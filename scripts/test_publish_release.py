@@ -16,6 +16,8 @@ import publish_release as release
 REPO = "owned/controlled-plugins"
 SOURCE = "a" * 40
 BASE = f"https://github.com/{REPO}/releases/download/build-{SOURCE}/"
+# Shape observed on the first real GitHub draft release, before publication.
+DRAFT_BASE = f"https://github.com/{REPO}/releases/download/untagged-57fb3b676a90605f3dbe/"
 
 
 def archive(files):
@@ -29,7 +31,7 @@ def archive(files):
 class ControlledGitHub:
     """Minimal native GitHub API contract with an independently enforced DAG CAS."""
     def __init__(self, license_bytes):
-        self.calls, self.downloads = [], []
+        self.calls, self.downloads, self.download_metadata = [], [], []
         self.private, self.default = False, "main"
         self.head = SOURCE
         self.source_tree = "b" * 40
@@ -42,6 +44,7 @@ class ControlledGitHub:
         self.lose_upload = self.conflict_upload = False
         self.corrupt_public = self.race_at_ref = self.advance_after_upload = False
         self.deny_create = False
+        self.published_asset_override = None
 
     def newer_source(self):
         head, tree = "d" * 40, "e" * 40
@@ -89,7 +92,7 @@ class ControlledGitHub:
             if name in self.assets:
                 raise AssertionError("asset clobber/duplicate POST")
             self.payloads[name] = data
-            self.assets[name] = {"id": len(self.assets)+1, "name": name, "size": len(data), "digest": "sha256:"+release.sha256(data), "state": "uploaded", "browser_download_url": BASE+name}
+            self.assets[name] = {"id": len(self.assets)+1, "name": name, "size": len(data), "digest": "sha256:"+release.sha256(data), "state": "uploaded", "browser_download_url": (DRAFT_BASE if self.release["draft"] else BASE)+name}
             if self.lose_upload:
                 self.lose_upload = False
                 raise release.APIError(None, "POST")
@@ -100,6 +103,10 @@ class ControlledGitHub:
         if method == "PATCH" and route == "/releases/1":
             assert value == {"draft": False}
             self.release["draft"] = False
+            for name, asset in self.assets.items():
+                asset["browser_download_url"] = BASE+name
+            if self.published_asset_override:
+                self.assets[release.INDEX].update(self.published_asset_override)
             self.tag = SOURCE
             if self.advance_after_upload:
                 self.newer_source()
@@ -135,9 +142,13 @@ class ControlledGitHub:
 
     def download(self, asset, public, expected_url):
         self.downloads.append((asset["name"], public))
-        assert expected_url == asset["browser_download_url"]
+        self.download_metadata.append((asset["name"], public, asset["browser_download_url"], asset["id"]))
+        assert expected_url == BASE+asset["name"]
         if public:
             assert self.release["draft"] is False
+            assert asset["browser_download_url"] == expected_url, "publisher retained stale draft URL instead of refreshing metadata"
+        else:
+            assert asset["browser_download_url"] == DRAFT_BASE+asset["name"]
         data = self.payloads[asset["name"]]
         return data+b"corruption" if public and self.corrupt_public else data
 
@@ -180,6 +191,29 @@ class PublicationTests(unittest.TestCase):
         self.assertEqual(first, second)
         self.assertEqual(len(self.api.writes()), writes, "idempotent rerun must not create/delete/upload/update anything")
         self.assertFalse(any(c[0] == "DELETE" for c in self.api.calls))
+
+    def test_real_untagged_draft_refreshes_published_metadata_before_public_download(self):
+        self.run_publish()
+        draft_reads = [(n, url, asset_id) for n, public, url, asset_id in self.api.download_metadata if not public]
+        public_reads = [(n, url, asset_id) for n, public, url, asset_id in self.api.download_metadata if public]
+        self.assertEqual(len(draft_reads), 3)
+        self.assertEqual({n: i for n, _, i in draft_reads}, {n: i for n, _, i in public_reads})
+        self.assertTrue(all(url == DRAFT_BASE+n for n, url, _ in draft_reads))
+        self.assertTrue(all(url == BASE+n for n, url, _ in public_reads))
+        publication = next(i for i,c in enumerate(self.api.calls) if c[0] == "PATCH" and c[1].endswith("/releases/1"))
+        refresh = next(i for i,c in enumerate(self.api.calls) if i > publication and c[0] == "GET" and "/releases/1/assets?" in c[1])
+        index_write = next(i for i,c in enumerate(self.api.calls) if c[0] == "POST" and c[1].endswith("/git/blobs"))
+        self.assertLess(publication, refresh)
+        self.assertLess(refresh, index_write)
+
+    def test_published_asset_identity_size_or_digest_change_blocks_index(self):
+        for altered in [{"id": 999}, {"size": 1}, {"digest": "sha256:"+"0"*64}]:
+            with self.subTest(altered=altered):
+                self.api = ControlledGitHub(self.license)
+                self.api.published_asset_override = altered
+                with self.assertRaises(release.PublishError): self.run_publish()
+                self.assertEqual(self.api.head, SOURCE)
+                self.assertFalse(any(c[0] == "POST" and c[1].endswith("/git/blobs") for c in self.api.calls))
 
     def test_interrupted_applied_upload_resumes_existing_draft_without_resubmit(self):
         self.api.lose_upload = True
@@ -294,10 +328,27 @@ class TransportTests(unittest.TestCase):
                     raise HTTPError(req.full_url, 302, "redirect", {"Location": "https://release-assets.githubusercontent.com/owned/download?signature=synthetic"}, None)
                 return Response(b"owned bytes")
         api.opener = Opener()
-        asset = {"id": 7, "browser_download_url": BASE+"owned.zip"}
+        asset = {"id": 7, "browser_download_url": DRAFT_BASE+"owned.zip"}
         self.assertEqual(api.download(asset, False, BASE+"owned.zip"), b"owned bytes")
+        self.assertEqual(calls[0].full_url, f"https://api.github.com/repos/{REPO}/releases/assets/7")
         self.assertEqual(calls[0].get_header("Authorization"), "Bearer owned-test-token")
         self.assertIsNone(calls[1].get_header("Authorization"))
+
+    def test_draft_browser_url_is_never_followed_and_public_still_requires_canonical_url(self):
+        api = release.GitHub(REPO, "owned-test-token")
+        asset = {"id": 7, "browser_download_url": "https://unrelated.invalid/never-follow"}
+        with patch.object(api, "_read", return_value=b"owned") as read:
+            self.assertEqual(api.download(asset, False, BASE+"owned.zip"), b"owned")
+            self.assertEqual(read.call_args.args[0], f"https://api.github.com/repos/{REPO}/releases/assets/7")
+            read.reset_mock()
+            with self.assertRaisesRegex(release.PublishError, "public repository URL"):
+                api.download(asset, True, BASE+"owned.zip")
+            read.assert_not_called()
+        for identity in ["7", 0, -1, True, "../foreign"]:
+            with self.subTest(identity=identity), patch.object(api, "_read") as read:
+                with self.assertRaisesRegex(release.PublishError, "invalid identity"):
+                    api.download({"id": identity}, False, BASE+"owned.zip")
+                read.assert_not_called()
 
     def test_asset_redirect_to_unrelated_host_is_blocked(self):
         api = release.GitHub(REPO, "owned-test-token")

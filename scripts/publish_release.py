@@ -194,12 +194,18 @@ class GitHub:
         return decode_json(self._read(("https://uploads.github.com" if upload else "https://api.github.com") + path, method, data, headers))
 
     def download(self, asset: dict, public: bool, expected_url: str) -> bytes:
-        if asset.get("browser_download_url") != expected_url:
+        asset_id = asset.get("id")
+        if type(asset_id) is not int or asset_id <= 0:
+            raise PublishError("release asset has invalid identity")
+        if public and asset.get("browser_download_url") != expected_url:
             raise PublishError("release asset download URL is not the expected public repository URL")
         headers = {"User-Agent": "light-media-plugins-release"}
         url = expected_url
         if not public:
-            url = f'https://api.github.com/repos/{self.repo}/releases/assets/{int(asset["id"])}'
+            # GitHub drafts expose a provisional untagged-* browser URL. Never
+            # follow or validate it as the eventual public URL: use only this
+            # repository's authenticated, exact asset-ID API resource.
+            url = f'https://api.github.com/repos/{self.repo}/releases/assets/{asset_id}'
             headers.update({"Authorization": "Bearer " + self.token, "Accept": "application/octet-stream", "X-GitHub-Api-Version": API_VERSION})
         return self._read(url, headers=headers, limit=MAX_ASSET, redirects=True)
 
@@ -260,6 +266,15 @@ def list_assets(api, prefix: str, release_id: int) -> dict:
     raise PublishError("release asset pagination bound exceeded")
 
 
+def validate_asset(asset: dict, name: str, expected: bytes, expected_id=None):
+    asset_id = asset.get("id")
+    if type(asset_id) is not int or asset_id <= 0 or asset.get("name") != name or (expected_id is not None and asset_id != expected_id):
+        raise PublishError("release asset identity changed; refusing clobber")
+    if asset.get("state") != "uploaded" or asset.get("size") != len(expected) or asset.get("digest") not in {None, "sha256:" + sha256(expected)}:
+        raise PublishError("existing asset metadata conflicts; refusing clobber")
+    return asset_id
+
+
 def publish(root: Path, dist: Path, repo: str, source: str, api) -> dict:
     assets = validate_bundle(root, dist, repo, source)
     prefix, tag = f"/repos/{repo}", "build-" + source
@@ -290,6 +305,7 @@ def publish(root: Path, dist: Path, repo: str, source: str, api) -> dict:
     if not remote.keys() <= assets.keys():
         raise PublishError("release contains unexpected assets; nothing will be removed")
     base = f"https://github.com/{repo}/releases/download/{tag}/"
+    verified_ids = {}
     for name, expected in assets.items():
         if name not in remote:
             try:
@@ -303,8 +319,7 @@ def publish(root: Path, dist: Path, repo: str, source: str, api) -> dict:
                 if name not in remote:
                     raise
         asset = remote[name]
-        if asset.get("state") != "uploaded" or asset.get("size") != len(expected) or asset.get("digest") not in {None, "sha256:" + sha256(expected)}:
-            raise PublishError("existing asset metadata conflicts; refusing clobber")
+        verified_ids[name] = validate_asset(asset, name, expected)
         if api.download(asset, not release.get("draft", False), base + quote(name, safe="")) != expected:
             raise PublishError("downloaded asset bytes differ; refusing clobber")
     if release.get("draft"):
@@ -314,9 +329,15 @@ def publish(root: Path, dist: Path, repo: str, source: str, api) -> dict:
     tag_ref = api.request("GET", prefix + "/git/ref/tags/" + tag)
     if tag_ref.get("object", {}).get("type") != "commit" or tag_ref["object"].get("sha") != source:
         raise PublishError("published tag does not identify built source")
-    # Verify the *public* downloads too, before making the install index visible.
+    # Publishing changes draft untagged-* URLs. Fetch fresh metadata, bind it
+    # to the exact already-verified asset identities, then anonymously verify
+    # canonical public downloads before making the install index visible.
+    published = list_assets(api, prefix, release_id)
+    if published.keys() != assets.keys():
+        raise PublishError("published release asset inventory changed")
     for name, expected in assets.items():
-        actual = api.download(remote[name], True, base + quote(name, safe=""))
+        validate_asset(published[name], name, expected, verified_ids[name])
+        actual = api.download(published[name], True, base + quote(name, safe=""))
         if actual != expected or sha256(actual) != sha256(expected):
             raise PublishError("public release download bytes/SHA not verified")
     head, tree, entries, _ = head_snapshot(api, prefix, source)
