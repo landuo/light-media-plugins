@@ -1,0 +1,101 @@
+{
+  "schema_version": 1,
+  "plugins": [
+    {
+      "schema_version": 1,
+      "plugin_id": "CategoryEditor",
+      "current_version": "1.3",
+      "releases": [
+        {
+          "version": "1.3",
+          "manifest": {
+            "plugin_order": 5,
+            "schema_version": 1,
+            "plugin_id": "CategoryEditor",
+            "name": "二级分类策略",
+            "description": "编辑下载和整理时自动二级分类的目录规则。",
+            "icon": "Bookstack_A.png",
+            "author": "jxxghp",
+            "author_url": "https://github.com/jxxghp",
+            "version": "1.3",
+            "runtime": "go-executable",
+            "entry": "category-editor",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_dashboard_meta",
+              "get_auth_providers",
+              "get_module",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.category.get_default",
+              "plugin.category.apply",
+              "plugin.systemmessage.put",
+              "plugin.base.update_config"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-3157db8e4879f59c39f1d43622e8355a626aeca0/CategoryEditor-1.3-linux-amd64.zip",
+              "sha256": "068f65d6084be55d54ac0df688db55ab062734f3e5a8aaabe1f4b8f0a2e0319d",
+              "size": 2627907,
+              "format": "zip",
+              "executable_sha256": "31bb4b8daafd1944113e1c06c5eeafa68e3dddb97c29112ae17c4d476b93e401",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 1808,
+                  "sha256": "8d8fc6fb7112aa76dfdb94aa633cf6985196a3dd603aa4f8c6f8e19418ae15b2"
+                },
+                {
+                  "path": "category-editor",
+                  "size": 4607245,
+                  "sha256": "31bb4b8daafd1944113e1c06c5eeafa68e3dddb97c29112ae17c4d476b93e401"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
