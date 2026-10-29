@@ -1,0 +1,193 @@
+{
+  "schema_version": 1,
+  "source_commit": "2b795ebb62207861a5f4b5c54291b5ebd12b3bed",
+  "scope": "CategoryEditor worker and the minimum complete-file SDK build closure; not a full host or general SDK distribution",
+  "allowed_changes": [
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/plugins",
+      "to": "github.com/landuo/light-media-plugins/internal/sdk"
+    },
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/plugins/categoryeditor",
+      "to": "github.com/landuo/light-media-plugins/plugins/categoryeditor"
+    }
+  ],
+  "files": [
+    {
+      "source_path": "internal/plugins/api.go",
+      "path": "internal/sdk/api.go",
+      "source_sha256": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+      "sha256": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/base.go",
+      "path": "internal/sdk/base.go",
+      "source_sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+      "sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/broadcast_handler.go",
+      "path": "internal/sdk/broadcast_handler.go",
+      "source_sha256": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+      "sha256": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/category_policy.go",
+      "path": "internal/sdk/category_policy.go",
+      "source_sha256": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+      "sha256": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/chain_handler.go",
+      "path": "internal/sdk/chain_handler.go",
+      "source_sha256": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+      "sha256": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/concurrent_session.go",
+      "path": "internal/sdk/concurrent_session.go",
+      "source_sha256": "c36f70926d106b5f6171d78f98ac08b1d05bbe4689cf6e04b87ed9916227ccc8",
+      "sha256": "c36f70926d106b5f6171d78f98ac08b1d05bbe4689cf6e04b87ed9916227ccc8",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/concurrent_transport.go",
+      "path": "internal/sdk/concurrent_transport.go",
+      "source_sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/concurrent_worker.go",
+      "path": "internal/sdk/concurrent_worker.go",
+      "source_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/events.go",
+      "path": "internal/sdk/events.go",
+      "source_sha256": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+      "sha256": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/frontend.go",
+      "path": "internal/sdk/frontend.go",
+      "source_sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+      "sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/identity.go",
+      "path": "internal/sdk/identity.go",
+      "source_sha256": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+      "sha256": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/jsonrpc.go",
+      "path": "internal/sdk/jsonrpc.go",
+      "source_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/module_result.go",
+      "path": "internal/sdk/module_result.go",
+      "source_sha256": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+      "sha256": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/mutable_event.go",
+      "path": "internal/sdk/mutable_event.go",
+      "source_sha256": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+      "sha256": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/protocol.go",
+      "path": "internal/sdk/protocol.go",
+      "source_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/runner_budget.go",
+      "path": "internal/sdk/runner_budget.go",
+      "source_sha256": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+      "sha256": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/runner_observation.go",
+      "path": "internal/sdk/runner_observation.go",
+      "source_sha256": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+      "sha256": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/runtime_support.go",
+      "path": "internal/sdk/runtime_support.go",
+      "source_sha256": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+      "sha256": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/transport.go",
+      "path": "internal/sdk/transport.go",
+      "source_sha256": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+      "sha256": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/worker.go",
+      "path": "internal/sdk/worker.go",
+      "source_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/categoryeditor/categoryeditor.go",
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "source_sha256": "b7f16a9609a8cff0816034896066fc52d376209aa63dac54c1cf92f2f7bb4069",
+      "sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "changes": [
+        "module_import_relocation"
+      ]
+    },
+    {
+      "source_path": "internal/plugins/categoryeditor/categoryeditor_test.go",
+      "path": "plugins/categoryeditor/categoryeditor_test.go",
+      "source_sha256": "42143c157c9697649f234949c5feaca590780b4dcbff6122b81f73b98252320f",
+      "sha256": "71faceb60b71e0db5e2bdccbf48315233ae9bfe7abb253764d45caf422a29e49",
+      "changes": [
+        "module_import_relocation"
+      ]
+    },
+    {
+      "source_path": "internal/plugins/categoryeditor/form.json",
+      "path": "plugins/categoryeditor/form.json",
+      "source_sha256": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+      "sha256": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+      "changes": []
+    },
+    {
+      "source_path": "cmd/category-editor/main.go",
+      "path": "cmd/category-editor/main.go",
+      "source_sha256": "2e91534eace7accb04d54be3dce9f2b440d29c523ca1de98c0172164e0e693d6",
+      "sha256": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+      "changes": [
+        "module_import_relocation"
+      ]
+    }
+  ]
+}

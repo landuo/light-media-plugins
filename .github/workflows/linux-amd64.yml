@@ -1,0 +1,81 @@
+name: Linux amd64 plugins
+
+on:
+  push:
+    branches: [main]
+    paths-ignore: [go-plugins.v1.json]
+  pull_request:
+    branches: [main]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+# Do not cancel an asset upload. An older queued build must pass source-tree
+# checks before any root-index update; non-force ref CAS protects concurrent main.
+concurrency:
+  group: linux-amd64-${{ github.event.pull_request.number || github.ref }}
+  cancel-in-progress: false
+
+env:
+  GOTOOLCHAIN: local
+  GOFLAGS: -mod=readonly
+  GOAUTH: 'off'
+  GOPRIVATE: ''
+  GOOS: linux
+  GOARCH: amd64
+
+jobs:
+  test:
+    if: github.event_name != 'workflow_dispatch' || github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: read
+    env:
+      CGO_ENABLED: '1'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.2'
+          check-latest: false
+          cache: false
+      - name: Vet, race tests, and controlled packaging/publication tests
+        run: |
+          test "$(uname -m)" = x86_64
+          go vet ./...
+          go test -race ./...
+          python3 -m unittest discover -s scripts -p 'test_*.py' -v
+
+  release:
+    needs: test
+    if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    permissions:
+      contents: write
+    env:
+      CGO_ENABLED: '0'
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.2'
+          check-latest: false
+          cache: false
+      - name: Require approved root license and package actual worker manifests
+        run: |
+          test -s LICENSE
+          python3 scripts/build_plugins.py --output dist \
+            --release-base-url "https://github.com/$GITHUB_REPOSITORY/releases/download/build-$GITHUB_SHA/"
+      - name: Publish without clobber, verify public bytes, and CAS the index
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/publish_release.py --dist dist \
+            --repo "$GITHUB_REPOSITORY" --source-sha "$GITHUB_SHA"
