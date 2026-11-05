@@ -129,7 +129,7 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "fbddc379789af40528fedac75b0cb193379b7401",
+    "revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
@@ -137,7 +137,7 @@
       "migration/ledger.json",
       "docs/migration-task.md"
     ],
-    "revision_scope": "Locally committed six-instance/five-family checkpoint with full PUI source/Main/browser/canonicalZIP acceptance, SDK98 unchanged. Host verifiedPUI19 saved separatelyafb1; finite state and Rlk/AutoSignIn next slices are separate. Remote main4453 unchanged; no deployment."
+    "revision_scope": "Locally saved seven-instance/six-family functional acceptance, completeRlk source/Main/browser/canonicalpackage+source method/Auth revalidation. No private config/data import, remote push or deployment; unacceptedAutoSignIn remains untracked and outside delivered code."
   },
   "inventory": [
     {
@@ -5912,7 +5912,8 @@
         "original/SDK/kernel/App/Main/UI epochs and failures remain distinct; original Main7 UI is not relabelled as host881f UI"
       ],
       "private_configuration_data_migration_status": "not_run",
-      "current_dependency_status": "verified_current23_manifest/SDK98/host881f/actualMainUIpackage/source/kernel/independent_complete"
+      "current_dependency_status": "verified_current23_manifest/SDK98/host881f/actualMainUIpackage/source/kernel/independent_complete",
+      "verified_baseline_revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b"
     },
     {
       "id": "plugin.MPServerStatus",
@@ -34452,412 +34453,505 @@
     ]
   },
   "resume": {
-    "stage": "current23_auth_addon_sealed_main7_UI_and_current4_auth_running_canonical23_building",
-    "worktree": "/Users/accidia/projects/light-media-plugins",
-    "source_root": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot",
-    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
-    "branch": "codex/installed-plugins-20261105",
-    "workers": [
-      "plugin_sdk: work-only parallelSDK/Appguard candidate b6c879 frozen, no actualSDK98 change; now exclusive3Manifest inherited-module correction/source-red and new Rlk/consumer freezes",
-      "plugin_source_discovery: actual source inherited-module/check_method oracle, full other-interface gate scan, independent3Manifest and new Main/composite",
-      "torrent_transfer: completeAutoSignIn2.9.15 Go candidate;1261 controlled source cases and persistent120site SDK pass; remaining187logs/source fields/scheduler precision/sharedparallel capability gates; no real PT/Main claim",
-      "root: Main5 actual0/283.97s/170obs/7workerjoin and IAB full save/realfileevent; soleledger; source-inherited-module correction closure then Main6/package; no push/deploy"
-    ],
-    "next": "Complete new23 actualRlkMain7+IAB (include logout/login with enabled plugin), current4Auth Main2 and canonical23 Main. Reuse actualPUI3 unchanged d001/MPS3278+host3c inputs; independent final composite then current acceptances. All legacy20 and failedPUI2 remain exact historical artifacts.",
-    "blockers": [],
-    "private_work": "work/migration-20261105/; never publish raw user configuration/data",
-    "sdk_production_freeze": "SDK_ORIGIN98 sha256 40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875, source host f7b34c33196a6a52c8d0c7d853fc8a23614bce5f; no further SDK edits",
-    "source_discovery_note": "190 installed raw source files frozen; Category passed on75e; independent source contracts ready for TT/SiteStatistic/RemoveLink. No total completion claim.",
-    "accepted_instances": 0,
-    "accepted_families": 0,
-    "owned_linux_test_infrastructure": {
-      "root": "/home/admin/light-media-plugins-migration-tt-20261105",
-      "marker": "light-media-plugins/TorrentTransfer/20261105/owned-only",
-      "state": "All4 exact-owned daemons removed after independent read-only sample; owned Transmission image and NAS root removed; no production source touched.",
-      "image_build_session": 24756,
-      "cleanup_required": false,
-      "containers": [
-        "lm-plugins-tt-20261105-qb-source",
-        "lm-plugins-tt-20261105-qb-target",
-        "lm-plugins-tt-20261105-tr-source",
-        "lm-plugins-tt-20261105-tr-target"
-      ],
-      "image_id": "sha256:f11b71591e57136d3da80d51f40763958f4390891ad0c85e114a4a0d3da5af57",
-      "active_main_run": "main-run-6",
-      "session_id": null,
-      "cleanup_evidence": "evidence/torrenttransfer-20261105/owned-runtime-cleanup.json"
-    },
-    "current_driver": "MPS full final composite48f passed; SDK98 Main4 exit0/17.97s; RemoveLink Main3 exit1/35.90s STRM harness NFO stem mismatch, full audit before Main4.",
-    "host_sdk_increment": {
-      "commit": "d715db2c3665b32670f3f60c519ad7220224a856",
-      "branch": "codex/plugin-source-error-outcomes-20261105",
-      "published": false,
-      "actual_main_daemon_acceptance": "Site full composite accepted d715/53c3, currentSDK95 origin. Later shared modifications require new dependency proof; historical TT404 unchanged."
-    },
-    "sdk_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
-    "category_current_dependency_review": "SDK95 independent impact certificate fe8637da... proves original93/business unchanged, no new init/global/linked clients, Linux text/rodata/PC mapping equality, cold normal/race292 and negative reachability. Actual75e main/UI stays historical.",
-    "accepted_checkpoint_commit": "fbddc379789af40528fedac75b0cb193379b7401",
-    "inflight_root_files": [
-      "plugins/pluginuninstall/",
+    "read_first": [
+      "docs/migration-task.md",
       "migration/ledger.json"
     ],
-    "torrenttransfer_freeze_manifest_sha256": "0f6641da6e2deee482f246496d0d832f51881404e7627e26aadfbe52ad745b5c",
-    "torrenttransfer_worker_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
-    "owned_site_runtime": {
-      "root": "/home/admin/light-media-plugins-migration-site-20261105",
-      "state": "removed after independent read-only SQLite/process/binary sample",
-      "cleanup_evidence": "evidence/sitestatistic-20261105/owned-runtime-cleanup.json"
+    "current": {
+      "functional_verified_instances": 7,
+      "total_installed_instances": 23,
+      "business_families_verified": 6,
+      "private_original_config_data_import": "not_run; must be separately validated without replaying one-shots or duplicate scheduled writes",
+      "target_worktree": "/Users/accidia/projects/light-media-plugins",
+      "target_branch": "codex/installed-plugins-20261105",
+      "tested_saved_code_revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b",
+      "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+      "host_worktree": "/Users/accidia/projects/light-media",
+      "host_branch": "codex/plugin-source-error-outcomes-20261105",
+      "host_HEAD": "ed88a7777046bf78ed56519dc0441f0b6e88de81",
+      "minimum_host_code_revision": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
+      "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+      "SDK98_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "SDK_source_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+      "SDK98_real_files_unchanged": true,
+      "delivery": "local only; no new push/merge/productiondeploy authorization",
+      "latest_Rlk_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
+      "latest_Rlk_independent_composite_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
+      "latest_Rlk_copy_manifest_sha256": "9bebb547ca725d00706333f18b365aa7e8b22a6e521bf459c9ea16db7a8706f4",
+      "current_six_revalidation": "source_interfaces.current_six_revalidation.20261106 plus final_metadata_registration; original business/UI/network proof remains original binding",
+      "tests_running": "no ordinary Main/browser/NAS worker from completed7th; work-only source/overlay author/reviewer tests may run"
     },
-    "module_increment": {
-      "state": "exact3ELFunreachable addition independently passed",
-      "evidence_id": "sdk.unreachable_module_increment",
-      "review_sha256": "17729c9fb70794c1af8576115c343be9f72831c2ab1691add783ded2e181cdc4",
-      "accepted_worker_ELF_before_after_equal": true,
-      "not_MPS_acceptance": true,
-      "next_work_only_candidate": "regexp2v2.9.0 five-command exactELF/linked package equality gate passed using -modfile only; Rlk final sixth and independent/license gate pending; shared go.mod/go.sum unchanged"
+    "current_artifact_inputs": {
+      "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
+      "local_host": "/Users/accidia/projects/light-media/work/shared-host-managed-storage-20261106/light-media-host-managed-storage-linux (single6ce)",
+      "NAS_shared_root": "/home/admin/light-media-plugins-migration-sdk98-20261105",
+      "NAS_Rlk_root": "/home/admin/light-media-plugins-migration-removelink-20261105",
+      "retained_NAS_inputs": "15ELFs only; current6family worker set+sourceversion/testfixture/drivers+current6ce host+oneoldf7protocol compatibilityhost; no running services",
+      "cleanup": "18ownedNAS runtime dirs and23supersededELFs removed after archival/independentreadonlysample;20localpluginGo binaries removed/current13 moved once;4localoldhost/fixtureGo binaries removed/current6ce retained; oldUI-ready6/7private files removed and ownIABtab closed",
+      "cleanup_NAS_sha256": "b1f5f5fe6b20d4bc343d1efaf5273d0b90696688314111509d25fef60fb16cee",
+      "cleanup_local_plugin_sha256": "c72d61613e6438c00d8bfbf16bacecefb4f042ca6499d1faf7fd14ef155e54e4",
+      "cleanup_local_host_public": "/Users/accidia/projects/light-media/testdata/plugin-storage-managed-cleanup-20261106.json",
+      "cleanup_local_host_sha256": "00431d20f5be73bcceeba161931ab1a67cacdb49eda3f992ae906d12292dd4ea"
     },
-    "shared_increment": {
-      "state": "verified_named_four_accepted_consumers_current98_f7",
-      "historical_verified_baseline_revision": "16c572ecaf6994ddb38c135cdc76a3c05a9d40ab",
-      "historical_verified_instances": 4,
-      "historical_verified_families": 3,
-      "current_dependency_certification": true,
-      "changed_scope": "SDK cleanup continuation/HOME; finite manager operation-owner and local metadata host primitives. No current old-SDK evidence relabelled.",
-      "next": "No further SDK edits; new host storage and PluginUnInstall adaptations retain separate acceptance gates.",
-      "source_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
-      "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
-      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
-      "impact_certificate_sha256": "25bc2bf5eb864c52e9235510c9320e330702aa0636c0f8041a586dd14987fa58",
-      "cleanup_HOME_local_evidence": "Root actual010128, Local-only298d and committed hostf7 retain original seals; no current daemon/UI historical relabel."
+    "next_complete_slice": "AutoSignIn2.9.15 full business and native integrations, then remaining15discovered plugins. Do not mark AutoSignIn or all23 complete from pure/SDK tests.",
+    "active_ownership": {
+      "Root": "singleledger/registry/hostsharedintegration/nativeMain/browser/publishing and actual deliverystate",
+      "/root/plugin_source_discovery": "independent work-only parallelSDK6/Appguard2 review; exclusively work/independent-parallel-hostcall-review-20261106, no actualsource/SDK/ledger edits",
+      "/root/plugin_sdk": "author ownwork overlay AutoSignIn source-edge fixes R01/R03-R07 (plugin.go,run.go,services.go,html.go,json_adapters.go+source_http_json.go/source_repr.go+test); not selfreview; actualtarget r4 remains frozen",
+      "/root/torrent_transfer": "author ownwork completePythonregex front-end/typedAST/privateexecution bridge R02; no overlap with SDKagent5files; source Sites contract and phasebudget work candidates; actualtarget r4 frozen"
     },
-    "current_runs": {
-      "MPS": {
-        "main_run": "5",
-        "exit": 0,
-        "seconds": 1048.87,
-        "private_evidence_root": "work/migration-20261105/mpserverstatus-runtime",
-        "harvest_manifest_sha256": "2afbec5b926c985f10303a00aff8b831c15eee4ef40919ebdc5c9019138f6519",
-        "independent_source_sdk_review_sha256": "72f9cde8fd6ffdbd5a1c0d266222787376433780daad9b9009ed84d2ba193e6a",
-        "UI_touch": "passed_actual_Chrome_touch_emulation",
-        "full_feature_certification": true,
-        "independent_composite_review_sha256": "48f6ecbec472c6179f0b4e53d0d95b8f9a93612af476fa954919f47376e835f5",
-        "formal_ledger_registration": "verified",
-        "owned_runtime": "cleaned_marker_bound_no_processes_or_containers"
-      },
-      "RemoveLink": {
-        "run": "3",
-        "state": "actual_failed_driver_STRM_NFO_stem_expectation_full_audit_before_retry",
-        "owned_root": "/home/admin/light-media-plugins-migration-removelink-20261105",
-        "host_sha256": "c329be188831b1d64760ec70c971a41f691216f15beb032c0c3b0acbe54192ff",
-        "worker_sha256": "0ebb0476a1ab17a782accd263a7ec7a7d9fc69a25db42823836cfb48e79a0dfb",
-        "driver_sha256": "068c088c001b8bb26b24c2c4f48b5504932f0f6baabc7d4e49c834411ec52e9b",
-        "seconds": 35.9,
-        "exit": 1,
-        "new_confirmed_differences": [
-          "delay ±1e400 pre-stop OverflowError: minimal Go fix +actual8case source fixture and handler state test passed; full logs integration pending",
-          "99 source logs/11 actual source sequences: dedicated implementation in progress",
-          "independent timer versus observer and source state/queue lock ranges: actualsource/concurrent Go red; correction pending",
-          "per-observer source exception failure domain: actualtwoinotify source oracle/current worker red; correction pending",
-          "parent0300: host O_PATH actual Storage.Delete red/green, Rlk delete adapter parent List correction pending fullactualRlk proof",
-          "inotify ENOSYS is startup failure, not polling fallback: Root minimal native constructor fix/tests authored, Linuxexecution pending current product freeze"
+    "AutoSignIn_current": {
+      "source_files": 26,
+      "source_version": "2.9.15",
+      "unaccepted_product_scope": "cmd/auto-sign-in,plugins/autosignin untracked; no registry entry/rootmodulechanges/actual Main",
+      "r4": "572fixedinputs; normal/race2539pass but independently91newsourcecomparisonnodes red plus4malformedhistory cases; no full source equivalence claim",
+      "independent_review": "work/independent-autosignin-business-review-20261106/freeze.json59ec306b40159007c16e7bf44a822084e8cc410d167e7dac49193fa14bac7216",
+      "independent_findings_sha256": "35a9c6120c011829677bf352fe1f85b2fa2970bcfaf7fae8d8782e7dcea9551c",
+      "seven_confirmed_groups": [
+        "4inheritedpass methodadvertisements",
+        "Python regex syntax/flags/width/capture/execution differences; repeated text-only translation assumption rejected",
+        "strptime exactUnicode year vsASCII month/asymmetric day grammar",
+        "Pythonrepr control/NBSP diagnostics",
+        "lxml NUL recovery versus hardrejection",
+        "source HTTPJSON nonfinite/extensions/errors versus IPC strictJSON",
+        "truthy malformeddailyhistory must raise before queries/visits/writes"
+      ],
+      "next_dependencies": [
+        "Root independently integrate work-only opt-inparallelSDK6+Appguard2 only after review/counter/nativeoldconsumer impact",
+        "Root implement finite source-bound nativeSites/metadata/credential/alias/CustomSites/stats/publicReferer/provider/scheduler precise capabilities",
+        "merge independentlyreviewed source-edge+completeRegex work overlays; nativeApp/Main/UI/clone/restart/OCR/near-limitdrain; no oldconfigreplay"
+      ],
+      "Sites_contract": "work/migration-20261105/autosignin-host-contract-20261106/CONTRACT.md b4c7dc31ec39f47a493de7b1d5a89f42246943c8d076d812f1490737cae642e7,86inputs and38actualsource preparationcases; not targetwire/Main",
+      "regex_plan": "work/migration-20261105/autosignin-regex-frontend-20261106/PLAN.md dba9a3feaa53d9c3e5c2c82384d25964ebc650f1d1746f9b70282b233d5487a5; fullparser/state/width/compiler→typedAST bridge, source LTRlookbehind/largelegalrepeat execution cannot clamp; workfirstAST323nodes passed, no matchingclosure yet",
+      "phase_budget_work": "work/migration-20261105/autosignin-implementation-20261106/phase-budget-candidate/summary.json4e9ee46b6da6017e0c619c4a778653c53ed6b43f947da515c0b8c374b7be937e; realoverlay4near16.78MBsyntheticreplies/2freshcallbacks, normal/race7+2compiledmutants; not actualASI/App/40-48/drainproof",
+      "regex_unused_consumer_gate": "work/root-regex-vendor-review-20261106/unused-consumers.json81da513e7178cc30a4d474f038afe7bd38bfbdf02dfc995f1e11baee03ea540f; exact33upstream/privatefiles+4algorithmchanges and6currentLinuxELFs same; not fullalgorithm parity"
+    },
+    "parallel_SDK_work_only": {
+      "path": "work/migration-20261105/autosignin-reverse-host-design-20261106/overlay-v1",
+      "freeze_sha256": "b6c8797bdbbebeb272065ad3cb5593fe3003a710ecd095ff12f77b4227ab69b1",
+      "actualsharedfiles_modified": false,
+      "scope": "sixSDK productionfiles+2Apptransientguardtyped-markerfix; requires sourceindependentreview, legacyconsumerimpact and realASI native/phase/byte/drain/UI acceptance",
+      "critical_correction": "MaxParallelHostCalls Ncharged is perincoming invocation; singlepublisher lock sessionwide. FINAL_REVIEW acrosssession wording overbroad. ExistingRPC64default/256max and wire/chunkbudget are perincoming, not pass/session quotas. Snapshot is observation, neverpermission/reservation/physicaldrain."
+    },
+    "dirty_work_to_protect": [
+      "unacceptedcmd/auto-sign-in andplugins/autosignin",
+      "unrelated.DS_Store files remain untracked",
+      "host preexistinguntracked testdata/plugin-storage-parent-permissions-cleanup-20261105.json remains untouched"
+    ],
+    "resume_commands": [
+      "gitstatus and actualremoteSHA/source/targetproofhash check",
+      "python3 /Users/accidia/.codex/skills/migrate-project-faithfully/scripts/check_ledger.py migration/ledger.json --source-repo work/migration-20261105/source-snapshot --target-repo .",
+      "read next ownedreview/author work results, retain actualsharedSDK98 until independentlygated"
+    ],
+    "historical_layers_before_seventh_save": {
+      "stage": "current23_auth_addon_sealed_main7_UI_and_current4_auth_running_canonical23_building",
+      "worktree": "/Users/accidia/projects/light-media-plugins",
+      "source_root": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot",
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "branch": "codex/installed-plugins-20261105",
+      "workers": [
+        "plugin_sdk: work-only parallelSDK/Appguard candidate b6c879 frozen, no actualSDK98 change; now exclusive3Manifest inherited-module correction/source-red and new Rlk/consumer freezes",
+        "plugin_source_discovery: actual source inherited-module/check_method oracle, full other-interface gate scan, independent3Manifest and new Main/composite",
+        "torrent_transfer: completeAutoSignIn2.9.15 Go candidate;1261 controlled source cases and persistent120site SDK pass; remaining187logs/source fields/scheduler precision/sharedparallel capability gates; no real PT/Main claim",
+        "root: Main5 actual0/283.97s/170obs/7workerjoin and IAB full save/realfileevent; soleledger; source-inherited-module correction closure then Main6/package; no push/deploy"
+      ],
+      "next": "Complete new23 actualRlkMain7+IAB (include logout/login with enabled plugin), current4Auth Main2 and canonical23 Main. Reuse actualPUI3 unchanged d001/MPS3278+host3c inputs; independent final composite then current acceptances. All legacy20 and failedPUI2 remain exact historical artifacts.",
+      "blockers": [],
+      "private_work": "work/migration-20261105/; never publish raw user configuration/data",
+      "sdk_production_freeze": "SDK_ORIGIN98 sha256 40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875, source host f7b34c33196a6a52c8d0c7d853fc8a23614bce5f; no further SDK edits",
+      "source_discovery_note": "190 installed raw source files frozen; Category passed on75e; independent source contracts ready for TT/SiteStatistic/RemoveLink. No total completion claim.",
+      "accepted_instances": 0,
+      "accepted_families": 0,
+      "owned_linux_test_infrastructure": {
+        "root": "/home/admin/light-media-plugins-migration-tt-20261105",
+        "marker": "light-media-plugins/TorrentTransfer/20261105/owned-only",
+        "state": "All4 exact-owned daemons removed after independent read-only sample; owned Transmission image and NAS root removed; no production source touched.",
+        "image_build_session": 24756,
+        "cleanup_required": false,
+        "containers": [
+          "lm-plugins-tt-20261105-qb-source",
+          "lm-plugins-tt-20261105-qb-target",
+          "lm-plugins-tt-20261105-tr-source",
+          "lm-plugins-tt-20261105-tr-target"
         ],
-        "current_new_implementation": "ctor final59/d52/96ef, old unsafe home/default cases now4branch actual red/green; fullnormal/race254 each plus228 stable inputs; independent final59 pending",
-        "source_red_seal": "3c95beaac97e6372c6aac23a35962380fdf439f08abcd4974109a756d844c9a4",
-        "logging_freeze": "282307b4d772efbc46f57c3d10f36902064e756fd0ca739494c5cad8ff9bf8d7",
-        "next_actual_main": "4 pending final59 independent review; new finite state host candidate1ddd compiled but not yet Main",
-        "reviewed_new_host_sha256": "c2a0df088eb5fece52e2dff108f66b8bcf4fa0b4665097438a017b82c5702d1f",
-        "host0719_narrow_permission_review": "2188702a0e7cfd67ee3bcec2413ad44996cded5f712a25f540a51a536cd7f01c",
-        "new_open_source_differences": [
-          "Unknown ~username must raise original Path.expanduser RuntimeError through original hardlink/scrap/observer catch boundaries, never be treated as no-match",
-          "Shared host getState legal large JSON exponents/integers/container truth: Root actualApp23 and Linux24 nodes green; independent/current Main gate pending"
-        ],
-        "final_producer_freeze": "96efa3208253921cfcd0a0c27365a366200aef47372b9f171902f0324f880eb5",
-        "final_producer_manifest": "d52bf7b0f6e06ef524833ccbb079b5a8a43305dc4f950d39e6ccd1767fc5b156",
-        "current_worker_sha256": "e2191c411bf55dc0c59b7d6acc6daad5c36f8a3d6b33b4496b8794a606648503"
+        "image_id": "sha256:f11b71591e57136d3da80d51f40763958f4390891ad0c85e114a4a0d3da5af57",
+        "active_main_run": "main-run-6",
+        "session_id": null,
+        "cleanup_evidence": "evidence/torrenttransfer-20261105/owned-runtime-cleanup.json"
       },
-      "SDK98Impact": {
-        "run": 4,
-        "exit": 0,
-        "seconds": 17.97,
-        "host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
-        "driver_sha256": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
-        "source_tail_audit_sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
-        "public_impact_seal": "25bc2bf5eb864c52e9235510c9320e330702aa0636c0f8041a586dd14987fa58",
-        "not_real_daemon_full_transfer": true,
-        "new_host_addon": {
-          "run": 5,
+      "current_driver": "MPS full final composite48f passed; SDK98 Main4 exit0/17.97s; RemoveLink Main3 exit1/35.90s STRM harness NFO stem mismatch, full audit before Main4.",
+      "host_sdk_increment": {
+        "commit": "d715db2c3665b32670f3f60c519ad7220224a856",
+        "branch": "codex/plugin-source-error-outcomes-20261105",
+        "published": false,
+        "actual_main_daemon_acceptance": "Site full composite accepted d715/53c3, currentSDK95 origin. Later shared modifications require new dependency proof; historical TT404 unchanged."
+      },
+      "sdk_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "category_current_dependency_review": "SDK95 independent impact certificate fe8637da... proves original93/business unchanged, no new init/global/linked clients, Linux text/rodata/PC mapping equality, cold normal/race292 and negative reachability. Actual75e main/UI stays historical.",
+      "accepted_checkpoint_commit": "fbddc379789af40528fedac75b0cb193379b7401",
+      "inflight_root_files": [
+        "plugins/pluginuninstall/",
+        "migration/ledger.json"
+      ],
+      "torrenttransfer_freeze_manifest_sha256": "0f6641da6e2deee482f246496d0d832f51881404e7627e26aadfbe52ad745b5c",
+      "torrenttransfer_worker_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+      "owned_site_runtime": {
+        "root": "/home/admin/light-media-plugins-migration-site-20261105",
+        "state": "removed after independent read-only SQLite/process/binary sample",
+        "cleanup_evidence": "evidence/sitestatistic-20261105/owned-runtime-cleanup.json"
+      },
+      "module_increment": {
+        "state": "exact3ELFunreachable addition independently passed",
+        "evidence_id": "sdk.unreachable_module_increment",
+        "review_sha256": "17729c9fb70794c1af8576115c343be9f72831c2ab1691add783ded2e181cdc4",
+        "accepted_worker_ELF_before_after_equal": true,
+        "not_MPS_acceptance": true,
+        "next_work_only_candidate": "regexp2v2.9.0 five-command exactELF/linked package equality gate passed using -modfile only; Rlk final sixth and independent/license gate pending; shared go.mod/go.sum unchanged"
+      },
+      "shared_increment": {
+        "state": "verified_named_four_accepted_consumers_current98_f7",
+        "historical_verified_baseline_revision": "16c572ecaf6994ddb38c135cdc76a3c05a9d40ab",
+        "historical_verified_instances": 4,
+        "historical_verified_families": 3,
+        "current_dependency_certification": true,
+        "changed_scope": "SDK cleanup continuation/HOME; finite manager operation-owner and local metadata host primitives. No current old-SDK evidence relabelled.",
+        "next": "No further SDK edits; new host storage and PluginUnInstall adaptations retain separate acceptance gates.",
+        "source_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+        "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+        "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+        "impact_certificate_sha256": "25bc2bf5eb864c52e9235510c9320e330702aa0636c0f8041a586dd14987fa58",
+        "cleanup_HOME_local_evidence": "Root actual010128, Local-only298d and committed hostf7 retain original seals; no current daemon/UI historical relabel."
+      },
+      "current_runs": {
+        "MPS": {
+          "main_run": "5",
           "exit": 0,
-          "seconds": 17.82,
-          "host_sha256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
-          "unchanged_driver": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
+          "seconds": 1048.87,
+          "private_evidence_root": "work/migration-20261105/mpserverstatus-runtime",
+          "harvest_manifest_sha256": "2afbec5b926c985f10303a00aff8b831c15eee4ef40919ebdc5c9019138f6519",
+          "independent_source_sdk_review_sha256": "72f9cde8fd6ffdbd5a1c0d266222787376433780daad9b9009ed84d2ba193e6a",
+          "UI_touch": "passed_actual_Chrome_touch_emulation",
+          "full_feature_certification": true,
+          "independent_composite_review_sha256": "48f6ecbec472c6179f0b4e53d0d95b8f9a93612af476fa954919f47376e835f5",
+          "formal_ledger_registration": "verified",
+          "owned_runtime": "cleaned_marker_bound_no_processes_or_containers"
+        },
+        "RemoveLink": {
+          "run": "3",
+          "state": "actual_failed_driver_STRM_NFO_stem_expectation_full_audit_before_retry",
+          "owned_root": "/home/admin/light-media-plugins-migration-removelink-20261105",
+          "host_sha256": "c329be188831b1d64760ec70c971a41f691216f15beb032c0c3b0acbe54192ff",
+          "worker_sha256": "0ebb0476a1ab17a782accd263a7ec7a7d9fc69a25db42823836cfb48e79a0dfb",
+          "driver_sha256": "068c088c001b8bb26b24c2c4f48b5504932f0f6baabc7d4e49c834411ec52e9b",
+          "seconds": 35.9,
+          "exit": 1,
+          "new_confirmed_differences": [
+            "delay ±1e400 pre-stop OverflowError: minimal Go fix +actual8case source fixture and handler state test passed; full logs integration pending",
+            "99 source logs/11 actual source sequences: dedicated implementation in progress",
+            "independent timer versus observer and source state/queue lock ranges: actualsource/concurrent Go red; correction pending",
+            "per-observer source exception failure domain: actualtwoinotify source oracle/current worker red; correction pending",
+            "parent0300: host O_PATH actual Storage.Delete red/green, Rlk delete adapter parent List correction pending fullactualRlk proof",
+            "inotify ENOSYS is startup failure, not polling fallback: Root minimal native constructor fix/tests authored, Linuxexecution pending current product freeze"
+          ],
+          "current_new_implementation": "ctor final59/d52/96ef, old unsafe home/default cases now4branch actual red/green; fullnormal/race254 each plus228 stable inputs; independent final59 pending",
+          "source_red_seal": "3c95beaac97e6372c6aac23a35962380fdf439f08abcd4974109a756d844c9a4",
+          "logging_freeze": "282307b4d772efbc46f57c3d10f36902064e756fd0ca739494c5cad8ff9bf8d7",
+          "next_actual_main": "4 pending final59 independent review; new finite state host candidate1ddd compiled but not yet Main",
+          "reviewed_new_host_sha256": "c2a0df088eb5fece52e2dff108f66b8bcf4fa0b4665097438a017b82c5702d1f",
+          "host0719_narrow_permission_review": "2188702a0e7cfd67ee3bcec2413ad44996cded5f712a25f540a51a536cd7f01c",
+          "new_open_source_differences": [
+            "Unknown ~username must raise original Path.expanduser RuntimeError through original hardlink/scrap/observer catch boundaries, never be treated as no-match",
+            "Shared host getState legal large JSON exponents/integers/container truth: Root actualApp23 and Linux24 nodes green; independent/current Main gate pending"
+          ],
+          "final_producer_freeze": "96efa3208253921cfcd0a0c27365a366200aef47372b9f171902f0324f880eb5",
+          "final_producer_manifest": "d52bf7b0f6e06ef524833ccbb079b5a8a43305dc4f950d39e6ccd1767fc5b156",
+          "current_worker_sha256": "e2191c411bf55dc0c59b7d6acc6daad5c36f8a3d6b33b4496b8794a606648503"
+        },
+        "SDK98Impact": {
+          "run": 4,
+          "exit": 0,
+          "seconds": 17.97,
+          "host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+          "driver_sha256": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
+          "source_tail_audit_sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
+          "public_impact_seal": "25bc2bf5eb864c52e9235510c9320e330702aa0636c0f8041a586dd14987fa58",
           "not_real_daemon_full_transfer": true,
-          "independent_addon": "pending"
+          "new_host_addon": {
+            "run": 5,
+            "exit": 0,
+            "seconds": 17.82,
+            "host_sha256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
+            "unchanged_driver": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
+            "not_real_daemon_full_transfer": true,
+            "independent_addon": "pending"
+          }
+        },
+        "PluginUnInstall": {
+          "state": "verified_source_Main_UI_canonicalZIP_and_independent_complete_composite",
+          "worker_sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+          "target18_manifest": "090159b7a56b9629871055d49cc6bf8afe605c8516eb6d93c09fb06ce6dffd0c",
+          "source_review": "f38f48ad3fef4cf87721b18e0305f4bb768f40b29f9d36e31ee5f5069d633568",
+          "ordinary_main_port": 36258,
+          "requires_browser_barrier": true,
+          "no_MPS_upstream_call": true,
+          "run": 1,
+          "exit": 0,
+          "seconds": 830.29,
+          "host_sha256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
+          "actual_harvest_manifest_sha256": "da452273d94730fd218e0841080feebcd27dbc4c85e5e7c879c58cb1a9d6d76c",
+          "private_evidence_root": "work/migration-20261105/pluginuninstall-main-runtime-20261106",
+          "UI": "actual IAB source form save once; dynamic self/clone/victim, selected victim card gone, empty selection/raw true flags, clone false independent",
+          "main_session": null,
+          "package": "actual canonical package API crossbuild byte-identical86cf, native NAS --manifest, ZIP7 members/6 notices; independent packaging pending",
+          "public_evidence_materialization": "migration/evidence/pluginuninstall-20261106 (351 copies; original independent/raw seals unchanged; private host full production sources retained only in original repository and hash map)",
+          "independent_composite": "1c17eb1e7be21ddc00ec815ad4222f1c9f0afd21a2dd1daca12ecdd4404b5026",
+          "canonicalZIP_Main": {
+            "exit": 0,
+            "seconds": 3.46,
+            "members": 7
+          },
+          "public_evidence_root": "migration/evidence/pluginuninstall-20261106",
+          "owned_runtime": "cleaned after independent1c17 read-only sample, marker-bound record9611121a",
+          "public_artifact_manifest_sha256": "23df8ae2fcf8ce76c119b51c707d0f9ab5c66db78944c60118f617842e9d3941"
         }
       },
-      "PluginUnInstall": {
-        "state": "verified_source_Main_UI_canonicalZIP_and_independent_complete_composite",
-        "worker_sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
-        "target18_manifest": "090159b7a56b9629871055d49cc6bf8afe605c8516eb6d93c09fb06ce6dffd0c",
-        "source_review": "f38f48ad3fef4cf87721b18e0305f4bb768f40b29f9d36e31ee5f5069d633568",
-        "ordinary_main_port": 36258,
-        "requires_browser_barrier": true,
-        "no_MPS_upstream_call": true,
-        "run": 1,
-        "exit": 0,
-        "seconds": 830.29,
-        "host_sha256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
-        "actual_harvest_manifest_sha256": "da452273d94730fd218e0841080feebcd27dbc4c85e5e7c879c58cb1a9d6d76c",
-        "private_evidence_root": "work/migration-20261105/pluginuninstall-main-runtime-20261106",
-        "UI": "actual IAB source form save once; dynamic self/clone/victim, selected victim card gone, empty selection/raw true flags, clone false independent",
-        "main_session": null,
-        "package": "actual canonical package API crossbuild byte-identical86cf, native NAS --manifest, ZIP7 members/6 notices; independent packaging pending",
-        "public_evidence_materialization": "migration/evidence/pluginuninstall-20261106 (351 copies; original independent/raw seals unchanged; private host full production sources retained only in original repository and hash map)",
-        "independent_composite": "1c17eb1e7be21ddc00ec815ad4222f1c9f0afd21a2dd1daca12ecdd4404b5026",
-        "canonicalZIP_Main": {
-          "exit": 0,
-          "seconds": 3.46,
-          "members": 7
+      "pluginuninstall_source_addon": {
+        "classification": "independent source-only current333/Python3.12 AST plus owned tmpfs filesystem; no target certification",
+        "cases": 21,
+        "certificate_sha256": "79792c47ef2b29cf46d39a1df862a90b6135bac5d2a199c0c6c800009adfbf41",
+        "root": "work/sites-review-20261105/pluginuninstall-source-only/startup-reinit-addon",
+        "important": "cold self/future class start reinsertion differs from loaded reinit; installed/config/class/running gates separate"
+      },
+      "current_host_increment": {
+        "base_revision": "0719a221229b32270e93d52ee917813258d3aa49",
+        "Root_storage_narrow_review": "2188702a0e7cfd67ee3bcec2413ad44996cded5f712a25f540a51a536cd7f01c",
+        "PUI_host19_manifest": {
+          "path": "/Users/accidia/projects/light-media/work/pluginuninstall-source-startup-20261105/host-files-current.json",
+          "sha256": "f9e4f90ef62309f4b064dbeb8f9a3b319841dd2c4c6e9bd33aa16201fb022988"
         },
-        "public_evidence_root": "migration/evidence/pluginuninstall-20261106",
-        "owned_runtime": "cleaned after independent1c17 read-only sample, marker-bound record9611121a",
-        "public_artifact_manifest_sha256": "23df8ae2fcf8ce76c119b51c707d0f9ab5c66db78944c60118f617842e9d3941"
-      }
-    },
-    "pluginuninstall_source_addon": {
-      "classification": "independent source-only current333/Python3.12 AST plus owned tmpfs filesystem; no target certification",
-      "cases": 21,
-      "certificate_sha256": "79792c47ef2b29cf46d39a1df862a90b6135bac5d2a199c0c6c800009adfbf41",
-      "root": "work/sites-review-20261105/pluginuninstall-source-only/startup-reinit-addon",
-      "important": "cold self/future class start reinsertion differs from loaded reinit; installed/config/class/running gates separate"
-    },
-    "current_host_increment": {
-      "base_revision": "0719a221229b32270e93d52ee917813258d3aa49",
-      "Root_storage_narrow_review": "2188702a0e7cfd67ee3bcec2413ad44996cded5f712a25f540a51a536cd7f01c",
-      "PUI_host19_manifest": {
-        "path": "/Users/accidia/projects/light-media/work/pluginuninstall-source-startup-20261105/host-files-current.json",
-        "sha256": "f9e4f90ef62309f4b064dbeb8f9a3b319841dd2c4c6e9bd33aa16201fb022988"
+        "PUI_independent_source_App_review": "f38f48ad3fef4cf87721b18e0305f4bb768f40b29f9d36e31ee5f5069d633568",
+        "PUI_Main_driver_freeze": "0052cfab0153e5f65e4f1320978fd9fe84a1e95e5417bde2402bd5a265a80777",
+        "accepted_five_bounded_App_impact": "6f97e1d70761acc01bff18b551f55140e0f369f04b619bbff976b390ff6b4b9e",
+        "Root_actual_App_current_normal": 48,
+        "Root_actual_App_current_race": 48,
+        "newhost_Main_UI": "passed currentfour Main5 and completePUI Main1/UI/ZIP; independent complete1c17. Laterstate3a delta remains separate.",
+        "superseded_compile_only_host": "7a08c6b60516a5ea9321916c25d587ceab9de2fd0c34a809a16222e48131eca8",
+        "new_confirmed_fixes": [
+          "source physical package traversal precedes stable plugin_order; ids only membership",
+          "stop(None) clears failed imported classes too",
+          "local installed flags/version reflect cache-ahead-of-DB source membership",
+          "has_page reflects source implemented method flag, never declared lifecycle stub",
+          "Path.exists/stat precedes empty targets, four errno absence rule, no directory read for empty targets"
+        ],
+        "remote_or_production_changed": false
       },
-      "PUI_independent_source_App_review": "f38f48ad3fef4cf87721b18e0305f4bb768f40b29f9d36e31ee5f5069d633568",
-      "PUI_Main_driver_freeze": "0052cfab0153e5f65e4f1320978fd9fe84a1e95e5417bde2402bd5a265a80777",
-      "accepted_five_bounded_App_impact": "6f97e1d70761acc01bff18b551f55140e0f369f04b619bbff976b390ff6b4b9e",
-      "Root_actual_App_current_normal": 48,
-      "Root_actual_App_current_race": 48,
-      "newhost_Main_UI": "passed currentfour Main5 and completePUI Main1/UI/ZIP; independent complete1c17. Laterstate3a delta remains separate.",
-      "superseded_compile_only_host": "7a08c6b60516a5ea9321916c25d587ceab9de2fd0c34a809a16222e48131eca8",
-      "new_confirmed_fixes": [
-        "source physical package traversal precedes stable plugin_order; ids only membership",
-        "stop(None) clears failed imported classes too",
-        "local installed flags/version reflect cache-ahead-of-DB source membership",
-        "has_page reflects source implemented method flag, never declared lifecycle stub",
-        "Path.exists/stat precedes empty targets, four errno absence rule, no directory read for empty targets"
-      ],
-      "remote_or_production_changed": false
-    },
-    "cleanup_progress": {
-      "MPS_runtime_network_and_tmp_binaries": "cleaned; single current66300 moved to shared subsequent-test inputs",
-      "SDK98_completed_runtimes": "four owned main dirs removed, old9binaries removed; current4worker/driver retained once in shared inputs",
-      "Root_permission_regression": "five local bins + ownedNASroot cleaned after2188; reviewed0719 server retained for Rlk Main",
-      "local_Docker_packaging_attempt": "stopped again after auto-started existing always-policy containers; container/volume definitions preserved; private cleanup record, no data-byte equality claim",
-      "PUI": "marker-bound fullNAS PUI root+completedSDKMain5 removed;7local generated artifacts removed; only LinuxPUI86cf and nativeMPS66d retained once as upcoming SDK compatibility inputs"
-    },
-    "current_host_state_increment": {
-      "production_path": "/Users/accidia/projects/light-media/internal/app/plugin_original_state.go",
-      "production_sha256": "3a1383a911e72eafc7aea5309f2d6ce557b3a8ab0ee5773516446747ed0f0c05",
-      "scope": "getState only; RawMessage plus Python lexical int/float truth; no global readSession/truth/SDK edits",
-      "private_evidence_root": "/Users/accidia/projects/light-media/work/plugin-state-numeric-20261106",
-      "actual_local_App_normal_nodes": 24,
-      "actual_local_App_race_nodes": 24,
-      "source_cases": 23,
-      "actual_Linux_UID1000_nodes": 24,
-      "Linux_seconds": 1.5811956450343132,
-      "old_compiled_production_negative": "7 exact source cases red",
-      "full_test_ELF": "5d1d62abfc6c74be55586a7aef5980a8102a7f3aa32bbf08a88b7c79200f5a0f",
-      "full_cold_build_inputs": 2746,
-      "generated_Go_testmain_inputs": 1,
-      "deterministic_rebuild_byte_identical": true,
-      "prior_failed_harnesses": "test field name, Mac /var temp preflight, combined oracle slice alias, first build-binding generated-cache relative path; all retained",
-      "independent_review": "3e696b77277d6ee383e0b34d469484c4020bae3567398d91ad9147970b030557 (finite typed truth/card contract; not8305 or raw original non-bool HTTP wire)",
-      "new_Rlk_Main4": "source8 ordinary config/local-card case added to driver, not executed",
-      "candidate_host_ELF": "1ddd264a1c83b1e1ce1d7588fe610f5351c2eb5d0f87f9e5931d70227f0a2f0f (compile-only0719+PUI19+state4; source23manifest5356ebc7, not yet Main)"
-    },
-    "AutoSignIn_shared_gaps": {
-      "parallel_reverse_calls": "SDK98 call.gate1 and inHost bool serialize source ThreadPool. Minimum negotiated parallel reverse-call design in progress; shared files unchanged. Do not claim arbitrary queue_cnt concurrency.",
-      "source_site_request": "finite source-proven absolute API alias/customsites/timeout/raw Cookie vs parsed cookies/null-empty UserAgent metadata gaps remain unverified; no guard bypass",
-      "producer_state": "22 Go candidate adapters plus actual source55 pure differential green; persistent SDK integration and all actual business/Main/UI gates pending"
-    },
-    "accepted_host_PUI_checkpoint": "afb1ebf224a224ab98a733960ab3aa319be5e212",
-    "removelink_main4_failure": {
-      "exit_code": -15,
-      "seconds": 708.8907073019072,
-      "pre_ui_observations": 135,
-      "last": "rm_ui_ready",
-      "actual_ui": "failed dynamic import view.js?v=2.18 due host RawQuery rejection",
-      "tail_executed": false,
-      "owned_processes_stopped": true,
-      "evidence": "work/migration-20261105/removelink-main4-20261106/actual-harvest/harvest-manifest.json",
-      "browser_evidence": "work/migration-20261105/removelink-main4-20261106/browser-run4/02-config-query-failure.png"
-    },
-    "historical_accepted_instances": 6,
-    "revalidating_instances": [],
-    "removelink_main5_executed": {
-      "exit_code": 0,
-      "seconds": 283.9671229671221,
-      "observations": 170,
-      "joined_workers": 7,
-      "browser": "actual IAB original config load/save/reopen/clone/tabs/log, owned unlink→2aliases deleted and clone3links retained",
-      "evidence": "work/migration-20261105/removelink-main5-20261106/actual-harvest/harvest-manifest.json",
-      "acceptance": "pending inherited-module declaration difference, canonical package and complete independent composite"
-    },
-    "finite_state_saved_host_commit": "21e5c54f",
-    "finite_query_saved_host_commit": "3a3f9e544073bf1c17e6698ad2eac2aef90d7f59",
-    "finite_inherited_getter_scope": {
-      "source_oracle": "work/sites-review-20261105/module-method-declarations-20261106/source-oracle.json",
-      "sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
-      "host_files": [
-        "internal/app/plugin_implementation.go",
-        "internal/app/plugin_original_commands.go",
-        "internal/app/plugin_original_services.go",
-        "internal/app/plugin_original_view_adapter.go"
-      ],
-      "actualMain5": "91module_declaration_failed errors in each of3projected log files are same91 events, not273; stopping object queried due Rlk inherited-module advertisement",
-      "currentRoot": "real installed counter SDK11race nodes pass; old preflight refusal recorded; compiled old-gate negative pending"
-    },
-    "current_four_Main": {
-      "status": "passed current23 Auth actual0/18.815901392s/75 observations; historical20 actual0/17.645130103s retained separately",
-      "host_sha256": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
-      "driver_sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
-      "evidence": "work/migration-20261106/current23-actual-harvest/raw/SDK98/source-auth-main-four-2",
-      "note": "owned qB source query peer, not new real-daemon transfer evidence; historical full daemon/UI source-body evidence unchanged"
-    },
-    "RlkMain6": {
-      "status": "actual complete0/686.3098s/178obs+IAB17raw+7workerjoin; module_errors0; historical20 metadata epoch",
-      "host": "3c0513",
-      "worker": "1afa9a",
-      "update": "d0b2bb",
-      "driver": "f24e9b",
-      "producer_freeze": "4693f0b87c3e78efb7d814b4d2db0e19c9302b8c822ee76c236339f8696a54b0",
-      "prepared_binding": "c13f9e1f4acb905a05f52d92491ccd1e1d0c748e104ceda2cb93dc8a096378a5",
-      "Main6_private_UI_ready": "work/migration-20261105/removelink-main6-20261106/private/ui-ready.json (0600, never publish)",
-      "NAS_owned_root": "/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6",
-      "module_errors_to_current_UI": 0
-    },
-    "PUI_current_Main2": {
-      "status": "actual exit1/0.225s before bootstrap; runtime not created; old hardcoded accepted worker hashes rejected correct new metadata workers",
-      "next": "explicit required EXPECT_WORKER/MPS_SHA guard; freeze originalPUItest for livef24 rebuild; newdriver freshMain3",
-      "NAS_failed_command": "/home/admin/light-media-plugins-migration-sdk98-20261105/source-declarations-pui-main-2-command.json",
-      "original_test_input_preserved_for_f24": "work/migration-20261105/removelink-main6-20261106/frozen-test-inputs/tests/integration/pluginuninstall_main_test.go"
-    },
-    "Rlk_canonical_package": {
-      "status": "actual current23 canonical10member ZIP/native manifest/ordinary Main passed0/4.727462177s/23obs/2joins; old20 packageMain1 retained separately",
-      "result": "work/migration-20261106/removelink-auth-packaging/canonical-package-result.json",
-      "zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
-      "worker_sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
-      "evidence": "work/migration-20261106/current23-actual-harvest/raw/Rlk/canonical-package-main-2"
-    },
-    "minimum_compatible_host_commit": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
-    "current_host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
-    "Auth_declaration_addon": {
-      "cause": "Root actual source review found three inherited-pass Auth advertisements still caused extra auth/render calls despite correct state-first host gate; former no_blanket_auth conclusion corrected",
-      "producer_freeze": "b2b5e1055cce13b925d7afb6e92d7d9406519906c9a10bbe3c82cf0dfccef52c",
-      "independent_review": "d8d7533603ec9a2b7cdfa399789cd29e61141cd25b2b428fbf66e3cd02d2cdc9",
-      "actualApp_enabled_four": "old get_state/auth/render1/1/1→new1/0/0 via actual production workers incl Cat partial-init failure; no worker debugAPI",
-      "new_root_source613": "d0a04ae38c66d36556db11b848eb290d13b4a4559d27c4d91aecfecb0b285755",
-      "Rlk59": "388c88079043906281d4fd0c5f28230d510aa416b7d334ba65e1088d26905936",
-      "host4_SDK98_and_other3workerELFs_unchanged": true,
-      "state": "current23 source/private/App/independent+ordinary Main4/RlkMain7/canonical2 executed; composite review pending; old20 immutable"
-    },
-    "PUI_current_Main3": {
-      "status": "actual complete0/19.0413s/291obs/35workerjoins with explicit01ba inputguard, SKIP_UI1",
-      "input_unchanged_by_Auth_addon": true,
-      "evidence": "work/migration-20261106/current-consumer-main/actual-harvest/SDK98/source-declarations-pui-main-3"
-    },
-    "RlkMain7": {
-      "status": "actual complete0/573.206051972s/178 observations/7worker joins; real IAB22 raw; enabled logout/relogin and owned inode cleanup passed; inherited module error0 through all joins",
-      "host": "3c05",
-      "worker": "6d751143",
-      "update": "8864147b",
-      "driver": "f24e9b1f (oldPUI test restored by precise single-file overlay for reproduction)",
-      "prepared_binding": "68bfe6bc5473b719132adafa1da981d27cf287e818c3e1ecd04549852da6b097",
-      "private_UI_ready": "work/migration-20261105/removelink-main7-20261106/private/ui-ready.json (neverpublish)",
-      "evidence": "work/migration-20261106/current23-actual-harvest/raw/Rlk/main-run-7",
-      "browser": "work/migration-20261105/removelink-main7-20261106/browser-run7; first prefilled login typeText appended fields failure retained, setValue actual recovery; no product auth mutation"
-    },
-    "current_finite_revalidation_public_copy": {
-      "path": "evidence/source-interface-revalidation-20261106/copy-manifest.json",
-      "sha256": "e681a37260aa7469ef0982362d21c02a72b7fc53c582ae97ad7464f7f9b6772f",
-      "current23_harvest_manifest_sha256": "671540693ff115773d5a0aaba166b70ae352056d8f47e03ecdf80c4a78f8c035",
-      "independent_current_six_review": "passed706d, verified6 restored; metadata-only5correction now separately reviewed70c432"
-    },
-    "Rlk_remaining_actual_chains": {
-      "status": "closed actualbusiness1, independently f954; two matching histories,2unrelated,3ownedreceiver notices,sourceexactsidecar/emptychild and retainedindex audited"
-    },
-    "historical_six_restoration": {
-      "status": "verified_current_dependency6/23",
-      "evidence_id": "source_interfaces.current_six_revalidation.20261106",
-      "independent_review_sha256": "706d8e08ac4db00a5a964248005ee1b07666f2f13e0ff94515f4708dc733f74e",
-      "approved_rebindings": 112,
-      "raw_observations_environment_binary_unchanged": true,
-      "Rlk": "still implementing;2 actual business chains pending"
-    },
-    "managed_storage_source_increment": {
-      "state": "verified bounded source-derived host2increment; saved881f; Rlkwholecompositef954 now passed",
-      "source": "fixed8a83 FileManager314-325 +LocalModule178-195; Rlk1246-1274 has no asset gate",
-      "host_base_commit": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
-      "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
-      "current_host_files": {
-        "internal/app/file_manager.go": "6a2ee92b4a6c6e7cb3a3fec545b7f286f6e0323cd88bc7927c4edc92d3e90be3",
-        "internal/app/plugin_original_host_storage.go": "d74c76f1e5a2f30ff0060692abb3a19ad0737bfb96c92ef406bb5c708bf2e9f5"
+      "cleanup_progress": {
+        "MPS_runtime_network_and_tmp_binaries": "cleaned; single current66300 moved to shared subsequent-test inputs",
+        "SDK98_completed_runtimes": "four owned main dirs removed, old9binaries removed; current4worker/driver retained once in shared inputs",
+        "Root_permission_regression": "five local bins + ownedNASroot cleaned after2188; reviewed0719 server retained for Rlk Main",
+        "local_Docker_packaging_attempt": "stopped again after auto-started existing always-policy containers; container/volume definitions preserved; private cleanup record, no data-byte equality claim",
+        "PUI": "marker-bound fullNAS PUI root+completedSDKMain5 removed;7local generated artifacts removed; only LinuxPUI86cf and nativeMPS66d retained once as upcoming SDK compatibility inputs"
       },
-      "semantics": "plugin StorageDelete does not use interactive asset/managed reference guard; keepsstatic/root/path/scope/snapshot/no-symlink/active-import/downloader guards; physical storage operation retains audit/index registration and independent history behavior",
-      "Root_normal_race": "4 nodes each pass;1Linux-only skip onMac; old2filecompiledoverlay1red, existingguard13racepass; firstMac /var preflight harnessfailure retained before ownedTMPDIR correction",
-      "current_six_impact": {
-        "four_Main": "actual0/18.4967397169s",
-        "PUI_Main": "actual0/21.7699102491s",
-        "old_bindings_untouched": true
+      "current_host_state_increment": {
+        "production_path": "/Users/accidia/projects/light-media/internal/app/plugin_original_state.go",
+        "production_sha256": "3a1383a911e72eafc7aea5309f2d6ce557b3a8ab0ee5773516446747ed0f0c05",
+        "scope": "getState only; RawMessage plus Python lexical int/float truth; no global readSession/truth/SDK edits",
+        "private_evidence_root": "/Users/accidia/projects/light-media/work/plugin-state-numeric-20261106",
+        "actual_local_App_normal_nodes": 24,
+        "actual_local_App_race_nodes": 24,
+        "source_cases": 23,
+        "actual_Linux_UID1000_nodes": 24,
+        "Linux_seconds": 1.5811956450343132,
+        "old_compiled_production_negative": "7 exact source cases red",
+        "full_test_ELF": "5d1d62abfc6c74be55586a7aef5980a8102a7f3aa32bbf08a88b7c79200f5a0f",
+        "full_cold_build_inputs": 2746,
+        "generated_Go_testmain_inputs": 1,
+        "deterministic_rebuild_byte_identical": true,
+        "prior_failed_harnesses": "test field name, Mac /var temp preflight, combined oracle slice alias, first build-binding generated-cache relative path; all retained",
+        "independent_review": "3e696b77277d6ee383e0b34d469484c4020bae3567398d91ad9147970b030557 (finite typed truth/card contract; not8305 or raw original non-bool HTTP wire)",
+        "new_Rlk_Main4": "source8 ordinary config/local-card case added to driver, not executed",
+        "candidate_host_ELF": "1ddd264a1c83b1e1ce1d7588fe610f5351c2eb5d0f87f9e5931d70227f0a2f0f (compile-only0719+PUI19+state4; source23manifest5356ebc7, not yet Main)"
       },
-      "RlkMain8_harness_failure": {
-        "exit": -15,
-        "seconds": 115.96924979612231,
-        "pre_ui_observations": 140,
-        "cause": "UI_WAIT=0 is nonempty and activates source driver browser gate; no actualUI/no ui-complete/no tailclaim",
-        "cleanup": "owned host gracefuljoin then exactdriverSIGTERM",
-        "record": "NAS Rlk/main-run-8-harness-stop.json"
+      "AutoSignIn_shared_gaps": {
+        "parallel_reverse_calls": "SDK98 call.gate1 and inHost bool serialize source ThreadPool. Minimum negotiated parallel reverse-call design in progress; shared files unchanged. Do not claim arbitrary queue_cnt concurrency.",
+        "source_site_request": "finite source-proven absolute API alias/customsites/timeout/raw Cookie vs parsed cookies/null-empty UserAgent metadata gaps remain unverified; no guard bypass",
+        "producer_state": "22 Go candidate adapters plus actual source55 pure differential green; persistent SDK integration and all actual business/Main/UI gates pending"
       },
-      "RlkMain9": {
-        "status": "passed actual ordinaryMain, no new browser claim",
-        "exit": 0,
-        "seconds": 35.460207489086315,
-        "observations": 177,
+      "accepted_host_PUI_checkpoint": "afb1ebf224a224ab98a733960ab3aa319be5e212",
+      "removelink_main4_failure": {
+        "exit_code": -15,
+        "seconds": 708.8907073019072,
+        "pre_ui_observations": 135,
+        "last": "rm_ui_ready",
+        "actual_ui": "failed dynamic import view.js?v=2.18 due host RawQuery rejection",
+        "tail_executed": false,
+        "owned_processes_stopped": true,
+        "evidence": "work/migration-20261105/removelink-main4-20261106/actual-harvest/harvest-manifest.json",
+        "browser_evidence": "work/migration-20261105/removelink-main4-20261106/browser-run4/02-config-query-failure.png"
+      },
+      "historical_accepted_instances": 6,
+      "revalidating_instances": [],
+      "removelink_main5_executed": {
+        "exit_code": 0,
+        "seconds": 283.9671229671221,
+        "observations": 170,
         "joined_workers": 7,
-        "module_errors": 0
+        "browser": "actual IAB original config load/save/reopen/clone/tabs/log, owned unlink→2aliases deleted and clone3links retained",
+        "evidence": "work/migration-20261105/removelink-main5-20261106/actual-harvest/harvest-manifest.json",
+        "acceptance": "pending inherited-module declaration difference, canonical package and complete independent composite"
       },
-      "new_business_driver": "plugin_sdk exclusive tagged tests/integration/removelink_business_main_test.go; actual ordinaryMain/realpublic import andownednotice pending",
-      "independent_review": "7bec111b3e0d69b0b5dccb7c28763fe7cb21b642171935b7fd618fc79d02a8bc",
-      "accepted_six_status": "unchanged6/23 because all6 manifests lackStorageDelete and current native impact passed; newRlk still unverified",
-      "native_harvest": {
-        "path": "work/migration-20261106/managed-storage-main-impact/raw/harvest-manifest.json",
-        "sha256": "ed97f205327b1ce771cb1709b516861dbd13bab822dad6c1ff20da4727d6e21f",
-        "files": 45
+      "finite_state_saved_host_commit": "21e5c54f",
+      "finite_query_saved_host_commit": "3a3f9e544073bf1c17e6698ad2eac2aef90d7f59",
+      "finite_inherited_getter_scope": {
+        "source_oracle": "work/sites-review-20261105/module-method-declarations-20261106/source-oracle.json",
+        "sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
+        "host_files": [
+          "internal/app/plugin_implementation.go",
+          "internal/app/plugin_original_commands.go",
+          "internal/app/plugin_original_services.go",
+          "internal/app/plugin_original_view_adapter.go"
+        ],
+        "actualMain5": "91module_declaration_failed errors in each of3projected log files are same91 events, not273; stopping object queried due Rlk inherited-module advertisement",
+        "currentRoot": "real installed counter SDK11race nodes pass; old preflight refusal recorded; compiled old-gate negative pending"
       },
-      "canonical3": {
-        "exit": 0,
-        "seconds": 4.725073131965473,
-        "observations": 23,
-        "joined_workers": 2,
-        "harvest_sha256": "6213c796060d7754acdb4b98c43f0731c3e5607fdbcb30c17e6b766a36d2142f"
+      "current_four_Main": {
+        "status": "passed current23 Auth actual0/18.815901392s/75 observations; historical20 actual0/17.645130103s retained separately",
+        "host_sha256": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+        "driver_sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+        "evidence": "work/migration-20261106/current23-actual-harvest/raw/SDK98/source-auth-main-four-2",
+        "note": "owned qB source query peer, not new real-daemon transfer evidence; historical full daemon/UI source-body evidence unchanged"
+      },
+      "RlkMain6": {
+        "status": "actual complete0/686.3098s/178obs+IAB17raw+7workerjoin; module_errors0; historical20 metadata epoch",
+        "host": "3c0513",
+        "worker": "1afa9a",
+        "update": "d0b2bb",
+        "driver": "f24e9b",
+        "producer_freeze": "4693f0b87c3e78efb7d814b4d2db0e19c9302b8c822ee76c236339f8696a54b0",
+        "prepared_binding": "c13f9e1f4acb905a05f52d92491ccd1e1d0c748e104ceda2cb93dc8a096378a5",
+        "Main6_private_UI_ready": "work/migration-20261105/removelink-main6-20261106/private/ui-ready.json (0600, never publish)",
+        "NAS_owned_root": "/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6",
+        "module_errors_to_current_UI": 0
+      },
+      "PUI_current_Main2": {
+        "status": "actual exit1/0.225s before bootstrap; runtime not created; old hardcoded accepted worker hashes rejected correct new metadata workers",
+        "next": "explicit required EXPECT_WORKER/MPS_SHA guard; freeze originalPUItest for livef24 rebuild; newdriver freshMain3",
+        "NAS_failed_command": "/home/admin/light-media-plugins-migration-sdk98-20261105/source-declarations-pui-main-2-command.json",
+        "original_test_input_preserved_for_f24": "work/migration-20261105/removelink-main6-20261106/frozen-test-inputs/tests/integration/pluginuninstall_main_test.go"
+      },
+      "Rlk_canonical_package": {
+        "status": "actual current23 canonical10member ZIP/native manifest/ordinary Main passed0/4.727462177s/23obs/2joins; old20 packageMain1 retained separately",
+        "result": "work/migration-20261106/removelink-auth-packaging/canonical-package-result.json",
+        "zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+        "worker_sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+        "evidence": "work/migration-20261106/current23-actual-harvest/raw/Rlk/canonical-package-main-2"
+      },
+      "minimum_compatible_host_commit": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
+      "current_host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+      "Auth_declaration_addon": {
+        "cause": "Root actual source review found three inherited-pass Auth advertisements still caused extra auth/render calls despite correct state-first host gate; former no_blanket_auth conclusion corrected",
+        "producer_freeze": "b2b5e1055cce13b925d7afb6e92d7d9406519906c9a10bbe3c82cf0dfccef52c",
+        "independent_review": "d8d7533603ec9a2b7cdfa399789cd29e61141cd25b2b428fbf66e3cd02d2cdc9",
+        "actualApp_enabled_four": "old get_state/auth/render1/1/1→new1/0/0 via actual production workers incl Cat partial-init failure; no worker debugAPI",
+        "new_root_source613": "d0a04ae38c66d36556db11b848eb290d13b4a4559d27c4d91aecfecb0b285755",
+        "Rlk59": "388c88079043906281d4fd0c5f28230d510aa416b7d334ba65e1088d26905936",
+        "host4_SDK98_and_other3workerELFs_unchanged": true,
+        "state": "current23 source/private/App/independent+ordinary Main4/RlkMain7/canonical2 executed; composite review pending; old20 immutable"
+      },
+      "PUI_current_Main3": {
+        "status": "actual complete0/19.0413s/291obs/35workerjoins with explicit01ba inputguard, SKIP_UI1",
+        "input_unchanged_by_Auth_addon": true,
+        "evidence": "work/migration-20261106/current-consumer-main/actual-harvest/SDK98/source-declarations-pui-main-3"
+      },
+      "RlkMain7": {
+        "status": "actual complete0/573.206051972s/178 observations/7worker joins; real IAB22 raw; enabled logout/relogin and owned inode cleanup passed; inherited module error0 through all joins",
+        "host": "3c05",
+        "worker": "6d751143",
+        "update": "8864147b",
+        "driver": "f24e9b1f (oldPUI test restored by precise single-file overlay for reproduction)",
+        "prepared_binding": "68bfe6bc5473b719132adafa1da981d27cf287e818c3e1ecd04549852da6b097",
+        "private_UI_ready": "work/migration-20261105/removelink-main7-20261106/private/ui-ready.json (neverpublish)",
+        "evidence": "work/migration-20261106/current23-actual-harvest/raw/Rlk/main-run-7",
+        "browser": "work/migration-20261105/removelink-main7-20261106/browser-run7; first prefilled login typeText appended fields failure retained, setValue actual recovery; no product auth mutation"
+      },
+      "current_finite_revalidation_public_copy": {
+        "path": "evidence/source-interface-revalidation-20261106/copy-manifest.json",
+        "sha256": "e681a37260aa7469ef0982362d21c02a72b7fc53c582ae97ad7464f7f9b6772f",
+        "current23_harvest_manifest_sha256": "671540693ff115773d5a0aaba166b70ae352056d8f47e03ecdf80c4a78f8c035",
+        "independent_current_six_review": "passed706d, verified6 restored; metadata-only5correction now separately reviewed70c432"
+      },
+      "Rlk_remaining_actual_chains": {
+        "status": "closed actualbusiness1, independently f954; two matching histories,2unrelated,3ownedreceiver notices,sourceexactsidecar/emptychild and retainedindex audited"
+      },
+      "historical_six_restoration": {
+        "status": "verified_current_dependency6/23",
+        "evidence_id": "source_interfaces.current_six_revalidation.20261106",
+        "independent_review_sha256": "706d8e08ac4db00a5a964248005ee1b07666f2f13e0ff94515f4708dc733f74e",
+        "approved_rebindings": 112,
+        "raw_observations_environment_binary_unchanged": true,
+        "Rlk": "still implementing;2 actual business chains pending"
+      },
+      "managed_storage_source_increment": {
+        "state": "verified bounded source-derived host2increment; saved881f; Rlkwholecompositef954 now passed",
+        "source": "fixed8a83 FileManager314-325 +LocalModule178-195; Rlk1246-1274 has no asset gate",
+        "host_base_commit": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
+        "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+        "current_host_files": {
+          "internal/app/file_manager.go": "6a2ee92b4a6c6e7cb3a3fec545b7f286f6e0323cd88bc7927c4edc92d3e90be3",
+          "internal/app/plugin_original_host_storage.go": "d74c76f1e5a2f30ff0060692abb3a19ad0737bfb96c92ef406bb5c708bf2e9f5"
+        },
+        "semantics": "plugin StorageDelete does not use interactive asset/managed reference guard; keepsstatic/root/path/scope/snapshot/no-symlink/active-import/downloader guards; physical storage operation retains audit/index registration and independent history behavior",
+        "Root_normal_race": "4 nodes each pass;1Linux-only skip onMac; old2filecompiledoverlay1red, existingguard13racepass; firstMac /var preflight harnessfailure retained before ownedTMPDIR correction",
+        "current_six_impact": {
+          "four_Main": "actual0/18.4967397169s",
+          "PUI_Main": "actual0/21.7699102491s",
+          "old_bindings_untouched": true
+        },
+        "RlkMain8_harness_failure": {
+          "exit": -15,
+          "seconds": 115.96924979612231,
+          "pre_ui_observations": 140,
+          "cause": "UI_WAIT=0 is nonempty and activates source driver browser gate; no actualUI/no ui-complete/no tailclaim",
+          "cleanup": "owned host gracefuljoin then exactdriverSIGTERM",
+          "record": "NAS Rlk/main-run-8-harness-stop.json"
+        },
+        "RlkMain9": {
+          "status": "passed actual ordinaryMain, no new browser claim",
+          "exit": 0,
+          "seconds": 35.460207489086315,
+          "observations": 177,
+          "joined_workers": 7,
+          "module_errors": 0
+        },
+        "new_business_driver": "plugin_sdk exclusive tagged tests/integration/removelink_business_main_test.go; actual ordinaryMain/realpublic import andownednotice pending",
+        "independent_review": "7bec111b3e0d69b0b5dccb7c28763fe7cb21b642171935b7fd618fc79d02a8bc",
+        "accepted_six_status": "unchanged6/23 because all6 manifests lackStorageDelete and current native impact passed; newRlk still unverified",
+        "native_harvest": {
+          "path": "work/migration-20261106/managed-storage-main-impact/raw/harvest-manifest.json",
+          "sha256": "ed97f205327b1ce771cb1709b516861dbd13bab822dad6c1ff20da4727d6e21f",
+          "files": 45
+        },
+        "canonical3": {
+          "exit": 0,
+          "seconds": 4.725073131965473,
+          "observations": 23,
+          "joined_workers": 2,
+          "harvest_sha256": "6213c796060d7754acdb4b98c43f0731c3e5607fdbcb30c17e6b766a36d2142f"
+        }
+      },
+      "verified_instances": 7,
+      "next_slice": "AutoSignIn: actualsource independent7group reds/work-only fixes; independently review/integrate boundedparallel SDK/Appguard and finite nativeSites/scheduler capabilities; no private config/data replay or productionactivation.",
+      "Rlk_final": {
+        "status": "verified_business_platform7th",
+        "public_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
+        "independent_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
+        "host_local_commit": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
+        "NAS_cleanup_sha256": "b1f5f5fe6b20d4bc343d1efaf5273d0b90696688314111509d25fef60fb16cee",
+        "local_plugin_cleanup_sha256": "c72d61613e6438c00d8bfbf16bacecefb4f042ca6499d1faf7fd14ef155e54e4",
+        "central_current_inputs": "work/migration-20261106/current-acceptance-inputs",
+        "target_code_commit": "pending local save; no push/deploy"
       }
-    },
-    "verified_instances": 7,
-    "next_slice": "AutoSignIn: actualsource independent7group reds/work-only fixes; independently review/integrate boundedparallel SDK/Appguard and finite nativeSites/scheduler capabilities; no private config/data replay or productionactivation.",
-    "Rlk_final": {
-      "status": "verified_business_platform7th",
-      "public_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
-      "independent_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
-      "host_local_commit": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
-      "NAS_cleanup_sha256": "b1f5f5fe6b20d4bc343d1efaf5273d0b90696688314111509d25fef60fb16cee",
-      "local_plugin_cleanup_sha256": "c72d61613e6438c00d8bfbf16bacecefb4f042ca6499d1faf7fd14ef155e54e4",
-      "central_current_inputs": "work/migration-20261106/current-acceptance-inputs",
-      "target_code_commit": "pending local save; no push/deploy"
     }
   }
 }
