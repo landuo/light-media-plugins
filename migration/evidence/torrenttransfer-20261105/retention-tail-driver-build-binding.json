@@ -1,0 +1,26 @@
+{
+  "classification": "actual source-derived base-retention correction and nonempty clone-uninstall continuation; old failed test exits kept",
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-o",
+    "work/migration-20261105/torrenttransfer-runtime/integration-retention-tail-linux.test",
+    "./tests/integration"
+  ],
+  "explicit_environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "inputs": {
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "tests/integration/torrenttransfer_main_test.go": "1c939cbb3eb78a03ca7fb8f9814e545ed8fafbbda850a86364678fec4fce8651",
+    "tests/integration/torrenttransfer_resume_main_test.go": "b6a32b6a57eaf2075d51d463b67675ea0f73aa05de425177e52b1ce5872e5aca",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+  },
+  "binary_sha256": "73768691be6dade6fbdc9d1ae72236649e624075957e03108cf0211eb7821db6",
+  "source_oracle_manifest_sha256": "d15841108dcda5cea05a741a98aabb042dfd6800f9eda1de81d30df065d659e4"
+}

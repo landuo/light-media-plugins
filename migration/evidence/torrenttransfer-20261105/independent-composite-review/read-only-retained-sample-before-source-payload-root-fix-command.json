@@ -1,0 +1,9 @@
+{
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "python3 -B -S -"
+  ],
+  "exit": 1,
+  "script": "from pathlib import Path\nimport hashlib,json,subprocess\nroot=Path('/home/admin/light-media-plugins-migration-tt-20261105').resolve()\nassert (root/'.task-owned').read_text()=='light-media-plugins/TorrentTransfer/20261105/owned-only'\nrun=root/'main-run-6';hashid='c90cb65ab1a00f91af9bc0f33eedce978582f2a4'\nfiles=[]\nfor rel in ['plugin-data/TorrentTransfermusic/tmp/'+hashid+'.torrent','backups/'+hashid+'.torrent','payload/owned-main-run-6-music.bin']:\n p=run/rel;assert not p.is_symlink() and p.is_file() and p.resolve().is_relative_to(root)\n raw=p.read_bytes();files.append({'path':rel,'bytes':len(raw),'sha256':hashlib.sha256(raw).hexdigest()})\nservices=[]\nfor ident in ['dcbd0899b49680933707b1203c0a10809e2fd3a2a5fad4d5c8a3a1bca4ead74a', '2f47fd50f38dfb8c27fe28207dd4b36a36852ad929643e8f34e27d14cc31b166', '65e30905d00e765b6cb5d29d210ba2a761ab2bd2debf9f6cb672a7fbbe5c0633', '454bc206270f9db198adcb56594301088ac5cf0ee328cf701a51892890ca9182']:\n raw=subprocess.check_output(['docker','inspect','--format','{{json .Id}}|{{json .Name}}|{{json .State.Running}}|{{json .Config.Labels}}|{{json .Mounts}}',ident],text=True).strip().split('|')\n cid,name,running,labels,mounts=[json.loads(x) for x in raw]\n assert cid==ident and name.startswith('/lm-plugins-tt-20261105-') and running is False\n assert all(m['Type']=='bind' and Path(m['Source']).resolve().is_relative_to(root) for m in mounts)\n services.append({'id':cid,'name':name,'running':running,'owned_mounts':[m['Source'] for m in mounts],'labels':labels})\nprint(json.dumps({'classification':'reviewer read-only current retained owned files and stopped-daemon inspection; no daemon startup or torrent/DB changes','files':files,'services':services}))\n"
+}

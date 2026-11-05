@@ -1,0 +1,4854 @@
+{
+  "environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "package_count": 128,
+  "graphs": {
+    "current95": {
+      "internal/goarch": {
+        "imports": [],
+        "go_files": [
+          "goarch.go",
+          "goarch_amd64.go",
+          "zgoarch_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "unsafe": {
+        "imports": [],
+        "go_files": [
+          "unsafe.go"
+        ],
+        "embed_files": []
+      },
+      "internal/abi": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "abi.go",
+          "abi_amd64.go",
+          "bounds.go",
+          "compiletype.go",
+          "escape.go",
+          "funcpc.go",
+          "iface.go",
+          "map.go",
+          "rangefuncconsts.go",
+          "runtime.go",
+          "stack.go",
+          "switch.go",
+          "symtab.go",
+          "type.go"
+        ],
+        "embed_files": []
+      },
+      "internal/unsafeheader": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "unsafeheader.go"
+        ],
+        "embed_files": []
+      },
+      "internal/cpu": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "cpu.go",
+          "cpu_x86.go",
+          "cpu_x86_other.go",
+          "datacache_x86.go"
+        ],
+        "embed_files": []
+      },
+      "internal/bytealg": {
+        "imports": [
+          "internal/cpu",
+          "unsafe"
+        ],
+        "go_files": [
+          "bytealg.go",
+          "compare_native.go",
+          "count_native.go",
+          "equal_generic.go",
+          "equal_native.go",
+          "index_amd64.go",
+          "index_native.go",
+          "indexbyte_native.go",
+          "lastindexbyte_generic.go"
+        ],
+        "embed_files": []
+      },
+      "internal/byteorder": {
+        "imports": [],
+        "go_files": [
+          "byteorder.go"
+        ],
+        "embed_files": []
+      },
+      "internal/chacha8rand": {
+        "imports": [
+          "internal/byteorder",
+          "internal/cpu",
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "chacha8.go",
+          "chacha8_generic.go"
+        ],
+        "embed_files": []
+      },
+      "internal/coverage/rtcov": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "rtcov.go"
+        ],
+        "embed_files": []
+      },
+      "internal/godebugs": {
+        "imports": [],
+        "go_files": [
+          "table.go"
+        ],
+        "embed_files": []
+      },
+      "internal/goexperiment": {
+        "imports": [],
+        "go_files": [
+          "exp_arenas_off.go",
+          "exp_boringcrypto_off.go",
+          "exp_cgocheck2_off.go",
+          "exp_dwarf5_on.go",
+          "exp_fieldtrack_off.go",
+          "exp_goroutineleakprofile_off.go",
+          "exp_greenteagc_on.go",
+          "exp_heapminimum512kib_off.go",
+          "exp_jsonv2_off.go",
+          "exp_loopvar_off.go",
+          "exp_newinliner_off.go",
+          "exp_preemptibleloops_off.go",
+          "exp_randomizedheapbase64_on.go",
+          "exp_regabiargs_on.go",
+          "exp_regabiwrappers_on.go",
+          "exp_runtimefreegc_off.go",
+          "exp_runtimesecret_off.go",
+          "exp_simd_off.go",
+          "exp_sizespecializedmalloc_off.go",
+          "exp_staticlockranking_off.go",
+          "flags.go"
+        ],
+        "embed_files": []
+      },
+      "internal/goos": {
+        "imports": [],
+        "go_files": [
+          "goos.go",
+          "unix.go",
+          "zgoos_linux.go"
+        ],
+        "embed_files": []
+      },
+      "internal/profilerecord": {
+        "imports": [],
+        "go_files": [
+          "profilerecord.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/atomic": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "atomic_amd64.go",
+          "doc.go",
+          "stubs.go",
+          "types.go",
+          "types_64bit.go",
+          "unaligned.go",
+          "xchg8.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/syscall/linux": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "defs_linux.go",
+          "defs_linux_amd64.go",
+          "syscall_linux.go"
+        ],
+        "embed_files": []
+      },
+      "math/bits": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "bits.go",
+          "bits_errors.go",
+          "bits_tables.go"
+        ],
+        "embed_files": []
+      },
+      "internal/strconv": {
+        "imports": [
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "atob.go",
+          "atoc.go",
+          "atof.go",
+          "atofeisel.go",
+          "atoi.go",
+          "ctoa.go",
+          "decimal.go",
+          "deps.go",
+          "ftoa.go",
+          "ftoadbox.go",
+          "ftoafixed.go",
+          "itoa.go",
+          "math.go",
+          "pow10tab.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/cgroup": {
+        "imports": [
+          "internal/bytealg",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "unsafe"
+        ],
+        "go_files": [
+          "cgroup.go",
+          "cgroup_linux.go",
+          "line_reader.go",
+          "runtime.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/exithook": {
+        "imports": [
+          "internal/runtime/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "hooks.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/gc": {
+        "imports": [
+          "internal/goarch"
+        ],
+        "go_files": [
+          "malloc.go",
+          "scan.go",
+          "sizeclasses.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/sys": {
+        "imports": [
+          "internal/goarch",
+          "internal/goos"
+        ],
+        "go_files": [
+          "consts.go",
+          "consts_norace.go",
+          "intrinsics.go",
+          "nih.go",
+          "no_dit.go",
+          "sys.go",
+          "zversion.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/gc/scan": {
+        "imports": [
+          "internal/cpu",
+          "internal/goarch",
+          "internal/runtime/gc",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "expand_amd64.go",
+          "expand_reference.go",
+          "filter.go",
+          "filter_amd64.go",
+          "scan_amd64.go",
+          "scan_go.go",
+          "scan_reference.go"
+        ],
+        "embed_files": []
+      },
+      "internal/asan": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "noasan.go"
+        ],
+        "embed_files": []
+      },
+      "internal/msan": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "nomsan.go"
+        ],
+        "embed_files": []
+      },
+      "internal/race": {
+        "imports": [
+          "internal/abi",
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "norace.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/math": {
+        "imports": [
+          "internal/goarch"
+        ],
+        "go_files": [
+          "math.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/maps": {
+        "imports": [
+          "internal/abi",
+          "internal/asan",
+          "internal/goarch",
+          "internal/msan",
+          "internal/race",
+          "internal/runtime/math",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "group.go",
+          "map.go",
+          "runtime.go",
+          "runtime_fast32.go",
+          "runtime_fast64.go",
+          "runtime_faststr.go",
+          "table.go",
+          "table_debug.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/pprof/label": {
+        "imports": [],
+        "go_files": [
+          "labelset.go"
+        ],
+        "embed_files": []
+      },
+      "internal/stringslite": {
+        "imports": [
+          "internal/bytealg",
+          "unsafe"
+        ],
+        "go_files": [
+          "strings.go"
+        ],
+        "embed_files": []
+      },
+      "internal/trace/tracev2": {
+        "imports": [],
+        "go_files": [
+          "doc.go",
+          "events.go",
+          "spec.go"
+        ],
+        "embed_files": []
+      },
+      "runtime": {
+        "imports": [
+          "internal/abi",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/chacha8rand",
+          "internal/coverage/rtcov",
+          "internal/cpu",
+          "internal/goarch",
+          "internal/godebugs",
+          "internal/goexperiment",
+          "internal/goos",
+          "internal/profilerecord",
+          "internal/runtime/atomic",
+          "internal/runtime/cgroup",
+          "internal/runtime/exithook",
+          "internal/runtime/gc",
+          "internal/runtime/gc/scan",
+          "internal/runtime/maps",
+          "internal/runtime/math",
+          "internal/runtime/pprof/label",
+          "internal/runtime/sys",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "internal/stringslite",
+          "internal/trace/tracev2",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "alg.go",
+          "arena.go",
+          "asan0.go",
+          "atomic_pointer.go",
+          "badlinkname.go",
+          "badlinkname_linux.go",
+          "cgo.go",
+          "cgo_mmap.go",
+          "cgo_sigaction.go",
+          "cgocall.go",
+          "cgocallback.go",
+          "cgocheck.go",
+          "cgroup_linux.go",
+          "chan.go",
+          "checkptr.go",
+          "compiler.go",
+          "complex.go",
+          "coro.go",
+          "covercounter.go",
+          "covermeta.go",
+          "cpuflags.go",
+          "cpuflags_amd64.go",
+          "cpuprof.go",
+          "cputicks.go",
+          "create_file_unix.go",
+          "debug.go",
+          "debugcall.go",
+          "debuglog.go",
+          "debuglog_off.go",
+          "defs_linux_amd64.go",
+          "dit.go",
+          "env_posix.go",
+          "error.go",
+          "extern.go",
+          "fastlog2.go",
+          "fastlog2table.go",
+          "fds_unix.go",
+          "fipsbypass.go",
+          "float.go",
+          "hash64.go",
+          "heapdump.go",
+          "hexdump.go",
+          "histogram.go",
+          "iface.go",
+          "lfstack.go",
+          "linkname.go",
+          "linkname_shim.go",
+          "linkname_unix.go",
+          "list.go",
+          "list_manual.go",
+          "lock_futex.go",
+          "lock_spinbit.go",
+          "lockrank.go",
+          "lockrank_off.go",
+          "malloc.go",
+          "malloc_generated.go",
+          "malloc_stubs.go",
+          "malloc_tables_generated.go",
+          "map.go",
+          "map_fast32.go",
+          "map_fast64.go",
+          "map_faststr.go",
+          "mbarrier.go",
+          "mbitmap.go",
+          "mcache.go",
+          "mcentral.go",
+          "mcheckmark.go",
+          "mcleanup.go",
+          "mem.go",
+          "mem_linux.go",
+          "mem_nonsbrk.go",
+          "metrics.go",
+          "mfinal.go",
+          "mfixalloc.go",
+          "mgc.go",
+          "mgclimit.go",
+          "mgcmark.go",
+          "mgcmark_greenteagc.go",
+          "mgcpacer.go",
+          "mgcscavenge.go",
+          "mgcstack.go",
+          "mgcsweep.go",
+          "mgcwork.go",
+          "mheap.go",
+          "minmax.go",
+          "mpagealloc.go",
+          "mpagealloc_64bit.go",
+          "mpagecache.go",
+          "mpallocbits.go",
+          "mprof.go",
+          "mranges.go",
+          "msan0.go",
+          "msize.go",
+          "mspanset.go",
+          "mstats.go",
+          "mwbbuf.go",
+          "nbpipe_pipe2.go",
+          "netpoll.go",
+          "netpoll_epoll.go",
+          "nonwindows_stub.go",
+          "note_other.go",
+          "os_linux.go",
+          "os_linux64.go",
+          "os_linux_generic.go",
+          "os_linux_noauxv.go",
+          "os_nonopenbsd.go",
+          "os_unix.go",
+          "panic.go",
+          "pinner.go",
+          "plugin.go",
+          "preempt.go",
+          "preempt_amd64.go",
+          "preempt_nonwindows.go",
+          "preempt_xreg.go",
+          "print.go",
+          "proc.go",
+          "profbuf.go",
+          "proflabel.go",
+          "race0.go",
+          "rand.go",
+          "rdebug.go",
+          "retry.go",
+          "runtime.go",
+          "runtime1.go",
+          "runtime2.go",
+          "runtime_boring.go",
+          "runtime_clearenv.go",
+          "rwmutex.go",
+          "secret.go",
+          "secret_asm.go",
+          "security_linux.go",
+          "security_unix.go",
+          "select.go",
+          "sema.go",
+          "set_vma_name_linux.go",
+          "signal_amd64.go",
+          "signal_linux_amd64.go",
+          "signal_unix.go",
+          "sigqueue.go",
+          "sigqueue_note.go",
+          "sigtab_linux_generic.go",
+          "slice.go",
+          "softfloat64.go",
+          "stack.go",
+          "stkframe.go",
+          "string.go",
+          "stubs.go",
+          "stubs2.go",
+          "stubs3.go",
+          "stubs_amd64.go",
+          "stubs_linux.go",
+          "stubs_nonwasm.go",
+          "symtab.go",
+          "symtabinl.go",
+          "synctest.go",
+          "sys_nonppc64x.go",
+          "sys_x86.go",
+          "tagptr.go",
+          "tagptr_64bit.go",
+          "test_amd64.go",
+          "time.go",
+          "time_nofake.go",
+          "timeasm.go",
+          "tls_stub.go",
+          "trace.go",
+          "traceallocfree.go",
+          "traceback.go",
+          "tracebuf.go",
+          "tracecpu.go",
+          "traceevent.go",
+          "tracemap.go",
+          "traceregion.go",
+          "traceruntime.go",
+          "tracestack.go",
+          "tracestatus.go",
+          "tracestring.go",
+          "tracetime.go",
+          "tracetype.go",
+          "type.go",
+          "unsafe.go",
+          "utf8.go",
+          "valgrind0.go",
+          "vdso_elf64.go",
+          "vdso_linux.go",
+          "vdso_linux_amd64.go",
+          "vgetrandom_linux.go",
+          "write_err.go"
+        ],
+        "embed_files": []
+      },
+      "internal/reflectlite": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/unsafeheader",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "swapper.go",
+          "type.go",
+          "value.go"
+        ],
+        "embed_files": []
+      },
+      "errors": {
+        "imports": [
+          "internal/reflectlite",
+          "unsafe"
+        ],
+        "go_files": [
+          "errors.go",
+          "join.go",
+          "wrap.go"
+        ],
+        "embed_files": []
+      },
+      "sync/atomic": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "doc_64.go",
+          "type.go",
+          "value.go"
+        ],
+        "embed_files": []
+      },
+      "internal/sync": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/race",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "hashtriemap.go",
+          "mutex.go",
+          "runtime.go"
+        ],
+        "embed_files": []
+      },
+      "internal/synctest": {
+        "imports": [
+          "internal/abi",
+          "unsafe"
+        ],
+        "go_files": [
+          "synctest.go"
+        ],
+        "embed_files": []
+      },
+      "sync": {
+        "imports": [
+          "internal/race",
+          "internal/sync",
+          "internal/synctest",
+          "runtime",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "cond.go",
+          "map.go",
+          "mutex.go",
+          "once.go",
+          "oncefunc.go",
+          "pool.go",
+          "poolqueue.go",
+          "runtime.go",
+          "runtime2.go",
+          "rwmutex.go",
+          "waitgroup.go"
+        ],
+        "embed_files": []
+      },
+      "internal/bisect": {
+        "imports": [
+          "runtime",
+          "sync",
+          "sync/atomic"
+        ],
+        "go_files": [
+          "bisect.go"
+        ],
+        "embed_files": []
+      },
+      "internal/godebug": {
+        "imports": [
+          "internal/bisect",
+          "internal/godebugs",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "godebug.go"
+        ],
+        "embed_files": []
+      },
+      "internal/oserror": {
+        "imports": [
+          "errors"
+        ],
+        "go_files": [
+          "errors.go"
+        ],
+        "embed_files": []
+      },
+      "cmp": {
+        "imports": [],
+        "go_files": [
+          "cmp.go"
+        ],
+        "embed_files": []
+      },
+      "iter": {
+        "imports": [
+          "internal/race",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go"
+        ],
+        "embed_files": []
+      },
+      "slices": {
+        "imports": [
+          "cmp",
+          "iter",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go",
+          "slices.go",
+          "sort.go",
+          "zsortanyfunc.go",
+          "zsortordered.go"
+        ],
+        "embed_files": []
+      },
+      "syscall": {
+        "imports": [
+          "errors",
+          "internal/asan",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/goarch",
+          "internal/msan",
+          "internal/oserror",
+          "internal/race",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "runtime",
+          "slices",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "badlinkname_unix.go",
+          "dirent.go",
+          "env_unix.go",
+          "exec_linux.go",
+          "exec_unix.go",
+          "flock_linux.go",
+          "forkpipe2.go",
+          "linkname_unix.go",
+          "lsf_linux.go",
+          "net.go",
+          "netlink_linux.go",
+          "rlimit.go",
+          "rlimit_stub.go",
+          "setuidgid_linux.go",
+          "sockcmsg_linux.go",
+          "sockcmsg_unix.go",
+          "sockcmsg_unix_other.go",
+          "syscall.go",
+          "syscall_linux.go",
+          "syscall_linux_amd64.go",
+          "syscall_unix.go",
+          "time_nofake.go",
+          "timestruct.go",
+          "zerrors_linux_amd64.go",
+          "zsyscall_linux_amd64.go",
+          "zsysnum_linux_amd64.go",
+          "ztypes_linux_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "time": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/godebug",
+          "internal/stringslite",
+          "math/bits",
+          "runtime",
+          "sync",
+          "syscall",
+          "unsafe"
+        ],
+        "go_files": [
+          "format.go",
+          "format_rfc3339.go",
+          "sleep.go",
+          "sys_unix.go",
+          "tick.go",
+          "time.go",
+          "zoneinfo.go",
+          "zoneinfo_goroot.go",
+          "zoneinfo_read.go",
+          "zoneinfo_unix.go"
+        ],
+        "embed_files": []
+      },
+      "context": {
+        "imports": [
+          "errors",
+          "internal/reflectlite",
+          "sync",
+          "sync/atomic",
+          "time"
+        ],
+        "go_files": [
+          "context.go"
+        ],
+        "embed_files": []
+      },
+      "io": {
+        "imports": [
+          "errors",
+          "sync"
+        ],
+        "go_files": [
+          "io.go",
+          "multi.go",
+          "pipe.go"
+        ],
+        "embed_files": []
+      },
+      "unicode": {
+        "imports": [],
+        "go_files": [
+          "casetables.go",
+          "digit.go",
+          "graphic.go",
+          "letter.go",
+          "tables.go"
+        ],
+        "embed_files": []
+      },
+      "unicode/utf8": {
+        "imports": [],
+        "go_files": [
+          "utf8.go"
+        ],
+        "embed_files": []
+      },
+      "bytes": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "io",
+          "iter",
+          "math/bits",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "buffer.go",
+          "bytes.go",
+          "iter.go",
+          "reader.go"
+        ],
+        "embed_files": []
+      },
+      "encoding": {
+        "imports": [],
+        "go_files": [
+          "encoding.go"
+        ],
+        "embed_files": []
+      },
+      "strconv": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/strconv",
+          "internal/stringslite",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "bytealg.go",
+          "doc.go",
+          "isprint.go",
+          "number.go",
+          "quote.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/base64": {
+        "imports": [
+          "internal/byteorder",
+          "io",
+          "slices",
+          "strconv"
+        ],
+        "go_files": [
+          "base64.go"
+        ],
+        "embed_files": []
+      },
+      "math": {
+        "imports": [
+          "internal/cpu",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "abs.go",
+          "acosh.go",
+          "asin.go",
+          "asinh.go",
+          "atan.go",
+          "atan2.go",
+          "atanh.go",
+          "bits.go",
+          "cbrt.go",
+          "const.go",
+          "copysign.go",
+          "dim.go",
+          "dim_asm.go",
+          "erf.go",
+          "erfinv.go",
+          "exp.go",
+          "exp2_noasm.go",
+          "exp_amd64.go",
+          "exp_asm.go",
+          "expm1.go",
+          "floor.go",
+          "floor_asm.go",
+          "fma.go",
+          "frexp.go",
+          "gamma.go",
+          "hypot.go",
+          "hypot_asm.go",
+          "j0.go",
+          "j1.go",
+          "jn.go",
+          "ldexp.go",
+          "lgamma.go",
+          "log.go",
+          "log10.go",
+          "log1p.go",
+          "log_asm.go",
+          "logb.go",
+          "mod.go",
+          "modf.go",
+          "nextafter.go",
+          "pow.go",
+          "pow10.go",
+          "remainder.go",
+          "signbit.go",
+          "sin.go",
+          "sincos.go",
+          "sinh.go",
+          "sqrt.go",
+          "stubs.go",
+          "tan.go",
+          "tanh.go",
+          "trig_reduce.go",
+          "unsafe.go"
+        ],
+        "embed_files": []
+      },
+      "reflect": {
+        "imports": [
+          "errors",
+          "internal/abi",
+          "internal/bytealg",
+          "internal/goarch",
+          "internal/race",
+          "internal/runtime/maps",
+          "internal/runtime/sys",
+          "internal/strconv",
+          "internal/unsafeheader",
+          "iter",
+          "math",
+          "runtime",
+          "strconv",
+          "sync",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "abi.go",
+          "badlinkname.go",
+          "deepequal.go",
+          "float32reg_generic.go",
+          "iter.go",
+          "makefunc.go",
+          "map.go",
+          "swapper.go",
+          "type.go",
+          "value.go",
+          "visiblefields.go"
+        ],
+        "embed_files": []
+      },
+      "internal/fmtsort": {
+        "imports": [
+          "cmp",
+          "reflect",
+          "slices"
+        ],
+        "go_files": [
+          "sort.go"
+        ],
+        "embed_files": []
+      },
+      "path": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "match.go",
+          "path.go"
+        ],
+        "embed_files": []
+      },
+      "io/fs": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/oserror",
+          "io",
+          "path",
+          "slices",
+          "time",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "format.go",
+          "fs.go",
+          "glob.go",
+          "readdir.go",
+          "readfile.go",
+          "readlink.go",
+          "stat.go",
+          "sub.go",
+          "walk.go"
+        ],
+        "embed_files": []
+      },
+      "internal/filepathlite": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io/fs",
+          "slices"
+        ],
+        "go_files": [
+          "path.go",
+          "path_nonwindows.go",
+          "path_unix.go"
+        ],
+        "embed_files": []
+      },
+      "internal/syscall/unix": {
+        "imports": [
+          "internal/strconv",
+          "runtime",
+          "sync/atomic",
+          "syscall",
+          "unsafe"
+        ],
+        "go_files": [
+          "at.go",
+          "at_fstatat.go",
+          "at_sysnum_linux.go",
+          "at_sysnum_newfstatat_linux.go",
+          "constants.go",
+          "copy_file_range_unix.go",
+          "eaccess.go",
+          "faccessat_syscall.go",
+          "fchmodat_linux.go",
+          "fcntl_unix.go",
+          "getrandom.go",
+          "getrandom_linux.go",
+          "kernel_version_ge.go",
+          "kernel_version_linux.go",
+          "net.go",
+          "nofollow_posix.go",
+          "nonblocking_unix.go",
+          "pidfd_linux.go",
+          "renameat_sysnum_linux.go",
+          "siginfo_linux.go",
+          "siginfo_linux_other.go",
+          "syscall.go",
+          "sysnum_linux_amd64.go",
+          "tcsetpgrp_linux.go",
+          "utimes.go",
+          "waitid_linux.go"
+        ],
+        "embed_files": []
+      },
+      "internal/poll": {
+        "imports": [
+          "errors",
+          "internal/strconv",
+          "internal/syscall/unix",
+          "io",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "copy_file_range_linux.go",
+          "copy_file_range_unix.go",
+          "errno_unix.go",
+          "fd.go",
+          "fd_fsync_posix.go",
+          "fd_mutex.go",
+          "fd_poll_runtime.go",
+          "fd_posix.go",
+          "fd_unix.go",
+          "fd_unixjs.go",
+          "fd_writev_unix.go",
+          "fstatat_unix.go",
+          "hook_cloexec.go",
+          "hook_unix.go",
+          "iovec_unix.go",
+          "sendfile.go",
+          "sendfile_unix.go",
+          "sock_cloexec.go",
+          "sockopt.go",
+          "sockopt_linux.go",
+          "sockopt_unix.go",
+          "sockoptip.go",
+          "splice_linux.go",
+          "writev.go"
+        ],
+        "embed_files": []
+      },
+      "internal/syscall/execenv": {
+        "imports": [
+          "syscall"
+        ],
+        "go_files": [
+          "execenv_default.go"
+        ],
+        "embed_files": []
+      },
+      "internal/testlog": {
+        "imports": [
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "exit.go",
+          "log.go"
+        ],
+        "embed_files": []
+      },
+      "os": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/filepathlite",
+          "internal/goarch",
+          "internal/poll",
+          "internal/strconv",
+          "internal/stringslite",
+          "internal/syscall/execenv",
+          "internal/syscall/unix",
+          "internal/testlog",
+          "io",
+          "io/fs",
+          "runtime",
+          "slices",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "dir.go",
+          "dir_unix.go",
+          "dirent_linux.go",
+          "eloop_other.go",
+          "env.go",
+          "error.go",
+          "error_errno.go",
+          "exec.go",
+          "exec_linux.go",
+          "exec_posix.go",
+          "exec_unix.go",
+          "executable.go",
+          "executable_procfs.go",
+          "file.go",
+          "file_open_unix.go",
+          "file_posix.go",
+          "file_unix.go",
+          "getwd.go",
+          "path.go",
+          "path_unix.go",
+          "pidfd_linux.go",
+          "pipe2_unix.go",
+          "proc.go",
+          "rawconn.go",
+          "removeall_at.go",
+          "removeall_unix.go",
+          "root.go",
+          "root_nonwindows.go",
+          "root_openat.go",
+          "root_unix.go",
+          "stat.go",
+          "stat_linux.go",
+          "stat_unix.go",
+          "statat.go",
+          "statat_unix.go",
+          "sticky_notbsd.go",
+          "sys.go",
+          "sys_linux.go",
+          "sys_unix.go",
+          "tempfile.go",
+          "types.go",
+          "types_unix.go",
+          "wait_waitid.go",
+          "zero_copy_linux.go",
+          "zero_copy_posix.go"
+        ],
+        "embed_files": []
+      },
+      "fmt": {
+        "imports": [
+          "errors",
+          "internal/fmtsort",
+          "internal/stringslite",
+          "io",
+          "math",
+          "os",
+          "reflect",
+          "slices",
+          "strconv",
+          "sync",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "doc.go",
+          "errors.go",
+          "format.go",
+          "print.go",
+          "scan.go"
+        ],
+        "embed_files": []
+      },
+      "strings": {
+        "imports": [
+          "errors",
+          "internal/abi",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io",
+          "iter",
+          "math/bits",
+          "sync",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "builder.go",
+          "clone.go",
+          "compare.go",
+          "iter.go",
+          "reader.go",
+          "replace.go",
+          "search.go",
+          "strings.go"
+        ],
+        "embed_files": []
+      },
+      "unicode/utf16": {
+        "imports": [],
+        "go_files": [
+          "utf16.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/json": {
+        "imports": [
+          "bytes",
+          "cmp",
+          "encoding",
+          "encoding/base64",
+          "errors",
+          "fmt",
+          "io",
+          "math",
+          "reflect",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf16",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "decode.go",
+          "encode.go",
+          "fold.go",
+          "indent.go",
+          "scanner.go",
+          "stream.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "bufio": {
+        "imports": [
+          "bytes",
+          "errors",
+          "io",
+          "strings",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "bufio.go",
+          "scan.go"
+        ],
+        "embed_files": []
+      },
+      "hash": {
+        "imports": [
+          "io"
+        ],
+        "go_files": [
+          "hash.go"
+        ],
+        "embed_files": []
+      },
+      "crypto": {
+        "imports": [
+          "hash",
+          "io",
+          "strconv"
+        ],
+        "go_files": [
+          "crypto.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/godebug": {
+        "imports": [
+          "internal/godebug"
+        ],
+        "go_files": [
+          "godebug.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140": {
+        "imports": [
+          "crypto/internal/fips140deps/godebug",
+          "errors",
+          "runtime",
+          "strings",
+          "unsafe"
+        ],
+        "go_files": [
+          "cast.go",
+          "fips140.go",
+          "indicator.go",
+          "notasan.go",
+          "notboring.go",
+          "notpurego.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/alias": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "alias.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/byteorder": {
+        "imports": [
+          "internal/byteorder"
+        ],
+        "go_files": [
+          "byteorder.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/cpu": {
+        "imports": [
+          "internal/cpu",
+          "internal/goarch"
+        ],
+        "go_files": [
+          "cpu.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/impl": {
+        "imports": [
+          "strings"
+        ],
+        "go_files": [
+          "impl.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha256": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "hash",
+          "math/bits"
+        ],
+        "go_files": [
+          "cast.go",
+          "sha256.go",
+          "sha256block.go",
+          "sha256block_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/constanttime": {
+        "imports": [],
+        "go_files": [
+          "constant_time.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/subtle": {
+        "imports": [
+          "crypto/internal/constanttime",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140deps/byteorder",
+          "math/bits"
+        ],
+        "go_files": [
+          "constant_time.go",
+          "xor.go",
+          "xor_asm.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha3": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "errors",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "cast.go",
+          "hashes.go",
+          "keccakf.go",
+          "sha3.go",
+          "sha3_amd64.go",
+          "shake.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha512": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "hash",
+          "math/bits"
+        ],
+        "go_files": [
+          "cast.go",
+          "sha512.go",
+          "sha512block.go",
+          "sha512block_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/hmac": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140/sha3",
+          "crypto/internal/fips140/sha512",
+          "errors",
+          "hash"
+        ],
+        "go_files": [
+          "cast.go",
+          "hmac.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/check": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/hmac",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/godebug",
+          "io",
+          "unsafe"
+        ],
+        "go_files": [
+          "check.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/aes": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/fips140deps/godebug",
+          "crypto/internal/impl",
+          "errors",
+          "math/bits",
+          "strconv"
+        ],
+        "go_files": [
+          "aes.go",
+          "aes_asm.go",
+          "aes_generic.go",
+          "cast.go",
+          "cbc.go",
+          "cbc_noasm.go",
+          "const.go",
+          "ctr.go",
+          "ctr_asm.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/time": {
+        "imports": [
+          "time"
+        ],
+        "go_files": [
+          "time.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/entropy/v1.0.0": {
+        "imports": [
+          "crypto/internal/fips140deps/time",
+          "errors",
+          "math/bits",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "entropy.go",
+          "sha384.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/sysrand": {
+        "imports": [
+          "errors",
+          "internal/syscall/unix",
+          "math",
+          "os",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "rand_getrandom.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/drbg": {
+        "imports": [
+          "bytes",
+          "crypto/internal/entropy/v1.0.0",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/sysrand",
+          "errors",
+          "io",
+          "math/bits",
+          "sync",
+          "sync/atomic"
+        ],
+        "go_files": [
+          "cast.go",
+          "ctrdrbg.go",
+          "rand.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/aes/gcm": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "math"
+        ],
+        "go_files": [
+          "cast.go",
+          "cmac.go",
+          "ctrkdf.go",
+          "gcm.go",
+          "gcm_asm.go",
+          "gcm_generic.go",
+          "gcm_nonces.go",
+          "ghash.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/fips140": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/check",
+          "internal/godebug",
+          "unsafe"
+        ],
+        "go_files": [
+          "enforcement.go",
+          "fips140.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140only": {
+        "imports": [
+          "crypto/fips140",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140/sha3",
+          "crypto/internal/fips140/sha512",
+          "hash",
+          "io"
+        ],
+        "go_files": [
+          "fips140only.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/subtle": {
+        "imports": [
+          "crypto/internal/constanttime",
+          "crypto/internal/fips140/subtle",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "constant_time.go",
+          "dit.go",
+          "xor.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/cipher": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/aes/gcm",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140only",
+          "crypto/subtle",
+          "errors",
+          "internal/byteorder",
+          "io"
+        ],
+        "go_files": [
+          "cbc.go",
+          "cfb.go",
+          "cipher.go",
+          "ctr.go",
+          "gcm.go",
+          "io.go",
+          "ofb.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/boring/sig": {
+        "imports": [],
+        "go_files": [
+          "sig.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/boring": {
+        "imports": [
+          "crypto",
+          "crypto/cipher",
+          "crypto/internal/boring/sig",
+          "hash"
+        ],
+        "go_files": [
+          "doc.go",
+          "notboring.go"
+        ],
+        "embed_files": []
+      },
+      "math/rand/v2": {
+        "imports": [
+          "errors",
+          "internal/byteorder",
+          "internal/chacha8rand",
+          "math",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "chacha8.go",
+          "exp.go",
+          "normal.go",
+          "pcg.go",
+          "rand.go",
+          "zipf.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/randutil": {
+        "imports": [
+          "io",
+          "math/rand/v2"
+        ],
+        "go_files": [
+          "randutil.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/rand": {
+        "imports": [
+          "crypto/internal/boring",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/randutil",
+          "internal/godebug",
+          "io",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "rand_fips140v1.26.go"
+        ],
+        "embed_files": []
+      },
+      "math/rand": {
+        "imports": [
+          "internal/godebug",
+          "math",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "exp.go",
+          "normal.go",
+          "rand.go",
+          "rng.go",
+          "zipf.go"
+        ],
+        "embed_files": []
+      },
+      "math/big": {
+        "imports": [
+          "bytes",
+          "errors",
+          "fmt",
+          "internal/byteorder",
+          "internal/cpu",
+          "io",
+          "math",
+          "math/bits",
+          "math/rand",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unsafe"
+        ],
+        "go_files": [
+          "accuracy_string.go",
+          "arith.go",
+          "arith_amd64.go",
+          "arith_decl.go",
+          "decimal.go",
+          "doc.go",
+          "float.go",
+          "floatconv.go",
+          "floatmarsh.go",
+          "ftoa.go",
+          "int.go",
+          "intconv.go",
+          "intmarsh.go",
+          "nat.go",
+          "natconv.go",
+          "natdiv.go",
+          "natmul.go",
+          "prime.go",
+          "rat.go",
+          "ratconv.go",
+          "ratmarsh.go",
+          "roundingmode_string.go",
+          "sqrt.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/rand": {
+        "imports": [
+          "crypto/internal/boring",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140only",
+          "crypto/internal/rand",
+          "errors",
+          "io",
+          "math/big",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "text.go",
+          "util.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/hex": {
+        "imports": [
+          "errors",
+          "fmt",
+          "io",
+          "slices",
+          "strings"
+        ],
+        "go_files": [
+          "hex.go"
+        ],
+        "embed_files": []
+      },
+      "sort": {
+        "imports": [
+          "internal/reflectlite",
+          "math/bits",
+          "slices"
+        ],
+        "go_files": [
+          "search.go",
+          "slice.go",
+          "sort.go",
+          "zsortfunc.go",
+          "zsortinterface.go"
+        ],
+        "embed_files": []
+      },
+      "regexp/syntax": {
+        "imports": [
+          "slices",
+          "sort",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "compile.go",
+          "doc.go",
+          "op_string.go",
+          "parse.go",
+          "perl_groups.go",
+          "prog.go",
+          "regexp.go",
+          "simplify.go"
+        ],
+        "embed_files": []
+      },
+      "regexp": {
+        "imports": [
+          "bytes",
+          "io",
+          "regexp/syntax",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "backtrack.go",
+          "exec.go",
+          "onepass.go",
+          "regexp.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/internal/sdk/sourcejson": {
+        "imports": [
+          "encoding/json",
+          "fmt",
+          "math",
+          "math/big",
+          "regexp",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "model.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/tag": {
+        "imports": [
+          "sort"
+        ],
+        "go_files": [
+          "tag.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/language": {
+        "imports": [
+          "bytes",
+          "errors",
+          "fmt",
+          "golang.org/x/text/internal/tag",
+          "sort",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "common.go",
+          "compact.go",
+          "compose.go",
+          "coverage.go",
+          "language.go",
+          "lookup.go",
+          "match.go",
+          "parse.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/language/compact": {
+        "imports": [
+          "golang.org/x/text/internal/language",
+          "sort",
+          "strings"
+        ],
+        "go_files": [
+          "compact.go",
+          "language.go",
+          "parents.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/language": {
+        "imports": [
+          "errors",
+          "fmt",
+          "golang.org/x/text/internal/language",
+          "golang.org/x/text/internal/language/compact",
+          "sort",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "coverage.go",
+          "doc.go",
+          "language.go",
+          "match.go",
+          "parse.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal": {
+        "imports": [
+          "golang.org/x/text/language",
+          "sort"
+        ],
+        "go_files": [
+          "internal.go",
+          "match.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/transform": {
+        "imports": [
+          "bytes",
+          "errors",
+          "io",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "transform.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/binary": {
+        "imports": [
+          "errors",
+          "io",
+          "math",
+          "reflect",
+          "slices",
+          "sync"
+        ],
+        "go_files": [
+          "binary.go",
+          "native_endian_little.go",
+          "varint.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/unicode/norm": {
+        "imports": [
+          "encoding/binary",
+          "fmt",
+          "golang.org/x/text/transform",
+          "io",
+          "sync",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "composition.go",
+          "forminfo.go",
+          "input.go",
+          "iter.go",
+          "normalize.go",
+          "readwriter.go",
+          "tables15.0.0.go",
+          "transform.go",
+          "trie.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/cases": {
+        "imports": [
+          "golang.org/x/text/internal",
+          "golang.org/x/text/language",
+          "golang.org/x/text/transform",
+          "golang.org/x/text/unicode/norm",
+          "strings",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "cases.go",
+          "context.go",
+          "fold.go",
+          "info.go",
+          "map.go",
+          "tables15.0.0.go",
+          "trieval.go"
+        ],
+        "embed_files": []
+      },
+      "maps": {
+        "imports": [
+          "iter",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go",
+          "maps.go"
+        ],
+        "embed_files": []
+      },
+      "mime": {
+        "imports": [
+          "bufio",
+          "bytes",
+          "encoding/base64",
+          "errors",
+          "fmt",
+          "io",
+          "maps",
+          "os",
+          "slices",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "encodedword.go",
+          "grammar.go",
+          "mediatype.go",
+          "type.go",
+          "type_unix.go"
+        ],
+        "embed_files": []
+      },
+      "weak": {
+        "imports": [
+          "internal/abi",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "pointer.go"
+        ],
+        "embed_files": []
+      },
+      "unique": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/stringslite",
+          "internal/sync",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "unsafe",
+          "weak"
+        ],
+        "go_files": [
+          "canonmap.go",
+          "clone.go",
+          "doc.go",
+          "handle.go"
+        ],
+        "embed_files": []
+      },
+      "net/netip": {
+        "imports": [
+          "cmp",
+          "errors",
+          "internal/bytealg",
+          "internal/byteorder",
+          "math",
+          "math/bits",
+          "strconv",
+          "unique"
+        ],
+        "go_files": [
+          "netip.go",
+          "uint128.go"
+        ],
+        "embed_files": []
+      },
+      "net/url": {
+        "imports": [
+          "errors",
+          "fmt",
+          "internal/godebug",
+          "net/netip",
+          "path",
+          "slices",
+          "strconv",
+          "strings",
+          "unsafe"
+        ],
+        "go_files": [
+          "encoding_table.go",
+          "url.go"
+        ],
+        "embed_files": []
+      },
+      "path/filepath": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/filepathlite",
+          "io/fs",
+          "os",
+          "runtime",
+          "slices",
+          "strings",
+          "syscall",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "match.go",
+          "path.go",
+          "path_unix.go",
+          "symlink.go",
+          "symlink_unix.go"
+        ],
+        "embed_files": []
+      },
+      "os/exec": {
+        "imports": [
+          "bytes",
+          "context",
+          "errors",
+          "internal/godebug",
+          "internal/syscall/execenv",
+          "internal/syscall/unix",
+          "io",
+          "io/fs",
+          "os",
+          "path/filepath",
+          "runtime",
+          "strconv",
+          "strings",
+          "sync/atomic",
+          "syscall",
+          "time"
+        ],
+        "go_files": [
+          "exec.go",
+          "exec_unix.go",
+          "lookpath.go",
+          "lp_unix.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/internal/sdk": {
+        "imports": [
+          "bufio",
+          "bytes",
+          "context",
+          "crypto/rand",
+          "encoding/base64",
+          "encoding/hex",
+          "encoding/json",
+          "errors",
+          "fmt",
+          "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+          "golang.org/x/text/cases",
+          "golang.org/x/text/language",
+          "golang.org/x/text/unicode/norm",
+          "io",
+          "math",
+          "mime",
+          "net/url",
+          "os",
+          "os/exec",
+          "path",
+          "path/filepath",
+          "regexp",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "sync/atomic",
+          "time",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "api.go",
+          "auth.go",
+          "base.go",
+          "broadcast_handler.go",
+          "browser_host.go",
+          "brush_inventory.go",
+          "category_policy.go",
+          "chain_handler.go",
+          "close_transport.go",
+          "concurrent_session.go",
+          "concurrent_shutdown.go",
+          "concurrent_transport.go",
+          "concurrent_worker.go",
+          "downloader_configurations.go",
+          "downloader_host.go",
+          "downloader_host_connection.go",
+          "downloader_host_delete_files.go",
+          "downloader_host_trackers.go",
+          "downloader_source.go",
+          "downloader_source_connection.go",
+          "downloader_source_find_by_tag.go",
+          "downloader_tasks.go",
+          "events.go",
+          "file_item.go",
+          "frontend.go",
+          "history_host.go",
+          "identity.go",
+          "input_interaction.go",
+          "jsonrpc.go",
+          "log.go",
+          "manager_resources.go",
+          "media_host.go",
+          "media_images.go",
+          "media_info.go",
+          "message_inbound.go",
+          "module_bytes.go",
+          "module_result.go",
+          "module_transfer.go",
+          "mutable_event.go",
+          "network_host.go",
+          "network_proxy_host.go",
+          "notification.go",
+          "ocr_host.go",
+          "pending_call.go",
+          "plugin_host.go",
+          "protocol.go",
+          "runner_budget.go",
+          "runner_observation.go",
+          "runtime_support.go",
+          "service_progress.go",
+          "settings_host.go",
+          "site_host.go",
+          "site_http_host.go",
+          "site_source.go",
+          "storage_host.go",
+          "storage_operation.go",
+          "subscription_host.go",
+          "title_torrent_filter.go",
+          "transport.go",
+          "worker.go"
+        ],
+        "embed_files": []
+      },
+      "embed": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io",
+          "io/fs",
+          "time"
+        ],
+        "go_files": [
+          "embed.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/plugins/categoryeditor": {
+        "imports": [
+          "bytes",
+          "context",
+          "embed",
+          "encoding/json",
+          "errors",
+          "github.com/landuo/light-media-plugins/internal/sdk",
+          "io",
+          "strconv",
+          "strings",
+          "sync"
+        ],
+        "go_files": [
+          "categoryeditor.go"
+        ],
+        "embed_files": [
+          "form.json"
+        ]
+      },
+      "github.com/landuo/light-media-plugins/cmd/category-editor": {
+        "imports": [
+          "context",
+          "encoding/json",
+          "fmt",
+          "github.com/landuo/light-media-plugins/internal/sdk",
+          "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+          "os"
+        ],
+        "go_files": [
+          "main.go"
+        ],
+        "embed_files": []
+      }
+    },
+    "exclude-to93": {
+      "internal/goarch": {
+        "imports": [],
+        "go_files": [
+          "goarch.go",
+          "goarch_amd64.go",
+          "zgoarch_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "unsafe": {
+        "imports": [],
+        "go_files": [
+          "unsafe.go"
+        ],
+        "embed_files": []
+      },
+      "internal/abi": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "abi.go",
+          "abi_amd64.go",
+          "bounds.go",
+          "compiletype.go",
+          "escape.go",
+          "funcpc.go",
+          "iface.go",
+          "map.go",
+          "rangefuncconsts.go",
+          "runtime.go",
+          "stack.go",
+          "switch.go",
+          "symtab.go",
+          "type.go"
+        ],
+        "embed_files": []
+      },
+      "internal/unsafeheader": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "unsafeheader.go"
+        ],
+        "embed_files": []
+      },
+      "internal/cpu": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "cpu.go",
+          "cpu_x86.go",
+          "cpu_x86_other.go",
+          "datacache_x86.go"
+        ],
+        "embed_files": []
+      },
+      "internal/bytealg": {
+        "imports": [
+          "internal/cpu",
+          "unsafe"
+        ],
+        "go_files": [
+          "bytealg.go",
+          "compare_native.go",
+          "count_native.go",
+          "equal_generic.go",
+          "equal_native.go",
+          "index_amd64.go",
+          "index_native.go",
+          "indexbyte_native.go",
+          "lastindexbyte_generic.go"
+        ],
+        "embed_files": []
+      },
+      "internal/byteorder": {
+        "imports": [],
+        "go_files": [
+          "byteorder.go"
+        ],
+        "embed_files": []
+      },
+      "internal/chacha8rand": {
+        "imports": [
+          "internal/byteorder",
+          "internal/cpu",
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "chacha8.go",
+          "chacha8_generic.go"
+        ],
+        "embed_files": []
+      },
+      "internal/coverage/rtcov": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "rtcov.go"
+        ],
+        "embed_files": []
+      },
+      "internal/godebugs": {
+        "imports": [],
+        "go_files": [
+          "table.go"
+        ],
+        "embed_files": []
+      },
+      "internal/goexperiment": {
+        "imports": [],
+        "go_files": [
+          "exp_arenas_off.go",
+          "exp_boringcrypto_off.go",
+          "exp_cgocheck2_off.go",
+          "exp_dwarf5_on.go",
+          "exp_fieldtrack_off.go",
+          "exp_goroutineleakprofile_off.go",
+          "exp_greenteagc_on.go",
+          "exp_heapminimum512kib_off.go",
+          "exp_jsonv2_off.go",
+          "exp_loopvar_off.go",
+          "exp_newinliner_off.go",
+          "exp_preemptibleloops_off.go",
+          "exp_randomizedheapbase64_on.go",
+          "exp_regabiargs_on.go",
+          "exp_regabiwrappers_on.go",
+          "exp_runtimefreegc_off.go",
+          "exp_runtimesecret_off.go",
+          "exp_simd_off.go",
+          "exp_sizespecializedmalloc_off.go",
+          "exp_staticlockranking_off.go",
+          "flags.go"
+        ],
+        "embed_files": []
+      },
+      "internal/goos": {
+        "imports": [],
+        "go_files": [
+          "goos.go",
+          "unix.go",
+          "zgoos_linux.go"
+        ],
+        "embed_files": []
+      },
+      "internal/profilerecord": {
+        "imports": [],
+        "go_files": [
+          "profilerecord.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/atomic": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "atomic_amd64.go",
+          "doc.go",
+          "stubs.go",
+          "types.go",
+          "types_64bit.go",
+          "unaligned.go",
+          "xchg8.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/syscall/linux": {
+        "imports": [
+          "internal/goarch",
+          "unsafe"
+        ],
+        "go_files": [
+          "defs_linux.go",
+          "defs_linux_amd64.go",
+          "syscall_linux.go"
+        ],
+        "embed_files": []
+      },
+      "math/bits": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "bits.go",
+          "bits_errors.go",
+          "bits_tables.go"
+        ],
+        "embed_files": []
+      },
+      "internal/strconv": {
+        "imports": [
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "atob.go",
+          "atoc.go",
+          "atof.go",
+          "atofeisel.go",
+          "atoi.go",
+          "ctoa.go",
+          "decimal.go",
+          "deps.go",
+          "ftoa.go",
+          "ftoadbox.go",
+          "ftoafixed.go",
+          "itoa.go",
+          "math.go",
+          "pow10tab.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/cgroup": {
+        "imports": [
+          "internal/bytealg",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "unsafe"
+        ],
+        "go_files": [
+          "cgroup.go",
+          "cgroup_linux.go",
+          "line_reader.go",
+          "runtime.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/exithook": {
+        "imports": [
+          "internal/runtime/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "hooks.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/gc": {
+        "imports": [
+          "internal/goarch"
+        ],
+        "go_files": [
+          "malloc.go",
+          "scan.go",
+          "sizeclasses.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/sys": {
+        "imports": [
+          "internal/goarch",
+          "internal/goos"
+        ],
+        "go_files": [
+          "consts.go",
+          "consts_norace.go",
+          "intrinsics.go",
+          "nih.go",
+          "no_dit.go",
+          "sys.go",
+          "zversion.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/gc/scan": {
+        "imports": [
+          "internal/cpu",
+          "internal/goarch",
+          "internal/runtime/gc",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "expand_amd64.go",
+          "expand_reference.go",
+          "filter.go",
+          "filter_amd64.go",
+          "scan_amd64.go",
+          "scan_go.go",
+          "scan_reference.go"
+        ],
+        "embed_files": []
+      },
+      "internal/asan": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "noasan.go"
+        ],
+        "embed_files": []
+      },
+      "internal/msan": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "nomsan.go"
+        ],
+        "embed_files": []
+      },
+      "internal/race": {
+        "imports": [
+          "internal/abi",
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "norace.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/math": {
+        "imports": [
+          "internal/goarch"
+        ],
+        "go_files": [
+          "math.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/maps": {
+        "imports": [
+          "internal/abi",
+          "internal/asan",
+          "internal/goarch",
+          "internal/msan",
+          "internal/race",
+          "internal/runtime/math",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "group.go",
+          "map.go",
+          "runtime.go",
+          "runtime_fast32.go",
+          "runtime_fast64.go",
+          "runtime_faststr.go",
+          "table.go",
+          "table_debug.go"
+        ],
+        "embed_files": []
+      },
+      "internal/runtime/pprof/label": {
+        "imports": [],
+        "go_files": [
+          "labelset.go"
+        ],
+        "embed_files": []
+      },
+      "internal/stringslite": {
+        "imports": [
+          "internal/bytealg",
+          "unsafe"
+        ],
+        "go_files": [
+          "strings.go"
+        ],
+        "embed_files": []
+      },
+      "internal/trace/tracev2": {
+        "imports": [],
+        "go_files": [
+          "doc.go",
+          "events.go",
+          "spec.go"
+        ],
+        "embed_files": []
+      },
+      "runtime": {
+        "imports": [
+          "internal/abi",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/chacha8rand",
+          "internal/coverage/rtcov",
+          "internal/cpu",
+          "internal/goarch",
+          "internal/godebugs",
+          "internal/goexperiment",
+          "internal/goos",
+          "internal/profilerecord",
+          "internal/runtime/atomic",
+          "internal/runtime/cgroup",
+          "internal/runtime/exithook",
+          "internal/runtime/gc",
+          "internal/runtime/gc/scan",
+          "internal/runtime/maps",
+          "internal/runtime/math",
+          "internal/runtime/pprof/label",
+          "internal/runtime/sys",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "internal/stringslite",
+          "internal/trace/tracev2",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "alg.go",
+          "arena.go",
+          "asan0.go",
+          "atomic_pointer.go",
+          "badlinkname.go",
+          "badlinkname_linux.go",
+          "cgo.go",
+          "cgo_mmap.go",
+          "cgo_sigaction.go",
+          "cgocall.go",
+          "cgocallback.go",
+          "cgocheck.go",
+          "cgroup_linux.go",
+          "chan.go",
+          "checkptr.go",
+          "compiler.go",
+          "complex.go",
+          "coro.go",
+          "covercounter.go",
+          "covermeta.go",
+          "cpuflags.go",
+          "cpuflags_amd64.go",
+          "cpuprof.go",
+          "cputicks.go",
+          "create_file_unix.go",
+          "debug.go",
+          "debugcall.go",
+          "debuglog.go",
+          "debuglog_off.go",
+          "defs_linux_amd64.go",
+          "dit.go",
+          "env_posix.go",
+          "error.go",
+          "extern.go",
+          "fastlog2.go",
+          "fastlog2table.go",
+          "fds_unix.go",
+          "fipsbypass.go",
+          "float.go",
+          "hash64.go",
+          "heapdump.go",
+          "hexdump.go",
+          "histogram.go",
+          "iface.go",
+          "lfstack.go",
+          "linkname.go",
+          "linkname_shim.go",
+          "linkname_unix.go",
+          "list.go",
+          "list_manual.go",
+          "lock_futex.go",
+          "lock_spinbit.go",
+          "lockrank.go",
+          "lockrank_off.go",
+          "malloc.go",
+          "malloc_generated.go",
+          "malloc_stubs.go",
+          "malloc_tables_generated.go",
+          "map.go",
+          "map_fast32.go",
+          "map_fast64.go",
+          "map_faststr.go",
+          "mbarrier.go",
+          "mbitmap.go",
+          "mcache.go",
+          "mcentral.go",
+          "mcheckmark.go",
+          "mcleanup.go",
+          "mem.go",
+          "mem_linux.go",
+          "mem_nonsbrk.go",
+          "metrics.go",
+          "mfinal.go",
+          "mfixalloc.go",
+          "mgc.go",
+          "mgclimit.go",
+          "mgcmark.go",
+          "mgcmark_greenteagc.go",
+          "mgcpacer.go",
+          "mgcscavenge.go",
+          "mgcstack.go",
+          "mgcsweep.go",
+          "mgcwork.go",
+          "mheap.go",
+          "minmax.go",
+          "mpagealloc.go",
+          "mpagealloc_64bit.go",
+          "mpagecache.go",
+          "mpallocbits.go",
+          "mprof.go",
+          "mranges.go",
+          "msan0.go",
+          "msize.go",
+          "mspanset.go",
+          "mstats.go",
+          "mwbbuf.go",
+          "nbpipe_pipe2.go",
+          "netpoll.go",
+          "netpoll_epoll.go",
+          "nonwindows_stub.go",
+          "note_other.go",
+          "os_linux.go",
+          "os_linux64.go",
+          "os_linux_generic.go",
+          "os_linux_noauxv.go",
+          "os_nonopenbsd.go",
+          "os_unix.go",
+          "panic.go",
+          "pinner.go",
+          "plugin.go",
+          "preempt.go",
+          "preempt_amd64.go",
+          "preempt_nonwindows.go",
+          "preempt_xreg.go",
+          "print.go",
+          "proc.go",
+          "profbuf.go",
+          "proflabel.go",
+          "race0.go",
+          "rand.go",
+          "rdebug.go",
+          "retry.go",
+          "runtime.go",
+          "runtime1.go",
+          "runtime2.go",
+          "runtime_boring.go",
+          "runtime_clearenv.go",
+          "rwmutex.go",
+          "secret.go",
+          "secret_asm.go",
+          "security_linux.go",
+          "security_unix.go",
+          "select.go",
+          "sema.go",
+          "set_vma_name_linux.go",
+          "signal_amd64.go",
+          "signal_linux_amd64.go",
+          "signal_unix.go",
+          "sigqueue.go",
+          "sigqueue_note.go",
+          "sigtab_linux_generic.go",
+          "slice.go",
+          "softfloat64.go",
+          "stack.go",
+          "stkframe.go",
+          "string.go",
+          "stubs.go",
+          "stubs2.go",
+          "stubs3.go",
+          "stubs_amd64.go",
+          "stubs_linux.go",
+          "stubs_nonwasm.go",
+          "symtab.go",
+          "symtabinl.go",
+          "synctest.go",
+          "sys_nonppc64x.go",
+          "sys_x86.go",
+          "tagptr.go",
+          "tagptr_64bit.go",
+          "test_amd64.go",
+          "time.go",
+          "time_nofake.go",
+          "timeasm.go",
+          "tls_stub.go",
+          "trace.go",
+          "traceallocfree.go",
+          "traceback.go",
+          "tracebuf.go",
+          "tracecpu.go",
+          "traceevent.go",
+          "tracemap.go",
+          "traceregion.go",
+          "traceruntime.go",
+          "tracestack.go",
+          "tracestatus.go",
+          "tracestring.go",
+          "tracetime.go",
+          "tracetype.go",
+          "type.go",
+          "unsafe.go",
+          "utf8.go",
+          "valgrind0.go",
+          "vdso_elf64.go",
+          "vdso_linux.go",
+          "vdso_linux_amd64.go",
+          "vgetrandom_linux.go",
+          "write_err.go"
+        ],
+        "embed_files": []
+      },
+      "internal/reflectlite": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/unsafeheader",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "swapper.go",
+          "type.go",
+          "value.go"
+        ],
+        "embed_files": []
+      },
+      "errors": {
+        "imports": [
+          "internal/reflectlite",
+          "unsafe"
+        ],
+        "go_files": [
+          "errors.go",
+          "join.go",
+          "wrap.go"
+        ],
+        "embed_files": []
+      },
+      "sync/atomic": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "doc_64.go",
+          "type.go",
+          "value.go"
+        ],
+        "embed_files": []
+      },
+      "internal/sync": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/race",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "hashtriemap.go",
+          "mutex.go",
+          "runtime.go"
+        ],
+        "embed_files": []
+      },
+      "internal/synctest": {
+        "imports": [
+          "internal/abi",
+          "unsafe"
+        ],
+        "go_files": [
+          "synctest.go"
+        ],
+        "embed_files": []
+      },
+      "sync": {
+        "imports": [
+          "internal/race",
+          "internal/sync",
+          "internal/synctest",
+          "runtime",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "cond.go",
+          "map.go",
+          "mutex.go",
+          "once.go",
+          "oncefunc.go",
+          "pool.go",
+          "poolqueue.go",
+          "runtime.go",
+          "runtime2.go",
+          "rwmutex.go",
+          "waitgroup.go"
+        ],
+        "embed_files": []
+      },
+      "internal/bisect": {
+        "imports": [
+          "runtime",
+          "sync",
+          "sync/atomic"
+        ],
+        "go_files": [
+          "bisect.go"
+        ],
+        "embed_files": []
+      },
+      "internal/godebug": {
+        "imports": [
+          "internal/bisect",
+          "internal/godebugs",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "godebug.go"
+        ],
+        "embed_files": []
+      },
+      "internal/oserror": {
+        "imports": [
+          "errors"
+        ],
+        "go_files": [
+          "errors.go"
+        ],
+        "embed_files": []
+      },
+      "cmp": {
+        "imports": [],
+        "go_files": [
+          "cmp.go"
+        ],
+        "embed_files": []
+      },
+      "iter": {
+        "imports": [
+          "internal/race",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go"
+        ],
+        "embed_files": []
+      },
+      "slices": {
+        "imports": [
+          "cmp",
+          "iter",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go",
+          "slices.go",
+          "sort.go",
+          "zsortanyfunc.go",
+          "zsortordered.go"
+        ],
+        "embed_files": []
+      },
+      "syscall": {
+        "imports": [
+          "errors",
+          "internal/asan",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/goarch",
+          "internal/msan",
+          "internal/oserror",
+          "internal/race",
+          "internal/runtime/syscall/linux",
+          "internal/strconv",
+          "runtime",
+          "slices",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "badlinkname_unix.go",
+          "dirent.go",
+          "env_unix.go",
+          "exec_linux.go",
+          "exec_unix.go",
+          "flock_linux.go",
+          "forkpipe2.go",
+          "linkname_unix.go",
+          "lsf_linux.go",
+          "net.go",
+          "netlink_linux.go",
+          "rlimit.go",
+          "rlimit_stub.go",
+          "setuidgid_linux.go",
+          "sockcmsg_linux.go",
+          "sockcmsg_unix.go",
+          "sockcmsg_unix_other.go",
+          "syscall.go",
+          "syscall_linux.go",
+          "syscall_linux_amd64.go",
+          "syscall_unix.go",
+          "time_nofake.go",
+          "timestruct.go",
+          "zerrors_linux_amd64.go",
+          "zsyscall_linux_amd64.go",
+          "zsysnum_linux_amd64.go",
+          "ztypes_linux_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "time": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/godebug",
+          "internal/stringslite",
+          "math/bits",
+          "runtime",
+          "sync",
+          "syscall",
+          "unsafe"
+        ],
+        "go_files": [
+          "format.go",
+          "format_rfc3339.go",
+          "sleep.go",
+          "sys_unix.go",
+          "tick.go",
+          "time.go",
+          "zoneinfo.go",
+          "zoneinfo_goroot.go",
+          "zoneinfo_read.go",
+          "zoneinfo_unix.go"
+        ],
+        "embed_files": []
+      },
+      "context": {
+        "imports": [
+          "errors",
+          "internal/reflectlite",
+          "sync",
+          "sync/atomic",
+          "time"
+        ],
+        "go_files": [
+          "context.go"
+        ],
+        "embed_files": []
+      },
+      "io": {
+        "imports": [
+          "errors",
+          "sync"
+        ],
+        "go_files": [
+          "io.go",
+          "multi.go",
+          "pipe.go"
+        ],
+        "embed_files": []
+      },
+      "unicode": {
+        "imports": [],
+        "go_files": [
+          "casetables.go",
+          "digit.go",
+          "graphic.go",
+          "letter.go",
+          "tables.go"
+        ],
+        "embed_files": []
+      },
+      "unicode/utf8": {
+        "imports": [],
+        "go_files": [
+          "utf8.go"
+        ],
+        "embed_files": []
+      },
+      "bytes": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "io",
+          "iter",
+          "math/bits",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "buffer.go",
+          "bytes.go",
+          "iter.go",
+          "reader.go"
+        ],
+        "embed_files": []
+      },
+      "encoding": {
+        "imports": [],
+        "go_files": [
+          "encoding.go"
+        ],
+        "embed_files": []
+      },
+      "strconv": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/strconv",
+          "internal/stringslite",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "bytealg.go",
+          "doc.go",
+          "isprint.go",
+          "number.go",
+          "quote.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/base64": {
+        "imports": [
+          "internal/byteorder",
+          "io",
+          "slices",
+          "strconv"
+        ],
+        "go_files": [
+          "base64.go"
+        ],
+        "embed_files": []
+      },
+      "math": {
+        "imports": [
+          "internal/cpu",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "abs.go",
+          "acosh.go",
+          "asin.go",
+          "asinh.go",
+          "atan.go",
+          "atan2.go",
+          "atanh.go",
+          "bits.go",
+          "cbrt.go",
+          "const.go",
+          "copysign.go",
+          "dim.go",
+          "dim_asm.go",
+          "erf.go",
+          "erfinv.go",
+          "exp.go",
+          "exp2_noasm.go",
+          "exp_amd64.go",
+          "exp_asm.go",
+          "expm1.go",
+          "floor.go",
+          "floor_asm.go",
+          "fma.go",
+          "frexp.go",
+          "gamma.go",
+          "hypot.go",
+          "hypot_asm.go",
+          "j0.go",
+          "j1.go",
+          "jn.go",
+          "ldexp.go",
+          "lgamma.go",
+          "log.go",
+          "log10.go",
+          "log1p.go",
+          "log_asm.go",
+          "logb.go",
+          "mod.go",
+          "modf.go",
+          "nextafter.go",
+          "pow.go",
+          "pow10.go",
+          "remainder.go",
+          "signbit.go",
+          "sin.go",
+          "sincos.go",
+          "sinh.go",
+          "sqrt.go",
+          "stubs.go",
+          "tan.go",
+          "tanh.go",
+          "trig_reduce.go",
+          "unsafe.go"
+        ],
+        "embed_files": []
+      },
+      "reflect": {
+        "imports": [
+          "errors",
+          "internal/abi",
+          "internal/bytealg",
+          "internal/goarch",
+          "internal/race",
+          "internal/runtime/maps",
+          "internal/runtime/sys",
+          "internal/strconv",
+          "internal/unsafeheader",
+          "iter",
+          "math",
+          "runtime",
+          "strconv",
+          "sync",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "abi.go",
+          "badlinkname.go",
+          "deepequal.go",
+          "float32reg_generic.go",
+          "iter.go",
+          "makefunc.go",
+          "map.go",
+          "swapper.go",
+          "type.go",
+          "value.go",
+          "visiblefields.go"
+        ],
+        "embed_files": []
+      },
+      "internal/fmtsort": {
+        "imports": [
+          "cmp",
+          "reflect",
+          "slices"
+        ],
+        "go_files": [
+          "sort.go"
+        ],
+        "embed_files": []
+      },
+      "path": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "match.go",
+          "path.go"
+        ],
+        "embed_files": []
+      },
+      "io/fs": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/oserror",
+          "io",
+          "path",
+          "slices",
+          "time",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "format.go",
+          "fs.go",
+          "glob.go",
+          "readdir.go",
+          "readfile.go",
+          "readlink.go",
+          "stat.go",
+          "sub.go",
+          "walk.go"
+        ],
+        "embed_files": []
+      },
+      "internal/filepathlite": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io/fs",
+          "slices"
+        ],
+        "go_files": [
+          "path.go",
+          "path_nonwindows.go",
+          "path_unix.go"
+        ],
+        "embed_files": []
+      },
+      "internal/syscall/unix": {
+        "imports": [
+          "internal/strconv",
+          "runtime",
+          "sync/atomic",
+          "syscall",
+          "unsafe"
+        ],
+        "go_files": [
+          "at.go",
+          "at_fstatat.go",
+          "at_sysnum_linux.go",
+          "at_sysnum_newfstatat_linux.go",
+          "constants.go",
+          "copy_file_range_unix.go",
+          "eaccess.go",
+          "faccessat_syscall.go",
+          "fchmodat_linux.go",
+          "fcntl_unix.go",
+          "getrandom.go",
+          "getrandom_linux.go",
+          "kernel_version_ge.go",
+          "kernel_version_linux.go",
+          "net.go",
+          "nofollow_posix.go",
+          "nonblocking_unix.go",
+          "pidfd_linux.go",
+          "renameat_sysnum_linux.go",
+          "siginfo_linux.go",
+          "siginfo_linux_other.go",
+          "syscall.go",
+          "sysnum_linux_amd64.go",
+          "tcsetpgrp_linux.go",
+          "utimes.go",
+          "waitid_linux.go"
+        ],
+        "embed_files": []
+      },
+      "internal/poll": {
+        "imports": [
+          "errors",
+          "internal/strconv",
+          "internal/syscall/unix",
+          "io",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "copy_file_range_linux.go",
+          "copy_file_range_unix.go",
+          "errno_unix.go",
+          "fd.go",
+          "fd_fsync_posix.go",
+          "fd_mutex.go",
+          "fd_poll_runtime.go",
+          "fd_posix.go",
+          "fd_unix.go",
+          "fd_unixjs.go",
+          "fd_writev_unix.go",
+          "fstatat_unix.go",
+          "hook_cloexec.go",
+          "hook_unix.go",
+          "iovec_unix.go",
+          "sendfile.go",
+          "sendfile_unix.go",
+          "sock_cloexec.go",
+          "sockopt.go",
+          "sockopt_linux.go",
+          "sockopt_unix.go",
+          "sockoptip.go",
+          "splice_linux.go",
+          "writev.go"
+        ],
+        "embed_files": []
+      },
+      "internal/syscall/execenv": {
+        "imports": [
+          "syscall"
+        ],
+        "go_files": [
+          "execenv_default.go"
+        ],
+        "embed_files": []
+      },
+      "internal/testlog": {
+        "imports": [
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "exit.go",
+          "log.go"
+        ],
+        "embed_files": []
+      },
+      "os": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/byteorder",
+          "internal/filepathlite",
+          "internal/goarch",
+          "internal/poll",
+          "internal/strconv",
+          "internal/stringslite",
+          "internal/syscall/execenv",
+          "internal/syscall/unix",
+          "internal/testlog",
+          "io",
+          "io/fs",
+          "runtime",
+          "slices",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "dir.go",
+          "dir_unix.go",
+          "dirent_linux.go",
+          "eloop_other.go",
+          "env.go",
+          "error.go",
+          "error_errno.go",
+          "exec.go",
+          "exec_linux.go",
+          "exec_posix.go",
+          "exec_unix.go",
+          "executable.go",
+          "executable_procfs.go",
+          "file.go",
+          "file_open_unix.go",
+          "file_posix.go",
+          "file_unix.go",
+          "getwd.go",
+          "path.go",
+          "path_unix.go",
+          "pidfd_linux.go",
+          "pipe2_unix.go",
+          "proc.go",
+          "rawconn.go",
+          "removeall_at.go",
+          "removeall_unix.go",
+          "root.go",
+          "root_nonwindows.go",
+          "root_openat.go",
+          "root_unix.go",
+          "stat.go",
+          "stat_linux.go",
+          "stat_unix.go",
+          "statat.go",
+          "statat_unix.go",
+          "sticky_notbsd.go",
+          "sys.go",
+          "sys_linux.go",
+          "sys_unix.go",
+          "tempfile.go",
+          "types.go",
+          "types_unix.go",
+          "wait_waitid.go",
+          "zero_copy_linux.go",
+          "zero_copy_posix.go"
+        ],
+        "embed_files": []
+      },
+      "fmt": {
+        "imports": [
+          "errors",
+          "internal/fmtsort",
+          "internal/stringslite",
+          "io",
+          "math",
+          "os",
+          "reflect",
+          "slices",
+          "strconv",
+          "sync",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "doc.go",
+          "errors.go",
+          "format.go",
+          "print.go",
+          "scan.go"
+        ],
+        "embed_files": []
+      },
+      "strings": {
+        "imports": [
+          "errors",
+          "internal/abi",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io",
+          "iter",
+          "math/bits",
+          "sync",
+          "unicode",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "builder.go",
+          "clone.go",
+          "compare.go",
+          "iter.go",
+          "reader.go",
+          "replace.go",
+          "search.go",
+          "strings.go"
+        ],
+        "embed_files": []
+      },
+      "unicode/utf16": {
+        "imports": [],
+        "go_files": [
+          "utf16.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/json": {
+        "imports": [
+          "bytes",
+          "cmp",
+          "encoding",
+          "encoding/base64",
+          "errors",
+          "fmt",
+          "io",
+          "math",
+          "reflect",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf16",
+          "unicode/utf8",
+          "unsafe"
+        ],
+        "go_files": [
+          "decode.go",
+          "encode.go",
+          "fold.go",
+          "indent.go",
+          "scanner.go",
+          "stream.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "bufio": {
+        "imports": [
+          "bytes",
+          "errors",
+          "io",
+          "strings",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "bufio.go",
+          "scan.go"
+        ],
+        "embed_files": []
+      },
+      "hash": {
+        "imports": [
+          "io"
+        ],
+        "go_files": [
+          "hash.go"
+        ],
+        "embed_files": []
+      },
+      "crypto": {
+        "imports": [
+          "hash",
+          "io",
+          "strconv"
+        ],
+        "go_files": [
+          "crypto.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/godebug": {
+        "imports": [
+          "internal/godebug"
+        ],
+        "go_files": [
+          "godebug.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140": {
+        "imports": [
+          "crypto/internal/fips140deps/godebug",
+          "errors",
+          "runtime",
+          "strings",
+          "unsafe"
+        ],
+        "go_files": [
+          "cast.go",
+          "fips140.go",
+          "indicator.go",
+          "notasan.go",
+          "notboring.go",
+          "notpurego.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/alias": {
+        "imports": [
+          "unsafe"
+        ],
+        "go_files": [
+          "alias.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/byteorder": {
+        "imports": [
+          "internal/byteorder"
+        ],
+        "go_files": [
+          "byteorder.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/cpu": {
+        "imports": [
+          "internal/cpu",
+          "internal/goarch"
+        ],
+        "go_files": [
+          "cpu.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/impl": {
+        "imports": [
+          "strings"
+        ],
+        "go_files": [
+          "impl.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha256": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "hash",
+          "math/bits"
+        ],
+        "go_files": [
+          "cast.go",
+          "sha256.go",
+          "sha256block.go",
+          "sha256block_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/constanttime": {
+        "imports": [],
+        "go_files": [
+          "constant_time.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/subtle": {
+        "imports": [
+          "crypto/internal/constanttime",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140deps/byteorder",
+          "math/bits"
+        ],
+        "go_files": [
+          "constant_time.go",
+          "xor.go",
+          "xor_asm.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha3": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "errors",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "cast.go",
+          "hashes.go",
+          "keccakf.go",
+          "sha3.go",
+          "sha3_amd64.go",
+          "shake.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/sha512": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "hash",
+          "math/bits"
+        ],
+        "go_files": [
+          "cast.go",
+          "sha512.go",
+          "sha512block.go",
+          "sha512block_amd64.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/hmac": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140/sha3",
+          "crypto/internal/fips140/sha512",
+          "errors",
+          "hash"
+        ],
+        "go_files": [
+          "cast.go",
+          "hmac.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/check": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/hmac",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/godebug",
+          "io",
+          "unsafe"
+        ],
+        "go_files": [
+          "check.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/aes": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/fips140deps/godebug",
+          "crypto/internal/impl",
+          "errors",
+          "math/bits",
+          "strconv"
+        ],
+        "go_files": [
+          "aes.go",
+          "aes_asm.go",
+          "aes_generic.go",
+          "cast.go",
+          "cbc.go",
+          "cbc_noasm.go",
+          "const.go",
+          "ctr.go",
+          "ctr_asm.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140deps/time": {
+        "imports": [
+          "time"
+        ],
+        "go_files": [
+          "time.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/entropy/v1.0.0": {
+        "imports": [
+          "crypto/internal/fips140deps/time",
+          "errors",
+          "math/bits",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "entropy.go",
+          "sha384.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/sysrand": {
+        "imports": [
+          "errors",
+          "internal/syscall/unix",
+          "math",
+          "os",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "syscall",
+          "time",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "rand_getrandom.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/drbg": {
+        "imports": [
+          "bytes",
+          "crypto/internal/entropy/v1.0.0",
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/sysrand",
+          "errors",
+          "io",
+          "math/bits",
+          "sync",
+          "sync/atomic"
+        ],
+        "go_files": [
+          "cast.go",
+          "ctrdrbg.go",
+          "rand.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140/aes/gcm": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140/check",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140/subtle",
+          "crypto/internal/fips140deps/byteorder",
+          "crypto/internal/fips140deps/cpu",
+          "crypto/internal/impl",
+          "errors",
+          "math"
+        ],
+        "go_files": [
+          "cast.go",
+          "cmac.go",
+          "ctrkdf.go",
+          "gcm.go",
+          "gcm_asm.go",
+          "gcm_generic.go",
+          "gcm_nonces.go",
+          "ghash.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/fips140": {
+        "imports": [
+          "crypto/internal/fips140",
+          "crypto/internal/fips140/check",
+          "internal/godebug",
+          "unsafe"
+        ],
+        "go_files": [
+          "enforcement.go",
+          "fips140.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/fips140only": {
+        "imports": [
+          "crypto/fips140",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140/sha256",
+          "crypto/internal/fips140/sha3",
+          "crypto/internal/fips140/sha512",
+          "hash",
+          "io"
+        ],
+        "go_files": [
+          "fips140only.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/subtle": {
+        "imports": [
+          "crypto/internal/constanttime",
+          "crypto/internal/fips140/subtle",
+          "internal/runtime/sys",
+          "unsafe"
+        ],
+        "go_files": [
+          "constant_time.go",
+          "dit.go",
+          "xor.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/cipher": {
+        "imports": [
+          "bytes",
+          "crypto/internal/fips140/aes",
+          "crypto/internal/fips140/aes/gcm",
+          "crypto/internal/fips140/alias",
+          "crypto/internal/fips140only",
+          "crypto/subtle",
+          "errors",
+          "internal/byteorder",
+          "io"
+        ],
+        "go_files": [
+          "cbc.go",
+          "cfb.go",
+          "cipher.go",
+          "ctr.go",
+          "gcm.go",
+          "io.go",
+          "ofb.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/boring/sig": {
+        "imports": [],
+        "go_files": [
+          "sig.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/boring": {
+        "imports": [
+          "crypto",
+          "crypto/cipher",
+          "crypto/internal/boring/sig",
+          "hash"
+        ],
+        "go_files": [
+          "doc.go",
+          "notboring.go"
+        ],
+        "embed_files": []
+      },
+      "math/rand/v2": {
+        "imports": [
+          "errors",
+          "internal/byteorder",
+          "internal/chacha8rand",
+          "math",
+          "math/bits",
+          "unsafe"
+        ],
+        "go_files": [
+          "chacha8.go",
+          "exp.go",
+          "normal.go",
+          "pcg.go",
+          "rand.go",
+          "zipf.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/randutil": {
+        "imports": [
+          "io",
+          "math/rand/v2"
+        ],
+        "go_files": [
+          "randutil.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/internal/rand": {
+        "imports": [
+          "crypto/internal/boring",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/randutil",
+          "internal/godebug",
+          "io",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "rand_fips140v1.26.go"
+        ],
+        "embed_files": []
+      },
+      "math/rand": {
+        "imports": [
+          "internal/godebug",
+          "math",
+          "sync",
+          "sync/atomic",
+          "unsafe"
+        ],
+        "go_files": [
+          "exp.go",
+          "normal.go",
+          "rand.go",
+          "rng.go",
+          "zipf.go"
+        ],
+        "embed_files": []
+      },
+      "math/big": {
+        "imports": [
+          "bytes",
+          "errors",
+          "fmt",
+          "internal/byteorder",
+          "internal/cpu",
+          "io",
+          "math",
+          "math/bits",
+          "math/rand",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unsafe"
+        ],
+        "go_files": [
+          "accuracy_string.go",
+          "arith.go",
+          "arith_amd64.go",
+          "arith_decl.go",
+          "decimal.go",
+          "doc.go",
+          "float.go",
+          "floatconv.go",
+          "floatmarsh.go",
+          "ftoa.go",
+          "int.go",
+          "intconv.go",
+          "intmarsh.go",
+          "nat.go",
+          "natconv.go",
+          "natdiv.go",
+          "natmul.go",
+          "prime.go",
+          "rat.go",
+          "ratconv.go",
+          "ratmarsh.go",
+          "roundingmode_string.go",
+          "sqrt.go"
+        ],
+        "embed_files": []
+      },
+      "crypto/rand": {
+        "imports": [
+          "crypto/internal/boring",
+          "crypto/internal/fips140/drbg",
+          "crypto/internal/fips140only",
+          "crypto/internal/rand",
+          "errors",
+          "io",
+          "math/big",
+          "unsafe"
+        ],
+        "go_files": [
+          "rand.go",
+          "text.go",
+          "util.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/hex": {
+        "imports": [
+          "errors",
+          "fmt",
+          "io",
+          "slices",
+          "strings"
+        ],
+        "go_files": [
+          "hex.go"
+        ],
+        "embed_files": []
+      },
+      "sort": {
+        "imports": [
+          "internal/reflectlite",
+          "math/bits",
+          "slices"
+        ],
+        "go_files": [
+          "search.go",
+          "slice.go",
+          "sort.go",
+          "zsortfunc.go",
+          "zsortinterface.go"
+        ],
+        "embed_files": []
+      },
+      "regexp/syntax": {
+        "imports": [
+          "slices",
+          "sort",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "compile.go",
+          "doc.go",
+          "op_string.go",
+          "parse.go",
+          "perl_groups.go",
+          "prog.go",
+          "regexp.go",
+          "simplify.go"
+        ],
+        "embed_files": []
+      },
+      "regexp": {
+        "imports": [
+          "bytes",
+          "io",
+          "regexp/syntax",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "backtrack.go",
+          "exec.go",
+          "onepass.go",
+          "regexp.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/internal/sdk/sourcejson": {
+        "imports": [
+          "encoding/json",
+          "fmt",
+          "math",
+          "math/big",
+          "regexp",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "model.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/tag": {
+        "imports": [
+          "sort"
+        ],
+        "go_files": [
+          "tag.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/language": {
+        "imports": [
+          "bytes",
+          "errors",
+          "fmt",
+          "golang.org/x/text/internal/tag",
+          "sort",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "common.go",
+          "compact.go",
+          "compose.go",
+          "coverage.go",
+          "language.go",
+          "lookup.go",
+          "match.go",
+          "parse.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal/language/compact": {
+        "imports": [
+          "golang.org/x/text/internal/language",
+          "sort",
+          "strings"
+        ],
+        "go_files": [
+          "compact.go",
+          "language.go",
+          "parents.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/language": {
+        "imports": [
+          "errors",
+          "fmt",
+          "golang.org/x/text/internal/language",
+          "golang.org/x/text/internal/language/compact",
+          "sort",
+          "strconv",
+          "strings"
+        ],
+        "go_files": [
+          "coverage.go",
+          "doc.go",
+          "language.go",
+          "match.go",
+          "parse.go",
+          "tables.go",
+          "tags.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/internal": {
+        "imports": [
+          "golang.org/x/text/language",
+          "sort"
+        ],
+        "go_files": [
+          "internal.go",
+          "match.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/transform": {
+        "imports": [
+          "bytes",
+          "errors",
+          "io",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "transform.go"
+        ],
+        "embed_files": []
+      },
+      "encoding/binary": {
+        "imports": [
+          "errors",
+          "io",
+          "math",
+          "reflect",
+          "slices",
+          "sync"
+        ],
+        "go_files": [
+          "binary.go",
+          "native_endian_little.go",
+          "varint.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/unicode/norm": {
+        "imports": [
+          "encoding/binary",
+          "fmt",
+          "golang.org/x/text/transform",
+          "io",
+          "sync",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "composition.go",
+          "forminfo.go",
+          "input.go",
+          "iter.go",
+          "normalize.go",
+          "readwriter.go",
+          "tables15.0.0.go",
+          "transform.go",
+          "trie.go"
+        ],
+        "embed_files": []
+      },
+      "golang.org/x/text/cases": {
+        "imports": [
+          "golang.org/x/text/internal",
+          "golang.org/x/text/language",
+          "golang.org/x/text/transform",
+          "golang.org/x/text/unicode/norm",
+          "strings",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "cases.go",
+          "context.go",
+          "fold.go",
+          "info.go",
+          "map.go",
+          "tables15.0.0.go",
+          "trieval.go"
+        ],
+        "embed_files": []
+      },
+      "maps": {
+        "imports": [
+          "iter",
+          "unsafe"
+        ],
+        "go_files": [
+          "iter.go",
+          "maps.go"
+        ],
+        "embed_files": []
+      },
+      "mime": {
+        "imports": [
+          "bufio",
+          "bytes",
+          "encoding/base64",
+          "errors",
+          "fmt",
+          "io",
+          "maps",
+          "os",
+          "slices",
+          "strings",
+          "sync",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "encodedword.go",
+          "grammar.go",
+          "mediatype.go",
+          "type.go",
+          "type_unix.go"
+        ],
+        "embed_files": []
+      },
+      "weak": {
+        "imports": [
+          "internal/abi",
+          "runtime",
+          "unsafe"
+        ],
+        "go_files": [
+          "doc.go",
+          "pointer.go"
+        ],
+        "embed_files": []
+      },
+      "unique": {
+        "imports": [
+          "internal/abi",
+          "internal/goarch",
+          "internal/stringslite",
+          "internal/sync",
+          "runtime",
+          "sync",
+          "sync/atomic",
+          "unsafe",
+          "weak"
+        ],
+        "go_files": [
+          "canonmap.go",
+          "clone.go",
+          "doc.go",
+          "handle.go"
+        ],
+        "embed_files": []
+      },
+      "net/netip": {
+        "imports": [
+          "cmp",
+          "errors",
+          "internal/bytealg",
+          "internal/byteorder",
+          "math",
+          "math/bits",
+          "strconv",
+          "unique"
+        ],
+        "go_files": [
+          "netip.go",
+          "uint128.go"
+        ],
+        "embed_files": []
+      },
+      "net/url": {
+        "imports": [
+          "errors",
+          "fmt",
+          "internal/godebug",
+          "net/netip",
+          "path",
+          "slices",
+          "strconv",
+          "strings",
+          "unsafe"
+        ],
+        "go_files": [
+          "encoding_table.go",
+          "url.go"
+        ],
+        "embed_files": []
+      },
+      "path/filepath": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/filepathlite",
+          "io/fs",
+          "os",
+          "runtime",
+          "slices",
+          "strings",
+          "syscall",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "match.go",
+          "path.go",
+          "path_unix.go",
+          "symlink.go",
+          "symlink_unix.go"
+        ],
+        "embed_files": []
+      },
+      "os/exec": {
+        "imports": [
+          "bytes",
+          "context",
+          "errors",
+          "internal/godebug",
+          "internal/syscall/execenv",
+          "internal/syscall/unix",
+          "io",
+          "io/fs",
+          "os",
+          "path/filepath",
+          "runtime",
+          "strconv",
+          "strings",
+          "sync/atomic",
+          "syscall",
+          "time"
+        ],
+        "go_files": [
+          "exec.go",
+          "exec_unix.go",
+          "lookpath.go",
+          "lp_unix.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/internal/sdk": {
+        "imports": [
+          "bufio",
+          "bytes",
+          "context",
+          "crypto/rand",
+          "encoding/base64",
+          "encoding/hex",
+          "encoding/json",
+          "errors",
+          "fmt",
+          "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+          "golang.org/x/text/cases",
+          "golang.org/x/text/language",
+          "golang.org/x/text/unicode/norm",
+          "io",
+          "math",
+          "mime",
+          "net/url",
+          "os",
+          "os/exec",
+          "path",
+          "path/filepath",
+          "regexp",
+          "slices",
+          "strconv",
+          "strings",
+          "sync",
+          "sync/atomic",
+          "time",
+          "unicode",
+          "unicode/utf8"
+        ],
+        "go_files": [
+          "api.go",
+          "auth.go",
+          "base.go",
+          "broadcast_handler.go",
+          "browser_host.go",
+          "brush_inventory.go",
+          "category_policy.go",
+          "chain_handler.go",
+          "close_transport.go",
+          "concurrent_session.go",
+          "concurrent_shutdown.go",
+          "concurrent_transport.go",
+          "concurrent_worker.go",
+          "downloader_configurations.go",
+          "downloader_host.go",
+          "downloader_host_connection.go",
+          "downloader_host_delete_files.go",
+          "downloader_host_trackers.go",
+          "downloader_source.go",
+          "downloader_source_connection.go",
+          "downloader_source_find_by_tag.go",
+          "downloader_tasks.go",
+          "events.go",
+          "file_item.go",
+          "frontend.go",
+          "history_host.go",
+          "identity.go",
+          "input_interaction.go",
+          "jsonrpc.go",
+          "log.go",
+          "manager_resources.go",
+          "media_host.go",
+          "media_images.go",
+          "media_info.go",
+          "message_inbound.go",
+          "module_bytes.go",
+          "module_result.go",
+          "module_transfer.go",
+          "mutable_event.go",
+          "network_host.go",
+          "network_proxy_host.go",
+          "notification.go",
+          "ocr_host.go",
+          "pending_call.go",
+          "plugin_host.go",
+          "protocol.go",
+          "runner_budget.go",
+          "runner_observation.go",
+          "runtime_support.go",
+          "service_progress.go",
+          "settings_host.go",
+          "site_host.go",
+          "site_http_host.go",
+          "storage_host.go",
+          "storage_operation.go",
+          "subscription_host.go",
+          "title_torrent_filter.go",
+          "transport.go",
+          "worker.go"
+        ],
+        "embed_files": []
+      },
+      "embed": {
+        "imports": [
+          "errors",
+          "internal/bytealg",
+          "internal/stringslite",
+          "io",
+          "io/fs",
+          "time"
+        ],
+        "go_files": [
+          "embed.go"
+        ],
+        "embed_files": []
+      },
+      "github.com/landuo/light-media-plugins/plugins/categoryeditor": {
+        "imports": [
+          "bytes",
+          "context",
+          "embed",
+          "encoding/json",
+          "errors",
+          "github.com/landuo/light-media-plugins/internal/sdk",
+          "io",
+          "strconv",
+          "strings",
+          "sync"
+        ],
+        "go_files": [
+          "categoryeditor.go"
+        ],
+        "embed_files": [
+          "form.json"
+        ]
+      },
+      "github.com/landuo/light-media-plugins/cmd/category-editor": {
+        "imports": [
+          "context",
+          "encoding/json",
+          "fmt",
+          "github.com/landuo/light-media-plugins/internal/sdk",
+          "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+          "os"
+        ],
+        "go_files": [
+          "main.go"
+        ],
+        "embed_files": []
+      }
+    }
+  },
+  "only_delta": {
+    "github.com/landuo/light-media-plugins/internal/sdk": {
+      "only_current": [
+        "site_source.go"
+      ],
+      "only_exclude": []
+    }
+  },
+  "imports_and_embeds_identical": true
+}

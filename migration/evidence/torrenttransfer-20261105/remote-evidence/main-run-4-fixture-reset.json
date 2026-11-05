@@ -1,0 +1,61 @@
+{
+  "classification": "owned disposable fixture reset after three failed driver runs; no production daemon/config or user files accessed",
+  "daemons": [
+    {
+      "container": "lm-plugins-tt-20261105-qb-source",
+      "verified_container_id": "dcbd0899b49680933707b1203c0a10809e2fd3a2a5fad4d5c8a3a1bca4ead74a",
+      "removed_owned_tasks_only": [
+        {
+          "hash": "c13f4bf0a1216a3d240fd250b01f4c3239da8918",
+          "name": "owned-transfer-0.bin",
+          "save_path": "/home/admin/light-media-plugins-migration-tt-20261105/payload"
+        },
+        {
+          "hash": "4ef7cf3ec3b1262d2a1a1b3e1edf3e7fcafa3816",
+          "name": "owned-preflight-qbittorrent.bin",
+          "save_path": "/home/admin/light-media-plugins-migration-tt-20261105/payload"
+        }
+      ],
+      "delete_files": false,
+      "remaining_tasks": 0
+    },
+    {
+      "container": "lm-plugins-tt-20261105-qb-target",
+      "verified_container_id": "2f47fd50f38dfb8c27fe28207dd4b36a36852ad929643e8f34e27d14cc31b166",
+      "removed_owned_tasks_only": [],
+      "delete_files": false,
+      "remaining_tasks": 0
+    },
+    {
+      "container": "lm-plugins-tt-20261105-tr-source",
+      "verified_container_id": "65e30905d00e765b6cb5d29d210ba2a761ab2bd2debf9f6cb672a7fbbe5c0633",
+      "removed_owned_tasks_only": [
+        {
+          "downloadDir": "/home/admin/light-media-plugins-migration-tt-20261105/payload",
+          "hashString": "0af7d50318e51d068fce3e01554dbf41ef5bcc0d",
+          "name": "owned-preflight-transmission.bin"
+        }
+      ],
+      "delete_files": false,
+      "remaining_tasks": 0
+    },
+    {
+      "container": "lm-plugins-tt-20261105-tr-target",
+      "verified_container_id": "454bc206270f9db198adcb56594301088ac5cf0ee328cf701a51892890ca9182",
+      "removed_owned_tasks_only": [],
+      "delete_files": false,
+      "remaining_tasks": 0
+    }
+  ],
+  "payload_sha256_before": {
+    "owned-transfer-0.bin": "2d528f7d08d395b01967448b581237353e2a74ff2468ebc999c4fb15bbabe9c7",
+    "owned-preflight-qbittorrent.bin": "73047d9a90e6fef1a6907e0fd641904ce3f5af7534a0e346371f8ecc526d2ed1",
+    "owned-preflight-transmission.bin": "3edba40f24da419e75f45abc14b55a06649f6dc431db3aefd5a46a5dccb4e60e"
+  },
+  "payload_sha256_after": {
+    "owned-transfer-0.bin": "2d528f7d08d395b01967448b581237353e2a74ff2468ebc999c4fb15bbabe9c7",
+    "owned-preflight-qbittorrent.bin": "73047d9a90e6fef1a6907e0fd641904ce3f5af7534a0e346371f8ecc526d2ed1",
+    "owned-preflight-transmission.bin": "3edba40f24da419e75f45abc14b55a06649f6dc431db3aefd5a46a5dccb4e60e"
+  },
+  "all_payload_bytes_preserved": true
+}

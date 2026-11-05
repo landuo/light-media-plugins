@@ -1,0 +1,448 @@
+{
+  "kind": "isolated-original-source-AST-with-synthetic-dependencies",
+  "source_hashes": {
+    "categoryeditor/__init__.py": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+    "torrenttransfer/__init__.py": "e5f513a57cf42ee8778744ba30cf669f93a5a3e6c7589ca0b2e3b9c483651bd5",
+    "torrenttransfermusic/__init__.py": "4d271e68aa3fc994c1d50cd850d4b1e5699c9f7900eaa106082b9f13efe4c5bb",
+    "installed-host/app/modules/themoviedb/category.py": "1c0ec53b78caa3a4949dd970931f38430c67c9d46ea2e16c3cc00950fb24c2b2"
+  },
+  "limitations": [
+    "Original plugin classes executed with synthetic host/client/scheduler/timezone/codec adapters; no app imports, live configuration, sockets, real messages or actual client mutations",
+    "Codec is synthetic fixture dispatch/JSON encoding: does not verify bencode or YAML behavior",
+    "No target implementation, browser, actual host or restart-process acceptance executed"
+  ],
+  "passed": 45,
+  "failed": 0,
+  "observations": [
+    {
+      "id": "CE-T02",
+      "status": "passed",
+      "observed": {
+        "file_exact": true,
+        "reload": 1,
+        "effects": [
+          "message",
+          "config"
+        ],
+        "state": false
+      }
+    },
+    {
+      "id": "CE-T03",
+      "status": "passed",
+      "observed": {
+        "enabled": false,
+        "content": ""
+      }
+    },
+    {
+      "id": "CE-T01",
+      "status": "passed",
+      "observed": {
+        "state": null,
+        "effects": []
+      }
+    },
+    {
+      "id": "CE-T08",
+      "status": "passed",
+      "observed": {
+        "default_is_builtin": true,
+        "enabled": false,
+        "ace": {
+          "modelvalue": "content",
+          "lang": "yaml",
+          "theme": "monokai",
+          "style": "height: 30rem"
+        }
+      }
+    },
+    {
+      "id": "CE-T04",
+      "status": "passed",
+      "observed": {
+        "state": true,
+        "effects": []
+      }
+    },
+    {
+      "id": "CE-T11-empty-metadata",
+      "status": "passed",
+      "observed": ""
+    },
+    {
+      "id": "CE-T11-empty-categories",
+      "status": "passed",
+      "observed": ""
+    },
+    {
+      "id": "CE-T11-first-catch-all",
+      "status": "passed",
+      "observed": "first"
+    },
+    {
+      "id": "CE-T11-and-country-genre",
+      "status": "passed",
+      "observed": "animation"
+    },
+    {
+      "id": "CE-T11-and-reject",
+      "status": "passed",
+      "observed": "fallback"
+    },
+    {
+      "id": "CE-T11-missing-attr",
+      "status": "passed",
+      "observed": "fallback"
+    },
+    {
+      "id": "CE-T11-release-range",
+      "status": "passed",
+      "observed": "recent"
+    },
+    {
+      "id": "CE-T11-release-tv-fallback",
+      "status": "passed",
+      "observed": "recent"
+    },
+    {
+      "id": "CE-T11-negative-range",
+      "status": "passed",
+      "observed": "fallback"
+    },
+    {
+      "id": "CE-T11-negative-range-pass",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-rule-no-whitespace-trim",
+      "status": "passed",
+      "observed": "fallback"
+    },
+    {
+      "id": "CE-T11-casefold-production-country",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-generic-list",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-false-rule-value-ignored",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-string-range-endpoints",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-reversed-range-becomes-empty",
+      "status": "passed",
+      "observed": "a"
+    },
+    {
+      "id": "CE-T11-nonstring-rule",
+      "status": "passed",
+      "observed": {
+        "raised": "AttributeError"
+      }
+    },
+    {
+      "id": "TT-T002",
+      "status": "passed",
+      "observed": [
+        [
+          "a",
+          " b"
+        ],
+        [
+          "a",
+          "b"
+        ],
+        [
+          ""
+        ],
+        []
+      ]
+    },
+    {
+      "id": "TT-T024",
+      "status": "passed",
+      "observed": [
+        "/b",
+        "/a/x",
+        "/a/x",
+        "/bbc/x",
+        null
+      ]
+    },
+    {
+      "id": "TT-T013",
+      "status": "passed",
+      "observed": 0
+    },
+    {
+      "id": "TT-T016",
+      "status": "passed",
+      "observed": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "TT-T017",
+      "status": "passed",
+      "observed": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "TT-T018",
+      "status": "passed",
+      "observed": [
+        0,
+        1
+      ]
+    },
+    {
+      "id": "TT-T019",
+      "status": "passed",
+      "observed": [
+        1,
+        0
+      ]
+    },
+    {
+      "id": "TT-T021",
+      "status": "passed",
+      "observed": {
+        "destination_calls": [],
+        "source_delete_calls": 0
+      }
+    },
+    {
+      "id": "TT-T022",
+      "status": "passed",
+      "observed": {
+        "delete": {
+          "delete_file": false,
+          "ids": [
+            "h"
+          ]
+        },
+        "history": {}
+      }
+    },
+    {
+      "id": "TT-T032",
+      "status": "passed",
+      "observed": {
+        "forwarded_trackerless": true,
+        "temp_exists": false
+      }
+    },
+    {
+      "id": "TT-T031",
+      "status": "passed",
+      "observed": {
+        "synthetic_codec_output": {
+          "announce": "a",
+          "announce-list": [
+            [
+              "a",
+              "b"
+            ],
+            [
+              "c"
+            ]
+          ],
+          "info": {}
+        },
+        "source_unchanged": true
+      }
+    },
+    {
+      "id": "TT-T039",
+      "status": "passed",
+      "observed": {
+        "false_tuple_still_lookup": true,
+        "history_written": true
+      }
+    },
+    {
+      "id": "TT-T041",
+      "status": "passed",
+      "observed": [
+        {
+          "skip": false,
+          "auto": false,
+          "recheck_calls": 1
+        },
+        {
+          "skip": false,
+          "auto": true,
+          "recheck_calls": 1
+        },
+        {
+          "skip": true,
+          "auto": false,
+          "recheck_calls": 0
+        },
+        {
+          "skip": true,
+          "auto": true,
+          "recheck_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "TT-T043-T044",
+      "status": "passed",
+      "observed": {
+        "source-h": {
+          "to_download": "target",
+          "to_download_id": "new-hash",
+          "delete_source": true,
+          "delete_duplicate": false
+        }
+      }
+    },
+    {
+      "id": "TT-T052",
+      "status": "passed",
+      "observed": [
+        [
+          [
+            "new-hash"
+          ],
+          false
+        ],
+        [
+          [],
+          false
+        ],
+        [
+          [],
+          false
+        ]
+      ]
+    },
+    {
+      "id": "TT-T053",
+      "status": "passed",
+      "observed": {
+        "start_calls": [
+          {
+            "ids": [
+              "h1"
+            ]
+          }
+        ],
+        "remaining": [
+          "h2"
+        ]
+      }
+    },
+    {
+      "id": "TT-T054",
+      "status": "passed",
+      "observed": {
+        "gate_stuck": true,
+        "queue_unchanged": [
+          "h"
+        ]
+      }
+    },
+    {
+      "id": "TT-T050",
+      "status": "passed",
+      "observed": [
+        true,
+        true,
+        false,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "TT-T051",
+      "status": "passed",
+      "observed": [
+        true,
+        false,
+        false
+      ]
+    },
+    {
+      "id": "TT-T007",
+      "status": "passed",
+      "observed": {
+        "scheduled": [
+          "transfer",
+          "date"
+        ],
+        "flag_persisted": false,
+        "enabled": false
+      }
+    },
+    {
+      "id": "TT-T056",
+      "status": "passed",
+      "observed": {
+        "queue": {
+          "target": [
+            "h"
+          ]
+        },
+        "running_gate": true,
+        "scheduler": null,
+        "event": false
+      }
+    },
+    {
+      "id": "TT-SYNTHETIC-4TYPES",
+      "status": "passed",
+      "observed": [
+        {
+          "from": "qbittorrent",
+          "to": "qbittorrent",
+          "paused": true,
+          "history": true
+        },
+        {
+          "from": "qbittorrent",
+          "to": "transmission",
+          "paused": true,
+          "history": true
+        },
+        {
+          "from": "transmission",
+          "to": "qbittorrent",
+          "paused": true,
+          "history": true
+        },
+        {
+          "from": "transmission",
+          "to": "transmission",
+          "paused": true,
+          "history": true
+        }
+      ]
+    },
+    {
+      "id": "TT-T061-BUSINESS",
+      "status": "passed",
+      "observed": {
+        "same_business_effects": true,
+        "separate_class_identity": true,
+        "platform_lifecycle_unverified": true
+      }
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "status": "passed_no_CategoryEditor_or_TorrentTransfer_worker_impact_from_SDK95_SourceSites_addition",
+  "scope": "SDK93\u219295 worker dependency impact only; not a new ordinary-main/browser/native daemon execution",
+  "sdk_origin_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+  "source_host_commit": "a16a833a304a30954af9c4ea8cd74bd04179188f",
+  "current95_host_git_blobs_bound": true,
+  "historical93_unchanged": true,
+  "new_production_files": 1,
+  "new_test_files": 1,
+  "new_source_has_no_init_package_variables_or_registration": true,
+  "Category102_prior_inputs_unchanged": true,
+  "TorrentTransfer32_inputs_unchanged": true,
+  "current95_input_manifest_sha256": "6c02089c952ee4f2d64f4e1cb6b3c2a92783f1f19921ea133a3130661ac66136",
+  "programs": {
+    "category-editor": {
+      "package_count": 128,
+      "retained_symbols": 4877,
+      "pc_functions": 3210,
+      "pc_source_files": 429,
+      "package_imports_embeds_identical": true,
+      "one_unreferenced_selected_sdk_file": "site_source.go",
+      "new_source_sites_clients_linked": false,
+      "machine_code_and_rodata_identical": true,
+      "critical_runtime_sections_identical": [
+        ".text",
+        ".rodata",
+        ".typelink",
+        ".itablink",
+        ".go.buildinfo",
+        ".noptrdata",
+        ".data"
+      ],
+      "full_binary_byte_equal": false,
+      "actual_current95_linux_binary_sha256": "6106600c1a5403d7996f09019b1d33c1177024ca33581814a5070641f7b0ff36",
+      "actual_old93_overlay_linux_binary_sha256": "c0dfc19891129cf957bef5ee08be9ed783b7635ccaa0ac7f5d02245ca481ce03",
+      "only_raw_section_deltas": [
+        ".note.go.buildid",
+        ".note.gnu.build-id",
+        ".gopclntab",
+        ".go.module",
+        ".debug_line",
+        ".debug_info"
+      ],
+      "pc_mapping_evidence_sha256": "2c474bbb51b7ab77a49338d3bddcac430724763b9e5419455069a750da930e20"
+    },
+    "torrent-transfer": {
+      "package_count": 129,
+      "retained_symbols": 5374,
+      "pc_functions": 3607,
+      "pc_source_files": 484,
+      "package_imports_embeds_identical": true,
+      "one_unreferenced_selected_sdk_file": "site_source.go",
+      "new_source_sites_clients_linked": false,
+      "machine_code_and_rodata_identical": true,
+      "critical_runtime_sections_identical": [
+        ".text",
+        ".rodata",
+        ".typelink",
+        ".itablink",
+        ".go.buildinfo",
+        ".noptrdata",
+        ".data"
+      ],
+      "full_binary_byte_equal": false,
+      "actual_current95_linux_binary_sha256": "3882fcc29031c2e3b99531b599cfc33c76ec75dd1ca986fab0663e4002bf4402",
+      "actual_old93_overlay_linux_binary_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+      "only_raw_section_deltas": [
+        ".note.go.buildid",
+        ".note.gnu.build-id",
+        ".gopclntab",
+        ".go.module",
+        ".debug_line",
+        ".debug_info"
+      ],
+      "pc_mapping_evidence_sha256": "4d8e1bc4d45e0865fef1d06ff0cbdbba4d6aab3139c21da72859fd07a24223f9"
+    }
+  },
+  "cold_tests": [
+    {
+      "mode": "normal",
+      "tests_and_subtests": 292,
+      "packages": 4,
+      "sha256": "15b65c9ab0f096622d3be165447bc959414db116301ae89f38ed76ce7c68b5bc"
+    },
+    {
+      "mode": "race",
+      "tests_and_subtests": 292,
+      "packages": 4,
+      "sha256": "8ba4418833df16179370869d3bdaaf17f96f158ca230ec4ae32a8992e6598b87"
+    }
+  ],
+  "compiled_reachability_negative_killed": true,
+  "negative_sha256": "fc08727d1ed46ea5dfcc157b35a1204164850212443112a5ccb72c1d8d7e0b62",
+  "cleanup_sha256": "6dc02d453800f0e1261678a6aa74e83c2fd56edb5d5933d1662e9cb15950c32c",
+  "historical_evidence_not_rewritten": {
+    "category93_certificate": "fe43fd1ee51e7caa1c6ddd950b59352eb692e043e900557a83a4a9dfd4f69ee3",
+    "TT_prior_freeze": "0f6641da6e2deee482f246496d0d832f51881404e7627e26aadfbe52ad745b5c"
+  },
+  "initial_verifier_failure": "Assumed a wrong sourceindexer import relocation; failed on unchanged module_transfer.go. Corrected to exact per-file declared sourcejson relocation; original script preserved; no code changed.",
+  "limits": [
+    "Full ELF bytes/build IDs and CU/debug metadata differ; identical runtime code/data/rodata and complete PC\u2192source line meaning are the finite equivalence proof.",
+    "Historical Category75e and TT404/aa7c Linux/main/UI evidence retains its actual binaries/host hashes; new95 binaries are separately recorded here.",
+    "This does not certify all generic a16 host behavior, Site external trackers or private configuration/data migration.",
+    "No product/SDK/ledger/old certificate changed; independent outputs only."
+  ]
+}

@@ -1,0 +1,12 @@
+{
+  "classification": "Actual IAB source and clone config/log/oneShot/file verification completed; exact configs restored and independently checked before attempted clone update",
+  "passed": [
+    "source4ordereddownloaders",
+    "batchrunningUI",
+    "invalidpathreset",
+    "validUIonce/log",
+    "cloneNotifyisolation",
+    "cloneUItempfileisolation"
+  ],
+  "pending_issue": "clone update using parent single-plugin index returns preflight requested-plugin-ID mismatch; retained as failed, not accepted. Other cold/reset/uninstall lifecycle proceeds."
+}

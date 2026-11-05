@@ -787,9 +787,9 @@ func TestTorrentTransferActualMainDaemons(t *testing.T) {
 	h.ok("DELETE", "/api/plugins/"+id, nil)
 	install(false)
 	h.config(id, finalConfig)
-	if len(ownedTransferData(t, h, id)) != 0 {
-		t.Fatal("uninstall retained source data")
-	}
+	// Actual MP uninstall only deletes config/KV/code for is_clone. A base
+	// plugin retains configuration and history for reinstall.
+	assertData(id, sourceData)
 	sort.Strings(sourceKeys)
 	h.record("acceptance_completed", map[string]any{"source_history_keys": sourceKeys, "cold_before": before, "cold_after": after, "scope": "actual main, four owned real daemons, synthetic torrent/payload files only; not private configuration migration or production deployment"})
 }

@@ -1,0 +1,70 @@
+Browser tab: 7, Title: "光影 · Light Media", URL: "http://192.168.8.129:36252/#plugins".
+1 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36252/#plugins
+	2 container app
+		3 container
+			4 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36252/#discover
+			5 link Description: 搜索结果, Value: 192.168.8.129:36252/#search
+			6 text 发现
+			7 link Description: 推荐, Value: 192.168.8.129:36252/#discover
+			8 link Description: 探索, Value: 192.168.8.129:36252/#explore
+			9 link Description: 仪表板, Value: 192.168.8.129:36252/#dashboard
+			10 text 订阅
+			11 link Description: 电影, Value: 192.168.8.129:36252/#subscriptions?type=movie
+			12 link Description: 电视剧, Value: 192.168.8.129:36252/#subscriptions?type=tv
+			13 link Description: 日历, Value: 192.168.8.129:36252/#calendar
+			14 text 整理
+			15 link Description: 下载管理, Value: 192.168.8.129:36252/#downloads
+			16 link Description: 整理历史, Value: 192.168.8.129:36252/#history
+			17 link Description: 文件管理, Value: 192.168.8.129:36252/#files
+			18 text 系统
+			19 link Description: 站点管理, Value: 192.168.8.129:36252/#sites
+			20 link Description: 插件, Value: 192.168.8.129:36252/#plugins
+			21 link Description: 任务队列, Value: 192.168.8.129:36252/#jobs
+			22 link Description: 日志, Value: 192.168.8.129:36252/#logs
+			23 link Description: 设置, Value: 192.168.8.129:36252/#settings
+		24 container
+			25 button 搜索影视
+			26 text field (settable) 搜索电影、剧集
+			27 text ⌘K
+			28 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			29 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			31 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+			32 button 退出登录
+		33 container
+			34 tab group
+				35 container
+					36 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					37 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			38 button 搜索插件
+			39 button 筛选已安装插件
+			40 button 排序插件
+			41 container
+				42 text 自动转移做种  v1.10.3 定期转移下载器中的做种任务到另一个下载器。
+				43 link Description: jxxghp, Value: github.com/jxxghp
+				44 pop up button (collapsed) Description: 自动转移做种操作, Secondary Actions: Expand
+			45 container
+				46 text 自动转移做种  v1.10.4 定期转移下载器中的做种任务到另一个下载器。
+				47 link Description: jxxghp, Value: github.com/jxxghp
+				48 pop up button (collapsed) Description: 自动转移做种操作, Secondary Actions: Expand
+			49 button 新建文件夹
+	50 container
+		51 container
+			52 button 关闭插件日志
+			53 text 插件日志
+			54 link 192.168.8.129:36252/api/plugins/TorrentTransfer/logs/download
+			55 link 192.168.8.129:36252/api/plugins/TorrentTransfer/logs/file
+			56 combo box (collapsed) Secondary Actions: Expand
+				57 container
+					58 text 全部级别
+					59 text field (settable) Description: 日志级别, Help: Open, Value: ALL, ID: input-157
+			60 text field (settable) Description: 搜索日志内容, Value: 转移做种任务执行完成, ID: input-160
+			61 button Clear 
+			62 button 暂停日志流
+			63 text 2026/11/05 14:50:41
+			64 text INFO:
+			65 container
+				66 text 14:50:41,897 plugins - 转移做种任务执行完成
+
+The focused UI element is 60 text field (settable) Description: 搜索日志内容, Value: 转移做种任务执行完成, ID: input-160

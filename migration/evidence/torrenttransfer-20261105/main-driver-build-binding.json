@@ -1,0 +1,26 @@
+{
+  "classification": "ordinary-main test driver build, execution tracked separately",
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-o",
+    "work/migration-20261105/torrenttransfer-runtime/integration-linux.test",
+    "./tests/integration"
+  ],
+  "explicit_environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "inputs": {
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "tests/integration/torrenttransfer_main_test.go": "5db5b10c386b33eda119c7768dbad512cce5b97bcedd3e30824e40f97896768b",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+  },
+  "driver_sha256": "93b07c085f8c91eeec0b7e98182b1e1f2ee3106b6785750bbaaa409fad7a95b2",
+  "go_version": "go version go1.26.2 darwin/arm64",
+  "change": "Actual TR3/RPC16 ignores torrent-add(labels), matching installed vendor note requiringRPC17. Fixture now establishes source labels through RPC16 torrent-set and reads back exact labels before source verification. Real target TR3 label non-retention remains observed original condition, not normalized."
+}

@@ -1,0 +1,11 @@
+# Actual installed uninstall retention contract
+
+Source: installed `/app/app/api/endpoints/plugin.py` SHA256 `16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce`, lines 993–1030. Manager implementation is the actual captured `app/core/plugin.py`; both complete input fingerprints are in the oracle.
+
+The actual source API removes the first matching installed-list entry, updates that list, removes the plugin APIs and jobs, then tests the loaded class `is_clone`. **Base uninstall retains plugin configuration, persisted plugin data and the source directory.** Base reinstall can recover the retained 106 history records; expecting zero would contradict source. The source test does not perform a real reinstall.
+
+For a clone, the source calls `delete_plugin_config` (actual `SystemConfigOper.delete("plugin.<ID>")`), then `delete_plugin_data` (`PluginDataOper.del_data(ID)`), then checks and recursively removes **only** `ROOT_PATH/app/plugins/<ID.lower()>`. It pops the class only on successful directory removal. Missing directory is skipped; `rmtree` error is logged and uninstall still continues and returns success. The source does not delete the parent directory or unrelated plugin paths.
+
+Both branches next remove the ID from each old-list or new-dict folder (one matching entry per folder), then call `remove_plugin` → `stop`: disable event handlers, `close` before `stop_service`, remove class/running references, clear only the exact lower-case Python module prefix and its submodules (a similarly prefixed sibling survives), invalidate module caches, clear the tools cache. All four bounded AST executions pass, including missing-directory and removal-error branches.
+
+`uninstall-source-oracle.json` preserves the full before/after state and operation trace. DB/filesystem/scheduler/event/plugin methods are inert owned recorders; actual API/folder/route/Manager method bodies execute, with application decorators removed. Runtime is local Python 3.14 versus installed Python 3.12.13; this is a branch/ordering source oracle, not actual MP uninstall, actual target main acceptance, or a claim that prior failed main drivers passed. The previous main6 and lifecycle-continuation failure records remain failures; this oracle supplies the correct retention expectation for the next bounded tail verification.

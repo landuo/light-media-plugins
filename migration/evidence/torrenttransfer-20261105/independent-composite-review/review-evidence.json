@@ -1,0 +1,36 @@
+{
+  "classification": "independent composite source/driver/raw/browser audit passed within stated scope; separate failed executions retained",
+  "dossier_input_manifest_sha256": "ebaafeb5b95ad2ed37bee90a699c1aa47f39ecddd8799c60ff20216dd5b9c784",
+  "artifact_leaves_checked": 102,
+  "host_git_inputs_checked": 1828,
+  "driver_bindings_matched": true,
+  "exit_codes": [
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "original_worker_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+  "ordinary_main_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+  "ordinary_main_sha256": "25d8b4e83e4a7422cc0fff9a341aed94ae0de629f2f18fc3fc352adc8a702f64",
+  "real_transfer_pairs": 4,
+  "source_history": 106,
+  "clone_history": 1,
+  "real_batch_count": 100,
+  "real_batch_seconds": 305.842710068,
+  "private_timer_seconds_after_file_arrival": 27.849969606,
+  "browser_png_reviewed": 5,
+  "browser_ax_reviewed": 8,
+  "readonly_retained_sample_sha256": "1ab2c3ba5cdb82e4f71a926939721ec84c28b6fcced61fc77e1beb7aae0fd7fa",
+  "remaining_claims": [
+    "No complete original command passed; composite traces are combined explicitly",
+    "SourceSites/newa16 main and SDK95 worker impact are distinct",
+    "No private live migration or production deployment; original MP read-only",
+    "Healthy clone lifecycle only; unloaded-class platform proof reused separately"
+  ],
+  "review_sha256": "b3dc7d94e609bfad5102509eb3784fcc580608c822a0a40d286764245f0d99eb"
+}

@@ -1,0 +1,215 @@
+{
+  "clock": "test-only-controlled-clock;production-timer-unchanged",
+  "default_max_host_calls": 64,
+  "events": [
+    {
+      "at": "2026-11-05T08:37:08.343738Z",
+      "kind": "owner.start",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T08:37:08.345737Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "owner:init"
+    },
+    {
+      "at": "2026-11-05T08:37:08.346867Z",
+      "kind": "rpc",
+      "method": "plugin.base.update_config",
+      "phase": "owner:init"
+    },
+    {
+      "at": "2026-11-05T08:37:08.347479Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "owner:init"
+    },
+    {
+      "at": "2026-11-05T08:37:08.347505Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.348151Z",
+      "kind": "owner.complete",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T08:37:08.348188Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T08:37:08.348756Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T08:37:08.348799Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T08:37:08.349249Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T08:37:08.349637Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.350088Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.350718Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.351281Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.351874Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.352405Z",
+      "kind": "rpc",
+      "method": "downloader.source.completed",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.364349Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.364818Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.364843Z",
+      "kind": "owner.start",
+      "phase": "stop_service"
+    },
+    {
+      "at": "2026-11-05T08:37:08.396863Z",
+      "kind": "child.admit",
+      "phase": "transfer_continue:{\"pass\":1,\"token\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.397737Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "transfer_continue:{\"pass\":1,\"token\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.398133Z",
+      "kind": "child.complete",
+      "phase": "transfer_continue:{\"pass\":1,\"token\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.398245Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T08:37:08.398346Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T08:37:08.398892Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T08:37:08.398943Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T08:37:08.399391Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    }
+  ],
+  "kind": "actual-independent-SDK-worker-with-synthetic-host-resources",
+  "observed_max_host_calls": 8,
+  "phases": [
+    {
+      "end": "2026-11-05T08:37:08.348139Z",
+      "error": "",
+      "host_calls": 3,
+      "method": "init",
+      "start": "2026-11-05T08:37:08.343734Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.348754Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T08:37:08.348187Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.349244Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T08:37:08.348799Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.398132Z",
+      "error": "",
+      "host_calls": 1,
+      "method": "transfer_continue",
+      "start": "2026-11-05T08:37:08.396862Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.398242Z",
+      "error": "",
+      "host_calls": 8,
+      "method": "private_scheduler",
+      "start": "2026-11-05T08:37:08.347504Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.398333Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "stop_service",
+      "start": "2026-11-05T08:37:08.364843Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.398891Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T08:37:08.398345Z"
+    },
+    {
+      "end": "2026-11-05T08:37:08.39939Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T08:37:08.398942Z"
+    }
+  ],
+  "test": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations/stop-queued-before-selection",
+  "total_rpc": 12
+}
