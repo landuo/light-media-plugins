@@ -1,2 +1,4 @@
 # Raw go version -m evidence retains exact tabs and trailing bytes.
 migration/evidence/**/host-*-buildinfo.txt -whitespace
+# Browser accessibility snapshots retain exact observed text, including spaces.
+migration/evidence/torrenttransfer-20261105/browser/*.ax.txt -whitespace
