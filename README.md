@@ -1,6 +1,6 @@
 # Light Media Plugins
 
-当前本地已验收 4/23 个实例：CategoryEditor（二级分类策略）1.3、TorrentTransfer（自动转移做种）1.10.3 及其音乐分身、SiteStatistic（站点数据统计）1.9.7。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
+当前本地已验收 6/23 个实例：CategoryEditor（二级分类策略）1.3、TorrentTransfer（自动转移做种）1.10.3 及其音乐分身、SiteStatistic（站点数据统计）1.9.7、MPServerStatus（MoviePilot 服务监控）1.4、PluginUnInstall（插件彻底卸载）2.2。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
 ## CategoryEditor 安装与使用
 
@@ -47,6 +47,22 @@ SiteStatistic1.9.7 需要本地宿主提交 `d715db2c3665b32670f3f60c519ad722022
 3. 分身由宿主创建和管理，配置、数据、进程、重载和更新相互隔离。主插件卸载保留存储，公开配置返回空对象，重装恢复；已加载分身卸载清除其命名空间和代码。
 
 真实普通Linux主程序、独占TLS/Nexus样本、SQLite、API、事件、通知持久化以及桌面/触摸页面均已验收；无实际外部通知接收方。失败历史和最后通过的复合证据见 [`ACCEPTANCE.json`](migration/evidence/sitestatistic-20261105/ACCEPTANCE.json)，必要适配见 [`ORIGIN.md`](plugins/sitestatistic/ORIGIN.md)。1.9.8仅为更新夹具，没有迁移私人配置或操作原系统。
+
+## MoviePilot 服务监控
+
+MPServerStatus1.4 已在普通 Linux 主程序和真实桌面、移动触摸页面验收。开启后可查看服务状态、延迟和最近记录；支持数据页、仪表板及平台分身的独立开关。原版没有命令、定时服务或插件 API，页面请求时获取原版指定状态源。
+
+验收使用受控 HTTPS/DNS/TLS/代理样本，证明响应处理和页面交互；不表示公网状态源始终可用。更新测试中的1.4.1仅为版本夹具。完整证据与必要适配见 [`ACCEPTANCE.json`](migration/evidence/mpserverstatus-20261105/ACCEPTANCE.json) 和 [`ORIGIN.md`](plugins/mpserverstatus/ORIGIN.md)。当前源码和配套改动仍仅本地保存，尚未推送或部署。
+
+## 插件彻底卸载
+
+PluginUnInstall2.2 已通过普通 Linux 主程序、真实配置页面及正式 ZIP 安装验收。配套宿主的新增管理接口目前仅本地分支，已发布75e宿主尚不包含本功能；本插件和宿主改动均未推送或部署。
+
+1. 在设置中选择目标插件及两个清除开关，保存后立即按原版已安装顺序停止对象、移除代码并更新安装记录。没有额外启用开关、运行一次、定时任务或数据页。
+2. 原版移除类后再以默认强制参数清除配置与数据，这些调用通常保留命名空间。迁移保持该行为；两个开关的原始值仍保留，选中列表执行后清空。普通平台卸载、重置与这里的逻辑分别验收。
+3. 分身身份、代码和数据由平台管理。自身卸载及冷启动期间移除后续插件的原版状态差异也保留；后续真正重启不重新加载已移除记录。
+
+来源、必要 Go 适配和完整证据见 [`ORIGIN.md`](plugins/pluginuninstall/ORIGIN.md) 与 [`ACCEPTANCE.json`](migration/evidence/pluginuninstall-20261106/ACCEPTANCE.json)。测试2.2.1仅为更新夹具，未导入私人配置或操作原系统。
 
 ## 自动构建与发布
 

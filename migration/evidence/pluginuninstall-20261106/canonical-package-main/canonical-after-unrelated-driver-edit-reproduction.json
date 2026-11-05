@@ -1,0 +1,22 @@
+{
+  "classification": "after actual canonical smoke, a subsequent unexecuted Rlk Main4 scalar probe field tag was corrected to actual public instance_id; original PUI smoke ELF/source binding retained and byte-identically reproduced by a one-test-file overlay of the exact prior input, reconstructed and SHA-checked against original prebuild binding. No PUI executable, PUI test/helper or old observations changed.",
+  "original_input": "tests/integration/removelink_main_test.go",
+  "original_input_sha256": "7562d6676e76c200ce306137c2f5657817d0fc81470f474f5a70da64168032a1",
+  "current_following_Rlk_probe_input_sha256": "fef1a46ae19d7230d67a4ff576a4697a4f2f2ab997c0b7653b61efc35cdbb14b",
+  "frozen_test_source": "work/migration-20261105/pluginuninstall-packaging-20261106/canonical-unexecuted-rlk-input.go",
+  "overlay_sha256": "c458373e2cd535f48d3970c27b4811f1249477dc0ea5b8a8a2e3a5354112703b",
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-packaging-20261106/canonical-reproduce-overlay.json",
+    "-o",
+    "work/migration-20261105/pluginuninstall-packaging-20261106/canonical-package-main-linux.test",
+    "./tests/integration"
+  ],
+  "exit_code": 0,
+  "actual_NAS_smoke_ELF_sha256": "caea43a33ca6455fa674b8eac160d0e7174181fe91de20da914a27316c7daf38",
+  "byte_identical_rebuild": true
+}

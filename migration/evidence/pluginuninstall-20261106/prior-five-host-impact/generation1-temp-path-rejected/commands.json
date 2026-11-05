@@ -1,0 +1,105 @@
+[
+  {
+    "name": "build-category-editor",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/category-editor-native",
+      "./cmd/category-editor"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.517
+  },
+  {
+    "name": "build-torrent-transfer",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/torrent-transfer-native",
+      "./cmd/torrent-transfer"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.252
+  },
+  {
+    "name": "build-site-statistic",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/site-statistic-native",
+      "./cmd/site-statistic"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.222
+  },
+  {
+    "name": "manifest-impact_category_binary",
+    "command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/category-editor-native",
+      "--manifest"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 1.449
+  },
+  {
+    "name": "manifest-impact_tt_binary",
+    "command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/torrent-transfer-native",
+      "--manifest"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.489
+  },
+  {
+    "name": "manifest-impact_site_binary",
+    "command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/site-statistic-native",
+      "--manifest"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.476
+  },
+  {
+    "name": "manifest-impact_mps_binary",
+    "command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+      "--manifest"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit_code": 0,
+    "elapsed_seconds": 0.01
+  },
+  {
+    "name": "app-normal",
+    "command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/pui-host19-accepted-impact-20261106/app-overlay.json",
+      "./internal/app",
+      "-run",
+      "^TestIndependentPUIHost19AcceptedConsumers$",
+      "-timeout",
+      "3m"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "exit_code": 1,
+    "elapsed_seconds": 11.415
+  }
+]

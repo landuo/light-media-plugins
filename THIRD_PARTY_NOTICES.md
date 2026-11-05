@@ -69,3 +69,13 @@ source and approved proxy-TLS adaptation. These tables/algorithms are Go source
 and embedded assets; no Python interpreter or package is used at runtime.
 The build allowlist must include all applicable notices in each corresponding
 plugin ZIP and the selected release's third-party notice bundle.
+
+## PluginUnInstall business source
+
+PluginUnInstall 2.2 was written by thsrite for MoviePilot. The fixed installed
+source SHA256 is `2210e9dea47eeccdc46208d515e45ce1222dcadf50dbfc63cbeb41f94e470487`
+in the read-only installed content snapshot recorded by migration/ledger.json.
+Its Go worker uses the existing GPLv3 SDK and x/text dependency, without a
+Python runtime. Source algorithm, finite host adaptations and provenance are
+recorded in plugins/pluginuninstall/ORIGIN.md. Author attribution is retained
+in the actual worker manifest. No upstream icon is redistributed.

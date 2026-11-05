@@ -1,0 +1,30 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-race",
+    "-json",
+    "./internal/app",
+    "-run",
+    "^TestSourceUninstall(PackageTraversalIgnoresMembershipOrder|StopAllClearsFailedClasses|PagePresenceUsesSourceDeclaration)$"
+  ],
+  "exit_code": 0,
+  "seconds": 33.41331911087036,
+  "before": {
+    "plugin_original_startup.go": "47775ceeb72b190d1917641c162f4007049b9be6758e72998393ca8b101f5d94",
+    "plugin_original_local_cards.go": "d8ae643039426ae81da77707e58a5883f24f6e061e552613ee1d40f4a5a0a4c5",
+    "plugin_original_market_cards.go": "101df126cbb2e3b34f439acd17ffd06895a0d577b98e4c567d3314ffac4224da",
+    "plugin_original_class_registry.go": "7008fafa4d3834a8bd1989b676524a9f4ed1857bd2cc308632d81df327e1d235",
+    "plugin_original_source_startup_order_test.go": "246ebe62a8c1478980215fd42b8a0033ce0b9ce285dcb11b3fbe93b941eb07a7"
+  },
+  "after": {
+    "plugin_original_startup.go": "47775ceeb72b190d1917641c162f4007049b9be6758e72998393ca8b101f5d94",
+    "plugin_original_local_cards.go": "d8ae643039426ae81da77707e58a5883f24f6e061e552613ee1d40f4a5a0a4c5",
+    "plugin_original_market_cards.go": "101df126cbb2e3b34f439acd17ffd06895a0d577b98e4c567d3314ffac4224da",
+    "plugin_original_class_registry.go": "7008fafa4d3834a8bd1989b676524a9f4ed1857bd2cc308632d81df327e1d235",
+    "plugin_original_source_startup_order_test.go": "246ebe62a8c1478980215fd42b8a0033ce0b9ce285dcb11b3fbe93b941eb07a7"
+  },
+  "stable": true,
+  "classification": "source-derived targeted actual App/SQLite and separately compiled real PUI/MPS worker regression; not ordinary Main"
+}

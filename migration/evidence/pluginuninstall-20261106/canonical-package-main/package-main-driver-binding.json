@@ -1,0 +1,61 @@
+{
+  "classification": "deterministic independent rebuild matches actual NAS submitted package-smoke driver; complete integration package test sources + module/SDKorigin metadata unchanged",
+  "before": {
+    "tests/integration/torrenttransfer_resume_main_test.go": "b6a32b6a57eaf2075d51d463b67675ea0f73aa05de425177e52b1ce5872e5aca",
+    "tests/integration/mpserverstatus_helpers_test.go": "b5a580ee83c960035cc5a266ba887c0917dadbddec415a71812f1465d6bf8e50",
+    "tests/integration/pluginuninstall_package_main_test.go": "c2f263706e89c9ec861902e85d31e901b39dcb345b4961d3900d7882bd1e4d18",
+    "tests/integration/sitestatistic_helpers_test.go": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace",
+    "tests/integration/mpserverstatus_main_test.go": "c172fd1bf74da3740aaf486a8dafdd8abc60d48c3be714f1174f3fa12afe0142",
+    "tests/integration/removelink_helpers_test.go": "6060248b76194acd752d98057b01820b6afa92047cba42212ea11c938ed9f6ac",
+    "tests/integration/sitestatistic_main_test.go": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f",
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/sdk98_impact_helpers_test.go": "9379a31f3b51d2393383d8bf126bc005446cee936cb4ed13a48eeb6240bbfe7f",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "tests/integration/pluginuninstall_main_test.go": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+    "tests/integration/sdk98_impact_test.go": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+    "tests/integration/pluginuninstall_helpers_test.go": "f2c8cb48cbd15a406dfe67f3dea294efe9fe390072c6ea84b4f5492878813b34",
+    "tests/integration/removelink_main_test.go": "7562d6676e76c200ce306137c2f5657817d0fc81470f474f5a70da64168032a1",
+    "tests/integration/torrenttransfer_main_test.go": "1c939cbb3eb78a03ca7fb8f9814e545ed8fafbbda850a86364678fec4fce8651",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3"
+  },
+  "after": {
+    "tests/integration/torrenttransfer_resume_main_test.go": "b6a32b6a57eaf2075d51d463b67675ea0f73aa05de425177e52b1ce5872e5aca",
+    "tests/integration/mpserverstatus_helpers_test.go": "b5a580ee83c960035cc5a266ba887c0917dadbddec415a71812f1465d6bf8e50",
+    "tests/integration/pluginuninstall_package_main_test.go": "c2f263706e89c9ec861902e85d31e901b39dcb345b4961d3900d7882bd1e4d18",
+    "tests/integration/sitestatistic_helpers_test.go": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace",
+    "tests/integration/mpserverstatus_main_test.go": "c172fd1bf74da3740aaf486a8dafdd8abc60d48c3be714f1174f3fa12afe0142",
+    "tests/integration/removelink_helpers_test.go": "6060248b76194acd752d98057b01820b6afa92047cba42212ea11c938ed9f6ac",
+    "tests/integration/sitestatistic_main_test.go": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f",
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/sdk98_impact_helpers_test.go": "9379a31f3b51d2393383d8bf126bc005446cee936cb4ed13a48eeb6240bbfe7f",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "tests/integration/pluginuninstall_main_test.go": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+    "tests/integration/sdk98_impact_test.go": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+    "tests/integration/pluginuninstall_helpers_test.go": "f2c8cb48cbd15a406dfe67f3dea294efe9fe390072c6ea84b4f5492878813b34",
+    "tests/integration/removelink_main_test.go": "7562d6676e76c200ce306137c2f5657817d0fc81470f474f5a70da64168032a1",
+    "tests/integration/torrenttransfer_main_test.go": "1c939cbb3eb78a03ca7fb8f9814e545ed8fafbbda850a86364678fec4fce8651",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3"
+  },
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/pluginuninstall-packaging-20261106/canonical-package-main-linux.test",
+    "./tests/integration"
+  ],
+  "environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "exit_code": 0,
+  "binary_sha256": "caea43a33ca6455fa674b8eac160d0e7174181fe91de20da914a27316c7daf38",
+  "byte_identical_rebuild": true
+}

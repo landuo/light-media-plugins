@@ -1,0 +1,35 @@
+{
+  "classification": "actual native Linux UID1000 ordinary Main base0719+independent reviewed19f9e4 with actual Go PUI/MPS/ownedSDKfixture workers; all synthetic namespaces and owned files, no production plugin import or externalMPSprobe",
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/plugin-uninstall-linux": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+    "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/pluginuninstall-main-linux.test": "219af7aa5183087226cc073d1adf1c1df4417252c1ba61a3d346fd09a2601db1",
+    "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/plugin-uninstall-2.2.1-linux": "793ad8df2e372d11012ef5eace030e6791f57c71373e74fd29572ad75d602e96",
+    "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/owned-pui-fixture-linux": "b4d23deb2ba9d58dbd30dc56d6f212c5498cad35272160716dc0c85650ec7744",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-pluginuninstall-reviewed-linux": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/mp-server-status-linux-amd64": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055"
+  },
+  "command": [
+    "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/pluginuninstall-main-linux.test",
+    "-test.run=^TestPluginUninstallOrdinaryMain$",
+    "-test.v",
+    "-test.timeout=70m"
+  ],
+  "environment": {
+    "PLUGINUNINSTALL_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-pluginuninstall-reviewed-linux",
+    "PLUGINUNINSTALL_EXPECT_HOST_SHA256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
+    "PLUGINUNINSTALL_WORKER_BINARY": "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/plugin-uninstall-linux",
+    "PLUGINUNINSTALL_UPDATE_BINARY": "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/plugin-uninstall-2.2.1-linux",
+    "PLUGINUNINSTALL_MPS_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/mp-server-status-linux-amd64",
+    "PLUGINUNINSTALL_FIXTURE_BINARY": "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/bin/owned-pui-fixture-linux",
+    "PLUGINUNINSTALL_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-pluginuninstall-20261105/main-run-1/runtime",
+    "PLUGINUNINSTALL_LISTEN": "0.0.0.0:36258",
+    "PLUGINUNINSTALL_PUBLIC_URL": "http://192.168.8.129:36258"
+  },
+  "host_source_manifest_sha256": "f9e4f90ef62309f4b064dbeb8f9a3b319841dd2c4c6e9bd33aa16201fb022988",
+  "source_App_review_sha256": "f38f48ad3fef4cf87721b18e0305f4bb768f40b29f9d36e31ee5f5069d633568",
+  "driver_freeze_sha256": "0052cfab0153e5f65e4f1320978fd9fe84a1e95e5417bde2402bd5a265a80777",
+  "started_utc": "2026-11-05T16:35:43.662048+00:00",
+  "python_role": "owned orchestration only; actual product/backend/plugin workers are Go",
+  "exit_code": 0,
+  "ended_utc": "2026-11-05T16:49:33.989537+00:00"
+}

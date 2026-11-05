@@ -1,0 +1,1926 @@
+[
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "display_version": "owned-music",
+        "source_instance_id": "TorrentTransfer",
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "Owned music",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfermusic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "CategoryEditor",
+      "TorrentTransfer",
+      "SiteStatistic",
+      "MPServerStatus",
+      "TorrentTransfermusic"
+    ],
+    "phase": "initial-five",
+    "running": [
+      "CategoryEditor",
+      "TorrentTransfer",
+      "SiteStatistic",
+      "MPServerStatus",
+      "TorrentTransfermusic"
+    ],
+    "source_installed": [
+      "CategoryEditor",
+      "TorrentTransfer",
+      "SiteStatistic",
+      "MPServerStatus",
+      "TorrentTransfermusic"
+    ]
+  },
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "display_version": "owned-music",
+        "source_instance_id": "TorrentTransfer",
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "Owned music",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfermusic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "phase": "physical-tie-order",
+    "running": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "source_installed": [
+      "MPServerStatus",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "CategoryEditor",
+      "SiteStatistic"
+    ]
+  },
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "phase": "cache-ahead-SQL-four-running",
+    "running": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "source_installed": [
+      "CategoryEditor",
+      "TorrentTransfer",
+      "SiteStatistic",
+      "MPServerStatus"
+    ]
+  },
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "display_version": "owned-music",
+        "source_instance_id": "TorrentTransfer",
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "Owned music",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfermusic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "phase": "true-cold-five-from-unchanged-SQL",
+    "running": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "source_installed": [
+      "MPServerStatus",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "CategoryEditor",
+      "SiteStatistic"
+    ]
+  },
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "display_version": "owned-music",
+        "source_instance_id": "TorrentTransfer",
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "Owned music",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfermusic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "phase": "disabled-source-strip-failure-class-without-runtime",
+    "running": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "source_installed": [
+      "MPServerStatus",
+      "TorrentTransfermusic",
+      "TorrentTransfer",
+      "CategoryEditor",
+      "SiteStatistic"
+    ]
+  },
+  {
+    "cards": [
+      {
+        "available": true,
+        "plugin_order": 1,
+        "broadcast_handlers": [
+          {
+            "event": "site.refreshed",
+            "method": "send_msg"
+          }
+        ],
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "SiteStatistic",
+        "name": "站点数据统计",
+        "description": "站点统计数据图表。",
+        "icon": "statistic.png",
+        "author": "lightolly,jxxghp",
+        "author_url": "https://github.com/lightolly",
+        "version": "1.9.7",
+        "runtime": "go-executable",
+        "entry": "site-statistic",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close",
+          "send_msg",
+          "http",
+          "private_refresh",
+          "data_continue"
+        ],
+        "capabilities": [
+          "sites.read",
+          "sites.source.account.read",
+          "sites.source.indexer",
+          "sites.source.refresh",
+          "sites.source.refresh_all",
+          "plugin.base.update_config",
+          "plugin.base.get_data",
+          "plugin.base.save_data",
+          "message.post",
+          "plugin.log.write",
+          "plugin.background.submit"
+        ],
+        "has_page": true,
+        "apis": [
+          {
+            "key": "refresh_by_domain",
+            "path": "/refresh_by_domain",
+            "methods": [
+              "GET"
+            ],
+            "auth": "apikey",
+            "query": [
+              {
+                "name": "domain",
+                "kind": "string",
+                "required": true
+              },
+              {
+                "name": "apikey",
+                "kind": "api_key",
+                "required": true
+              }
+            ],
+            "headers": [
+              "x-moviepilot-locale",
+              "x-locale",
+              "accept-language"
+            ]
+          }
+        ],
+        "instance_id": "SiteStatistic",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 5,
+        "schema_version": 1,
+        "plugin_id": "CategoryEditor",
+        "name": "二级分类策略",
+        "description": "编辑下载和整理时自动二级分类的目录规则。",
+        "icon": "Bookstack_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.3",
+        "runtime": "go-executable",
+        "entry": "category-editor",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop"
+        ],
+        "capabilities": [
+          "plugin.category.get_default",
+          "plugin.category.apply",
+          "plugin.systemmessage.put",
+          "plugin.base.update_config"
+        ],
+        "instance_id": "CategoryEditor",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 18,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "TorrentTransfer",
+        "name": "自动转移做种",
+        "description": "定期转移下载器中的做种任务到另一个下载器。",
+        "icon": "seed.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.10.3",
+        "runtime": "go-executable",
+        "entry": "torrent-transfer",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_service",
+          "get_command",
+          "get_api",
+          "get_render_mode",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_dashboard_meta",
+          "get_auth_providers",
+          "get_module",
+          "close",
+          "stop_service",
+          "stop",
+          "transfer",
+          "check_recheck",
+          "private_scheduler",
+          "transfer_continue"
+        ],
+        "capabilities": [
+          "downloader.configurations.read",
+          "downloader.source.connection",
+          "downloader.source.completed",
+          "downloader.source.tasks",
+          "downloader.source.add",
+          "downloader.source.find_by_tag",
+          "downloader.source.control",
+          "plugin.base.update_config",
+          "plugin.base.get_data_path",
+          "plugin.base.save_data",
+          "plugin.base.get_instance_metadata",
+          "plugin.background.submit",
+          "plugin.systemmessage.put",
+          "message.post",
+          "plugin.log.write"
+        ],
+        "instance_id": "TorrentTransfer",
+        "installed": true,
+        "state": false
+      },
+      {
+        "available": true,
+        "plugin_order": 99,
+        "runtime_support": {
+          "platforms": [
+            "linux"
+          ],
+          "storage_types": [
+            "local"
+          ]
+        },
+        "schema_version": 1,
+        "plugin_id": "MPServerStatus",
+        "name": "MoviePilot服务监控",
+        "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
+        "icon": "Duplicati_A.png",
+        "author": "jxxghp",
+        "author_url": "https://github.com/jxxghp",
+        "version": "1.4",
+        "runtime": "go-executable",
+        "entry": "mp-server-status",
+        "host_api_min": 1,
+        "host_api_max": 1,
+        "methods": [
+          "init",
+          "get_state",
+          "get_form",
+          "get_page",
+          "get_dashboard",
+          "get_service",
+          "get_api",
+          "get_command",
+          "get_render_mode",
+          "stop_service",
+          "stop",
+          "close"
+        ],
+        "capabilities": [
+          "network.proxy.read",
+          "plugin.log.write"
+        ],
+        "has_page": true,
+        "dashboard_parameters": [],
+        "form_model_policy": {
+          "installed": "source",
+          "preview": "source"
+        },
+        "instance_id": "MPServerStatus",
+        "installed": true,
+        "state": false
+      }
+    ],
+    "classes": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "phase": "failed-music-class-cleared-by-stop-all",
+    "running": [
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "MPServerStatus"
+    ],
+    "source_installed": [
+      "CategoryEditor",
+      "TorrentTransfer",
+      "SiteStatistic",
+      "MPServerStatus"
+    ]
+  },
+  {
+    "cards": [],
+    "classes": null,
+    "phase": "empty-no-code-scan",
+    "running": [],
+    "source_installed": []
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-race",
+    "-json",
+    "./internal/app",
+    "-run",
+    "^TestSourceUninstallEmptyMembershipDoesNotReadPackageDirectory$"
+  ],
+  "exit_code": 0,
+  "seconds": 25.38484501838684
+}

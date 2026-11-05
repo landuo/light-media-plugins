@@ -1,0 +1,39 @@
+{
+  "classification": "canonical actual ordinary Main package smoke, exact marker-owned sanitized command/log/HTTP observations only; no DB/key/config/credentials",
+  "files": [
+    {
+      "path": "package-main-1.log",
+      "bytes": 129,
+      "sha256": "f1d1372b166907c5c02d070af9c995a57f22bc28628d4ad60d9433f20577766f"
+    },
+    {
+      "path": "package-main-1-command.json",
+      "bytes": 2003,
+      "sha256": "e579b2d68741d84c310205dadbd77373da0ce8d5758813de5d3f0a27e48d24f9"
+    },
+    {
+      "path": "package-main-1/runtime/evidence/observations.jsonl",
+      "bytes": 15588,
+      "sha256": "4957340a1632820d1e123f67e267bf4c9653340f9ac3c7a50168ceb7912b01b1"
+    },
+    {
+      "path": "package-main-1/runtime/evidence/host-1.log",
+      "bytes": 4350,
+      "sha256": "8e7a34f54404c466e84124ba59a8301942cbb9c31a4b84213d93bd62febd9a94"
+    },
+    {
+      "path": "package-main-1/runtime/logs/app.jsonl",
+      "bytes": 4845,
+      "sha256": "23d540b52f498eca5a44a803e6f8c895d3ee473bff40ca8d80be8d39dc343016"
+    },
+    {
+      "path": "package-main-1/runtime/logs/plugins/pluginuninstall.log",
+      "bytes": 86,
+      "sha256": "787b270c92317a08a80ff7554c0e7c71dd46aa2f4eecc7372089d24a1ded8e1a"
+    }
+  ],
+  "missing_optional": [
+    "package-main-1/runtime/logs/plugins/pluginuninstallpackage.log",
+    "package-main-1/runtime/logs/plugins/ownedpuifixture.log"
+  ]
+}

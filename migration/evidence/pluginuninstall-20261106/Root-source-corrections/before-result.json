@@ -1,0 +1,15 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-race",
+    "-json",
+    "./internal/app",
+    "-run",
+    "^TestSourceUninstall(PackageTraversalIgnoresMembershipOrder|StopAllClearsFailedClasses|PagePresenceUsesSourceDeclaration)$"
+  ],
+  "exit_code": 1,
+  "seconds": 29.015349864959717,
+  "classification": "source-derived regressions before fixes, actual App + separately compiled Go PUI/MPS workers on owned filesystem/SQLite"
+}

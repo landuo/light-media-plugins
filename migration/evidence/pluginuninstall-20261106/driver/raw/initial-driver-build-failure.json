@@ -1,0 +1,6 @@
+{
+  "command": "go test -count=1 tests/integration/pluginuninstall_main_test.go tests/integration/pluginuninstall_helpers_test.go tests/integration/testhost_main_test.go -run TestPluginUninstall(HTTP|SourceForm)",
+  "exit_code": 1,
+  "stderr": "pluginuninstall_main_test.go:15:2: \"time\" imported and not used",
+  "classification": "initial compile-only harness failure; removed unused import; no Main or NAS started"
+}

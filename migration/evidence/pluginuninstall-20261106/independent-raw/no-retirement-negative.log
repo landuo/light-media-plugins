@@ -1,0 +1,14 @@
+=== RUN   TestIndependentLoadedSelfInitializerReapsOnlyAfterItsSourceTail
+{"app_version":"0.4.19","event":"login","id":"log_kUHHm6_Nw0ZGQeBK4fgbbDHb","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","job_id":"","level":"INFO","message":"管理员已登录","module":"auth","time":"2026-11-05T15:41:18.03288Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":716,"event":"request_completed","http_status":200,"id":"log_uFgeEh5oGiGaZ5d3eYgn6asa","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.auth","request_id":"req__suTNx2etATxzgbwCQEoN6Wh","time":"2026-11-05T15:41:18.033472Z"}
+{"app_version":"0.4.19","duration_ms":486,"event":"request_completed","http_status":200,"id":"log_z7FEU8-n2K9ziy7S6BlxZILs","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_IhwiWhHSVmBtfI2X_RutQTcY","time":"2026-11-05T15:41:18.537489Z"}
+{"app_version":"0.4.19","event":"command_registration_unavailable","id":"log_ZG6nENzmxPwhQ57QXVUM5WTA","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","job_id":"","level":"WARN","message":"命令菜单元数据已准备，核心尚无菜单注册提供方","module":"plugins","time":"2026-11-05T15:41:18.538506Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":738,"event":"request_completed","http_status":200,"id":"log_p61dKiPqY6aeXUH34LqYg_6Y","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_RWIvFbwZLIDE8CR_XAEL6JGo","time":"2026-11-05T15:41:19.307386Z"}
+{"app_version":"0.4.19","event":"plugin_message","id":"log_IC50f2_iiWh0_6B6TdhKLrZe","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","level":"INFO","message":"插件 PluginUnInstall 已卸载","module":"plugins","operation":"uninstall_continue","plugin_call_id":"pc_QyZNBcmOhzOT0Bodpva0pnT8","plugin_id":"PluginUnInstall","plugin_instance_id":"PluginUnInstall","plugin_version":"2.2","time":"2026-11-05T15:41:19.337233Z"}
+{"app_version":"0.4.19","duration_ms":37,"event":"request_completed","http_status":200,"id":"log_MQc1B_S_5_0U2tXP73Hfyh8k","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","level":"INFO","message":"API 请求处理完成","method":"PUT","module":"http.plugins","request_id":"req_dh7cRhKDnEZeLJ0ioSTI8jdw","time":"2026-11-05T15:41:19.348306Z"}
+    z_independent_source_uninstall_test.go:39: loaded self removal finished source tail but leaked physical Go transport
+{"app_version":"0.4.19","event":"stopped","id":"log_SewH-DkB0G441m7b6wIJ9S5m","instance_id":"instance_-UyWd8e7QmBRNsXs2ON3suIp","job_id":"","level":"INFO","message":"服务已停止","module":"runtime","time":"2026-11-05T15:41:21.355073Z","workflow_id":""}
+--- FAIL: TestIndependentLoadedSelfInitializerReapsOnlyAfterItsSourceTail (4.26s)
+FAIL
+FAIL	light-media/internal/app	7.080s
+FAIL

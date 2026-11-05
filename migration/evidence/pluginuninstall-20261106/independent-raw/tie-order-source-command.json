@@ -1,0 +1,17 @@
+{
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker run --rm -i --label task=lm-independent-pui-tie-1e7887bef2fc44a5b2def334982efa12 --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=64m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -"
+  ],
+  "exit": 0,
+  "payload_sha256": "40ef6bed824571625757c3cb12f50d2c210a347986af01c4a5ece951ca2d0196",
+  "original_harness_sha256": "7e8df31adef074a680f59604b7cf676880542e58249566b80fcc31832a33ec2e",
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker ps -aq --filter label=task=lm-independent-pui-tie-1e7887bef2fc44a5b2def334982efa12"
+  ],
+  "cleanup_exit": 0,
+  "remaining_containers": ""
+}

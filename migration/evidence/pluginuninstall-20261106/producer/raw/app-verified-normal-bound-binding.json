@@ -1,0 +1,22 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "./internal/app",
+    "-run",
+    "^TestSourceUninstall"
+  ],
+  "explicit_environment": {
+    "TMPDIR": "/Users/accidia/projects/light-media/work/plugin-uninstall-tmp",
+    "SOURCE_UNINSTALL_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/plugin-uninstall",
+    "SOURCE_UNINSTALL_FUTURE_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+    "OWNED_HOST_SERVICES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-host-services-fixture",
+    "SOURCE_UNINSTALL_COUNTER_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-standard-fixture"
+  },
+  "seconds": 28.9550838470459,
+  "exit": 0,
+  "inputs": 2745,
+  "changed": []
+}

@@ -1,0 +1,84 @@
+{
+  "classification": "completed PUI fixture cleanup after independent complete1c17; data/evidence source hashes retained; necessary single next-SDK test inputs preserved",
+  "remote": {
+    "classification": "marker-verified complete owned PUI synthetic runtime/bin cleanup plus completed SDK impact run5; all source/main/package/UI/DB facts already independently sampled and raw evidence preserved; no production paths or global services touched",
+    "uid": 1000,
+    "matching_processes_before": [],
+    "removed_roots": [
+      {
+        "path": "/home/admin/light-media-plugins-migration-pluginuninstall-20261105",
+        "files_before": 62,
+        "absent_after": true
+      },
+      {
+        "path": "/home/admin/light-media-plugins-migration-sdk98-20261105/main-run-5",
+        "files_before": 22,
+        "absent_after": true
+      }
+    ],
+    "retained_single_next_acceptance_input": {
+      "path": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/plugin-uninstall-sdk98-linux-amd64",
+      "sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1"
+    },
+    "at_utc": "2026-11-05T18:01:28.745879+00:00"
+  },
+  "local_single_input_moves": [
+    {
+      "from": "work/migration-20261105/pluginuninstall-20261105/plugin-uninstall-linux",
+      "to": "work/migration-20261105/shared-acceptance-inputs/plugin-uninstall-sdk98-linux-amd64",
+      "sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+      "reason": "single upcoming shared-SDK compatibility input retained; not duplicated"
+    },
+    {
+      "from": "work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+      "to": "work/migration-20261105/shared-acceptance-inputs/mp-server-status-sdk98-native-arm64",
+      "sha256": "66d046374934df41d6935ed69a7192e9110f279c78a34b4b68baeca4669f087b",
+      "reason": "single upcoming shared-SDK compatibility input retained; not duplicated"
+    }
+  ],
+  "owned_local_generated_artifacts_removed": [
+    {
+      "path": "work/migration-20261105/pluginuninstall-20261105/plugin-uninstall",
+      "sha256": "7f0d0d2bb9729c9460c5a72bd1e73c43d756286b1ef19dfa6ef8aa092689356b",
+      "bytes": 4805170,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-main-driver-20261105/pluginuninstall-main-linux.test",
+      "sha256": "219af7aa5183087226cc073d1adf1c1df4417252c1ba61a3d346fd09a2601db1",
+      "bytes": 11062247,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture-linux",
+      "sha256": "b4d23deb2ba9d58dbd30dc56d6f212c5498cad35272160716dc0c85650ec7744",
+      "bytes": 4650716,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-uninstall-2.2.1-linux",
+      "sha256": "793ad8df2e372d11012ef5eace030e6791f57c71373e74fd29572ad75d602e96",
+      "bytes": 4942777,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/shared-acceptance-inputs/mp-server-status-linux-amd64",
+      "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+      "bytes": 16753190,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-packaging-20261106/canonical-package-main-linux.test",
+      "sha256": "caea43a33ca6455fa674b8eac160d0e7174181fe91de20da914a27316c7daf38",
+      "bytes": 13558624,
+      "absent_after": true
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-packaging-20261106/cross-output/PluginUnInstall-2.2-linux-amd64.zip",
+      "sha256": "45865b1b617ae5eee8916f2ebf6da147c25ce0b608bc76dc8abee5641be9fc8d",
+      "bytes": 2812678,
+      "absent_after": true
+    }
+  ],
+  "remote_or_production_delivery": false
+}
