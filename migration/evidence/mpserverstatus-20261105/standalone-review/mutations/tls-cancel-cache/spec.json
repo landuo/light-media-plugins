@@ -1,0 +1,8 @@
+{
+  "name": "tls-cancel-cache",
+  "path": "plugins/mpserverstatus/status.go",
+  "old": "if ctx.Err() == nil {",
+  "new": "if true {",
+  "occurrence": 1,
+  "run": "TestIndependent.*Cancel.*Cache"
+}

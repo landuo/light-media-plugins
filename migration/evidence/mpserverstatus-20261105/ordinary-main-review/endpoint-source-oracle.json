@@ -1,0 +1,90 @@
+{
+  "classification": "selected original endpoint AST, synthetic plugin/manager/logger only; localPython3.14 pure dict/exception execution, not installed vendor runtime or app import",
+  "runtime": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "source_sha256": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+  "source_functions": [
+    {
+      "name": "plugin_form",
+      "line": 649,
+      "end": 677
+    },
+    {
+      "name": "plugin_page",
+      "line": 681,
+      "end": 701
+    }
+  ],
+  "cases": [
+    {
+      "name": "form-raw-overrides-bool",
+      "method": "plugin_form",
+      "stored_config": {
+        "enable": "false",
+        "onlyonce": true
+      },
+      "return": {
+        "render_mode": "vuetify",
+        "conf": [
+          {
+            "component": "VSwitch"
+          }
+        ],
+        "model": {
+          "enable": "false",
+          "onlyonce": true
+        }
+      },
+      "error": null,
+      "logs": []
+    },
+    {
+      "name": "page-normal",
+      "method": "plugin_page",
+      "stored_config": {},
+      "return": {
+        "render_mode": "vuetify",
+        "page": [
+          {
+            "component": "VAlert",
+            "text": "owned healthy"
+          }
+        ]
+      },
+      "error": null,
+      "logs": []
+    },
+    {
+      "name": "page-none",
+      "method": "plugin_page",
+      "stored_config": {},
+      "return": {
+        "render_mode": "vuetify",
+        "page": []
+      },
+      "error": null,
+      "logs": []
+    },
+    {
+      "name": "page-unicodeerror",
+      "method": "plugin_page",
+      "stored_config": {},
+      "return": {},
+      "error": null,
+      "logs": [
+        "插件 MPServerStatus 调用方法 get_page 出错: synthetic undefined codec"
+      ]
+    },
+    {
+      "name": "page-not-loaded",
+      "method": "plugin_page",
+      "stored_config": {},
+      "return": null,
+      "error": {
+        "type": "HTTPException",
+        "status_code": 404,
+        "detail": "插件 MPServerStatus 不存在或未加载"
+      },
+      "logs": []
+    }
+  ]
+}

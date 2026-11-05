@@ -1,0 +1,8 @@
+{
+  "name": "dns-cancel-cache",
+  "path": "plugins/mpserverstatus/status.go",
+  "old": "if ctx.Err() == nil {",
+  "new": "if true {",
+  "occurrence": 0,
+  "run": "TestIndependent.*Cancel.*Cache"
+}

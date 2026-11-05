@@ -1,0 +1,364 @@
+{
+  "schema_version": 1,
+  "classification": "scoped SDK95to98 accepted-consumer dependency impact, source-bound local/race/actual-process plus ordinaryRoot LinuxMain4 passed",
+  "status_recommendation": "passed within named4instances and tested scopes; coordinator alone updates ledger",
+  "source": {
+    "old_target_commit": "16c572ecaf6994ddb38c135cdc76a3c05a9d40ab",
+    "old_snapshot": {
+      "path": "work/migration-20261105/sdk98-impact-20261105/sdk95-git-binding.json",
+      "sha256": "fe220fc57996b07165e48c3bc66aa60a6fbc0310d519aa1363414ff958e7b6ac",
+      "bytes": 10724
+    },
+    "new_origin": {
+      "path": "SDK_ORIGIN.json",
+      "sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "bytes": 246908
+    },
+    "new_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+  },
+  "main_host": {
+    "commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+    "ELF": "7521f81d24cddd658368b4b4ebd724c2dfc23494f460acc48e63370d6950fb17",
+    "source_binding": {
+      "path": "migration/evidence/sdk98-impact-20261105/host-f7-build-source-binding.json",
+      "sha256": "301a2f5c8abfaa7465fc0ae103f089beba32388f8e648d770b648464734ac44f",
+      "bytes": 873381
+    }
+  },
+  "worker_ELF_sha256": {
+    "bin/category-editor-sdk98-linux-amd64": "6f816f075373597647bbb91e29619394d2e468986da70a0e9110f07bbb7da868",
+    "bin/torrent-transfer-sdk98-linux-amd64": "b2ba2090f1380be18445fe00c5e5031abb40cdb196204884df90e46f137cb1b5",
+    "bin/site-statistic-sdk98-linux-amd64": "e2d81f53ac72aa75c06541418204e8469fbf6bd66a26dfafb4968fd50b027c75"
+  },
+  "accepted_instances": [
+    "CategoryEditor",
+    "TorrentTransfer",
+    "TorrentTransfermusic",
+    "SiteStatistic"
+  ],
+  "unchanged_product_and_SDK_inputs": {
+    "path": "migration/evidence/sdk98-impact-20261105/main4-inputs-after.json",
+    "sha256": "615a0a45e01c1dbddffa5b1a6794df9d5e5460cdc1b8f276c099e341bc43db57",
+    "bytes": 20584
+  },
+  "local_full_suite_passes": {
+    "95normal": 477,
+    "95race": 477,
+    "98normal": 477,
+    "98race": 477,
+    "category_Linux_only_cmd_smoke_local_skip": true
+  },
+  "actual_worker_crossmatrix": {
+    "description": "2Runner x2Worker x4instances, normal andrace; host callbacks synthetic, notMain",
+    "semantic_trace_comparison": [
+      {
+        "instance": "CategoryEditor",
+        "execution_count": 8,
+        "exact_result_error_code_callback_trace_equal": true,
+        "semantic_sha256": "3bbac63ae9c9cb94589fab8ba0f1d85ca34c543fc2afba84d6eb39d41f8ca98c"
+      },
+      {
+        "instance": "TorrentTransfer",
+        "execution_count": 8,
+        "exact_result_error_code_callback_trace_equal": true,
+        "semantic_sha256": "5bee2439274eafc4d6c8a95c7b819b72310420f56eee7d4387ba14316bf49591"
+      },
+      {
+        "instance": "TorrentTransfermusic",
+        "execution_count": 8,
+        "exact_result_error_code_callback_trace_equal": true,
+        "semantic_sha256": "5bee2439274eafc4d6c8a95c7b819b72310420f56eee7d4387ba14316bf49591"
+      },
+      {
+        "instance": "SiteStatistic",
+        "execution_count": 8,
+        "exact_result_error_code_callback_trace_equal": true,
+        "semantic_sha256": "b975319f0bfefadf0ed5ae56d657aaa79831b1113efa43f00508c8e198d2bbf1"
+      }
+    ],
+    "HOME_expected_delta": {
+      "runner95": {
+        "absent": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "empty": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "set": {
+          "home": "",
+          "present": false,
+          "secret": false
+        }
+      },
+      "runner98": {
+        "absent": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "empty": {
+          "home": "",
+          "present": true,
+          "secret": false
+        },
+        "set": {
+          "home": "/owned/sdk98-impact-home",
+          "present": true,
+          "secret": false
+        }
+      },
+      "runner95-race": {
+        "absent": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "empty": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "set": {
+          "home": "",
+          "present": false,
+          "secret": false
+        }
+      },
+      "runner98-race": {
+        "absent": {
+          "home": "",
+          "present": false,
+          "secret": false
+        },
+        "empty": {
+          "home": "",
+          "present": true,
+          "secret": false
+        },
+        "set": {
+          "home": "/owned/sdk98-impact-home",
+          "present": true,
+          "secret": false
+        }
+      }
+    },
+    "legitimate_nonconsumer_cleanup_wire_fields_absent": true
+  },
+  "current98_budget_observations": {
+    "normal": [
+      {
+        "case": "TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+        "total_rpc": 1810,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+        "total_rpc": 809,
+        "observed_max_host_calls": 8,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+        "total_rpc": 11,
+        "observed_max_host_calls": 6,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+        "total_rpc": 421,
+        "observed_max_host_calls": 6,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+        "total_rpc": 1513,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+        "total_rpc": 1513,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+        "total_rpc": 12,
+        "observed_max_host_calls": 8,
+        "default_max_host_calls": 64
+      }
+    ],
+    "race": [
+      {
+        "case": "TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+        "total_rpc": 1810,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+        "total_rpc": 809,
+        "observed_max_host_calls": 8,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+        "total_rpc": 11,
+        "observed_max_host_calls": 6,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+        "total_rpc": 421,
+        "observed_max_host_calls": 6,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+        "total_rpc": 1513,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+        "total_rpc": 1513,
+        "observed_max_host_calls": 15,
+        "default_max_host_calls": 64
+      },
+      {
+        "case": "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+        "total_rpc": 12,
+        "observed_max_host_calls": 8,
+        "default_max_host_calls": 64
+      }
+    ]
+  },
+  "new_HTTP_fixture_checks": {
+    "normal_tests_subtests": 15,
+    "race_tests_subtests": 15,
+    "raw_HTTP_observations": 26,
+    "vet_exit": 0,
+    "Linux_driver_build_exit": 0,
+    "freeze": {
+      "path": "migration/evidence/sdk98-impact-20261105/main4-freeze.json",
+      "sha256": "d8b8d3ee824af4c164b797aa9b12c3e44d16ed43cfb89f642d6d8e5943e00ff4",
+      "bytes": 17878
+    }
+  },
+  "ordinary_Main4": {
+    "command": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4-command.json",
+      "sha256": "46ba87522db06541a86d28842762ada33741ba09595b44f41e8fb5a6e507e1a5",
+      "bytes": 1919
+    },
+    "raw_observations": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/evidence/observations.jsonl",
+      "sha256": "5ef9d5d9f5f7a0bc6693d811c96573765c91838a7722737130fc426f93dd45ef",
+      "bytes": 54471
+    },
+    "log": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4.log",
+      "sha256": "1a38e0ddd8c47670ac5dc49c75e3aed65f805fe20ed4561eff6abde5286d1775",
+      "bytes": 116
+    },
+    "exit_code": 0,
+    "Go_test_seconds": 17.97,
+    "source_expected_actual_comparison": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main-comparison.json",
+      "sha256": "b418390cc7a2a419fcf62718278ad61fcb10a357edb750caaa940e926b65a2ab",
+      "bytes": 11932
+    },
+    "wrapper": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main/run_owned_main.py",
+      "sha256": "4874be5a402bf058e0ce68b1c5f2a92a77ca9d35b9f3f5be7d5a6b4532b29bd0",
+      "bytes": 2453
+    },
+    "post_run_cleanup": {
+      "path": "migration/evidence/sdk98-impact-20261105/actual-main/post-run-cleanup.json",
+      "sha256": "032f92f7d699affe42d4c8c99de8601628bb0319d330f814a1957db57ec087da",
+      "bytes": 431
+    }
+  },
+  "retained_failed_Main_generations": [
+    {
+      "run": 1,
+      "exit_code": 1,
+      "command": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1-command.json",
+        "sha256": "ae7760f4e8f72ea92ba5f83d931773c7334ee76f74895d2661a29344a92f50b2",
+        "bytes": 1919
+      },
+      "log": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1.log",
+        "sha256": "7a8989be96e4d824651067df8e9044f07c35d0bdaa009e52225e6ee2067adf1f",
+        "bytes": 204
+      },
+      "driver_generation": {
+        "path": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/preserved.json",
+        "sha256": "9e5ca72f6c7001da86fd94c999a383bf2a8497f916d440ba6d4f9e4af1012df7",
+        "bytes": 1990
+      }
+    },
+    {
+      "run": 2,
+      "exit_code": 1,
+      "command": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2-command.json",
+        "sha256": "8dacd5eac47582b78dda56a8933c85c9e50ff2dd1c05b0269155b292ff6d8eb6",
+        "bytes": 1919
+      },
+      "log": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2.log",
+        "sha256": "632882915b650c10dd2ab1d81c1d7142c9ebd5425afdff52fcff0ca8024e3678",
+        "bytes": 198
+      },
+      "driver_generation": {
+        "path": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/preserved.json",
+        "sha256": "288aebe3d8a1f000fc81e79e92853d1e65433a2b846cb8839ad478822419fa4b",
+        "bytes": 2006
+      }
+    },
+    {
+      "run": 3,
+      "exit_code": 1,
+      "command": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3-command.json",
+        "sha256": "e35b88936abc7ee0ed7d92240b2715873b5e84d46c2468ba1998b4593f23c9d5",
+        "bytes": 1919
+      },
+      "log": {
+        "path": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3.log",
+        "sha256": "7cd5b68c7b5fcf4dfc19eed5e2e5101939b9acae5b7a9e48c99d000d5acdb1cb",
+        "bytes": 201
+      },
+      "driver_generation": {
+        "path": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/preserved.json",
+        "sha256": "eb56db030da84f4510fad236abf852151fe2de3a22931934dbcad2306ea92957",
+        "bytes": 2102
+      }
+    }
+  ],
+  "whole_tail_audit": {
+    "path": "migration/evidence/sdk98-impact-20261105/main4-tail-source-audit.json",
+    "sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
+    "bytes": 18293
+  },
+  "historical_local_freeze_unchanged": {
+    "path": "migration/evidence/sdk98-impact-20261105/historical-local-freeze.json",
+    "sha256": "c3f6199ba5805a756e6cadac21262a1fa33f79f7aac5620643c4898f1b4f506f",
+    "bytes": 35534
+  },
+  "limitations": [
+    "qB native HTTP queryprotocol peer only; no real qB/TR fulltransfer reacceptance",
+    "No newUI run in this dependency impact; family historicalUI retains originalSDKbinding",
+    "Current f7 fixedhost only; later Root storage.delete patch notincluded",
+    "No product/sharedSDK/registry/ledger changes by this task",
+    "No wholeSDK ELF equality claim; generic cleanupcode linked despite capabsent"
+  ],
+  "driver_ELF_sha256": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f"
+}

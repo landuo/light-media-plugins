@@ -1,0 +1,247 @@
+{
+  "classification": "immutable final-current command/result sidecar; nine executed phases all exit0, driver compiled only",
+  "freeze": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/freeze-manifest-current.json",
+    "sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b"
+  },
+  "commands": [
+    {
+      "phase": "normal",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "./plugins/mpserverstatus/...",
+        "./cmd/mp-server-status"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.798376+00:00",
+      "finished_utc": "2026-11-05T11:56:53.319482+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/current-full-normal.jsonl",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/current-full-normal.jsonl.stderr",
+      "result_sha256": "2d08e17109d2aeab07dc134ba166606c79e832dea9767159f3cd7264f4466ca3",
+      "stdout_sha256": "a3cf16239d17b175219ade6b9fc6c536b3aae9a284f00e66b8fbc93abd2d0513",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./plugins/mpserverstatus/...",
+        "./cmd/mp-server-status"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.796821+00:00",
+      "finished_utc": "2026-11-05T11:57:00.161764+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/current-full-race.jsonl",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/current-full-race.jsonl.stderr",
+      "result_sha256": "f7ad48e058dab6a684939ae9579650a11d2a24015de06731b2fd2f897c24d35c",
+      "stdout_sha256": "8e791af3db41a9d12f4c5e587709997d191ea647ba5beb54d67efd93999dbcc4",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "vet",
+      "command": [
+        "go",
+        "vet",
+        "./plugins/mpserverstatus/...",
+        "./cmd/mp-server-status"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.801457+00:00",
+      "finished_utc": "2026-11-05T11:56:51.127412+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/current-vet.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/current-vet.log.stderr",
+      "result_sha256": "b1b0c46418316b3ec64dd252e2267798d531418b036f0ed14aef88dc45266978",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "linux",
+      "command": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/mp-server-status-linux-amd64",
+        "./cmd/mp-server-status"
+      ],
+      "env_overrides": {
+        "GOFLAGS": "",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "at_utc": "2026-11-05T11:56:49.795724+00:00",
+      "finished_utc": "2026-11-05T11:56:51.160744+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/current-linux-build.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/current-linux-build.log.stderr",
+      "result_sha256": "309320b8efb1a3d354ba90a5ed5d5da8ec0d55517b79109794bfcab95baf5e6c",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "update",
+      "command": [
+        "go",
+        "build",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/manifest-update-overlay.json",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/mp-server-status-update-linux-amd64",
+        "./cmd/mp-server-status"
+      ],
+      "env_overrides": {
+        "GOFLAGS": "",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "at_utc": "2026-11-05T11:56:49.794558+00:00",
+      "finished_utc": "2026-11-05T11:56:51.173589+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/current-update-linux-build.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/current-update-linux-build.log.stderr",
+      "result_sha256": "6384f818a770959fe873f49359dfe80c7afa976742a6adf10a3599fab00531d1",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "driver-normal",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "./tests/integration",
+        "-run",
+        "^$"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.795188+00:00",
+      "finished_utc": "2026-11-05T11:56:51.883565+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-normal-compile.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-normal-compile.log.stderr",
+      "result_sha256": "7e62cf13be3436a262199f539042e4fc0a3a41b4c6a818e98efa65f5443de908",
+      "stdout_sha256": "403e97f09e32542f8e99a0a6a6d984242e7fe6a23fae5d9b73962dbc8a204b2c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "driver-race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "./tests/integration",
+        "-run",
+        "^$"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.806755+00:00",
+      "finished_utc": "2026-11-05T11:56:52.979758+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-race-compile.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-race-compile.log.stderr",
+      "result_sha256": "97330c418270580077973bca5a97ce48c238d6e80be3f510a58eb70dcc103d4b",
+      "stdout_sha256": "b84c1d73f2bf73b6c72f541e2d46a63094cae48f53ab57f4433d1dd7de9de173",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "driver-vet",
+      "command": [
+        "go",
+        "vet",
+        "./tests/integration"
+      ],
+      "env_overrides": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T11:56:49.805328+00:00",
+      "finished_utc": "2026-11-05T11:56:50.323192+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-vet.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-vet.log.stderr",
+      "result_sha256": "84e34e5a131d085f84f3a245f7aceb537e128a19ceff61dffee395cf8c63f186",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "phase": "driver-linux",
+      "command": [
+        "go",
+        "test",
+        "-c",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/mpserverstatus-main-tests-linux-amd64",
+        "./tests/integration"
+      ],
+      "env_overrides": {
+        "GOFLAGS": "",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "at_utc": "2026-11-05T11:56:49.806953+00:00",
+      "finished_utc": "2026-11-05T11:56:51.276774+00:00",
+      "exit_code": 0,
+      "stdout": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-linux-build.log",
+      "stderr": "work/migration-20261105/mpserverstatus-preparation/main-driver-current-linux-build.log.stderr",
+      "result_sha256": "373b9f997b60894a90a38035cdb8ca8d9470ed5d71ade3c4e06aa31c5e7ff84e",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "standalone_observations": [
+    {
+      "mode": "normal",
+      "path": "work/migration-20261105/mpserverstatus-preparation/worker-budget-observations-normal.json",
+      "sha256": "bbf71edf391cc92d3dbf64c7236cf086ef892f1a2073fecbb603eccb9a5affaa",
+      "calls": 172,
+      "host_calls": 494,
+      "max_host_calls": 3,
+      "owned_http_requests": 165,
+      "unexpected_network": 0,
+      "expired_host_calls": 0
+    },
+    {
+      "mode": "race",
+      "path": "work/migration-20261105/mpserverstatus-preparation/worker-budget-observations-race.json",
+      "sha256": "f3f0cef5375267ba35876ac0836385bb19fa196cba63bb8165a9586afaea26ba",
+      "calls": 172,
+      "host_calls": 494,
+      "max_host_calls": 3,
+      "owned_http_requests": 165,
+      "unexpected_network": 0,
+      "expired_host_calls": 0
+    }
+  ],
+  "manifest_update_fixture": {
+    "only_diff": "const Version = \"1.4\" to \"1.4.1\"",
+    "original_status_sha256": "e05c50c15db2d597bc83903adaf261bb4d55489b883cca8db8920c8b7ad058ad",
+    "fixture_status_sha256": "b93833e0c9ee6f64eef467876ff8c16737e0758be2fc3cc4308a8096e3c6bca0",
+    "whole_file_overlay_sha256": "8ac800f99c8a9e8600fb56aca0abdf222572e8fb6f10dcfd8a842cbc1111e170"
+  },
+  "main_execution": "not run by worker; Root owns NAS ordinaryMain/browser"
+}

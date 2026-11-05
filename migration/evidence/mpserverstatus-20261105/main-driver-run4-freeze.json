@@ -1,0 +1,157 @@
+{
+  "classification": "driver-only original page exception-envelope correction for actualMain run4; compiled exact3 required driver/shared-helper files only, no Main execution by worker",
+  "source_contract": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-source-contract.json",
+    "sha256": "b9f74fe61152603186393da32c17db72a15ba4cdfaf7de69e314a0d4c0ceb38a",
+    "bytes": 1544
+  },
+  "old_run3_generation": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run3-superseded/preserved-binding.json",
+    "sha256": "a3f582ee86bcfccf9021c1ab75e2d147254bd8cfeb68535073603647f7311090",
+    "bytes": 2320
+  },
+  "business_freeze_unchanged": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/freeze-manifest-current.json",
+    "sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b",
+    "owned_files": 354,
+    "sdk_files": 98
+  },
+  "input_stable": true,
+  "inputs_before": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-inputs-before.json",
+    "sha256": "68d35c0336dfb6fb5ebcf4756d367d1c89f9ac6825439046f7cb235a82a17f83",
+    "bytes": 67682
+  },
+  "inputs_after": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-inputs-after.json",
+    "sha256": "5b3b2c84a84cda385130e1a55d9ed7405c9e8631f173184fc981749afa879979",
+    "bytes": 67682
+  },
+  "sources": {
+    "tests/integration/mpserverstatus_helpers_test.go": "b5a580ee83c960035cc5a266ba887c0917dadbddec415a71812f1465d6bf8e50",
+    "tests/integration/mpserverstatus_main_test.go": "c172fd1bf74da3740aaf486a8dafdd8abc60d48c3be714f1174f3fa12afe0142",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a"
+  },
+  "binary": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/mpserverstatus-main-tests-linux-amd64",
+    "sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+    "bytes": 11669109
+  },
+  "commands": [
+    {
+      "result": {
+        "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-normal-result.json",
+        "sha256": "c4c31b66786405bc2353420fb5e13f2169e03cd1e010f6e88a562bcb33f5c819",
+        "bytes": 671
+      },
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/mpserverstatus_helpers_test.go",
+        "tests/integration/mpserverstatus_main_test.go",
+        "-run",
+        "^$"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T12:25:35.436243+00:00",
+      "finished_utc": "2026-11-05T12:25:36.679463+00:00",
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-normal.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-normal.stderr",
+      "stdout_sha256": "afd74bb63f2c128af27fa27ed36e866d7cd54b3990eec75afb1c3bb5890cdf67",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "result": {
+        "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-race-result.json",
+        "sha256": "c78b1de694fdc338f16f27a6435712cfb48988f3c14cf91d1087a2165d73941d",
+        "bytes": 680
+      },
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/mpserverstatus_helpers_test.go",
+        "tests/integration/mpserverstatus_main_test.go",
+        "-run",
+        "^$"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T12:25:35.436239+00:00",
+      "finished_utc": "2026-11-05T12:25:37.705753+00:00",
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-race.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-race.stderr",
+      "stdout_sha256": "a78672cd690bb6818cb85fc5193a90792b7a28b0a3abe88ecd1b8a54a2e4abcb",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "result": {
+        "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-vet-result.json",
+        "sha256": "6ed9f60737376396a85eb92a87c628187d0c85cd0b7b1916a44619283b4eb98b",
+        "bytes": 626
+      },
+      "command": [
+        "go",
+        "vet",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/mpserverstatus_helpers_test.go",
+        "tests/integration/mpserverstatus_main_test.go"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "at_utc": "2026-11-05T12:25:35.434566+00:00",
+      "finished_utc": "2026-11-05T12:25:35.725523+00:00",
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-vet.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-vet.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "result": {
+        "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-linux-result.json",
+        "sha256": "cf6e84b8b7efc0094adde59e6ff924220a39858f34ec28e57302b97972b5cf48",
+        "bytes": 859
+      },
+      "command": [
+        "go",
+        "test",
+        "-c",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/mpserverstatus-main-tests-linux-amd64",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/mpserverstatus_helpers_test.go",
+        "tests/integration/mpserverstatus_main_test.go"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "at_utc": "2026-11-05T12:25:35.436266+00:00",
+      "finished_utc": "2026-11-05T12:25:36.036242+00:00",
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-linux.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/main-driver-run4-linux.stderr",
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "retained_package_attempt": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-package-attempt/input-check-failure.json",
+    "sha256": "1b52bf0ec66311b1e3eb4a2f5bf4a7f16efa7a2d10acfde2bdd25be49fe8b1e3",
+    "bytes": 390
+  },
+  "remaining": "Root actualMain run4+browser; existing66300worker/75eMain unchanged; original plugin-internal codec exception proven separately from endpoint catch; run1/run2/run3 failures retained"
+}

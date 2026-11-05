@@ -1,0 +1,36 @@
+--- run3/mpserverstatus_main_test.go
++++ run4/mpserverstatus_main_test.go
+@@ -277,12 +277,30 @@
+ 	peer.set("broken", true)
+ 	page = s.okMPS("GET", "/api/plugins/"+mpsSource+"/page", nil)
+ 	mpsHas(t, page, "服务器状态格式异常：缺少活跃连接数据")
++	beforeExceptionPID := s.workersMPS()[mpsSource]
++	if beforeExceptionPID == 0 {
++		t.Fatal("worker missing before source text exception")
++	}
++	beforeExceptionHTTP, beforeExceptionTLS := peer.counts()
+ 	peer.set("undefined", true)
+-	status, _, e := s.raw(ctx, "GET", "/api/plugins/"+mpsSource+"/page", nil)
+-	if e == nil && status >= 200 && status < 300 {
+-		t.Fatal("source text UnicodeError became success banner")
++	status, errorBody, e := s.raw(ctx, "GET", "/api/plugins/"+mpsSource+"/page", nil)
++	var emptyPage map[string]any
++	if e != nil || status != http.StatusOK || json.Unmarshal(errorBody, &emptyPage) != nil || emptyPage == nil || len(emptyPage) != 0 {
++		t.Fatal("source page endpoint must catch UnicodeError and return exact empty object", status, string(errorBody), e)
++	}
++	if pid := s.workersMPS()[mpsSource]; pid != beforeExceptionPID {
++		t.Fatal("source text exception replaced/killed worker", beforeExceptionPID, pid)
+ 	}
+ 	peer.set("ok", true)
++	page = s.okMPS("GET", "/api/plugins/"+mpsSource+"/page", nil)
++	mpsHas(t, page, "服务状态正常", "Owned-MPS-Nginx")
++	if mpsCard(t, page, "活跃连接") != "12" || s.workersMPS()[mpsSource] != beforeExceptionPID {
++		t.Fatal("same worker did not recover real parsed source page after UnicodeError")
++	}
++	if n, d := peer.counts(); n != beforeExceptionHTTP+2 || d != beforeExceptionTLS {
++		t.Fatal("exception/recovery source HTTP or cached TLS sequence changed", n-beforeExceptionHTTP, d-beforeExceptionTLS)
++	}
++	s.record("mps_source_page_exception_and_recovery", map[string]any{"exception_status": status, "exception_data": emptyPage, "same_worker_pid": beforeExceptionPID, "healthy_followup": "source normal alert + parsed active12, no reload", "owned_HTTP_delta": 2, "directTLS_delta": 0, "classification": "original page endpoint catches plugin method exception into empty object; HTTP200 alone is not success"})
+ 	// More than64 calls and256 RPC through ordinary Main. Exact original
+ 	// per-callback RPC accounting is separately bound to SDK95 worker evidence.
+ 	batchBefore, batchDirect := peer.counts()

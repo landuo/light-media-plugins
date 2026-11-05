@@ -1,0 +1,365 @@
+{
+  "classification": "complete finite unreached-tail harness audit after thirdfailed SDKimpactMain; source/static + localHTTPfixtures only, NOT Main4 acceptance",
+  "doubtful_assumption": "Previously unexecuted routes and response/completion expectations were treated as established. No more one-URL guess/relaunch.",
+  "pinned_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+  "main_binary_sha256": "7521f81d24cddd658368b4b4ebd724c2dfc23494f460acc48e63370d6950fb17",
+  "SDK_ORIGIN_SHA256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "host_files": {
+    "internal/app/http.go": {
+      "sha256": "240a34c6ac4135345a71716781efdf4976b66737fdecca8b2c9996980a6f8cd2",
+      "git_blob": "ed130ba17d3927183c696c28df5b42f1d250ff41",
+      "anchors": {
+        "case p == \"sites/manage\" && method == \"POST\":": [
+          235
+        ],
+        "parts[1] == \"history\"": [
+          249
+        ],
+        "case p == \"notifications\"": [
+          527
+        ]
+      }
+    },
+    "internal/app/site_manage.go": {
+      "sha256": "3a986c564ef6515255a2440c1a0d2c74aa725cbbd9b1138dc814ccb0368f57a4",
+      "git_blob": "763b1081f838450be417f590c767dce39735e28e",
+      "anchors": {
+        "func (a *App) managedSites": [
+          130
+        ],
+        "func (a *App) saveManagedSite": [
+          181
+        ],
+        "a.emitStandardSiteUpdated": [
+          220
+        ],
+        "func (a *App) managedSiteHistory": [
+          495
+        ]
+      }
+    },
+    "internal/app/plugin_standard_site_events.go": {
+      "sha256": "b435cdbb7083819071486dccdc04a3e4f6f01e94b9a6b505507eb9aa78790118",
+      "git_blob": "9bd39365a3c56c080260423735b7415347d29530",
+      "anchors": {
+        "func (a *App) emitStandardSiteUpdated": [
+          11
+        ]
+      }
+    },
+    "internal/app/plugin_original_core_site_updated.go": {
+      "sha256": "2ef5ff97e334244bb6fbdc387f877b3ef3158a53f19ba3b5a59a165256f836a7",
+      "git_blob": "84a25d52a7305db787342f0502b2d8f760d56079",
+      "anchors": {
+        "func (a *App) consumeOriginalCoreSiteUpdated": [
+          11
+        ],
+        "collectManagedSiteObserved": [
+          31
+        ]
+      }
+    },
+    "internal/app/plugin_original_host_sites_source.go": {
+      "sha256": "8417d08e41c11f38a04d652e8e4b310f746feaec8d2875d915e5b6356522c4e8",
+      "git_blob": "bceccbf650f16c47eed4f897159d5018d9795e8c",
+      "anchors": {
+        "func (a *App) originalSourceSiteRefresh": [
+          146,
+          209
+        ],
+        "func (a *App) originalSourceSiteRefreshAll": [
+          209
+        ],
+        "a.emitStandardSiteRefreshed(ctx, \"*\")": [
+          286
+        ]
+      }
+    },
+    "internal/app/plugin_original_config.go": {
+      "sha256": "0813bed9d2c7c670401ed4fb3a6a13cb8bca3c5b23b9f28b26bd9285667ad1c2",
+      "git_blob": "0179152dfd0c4aa27ffe466006d5a4a82e90501b",
+      "anchors": {
+        "func originalPluginConfigurationRoute": [
+          12
+        ],
+        "func (a *App) originalPluginConfigurationHTTP": [
+          81
+        ],
+        "a.initOriginalLoadedPlugin": [
+          137
+        ],
+        "a.reloadOriginalPlugin": [
+          146
+        ]
+      }
+    },
+    "internal/app/plugin_original_manager_configuration.go": {
+      "sha256": "15c893520dd5bfb13d4605cf15f598c03423c8f187ef010bc568ea05f7db5b91",
+      "git_blob": "a84e1223fb52c374905b259eee2790771eca66b2",
+      "anchors": {
+        "func (a *App) originalManagerConfiguration": [
+          10
+        ]
+      }
+    },
+    "internal/app/plugin_original_manager_http.go": {
+      "sha256": "b3961f0fbe0c80316e1155eb10de9dc4a6178f9f52dd491805575e2da3d7b88e",
+      "git_blob": "cf6721dd024beefd84bd4b01464087d97a7bd4ae",
+      "anchors": {
+        "parts[1] == \"page\"": [
+          82
+        ],
+        "originalExternalViewHTTP": [
+          93
+        ]
+      }
+    },
+    "internal/app/plugin_original_view_http.go": {
+      "sha256": "46d1355e0fab72472fdca307de498814cbbf3663f709f4ed49bd4d8b07ebdd9d",
+      "git_blob": "471731752af7750d1ba93c31897baeaa801aa1cf",
+      "anchors": {
+        "func (a *App) originalExternalViewHTTP": [
+          14
+        ],
+        "case \"page\":": [
+          27,
+          67
+        ],
+        "case \"dashboard\":": [
+          29
+        ]
+      }
+    },
+    "internal/app/plugin_original_dashboard_tuple.go": {
+      "sha256": "c59fefacc3ff4e87b89781ddbf8efb3ebe23b7c262781714bd012ff3f94a5c0b",
+      "git_blob": "f90a0ec6e60f2859ba45c6fd7587769823e6bb8c",
+      "anchors": {
+        "func originalDashboardResponse": [
+          50
+        ],
+        "result[\"cols\"]": [
+          54
+        ]
+      }
+    },
+    "internal/app/plugin_custom_api.go": {
+      "sha256": "01bc2632d46992a315c112bab3a84ef9207c38e716c9b1d6c91bd4d39de0b274",
+      "git_blob": "0f7381d3ac40e25a7b89637ac41e350d3404a89b",
+      "anchors": {
+        "func pluginCustomPath": [
+          102
+        ],
+        "func (a *App) servePluginCustomAPI": [
+          135
+        ],
+        "input.CredentialMatches": [
+          227
+        ],
+        "response.Body": [
+          287
+        ]
+      }
+    },
+    "internal/app/notifications.go": {
+      "sha256": "f3aee23f0914f650dc5f2be2f547e70676936b68eedb3862e11aff55264630d7",
+      "git_blob": "c421da04370e1b9a01fd857da409107ba4656257",
+      "anchors": {
+        "type Notification struct": [
+          10
+        ],
+        "func (a *App) notifications": [
+          63
+        ]
+      }
+    },
+    "internal/app/plugin_original_lifecycle.go": {
+      "sha256": "ce705d2eb4e3a6f31bde2ce2c3dddda96b2cb287e168d575e84c63fe3e7ff67a",
+      "git_blob": "3253464a1bfd6ccdc83be326a04b9267b3c4c5e9",
+      "anchors": {
+        "func (a *App) stopOriginalPlugin": [
+          164
+        ],
+        "func (a *App) reloadOriginalPlugin": [
+          233
+        ]
+      }
+    },
+    "internal/app/plugin_original_session.go": {
+      "sha256": "d4a62eac3f4d65b65ffc7923d941b925cf7d890e434460410689e2ea3b6f6138",
+      "git_blob": "689fb1239785660eaf9b944e4ca3f80c590d42f2",
+      "anchors": {
+        "func (p *originalPluginInstance) stopSession": [
+          106
+        ],
+        "return client.StopWithHost": [
+          120
+        ]
+      }
+    },
+    "internal/app/site_statistics.go": {
+      "sha256": "31a3ecc029d43a2e9a994d9e94eea2a351fa5c7eb2c3375ec574e7536d195290",
+      "git_blob": "bd83edc861df1e24cb71ae0168a1a346f3ddb012",
+      "anchors": {
+        "func siteDataRefreshHours": [
+          284
+        ],
+        "if hours == 0 {": [
+          313
+        ]
+      }
+    },
+    "internal/app/plugin_services.go": {
+      "sha256": "2ec442adc44a0d688cd79c2c77fbc4a18bf562bc93c6f4e752229c1bfbd414df",
+      "git_blob": "b7e17d56286894e28e2c7ce9ba27ae2fc50dd993",
+      "anchors": {
+        "originalPublicServicesResult": [
+          82
+        ],
+        "CanRun": [
+          22
+        ],
+        "a.runOriginalPublicService": [
+          132
+        ]
+      }
+    },
+    "internal/app/plugin_original_direct_dispatch.go": {
+      "sha256": "8785a4121a5dbb177798856b8c9ec1bb4da18996baccd796e8769d8d412587d1",
+      "git_blob": "0ed932a7e38a735ee33f8fa695b427ffab0e9d2c",
+      "anchors": {
+        "func (a *App) runOriginalPublicService": [
+          287
+        ],
+        "if wait && !job.definition.Async {": [
+          309
+        ]
+      }
+    }
+  },
+  "accepted_source_and_original_files": {
+    "tests/integration/sitestatistic_main_test.go": {
+      "sha256": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f"
+    },
+    "tests/integration/sitestatistic_helpers_test.go": {
+      "sha256": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace"
+    },
+    "work/migration-20261105/source-snapshot/sitestatistic/__init__.py": {
+      "sha256": "763a88be85185a94082a2f131ed1c80d8306abe24b10ebe9ae95447cfe5da17d"
+    },
+    "work/migration-20261105/site-helper-reference/site.py": {
+      "sha256": "aa759e3f1348863b109acdecb765c87a14822a14fbf63bab3fc93584d51bfaa6"
+    }
+  },
+  "remaining_phases": [
+    {
+      "phase": "site create + initialization settling",
+      "request": "POST /api/sites/manage raw SiteConfig (client id sdk98-nexus, known Nexus HTTPS origin, canonical btschool.club, proxy=true, enabled=true); GET /api/sites/manage/sdk98-nexus/history",
+      "source": "http.go233-257 -> saveManagedSite181-230 -> emitStandardSiteUpdated11 -> consumeOriginalCoreSiteUpdated11 -> ordinary observed write/event. managedSites138 returns data.sites[].config + credential_configured. managedSiteHistory495 reads exact configured id.",
+      "accepted_Main5": "sitestatistic_main_test.go175-200; same POST and history username wait + network quiet1200ms",
+      "assert": "Canonical id/name/baseurl/domain+enabled/proxy+credential state; history self after real native parser; allow site-created async callbacks to settle before baseline. Site disabled has no summary/receipt.",
+      "correction": "Old PUT-by-id404 invalid. Settings persistence alone is not connection success.",
+      "fixture": "RemainingHTTPContract site404/site_empty/site_id + exact POST body/auth; actual SQLite history requires Main."
+    },
+    {
+      "phase": "source one-shot/global event",
+      "request": "PUT /api/plugins/SiteStatistic raw ssConfig(true,true,all,total); GET /api/plugins/SiteStatistic",
+      "source": "plugin_original_config99-165 save then init same object -> source init63 date now+3sec -> SourceRefreshAll205 per site current DTO/row event -> commit global *278 then asynchronous emit286. Source send_msg217 -> post_message308 -> save_data311.",
+      "accepted_Main5": "ssTrigger115 + main270-290, exact per-site/+1 global, waits independently for notice and last_notify",
+      "assert": "Exact +1 global and +1 native site fact; GET raw config has onlyonce=false and unknown extra preserved; await notice AND receipt metadata, not global event alone.",
+      "fixture": "DelayedNotificationHTTP returns empty -> stored notice without receipt -> complete; rejects wrong enum/meaningless message. No DB event execution claimed by fixture."
+    },
+    {
+      "phase": "page/dashboard",
+      "request": "GET /api/plugins/SiteStatistic/page; GET /api/plugins/SiteStatistic/dashboard?key=",
+      "source": "manager_http93 -> originalExternalViewHTTP14; page data={render_mode,page}, dashboard tuple -> originalDashboardResponse50 sets id/name/key/render_mode/cols/attrs/elements. Source get_page973/get_dashboard937. Ordinary page errors can be HTTP200 data{}; dashboard errors500.",
+      "accepted_Main5": "main297-309 actual VApexChart/page owned account + dashboard",
+      "assert": "Require Vuetify structure, page array + exact owned name and chart; dashboard correct instance/default key + nonempty elements/chart. HTTP200{} rejected.",
+      "fixture": "RemainingHTTPContract page_empty/dashboard_empty vs exact wire shapes."
+    },
+    {
+      "phase": "single source API",
+      "request": "GET /api/v1/plugin/SiteStatistic/refresh_by_domain?domain=btschool.club&locale=zh-CN&apikey=(memory); X-API-KEY only memory",
+      "source": "plugin_custom_api103 registered legacy prefix; authority and required params; key converted to CredentialMatches223 not leakedworker; plugin external response directly written275-291. Source refresh_by_domain1100-1123. Current SiteUserData schema19fields.",
+      "accepted_Main5": "main224-246 all4 locales/native current DTO; helper80+105 exact message/19rawfields",
+      "assert": "HTTP200 success=true, message/message_i18n exact 站点 btschool.club 刷新成功; current19field DTO upload2147483648 etc null fields; +1 single event and no global/summary.",
+      "correction": "Old shorter message 刷新成功 was false expected.",
+      "fixture": "RemainingHTTPContract valid params/auth + api_short_message/api_old_data/api_missing_field/api_empty."
+    },
+    {
+      "phase": "notification identity + data receipt",
+      "request": "GET /api/notifications + SELECT only plugin_values metadata in own SQLite mode=ro/query_only",
+      "source": "notifications.go9,63 items contains title,message,mtype; source NotificationType.SiteMessage wire value站点. Source post308 before save311. No worker own sealed value read needed.",
+      "accepted_Main5": "main272-289 waits then fullbody, helper382 filters exact title站点数据统计; parent source enum wire fix already accepted",
+      "assert": "Exactly1 matching notice: 站点 enum, owned name, 汇总,2.0G/1.0G; receipt key exists. Read-only metadata revisions+SHA256(ciphertext) proves persistence cold without decrypt/key access.",
+      "fixture": "DelayedNotificationHTTP + enum/body negative branches; no synthetic notice counted as Main proof."
+    },
+    {
+      "phase": "four reload/drain",
+      "request": "POST /api/plugins/{CategoryEditor,TorrentTransfer,TorrentTransfermusic,SiteStatistic}/reload {}",
+      "source": "config route21 + originalPluginConfigurationHTTP148 -> reloadOriginalPlugin233 -> stopOriginalPlugin163 closes submissions/methods/session -> stopSession106 StopWithHost -> start new object -> asynchronous PluginReload.",
+      "accepted_Main5": "same reload route and workerPID assertions in accepted driver; local old95/new98 actual-process lifecycle suites independently bound",
+      "assert": "Acknowledgment then new nonzero worker PID, old PID absent; original service owners already idle; source one-shot false before reload; preserve config/data. No synchronous PluginReload broadcast completion assumption.",
+      "fixture": "ReloadAndConfigHTTP exact POST routes/instance independent values; real process drain exclusively Main."
+    },
+    {
+      "phase": "disable before cold",
+      "request": "PUT /api/plugins/TorrentTransfer, TorrentTransfermusic, SiteStatistic raw configs enabled=false/onlyonce=false; GET each config",
+      "source": "config route raw object saved/init; originalManagerConfiguration10 returns full loaded stored object, not form coerce. All disabled still remain loaded.",
+      "accepted_Main5": "main450-458 same disable-before-cold, preserves independent config",
+      "assert": "Raw complete base/clone configs remain inverse downloaders; Site unknown field retained; captured metadata snapshot after asynchronous receipt completion. Category already disabled retains YAML content.",
+      "fixture": "ReloadAndConfigHTTP raw null/false/string/zero extra values remain independent; actual config GET asserted by unchanged accepted helper."
+    },
+    {
+      "phase": "ordinary Main stop/cold",
+      "request": "actual child stop/join -> restart same owned data dir/login -> GET configs + notifications; read PIDs/category file/SQLite metadata",
+      "source": "plugin_original_sessioncloseOriginalSessions -> stopSession StopWithHost; loaded classes reinit from own encrypted config; disabled once=false source init creates no date job; site_statistics318 hours0 disables core period. Source TT date and Site date both3sec.",
+      "accepted_Main5": "main450-476 fresh worker identity then3500ms observation; earlier driver2100ms insufficient",
+      "assert": "4new distinct process identities, old gone; >=3500ms after fresh workers; qB sourceCompleted count unchanged, global* count/summary count unchanged, ciphertext digest/revision/namespace key metadata identical, Category inode+mtime unchanged, raw config exact.",
+      "correction": "Old2100ms could falsely pass before a delayed3sec replay.",
+      "fixture": "No fixture substitutes for restart/replay/process evidence; guarded opt-in Main only."
+    },
+    {
+      "phase": "final strict peer/boundary",
+      "request": "peer reports + query-only own SQLite facts + final stop",
+      "source": "existing accepted ssPeer strict canonical CONNECT two known authorities, verified own CA; qB peer supports exact SourceCompleted POST/filter no hash and rejectswrites. Captured currentSDK nonconsumer manifests do not claim cleanup capability.",
+      "accepted_Main5": "shared ssPeer/assert/report frozen same sourceSHA; source native qB POST verified Main2 after counter fix.",
+      "assert": "No unexpected peer path/authority/cookie or qB native mutation; real Main+native source protocol/SQLite/API/events/lifecycle evidence. Not real qB daemon/full transfer; old historical Main evidence remains95.",
+      "fixture": "QBPeerSourcePostSelector ensures only exact POST counted; no public/PT/production service touched."
+    },
+    {
+      "phase": "already reached manual service correction retained",
+      "request": "POST /api/plugins/services/run exact instance_id/service_id then GET /api/plugins/services",
+      "source": "plugin_services132 -> runOriginalPublicService(wait=false) direct_dispatch287-319; admitted async callback. Old original compatibility GET path is wait=true, not conflated.",
+      "accepted_Main5": "not applicable; TTaccepted original actual Main service chain and f7 source owned byRoot",
+      "assert": "accepted+success is admission, then native completed queries observed separately, both service rows can_run=true/status等待 required before tail/reload.",
+      "fixture": "AsyncHTTPCompletion returns2acks with0queries, busy first GET, later2queries/idle; rejects re-admission. Original Main1/2 failures retained."
+    }
+  ],
+  "preserved_failures": [
+    {
+      "run": 1,
+      "NAS_root": "/home/admin/light-media-plugins-migration-sdk98-20261105/main-run-1",
+      "local_generation": "main1-superseded/preserved.json",
+      "status": "actualfailed, not overwritten"
+    },
+    {
+      "run": 2,
+      "NAS_root": "/home/admin/light-media-plugins-migration-sdk98-20261105/main-run-2",
+      "local_generation": "main2-superseded/preserved.json",
+      "status": "actualfailed, not overwritten"
+    },
+    {
+      "run": 3,
+      "NAS_root": "/home/admin/light-media-plugins-migration-sdk98-20261105/main-run-3",
+      "local_generation": "main3-superseded/preserved.json",
+      "status": "actualfailed, not overwritten"
+    }
+  ],
+  "forbidden_claims": [
+    "No product/SDK fix inferred from harness route errors",
+    "No Main4 execution from compilation/HTTPfixture success",
+    "No real qB transfer revalidation from query-only peer",
+    "No decryption or sourceproductionconfig reads",
+    "No wholeSDK95to98 conclusion from Local-only proof"
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "classification": "actual GOOS=linux/GOARCH=amd64/CGO0 go list dependency graph; independent Linux ELF go version-m captured separately",
+  "packages": 210,
+  "standard_library_packages": 192,
+  "module_versions": {
+    "github.com/landuo/light-media-plugins": "devel",
+    "golang.org/x/text": "v0.43.0",
+    "github.com/andybalholm/brotli": "v1.2.6",
+    "golang.org/x/net": "v0.61.0"
+  },
+  "local_packages": [
+    "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+    "github.com/landuo/light-media-plugins/internal/sdk",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus/requestsproxy",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+    "github.com/landuo/light-media-plugins/cmd/mp-server-status"
+  ],
+  "no_original_app_runtime": true
+}

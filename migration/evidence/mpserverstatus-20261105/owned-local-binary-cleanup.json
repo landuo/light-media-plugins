@@ -1,0 +1,56 @@
+{
+  "classification": "owned local generated executable cleanup after sealed acceptance; source/evidence/cache and one shared subsequent-test worker retained",
+  "utc": "2026-11-05T14:23:52.254741+00:00",
+  "removed": [
+    {
+      "path": "work/migration-20261105/mpserverstatus-preparation/mpserverstatus-main-tests-linux-amd64",
+      "sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+      "size": 11669109,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-preparation/mp-server-status-update-linux-amd64",
+      "sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+      "size": 16753190,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run2-superseded/mpserverstatus-main-tests-linux-amd64",
+      "sha256": "1c75a0978976ede56d0bf7473130ac6f4d0f95ec398dd97da019196efa52b8e3",
+      "size": 12285474,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-preparation/freeze-sdk95-before-date-review/mp-server-status-linux-amd64",
+      "sha256": "4a5a62822dcba2efad3d64adb354c9edc62f3f0a129bbf59f5c59192b8e25c94",
+      "size": 16707020,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run3-superseded/mpserverstatus-main-tests-linux-amd64",
+      "sha256": "8a35d384334d80f7c91c12a5aa79fa081fb0d46d2041486514afb8435de2c180",
+      "size": 12285314,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-runtime/light-media-host75e-linux",
+      "sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+      "size": 70557259,
+      "magic": "7f454c46"
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/MPServerStatus-1.4-linux-amd64.zip",
+      "sha256": "85bdb44f7ae29dc9e86f7a22ef06352447de8874cb8ab1e2b6d3627f75aa00dd",
+      "size": 9434831,
+      "reason": "temporary unpublished executable ZIP after independent exact replay"
+    }
+  ],
+  "retained": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/mp-server-status-linux-amd64",
+    "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+    "size": 16753190,
+    "magic": "7f454c46",
+    "retained_path": "work/migration-20261105/shared-acceptance-inputs/mp-server-status-linux-amd64",
+    "reason": "single current Linux worker for subsequent PluginUnInstall host acceptance"
+  }
+}

@@ -1,0 +1,6227 @@
+{
+  "clock": "test-only-controlled-clock;production-timer-unchanged",
+  "default_max_host_calls": 64,
+  "events": [
+    {
+      "at": "2026-11-05T12:31:29.953574Z",
+      "kind": "owner.start",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954196Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "owner:init"
+    },
+    {
+      "at": "2026-11-05T12:31:29.95421Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954429Z",
+      "kind": "owner.complete",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954439Z",
+      "kind": "owner.start",
+      "phase": "test_pending"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954571Z",
+      "kind": "owner.complete",
+      "phase": "test_pending"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954579Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954677Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954689Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954766Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954823Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954831Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.954994Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955102Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955216Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955291Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955451Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955541Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":0,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955809Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955881Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955886Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955972Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.955995Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956171Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956253Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956325Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956412Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956565Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.956641Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":1,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957026Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957133Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957139Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957244Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957255Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.95726Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957385Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.95746Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957562Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957628Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957702Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.957759Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":2,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958337Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958429Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958435Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958528Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958532Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958537Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958692Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.95879Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958875Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.958942Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959042Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959127Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":3,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959581Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959712Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959718Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959832Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959836Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.959837Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960081Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960158Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960242Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960345Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960428Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":4,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.960946Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96103Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961034Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961104Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961118Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961123Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961295Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961395Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961499Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961586Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961674Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.961745Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":5,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962189Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96227Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962277Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962351Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962355Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962356Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962483Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962557Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962635Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962706Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.962778Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96285Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":6,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96345Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963526Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963531Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963619Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963634Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963639Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963806Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963878Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.963948Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964021Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964107Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964175Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":7,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964727Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964848Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964854Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964934Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964936Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.964939Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965065Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965132Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965193Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965253Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965326Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.965375Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":8,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966036Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966113Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966118Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966186Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966189Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96619Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966287Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966356Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966415Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966471Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.966541Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.96659Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":9,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967299Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967375Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967379Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967447Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967459Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967463Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967569Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967632Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967685Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967739Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967801Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.967853Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":10,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968542Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968627Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968634Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968734Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968757Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968761Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968906Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.968997Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969087Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969176Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969278Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969364Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":11,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969816Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969935Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.969941Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970048Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970053Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970054Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970159Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970273Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970376Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970462Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970575Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.970677Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":12,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971104Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971207Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971214Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971304Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971317Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971322Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971448Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971537Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971618Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971686Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.971764Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97183Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":13,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972387Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972459Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972464Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972555Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972563Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972567Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972697Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972767Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972844Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972913Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.972994Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973042Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":14,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973658Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973736Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973741Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973816Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973822Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97383Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.973962Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974052Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974136Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974222Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974301Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974373Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":15,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974901Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974987Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.974991Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97507Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97509Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975094Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975236Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975312Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975378Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975436Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.975514Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97557Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":16,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976146Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976216Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976221Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976302Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976311Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976315Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976433Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976505Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976585Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976652Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976741Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.976834Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":17,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977395Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977509Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977515Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977615Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977638Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977643Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977762Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977835Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977889Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.977941Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978024Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978104Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":18,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97875Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978829Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978833Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978921Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.978924Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.97893Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979201Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979491Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979578Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979637Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979718Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979784Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":19,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.979979Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980066Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98007Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980144Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980148Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980156Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980299Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980387Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980464Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980525Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.980601Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98065Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":20,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98123Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981305Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98131Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981405Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981409Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981418Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981562Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981644Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981725Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.981797Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98205Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98234Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":21,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982445Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982546Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982552Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982634Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982646Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982651Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982785Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982861Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982944Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.982996Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983096Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983172Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":22,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983709Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983801Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983809Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983909Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983919Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.983923Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984045Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984129Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984202Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984275Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984369Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984443Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":23,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.984998Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985072Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985077Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985157Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985161Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985167Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985289Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985374Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985439Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985504Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985601Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.985678Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":24,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986255Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986345Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986351Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986432Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986434Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986437Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986588Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986664Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986734Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98679Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986863Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.986916Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":25,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987524Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98761Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987614Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987673Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987687Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987693Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987811Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987872Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.987931Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.98798Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988042Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988088Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":26,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988767Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988836Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988841Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988898Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988909Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.988912Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989004Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989062Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989112Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989161Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989221Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.989269Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":27,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990003Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990082Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990086Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990147Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990159Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990163Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99027Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990335Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990392Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990449Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99051Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.990558Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":28,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99126Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991335Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99134Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991418Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991437Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991442Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991557Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991642Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991719Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991786Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991877Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.991941Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":29,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992527Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992617Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992621Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992705Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992709Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992712Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992821Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992894Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.992959Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993026Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993108Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993161Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":30,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993805Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993906Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.993911Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994022Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994027Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994031Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994135Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994219Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994293Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994372Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994468Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.994538Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":31,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995122Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995217Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995222Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995341Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995351Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995356Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995504Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995592Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995676Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995758Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995856Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.995936Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":32,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996381Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996474Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99648Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99658Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996584Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996586Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996725Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996807Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996886Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.996962Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997051Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997126Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":33,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997657Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997752Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997756Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997846Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99785Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997851Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.997969Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998065Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.99815Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998221Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998303Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998373Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":34,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998901Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998982Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:29.998987Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999067Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999077Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999082Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999213Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999295Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999388Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999478Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999576Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:29.999644Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":35,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00016Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000249Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000254Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000362Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000368Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000373Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000507Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000596Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000679Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000754Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000835Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.000905Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":36,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001452Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001546Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001552Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001644Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001652Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001656Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001784Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001867Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.001942Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002013Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002102Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002176Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":37,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002727Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002813Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002818Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00291Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002925Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.002929Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003061Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003154Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003236Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003304Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003403Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003477Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":38,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.003977Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004099Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004104Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004192Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004199Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004203Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004336Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004419Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004502Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004568Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00466Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.004748Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":39,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005298Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005383Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005388Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005477Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005483Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005492Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005615Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00569Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005786Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005872Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.005955Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006014Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":40,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00653Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006606Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006611Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006692Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006697Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006701Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006826Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006893Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.006956Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007014Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007082Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007137Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":41,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007787Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00787Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007879Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007931Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007952Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.007955Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.008066Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00815Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.008225Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.008278Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.008346Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00839Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":42,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009026Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009087Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009091Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009162Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009165Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009166Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00929Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009361Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00942Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009478Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.009553Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.00978Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":43,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010243Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010325Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01033Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010433Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010437Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010443Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010574Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010664Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010744Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010804Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010892Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.010969Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":44,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011526Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011631Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011637Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011725Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011736Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01174Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011886Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.011977Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01208Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.012156Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01225Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.012315Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":45,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01279Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.012871Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01288Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.012944Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.012966Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01297Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013161Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013238Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013303Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013366Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013425Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.013483Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":46,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014025Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014117Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014123Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01424Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014244Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014264Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014367Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014429Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.0145Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014558Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014626Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.014677Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":47,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.0154Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015468Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015472Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015539Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015546Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01555Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015673Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015767Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015829Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015903Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.015998Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016066Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":48,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016642Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016721Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016727Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016812Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.016816Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01682Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01694Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017016Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017075Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017202Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017343Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017513Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":49,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.017898Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018009Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018016Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018083Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018108Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018112Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018288Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018365Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018456Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018532Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018637Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.018713Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":50,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019173Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019263Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019268Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019347Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019362Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019366Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019501Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019582Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.01965Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019709Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019785Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.019859Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":51,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020432Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020506Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020511Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02058Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020593Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020597Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020713Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020768Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020822Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02087Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020933Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.020987Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":52,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021684Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021751Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021756Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021811Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021825Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021829Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.021936Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022007Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022072Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02212Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022181Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022248Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":53,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022917Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022985Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.022989Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023086Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02309Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023097Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023224Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023298Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023363Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023421Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023495Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.023557Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":54,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024181Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02424Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024245Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02431Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024326Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02433Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024434Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024487Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024541Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024593Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024663Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.024713Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":55,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025414Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025475Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025479Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025534Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025547Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025551Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025654Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025715Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02577Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025821Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025887Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.025939Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":56,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026623Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026686Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02669Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026745Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026754Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026758Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026866Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026929Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.026987Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027048Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027112Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02716Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":57,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027848Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027908Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027912Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027977Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027991Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.027994Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028104Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028158Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028215Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028262Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028354Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.028405Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":58,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.02907Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029139Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029143Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029233Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029236Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029241Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029333Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029386Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029445Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029502Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029566Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.029619Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":59,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030341Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030397Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030401Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030471Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030474Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03048Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030562Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03063Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03069Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030739Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030798Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.030854Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":60,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031581Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031665Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031669Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031779Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031784Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031791Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.031905Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032001Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03208Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032154Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032241Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032319Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":61,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032823Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032901Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032906Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032964Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032981Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.032984Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.033089Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.033159Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03322Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.033268Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.033338Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.033389Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":62,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034058Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034124Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034129Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.0342Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034208Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034225Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034307Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034379Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03444Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034499Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.034569Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03463Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":63,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03531Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035373Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035377Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035441Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03545Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035454Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035576Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035645Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035719Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035788Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035857Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.035911Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":64,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036518Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036577Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036581Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036728Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036852Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.036863Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.037307Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03743Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03752Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.037603Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.037695Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.037768Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":65,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.038899Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039045Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039051Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039123Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039127Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039141Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.03926Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039372Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039464Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039544Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039634Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.039713Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":66,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040181Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04027Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040275Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040355Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040372Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040376Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04051Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040617Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040717Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040788Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040864Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.040933Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":67,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04141Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041488Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041492Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041593Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041597Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041615Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041726Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041804Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.041887Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04196Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042053Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042121Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":68,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042702Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042796Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042801Z",
+      "kind": "owner.start",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042901Z",
+      "kind": "rpc",
+      "method": "plugin.background.submit",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042906Z",
+      "kind": "child.admit",
+      "phase": "private_scheduler:{\"cycle\":70,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.042917Z",
+      "kind": "owner.complete",
+      "phase": "test_tick"
+    },
+    {
+      "at": "2026-11-05T12:31:30.043052Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.043145Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.043238Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04335Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.043453Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.043518Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":69,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044007Z",
+      "kind": "owner.start",
+      "phase": "stop_service"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044109Z",
+      "kind": "child.complete",
+      "phase": "private_scheduler:{\"cycle\":70,\"generation\":1}"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04413Z",
+      "kind": "owner.complete",
+      "phase": "stop_service"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044131Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044221Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044226Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04433Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.044338Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:31:30.04443Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    }
+  ],
+  "kind": "actual-independent-SDK-worker-with-synthetic-host-resources",
+  "observed_max_host_calls": 6,
+  "phases": [
+    {
+      "end": "2026-11-05T12:31:29.954427Z",
+      "error": "",
+      "host_calls": 1,
+      "method": "init",
+      "start": "2026-11-05T12:31:29.953507Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.954571Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_pending",
+      "start": "2026-11-05T12:31:29.954439Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.954676Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.954579Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.954766Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.954688Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.955533Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.954209Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.955881Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.955809Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.955971Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.955886Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.956641Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.954831Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.957131Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.957026Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.957243Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.957139Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.957759Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.956Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.958428Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.958337Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.958527Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.958435Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.959127Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.957259Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.959711Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.959581Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.959835Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.959718Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.960427Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.958536Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.961027Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.960945Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.961104Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.961034Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.961745Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.959837Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.96227Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.962189Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.962356Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.962277Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.96285Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.961122Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.963525Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.96345Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.963618Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.963531Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.964175Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.962355Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.964848Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.964726Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.964935Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.964854Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.965375Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.963638Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.966108Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.966036Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.966189Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.966118Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.966589Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.964939Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.967375Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.967299Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.967447Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.967379Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.967849Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.966189Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.968626Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.968542Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.968734Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.968634Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.969364Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.967463Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.969935Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.969815Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.970054Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.969941Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.970677Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.96876Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.971207Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.971103Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.971303Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.971214Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.97183Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.970053Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.972459Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.972386Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.972555Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.972464Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.973042Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.971322Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.973736Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.973657Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.973815Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.973741Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.974373Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.972567Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.974986Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.9749Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.975069Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.974991Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.97557Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.97383Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.976216Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.976146Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.976302Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.976221Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.976834Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.975094Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.977509Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.977395Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.977614Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.977515Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.978103Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.976315Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.978829Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.97875Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.978921Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.978833Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.979784Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.977643Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.980065Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.979979Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.980156Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.98007Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.98065Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.97893Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.981305Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.98123Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.981418Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.98131Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.98234Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.980148Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.982546Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.982445Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.982634Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.982552Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.983172Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.981409Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.983789Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.983709Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.983909Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.983809Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.984443Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.982651Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.985072Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.984998Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.985167Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.985077Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.985678Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.983923Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.986345Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.986255Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.986434Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.986351Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.986916Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.985161Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.987609Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.987524Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.987673Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.987614Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.988088Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.986436Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.988836Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.988767Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.988898Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.988841Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.989269Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.987693Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.990082Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.990003Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.990146Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.990086Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.990557Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.988912Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.991334Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.99126Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.991418Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.991339Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.99194Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.990163Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.992617Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.992527Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.992712Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.992621Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.993161Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.991442Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.993906Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.993805Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.994031Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.993911Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.994538Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.992708Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.995217Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.995122Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.99534Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.995222Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.995936Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.994026Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.996474Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.996381Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.996585Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.99648Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.997126Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.995355Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.997752Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.997657Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.997851Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.997756Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.998373Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.996584Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.998982Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:29.998901Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.999067Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:29.998987Z"
+    },
+    {
+      "end": "2026-11-05T12:31:29.999644Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.99785Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.000248Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.00016Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.000373Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.000254Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.000905Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:29.999082Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.001546Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.001451Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.001644Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.001552Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.002176Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.000368Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.002813Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.002727Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.00291Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.002818Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.003477Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.001656Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.004099Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.003976Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.004192Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.004104Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.004748Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.002929Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.005383Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.005298Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.005492Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.005388Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.006014Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.004203Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.006606Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.00653Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.006692Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.006611Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.007137Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.005483Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.00787Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.007787Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.007931Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.007879Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.00839Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.0067Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.009087Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.009026Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.009165Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.009091Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.009758Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.007955Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.010325Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.010243Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.010443Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.01033Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.010968Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.009166Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.011631Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.011526Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.011725Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.011637Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.012315Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.010437Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.012871Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.01279Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.012944Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.01288Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.013483Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.01174Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.014109Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.014025Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.014264Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.014123Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.014677Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.01297Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.015468Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.0154Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.015539Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.015472Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.016066Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.014244Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.016721Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.016641Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.01682Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.016726Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.017512Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.01555Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.018008Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.017898Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.018083Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.018016Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.018713Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.016816Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.019263Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.019173Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.019347Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.019267Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.019859Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.018112Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.020506Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.020431Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.02058Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.020511Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.020987Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.019366Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.021751Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.021684Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.021811Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.021756Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.022248Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.020597Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.022985Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.022917Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.02309Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.022989Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.023557Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.021829Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.02424Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.024181Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.02431Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.024245Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.024713Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.02309Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.025472Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.025414Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.025534Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.025479Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.025939Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.02433Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.026685Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.026623Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.026745Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.02669Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.02716Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.025551Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.027908Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.027848Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.027977Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.027912Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.028405Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.026757Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.029137Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.02907Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.029241Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.029143Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.029619Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.027994Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.030396Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.03034Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.030479Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.030401Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.030853Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.029236Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.031665Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.031581Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.03179Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.031669Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.032319Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.030474Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.032901Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.032823Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.032964Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.032906Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.033389Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.031784Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.034124Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.034058Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.034225Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.034129Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.03463Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.032984Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.035373Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.03531Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.035441Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.035377Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.035911Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.034208Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.036576Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.036518Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.036727Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.03658Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.037768Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.035454Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.039045Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.038899Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.039141Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.039051Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.039713Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.036863Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.04027Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.040181Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.040355Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.040275Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.040933Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.039127Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.041488Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.04141Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.041615Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.041492Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.042121Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.040375Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.042796Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.042702Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.042916Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_tick",
+      "start": "2026-11-05T12:31:30.042801Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.043518Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.041597Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.044109Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "private_scheduler",
+      "start": "2026-11-05T12:31:30.042905Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.04413Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "stop_service",
+      "start": "2026-11-05T12:31:30.044007Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.044221Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.044131Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.04433Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.044226Z"
+    },
+    {
+      "end": "2026-11-05T12:31:30.04443Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:31:30.044337Z"
+    }
+  ],
+  "test": "TestSDKMoreThan64PrivateTicksKeepFreshBudgets",
+  "total_rpc": 421
+}

@@ -1,0 +1,168 @@
+{
+  "classification": "real cross-built Go ELF, actual NAS Linux amd64 --manifest, existing canonical packaging validation/archive/publish functions; no platform spoof, no modified production builder or Python product runtime",
+  "canonical_mac_CLI": "failed as designed; retained original build-command/stdout/stderr",
+  "started_utc": "2026-11-05T14:15:27.412197+00:00",
+  "build_config_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+  "build_script_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "plugin_spec": {
+    "id": "MPServerStatus",
+    "package": "./cmd/mp-server-status",
+    "host_contract": "light-media.sdk-resources/v1",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS",
+      "third_party/brotli-LICENSE",
+      "third_party/brotli-flate-LICENSE",
+      "third_party/x-net-LICENSE",
+      "third_party/x-net-PATENTS",
+      "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+      "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+      "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+      "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+      "plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+      "plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+      "plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+      "plugins/mpserverstatus/ORIGIN.md",
+      "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE"
+    ]
+  },
+  "release_url": "explicit nonpublished example.invalid fixture; no remote release/upload",
+  "build": {
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-packaging/.mps-cross-build-herje4l8/compiled-worker",
+      "./cmd/mp-server-status"
+    ],
+    "exit_code": 0
+  },
+  "worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "exit_code": 0,
+  "artifacts": [
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/MPServerStatus-1.4-linux-amd64.zip",
+      "sha256": "85bdb44f7ae29dc9e86f7a22ef06352447de8874cb8ab1e2b6d3627f75aa00dd",
+      "bytes": 9434831
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/THIRD_PARTY_LICENSES.zip",
+      "sha256": "9ae2a0a642192dacae289634db57cab2f8fb25fc5965e821036cc842b614c07d",
+      "bytes": 53976
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/go-plugins.v1.json",
+      "sha256": "c03aa32614dc33fc6c7e6cc47d2c0a0f466e56db8f8490ae7289c70a46475d0f",
+      "bytes": 6871
+    }
+  ],
+  "member_inventory": [
+    {
+      "path": "LICENSE",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "LICENSE.upstream",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 3780,
+      "sha256": "af1c5b33b69152c5197c1ce977057c8b92d616a724c2251ee432480fbfdeeb31"
+    },
+    {
+      "path": "mp-server-status",
+      "size": 16753190,
+      "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055"
+    },
+    {
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "size": 9133,
+      "sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1"
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+      "size": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+      "size": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+      "size": 641,
+      "sha256": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616"
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+      "size": 2363,
+      "sha256": "ed2e1332b5ad9d3b028644482db2cf2c4796a98d9473f297314cafafb66dedcb"
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+      "size": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+      "size": 1401,
+      "sha256": "7027e214e014eb78b7adcc1ceda5aca713a79fc4f6a0c52c9da5b3e707e6ffe9"
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+      "size": 10142,
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE",
+      "size": 38,
+      "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+    },
+    {
+      "path": "third_party/Go-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/brotli-LICENSE",
+      "size": 1084,
+      "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+    },
+    {
+      "path": "third_party/brotli-flate-LICENSE",
+      "size": 1479,
+      "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+    },
+    {
+      "path": "third_party/x-net-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-net-PATENTS",
+      "size": 1303,
+      "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+    },
+    {
+      "path": "third_party/x-text-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-text-PATENTS",
+      "size": 1303,
+      "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+    }
+  ],
+  "actual_manifest_sha256": "e4689aca4d1c042450166b36a2f9b2eb2a95a48833a173f3b4b937a93f3a5527",
+  "ended_utc": "2026-11-05T14:15:30.247971+00:00"
+}

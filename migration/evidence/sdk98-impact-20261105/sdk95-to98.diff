@@ -1,0 +1,533 @@
+diff --git a/internal/sdk/concurrent_session.go b/internal/sdk/concurrent_session.go
+index 35c8056..a5647bb 100644
+--- a/internal/sdk/concurrent_session.go
++++ b/internal/sdk/concurrent_session.go
+@@ -14,46 +14,51 @@ type concurrentOutcome struct {
+ 	err   error
+ }
+ type concurrentHostCall struct {
+-	id          string
+-	method      string
+-	ctx         context.Context
+-	cancel      context.CancelFunc
+-	finish      context.CancelFunc
+-	stopLife    func() bool
+-	budget      *runnerBudget
+-	host        HostHandler
+-	account     concurrentAccount
+-	result      chan concurrentOutcome
+-	sent        chan struct{}
+-	mu          sync.Mutex
+-	closed      bool
+-	received    bool
+-	wasCanceled bool
+-	cleanup     bool
+-	inHost      bool
+-	seen        map[string]bool
+-	hosts       sync.WaitGroup
++	id              string
++	method          string
++	ctx             context.Context
++	cancel          context.CancelFunc
++	finish          context.CancelFunc
++	stopLife        func() bool
++	budget          *runnerBudget
++	host            HostHandler
++	account         concurrentAccount
++	result          chan concurrentOutcome
++	sent            chan struct{}
++	mu              sync.Mutex
++	closed          bool
++	received        bool
++	wasCanceled     bool
++	cleanup         bool
++	inHost          bool
++	seen            map[string]bool
++	hosts           sync.WaitGroup
++	cleanupRoot     *cleanupHostRoot
++	cleanupReleased bool
++	cleanupReturned bool
++	cleanupParentID string
+ }
+ 
+ type concurrentClient struct {
+-	transportClose bool
+-	client         *Client
+-	transport      *concurrentTransport
+-	proposal       concurrentProposal
+-	mu             sync.Mutex
+-	calls          map[string]*concurrentHostCall
+-	terminal       error
+-	stopping       bool
+-	draining       bool
+-	shutdownDone   chan struct{}
+-	shutdownErr    error
+-	cleanupGate    chan struct{}
+-	expectedEOF    bool
+-	stopDone       chan struct{}
+-	stopErr        error
+-	readerDone     chan struct{}
+-	hosts          sync.WaitGroup
+-	writes         sync.WaitGroup
++	transportClose       bool
++	cleanupContinuations bool
++	client               *Client
++	transport            *concurrentTransport
++	proposal             concurrentProposal
++	mu                   sync.Mutex
++	calls                map[string]*concurrentHostCall
++	terminal             error
++	stopping             bool
++	draining             bool
++	shutdownDone         chan struct{}
++	shutdownErr          error
++	cleanupGate          chan struct{}
++	expectedEOF          bool
++	stopDone             chan struct{}
++	stopErr              error
++	readerDone           chan struct{}
++	hosts                sync.WaitGroup
++	writes               sync.WaitGroup
+ }
+ 
+ func newConcurrentClient(c *Client, proposal concurrentProposal) *concurrentClient {
+@@ -99,6 +104,11 @@ func (m *concurrentClient) readLoop() {
+ 			call.revoke()
+ 			call.stopLife()
+ 			call.finish()
++			reason := m.terminal
++			if reason == nil {
++				reason = failure("session_closed")
++			}
++			m.releaseCleanupChildLocked(call, concurrentOutcome{err: reason})
+ 			delete(m.calls, id)
+ 		}
+ 		m.mu.Unlock()
+@@ -156,7 +166,16 @@ func (m *concurrentClient) readLoop() {
+ 				m.expectedEOF = true
+ 				m.mu.Unlock()
+ 			}
+-			call.revoke()
++			if root := call.cleanupRoot; root != nil && root.root == call && frame.Error == nil {
++				// Seal admission immediately, while successful descendants finish
++				// their host-side result handoff before root cancellation.
++				call.mu.Lock()
++				call.closed = true
++				call.host = nil
++				call.mu.Unlock()
++			} else {
++				call.revoke()
++			}
+ 			// Joining cannot block the sole reader, which may be needed by
+ 			// another call's callback. No callback can be added after revoke.
+ 			go m.complete(call, concurrentOutcome{frame: frame})
+@@ -198,7 +217,19 @@ func (m *concurrentClient) readLoop() {
+ 
+ func (m *concurrentClient) complete(call *concurrentHostCall, outcome concurrentOutcome) {
+ 	call.hosts.Wait()
++	if root := call.cleanupRoot; root != nil && root.root == call {
++		root.children.Wait()
++		call.revoke()
++	}
+ 	m.mu.Lock()
++	if root := call.cleanupRoot; root != nil && root.root == call {
++		if m.terminal != nil {
++			outcome.err = m.terminal
++		} else if outcome.err == nil && outcome.frame.Error == nil {
++			outcome.err = root.err
++		}
++	}
++	m.releaseCleanupChildLocked(call, outcome)
+ 	if m.calls[call.id] == call {
+ 		delete(m.calls, call.id)
+ 	}
+@@ -263,7 +294,7 @@ func (m *concurrentClient) call(ctx context.Context, method string, payload json
+ 
+ // admitted is notified exactly once, before any worker completion is awaited.
+ // An accepted call already owns the same bounded table slot as ordinary Call.
+-func (m *concurrentClient) callStarted(ctx context.Context, method string, payload json.RawMessage, host HostHandler, options CallOptions, cleanup bool, admitted chan<- error, admissionCtx context.Context) (out RunResult, err error) {
++func (m *concurrentClient) callStarted(ctx context.Context, method string, payload json.RawMessage, host HostHandler, options CallOptions, cleanup bool, admitted chan<- error, admissionCtx context.Context, ancestor ...*cleanupHostRoot) (out RunResult, err error) {
+ 	announced := false
+ 	defer func() {
+ 		if admitted != nil && !announced {
+@@ -289,6 +320,52 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
+ 		finish()
+ 		return out, failure("execution_canceled")
+ 	}
++	if len(ancestor) > 0 {
++		var root *cleanupHostRoot
++		var bindErr error
++		for {
++			root, bindErr = m.cleanupRootLocked(admissionCtx)
++			if bindErr != nil || root != ancestor[0] {
++				break
++			}
++			binding := admissionCtx.Value(cleanupHostBindingKey{}).(*cleanupHostBinding)
++			if root.slots < cleanupHandoffSlots {
++				call.cleanupParentID = binding.call.id
++				break
++			}
++			// Only the current chain's predecessor can be awaiting its ACK/
++			// actual reply. Siblings or a root's third child are not queued.
++			previous := m.calls[binding.call.cleanupParentID]
++			if binding.call == root.root || previous == nil || previous == root.root || previous.cleanupRoot != root {
++				bindErr = failure("cleanup_call_limit")
++				break
++			}
++			changed := root.slotChanged
++			m.mu.Unlock()
++			select {
++			case <-changed:
++			case <-ctx.Done():
++				bindErr = failure("execution_canceled")
++			}
++			m.mu.Lock()
++			if bindErr != nil {
++				break
++			}
++		}
++		if bindErr != nil || root != ancestor[0] {
++			m.mu.Unlock()
++			stopLife()
++			cancel()
++			finish()
++			if bindErr != nil {
++				return out, bindErr
++			}
++			return out, failure("cleanup_call_closed")
++		}
++		call.cleanupRoot = root
++	} else if cleanup && m.cleanupContinuations && (method == "close" || method == "stop_service") {
++		call.cleanupRoot = &cleanupHostRoot{root: call, slotChanged: make(chan struct{})}
++	}
+ 	if m.terminal != nil || (m.draining || m.stopping) && !cleanup || m.stopping && method != "stop" || len(m.calls) >= m.proposal.MaxCalls && !cleanup {
+ 		reason := m.terminal
+ 		if reason == nil {
+@@ -305,9 +382,26 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
+ 		return out, reason
+ 	}
+ 	m.calls[id] = call
++	if root := call.cleanupRoot; root != nil {
++		if root.root != call {
++			root.slots++
++			root.children.Add(1)
++		}
++		call.ctx = context.WithValue(call.ctx, cleanupHostBindingKey{}, &cleanupHostBinding{client: m.client, call: call, root: root})
++	}
+ 	m.writes.Add(1)
+ 	m.mu.Unlock()
+-	if admitted != nil {
++	if root := call.cleanupRoot; root != nil && root.root != call {
++		defer func() {
++			m.mu.Lock()
++			call.cleanupReturned = true
++			if call.cleanupReleased {
++				root.children.Done()
++			}
++			m.mu.Unlock()
++		}()
++	}
++	if admitted != nil && len(ancestor) == 0 {
+ 		announced = true
+ 		admitted <- nil
+ 	}
+@@ -329,6 +423,10 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
+ 	// Own input bytes: cancellation can return while a blocked pipe writer is
+ 	// being reaped, so the caller must be free to reuse its original buffer.
+ 	request := Frame{Protocol: ProtocolVersion, ID: id, Type: "call", Identity: m.client.binding.Identity, Method: method, Payload: append(json.RawMessage(nil), payload...)}
++	if root := call.cleanupRoot; root != nil && root.root != call {
++		request.CleanupRoot = root.root.id
++	}
++	sendReady := make(chan error, 1)
+ 	go func() {
+ 		defer m.writes.Done()
+ 		n, sendErr := m.transport.write(request, func(n concurrentWireCount) error {
+@@ -338,6 +436,7 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
+ 			return call.account.send(n)
+ 		})
+ 		close(call.sent)
++		sendReady <- sendErr
+ 		if sendErr != nil {
+ 			if n.bytes == 0 {
+ 				call.mu.Lock()
+@@ -351,6 +450,21 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
+ 			}
+ 		}
+ 	}()
++	if admitted != nil && len(ancestor) > 0 {
++		// Publish the child frame before acknowledging the parent host call.
++		// Otherwise a root whose body returns after SubmitCleanup can seal its
++		// worker lineage before the admitted child reaches the reader.
++		var sendErr error
++		select {
++		case sendErr = <-sendReady:
++		// A fast child reply seals its own callCtx normally. Only the
++		// inherited caller/root context can cancel admission.
++		case <-ctx.Done():
++			sendErr = failure("execution_canceled")
++		}
++		announced = true
++		admitted <- sendErr
++	}
+ 	var outcome concurrentOutcome
+ 	select {
+ 	case outcome = <-call.result:
+diff --git a/internal/sdk/concurrent_worker.go b/internal/sdk/concurrent_worker.go
+index cc7e7bb..8bbffc4 100644
+--- a/internal/sdk/concurrent_worker.go
++++ b/internal/sdk/concurrent_worker.go
+@@ -11,15 +11,16 @@ import (
+ )
+ 
+ type concurrentWorkerCall struct {
+-	cleanup bool
+-	request Frame
+-	ctx     context.Context
+-	cancel  context.CancelFunc
+-	phase   callbackPhase
+-	account concurrentAccount
+-	gate    chan struct{}
+-	mu      sync.Mutex
+-	pending map[string]chan Frame
++	cleanup     bool
++	request     Frame
++	ctx         context.Context
++	cancel      context.CancelFunc
++	phase       callbackPhase
++	account     concurrentAccount
++	gate        chan struct{}
++	mu          sync.Mutex
++	pending     map[string]chan Frame
++	cleanupRoot *cleanupWorkerRoot
+ }
+ 
+ type concurrentWorker struct {
+@@ -203,8 +204,20 @@ func (w *concurrentWorker) readLoop() {
+ 			return
+ 		}
+ 		w.mu.Lock()
+-		cleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
+-		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || cleanup && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup {
++		rootCleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
++		var ancestor *cleanupWorkerRoot
++		if request.CleanupRoot != "" {
++			parent := w.calls[request.CleanupRoot]
++			if !w.draining || !cleanupDeclared(w.manifest) || parent == nil || parent.cleanupRoot == nil || parent.cleanupRoot.root != parent || parent.cleanupRoot.closed || parent.ctx.Err() != nil || (parent.phase.closed.Load() && !parent.cleanupRoot.bodyReturned) || parent.cleanupRoot.slots >= cleanupHandoffSlots {
++				w.mu.Unlock()
++				cancel()
++				w.finish(failure("cleanup_call_closed"))
++				return
++			}
++			ancestor = parent.cleanupRoot
++		}
++		cleanup := rootCleanup || ancestor != nil
++		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || rootCleanup && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup {
+ 			w.mu.Unlock()
+ 			cancel()
+ 			w.finish(failure("concurrent_call_limit"))
+@@ -213,7 +226,21 @@ func (w *concurrentWorker) readLoop() {
+ 		w.calls[request.ID] = call
+ 		if cleanup {
+ 			call.cleanup = true
++		}
++		if rootCleanup {
+ 			w.cleanupActive = true
++			if cleanupDeclared(w.manifest) {
++				call.cleanupRoot = &cleanupWorkerRoot{root: call}
++				call.ctx = context.WithValue(call.ctx, cleanupInvocationKey{}, true)
++			}
++		}
++		if ancestor != nil {
++			cancel()
++			call.ctx, call.cancel = context.WithCancel(ancestor.root.ctx)
++			call.ctx = context.WithValue(call.ctx, cleanupInvocationKey{}, true)
++			call.cleanupRoot = ancestor
++			ancestor.slots++
++			ancestor.children.Add(1)
+ 		}
+ 		if request.Method == "stop" {
+ 			w.stopping = true
+@@ -236,10 +263,12 @@ func (w *concurrentWorker) readLoop() {
+ }
+ 
+ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
++	defer w.releaseCleanupChild(call)
+ 	host := func(ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
+ 		return w.host(call, ctx, method, payload)
+ 	}
+ 	result, err := w.handle(call.ctx, call.request.Method, call.request.Payload, host)
++	w.finishCleanupRoot(call, err)
+ 	call.phase.closed.Store(true)
+ 	canceled := call.ctx.Err() != nil
+ 	call.cancel()
+@@ -261,7 +290,13 @@ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
+ 	// result. The host may immediately send the next reserved cleanup call.
+ 	w.mu.Lock()
+ 	delete(w.calls, call.request.ID)
+-	if call.cleanup {
++	if root := call.cleanupRoot; root != nil && root.root != call {
++		root.slots--
++		if root.bodyReturned && root.slots == 0 {
++			root.closed = true
++		}
++	}
++	if call.cleanup && (call.cleanupRoot == nil || call.cleanupRoot.root == call) {
+ 		w.cleanupActive = false
+ 	}
+ 	w.mu.Unlock()
+diff --git a/internal/sdk/jsonrpc.go b/internal/sdk/jsonrpc.go
+index 38ade8b..cfa6e51 100644
+--- a/internal/sdk/jsonrpc.go
++++ b/internal/sdk/jsonrpc.go
+@@ -27,9 +27,10 @@ type rpcError struct {
+ type rpcValue struct {
+ 	Protocol int `json:"protocol"`
+ 	Identity
+-	Kind    string          `json:"kind,omitempty"`
+-	Payload json.RawMessage `json:"payload,omitempty"`
+-	Code    string          `json:"code,omitempty"`
++	Kind        string          `json:"kind,omitempty"`
++	Payload     json.RawMessage `json:"payload,omitempty"`
++	Code        string          `json:"code,omitempty"`
++	CleanupRoot string          `json:"cleanup_root,omitempty"`
+ }
+ 
+ func strictJSON(raw []byte, value any) error {
+@@ -50,7 +51,10 @@ func (f Frame) MarshalJSON() ([]byte, error) {
+ 		return nil, failure("invalid_frame")
+ 	}
+ 	message := rpcMessage{Version: "2.0", ID: f.ID}
+-	value := rpcValue{Protocol: f.Protocol, Identity: f.Identity}
++	value := rpcValue{Protocol: f.Protocol, Identity: f.Identity, CleanupRoot: f.CleanupRoot}
++	if f.CleanupRoot != "" && (f.Type != "call" || !identityPattern.MatchString(f.CleanupRoot) || strings.Contains(f.CleanupRoot, ".") || !cleanupChildMethod(f.Method)) {
++		return nil, failure("invalid_frame")
++	}
+ 	switch f.Type {
+ 	case "call", "host_call":
+ 		if !methodPattern.MatchString(f.Method) || f.Result != nil || f.Error != nil {
+@@ -174,6 +178,10 @@ func (f *Frame) UnmarshalJSON(raw []byte) error {
+ 		decoded.Type = value.Kind
+ 	}
+ 	decoded.Protocol, decoded.Identity = value.Protocol, value.Identity
++	decoded.CleanupRoot = value.CleanupRoot
++	if decoded.CleanupRoot != "" && (decoded.Type != "call" || !identityPattern.MatchString(decoded.CleanupRoot) || strings.Contains(decoded.CleanupRoot, ".") || !cleanupChildMethod(decoded.Method)) {
++		return failure("invalid_frame")
++	}
+ 	*f = decoded
+ 	return nil
+ }
+diff --git a/internal/sdk/plugin_host.go b/internal/sdk/plugin_host.go
+index acc0e97..5af0832 100644
+--- a/internal/sdk/plugin_host.go
++++ b/internal/sdk/plugin_host.go
+@@ -86,6 +86,16 @@ func (m PluginHost) Read(ctx context.Context, request PluginManagerRequest) ([]P
+ 	return value, err
+ }
+ 
++// Local mirrors the source manager's get_local_plugins metadata traversal.
++// It includes imported but uninstalled classes and performs their ordinary
++// state getters before sorting; it does not consult any plugin market.
++// Raw source-shaped rows preserve metadata independently of runtime state DTOs.
++func (m PluginHost) Local(ctx context.Context) ([]json.RawMessage, error) {
++	var value []json.RawMessage
++	err := hostServiceCall(ctx, m.Host, PluginManagerReadCapability, PluginManagerRequest{View: "local"}, &value)
++	return value, err
++}
++
+ func (m PluginHost) ControlRequest(ctx context.Context, request PluginManagerRequest) (PluginControlResult, error) {
+ 	var value PluginControlResult
+ 	err := hostServiceCall(ctx, m.Host, PluginManagerControlCapability, request, &value)
+diff --git a/internal/sdk/protocol.go b/internal/sdk/protocol.go
+index 201fb71..d93cb2a 100644
+--- a/internal/sdk/protocol.go
++++ b/internal/sdk/protocol.go
+@@ -237,23 +237,25 @@ type Frame struct {
+ 	ID       string `json:"request_id"`
+ 	Type     string `json:"type"`
+ 	Identity
+-	Method  string          `json:"method,omitempty"`
+-	Payload json.RawMessage `json:"payload,omitempty"`
+-	Result  json.RawMessage `json:"result,omitempty"`
+-	Error   *ReplyError     `json:"error,omitempty"`
++	Method      string          `json:"method,omitempty"`
++	Payload     json.RawMessage `json:"payload,omitempty"`
++	Result      json.RawMessage `json:"result,omitempty"`
++	Error       *ReplyError     `json:"error,omitempty"`
++	CleanupRoot string          `json:"cleanup_root,omitempty"`
+ }
+ 
+ type Handshake struct {
+-	TransportClose    int                     `json:"transport_close,omitempty"`
+-	ConcurrentSession int                     `json:"concurrent_session,omitempty"`
+-	Protocol          int                     `json:"protocol"`
+-	PluginID          string                  `json:"plugin_id"`
+-	Version           string                  `json:"version"`
+-	HostAPI           int                     `json:"host_api"`
+-	Methods           []string                `json:"methods"`
+-	Capabilities      []string                `json:"capabilities"`
+-	Transport         *transportAdvertisement `json:"transport,omitempty"`
+-	PersistentSession int                     `json:"persistent_session,omitempty"`
++	CleanupContinuation int                     `json:"cleanup_continuation,omitempty"`
++	TransportClose      int                     `json:"transport_close,omitempty"`
++	ConcurrentSession   int                     `json:"concurrent_session,omitempty"`
++	Protocol            int                     `json:"protocol"`
++	PluginID            string                  `json:"plugin_id"`
++	Version             string                  `json:"version"`
++	HostAPI             int                     `json:"host_api"`
++	Methods             []string                `json:"methods"`
++	Capabilities        []string                `json:"capabilities"`
++	Transport           *transportAdvertisement `json:"transport,omitempty"`
++	PersistentSession   int                     `json:"persistent_session,omitempty"`
+ }
+ 
+ // Error deliberately contains only a local code. Worker output, command paths,
+@@ -341,7 +343,7 @@ func (runner Runner) Run(ctx context.Context, command Command, manifest Manifest
+ 	cmd.Dir, cmd.WaitDelay = command.Dir, time.Second
+ 	// Do not inherit provider credentials or management sessions from the host.
+ 	cmd.Env = []string{"GOMEMLIMIT=64MiB"}
+-	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT"} {
++	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT", "HOME"} {
+ 		if value, present := os.LookupEnv(key); present {
+ 			cmd.Env = append(cmd.Env, key+"="+value)
+ 		}
+@@ -678,7 +680,7 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
+ 	cmd := exec.CommandContext(life, command.Path, command.Args...)
+ 	cmd.Dir, cmd.WaitDelay = command.Dir, time.Second
+ 	cmd.Env = []string{"GOMEMLIMIT=64MiB"}
+-	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT"} {
++	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT", "HOME"} {
+ 		if value, ok := os.LookupEnv(key); ok {
+ 			cmd.Env = append(cmd.Env, key+"="+value)
+ 		}
+@@ -782,10 +784,14 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
+ 			}
+ 			c.concurrent = newConcurrentClient(c, proposal)
+ 			c.concurrent.transportClose = agreed.TransportClose == 1
++			c.concurrent.cleanupContinuations = cleanupDeclared(manifest) && agreed.CleanupContinuation == 1
+ 		} else if runner.RequireConcurrent {
+ 			return nil, failure("concurrent_session_unsupported")
+ 		}
+ 	}
++	if cleanupDeclared(manifest) && !c.SupportsCleanupContinuations() {
++		return nil, failure("cleanup_continuation_unsupported")
++	}
+ 	if startup.Err() != nil || life.Err() != nil {
+ 		return nil, failure("execution_canceled")
+ 	}
+diff --git a/internal/sdk/worker.go b/internal/sdk/worker.go
+index d400a94..a094040 100644
+--- a/internal/sdk/worker.go
++++ b/internal/sdk/worker.go
+@@ -67,7 +67,11 @@ func serve(ctx context.Context, input io.Reader, output io.Writer, manifest Mani
+ 	if concurrent {
+ 		advertisedConcurrent = 1
+ 	}
+-	helloResult, _ := json.Marshal(Handshake{TransportClose: advertisedConcurrent, ConcurrentSession: advertisedConcurrent, Protocol: ProtocolVersion, PluginID: manifest.PluginID, Version: manifest.Version, HostAPI: HostAPIVersion, Methods: manifest.Methods, Capabilities: manifest.Capabilities, Transport: &transportAdvertisement{Version: 1}, PersistentSession: 1})
++	helloResponse := Handshake{TransportClose: advertisedConcurrent, ConcurrentSession: advertisedConcurrent, Protocol: ProtocolVersion, PluginID: manifest.PluginID, Version: manifest.Version, HostAPI: HostAPIVersion, Methods: manifest.Methods, Capabilities: manifest.Capabilities, Transport: &transportAdvertisement{Version: 1}, PersistentSession: 1}
++	if advertisedConcurrent == 1 && cleanupDeclared(manifest) {
++		helloResponse.CleanupContinuation = 1
++	}
++	helloResult, _ := json.Marshal(helloResponse)
+ 	if err = s.write(Frame{Protocol: ProtocolVersion, ID: first.ID, Type: "result", Identity: s.identity, Result: helloResult}); err != nil {
+ 		return err
+ 	}

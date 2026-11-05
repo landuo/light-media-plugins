@@ -1,0 +1,8 @@
+{
+  "name": "sample-history",
+  "path": "plugins/mpserverstatus/status.go",
+  "old": "m.Last = &Sample{now, jnumber(integer(accepts)), jnumber(integer(handled)), jnumber(integer(total))}",
+  "new": "m.Last = nil",
+  "occurrence": 0,
+  "run": "TestInstalledASTOracle/metrics|TestPersistentInitNoopStop"
+}

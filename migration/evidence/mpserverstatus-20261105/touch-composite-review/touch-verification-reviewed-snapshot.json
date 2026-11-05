@@ -1,0 +1,39 @@
+{
+  "classification": "actual Chrome touch CDP UI interaction; no DOM state injection, fixed owned Go Main testnamespace",
+  "run": "main-run-5",
+  "browser": "Chrome id1 tab368189639",
+  "host_sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+  "driver_sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+  "viewport_override": {
+    "width": 390,
+    "height": 844
+  },
+  "observed_document_client_width": 375,
+  "verified": [
+    "touchStart/move actual down-pull indicator",
+    "touchEnd opens PluginQuickAccess fullscreen",
+    "enabled base and disabled clone both listed by has_page",
+    "click base displays actual active12/ownedTLS/metrics",
+    "close/reopen recent access retained",
+    "click disabled clone displays Plugin not enabled",
+    "restore Auto layout/reset viewport/disable temporary touch override"
+  ],
+  "preceding_limitations": "Chrome extension popup blocked earlier attempts; user dismissed and manually logged into synthetic account. Initial immediately-after-layout gesture did not open; fresh DOM confirmed zero active overlays/scroll0/visible, subsequent gesture showed real pull indicator and list.",
+  "data": "owned synthetic Nginx peer, not public-service availability",
+  "production_modified": false,
+  "UI_touch_status": "passed",
+  "source_business_worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "actual_UI_worker_roles": {
+    "base": {
+      "version": "1.4.1",
+      "sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+      "role": "manifest-version-only fixture update, not upstreamrelease"
+    },
+    "clone": {
+      "version": "1.4",
+      "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+      "role": "original source-version worker"
+    }
+  },
+  "correction": "Initial metadata mistakenly labeled source-version worker SHA as the UI binary; original record retained separately. Actual UI is after base manifest-only update, clone unchanged."
+}

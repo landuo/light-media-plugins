@@ -11,15 +11,16 @@ import (
 )
 
 type concurrentWorkerCall struct {
-	cleanup bool
-	request Frame
-	ctx     context.Context
-	cancel  context.CancelFunc
-	phase   callbackPhase
-	account concurrentAccount
-	gate    chan struct{}
-	mu      sync.Mutex
-	pending map[string]chan Frame
+	cleanup     bool
+	request     Frame
+	ctx         context.Context
+	cancel      context.CancelFunc
+	phase       callbackPhase
+	account     concurrentAccount
+	gate        chan struct{}
+	mu          sync.Mutex
+	pending     map[string]chan Frame
+	cleanupRoot *cleanupWorkerRoot
 }
 
 type concurrentWorker struct {
@@ -203,8 +204,20 @@ func (w *concurrentWorker) readLoop() {
 			return
 		}
 		w.mu.Lock()
-		cleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
-		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || cleanup && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup {
+		rootCleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
+		var ancestor *cleanupWorkerRoot
+		if request.CleanupRoot != "" {
+			parent := w.calls[request.CleanupRoot]
+			if !w.draining || !cleanupDeclared(w.manifest) || parent == nil || parent.cleanupRoot == nil || parent.cleanupRoot.root != parent || parent.cleanupRoot.closed || parent.ctx.Err() != nil || (parent.phase.closed.Load() && !parent.cleanupRoot.bodyReturned) || parent.cleanupRoot.slots >= cleanupHandoffSlots {
+				w.mu.Unlock()
+				cancel()
+				w.finish(failure("cleanup_call_closed"))
+				return
+			}
+			ancestor = parent.cleanupRoot
+		}
+		cleanup := rootCleanup || ancestor != nil
+		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || rootCleanup && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup {
 			w.mu.Unlock()
 			cancel()
 			w.finish(failure("concurrent_call_limit"))
@@ -213,7 +226,21 @@ func (w *concurrentWorker) readLoop() {
 		w.calls[request.ID] = call
 		if cleanup {
 			call.cleanup = true
+		}
+		if rootCleanup {
 			w.cleanupActive = true
+			if cleanupDeclared(w.manifest) {
+				call.cleanupRoot = &cleanupWorkerRoot{root: call}
+				call.ctx = context.WithValue(call.ctx, cleanupInvocationKey{}, true)
+			}
+		}
+		if ancestor != nil {
+			cancel()
+			call.ctx, call.cancel = context.WithCancel(ancestor.root.ctx)
+			call.ctx = context.WithValue(call.ctx, cleanupInvocationKey{}, true)
+			call.cleanupRoot = ancestor
+			ancestor.slots++
+			ancestor.children.Add(1)
 		}
 		if request.Method == "stop" {
 			w.stopping = true
@@ -236,10 +263,12 @@ func (w *concurrentWorker) readLoop() {
 }
 
 func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
+	defer w.releaseCleanupChild(call)
 	host := func(ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
 		return w.host(call, ctx, method, payload)
 	}
 	result, err := w.handle(call.ctx, call.request.Method, call.request.Payload, host)
+	w.finishCleanupRoot(call, err)
 	call.phase.closed.Store(true)
 	canceled := call.ctx.Err() != nil
 	call.cancel()
@@ -261,7 +290,13 @@ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
 	// result. The host may immediately send the next reserved cleanup call.
 	w.mu.Lock()
 	delete(w.calls, call.request.ID)
-	if call.cleanup {
+	if root := call.cleanupRoot; root != nil && root.root != call {
+		root.slots--
+		if root.bodyReturned && root.slots == 0 {
+			root.closed = true
+		}
+	}
+	if call.cleanup && (call.cleanupRoot == nil || call.cleanupRoot.root == call) {
 		w.cleanupActive = false
 	}
 	w.mu.Unlock()

@@ -1,0 +1,369 @@
+{
+  "classification": "SDK95to98 dependency regression Main4 testdriver freeze AFTER complete source-tail audit and meaningful real HTTP fixtures; Main4 itself NOT executed",
+  "pinned_host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+  "host_ELF_sha256": "7521f81d24cddd658368b4b4ebd724c2dfc23494f460acc48e63370d6950fb17",
+  "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "source_audit": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main4-tail-source-audit.json",
+    "sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
+    "bytes": 18293
+  },
+  "run_contract": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main4-run-contract.json",
+    "sha256": "f4236b73c350e636780cd6bd150e1ef18632cf35fcceedefe3cab31f2a5a3c77",
+    "bytes": 2299
+  },
+  "binary": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+    "sha256": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
+    "bytes": 12742124
+  },
+  "driver_sources": [
+    {
+      "path": "tests/integration/sdk98_impact_test.go",
+      "sha256": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+      "bytes": 10466
+    },
+    {
+      "path": "tests/integration/sdk98_impact_helpers_test.go",
+      "sha256": "9379a31f3b51d2393383d8bf126bc005446cee936cb4ed13a48eeb6240bbfe7f",
+      "bytes": 36537
+    }
+  ],
+  "stable_inputs": {
+    "before": {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-inputs-before.json",
+      "sha256": "615a0a45e01c1dbddffa5b1a6794df9d5e5460cdc1b8f276c099e341bc43db57",
+      "bytes": 20584
+    },
+    "after": {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-inputs-after.json",
+      "sha256": "615a0a45e01c1dbddffa5b1a6794df9d5e5460cdc1b8f276c099e341bc43db57",
+      "bytes": 20584
+    },
+    "count": 183
+  },
+  "only_changes_vs_Main3": {
+    "tests/integration/sdk98_impact_helpers_test.go": [
+      "154477489618a731210763dd9609443f7324bdc1b0af3663241babb9c0490964",
+      "9379a31f3b51d2393383d8bf126bc005446cee936cb4ed13a48eeb6240bbfe7f"
+    ]
+  },
+  "checks": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go",
+        "-run",
+        "^TestSDK98Impact(QBPeerSourcePostSelector|RemainingHTTPContract|AsyncHTTPCompletion|DelayedNotificationHTTP|ReloadAndConfigHTTP)$"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-normal"
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-normal.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-normal.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-normal-result.json",
+        "sha256": "59718bd0daa9b56d5cde79f9d5efa57194c95f66a940d2f363f0cc4525ae4430",
+        "bytes": 924
+      },
+      "stdout_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-normal.log",
+        "sha256": "60ca07a3466ba706dc78ca3aafa73945485a736f6bf443a77c52cc804fc5328d",
+        "bytes": 13081
+      },
+      "stderr_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-normal.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "passed_tests_subtests": 15
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-race",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go",
+        "-run",
+        "^TestSDK98Impact(QBPeerSourcePostSelector|RemainingHTTPContract|AsyncHTTPCompletion|DelayedNotificationHTTP|ReloadAndConfigHTTP)$"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-race"
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-race.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-race.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-race-result.json",
+        "sha256": "668210ea66a546678259563db50b674cd5d718ff52c0822d6cdfdc5b69baeee4",
+        "bytes": 931
+      },
+      "stdout_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-race.log",
+        "sha256": "43c36aeb189c7d351d9906ec02d7dbe34dba5814c37aa1425edf89f7ba6a72b1",
+        "bytes": 13083
+      },
+      "stderr_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-race.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "passed_tests_subtests": 15
+    },
+    {
+      "command": [
+        "go",
+        "vet",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-vet"
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-vet.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-vet.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-vet-result.json",
+        "sha256": "692a61a019805ae470bfd7250f592f9bd307c8d6204d17fde3dc7ff1acf68533",
+        "bytes": 736
+      },
+      "stdout_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-vet.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-vet.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-c",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-linux",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-linux.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-linux.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-linux-result.json",
+        "sha256": "2c50d4a426f74c15d7ccde7cbd425c47a0cd78568ea7c3c021fdd71f65cc45e3",
+        "bytes": 964
+      },
+      "stdout_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-linux.log",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "stderr_binding": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main4-linux.stderr",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  ],
+  "raw_owned_HTTP_fixture_observations": [
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "sha256": "05c92cdaf61bb955daa6ed68a9ae2746da087015a1affb721558ce0c087d29ef",
+      "bytes": 1256
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "sha256": "bafc45425f6cd2eb770cd9b94a5fc9157d8d5dbf8068932a2e773dad2c27dde5",
+      "bytes": 762
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "sha256": "fa630537d71cf4219fd1ed561f546695b12dfb473469c51eff06c6e8e5b2953b",
+      "bytes": 3006
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "sha256": "ad02a0ff623ab72b449dd21549b4348736c7d6a9b6b525330da9bc1448d83d9e",
+      "bytes": 1196
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "sha256": "ce0c6ea48d8923e616871ba5e4cab532e00da6b75ad16769bf6f88ca29f3cf71",
+      "bytes": 2024
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "sha256": "8ffae8c141bae1320ff04bb5c5af43c4914a0fb95c6d7c7df1a05efe1e74c302",
+      "bytes": 921
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "sha256": "d6a32b0605bbef0db282c8c4fc96aaadc73efe79f3ed1ccd65c34c41a78a9075",
+      "bytes": 555
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "sha256": "8d834fa5abf91337d21fb50a616e752505f857c9ef235990c289a7a9e83647c5",
+      "bytes": 562
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "sha256": "8b7701b4defd9f33de6f8992bb7dc5437aa79300a229026bc1d822cc6c4291bb",
+      "bytes": 757
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "sha256": "6d347ffbf05ede521e1a7a876b8cb7ca33e5de8d8ff17f028e28614b69662429",
+      "bytes": 2016
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "sha256": "d62556b70292da866bbc67914c1cfdca1d5f1f4af0ff97815fa889a2179a2ccc",
+      "bytes": 1525
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "sha256": "2871f70bfa046a274edf3504e034ecfc9d71cec53c69847f2fcfde35b7bd24e5",
+      "bytes": 1982
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "sha256": "5fe3513bbfb799a67028aa2b6131ae94f3130ee7c96049ea86dcd454c0f2a867",
+      "bytes": 2010
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "sha256": "7afb593353734662fd2f30ba237c586ee53f37e1dcc25d1d2d084339515927cf",
+      "bytes": 1257
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "sha256": "1105c0f77d64487468949afe3cd046d5b8df051f42572833c24af7ac733b661b",
+      "bytes": 762
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "sha256": "0055afd1073e606ee99cd9b554e53d5a98f342fccfbc034c0a2eaea34620e0bd",
+      "bytes": 3006
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "sha256": "6263674b386aa9d5ee9ae04e2f7d96c6d43c093d70f0f532a9b6834bdda78b7e",
+      "bytes": 1196
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "sha256": "97fa91a0b566b6f4d59a1d58f1e353adc674c82cda1d8df872e4058a8b3f28d7",
+      "bytes": 2025
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "sha256": "4326fbe186cd6b8e5a88055e1771549fe1b8c1623506981fd3ac8026c5af0fbe",
+      "bytes": 922
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "sha256": "67f7541d3cf86ead5c6502dfdfa9fb5e6a31b833e4b51df91dd5205512a676e2",
+      "bytes": 555
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "sha256": "b700de03935f24145be1eeb420bb49627a2b8c08c2497aa5c608cd4470444c76",
+      "bytes": 562
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "sha256": "25f482502efc2f7912d8ca7943d4c03e66dc5a2e2265de4716e85451c192b8e7",
+      "bytes": 756
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "sha256": "78e52f896b8e870ca767b268f4bf712a98b7c0e328445ed3f3b4e08f86ac1522",
+      "bytes": 2016
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "sha256": "09fe29132643613c9418b4aa6069a6f79bc315cdc3395ba1e618cbe8f2fd676b",
+      "bytes": 1525
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "sha256": "73f2e967ec3f2ae4ad6f03e790e7f4acd13bb40b0f362afcd6c91be9e6cf4a40",
+      "bytes": 1982
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "sha256": "1eb6ef5e5db5123aae2c5bb2ebf2560e477fa14fbf468d867a031a930e882d84",
+      "bytes": 2009
+    }
+  ],
+  "previous_failed_generations": [
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/preserved.json",
+      "sha256": "9e5ca72f6c7001da86fd94c999a383bf2a8497f916d440ba6d4f9e4af1012df7",
+      "bytes": 1990
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/preserved.json",
+      "sha256": "288aebe3d8a1f000fc81e79e92853d1e65433a2b846cb8839ad478822419fa4b",
+      "bytes": 2006
+    },
+    {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/preserved.json",
+      "sha256": "eb56db030da84f4510fad236abf852151fe2de3a22931934dbcad2306ea92957",
+      "bytes": 2102
+    }
+  ],
+  "seal_inventory_failure": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main4-seal-attempt1.json",
+    "sha256": "e2110885479e119d14b6d9c156ebc4464d5b25a6e82f5b1124fbae57379f327f",
+    "bytes": 286
+  },
+  "unchanged_prior_local_477_and_actual_process_crossmatrix": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/impact-freeze.json",
+    "sha256": "c3f6199ba5805a756e6cadac21262a1fa33f79f7aac5620643c4898f1b4f506f",
+    "bytes": 35534
+  },
+  "boundaries": [
+    "Only own test helper changed; zero product/SDK/host/shareddriver changes",
+    "No ownNAS writes/hostexecution; Root exclusively runs Main4 after audit review",
+    "No config/KV unsealing; read-only ownSQLite key/revision/ciphertextSHA256 metadata only",
+    "Source API complete message/currentDTO and async notification receipt now mandatory; failure never HTTP200only",
+    "Main1/2/3 failures remain real failures; fullfreeze generations andNAS raw exits preserved"
+  ]
+}

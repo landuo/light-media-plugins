@@ -1,0 +1,7 @@
+{
+  "exit_code": 1,
+  "phase": "copy new Main5 harvest manifest",
+  "cause": "new private harvest-manifest.json collides with historical runs1-4 generic manifest",
+  "before_failure": "missing70 archive/map and source-only/touch content already written; no product changes",
+  "fix": "preserve original manifest, map new run5 manifest under unique public filename"
+}

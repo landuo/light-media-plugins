@@ -1,0 +1,24 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-o",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+    "tests/integration/testhost_main_test.go",
+    "tests/integration/sitestatistic_helpers_test.go",
+    "tests/integration/sitestatistic_main_test.go",
+    "tests/integration/sdk98_impact_test.go",
+    "tests/integration/sdk98_impact_helpers_test.go"
+  ],
+  "env": {
+    "GOFLAGS": "",
+    "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-linux",
+    "CGO_ENABLED": "0",
+    "GOOS": "linux",
+    "GOARCH": "amd64"
+  },
+  "exit_code": 0,
+  "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-linux.log",
+  "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-linux.stderr"
+}

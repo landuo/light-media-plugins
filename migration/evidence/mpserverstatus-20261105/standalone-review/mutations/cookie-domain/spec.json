@@ -1,0 +1,8 @@
+{
+  "name": "cookie-domain",
+  "path": "plugins/mpserverstatus/cookies.go",
+  "old": "if !strings.Contains(undotted, \".\") && !strings.HasSuffix(effective, \".local\") {",
+  "new": "if false {",
+  "occurrence": 0,
+  "run": "TestIndependentActualRequestsCookieRedirect|TestIndependentActual312CookiePolicy"
+}

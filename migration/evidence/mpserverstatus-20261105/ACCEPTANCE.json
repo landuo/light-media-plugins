@@ -1,0 +1,93 @@
+{
+  "schema_version": 1,
+  "status": "verified_scoped_MPS_family",
+  "accepted_at_utc": "2026-11-05T14:25:09.407597+00:00",
+  "source": {
+    "installed_file": "mpserverstatus/__init__.py",
+    "sha256": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+    "version": "1.4",
+    "original_lines": 1017,
+    "methods": 42
+  },
+  "frozen_target_manifest_sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b",
+  "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "target_binding_count": 456,
+  "worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "actual_host_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+  "actual_host_binary_sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+  "independent_seals": {
+    "source_standalone": "72f9cde8fd6ffdbd5a1c0d266222787376433780daad9b9009ed84d2ba193e6a",
+    "ordinary_main_desktop": "02c22b2c86670c3eba7c8ee9e7982e998ee0a2e4928cf2a6079382c542444f5a",
+    "final_touch_composite": "48f6ecbec472c6179f0b4e53d0d95b8f9a93612af476fa954919f47376e835f5",
+    "packaging": "866d2b3be0b630107088717e8ebbfd2e82588aed1ab3cc8c9e611533aa0fcbeb"
+  },
+  "actual_main_exits": [
+    1,
+    1,
+    1,
+    0,
+    0
+  ],
+  "facet_checks": {
+    "data": {
+      "source": "init_plugin45–53,get_form68–101,_load_status_snapshot166–187",
+      "result": "Raw enable/form default and truthiness preserved; HTTP/DNS/TLS/sample cache stays ephemeral. Actual raw config save/cold/reset/purge/retention/reinstall and isolated clone DB facts. No source KV/files data to migrate.",
+      "status": "passed"
+    },
+    "state": {
+      "source": "init_plugin45–53,get_page103–130,get_dashboard132–152,get_state154–158,stop_service160–164",
+      "result": "Disabled page gate differs from direct dashboard; config reinit resets caches in same worker, reload/update/cold replace process. Source no-op stop and cache/state transitions covered.",
+      "status": "passed"
+    },
+    "errors": {
+      "source": "_request_server_status189–210,_get_dns_info340–376,_get_tls_info378–427 and fixed host page endpoint",
+      "result": "Source/vendor negative cases and eight killed mutants; actual bad certificate/cache cases, UnicodeError HTTP200 exact empty object and same-PID healthy recovery. Transport success alone never satisfies assertions.",
+      "status": "passed"
+    },
+    "concurrency": {
+      "source": "_load_status_snapshot166–187,_request_server_status189–210",
+      "result": "Actual165 calls, peak8, zero errors and over6second native response through ordinary host. SDK98 standalone172 callbacks/494 measured reverse RPC; no source events/jobs/commands/API. Main RPC495 is explicitly not measured.",
+      "status": "passed"
+    },
+    "restart": {
+      "source": "init_plugin45–53,stop_service160–164 plus fixed manager lifecycle",
+      "result": "Actual Main4 and5 each complete cold/reset/clone purge/base retention/reinstall tail, with PID/code/config/data isolation. No source private job or one-shot to replay.",
+      "status": "passed"
+    },
+    "compatibility": {
+      "source": "get_form68–101,get_page103–130,get_dashboard132–152,_build_metrics255–313 and render helpers446–1017",
+      "result": "Verbatim source forms/defaults and page/dashboard schema; actual settings/page/log/widget/refresh persistence plus mobile pull-down/has_page disabled clone/recent. Current333 Requests/urllib3/text/codec/proxy behaviors independently reviewed; notices packaged.",
+      "status": "passed"
+    },
+    "security": {
+      "source": "_request_server_status189–210,_get_dns_info340–376,_get_tls_info378–427",
+      "result": "Native verified HTTPS CONNECT/TLS within owned namespace; original service read-only, no production credentials or DB. Explicit Go cancellation/fixed-origin credential/host path bounds documented in ORIGIN. Strict peers report zero unexpected requests.",
+      "status": "passed"
+    },
+    "performance": {
+      "source": "_load_status_snapshot166–187,_request_server_status189–210 and diagnostic probes",
+      "result": "Owned native batch165/width8 and 6.02second response observed; source cache/read-idle/TLS timing modeled from actual source. No public availability, arbitrary device or measured full20second-timeout claim.",
+      "status": "passed"
+    }
+  },
+  "necessary_adaptations": [
+    "strict HTTPS proxy TLS before credentials, separate verifyFalse fixed uncredentialed origin",
+    "caller cancellation/guard propagates and does not replace DNS/TLS caches; source has no ctx; active-caller native failures retain original TTL",
+    "no netrc/private account file access; destination userinfo/Authorization guard",
+    "Go OS DNS/native TLS diagnostics/order/root-store boundaries disclosed in ORIGIN"
+  ],
+  "remaining_in_scope_defects_or_unverified_items": [],
+  "boundaries": [
+    "Linux/local/single-user/all-Go product; host owns clones",
+    "No workflow/AI/official auth levels/RSA",
+    "Public upstream availability/production configuration migration/deployment not claimed",
+    "Update artifact1.4.1 differs only in Version, not a real upstream release",
+    "Chrome touch emulation not physical-phone coverage; requested390/document375 recorded",
+    "Actual Main remains published75e; current98 standalone is not newer-host Main execution"
+  ],
+  "cleanup": [
+    "owned-runtime-cleanup.json",
+    "owned-local-binary-cleanup.json"
+  ],
+  "state_authority": "../../ledger.json"
+}

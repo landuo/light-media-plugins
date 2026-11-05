@@ -1,0 +1,26 @@
+{
+  "classification": "actual Chrome touch CDP UI interaction; no DOM state injection, fixed owned Go Main testnamespace",
+  "run": "main-run-5",
+  "browser": "Chrome id1 tab368189639",
+  "host_sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+  "worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "driver_sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+  "viewport_override": {
+    "width": 390,
+    "height": 844
+  },
+  "observed_document_client_width": 375,
+  "verified": [
+    "touchStart/move actual down-pull indicator",
+    "touchEnd opens PluginQuickAccess fullscreen",
+    "enabled base and disabled clone both listed by has_page",
+    "click base displays actual active12/ownedTLS/metrics",
+    "close/reopen recent access retained",
+    "click disabled clone displays Plugin not enabled",
+    "restore Auto layout/reset viewport/disable temporary touch override"
+  ],
+  "preceding_limitations": "Chrome extension popup blocked earlier attempts; user dismissed and manually logged into synthetic account. Initial immediately-after-layout gesture did not open; fresh DOM confirmed zero active overlays/scroll0/visible, subsequent gesture showed real pull indicator and list.",
+  "data": "owned synthetic Nginx peer, not public-service availability",
+  "production_modified": false,
+  "UI_touch_status": "passed"
+}

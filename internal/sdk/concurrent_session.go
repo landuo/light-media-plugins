@@ -14,46 +14,51 @@ type concurrentOutcome struct {
 	err   error
 }
 type concurrentHostCall struct {
-	id          string
-	method      string
-	ctx         context.Context
-	cancel      context.CancelFunc
-	finish      context.CancelFunc
-	stopLife    func() bool
-	budget      *runnerBudget
-	host        HostHandler
-	account     concurrentAccount
-	result      chan concurrentOutcome
-	sent        chan struct{}
-	mu          sync.Mutex
-	closed      bool
-	received    bool
-	wasCanceled bool
-	cleanup     bool
-	inHost      bool
-	seen        map[string]bool
-	hosts       sync.WaitGroup
+	id              string
+	method          string
+	ctx             context.Context
+	cancel          context.CancelFunc
+	finish          context.CancelFunc
+	stopLife        func() bool
+	budget          *runnerBudget
+	host            HostHandler
+	account         concurrentAccount
+	result          chan concurrentOutcome
+	sent            chan struct{}
+	mu              sync.Mutex
+	closed          bool
+	received        bool
+	wasCanceled     bool
+	cleanup         bool
+	inHost          bool
+	seen            map[string]bool
+	hosts           sync.WaitGroup
+	cleanupRoot     *cleanupHostRoot
+	cleanupReleased bool
+	cleanupReturned bool
+	cleanupParentID string
 }
 
 type concurrentClient struct {
-	transportClose bool
-	client         *Client
-	transport      *concurrentTransport
-	proposal       concurrentProposal
-	mu             sync.Mutex
-	calls          map[string]*concurrentHostCall
-	terminal       error
-	stopping       bool
-	draining       bool
-	shutdownDone   chan struct{}
-	shutdownErr    error
-	cleanupGate    chan struct{}
-	expectedEOF    bool
-	stopDone       chan struct{}
-	stopErr        error
-	readerDone     chan struct{}
-	hosts          sync.WaitGroup
-	writes         sync.WaitGroup
+	transportClose       bool
+	cleanupContinuations bool
+	client               *Client
+	transport            *concurrentTransport
+	proposal             concurrentProposal
+	mu                   sync.Mutex
+	calls                map[string]*concurrentHostCall
+	terminal             error
+	stopping             bool
+	draining             bool
+	shutdownDone         chan struct{}
+	shutdownErr          error
+	cleanupGate          chan struct{}
+	expectedEOF          bool
+	stopDone             chan struct{}
+	stopErr              error
+	readerDone           chan struct{}
+	hosts                sync.WaitGroup
+	writes               sync.WaitGroup
 }
 
 func newConcurrentClient(c *Client, proposal concurrentProposal) *concurrentClient {
@@ -99,6 +104,11 @@ func (m *concurrentClient) readLoop() {
 			call.revoke()
 			call.stopLife()
 			call.finish()
+			reason := m.terminal
+			if reason == nil {
+				reason = failure("session_closed")
+			}
+			m.releaseCleanupChildLocked(call, concurrentOutcome{err: reason})
 			delete(m.calls, id)
 		}
 		m.mu.Unlock()
@@ -156,7 +166,16 @@ func (m *concurrentClient) readLoop() {
 				m.expectedEOF = true
 				m.mu.Unlock()
 			}
-			call.revoke()
+			if root := call.cleanupRoot; root != nil && root.root == call && frame.Error == nil {
+				// Seal admission immediately, while successful descendants finish
+				// their host-side result handoff before root cancellation.
+				call.mu.Lock()
+				call.closed = true
+				call.host = nil
+				call.mu.Unlock()
+			} else {
+				call.revoke()
+			}
 			// Joining cannot block the sole reader, which may be needed by
 			// another call's callback. No callback can be added after revoke.
 			go m.complete(call, concurrentOutcome{frame: frame})
@@ -198,7 +217,19 @@ func (m *concurrentClient) readLoop() {
 
 func (m *concurrentClient) complete(call *concurrentHostCall, outcome concurrentOutcome) {
 	call.hosts.Wait()
+	if root := call.cleanupRoot; root != nil && root.root == call {
+		root.children.Wait()
+		call.revoke()
+	}
 	m.mu.Lock()
+	if root := call.cleanupRoot; root != nil && root.root == call {
+		if m.terminal != nil {
+			outcome.err = m.terminal
+		} else if outcome.err == nil && outcome.frame.Error == nil {
+			outcome.err = root.err
+		}
+	}
+	m.releaseCleanupChildLocked(call, outcome)
 	if m.calls[call.id] == call {
 		delete(m.calls, call.id)
 	}
@@ -263,7 +294,7 @@ func (m *concurrentClient) call(ctx context.Context, method string, payload json
 
 // admitted is notified exactly once, before any worker completion is awaited.
 // An accepted call already owns the same bounded table slot as ordinary Call.
-func (m *concurrentClient) callStarted(ctx context.Context, method string, payload json.RawMessage, host HostHandler, options CallOptions, cleanup bool, admitted chan<- error, admissionCtx context.Context) (out RunResult, err error) {
+func (m *concurrentClient) callStarted(ctx context.Context, method string, payload json.RawMessage, host HostHandler, options CallOptions, cleanup bool, admitted chan<- error, admissionCtx context.Context, ancestor ...*cleanupHostRoot) (out RunResult, err error) {
 	announced := false
 	defer func() {
 		if admitted != nil && !announced {
@@ -289,6 +320,52 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 		finish()
 		return out, failure("execution_canceled")
 	}
+	if len(ancestor) > 0 {
+		var root *cleanupHostRoot
+		var bindErr error
+		for {
+			root, bindErr = m.cleanupRootLocked(admissionCtx)
+			if bindErr != nil || root != ancestor[0] {
+				break
+			}
+			binding := admissionCtx.Value(cleanupHostBindingKey{}).(*cleanupHostBinding)
+			if root.slots < cleanupHandoffSlots {
+				call.cleanupParentID = binding.call.id
+				break
+			}
+			// Only the current chain's predecessor can be awaiting its ACK/
+			// actual reply. Siblings or a root's third child are not queued.
+			previous := m.calls[binding.call.cleanupParentID]
+			if binding.call == root.root || previous == nil || previous == root.root || previous.cleanupRoot != root {
+				bindErr = failure("cleanup_call_limit")
+				break
+			}
+			changed := root.slotChanged
+			m.mu.Unlock()
+			select {
+			case <-changed:
+			case <-ctx.Done():
+				bindErr = failure("execution_canceled")
+			}
+			m.mu.Lock()
+			if bindErr != nil {
+				break
+			}
+		}
+		if bindErr != nil || root != ancestor[0] {
+			m.mu.Unlock()
+			stopLife()
+			cancel()
+			finish()
+			if bindErr != nil {
+				return out, bindErr
+			}
+			return out, failure("cleanup_call_closed")
+		}
+		call.cleanupRoot = root
+	} else if cleanup && m.cleanupContinuations && (method == "close" || method == "stop_service") {
+		call.cleanupRoot = &cleanupHostRoot{root: call, slotChanged: make(chan struct{})}
+	}
 	if m.terminal != nil || (m.draining || m.stopping) && !cleanup || m.stopping && method != "stop" || len(m.calls) >= m.proposal.MaxCalls && !cleanup {
 		reason := m.terminal
 		if reason == nil {
@@ -305,9 +382,26 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 		return out, reason
 	}
 	m.calls[id] = call
+	if root := call.cleanupRoot; root != nil {
+		if root.root != call {
+			root.slots++
+			root.children.Add(1)
+		}
+		call.ctx = context.WithValue(call.ctx, cleanupHostBindingKey{}, &cleanupHostBinding{client: m.client, call: call, root: root})
+	}
 	m.writes.Add(1)
 	m.mu.Unlock()
-	if admitted != nil {
+	if root := call.cleanupRoot; root != nil && root.root != call {
+		defer func() {
+			m.mu.Lock()
+			call.cleanupReturned = true
+			if call.cleanupReleased {
+				root.children.Done()
+			}
+			m.mu.Unlock()
+		}()
+	}
+	if admitted != nil && len(ancestor) == 0 {
 		announced = true
 		admitted <- nil
 	}
@@ -329,6 +423,10 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 	// Own input bytes: cancellation can return while a blocked pipe writer is
 	// being reaped, so the caller must be free to reuse its original buffer.
 	request := Frame{Protocol: ProtocolVersion, ID: id, Type: "call", Identity: m.client.binding.Identity, Method: method, Payload: append(json.RawMessage(nil), payload...)}
+	if root := call.cleanupRoot; root != nil && root.root != call {
+		request.CleanupRoot = root.root.id
+	}
+	sendReady := make(chan error, 1)
 	go func() {
 		defer m.writes.Done()
 		n, sendErr := m.transport.write(request, func(n concurrentWireCount) error {
@@ -338,6 +436,7 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 			return call.account.send(n)
 		})
 		close(call.sent)
+		sendReady <- sendErr
 		if sendErr != nil {
 			if n.bytes == 0 {
 				call.mu.Lock()
@@ -351,6 +450,21 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 			}
 		}
 	}()
+	if admitted != nil && len(ancestor) > 0 {
+		// Publish the child frame before acknowledging the parent host call.
+		// Otherwise a root whose body returns after SubmitCleanup can seal its
+		// worker lineage before the admitted child reaches the reader.
+		var sendErr error
+		select {
+		case sendErr = <-sendReady:
+		// A fast child reply seals its own callCtx normally. Only the
+		// inherited caller/root context can cancel admission.
+		case <-ctx.Done():
+			sendErr = failure("execution_canceled")
+		}
+		announced = true
+		admitted <- sendErr
+	}
 	var outcome concurrentOutcome
 	select {
 	case outcome = <-call.result:

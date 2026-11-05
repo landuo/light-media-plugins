@@ -1,0 +1,59 @@
+{
+  "status": "passed",
+  "scope": "bounded packaging addon; no new business/main/UI execution, no remote release or deployment",
+  "canonical_builder_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "build_config_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+  "worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "previous_seals_unchanged": [
+    "72f9cde8fd6ffdbd5a1c0d266222787376433780daad9b9009ed84d2ba193e6a",
+    "02c22b2c86670c3eba7c8ee9e7982e998ee0a2e4928cf2a6079382c542444f5a",
+    "48f6ecbec472c6179f0b4e53d0d95b8f9a93612af476fa954919f47376e835f5"
+  ],
+  "checks": [
+    "18 explicit notices plus canonical LICENSE produce19 notice members; byteexact current source and source provenance",
+    "20 plugin ZIP members: original ELF plus19 notices; no links/path escapes",
+    "validate_manifest actual NAS UID1000 output; worker byteexact independently certified66300",
+    "canonical archive_plugin and publish_fresh replay reproduced all3 outputs byte-for-byte",
+    "Mac CLI Linux-only failure and Docker proxy pull failure retained; task-only crossbuilder uses real Go crosscompile without platform spoofing"
+  ],
+  "artifacts": [
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/MPServerStatus-1.4-linux-amd64.zip",
+      "sha256": "85bdb44f7ae29dc9e86f7a22ef06352447de8874cb8ab1e2b6d3627f75aa00dd",
+      "bytes": 9434831
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/THIRD_PARTY_LICENSES.zip",
+      "sha256": "9ae2a0a642192dacae289634db57cab2f8fb25fc5965e821036cc842b614c07d",
+      "bytes": 53976
+    },
+    {
+      "path": "work/migration-20261105/mpserverstatus-packaging/cross-output/go-plugins.v1.json",
+      "sha256": "c03aa32614dc33fc6c7e6cc47d2c0a0f466e56db8f8490ae7289c70a46475d0f",
+      "bytes": 6871
+    }
+  ],
+  "source_inputs": [
+    {
+      "path": "scripts/build_plugins.py",
+      "sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6"
+    },
+    {
+      "path": "build-plugins.json",
+      "sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7"
+    },
+    {
+      "path": "migration/evidence/mpserverstatus-20261105/packaging/cross_package.py",
+      "sha256": "3c8e3b24b52654100cd405e94fab0e53c9658e63e78927c2147e1dd369c57288"
+    },
+    {
+      "path": "migration/evidence/mpserverstatus-20261105/packaging/cross-package-result.json",
+      "sha256": "337ad30f62c4491e3d91d4c2ce148249fe297d9d3ec8e6476f63b41530117d9b"
+    },
+    {
+      "path": "migration/evidence/mpserverstatus-20261105/packaging/actual-linux-manifest.json",
+      "sha256": "e4689aca4d1c042450166b36a2f9b2eb2a95a48833a173f3b4b937a93f3a5527"
+    }
+  ],
+  "cleanup": "replay TemporaryDirectory removed; no processes or binary extracted"
+}

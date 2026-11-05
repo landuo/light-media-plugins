@@ -1,0 +1,155 @@
+{
+  "classification": "SDKimpact ordinaryMain2 driver-only source POST-form selector counter fix, not product/SDK change, compilation+ownedHTTPunitregression only",
+  "source_contract": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main2-source-contract.json",
+    "sha256": "845b28ccdbc083697f54cfd6b8687e4eac26db6dbb6e6f158fb3c39a5923ec54",
+    "bytes": 1228
+  },
+  "old_generation": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/preserved.json",
+    "sha256": "9e5ca72f6c7001da86fd94c999a383bf2a8497f916d440ba6d4f9e4af1012df7",
+    "bytes": 1990
+  },
+  "baseline_dependency_audit": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/impact-freeze.json",
+    "sha256": "c3f6199ba5805a756e6cadac21262a1fa33f79f7aac5620643c4898f1b4f506f",
+    "status": "477old/new normal/race+actualprocess crossmatrix evidence unchanged; prior driver85ea superseded only"
+  },
+  "stable_inputs": {
+    "before": {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main2-inputs-before.json",
+      "sha256": "6ae1286be930cf3858ed92e1869ad12d965f0faab622b8d97aaba7fcf9f38d66",
+      "bytes": 20584
+    },
+    "after": {
+      "path": "work/migration-20261105/sdk98-impact-20261105/main2-inputs-after.json",
+      "sha256": "6ae1286be930cf3858ed92e1869ad12d965f0faab622b8d97aaba7fcf9f38d66",
+      "bytes": 20584
+    },
+    "count": 183
+  },
+  "only_input_changes_vs_Main1": {
+    "tests/integration/sdk98_impact_helpers_test.go": [
+      "1d3b03f12bf59b5e4d752777bacd79010bbe6859ed4519df9fed497e2cb4a02a",
+      "090a6b7059e8f25f76bdc9db912c50592017983c2f27714f79151534b4ef85cd"
+    ]
+  },
+  "binary": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+    "sha256": "5d649f3d6fbec3cf17a8831b66e64dd808cdc3cadfab5215251748e34015db97",
+    "bytes": 12663834
+  },
+  "checks": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go",
+        "-run",
+        "^TestSDK98ImpactQBPeerSourcePostSelector$"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-normal.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-normal.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main2-normal-result.json",
+        "sha256": "5478ccd89adc28bd5b182dde979881e9863d0d6af799a18b57446b9dbb18b9df",
+        "bytes": 674
+      },
+      "stdout_sha256": "05c8fb2ae31f94c40dfd055115dcf89bad789b42a2855a6b2ba5ba94cadc0c5c",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-race",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go",
+        "-run",
+        "^TestSDK98ImpactQBPeerSourcePostSelector$"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-race.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-race.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main2-race-result.json",
+        "sha256": "a39112bb97447c3223018b5ae73e4ff4c2ae7bd3aa0d91202a69c148bb9c7870",
+        "bytes": 683
+      },
+      "stdout_sha256": "713f5d2110e2d4f0df0b8846064ae21e8257c7c6cfc3b4a6ff42b2e88b79aec5",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "go",
+        "vet",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go"
+      ],
+      "env": {
+        "GOFLAGS": ""
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-vet.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-vet.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main2-vet-result.json",
+        "sha256": "9f617d1ede42a00a0612ef8ea10c6dad45916e0a62e744eab7d83a36fb1f380a",
+        "bytes": 590
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-c",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+        "tests/integration/testhost_main_test.go",
+        "tests/integration/sitestatistic_helpers_test.go",
+        "tests/integration/sitestatistic_main_test.go",
+        "tests/integration/sdk98_impact_test.go",
+        "tests/integration/sdk98_impact_helpers_test.go"
+      ],
+      "env": {
+        "GOFLAGS": "",
+        "CGO_ENABLED": "0",
+        "GOOS": "linux",
+        "GOARCH": "amd64"
+      },
+      "exit_code": 0,
+      "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-linux.log",
+      "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main2-linux.stderr",
+      "record": {
+        "path": "work/migration-20261105/sdk98-impact-20261105/main2-linux-result.json",
+        "sha256": "301b5e39b4d38ff7700eb866f1cd2942321f5f6928380161ca385b668c3d074d",
+        "bytes": 816
+      },
+      "stdout_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    }
+  ],
+  "NAS_actual_Main1": "Root retains exact failed run; both3second private callbacks actually ran, onlyquery counter missedPOSTbody",
+  "remaining": "Root Main2 using samef7Host7521/current3workerELFs; original>=2private/>=4source query asserts retained; ownedqBprotocolpeer notrealdaemon"
+}

@@ -237,23 +237,25 @@ type Frame struct {
 	ID       string `json:"request_id"`
 	Type     string `json:"type"`
 	Identity
-	Method  string          `json:"method,omitempty"`
-	Payload json.RawMessage `json:"payload,omitempty"`
-	Result  json.RawMessage `json:"result,omitempty"`
-	Error   *ReplyError     `json:"error,omitempty"`
+	Method      string          `json:"method,omitempty"`
+	Payload     json.RawMessage `json:"payload,omitempty"`
+	Result      json.RawMessage `json:"result,omitempty"`
+	Error       *ReplyError     `json:"error,omitempty"`
+	CleanupRoot string          `json:"cleanup_root,omitempty"`
 }
 
 type Handshake struct {
-	TransportClose    int                     `json:"transport_close,omitempty"`
-	ConcurrentSession int                     `json:"concurrent_session,omitempty"`
-	Protocol          int                     `json:"protocol"`
-	PluginID          string                  `json:"plugin_id"`
-	Version           string                  `json:"version"`
-	HostAPI           int                     `json:"host_api"`
-	Methods           []string                `json:"methods"`
-	Capabilities      []string                `json:"capabilities"`
-	Transport         *transportAdvertisement `json:"transport,omitempty"`
-	PersistentSession int                     `json:"persistent_session,omitempty"`
+	CleanupContinuation int                     `json:"cleanup_continuation,omitempty"`
+	TransportClose      int                     `json:"transport_close,omitempty"`
+	ConcurrentSession   int                     `json:"concurrent_session,omitempty"`
+	Protocol            int                     `json:"protocol"`
+	PluginID            string                  `json:"plugin_id"`
+	Version             string                  `json:"version"`
+	HostAPI             int                     `json:"host_api"`
+	Methods             []string                `json:"methods"`
+	Capabilities        []string                `json:"capabilities"`
+	Transport           *transportAdvertisement `json:"transport,omitempty"`
+	PersistentSession   int                     `json:"persistent_session,omitempty"`
 }
 
 // Error deliberately contains only a local code. Worker output, command paths,
@@ -341,7 +343,7 @@ func (runner Runner) Run(ctx context.Context, command Command, manifest Manifest
 	cmd.Dir, cmd.WaitDelay = command.Dir, time.Second
 	// Do not inherit provider credentials or management sessions from the host.
 	cmd.Env = []string{"GOMEMLIMIT=64MiB"}
-	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT"} {
+	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT", "HOME"} {
 		if value, present := os.LookupEnv(key); present {
 			cmd.Env = append(cmd.Env, key+"="+value)
 		}
@@ -678,7 +680,7 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	cmd := exec.CommandContext(life, command.Path, command.Args...)
 	cmd.Dir, cmd.WaitDelay = command.Dir, time.Second
 	cmd.Env = []string{"GOMEMLIMIT=64MiB"}
-	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT"} {
+	for _, key := range []string{"PATH", "LANG", "LC_ALL", "TZ", "SYSTEMROOT", "HOME"} {
 		if value, ok := os.LookupEnv(key); ok {
 			cmd.Env = append(cmd.Env, key+"="+value)
 		}
@@ -782,9 +784,13 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 			}
 			c.concurrent = newConcurrentClient(c, proposal)
 			c.concurrent.transportClose = agreed.TransportClose == 1
+			c.concurrent.cleanupContinuations = cleanupDeclared(manifest) && agreed.CleanupContinuation == 1
 		} else if runner.RequireConcurrent {
 			return nil, failure("concurrent_session_unsupported")
 		}
+	}
+	if cleanupDeclared(manifest) && !c.SupportsCleanupContinuations() {
+		return nil, failure("cleanup_continuation_unsupported")
 	}
 	if startup.Err() != nil || life.Err() != nil {
 		return nil, failure("execution_canceled")

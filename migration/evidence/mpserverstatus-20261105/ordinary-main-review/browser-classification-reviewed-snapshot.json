@@ -1,0 +1,36 @@
+{
+  "actual_url": "http://192.168.8.129:36255",
+  "actual_main_run": "main-run-4",
+  "host": "published75e/0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+  "worker": "SDK98/66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "source_version": "1.4",
+  "fixture_update_version": "1.4.1 not upstreamrelease",
+  "data": "owned synthetic HTTPS Nginx peer; actual LinuxOS lookup/TLS; no upstream availability claim",
+  "browser": "IAB id3 tab9",
+  "verified": [
+    "actual login",
+    "data page active12/reading2/writing3/waiting7/ownedTLS",
+    "only enable form field",
+    "save disable/reopen unchecked/page disabled",
+    "reenable save",
+    "clone remains separatelydisabled",
+    "logs streaming/filter request latency",
+    "dashboard enabled-only selection",
+    "save and reload persisted widget",
+    "390x844 actualresponsive dashboard",
+    "restore Auto and resetviewport"
+  ],
+  "not_verified": [
+    "touch-only pull-down quick access: Chrome extension UI blocked; IAB Input.synthesizeScrollGesture unsupported"
+  ],
+  "failures": [
+    {
+      "surface": "Chrome368189639",
+      "result": "extension UI interrupted control; no bypass attempted"
+    },
+    {
+      "surface": "IABdashboard selector",
+      "result": "DOM actualbutton not rolecheckbox; freshDOM located correctbutton, selected andsaved"
+    }
+  ]
+}

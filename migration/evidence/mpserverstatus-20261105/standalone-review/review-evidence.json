@@ -1,0 +1,263 @@
+{
+  "schema_version": 1,
+  "classification": "independent source-to-Go current98 code and standalone gates passed; ordinary Main/browser/public DNS-TLS/clone acceptance separate",
+  "sealed_at_utc": "2026-11-05T12:08:41.105117+00:00",
+  "status": "passed_for_source_contract_and_standalone_boundaries",
+  "unresolved_confirmed_product_defects": [],
+  "source": {
+    "plugin": "MPServerStatus",
+    "version": "1.4",
+    "snapshot_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "path": "work/migration-20261105/source-snapshot/mpserverstatus/__init__.py",
+    "sha256": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+    "original_lines": 1017,
+    "methods": 42,
+    "independent_source_before_target_cases": 188,
+    "earlier_source_runtime": "local Python3.14.4 synthetic AST; no vendor networking equivalence asserted",
+    "later_bounded_wire_oracles": "actual image33354456/Python3.12.13 Requests2.34.2 urllib3 2.7.0; owned loopback or no networking; no production app imports"
+  },
+  "frozen_target": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/freeze-manifest-current.json",
+    "sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b",
+    "bytes": 168890
+  },
+  "current_SDK_ORIGIN": {
+    "path": "SDK_ORIGIN.json",
+    "sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "bytes": 246908
+  },
+  "host_source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+  "input_files_before_and_after": 470,
+  "SDK_complete_files_git_verified": 98,
+  "codec_source_plan_whole_files_verified": 304,
+  "scope": {
+    "linux_local_single_user": true,
+    "go_only_product_runtime": true,
+    "platform_owns_clones": true,
+    "official_auth_excluded_by_user": true,
+    "no_new_workflow_AI_or_global_executor": true
+  },
+  "verification": {
+    "normal": {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "./plugins/mpserverstatus/...",
+        "./cmd/mp-server-status"
+      ],
+      "GOFLAGS": "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/mpserverstatus-review/final-current98/overlay.json",
+      "exit_code": 0,
+      "passed_tests_and_subtests": 708,
+      "packages": [
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+          "action": "pass",
+          "elapsed": 0.292
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus/requestsproxy",
+          "action": "pass",
+          "elapsed": 0.391
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+          "action": "pass",
+          "elapsed": 1.093
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/cmd/mp-server-status",
+          "action": "pass",
+          "elapsed": 1.251
+        }
+      ],
+      "raw": {
+        "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/cold-normal.jsonl",
+        "sha256": "fd980eb73d20c6c891a6ab47848f54bbbef58f5b7aeb651de723ae8d36b5694b",
+        "bytes": 697265
+      },
+      "stderr": {
+        "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/cold-normal-stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    },
+    "race": {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-race",
+        "-json",
+        "./plugins/mpserverstatus/...",
+        "./cmd/mp-server-status"
+      ],
+      "GOFLAGS": "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/mpserverstatus-review/final-current98/overlay.json",
+      "exit_code": 0,
+      "passed_tests_and_subtests": 708,
+      "packages": [
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus/requestsproxy",
+          "action": "pass",
+          "elapsed": 1.416
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+          "action": "pass",
+          "elapsed": 2.176
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+          "action": "pass",
+          "elapsed": 3.39
+        },
+        {
+          "package": "github.com/landuo/light-media-plugins/cmd/mp-server-status",
+          "action": "pass",
+          "elapsed": 6.743
+        }
+      ],
+      "raw": {
+        "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/cold-race.jsonl",
+        "sha256": "2c7e6423b4c7c048e99838d25d05f7cdb50f969413432b02427cf3f86c08a0a2",
+        "bytes": 697489
+      },
+      "stderr": {
+        "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/cold-race-stderr.txt",
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      }
+    }
+  },
+  "additional_independent_tests_and_subtests_per_mode": 226,
+  "additional_case_count_warning": "226 includes root tests and repeated native projections; not226 distinct original source cases. 149/188 independent initial source cases directly replayed, remaining39 reviewed against actual-source runtime/metrics/lifecycle traces and method mapping.",
+  "standalone_observations": {
+    "normal": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/worker-observations/worker-budget-observations-normal.json",
+      "sha256": "b2b558060309dfd0ebd503f589caed0e91e681f569c541406a9f5e0e5ce6b07c",
+      "bytes": 35035
+    },
+    "race": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/worker-observations/worker-budget-observations-race.json",
+      "sha256": "0a9cf2de3d602642bb01ed161e59e5b0993d955e5c63f4e65055b515359c5d53",
+      "bytes": 35036
+    }
+  },
+  "standalone_totals_each_mode": {
+    "callbacks": 172,
+    "RPC": 494,
+    "max_phase_RPC": 3,
+    "owned_HTTPS_requests": 165,
+    "unexpected_network": 0,
+    "expired_host_calls": 0,
+    "HostHandler_identity_resources": "synthetic; not ordinary Main"
+  },
+  "negative_mutations": {
+    "total": 8,
+    "compiled": 8,
+    "killed_by_real_test_failure": 8,
+    "details": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/mutation-results.json",
+      "sha256": "dc379eefbba4b54e7d31b593a1b4996d6bf01dd27cea3dfd5a18023345308de2",
+      "bytes": 5122
+    }
+  },
+  "vet": {
+    "exit_code": 0,
+    "command": [
+      "go",
+      "vet",
+      "./plugins/mpserverstatus/...",
+      "./cmd/mp-server-status"
+    ],
+    "stderr": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/vet-stderr.txt",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  },
+  "independent_Linux_build": {
+    "command": "CGO_ENABLED=0 GOOS=linux GOARCH=amd64 GOFLAGS= go build -trimpath -buildvcs=false -o own path ./cmd/mp-server-status",
+    "exit_code": 0,
+    "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+    "whole_bytes_equal_frozen_author_worker": true,
+    "actual_go_version_m": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/linux-worker-buildinfo.txt",
+      "sha256": "d5c921ef5b7a950cbee1640c8c33932b5ba89dba26a9bfe7efaa85e2a440637c",
+      "bytes": 609
+    },
+    "dependencies": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/linux-deps-summary.json",
+      "sha256": "1cadcea9bb403b56228b882d6b86e18b96f14b9f0957ec31ba053c6bc858fd46",
+      "bytes": 886
+    },
+    "ELF_removed_after_capture": true
+  },
+  "input_provenance": {
+    "before": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/input-binding-before.json",
+      "sha256": "4c7f51d9b3366911b3bffae055c897d5ea99d2f195f2aa018fd0629a9d71bac8",
+      "bytes": 148666
+    },
+    "after": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/input-binding-after.json",
+      "sha256": "af6205edde53141339fc97e8b3d6f31aa9fa3bbab015d131967b3213252c985f",
+      "bytes": 148666
+    },
+    "SDK_git_whole_files": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/sdk98-git-provenance.json",
+      "sha256": "3fdb952798a5ca0d4f24725e895bc6d423de54acdf3103a2aef92b3590a19f64",
+      "bytes": 41763
+    },
+    "codec_whole_files": {
+      "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/codec-provenance.json",
+      "sha256": "c24513a674efa34f2ee9e5a4da0d6cf2c48f14b17f5d60f9d411278978b9cfbf",
+      "bytes": 117216
+    }
+  },
+  "source_method_coverage": {
+    "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/source-method-coverage.json",
+    "sha256": "15464307fd215e809fab01cc5d659f8ca6b6bb4b55f2642f8f804a644092024a",
+    "bytes": 11615
+  },
+  "report": {
+    "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/review.md",
+    "sha256": "8a662712df2874dc3c5ba894ec9c8e86b4a06d757a1cd31526f501228f82f00c",
+    "bytes": 7603
+  },
+  "failures_preserved": [
+    "initial c23b/oldSDK95 source comparisons and superseded worker evidence",
+    "date/header/text/Cookie source red logs",
+    "two caller-cancellation cache red logs; approved runtime adaptation, not Python behavior",
+    "NO_PROXY hypothesis disproved by source: no false bug/fix",
+    "native-text WIP mutable-input/nonzero Go output not marked final pass; wrapper metadata masking documented",
+    "first combined overlay package mismatch setup failure, subsequently corrected"
+  ],
+  "approved_adaptations": [
+    "private verified HTTPS proxy credential boundary; reject redirect userinfo; no netrc account lookup",
+    "native Go resolver/root stores/diagnostic wording",
+    "scope/caller cancellation terminal; canceled caller skips cache replacement, active internal timeout retains source failure cache",
+    "SDK existing transport/log/response budgets unchanged"
+  ],
+  "not_claimed": [
+    "ordinary Main or browser execution",
+    "real public movie-pilot.org HTTP/DNS/certificate chain",
+    "ordinary platform clone/update/uninstall lifecycle",
+    "byte-identical CPython/OpenSSL error messages",
+    "exhaustive arbitrary HTTP/vendor behavior beyond finite source fixed-probe contract"
+  ],
+  "cleanup": {
+    "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/cleanup.json",
+    "sha256": "30413033ab5d8f317cdc3f5a9e47312f0504744e98b3bfb3fff0744f8c89a572",
+    "bytes": 960
+  },
+  "artifact_manifest": {
+    "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/artifact-manifest.json",
+    "sha256": "6aa60f04e158bd231b590fa37db45f12d6bf2de4041be893f32dd2de9c182c6b",
+    "bytes": 37210
+  },
+  "artifact_count": 167,
+  "product_host_SDK_ledger_modified": false,
+  "commit_push_deploy": false
+}

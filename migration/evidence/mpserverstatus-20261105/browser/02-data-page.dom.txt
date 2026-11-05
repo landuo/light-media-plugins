@@ -1,0 +1,175 @@
+- complementary:
+  - link "光影 LIGHT MEDIA":
+    - /url: "#discover"
+    - text: 光影
+    - generic: LIGHT MEDIA
+  - navigation:
+    - link "搜索结果":
+      - /url: "#search"
+      - text: 搜索结果
+    - generic: 发现
+    - link "推荐":
+      - /url: "#discover"
+      - text: 推荐
+    - link "探索":
+      - /url: "#explore"
+      - text: 探索
+    - link "仪表板":
+      - /url: "#dashboard"
+      - text: 仪表板
+    - generic: 订阅
+    - link "电影":
+      - /url: "#subscriptions?type=movie"
+      - text: 电影
+    - link "电视剧":
+      - /url: "#subscriptions?type=tv"
+      - text: 电视剧
+    - link "日历":
+      - /url: "#calendar"
+      - text: 日历
+    - generic: 整理
+    - link "下载管理":
+      - /url: "#downloads"
+      - text: 下载管理
+    - link "整理历史":
+      - /url: "#history"
+      - text: 整理历史
+    - link "文件管理":
+      - /url: "#files"
+      - text: 文件管理
+    - generic: 系统
+    - link "站点管理":
+      - /url: "#sites"
+      - text: 站点管理
+    - link "插件":
+      - /url: "#plugins"
+      - text: 插件
+    - link "任务队列":
+      - /url: "#jobs"
+      - text: 任务队列
+    - link "日志":
+      - /url: "#logs"
+      - text: 日志
+    - link "设置":
+      - /url: "#settings"
+      - text: 设置
+- banner:
+  - search:
+    - button "搜索影视":
+    - textbox "搜索电影、剧集":
+      - /placeholder: 搜索电影、剧集…
+    - generic: ⌘K
+  - button "用户界面设置":
+  - button "捷径":
+  - button "通知中心":
+  - button "退出登录":
+- main:
+  - tablist:
+    - tab "我的插件" [selected]:
+      - generic: 我的插件
+    - tab "插件市场":
+      - generic: 插件市场
+  - button "搜索插件":
+  - button "筛选已安装插件":
+  - button "排序插件":
+  - generic "Owned MPS twin v1.4":
+    - generic: Owned MPS twin v1.4
+  - generic "在仪表板中实时显示MoviePilot公共服务器状态。"
+  - link "jxxghp":
+    - /url: https://github.com/jxxghp
+  - button "Owned MPS twin操作":
+  - generic "MoviePilot服务监控 v1.4.1":
+    - generic: MoviePilot服务监控 v1.4.1
+  - generic "在仪表板中实时显示MoviePilot公共服务器状态。"
+  - link "jxxghp":
+    - /url: https://github.com/jxxghp
+  - button "MoviePilot服务监控操作":
+  - button "新建文件夹":
+- status
+- dialog:
+  - generic: MoviePilot服务监控
+  - button "关闭插件详情":
+  - alert:
+    - generic: 服务状态正常 · HTTP 200 · movie-pilot.org
+  - generic: HTTP状态
+  - generic: "200"
+  - generic: HTTP/1.1
+  - generic: 响应延迟
+  - generic: 16 ms
+  - generic: 101 B 响应
+  - generic: 活跃连接
+  - generic: "12"
+  - generic: 忙碌 41.7%
+  - generic: 请求速率
+  - generic: 待刷新
+  - generic: 等待下一次采样
+  - generic: 连接速率
+  - generic: 待刷新
+  - generic: 等待下一次采样
+  - generic: 等待连接
+  - generic: "7"
+  - generic: 58.3% 空闲
+  - generic: 处理中连接
+  - generic: "5"
+  - generic: 读 2 / 写 3
+  - generic: 请求/连接
+  - generic: "12.04"
+  - generic: 累计均值
+  - generic: 总请求数
+  - generic: 14,145
+  - generic: Nginx 累计
+  - generic: 总连接数
+  - generic: 1,180
+  - generic: Nginx 累计
+  - generic: 丢弃连接
+  - generic: "5"
+  - generic: 0.4%
+  - generic: TLS证书
+  - generic: 89 天
+  - generic: 2027-02-03 12:26 UTC
+  - generic: 连接明细
+  - table:
+    - rowgroup:
+      - row "Reading 2 / 16.7%":
+        - cell "Reading"
+        - cell "2 / 16.7%"
+      - row "Writing 3 / 25.0%":
+        - cell "Writing"
+        - cell "3 / 25.0%"
+      - row "Waiting 7 / 58.3%":
+        - cell "Waiting"
+        - cell "7 / 58.3%"
+      - row "Handled 1,175":
+        - cell "Handled"
+        - cell "1,175"
+      - row "Dropped 5 / 0.4%":
+        - cell "Dropped"
+        - cell "5 / 0.4%"
+  - generic: 服务探测
+  - table:
+    - rowgroup:
+      - row "域名 movie-pilot.org:443":
+        - cell "域名"
+        - cell "movie-pilot.org:443"
+      - row "解析IP 127.0.0.1":
+        - cell "解析IP"
+        - cell "127.0.0.1"
+      - row "DNS耗时 0 ms":
+        - cell "DNS耗时"
+        - cell "0 ms"
+      - row "TLS版本 TLSv1.3":
+        - cell "TLS版本"
+        - cell "TLSv1.3"
+      - row "证书签发 Owned MPS public probe CA":
+        - cell "证书签发"
+        - cell "Owned MPS public probe CA"
+      - row "服务时间 2026-11-05 12:28:04 UTC":
+        - cell "服务时间"
+        - cell "2026-11-05 12:28:04 UTC"
+      - row "Server Owned-MPS-Nginx":
+        - cell "Server"
+        - cell "Owned-MPS-Nginx"
+      - row "Content-Type text/plain":
+        - cell "Content-Type"
+        - cell "text/plain"
+  - button "插件设置":

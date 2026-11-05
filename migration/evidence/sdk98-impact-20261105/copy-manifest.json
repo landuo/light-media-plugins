@@ -1,0 +1,1499 @@
+{
+  "classification": "allowlisted source/command/check/raw sanitized test observation publication; no ELF/DB/key/cookie/config snapshots",
+  "files": [
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/impact-freeze.json",
+      "public": "migration/evidence/sdk98-impact-20261105/historical-local-freeze.json",
+      "sha256": "c3f6199ba5805a756e6cadac21262a1fa33f79f7aac5620643c4898f1b4f506f",
+      "bytes": 35534
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/sdk95-git-binding.json",
+      "public": "migration/evidence/sdk98-impact-20261105/sdk95-git-binding.json",
+      "sha256": "fe220fc57996b07165e48c3bc66aa60a6fbc0310d519aa1363414ff958e7b6ac",
+      "bytes": 10724
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/sdk95-to98.diff",
+      "public": "migration/evidence/sdk98-impact-20261105/sdk95-to98.diff",
+      "sha256": "fc255c336beb8765bb73d76db98932ee475415d9664f3383e8db4176947bff63",
+      "bytes": 21756
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/reachability.md",
+      "public": "migration/evidence/sdk98-impact-20261105/historical-reachability.md",
+      "sha256": "65a06b61a34969971d158f3aacd723be3c458ef759011f81f765ce74b8c4a1f9",
+      "bytes": 5754
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/local-proof-reuse-inspection.json",
+      "public": "migration/evidence/sdk98-impact-20261105/local-proof-reuse-inspection.json",
+      "sha256": "cd88842152c67ef52fee394152f8d3628cd01ed923e229c0ca0284eca9720334",
+      "bytes": 1172
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/final-inputs-before.json",
+      "public": "migration/evidence/sdk98-impact-20261105/local-inputs-before.json",
+      "sha256": "e786fc55de0891140ac8740ec211cfa6b54d4b26c75ac049995d9aa8351121e3",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/final-inputs-after.json",
+      "public": "migration/evidence/sdk98-impact-20261105/local-inputs-after.json",
+      "sha256": "e786fc55de0891140ac8740ec211cfa6b54d4b26c75ac049995d9aa8351121e3",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-inputs-before.json",
+      "public": "migration/evidence/sdk98-impact-20261105/main4-inputs-before.json",
+      "sha256": "615a0a45e01c1dbddffa5b1a6794df9d5e5460cdc1b8f276c099e341bc43db57",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-inputs-after.json",
+      "public": "migration/evidence/sdk98-impact-20261105/main4-inputs-after.json",
+      "sha256": "615a0a45e01c1dbddffa5b1a6794df9d5e5460cdc1b8f276c099e341bc43db57",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-tail-source-audit.json",
+      "public": "migration/evidence/sdk98-impact-20261105/main4-tail-source-audit.json",
+      "sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
+      "bytes": 18293
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-freeze.json",
+      "public": "migration/evidence/sdk98-impact-20261105/main4-freeze.json",
+      "sha256": "d8b8d3ee824af4c164b797aa9b12c3e44d16ed43cfb89f642d6d8e5943e00ff4",
+      "bytes": 17878
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-run-contract.json",
+      "public": "migration/evidence/sdk98-impact-20261105/main4-run-contract.json",
+      "sha256": "f4236b73c350e636780cd6bd150e1ef18632cf35fcceedefe3cab31f2a5a3c77",
+      "bytes": 2299
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main-comparison.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main-comparison.json",
+      "sha256": "b418390cc7a2a419fcf62718278ad61fcb10a357edb750caaa940e926b65a2ab",
+      "bytes": 11932
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/compare_actual_main.py",
+      "public": "migration/evidence/sdk98-impact-20261105/compare_actual_main.py",
+      "sha256": "c0d8602107f0e3450e8123446d589dd6fbad14d106ba0e991885ff551f4f8c79",
+      "bytes": 9204
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/capture.py",
+      "public": "migration/evidence/sdk98-impact-20261105/capture.py",
+      "sha256": "af33bfc70fa027659fe76f9de599ec7464dad87d506695a3338fe3a642cbced7",
+      "bytes": 968
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/prepare.py",
+      "public": "migration/evidence/sdk98-impact-20261105/prepare.py",
+      "sha256": "90d685e5477dc1bf27761976e6dd25ac845713b5f404f13223e8964f95944073",
+      "bytes": 2223
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4_build.py",
+      "public": "migration/evidence/sdk98-impact-20261105/main4_build.py",
+      "sha256": "f7e1864b16851d9d765135cab50ecb6dda7d7b018a3727c7c93d75336cdfb566",
+      "bytes": 1347
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-seal-attempt1.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failures/main4-seal-inventory.json",
+      "sha256": "e2110885479e119d14b6d9c156ebc4464d5b25a6e82f5b1124fbae57379f327f",
+      "bytes": 286
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/run_owned_main.py",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/run_owned_main.py",
+      "sha256": "4874be5a402bf058e0ce68b1c5f2a92a77ca9d35b9f3f5be7d5a6b4532b29bd0",
+      "bytes": 2453
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/harvest_allowlisted.py",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/harvest_allowlisted.py",
+      "sha256": "881f2bdb2b4cac304533f4823a0b7eb6aa69f8d22d901ed8715d6a975cf51874",
+      "bytes": 1500
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/post-run-cleanup.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/post-run-cleanup.json",
+      "sha256": "032f92f7d699affe42d4c8c99de8601628bb0319d330f814a1957db57ec087da",
+      "bytes": 431
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-normal.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites95-normal.jsonl",
+      "sha256": "32c01c4d0c8cd5a3384938dacad595b6a268c9b9ce2c23d56280a508a86dfd2a",
+      "bytes": 468832
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-normal.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites95-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-race.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites95-race.jsonl",
+      "sha256": "7690e13e9d2d1c42e01b1daa2e49182a7b75d5e81db6ee351ecfd918ef9fd41e",
+      "bytes": 468989
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-race.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites95-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-normal.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites98-normal.jsonl",
+      "sha256": "bc2e507a757d7d8537ed392a8fdc76ce5db676609aa896511e0af4b7f4930821",
+      "bytes": 468836
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-normal.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites98-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-race.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites98-race.jsonl",
+      "sha256": "30758963ef173c3521d15d7de29bac661b050a480d5472382f27ecc0ee49d0aa",
+      "bytes": 468987
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-race.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/suites98-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner95.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner95.jsonl",
+      "sha256": "475942de31681a5d3e4a644db755fd661644fe8866e7146aae0e407fc9ea86f9",
+      "bytes": 9678
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner95.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner95.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner95-race.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner95-race.jsonl",
+      "sha256": "9b0ef1f570c2fe655a2f5a1fce572c5070de5cda404040af28eac9b2789bb98a",
+      "bytes": 9679
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner95-race.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner95-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner98.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner98.jsonl",
+      "sha256": "769b3f046209cbdc828665877f75f7d61abcec300c2678b1cf2b5adc45c58b32",
+      "bytes": 9679
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner98.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner98.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner98-race.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner98-race.jsonl",
+      "sha256": "50535abb77bcedd30f348ed9d3b8263669e55b41b9834710b88d1b353dc18beb",
+      "bytes": 9679
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-runner98-race.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/actual-runner98-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-normal-attempt1.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/failures/suites95-normal-attempt1.jsonl",
+      "sha256": "44f3f052fde28612a2d25243c9cdbd51e2d2f660268f4169af74e5d908846267",
+      "bytes": 464875
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites95-normal-attempt1.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/failures/suites95-normal-attempt1.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-normal-attempt1.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/failures/suites98-normal-attempt1.jsonl",
+      "sha256": "9629e382b02a075c0192daeaca9eeec6966d513530d622e636014f3dd563e5ec",
+      "bytes": 464860
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/suites98-normal-attempt1.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/failures/suites98-normal-attempt1.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-normal.log",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-normal.log",
+      "sha256": "60ca07a3466ba706dc78ca3aafa73945485a736f6bf443a77c52cc804fc5328d",
+      "bytes": 13081
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-normal.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-normal-result.json",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-normal-result.json",
+      "sha256": "59718bd0daa9b56d5cde79f9d5efa57194c95f66a940d2f363f0cc4525ae4430",
+      "bytes": 924
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-race.log",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-race.log",
+      "sha256": "43c36aeb189c7d351d9906ec02d7dbe34dba5814c37aa1425edf89f7ba6a72b1",
+      "bytes": 13083
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-race.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-race-result.json",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-race-result.json",
+      "sha256": "668210ea66a546678259563db50b674cd5d718ff52c0822d6cdfdc5b69baeee4",
+      "bytes": 931
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-vet.log",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-vet.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-vet.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-vet.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-vet-result.json",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-vet-result.json",
+      "sha256": "692a61a019805ae470bfd7250f592f9bd307c8d6204d17fde3dc7ff1acf68533",
+      "bytes": 736
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-linux.log",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-linux.log",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-linux.stderr",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-linux.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-linux-result.json",
+      "public": "migration/evidence/sdk98-impact-20261105/checks/main4-linux-result.json",
+      "sha256": "2c50d4a426f74c15d7ccde7cbd425c47a0cd78568ea7c3c021fdd71f65cc45e3",
+      "bytes": 964
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-CategoryEditor-in.jsonl",
+      "sha256": "cc273a54f276051293b38683262a42ed0838895465cf6280433a249d98a68be0",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-CategoryEditor-out.jsonl",
+      "sha256": "03b452e8fd61b57ce8c72d3c54f887a61262fb781d8c51f68bff9a635c5cadcb",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-SiteStatistic-in.jsonl",
+      "sha256": "c5049167a391f05dff26eabd645579dc49439097664c4fc12c8f3ed0eea854a9",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-SiteStatistic-out.jsonl",
+      "sha256": "eca98e3b219c7fa3a3a04c2b8b5a13f33d1c5dfaf551315f6cfd57fd1f121243",
+      "bytes": 5131
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-TorrentTransfer-in.jsonl",
+      "sha256": "135f410032a1894a14560b0cf4d7f64cb2d0b525030328d1b10bb106d0b8b5e7",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-TorrentTransfer-out.jsonl",
+      "sha256": "465766a7fa2c9cd2e5bef6ccf1d24677099e91f609fcf39c8f5775432e691433",
+      "bytes": 8449
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-TorrentTransfermusic-in.jsonl",
+      "sha256": "c2c27c7a2611df683d6f1c06bafd4938246b5b1972ec7ce9598d0cbf29cedc61",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/95-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/95-TorrentTransfermusic-out.jsonl",
+      "sha256": "c9d12712559d6d903f8559e6ac19551ad7c07deb7840d40ae6b7f788a47d3c14",
+      "bytes": 8524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-CategoryEditor-in.jsonl",
+      "sha256": "3543cd9caf56d53afbd218e764d02f97535675b323133ada24ae8358b5db3ee9",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-CategoryEditor-out.jsonl",
+      "sha256": "69945877f2cb4255501891dc22d3fd7abc5c7427cc80bb6dfdce2647f56de923",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-SiteStatistic-in.jsonl",
+      "sha256": "2a0ef0677ff0f80448e3b57eb73d778de9ca2425c45b42049751a5ac98733cd8",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-SiteStatistic-out.jsonl",
+      "sha256": "6cf3db3e3a25557f6bfc8726243aa81b415262c9b6580ce3726a523b53439ece",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-TorrentTransfer-in.jsonl",
+      "sha256": "3f6b8e30ef8a3f6f1db9418b938e3e38ab87a37b8bde1c431bc26d0aee5909c8",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-TorrentTransfer-out.jsonl",
+      "sha256": "beeec525f0ea140ddbaebb2124513efcc79bf5f30e5273add2a9143babc1061c",
+      "bytes": 8449
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-TorrentTransfermusic-in.jsonl",
+      "sha256": "17eb80fd095ca8496cddb94aed5c5ea59107aab31be22e04f20a96910cb1e705",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/98-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/98-TorrentTransfermusic-out.jsonl",
+      "sha256": "fb29b7f947131623e4176cf373c1a3cdb9bdbe32626d91757539016fb795cd73",
+      "bytes": 8524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95/observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95/observations.json",
+      "sha256": "4c9feebc5bcdb9f5cded0df6567a75430ae2360ec035dc9d6d0d2923716d3cbb",
+      "bytes": 75506
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-CategoryEditor-in.jsonl",
+      "sha256": "089de7a74d31c5f1aa69aa226ea7074426e9d9f23f91702a9f7d34f41a300fe6",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-CategoryEditor-out.jsonl",
+      "sha256": "fabc79ca9be2083e850f924deb7056230aa2ca1e6bf6f67eb52773bdeacb6252",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-SiteStatistic-in.jsonl",
+      "sha256": "00b874bea1027a18f338c989a852b5ea3cc1df3b10502db190c0ccf4d5e100be",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-SiteStatistic-out.jsonl",
+      "sha256": "b4eae6f65b8e5c75f23f5e3043144eec25a12c1642313eeeb1d8c2136abe8742",
+      "bytes": 5131
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-TorrentTransfer-in.jsonl",
+      "sha256": "57fb4328f460f6b4bb1f33f86083ce80cb7bce2a3b9b49f04b06f0423b07e95b",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-TorrentTransfer-out.jsonl",
+      "sha256": "f8579b1256176e69c36668d9a5b9c78673e41b899147beadab9d8cb9d27df939",
+      "bytes": 8449
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-TorrentTransfermusic-in.jsonl",
+      "sha256": "d83963bc09cf9605f9d6c868f2c5b7263d75f2c94c80e390ad1d7b909323e711",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/95-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/95-TorrentTransfermusic-out.jsonl",
+      "sha256": "54e03397031ad83140344b14931a7951d524d9df86f35ecc8d5ce2541112e335",
+      "bytes": 8524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-CategoryEditor-in.jsonl",
+      "sha256": "e38e4454a2f17f7f60954a51ef16bac059f3b61ad7f15cf505fd94c2036abf16",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-CategoryEditor-out.jsonl",
+      "sha256": "f62b6ec2c7d0bab75eee1fe4e8a9bc049c689575bb624876bf131ee6d6154bb1",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-SiteStatistic-in.jsonl",
+      "sha256": "817a3b868b315d5497572f739f0c736ea054c04ef122cd9af9010f2fb7eec8b5",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-SiteStatistic-out.jsonl",
+      "sha256": "12336a70ec76eb7da8f1166c51fbd8a9ae65b38b6c2bb3d40edec61a576926db",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-TorrentTransfer-in.jsonl",
+      "sha256": "51d81c01725d00f592c0fd47937c3fb16e81aabdb6b2f7def1b15d7f4923a8c0",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-TorrentTransfer-out.jsonl",
+      "sha256": "43388b417b3e97ecafcde5f9a3911cb0d2b874f7fb2dd5f656b01cd6600139a2",
+      "bytes": 8668
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-TorrentTransfermusic-in.jsonl",
+      "sha256": "81e283b46a4c0a4bc1f7e492eff86295d8f55a0a418de3e097068d04a19601b8",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/98-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/98-TorrentTransfermusic-out.jsonl",
+      "sha256": "91c084f996e56f056aca9c452fe2a978f43b1840caef3bf8b049b5ecedc90a76",
+      "bytes": 8524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98/observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98/observations.json",
+      "sha256": "7438977f3551dd3a7588177ae9e3dd8d7479a3ba78e1d26ced8fe4ae7ee92863",
+      "bytes": 75528
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-CategoryEditor-in.jsonl",
+      "sha256": "738bd77178ee2d2350f5153b1051f10ada46cefbb1a9e270ce62e03dc40fb6c8",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-CategoryEditor-out.jsonl",
+      "sha256": "a7ea384afdbb5dc261b677bc850d4f802b4c6972a670b73eb95d2271005b8f0b",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-SiteStatistic-in.jsonl",
+      "sha256": "c4c96223ad0e8e65018a8a90cc1e600046b00ad00cc440d4efd3a1620347191b",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-SiteStatistic-out.jsonl",
+      "sha256": "95a6ddbd8e2b064227bd3a1147f11853b41e1cdf07b789e2e3373572c4e302fc",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-TorrentTransfer-in.jsonl",
+      "sha256": "0a443a4fb8488e085289fdb0eb0eaff9de46cfe7cdb9d027a266fa202b165bf7",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-TorrentTransfer-out.jsonl",
+      "sha256": "f260c7a34edd62584088714845361d87ccf66752fa09830e328c616c423cf98b",
+      "bytes": 8449
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-TorrentTransfermusic-in.jsonl",
+      "sha256": "82487da333f17bf5781a296a8c57f66a59a0e9083615f2ba581badbc6c6ae279",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/95-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/95-TorrentTransfermusic-out.jsonl",
+      "sha256": "e9b54069c7bc24906928c2c3b5724d4843d396f8d63f7e52c90cd7b92ee87d3f",
+      "bytes": 8748
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-CategoryEditor-in.jsonl",
+      "sha256": "cd2c78e0e72f90a25cc85355e6449e99aa09b0b13c240e11510e5af47a6c2eef",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-CategoryEditor-out.jsonl",
+      "sha256": "ad1e9493b98fcec28cd165c8b90d5f68c3a50c79966481ab8a25dd2a04db680c",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-SiteStatistic-in.jsonl",
+      "sha256": "9711068f345c75e72a365992e90789e62ff181760baa7b3e868478c922a664a2",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-SiteStatistic-out.jsonl",
+      "sha256": "640d850a228bf4a8aed116dea336a1eb80d87e258797462b859f3c25fc4ed44a",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-TorrentTransfer-in.jsonl",
+      "sha256": "7ca83d02df1543fe07a9b1198d50a77acca5313ab3bc89d0fac2806c89e92eca",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-TorrentTransfer-out.jsonl",
+      "sha256": "6233f2f013b9ea0b0ad516ad2c551c918c75918d14b3597bc938941fb6b2b3ee",
+      "bytes": 8668
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-TorrentTransfermusic-in.jsonl",
+      "sha256": "ab74efdeffb50ebf9a2ca7ae5bf17b93105d9feaef803aac0d7787561c8c0c4e",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/98-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/98-TorrentTransfermusic-out.jsonl",
+      "sha256": "8087b69843f1c0c45f3fbb9d1961a21e37bd5532f50b860c11f1d0b7c83750c2",
+      "bytes": 8748
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner95-race/observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner95-race/observations.json",
+      "sha256": "4c9feebc5bcdb9f5cded0df6567a75430ae2360ec035dc9d6d0d2923716d3cbb",
+      "bytes": 75506
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-CategoryEditor-in.jsonl",
+      "sha256": "5d8c26bdd0b99f72ca5e25493302c5a1d79033dc1f2711a6cad667c454f0bfc9",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-CategoryEditor-out.jsonl",
+      "sha256": "816632a19569b19dcbee45c49895ddebc7b5f704cabdd3564668e36f132d3027",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-SiteStatistic-in.jsonl",
+      "sha256": "b61882f8f64de83aa300bf4a5beb9537894c792ea6d3e41fb1fc951a73478354",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-SiteStatistic-out.jsonl",
+      "sha256": "855b6089c1e0c5f20b8a53020451f922f2096d949156aaa04dbc0bd49fd8dd74",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-TorrentTransfer-in.jsonl",
+      "sha256": "837d699f1f84019d5c819addfbb3d18c959850cfd6e5cab81df12121f80bc994",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-TorrentTransfer-out.jsonl",
+      "sha256": "22a03b996033d70be59aa9bee59f9d3d2ecaa17647500d50a9485d62ba671ad5",
+      "bytes": 8668
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-TorrentTransfermusic-in.jsonl",
+      "sha256": "f9e99148799b876678f8a678d6a5dd9e7c3e20b1676e5ef3854b5764f42cea88",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/95-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/95-TorrentTransfermusic-out.jsonl",
+      "sha256": "106caddfc2c8e27336ecf4f4431956c6c3c08fcb4b4bb0694c2ebdde5c377787",
+      "bytes": 8524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-CategoryEditor-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-CategoryEditor-in.jsonl",
+      "sha256": "64a370fffcbbb795d7a3c73a6255582ebb8ee7d35e1e662db323c962c7fdbf03",
+      "bytes": 2817
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-CategoryEditor-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-CategoryEditor-out.jsonl",
+      "sha256": "fb6fb197dfd78e93fbf163ed4de23efd3de8aa7aaf3be6266c20de34aa276206",
+      "bytes": 3688
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-SiteStatistic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-SiteStatistic-in.jsonl",
+      "sha256": "166415d55aa45a80bed526e89fb5460fd28411e46aa87a058f25c686d5593291",
+      "bytes": 3200
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-SiteStatistic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-SiteStatistic-out.jsonl",
+      "sha256": "a2b1bfc6a1b6e9c9f7845ab965eb5b49f7bbb0d99003080db72e977bfde5f768",
+      "bytes": 4917
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-TorrentTransfer-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-TorrentTransfer-in.jsonl",
+      "sha256": "0715ebd8abefb249384dd71dcbb14101020c6952adf303c55f2fb9c776fc5596",
+      "bytes": 3544
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-TorrentTransfer-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-TorrentTransfer-out.jsonl",
+      "sha256": "db487b261cd86f0f4585989d995294748d6fff3f7a6bcc1ade5ba011c51f7490",
+      "bytes": 8449
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-TorrentTransfermusic-in.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-TorrentTransfermusic-in.jsonl",
+      "sha256": "6fd0a92d81c285cd2a64fea0a4fd138effa3d8df2144e476e537f542ee7abd0d",
+      "bytes": 3619
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/98-TorrentTransfermusic-out.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/98-TorrentTransfermusic-out.jsonl",
+      "sha256": "21cf9bc20739b5544c6ce6842f7c1086373e07744aedccf56e9c3b273266b6fd",
+      "bytes": 8748
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/runner98-race/observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/wire/runner98-race/observations.json",
+      "sha256": "7438977f3551dd3a7588177ae9e3dd8d7479a3ba78e1d26ced8fe4ae7ee92863",
+      "bytes": 75528
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/site-observations/sdk-worker-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/site-observations/sdk-worker-observations.json",
+      "sha256": "9bde182d62a8b9f2739b1a75ad7dff555b81cc218e9e96085ea0e0c7b2c4398e",
+      "bytes": 209473
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "sha256": "75e6d0bfac4d29bfc48daf5ac7119f4773f60ee2839539d2f77026d58286aaae",
+      "bytes": 443272
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "sha256": "abbe42e8b1fe8b5ede4cc88870c9a7720a78fbc059b75141d52ae6dc9c1adb48",
+      "bytes": 336797
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "sha256": "e54dd14189d2005e0545da24da680ddac87cf67f9e48606a7fd147ba6a5c2458",
+      "bytes": 4894
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "sha256": "d118478c8ab84e8bfb40c8b41ac6aa9bacc1b581fd70f2d2d2a660a563822173",
+      "bytes": 172658
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "sha256": "7c34157720a166a88d07d1a80175f6267c31531ff24b6e26bd586352c8cddd7b",
+      "bytes": 373025
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "sha256": "467b74ca11dd677676dd3a06be46fee88033061833b798de96e55bc104ec5287",
+      "bytes": 373021
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "sha256": "a5dc2efdf4ba7fd15afcf428e9999444e8a3a4e80e31d735b6f851256603f003",
+      "bytes": 5736
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/cmd/site-statistic/lifecycle_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/cmd/site-statistic/lifecycle_test.go",
+      "sha256": "ab4a30e91d6eef713859e9c81e867295f18e375d198208b20474e8ae6f44321c",
+      "bytes": 7899
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/cmd/site-statistic/main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/cmd/site-statistic/main_test.go",
+      "sha256": "903b3ae551c0ed80a2caaa5617d824e59d26c2448e95b7ea99a48d2ec97884c8",
+      "bytes": 7945
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/cmd/torrent-transfer/main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/cmd/torrent-transfer/main_test.go",
+      "sha256": "fb3a5e826a79f8cbc9e48e2d0a28ca23ab3141b679824808061792330a62b07a",
+      "bytes": 6213
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/plugins/torrenttransfer/protocol_budget_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/plugins/torrenttransfer/protocol_budget_test.go",
+      "sha256": "e349f348999739110aea817005790d0c4bdf0c6a5b79af81f44903562d5f78c0",
+      "bytes": 21185
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/site-observations/sdk-worker-lifecycle-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/site-observations/sdk-worker-lifecycle-observations.json",
+      "sha256": "accfdaecc714bfe781ae3fae68cd36547d5d4f6110f7030a18f4e0c19ac3e7bf",
+      "bytes": 591
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/site-observations/sdk-worker-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/site-observations/sdk-worker-observations.json",
+      "sha256": "bdc35650f162b3e6e1599781001f5cc947a330b4539d39bd60246fb7ab4c5761",
+      "bytes": 209470
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "sha256": "0c866a3749527dab5f6c160c6138c82c7b6667b5a4fbb672eddee80ed1ddb73f",
+      "bytes": 443310
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "sha256": "85aa02b138cdffbe3173a811aca5c4a3c75c80c5c6efd068689da3adb22e3202",
+      "bytes": 336799
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "sha256": "be7cd4665f282fa30ebc8266047241ad4b3424b8d80162df9da512556a998499",
+      "bytes": 4894
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "sha256": "65f0936aabdbcec2c09210fe741897f936c98e34068af9ac9cbf0d13aca0518f",
+      "bytes": 172632
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "sha256": "846311326f9c2f39f3dfb21c82ef28c65434af0e9ccfe38586b4f7d09eb84bb7",
+      "bytes": 373034
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "sha256": "4f03c37c8e8999a70eeda6df65972e2929a9eb2041a77bf84413d5685e19b451",
+      "bytes": 373037
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations95-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "sha256": "de4cf3a0c6311805d44a277bc941a4b879169ec800ab0a8138240985882d8850",
+      "bytes": 5741
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/site-observations/sdk-worker-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/site-observations/sdk-worker-observations.json",
+      "sha256": "35a3303ac8cf45a1cdd8c0b9524963abcdf59c03787ecb8644f61a6288803e5a",
+      "bytes": 209491
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "sha256": "0add3a89a786ade8673e7ff745a2b9a42573aef0589119d25f16d4e109970170",
+      "bytes": 443286
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "sha256": "576e3a47e20362aa1cf1c6ade142ad61fe82aebe21bcf71b28b148ee8816dc6b",
+      "bytes": 336819
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "sha256": "5bc915890d403cf433379168eee11a91f42ab06efb076e8e16d7118081142e9b",
+      "bytes": 4892
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "sha256": "4cca4c3e0baa92da230d162f74eefb41ac59d28801cb2d5ddb8fca9a78d8f303",
+      "bytes": 172629
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "sha256": "a853862757568f102f340991d2ac97d07e4e3953d349c7314e482c5da6c4fdfc",
+      "bytes": 373015
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "sha256": "582bc4de328d7851783ffa1b807c51924c427712b2f539669fc60708195fd1fe",
+      "bytes": 372998
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-normal/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "sha256": "3a0239e2df77039e1a2ac8106d4b21d4a8b916f6e80ba9450e7e9f2534bf6a83",
+      "bytes": 5744
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/cmd/site-statistic/lifecycle_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/cmd/site-statistic/lifecycle_test.go",
+      "sha256": "bf4e15f3243d4574528ad9283cc342ecd5397e45d040ed81ae1e961ad4afcb88",
+      "bytes": 7899
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/cmd/site-statistic/main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/cmd/site-statistic/main_test.go",
+      "sha256": "3f73ebc4a9c914f17651b83c8b0cd92068ca51df32e9463e508736e161d150c5",
+      "bytes": 7945
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/cmd/torrent-transfer/main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/cmd/torrent-transfer/main_test.go",
+      "sha256": "9a1246f03b3d105ff238dc5257e14057af40b43605840b54a72e101d05506cef",
+      "bytes": 6213
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/plugins/torrenttransfer/protocol_budget_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/plugins/torrenttransfer/protocol_budget_test.go",
+      "sha256": "6813f41bb154d54cc1147cb8c95b2f0dea034ece0324a5fb01b6e4bc342be8e7",
+      "bytes": 21185
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/site-observations/sdk-worker-lifecycle-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/site-observations/sdk-worker-lifecycle-observations.json",
+      "sha256": "accfdaecc714bfe781ae3fae68cd36547d5d4f6110f7030a18f4e0c19ac3e7bf",
+      "bytes": 591
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/site-observations/sdk-worker-observations.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/site-observations/sdk-worker-observations.json",
+      "sha256": "7ac1d883612e2f22fe0dfa700b73161953680677bbee1c73cb51cbb6590a491f",
+      "bytes": 209455
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json",
+      "sha256": "ea35d1ddb49bf4b3bd90ec94b1df34e793a2e48b00422c738a90988cb2c8f1ea",
+      "bytes": 443257
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json",
+      "sha256": "24bb86b6c6610abaecf034ff52d2ca8e7a9ff41f4f3ec46662105df472e777f8",
+      "bytes": 336794
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKLargeRecheckPreservesSingleBulkCalls.json",
+      "sha256": "543a6c5cec25a5c223ee83fba766cffc077a541c902e154bd3cef4d5e0262d83",
+      "bytes": 4898
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json",
+      "sha256": "eabdcf5db65865a8f1c0d4e169d91bcd028a23791c8cd09970cd1a6f1ef7acfe",
+      "bytes": 172636
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json",
+      "sha256": "4e8ef4e43f5a133d3004a81281f8e867c57121fc5e2dd7831057a555b6759dd0",
+      "bytes": 373010
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json",
+      "sha256": "fb4cb65ac25ae716cb45ca9e5ac24456fd14d7caeb5341751f9d46d3b2911bcb",
+      "bytes": 373019
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "public": "migration/evidence/sdk98-impact-20261105/SDK-observations/observations98-race/tt-observations/TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json",
+      "sha256": "7f8c00832a6dced131c52fb41034c4c9405db6128d4c0a5189724b5ca6a84766",
+      "bytes": 5738
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "sha256": "05c92cdaf61bb955daa6ed68a9ae2746da087015a1affb721558ce0c087d29ef",
+      "bytes": 1256
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "sha256": "bafc45425f6cd2eb770cd9b94a5fc9157d8d5dbf8068932a2e773dad2c27dde5",
+      "bytes": 762
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "sha256": "fa630537d71cf4219fd1ed561f546695b12dfb473469c51eff06c6e8e5b2953b",
+      "bytes": 3006
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "sha256": "ad02a0ff623ab72b449dd21549b4348736c7d6a9b6b525330da9bc1448d83d9e",
+      "bytes": 1196
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "sha256": "ce0c6ea48d8923e616871ba5e4cab532e00da6b75ad16769bf6f88ca29f3cf71",
+      "bytes": 2024
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "sha256": "8ffae8c141bae1320ff04bb5c5af43c4914a0fb95c6d7c7df1a05efe1e74c302",
+      "bytes": 921
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "sha256": "d6a32b0605bbef0db282c8c4fc96aaadc73efe79f3ed1ccd65c34c41a78a9075",
+      "bytes": 555
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "sha256": "8d834fa5abf91337d21fb50a616e752505f857c9ef235990c289a7a9e83647c5",
+      "bytes": 562
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "sha256": "8b7701b4defd9f33de6f8992bb7dc5437aa79300a229026bc1d822cc6c4291bb",
+      "bytes": 757
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "sha256": "6d347ffbf05ede521e1a7a876b8cb7ca33e5de8d8ff17f028e28614b69662429",
+      "bytes": 2016
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "sha256": "d62556b70292da866bbc67914c1cfdca1d5f1f4af0ff97815fa889a2179a2ccc",
+      "bytes": 1525
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "sha256": "2871f70bfa046a274edf3504e034ecfc9d71cec53c69847f2fcfde35b7bd24e5",
+      "bytes": 1982
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-normal/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "sha256": "5fe3513bbfb799a67028aa2b6131ae94f3130ee7c96049ea86dcd454c0f2a867",
+      "bytes": 2010
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactAsyncHTTPCompletion/http-observations.jsonl",
+      "sha256": "7afb593353734662fd2f30ba237c586ee53f37e1dcc25d1d2d084339515927cf",
+      "bytes": 1257
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactDelayedNotificationHTTP/http-observations.jsonl",
+      "sha256": "1105c0f77d64487468949afe3cd046d5b8df051f42572833c24af7ac733b661b",
+      "bytes": 762
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactReloadAndConfigHTTP/http-observations.jsonl",
+      "sha256": "0055afd1073e606ee99cd9b554e53d5a98f342fccfbc034c0a2eaea34620e0bd",
+      "bytes": 3006
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_dashboard_http200_empty_is_not_chart/http-observations.jsonl",
+      "sha256": "6263674b386aa9d5ee9ae04e2f7d96c6d43c093d70f0f532a9b6834bdda78b7e",
+      "bytes": 1196
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_exact_routes_body_auth_and_source_fields/http-observations.jsonl",
+      "sha256": "97fa91a0b566b6f4d59a1d58f1e353adc674c82cda1d8df872e4058a8b3f28d7",
+      "bytes": 2025
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_page_http200_empty_is_not_data/http-observations.jsonl",
+      "sha256": "4326fbe186cd6b8e5a88055e1771549fe1b8c1623506981fd3ac8026c5af0fbe",
+      "bytes": 922
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_404_is_not_saved/http-observations.jsonl",
+      "sha256": "67f7541d3cf86ead5c6502dfdfa9fb5e6a31b833e4b51df91dd5205512a676e2",
+      "bytes": 555
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_http200_empty_is_not_saved/http-observations.jsonl",
+      "sha256": "b700de03935f24145be1eeb420bb49627a2b8c08c2497aa5c608cd4470444c76",
+      "bytes": 562
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_site_wrong_canonical_identity/http-observations.jsonl",
+      "sha256": "25f482502efc2f7912d8ca7943d4c03e66dc5a2e2265de4716e85451c192b8e7",
+      "bytes": 756
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_current_DTO_not_old_daily/http-observations.jsonl",
+      "sha256": "78e52f896b8e870ca767b268f4bf712a98b7c0e328445ed3f3b4e08f86ac1522",
+      "bytes": 2016
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_http200_empty_is_not_success/http-observations.jsonl",
+      "sha256": "09fe29132643613c9418b4aa6069a6f79bc315cdc3395ba1e618cbe8f2fd676b",
+      "bytes": 1525
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_message_requires_domain/http-observations.jsonl",
+      "sha256": "73f2e967ec3f2ae4ad6f03e790e7f4acd13bb40b0f362afcd6c91be9e6cf4a40",
+      "bytes": 1982
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/HTTP-fixtures/main4-http-race/TestSDK98ImpactRemainingHTTPContract_source_missing_null_field_rejected/http-observations.jsonl",
+      "sha256": "1eb6ef5e5db5123aae2c5bb2ebf2560e477fa14fbf468d867a031a930e882d84",
+      "bytes": 2009
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/harvest-manifest.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/run1-harvest-manifest.json",
+      "sha256": "babfbd618e1eb3b7dc6daaa6aabdb342632b76a17774cda4c21743da7beee5d7",
+      "bytes": 742
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1/evidence/host-1.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1/evidence/host-1.log",
+      "sha256": "3d1901ca58d7f4e5d73d5b185f22efdc87913052fa23d3b6b7d0b48454aa8423",
+      "bytes": 8087
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1/evidence/observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1/evidence/observations.jsonl",
+      "sha256": "93a76acdd49e07cdc506fe916ac6777012f3c8cbf98459c22063b747e1d1062d",
+      "bytes": 17755
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1/logs/app.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1/logs/app.jsonl",
+      "sha256": "bc312d6a49e01b2c42136af75d4b36edf2649f53c58a545db4091b008ca11030",
+      "bytes": 8581
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1/logs/plugins/torrenttransfer.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1/logs/plugins/torrenttransfer.log",
+      "sha256": "670a8551bbaeb5d75fecefd7f553c4907d45f5de68238c88af1d99df044a7d76",
+      "bytes": 264
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1/logs/plugins/torrenttransfermusic.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1/logs/plugins/torrenttransfermusic.log",
+      "sha256": "b2a63eb0fb800c791b01727f7e59c2bc84c81bf5ac80174b6ad0655e2b88c354",
+      "bytes": 264
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1-command.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1-command.json",
+      "sha256": "ae7760f4e8f72ea92ba5f83d931773c7334ee76f74895d2661a29344a92f50b2",
+      "bytes": 1919
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/main-run-1.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-1.log",
+      "sha256": "7a8989be96e4d824651067df8e9044f07c35d0bdaa009e52225e6ee2067adf1f",
+      "bytes": 204
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/harvest-manifest.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/run2-harvest-manifest.json",
+      "sha256": "08a7bf11ce84189be07f127920def2de3f6b9169e3443e6a197bd48c0d13c218",
+      "bytes": 742
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2/evidence/host-1.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2/evidence/host-1.log",
+      "sha256": "6905a7fab955804e59788b5f69fdba4e485313e9525a5e4ebd3b8515fb010fb2",
+      "bytes": 10779
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2/evidence/observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2/evidence/observations.jsonl",
+      "sha256": "71683bbf00ea5f122aaac71f0351bc65cb3d65c576238eee139e355293262070",
+      "bytes": 18558
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2/logs/app.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2/logs/app.jsonl",
+      "sha256": "359c82aa1d79a66e9abedc482cf2c76534f81c925a93b243ab105c82498fcf88",
+      "bytes": 11274
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2/logs/plugins/torrenttransfer.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2/logs/plugins/torrenttransfer.log",
+      "sha256": "cd7a73487519ce1d2f951d75cd2ccb6e2e6baf66a391dffde7eb0fe476a17df4",
+      "bytes": 339
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2/logs/plugins/torrenttransfermusic.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2/logs/plugins/torrenttransfermusic.log",
+      "sha256": "4c6d09c20a6a952c92af8e4d728394684e3872d4014aa5964519c42f448c00f6",
+      "bytes": 339
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2-command.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2-command.json",
+      "sha256": "8dacd5eac47582b78dda56a8933c85c9e50ff2dd1c05b0269155b292ff6d8eb6",
+      "bytes": 1919
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/main-run-2.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-2.log",
+      "sha256": "632882915b650c10dd2ab1d81c1d7142c9ebd5425afdff52fcff0ca8024e3678",
+      "bytes": 198
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/harvest-manifest.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/run3-run4-harvest-manifest.json",
+      "sha256": "1bd6a67d29a44f60133daabed82ddd7852cf5c2733170778fc38506cd2e1ae12",
+      "bytes": 3132
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3/evidence/host-1.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3/evidence/host-1.log",
+      "sha256": "dbec887987ef935b1d660c5c4ace461222f8ec0eb382db06a80169be49c40294",
+      "bytes": 10844
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3/evidence/observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3/evidence/observations.jsonl",
+      "sha256": "0a7bd649a92702cb0fae7c96ae500d795ef7be5cc47a9fd12c52d54b138a7083",
+      "bytes": 25690
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3/logs/app.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3/logs/app.jsonl",
+      "sha256": "6fbad913343eec8384f6f0852a9bf7933ded970d5dce3ea68f3f130939a83e14",
+      "bytes": 11339
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3/logs/plugins/torrenttransfer.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3/logs/plugins/torrenttransfer.log",
+      "sha256": "83c6da3aa10769154a73cc4500ee156c68be416ed100a1b72f6beba62a5520f3",
+      "bytes": 436
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3/logs/plugins/torrenttransfermusic.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3/logs/plugins/torrenttransfermusic.log",
+      "sha256": "3e9f56ac4e2ed4a7ca3370d0d22c688bbf0ac6985a938c93d27f6472157472af",
+      "bytes": 436
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3-command.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3-command.json",
+      "sha256": "e35b88936abc7ee0ed7d92240b2715873b5e84d46c2468ba1998b4593f23c9d5",
+      "bytes": 1919
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-3.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-3.log",
+      "sha256": "7cd5b68c7b5fcf4dfc19eed5e2e5101939b9acae5b7a9e48c99d000d5acdb1cb",
+      "bytes": 201
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/evidence/host-1.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/evidence/host-1.log",
+      "sha256": "0ece8fce8d44f3faff00527e98de700c2efadd02389f8d33da5ab26e875b1d14",
+      "bytes": 16451
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/evidence/host-2.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/evidence/host-2.log",
+      "sha256": "3930b0211744b87978f8c619dd62124b811c5bdcdb10901e0274744f7a85efe5",
+      "bytes": 1830
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/evidence/observations.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/evidence/observations.jsonl",
+      "sha256": "5ef9d5d9f5f7a0bc6693d811c96573765c91838a7722737130fc426f93dd45ef",
+      "bytes": 54471
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/logs/app.jsonl",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/logs/app.jsonl",
+      "sha256": "6db3833fe7dd5071d7d43621e3cbf5df4fe6359a64cb62cdda35dbc35e7a1147",
+      "bytes": 18735
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/logs/plugins/sitestatistic.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/logs/plugins/sitestatistic.log",
+      "sha256": "4f76a7ae5e5d77df2a578bcbefa060cc0eccc6f449e11552eea3def348057d90",
+      "bytes": 205
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/logs/plugins/torrenttransfer.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/logs/plugins/torrenttransfer.log",
+      "sha256": "5132b37d34b209858cfa71a91047178b3d7d799b7c74dc11ac0e175fea055e44",
+      "bytes": 436
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4/logs/plugins/torrenttransfermusic.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4/logs/plugins/torrenttransfermusic.log",
+      "sha256": "5e8a31470ee5a2ef707546f7eeefbc0c66b185862e36e7845f731e26a759a127",
+      "bytes": 436
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4-command.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4-command.json",
+      "sha256": "46ba87522db06541a86d28842762ada33741ba09595b44f41e8fb5a6e507e1a5",
+      "bytes": 1919
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-3-4-harvest/main-run-4.log",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/main-run-4.log",
+      "sha256": "1a38e0ddd8c47670ac5dc49c75e3aed65f805fe20ed4561eff6abde5286d1775",
+      "bytes": 116
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/final-inputs-after.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/final-inputs-after.json",
+      "sha256": "e786fc55de0891140ac8740ec211cfa6b54d4b26c75ac049995d9aa8351121e3",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/final-inputs-before.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/final-inputs-before.json",
+      "sha256": "e786fc55de0891140ac8740ec211cfa6b54d4b26c75ac049995d9aa8351121e3",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/impact-freeze.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/impact-freeze.json",
+      "sha256": "c3f6199ba5805a756e6cadac21262a1fa33f79f7aac5620643c4898f1b4f506f",
+      "bytes": 35534
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/main-run-contract.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/main-run-contract.json",
+      "sha256": "10a3da6b259d23c8b0e82d157aa3dd6cb0dfd6ecb87c14cacee0c463ce201451",
+      "bytes": 1166
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/preserved.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/preserved.json",
+      "sha256": "9e5ca72f6c7001da86fd94c999a383bf2a8497f916d440ba6d4f9e4af1012df7",
+      "bytes": 1990
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/sdk98_impact_helpers_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/sdk98_impact_helpers_test.go",
+      "sha256": "1d3b03f12bf59b5e4d752777bacd79010bbe6859ed4519df9fed497e2cb4a02a",
+      "bytes": 13916
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main1-superseded/sdk98_impact_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main1/sdk98_impact_test.go",
+      "sha256": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+      "bytes": 10466
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/main2-freeze.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/main2-freeze.json",
+      "sha256": "3418555de17b99103b01ca411f9ed0e7fe6e729b67d100d6b91f315ea2e0b362",
+      "bytes": 6879
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/main2-inputs-after.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/main2-inputs-after.json",
+      "sha256": "6ae1286be930cf3858ed92e1869ad12d965f0faab622b8d97aaba7fcf9f38d66",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/main2-inputs-before.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/main2-inputs-before.json",
+      "sha256": "6ae1286be930cf3858ed92e1869ad12d965f0faab622b8d97aaba7fcf9f38d66",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/main2-source-contract.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/main2-source-contract.json",
+      "sha256": "845b28ccdbc083697f54cfd6b8687e4eac26db6dbb6e6f158fb3c39a5923ec54",
+      "bytes": 1228
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/preserved.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/preserved.json",
+      "sha256": "288aebe3d8a1f000fc81e79e92853d1e65433a2b846cb8839ad478822419fa4b",
+      "bytes": 2006
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/sdk98_impact_helpers_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/sdk98_impact_helpers_test.go",
+      "sha256": "090a6b7059e8f25f76bdc9db912c50592017983c2f27714f79151534b4ef85cd",
+      "bytes": 15065
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main2-superseded/sdk98_impact_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main2/sdk98_impact_test.go",
+      "sha256": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+      "bytes": 10466
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/main3-freeze.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/main3-freeze.json",
+      "sha256": "c230d11c7e05f60b98e75c035c313d6720b45089f582c96461abf7fc94992bc1",
+      "bytes": 6669
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/main3-inputs-after.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/main3-inputs-after.json",
+      "sha256": "e7b190ba60b063ea845344bb3cec4ea2080c11f6717797ddfd7a848f954fdd0d",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/main3-inputs-before.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/main3-inputs-before.json",
+      "sha256": "e7b190ba60b063ea845344bb3cec4ea2080c11f6717797ddfd7a848f954fdd0d",
+      "bytes": 20584
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/main3-source-contract.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/main3-source-contract.json",
+      "sha256": "33ca3dd682e834665b5a771730e10076fec77a30013cddeea81ff6d91a6bd6f6",
+      "bytes": 1524
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/preserved.json",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/preserved.json",
+      "sha256": "eb56db030da84f4510fad236abf852151fe2de3a22931934dbcad2306ea92957",
+      "bytes": 2102
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/sdk98_impact_helpers_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/sdk98_impact_helpers_test.go",
+      "sha256": "154477489618a731210763dd9609443f7324bdc1b0af3663241babb9c0490964",
+      "bytes": 16442
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/main3-superseded/sdk98_impact_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/failed-driver-generations/main3/sdk98_impact_test.go",
+      "sha256": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+      "bytes": 10466
+    },
+    {
+      "source": "tests/integration/testhost_main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/driver-sources/testhost_main_test.go",
+      "sha256": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+      "bytes": 9233
+    },
+    {
+      "source": "tests/integration/sitestatistic_helpers_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/driver-sources/sitestatistic_helpers_test.go",
+      "sha256": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace",
+      "bytes": 18900
+    },
+    {
+      "source": "tests/integration/sitestatistic_main_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/driver-sources/sitestatistic_main_test.go",
+      "sha256": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f",
+      "bytes": 27386
+    },
+    {
+      "source": "tests/integration/sdk98_impact_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/driver-sources/sdk98_impact_test.go",
+      "sha256": "a4a9024ee923a4232fec3a91fd0ea6c888e70c2f2200524d888e8b8c5c783b45",
+      "bytes": 10466
+    },
+    {
+      "source": "tests/integration/sdk98_impact_helpers_test.go",
+      "public": "migration/evidence/sdk98-impact-20261105/driver-sources/sdk98_impact_helpers_test.go",
+      "sha256": "9379a31f3b51d2393383d8bf126bc005446cee936cb4ed13a48eeb6240bbfe7f",
+      "bytes": 36537
+    },
+    {
+      "source": "work/migration-20261105/shared-host-f7/hostf7-build-source-binding.json",
+      "public": "migration/evidence/sdk98-impact-20261105/host-f7-build-source-binding.json",
+      "sha256": "301a2f5c8abfaa7465fc0ae103f089beba32388f8e648d770b648464734ac44f",
+      "bytes": 873381
+    }
+  ]
+}

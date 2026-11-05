@@ -1,0 +1,90 @@
+{
+  "classification": "independent projection from immutable actualRun5 raw; not a new replay",
+  "rows": 247,
+  "event_counts": {
+    "mps_bootstrap": 1,
+    "mps_main_start": 2,
+    "mps_http": 226,
+    "mps_worker_pids": 7,
+    "mps_actual_over5s_handler": 1,
+    "mps_source_page_exception_and_recovery": 1,
+    "mps_main165_batch": 1,
+    "mps_active_reinit_completion": 1,
+    "mps_manifest_only_update": 1,
+    "mps_ui_ready": 1,
+    "main_exit": 2,
+    "mps_peer_final": 1,
+    "mps_acceptance_complete": 1,
+    "mps_peer_on_return": 1
+  },
+  "source_latency": {
+    "caller_timeout_seconds": 45,
+    "source_idle_timeout_seconds": 20,
+    "source_latency": "6.02 秒",
+    "wall_ms": 6111
+  },
+  "exception_recovery": {
+    "classification": "original page endpoint catches plugin method exception into empty object; HTTP200 alone is not success",
+    "directTLS_delta": 0,
+    "exception_data": {},
+    "exception_status": 200,
+    "healthy_followup": "source normal alert + parsed active12, no reload",
+    "owned_HTTP_delta": 2,
+    "same_worker_pid": 63
+  },
+  "batch": {
+    "RPC_classification": "ordinary Main API exposes no per-callback RPC counter; bound standalone SDK95 observation is separate, not renamed as Main telemetry",
+    "RPC_inference_from_exact_worker_success_path": {
+      "classification": "source/code-derived, not measured Main pipe",
+      "per_call": 3,
+      "total": 495
+    },
+    "actual_done": 165,
+    "actual_errors": 0,
+    "actual_owned_HTTP_delta": 165,
+    "actual_peak_inflight_HTTP": 8,
+    "configured_parallel_width": 8,
+    "directTLS_delta": 0,
+    "total": 165
+  },
+  "manifest_update": {
+    "from": "1.4",
+    "not_upstream_release": true,
+    "to": "1.4.1",
+    "worker_sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4"
+  },
+  "complete": {
+    "classification": "ordinary Linux Main+fixedURI+owned hosts resolver/nativeTLS/strictproxy+standard business process",
+    "not_production_config_migration": true,
+    "not_public_service_availability": true,
+    "source_worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+    "update_worker_sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4"
+  },
+  "peer": {
+    "classification": "owned namespace hosts+real TLS443+strict HTTPS CONNECT; not public DNS/probe availability",
+    "connects": 182,
+    "keys": "memory only; CA public file same inode; system trust bind only this container",
+    "owned_artifact_denials_for_existing_direct_fallback": 0,
+    "requests": 182,
+    "unexpected": []
+  },
+  "TLS": {
+    "total": 188,
+    "direct": 6,
+    "proxied": 182,
+    "SNI": [
+      "movie-pilot.org"
+    ]
+  },
+  "main_exits": [
+    {
+      "error": "<nil>",
+      "pid": 18
+    },
+    {
+      "error": "<nil>",
+      "pid": 98
+    }
+  ],
+  "peer_on_return_test_failed": false
+}

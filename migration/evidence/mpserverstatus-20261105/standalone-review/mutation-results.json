@@ -1,0 +1,187 @@
+[
+  {
+    "name": "cookie-domain",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependentActualRequestsCookieRedirect|TestIndependentActual312CookiePolicy",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.3807590007781982,
+    "run_count": 35,
+    "failed_tests": [
+      "TestIndependentActual312CookiePolicy/reference/source-cookie-review.json/owned=test;_Path=/;_Domain=org",
+      "TestIndependentActual312CookiePolicy/reference/source-cookie-review.json/owned=test;_Path=/;_Domain=.org",
+      "TestIndependentActual312CookiePolicy/reference/source-cookie-review.json/owned=test;_Path=/;_Domain=ORG",
+      "TestIndependentActual312CookiePolicy",
+      "TestIndependentActualRequestsCookieRedirect/org",
+      "TestIndependentActualRequestsCookieRedirect/.org",
+      "TestIndependentActualRequestsCookieRedirect/ORG",
+      "TestIndependentActualRequestsCookieRedirect"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "date-unicode",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependentActual312Date|TestIndependentSourceDateAST",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.0251870155334473,
+    "run_count": 37,
+    "failed_tests": [
+      "TestIndependentActual312DateLexicalCases/Fri,_01_Nov_\u0662\u0660\u0662\u0664_12:34:56_GMT",
+      "TestIndependentActual312DateLexicalCases/Fri,_01_Nov_\ud835\udfda\uff10\uff12\uff14_12:34:56_GMT",
+      "TestIndependentActual312DateLexicalCases/Fri,_01_Nov_\u00b224_12:34:56_2024",
+      "TestIndependentActual312DateLexicalCases/Fri,_01_Nov_\u246024_12:34:56_2024",
+      "TestIndependentActual312DateLexicalCases"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "dns-cancel-cache",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependent.*Cancel.*Cache",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.009566068649292,
+    "run_count": 3,
+    "failed_tests": [
+      "TestIndependentCanceledDetailsDoNotBecomeOrdinaryCache/dns",
+      "TestIndependentCanceledDetailsDoNotBecomeOrdinaryCache"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "get-auto-retry",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestNativeNoHiddenGETRetryAfterRedirectSocketDrop",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.02994704246521,
+    "run_count": 1,
+    "failed_tests": [
+      "TestNativeNoHiddenGETRetryAfterRedirectSocketDrop"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "header-budget",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependentActual312Header|TestIndependentSourceNativeHeaderCount",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.4421789646148682,
+    "run_count": 10,
+    "failed_tests": [
+      "TestIndependentActual312HeaderCount/100",
+      "TestIndependentActual312HeaderCount",
+      "TestIndependentSourceNativeHeaderCount/100",
+      "TestIndependentSourceNativeHeaderCount"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "sample-history",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestInstalledASTOracle/metrics|TestPersistentInitNoopStop",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.0075950622558594,
+    "run_count": 7,
+    "failed_tests": [
+      "TestPersistentInitNoopStopAndInflightCaches",
+      "TestInstalledASTOracle/metrics-0",
+      "TestInstalledASTOracle/metrics-1",
+      "TestInstalledASTOracle/metrics-2",
+      "TestInstalledASTOracle"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "text-exception",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependentActualText",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.0474839210510254,
+    "run_count": 12,
+    "failed_tests": [
+      "TestIndependentActualTextDecodeExceptionClasses/undefined",
+      "TestIndependentActualTextDecodeExceptionClasses/idna",
+      "TestIndependentActualTextDecodeExceptionClasses",
+      "TestIndependentActualTextErrors/undefined",
+      "TestIndependentActualTextErrors/idna",
+      "TestIndependentActualTextErrors"
+    ],
+    "build_failed": false,
+    "killed": true
+  },
+  {
+    "name": "tls-cancel-cache",
+    "command": [
+      "go",
+      "test",
+      "-count=1",
+      "-json",
+      "-run",
+      "TestIndependent.*Cancel.*Cache",
+      "./plugins/mpserverstatus"
+    ],
+    "exit_code": 1,
+    "duration": 1.0131959915161133,
+    "run_count": 3,
+    "failed_tests": [
+      "TestIndependentCanceledDetailsDoNotBecomeOrdinaryCache/tls",
+      "TestIndependentCanceledDetailsDoNotBecomeOrdinaryCache"
+    ],
+    "build_failed": false,
+    "killed": true
+  }
+]

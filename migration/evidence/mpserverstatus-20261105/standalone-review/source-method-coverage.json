@@ -1,0 +1,300 @@
+{
+  "source_sha256": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+  "classification": "all42 original methods read source-first; branch-to-target review, not a claim all188 independent source states replay literally",
+  "methods": [
+    {
+      "method": "init_plugin",
+      "source_start": 45,
+      "source_end": 53,
+      "target": "status.go:103 Machine.Init; plugin.go:32 Handle",
+      "independently_reviewed_contract_and_checks": "source config/form14; own10; reset/inflight persistent worker"
+    },
+    {
+      "method": "get_command",
+      "source_start": 56,
+      "source_end": 60,
+      "target": "plugin.go:38 Handle",
+      "independently_reviewed_contract_and_checks": "empty array; dynamic form test and manifest"
+    },
+    {
+      "method": "get_api",
+      "source_start": 62,
+      "source_end": 66,
+      "target": "plugin.go:38 Handle",
+      "independently_reviewed_contract_and_checks": "empty array; no invented registration"
+    },
+    {
+      "method": "get_form",
+      "source_start": 68,
+      "source_end": 101,
+      "target": "status.go:Form; plugin.go:35 Handle",
+      "independently_reviewed_contract_and_checks": "source14 form plus own10 truthy/current state"
+    },
+    {
+      "method": "get_page",
+      "source_start": 103,
+      "source_end": 130,
+      "target": "plugin.go:46 Handle; status.go:582 Page",
+      "independently_reviewed_contract_and_checks": "enable gate once; detailed full/unavailable render; source runtime0..14; persistent inflight"
+    },
+    {
+      "method": "get_dashboard",
+      "source_start": 132,
+      "source_end": 152,
+      "target": "plugin.go:46 Handle; status.go:589 Dashboard",
+      "independently_reviewed_contract_and_checks": "no enable gate; compact cols12/md8 refresh10; source runtime0/1/10"
+    },
+    {
+      "method": "get_state",
+      "source_start": 154,
+      "source_end": 158,
+      "target": "status.go:137 State; plugin.go:33 Handle",
+      "independently_reviewed_contract_and_checks": "source config/form; actual executable init/form"
+    },
+    {
+      "method": "stop_service",
+      "source_start": 160,
+      "source_end": 164,
+      "target": "plugin.go:40 Handle; status.go:138 Stop",
+      "independently_reviewed_contract_and_checks": "literal no-op; inflight reinit may refill caches; owner shutdown separate SDK adaptation"
+    },
+    {
+      "method": "_load_status_snapshot",
+      "source_start": 166,
+      "source_end": 187,
+      "target": "status.go:502 LoadWith",
+      "independently_reviewed_contract_and_checks": "HTTP/probe/details/gate/parse/metrics exact order; runtime0..14 and text8; cancellation typed guard"
+    },
+    {
+      "method": "_request_server_status",
+      "source_start": 189,
+      "source_end": 210,
+      "target": "status.go:502 LoadWith; network.go:60 status",
+      "independently_reviewed_contract_and_checks": "source request7 and runtime12 TypeError fallback; actual RequestUtils19/redirectdrop; native20sec read-idle vs caller cancellation"
+    },
+    {
+      "method": "_parse_status_text",
+      "source_start": 213,
+      "source_end": 253,
+      "target": "status.go:Parse; unicode_table.go",
+      "independently_reviewed_contract_and_checks": "source14 parser + extra29 subset + own15 Unicode/header-first/fallback/error order"
+    },
+    {
+      "method": "_build_metrics",
+      "source_start": 255,
+      "source_end": 313,
+      "target": "status.go:311 Metrics",
+      "independently_reviewed_contract_and_checks": "source5 metrics + extra29 subset; shared Last sample, decline/zero/backwards/large-int; sample mutation killed"
+    },
+    {
+      "method": "_build_http_probe",
+      "source_start": 315,
+      "source_end": 338,
+      "target": "status.go:357 Probe; content.go:responseText",
+      "independently_reviewed_contract_and_checks": "metadata/headers/date/content; native source19; source getter8 and actual codec110; first text before details, second after"
+    },
+    {
+      "method": "_get_dns_info",
+      "source_start": 340,
+      "source_end": 376,
+      "target": "status.go:399 dns; network.go:DNS/connect",
+      "independently_reviewed_contract_and_checks": "source runtime7/8/13/14 success/error TTL60 strict; dedup first order; current cancellation4 cases"
+    },
+    {
+      "method": "_get_tls_info",
+      "source_start": 378,
+      "source_end": 427,
+      "target": "status.go:454 tls; network.go:TLS",
+      "independently_reviewed_contract_and_checks": "source runtime7/8/9/13/14 verified independent TLS/error TTL3600 strict; nonHTTPS early; floor expiry; current cancellation4"
+    },
+    {
+      "method": "_extract_certificate_name",
+      "source_start": 430,
+      "source_end": 444,
+      "target": "status.go:436 CertificateName",
+      "independently_reviewed_contract_and_checks": "own6 name precedence projections; source format corpus"
+    },
+    {
+      "method": "_build_dashboard_elements",
+      "source_start": 446,
+      "source_end": 456,
+      "target": "render.go:Elements/dashboardCards",
+      "independently_reviewed_contract_and_checks": "source full runtime dashboard trees; cols/attrs in Handle"
+    },
+    {
+      "method": "_build_dashboard_unavailable_elements",
+      "source_start": 458,
+      "source_end": 468,
+      "target": "render.go:Elements/dashboardCards",
+      "independently_reviewed_contract_and_checks": "source runtime unavailable compact tree, metrics omitted"
+    },
+    {
+      "method": "_build_dashboard_cards",
+      "source_start": 470,
+      "source_end": 536,
+      "target": "render.go:dashboardCards",
+      "independently_reviewed_contract_and_checks": "6 source ordered cards, unavailable captions/rates; source runtime"
+    },
+    {
+      "method": "_build_status_elements",
+      "source_start": 538,
+      "source_end": 613,
+      "target": "render.go:Elements",
+      "independently_reviewed_contract_and_checks": "12 source ordered cards + two tables; source runtime"
+    },
+    {
+      "method": "_build_unavailable_elements",
+      "source_start": 615,
+      "source_end": 655,
+      "target": "render.go:Elements",
+      "independently_reviewed_contract_and_checks": "4 source ordered cards + one table; source runtime2/3/4/5/7"
+    },
+    {
+      "method": "_build_summary_alert",
+      "source_start": 658,
+      "source_end": 672,
+      "target": "render.go:summary",
+      "independently_reviewed_contract_and_checks": "exact source summary defaults/error/HTTP/host; runtime full trees"
+    },
+    {
+      "method": "_build_stat_card",
+      "source_start": 675,
+      "source_end": 755,
+      "target": "render.go:card/stat",
+      "independently_reviewed_contract_and_checks": "exact source nested components/props/text/order; own zero-sm/empty-subtitle"
+    },
+    {
+      "method": "_build_info_table",
+      "source_start": 758,
+      "source_end": 818,
+      "target": "render.go:table",
+      "independently_reviewed_contract_and_checks": "source rows/order/props; own empty rows"
+    },
+    {
+      "method": "_safe_percent",
+      "source_start": 821,
+      "source_end": 827,
+      "target": "status.go:ratio",
+      "independently_reviewed_contract_and_checks": "None on falsey denominator; no clamp; arbitrary ints/float overflow"
+    },
+    {
+      "method": "_safe_ratio",
+      "source_start": 830,
+      "source_end": 836,
+      "target": "status.go:ratio",
+      "independently_reviewed_contract_and_checks": "None on falsey denominator; large integers; source metrics/extra"
+    },
+    {
+      "method": "_safe_delta_rate",
+      "source_start": 839,
+      "source_end": 845,
+      "target": "status.go:delta",
+      "independently_reviewed_contract_and_checks": "nonpositive window/decreasing counters None; equal0; source metrics/extra"
+    },
+    {
+      "method": "_format_http_version",
+      "source_start": 848,
+      "source_end": 858,
+      "target": "status.go:594 HTTPVersion",
+      "independently_reviewed_contract_and_checks": "10/11/20/default; own7; actual physical status-version cases"
+    },
+    {
+      "method": "_format_response_date",
+      "source_start": 861,
+      "source_end": 870,
+      "target": "date.go:ResponseDate",
+      "independently_reviewed_contract_and_checks": "own6 + actual333 exact original date20; valid/invalid underscore, huge offset and Unicode15 digit; negative killed"
+    },
+    {
+      "method": "_format_integer",
+      "source_start": 873,
+      "source_end": 879,
+      "target": "status.go:605 FormatInteger",
+      "independently_reviewed_contract_and_checks": "own nonfinite/rounding source5*11 format projections and source126 formats"
+    },
+    {
+      "method": "_format_float",
+      "source_start": 882,
+      "source_end": 888,
+      "target": "status.go:619 FormatFloat",
+      "independently_reviewed_contract_and_checks": "source formatting/error/nonfinite; fixed precision2"
+    },
+    {
+      "method": "_format_percent",
+      "source_start": 891,
+      "source_end": 897,
+      "target": "status.go:635 FormatPercent",
+      "independently_reviewed_contract_and_checks": "source None/rounding/nonfinite"
+    },
+    {
+      "method": "_format_seconds",
+      "source_start": 900,
+      "source_end": 908,
+      "target": "status.go:641 FormatSeconds",
+      "independently_reviewed_contract_and_checks": "source ms/seconds threshold+rounding"
+    },
+    {
+      "method": "_format_rate",
+      "source_start": 911,
+      "source_end": 917,
+      "target": "status.go:650 FormatRate",
+      "independently_reviewed_contract_and_checks": "source None待刷新 and source unit"
+    },
+    {
+      "method": "_format_sample_caption",
+      "source_start": 920,
+      "source_end": 926,
+      "target": "status.go:656 FormatSample",
+      "independently_reviewed_contract_and_checks": "source None等待下一次采样/positive/zero/negative"
+    },
+    {
+      "method": "_format_size",
+      "source_start": 929,
+      "source_end": 937,
+      "target": "status.go:662 FormatSize",
+      "independently_reviewed_contract_and_checks": "source B/KB/MB boundaries; own7"
+    },
+    {
+      "method": "_format_ips",
+      "source_start": 940,
+      "source_end": 949,
+      "target": "status.go:685 FormatIPs",
+      "independently_reviewed_contract_and_checks": "source error precedence/empty/first3 ellipsis; own4"
+    },
+    {
+      "method": "_format_connection_detail",
+      "source_start": 951,
+      "source_end": 955,
+      "target": "render.go:dashboardCards/Elements inline",
+      "independently_reviewed_contract_and_checks": "source read/write string appears in full and compact trees; runtime expected tree"
+    },
+    {
+      "method": "_format_tls_days",
+      "source_start": 958,
+      "source_end": 969,
+      "target": "status.go:700 FormatTLSDays",
+      "independently_reviewed_contract_and_checks": "source enabled/error/missing/day precedence; own10 TLS display"
+    },
+    {
+      "method": "_severity_color",
+      "source_start": 972,
+      "source_end": 986,
+      "target": "status.go:712 Severity",
+      "independently_reviewed_contract_and_checks": "source ascending/descending threshold comparisons; own12"
+    },
+    {
+      "method": "_latency_color",
+      "source_start": 989,
+      "source_end": 1001,
+      "target": "status.go:730 Latency",
+      "independently_reviewed_contract_and_checks": "source not-ok/None/exact1/exact3; own10"
+    },
+    {
+      "method": "_tls_color",
+      "source_start": 1004,
+      "source_end": 1017,
+      "target": "status.go:745 TLSColor",
+      "independently_reviewed_contract_and_checks": "source disabled/error/day precedence; own10 TLS display"
+    }
+  ]
+}

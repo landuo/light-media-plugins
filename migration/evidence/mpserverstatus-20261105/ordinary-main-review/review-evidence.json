@@ -1,0 +1,243 @@
+{
+  "schema_version": 1,
+  "classification": "actual ordinary published75e Main passed plus desktop/mobile-layout browser review; pending touch-only quickaccess not_run, not UI100percent",
+  "sealed_at_utc": "2026-11-05T12:48:35.609681+00:00",
+  "status": "main_and_desktop_layout_passed_touch_interaction_pending",
+  "product_findings": [],
+  "prior_code_standalone_seal": {
+    "path": "work/sites-review-20261105/mpserverstatus-review/final-current98/review-evidence.json",
+    "sha256": "72f9cde8fd6ffdbd5a1c0d266222787376433780daad9b9009ed84d2ba193e6a",
+    "bytes": 10989
+  },
+  "business_freeze": {
+    "path": "work/migration-20261105/mpserverstatus-preparation/freeze-manifest-current.json",
+    "sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b",
+    "bytes": 168890
+  },
+  "business_owned_files": 354,
+  "SDK_files": 98,
+  "SDK_Origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "business_SDK_module_unchanged_files": 462,
+  "host": {
+    "commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+    "committed_source_files_independently_checked": 1815,
+    "source_proof": {
+      "path": "work/sites-review-20261105/mpserverstatus-main-addon/published75e-git-provenance.json",
+      "sha256": "f49ab68d96acacf5b6d68dc420e7d63d2329a52ebc6a70269bcfe1d085397258",
+      "bytes": 449848
+    },
+    "not_current_f7_host": true
+  },
+  "source_worker_sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+  "update_fixture": {
+    "sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+    "version": "1.4.1",
+    "only_change": "Version literal 1.4->1.4.1",
+    "not_upstream_release": true
+  },
+  "driver": {
+    "freeze": {
+      "path": "work/migration-20261105/mpserverstatus-preparation/main-driver-run4-freeze.json",
+      "sha256": "4efeb821756518aac09c41d53fe7e585969b0bf64069bf539af311ccf3d67ade",
+      "bytes": 7341
+    },
+    "sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+    "source_diffs": [
+      "run2-to-run4-mpserverstatus_main_test.go.diff",
+      "run3-to-run4-mpserverstatus_main_test.go.diff"
+    ],
+    "helper_diffs_empty": true,
+    "original_endpoint_source_oracle": {
+      "path": "work/sites-review-20261105/mpserverstatus-main-addon/endpoint-source-oracle.json",
+      "sha256": "ab1102939f11a1b8e2a6bee6d1870f43f504a3eab43de437d02b35821f259919",
+      "bytes": 2099
+    }
+  },
+  "executed_runs": [
+    {
+      "run": 1,
+      "exit_code": 1,
+      "command": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-1-command.json",
+        "sha256": "bc04978fe0ba71d54094e53b0c512b9bc59e9cbe5b97f2263fb2f4f93d049c71",
+        "bytes": 3423
+      },
+      "log": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-1.log",
+        "sha256": "93e8cd92c7db5831cafc6bb46136281f8b50727921e6b5a0d2b69f81405e240f",
+        "bytes": 199
+      },
+      "binary_sha256": {
+        "light-media-host75e-linux": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+        "mp-server-status-linux-amd64": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+        "mp-server-status-update-linux-amd64": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+        "mpserverstatus-main-tests-linux-amd64": "1c75a0978976ede56d0bf7473130ac6f4d0f95ec398dd97da019196efa52b8e3"
+      },
+      "tail": "=== RUN   TestMPServerStatusActualMainOwnedNamespace\n    mpserverstatus_main_test.go:179: public CA must be within new owned runtime\n--- FAIL: TestMPServerStatusActualMainOwnedNamespace (0.03s)\nFAIL\n"
+    },
+    {
+      "run": 2,
+      "exit_code": 1,
+      "command": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-2-command.json",
+        "sha256": "88e7738ca1a24c29c3c0711d13cadc93061c9c1c2c0a8535d9b5581ae55094a4",
+        "bytes": 3543
+      },
+      "log": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-2.log",
+        "sha256": "6c7cab9be57aafe0ca93ac6a270ae8685c03fe34926a208acf5abdafbca15dac",
+        "bytes": 567
+      },
+      "binary_sha256": {
+        "light-media-host75e-linux": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+        "mp-server-status-linux-amd64": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+        "mp-server-status-update-linux-amd64": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+        "mpserverstatus-main-tests-linux-amd64": "1c75a0978976ede56d0bf7473130ac6f4d0f95ec398dd97da019196efa52b8e3"
+      },
+      "tail": " TestMPServerStatusActualMainOwnedNamespace\n    mpserverstatus_main_test.go:218: source current bool form projection missing true {\"conf\":[{\"component\":\"VForm\",\"content\":[{\"component\":\"VRow\",\"content\":[{\"component\":\"VCol\",\"content\":[{\"component\":\"VSwitch\",\"props\":{\"label\":\"启用插件\",\"model\":\"enable\"}}],\"props\":{\"cols\":12,\"md\":6}}]}]}],\"model\":{\"enable\":\"false\",\"onlyonce\":true,\"owned_unknown\":\"source preserves unknown value; one-shot is not a source feature\"},\"render_mode\":\"vuetify\"}\n--- FAIL: TestMPServerStatusActualMainOwnedNamespace (3.18s)\nFAIL\n"
+    },
+    {
+      "run": 3,
+      "exit_code": 1,
+      "command": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-3-command.json",
+        "sha256": "33122a593bc05f6ecf828028d87084ad09f9e6a097e41c83b4c1f75ddeac53f2",
+        "bytes": 3456
+      },
+      "log": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-3.log",
+        "sha256": "dcce30b5fff672cbb394adc66ab59557371da45c39de2bd0a63d7154d5f1b716",
+        "bytes": 307
+      },
+      "binary_sha256": {
+        "light-media-host75e-linux": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+        "mp-server-status-linux-amd64": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+        "mp-server-status-update-linux-amd64": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+        "mpserverstatus-main-tests-linux-amd64": "8a35d384334d80f7c91c12a5aa79fa081fb0d46d2041486514afb8435de2c180"
+      },
+      "tail": "=== RUN   TestMPServerStatusActualMainOwnedNamespace\n2026/11/05 20:14:31 http: TLS handshake error from 127.0.0.1:57640: remote error: tls: bad certificate\n    mpserverstatus_main_test.go:283: source text UnicodeError became success banner\n--- FAIL: TestMPServerStatusActualMainOwnedNamespace (10.73s)\nFAIL\n"
+    },
+    {
+      "run": 4,
+      "exit_code": 0,
+      "command": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-4-command.json",
+        "sha256": "81b2d90791307a1fe5cf6a525f662bef839b6620d709c563c18d673122c89186",
+        "bytes": 3456
+      },
+      "log": {
+        "path": "work/migration-20261105/mpserverstatus-runtime/nas-harvest-runs1-4/main-run-4.log",
+        "sha256": "271288411c1b646824e52bd7e4dc9da7ca5fe0a7ff19e50dd0ab2f3e7e59afbe",
+        "bytes": 312
+      },
+      "binary_sha256": {
+        "light-media-host75e-linux": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+        "mp-server-status-linux-amd64": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+        "mp-server-status-update-linux-amd64": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+        "mpserverstatus-main-tests-linux-amd64": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d"
+      },
+      "tail": "=== RUN   TestMPServerStatusActualMainOwnedNamespace\n2026/11/05 20:26:51 http: TLS handshake error from 127.0.0.1:36282: remote error: tls: bad certificate\n    mpserverstatus_main_test.go:435: MPS UI_STAGE_READY /owned/main-run-4/ui-ready.json\n--- PASS: TestMPServerStatusActualMainOwnedNamespace (369.50s)\nPASS\n"
+    }
+  ],
+  "green_run4": {
+    "test_duration_seconds": 369.5,
+    "observation_rows": 247,
+    "HTTP_rows": 226,
+    "ordinary_main_generations": 2,
+    "main_exits_clean": 2,
+    "acceptance_complete": true,
+    "peer_on_return_test_failed": false,
+    "handler_slow_latency_seconds": 6.02,
+    "handler_slow_wall_ms": 6146,
+    "full20second_timeout_measured": false,
+    "UnicodeError_exact_data": {},
+    "exception_then_recovery_same_PID": 64,
+    "batch_dashboard_requests": 165,
+    "batch_peak_concurrent": 8,
+    "batch_errors": 0,
+    "batch_owned_HTTP_delta": 165,
+    "batch_directTLS_delta": 0,
+    "Main_RPC_counters_measured": false,
+    "code_inference_RPC": 495,
+    "stale_raw_SDK95_label": "metadata erratum; actual worker currentSDK98/66300; source/standalone72f has separate actual494RPC evidence",
+    "final_peer_requests": 193,
+    "final_peer_CONNECTs": 193,
+    "final_peer_origin_TLS_handshakes": 199,
+    "final_peer_direct_TLS_attempts": 6,
+    "unexpected_network": 0,
+    "raw_summary": {
+      "path": "work/sites-review-20261105/mpserverstatus-main-addon/run4-observation-summary.json",
+      "sha256": "0cf910cd63cf69cbf6038199f2f8877172b870905a178375906423efabd7d324",
+      "bytes": 3837
+    }
+  },
+  "browser": {
+    "artifacts": 22,
+    "PNGs_independently_viewed": 10,
+    "snapshot": {
+      "path": "work/sites-review-20261105/mpserverstatus-main-addon/browser-classification-reviewed-snapshot.json",
+      "sha256": "1fed43544f336d7fb70b88b58241f718db520fda97f5b1687c1727dbe797e6e2",
+      "bytes": 1368
+    },
+    "verified": [
+      "real data page and onlyenable form",
+      "save disable/reopen unchecked/disabledpage/reenable",
+      "clone separatelydisabled",
+      "source latency logfilter",
+      "enabled-only dashboardselection/save/reload",
+      "390x844 responsive layout then desktop restoration"
+    ],
+    "pending_not_run": [
+      "touch-only pull-down quickaccess: Chrome extension UI blocked and IAB gesture unsupported"
+    ],
+    "UI100percent": false,
+    "user_pending_decision_not_inferred": true
+  },
+  "lifecycle": [
+    "distinctbase/clone PIDs and samples/config",
+    "basefixtureupdate1.4.1 withclone1.4 retained",
+    "active reinit completion recorded withoutPythoncancellation equivalence",
+    "coldno ignoredonlyonce/backgroundprobe andsamplefirst",
+    "base/clone resetisolation",
+    "clonecode/configremoved, archivedinstallation+metadatarowsretained",
+    "basepublicgetter{}afteruninstall butrawconfig/coderetained,reinstallrestoresvalues"
+  ],
+  "independent_readonly_NAS": {
+    "path": "work/sites-review-20261105/mpserverstatus-main-addon/nas-readonly-sample.json",
+    "sha256": "7c764ff0b1591c942e1c509da19812a6735498dc3535e2285e7760e7d5a9e7e9",
+    "bytes": 9370
+  },
+  "secret_scan": {
+    "path": "work/sites-review-20261105/mpserverstatus-main-addon/raw-and-browser-secret-scan.json",
+    "sha256": "7e3463506c8a4b443bb3929911187d67ea2b3146cc83b2848f38d58ebd76fe2c",
+    "bytes": 11415
+  },
+  "report": {
+    "path": "work/sites-review-20261105/mpserverstatus-main-addon/review.md",
+    "sha256": "1b90a08020cd184261a3391800a3e46e3bee21c161ec71fafdac658a59e1f9e3",
+    "bytes": 8136
+  },
+  "artifact_manifest": {
+    "path": "work/sites-review-20261105/mpserverstatus-main-addon/artifact-manifest.json",
+    "sha256": "4d1a86c81f542609b2c7a2dd357dcbc1655d25e29574b9ba76db98e932222ac6",
+    "bytes": 9736
+  },
+  "not_claimed": [
+    "touchgesturepassed",
+    "publicupstreamavailability",
+    "publicDNS/certificatechain",
+    "productionconfigmigration",
+    "Mainpipe495RPCmeasured",
+    "newf7Mainexecuted",
+    "everyclonemetadatabasetablerowdeleted"
+  ],
+  "safety": {
+    "new_apps_or_processes_started": false,
+    "production_source_or_original_config_modified": false,
+    "no_credential_decryption_or_secretkey_read": true,
+    "only_owned_NAS_SQLite_mode_ro_immutable": true,
+    "product_host_SDK_ledger_Git_modified": false
+  },
+  "cleanup": "ownedNAScontainers/processesalready0; reviewercreatednobins; coordinatorownsremainingruntime/cleanup/pendingtouch"
+}

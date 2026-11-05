@@ -1,0 +1,8 @@
+work/migration-20261105/mpserverstatus-preparation/mpserverstatus-main-tests-linux-amd64: go1.26.2
+	path	command-line-arguments.test
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

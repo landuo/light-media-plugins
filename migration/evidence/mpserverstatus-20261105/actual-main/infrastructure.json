@@ -1,0 +1,19 @@
+{
+  "classification": "owned Docker network and browser published-port preflight only, not plugin/runtime acceptance; Python used solely as disposable infrastructure probe",
+  "root": "/home/admin/light-media-plugins-migration-mps-20261105",
+  "marker": "light-media-plugins/MPServerStatus/20261105/owned-only",
+  "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+  "network": {
+    "name": "lm-plugins-mps-internal-20261105",
+    "id": "d25278677c0149f5f3a4cab20cd52743c8754c3bf7f6f35dfd66e36c7cd4c852",
+    "internal": true,
+    "task_label": "light-media-plugins.MPServerStatus.20261105"
+  },
+  "probe_container": "lm-plugins-mps-network-probe-20261105",
+  "probe_container_exit": 0,
+  "probe_stdout": "{\"uid\": 1000, \"hosts_resolution\": [\"127.0.0.1\"], \"low_port_443_bind\": true}\n",
+  "probe_stderr": "",
+  "published_http_probe": null,
+  "last_poll_error": "URLError",
+  "container_removed": true
+}

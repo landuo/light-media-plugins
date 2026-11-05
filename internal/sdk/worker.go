@@ -67,7 +67,11 @@ func serve(ctx context.Context, input io.Reader, output io.Writer, manifest Mani
 	if concurrent {
 		advertisedConcurrent = 1
 	}
-	helloResult, _ := json.Marshal(Handshake{TransportClose: advertisedConcurrent, ConcurrentSession: advertisedConcurrent, Protocol: ProtocolVersion, PluginID: manifest.PluginID, Version: manifest.Version, HostAPI: HostAPIVersion, Methods: manifest.Methods, Capabilities: manifest.Capabilities, Transport: &transportAdvertisement{Version: 1}, PersistentSession: 1})
+	helloResponse := Handshake{TransportClose: advertisedConcurrent, ConcurrentSession: advertisedConcurrent, Protocol: ProtocolVersion, PluginID: manifest.PluginID, Version: manifest.Version, HostAPI: HostAPIVersion, Methods: manifest.Methods, Capabilities: manifest.Capabilities, Transport: &transportAdvertisement{Version: 1}, PersistentSession: 1}
+	if advertisedConcurrent == 1 && cleanupDeclared(manifest) {
+		helloResponse.CleanupContinuation = 1
+	}
+	helloResult, _ := json.Marshal(helloResponse)
 	if err = s.write(Frame{Protocol: ProtocolVersion, ID: first.ID, Type: "result", Identity: s.identity, Result: helloResult}); err != nil {
 		return err
 	}
