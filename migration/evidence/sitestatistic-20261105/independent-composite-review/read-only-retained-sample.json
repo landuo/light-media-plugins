@@ -1,0 +1,41 @@
+{
+  "classification": "independent NAS read-only retained owned sample; no service startup, config, credentials or live PT access",
+  "marker": "verified exact run5 marker",
+  "binaries": {
+    "bin/light-media-source-recovery": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+    "bin/site-statistic-fixed": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+    "bin/site-statistic-update-fixed": "943b5f919882e1da0d25bb0141e2ec1e2ffb73492ec40ff6074ad1f1458ef096",
+    "bin/main-driver-public-config-fixed": "86417b14abb2344b4484c0f51ef773c097bfe0cb9e86255139e0b6ff2dade11e"
+  },
+  "db": {
+    "events": {
+      "ss-owned-native-b": 8,
+      "ss-owned-native-a": 20,
+      "*": 7
+    },
+    "records": {
+      "site_connection": 2,
+      "site_icon": 2,
+      "site_stats_history": 2,
+      "site_stats_latest": 2
+    },
+    "plugin_value_row_counts": [
+      [
+        "OwnedModuleOverride",
+        "config",
+        1
+      ],
+      [
+        "SiteStatistic",
+        "config",
+        1
+      ],
+      [
+        "SiteStatistic",
+        "data",
+        1
+      ]
+    ]
+  },
+  "owned_processes": []
+}

@@ -1,0 +1,8 @@
+{
+  "classification": "review evidence packaging attempt after coordinator cleanup; not a product/build/test failure",
+  "command": "python3 work/sites-review-20261105/site-final-composite/verify_closure.py",
+  "exit_code": 1,
+  "location": "go version -m /Users/accidia/projects/light-media-plugins/work/migration-20261105/sitestatistic-runtime/light-media-site-host-linux",
+  "cause": "Coordinator removed owned binaries after reviewer explicitly completed NAS sample and authorized cleanup. Earlier independent binary hash verification and actual go version -m host/base-worker invocations had completed before cleanup. Packaging script attempted a second read afterwards.",
+  "resolution": "Reuse earlier exact1968 file/binary verification, independently observed two buildinfo results and retained host buildinfo raw. Do not rebuild, fabricate late execution or claim separate update-worker BOM execution."
+}

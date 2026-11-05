@@ -1,0 +1,96 @@
+{
+  "classification": "same333 image isolated actual SQLAlchemy/SQLite and realPydantic source-only oracle, no native application imports/real data/production writes",
+  "successful_run": "r3",
+  "successful_stdout_sha256": "f269b583b34644016f9e6265ff7f4292053dd052534553c852ce6a6551e47a3b",
+  "failed_harness_runs_preserved": [
+    "r1 typing.Sequence shadowed SQLAlchemy Sequence",
+    "r2 isolation namespace deferred Optional not resolved by Pydantic; schema compiled with original eager annotations in r3"
+  ],
+  "all3containers_and_marked_remote_directories_removed": true,
+  "files": {
+    "TASK.json": {
+      "sha256": "462847fdf7963b267b9e4211a1c237fc67e622171b62c4d1da33680a919d1b33",
+      "bytes": 220
+    },
+    "input/db_base.py": {
+      "sha256": "6da490f32d0de67839249b4e318fecbf4c877ec5acde4eef08634738c4cfafc9",
+      "bytes": 17643
+    },
+    "input/probe.py": {
+      "sha256": "23c640b6e02e5795a252e586bffd0c4e6d684e67f298da849b934dbe2bfc5f44",
+      "bytes": 6980
+    },
+    "input/schema_site.py": {
+      "sha256": "aa759e3f1348863b109acdecb765c87a14822a14fbf63bab3fc93584d51bfaa6",
+      "bytes": 3378
+    },
+    "input/site_model.py": {
+      "sha256": "5cda6b9eb37de3cc25c66abfd41832341ea5270bc73971a24425bd00ef63c8e4",
+      "bytes": 3208
+    },
+    "input/userdata_model.py": {
+      "sha256": "380180dfd4d8d2e4941f59ba0f68fa9a5c1421ed980d2d244c661b70c0dee3a1",
+      "bytes": 5309
+    },
+    "r1-execution.json": {
+      "sha256": "92d42a03fcd702b2fea7a998aaec3d58553e1369d456a3dca68b6480711d791b",
+      "bytes": 2491
+    },
+    "r1-probe.py": {
+      "sha256": "f3c40e6f8974fd08668470451c8ea7ae007a3036e2a68f48ff154bc4f4098df7",
+      "bytes": 6884
+    },
+    "r1-run-summary.jsonl": {
+      "sha256": "c1b8dc6e2374ca43344f9e356ddecf367ca0f7bb9f7099b4caa7d5890cc9946a",
+      "bytes": 1245
+    },
+    "r1-stderr.txt": {
+      "sha256": "637eb2477765471f8ac9ad0d338a133067f950e6b2c33399bbd44c7de30bd11e",
+      "bytes": 1131
+    },
+    "r1-stdout.json": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "r2-execution.json": {
+      "sha256": "d20728e0f5bff5a15c0a7eb85972e750d433b1c27648bc798c69531ece863e66",
+      "bytes": 2491
+    },
+    "r2-probe.py": {
+      "sha256": "c3672b512d49dd33ed0f5865fa6e92730491a50d305339db268264085ca5d6da",
+      "bytes": 6884
+    },
+    "r2-run-summary.jsonl": {
+      "sha256": "51ba3e86295ea14df9d84f41744c328adfcc82503b637d9de4ee159f5a04d476",
+      "bytes": 1006
+    },
+    "r2-stderr.txt": {
+      "sha256": "0a89843a469c0e811887137d473191e70bd94d92b3808e275efbee4b717e9962",
+      "bytes": 900
+    },
+    "r2-stdout.json": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "r3-execution.json": {
+      "sha256": "7e66f1db2c05531896e1ef4d27bb89b920b9d04bd31caad10c1ea43d7609b497",
+      "bytes": 2492
+    },
+    "r3-run-summary.jsonl": {
+      "sha256": "f0d3e5c344db18159bef7bd710693357fe46a5ff7083374142856b6f69d1d6e6",
+      "bytes": 93
+    },
+    "r3-stderr.txt": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "r3-stdout.json": {
+      "sha256": "f269b583b34644016f9e6265ff7f4292053dd052534553c852ce6a6551e47a3b",
+      "bytes": 10722
+    },
+    "run_oracle.py": {
+      "sha256": "99d0873bd5cb07808a944417844db4d71a2878134faf6e4ceca1746c87e392df",
+      "bytes": 3723
+    }
+  }
+}

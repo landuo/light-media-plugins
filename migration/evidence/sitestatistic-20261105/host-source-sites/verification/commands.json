@@ -1,0 +1,133 @@
+{
+  "classification": "exact executed commands; environment not explicitly set per build is separately identified",
+  "build_commands": [
+    {
+      "cwd": "/Users/accidia/projects/light-media",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "work/site-source-capabilities-20261105/module-worker",
+        "./cmd/owned-module-override"
+      ]
+    },
+    {
+      "cwd": "/Users/accidia/projects/light-media",
+      "command": [
+        "go",
+        "build",
+        "-race",
+        "-o",
+        "work/site-source-capabilities-20261105/module-worker-race",
+        "./cmd/owned-module-override"
+      ]
+    },
+    {
+      "cwd": "/Users/accidia/projects/light-media",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "work/site-source-capabilities-20261105/business-worker",
+        "./cmd/plugin-host-business-fixture"
+      ]
+    },
+    {
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "command": [
+        "go",
+        "build",
+        "-o",
+        "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker",
+        "./work/migration-20261105/sites-source-capabilities/worker"
+      ]
+    },
+    {
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "command": [
+        "go",
+        "build",
+        "-race",
+        "-o",
+        "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker-race",
+        "./work/migration-20261105/sites-source-capabilities/worker"
+      ]
+    }
+  ],
+  "environment_observed_after_builds": {
+    "GOOS": "darwin",
+    "GOARCH": "arm64",
+    "CGO_ENABLED": "1",
+    "GOTOOLCHAIN": "auto",
+    "version": "go1.26.2 darwin/arm64",
+    "per_build_explicit_go_environment": null,
+    "note": "No GOOS/GOARCH/CGO overrides were passed in these build commands; snapshot is task observation, not invented per-build capture."
+  },
+  "app_test_environment": {
+    "TMPDIR": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/tmp",
+    "PLUGIN_SOURCE_SITES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker",
+    "OWNED_MODULE_OVERRIDE_BINARY": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/module-worker",
+    "OWNED_HOST_BUSINESS_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/business-worker"
+  },
+  "app_normal": [
+    "go",
+    "test",
+    "./internal/app",
+    "-run",
+    "^(TestSourceSites|TestOriginalHostBusinessSites|TestSiteMessagePinnedAST|TestSiteMessageDefiniteGuard)",
+    "-json"
+  ],
+  "app_race": {
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "./internal/app",
+      "-run",
+      "^(TestSourceSites|TestOriginalHostBusinessSites|TestSiteMessagePinnedAST|TestSiteMessageDefiniteGuard)",
+      "-json"
+    ],
+    "environment_delta": {
+      "PLUGIN_SOURCE_SITES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker-race",
+      "OWNED_MODULE_OVERRIDE_BINARY": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/module-worker-race"
+    }
+  },
+  "native_fresh_race": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "./internal/sites",
+    "./internal/sourceindexer",
+    "./internal/plugins",
+    "-json"
+  ],
+  "vet": [
+    "go",
+    "vet",
+    "./internal/sites",
+    "./internal/sourceindexer",
+    "./internal/plugins",
+    "./internal/app"
+  ],
+  "target_sdk_normal": [
+    "go",
+    "test",
+    "./internal/sdk",
+    "-json"
+  ],
+  "target_sdk_race": [
+    "go",
+    "test",
+    "-race",
+    "./internal/sdk",
+    "-json"
+  ],
+  "negative_command_driver": {
+    "path": "run_final_negatives.py",
+    "sha256": "b62d6b953cd04d0f81d1f50a68ed010f7d36b0b4c7f66df2071fea2ff723eb39",
+    "details": "negative-final/observations.json"
+  },
+  "source_worker_import_relocation_only": "light-media/internal/plugins -> github.com/landuo/light-media-plugins/internal/sdk (alias plugins)",
+  "clock_test": "test binary re-exec with TZ=UTC and SOURCE_SITES_CLOCK_CHILD=1; no parent environment/system timezone mutation"
+}

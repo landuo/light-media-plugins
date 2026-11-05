@@ -1,0 +1,9 @@
+{"Time":"2026-11-05T16:49:50.822338+08:00","Action":"start","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic"}
+{"Time":"2026-11-05T16:49:51.533916+08:00","Action":"run","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Test":"TestSourceSiteMessageEnumWire"}
+{"Time":"2026-11-05T16:49:51.533977+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Test":"TestSourceSiteMessageEnumWire","Output":"=== RUN   TestSourceSiteMessageEnumWire\n"}
+{"Time":"2026-11-05T16:49:51.534086+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Test":"TestSourceSiteMessageEnumWire","Output":"    notification_wire_test.go:38: source notification wire mismatch: got map[mtype:站点消息 text:owned body title:owned title], enum value \"站点\"\n"}
+{"Time":"2026-11-05T16:49:51.534113+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Test":"TestSourceSiteMessageEnumWire","Output":"--- FAIL: TestSourceSiteMessageEnumWire (0.00s)\n"}
+{"Time":"2026-11-05T16:49:51.53412+08:00","Action":"fail","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Test":"TestSourceSiteMessageEnumWire","Elapsed":0}
+{"Time":"2026-11-05T16:49:51.534127+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Output":"FAIL\n"}
+{"Time":"2026-11-05T16:49:51.534637+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Output":"FAIL\tgithub.com/landuo/light-media-plugins/plugins/sitestatistic\t0.712s\n"}
+{"Time":"2026-11-05T16:49:51.534658+08:00","Action":"fail","Package":"github.com/landuo/light-media-plugins/plugins/sitestatistic","Elapsed":0.712}

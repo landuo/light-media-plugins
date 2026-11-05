@@ -1,0 +1,19 @@
+{
+  "classification": "reviewer actual go version -m base worker invocation before cleanup; structured transcription of tool result, not a claimed newly captured raw stdout",
+  "path": "github.com/landuo/light-media-plugins/cmd/site-statistic",
+  "version": "go1.26.2",
+  "dep": {
+    "path": "golang.org/x/text",
+    "version": "v0.43.0",
+    "sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+  },
+  "flags": [
+    "-buildmode=exe",
+    "-compiler=gc",
+    "-trimpath=true",
+    "CGO_ENABLED=0",
+    "GOARCH=amd64",
+    "GOOS=linux",
+    "GOAMD64=v1"
+  ]
+}

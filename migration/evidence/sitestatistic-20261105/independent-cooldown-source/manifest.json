@@ -1,0 +1,32 @@
+{
+  "classification": "actual installed static source read only via isolated -B -S standard library reader; no app/package imports, live config or DB",
+  "container_before": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 2026-10-28T11:43:10.979716372Z",
+  "container_after": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 2026-10-28T11:43:10.979716372Z",
+  "files": [
+    {
+      "path": "/app/app/chain/__init__.py",
+      "sha256": "afff04531e8ea7e312998f033f169114f785361bdc65fe7445df6cbc0d39c753",
+      "bytes": 75902
+    },
+    {
+      "path": "/app/app/modules/indexer/__init__.py",
+      "sha256": "b1ec0525faf43003d6e65ef8851d0c1198ca77fc15c417b156134f9c08f1d7cf",
+      "bytes": 42309
+    },
+    {
+      "path": "/app/app/utils/http.py",
+      "sha256": "f8d90a731717de14a822d8035a14486caba2e25d52018c87d6ec0d9fcd3b2b27",
+      "bytes": 62612
+    },
+    {
+      "path": "/app/app/modules/indexer/parser/__init__.py",
+      "sha256": "ef73038e897b57f20269ed4141ea0574a027a6e760c78a5577f0aeb9b3ca30ed",
+      "bytes": 17268
+    },
+    {
+      "path": "/app/app/modules/indexer/parser/nexus_php.py",
+      "sha256": "b5c47b4ef97683057d0640f0bc8f4ad3e5354a29728f3acc12a4ed49b20382a4",
+      "bytes": 20663
+    }
+  ]
+}

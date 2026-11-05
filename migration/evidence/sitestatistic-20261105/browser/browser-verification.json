@@ -1,0 +1,112 @@
+{
+  "classification": "Actual ordinary d715 Linux main, source-corrected worker and native owned TLS/HTML peers; IAB desktop and Chrome real CDP touch under390x844. No fabricated UI/server data.",
+  "completed_at_utc": "2026-11-05T10:01:39.849766+00:00",
+  "main_run": "main-run-4",
+  "observed": [
+    "Parent1.9.8 manifest-only fixture and clone1.9.7",
+    "Native source page totals11G/2G,4seeds/6K and two real persisted account rows; zero delta/no-chart-data expected with no prior-day observations",
+    "UI saved enabled=true/notify_type=all/onlyonce=true; reopened shows enabled=true/onlyonce=false and all saved; actual completion11G/2G log",
+    "Clone remains disabled/oncefalse/dashboardtoday/notifytotal while source is enabled/dashboardall/notifyall",
+    "Dashboard selection persisted across reload and rendered source counts/charts",
+    "Chrome390x844 application-mode touch pull lists parent/clone via has_page; touching parent opens actual data modal with two rows",
+    "Persisted notice center shows four actual summary records including UI-triggered11G/2G notice"
+  ],
+  "delivery_boundary": "No real external messaging channel configured. Source ignores normal dispatch failures after saving history and still saves its receipt; error log plus source completion are both preserved. Browser confirms actual persisted in-app notice text, not receipt by an external person.",
+  "navigation_boundary": "Sidebar_nav is explicit Vue sidebar declarations only; this Vuetify plugin has no such entry. Normal card detail and mobile has_page quick access were actually exercised.",
+  "automation_boundaries": [
+    "IAB raw Input.dispatchTouchEvent unsupported; transient touch emulation reset before usingChrome.",
+    "Chrome native typeText attempts detached/failed validation; stable DOM fill then login succeeded.",
+    "Early viewport/menu attempts did not visibly open menu; no claim of a product fix. Selected app layout through normal standard-viewport controls, then set390x844 and actual touch pull/tap passed.",
+    "Chrome touch emulation disabled, viewport reset and originalAuto layout restored; ownChrome tab closed. Original IAB tab absent when returning after browser handoff; its task-origin layout preference had been setApp. No production origin settings changed."
+  ],
+  "files": {
+    "01-source-clone-versions.ax.txt": {
+      "sha256": "2958b5a5543e0073e69d8362d14b3ac5f83b1348684e77918f33464336da8011",
+      "bytes": 2750
+    },
+    "01-source-clone-versions.png": {
+      "sha256": "dbe63f0e89f3ca717b856c1e5c33764ec0a6f7c8ad06b2fa0ac155866a569cbb",
+      "bytes": 36002
+    },
+    "02-native-data-page.ax.txt": {
+      "sha256": "e1266f975ad857b606f6ba197d00a3a26c6a51903b84f11d64b8a80e3de81683",
+      "bytes": 4642
+    },
+    "02-native-data-page.png": {
+      "sha256": "3627fa316054ff8b38d707b46bac3afd7425a17bc9b1648ca12d65f45c485a00",
+      "bytes": 39778
+    },
+    "03-ui-once-before-save.ax.txt": {
+      "sha256": "45770124ad77a14712e2abffab84b7bb5e101fa7d5b85414bcbb051018ae45d4",
+      "bytes": 3757
+    },
+    "04-ui-saved.ax.txt": {
+      "sha256": "547f37bdf3fcd60866897584e1f72f12da77f08cc3ead9d5fbd435b0be638251",
+      "bytes": 2756
+    },
+    "04-ui-saved.png": {
+      "sha256": "ce5d997c600786b9d393254bda33a666dc60502103685d75c0d5055032633e9e",
+      "bytes": 36023
+    },
+    "05-ui-once-cleared.ax.txt": {
+      "sha256": "0c9d55ce7c3b2f699b08d7671ef44b5ec46452d95df68136345bacf1385c9f96",
+      "bytes": 3854
+    },
+    "05-ui-once-cleared.png": {
+      "sha256": "22517bb474420b6ec4384f947195efd58f8fe1b8fe73d88972a5599dffa247bb",
+      "bytes": 44737
+    },
+    "06-clone-config-unaffected.ax.txt": {
+      "sha256": "2d32f9adac784c7ef680e7b6e7a1b92c1fc1835daa8a407a099df294f6100c05",
+      "bytes": 3838
+    },
+    "07-ui-once-log.ax.txt": {
+      "sha256": "2a8d81c1aefa1beadc73d79b817375513e68548e3ceba2856035fb11fbd91232",
+      "bytes": 5817
+    },
+    "07-ui-once-log.png": {
+      "sha256": "1a7cd5a567d20d65f1380e175bae08c021e3fd57f1166846438057e3caeabc36",
+      "bytes": 69258
+    },
+    "08-dashboard-widget.ax.txt": {
+      "sha256": "f113b70e623e0371ef68fa2bf7d54d85afa5db78a615a631060dd92ce896a423",
+      "bytes": 2439
+    },
+    "08-dashboard-widget.png": {
+      "sha256": "35d2d771704d962eeb76c5aed9b8e089152a7a215f1bba9caf4da4a02c0feea2",
+      "bytes": 36375
+    },
+    "09-dashboard-after-reload.ax.txt": {
+      "sha256": "ca25a790b597db167013f24f48305318942f278a4bb93bb24be5f7e698928819",
+      "bytes": 2440
+    },
+    "09-dashboard-after-reload.png": {
+      "sha256": "35d2d771704d962eeb76c5aed9b8e089152a7a215f1bba9caf4da4a02c0feea2",
+      "bytes": 36375
+    },
+    "10-mobile-quick-access.dom.txt": {
+      "sha256": "4d92d0d3249188c6bec86176133b3835fd876bbda657570180f3a2a957002784",
+      "bytes": 942
+    },
+    "10-mobile-quick-access.png": {
+      "sha256": "bd7e82b58fd6b6a9cec370f2ba6d35c8d95e3aae5105730f654e07fd23c1859b",
+      "bytes": 10437
+    },
+    "11-mobile-data-page.ax.txt": {
+      "sha256": "3792dab825b60504ce11b9e84c997e15dd3a766a067d3e4510e1214d96bb6f2a",
+      "bytes": 3339
+    },
+    "11-mobile-data-page.png": {
+      "sha256": "1118000e4b05a439512686070faf6f4fb2ba5026722d3619836dcecb467a7af7",
+      "bytes": 16603
+    },
+    "12-persisted-notice-center.dom.txt": {
+      "sha256": "d45a84fbcff1e2b9d592d7c107fe72cb58e989c25c2c9c307843697c9691c961",
+      "bytes": 3785
+    },
+    "12-persisted-notice-center.png": {
+      "sha256": "4fbea12b50e9e65d114c06dbbe46e7088701495bc12ee714b73d69001e6a0126",
+      "bytes": 54892
+    }
+  }
+}

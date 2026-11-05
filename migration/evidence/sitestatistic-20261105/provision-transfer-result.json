@@ -1,0 +1,16 @@
+{
+  "prior_attempts": [
+    {
+      "exit_code": 127,
+      "stage": "archive transfer invocation, no application execution",
+      "cause": "Incorrect manual shell quoting; corrected with shlex.join"
+    },
+    {
+      "exit_code": 1,
+      "stage": "archive extraction, no application execution",
+      "cause": "NAS Python tarfile lacks extractall(filter=); replaced with strict four-name regular-file allowlist and manual streamed copy"
+    }
+  ],
+  "current_exit_code": 0,
+  "no_source_or_production_mutation": true
+}

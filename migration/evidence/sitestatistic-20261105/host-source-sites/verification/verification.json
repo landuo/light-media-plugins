@@ -1,0 +1,144 @@
+{
+  "frozen_manifest": "current-owned-files.json",
+  "frozen_manifest_sha256": "171b283d882c220fd1ec623ae9c59c505d8b744990763fa547e63fe5569ebe87",
+  "production_and_test_files": 16,
+  "actual_local_app_native_peer_sqlite_runs": [
+    {
+      "path": "app-final-frozen-normal.jsonl",
+      "sha256": "b1a464be5b5be204bf1e3568fa5bf6196d18ccf20fd13c5394c7e111b9266db6",
+      "passed_tests": 113,
+      "failures": [],
+      "packages": [
+        {
+          "package": "light-media/internal/app",
+          "elapsed": 9.725
+        }
+      ],
+      "cached": false
+    },
+    {
+      "path": "app-final-frozen-race.jsonl",
+      "sha256": "3dc4cd8560dc2625acd5ee97d49c1072225e17a1ad3ae1276ee43f7a110c09ac",
+      "passed_tests": 113,
+      "failures": [],
+      "packages": [
+        {
+          "package": "light-media/internal/app",
+          "elapsed": 78.225
+        }
+      ],
+      "cached": false
+    },
+    {
+      "path": "native-sdk-final-fresh-race.jsonl",
+      "sha256": "49b66b4426255279cd1748786c1826ae3e2806351a9495ba8e37f6261ba58d25",
+      "passed_tests": 982,
+      "failures": [],
+      "packages": [
+        {
+          "package": "light-media/internal/sourceindexer",
+          "elapsed": 1.537
+        },
+        {
+          "package": "light-media/internal/sites",
+          "elapsed": 4.702
+        },
+        {
+          "package": "light-media/internal/plugins",
+          "elapsed": 121.779
+        }
+      ],
+      "cached": false
+    }
+  ],
+  "target_independent_sdk_runs": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sites-source-capabilities/sdk-normal.jsonl",
+      "sha256": "197d92b0ac9832a8b5ce4c1514b33953ded85d3982e7d638128ce01b24a792e7",
+      "passed_tests": 129,
+      "failures": [],
+      "packages": [
+        {
+          "package": "github.com/landuo/light-media-plugins/internal/sdk",
+          "elapsed": 8.853
+        }
+      ],
+      "cached": false
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sites-source-capabilities/sdk-race.jsonl",
+      "sha256": "3768d306d3c0966cb85b0c172f6587081a82401d987c23c9e55ebf5c52d4c992",
+      "passed_tests": 129,
+      "failures": [],
+      "packages": [
+        {
+          "package": "github.com/landuo/light-media-plugins/internal/sdk",
+          "elapsed": 25.156
+        }
+      ],
+      "cached": false
+    }
+  ],
+  "cached_gate_separately_retained": {
+    "path": "native-sdk-final-frozen-race.jsonl",
+    "sha256": "576f7935d438fce75432fddae5c88924c8a812f82cd08177f630eb69ffd51716",
+    "passed_tests": 982,
+    "failures": [],
+    "packages": [
+      {
+        "package": "light-media/internal/sourceindexer",
+        "elapsed": 0.002
+      },
+      {
+        "package": "light-media/internal/sites",
+        "elapsed": 0.011
+      },
+      {
+        "package": "light-media/internal/plugins",
+        "elapsed": 0.021
+      }
+    ],
+    "cached": true
+  },
+  "vet": {
+    "exit_code": 0,
+    "log": "vet-final.log",
+    "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "compiled_negative_mutants": 6,
+  "negative_observations_sha256": "c8353ae7b5803acb0d62267c6000f6fa9178fc7a9a413b9de151d3649e2263e0",
+  "old_sdk93_unchanged": true,
+  "new_sdk_files": [
+    {
+      "source_path": "internal/plugins/site_source.go",
+      "path": "internal/sdk/site_source.go",
+      "source_sha256": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+      "sha256": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+      "changes": [],
+      "source_state": "working delta on 404daade9d5f321624e7b421dbf877a23fe5c2b9; coordinator will bind exact accepted commit"
+    },
+    {
+      "source_path": "internal/plugins/site_source_test.go",
+      "path": "internal/sdk/site_source_test.go",
+      "source_sha256": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+      "sha256": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+      "changes": [],
+      "source_state": "working delta on 404daade9d5f321624e7b421dbf877a23fe5c2b9; coordinator will bind exact accepted commit"
+    }
+  ],
+  "source_oracles": "source-evidence-files.json + original source manifests under testdata/plugin-source-sites-20261105/source-orm",
+  "classification": {
+    "compiled_helper": "actual sameSO source getters with synthetic dependencies; old sameSO r9 reused for Get-copy correction, no freshGet run claim",
+    "source_orm": "independent actual333544/Py3.12.13/Pydantic2.13.4/SQLAlchemy2.0.51/memorySQLite3.40.1; independent source scripts and fixtures",
+    "native_peer": "actual Go native parser/HTTP/SQLite via owned local peer, not a real tracker",
+    "app_worker": "independently compiled target SDK worker, normal and race; local App/real artifact install/SQLite/clone/cold",
+    "main_browser_production": "NOT RUN for new SourceSites; prior TT404 acceptance stays historical and is not reclassified"
+  },
+  "historical_failures_retained": {
+    "app-first.jsonl": "unsafe system TMPDIR ancestor before artifact install; rerun with task-owned safe TMPDIR",
+    "app-second.jsonl": "wrong fixture used empty model constructor dict as falsey serialized DTO; mTeam loopback config unsupported; corrected to serialized DTO/actual supported hhan parser failure",
+    "app-third.jsonl": "new test queried nonexistent SQL event columns; corrected JSON payload query",
+    "negative/drop-current.jsonl": "initial mutation did not compile due now-unused variable; NOT counted; corrected and final compiling mutation both retained"
+  },
+  "no_commit_push_deploy": true
+}

@@ -1,0 +1,47 @@
+[
+  {
+    "path": "binding-source/r1-stdout.json",
+    "sha256": "2ab48764cf354bf8ec8d60409871f8aa9b4eb8a50674c23753dfcbaf63b66400",
+    "invalid_wire_field_paths": [
+      "$.cases[5].source_trace[4].fields.mtype"
+    ],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  },
+  {
+    "path": "binding-source-widefloat/r1-stdout.json",
+    "sha256": "d29c4cdc30387f7131456d2cee54fedc9d73026507f5602ef27afb797ede3864",
+    "invalid_wire_field_paths": [],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  },
+  {
+    "path": "binding-source-nulls/r1-stdout.json",
+    "sha256": "49d26d7ca0d352f83cdc89aa80c6cd1cd0ab0e562a7fde17bc1c6e9c38513fbf",
+    "invalid_wire_field_paths": [],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  },
+  {
+    "path": "binding-source-clock/r1-stdout.json",
+    "sha256": "d07ab24c6e1d0efc2bc73c2412af4770760901095ef18eefc5d1679dff020df6",
+    "invalid_wire_field_paths": [],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  },
+  {
+    "path": "binding-source-chain-seed/r1-stdout.json",
+    "sha256": "95e8c21ed3af832130275e192436aa954aaf4af15ce025fc4ab85030ed3d5464",
+    "invalid_wire_field_paths": [
+      "$.cases[1].source_trace[4].fields.mtype"
+    ],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  },
+  {
+    "path": "notification-mode-source/oracle.json",
+    "sha256": "2afc3723214fa8c5b1299b09615f4d3124a4e11500359fd2d260950b36d046fc",
+    "invalid_wire_field_paths": [
+      "$.cases[0].trace[2].value.mtype",
+      "$.cases[0].notices[0].mtype",
+      "$.cases[1].trace[2].value.mtype",
+      "$.cases[1].notices[0].mtype"
+    ],
+    "unaffected_projections": "DTO/current/SQL/event order/body/fingerprint/receipt do not use the enum constant; previous synthetic mtype values are not actual source wire"
+  }
+]

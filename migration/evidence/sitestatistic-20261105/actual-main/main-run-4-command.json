@@ -1,0 +1,24 @@
+{
+  "classification": "actual ordinary Linux main/native HTTPS peer/API/SQLite/events/worker; source-corrected sidebar expectation, no product sidebar added; source-enum/recovery fixes bound separately",
+  "started_at_utc": "2026-11-05T09:27:46.238740+00:00",
+  "command": [
+    "/home/admin/light-media-plugins-migration-site-20261105/bin/main-driver-sidebar-fixed",
+    "-test.run",
+    "^TestSiteStatisticActualMainOwnedHTTPS$",
+    "-test.v",
+    "-test.timeout",
+    "70m"
+  ],
+  "environment": {
+    "SITESTATISTIC_HOST_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/light-media-source-recovery",
+    "SITESTATISTIC_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-fixed",
+    "SITESTATISTIC_UPDATE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-update-fixed",
+    "SITESTATISTIC_MODULE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/owned-module",
+    "SITESTATISTIC_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-site-20261105/main-run-4",
+    "SITESTATISTIC_LISTEN": "0.0.0.0:36253",
+    "SITESTATISTIC_PUBLIC_URL": "http://192.168.8.129:36253",
+    "SITESTATISTIC_UI_WAIT": "1"
+  },
+  "exit_code": 1,
+  "ended_at_utc": "2026-11-05T10:01:54.034966+00:00"
+}

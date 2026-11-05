@@ -1,0 +1,10 @@
+import pathlib,ast,json,hashlib,sys
+R=pathlib.Path(__file__).resolve().parents[3];P=R/'work/migration-20261105/host-reference/app/core/plugin.py';O=pathlib.Path(__file__).resolve().parent
+T=ast.parse(P.read_bytes());C=next(n for n in T.body if isinstance(n,ast.ClassDef) and n.name=='PluginManager');F=next(n for n in C.body if isinstance(n,ast.FunctionDef) and n.name=='get_plugin_config');calls=[];conf={'enabled':False,'onlyonce':False,'dashboard_type':'all','notify_type':'total','owned_unknown':'preserved source extra','':'ignored'}
+class Oper:
+ def get(self,key):calls.append(['get',key]);return conf.copy()
+N={'SystemConfigOper':Oper};exec(compile(ast.fix_missing_locations(ast.Module(body=[ast.ClassDef(name='Probe',bases=[],keywords=[],body=[F],decorator_list=[])],type_ignores=[])),str(P),'exec'),N)
+M=N['Probe']();M._config_key='config:%s';M._plugins={'SiteStatistic':True};before=M.get_plugin_config('SiteStatistic');firstcalls=calls[:];calls.clear()
+# Actual unregistration statement is independently static bound to stop181, reached by remove_plugin634->stop157. This is a state fixture, not full stop execution.
+M._plugins={};after=M.get_plugin_config('SiteStatistic');aftercalls=calls[:];calls.clear();M._plugins={'SiteStatistic':True};reload=M.get_plugin_config('SiteStatistic')
+r={'classification':'actual installed get_plugin_config776 AST only, synthetic SystemConfigOper/state; Python3.14; no app/config import. Full stop/uninstall static chain and earlier source uninstall oracle separately bound','source_sha256':hashlib.sha256(P.read_bytes()).hexdigest(),'source_lines':[F.lineno,F.end_lineno],'before_registered':{'return':before,'calls':firstcalls},'unregistered_retained_storage':{'return':after,'calls':aftercalls,'storage_retained':conf},'registered_again':{'return':reload,'calls':calls},'runtime':sys.version};(O/'source-getter-oracle.json').write_text(json.dumps(r,ensure_ascii=False,indent=2)+'\n');print(json.dumps({'unregistered_return':after,'storage_reads_after_unregistered':len(aftercalls),'reinstall_all_values':before==reload}))

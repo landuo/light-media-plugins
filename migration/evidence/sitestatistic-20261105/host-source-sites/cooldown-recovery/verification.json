@@ -1,0 +1,68 @@
+{
+  "classification": "Finite source-userdata native recovery correction; ordinary site cooldown remains unchanged. New ordinary main not yet run.",
+  "base_commit": "a16a833a304a30954af9c4ea8cd74bd04179188f",
+  "target_files": {
+    "internal/app/search_download.go": "b22c5ed3325ec7708ef04d2bce7223b83a332922d472e68965adb66f38518210",
+    "internal/app/site_manage.go": "3a986c564ef6515255a2440c1a0d2c74aa725cbbd9b1138dc814ccb0368f57a4",
+    "internal/app/plugin_original_source_userdata_cooldown_test.go": "55ee3f3230d9cf2a883c432dd7f8559d51ee0b144637de87bfe193fab560ed47"
+  },
+  "source_oracle_sha256": "04e759215d73cb13cba1517f4241e5947043065c846932ff5fb67e2e5d4ca751",
+  "source_behavior": "Actual synchronous IndexerModule/parser/RequestUtils control flow has no persistent15-minute cooldown. Consecutive loggedout/normal/normal calls each reach request. The async H2 fallback timer is unrelated and untouched.",
+  "change": "Only host-owned SourceResult native collection passes ordinaryCooldown=false to private wrapper; no input flag/context marker/new capability. Source ignores existing ordinary cooldown and never creates/replaces it. Other locks/guards/identity/limits/quotas keep their original body.",
+  "commands": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "./internal/app",
+        "-run",
+        "^TestSourceUserdataNativeRecoveryKeepsOrdinaryCooldownSeparate$"
+      ],
+      "exit_code": 1,
+      "raw": "cooldown-before-fix.jsonl",
+      "meaning": "Olda16 actually creates undesired ordinary cooldown after native source loggedout DTO."
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./internal/app",
+        "-run",
+        "^(TestSourceUserdataNativeRecoveryKeepsOrdinaryCooldownSeparate|TestSiteRequest|TestSiteMessageDefiniteGuard|TestSourceSitesIntrinsicNativeGuardStaysRejectedAfterRestore)$"
+      ],
+      "exit_code": 0,
+      "tests_passed": 2,
+      "raw": "cooldown-fixed-race.jsonl",
+      "selection_note": "Anchored prefixes namedTestSiteRequest/DefiniteGuard are not matching longer names; only two explicitly listed roots executed, not a claimed broad guard suite."
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./internal/app",
+        "-run",
+        "^TestSiteRequest.*$"
+      ],
+      "exit_code": 0,
+      "tests_passed": 2,
+      "raw": "cooldown-ordinary-limits-race.jsonl"
+    }
+  ],
+  "scope": "owned local native HTTP/App/SQLite and independent source AST harness (localPython3.14), no real tracker or ordinary main/browser claim",
+  "artifacts": {
+    "cooldown-before-fix.jsonl": "3e07a782304eec49f9f457ac2e1a0ceb08f6637b45624bf3ac7dd2652f480023",
+    "cooldown-fixed-race.jsonl": "548bea85e2775b9b182eec3d8914dd01ad9f992b9c8062601fe12bc310b1ff87",
+    "cooldown-ordinary-limits-race.jsonl": "d861f83bca49256ffbefb7b518cb278f5007c14e139ebccfbb0a02cabefd4f11",
+    "independent-source.tar.gz": "aa3fa2956aaaf64e081ea4a70757139f3dfabae776a8ff803f800781bcff9ff1",
+    "source-manifest.json": "1c23d7b5dbc2ca1b1d3e639115fc0a77583178d16e05b40d0ad7b74e2cd9f5d0",
+    "source-oracle.json": "04e759215d73cb13cba1517f4241e5947043065c846932ff5fb67e2e5d4ca751"
+  }
+}

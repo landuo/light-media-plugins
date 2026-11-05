@@ -2,3 +2,8 @@
 migration/evidence/**/host-*-buildinfo.txt -whitespace
 # Browser accessibility snapshots retain exact observed text, including spaces.
 migration/evidence/torrenttransfer-20261105/browser/*.ax.txt -whitespace
+# Source audit output is byte-bound evidence, including Go's trailing tabs and
+# unified diff context prefixes. Do not normalize these captured bytes.
+migration/evidence/sitestatistic-20261105/host-buildinfo.txt -whitespace
+migration/evidence/sitestatistic-20261105/independent-composite-review/host-buildinfo-reused.txt -whitespace
+migration/evidence/sitestatistic-20261105/independent-composite-review/*.diff -whitespace

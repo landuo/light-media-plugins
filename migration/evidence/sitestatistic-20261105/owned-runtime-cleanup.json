@@ -1,0 +1,50 @@
+{
+  "classification": "cleanup only exact-owned SiteStatistic test root after independent read-only SQLite/binary sample; no production paths",
+  "at_utc": "2026-11-05T10:15:13.360619+00:00",
+  "root": "/home/admin/light-media-plugins-migration-site-20261105",
+  "marker": "light-media-plugins/SiteStatistic/20261105/owned-only",
+  "active_owned_processes": [],
+  "binary_inventory_before_remove": {
+    "bin/light-media": {
+      "sha256": "2cc2a4067db72f039710d6514c524d8943761f1bc44eb51fcc44df11f124d3ad",
+      "bytes": 70739417
+    },
+    "bin/site-statistic": {
+      "sha256": "22aadc5d68b271195a5ad20af2979ad431bc03c5273cedc404e8e8e1d4ce59d3",
+      "bytes": 5759329
+    },
+    "bin/light-media-source-recovery": {
+      "sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+      "bytes": 70743969
+    },
+    "bin/main-driver-public-config-fixed": {
+      "sha256": "86417b14abb2344b4484c0f51ef773c097bfe0cb9e86255139e0b6ff2dade11e",
+      "bytes": 12151268
+    },
+    "bin/main-driver": {
+      "sha256": "fb07c830d601ec21dfecf9460733741c157f24e20fe52346a74698dec15c4042",
+      "bytes": 12151024
+    },
+    "bin/site-statistic-fixed": {
+      "sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+      "bytes": 5759329
+    },
+    "bin/site-statistic-update": {
+      "sha256": "c2294bc9d04c813969cbf6e8c55818171b6384e47d5c0362f7dc49d15beeb893",
+      "bytes": 5759329
+    },
+    "bin/site-statistic-update-fixed": {
+      "sha256": "943b5f919882e1da0d25bb0141e2ec1e2ffb73492ec40ff6074ad1f1458ef096",
+      "bytes": 5759329
+    },
+    "bin/main-driver-sidebar-fixed": {
+      "sha256": "ae5079a54a03d695e52d6196e9dcd2b40dd5dccf7f6ff2f5b62db3d6ce250cb3",
+      "bytes": 12151280
+    },
+    "bin/owned-module": {
+      "sha256": "290ccbc71503f18855c62c40f10b519e91ce9522953764201135087450e12b8d",
+      "bytes": 5615878
+    }
+  },
+  "root_exists_after": false
+}

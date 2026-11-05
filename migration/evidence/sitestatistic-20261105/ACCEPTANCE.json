@@ -1,0 +1,26 @@
+{
+  "status": "accepted_with_recorded_existing_Go_host_adaptations",
+  "instances": [
+    "SiteStatistic"
+  ],
+  "source_version": "1.9.7",
+  "business_target_commit": "c1ce619e8365b760799f9105722b42f83f2f0e78",
+  "business_target40_freeze_sha256": "5fe193964fcb15a6b07a4613bfa01873cbe3bda1725d145c817bb7a0ec76c31b",
+  "current_sdk_origin_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+  "ordinary_actual_host_commit": "d715db2c3665b32670f3f60c519ad7220224a856",
+  "ordinary_actual_host_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+  "ordinary_actual_worker_sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+  "independent_composite_review_sha256": "71d50afa46fa5280d0b0b9c7ff3ed6a102cd54a87be4f347a165361548412b50",
+  "raw_main_exit_codes": [
+    1,
+    1,
+    1,
+    1,
+    0
+  ],
+  "clarification": "Main4 actual desktop/touch UI is composed with same product/host Main5 full lifecycle. Main4 remains exit1 and did not reach final peer gate; Main5 exit0 did not repeat UI. Original enum-double mtype invalid fields are explicitly superseded by source-bound real wire proof. No external recipient delivery, private config/data migration, generic PT-site completeness or upstream1.9.8 release claimed.",
+  "scope": "Linux/local/single-user SiteStatistic and platform clone; source/synthetic/native/real main/browser evidence classified separately.",
+  "adaptations_document": "plugins/sitestatistic/ORIGIN.md",
+  "remote_publication": false,
+  "production_deployment": false
+}

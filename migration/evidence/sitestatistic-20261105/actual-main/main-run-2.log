@@ -1,0 +1,4 @@
+=== RUN   TestSiteStatisticActualMainOwnedHTTPS
+    sitestatistic_main_test.go:272: ordinary all refresh missing/duplicated single site facts {map[ss-owned-native-a:8 ss-owned-native-b:1] map[site_connection:2 site_cooldown:1 site_icon:2 site_stats_history:2 site_stats_latest:2] map[SiteStatistic:1]} {map[*:1 ss-owned-native-a:8 ss-owned-native-b:2] map[site_connection:2 site_cooldown:1 site_icon:2 site_stats_history:2 site_stats_latest:2] map[SiteStatistic:1]}
+--- FAIL: TestSiteStatisticActualMainOwnedHTTPS (8.31s)
+FAIL

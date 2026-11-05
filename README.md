@@ -1,6 +1,6 @@
 # Light Media Plugins
 
-当前本地已验收 3/23 个实例：CategoryEditor（二级分类策略）1.3、TorrentTransfer（自动转移做种）1.10.3 及其音乐分身。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
+当前本地已验收 4/23 个实例：CategoryEditor（二级分类策略）1.3、TorrentTransfer（自动转移做种）1.10.3 及其音乐分身、SiteStatistic（站点数据统计）1.9.7。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
 ## CategoryEditor 安装与使用
 
@@ -37,6 +37,16 @@ CategoryEditor 原本通过 JSON `get_form` 使用宿主表单渲染器，没有
 主插件卸载保留配置、数据和代码；已加载分身卸载清除其配置、数据和代码。历史失败测试与最终复合证据分别记录，详见
 [`ACCEPTANCE.json`](migration/evidence/torrenttransfer-20261105/ACCEPTANCE.json) 和
 [`ORIGIN.md`](plugins/torrenttransfer/ORIGIN.md)。测试中的 1.10.4 只是更新夹具。
+
+## 站点数据统计
+
+SiteStatistic1.9.7 需要本地宿主提交 `d715db2c3665b32670f3f60c519ad7220224a856` 的 SourceSites 资源与恢复修复；这些接口尚未合并、推送或部署，已发布宿主75e不具备。插件本轮也未推送，远端市场暂不可安装。
+
+1. 安装后选择启用、仪表板统计范围和通知范围，保存配置。站点刷新事件触发原版汇总与正文去重；“运行一次”在三秒后由宿主刷新站点并自动清除此开关。
+2. 通过插件数据页查看统计和站点账户数据；仪表板可选择此插件。移动端应用布局下可由下拉快捷入口打开数据页。原版没有此插件的独立侧栏项。
+3. 分身由宿主创建和管理，配置、数据、进程、重载和更新相互隔离。主插件卸载保留存储，公开配置返回空对象，重装恢复；已加载分身卸载清除其命名空间和代码。
+
+真实普通Linux主程序、独占TLS/Nexus样本、SQLite、API、事件、通知持久化以及桌面/触摸页面均已验收；无实际外部通知接收方。失败历史和最后通过的复合证据见 [`ACCEPTANCE.json`](migration/evidence/sitestatistic-20261105/ACCEPTANCE.json)，必要适配见 [`ORIGIN.md`](plugins/sitestatistic/ORIGIN.md)。1.9.8仅为更新夹具，没有迁移私人配置或操作原系统。
 
 ## 自动构建与发布
 

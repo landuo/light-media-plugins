@@ -1,0 +1,23 @@
+{
+  "classification": "actual ordinary Linux main/native owned HTTPS/API/SQLite/events/worker; source-corrected uninstalled public config getter; UI run4 bound separately",
+  "started_at_utc": "2026-11-05T10:10:50.249715+00:00",
+  "command": [
+    "/home/admin/light-media-plugins-migration-site-20261105/bin/main-driver-public-config-fixed",
+    "-test.run",
+    "^TestSiteStatisticActualMainOwnedHTTPS$",
+    "-test.v",
+    "-test.timeout",
+    "70m"
+  ],
+  "environment": {
+    "SITESTATISTIC_HOST_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/light-media-source-recovery",
+    "SITESTATISTIC_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-fixed",
+    "SITESTATISTIC_UPDATE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-update-fixed",
+    "SITESTATISTIC_MODULE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/owned-module",
+    "SITESTATISTIC_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-site-20261105/main-run-5",
+    "SITESTATISTIC_LISTEN": "0.0.0.0:36253",
+    "SITESTATISTIC_PUBLIC_URL": "http://192.168.8.129:36253"
+  },
+  "exit_code": 0,
+  "ended_at_utc": "2026-11-05T10:11:28.250855+00:00"
+}

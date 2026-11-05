@@ -1,0 +1,24 @@
+{
+  "classification": "actual ordinary Linux main/native HTTPS peer/API/SQLite/events/worker; source-enum corrected worker, host/driver unchanged; own synthetic inputs, browser separate",
+  "started_at_utc": "2026-11-05T08:57:24.828323+00:00",
+  "command": [
+    "/home/admin/light-media-plugins-migration-site-20261105/bin/main-driver",
+    "-test.run",
+    "^TestSiteStatisticActualMainOwnedHTTPS$",
+    "-test.v",
+    "-test.timeout",
+    "70m"
+  ],
+  "environment": {
+    "SITESTATISTIC_HOST_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/light-media",
+    "SITESTATISTIC_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-fixed",
+    "SITESTATISTIC_UPDATE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/site-statistic-update-fixed",
+    "SITESTATISTIC_MODULE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-site-20261105/bin/owned-module",
+    "SITESTATISTIC_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-site-20261105/main-run-2",
+    "SITESTATISTIC_LISTEN": "0.0.0.0:36253",
+    "SITESTATISTIC_PUBLIC_URL": "http://192.168.8.129:36253",
+    "SITESTATISTIC_UI_WAIT": "1"
+  },
+  "exit_code": 1,
+  "ended_at_utc": "2026-11-05T08:57:33.151286+00:00"
+}
