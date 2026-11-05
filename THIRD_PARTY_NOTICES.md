@@ -17,12 +17,12 @@ the actual category file write and cache refresh; its documented safety bounds
 are intentional adaptation differences, not claims of identical behavior for
 every input. No upstream icon image is redistributed by this package.
 
-## Go and golang.org/x/text
+## Go modules
 
 The executable includes the Go runtime. Its copyright and license text are in
 `third_party/Go-LICENSE`.
 
-The only third-party Go module is `golang.org/x/text v0.43.0`; its copyright and
+The shared SDK uses `golang.org/x/text v0.43.0`; its copyright and
 license text are in `third_party/x-text-LICENSE`, with its additional patent
 grant in `third_party/x-text-PATENTS`. The module checksums are fixed in
 `go.sum`.
@@ -33,8 +33,39 @@ grant in `third_party/x-text-PATENTS`. The module checksums are fixed in
 import relocation. The CategoryEditor adaptation and this required complete-file SDK
 snapshot are distributed under GNU GPL version 3; see `LICENSE`. This grant
 does not imply that the unrelated host application is public or GPL-licensed.
-Go and x/text retain their original licenses as stated above. This repository
+Go and the listed modules retain their original licenses as stated above. This repository
 does not include the host application, private configuration, databases, or
 private original migration logs. Controlled synthetic/source/main/browser evidence is
 separately classified in migration/evidence; it contains no production
 configuration or database.
+
+## Installed plugin adaptations and MPServerStatus support
+
+The installed TorrentTransfer1.10.3 and SiteStatistic1.9.7 business source was
+written by jxxghp for MoviePilot. Their fixed installed content source, authors,
+exact source SHA256, adaptations and evidence are retained in each plugin's
+ORIGIN.md and migration/ledger.json. The content baseline is not represented
+as a newly identified upstream commit.
+
+The MPServerStatus1.4 Go candidate is adapted from jxxghp's installed source
+SHA256 `63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90`.
+Its fixed source/plugin behavior and pure codec/proxy helper reuse are described
+in plugins/mpserverstatus/ORIGIN.md; this attribution does not claim acceptance.
+It adds these exact runtime module dependencies:
+
+- `github.com/andybalholm/brotli v1.2.6`: MIT text in
+  third_party/brotli-LICENSE. A conservative complete-module copy of the
+  unused flate subpackage's BSD notice is in third_party/brotli-flate-LICENSE.
+- `golang.org/x/net v0.61.0`: BSD text in third_party/x-net-LICENSE
+  and the additional Go IP grant in third_party/x-net-PATENTS. Only its
+  proxy/internal-socks leaves are required here.
+
+The pure encoding detector preserves CPython's PSF license/history, Unicode
+LicenseV3 and chardet0BSD notice under plugins/mpserverstatus/encodingdetector/.
+The finite requests proxy helper preserves the CPython, RequestsApache2.0
+(including original NOTICE) and PySocksBSD texts under
+plugins/mpserverstatus/requestsproxy/licenses/; REQUESTS-NOTICE identifies its
+source and approved proxy-TLS adaptation. These tables/algorithms are Go source
+and embedded assets; no Python interpreter or package is used at runtime.
+The build allowlist must include all applicable notices in each corresponding
+plugin ZIP and the selected release's third-party notice bundle.

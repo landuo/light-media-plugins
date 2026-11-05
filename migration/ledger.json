@@ -4359,7 +4359,8 @@
         "categoryeditor.source-differential.20261105",
         "categoryeditor.actual-main-browser.20261105",
         "categoryeditor.independent-review.20261105",
-        "sdk95.unreachable-source-sites-impact.20261105"
+        "sdk95.unreachable-source-sites-impact.20261105",
+        "sdk.unreachable_module_increment"
       ],
       "review": {
         "status": "passed",
@@ -4367,7 +4368,8 @@
         "reviewer": "/root/category_review",
         "evidence_ids": [
           "categoryeditor.independent-review.20261105",
-          "sdk95.unreachable-source-sites-impact.20261105"
+          "sdk95.unreachable-source-sites-impact.20261105",
+          "sdk.unreachable_module_increment"
         ]
       },
       "original_instance_id": "CategoryEditor",
@@ -4760,7 +4762,8 @@
         "torrenttransfer.source-differential.20261105",
         "torrenttransfer.actual-main-browser-composite.20261105",
         "torrenttransfer.independent-review.20261105",
-        "sdk95.unreachable-source-sites-impact.20261105"
+        "sdk95.unreachable-source-sites-impact.20261105",
+        "sdk.unreachable_module_increment"
       ],
       "review": {
         "status": "passed",
@@ -4768,7 +4771,8 @@
         "reviewer": "/root/plugin_source_discovery",
         "evidence_ids": [
           "torrenttransfer.independent-review.20261105",
-          "sdk95.unreachable-source-sites-impact.20261105"
+          "sdk95.unreachable-source-sites-impact.20261105",
+          "sdk.unreachable_module_increment"
         ]
       },
       "original_instance_id": "TorrentTransfer",
@@ -5121,14 +5125,16 @@
       "evidence_ids": [
         "sitestatistic.source_and_sdk",
         "sitestatistic.actual_main_browser",
-        "sitestatistic.independent_composite"
+        "sitestatistic.independent_composite",
+        "sdk.unreachable_module_increment"
       ],
       "review": {
         "status": "passed",
         "independent": true,
         "reviewer": "/root/plugin_source_discovery",
         "evidence_ids": [
-          "sitestatistic.independent_composite"
+          "sitestatistic.independent_composite",
+          "sdk.unreachable_module_increment"
         ]
       },
       "original_instance_id": "SiteStatistic",
@@ -12362,7 +12368,8 @@
         "torrenttransfer.source-differential.20261105",
         "torrenttransfer.actual-main-browser-composite.20261105",
         "torrenttransfer.independent-review.20261105",
-        "sdk95.unreachable-source-sites-impact.20261105"
+        "sdk95.unreachable-source-sites-impact.20261105",
+        "sdk.unreachable_module_increment"
       ],
       "review": {
         "status": "passed",
@@ -12370,7 +12377,8 @@
         "reviewer": "/root/plugin_source_discovery",
         "evidence_ids": [
           "torrenttransfer.independent-review.20261105",
-          "sdk95.unreachable-source-sites-impact.20261105"
+          "sdk95.unreachable-source-sites-impact.20261105",
+          "sdk.unreachable_module_increment"
         ]
       },
       "original_instance_id": "TorrentTransfermusic",
@@ -15272,8 +15280,8 @@
         "target_files": {
           "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
           "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
@@ -15574,7 +15582,20 @@
         "evidence/categoryeditor-20261105/category-review-sdk93-final/negative_reachable_client.py": "3c356c3436f5ccdb5d8a89a3a9afd40c0e0bd80dfa020a79972461752d9b6c83",
         "evidence/categoryeditor-20261105/category-review-sdk93-final/_tools/elfinspect.go": "d8b0631e49cb75d23d8f849ef48253b16a80cba57cbfba9f015af9aef55d7e2a",
         "evidence/categoryeditor-20261105/category-review-sdk93-final/_tools/inspect.go": "ecc01ca005f280d5ef288f9e8f42d5ae6a8da849fabe3f53ad91310e4d10ede9"
-      }
+      },
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "id": "categoryeditor.actual-main-browser.20261105",
@@ -15594,8 +15615,8 @@
         "target_files": {
           "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
           "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
@@ -15910,7 +15931,20 @@
         "evidence/categoryeditor-20261105/category-review-sdk93-final/negative_reachable_client.py": "3c356c3436f5ccdb5d8a89a3a9afd40c0e0bd80dfa020a79972461752d9b6c83",
         "evidence/categoryeditor-20261105/category-review-sdk93-final/_tools/elfinspect.go": "d8b0631e49cb75d23d8f849ef48253b16a80cba57cbfba9f015af9aef55d7e2a",
         "evidence/categoryeditor-20261105/category-review-sdk93-final/_tools/inspect.go": "ecc01ca005f280d5ef288f9e8f42d5ae6a8da849fabe3f53ad91310e4d10ede9"
-      }
+      },
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "id": "categoryeditor.independent-review.20261105",
@@ -15924,8 +15958,8 @@
         "target_files": {
           "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
           "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
@@ -16284,7 +16318,20 @@
         "evidence/categoryeditor-20261105/category-review-sdk93-final/_tools/inspect.go": "ecc01ca005f280d5ef288f9e8f42d5ae6a8da849fabe3f53ad91310e4d10ede9"
       },
       "reviewer": "/root/category_review",
-      "observations": "Independent source-first discovery, direct source/Go replay, negative overlay, original raw main/browser evidence,1818 actual host Git compile-input blobs and current SDK link closure audited. Exact historical build command supplement added later by original worker; no bit-rebuild claim."
+      "observations": "Independent source-first discovery, direct source/Go replay, negative overlay, original raw main/browser evidence,1818 actual host Git compile-input blobs and current SDK link closure audited. Exact historical build command supplement added later by original worker; no bit-rebuild claim.",
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "id": "sdk95.unreachable-source-sites-impact.20261105",
@@ -16302,8 +16349,8 @@
         "target_files": {
           "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
           "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
@@ -16539,7 +16586,20 @@
         "evidence/sdk95-impact-20261105/torrent-transfer-import-graph.json": "51ed23d8c27048fc3cc17ac2392d777188ffc3109786e268119020b6b4fa5a72",
         "evidence/sdk95-impact-20261105/torrent-transfer-link-audit.json": "26dc0a2d0a56e5e9c09200aa3e01957514010cad45ffcc41f311391a6a94c59e",
         "evidence/sdk95-impact-20261105/torrent-transfer-pc-file-line-maps.json": "4d8e1bc4d45e0865fef1d06ff0cbdbba4d6aab3139c21da72859fd07a24223f9"
-      }
+      },
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -16581,8 +16641,8 @@
           "plugins/torrenttransfer/timezone.go": "0077073ecea518e5a6751ae04263cf18a0ace1dd10bb5cd1947881e321a72b1e",
           "plugins/torrenttransfer/timezone_test.go": "4e079da7164990e00b1bdabfc48b83c2c6f1d32782cfb328c90b0ca943725c89",
           "plugins/torrenttransfer/types.go": "cd60255f18c406e644f084458576d5154c62915cce8ce93e4db2d8d363f48095",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
           "internal/sdk/base.go": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
@@ -16990,7 +17050,20 @@
         "source_plugin": "Installed TorrentTransfer1.10.3 and music content snapshot270ae0bcbf1d270b916ca9b14f8bffff9b1938d0; exact raw SHA in independent-business-review.json",
         "original_and_target_scenarios": "Source-first contracts/raw source oracles in source-first/ and independent-business-review.tar.gz; actual owned synthetic torrent/payload data and exact run command/environment/build manifests in evidence directory",
         "normalization": "Only finite source dependency text/timezone diagnostic aliases documented in independent review; business fields/state/order/side effects and failed exits not normalized away."
-      }
+      },
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -17032,8 +17105,8 @@
           "plugins/torrenttransfer/timezone.go": "0077073ecea518e5a6751ae04263cf18a0ace1dd10bb5cd1947881e321a72b1e",
           "plugins/torrenttransfer/timezone_test.go": "4e079da7164990e00b1bdabfc48b83c2c6f1d32782cfb328c90b0ca943725c89",
           "plugins/torrenttransfer/types.go": "cd60255f18c406e644f084458576d5154c62915cce8ce93e4db2d8d363f48095",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
           "internal/sdk/base.go": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
@@ -17441,7 +17514,20 @@
         "source_plugin": "Installed TorrentTransfer1.10.3 and music content snapshot270ae0bcbf1d270b916ca9b14f8bffff9b1938d0; exact raw SHA in independent-business-review.json",
         "original_and_target_scenarios": "Source-first contracts/raw source oracles in source-first/ and independent-business-review.tar.gz; actual owned synthetic torrent/payload data and exact run command/environment/build manifests in evidence directory",
         "normalization": "Only finite source dependency text/timezone diagnostic aliases documented in independent review; business fields/state/order/side effects and failed exits not normalized away."
-      }
+      },
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -17483,8 +17569,8 @@
           "plugins/torrenttransfer/timezone.go": "0077073ecea518e5a6751ae04263cf18a0ace1dd10bb5cd1947881e321a72b1e",
           "plugins/torrenttransfer/timezone_test.go": "4e079da7164990e00b1bdabfc48b83c2c6f1d32782cfb328c90b0ca943725c89",
           "plugins/torrenttransfer/types.go": "cd60255f18c406e644f084458576d5154c62915cce8ce93e4db2d8d363f48095",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
           "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
           "internal/sdk/base.go": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
@@ -17887,7 +17973,20 @@
         "Independent work/sites-review-20261105/tt-composite-review/review-evidence.json and review.md"
       ],
       "observations": "Independent full business/finite host review, immutable real-main/UI composite audit (102 pre-audit leaves,1828 actual404 Gitblob checks, original/current driver hashes), read-only NAS retained sample and exact daemon ownership/stop checks; no rerun100 and no relabeling failures. SDK95 current impact is a separate evidence record.",
-      "reviewer": "/root/plugin_source_discovery"
+      "reviewer": "/root/plugin_source_discovery",
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -17996,8 +18095,8 @@
           "internal/sdk/title_torrent_filter.go": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
           "internal/sdk/transport.go": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
           "internal/sdk/worker.go": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db"
         },
         "fixture_files": {
@@ -18511,7 +18610,20 @@
         "Independent initial/race/negative and enum/cooldown source add-ons, actual commands inside respective proof directories"
       ],
       "inputs": "Fixed installed SiteStatistic1.9.7 source1122lines; current40files/freeze5fe193..., SDK95/c9dc2..., hostd7151832Gitblob closure and source-corrected53c3 worker. See complete hashed input and artifact manifests.",
-      "observations": "Source binding, source statistics/precision/config/data/locale/one-shot/noopstop/callback budgets and finite current source DTO/history/SQL; old enum-double trace mtype explicitly superseded by actual source enum red/green and real wire proof."
+      "observations": "Source binding, source statistics/precision/config/data/locale/one-shot/noopstop/callback budgets and finite current source DTO/history/SQL; old enum-double trace mtype explicitly superseded by actual source enum red/green and real wire proof.",
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -18620,8 +18732,8 @@
           "internal/sdk/title_torrent_filter.go": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
           "internal/sdk/transport.go": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
           "internal/sdk/worker.go": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db"
         },
         "fixture_files": {
@@ -19134,7 +19246,20 @@
         "Actual ordinary IAB and Chrome page interactions under browser/browser-verification.json; same-product main4 UI composed with complete main5"
       ],
       "inputs": "Fixed installed SiteStatistic1.9.7 source1122lines; current40files/freeze5fe193..., SDK95/c9dc2..., hostd7151832Gitblob closure and source-corrected53c3 worker. See complete hashed input and artifact manifests.",
-      "observations": "Main1..4 exit1 retained; Main5 exit0/37.96s. Native TLS/error/null/recovery/SQL, exact API/locales, persisted notice/dedupe/receipt, form/page/dashboard, platform clone/reload/manifest-only update/cold/no replay/reset/nonempty clone purge/base retained storage and full reinstall. Actual desktop/touch UI4; no external receiver. Main5 strict peer and evidence secret assertions passed."
+      "observations": "Main1..4 exit1 retained; Main5 exit0/37.96s. Native TLS/error/null/recovery/SQL, exact API/locales, persisted notice/dedupe/receipt, form/page/dashboard, platform clone/reload/manifest-only update/cold/no replay/reset/nonempty clone purge/base retained storage and full reinstall. Actual desktop/touch UI4; no external receiver. Main5 strict peer and evidence secret assertions passed.",
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
     },
     {
       "feature_ids": [
@@ -19243,8 +19368,8 @@
           "internal/sdk/title_torrent_filter.go": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
           "internal/sdk/transport.go": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
           "internal/sdk/worker.go": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
-          "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
-          "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
           "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db"
         },
         "fixture_files": {
@@ -19756,7 +19881,94 @@
         "Independent verify_inputs.py, verify_closure.py, source_getter_oracle.py, read_only_sample.py and final artifact inspection; retained earlier failed preparation attempts under independent-composite-review/"
       ],
       "inputs": "Fixed installed SiteStatistic1.9.7 source1122lines; current40files/freeze5fe193..., SDK95/c9dc2..., hostd7151832Gitblob closure and source-corrected53c3 worker. See complete hashed input and artifact manifests.",
-      "observations": "Reviewer /root/plugin_source_discovery confirmed1968 input hashes,95 complete SDK files,1832 committed host build inputs,25 actual raw artifacts,22 browser files/10 PNGs, original-source getter behavior and SQLite/ELF/process readonly sample; no product/SDK edits. Certificate71d50afa... accepts bounded composite without relabelling failed runs."
+      "observations": "Reviewer /root/plugin_source_discovery confirmed1968 input hashes,95 complete SDK files,1832 committed host build inputs,25 actual raw artifacts,22 browser files/10 PNGs, original-source getter behavior and SQLite/ELF/process readonly sample; no product/SDK edits. Certificate71d50afa... accepts bounded composite without relabelling failed runs.",
+      "historical_bindings": [
+        {
+          "reason": "newdirectmodulesunreachable;6ELF actual byte equality + independent exactBOM; current original95 unchanged",
+          "target_files": {
+            "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+            "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+          },
+          "reuse_evidence_id": "sdk.unreachable_module_increment"
+        }
+      ],
+      "dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ]
+    },
+    {
+      "id": "sdk.unreachable_module_increment",
+      "kind": "review",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "commands": [
+        "Actual Root before/after CGO_ENABLED0 Linux/amd64 go build -trimpath -buildvcs=false for all3business workers;6argv/exit/logs in impact.json",
+        "Independent complete-byte and SHA/BOM/go.mod/go.sum/all95SDK checks;6 actual go version -m outputs and source-license file comparisons in independent-review.json"
+      ],
+      "inputs": "Only new exactdirectmodules Brotli1.2.6+x/net0.61.0 and4sums; current95SDK+origin bytes unchanged; exact before/after files and Linux runtime closure captured.",
+      "observations": "All3 ELFs before/after exactly equal. Cat6106600c and TT3882fcc match current95 impact certificate; Site53c3 matches actualmain worker. New modules absent from all3 import/BOM closures. This reuses bound historical real main/UI evidence; it is not new main/UI/MPS acceptance.",
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "target_files": {
+          "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+          "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+          "third_party/brotli-LICENSE": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+          "third_party/brotli-flate-LICENSE": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "third_party/x-net-LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "third_party/x-net-PATENTS": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+        },
+        "fixture_files": {
+          "evidence/module-addition-20261105/artifact-manifest.json": "fd4031f63396db7667d0941e69655f28cec503ed3b5bf196c1d7ff1bbb55dc79",
+          "evidence/module-addition-20261105/category-editor-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/category-editor-after-independent-buildinfo.txt": "6e746eaa29a492f6223b85a0ced460f6de564540b066035823f6b0fe330f42e0",
+          "evidence/module-addition-20261105/category-editor-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/category-editor-before-independent-buildinfo.txt": "d73aa1ef27f3daf8d232005df506f9a8d531d936bec2d3f9352530042b9e6619",
+          "evidence/module-addition-20261105/cleanup.json": "3315c7cfcb4e10f4d2784faee746bd2268110449b7dea9e7c3406d51807f0455",
+          "evidence/module-addition-20261105/go.mod-after": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+          "evidence/module-addition-20261105/go.mod-before": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+          "evidence/module-addition-20261105/go.sum-after": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+          "evidence/module-addition-20261105/go.sum-before": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+          "evidence/module-addition-20261105/impact.json": "c9941e87cd6c14c544ab4d734ca8b4877d32237b0a3b351efecf89a72fdb2051",
+          "evidence/module-addition-20261105/independent-review.json": "17729c9fb70794c1af8576115c343be9f72831c2ab1691add783ded2e181cdc4",
+          "evidence/module-addition-20261105/site-statistic-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/site-statistic-after-independent-buildinfo.txt": "023c5808eded52aa80c26757d20f6ebab6b45315ab9c2b99b931332b494f51d5",
+          "evidence/module-addition-20261105/site-statistic-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/site-statistic-before-independent-buildinfo.txt": "6b71666edbcae57ea49f0bf68fafd529e0a75ba8f4b9ac1f71d7397de9a24da1",
+          "evidence/module-addition-20261105/torrent-transfer-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/torrent-transfer-after-independent-buildinfo.txt": "5068b0b032a19b6f61c9dee53133eac0eecb6ca52fbb4aa0ad1cd945f175a66c",
+          "evidence/module-addition-20261105/torrent-transfer-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+          "evidence/module-addition-20261105/torrent-transfer-before-independent-buildinfo.txt": "0b0570fb840ddbdc547096b50551339c85ec45fcd249a8b946c3e616befbc2bb"
+        },
+        "environment": "Go1.26.2 darwin/arm64 cross-build CGO0 Linux/amd64; both new modules fixed cached dirhash/version, same toolchain and existingx/text0.43.0. Independent actual six-BOM and byte comparisons."
+      },
+      "artifacts": {
+        "evidence/module-addition-20261105/artifact-manifest.json": "fd4031f63396db7667d0941e69655f28cec503ed3b5bf196c1d7ff1bbb55dc79",
+        "evidence/module-addition-20261105/category-editor-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/category-editor-after-independent-buildinfo.txt": "6e746eaa29a492f6223b85a0ced460f6de564540b066035823f6b0fe330f42e0",
+        "evidence/module-addition-20261105/category-editor-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/category-editor-before-independent-buildinfo.txt": "d73aa1ef27f3daf8d232005df506f9a8d531d936bec2d3f9352530042b9e6619",
+        "evidence/module-addition-20261105/cleanup.json": "3315c7cfcb4e10f4d2784faee746bd2268110449b7dea9e7c3406d51807f0455",
+        "evidence/module-addition-20261105/go.mod-after": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+        "evidence/module-addition-20261105/go.mod-before": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+        "evidence/module-addition-20261105/go.sum-after": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+        "evidence/module-addition-20261105/go.sum-before": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+        "evidence/module-addition-20261105/impact.json": "c9941e87cd6c14c544ab4d734ca8b4877d32237b0a3b351efecf89a72fdb2051",
+        "evidence/module-addition-20261105/independent-review.json": "17729c9fb70794c1af8576115c343be9f72831c2ab1691add783ded2e181cdc4",
+        "evidence/module-addition-20261105/site-statistic-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/site-statistic-after-independent-buildinfo.txt": "023c5808eded52aa80c26757d20f6ebab6b45315ab9c2b99b931332b494f51d5",
+        "evidence/module-addition-20261105/site-statistic-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/site-statistic-before-independent-buildinfo.txt": "6b71666edbcae57ea49f0bf68fafd529e0a75ba8f4b9ac1f71d7397de9a24da1",
+        "evidence/module-addition-20261105/torrent-transfer-after-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/torrent-transfer-after-independent-buildinfo.txt": "5068b0b032a19b6f61c9dee53133eac0eecb6ca52fbb4aa0ad1cd945f175a66c",
+        "evidence/module-addition-20261105/torrent-transfer-before-build.log": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "evidence/module-addition-20261105/torrent-transfer-before-independent-buildinfo.txt": "0b0570fb840ddbdc547096b50551339c85ec45fcd249a8b946c3e616befbc2bb"
+      }
     }
   ],
   "scope": {
@@ -19849,6 +20061,13 @@
       "root": "/home/admin/light-media-plugins-migration-site-20261105",
       "state": "removed after independent read-only SQLite/process/binary sample",
       "cleanup_evidence": "evidence/sitestatistic-20261105/owned-runtime-cleanup.json"
+    },
+    "module_increment": {
+      "state": "exact3ELFunreachable addition independently passed",
+      "evidence_id": "sdk.unreachable_module_increment",
+      "review_sha256": "17729c9fb70794c1af8576115c343be9f72831c2ab1691add783ded2e181cdc4",
+      "accepted_worker_ELF_before_after_equal": true,
+      "not_MPS_acceptance": true
     }
   }
 }

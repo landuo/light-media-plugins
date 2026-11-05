@@ -1,0 +1,108 @@
+{
+  "classification": "Root controlled before/after exact worker build for adding unreachable module dependencies; not business acceptance",
+  "environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "before_files": {
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+    "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db"
+  },
+  "commands": [
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/category-editor-before",
+        "./cmd/category-editor"
+      ],
+      "exit_code": 0,
+      "sha256": "6106600c1a5403d7996f09019b1d33c1177024ca33581814a5070641f7b0ff36",
+      "bytes": 4607804
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/torrent-transfer-before",
+        "./cmd/torrent-transfer"
+      ],
+      "exit_code": 0,
+      "sha256": "3882fcc29031c2e3b99531b599cfc33c76ec75dd1ca986fab0663e4002bf4402",
+      "bytes": 5710087
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/site-statistic-before",
+        "./cmd/site-statistic"
+      ],
+      "exit_code": 0,
+      "sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+      "bytes": 5759329
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/category-editor-after",
+        "./cmd/category-editor"
+      ],
+      "exit_code": 0,
+      "sha256": "6106600c1a5403d7996f09019b1d33c1177024ca33581814a5070641f7b0ff36",
+      "bytes": 4607804,
+      "exact_binary_equal_to_before": true
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/torrent-transfer-after",
+        "./cmd/torrent-transfer"
+      ],
+      "exit_code": 0,
+      "sha256": "3882fcc29031c2e3b99531b599cfc33c76ec75dd1ca986fab0663e4002bf4402",
+      "bytes": 5710087,
+      "exact_binary_equal_to_before": true
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/module-addition-impact/site-statistic-after",
+        "./cmd/site-statistic"
+      ],
+      "exit_code": 0,
+      "sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+      "bytes": 5759329,
+      "exact_binary_equal_to_before": true
+    }
+  ],
+  "after_files": {
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+    "SDK_ORIGIN.json": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db"
+  },
+  "all_three_exact_Linux_binary_equal": true
+}

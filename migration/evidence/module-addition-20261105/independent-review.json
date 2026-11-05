@@ -1,0 +1,115 @@
+{
+  "status": "passed_finite_unused_module_addition_impact",
+  "classification": "independent exact hashes/full Linux ELF equality+actual six ELF buildinfo inspections+95SDK immutability+four cached-license comparisons; not new ordinary main/UI/business acceptance",
+  "impact_json_sha256": "c9941e87cd6c14c544ab4d734ca8b4877d32237b0a3b351efecf89a72fdb2051",
+  "binaries": [
+    {
+      "path": "work/migration-20261105/module-addition-impact/category-editor-before",
+      "sha256": "6106600c1a5403d7996f09019b1d33c1177024ca33581814a5070641f7b0ff36",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    },
+    {
+      "path": "work/migration-20261105/module-addition-impact/torrent-transfer-before",
+      "sha256": "3882fcc29031c2e3b99531b599cfc33c76ec75dd1ca986fab0663e4002bf4402",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    },
+    {
+      "path": "work/migration-20261105/module-addition-impact/site-statistic-before",
+      "sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    },
+    {
+      "path": "work/migration-20261105/module-addition-impact/category-editor-after",
+      "sha256": "6106600c1a5403d7996f09019b1d33c1177024ca33581814a5070641f7b0ff36",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    },
+    {
+      "path": "work/migration-20261105/module-addition-impact/torrent-transfer-after",
+      "sha256": "3882fcc29031c2e3b99531b599cfc33c76ec75dd1ca986fab0663e4002bf4402",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    },
+    {
+      "path": "work/migration-20261105/module-addition-impact/site-statistic-after",
+      "sha256": "53c3f7f44a17ba86ac468ea5d538a2b6e03845d2d1e55e12f16a3d686b75f833",
+      "dependencies": [
+        [
+          "golang.org/x/text",
+          "v0.43.0",
+          "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc="
+        ]
+      ]
+    }
+  ],
+  "all_three_binary_pairs_whole_bytes_equal": true,
+  "matches_prior_actual95_Category_TT_and_source_fixed_Site_worker_hashes": true,
+  "not_compared_as_historical93_TT_aa7_worker": true,
+  "SDK95_all_declared_hashes_unchanged": true,
+  "SDK_ORIGIN_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+  "SDK_host_a16_Gitblob_and_relocations_reuse": "same c9dc origin/all95 hash as independent site-final-composite closure-verification, no source byte change",
+  "new_module_scope": [
+    "github.com/andybalholm/brotli v1.2.6",
+    "golang.org/x/net v0.61.0"
+  ],
+  "new_modules_linked_in_any_existing_worker": false,
+  "plan_sha256": "bde79394d0d0df82be4bf51fa83166ff66a70cab321c7ba74f1f54d4db6e8fa7",
+  "licenses": [
+    {
+      "target": "third_party/brotli-LICENSE",
+      "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+      "source": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6/LICENSE"
+    },
+    {
+      "target": "third_party/brotli-flate-LICENSE",
+      "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+      "source": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6/flate/LICENSE"
+    },
+    {
+      "target": "third_party/x-net-LICENSE",
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "source": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/LICENSE"
+    },
+    {
+      "target": "third_party/x-net-PATENTS",
+      "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+      "source": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/PATENTS"
+    }
+  ],
+  "notices_sha256": "af1c5b33b69152c5197c1ce977057c8b92d616a724c2251ee432480fbfdeeb31",
+  "historical_go_mod_sum_before_retained": true,
+  "constraints": [
+    "MPS acceptance remains separate",
+    "Historical main/UI input hashes unchanged; no claim historical hosts were rebuilt with new module graph",
+    "Future SDK or reachable import changes invalidate this no-impact conclusion",
+    "No package/build registry/product source modified by reviewer"
+  ]
+}

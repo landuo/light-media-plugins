@@ -100,6 +100,6 @@ python3 scripts/build_plugins.py --output dist \
 - CategoryEditor 的 Go 业务来源保留原提交 `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；共享 SDK 基线已核对至 `75e13686a0e3df05ac251e359303ef3fd5971cf6`。`SDK_ORIGIN.json` 列出完整文件、逐文件指纹、历史快照和仅有的模块导入调整。后续插件所需的新宿主接口单独记录，尚未发布的接口不冒称已包含在该宿主提交。
 - `plugins/categoryeditor` 保留业务实现、嵌入表单及纯合成单元测试。协议 smoke test 启动真实 worker 进程并提供合成宿主回调，不等同于真实宿主的端到端验收。
 - `migration/evidence/` 保存经检查的受控测试、源码差分、真实 Linux main/浏览器记录和独立审查；合成、协议回放和实机证据分别标明。私人迁移材料仍在被忽略的 `work/`。本仓库插件实现及所需完整文件 SDK 快照按现有 GNU GPLv3 授权提供，条款见 `LICENSE`；第三方材料保留各自许可。
-- 唯一第三方 Go 模块为 `golang.org/x/text v0.43.0`。Go 与 x/text 的许可证及 x/text 专利授权文本保留于 `third_party/`。
+- 第三方 Go 模块固定为 `golang.org/x/text v0.43.0`、服务监控候选所需的 `github.com/andybalholm/brotli v1.2.6` 和 `golang.org/x/net v0.61.0`。许可证、专利文本和适用的纯算法来源说明见 `third_party/`、`THIRD_PARTY_NOTICES.md` 及对应插件来源文档；候选依赖存在不代表插件已验收。
 
 本轮迁移约束与恢复入口：[`docs/migration-task.md`](docs/migration-task.md)。CategoryEditor 的保存、全局策略与分身配置关系，以及失败恢复、重启和卸载证据见 [`migration/evidence/categoryeditor-20261105/`](migration/evidence/categoryeditor-20261105/)。测试中的 1.3.1 仅为 manifest 更新夹具，不代表上游新版本或已发布制品。
