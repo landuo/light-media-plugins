@@ -1,0 +1,31 @@
+{
+  "source_containers_remaining": 0,
+  "target_containers_remaining": 0,
+  "target_remote_task_directories_removed": true,
+  "source_staging": "stdin only, no files",
+  "test_ELFs_removed": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/removelink-before.test",
+      "sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b",
+      "bytes": 7445207
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/removelink-after.test",
+      "sha256": "99dc3019d086e4f61d2c16cb1b510b1426a76f339757691f9dd38327ea262f0e",
+      "bytes": 7445263
+    }
+  ],
+  "current_ELFs_retained_for_coordinator_Main4": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/remove-link-linux",
+      "sha256": "e2191c411bf55dc0c59b7d6acc6daad5c36f8a3d6b33b4496b8794a606648503",
+      "bytes": 5401758
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/remove-link-2.18.1-linux",
+      "sha256": "866a3549a65c3ef988592df1bbb989c4f5b809252aef6697e7a99c7e6aea8ff7",
+      "bytes": 5401758
+    }
+  ],
+  "sources": "source-commands.json; before/after-commands.json; before/after-cleanup.json"
+}

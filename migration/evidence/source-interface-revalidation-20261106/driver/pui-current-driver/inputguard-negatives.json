@@ -1,0 +1,38 @@
+[
+  {
+    "argv": [
+      "go",
+      "test",
+      "./tests/integration",
+      "-run",
+      "^TestPluginUninstallOrdinaryMain$",
+      "-count=1",
+      "-json"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "classification": "real preflight negative only, no bootstrap/native load/Main; intentionally missing required expected hash",
+    "missing": "PLUGINUNINSTALL_EXPECT_WORKER_SHA256",
+    "exit": 1,
+    "matched_required_input_error": true,
+    "runtime_directory_created": false,
+    "elapsed_seconds": 0.8188111670315266
+  },
+  {
+    "argv": [
+      "go",
+      "test",
+      "./tests/integration",
+      "-run",
+      "^TestPluginUninstallOrdinaryMain$",
+      "-count=1",
+      "-json"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "classification": "real preflight negative only, no bootstrap/native load/Main; intentionally missing required expected hash",
+    "missing": "PLUGINUNINSTALL_EXPECT_MPS_SHA256",
+    "exit": 1,
+    "matched_required_input_error": true,
+    "runtime_directory_created": false,
+    "elapsed_seconds": 0.6265028747729957
+  }
+]

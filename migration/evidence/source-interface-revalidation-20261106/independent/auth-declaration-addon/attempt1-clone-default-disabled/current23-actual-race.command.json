@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-overlay",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/host-overlay.json",
+    "-run",
+    "^TestIndependentActualProductionAuthDiscovery$",
+    "-v",
+    "./internal/app"
+  ],
+  "cwd": "/Users/accidia/projects/light-media",
+  "exit_code": 1,
+  "seconds": 8.797851800918579,
+  "stdout_sha256": "99dbdf7f46cab0b99e1b291a11433bb9f645883c4dde5dda23925be4fc35f029",
+  "stderr_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+}

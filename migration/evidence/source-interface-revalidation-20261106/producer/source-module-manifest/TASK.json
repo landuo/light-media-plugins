@@ -1,0 +1,23 @@
+{
+  "owner": "/root/plugin_sdk",
+  "scope": "Only three Manifest get_module declarations + source-derived tests; SDK98/host unchanged",
+  "stage": "await sealed source oracle; before snapshots only",
+  "baseline_production": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/categoryeditor/categoryeditor.go",
+      "sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "snapshot": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/before/plugins/categoryeditor/categoryeditor.go"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/torrenttransfer/plugin.go",
+      "sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "snapshot": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/before/plugins/torrenttransfer/plugin.go"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/removelink/plugin.go",
+      "sha256": "37411f3b003987ec094c3812b84073efd1fdbcbe6196d015965e9db6d1b19521",
+      "snapshot": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/before/plugins/removelink/plugin.go"
+    }
+  ],
+  "sdk_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+}

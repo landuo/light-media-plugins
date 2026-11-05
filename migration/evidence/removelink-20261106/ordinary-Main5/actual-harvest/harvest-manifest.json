@@ -1,0 +1,83 @@
+{
+  "classification": "actual native ordinary Main5 full test driver exit0; real IAB configuration and owned filesystem; manifest inherited-module getter/log difference discovered after execution so family NOT yet accepted",
+  "exit_code": 0,
+  "seconds": 283.9671229671221,
+  "observations": 170,
+  "last_observation": {
+    "at": "2026-11-05T19:06:28.163443155Z",
+    "event": "rm_all_workers_joined",
+    "value": {
+      "all_observed_PIDs_gone": true,
+      "main_exited": true,
+      "observed_workers": 7
+    }
+  },
+  "files": [
+    {
+      "path": "main-run-5-command.json",
+      "bytes": 3600,
+      "sha256": "ebf5435baf52bad165c572aa1e3b6b5e8985e58d9120312fbb378b73041c81fc"
+    },
+    {
+      "path": "main-run-5.log",
+      "bytes": 299,
+      "sha256": "4a39692facff714e1a17af963aa66d264f98e74fdc895db65b9baa98927d329b"
+    },
+    {
+      "path": "input-inventory-run5.json",
+      "bytes": 1168,
+      "sha256": "482686240a08bc6e1980380fec8b40ccbab5bab7ae59cae4b41de113dad371ec"
+    },
+    {
+      "path": "main-run-5/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "main-run-5/ui-complete",
+      "bytes": 125,
+      "sha256": "1b1e463cabdb1a1c3c6a3dd9ca5be280abf13c5c7abac6c35a2d5ed84fdec92e"
+    },
+    {
+      "path": "main-run-5/evidence/observations.jsonl",
+      "bytes": 457882,
+      "sha256": "d2f9a6ae84f175462fabd521ae1baedcc50dc990ccc63d8b69b96802b167efb0"
+    },
+    {
+      "path": "main-run-5/evidence/host-1.log",
+      "bytes": 234504,
+      "sha256": "7345745104120a187f00a8421ab49915db84ba5b88e8578b0250b328c0701514"
+    },
+    {
+      "path": "main-run-5/evidence/host-2.log",
+      "bytes": 8675,
+      "sha256": "f9be3795f85d5ed7549d104b684bd39c397a6a6144ebefc754e0269f785664bf"
+    },
+    {
+      "path": "main-run-5/evidence/browser-files-before.json",
+      "bytes": 1088,
+      "sha256": "292edd7a156e0dbd0e2438c8b26a9512f30c32a6103240556132ae77a4a21da5"
+    },
+    {
+      "path": "main-run-5/evidence/browser-files-after.json",
+      "bytes": 466,
+      "sha256": "22dc9b455501ccc27fc02b8732903b274cffdcfb930d28ae1b56bfab0800457f"
+    },
+    {
+      "path": "main-run-5/app/logs/plugins/removelink.log",
+      "bytes": 64858,
+      "sha256": "5b51e140cb0b95bf879ff8efbd97cabeea284b08b02e8999b392b6fcf9fb34e5"
+    },
+    {
+      "path": "main-run-5/app/logs/plugins/removelinkowned.log",
+      "bytes": 2407,
+      "sha256": "14d398201cda741471d666c24a8f68ac9c4ce015ab4c5bba19127b9c37c8b783"
+    }
+  ],
+  "private_excluded": [
+    "ui-ready.json",
+    "light-media.db",
+    "secret.key"
+  ],
+  "at": "2026-11-05T19:08:14.654277+00:00"
+}

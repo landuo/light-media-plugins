@@ -1,0 +1,135 @@
+{
+  "cwd": "/Users/accidia/projects/light-media-plugins",
+  "commands": {
+    "normal": {
+      "argv": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "./plugins/removelink",
+        "./cmd/remove-link"
+      ],
+      "raw": "full-normal-joined.jsonl",
+      "exit": 0
+    },
+    "race": {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./plugins/removelink",
+        "./cmd/remove-link"
+      ],
+      "raw": "full-race-joined.jsonl",
+      "exit": 0
+    },
+    "vet": {
+      "argv": [
+        "go",
+        "vet",
+        "./plugins/removelink",
+        "./cmd/remove-link"
+      ],
+      "raw": "vet-final.stdout",
+      "exit": 0
+    },
+    "delayed_source_red_to_green": {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "-overlay",
+        "work/sites-review-20261105/removelink-family-review/stage1-source-red-seal/concurrency-independent-overlay.json",
+        "./plugins/removelink",
+        "-run",
+        "^TestIndependentCreatedDuringDelayedExistsKeepsOldLinks$"
+      ],
+      "raw": "independent-delayed-final.jsonl",
+      "exit": 0
+    },
+    "observer_source_red_to_green": {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "-overlay",
+        "work/sites-review-20261105/removelink-family-review/stage1-source-red-seal/observer-failure-independent-overlay.json",
+        "./plugins/removelink",
+        "-run",
+        "^TestIndependentOneObserverErrorDoesNotStopSiblingDirectoryEvents$"
+      ],
+      "raw": "independent-observer-final.jsonl",
+      "exit": 0
+    },
+    "helper_join_fairness_repeat": {
+      "argv": [
+        "go",
+        "test",
+        "-race",
+        "-count=10",
+        "-json",
+        "./plugins/removelink",
+        "-run",
+        "TestActualWorkerFreshStopFlushesUnenteredTaskWithoutReplayingUnknownNotice|TestActualWorkerTenObserverRootsFairWhileSixCallbacksBlocked"
+      ],
+      "raw": "helper-timer-race10.jsonl",
+      "exit": 0
+    },
+    "linux_test_build": {
+      "argv": [
+        "go",
+        "test",
+        "-c",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/removelink-concurrency-20261105/removelink-linux.test",
+        "./plugins/removelink"
+      ],
+      "explicit_env": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      },
+      "raw": "linux-test-build.stdout",
+      "exit": 0
+    },
+    "linux_worker_build": {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "work/migration-20261105/removelink-concurrency-20261105/remove-link-linux",
+        "./cmd/remove-link"
+      ],
+      "explicit_env": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      },
+      "raw": "linux-worker-build.stdout",
+      "exit": 0
+    },
+    "linux_actual_sdk_kernel": {
+      "script": "linux-run.sh",
+      "raw": "linux-native-final.stdout",
+      "exit": 0,
+      "uid": 1000,
+      "classification": "real Linux native kernel plus independent SDK worker and owned filesystem protocol peer; no App/cmd/server"
+    },
+    "mutations": {
+      "script": "mutations.py",
+      "raw": "mutations/observations.json",
+      "expected": "all four build_exit=0 and run_exit=1"
+    }
+  }
+}

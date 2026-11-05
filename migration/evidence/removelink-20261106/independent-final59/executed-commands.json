@@ -1,0 +1,71 @@
+[
+  {
+    "label": "full-normal",
+    "command": [
+      "go",
+      "test",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/overlay.json",
+      "-count=1",
+      "-json",
+      "./plugins/removelink",
+      "./cmd/remove-link"
+    ],
+    "exit": 0,
+    "elapsed": 14.706722021102905,
+    "counts": {
+      "pass": 275,
+      "fail": 0,
+      "skip": 9
+    },
+    "package_results": [
+      {
+        "Time": "2026-11-06T02:06:48.755313+08:00",
+        "Action": "skip",
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-06T02:07:02.750185+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Elapsed": 13.995
+      }
+    ]
+  },
+  {
+    "label": "full-race",
+    "command": [
+      "go",
+      "test",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/overlay.json",
+      "-count=1",
+      "-json",
+      "-race",
+      "./plugins/removelink",
+      "./cmd/remove-link"
+    ],
+    "exit": 0,
+    "elapsed": 65.98777604103088,
+    "counts": {
+      "pass": 275,
+      "fail": 0,
+      "skip": 9
+    },
+    "package_results": [
+      {
+        "Time": "2026-11-06T02:07:03.922443+08:00",
+        "Action": "skip",
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-06T02:08:08.745174+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Elapsed": 64.823
+      }
+    ]
+  }
+]

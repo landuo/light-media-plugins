@@ -1,0 +1,39 @@
+{
+  "classification": "actual UID1000 Linux ordinaryGo Main651dd+2managed-storage(6ce69c), real Rlk6d75 and OwnedNotice406d; four real public-import jobs generate SQLite history/assets/managed files, exact src/dest history delete, sidecars and same-stem trickplay/empty child, actual loopback notice receiver and persisted receipts; not UI or external recipient acceptance",
+  "fixture_preparation": "only synthetic metadata cache and encrypted notice preferences preseeded in owned0600 DB while Main stopped under exclusive instance lock; no history/asset seed or fake HostCaller; no real source credentials/config/network",
+  "command": [
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-business-main-linux.test",
+    "-test.run=^TestRemoveLinkBusinessActualMain$",
+    "-test.v",
+    "-test.timeout=8m"
+  ],
+  "environment": {
+    "REMOVELINK_BUSINESS_MAIN": "1",
+    "REMOVELINK_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-managed-storage-linux",
+    "REMOVELINK_EXPECT_HOST_SHA256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+    "REMOVELINK_WORKER_BINARY": "/home/admin/light-media-plugins-migration-removelink-20261105/bin/remove-link-auth-declarations-linux",
+    "REMOVELINK_EXPECT_WORKER_SHA256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+    "REMOVELINK_NOTICE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-removelink-20261105/bin/owned-notice-fixture-linux",
+    "REMOVELINK_EXPECT_NOTICE_SHA256": "406d13fa0e7c36ee30968117198e9c1ee84f5105fae10d15632e25cf78292952",
+    "REMOVELINK_FRONTEND_DIR": "/home/admin/light-media-plugins-migration-removelink-20261105/frontend-run4",
+    "REMOVELINK_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-removelink-20261105/business-main-1",
+    "REMOVELINK_LISTEN": "127.0.0.1:36260",
+    "REMOVELINK_UI_WAIT": ""
+  },
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-business-main-linux.test": "757ce25cdde414437ccdcb43e62ab09b9612c72264a8fdf78174d4ce81db80b4",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/owned-notice-fixture-linux": "406d13fa0e7c36ee30968117198e9c1ee84f5105fae10d15632e25cf78292952",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-managed-storage-linux": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/remove-link-auth-declarations-linux": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/frontend-run4/remoteEntry.js": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/frontend-run4/view.js": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/frontend-run4/style.css": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500"
+  },
+  "producer_driver_freeze_sha256": "21a5c6e3d6373a0c0c186e64e6541c33e02581148a2010ece311932e9c9579f0",
+  "host_independent_delta_review_sha256": "7bec111b3e0d69b0b5dccb7c28763fe7cb21b642171935b7fd618fc79d02a8bc",
+  "python_role": "owned stopped-Main test fixture SQLite setup/orchestration only; delivered host and plugins allGo",
+  "started_utc": "2026-11-05T21:19:30.380860+00:00",
+  "exit_code": 0,
+  "seconds": 5.951829656027257,
+  "ended_utc": "2026-11-05T21:19:36.332990+00:00"
+}

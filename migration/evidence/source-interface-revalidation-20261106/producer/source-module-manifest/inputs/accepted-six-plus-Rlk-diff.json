@@ -1,0 +1,62 @@
+{
+  "instances": {
+    "CategoryEditor": "category-editor",
+    "TorrentTransfer": "torrent-transfer",
+    "TorrentTransfermusic": "torrent-transfer",
+    "SiteStatistic": "site-statistic",
+    "MPServerStatus": "mp-server-status",
+    "PluginUnInstall": "plugin-uninstall",
+    "RemoveLink": "remove-link"
+  },
+  "per_family": {
+    "category-editor": {
+      "count_before": 68,
+      "count_after": 68,
+      "changed": [
+        "plugins/categoryeditor/categoryeditor.go"
+      ],
+      "unchanged_other_files": true
+    },
+    "torrent-transfer": {
+      "count_before": 80,
+      "count_after": 80,
+      "changed": [
+        "plugins/torrenttransfer/plugin.go"
+      ],
+      "unchanged_other_files": true
+    },
+    "site-statistic": {
+      "count_before": 86,
+      "count_after": 86,
+      "changed": [
+        "plugins/sitestatistic/plugin.go"
+      ],
+      "unchanged_other_files": true
+    },
+    "mp-server-status": {
+      "count_before": 383,
+      "count_after": 383,
+      "changed": [
+        "plugins/mpserverstatus/plugin.go"
+      ],
+      "unchanged_other_files": true
+    },
+    "plugin-uninstall": {
+      "count_before": 74,
+      "count_after": 74,
+      "changed": [
+        "plugins/pluginuninstall/plugin.go"
+      ],
+      "unchanged_other_files": true
+    },
+    "remove-link": {
+      "count_before": 81,
+      "count_after": 81,
+      "changed": [
+        "plugins/removelink/plugin.go"
+      ],
+      "unchanged_other_files": true
+    }
+  },
+  "note": "All six previously accepted instances rebound to current compile inputs; TT/music share the same artifact but have separate actual SDK processes. Only each family own Manifest-containing file changes. Algorithms are separately verified full normal/race; ordinary main/host acquisition is Root-owned."
+}

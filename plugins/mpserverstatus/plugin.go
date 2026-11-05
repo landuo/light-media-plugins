@@ -10,7 +10,7 @@ import (
 
 func Manifest() sdk.Manifest {
 	empty := []string{}
-	return sdk.Manifest{SchemaVersion: 1, PluginID: "MPServerStatus", Name: "MoviePilot服务监控", Description: "在仪表板中实时显示MoviePilot公共服务器状态。", Icon: "Duplicati_A.png", Version: Version, Author: "jxxghp", AuthorURL: "https://github.com/jxxghp", PluginOrder: 99, Runtime: "go-executable", Entry: "mp-server-status", HostAPIMin: 1, HostAPIMax: 1, Methods: []string{"init", "get_state", "get_form", "get_page", "get_dashboard", "get_service", "get_api", "get_command", "get_render_mode", "stop_service", "stop", "close"}, Capabilities: []string{sdk.NetworkProxyReadCapability, sdk.LogWriteCapability}, HasPage: true, FormModelPolicy: &sdk.FormModelPolicy{Installed: sdk.FormModelSource, Preview: sdk.FormModelSource}, DashboardParameters: &empty, RuntimeSupport: &sdk.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}}}
+	return sdk.Manifest{SchemaVersion: 1, PluginID: "MPServerStatus", Name: "MoviePilot服务监控", Description: "在仪表板中实时显示MoviePilot公共服务器状态。", Icon: "Duplicati_A.png", Version: Version, Author: "jxxghp", AuthorURL: "https://github.com/jxxghp", PluginOrder: 99, Runtime: "go-executable", Entry: "mp-server-status", HostAPIMin: 1, HostAPIMax: 1, Methods: []string{"init", "get_state", "get_form", "get_page", "get_dashboard", "get_api", "get_command", "get_render_mode", "stop_service", "stop", "close"}, Capabilities: []string{sdk.NetworkProxyReadCapability, sdk.LogWriteCapability}, HasPage: true, FormModelPolicy: &sdk.FormModelPolicy{Installed: sdk.FormModelSource, Preview: sdk.FormModelSource}, DashboardParameters: &empty, RuntimeSupport: &sdk.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}}}
 }
 
 type Plugin struct {

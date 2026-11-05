@@ -1,0 +1,18 @@
+{
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker run --rm -i --label task=lm-plugin-removelink-repr-20261106-9405abc7996a4969811000492faaca6b --network none --read-only --user 1000:1000 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=8m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -I -B -S -"
+  ],
+  "exit": 0,
+  "payload_sha256": "d93d42f03c0d3abe20d769bcbaa542437e6e06ec244ae5f50959b2cab76b523f",
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker ps -aq --filter label=task=lm-plugin-removelink-repr-20261106-9405abc7996a4969811000492faaca6b"
+  ],
+  "cleanup_exit": 0,
+  "remaining_containers": "",
+  "cleanup_stderr": "",
+  "staging_files": "none; source stdin only; disposable tmpfs removed with container"
+}

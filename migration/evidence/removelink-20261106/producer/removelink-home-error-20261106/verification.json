@@ -1,0 +1,133 @@
+{
+  "before-race": {
+    "pass": 0,
+    "fail": 2,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "fail",
+        "Elapsed": 1.335
+      }
+    ],
+    "classification": "First actual source assertion red plus test fixture []any\u2192[][2]string type assertion panic; preserved. Fixed only fixture decoding before r2, not original assertions."
+  },
+  "before-r2-race": {
+    "pass": 1,
+    "fail": 4,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "fail",
+        "Elapsed": 0.5
+      }
+    ]
+  },
+  "targeted-race": {
+    "pass": 7,
+    "fail": 0,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 1.53
+      }
+    ]
+  },
+  "actual-sdk-boundary-race": {
+    "pass": 3,
+    "fail": 0,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 3.601
+      }
+    ]
+  },
+  "targeted-final-race": {
+    "pass": 14,
+    "fail": 0,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 3.717
+      }
+    ]
+  },
+  "full-normal": {
+    "pass": 240,
+    "fail": 0,
+    "skip": 8,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 11.531
+      }
+    ]
+  },
+  "full-race": {
+    "pass": 240,
+    "fail": 0,
+    "skip": 8,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 58.986
+      }
+    ]
+  },
+  "independent-current-race": {
+    "pass": 4,
+    "fail": 0,
+    "skip": 0,
+    "packages": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 1.651
+      }
+    ]
+  },
+  "linux_actual": {
+    "uid": 1000,
+    "root_pass": 4,
+    "including_subtests_pass": 14,
+    "exit": 0,
+    "classification": "actual owned NAS Linux kernel/NSS/filesystem and independent SDK worker; synthetic input dispatch/protocol HostHandler, no App/main"
+  },
+  "inputs": {
+    "before_after_equal": true,
+    "compile_and_fixture_files": 228,
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+  },
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-error-20261106/remove-link-linux",
+      "sha256": "fa5385d956d715aeb60dc26230eb3968f402859093ff86ca7560b07228ba1f52",
+      "bytes": 5401950
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-error-20261106/remove-link-2.18.1-linux",
+      "sha256": "b958e9d3e0d4f63b8b82147cbcb4fe25850e85ad5623d64a6857fa4d6781b6ea",
+      "bytes": 5401950
+    }
+  ]
+}

@@ -73,7 +73,7 @@ func TestPluginUninstallOrdinaryMain(t *testing.T) {
 	if os.Getenv("PLUGINUNINSTALL_HOST_BINARY") == "" {
 		t.Skip("opt-in ordinary Linux Main; not executed acceptance")
 	}
-	for _, name := range []string{"PLUGINUNINSTALL_WORKER_BINARY", "PLUGINUNINSTALL_UPDATE_BINARY", "PLUGINUNINSTALL_MPS_BINARY", "PLUGINUNINSTALL_FIXTURE_BINARY", "PLUGINUNINSTALL_EXPECT_HOST_SHA256"} {
+	for _, name := range []string{"PLUGINUNINSTALL_WORKER_BINARY", "PLUGINUNINSTALL_UPDATE_BINARY", "PLUGINUNINSTALL_MPS_BINARY", "PLUGINUNINSTALL_FIXTURE_BINARY", "PLUGINUNINSTALL_EXPECT_HOST_SHA256", "PLUGINUNINSTALL_EXPECT_WORKER_SHA256", "PLUGINUNINSTALL_EXPECT_MPS_SHA256"} {
 		if os.Getenv(name) == "" {
 			t.Fatal("required owned input", name)
 		}
@@ -85,8 +85,8 @@ func TestPluginUninstallOrdinaryMain(t *testing.T) {
 	if first.version != "2.2" || updated.version != "2.2.1" {
 		t.Fatal("manifest-only test update must use distinct real executable version")
 	}
-	if first.hash != "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1" || mps.hash != "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055" {
-		t.Fatal("frozen original worker inputs changed")
+	if first.hash != os.Getenv("PLUGINUNINSTALL_EXPECT_WORKER_SHA256") || mps.hash != os.Getenv("PLUGINUNINSTALL_EXPECT_MPS_SHA256") {
+		t.Fatal("actual worker inputs must match the explicitly expected PUI/MPS hashes")
 	}
 	actualHost := fileHash(t, os.Getenv("PLUGINUNINSTALL_HOST_BINARY"))
 	if actualHost != os.Getenv("PLUGINUNINSTALL_EXPECT_HOST_SHA256") || actualHost == "7a08c6b60516a5ea9321916c25d587ceab9de2fd0c34a809a16222e48131eca8" {

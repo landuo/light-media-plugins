@@ -1,0 +1,31 @@
+{
+  "classification": "independent finite shared internal-state truth adapter review; separate from earlier PUI/Main seals",
+  "status": "passed",
+  "production_sha256": "3a1383a911e72eafc7aea5309f2d6ce557b3a8ab0ee5773516446747ed0f0c05",
+  "source_cases": 23,
+  "source_raw8_sha256": "5f6d233bc43974884d11827d564df12f49f66880a7ef0b4d743c7071501a60a3",
+  "source_scalar15_sha256": "5207256aa29bad7919a8fe0c10f914377b87a001e032f303f8d503ed60449e07",
+  "own_actual_App_normal_nodes": 24,
+  "own_actual_App_race_nodes": 24,
+  "own_inputs_before_after_equal": true,
+  "own_bound_inputs": 4086,
+  "own_rational_mutant_compiled_killed": true,
+  "own_mutant_leaf_failures": 3,
+  "reviewed_Root_native_App_exit": 0,
+  "reviewed_Root_native_App_nodes": 24,
+  "reviewed_Root_native_App_race": false,
+  "reviewed_Root_native_reproduction_inputs": 2746,
+  "reviewed_Root_native_ELF_sha256": "5d1d62abfc6c74be55586a7aef5980a8102a7f3aa32bbf08a88b7c79200f5a0f",
+  "reviewed_Root_five_consumers_and_standard_module_normal_race_nodes_each": 32,
+  "generic_readSession_and_sourceSubscriptionTruth_unchanged": true,
+  "SDK98_and_PUI19_unchanged": true,
+  "race_boundary": "Host/App race; independent prebuilt normal SDK fixture",
+  "report_sha256": "0986c0b7694ae5ba5b78f40d6ebe44425bd15b9c42a55b723a573e216c8cc551",
+  "external_manifest_sha256": "78118eba2b2e37fd9c6ea3b8989d21ecbb7ecb4da2c78f8d4d32b93835841a9d",
+  "not_claimed": [
+    "ordinary Main/NAS replay by independent reviewer",
+    "source raw public Plugin-schema wire equality for nonboolean malformed values",
+    "relabeling8305 PUI or earlier Main/UI as new-state execution",
+    "production deployment or data migration"
+  ]
+}

@@ -1,0 +1,16 @@
+{
+  "argv": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker run --rm -i --label task=lm-independent-custom-scrap-cfbaa761d5c54447acb8a14bb73cff4c --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=32m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+  ],
+  "exit": 0,
+  "payload_sha256": "f5289ccab197cd080f50e0ef62ece6621a51d609caa5d94d51796bf3c096f544",
+  "cleanup_argv": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker ps -aq --filter label=task=lm-independent-custom-scrap-cfbaa761d5c54447acb8a14bb73cff4c"
+  ],
+  "cleanup_exit": 0,
+  "containers_remaining": ""
+}

@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-overlay",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/managed-history-guard-review/overlay.json",
+    "-run",
+    "^(TestIndependentRemoveLinkActualHistoryManagedAliasSourceContract|TestOriginalPluginStorageActualSDKDeletesRegisteredTargetRetainsHistoryAndSource|TestOriginalPluginStorageActualSDKKeepsActiveImportProtection|TestOriginalHostStorageActualSDKPinnedSourceFilesCloneAndColdRecovery|TestOriginalPluginStorageActualSDKUnlinksOnlySelectedHardlink|TestFileOperationsRejectStaleSymlinksAndProtectedPaths|TestFileOperationsProtectActiveImportAndDownloadMappings|TestFileDestructiveOperationsProtectOtherExistingDaemonTasks)$",
+    "-v",
+    "./internal/app"
+  ],
+  "exit": 0,
+  "seconds": 34.453376054763794,
+  "inputs_pre_post_same": true,
+  "worker_Rlk_sha256": "4d5cf5f3016c8584e14b4e2f94dc91eb53206e5dd338b8c19d1844500b592a75",
+  "worker_HostServices_sha256": "6ef7b383e9cff47111a7ddd8e2dffa8566ded2f16b23a5256150641faf869998",
+  "classification": "actual App + real SDK resource/production Rlk processes and owned filesystem/importedmedia/SQLite; filemanager downloader guard uses owned protocol HTTP peer, not real daemon"
+}

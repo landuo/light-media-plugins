@@ -1,0 +1,5 @@
+=== RUN   TestIndependentCreatedDuringDelayedExistsKeepsOldLinks
+    independent_stage1_replay_test.go:75: actual3.12 expected created-before-release=true old=true new=true; Go early=false oldErr=stat /Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestIndependentCreatedDuringDelayedExistsKeepsOldLinks1107792760/001/b.mkv: no such file or directory newErr=stat /Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestIndependentCreatedDuringDelayedExistsKeepsOldLinks1107792760/001/new.mkv: no such file or directory
+    independent_stage1_replay_test.go:77: whole Tick lock suppresses source on_created→recent-rehardlink protection
+--- FAIL: TestIndependentCreatedDuringDelayedExistsKeepsOldLinks (0.11s)
+FAIL

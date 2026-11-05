@@ -1,0 +1,4 @@
+=== RUN   TestIndependentOneObserverErrorDoesNotStopSiblingDirectoryEvents
+    independent_stage1_replay_test.go:118: actual original watchdog first observer AttributeError leaves second observer delivering directory deleted event; Go closes aggregate watch
+--- FAIL: TestIndependentOneObserverErrorDoesNotStopSiblingDirectoryEvents (5.88s)
+FAIL

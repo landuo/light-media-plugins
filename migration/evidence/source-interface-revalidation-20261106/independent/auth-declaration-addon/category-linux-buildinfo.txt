@@ -1,0 +1,11 @@
+/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/category: go1.26.2
+	path	github.com/landuo/light-media-plugins/cmd/category-editor
+	mod	github.com/landuo/light-media-plugins	(devel)	
+	dep	golang.org/x/text	v0.43.0	h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-trimpath=true
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

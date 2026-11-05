@@ -1,0 +1,19 @@
+{
+  "command": [
+    "python3",
+    "-m",
+    "unittest",
+    "discover",
+    "-s",
+    "scripts",
+    "-p",
+    "test_*.py",
+    "-v"
+  ],
+  "exit_code": 0,
+  "seconds": 0.32080433377996087,
+  "input_sha256": {
+    "scripts/build_plugins.py": "917a1166bd4ecbb155f5cda684213816a194c98bdfd97eea5ede3afa6cfd953e",
+    "scripts/test_build_plugins.py": "079791b9ae6afaab6680d969ff9b4683e8e9d6b4408a2605fd0d3493140f5ed6"
+  }
+}

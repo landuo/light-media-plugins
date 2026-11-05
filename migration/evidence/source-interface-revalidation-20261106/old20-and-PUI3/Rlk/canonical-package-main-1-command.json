@@ -1,0 +1,28 @@
+{
+  "classification": "actual canonical10member ZIP installed through ordinary Main3c05; new1afa native worker + platform clone + actual Linux owned hardlink cleanup + native source cache-query imports; no browser claim from this run",
+  "command": [
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+    "-test.run=^TestRemoveLinkCanonicalPackageOrdinaryMain$",
+    "-test.timeout=10m",
+    "-test.v"
+  ],
+  "environment": {
+    "REMOVELINK_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux",
+    "REMOVELINK_EXPECT_HOST_SHA256": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "REMOVELINK_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-main-1",
+    "REMOVELINK_LISTEN": "127.0.0.1:36259",
+    "REMOVELINK_PACKAGE_ZIP": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-input/RemoveLink-2.18-linux-amd64.zip",
+    "REMOVELINK_PACKAGE_INDEX": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-input/go-plugins.v1.json"
+  },
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-input/RemoveLink-2.18-linux-amd64.zip": "c3088076efaa9787f9ab651abf015223647a5f4f2384b75a2e9502af80ca0b9e",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-input/go-plugins.v1.json": "aefce13db247a0d47873c87a7a48644f443939290757d9b0031a0f86ac534cf7",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d"
+  },
+  "driver_unexecuted_old_PUI_source": "f24 reproducible via frozen-test-inputs single-file overlay; newPUI driver01ba is a separate test input",
+  "started_utc": "2026-11-05T19:59:21.999863+00:00",
+  "exit_code": 0,
+  "seconds": 5.081739669898525,
+  "ended_utc": "2026-11-05T19:59:27.082008+00:00"
+}

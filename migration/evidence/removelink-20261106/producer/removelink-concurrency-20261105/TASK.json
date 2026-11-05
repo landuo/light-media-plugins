@@ -1,0 +1,17 @@
+{
+  "task": "RemoveLink source timer/observer concurrency repair",
+  "source_sha256": "22fb375e531378b3454607c7bca305b637abd60ee8ed69e14e32fbc2ddfc5485",
+  "scope": [
+    "plugins/removelink/**",
+    "cmd/remove-link/**"
+  ],
+  "excluded": [
+    "SDK98",
+    "PUI",
+    "host",
+    "integration driver",
+    "registry",
+    "ledger"
+  ],
+  "source_red_seal": "work/sites-review-20261105/removelink-family-review/stage1-source-red-seal"
+}

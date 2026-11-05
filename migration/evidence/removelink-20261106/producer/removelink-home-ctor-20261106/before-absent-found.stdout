@@ -1,0 +1,11 @@
+=== RUN   TestSource312ConstructorHomeBranches
+=== RUN   TestSource312ConstructorHomeBranches/~
+=== RUN   TestSource312ConstructorHomeBranches/~/child
+=== RUN   TestSource312ConstructorHomeBranches//absolute/owned
+=== NAME  TestSource312ConstructorHomeBranches
+    helpers_test.go:171: actual mode=absent-found uid=65534 HOME_present=false passwd_found=true
+--- PASS: TestSource312ConstructorHomeBranches (0.00s)
+    --- PASS: TestSource312ConstructorHomeBranches/~ (0.00s)
+    --- PASS: TestSource312ConstructorHomeBranches/~/child (0.00s)
+    --- PASS: TestSource312ConstructorHomeBranches//absolute/owned (0.00s)
+PASS

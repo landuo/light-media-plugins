@@ -1,0 +1,8 @@
+{
+  "classification": "owned Main8 harness error: REMOVELINK_UI_WAIT=0 is nonempty and source driver waits UI for any nonempty value; loopback-only run had no browser execution. Host gracefully stopped before terminating driver; no ui-complete fabricated; no cold/reset/uninstall tail claim",
+  "host_pid": 2286456,
+  "driver_pid": 2286399,
+  "host_gracefully_joined": true,
+  "no_ui_complete": true,
+  "fix": "fresh Main9 with REMOVELINK_UI_WAIT empty, not a product change"
+}

@@ -1,0 +1,66 @@
+[
+  {
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-review-home-ctor-8cce479e802240928aa1b44beab937b1 --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+    ],
+    "exit": 0,
+    "payload_sha256": "d53c1c2dd48bbbfdb28b3028c844432c28f2b6463c6bb41e548b09110c0bdfdf",
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-review-home-ctor-8cce479e802240928aa1b44beab937b1"
+    ],
+    "cleanup_exit": 0,
+    "remaining": ""
+  },
+  {
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-review-home-ctor-ea25d1cee0c14b19bed64c06e0a01a5d --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+    ],
+    "exit": 0,
+    "payload_sha256": "d9d443b1b58fd0214494f13fccc3bd96dba33ed47503ca6bf2aed13b7e4b6688",
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-review-home-ctor-ea25d1cee0c14b19bed64c06e0a01a5d"
+    ],
+    "cleanup_exit": 0,
+    "remaining": ""
+  },
+  {
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-review-home-ctor-0d074c85119e46e798dbd7fdc92297a4 --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+    ],
+    "exit": 0,
+    "payload_sha256": "d7ac2aa4be9c7a655d6f13bbb0d43ac6a6132f58eb3810faadd8c66cc9a3268e",
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-review-home-ctor-0d074c85119e46e798dbd7fdc92297a4"
+    ],
+    "cleanup_exit": 0,
+    "remaining": ""
+  },
+  {
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-review-home-ctor-457b3885dd7d43458fd357e9c72d5394 --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+    ],
+    "exit": 0,
+    "payload_sha256": "54dc0081f76f7033fffaf8f4ebcbd7bc6d5be8ea155efd196dbb463518f51dff",
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-review-home-ctor-457b3885dd7d43458fd357e9c72d5394"
+    ],
+    "cleanup_exit": 0,
+    "remaining": ""
+  }
+]

@@ -1,0 +1,353 @@
+{
+  "classification": "allowlisted actual managed-storage host increment native ordinary Main; Main8 interrupted harness UI wait is retained, no UI/tail claimed there; excludes database, credentials, key, UI-ready, certificates, binaries and private configurations",
+  "collected_utc": "2026-11-05T21:13:49.508608+00:00",
+  "runs": {
+    "managed-storage-main-four-1": {
+      "exit_code": 0,
+      "seconds": 18.496739716967568,
+      "observations": 75,
+      "last_observation": {
+        "at": "2026-11-05T21:10:20.557652863Z",
+        "event": "sdk98_impact_on_return",
+        "value": {
+          "Nexus": {
+            "TLS": "verified CA+two DNS SANs; no TLS bypass",
+            "connects": [
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443"
+            ],
+            "owned_artifact_http_denials_for_existing_direct_fallback": 6,
+            "requests": [
+              "pt.btschool.club/",
+              "pt.btschool.club/favicon.ico",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding"
+            ],
+            "routing": "strict CONNECT maps only two literal authorities to one owned loopback listener; no target DNS or external dial",
+            "unexpected": []
+          },
+          "qb": {
+            "classification": "owned HTTP source-qB protocol peer, not real qB daemon/full transfer proof",
+            "completed_queries": 4,
+            "info_selectors": [
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              }
+            ],
+            "unexpected_or_mutation_requests": []
+          },
+          "test_failed": false
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 4
+    },
+    "managed-storage-pui-main-1": {
+      "exit_code": 0,
+      "seconds": 21.769910249160603,
+      "observations": 291,
+      "last_observation": {
+        "at": "2026-11-05T21:10:40.241232137Z",
+        "event": "pui_main_complete",
+        "value": {
+          "DB_fault_layer": "not injected in Main; producer realSQLite43 separate",
+          "UI_executed": false,
+          "all_observed_workers_joined": 35,
+          "instances": "base, platform clones, self/future cold source distinctions",
+          "network": "owned loopback executable repositories only; MPS init/state only, no page/dashboard/network",
+          "ordinary_main": "all asserted stages complete"
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 2
+    },
+    "main-run-8": {
+      "exit_code": -15,
+      "seconds": 115.96924979612231,
+      "observations": 140,
+      "last_observation": {
+        "at": "2026-11-05T21:10:32.885884401Z",
+        "event": "rm_ui_ready",
+        "value": {
+          "pid": 2286456,
+          "url": "http://127.0.0.1:36256"
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 6
+    },
+    "main-run-9": {
+      "exit_code": 0,
+      "seconds": 35.460207489086315,
+      "observations": 177,
+      "last_observation": {
+        "at": "2026-11-05T21:12:43.211937647Z",
+        "event": "rm_no_inherited_module_discovery",
+        "value": {
+          "complete_app_log_checked": true,
+          "module_declaration_failed_count": 0,
+          "stage": "full-tail-after-all-worker-joins"
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 6
+    }
+  },
+  "files": [
+    {
+      "path": "SDK98/.task-owned",
+      "bytes": 46,
+      "sha256": "e048bd9af1345dc142f3b83e82f2b01a32cac8ef1ea2f0f19b563ec1454e4a26"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/.task-owned",
+      "bytes": 51,
+      "sha256": "5da46e6924baa43d1770bf4ed0e7e64a408be3c0cf8a05f56724234d4cafb76a"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/evidence/host-1.log",
+      "bytes": 16454,
+      "sha256": "54050f7243f24a0192c1ce4dcd7a44792d22958816094a772be81690932a738e"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/evidence/host-2.log",
+      "bytes": 1830,
+      "sha256": "23b11c5f5aca4e9b4a3e3656e23ae4569eeec8a46c95661a7bec28eef3aa76c3"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/evidence/observations.jsonl",
+      "bytes": 55203,
+      "sha256": "19a373e5939a3810d61d3172705b46d56b55d9efbe7e381e90c7fd1f60e1ed11"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/logs/app.jsonl",
+      "bytes": 18734,
+      "sha256": "d483fcf2ae64038fc82c80fbfcfa1bf132d40ebb935544e18844c977e2b6d1b5"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/logs/plugins/sitestatistic.log",
+      "bytes": 205,
+      "sha256": "38d43ce888ca3911a32b604df3306ff8f670f8b99b072e7710ad645ce16ab540"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/logs/plugins/torrenttransfer.log",
+      "bytes": 436,
+      "sha256": "a1302aab91df66c292a62eb1603d964b7194ca6f10f22376c93bfb67a27453c1"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1/logs/plugins/torrenttransfermusic.log",
+      "bytes": 436,
+      "sha256": "dbaef4579ee015845a5f7632a9c18e61da0b8ad011cb145b187cdc04041e32fa"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1-command.json",
+      "bytes": 2866,
+      "sha256": "59a9aaa3f53be59ef765191ca57775741de020945a11d836b9b7d749087e60d2"
+    },
+    {
+      "path": "SDK98/managed-storage-main-four-1.log",
+      "bytes": 116,
+      "sha256": "cdc10d1c157347f041a0a5f8bbbfc55c1eea3ea08046c0279ef89ebc232d0084"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/.task-owned",
+      "bytes": 55,
+      "sha256": "faa47ddb3d18cecc457222a873142bf58776d816ee42bf95eeb8b315ebcbd931"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-1.log",
+      "bytes": 15684,
+      "sha256": "4a01665f9b43bf1c5ecbbfde513815ca968b616aa90a1129d7e39c85787fe236"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-2.log",
+      "bytes": 2256,
+      "sha256": "d8152ef6c4b101cf6348971d79f1d42e5fbffbe020d805c3cea62e76e911eb50"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-3.log",
+      "bytes": 3302,
+      "sha256": "51b6e118b46ede54ba750ef1559c9c396d70a88e3af88a4e46f773ca7a5ac8dc"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-4.log",
+      "bytes": 2258,
+      "sha256": "c4f2293d530f695addf9ee5353544f7c6c42c0f1165731565ed2b56304ee4047"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-5.log",
+      "bytes": 2614,
+      "sha256": "5dd5d8440f666629b64942ea807badb4ecd7dd320838641f3e0e26a1317dacd2"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-6.log",
+      "bytes": 2870,
+      "sha256": "d7f0119ed11bc18479cee6d728c0110492203a23b3d6b53bbc722f755c920fa3"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-7.log",
+      "bytes": 2266,
+      "sha256": "9f04bf6d6eb55c505b422589497d46e7ce6dd95683afc0050528994f5fcb24e5"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/host-8.log",
+      "bytes": 4614,
+      "sha256": "2c45e6a93de5489858f0d98aeb5b73355521abb0f497dcc33e74b2eeaf294251"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/evidence/observations.jsonl",
+      "bytes": 213129,
+      "sha256": "2370733c4f777c73bf1112877230911bb85b2cd82e6e7dfe3556e5c0771ed1b9"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/logs/app.jsonl",
+      "bytes": 36072,
+      "sha256": "e1aba17dafe90d15ce9ef74ed4d5cfd649c4ea62b7ecbef794e3eee99bb60113"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/logs/plugins/pluginuninstall.log",
+      "bytes": 555,
+      "sha256": "0fb6bc926aa576f82ed62a00ecaa9d68708223ab299dc6a16330988d8fb5c46b"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/logs/plugins/pluginuninstallcold.log",
+      "bytes": 83,
+      "sha256": "2fefc5c9890b017f3ab03b2929782b87d4bdcfbd365da69ad8d9544b75322781"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1/logs/plugins/pluginuninstallowned.log",
+      "bytes": 84,
+      "sha256": "5697e0a3d148c8bfdd38812a9370408dab40aa658380a0cae3fb97050faba68f"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1-command.json",
+      "bytes": 3648,
+      "sha256": "5c86bd3571299adb87ea289d438a8085fa4d853f9797859e8655adaf213b17e2"
+    },
+    {
+      "path": "SDK98/managed-storage-pui-main-1.log",
+      "bytes": 98,
+      "sha256": "b644a7a5e66c947642e8c658b3fa48aff347be0f6c6ef129e50c869dd99e10c7"
+    },
+    {
+      "path": "Rlk/.task-owned",
+      "bytes": 51,
+      "sha256": "478da5145e979f854541c572fdac24dea2e24d74f06c89d996a378b056d78049"
+    },
+    {
+      "path": "Rlk/main-run-8/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/main-run-8/app/logs/app.jsonl",
+      "bytes": 188926,
+      "sha256": "87ff14d5d672f95ba682a249db6bba4e179e614931c07a7dc37d449dd5bd7658"
+    },
+    {
+      "path": "Rlk/main-run-8/app/logs/plugins/removelink.log",
+      "bytes": 55583,
+      "sha256": "e47511f69504ebfb070af3e48a72f67261affc4f90517f0845b8b51835fd2311"
+    },
+    {
+      "path": "Rlk/main-run-8/app/logs/plugins/removelinkowned.log",
+      "bytes": 2247,
+      "sha256": "b15ec56afffa6b74f29eb004103fba834cd9ddab2b2d80850e916e0b495641b4"
+    },
+    {
+      "path": "Rlk/main-run-8/evidence/host-1.log",
+      "bytes": 188431,
+      "sha256": "4c07ea9ec8a53ab928652a967ea9fab1dceefd98e61850596da86b7570f87476"
+    },
+    {
+      "path": "Rlk/main-run-8/evidence/observations.jsonl",
+      "bytes": 393475,
+      "sha256": "6b1c0c1938ccc8f1ab57e1962c3acfd1784436867c89e9184fa8fcc05d954601"
+    },
+    {
+      "path": "Rlk/main-run-8-command.json",
+      "bytes": 4488,
+      "sha256": "a0acfa96e17451e73103bde89d594c1cbd7b7b306f580c23ca7b09b73cc14e3c"
+    },
+    {
+      "path": "Rlk/main-run-8.log",
+      "bytes": 35,
+      "sha256": "17cdfa7b5d172cf9aeef41fc848017c02ca146387edee9949a290b74e4d04c14"
+    },
+    {
+      "path": "Rlk/main-run-9/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/main-run-9/app/logs/app.jsonl",
+      "bytes": 198689,
+      "sha256": "341717f15e21110fc784771fcbef57038b07772c0a4db13601d5f88564776aca"
+    },
+    {
+      "path": "Rlk/main-run-9/app/logs/plugins/removelink.log",
+      "bytes": 56559,
+      "sha256": "cc7f3549207e2ebcbae7c9c0b67e145fc366004c6738a0f5a6e35937ea78c1fa"
+    },
+    {
+      "path": "Rlk/main-run-9/app/logs/plugins/removelinkowned.log",
+      "bytes": 2407,
+      "sha256": "da614c56d8360c9119e9ff81470deec6b0fef55874f512d7d591dad5cffabc92"
+    },
+    {
+      "path": "Rlk/main-run-9/evidence/host-1.log",
+      "bytes": 189560,
+      "sha256": "25dc4d823c12a93256fde3d293d64d8866f1e4d07031096546c9839a1972a6b0"
+    },
+    {
+      "path": "Rlk/main-run-9/evidence/host-2.log",
+      "bytes": 8675,
+      "sha256": "ac0473220fde10188b2481f89f19866840c8191c948fdbf17bfef97da3afb2c4"
+    },
+    {
+      "path": "Rlk/main-run-9/evidence/observations.jsonl",
+      "bytes": 465160,
+      "sha256": "02cb554e55bf5ff49b4becec96c78d45f919e707415ffe5a9128f5bc6e066ca1"
+    },
+    {
+      "path": "Rlk/main-run-9-command.json",
+      "bytes": 4485,
+      "sha256": "5fb13b1172e4a0718f5a5eb28006ff7d5c91d62ca612b14b635262cec599ec11"
+    },
+    {
+      "path": "Rlk/main-run-9.log",
+      "bytes": 298,
+      "sha256": "9b8410c6dcfc297842bb0cd8a8b50ecddc0534402f9e5c813b0501abc77d3b95"
+    }
+  ]
+}

@@ -1,0 +1,106 @@
+{
+  "cwd": "/Users/accidia/projects/light-media-plugins",
+  "normal": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "race": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "vet": [
+    "go",
+    "vet",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "targeted": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "-run",
+    "TestSource312UnknownNamedHomeStopsBeforeUnlink|TestEmptyExcludeDoesNotNormalizeUnknownHome|TestSource312PathExpansionOrder|TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary"
+  ],
+  "independent": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "-overlay",
+    "work/migration-20261105/removelink-home-error-20261106/independent-current-assertions-only-overlay.json",
+    "./plugins/removelink",
+    "-run",
+    "^TestIndependentUnknownNamedHomeStopsUnlinkLikePathlib$"
+  ],
+  "linux_build_env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "linux_build": [
+    "go",
+    "build",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/removelink-home-error-20261106/remove-link-final-linux",
+    "./cmd/remove-link"
+  ],
+  "linux_update_fixture_build": [
+    "go",
+    "build",
+    "-trimpath",
+    "-buildvcs=false",
+    "-overlay",
+    "work/migration-20261105/removelink-home-error-20261106/update-version-overlay.json",
+    "-o",
+    "work/migration-20261105/removelink-home-error-20261106/remove-link-2.18.1-final-linux",
+    "./cmd/remove-link"
+  ],
+  "linux_test_build": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/removelink-home-error-20261106/removelink-linux-final.test",
+    "./plugins/removelink"
+  ],
+  "linux_run_script": "linux-run.sh",
+  "exit_codes": {
+    "before_race": 1,
+    "before_r2_race": 1,
+    "targeted": 0,
+    "actual_sdk_boundary": 0,
+    "normal": 0,
+    "race": 0,
+    "vet": 0,
+    "independent": 0,
+    "linux_build": 0,
+    "linux_update_fixture_build": 0,
+    "linux_test_build": 0,
+    "linux_actual_source_sdk": 0
+  },
+  "final_raws": [
+    "full-frozen-normal.jsonl",
+    "full-frozen-race.jsonl",
+    "vet-final.stdout",
+    "linux-actual-final.stdout"
+  ],
+  "normal_and_race_argv_unchanged": true,
+  "linux_selected_script_unchanged": "linux-run.sh"
+}

@@ -1,0 +1,1928 @@
+{
+  "input_sha256": "2270f51eb181e1e2f3f23a75a25c116e9ae850d3d88af3cbe0cd65f7e7ff7494",
+  "count": 112,
+  "all_current_hashes_verified": true,
+  "rows": [
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "current_target_sha256": "56bc1de176104f9a00d2b6906b963e7e36ef4f0af55e41d6693112239a04c9f0",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.source-differential.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "current_target_sha256": "56bc1de176104f9a00d2b6906b963e7e36ef4f0af55e41d6693112239a04c9f0",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.actual-main-browser.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "current_target_sha256": "56bc1de176104f9a00d2b6906b963e7e36ef4f0af55e41d6693112239a04c9f0",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "categoryeditor.independent-review.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "Only current origin metadata is rebound after independently proved SDK95 unreachable-client impact. Historical executable/host/environment/observations remain untouched; exact93 origin is preserved in SDK95 impact evidence.",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "current_target_sha256": "56bc1de176104f9a00d2b6906b963e7e36ef4f0af55e41d6693112239a04c9f0",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/ORIGIN.md",
+      "historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "current_target_sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk95.unreachable-source-sites-impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/plugin.go",
+      "historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "current_target_sha256": "87c6e130a3266d001f7e0196ba51dc7961a86e336557380c5f2ae5747ee49ccc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/ORIGIN.md",
+      "historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "current_target_sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/plugin.go",
+      "historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "current_target_sha256": "87c6e130a3266d001f7e0196ba51dc7961a86e336557380c5f2ae5747ee49ccc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.source-differential.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/ORIGIN.md",
+      "historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "current_target_sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/plugin.go",
+      "historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "current_target_sha256": "87c6e130a3266d001f7e0196ba51dc7961a86e336557380c5f2ae5747ee49ccc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.actual-main-browser-composite.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/ORIGIN.md",
+      "historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "current_target_sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "plugins/torrenttransfer/plugin.go",
+      "historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "current_target_sha256": "87c6e130a3266d001f7e0196ba51dc7961a86e336557380c5f2ae5747ee49ccc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "torrenttransfer.independent-review.20261105",
+      "feature_ids": [
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/ORIGIN.md",
+      "historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "current_target_sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/plugin.go",
+      "historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "current_target_sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.source_and_sdk",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/ORIGIN.md",
+      "historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "current_target_sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/plugin.go",
+      "historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "current_target_sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.actual_main_browser",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/ORIGIN.md",
+      "historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "current_target_sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/plugin.go",
+      "historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "current_target_sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_session.go",
+      "historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "current_target_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/concurrent_worker.go",
+      "historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "current_target_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/jsonrpc.go",
+      "historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "current_target_sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/plugin_host.go",
+      "historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "current_target_sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/protocol.go",
+      "historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "current_target_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "internal/sdk/worker.go",
+      "historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "current_target_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "SDK95→98 exact six-file delta; immutable25bc crossRunner/local normal+race/native Main4; current23 real four-instance Main2 adds current host/method gates",
+      "preserve_historical_target_sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sitestatistic.independent_composite",
+      "feature_ids": [
+        "plugin.SiteStatistic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [
+        "sdk.unreachable_module_increment"
+      ],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk.unreachable_module_increment",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "SDK_ORIGIN.json",
+      "historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "current_target_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "old95 origin preserved; current98 origin40e exact already25bc tested, not relabel old binary/Main/UI",
+      "preserve_historical_target_sha256": "c9dc2b5a876f90984cf2eedc3c12020b6c2553888b959f1cdfea78f0aea9c5db",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.source_and_sdk",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "current_target_sha256": "e1d896a2e6c02c56f045ac681cdf1895fb3cbb50d0cfbf5ab6f385f3fab79584",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.source_and_sdk",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/plugin.go",
+      "historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "current_target_sha256": "9023a12cb3cf820e8e731d0665d10e127fc6d1f4c70de0f98d59bdb8ae8d18a6",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.source_and_sdk",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "build-plugins.json",
+      "historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "current_target_sha256": "cebb45291281a4d1112ce45742eb69a013efdc45fe49e72f4cb6e80aa4fb4a40",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "only append PluginUnInstall build spec; every previous family including MPS exact config unchanged; prior exact package outputs retained",
+      "preserve_historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.actual_main_browser",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "current_target_sha256": "e1d896a2e6c02c56f045ac681cdf1895fb3cbb50d0cfbf5ab6f385f3fab79584",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.actual_main_browser",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/plugin.go",
+      "historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "current_target_sha256": "9023a12cb3cf820e8e731d0665d10e127fc6d1f4c70de0f98d59bdb8ae8d18a6",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.actual_main_browser",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "build-plugins.json",
+      "historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "current_target_sha256": "cebb45291281a4d1112ce45742eb69a013efdc45fe49e72f4cb6e80aa4fb4a40",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "only append PluginUnInstall build spec; every previous family including MPS exact config unchanged; prior exact package outputs retained",
+      "preserve_historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.independent_composite_packaging",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "current_target_sha256": "e1d896a2e6c02c56f045ac681cdf1895fb3cbb50d0cfbf5ab6f385f3fab79584",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.independent_composite_packaging",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "plugins/mpserverstatus/plugin.go",
+      "historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "current_target_sha256": "9023a12cb3cf820e8e731d0665d10e127fc6d1f4c70de0f98d59bdb8ae8d18a6",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "mpserverstatus.independent_composite_packaging",
+      "feature_ids": [
+        "plugin.MPServerStatus"
+      ],
+      "path": "build-plugins.json",
+      "historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "current_target_sha256": "cebb45291281a4d1112ce45742eb69a013efdc45fe49e72f4cb6e80aa4fb4a40",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "only append PluginUnInstall build spec; every previous family including MPS exact config unchanged; prior exact package outputs retained",
+      "preserve_historical_target_sha256": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "current_target_sha256": "56bc1de176104f9a00d2b6906b963e7e36ef4f0af55e41d6693112239a04c9f0",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/ORIGIN.md",
+      "historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "current_target_sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "e19870f3bfe8ed5c00081c33841100c02cbb8897a7e1a3e443468f959252beee",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/sitestatistic/plugin.go",
+      "historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "current_target_sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/torrenttransfer/ORIGIN.md",
+      "historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "current_target_sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "463dfe5a919b0fe7d4dbf74e180db4b555881ea72fcad39ca7bbd55436cff461",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "sdk98.accepted_four_instance_impact.20261105",
+      "feature_ids": [
+        "plugin.CategoryEditor",
+        "plugin.TorrentTransfer",
+        "plugin.TorrentTransfermusic",
+        "plugin.SiteStatistic"
+      ],
+      "path": "plugins/torrenttransfer/plugin.go",
+      "historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "current_target_sha256": "87c6e130a3266d001f7e0196ba51dc7961a86e336557380c5f2ae5747ee49ccc",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.source_standalone_App",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/ORIGIN.md",
+      "historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "current_target_sha256": "c8d5e0d035c91d937130c22dd808897a6e2ae5f7695f88804d73f129a82c19a0",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.source_standalone_App",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/plugin.go",
+      "historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "current_target_sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.source_standalone_App",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "tests/integration/pluginuninstall_main_test.go",
+      "historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "current_target_sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "strict mandatory env expected PUI/MPS worker hashes replace two old constants; install/version/host prechecks stay; actual current PUI3 full source tails35joins noUI; original f24 reconstructed via saved old file",
+      "preserve_historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.actual_main_browser_package",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/ORIGIN.md",
+      "historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "current_target_sha256": "c8d5e0d035c91d937130c22dd808897a6e2ae5f7695f88804d73f129a82c19a0",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.actual_main_browser_package",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/plugin.go",
+      "historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "current_target_sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.actual_main_browser_package",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "tests/integration/pluginuninstall_main_test.go",
+      "historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "current_target_sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "strict mandatory env expected PUI/MPS worker hashes replace two old constants; install/version/host prechecks stay; actual current PUI3 full source tails35joins noUI; original f24 reconstructed via saved old file",
+      "preserve_historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.independent_composite",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/ORIGIN.md",
+      "historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "current_target_sha256": "c8d5e0d035c91d937130c22dd808897a6e2ae5f7695f88804d73f129a82c19a0",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "compatibility documentation only; optional source declarations/host minimum explained; no business function body changes",
+      "preserve_historical_target_sha256": "d9e44a64201862a7fa872ba256b6b676fc11682ffef4e9a83c50ef71e2c63635",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.independent_composite",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "plugins/pluginuninstall/plugin.go",
+      "historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "current_target_sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "exact source-derived Methods-only20+Auth3 changes independently strict full-file AST checked; MPS only null get_service ad removed; all Handle/business AST unchanged; host4/API positive/null controls plus new seven ELF builds",
+      "preserve_historical_target_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+      "observations_environment_binary_not_rewritten": true
+    },
+    {
+      "evidence_id": "pluginuninstall.independent_composite",
+      "feature_ids": [
+        "plugin.PluginUnInstall"
+      ],
+      "path": "tests/integration/pluginuninstall_main_test.go",
+      "historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "current_target_sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7",
+      "current_dependency_evidence_ids": [],
+      "historical_binding_note": "",
+      "approved_current_binding_only": true,
+      "reuse_basis": "strict mandatory env expected PUI/MPS worker hashes replace two old constants; install/version/host prechecks stay; actual current PUI3 full source tails35joins noUI; original f24 reconstructed via saved old file",
+      "preserve_historical_target_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "observations_environment_binary_not_rewritten": true
+    }
+  ]
+}

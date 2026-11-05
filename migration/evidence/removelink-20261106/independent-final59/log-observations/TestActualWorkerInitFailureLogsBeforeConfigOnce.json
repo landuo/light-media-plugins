@@ -1,0 +1,24 @@
+{
+  "case": "invalid-config-source-INFO-before-error-same-process-recovers",
+  "classification": "actual independent SDK worker with synthetic scoped host and owned filesystem; NOT ordinary Main",
+  "default_host_call_limit": 64,
+  "logs": [
+    [
+      "INFO",
+      "初始化媒体文件清理插件"
+    ]
+  ],
+  "maximum_calls_per_phase": 1,
+  "phases": [
+    {
+      "Method": "owner:init",
+      "Calls": 1
+    },
+    {
+      "Method": "owner:get_state",
+      "Calls": 0
+    }
+  ],
+  "private_slice_limit": 24,
+  "total_host_calls": 1
+}

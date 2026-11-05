@@ -1,0 +1,34 @@
+{
+  "plugins/categoryeditor/categoryeditor.go": [
+    "get_service",
+    "get_command",
+    "get_dashboard",
+    "get_dashboard_meta",
+    "get_module"
+  ],
+  "plugins/torrenttransfer/plugin.go": [
+    "get_command",
+    "get_dashboard",
+    "get_dashboard_meta",
+    "get_module"
+  ],
+  "plugins/removelink/plugin.go": [
+    "get_service",
+    "get_command",
+    "get_dashboard",
+    "get_dashboard_meta",
+    "get_module"
+  ],
+  "plugins/sitestatistic/plugin.go": [
+    "get_service",
+    "get_command"
+  ],
+  "plugins/mpserverstatus/plugin.go": [
+    "get_service"
+  ],
+  "plugins/pluginuninstall/plugin.go": [
+    "get_service",
+    "get_command",
+    "get_dashboard"
+  ]
+}

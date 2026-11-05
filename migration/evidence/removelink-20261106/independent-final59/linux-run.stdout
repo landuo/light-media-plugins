@@ -1,0 +1,82 @@
+uid=1000(admin) gid=1001(Users) groups=1001(Users),994(docker),1000(Administrators)
+099745f20a55d82745d23f1b2b2e3c9c44de4d47ec2b50d60647cba887d3f0d9  review.test
+=== RUN   TestActualWorkerIndependentTimerAndObserverCallers
+--- PASS: TestActualWorkerIndependentTimerAndObserverCallers (0.04s)
+=== RUN   TestActualWorkerObserverLanesSerialPerRootAndIndependentAcrossRoots
+--- PASS: TestActualWorkerObserverLanesSerialPerRootAndIndependentAcrossRoots (0.04s)
+=== RUN   TestActualWorkerObserverStartsBeforeInitialBulkScanCompletes
+--- PASS: TestActualWorkerObserverStartsBeforeInitialBulkScanCompletes (0.02s)
+=== RUN   TestActualWorkerStopWaitsForIndependentObserverAndTimerWork
+--- PASS: TestActualWorkerStopWaitsForIndependentObserverAndTimerWork (0.10s)
+=== RUN   TestActualWorkerTypedSourceAttributeStopsOnlyItsObserver
+--- PASS: TestActualWorkerTypedSourceAttributeStopsOnlyItsObserver (0.04s)
+=== RUN   TestActualWorkerStopJoinsTimerBeforeQueueFlush
+--- PASS: TestActualWorkerStopJoinsTimerBeforeQueueFlush (0.11s)
+=== RUN   TestActualWorkerTenObserverRootsFairWhileSixCallbacksBlocked
+    concurrency_protocol_test.go:424: actual SDK: phases=60 cleanup_phases=17 total_RPC=193 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerTenObserverRootsFairWhileSixCallbacksBlocked (0.11s)
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=false
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=true
+--- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary (0.07s)
+    --- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=false (0.03s)
+    --- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=true (0.04s)
+=== RUN   TestIndependentHomeRuntimeKillsOnlyFailedObserver
+--- PASS: TestIndependentHomeRuntimeKillsOnlyFailedObserver (0.03s)
+=== RUN   TestIndependentCreatedDuringDelayedExistsKeepsOldLinks
+    independent_stage1_replay_test.go:75: actual3.12 expected created-before-release=true old=true new=true; Go early=true oldErr=<nil> newErr=<nil>
+--- PASS: TestIndependentCreatedDuringDelayedExistsKeepsOldLinks (0.00s)
+=== RUN   TestIndependentOneObserverErrorDoesNotStopSiblingDirectoryEvents
+--- PASS: TestIndependentOneObserverErrorDoesNotStopSiblingDirectoryEvents (1.89s)
+=== RUN   TestIndependentSourceNamedHomeProtection
+--- PASS: TestIndependentSourceNamedHomeProtection (0.00s)
+=== RUN   TestIndependentDelayOverflowBeforeStop
+--- PASS: TestIndependentDelayOverflowBeforeStop (0.00s)
+=== RUN   TestIndependentWorkerUnlinkNoParentReadPrecondition
+--- PASS: TestIndependentWorkerUnlinkNoParentReadPrecondition (0.03s)
+=== RUN   TestActualWorkerObserverToOwnedFilesystemCleanup
+    observer_test.go:48: actual SDK: phases=31 cleanup_phases=23 total_RPC=508 max_RPC_per_phase=25 hard_default=64
+    observer_test.go:49: actual observer→worker→SDK→owned local files; OS=linux (Linux=inotify, other development OS=polling)
+--- PASS: TestActualWorkerObserverToOwnedFilesystemCleanup (0.23s)
+=== RUN   TestActualWorkerObserverRenameAndStopBeforeDue
+    observer_test.go:120: actual SDK: phases=33 cleanup_phases=21 total_RPC=483 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerObserverRenameAndStopBeforeDue (1.38s)
+=== RUN   TestActualWorkerObserverRealTimerDoesNotRunEarly
+    observer_test.go:152: actual owned Linux timer elapsed 10.14633064s
+    observer_test.go:154: actual SDK: phases=28 cleanup_phases=13 total_RPC=222 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerObserverRealTimerDoesNotRunEarly (10.19s)
+=== RUN   TestActualWorkerFreshStopFlushesUnenteredTaskWithoutReplayingUnknownNotice
+--- PASS: TestActualWorkerFreshStopFlushesUnenteredTaskWithoutReplayingUnknownNotice (0.03s)
+=== RUN   TestActualWorkerMoreThan64LinksOwnerWaitsThroughLastEffect
+    protocol_test.go:517: actual SDK: phases=30 cleanup_phases=27 total_RPC=650 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerMoreThan64LinksOwnerWaitsThroughLastEffect (0.23s)
+=== RUN   TestActualWorkerLargeScrapeDirectoryAndFilteredCandidates
+    protocol_test.go:538: actual SDK: phases=178 cleanup_phases=95 total_RPC=662 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerLargeScrapeDirectoryAndFilteredCandidates (0.82s)
+=== RUN   TestActualWorkerQueuedStopAndReloadFlushWithNewFlags
+=== RUN   TestActualWorkerQueuedStopAndReloadFlushWithNewFlags/false
+    protocol_test.go:569: actual SDK: phases=29 cleanup_phases=25 total_RPC=598 max_RPC_per_phase=25 hard_default=64
+=== RUN   TestActualWorkerQueuedStopAndReloadFlushWithNewFlags/true
+    protocol_test.go:569: actual SDK: phases=14 cleanup_phases=10 total_RPC=219 max_RPC_per_phase=25 hard_default=64
+--- PASS: TestActualWorkerQueuedStopAndReloadFlushWithNewFlags (0.28s)
+    --- PASS: TestActualWorkerQueuedStopAndReloadFlushWithNewFlags/false (0.19s)
+    --- PASS: TestActualWorkerQueuedStopAndReloadFlushWithNewFlags/true (0.09s)
+=== RUN   TestActualWorkerTransientAuthorityFailureStopsLaterEffects
+--- PASS: TestActualWorkerTransientAuthorityFailureStopsLaterEffects (0.03s)
+=== RUN   TestActualWorkerUnknownWriteCancellationRetainsFactNoReplay
+--- PASS: TestActualWorkerUnknownWriteCancellationRetainsFactNoReplay (0.03s)
+=== RUN   TestActualCleanupRootFlushesOver64LinksBeforeOwnerReturns
+    protocol_test.go:687: actual SDK: phases=30 cleanup_phases=25 total_RPC=598 max_RPC_per_phase=25 hard_default=64
+    protocol_test.go:705: actual cleanup root90links totalRPC=598 maxPhase=25 sourceEffects=map[delete:90 event:91 history:91 notify:1]
+--- PASS: TestActualCleanupRootFlushesOver64LinksBeforeOwnerReturns (0.18s)
+=== RUN   TestLinuxSourceObserverStartFailure
+=== RUN   TestLinuxSourceObserverStartFailure/unsupported
+=== RUN   TestLinuxSourceObserverStartFailure/watch_limit
+=== RUN   TestLinuxSourceObserverStartFailure/instance_limit
+--- PASS: TestLinuxSourceObserverStartFailure (0.00s)
+    --- PASS: TestLinuxSourceObserverStartFailure/unsupported (0.00s)
+    --- PASS: TestLinuxSourceObserverStartFailure/watch_limit (0.00s)
+    --- PASS: TestLinuxSourceObserverStartFailure/instance_limit (0.00s)
+=== RUN   TestLinuxSourceObserverActualNativeDelete
+--- PASS: TestLinuxSourceObserverActualNativeDelete (0.02s)
+PASS

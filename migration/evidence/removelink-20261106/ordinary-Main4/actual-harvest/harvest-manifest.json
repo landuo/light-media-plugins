@@ -1,0 +1,57 @@
+{
+  "classification": "actual UID1000 ordinary Go Main4, pre-UI business checks executed; actual browser configuration import failed due host resource-query rejection; coordinator gracefully stopped Main then SIGTERM test driver without ui-complete; tail NOT run",
+  "exit_code": -15,
+  "seconds": 708.8907073019072,
+  "observations": 135,
+  "last_observation": "rm_ui_ready",
+  "ui_complete_written": false,
+  "all_owned_main_workers_gone_before_driver_stop": true,
+  "files": [
+    {
+      "path": "main-run-4-command.json",
+      "bytes": 3432,
+      "sha256": "d391b0640da7100976b2d6528f56711d158cb1f373eac57c5e1eab3163071b1a"
+    },
+    {
+      "path": "main-run-4.log",
+      "bytes": 35,
+      "sha256": "17cdfa7b5d172cf9aeef41fc848017c02ca146387edee9949a290b74e4d04c14"
+    },
+    {
+      "path": "input-inventory-run4.json",
+      "bytes": 1164,
+      "sha256": "4e5f7109dd187700ddbcc0f574874a8ca7225b74db64bd60a7ab798fb390132f"
+    },
+    {
+      "path": "main-run-4/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "main-run-4/evidence/observations.jsonl",
+      "bytes": 393887,
+      "sha256": "cfb736620ca65975ec4207e764c1bb5262cfe3730786928316db01c47d504305"
+    },
+    {
+      "path": "main-run-4/evidence/host-1.log",
+      "bytes": 225114,
+      "sha256": "8239233c16a7a3251c32e75dc191df6a26c81ecd98c01192da196c74ed4541b2"
+    },
+    {
+      "path": "main-run-4/app/logs/plugins/removelink.log",
+      "bytes": 61394,
+      "sha256": "479698d866388ae401bf9387a233f1d35dbf2c623df2db84832192b43ef06571"
+    },
+    {
+      "path": "main-run-4/app/logs/plugins/removelinkowned.log",
+      "bytes": 2247,
+      "sha256": "dfc74deecbb2eb60665f6c3fcc67c67d42e6dd0ad748d77567ae36ad51824d7a"
+    }
+  ],
+  "private_excluded": [
+    "ui-ready.json",
+    "light-media.db",
+    "secret.key"
+  ],
+  "at": "2026-11-05T18:58:06.337359+00:00"
+}

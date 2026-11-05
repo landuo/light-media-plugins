@@ -1,0 +1,70 @@
+[
+  {
+    "mode": "present-empty",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-plugin-removelink-ctor-025822b30f5d40579bcd1385af4de97e --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=8m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -I -B -S - present-empty"
+    ],
+    "exit": 0,
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-plugin-removelink-ctor-025822b30f5d40579bcd1385af4de97e"
+    ],
+    "cleanup_exit": 0,
+    "remaining": "",
+    "payload_sha256": "e867a67b06f16470a781c4b3e0cbfc0b99c9d18f5130f8a903e9597f947b8450"
+  },
+  {
+    "mode": "present-value",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-plugin-removelink-ctor-3896622ab408422c9c3a603ed344001b --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=8m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -I -B -S - present-value"
+    ],
+    "exit": 0,
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-plugin-removelink-ctor-3896622ab408422c9c3a603ed344001b"
+    ],
+    "cleanup_exit": 0,
+    "remaining": "",
+    "payload_sha256": "e867a67b06f16470a781c4b3e0cbfc0b99c9d18f5130f8a903e9597f947b8450"
+  },
+  {
+    "mode": "absent-found",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-plugin-removelink-ctor-90e1b2606e634d05ad551dfbf765d98a --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=8m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -I -B -S - absent-found"
+    ],
+    "exit": 0,
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-plugin-removelink-ctor-90e1b2606e634d05ad551dfbf765d98a"
+    ],
+    "cleanup_exit": 0,
+    "remaining": "",
+    "payload_sha256": "e867a67b06f16470a781c4b3e0cbfc0b99c9d18f5130f8a903e9597f947b8450"
+  },
+  {
+    "mode": "absent-unmapped",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm -i --label task=lm-plugin-removelink-ctor-a952e17bab6e4644a93e5e2bb95c949a --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=8m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -I -B -S - absent-unmapped"
+    ],
+    "exit": 0,
+    "cleanup_command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker ps -aq --filter label=task=lm-plugin-removelink-ctor-a952e17bab6e4644a93e5e2bb95c949a"
+    ],
+    "cleanup_exit": 0,
+    "remaining": "",
+    "payload_sha256": "e867a67b06f16470a781c4b3e0cbfc0b99c9d18f5130f8a903e9597f947b8450"
+  }
+]

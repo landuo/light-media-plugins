@@ -1,0 +1,111 @@
+{
+  "owner": "/root/plugin_sdk",
+  "phase": "compiled test driver only; ordinary Main not executed; pending independent review/Root run",
+  "source": {
+    "path": "/Users/accidia/projects/light-media-plugins/tests/integration/removelink_business_main_test.go",
+    "sha256": "6e48dd4066ed75760148bf58b996e792a09570005117731b80c1e43cfe6643da",
+    "git_blob": "659fcf455944e27259759d6b0dfda5c8308a7414"
+  },
+  "source_prod_changed": false,
+  "shared_SDK_changed": false,
+  "host_changed": false,
+  "old_drivers_changed": false,
+  "build_tag": "removelink_business_acceptance",
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/removelink-business-main-linux.test",
+      "sha256": "757ce25cdde414437ccdcb43e62ab09b9612c72264a8fdf78174d4ce81db80b4",
+      "bytes": 13703156
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/owned-notice-fixture-linux",
+      "sha256": "406d13fa0e7c36ee30968117198e9c1ee84f5105fae10d15632e25cf78292952",
+      "bytes": 10219798
+    }
+  ],
+  "verification": [
+    {
+      "name": "contracts-final-normal",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "-tags=removelink_business_acceptance",
+        "./tests/integration",
+        "-run",
+        "^TestRemoveLinkBusinessNoticeContracts$"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "elapsed_seconds": 1.2648862078785896,
+      "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-normal.jsonl"
+    },
+    {
+      "name": "contracts-final-race",
+      "argv": [
+        "go",
+        "test",
+        "-json",
+        "-race",
+        "-count=1",
+        "-tags=removelink_business_acceptance",
+        "./tests/integration",
+        "-run",
+        "^TestRemoveLinkBusinessNoticeContracts$"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "elapsed_seconds": 2.9814639161340892,
+      "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-race.jsonl"
+    },
+    {
+      "name": "vet-final",
+      "argv": [
+        "go",
+        "vet",
+        "-tags=removelink_business_acceptance",
+        "./tests/integration"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "elapsed_seconds": 0.29703370900824666,
+      "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/vet-final.jsonl"
+    }
+  ],
+  "inputs_stable": true,
+  "owned_evidence": {
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/inputs-after.json": "a0d273d097a612acf2da728075a62dc0dfbe0f56291e9b00cc5ee8d1076a32a1",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/build.py": "890431de54065f994c4df6447325c96e51963cb6aa7c0e69abdcf460976410ae",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/verification-local.json": "8f546df1b5b305771dd703386f7b93eddbd23aa950a8db1778f1eb5ccdac06de",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/owned-notice-fixture-linux": "406d13fa0e7c36ee30968117198e9c1ee84f5105fae10d15632e25cf78292952",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/removelink-business-main-linux.test.buildinfo.txt": "89705bb42ca55e552f8104ce98c3823260b0f96724b9de4d54598466b2797053",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/driver-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/default-tag-exclusion-proof.json": "183c23ad333ff485b24d1316e46ee139b573fa7eff2b89adcc6ca4b6b638aa14",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/default-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/vet-final.jsonl": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/owned-notice-fixture-linux.buildinfo.txt": "a370bad25545ad2177380dd9521e23ae684b19ca3208bdf9b9364478f019a547",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/TASK.json": "a05646644bfe1be3756eebb373feb56492139a20913ee0d2bc6da9f7fddd0e12",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/first-compile-failure.jsonl": "9985cc68e2009238b45782825578570fb2653ce9d4883afd255014cc6ac5df25",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-race.jsonl": "e8f4759b4c651110b5598d2b9c5fd7b91418779722ae8ec956701c439e826c6e",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-normal.jsonl": "6d7fc99b0d66b8c6df30de993359715c262823f9a037e629b7ebb0c60ac8ac56",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-race.jsonl": "d056021ae490560daa8237a890e8593f17b742ce98441fa76083d4609ebd6542",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/driver-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/vet.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/draft-before-trickplay-build.json": "9600437d3ad74eac42c17cbad091b39d6bb6969577e8764c33c6e17f9ee48bb9",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/default-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/commands.json": "5760716d415645a2e445120897ff49a3bab7ec9100f85ad522f07a0396483b0b",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-index-normal.jsonl": "08a5840a2a24c82f286c051a1ace26f0f0f569bc75650c2f85f529fd3fc57734",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/git-source-binding.json": "da8185cc75e97acabc51baadb1dc072c765a6fd2cfe7c50919feb9eb93954eee",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/source-references.json": "563c9ab7156f41c4f079bae9e3167186db8329f23caec150c192848407131c48",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/inputs-before.json": "a0d273d097a612acf2da728075a62dc0dfbe0f56291e9b00cc5ee8d1076a32a1",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/REPORT.txt": "72936cee2d91c005fdbce02ae616120ac638e9f73d5a7f80176edb2aa7652b5e",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-normal.jsonl": "73a9fb8d5939342b71d900dc33757f3cdd9543ee366279a201edf94bc78f08e7",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/removelink-business-main-linux.test": "757ce25cdde414437ccdcb43e62ab09b9612c72264a8fdf78174d4ce81db80b4",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/notice-build.stderr": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/notice-build.stdout": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/toolchain.json": "2f6dd415727a84222a02729614cc34f1c69decd966a973728e4302d20990e855",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/notice-build-closure.json": "3b8a4eb36543bbe629aa1c9310a86ba95db51dfa333b576359e297130fda27d8",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/artifacts.json": "d1f4a1462df183992df32c7c02c43d7be86f279395fddb8ea8ad32f811fb61a9"
+  }
+}

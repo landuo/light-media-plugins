@@ -1,0 +1,36 @@
+{
+  "classification": "actual native UID1000 complete PUI Main2 current3c05 host/currentd001 PUI/new3278 disabled MPS witness; all source lifecycle tail, UI explicitly skipped in this run and old Main1 IAB retains its historical binding; no MPS page/dashboard or production network/account",
+  "command": [
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+    "-test.run=^TestPluginUninstallOrdinaryMain$",
+    "-test.timeout=20m",
+    "-test.v"
+  ],
+  "environment": {
+    "PLUGINUNINSTALL_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux",
+    "PLUGINUNINSTALL_EXPECT_HOST_SHA256": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "PLUGINUNINSTALL_WORKER_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-plugin-uninstall-linux",
+    "PLUGINUNINSTALL_UPDATE_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-plugin-uninstall-2.2.1-linux",
+    "PLUGINUNINSTALL_MPS_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-mp-server-status-linux",
+    "PLUGINUNINSTALL_FIXTURE_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-owned-pui-fixture-linux",
+    "PLUGINUNINSTALL_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-sdk98-20261105/source-declarations-pui-main-2",
+    "PLUGINUNINSTALL_LISTEN": "127.0.0.1:36258",
+    "PLUGINUNINSTALL_SKIP_UI": "1"
+  },
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-plugin-uninstall-linux": "d001e6796321b8a7702aad9fe9c4785f2ad349c5b3d19b0008ed8d0440e0dbc3",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-mp-server-status-linux": "32780c52accebb11329d9e54aea09c6dcc124f92532c1fd882e203b8aa8a793d",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-plugin-uninstall-2.2.1-linux": "e0b5f2f6f8f7004d9a10835affe531964dfeacd54be6bb114b1e2eed10a3130b",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-owned-pui-fixture-linux": "b4d23deb2ba9d58dbd30dc56d6f212c5498cad35272160716dc0c85650ec7744",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d"
+  },
+  "version2_2_1": "fixture only, not upstream release",
+  "probe": "exact historical b4d23 Linux SDK fixture, not business provider",
+  "producer_freeze": "4693f0b87c3e78efb7d814b4d2db0e19c9302b8c822ee76c236339f8696a54b0",
+  "preparation_freeze": "a9926fa5bbf138076b809214fd72c0162e0e03f217368976334f0cd346928e5b",
+  "started_utc": "2026-11-05T19:46:49.006931+00:00",
+  "exit_code": 1,
+  "seconds": 0.2249663940165192,
+  "ended_utc": "2026-11-05T19:46:49.232219+00:00"
+}

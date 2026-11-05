@@ -1,0 +1,143 @@
+{
+  "classification": "independent canonical tooling query graph review and synthetic archive tests; original Rlk source JS/CSS bytes consumed, not production ZIP/main/browser acceptance",
+  "passed": true,
+  "builder_sha256": "917a1166bd4ecbb155f5cda684213816a194c98bdfd97eea5ede3afa6cfd953e",
+  "test_sha256": "079791b9ae6afaab6680d969ff9b4683e8e9d6b4408a2605fd0d3493140f5ed6",
+  "before_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "actual_source_oracle_sha256": "1d3838bbe050cfd06e49571ba5cacc366b3867c1d7d032c15175997c9790a314",
+  "query_cases": [
+    {
+      "query": "",
+      "old_error": null,
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=2.18",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=2.18.1",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=one&v=two",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?other=value",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=2.18&other=value",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?%76=2.18",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=a%2Fb",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=%ZZ",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=%00",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    },
+    {
+      "query": "?v=one;other=two",
+      "old_error": "frontend graph must use package-relative asset URLs",
+      "current_exact_bytes": true,
+      "archive_exact_members_and_bytes": true,
+      "missing_member_rejected": true
+    }
+  ],
+  "original_Rlk_remoteEntry_and_siblings_collect_exactly": {
+    "remoteEntry.js": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b",
+    "view.js": "e4377287647869ad3c97c293ad7abcaa60864d50d1f75140a9910895a9580a53",
+    "style.css": "0502ab6e96b309f848d155fa7822ef2f6588c196d8c1feff6f8d414300f9b60c"
+  },
+  "unsafe_references_rejected": [
+    {
+      "reference": "https://example.invalid/view.js?v=2.18",
+      "rejected": "frontend graph must use package-relative asset URLs"
+    },
+    {
+      "reference": "//example.invalid/view.js?v=2.18",
+      "rejected": "frontend graph must use package-relative asset URLs"
+    },
+    {
+      "reference": "/view.js?v=2.18",
+      "rejected": "frontend graph must use package-relative asset URLs"
+    },
+    {
+      "reference": "../../outside.js?v=2.18",
+      "rejected": "frontend asset reference escapes output root"
+    },
+    {
+      "reference": "./view.js#fragment",
+      "rejected": "frontend graph must use package-relative asset URLs"
+    },
+    {
+      "reference": "..\\outside.js?v=2.18",
+      "rejected": "frontend graph must use package-relative asset URLs"
+    }
+  ],
+  "legacy_tool_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py",
+      "-v"
+    ],
+    "exit_code": 0,
+    "seconds": 0.275112833827734,
+    "stderr_sha256": "9796fa6f037284b0ba7bf2db49c21361d071b616c988abd2b02fadb2391d3796"
+  },
+  "no_product_modules_registry_modified": true,
+  "temporary_owned_asset_trees_and_ZIPs_removed": true
+}

@@ -1,0 +1,28 @@
+{
+  "classification": "actual canonical10member ZIP installed through ordinary Main3c05; current23 new6d75 native worker + platform clone + actual Linux owned hardlink cleanup + native source cache-query imports; no browser claim from this run",
+  "command": [
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+    "-test.run=^TestRemoveLinkCanonicalPackageOrdinaryMain$",
+    "-test.timeout=10m",
+    "-test.v"
+  ],
+  "environment": {
+    "REMOVELINK_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux",
+    "REMOVELINK_EXPECT_HOST_SHA256": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "REMOVELINK_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-main-2",
+    "REMOVELINK_LISTEN": "127.0.0.1:36259",
+    "REMOVELINK_PACKAGE_ZIP": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/RemoveLink-2.18-linux-amd64.zip",
+    "REMOVELINK_PACKAGE_INDEX": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/go-plugins.v1.json"
+  },
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/RemoveLink-2.18-linux-amd64.zip": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/go-plugins.v1.json": "6cb8858a25f29a100ecac881f0a1f3b8a3ae7dcb36e778503f18ccc5b37e71b5",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-getter-gates-linux": "3c0513c3c92e4ab15128f1d0c0756cdd4c763403d0dc2b6111f8812a36d1c6cb",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d"
+  },
+  "driver_unexecuted_old_PUI_source": "f24 reproducible via frozen-test-inputs single-file overlay; newPUI driver01ba is a separate test input",
+  "started_utc": "2026-11-05T20:45:53.142550+00:00",
+  "exit_code": 0,
+  "seconds": 4.7274621778633446,
+  "ended_utc": "2026-11-05T20:45:57.870802+00:00"
+}

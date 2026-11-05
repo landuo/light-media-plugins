@@ -1,0 +1,87 @@
+{
+  "cwd": "/Users/accidia/projects/light-media-plugins",
+  "normal": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "race": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "vet": [
+    "go",
+    "vet",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "linux_build_env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "linux_build": [
+    "go",
+    "build",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/removelink-home-ctor-20261106/remove-link-linux",
+    "./cmd/remove-link"
+  ],
+  "linux_update_build": [
+    "go",
+    "build",
+    "-trimpath",
+    "-buildvcs=false",
+    "-overlay",
+    "work/migration-20261105/removelink-home-ctor-20261106/update-version-overlay.json",
+    "-o",
+    "work/migration-20261105/removelink-home-ctor-20261106/remove-link-2.18.1-linux",
+    "./cmd/remove-link"
+  ],
+  "linux_test_before_build": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/removelink-home-ctor-20261106/removelink-before.test",
+    "./plugins/removelink"
+  ],
+  "linux_test_after_build": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "work/migration-20261105/removelink-home-ctor-20261106/removelink-after.test",
+    "./plugins/removelink"
+  ],
+  "actual_source_run": "run-source.py + source-commands.json",
+  "actual_target_run": "run-target.py before/after <respective test ELF>; exact docker/env/UID/cleanup commands in before/after-commands.json",
+  "exits": {
+    "normal": 0,
+    "race": 0,
+    "vet": 0,
+    "linux_build": 0,
+    "linux_update_build": 0,
+    "linux_test_before_build": 0,
+    "linux_test_after_build": 0,
+    "before_present_empty": 0,
+    "before_present_value": 0,
+    "before_absent_found": 0,
+    "before_absent_unmapped": 1,
+    "after_all_four": 0
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "classification": "allowlisted actual managed-storage host increment native ordinary Main; Main8 interrupted harness UI wait is retained, no UI/tail claimed there; excludes database, credentials, key, UI-ready, certificates, binaries and private configurations",
+  "collected_utc": "2026-11-05T21:15:31.811608+00:00",
+  "runs": {
+    "canonical-package-main-3": {
+      "exit_code": 0,
+      "seconds": 4.725073131965473,
+      "observations": 23,
+      "last_observation": {
+        "at": "2026-11-05T21:14:09.699949701Z",
+        "event": "rm_canonical_package_complete",
+        "value": {
+          "all_workers_joined": 2,
+          "base_and_clone_source_relative_imports": true,
+          "canonical_zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+          "disabled_clone_unchanged": true,
+          "no_UI_claim": true,
+          "real_same_inode_alias_cleanup": true,
+          "verified_installed_members": 10
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 1
+    }
+  },
+  "files": [
+    {
+      "path": "SDK98/.task-owned",
+      "bytes": 46,
+      "sha256": "e048bd9af1345dc142f3b83e82f2b01a32cac8ef1ea2f0f19b563ec1454e4a26"
+    },
+    {
+      "path": "Rlk/.task-owned",
+      "bytes": 51,
+      "sha256": "478da5145e979f854541c572fdac24dea2e24d74f06c89d996a378b056d78049"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/app/logs/app.jsonl",
+      "bytes": 11092,
+      "sha256": "7b0784e9c0df17e5c6af371da444c0e4f26ad605f4b247b442b5e0f79af51265"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/app/logs/plugins/removelink.log",
+      "bytes": 1835,
+      "sha256": "904e92b29df948972c933c6308d433a40eb3dc6046ab5d5305322edc5b5080e9"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/app/logs/plugins/removelinkowned.log",
+      "bytes": 240,
+      "sha256": "fb1747270f1534ee3a4cc92b4e75809a12d082010cc04e9a0f1f420d6da00e68"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/evidence/host-1.log",
+      "bytes": 10597,
+      "sha256": "e74a1f0cdf932ee934f5932c8fdda64f3a06ec9f05e6c792a869052cffe26e09"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3/evidence/observations.jsonl",
+      "bytes": 9171,
+      "sha256": "8af217848643aa698e75ebae451f479379fd353d069b8aab5c86a1f7bee1bd35"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3-command.json",
+      "bytes": 2322,
+      "sha256": "d0106b59152902230a6bce2e1caa149fb295cbc772a1ec27b0135e9b6d23a522"
+    },
+    {
+      "path": "Rlk/canonical-package-main-3.log",
+      "bytes": 119,
+      "sha256": "16a7fa8bfa289d86735750f5decc756430c070b36643ce59bb3cb52a5ef127bf"
+    }
+  ]
+}

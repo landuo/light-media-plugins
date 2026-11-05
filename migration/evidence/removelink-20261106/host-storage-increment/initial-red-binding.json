@@ -1,0 +1,22 @@
+{
+  "production_before": [
+    {
+      "path": "internal/app/file_manager.go",
+      "SHA256": "cf5411f6791bed0a83212a361bfafe0eb0ca3aef78b068f59b8a5a2bf0a4db77",
+      "source_commit": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
+      "current_equal": false,
+      "public_copy": false
+    },
+    {
+      "path": "internal/app/plugin_original_host_storage.go",
+      "SHA256": "74f695d8952c650b675ec5c6a0da3996249b877332082e1e43353181416d121a",
+      "source_commit": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
+      "current_equal": false,
+      "public_copy": false
+    }
+  ],
+  "initial_test_sha256": "6445c9ef056ba257699063a75f60d2bb29ca5a3df724399c131133f381195a1d",
+  "initial_stdout_sha256": "be6d20ab62d5fda7e84e3c2cb44ce92d10c76f5ceacdcd4ea7692decdf623f47",
+  "new_stronger_same_inode_test_sha256": "9a7513730d393fe0819010fd0109b0ca3b42beb523949f2447679d6e696f2f9c",
+  "test_classification": "real imported synthetic media, actual App and production Rlk native process, fake catalog only; no fake host callbacks or ordinaryMain claim; old-source contract expects alias removal"
+}

@@ -1,0 +1,162 @@
+{
+  "removed_temporary_artifacts": [
+    {
+      "family": "categoryeditor",
+      "cmd": "category-editor",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/category-editor-native",
+      "sha256": "4f0b81903bb67e3be4a0c9874af08294ee386b44152bdd3dc703a0aa704c624a",
+      "bytes": 4524818
+    },
+    {
+      "family": "torrenttransfer",
+      "cmd": "torrent-transfer",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/torrent-transfer-native",
+      "sha256": "f4708e32f1ea42bb6d55067edab59346123e9cec17d4a7a3aacd3127e0d575ba",
+      "bytes": 5554930
+    },
+    {
+      "family": "removelink",
+      "cmd": "remove-link",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/remove-link-native",
+      "sha256": "f4eb54054763b3f0d75ca5286b41f924d900e0c359bfb686bbc70f900d0b56ee",
+      "bytes": 5187042
+    },
+    {
+      "family": "sitestatistic",
+      "cmd": "site-statistic",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/site-statistic-native",
+      "sha256": "7e4923605fd8640f380cbfbd51c341592adc787d6b163cb194eb848275bf6bed",
+      "bytes": 5631778
+    },
+    {
+      "family": "mpserverstatus",
+      "cmd": "mp-server-status",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/mp-server-status-native",
+      "sha256": "8b4b95c3f54369b83da67bd6467087a8fa9ccc72deb0026fb7ee51bd42c924e9",
+      "bytes": 16327122
+    },
+    {
+      "family": "pluginuninstall",
+      "cmd": "plugin-uninstall",
+      "target": "native",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/plugin-uninstall-native",
+      "sha256": "8b513d749ebd6d6ba2ddc9c1d4cfa813183e3d4502ad62bd724798e54406863b",
+      "bytes": 4805170
+    },
+    {
+      "family": "test-driver",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/source-interface-sdk-probe-linux",
+      "sha256": "64ef67ae55f9c799140330c3d1cc6e31901ae655476fe6b9d0103a04c579bc22",
+      "bytes": 4982583
+    }
+  ],
+  "retained_exact_main_inputs": [
+    {
+      "family": "categoryeditor",
+      "cmd": "category-editor",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/category-editor-linux",
+      "sha256": "3840d3307c9c0667ca0e97ba8febe35efc4597b8a66dd41521e01e2f98c080fb",
+      "bytes": 4628821
+    },
+    {
+      "family": "torrenttransfer",
+      "cmd": "torrent-transfer",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/torrent-transfer-linux",
+      "sha256": "3fb1ae31082a1256efb528ba036d437f872a2349bf223d163e71aae9b3eb2bd6",
+      "bytes": 5722660
+    },
+    {
+      "family": "removelink",
+      "cmd": "remove-link",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/remove-link-linux",
+      "sha256": "1afa9a6807faa9c237d7f65a8aa2048cb8a589ad123c349d627225d021d1f71b",
+      "bytes": 5401734
+    },
+    {
+      "family": "sitestatistic",
+      "cmd": "site-statistic",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/site-statistic-linux",
+      "sha256": "145f7439969d723e3512209262c8ab3d4c20b83b82027bb48852c1db545e5e30",
+      "bytes": 5776290
+    },
+    {
+      "family": "mpserverstatus",
+      "cmd": "mp-server-status",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/mp-server-status-linux",
+      "sha256": "32780c52accebb11329d9e54aea09c6dcc124f92532c1fd882e203b8aa8a793d",
+      "bytes": 16753358
+    },
+    {
+      "family": "pluginuninstall",
+      "cmd": "plugin-uninstall",
+      "target": "linux",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/plugin-uninstall-linux",
+      "sha256": "d001e6796321b8a7702aad9fe9c4785f2ad349c5b3d19b0008ed8d0440e0dbc3",
+      "bytes": 4942817
+    },
+    {
+      "family": "removelink",
+      "target": "linux-update-only-version",
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/bins/remove-link-2.18.1-linux",
+      "sha256": "d0b2bbda7f6366a91f7fda172922b99598be44cebe790cf14407e33881fd4125",
+      "bytes": 5401734
+    }
+  ],
+  "matching_local_task_processes": [],
+  "linux_remote_cleanup": {
+    "run": {
+      "argv": [
+        "docker",
+        "run",
+        "--rm",
+        "--pull=never",
+        "--label",
+        "task=lm-plugin-source-interfaces-20261106",
+        "--network=none",
+        "--read-only",
+        "--cap-drop=ALL",
+        "--security-opt=no-new-privileges",
+        "--user=1000:1000",
+        "--tmpfs",
+        "/tmp:rw,noexec,nosuid,nodev,size=16m",
+        "-v",
+        "/home/admin/light-media-plugins-migration-source-interfaces-20261106:/owned:ro",
+        "--entrypoint",
+        "/owned/source-interface-sdk-probe-linux",
+        "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+        "/owned/probe.json"
+      ],
+      "exit": 0,
+      "elapsed_seconds": 1.8999889129772782
+    },
+    "container_ids_remaining": [],
+    "removed_exact_owned_root": "/home/admin/light-media-plugins-migration-source-interfaces-20261106",
+    "owned_root_exists_after": false,
+    "removed_names": [
+      "TASK",
+      "category-editor-linux",
+      "mp-server-status-linux",
+      "plugin-uninstall-linux",
+      "probe.json",
+      "remove-link-2.18.1-linux",
+      "remove-link-linux",
+      "run-meta.json",
+      "site-statistic-linux",
+      "source-interface-sdk-probe-linux",
+      "source-oracle.json",
+      "torrent-transfer-linux"
+    ]
+  },
+  "note": "Seven Linux delivery/update inputs intentionally retained for Root Main6. All source/runtime temp processes and remote marker root are removed. No old acceptance input or Root main artifact was touched."
+}

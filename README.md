@@ -1,6 +1,8 @@
+> 2026-11-06：7/23 个实例已通过插件功能验收（含新增 RemoveLink）。本批插件配套宿主使用本地提交 `881f02673dd6bbab37f41e54ac66e6ed8e657688`；尚未推送或部署。
+
 # Light Media Plugins
 
-当前本地已验收 6/23 个实例：CategoryEditor（二级分类策略）1.3、TorrentTransfer（自动转移做种）1.10.3 及其音乐分身、SiteStatistic（站点数据统计）1.9.7、MPServerStatus（MoviePilot 服务监控）1.4、PluginUnInstall（插件彻底卸载）2.2。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
+已验收 7/23 个实例（CategoryEditor、TorrentTransfer 及音乐分身、SiteStatistic、MPServerStatus、PluginUnInstall、RemoveLink）。可选继承方法与发现顺序修正已通过当前原生主程序补充复验；原业务、页面、实机和外部协议证据保留原绑定，复用范围经独立审核，见[补验凭据](migration/evidence/source-interface-revalidation-20261106/ACCEPTANCE.json)。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
 ## CategoryEditor 安装与使用
 
@@ -24,7 +26,7 @@ CategoryEditor 原本通过 JSON `get_form` 使用宿主表单渲染器，没有
 
 ## 自动转移做种
 
-本地已验收的 TorrentTransfer 需要宿主提交
+已保存但正在补充复验的 TorrentTransfer 需要宿主提交
 `404daade9d5f321624e7b421dbf877a23fe5c2b9` 的 Source 下载器接口及其后续兼容实现。
 这些宿主改动目前仅在本地分支，尚未合并、推送或部署；已发布宿主 `75e13686` 不具备这些接口。
 本仓库新增代码也未推送，远端市场索引暂不包含此插件。
@@ -119,3 +121,9 @@ python3 scripts/build_plugins.py --output dist \
 - 第三方 Go 模块固定为 `golang.org/x/text v0.43.0`、服务监控候选所需的 `github.com/andybalholm/brotli v1.2.6` 和 `golang.org/x/net v0.61.0`。许可证、专利文本和适用的纯算法来源说明见 `third_party/`、`THIRD_PARTY_NOTICES.md` 及对应插件来源文档；候选依赖存在不代表插件已验收。
 
 本轮迁移约束与恢复入口：[`docs/migration-task.md`](docs/migration-task.md)。CategoryEditor 的保存、全局策略与分身配置关系，以及失败恢复、重启和卸载证据见 [`migration/evidence/categoryeditor-20261105/`](migration/evidence/categoryeditor-20261105/)。测试中的 1.3.1 仅为 manifest 更新夹具，不代表上游新版本或已发布制品。
+
+## RemoveLink 2.18
+
+已通过真实 Linux 主程序和浏览器验收，支持监控硬链接、延迟删除、排除规则、STRM 本地映射、刮削文件与空目录清理，以及平台统一管理的分身。真实整理生成的历史记录已验证按源/目标精确清理，并由独占测试通知接收服务实际收到三条原版通知。
+
+需要配套宿主本地提交 `881f02673dd6bbab37f41e54ac66e6ed8e657688`；当前配套改动未推送、未部署。源事件只有路径且没有种子哈希，因此不声称实际删除了下载器种子。内部审计与资产登记保留，选中历史记录从列表隐藏；私人配置和数据尚未导入。完整原版对照、实机与分层证据见 [验收记录](migration/evidence/removelink-20261106/ACCEPTANCE.json) 及 [来源与适配](plugins/removelink/ORIGIN.md)。

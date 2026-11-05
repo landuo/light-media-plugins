@@ -136,3 +136,5 @@ Actual host/site HTTP, browser rendering, disabled broadcast versus disabled API
 clone/cold-start/reset/update/uninstall and the final Source Sites native/App
 dependency gate are acceptance work owned by the coordinator. The independent
 CLI/SDK tests use synthetic resources and are not represented as those results.
+
+2026-11-06 source-checked declaration correction: the manifest omits `get_service`, `get_command`. The independent actual-Python3.12 source inventory distinguishes inherited/explicit `pass` from an implemented `return None`; compatible null Handle branches remain. API/page/auth declarations retain their separate source order. See [interface source and host dependency](../../tests/sourceinterfaces/ORIGIN.md). This new executable requires the finite host optional-lifecycle/discovery-gate/default-dashboard correction; older published host75e13686 rejects its artifact acquisition. SDK98 transport remains unchanged. The coordinator binds the exact new host commit separately; this note does not invent a released minimum version.

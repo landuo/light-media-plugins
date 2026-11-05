@@ -165,3 +165,7 @@ Run `go test -count=1 -race ./plugins/torrenttransfer ./cmd/torrent-transfer` fr
 repository worktree. Command-test binaries are created only in ignored `work/`
 and removed by the test. The migration coordinator owns the authoritative ledger,
 registry, host compatibility extension and real-service acceptance results.
+
+2026-11-06 source-checked declaration correction: the manifest omits `get_command`, `get_dashboard`, `get_dashboard_meta`, `get_module`. The independent actual-Python3.12 source inventory distinguishes inherited/explicit `pass` from an implemented `return None`; compatible null Handle branches remain. API/page/auth declarations retain their separate source order. See [interface source and host dependency](../../tests/sourceinterfaces/ORIGIN.md). This new executable requires the finite host optional-lifecycle/discovery-gate/default-dashboard correction; older published host75e13686 rejects its artifact acquisition. SDK98 transport remains unchanged. The coordinator binds the exact new host commit separately; this note does not invent a released minimum version.
+
+Subsequent source-auth correction: this family also omits inherited-pass `get_auth_providers`, after independently executing the source state-first/check_method auth registry. This supplements the initial20 omission note; compatible null Handle branches remain. See `tests/sourceinterfaces/ORIGIN.md` and the current23 source-interface revalidation evidence.

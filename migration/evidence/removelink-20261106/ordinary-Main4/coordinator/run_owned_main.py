@@ -1,0 +1,16 @@
+from pathlib import Path
+import os,json,hashlib,subprocess,datetime,time
+r=Path('/home/admin/light-media-plugins-migration-removelink-20261105');shared=Path('/home/admin/light-media-plugins-migration-sdk98-20261105')
+assert os.getuid()==1000 and (r/'.task-owned').read_text().strip()=='light-media-plugins/RemoveLink/20261105/owned-only'
+assert (shared/'.task-owned').read_text().strip()=='light-media-plugins/SDK98/20261105/owned-only'
+inputs=json.loads((r/'input-inventory-run4.json').read_text());assert len(inputs)==7
+for name,h in inputs.items():
+ p=Path(name);assert not p.is_symlink() and hashlib.sha256(p.read_bytes()).hexdigest()==h,name
+ if '/bin/' in name:p.chmod(0o755)
+host=shared/'bin/light-media-host-state3a-linux';assert hashlib.sha256(host.read_bytes()).hexdigest()=='1ddd264a1c83b1e1ce1d7588fe610f5351c2eb5d0f87f9e5931d70227f0a2f0f'
+run=r/'main-run-4';assert not run.exists()
+env=dict(os.environ,REMOVELINK_HOST_BINARY=str(host),REMOVELINK_EXPECT_HOST_SHA256='1ddd264a1c83b1e1ce1d7588fe610f5351c2eb5d0f87f9e5931d70227f0a2f0f',REMOVELINK_WORKER_BINARY=str(r/'bin/remove-link-final59-sdk98-linux'),REMOVELINK_UPDATE_WORKER_BINARY=str(r/'bin/remove-link-update-final59-sdk98-linux'),REMOVELINK_FRONTEND_DIR=str(r/'frontend-run4'),REMOVELINK_RUNTIME_DIR=str(run),REMOVELINK_LISTEN='0.0.0.0:36256',REMOVELINK_PUBLIC_URL='http://192.168.8.129:36256',REMOVELINK_UI_WAIT='1')
+cmd=[str(r/'bin/removelink-main4-linux.test'),'-test.run=^TestRemoveLinkActualMain$','-test.v','-test.timeout=35m'];meta={'classification':'actual native UID1000 ordinary Go Main0719+PUI19+finite state4 and independent source/private final59 SDK98 Rlk2.18; owned synthetic files only, no original config/production media/torrent or external notice account','command':cmd,'environment':{k:v for k,v in env.items()if k.startswith('REMOVELINK_')},'input_sha256':inputs,'producer59_manifest_sha256':'d52bf7b0f6e06ef524833ccbb079b5a8a43305dc4f950d39e6ccd1767fc5b156','source_private_review_sha256':'15d1a7c2ebf368dfc3f6e47a154d39324e7b5c468a2ef6b1b34b463766f01eaf','host_state_review_sha256':'3e696b77277d6ee383e0b34d469484c4020bae3567398d91ad9147970b030557','host_PUI_review_sha256':'1c17eb1e7be21ddc00ec815ad4222f1c9f0afd21a2dd1daca12ecdd4404b5026','prepared_local_binding_sha256':'44cde9e9a9bc5740e90da210ec1f85ae33dc97a82da255217191e85e43ec44c1','source_typed_state_boundary':'native bool card projection compares source internal truth; original Python non-bool HTTP serialization is not claimed identical','started_utc':datetime.datetime.now(datetime.timezone.utc).isoformat(),'python_role':'owned test orchestration only; host and plugin product code allGo'}
+p=r/'main-run-4-command.json';p.write_text(json.dumps(meta,indent=2)+'\n');start=time.monotonic()
+with (r/'main-run-4.log').open('wb') as log:out=subprocess.run(cmd,cwd=r,env=env,stdout=log,stderr=subprocess.STDOUT)
+meta.update(exit_code=out.returncode,seconds=time.monotonic()-start,ended_utc=datetime.datetime.now(datetime.timezone.utc).isoformat());p.write_text(json.dumps(meta,indent=2)+'\n');print(json.dumps({'exit_code':out.returncode,'seconds':meta['seconds']}));print((r/'main-run-4.log').read_text()[-5500:]);raise SystemExit(out.returncode)

@@ -1,0 +1,117 @@
+{
+  "inputs": {
+    "count": 228,
+    "pre_post_equal": true,
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+  },
+  "runs": {
+    "full-normal": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 9,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 11.986
+        }
+      ]
+    },
+    "full-race": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 9,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 58.866
+        }
+      ]
+    }
+  },
+  "native_matrix": {
+    "before": [
+      {
+        "mode": "present-empty",
+        "exit": 0,
+        "UID": 65533,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "present-value",
+        "exit": 0,
+        "UID": 65533,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "absent-found",
+        "exit": 0,
+        "UID": 65534,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "absent-unmapped",
+        "exit": 1,
+        "UID": 65533,
+        "pass_nodes": 1,
+        "fail_nodes": 3
+      }
+    ],
+    "after": [
+      {
+        "mode": "present-empty",
+        "exit": 0,
+        "UID": 65533,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "present-value",
+        "exit": 0,
+        "UID": 65533,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "absent-found",
+        "exit": 0,
+        "UID": 65534,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      },
+      {
+        "mode": "absent-unmapped",
+        "exit": 0,
+        "UID": 65533,
+        "pass_nodes": 4,
+        "fail_nodes": 0
+      }
+    ]
+  },
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/remove-link-linux",
+      "sha256": "e2191c411bf55dc0c59b7d6acc6daad5c36f8a3d6b33b4496b8794a606648503",
+      "bytes": 5401758
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-ctor-20261106/remove-link-2.18.1-linux",
+      "sha256": "866a3549a65c3ef988592df1bbb989c4f5b809252aef6697e7a99c7e6aea8ff7",
+      "bytes": 5401758
+    }
+  ]
+}

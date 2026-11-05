@@ -1,0 +1,224 @@
+Browser tab: 11, Title: "光影 · Light Media", URL: "http://192.168.8.129:36256/#plugins".
+1 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36256/#plugins
+	2 container app
+		3 container
+			4 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36256/#discover
+			5 link Description: 搜索结果, Value: 192.168.8.129:36256/#search
+			6 text 发现
+			7 link Description: 推荐, Value: 192.168.8.129:36256/#discover
+			8 link Description: 探索, Value: 192.168.8.129:36256/#explore
+			9 link Description: 仪表板, Value: 192.168.8.129:36256/#dashboard
+			10 text 订阅
+			11 link Description: 电影, Value: 192.168.8.129:36256/#subscriptions?type=movie
+			12 link Description: 电视剧, Value: 192.168.8.129:36256/#subscriptions?type=tv
+			13 link Description: 日历, Value: 192.168.8.129:36256/#calendar
+			14 text 整理
+			15 link Description: 下载管理, Value: 192.168.8.129:36256/#downloads
+			16 link Description: 整理历史, Value: 192.168.8.129:36256/#history
+			17 link Description: 文件管理, Value: 192.168.8.129:36256/#files
+			18 text 系统
+			19 link Description: 站点管理, Value: 192.168.8.129:36256/#sites
+			20 link Description: 插件, Value: 192.168.8.129:36256/#plugins
+			21 link Description: 任务队列, Value: 192.168.8.129:36256/#jobs
+			22 link Description: 日志, Value: 192.168.8.129:36256/#logs
+			23 link Description: 设置, Value: 192.168.8.129:36256/#settings
+		24 container
+			25 button 搜索影视
+			26 text field (settable) 搜索电影、剧集
+			27 text ⌘K
+			28 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			29 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			31 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+				32 container 有未读通知
+			33 button 退出登录
+		34 container
+			35 tab group
+				36 container
+					37 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					38 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			39 button 搜索插件
+			40 button 筛选已安装插件
+			41 button 排序插件
+			42 container
+				43 text 清理媒体文件  v2.18 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				44 link Description: DzAvril, Value: github.com/DzAvril
+				45 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			46 container
+				47 text 清理媒体文件  v2.18.1 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				48 link Description: DzAvril, Value: github.com/DzAvril
+				49 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			50 button 新建文件夹
+	51 container
+		52 container 关闭插件日志 插件日志 搜索日志内容 暂停日志流 2026/11/06 04:29:24 INFO: 04:29:24,070plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-043.mkv INFO: 04:29:24,076plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-089.mkv INFO: 04:29:24,084plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-050.mkv INFO: 04:29:24,089plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-016.mkv INFO: 04:29:24,096plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-083.mkv INFO: 04:29:24,102plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-021.mkv INFO: 04:29:24,110plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-045.mkv INFO: 04:29:24,123plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-044.mkv INFO: 04:29:24,133plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-051.mkv INFO: 04:29:24,142plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-032.mkv INFO:
+			53 container
+				54 button 关闭插件日志
+				55 text 插件日志
+				56 link 192.168.8.129:36256/api/plugins/RemoveLink/logs/download
+				57 link 192.168.8.129:36256/api/plugins/RemoveLink/logs/file
+				59 combo box (collapsed) Secondary Actions: Expand
+					60 container
+						61 text 全部级别
+						62 text field (settable) Description: 日志级别, Help: Open, Value: ALL, ID: input-178
+				63 container
+					64 text field (settable) Description: 搜索日志内容, ID: input-181
+				65 button 暂停日志流
+				66 text 2026/11/06 04:29:24
+				67 text INFO:
+				68 container
+					69 text 04:29:24,070 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-043.mkv
+				70 text INFO:
+				71 container
+					72 text 04:29:24,076 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-089.mkv
+				73 text INFO:
+				74 container
+					75 text 04:29:24,084 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-050.mkv
+				76 text INFO:
+				77 container
+					78 text 04:29:24,089 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-016.mkv
+				79 text INFO:
+				80 container
+					81 text 04:29:24,096 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-083.mkv
+				82 text INFO:
+				83 container
+					84 text 04:29:24,102 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-021.mkv
+				85 text INFO:
+				86 container
+					87 text 04:29:24,110 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-045.mkv
+				88 text INFO:
+				89 container
+					90 text 04:29:24,123 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-044.mkv
+				91 text INFO:
+				92 container
+					93 text 04:29:24,133 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-051.mkv
+				94 text INFO:
+				95 container
+					96 text 04:29:24,142 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-032.mkv
+				97 text INFO:
+				98 container
+					99 text 04:29:24,150 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-052.mkv
+				100 text INFO:
+				101 container
+					102 text 04:29:24,173 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-034.mkv
+				103 text INFO:
+				104 container
+					105 text 04:29:24,186 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-060.mkv
+				106 text INFO:
+				107 container
+					108 text 04:29:24,193 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-041.mkv
+				109 text INFO:
+				110 container
+					111 text 04:29:24,202 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-073.mkv
+				112 text INFO:
+				113 container
+					114 text 04:29:24,209 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-054.mkv
+				115 text INFO:
+				116 container
+					117 text 04:29:24,215 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-077.mkv
+				118 text INFO:
+				119 container
+					120 text 04:29:24,222 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-033.mkv
+				121 text INFO:
+				122 container
+					123 text 04:29:24,230 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-065.mkv
+				124 text INFO:
+				125 container
+					126 text 04:29:24,237 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-004.mkv
+				127 text INFO:
+				128 container
+					129 text 04:29:24,246 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-018.mkv
+				130 text INFO:
+				131 container
+					132 text 04:29:24,253 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-074.mkv
+				133 text INFO:
+				134 container
+					135 text 04:29:24,259 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-009.mkv
+				136 text INFO:
+				137 container
+					138 text 04:29:24,267 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-080.mkv
+				139 text INFO:
+				140 container
+					141 text 04:29:24,279 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-047.mkv
+				142 text INFO:
+				143 container
+					144 text 04:29:24,289 plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-026.mkv
+				145 text 2026/11/06 04:29:24
+				146 text INFO:
+				147 container
+					148 text 04:29:24,653 plugins - 初始化媒体文件清理插件
+				149 text INFO:
+				150 container
+					151 text 04:29:24,658 plugins - 延迟删除功能已启用，延迟时间: 86400 秒
+				152 text INFO:
+				153 container
+					154 text 04:29:24,660 plugins - STRM 文件删除监控功能已禁用
+				155 text INFO:
+				156 container
+					157 text 04:29:24,661 plugins - 硬链接监控目录：['/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop']
+				158 text INFO:
+				159 container
+					160 text 04:29:24,670 plugins - /home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop 的硬链接监控服务启动
+				161 text INFO:
+				162 container
+					163 text 04:29:24,673 plugins - 更新文件列表完成，共计 0 个文件，耗时 0.00 秒
+				164 text 2026/11/06 04:29:26
+				165 text INFO:
+				166 container
+					167 text 04:29:26,529 plugins - 初始化媒体文件清理插件
+				168 text INFO:
+				169 container
+					170 text 04:29:26,533 plugins - 延迟删除功能已启用，延迟时间: 86400 秒
+				171 text INFO:
+				172 container
+					173 text 04:29:26,533 plugins - STRM 文件删除监控功能已禁用
+				174 text INFO:
+				175 container
+					176 text 04:29:26,534 plugins - 硬链接监控目录：['/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop']
+				177 text INFO:
+				178 container
+					179 text 04:29:26,538 plugins - /home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop 的硬链接监控服务启动
+				180 text INFO:
+				181 container
+					182 text 04:29:26,541 plugins - 更新文件列表完成，共计 0 个文件，耗时 0.00 秒
+				183 text 2026/11/06 04:29:27
+				184 text INFO:
+				185 container
+					186 text 04:29:27,544 plugins - 初始化媒体文件清理插件
+				187 text 2026/11/06 04:31:52
+				188 text INFO:
+				189 container
+					190 text 04:31:52,020 plugins - 初始化媒体文件清理插件
+				191 text INFO:
+				192 container
+					193 text 04:31:52,026 plugins - 延迟删除功能已禁用，将使用立即删除模式
+				194 text INFO:
+				195 container
+					196 text 04:31:52,026 plugins - STRM 文件删除监控功能已禁用
+				197 text INFO:
+				198 container
+					199 text 04:31:52,027 plugins - 硬链接监控目录：['/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui']
+				200 text INFO:
+				201 container
+					202 text 04:31:52,032 plugins - /home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui 的硬链接监控服务启动
+				203 text INFO:
+				204 container
+					205 text 04:31:52,034 plugins - 更新文件列表完成，共计 4 个文件，耗时 0.00 秒
+				206 text 2026/11/06 04:33:47
+				207 text INFO:
+				208 container
+					209 text 04:33:47,738 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui/browser-source.mkv
+				210 text INFO:
+				211 container
+					212 text 04:33:47,741 plugins - 立即删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui/browser-alias-0.mkv
+				213 text INFO:
+				214 container
+					215 text 04:33:47,745 plugins - 立即删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui/browser-alias-1.mkv
+				216 text INFO:
+				217 container
+					218 text 04:33:47,761 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui/browser-alias-0.mkv
+				219 text INFO:
+				220 container
+					221 text 04:33:47,774 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/ui/browser-alias-1.mkv
+
+The focused UI element is 52 container 关闭插件日志 插件日志 搜索日志内容 暂停日志流 2026/11/06 04:29:24 INFO: 04:29:24,070plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-043.mkv INFO: 04:29:24,076plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-089.mkv INFO: 04:29:24,084plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-050.mkv INFO: 04:29:24,089plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-016.mkv INFO: 04:29:24,096plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-083.mkv INFO: 04:29:24,102plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-021.mkv INFO: 04:29:24,110plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-045.mkv INFO: 04:29:24,123plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-044.mkv INFO: 04:29:24,133plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-051.mkv INFO: 04:29:24,142plugins - 延迟删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-7/files/queued-stop/queued-stop-link-032.mkv INFO:

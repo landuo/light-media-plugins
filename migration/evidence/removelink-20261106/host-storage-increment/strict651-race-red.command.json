@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-overlay",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/managed-history-guard-review/before651-overlay.json",
+    "-run",
+    "^TestIndependentRemoveLinkActualHistoryManagedAliasSourceContract$",
+    "-v",
+    "./internal/app"
+  ],
+  "exit": 1,
+  "seconds": 29.737753868103027,
+  "classification": "two full production files fixed to original651 Git bytes; stronger actual same-inode assertion before source event; native realworker not race-instrumented"
+}

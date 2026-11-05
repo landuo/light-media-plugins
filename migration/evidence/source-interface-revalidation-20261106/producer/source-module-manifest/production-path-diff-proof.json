@@ -1,0 +1,70 @@
+[
+  {
+    "path": "plugins/categoryeditor/categoryeditor.go",
+    "before_sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+    "after_sha256": "2cab5876eabfff1d22cfdf5e53b8bf88a4301434388ff56c6ae4d60c7614fbfd",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta",
+      "get_module"
+    ]
+  },
+  {
+    "path": "plugins/torrenttransfer/plugin.go",
+    "before_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2",
+    "after_sha256": "48f099f1c0faa669ef78654e1ea08b52e2ed88c363203227ba3e6ba0f1d3567d",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta",
+      "get_module"
+    ]
+  },
+  {
+    "path": "plugins/removelink/plugin.go",
+    "before_sha256": "37411f3b003987ec094c3812b84073efd1fdbcbe6196d015965e9db6d1b19521",
+    "after_sha256": "45139714a32b260fb1de961bc11604dc1bc689d60b4e358a4ef6c700bcc6d39a",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta",
+      "get_module"
+    ]
+  },
+  {
+    "path": "plugins/sitestatistic/plugin.go",
+    "before_sha256": "30cffd306fa235bf6abc3a14f60d6b87101a6ffc5dea3aa7ee7ce7e88f35bf91",
+    "after_sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_service",
+      "get_command"
+    ]
+  },
+  {
+    "path": "plugins/mpserverstatus/plugin.go",
+    "before_sha256": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+    "after_sha256": "9023a12cb3cf820e8e731d0665d10e127fc6d1f4c70de0f98d59bdb8ae8d18a6",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_service"
+    ]
+  },
+  {
+    "path": "plugins/pluginuninstall/plugin.go",
+    "before_sha256": "ca1130940a858c1582e181ec9c0615159bedca6c1bd7d0175fe58312107774bc",
+    "after_sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+    "only_manifest_method_removals_and_gofmt": true,
+    "removed": [
+      "get_service",
+      "get_command",
+      "get_dashboard"
+    ]
+  }
+]

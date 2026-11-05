@@ -1,0 +1,141 @@
+{
+  "schema_version": 1,
+  "plugins": [
+    {
+      "schema_version": 1,
+      "plugin_id": "RemoveLink",
+      "current_version": "2.18",
+      "releases": [
+        {
+          "version": "2.18",
+          "manifest": {
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "frontend",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config"
+              ],
+              "shared": [
+                "vue"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "RemoveLink",
+            "name": "清理媒体文件",
+            "description": "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能",
+            "icon": "Ombi_A.png",
+            "author": "DzAvril",
+            "author_url": "https://github.com/DzAvril",
+            "version": "2.18",
+            "runtime": "go-executable",
+            "entry": "remove-link",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_api",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop",
+              "cleanup_continue",
+              "private_watch",
+              "private_observer",
+              "private_timer"
+            ],
+            "capabilities": [
+              "storage.files.exists",
+              "storage.files.list",
+              "storage.files.delete",
+              "history.transfer.read",
+              "history.transfer.delete",
+              "event.send",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.log.write",
+              "settings.read",
+              "plugin.background.submit",
+              "plugin.cleanup.submit"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://example.invalid/not-published/removelink-20261106/RemoveLink-2.18-linux-amd64.zip",
+              "sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+              "size": 3046957,
+              "format": "zip",
+              "executable_sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 4355,
+                  "sha256": "4ed7da4be12d120e8e722a685059b324944b019dc10a0d287f852d9ffe42b84f"
+                },
+                {
+                  "path": "frontend/remoteEntry.js",
+                  "size": 980,
+                  "sha256": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b"
+                },
+                {
+                  "path": "frontend/style.css",
+                  "size": 7201,
+                  "sha256": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500"
+                },
+                {
+                  "path": "frontend/view.js",
+                  "size": 10754,
+                  "sha256": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388"
+                },
+                {
+                  "path": "remove-link",
+                  "size": 5401766,
+                  "sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

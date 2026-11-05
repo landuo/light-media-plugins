@@ -191,12 +191,14 @@ def collect_frontend(output: Path, front: dict) -> dict[str, bytes]:
             if reference in front["shared"]:
                 continue
             parsed = urlsplit(reference)
-            if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment or reference.startswith("/") or "\\" in reference:
+            if parsed.scheme or parsed.netloc or parsed.fragment or reference.startswith("/") or "\\" in reference:
                 raise BuildError("frontend graph must use package-relative asset URLs")
             if not reference.startswith(".") and PurePosixPath(name).suffix.lower() != ".css":
                 raise BuildError(f"unresolved non-shared frontend module: {reference}")
             parts = list(PurePosixPath(name).parent.parts)
-            for part in reference.split("/"):
+            # Cache hints are not file identity. Preserve the original bytes,
+            # resolving only the path used by the source static-file endpoint.
+            for part in parsed.path.split("/"):
                 if part in {"", "."}:
                     continue
                 if part == "..":

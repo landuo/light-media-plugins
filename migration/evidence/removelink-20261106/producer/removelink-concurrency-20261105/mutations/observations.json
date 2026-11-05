@@ -1,0 +1,110 @@
+[
+  {
+    "name": "no-round-robin",
+    "build_command": [
+      "go",
+      "test",
+      "-race",
+      "-c",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/no-round-robin/overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/no-round-robin/removelink.test",
+      "./plugins/removelink"
+    ],
+    "build_exit": 0,
+    "source_sha256": "231d97d29f67dee0a1c033fc6f89d701426ff4031235631a52de69d54031e29f",
+    "binary_sha256": "b7c3ad8b173eb10bf238c017c41afc4d4d09f343751558108baf8d69c7048297",
+    "run_command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/no-round-robin/removelink.test",
+      "-test.v",
+      "-test.timeout=18s",
+      "-test.run=^TestActualWorkerTenObserverRootsFairWhileSixCallbacksBlocked$"
+    ],
+    "run_exit": 1,
+    "elapsed": 5.774328333325684,
+    "killed": true,
+    "binary_removed": true
+  },
+  {
+    "name": "observer-source-error-aborts-all",
+    "build_command": [
+      "go",
+      "test",
+      "-race",
+      "-c",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-source-error-aborts-all/overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-source-error-aborts-all/removelink.test",
+      "./plugins/removelink"
+    ],
+    "build_exit": 0,
+    "source_sha256": "3f5345d54b4d94955e784f247d057e1f460fd57042fb09b46ed43eb5de0947c7",
+    "binary_sha256": "238e00cf3dcc04d24971b7b5c240432224a94365747ae9a0054a9bf5304afbc3",
+    "run_command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-source-error-aborts-all/removelink.test",
+      "-test.v",
+      "-test.timeout=18s",
+      "-test.run=^TestActualWorkerTypedSourceAttributeStopsOnlyItsObserver$"
+    ],
+    "run_exit": 1,
+    "elapsed": 5.559515125118196,
+    "killed": true,
+    "binary_removed": true
+  },
+  {
+    "name": "observer-not-started-before-bulk",
+    "build_command": [
+      "go",
+      "test",
+      "-race",
+      "-c",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-not-started-before-bulk/overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-not-started-before-bulk/removelink.test",
+      "./plugins/removelink"
+    ],
+    "build_exit": 0,
+    "source_sha256": "6a406b34f1ccaf2a587fd5dc48dd4fce39c8c64500fd6b24dbb6dbce1d8a16ee",
+    "binary_sha256": "967c7ba6253ee12afe10897794baa4baf8ccdedab5b299a05dfa4aa9a726d003",
+    "run_command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/observer-not-started-before-bulk/removelink.test",
+      "-test.v",
+      "-test.timeout=18s",
+      "-test.run=^TestActualWorkerObserverStartsBeforeInitialBulkScanCompletes$"
+    ],
+    "run_exit": 1,
+    "elapsed": 5.583920499775559,
+    "killed": true,
+    "binary_removed": true
+  },
+  {
+    "name": "stop-does-not-join",
+    "build_command": [
+      "go",
+      "test",
+      "-race",
+      "-c",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/stop-does-not-join/overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/stop-does-not-join/removelink.test",
+      "./plugins/removelink"
+    ],
+    "build_exit": 0,
+    "source_sha256": "a0201ee94272bd55ef7e71fab2c67289edcf8cbb7982d92f5179d0b5ee031733",
+    "binary_sha256": "4a4551eea40de687a415b1c6f683c3afd72c3b6956092a3b132e3f5d1251634a",
+    "run_command": [
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-concurrency-20261105/mutations/stop-does-not-join/removelink.test",
+      "-test.v",
+      "-test.timeout=18s",
+      "-test.run=^TestActualWorkerStopWaitsForIndependentObserverAndTimerWork$"
+    ],
+    "run_exit": 1,
+    "elapsed": 1.5819862079806626,
+    "killed": true,
+    "binary_removed": true
+  }
+]

@@ -1,0 +1,118 @@
+{
+  "producer-before-repr-race": {
+    "pass": 0,
+    "fail": 4,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "fail",
+        "Elapsed": 5.826
+      }
+    ]
+  },
+  "producer-before-order-race": {
+    "pass": 0,
+    "fail": 4,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "fail",
+        "Elapsed": 1.043
+      }
+    ]
+  },
+  "producer-targeted-race": {
+    "pass": 17,
+    "fail": 0,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 15.159
+      }
+    ]
+  },
+  "full-normal": {
+    "pass": 226,
+    "fail": 0,
+    "skip": 8,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 11.556000000000001
+      }
+    ]
+  },
+  "full-race": {
+    "pass": 226,
+    "fail": 0,
+    "skip": 8,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 56.88
+      }
+    ]
+  },
+  "independent-new-reds-to-green-race": {
+    "pass": 0,
+    "fail": 8,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "fail",
+        "Elapsed": 0.66
+      }
+    ],
+    "classification": "Historical fixture error: original reviewer overlay pins complete old375c producer, so this intentionally preserved failed attempt does not test the repaired producer."
+  },
+  "independent-current-r2-race": {
+    "pass": 8,
+    "fail": 0,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 1.528
+      }
+    ],
+    "classification": "Only independent assertion file overlaid; actual current producer and all original assertions."
+  },
+  "input_binding": {
+    "before_after_equal": true,
+    "compile_and_runtime_fixture_files": 227,
+    "source_builtin_repr_count": 4448256,
+    "source_builtin_repr_sha256": "d1c5a884cd44630b3d0c7a66e761142dc673c83618c15e8706ec916cecfac04c",
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+  },
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-repr-20261106/remove-link-linux",
+      "sha256": "4d4ea1a6ba02b7ac065a570663fa2ca1abdf2976fd35cb0e6d6e87e854a85e15",
+      "bytes": 5400895
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-repr-20261106/remove-link-2.18.1-linux",
+      "sha256": "9cf06b9069ce16cbe29a1c098f09b26f21345f3840230f228d5639379a01ea69",
+      "bytes": 5400895,
+      "adaptation": "Only plugin Manifest.Version 2.18\u21922.18.1 using complete plugin.go overlay; production file unchanged."
+    }
+  ]
+}

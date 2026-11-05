@@ -1,0 +1,44 @@
+{
+  "source_driver_sha256": "6e48dd4066ed75760148bf58b996e792a09570005117731b80c1e43cfe6643da",
+  "producer_freeze_sha256": "21a5c6e3d6373a0c0c186e64e6541c33e02581148a2010ece311932e9c9579f0",
+  "source376_inputs_verified": 376,
+  "all_pre_post_same": true,
+  "GOFLAGS": "",
+  "classification": "independent compile-only Linux reproduction; ordinaryMain raw execution reviewed separately",
+  "results": [
+    {
+      "argv": [
+        "go",
+        "test",
+        "-tags=removelink_business_acceptance",
+        "-c",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/business-main-final-review/business-driver",
+        "./tests/integration"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "seconds": 0.39765286445617676,
+      "exit": 0,
+      "ELF_SHA256": "757ce25cdde414437ccdcb43e62ab09b9612c72264a8fdf78174d4ce81db80b4",
+      "matches_actual_NAS_execution_input": true
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/business-main-final-review/notice-fixture",
+        "./cmd/owned-notice-fixture"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "seconds": 0.3184692859649658,
+      "exit": 0,
+      "ELF_SHA256": "406d13fa0e7c36ee30968117198e9c1ee84f5105fae10d15632e25cf78292952",
+      "matches_actual_NAS_execution_input": true
+    }
+  ]
+}

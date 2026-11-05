@@ -1,0 +1,43 @@
+=== RUN   TestSourceCheckedManifestDeclarations
+=== RUN   TestSourceCheckedManifestDeclarations/categoryeditor
+    manifest_source_test.go:50: get_module advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_service advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard_meta advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/torrenttransfer
+    manifest_source_test.go:50: get_module advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard_meta advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/torrenttransfermusic
+    manifest_source_test.go:50: get_module advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard_meta advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/sitestatistic
+    manifest_source_test.go:50: get_service advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/mpserverstatus
+    manifest_source_test.go:50: get_service advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/pluginuninstall
+    manifest_source_test.go:50: get_service advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard advertised=true, executed source check_method=false
+=== RUN   TestSourceCheckedManifestDeclarations/removelink
+    manifest_source_test.go:50: get_module advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_service advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_command advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard advertised=true, executed source check_method=false
+    manifest_source_test.go:50: get_dashboard_meta advertised=true, executed source check_method=false
+--- FAIL: TestSourceCheckedManifestDeclarations (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/categoryeditor (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/torrenttransfer (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/torrenttransfermusic (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/sitestatistic (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/mpserverstatus (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/pluginuninstall (0.00s)
+    --- FAIL: TestSourceCheckedManifestDeclarations/removelink (0.00s)
+FAIL
+FAIL	github.com/landuo/light-media-plugins/tests/sourceinterfaces	0.757s
+FAIL

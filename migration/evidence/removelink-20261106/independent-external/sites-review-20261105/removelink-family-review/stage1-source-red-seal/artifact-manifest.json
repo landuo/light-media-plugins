@@ -1,0 +1,271 @@
+{
+  "status": "sealed source-discovery and independent red; final family acceptance pending authorized fixes",
+  "source_sha256": "22fb375e531378b3454607c7bca305b637abd60ee8ed69e14e32fbc2ddfc5485",
+  "original_47_manifest_sha256": "f777643a8998594f878d99bc5254e1d1b7a9f5e8e8cd655bce88bfc33c1d1f35",
+  "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "files": [
+    {
+      "path": "concurrency-independent-overlay.json",
+      "bytes": 246,
+      "sha256": "9b179fb05772e5f8c7e679908fcfde5df322d9c0bcf712afde8efb100b715870"
+    },
+    {
+      "path": "concurrency-independent-overlay_test.go",
+      "bytes": 8048,
+      "sha256": "b6a838643ef7e2b4a63c9b2307a9e80541855e792c1fa58e0899117e32a07e79"
+    },
+    {
+      "path": "delay-overflow-red.log",
+      "bytes": 406,
+      "sha256": "bc4f729671383facd16499940950be08a2bb1548a5e18745abf47ce30f9dd539"
+    },
+    {
+      "path": "delayed-create-red.log",
+      "bytes": 599,
+      "sha256": "dbc02d2d24ecd77ff64f86eb5aed0df37ae2ac1304b79b3687b6a9e26853e153"
+    },
+    {
+      "path": "delayed-create-source-command.json",
+      "bytes": 726,
+      "sha256": "126d9cca786cf3fac2ed2f21a161f1c1c476a18326542f28c1970b502f944bed"
+    },
+    {
+      "path": "delayed-create-source-oracle.json",
+      "bytes": 1911,
+      "sha256": "f9c4902c0b7bf864d0372bfc88f448f85aba5a9c4f9c01764786e9fb09d6c8b3"
+    },
+    {
+      "path": "delayed-create-source-payload.py",
+      "bytes": 105754,
+      "sha256": "486402f16e7bbac56eb7c4d15c3545954ec24f0fd95e0337dfdfb7677b0e4959"
+    },
+    {
+      "path": "delayed-create-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "findings-stage1.md",
+      "bytes": 6336,
+      "sha256": "3eb5d837edccb9ded5247bedb033410b1a948ae221acfb30939593a2b8acfce0"
+    },
+    {
+      "path": "independent-overlay.json",
+      "bytes": 241,
+      "sha256": "dd9678a21eedb888fbd4cc759c56fcb54fbbb488db00658425fff55aa07c99db"
+    },
+    {
+      "path": "init-source-command.json",
+      "bytes": 744,
+      "sha256": "f6381992fcd2c7ea62e056af4c32a3feb8159f15472e55fd3601882a58f4c7a3"
+    },
+    {
+      "path": "init-source-command.json.attempt1",
+      "bytes": 741,
+      "sha256": "0621a54c7f95409a7d2c079ea90c2b18011c4e4f46d263d23ec8a6e0385017f8"
+    },
+    {
+      "path": "init-source-oracle.json",
+      "bytes": 2802,
+      "sha256": "abfa4d7ad240e2e7a9d66241064c1ffdaafc94af26056371a34934bac2350097"
+    },
+    {
+      "path": "init-source-oracle.json.attempt1",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-source-payload.py",
+      "bytes": 8109,
+      "sha256": "b1e6966f87c90a0bd66764d22855b316b0716404b071bb9d7b137e8de0c88bb3"
+    },
+    {
+      "path": "init-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "init-source-stderr.txt.attempt1",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "initial-target-binding.json",
+      "bytes": 15015,
+      "sha256": "2c6ad5e8d80f12509fbad95747208955bd28b2e8153198ee8507575d96659447"
+    },
+    {
+      "path": "log-source-command.json",
+      "bytes": 934,
+      "sha256": "6f2fa97b65c4fa6e6b6c6ed8fadd1d249d3498ea4bd3ce34e859cc3c692f9145"
+    },
+    {
+      "path": "log-source-command.json.attempt1",
+      "bytes": 934,
+      "sha256": "875423e10a54535df06c59cfa6a4eb7329219107503395cdc12561e0accd0ee4"
+    },
+    {
+      "path": "log-source-oracle.json",
+      "bytes": 16265,
+      "sha256": "f7158984651f383ba5484caa9115fa3a1e75eca8079192227d3051446836ecbf"
+    },
+    {
+      "path": "log-source-oracle.json.attempt1",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "log-source-payload.py",
+      "bytes": 104965,
+      "sha256": "f67664804240b75459aa03ce16cd3190ff1da864b72d05d90884f045efb3f7f2"
+    },
+    {
+      "path": "log-source-payload.py.attempt1",
+      "bytes": 104969,
+      "sha256": "77f6890f397251fd3adaf95a4f8765b6fa79ca18898cf2179a50d2ece04113d2"
+    },
+    {
+      "path": "log-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "log-source-stderr.txt.attempt1",
+      "bytes": 161,
+      "sha256": "25af517bcba7f9b68928c2bf6146f569f2d060eb3f91e1316b854a1767a18b10"
+    },
+    {
+      "path": "named-home-independent-overlay.json",
+      "bytes": 245,
+      "sha256": "c0c9f2b1751433c2c62c95586cc00cfee3a1346466adadaa8baee527db9d67ea"
+    },
+    {
+      "path": "named-home-independent-overlay_test.go",
+      "bytes": 6972,
+      "sha256": "d2b8c085c7dc57e1b32daca78247a320e86d1b35d73bf2a938c15c8aad770f0f"
+    },
+    {
+      "path": "named-home-independent-overlay_test.go.linux-fixture-on-mac-historical",
+      "bytes": 6748,
+      "sha256": "dcabc84acb404a5a82557324f696c1d620ee33c8890fbae252387f3d3025e94d"
+    },
+    {
+      "path": "named-home-red.log",
+      "bytes": 377,
+      "sha256": "567b4e9e379982cc6df848cf9e34aa69695566f6ecd43771b53c903e6b8fc26f"
+    },
+    {
+      "path": "named-home-red.log.linux-fixture-on-mac-historical",
+      "bytes": 316,
+      "sha256": "b3776367d772c273fe00e2d4978d997c6b0c6f3fa2b7246cb3328eaa0724bf80"
+    },
+    {
+      "path": "named-home-source-command.json",
+      "bytes": 720,
+      "sha256": "eed5b5fbd28b42b486c49bbd7b1517656cf995247a6a07f250ba6b785e65af16"
+    },
+    {
+      "path": "named-home-source-oracle.json",
+      "bytes": 539,
+      "sha256": "715da4f23aa4fb4c01ad880476ddbb42502cfc46624c3d9d1a40a4c4463dfe8e"
+    },
+    {
+      "path": "named-home-source-payload.py",
+      "bytes": 103765,
+      "sha256": "78ecb2348e34b602d4f66a6d48b6fce2daa4a25130f7933194645071c7537012"
+    },
+    {
+      "path": "named-home-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "observer-failure-independent-overlay.json",
+      "bytes": 251,
+      "sha256": "6f73f782ff00d181502fcc388062e4e7bc2ffe72be4f6e1e826d83223d945b94"
+    },
+    {
+      "path": "observer-failure-independent-overlay_test.go",
+      "bytes": 7451,
+      "sha256": "0bb3648a276cb28a53a58819f958e42df3f1a16c737ab2af0656a7d35ddbada6"
+    },
+    {
+      "path": "observer-failure-red.log",
+      "bytes": 401,
+      "sha256": "97f0ac15e7b716a37088a2c5a79b78fef1cf2685fd4ba90cb4226ac3cd3a3d65"
+    },
+    {
+      "path": "observer-failure-source-command.json",
+      "bytes": 717,
+      "sha256": "4d76224b4a194e61c046cf7a428b4cbe8731aef4fa657b732bf9f4041264f8da"
+    },
+    {
+      "path": "observer-failure-source-oracle.json",
+      "bytes": 711,
+      "sha256": "c4d6e1590e1003cc10f0c89fbad7937ce08b42a3e87e42e67db2274f487459b9"
+    },
+    {
+      "path": "observer-failure-source-payload.py",
+      "bytes": 105465,
+      "sha256": "c1ff61ab59f7a0f6c8cafad93b544c94e14fe63d77d3c053ec7e514a788f3b56"
+    },
+    {
+      "path": "observer-failure-source-stderr.txt",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "oracle-independent-overlay_test.go",
+      "bytes": 6731,
+      "sha256": "ff8e67946beef5b250f3758f76f08914c6e26d6f16de32f10615a5bd76e08dca"
+    },
+    {
+      "path": "run_concurrency_oracle.py",
+      "bytes": 4151,
+      "sha256": "a635d9ef223321a9dd5d01063eeb07e407acd6ca52d6f694ec065ea9be2aabe6"
+    },
+    {
+      "path": "run_init_oracle.py",
+      "bytes": 3483,
+      "sha256": "f25bef2b076e6c64391304ccb453dcc1808510bd67f9b58d753faf63d46bcf73"
+    },
+    {
+      "path": "run_init_oracle.py.attempt1",
+      "bytes": 3480,
+      "sha256": "7fc4e1840364de60cc5b8491e58859ed692e813b584632b47b65eb768674864a"
+    },
+    {
+      "path": "run_log_oracle.py",
+      "bytes": 4037,
+      "sha256": "c3b0ff074abf5aeab4988e60a177b671bd3bef4a82c573f82edc36dfbf6afe34"
+    },
+    {
+      "path": "run_named_home_oracle.py",
+      "bytes": 2121,
+      "sha256": "a04e73a8a6257f83093f291e8fd6662d73be78181f3c8395efe3746b2b92b2c2"
+    },
+    {
+      "path": "run_observer_failure_oracle.py",
+      "bytes": 3853,
+      "sha256": "d33402891331afb835b635a0c6b9d0d314c7d49227883c9e0d815c45ce1314aa"
+    },
+    {
+      "path": "source-lock-boundaries.json",
+      "bytes": 12087,
+      "sha256": "978b6fd534fbcbe2a914a5251fc54ed96df50fc8d26ef0aabc951ec51efd9d74"
+    },
+    {
+      "path": "source-log-inventory.json",
+      "bytes": 19565,
+      "sha256": "2c6f37132810db9a428c8970149c536be6007d5a2ecb0572ad9b63ff4bf78e20"
+    },
+    {
+      "path": "source-method-inventory.json",
+      "bytes": 4619,
+      "sha256": "2e9539fecdebb5dacc8dc09c5d9ab0b6f7f52ebc94da3894d6205acc0a68fcd6"
+    }
+  ],
+  "source_execution": "actual image333544 Python3.12.13, isolated networknone/readonly/UID65534/tmpfs, original AST only; all scoped containers absent",
+  "target_red_classification": "compile-valid Go tests using independent source-derived expectations; concurrency red race tests; native observer Go development OS uses real polling, not Linux inotify; source observer failure uses actual Linux watchdog inotify",
+  "historical_driver_failures_preserved": true
+}

@@ -16,7 +16,7 @@ import (
 func Manifest() plugins.Manifest {
 	return plugins.Manifest{
 		SchemaVersion: 1, PluginID: "TorrentTransfer", Name: "自动转移做种", Description: "定期转移下载器中的做种任务到另一个下载器。", Icon: "seed.png", Author: "jxxghp", AuthorURL: "https://github.com/jxxghp", Version: "1.10.3", PluginOrder: 18, Runtime: "go-executable", Entry: "torrent-transfer", HostAPIMin: 1, HostAPIMax: 1,
-		Methods:        []string{"init", "get_state", "get_service", "get_command", "get_api", "get_render_mode", "get_form", "get_page", "get_dashboard", "get_dashboard_meta", "get_auth_providers", "get_module", "close", "stop_service", "stop", "transfer", "check_recheck", "private_scheduler", "transfer_continue"},
+		Methods:        []string{"init", "get_state", "get_service", "get_api", "get_render_mode", "get_form", "get_page", "close", "stop_service", "stop", "transfer", "check_recheck", "private_scheduler", "transfer_continue"},
 		Capabilities:   []string{plugins.DownloaderConfigurationsReadCapability, plugins.DownloaderSourceConnectionCapability, plugins.DownloaderSourceCompletedCapability, plugins.DownloaderSourceTasksCapability, plugins.DownloaderSourceAddCapability, plugins.DownloaderSourceFindByTagCapability, plugins.DownloaderSourceControlCapability, plugins.BaseUpdateConfig, plugins.BaseGetDataPath, plugins.BaseSaveData, plugins.BaseGetInstanceMetadata, plugins.BackgroundSubmitCapability, plugins.SystemMessagePutCapability, plugins.PostMessageCapability, plugins.LogWriteCapability},
 		RuntimeSupport: &plugins.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}},
 	}

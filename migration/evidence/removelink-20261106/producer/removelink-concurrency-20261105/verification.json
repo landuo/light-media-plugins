@@ -1,0 +1,84 @@
+{
+  "full-normal-joined": {
+    "pass": 218,
+    "fail": 0,
+    "skip": 8,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 10.543
+      }
+    ]
+  },
+  "full-race-joined": {
+    "pass": 218,
+    "fail": 0,
+    "skip": 8,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+        "Action": "skip",
+        "Elapsed": 0
+      },
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 43.786
+      }
+    ]
+  },
+  "independent-delayed-final": {
+    "pass": 1,
+    "fail": 0,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 1.675
+      }
+    ]
+  },
+  "independent-observer-final": {
+    "pass": 1,
+    "fail": 0,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 4.835
+      }
+    ]
+  },
+  "helper-timer-race10": {
+    "pass": 20,
+    "fail": 0,
+    "skip": 0,
+    "package_results": [
+      {
+        "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+        "Action": "pass",
+        "Elapsed": 24.304
+      }
+    ]
+  },
+  "linux_actual_sdk_kernel": {
+    "root_pass": 19,
+    "including_subtests_pass": 24,
+    "exit": 0,
+    "actual_timer_elapsed": "10.120151175s"
+  },
+  "input_binding": {
+    "nonstdlib_worker_test_inputs": 210,
+    "all_current_hashes_match": true,
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "note": "input manifest captured after the complete runs; same Go inputs remained unchanged throughout final runs/builds and subsequent targeted source-overlay execution; not presented as a separately captured pre-run complete graph"
+  }
+}

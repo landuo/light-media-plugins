@@ -82,11 +82,31 @@ class BuildPackagingTests(unittest.TestCase):
                     builder.collect_frontend(output, manifest(True)["frontend"])
 
     def test_parent_escape_absolute_and_remote_graph_rejected(self):
-        for target in ("../../outside.js", "/assets/lazy.js", "https://example.invalid/lazy.js", "./lazy.js?v=1"):
+        for target in ("../../outside.js", "/assets/lazy.js", "https://example.invalid/lazy.js", "../../outside.js?v=1", "https://example.invalid/lazy.js?v=1"):
             with self.subTest(target=target), tempfile.TemporaryDirectory() as directory:
                 root = Path(directory)
                 (root / "remoteEntry.js").write_text(f'export const get=()=>import({json.dumps(target)});')
                 with self.assertRaises(builder.BuildError):
+                    builder.collect_frontend(root, manifest(True)["frontend"])
+
+    def test_source_cache_queries_resolve_path_without_rewriting_assets(self):
+        # Exact RemoveLink remoteEntry imports use view.js?v=2.18 and
+        # style.css?v=2.18. The original endpoint ignores these cache hints.
+        queries = ("v=2.18", "v=2.18.1", "v=", "v=one&v=two", "other=value", "v=2.18&other=value", "%76=2.18", "v=a%2Fb", "v=%ZZ", "v=%00", "v=one;other=two")
+        for query in queries:
+            with self.subTest(query=query), tempfile.TemporaryDirectory() as directory:
+                root = Path(directory)
+                values = {
+                    "remoteEntry.js": ('export const get=()=>import(new URL("./view.js?' + query + '", import.meta.url).href); const style = new URL("./style.css?' + query + '", import.meta.url);').encode(),
+                    "view.js": b"export default {};",
+                    "style.css": ('@import "./other.css?' + query + '";').encode(),
+                    "other.css": b".owned{color:purple}",
+                }
+                for name, data in values.items():
+                    (root / name).write_bytes(data)
+                self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                (root / "view.js").unlink()
+                with self.assertRaisesRegex(builder.BuildError, "missing asset: view.js"):
                     builder.collect_frontend(root, manifest(True)["frontend"])
 
     def test_frontend_requires_real_build_command_and_isolated_output(self):

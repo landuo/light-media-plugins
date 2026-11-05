@@ -130,3 +130,5 @@ lexical rules: an invalid value drops the cookie, zero/negative values expire
 it, and the last repeated attribute wins. Source fixtures cover ordinary and
 local domains and these expiration branches; cookies never persist between
 logical status requests or supply private account credentials.
+
+2026-11-06 source-checked declaration correction: the manifest omits `get_service`. The independent actual-Python3.12 source inventory distinguishes inherited/explicit `pass` from an implemented `return None`; compatible null Handle branches remain. API/page/auth declarations retain their separate source order. See [interface source and host dependency](../../tests/sourceinterfaces/ORIGIN.md). This new executable requires the finite host optional-lifecycle/discovery-gate/default-dashboard correction; older published host75e13686 rejects its artifact acquisition. SDK98 transport remains unchanged. The coordinator binds the exact new host commit separately; this note does not invent a released minimum version.

@@ -1,0 +1,74 @@
+{
+  "source_path": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/module-method-declarations-20261106/registry-source-oracle.json",
+  "source_sha256": "d3b241a8b783c825cc5b11f28010d95fee8fe280ce7f51e3b3f1e001ca1246c1",
+  "cases": [
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 1,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "auth-state-failure-propagates-before-implementation-check",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": null,
+      "error": {
+        "class": "RuntimeError",
+        "message": "owned synthetic getter failure",
+        "status": null
+      },
+      "logged_errors": []
+    }
+  ],
+  "classification": "actual333 exact source manager registry/direct-dashboard AST with synthetic interface implementations/state and real seven source-class predicates; no source business network or app imports"
+}

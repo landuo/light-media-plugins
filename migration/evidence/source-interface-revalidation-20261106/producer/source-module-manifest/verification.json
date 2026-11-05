@@ -1,0 +1,219 @@
+{
+  "source_seal_sha256": "1901d7d6df98241143c8323618f77ca996451a596d7f5449e88e808127dccdb8",
+  "source_oracle_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
+  "source_old_red": "source-before-red.jsonl",
+  "source_new_green": "source-after-green.jsonl",
+  "full_runs": {
+    "full-normal.jsonl": {
+      "pass": 1213,
+      "fail": 0,
+      "skip": 10,
+      "packages": {
+        "github.com/landuo/light-media-plugins/plugins/categoryeditor": {
+          "pass": 73,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 0.53
+        },
+        "github.com/landuo/light-media-plugins/plugins/torrenttransfer": {
+          "pass": 218,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 2.593
+        },
+        "github.com/landuo/light-media-plugins/plugins/removelink": {
+          "pass": 254,
+          "fail": 0,
+          "skip": 9,
+          "package_action": "pass",
+          "elapsed_seconds": 11.697
+        },
+        "github.com/landuo/light-media-plugins/plugins/sitestatistic": {
+          "pass": 179,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 0.538
+        },
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus": {
+          "pass": 370,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 1.315
+        },
+        "github.com/landuo/light-media-plugins/plugins/pluginuninstall": {
+          "pass": 103,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 0.789
+        },
+        "github.com/landuo/light-media-plugins/cmd/category-editor": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 1,
+          "package_action": "pass",
+          "elapsed_seconds": 0.435
+        },
+        "github.com/landuo/light-media-plugins/cmd/torrent-transfer": {
+          "pass": 1,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 4.647
+        },
+        "github.com/landuo/light-media-plugins/cmd/remove-link": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "skip",
+          "elapsed_seconds": 0.001
+        },
+        "github.com/landuo/light-media-plugins/cmd/site-statistic": {
+          "pass": 6,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 5.547
+        },
+        "github.com/landuo/light-media-plugins/cmd/mp-server-status": {
+          "pass": 1,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 2.778
+        },
+        "github.com/landuo/light-media-plugins/cmd/plugin-uninstall": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "skip",
+          "elapsed_seconds": 0
+        },
+        "github.com/landuo/light-media-plugins/tests/sourceinterfaces": {
+          "pass": 8,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 0.251
+        }
+      }
+    },
+    "full-race.jsonl": {
+      "pass": 1213,
+      "fail": 0,
+      "skip": 10,
+      "packages": {
+        "github.com/landuo/light-media-plugins/plugins/categoryeditor": {
+          "pass": 73,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 1.49
+        },
+        "github.com/landuo/light-media-plugins/plugins/torrenttransfer": {
+          "pass": 218,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 13.942
+        },
+        "github.com/landuo/light-media-plugins/plugins/removelink": {
+          "pass": 254,
+          "fail": 0,
+          "skip": 9,
+          "package_action": "pass",
+          "elapsed_seconds": 59.357
+        },
+        "github.com/landuo/light-media-plugins/plugins/sitestatistic": {
+          "pass": 179,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 2.185
+        },
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus": {
+          "pass": 370,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 3.508
+        },
+        "github.com/landuo/light-media-plugins/plugins/pluginuninstall": {
+          "pass": 103,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 2.681
+        },
+        "github.com/landuo/light-media-plugins/cmd/category-editor": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 1,
+          "package_action": "pass",
+          "elapsed_seconds": 1.459
+        },
+        "github.com/landuo/light-media-plugins/cmd/torrent-transfer": {
+          "pass": 1,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 5.089
+        },
+        "github.com/landuo/light-media-plugins/cmd/remove-link": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "skip",
+          "elapsed_seconds": 0
+        },
+        "github.com/landuo/light-media-plugins/cmd/site-statistic": {
+          "pass": 6,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 13.447
+        },
+        "github.com/landuo/light-media-plugins/cmd/mp-server-status": {
+          "pass": 1,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 7.987
+        },
+        "github.com/landuo/light-media-plugins/cmd/plugin-uninstall": {
+          "pass": 0,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "skip",
+          "elapsed_seconds": 0
+        },
+        "github.com/landuo/light-media-plugins/tests/sourceinterfaces": {
+          "pass": 8,
+          "fail": 0,
+          "skip": 0,
+          "package_action": "pass",
+          "elapsed_seconds": 1.5939999999999999
+        }
+      }
+    }
+  },
+  "vet_exit": 0,
+  "native_sdk_instances": 7,
+  "linux_sdk_instances_including_update": 8,
+  "linux_result": "linux-sdk-results.json",
+  "linux_source_app_network_calls": 0,
+  "current_whole_input_count": 613,
+  "current_inputs_before_after_same": true,
+  "Rlk_files": 59,
+  "Rlk_only_changed": [
+    "plugins/removelink/plugin.go",
+    "plugins/removelink/ORIGIN.md"
+  ],
+  "SDK98_unchanged": true,
+  "host_product_edited_by_this_task": false,
+  "ordinary_main_pending_root": true
+}

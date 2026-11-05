@@ -1,0 +1,31 @@
+[
+  {
+    "phase": "old-source-red",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/manifest-methods-review/old-manifests-overlay.json",
+      "-v",
+      "./tests/sourceinterfaces"
+    ],
+    "exit_code": 1,
+    "seconds": 1.1670707906596363,
+    "source_fixture_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606"
+  },
+  {
+    "phase": "current-source-race",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-count=1",
+      "-v",
+      "./tests/sourceinterfaces"
+    ],
+    "exit_code": 0,
+    "seconds": 1.8470780830830336,
+    "source_fixture_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606"
+  }
+]

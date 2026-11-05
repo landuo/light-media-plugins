@@ -1,0 +1,25 @@
+{
+  "owner": "/root/plugin_sdk",
+  "scope": "Local compile/binding only for Root PUI Main2 SKIP_UI=1; no product edits/NAS/Main/private UI-ready/DB",
+  "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "old_probe_source_sha256": "6cc20daad968ab46bbc0c5f7049db2da08558153e249968f7b2fba66895d47c6",
+  "legacy_probe_command": {
+    "name": "probe-linux",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture-linux",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe/main.go"
+    ],
+    "exit_code": 0,
+    "elapsed_seconds": 0.236,
+    "cross_environment": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    }
+  }
+}

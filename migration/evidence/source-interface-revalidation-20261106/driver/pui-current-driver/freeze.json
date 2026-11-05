@@ -1,0 +1,218 @@
+{
+  "classification": "test-input guard repair + compile-only driver; no NAS/Main",
+  "changed_test": {
+    "path": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_main_test.go",
+    "sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7"
+  },
+  "new_driver": {
+    "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test",
+    "sha256": "01ba473ce2aeb5da61c299dded7a7be74cc22816a9a9f3c4edcb2e8cc26dd57b",
+    "bytes": 13592704
+  },
+  "preserved_Rlk_old_input": {
+    "source": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_main_test.go",
+    "saved_old_input": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-main6-20261106/frozen-test-inputs/tests/integration/pluginuninstall_main_test.go",
+    "sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+    "matches_Rlk_driver_binding": true,
+    "Rlk_binding_sha256": "a42a44bdc98230a77f34387357f27edc48ea6073dfcf59bf1be849ce91aec72d",
+    "Rlk_binary_sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+    "note": "This is the exact old compilation input of the currently running f24 Rlk Main6. New PUI source will not relabel that run."
+  },
+  "source_diff_proof": {
+    "only_changed_path": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_main_test.go",
+    "old_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+    "new_sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7",
+    "exact_three_replacements_only": true,
+    "version_tuple_guard_unchanged": true,
+    "host_exact_and_rejected7a08_guard_unchanged": true,
+    "current_Source613_all_unchanged": true,
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+  },
+  "compile_inputs_before_after_equal": true,
+  "compile_input_count": 117,
+  "integration_Go_file_count": 16,
+  "normal_nonMain_pass": 12,
+  "race_nonMain_pass": 12,
+  "required_input_negatives": [
+    {
+      "argv": [
+        "go",
+        "test",
+        "./tests/integration",
+        "-run",
+        "^TestPluginUninstallOrdinaryMain$",
+        "-count=1",
+        "-json"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "classification": "real preflight negative only, no bootstrap/native load/Main; intentionally missing required expected hash",
+      "missing": "PLUGINUNINSTALL_EXPECT_WORKER_SHA256",
+      "exit": 1,
+      "matched_required_input_error": true,
+      "runtime_directory_created": false,
+      "elapsed_seconds": 0.8188111670315266
+    },
+    {
+      "argv": [
+        "go",
+        "test",
+        "./tests/integration",
+        "-run",
+        "^TestPluginUninstallOrdinaryMain$",
+        "-count=1",
+        "-json"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "classification": "real preflight negative only, no bootstrap/native load/Main; intentionally missing required expected hash",
+      "missing": "PLUGINUNINSTALL_EXPECT_MPS_SHA256",
+      "exit": 1,
+      "matched_required_input_error": true,
+      "runtime_directory_created": false,
+      "elapsed_seconds": 0.6265028747729957
+    }
+  ],
+  "reproduced_old_f24_sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+  "reproduced_old_ELF_removed": true,
+  "files": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/REPORT.md",
+      "sha256": "091b608d0cc88d4180ea8c32202c331884c8b54473c3f68cd604a2361dd7a35c",
+      "bytes": 2951
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/TASK.json",
+      "sha256": "399b2e871ef1027af5c6c9d438ee4ae630985db25be0b9f2a4480691ea2d6629",
+      "bytes": 534
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/artifacts.json",
+      "sha256": "e790ed83c8ed3920eac4bb16f1327114adda2f05aaf69f517d98446c78941f87",
+      "bytes": 575
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/build_driver.py",
+      "sha256": "4b2e5bd6a50b2134df47bf4c2b7f4e5ea3ee169ae2b677149a8601e34755949c",
+      "bytes": 2671
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/cleanup.json",
+      "sha256": "533dd89cfd26fbbe21be76d137dd51e134d941aede26ef58d04d48f2aba78e80",
+      "bytes": 588
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/commands.json",
+      "sha256": "9d9050cfced36c592c89f7230a01294ad71e69400dccfb67433ea1d1974693b4",
+      "bytes": 1148
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/inputguard-negatives.json",
+      "sha256": "9aed84a86cfec5fdda9b6274dac75e234b27944b68b70a5924aa9c1f46b34491",
+      "bytes": 1114
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/inputs-after.json",
+      "sha256": "11795fa2e0c805861f01c013856ba01258e547c50d4b7ff30ab0d317fd4f9253",
+      "bytes": 12603
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/inputs-before.json",
+      "sha256": "11795fa2e0c805861f01c013856ba01258e547c50d4b7ff30ab0d317fd4f9253",
+      "bytes": 12603
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/local-normal.jsonl",
+      "sha256": "b7b9a86503ed91d0ade99e87c613dae0f754b66722cd9af91d54b7a388d81a8d",
+      "bytes": 12002
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/local-race.jsonl",
+      "sha256": "4c9dab85149818abde637f4bad35fd69eb0c4e72ba69d9f0211040bad897407e",
+      "bytes": 12014
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/old-f24-single-file-overlay.json",
+      "sha256": "71176a32c89c0458d09c69f57dd9bddb6031656e6a331f43f5d0ebf8d4816d70",
+      "bytes": 283
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/old-pui-main-test.go",
+      "sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "bytes": 24629
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test",
+      "sha256": "01ba473ce2aeb5da61c299dded7a7be74cc22816a9a9f3c4edcb2e8cc26dd57b",
+      "bytes": 13592704
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test.buildinfo.txt",
+      "sha256": "07f067c73428b15583c6963927cbe34fd8525406b84f3100ee49bf7f7a2f8f49",
+      "bytes": 397
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall_expect_mps_sha256.negative.jsonl",
+      "sha256": "49a5fa929d4e9918060639d5f1bf0fabbc4a5e35bf25de32d42513ab9db179e6",
+      "bytes": 1719
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall_expect_mps_sha256.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall_expect_worker_sha256.negative.jsonl",
+      "sha256": "9f1ddfca8cfee601943e37c1ef153d943cde6fdf3782709c5ba2561585082f54",
+      "bytes": 1720
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall_expect_worker_sha256.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/preserved-Rlk-Main6-input.json",
+      "sha256": "5bf201f5ea91444384b1fae228bdbc91e53d58b2b162e75ff7f5f73f62fb137a",
+      "bytes": 729
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/removelink-f24-reproduced-linux.test.buildinfo.txt",
+      "sha256": "87d657a5c2b62d7cf9fd6106852ab74e407b89098a99d4f5886394f6d047283a",
+      "bytes": 394
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/removelink-f24-reproduced-linux.test.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/removelink-f24-reproduced-linux.test.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/run_guard_checks.py",
+      "sha256": "3472125350cbe02988a837aa6a13832b59bdf677b64f27ebc02d78cf2f055999",
+      "bytes": 1839
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/source-diff-proof.json",
+      "sha256": "b2b3bc3c87843dc56fe2c9605c99c8a98948c880918b320cf06d389e2cfb30d9",
+      "bytes": 559
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/toolchain.json",
+      "sha256": "3d50b4fbd4d56be4e225da53b7f69905e92f3fa0bf086a388f7bc9c2a14d166b",
+      "bytes": 105
+    }
+  ]
+}
