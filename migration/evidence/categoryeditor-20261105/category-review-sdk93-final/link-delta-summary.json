@@ -1,0 +1,54 @@
+{
+  "text_equal": true,
+  "section_differences": {
+    ".note.go.buildid": {
+      "current_sha256": "9e321592e138f727a202ac3219b1ebf1b89512b4323c3339c2c60ca10cda57eb",
+      "exclude_sha256": "aabef9cf3a4886a3616a80a07351cbe3b53a8e3bc5136512bf54c4a67cf735dd",
+      "bytes": 100,
+      "changed_bytes": 79
+    },
+    ".note.gnu.build-id": {
+      "current_sha256": "e3e8916ec2325793b66204703a8677d7637a3a0b7a0760f206b175cd282280ab",
+      "exclude_sha256": "3ff0525948acd37bf04bad2f4a1012f63158d3978f6260a8bdcf0744c20a4306",
+      "bytes": 36,
+      "changed_bytes": 20
+    },
+    ".rodata": {
+      "current_sha256": "42caa6aa7c51421a132785018921a1fc2b96c1cd1ff9da15b2b0a2a0fca9bd34",
+      "exclude_sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165",
+      "bytes": 397985,
+      "changed_bytes": 68
+    },
+    ".gopclntab": {
+      "current_bytes": 1157160,
+      "exclude_bytes": 1157144
+    },
+    ".go.module": {
+      "current_sha256": "4278921b1713930ded00f57f8d573879dc15759b3d581d65358b484ec78d6f4b",
+      "exclude_sha256": "364262ca6cf15272eb529dd4e0d16a7b2772d407ecceab5b55df3938c083dacb",
+      "bytes": 592,
+      "changed_bytes": 9
+    },
+    ".debug_line": {
+      "current_bytes": 282945,
+      "exclude_bytes": 282892
+    },
+    ".debug_info": {
+      "current_sha256": "8a7d2e81493b99afed47ce55346dfea866ee6ae4b7d6d965de7e80f0bec75beb",
+      "exclude_sha256": "61c6cbf6ff4454748e9e19cf39b82c99be5234269e6daf68feba116283f87996",
+      "bytes": 476226,
+      "changed_bytes": 429907
+    },
+    ".symtab": {
+      "current_sha256": "ad726aad624ffc84662840cc1cd682e1ea11eafdec9581b77455c398f48d9604",
+      "exclude_sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29",
+      "bytes": 117072,
+      "changed_bytes": 3
+    }
+  },
+  "pc_map_differences": 0,
+  "file_delta": {
+    "only_current": [],
+    "only_exclude": []
+  }
+}

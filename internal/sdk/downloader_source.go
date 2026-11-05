@@ -19,12 +19,13 @@ const (
 	DownloaderSourceControlCapability   = "downloader.source.control"
 )
 
-// DownloaderSourceAddRequestV1 carries only the fixed vendor's skip_checking
-// multipart text. Normal Add remains boolean-only. The business adapter owns
-// source Python repr normalization; the host never coerces this text again.
+// DownloaderSourceAddRequestV1 carries the fixed QB vendor's skip_checking
+// multipart text and repeated labels. Normal Add remains unchanged. The
+// business adapter owns Python repr normalization; the host preserves text.
 type DownloaderSourceAddRequestV1 struct {
 	DownloaderAddRequestV1
-	SkipCheckingWire *string `json:"skip_checking_wire,omitempty"`
+	SkipCheckingWire *string  `json:"skip_checking_wire,omitempty"`
+	QBLabels         []string `json:"qb_labels,omitempty"`
 }
 
 func (r DownloaderSourceAddRequestV1) Validate() error {
@@ -33,6 +34,11 @@ func (r DownloaderSourceAddRequestV1) Validate() error {
 	}
 	if r.SkipCheckingWire != nil && (r.SkipChecking != nil || !utf8.ValidString(*r.SkipCheckingWire) || len(*r.SkipCheckingWire) > MaxPayloadBytes) {
 		return errors.New("invalid or conflicting source skip-checking text")
+	}
+	for _, label := range r.QBLabels {
+		if !utf8.ValidString(label) || len(label) > MaxPayloadBytes {
+			return errors.New("invalid source QB label text")
+		}
 	}
 	if len(r.Torrent) > MaxPayloadBytes {
 		return errors.New("source add request exceeds shared transport limit")

@@ -1,0 +1,216 @@
+{
+  "status": "passed_no_CategoryEditor_worker_dependency_impact",
+  "at": "2026-11-05T06:27:47.682689+00:00",
+  "scope": "SDK93 worker additions only; current Linux link/ABI/PC metadata proof and native Category race; no current-host main/UI rerun",
+  "sdk_origin_sha256": "c793de882f5b9d2970d612a43addc1bb924b47d6c31ad223e0fe06baa1c61233",
+  "sdk_origin_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+  "sdk_files": 93,
+  "all93_git_blobs_bound": true,
+  "original84_files_unchanged": true,
+  "new_files": [
+    {
+      "source_path": "internal/plugins/downloader_configurations.go",
+      "path": "internal/sdk/downloader_configurations.go",
+      "changes": [],
+      "source_sha256": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+      "sha256": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_configurations_test.go",
+      "path": "internal/sdk/downloader_configurations_test.go",
+      "changes": [],
+      "source_sha256": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+      "sha256": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_source.go",
+      "path": "internal/sdk/downloader_source.go",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "locally committed; not main/pushed/deployed",
+      "source_sha256": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+      "sha256": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_connection.go",
+      "path": "internal/sdk/downloader_source_connection.go",
+      "changes": [],
+      "source_sha256": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+      "sha256": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_connection_test.go",
+      "path": "internal/sdk/downloader_source_connection_test.go",
+      "changes": [],
+      "source_sha256": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+      "sha256": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_find_by_tag.go",
+      "path": "internal/sdk/downloader_source_find_by_tag.go",
+      "changes": [],
+      "source_sha256": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+      "sha256": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_labels_test.go",
+      "path": "internal/sdk/downloader_source_labels_test.go",
+      "changes": [],
+      "source_sha256": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+      "sha256": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_state": "locally committed; not main/pushed/deployed"
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_test.go",
+      "path": "internal/sdk/downloader_source_test.go",
+      "source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "Committed locally on codex/plugin-source-error-outcomes-20261105; not merged, pushed or deployed.",
+      "source_sha256": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "sha256": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_wire_test.go",
+      "path": "internal/sdk/downloader_source_wire_test.go",
+      "source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "Committed locally on codex/plugin-source-error-outcomes-20261105; not merged, pushed or deployed.",
+      "source_sha256": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "sha256": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "changes": []
+    }
+  ],
+  "new_production_file_count": 4,
+  "new_test_file_count": 5,
+  "no_new_init_package_vars_registration": true,
+  "category_business_form_command_module_files_unchanged": true,
+  "category_historical_driver_files_unchanged": true,
+  "linux_package_count": 128,
+  "linux_package_import_graph_identical": true,
+  "selected_go_file_delta": {
+    "github.com/landuo/light-media-plugins/internal/sdk": {
+      "only_current": [
+        "downloader_configurations.go",
+        "downloader_source.go",
+        "downloader_source_connection.go",
+        "downloader_source_find_by_tag.go"
+      ],
+      "only_exclude": []
+    }
+  },
+  "retained_symbols": 4877,
+  "retained_symbol_names_sizes_kinds_identical": true,
+  "retained_new_source_clients": [],
+  "raw_nm_byte_equal": false,
+  "nm_delta_only_metadata_addresses": {
+    "go:func.*": {
+      "current": [
+        "6995f0",
+        "203432",
+        "r"
+      ],
+      "exclude": [
+        "6995e0",
+        "203432",
+        "r"
+      ]
+    },
+    "runtime.epclntab": {
+      "current": [
+        "6ccad8",
+        "0",
+        "r"
+      ],
+      "exclude": [
+        "6ccac8",
+        "0",
+        "r"
+      ]
+    },
+    "runtime.findfunctab": {
+      "current": [
+        "6cb098",
+        "6720",
+        "r"
+      ],
+      "exclude": [
+        "6cb088",
+        "6720",
+        "r"
+      ]
+    }
+  },
+  "machine_text_byte_identical": true,
+  "machine_text": {
+    "address": 4198400,
+    "offset": 4096,
+    "bytes": 1376177,
+    "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+  },
+  "raw_rodata_byte_equal": false,
+  "all68_rodata_changed_bytes_are_semantically_identical_name_pool_or8_adjusted_name_refs": true,
+  "rodata_proof_sha256": "fe564cc9caf7ec5c651d07fefe96773d816a4bd9145f22080d2b1ebd2f675a2a",
+  "pc_function_file_line_maps_all_identical": 3210,
+  "pc_source_file_sets_identical": 429,
+  "other_identical_runtime_sections": [
+    ".text",
+    ".typelink",
+    ".itablink",
+    ".go.buildinfo",
+    ".go.fipsinfo",
+    ".noptrdata",
+    ".data"
+  ],
+  "moduledata_delta": "cu table length+4; later metadata pointers+16 only; actual PC→file/line meaning identical",
+  "compiling_reachability_negative_killed": true,
+  "negative_evidence_sha256": "018553947ffdfcd204d3e5fc9426be5178e5f9313ed2374631dbaa770294485e",
+  "current_category_manifest_exact": true,
+  "current_category_race": {
+    "passed_tests_and_subtests": 73,
+    "packages": [
+      {
+        "Time": "2026-11-05T14:23:20.569849+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/cmd/category-editor",
+        "Elapsed": 1.729
+      },
+      {
+        "Time": "2026-11-05T14:23:20.571685+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Elapsed": 1.7309999999999999
+      }
+    ],
+    "sha256": "ffd0b5be7e691ec5a3bb4f2c32860db418b9d4ba28428a857c538749733ef998"
+  },
+  "input_unchanged": true,
+  "original_evidence_sha256_unchanged": {
+    "historical87_certificate": "7a4b1d0db3d0afcd557d2bc9ca74ca9a9a73cb6008ee493a3008cd5f8c4363d4",
+    "historical_Category_final": "7f84b3cea6016995caf7f3a5f80b2d78f931565652f93a691a622564e8a3f6fb"
+  },
+  "no_sdk93_client_caused_main_UI_rerun_required": true,
+  "temporary_binaries_and_overlays_removed": true,
+  "product_SDK_ledger_or_old_evidence_files_changed": false,
+  "limits": [
+    "This certificate is scoped to Category worker SDK dependency additions, not approval of all Source capabilities or a current-host generic platform migration.",
+    "Historical75e actual main/Linux/UI runs retain their actual source/host/worker hashes. They are not reclassified as execution against404daade or SDK93.",
+    "Raw nm/full ELF/rodata equality was explicitly falsified and is not claimed; exact semantic metadata equivalence is separately proved.",
+    "Future Category/old84/init/registration/import-graph changes invalidate reuse and require new impact review."
+  ]
+}

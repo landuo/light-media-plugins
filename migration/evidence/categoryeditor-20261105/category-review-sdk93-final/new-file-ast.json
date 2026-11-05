@@ -1,0 +1,153 @@
+[
+  {
+    "functions": [
+      "Configurations"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_configurations.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestDownloaderConfigurationsRetainOrderAndDuplicateNames",
+      "TestDownloaderConfigurationsRejectInvalidResponseIdentity"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_configurations_test.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "Validate",
+      "SourceTasks",
+      "SourceCompleted",
+      "sourceTasks",
+      "SourceAdd",
+      "SourceControl",
+      "sourceMutation"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors",
+      "strings",
+      "unicode/utf8"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "SourceConnection"
+    ],
+    "imports": [
+      "context",
+      "errors"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_connection.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceConnectionSDKRequiresExplicitPresenceAndInactive",
+      "TestSourceFindByTagSDKKeepsFiniteSelectionAndIdentity"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_connection_test.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "SourceFindByTag"
+    ],
+    "imports": [
+      "context",
+      "errors"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_find_by_tag.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceAddQBLabelsFiniteSDKProtocol"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "reflect",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_labels_test.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceDownloaderSDKRejectsMalformedOrForeignOutcomes",
+      "TestSourceDownloaderSDKPreservesUnknownAndCausalReceipts"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_test.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceAddWireValidationKeepsFiniteRequestBoundary"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_wire_test.go",
+    "registration_calls": []
+  }
+]

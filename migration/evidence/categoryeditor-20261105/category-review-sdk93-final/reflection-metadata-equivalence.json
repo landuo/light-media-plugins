@@ -1,0 +1,348 @@
+{
+  "kind": "finite exact Go1.26.2 ABI interpretation of all68 changed rodata bytes; no arbitrary output normalization",
+  "original_rodata_changed_bytes": 68,
+  "name_pool_range": [
+    24747,
+    24837
+  ],
+  "name_pool_records": {
+    "current": [
+      {
+        "offset": 24747,
+        "flags": 3,
+        "name": "Name",
+        "tag": "json:\"name\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24765,
+        "flags": 3,
+        "name": "Kind",
+        "tag": "json:\"kind\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24783,
+        "flags": 3,
+        "name": "Type",
+        "tag": "json:\"type\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24801,
+        "flags": 3,
+        "name": "Data",
+        "tag": "json:\"data\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24819,
+        "flags": 1,
+        "name": "*plugins.HTTPAPI",
+        "tag": null,
+        "bytes": 18
+      }
+    ],
+    "exclude": [
+      {
+        "offset": 24747,
+        "flags": 3,
+        "name": "Kind",
+        "tag": "json:\"kind\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24765,
+        "flags": 3,
+        "name": "Type",
+        "tag": "json:\"type\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24783,
+        "flags": 3,
+        "name": "Data",
+        "tag": "json:\"data\"",
+        "bytes": 18
+      },
+      {
+        "offset": 24801,
+        "flags": 1,
+        "name": "*plugins.HTTPAPI",
+        "tag": null,
+        "bytes": 18
+      },
+      {
+        "offset": 24819,
+        "flags": 3,
+        "name": "Name",
+        "tag": "json:\"name\"",
+        "bytes": 18
+      }
+    ]
+  },
+  "same_encoded_names_tags_and_flags": true,
+  "all8_name_references_resolve_to_identical_semantics": [
+    {
+      "offset": 130056,
+      "abi": "Type.Str/nameOff32",
+      "width": 4,
+      "current": {
+        "encoded": 24819,
+        "target_offset": 24819,
+        "resolved": {
+          "flags": 1,
+          "name": "*plugins.HTTPAPI",
+          "tag": null
+        }
+      },
+      "exclude": {
+        "encoded": 24801,
+        "target_offset": 24801,
+        "resolved": {
+          "flags": 1,
+          "name": "*plugins.HTTPAPI",
+          "tag": null
+        }
+      }
+    },
+    {
+      "offset": 182752,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599403,
+        "target_offset": 24747,
+        "resolved": {
+          "flags": 3,
+          "name": "Name",
+          "tag": "json:\"name\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599475,
+        "target_offset": 24819,
+        "resolved": {
+          "flags": 3,
+          "name": "Name",
+          "tag": "json:\"name\""
+        }
+      }
+    },
+    {
+      "offset": 182776,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599421,
+        "target_offset": 24765,
+        "resolved": {
+          "flags": 3,
+          "name": "Kind",
+          "tag": "json:\"kind\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599403,
+        "target_offset": 24747,
+        "resolved": {
+          "flags": 3,
+          "name": "Kind",
+          "tag": "json:\"kind\""
+        }
+      }
+    },
+    {
+      "offset": 182992,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599457,
+        "target_offset": 24801,
+        "resolved": {
+          "flags": 3,
+          "name": "Data",
+          "tag": "json:\"data\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599439,
+        "target_offset": 24783,
+        "resolved": {
+          "flags": 3,
+          "name": "Data",
+          "tag": "json:\"data\""
+        }
+      }
+    },
+    {
+      "offset": 229232,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599457,
+        "target_offset": 24801,
+        "resolved": {
+          "flags": 3,
+          "name": "Data",
+          "tag": "json:\"data\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599439,
+        "target_offset": 24783,
+        "resolved": {
+          "flags": 3,
+          "name": "Data",
+          "tag": "json:\"data\""
+        }
+      }
+    },
+    {
+      "offset": 236656,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599439,
+        "target_offset": 24783,
+        "resolved": {
+          "flags": 3,
+          "name": "Type",
+          "tag": "json:\"type\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599421,
+        "target_offset": 24765,
+        "resolved": {
+          "flags": 3,
+          "name": "Type",
+          "tag": "json:\"type\""
+        }
+      }
+    },
+    {
+      "offset": 240520,
+      "abi": "Type.Str/nameOff32",
+      "width": 4,
+      "current": {
+        "encoded": 24819,
+        "target_offset": 24819,
+        "resolved": {
+          "flags": 1,
+          "name": "*plugins.HTTPAPI",
+          "tag": null
+        }
+      },
+      "exclude": {
+        "encoded": 24801,
+        "target_offset": 24801,
+        "resolved": {
+          "flags": 1,
+          "name": "*plugins.HTTPAPI",
+          "tag": null
+        }
+      }
+    },
+    {
+      "offset": 267312,
+      "abi": "abi.Name absolute64",
+      "width": 8,
+      "current": {
+        "encoded": 5599403,
+        "target_offset": 24747,
+        "resolved": {
+          "flags": 3,
+          "name": "Name",
+          "tag": "json:\"name\""
+        }
+      },
+      "exclude": {
+        "encoded": 5599475,
+        "target_offset": 24819,
+        "resolved": {
+          "flags": 3,
+          "name": "Name",
+          "tag": "json:\"name\""
+        }
+      }
+    }
+  ],
+  "all_changed_rodata_bytes_explained": true,
+  "moduledata_changed_bytes": 9,
+  "all_moduledata_deltas_are_cutab_size4_or_subsequent_metadata_address16": [
+    {
+      "offset": 40,
+      "current": 1882,
+      "exclude": 1878,
+      "delta": 4
+    },
+    {
+      "offset": 48,
+      "current": 1882,
+      "exclude": 1878,
+      "delta": 4
+    },
+    {
+      "offset": 56,
+      "current": 6138408,
+      "exclude": 6138392,
+      "delta": 16
+    },
+    {
+      "offset": 80,
+      "current": 6150504,
+      "exclude": 6150488,
+      "delta": 16
+    },
+    {
+      "offset": 104,
+      "current": 6618976,
+      "exclude": 6618960,
+      "delta": 16
+    },
+    {
+      "offset": 128,
+      "current": 6618976,
+      "exclude": 6618960,
+      "delta": 16
+    },
+    {
+      "offset": 152,
+      "current": 7123096,
+      "exclude": 7123080,
+      "delta": 16
+    },
+    {
+      "offset": 320,
+      "current": 6919664,
+      "exclude": 6919648,
+      "delta": 16
+    },
+    {
+      "offset": 328,
+      "current": 7129816,
+      "exclude": 7129800,
+      "delta": 16
+    }
+  ],
+  "raw_identical_sections": [
+    ".text",
+    ".typelink",
+    ".itablink",
+    ".go.buildinfo",
+    ".go.fipsinfo",
+    ".noptrdata",
+    ".data"
+  ],
+  "pc_functions_checked": 3210,
+  "pc_file_line_maps_identical": true,
+  "file_sets_identical": true,
+  "abi_source_sha256": {
+    "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/abi/type.go": "b7245bd743802e2b5eced71a1f87963c395c2536cd7ea1b77f2364d20a79bf3d",
+    "/opt/homebrew/Cellar/go/1.26.2/libexec/src/runtime/symtab.go": "556bdcf7743dc7be1c7c6bef9f95b968879c152696a4fa96afb6b6c48e2f45e9",
+    "/opt/homebrew/Cellar/go/1.26.2/libexec/src/cmd/link/internal/ld/pcln.go": "6562c101bb8555579af885b2ea016007d76db7fccf00de993ac0398e25cb0e99"
+  },
+  "old_full_nm_and_raw_rodata_equality_not_claimed": true,
+  "code_or_business_inputs_modified": false
+}

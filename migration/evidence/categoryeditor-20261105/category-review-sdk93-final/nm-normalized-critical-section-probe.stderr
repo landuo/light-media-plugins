@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/work/migration-20261105/category-review-sdk93-final/audit.py", line 74, in <module>
+    for name in critical:assert builds[0]['elf_sections'][name]==builds[1]['elf_sections'][name],name
+                                ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: .rodata
