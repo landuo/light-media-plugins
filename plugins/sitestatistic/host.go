@@ -68,7 +68,7 @@ func (h sdkHost) SaveConfig(ctx context.Context, value map[string]any) error {
 	return e
 }
 func (h sdkHost) Post(ctx context.Context, n Notification) error {
-	_, e := (plugins.Base{Host: h.caller}).PostMessage(ctx, map[string]any{"mtype": "站点消息", "title": n.Title, "text": n.Text})
+	_, e := (plugins.Base{Host: h.caller}).PostMessage(ctx, map[string]any{"mtype": "站点", "title": n.Title, "text": n.Text})
 	return e
 }
 func (h sdkHost) Log(ctx context.Context, level, message string) error {

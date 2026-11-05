@@ -7,6 +7,14 @@ from installed snapshot content commit
 `270ae0bcbf1d270b916ca9b14f8bffff9b1938d0`. No source application, Python runtime,
 production settings, site credentials or site parsers are bundled.
 
+Notification dispatch uses the actual `NotificationType.SiteMessage.value`,
+`站点`, from installed/fixed `app/schemas/types.py:313` (SHA256
+`025060b9dd29be0fc811cb42ea357e7cd23ce1f450cb704f04f18012ed8be5c1`).
+`reference/site-message-enum.json` binds the independent static AST capture.
+The first ordinary-main run exposed an incorrect display-label wire value;
+its failed run and the source-derived failing-before/fixed-after wire test are
+retained. Notification-body-only oracles do not certify this transport enum.
+
 | Source entry/algorithm | Go implementation |
 |---|---|
 | `init_plugin:63`, state `85`, literal form `116` | `config.go`, `plugin.go`, `form.json`, `defaults.json` |
