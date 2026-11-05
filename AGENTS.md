@@ -1,0 +1,13 @@
+# Installed MoviePilot plugin migration
+
+- Current task: migrate the user's live installed plugins to this repository one plugin at a time. The previous pause on business-plugin development ended with this explicit request.
+- Use `docs/migration-task.md` and the single `migration/ledger.json` to resume. Do not turn partial implementations, copied configurations, protocol mocks, or successful compilation into completion claims.
+- Go backend; use the existing plugin frontend and packaging conventions. Existing Python build/publication scripts are build tools only; do not add a Python plugin runtime.
+- Only Linux, local storage and single user. No workflow or AI systems, APIs, configuration, placeholders or extension framework. Ordinary events, commands and scheduled tasks remain in scope. Official MoviePilot authentication levels/RSA are excluded by the user's prior instruction.
+- Reuse correct implementation and the existing shared SDK snapshot. Record its exact host commit and per-file changes in `SDK_ORIGIN.json`; do not copy the host application or create per-plugin SDK/framework copies.
+- Platform owns clones. A clone is an instance and must not become a duplicate business implementation. Verify independent identity, configuration, data, files, updates, reset and uninstall.
+- Old MoviePilot and old projects are read-only. Do not import/run plugins in production, replay one-shot flags, or enable competing scheduled writes. Use owned test data/services/directories for execution.
+- User credentials, cookies, tokens, private torrent material and real database/configuration snapshots stay out of Git and reports. Source inspection must not dump configuration values. Private working material belongs under ignored `work/`.
+- This checkout is the primary worktree for this separate repository. Reuse it, ordinary Go/npm caches and the current build tools. Do not clone/copy the host project, create release source replicas, or touch other tasks' worktrees.
+- The fixed delivery branch is `main`; current work is local on `codex/installed-plugins-20261105`. Development and verification are authorized; do not infer a production deployment or a new repository push from the previous host-repository push instruction.
+- Only the coordinator writes the authoritative ledger/build registry. Workers use assigned files and return source/target/test evidence. Preserve failed runs and distinguish source execution, real host/browser, protocol replay and unverified integration.

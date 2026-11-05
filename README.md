@@ -1,11 +1,12 @@
 # Light Media Plugins
 
-当前包含 CategoryEditor（二级分类策略）1.3 的标准 Go worker。构建目标仅为 Linux amd64；宿主功能由光影提供，本仓库不包含宿主应用、下载器或私人迁移证据。
+当前已验收 CategoryEditor（二级分类策略）1.3，正在按原版逐个迁移实机安装的 23 个插件实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
 ## 安装与使用
 
-1. 宿主必须具有 CategoryEditor 的标准资源接口。已验证的配套光影提交为
-   `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；仅看到应用版本号不能证明包含这些接口。
+1. 宿主必须具有 CategoryEditor 的标准资源接口。最低原配套提交为
+   `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；本轮真实 Linux main 和浏览器验收使用
+   `75e13686a0e3df05ac251e359303ef3fd5971cf6`。仅看到应用版本号不能证明包含这些接口。
 2. 等本仓库的 **Linux amd64 plugins** 工作流成功，且根目录出现
    `go-plugins.v1.json` 后，在光影插件市场加入
    `https://github.com/landuo/light-media-plugins`，刷新并安装“二级分类策略”。
@@ -69,8 +70,10 @@ python3 scripts/build_plugins.py --output dist \
 
 ## 来源和差异
 
-- CategoryEditor 的固定上游业务源为已安装 1.3 版本，源文件 SHA-256 为 `24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27`，已核验与 `jxxghp/MoviePilot-Plugins` 提交 `ce3357c0f2bb4e46f5ff9b72560505a33b26a362` 的 CategoryEditor 源文件逐字节相同。该提交的 GPL3 许可证原文保留于 `LICENSE.upstream`。辅助 helper 的迁移依据为归档版本，不据此宣称证明用户设备现用 helper 版本。
-- Go 业务实现与最小 SDK 文件固定于光影提交 `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`。`SDK_ORIGIN.json` 列出相对源路径、逐文件 SHA-256 与唯一允许的模块导入路径调整；SDK 20 个完整文件未裁剪或改写。
+- CategoryEditor 的固定上游业务源为已安装 1.3 版本，源文件 SHA-256 为 `24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27`，已核验与 `jxxghp/MoviePilot-Plugins` 提交 `ce3357c0f2bb4e46f5ff9b72560505a33b26a362` 的 CategoryEditor 源文件逐字节相同。该提交的 GPL3 许可证原文保留于 `LICENSE.upstream`。本轮只读核对了用户设备现用 helper 和内置默认模板，指纹与固定参考一致；未在原服务执行插件。
+- CategoryEditor 的 Go 业务来源保留原提交 `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；共享 SDK 基线已核对至 `75e13686a0e3df05ac251e359303ef3fd5971cf6`。`SDK_ORIGIN.json` 列出完整文件、逐文件指纹、历史快照和仅有的模块导入调整。后续插件所需的新宿主接口单独记录，尚未发布的接口不冒称已包含在该宿主提交。
 - `plugins/categoryeditor` 保留业务实现、嵌入表单及纯合成单元测试。协议 smoke test 启动真实 worker 进程并提供合成宿主回调，不等同于真实宿主的端到端验收。
-- 原始内部迁移材料、源代码 oracle、完整 SDK 测试、其他业务插件和宿主系统没有复制。本仓库插件实现及所含最小 SDK 快照经权利人明确授权按 GNU GPLv3 发布，完整条款见 `LICENSE`；第三方材料保留各自许可。
+- `migration/evidence/` 保存经检查的受控测试、源码差分、真实 Linux main/浏览器记录和独立审查；合成、协议回放和实机证据分别标明。私人迁移材料仍在被忽略的 `work/`。本仓库插件实现及所需完整文件 SDK 快照按现有 GNU GPLv3 授权提供，条款见 `LICENSE`；第三方材料保留各自许可。
 - 唯一第三方 Go 模块为 `golang.org/x/text v0.43.0`。Go 与 x/text 的许可证及 x/text 专利授权文本保留于 `third_party/`。
+
+本轮迁移约束与恢复入口：[`docs/migration-task.md`](docs/migration-task.md)。CategoryEditor 的保存、全局策略与分身配置关系，以及失败恢复、重启和卸载证据见 [`migration/evidence/categoryeditor-20261105/`](migration/evidence/categoryeditor-20261105/)。测试中的 1.3.1 仅为 manifest 更新夹具，不代表上游新版本或已发布制品。

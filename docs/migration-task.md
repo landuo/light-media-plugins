@@ -1,0 +1,15 @@
+# Installed plugin migration, 2026-11-05
+
+The user explicitly requested the complete-project-migration skill to migrate their MP-installed plugins into `landuo/light-media-plugins`, implementing plugins individually. This resumes business-plugin work for this repository; the host platform has already passed its separate 65-item acceptance and is published on `landuo/light-media@75e13686a0e3df05ac251e359303ef3fd5971cf6`.
+
+The live original `moviepilot` container was inspected through SQLite `mode=ro`, `query_only`, static AST and file hashes only. It has 23 instances, including `TorrentTransfermusic`. Every installed source file matches the earlier read-only handoff archive; the exact local content-baseline SHA and inventory are recorded in the single `migration/ledger.json`. This content SHA is not represented as an upstream commit.
+
+Keep all original behavior within the existing Go/Linux/local-storage/single-user contract. Workflow and AI functionality and official authentication levels/RSA remain excluded. Split mixed branches rather than deleting ordinary plugin behavior. Clones are managed by the platform, with one business implementation per plugin family. Original configuration/data compatibility must be reviewed without publishing secrets or applying private state to production.
+
+Worktree: `/Users/accidia/projects/light-media-plugins`; initial remote/main `4453f821ba32d5d4cc949e68d08d970e6ee7c975`; working branch `codex/installed-plugins-20261105`; fixed delivery branch `main`. Local development/acceptance is authorized, with no new remote push or production deployment assumed. Existing CategoryEditor and shared SDK/build/release code must be inspected and reused when correct.
+
+Execution order follows the live installed list. First revalidate the existing CategoryEditor against current source and the current host SDK. Then implement TorrentTransfer 1.10.3, including its music clone through platform identity. Continue the remaining installed plugins as complete slices, each with fixed source, full UI/API/event/service paths, real host tests, source-derived failure/restart/data cases and independent review. Discovery of later plugins may run independently, while business implementation acceptance proceeds individually.
+
+The coordinator maintains `migration/ledger.json`; it is the only feature-state authority. Statuses are discovered/implementing/blocked/needs_decision/verified/excluded. Previously copied code or historical host-repository acceptance is not automatically current target-repository acceptance. Keep exact source/target/test/environment bindings. No final whole-migration claim until every in-scope slice has valid executed evidence and independent review.
+
+Private source baseline, live inventory, temporary binaries and isolated runtime data are under `work/migration-20261105/`. Confirmed public-safe contracts and evidence belong under `migration/` and `docs/`. Do not change old MoviePilot, activate live subscriptions/downloaders or send notifications to real recipients during development.

@@ -1,0 +1,153 @@
+=== RUN   TestManifestIsStandardSourceArtifact
+--- PASS: TestManifestIsStandardSourceArtifact (0.00s)
+=== RUN   TestDefaultsAndNoOpGetters
+=== RUN   TestDefaultsAndNoOpGetters/get_command
+=== RUN   TestDefaultsAndNoOpGetters/get_api
+=== RUN   TestDefaultsAndNoOpGetters/get_page
+=== RUN   TestDefaultsAndNoOpGetters/get_service
+=== RUN   TestDefaultsAndNoOpGetters/get_dashboard
+=== RUN   TestDefaultsAndNoOpGetters/get_dashboard_meta
+=== RUN   TestDefaultsAndNoOpGetters/get_auth_providers
+=== RUN   TestDefaultsAndNoOpGetters/get_module
+=== RUN   TestDefaultsAndNoOpGetters/close
+=== RUN   TestDefaultsAndNoOpGetters/stop_service
+=== RUN   TestDefaultsAndNoOpGetters/stop
+--- PASS: TestDefaultsAndNoOpGetters (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_command (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_api (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_page (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_service (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_dashboard (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_dashboard_meta (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_auth_providers (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/get_module (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/close (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/stop_service (0.00s)
+    --- PASS: TestDefaultsAndNoOpGetters/stop (0.00s)
+=== RUN   TestFalseyInitDoesNotMutateExistingObject
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/null
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/{}
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/false
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/0
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/-0.0
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/1e-400
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/""
+=== RUN   TestFalseyInitDoesNotMutateExistingObject/[]
+--- PASS: TestFalseyInitDoesNotMutateExistingObject (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/null (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/{} (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/false (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/0 (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/-0.0 (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/1e-400 (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/"" (0.00s)
+    --- PASS: TestFalseyInitDoesNotMutateExistingObject/[] (0.00s)
+=== RUN   TestNonemptyConfigPreservesRawDisabledState
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"other":1}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"content":"retained"}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":null,"content":"x"}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":false,"content":42}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":0,"content":false}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":-0.0,"content":null}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":"","content":[]}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":[],"content":{}}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"enabled":{},"content":[1]}
+=== RUN   TestNonemptyConfigPreservesRawDisabledState/{"action":"init","config":{"enabled":true,"content":"wrong"}}
+--- PASS: TestNonemptyConfigPreservesRawDisabledState (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"other":1} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"content":"retained"} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":null,"content":"x"} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":false,"content":42} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":0,"content":false} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":-0.0,"content":null} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":"","content":[]} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":[],"content":{}} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"enabled":{},"content":[1]} (0.00s)
+    --- PASS: TestNonemptyConfigPreservesRawDisabledState/{"action":"init","config":{"enabled":true,"content":"wrong"}} (0.00s)
+=== RUN   TestEnabledTruthinessAndContentForwarding
+=== RUN   TestEnabledTruthinessAndContentForwarding/true
+=== RUN   TestEnabledTruthinessAndContentForwarding/1
+=== RUN   TestEnabledTruthinessAndContentForwarding/-2
+=== RUN   TestEnabledTruthinessAndContentForwarding/0.01
+=== RUN   TestEnabledTruthinessAndContentForwarding/"false"
+=== RUN   TestEnabledTruthinessAndContentForwarding/[false]
+=== RUN   TestEnabledTruthinessAndContentForwarding/{"x":false}
+=== RUN   TestEnabledTruthinessAndContentForwarding/123456789012345678901234567890
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=null
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=false
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=0
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=-0.0
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=1e-400
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=""
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=[]
+=== RUN   TestEnabledTruthinessAndContentForwarding/content={}
+=== RUN   TestEnabledTruthinessAndContentForwarding/content="中文\r\n#_keep\n"
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=true
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=123456789012345678901234567890
+=== RUN   TestEnabledTruthinessAndContentForwarding/content=[0]
+=== RUN   TestEnabledTruthinessAndContentForwarding/content={"a":1}
+--- PASS: TestEnabledTruthinessAndContentForwarding (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/true (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/1 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/-2 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/0.01 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/"false" (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/[false] (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/{"x":false} (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/123456789012345678901234567890 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=null (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=false (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=0 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=-0.0 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=1e-400 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content="" (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=[] (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content={} (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content="中文\r\n#_keep\n" (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=true (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=123456789012345678901234567890 (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content=[0] (0.00s)
+    --- PASS: TestEnabledTruthinessAndContentForwarding/content={"a":1} (0.00s)
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/success
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/update_false_is_not_exception
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/update_None_is_not_exception
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/apply_failure_keeps_enabled
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/message_failure_keeps_enabled
+=== RUN   TestInitializationEffectOrderAndFailureBoundaries/update_exception_already_disabled
+--- PASS: TestInitializationEffectOrderAndFailureBoundaries (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/success (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/update_false_is_not_exception (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/update_None_is_not_exception (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/apply_failure_keeps_enabled (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/message_failure_keeps_enabled (0.00s)
+    --- PASS: TestInitializationEffectOrderAndFailureBoundaries/update_exception_already_disabled (0.00s)
+=== RUN   TestReloadIsExplicitAndObjectsAreIndependent
+--- PASS: TestReloadIsExplicitAndObjectsAreIndependent (0.00s)
+=== RUN   TestGetFormAlwaysReadsOriginalDefaults
+--- PASS: TestGetFormAlwaysReadsOriginalDefaults (0.00s)
+=== RUN   TestGetFormPropagatesDefaultReadFailure
+--- PASS: TestGetFormPropagatesDefaultReadFailure (0.00s)
+=== RUN   TestInvalidConfigDoesNotMutateMembers
+=== RUN   TestInvalidConfigDoesNotMutateMembers/true
+=== RUN   TestInvalidConfigDoesNotMutateMembers/1
+=== RUN   TestInvalidConfigDoesNotMutateMembers/"text"
+=== RUN   TestInvalidConfigDoesNotMutateMembers/[1]
+=== RUN   TestInvalidConfigDoesNotMutateMembers/{
+=== RUN   TestInvalidConfigDoesNotMutateMembers/{}_{}
+--- PASS: TestInvalidConfigDoesNotMutateMembers (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/true (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/1 (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/"text" (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/[1] (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/{ (0.00s)
+    --- PASS: TestInvalidConfigDoesNotMutateMembers/{}_{} (0.00s)
+=== RUN   TestRawUnicodeIsPreservedForSourceEncodingFailure
+--- PASS: TestRawUnicodeIsPreservedForSourceEncodingFailure (0.00s)
+PASS
+ok  	github.com/landuo/light-media-plugins/plugins/categoryeditor	0.393s
+=== RUN   TestWorkerProtocolSmoke
+    main_test.go:24: the supported worker build target is linux/amd64
+--- SKIP: TestWorkerProtocolSmoke (0.00s)
+PASS
+ok  	github.com/landuo/light-media-plugins/cmd/category-editor	0.391s

@@ -1,0 +1,10 @@
+{
+  "kind": "non-acceptance reproducibility probe, not a product failure",
+  "command": "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -overlay=<delete new downloader_source.go> -buildvcs=false -o <owned-temp>/category-editor ./cmd/category-editor",
+  "build_exit": 0,
+  "candidate_sha256": "211a29dc99a38b06ee204e93a9d0a1f94183b36b1861e62b1f870d262089b779",
+  "actual_prior_runtime_worker_sha256": "091493585e9a33b68ddc1ea3e11e5b2fccacb16289b7284771c7862bc5e33cd3",
+  "byte_reproduction": false,
+  "reason_not_asserted": "Original worker build command/flags were not included in initial runtime manifest; do not infer them from the source code or replace recorded runtime SHA with this candidate.",
+  "cleanup": "owned temporary binary and overlay removed"
+}

@@ -1,0 +1,76 @@
+Mutation: successful init retains enabled=true instead of auto-disable
+target cases=57
+{"cases": 57, "steps": 138, "field_comparisons": 1242, "differences": 70, "passed": false}
+[
+  {
+    "id": "one-shot-success",
+    "step": 0,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "one-shot-success",
+    "step": 1,
+    "field": "result",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "one-shot-success",
+    "step": 1,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "one-shot-success",
+    "step": 2,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "one-shot-success",
+    "step": 3,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "explicit-repeat",
+    "step": 0,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "explicit-repeat",
+    "step": 1,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "missing-content",
+    "step": 0,
+    "field": "state",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "missing-content",
+    "step": 1,
+    "field": "result",
+    "source": false,
+    "target": true
+  },
+  {
+    "id": "missing-content",
+    "step": 1,
+    "field": "state",
+    "source": false,
+    "target": true
+  }
+]
+COMPARISON_EXIT=1

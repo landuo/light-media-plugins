@@ -30,9 +30,11 @@ grant in `third_party/x-text-PATENTS`. The module checksums are fixed in
 ## SDK provenance
 
 `SDK_ORIGIN.json` identifies the exact complete-file SDK snapshot and permitted
-import relocation. The CategoryEditor adaptation and this explicitly authorized minimum SDK
+import relocation. The CategoryEditor adaptation and this required complete-file SDK
 snapshot are distributed under GNU GPL version 3; see `LICENSE`. This grant
 does not imply that the unrelated host application is public or GPL-licensed.
 Go and x/text retain their original licenses as stated above. This repository
 does not include the host application, private configuration, databases, or
-original migration logs.
+private original migration logs. Controlled synthetic/source/main/browser evidence is
+separately classified in migration/evidence; it contains no production
+configuration or database.

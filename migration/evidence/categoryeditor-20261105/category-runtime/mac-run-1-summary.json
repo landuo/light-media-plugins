@@ -1,0 +1,158 @@
+{
+  "run": "mac-run-1",
+  "main_processes": [
+    {
+      "base": "http://127.0.0.1:59862",
+      "binary_sha256": "b4743ec9a2be669068ded6544dca960d710a0a7c81ee9be138b6afc9ed542842",
+      "generation": 1,
+      "pid": 71149
+    },
+    {
+      "base": "http://127.0.0.1:59862",
+      "binary_sha256": "b4743ec9a2be669068ded6544dca960d710a0a7c81ee9be138b6afc9ed542842",
+      "generation": 2,
+      "pid": 71202
+    }
+  ],
+  "main_exits": [
+    {
+      "error": "<nil>",
+      "pid": 71149
+    },
+    {
+      "error": "<nil>",
+      "pid": 71202
+    }
+  ],
+  "http_count": 40,
+  "non2xx_expected_or_observed": [
+    {
+      "method": "PUT",
+      "path": "/api/plugins/CategoryEditor",
+      "request": {
+        "content": "movie:\n  不应写入: {}\ntv: {}\n",
+        "enabled": true,
+        "retained_on_failure": true
+      },
+      "response": {
+        "error": {
+          "code": "INTERNAL_ERROR",
+          "message": "操作失败，请查看关联日志"
+        },
+        "request_id": "req_bfPgCNWWqbM8KTFNEyEHZfZp"
+      },
+      "status": 500
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/CategoryEditorowned/form",
+      "request": null,
+      "response": {
+        "error": {
+          "code": "PLUGIN_NOT_LOADED",
+          "message": "插件未加载或尚未适配"
+        },
+        "request_id": "req_kz4TyjrW4Teq7tJV7ijIdjcK"
+      },
+      "status": 404
+    },
+    {
+      "method": "GET",
+      "path": "/api/plugins/CategoryEditor/form",
+      "request": null,
+      "response": {
+        "error": {
+          "code": "PLUGIN_NOT_LOADED",
+          "message": "插件未加载或尚未适配"
+        },
+        "request_id": "req_8NvM6FZ8JXrRtJXbcf_1hZ-l"
+      },
+      "status": 404
+    }
+  ],
+  "worker_pid_observations": [
+    {
+      "CategoryEditor": 71155
+    },
+    {
+      "CategoryEditor": 71155
+    },
+    {
+      "CategoryEditor": 71155
+    },
+    {
+      "CategoryEditor": 71155
+    },
+    {
+      "CategoryEditor": 71155,
+      "CategoryEditorowned": 71189
+    },
+    {
+      "CategoryEditor": 71191,
+      "CategoryEditorowned": 71189
+    },
+    {
+      "CategoryEditor": 71200,
+      "CategoryEditorowned": 71189
+    },
+    {
+      "CategoryEditor": 71203,
+      "CategoryEditorowned": 71204
+    }
+  ],
+  "policy_byte_snapshots": [
+    {
+      "bytes": 5298,
+      "sha256": "1095b3aeb315569f541fded31bc77f43fa625cb9ac4844e3a28ba7d7868b2303"
+    },
+    {
+      "bytes": 132,
+      "sha256": "e517c6bc1a16d49dbf3d431d6b5682e2989620a8de5c1be34d792bd47404faf2"
+    },
+    {
+      "bytes": 32,
+      "sha256": "9ddec6035a3702b58ffdae0b82f729c5561fe6351e2a0f5378cb1fe9d0f3c774"
+    },
+    {
+      "bytes": 132,
+      "sha256": "e517c6bc1a16d49dbf3d431d6b5682e2989620a8de5c1be34d792bd47404faf2"
+    },
+    {
+      "bytes": 132,
+      "sha256": "e517c6bc1a16d49dbf3d431d6b5682e2989620a8de5c1be34d792bd47404faf2"
+    },
+    {
+      "bytes": 49,
+      "sha256": "55fce716499fb2b126250f39cf5e2aec57b805aa01230d683e721bb74038fe0c"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    },
+    {
+      "bytes": 73,
+      "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b"
+    }
+  ],
+  "raw_events": 72
+}

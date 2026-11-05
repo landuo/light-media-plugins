@@ -1,0 +1,17 @@
+{
+  "classification": "Actual IAB UI on owned isolated Linux cmd/server; synthetic settings only",
+  "source_version": "1.3.1 test manifest overlay, same business as1.3",
+  "clone_version": "1.3",
+  "actions": [
+    "source policy UI来源电影/UI来源剧集 enabled save succeeded; reopen enabled0",
+    "clone still held its previous 分身共享全局电影/剧集 config after source write",
+    "clone policy UI分身电影/UI分身剧集 save under owned category.yaml0400 failed; request req_p6EQ0FEEZq6MVGXbJVfUIt9M and exact draft/enabled1 retained",
+    "after original0600 restored, same retained clone form saved successfully; reopen shows enabled0",
+    "full page reload and source reopen retained UI来源电影/UI来源剧集 with enabled0, not clone text"
+  ],
+  "source_config": "movie:\n  UI来源电影: {}\ntv:\n  UI来源剧集: {}\n",
+  "clone_config": "movie:\n  UI分身电影: {}\ntv:\n  UI分身剧集: {}\n",
+  "global_policy_semantics": "Shared global policy expected; separate source/clone config preserved. Actual file/cache and post-UI cold checked by separate public-HTTP driver.",
+  "root_ui_complete": true,
+  "created_tab_closed": true
+}

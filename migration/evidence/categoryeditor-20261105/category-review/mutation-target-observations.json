@@ -1,0 +1,3245 @@
+{
+  "cases": [
+    {
+      "id": "fresh-and-noop",
+      "observations": [
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_command",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_api",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_page",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "form-fresh-read",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "启用插件（写入配置文件）"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "content": "default-one\n",
+              "enabled": false
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "启用插件（写入配置文件）"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "content": "default-two\n",
+              "enabled": false
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "form-read-fails",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "form-invalid-utf8",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "form-empty-default",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "启用插件（写入配置文件）"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "one-shot-success",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "启用插件（写入配置文件）"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "content": "default-one\n",
+              "enabled": false
+            }
+          ],
+          "state": true,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "explicit-repeat",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "same\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "same\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "73616d650a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "same\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "same\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "same\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "73616d650a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            },
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "same\n",
+              "enabled": false
+            },
+            {
+              "content": "same\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        }
+      ]
+    },
+    {
+      "id": "disabled-draft",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "启用插件（写入配置文件）"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "content": "default-one\n",
+              "enabled": false
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "missing-enabled",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "missing-content",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": 0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": 0,
+          "state": 0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": -0.0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": -0.0,
+          "state": -0.0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "",
+          "state": "",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": [],
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": [],
+          "state": [],
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": {},
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": {},
+          "state": {},
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "value",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-8",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "value",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-9",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "value",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-10",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "value",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-11",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "value",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "value",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": true
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-8",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": 123456789012345678901234567890
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-9",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": [
+                  0
+                ]
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-10",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": {
+                  "a": 1
+                }
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-11",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "\u4e2d\u6587\r\n# keep\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "\u4e2d\u6587\r\n# keep\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "e4b8ade696870d0a23206b6565700a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "\u4e2d\u6587\r\n# keep\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "e4b8ade696870d0a23206b6565700a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "\u4e2d\u6587\r\n# keep\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-12",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "movie: [invalid"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "movie: [invalid",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "6d6f7669653a205b696e76616c6964",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie: [invalid",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6d6f7669653a205b696e76616c6964",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "movie: [invalid",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "content-type-13",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "fault-apply",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "fault-helper",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "fault-message",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "fault-update",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "new\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "update-return-False",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "new\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "new\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "new\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "update-return-None",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "new\n",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "new\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "new\n",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "unicode-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before\ud800after"
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "unicode-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before\udc00after"
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0
+        }
+      ]
+    },
+    {
+      "id": "unicode-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "emoji\ud83d\ude0a"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+                "title": "二级分类策略"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "content": "emoji\ud83d\ude0a",
+                  "enabled": false
+                }
+              }
+            }
+          ],
+          "file_hex": "656d6f6a69f09f988a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "emoji\ud83d\ude0a",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 1
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "656d6f6a69f09f988a",
+          "messages": [
+            {
+              "message": "二级分类策略已更新，请注意同步调整目录设置，插件将恢复关闭状态！",
+              "title": "二级分类策略"
+            }
+          ],
+          "updates": [
+            {
+              "content": "emoji\ud83d\ude0a",
+              "enabled": false
+            }
+          ],
+          "helper_calls": 0
+        }
+      ]
+    }
+  ],
+  "resource_kind": "synthetic callbacks; owned file IO; no real host"
+}

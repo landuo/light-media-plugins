@@ -1,0 +1,1133 @@
+{
+  "status": "passed_under_explicit_target_SDK_and_approved_safety_adaptations",
+  "independent": true,
+  "reviewer": "/root/category_review",
+  "report": "work/migration-20261105/category-review/FINAL-REVIEW-20261105.md",
+  "source_plugin_sha256": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+  "source_plugin_version": "1.3",
+  "host_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+  "exact_git_host_inputs_checked": 1818,
+  "actual_runtime": {
+    "status": "runtime evidence independently consistent",
+    "source_input_git_blob_checks": 1818,
+    "source_input_mismatches": [],
+    "host_source": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "actual_binary_records_checked": [
+      {
+        "path": "tests/integration/testhost_main_test.go",
+        "sha256": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+        "size": 9233
+      },
+      {
+        "path": "tests/integration/categoryeditor_main_test.go",
+        "sha256": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+        "size": 11550
+      },
+      {
+        "path": "plugins/categoryeditor/categoryeditor.go",
+        "sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+        "size": 7880
+      },
+      {
+        "path": "plugins/categoryeditor/form.json",
+        "sha256": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+        "size": 930
+      },
+      {
+        "path": "cmd/category-editor/main.go",
+        "sha256": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+        "size": 786
+      },
+      {
+        "path": "SDK_ORIGIN.json",
+        "sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+        "size": 39661
+      },
+      {
+        "path": "work/migration-20261105/light-media-host-mac",
+        "sha256": "b4743ec9a2be669068ded6544dca960d710a0a7c81ee9be138b6afc9ed542842",
+        "size": 68671490
+      },
+      {
+        "path": "work/migration-20261105/light-media-host-linux",
+        "sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+        "size": 70557259
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/category-editor-version-fixture.go",
+        "sha256": "29c23b985cc424e7b53bd0896b761eefb35fbd11e65eb509510737ce36c7c160",
+        "size": 814
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/worker-version-overlay.json",
+        "sha256": "588997d9c42212ed9c560128b8570f40207efe5fc06e083e746497e36f4c1a67",
+        "size": 224
+      }
+    ],
+    "removed_task_binaries_recorded": [
+      {
+        "path": "work/migration-20261105/category-runtime/category-editor-mac",
+        "sha256": "d556c8877463e36fbe03d80b8e664afcd4be5e48ac38a61f64ef4e3df00648fc",
+        "size": 4523778
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/category-editor-update-mac",
+        "sha256": "c3dbb9c58e4c5880f61e39f107c1f04030fe8ae2bdb2303ed1a4b0717ded3665",
+        "size": 4523778
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/category-editor-linux",
+        "sha256": "091493585e9a33b68ddc1ea3e11e5b2fccacb16289b7284771c7862bc5e33cd3",
+        "size": 4626294
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/category-editor-update-linux",
+        "sha256": "f46fef8bbcc8c18ed8c5b3fb7c28196e793842bb81628d502bec3005646b02df",
+        "size": 4626302
+      },
+      {
+        "path": "work/migration-20261105/category-runtime/categoryeditor-main-linux.test",
+        "sha256": "26f559bc85e59bc6b61e0a5b8f54c16b0f6389f2064bb36d69cdee671d1a2c07",
+        "size": 11011986
+      }
+    ],
+    "summaries": {
+      "linux-run": {
+        "raw_events": 78,
+        "public_http": 42,
+        "main_pids": [
+          1822162,
+          1826298
+        ],
+        "all_main_exits_normal": true,
+        "worker_pids": [
+          {
+            "CategoryEditor": 1822188
+          },
+          {
+            "CategoryEditor": 1822188
+          },
+          {
+            "CategoryEditor": 1822188
+          },
+          {
+            "CategoryEditor": 1822188
+          },
+          {
+            "CategoryEditor": 1822188,
+            "CategoryEditorowned": 1822223
+          },
+          {
+            "CategoryEditor": 1822231,
+            "CategoryEditorowned": 1822223
+          },
+          {
+            "CategoryEditor": 1822243,
+            "CategoryEditorowned": 1822223
+          },
+          {
+            "CategoryEditor": 1826330,
+            "CategoryEditorowned": 1826336
+          }
+        ],
+        "sse_nonempty": 1,
+        "index_and_executable_acquisitions": {
+          "/index": 4,
+          "/worker": 4
+        },
+        "http500": "one intentional non-root driver0400 failure",
+        "not_loaded_404_count": 2,
+        "host_logs": [
+          {
+            "path": "work/migration-20261105/category-runtime/linux-run/evidence/host-1.log",
+            "records": 36,
+            "request_failed_ids": [
+              "req_uaEW8OPMXy4VBDP1vEw4Zq4C",
+              "req_p6EQ0FEEZq6MVGXbJVfUIt9M"
+            ]
+          },
+          {
+            "path": "work/migration-20261105/category-runtime/linux-run/evidence/host-2.log",
+            "records": 13,
+            "request_failed_ids": []
+          }
+        ]
+      },
+      "mac-run-2": {
+        "raw_events": 76,
+        "public_http": 41,
+        "main_pids": [
+          71377,
+          71396
+        ],
+        "all_main_exits_normal": true,
+        "worker_pids": [
+          {
+            "CategoryEditor": 71380
+          },
+          {
+            "CategoryEditor": 71380
+          },
+          {
+            "CategoryEditor": 71380
+          },
+          {
+            "CategoryEditor": 71380
+          },
+          {
+            "CategoryEditor": 71380,
+            "CategoryEditorowned": 71387
+          },
+          {
+            "CategoryEditor": 71389,
+            "CategoryEditorowned": 71387
+          },
+          {
+            "CategoryEditor": 71392,
+            "CategoryEditorowned": 71387
+          },
+          {
+            "CategoryEditor": 71397,
+            "CategoryEditorowned": 71398
+          }
+        ],
+        "sse_nonempty": 1,
+        "index_and_executable_acquisitions": {
+          "/index": 4,
+          "/worker": 4
+        },
+        "http500": "one intentional non-root driver0400 failure",
+        "not_loaded_404_count": 2,
+        "host_logs": [
+          {
+            "path": "work/migration-20261105/category-runtime/mac-run-2/evidence/host-1.log",
+            "records": 20,
+            "request_failed_ids": [
+              "req_yXi8nJN3xaKSUpSH3zq3FiTz"
+            ]
+          },
+          {
+            "path": "work/migration-20261105/category-runtime/mac-run-2/evidence/host-2.log",
+            "records": 13,
+            "request_failed_ids": []
+          }
+        ]
+      }
+    },
+    "coverage": {
+      "linux-run": [
+        "real executable install through owned HTTP index",
+        "source form tree/default bytes",
+        "disabled save without apply",
+        "write/reload/message/auto-off/full replacement",
+        "malformed YAML warm cache",
+        "actual0400 failure preserving config/cache/worker",
+        "same-worker0600 recovery",
+        "clone config/code/PID identity; shared global policy",
+        "source-only reload/force reacquire/version fixture",
+        "cold new main/worker PIDs; unchanged policy inode/mtime via driver assertions; empty SSE",
+        "clone reset/uninstall, source uninstall/reinstall config retention"
+      ],
+      "mac-run-2": [
+        "real executable install through owned HTTP index",
+        "source form tree/default bytes",
+        "disabled save without apply",
+        "write/reload/message/auto-off/full replacement",
+        "malformed YAML warm cache",
+        "actual0400 failure preserving config/cache/worker",
+        "same-worker0600 recovery",
+        "clone config/code/PID identity; shared global policy",
+        "source-only reload/force reacquire/version fixture",
+        "cold new main/worker PIDs; unchanged policy inode/mtime via driver assertions; empty SSE",
+        "clone reset/uninstall, source uninstall/reinstall config retention"
+      ]
+    },
+    "browser": {
+      "independently_read": "five AX snapshots, five PNGs and root observation; not personally reexecuted browser",
+      "source_config": {
+        "content": "movie:\n  UI来源电影: {}\ntv:\n  UI来源剧集: {}\n",
+        "enabled": false
+      },
+      "clone_config": {
+        "content": "movie:\n  UI分身电影: {}\ntv:\n  UI分身剧集: {}\n",
+        "enabled": false
+      },
+      "shared_policy_sha256": "67c963d949364f1be044e18b0d07f45be8659ec4f97e8b50d57a59d79857a87e",
+      "failure_request": "req_p6EQ0FEEZq6MVGXbJVfUIt9M",
+      "actual0400_to0600_evidence_consistent": true
+    },
+    "fixture_version": "1.3.1 only manifest overlay, same1.3 business",
+    "cleanups_verified": true,
+    "artifacts": {
+      "work/migration-20261105/category-runtime/README.txt": {
+        "sha256": "7d652761d06c4d548da05d440b2271211c099fb88732a0ec597c6e13bf720320",
+        "bytes": 5932
+      },
+      "work/migration-20261105/category-runtime/browser/clone-before.ax.txt": {
+        "sha256": "6d4e4e766bfcfac1b1c28843e7ee4b24ff62186e127093e8e5e38a638a2707f7",
+        "bytes": 1246
+      },
+      "work/migration-20261105/category-runtime/browser/clone-before.png": {
+        "sha256": "1d33bb630f7687866123778e790b37e10044c9b4a4d7a00f4249ee9a40cc70f4",
+        "bytes": 34426
+      },
+      "work/migration-20261105/category-runtime/browser/clone-recovered.ax.txt": {
+        "sha256": "955c1764ea5e2631af63cf10178c7baf6ed5b8cec2edd9ddf5cda0e01e34b1a9",
+        "bytes": 1222
+      },
+      "work/migration-20261105/category-runtime/browser/clone-recovered.png": {
+        "sha256": "202f27b38cc92cff71c469a2072b6098def6c357bfd189fd874b32b2d300573e",
+        "bytes": 33278
+      },
+      "work/migration-20261105/category-runtime/browser/clone-write-failure.ax.txt": {
+        "sha256": "5e75a9090fda66a95e0d63de768619fa19bbd0a1bbcb774ab96cb76021118253",
+        "bytes": 673
+      },
+      "work/migration-20261105/category-runtime/browser/clone-write-failure.png": {
+        "sha256": "a92e0119c89515d69fc1c7e8e0ab204941abb95bc0c2eff38c72d457b04003f0",
+        "bytes": 40839
+      },
+      "work/migration-20261105/category-runtime/browser/observation.json": {
+        "sha256": "f12ccf36e0702950e2083883a018c5a3830da0fb0ecea87ae174453f45a6fb23",
+        "bytes": 1176
+      },
+      "work/migration-20261105/category-runtime/browser/source-after-refresh.ax.txt": {
+        "sha256": "a850ec2699bc6efd4701bbde6fd3477bf47fb4f0fca8117c880c2cc7821c629a",
+        "bytes": 1221
+      },
+      "work/migration-20261105/category-runtime/browser/source-after-refresh.png": {
+        "sha256": "ab70039eab887a2e083b3393cb56ea6b2b3af6a1a5be871defa4a913474154ff",
+        "bytes": 31386
+      },
+      "work/migration-20261105/category-runtime/browser/source-after-save.ax.txt": {
+        "sha256": "2b0884b9daa82551bde14fd0a8613f47c7ef5f8e96f514afa5cbe2bc5e92da19",
+        "bytes": 1222
+      },
+      "work/migration-20261105/category-runtime/browser/source-after-save.png": {
+        "sha256": "854525f65d764625b1bc8443a6025d457716167ed966cfcb0aae393c07da14ad",
+        "bytes": 33302
+      },
+      "work/migration-20261105/category-runtime/browser-write-failure-precondition.json": {
+        "sha256": "ebc5d07c914dbc2a72da44a7ffe65a13c10316e2c5d9aed85c1df67085c80c91",
+        "bytes": 294
+      },
+      "work/migration-20261105/category-runtime/browser-write-failure-restoration.json": {
+        "sha256": "5a8234b3ea3603d61c3ad0fe92bf82a9cb4c051db4f116cbfd16d5e1f8182837",
+        "bytes": 286
+      },
+      "work/migration-20261105/category-runtime/category-editor-version-fixture.go": {
+        "sha256": "29c23b985cc424e7b53bd0896b761eefb35fbd11e65eb509510737ce36c7c160",
+        "bytes": 814
+      },
+      "work/migration-20261105/category-runtime/cleanup-owned-remote.py": {
+        "sha256": "2e3837faf8c6ccbf05773228994bf8dc2e0f284bf70e155b48a8eecfb11d5523",
+        "bytes": 2521
+      },
+      "work/migration-20261105/category-runtime/host-build-source-binding.json": {
+        "sha256": "367ee5ee44777c05641595493d204c04838e26942665c27a442e8871a7997dad",
+        "bytes": 233626
+      },
+      "work/migration-20261105/category-runtime/host-linux-buildinfo.txt": {
+        "sha256": "f2d0dd53b466559cdb25bf97fae935de720476cacc845128d2ed7bb4eb2f4c75",
+        "bytes": 3592
+      },
+      "work/migration-20261105/category-runtime/host-mac-buildinfo.txt": {
+        "sha256": "761bd07330d73d27aacd5d0bb70c8d8ff62b7a7414b143f88a817625b0a59e58",
+        "bytes": 3772
+      },
+      "work/migration-20261105/category-runtime/initial-driver-compile-failure.txt": {
+        "sha256": "d1fa024ef314de839619eab884dab067bd5da93969bffac4150aff7d28a38f9c",
+        "bytes": 168
+      },
+      "work/migration-20261105/category-runtime/linux-cleanup.json": {
+        "sha256": "5f7f87274c36576948e0bf252067ce0e3bc0784c34ad2948dca5f471fa1dbc23",
+        "bytes": 1066
+      },
+      "work/migration-20261105/category-runtime/linux-namespace-proof.json": {
+        "sha256": "6d60a94b75bb999c35c36158766592493ad99acd7a9f6713e8c8644a903e76b7",
+        "bytes": 3594
+      },
+      "work/migration-20261105/category-runtime/linux-run/evidence/host-1.log": {
+        "sha256": "4e705a59241a56d738731fb07aa0a580beae844e14944ed8314435e1098de718",
+        "bytes": 12031
+      },
+      "work/migration-20261105/category-runtime/linux-run/evidence/host-2.log": {
+        "sha256": "c2e75d0af3e247466208a76de60c9cab5edc940ac58eb446c6b89e0db920a9d7",
+        "bytes": 4258
+      },
+      "work/migration-20261105/category-runtime/linux-run/evidence/observations.jsonl": {
+        "sha256": "4bd052158d161329c556fff7e6871a959f3871c485ef9a1bbb982984f53d23fa",
+        "bytes": 25842
+      },
+      "work/migration-20261105/category-runtime/linux-run/evidence/ui-final-http.json": {
+        "sha256": "9ee2cf25676cffbda60b76135dcfa1a19c0032f159c8e5ab9c1fcb1af6464e3c",
+        "bytes": 612
+      },
+      "work/migration-20261105/category-runtime/linux-run/final-category.yaml": {
+        "sha256": "67c963d949364f1be044e18b0d07f45be8659ec4f97e8b50d57a59d79857a87e",
+        "bytes": 53
+      },
+      "work/migration-20261105/category-runtime/linux-run/run.log": {
+        "sha256": "07b9a0653ccb638979d85a42f814b0018660e2c04b8ee0624be0d7e131c2cbfb",
+        "bytes": 385
+      },
+      "work/migration-20261105/category-runtime/linux-run-summary.json": {
+        "sha256": "3f38059e3738a1f2b46077ded5621cc2f10a5cca5c50ae3ffe133961a3e78f59",
+        "bytes": 5864
+      },
+      "work/migration-20261105/category-runtime/mac-cleanup.json": {
+        "sha256": "e8807fe4d1b9281e229916262f26a19b85896aad4839c999f69a74f02aa0bae3",
+        "bytes": 171
+      },
+      "work/migration-20261105/category-runtime/mac-run-1/evidence/final-category.yaml": {
+        "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b",
+        "bytes": 73
+      },
+      "work/migration-20261105/category-runtime/mac-run-1/evidence/host-1.log": {
+        "sha256": "e659570b386977b53d0197908db6c02d308100b46c0d7a64bd75c9930531eecf",
+        "bytes": 6612
+      },
+      "work/migration-20261105/category-runtime/mac-run-1/evidence/host-2.log": {
+        "sha256": "1b6d1a5d4414019995c7a33d6419760e62e01dfc48563687a17ff3521798f865",
+        "bytes": 4218
+      },
+      "work/migration-20261105/category-runtime/mac-run-1/evidence/observations.jsonl": {
+        "sha256": "ed3cbbeab0dd2d7141cce332b6c74b4a7df9f44bbc107abc67625a7c9077a645",
+        "bytes": 24556
+      },
+      "work/migration-20261105/category-runtime/mac-run-1-summary.json": {
+        "sha256": "f97ded19baec31f2b27044ea6e737e50dcffdfb5025ae742c2644790617c25f6",
+        "bytes": 3822
+      },
+      "work/migration-20261105/category-runtime/mac-run-1.log": {
+        "sha256": "23a3e20e1ac176cfb2f5de2d446fb801dba4035529efd1c985d1bc42201d1292",
+        "bytes": 345
+      },
+      "work/migration-20261105/category-runtime/mac-run-2/evidence/final-category.yaml": {
+        "sha256": "fa80c777c60a3146a740eb73aa32892d38c79337586fd22121d4ae28fd90dc3b",
+        "bytes": 73
+      },
+      "work/migration-20261105/category-runtime/mac-run-2/evidence/host-1.log": {
+        "sha256": "7b3cdfc369cd9e576e73e15311eadfc68469858b934af14064ad25246e17c320",
+        "bytes": 6611
+      },
+      "work/migration-20261105/category-runtime/mac-run-2/evidence/host-2.log": {
+        "sha256": "62fb481d91e57a51b3dbe2e28ba0c9fe55007a3d40664b863075afc33a19cb47",
+        "bytes": 4220
+      },
+      "work/migration-20261105/category-runtime/mac-run-2/evidence/observations.jsonl": {
+        "sha256": "aee30c784779c35fba95de1e1dcdfee453191a5b7cbb875582df9903e2849784",
+        "bytes": 25145
+      },
+      "work/migration-20261105/category-runtime/mac-run-2-summary.json": {
+        "sha256": "649e370592873e82d7aca62edc3c34897ef9d21b3399d398c16d0e2529c088e1",
+        "bytes": 3937
+      },
+      "work/migration-20261105/category-runtime/mac-run-2.log": {
+        "sha256": "16fdbaf9d60357f7c78b5924297334bb51319dd074a4175a8435fd93a601b870",
+        "bytes": 352
+      },
+      "work/migration-20261105/category-runtime/runtime-inputs-and-status.json": {
+        "sha256": "f05c2eaab747c7fe41e439a00cd89166852678e3ededc46e9dc8120fbf73be09",
+        "bytes": 6598
+      },
+      "work/migration-20261105/category-runtime/ui-final-http.json": {
+        "sha256": "9ee2cf25676cffbda60b76135dcfa1a19c0032f159c8e5ab9c1fcb1af6464e3c",
+        "bytes": 612
+      },
+      "work/migration-20261105/category-runtime/vet-main-driver.log": {
+        "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "bytes": 0
+      },
+      "work/migration-20261105/category-runtime/worker-version-overlay.json": {
+        "sha256": "588997d9c42212ed9c560128b8570f40207efe5fc06e083e746497e36f4c1a67",
+        "bytes": 224
+      }
+    },
+    "limits": [
+      "This reviewer inspected original execution records and code; the actual Linux/main/browser executions were performed by coordinator/runtime worker.",
+      "Original Python differential execution remains the independent57case oracle, not rerun during real-main acceptance.",
+      "Executable-format artifact acquisition is tested; no claim of newly published remote release or end-user private configuration migration.",
+      "Current host checkout has in-progress TorrentTransfer edits; this report binds actual75e host binaries and exact immutable Git inputs, not a new host build from those unaccepted edits."
+    ]
+  },
+  "current_dependency_analysis": {
+    "status": "new SDK file has no CategoryEditor reachable code; original evidence preserved",
+    "sdk_origin_sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+    "frozen_84_file_hashes_unchanged": true,
+    "frozen_production_set": "46bce3cfb0e8b8f42fbc4fa3f53e90e1fe5e8d421cc229be724a6063c1e162f0",
+    "new_production_files": [
+      {
+        "path": "internal/sdk/downloader_source.go",
+        "sha256": "a4d631a0e99f998402698c39447aa4336b0fb02b3555ad03bee82736562b4275",
+        "no_init_or_package_variables": true,
+        "imports": [
+          "context",
+          "errors",
+          "strings"
+        ],
+        "declarations": "four capability constants, two DTO types, Downloaders method implementations only"
+      }
+    ],
+    "compiled_category": [
+      {
+        "mode": "current",
+        "command": "go build -trimpath -buildvcs=false -o <owned-temp>/current-linux ./cmd/category-editor",
+        "binary_sha256": "829d6f6231c991098daf1c2720994b1c93a5d390cab8c9429e1a127342e26ee4",
+        "bytes": 4607756,
+        "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+        "source_methods_in_linked_binary": [],
+        "symbols": 4877,
+        "elf_sections": {
+          "": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          ".note.go.buildid": {
+            "bytes": 100,
+            "sha256": "a594e392b969085197c8d5fea2f5099fa6bed10c505911ea51ee8c75a74b6e0d"
+          },
+          ".note.gnu.build-id": {
+            "bytes": 36,
+            "sha256": "921deb0fa61f564ce9bb89044c3b31d5cd6756d0f734c7a53d8e1969e7cc1a81"
+          },
+          ".text": {
+            "bytes": 1376177,
+            "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+          },
+          ".rodata": {
+            "bytes": 397985,
+            "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+          },
+          ".gopclntab": {
+            "bytes": 1157144,
+            "sha256": "aa7fd6806be558a517bcca937eb9f59bf2ed342bf99fb5e500dc97dfb165416b"
+          },
+          ".typelink": {
+            "bytes": 3684,
+            "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+          },
+          ".itablink": {
+            "bytes": 472,
+            "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+          },
+          ".go.buildinfo": {
+            "bytes": 416,
+            "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+          },
+          ".go.fipsinfo": {
+            "bytes": 120,
+            "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+          },
+          ".go.module": {
+            "bytes": 592,
+            "sha256": "7ca4c98af682e47aee36c0edb043e1f5c39ba9612864e112228efd87a932baac"
+          },
+          ".noptrdata": {
+            "bytes": 178497,
+            "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+          },
+          ".data": {
+            "bytes": 44722,
+            "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+          },
+          ".debug_abbrev": {
+            "bytes": 352,
+            "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+          },
+          ".debug_line": {
+            "bytes": 282907,
+            "sha256": "755043c67e56847b73cc10638a3bed0df35cc7c9ca2c99ba457f470080159053"
+          },
+          ".debug_frame": {
+            "bytes": 55010,
+            "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+          },
+          ".debug_gdb_scripts": {
+            "bytes": 24,
+            "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+          },
+          ".debug_info": {
+            "bytes": 476228,
+            "sha256": "61c0d4327ba54f01a673b5149714ec9363bd61b3240baba7c0f4ab188c1c1ec5"
+          },
+          ".debug_loclists": {
+            "bytes": 235276,
+            "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+          },
+          ".debug_rnglists": {
+            "bytes": 117651,
+            "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+          },
+          ".debug_addr": {
+            "bytes": 6752,
+            "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+          },
+          ".symtab": {
+            "bytes": 117072,
+            "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+          },
+          ".strtab": {
+            "bytes": 149984,
+            "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+          },
+          ".shstrtab": {
+            "bytes": 292,
+            "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+          }
+        }
+      },
+      {
+        "mode": "frozen-minus-new-file",
+        "command": "go build -overlay=<owned-temp>/overlay.json -trimpath -buildvcs=false -o <owned-temp>/frozen-minus-new-file-linux ./cmd/category-editor",
+        "binary_sha256": "841a2903f4185d504b05753bca313522fdd396c6b12108dc39e22fdc1fbe593b",
+        "bytes": 4607740,
+        "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+        "source_methods_in_linked_binary": [],
+        "symbols": 4877,
+        "elf_sections": {
+          "": {
+            "bytes": 0,
+            "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+          },
+          ".note.go.buildid": {
+            "bytes": 100,
+            "sha256": "aabef9cf3a4886a3616a80a07351cbe3b53a8e3bc5136512bf54c4a67cf735dd"
+          },
+          ".note.gnu.build-id": {
+            "bytes": 36,
+            "sha256": "3ff0525948acd37bf04bad2f4a1012f63158d3978f6260a8bdcf0744c20a4306"
+          },
+          ".text": {
+            "bytes": 1376177,
+            "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+          },
+          ".rodata": {
+            "bytes": 397985,
+            "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+          },
+          ".gopclntab": {
+            "bytes": 1157144,
+            "sha256": "0ebffc3baa32749b7ee3999a73b0b43a1262d1cba0237d725f60b74d7fb967f3"
+          },
+          ".typelink": {
+            "bytes": 3684,
+            "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+          },
+          ".itablink": {
+            "bytes": 472,
+            "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+          },
+          ".go.buildinfo": {
+            "bytes": 416,
+            "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+          },
+          ".go.fipsinfo": {
+            "bytes": 120,
+            "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+          },
+          ".go.module": {
+            "bytes": 592,
+            "sha256": "364262ca6cf15272eb529dd4e0d16a7b2772d407ecceab5b55df3938c083dacb"
+          },
+          ".noptrdata": {
+            "bytes": 178497,
+            "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+          },
+          ".data": {
+            "bytes": 44722,
+            "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+          },
+          ".debug_abbrev": {
+            "bytes": 352,
+            "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+          },
+          ".debug_line": {
+            "bytes": 282892,
+            "sha256": "c43dbb861a669fb798d8cef2b3eba2da2e0bac3d92f95ac4f76cd40b12612b9a"
+          },
+          ".debug_frame": {
+            "bytes": 55010,
+            "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+          },
+          ".debug_gdb_scripts": {
+            "bytes": 24,
+            "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+          },
+          ".debug_info": {
+            "bytes": 476226,
+            "sha256": "61c6cbf6ff4454748e9e19cf39b82c99be5234269e6daf68feba116283f87996"
+          },
+          ".debug_loclists": {
+            "bytes": 235276,
+            "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+          },
+          ".debug_rnglists": {
+            "bytes": 117651,
+            "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+          },
+          ".debug_addr": {
+            "bytes": 6752,
+            "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+          },
+          ".symtab": {
+            "bytes": 117072,
+            "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+          },
+          ".strtab": {
+            "bytes": 149984,
+            "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+          },
+          ".shstrtab": {
+            "bytes": 292,
+            "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+          }
+        }
+      }
+    ],
+    "linked_nm_identical": true,
+    "linked_text_and_rodata_identical": true,
+    "binaries_equal": false,
+    "no_new_linked_Source_methods": true,
+    "temporary_binaries_removed": true,
+    "limits": [
+      "This is current-target cross-compilation and linker reachability verification, not a new Linux/App/browser execution.",
+      "Old real main executions remain bound to their actual original worker binary hashes; their SHA values are not replaced with current rebuild SHA.",
+      "Any subsequent initializer/global registration or edit to original Category reachable files requires reevaluation."
+    ]
+  },
+  "current_sdk_metadata": {
+    "kind": "current metadata extension; not a new real-main execution",
+    "frozen_original_origin_sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+    "current_origin_sha256": "63b48f5dcc28dcdc80fdcff34362c9dfdfcba6dd7f9eda1816d2aa95df019acc",
+    "current_schema": 3,
+    "current_source_commit": null,
+    "current_source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "current_source_branch": "codex/plugin-source-error-outcomes-20261105",
+    "current_source_state": "75e_frozen_base_plus_uncommitted_finite_increment_pending_coordinator_commit",
+    "original_84_files_unchanged": true,
+    "extension": [
+      {
+        "source_path": "internal/plugins/downloader_source.go",
+        "path": "internal/sdk/downloader_source.go",
+        "source_commit": null,
+        "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+        "source_branch": "codex/plugin-source-error-outcomes-20261105",
+        "source_state": "uncommitted_pending_coordinator_commit",
+        "source_sha256": "a4d631a0e99f998402698c39447aa4336b0fb02b3555ad03bee82736562b4275",
+        "sha256": "a4d631a0e99f998402698c39447aa4336b0fb02b3555ad03bee82736562b4275",
+        "changes": []
+      },
+      {
+        "source_path": "internal/plugins/downloader_source_test.go",
+        "path": "internal/sdk/downloader_source_test.go",
+        "source_commit": null,
+        "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+        "source_branch": "codex/plugin-source-error-outcomes-20261105",
+        "source_state": "uncommitted_pending_coordinator_commit",
+        "source_sha256": "58e8811830cfca6fc3b6561c4e75a89cfdc65a51db6f860b5d4e9376ad00c212",
+        "sha256": "58e8811830cfca6fc3b6561c4e75a89cfdc65a51db6f860b5d4e9376ad00c212",
+        "changes": []
+      }
+    ],
+    "category_dependency_analysis_still_applies": true,
+    "original_runtime_logs_and_SHA_not_rewritten": true
+  },
+  "current_category_tests": {
+    "roots": [
+      {
+        "Time": "2026-11-05T11:05:45.918231+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestManifestIsStandardSourceArtifact",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.918549+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestDefaultsAndNoOpGetters",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.918704+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestFalseyInitDoesNotMutateExistingObject",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.918912+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestNonemptyConfigPreservesRawDisabledState",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919257+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestEnabledTruthinessAndContentForwarding",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919376+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestInitializationEffectOrderAndFailureBoundaries",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.91939+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestReloadIsExplicitAndObjectsAreIndependent",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919407+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestGetFormAlwaysReadsOriginalDefaults",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919422+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestGetFormPropagatesDefaultReadFailure",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919556+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestInvalidConfigDoesNotMutateMembers",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919573+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "Test": "TestRawUnicodeIsPreservedForSourceEncodingFailure",
+        "Elapsed": 0
+      },
+      {
+        "Time": "2026-11-05T11:05:45.919641+08:00",
+        "Action": "skip",
+        "Package": "github.com/landuo/light-media-plugins/cmd/category-editor",
+        "Test": "TestWorkerProtocolSmoke",
+        "Elapsed": 0
+      }
+    ],
+    "failures": 0,
+    "linux_protocol": "explicitly skipped on darwin/arm64; actual Linux main evidence is separate",
+    "vet_exit": 0,
+    "manifest": {
+      "plugin_order": 5,
+      "schema_version": 1,
+      "plugin_id": "CategoryEditor",
+      "name": "二级分类策略",
+      "description": "编辑下载和整理时自动二级分类的目录规则。",
+      "icon": "Bookstack_A.png",
+      "author": "jxxghp",
+      "author_url": "https://github.com/jxxghp",
+      "version": "1.3",
+      "runtime": "go-executable",
+      "entry": "category-editor",
+      "host_api_min": 1,
+      "host_api_max": 1,
+      "methods": [
+        "init",
+        "get_state",
+        "get_service",
+        "get_command",
+        "get_api",
+        "get_render_mode",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_dashboard_meta",
+        "get_auth_providers",
+        "get_module",
+        "close",
+        "stop_service",
+        "stop"
+      ],
+      "capabilities": [
+        "plugin.category.get_default",
+        "plugin.category.apply",
+        "plugin.systemmessage.put",
+        "plugin.base.update_config"
+      ]
+    }
+  },
+  "current_source_files": {
+    "plugins/categoryeditor/categoryeditor.go": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+    "plugins/categoryeditor/form.json": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+    "plugins/categoryeditor/categoryeditor_test.go": "71faceb60b71e0db5e2bdccbf48315233ae9bfe7abb253764d45caf422a29e49",
+    "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+    "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955",
+    "SDK_ORIGIN.json": "63b48f5dcc28dcdc80fdcff34362c9dfdfcba6dd7f9eda1816d2aa95df019acc",
+    "internal/sdk/downloader_source.go": "a4d631a0e99f998402698c39447aa4336b0fb02b3555ad03bee82736562b4275",
+    "internal/sdk/downloader_source_test.go": "58e8811830cfca6fc3b6561c4e75a89cfdc65a51db6f860b5d4e9376ad00c212",
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "work/migration-20261105/source-snapshot/categoryeditor/__init__.py": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+    "work/migration-20261105/host-reference/app/modules/themoviedb/category.py": "1c0ec53b78caa3a4949dd970931f38430c67c9d46ea2e16c3cc00950fb24c2b2",
+    "work/migration-20261105/host-reference/config/category.yaml": "1095b3aeb315569f541fded31bc77f43fa625cb9ac4844e3a28ba7d7868b2303",
+    "work/migration-20261105/host-reference/app/core/config.py": "f19111073a7ef25ecd0b7e9d53dab343d76fe64ff3ad821f4ff39a790c104033"
+  },
+  "frozen_sdk_files": {
+    "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+    "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+    "internal/sdk/base.go": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+    "internal/sdk/broadcast_handler.go": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+    "internal/sdk/browser_host.go": "dc933914faa0e08857ed1666389dcd27a5a99e1d35a37543bc0a70784b1dec3d",
+    "internal/sdk/brush_inventory.go": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+    "internal/sdk/category_policy.go": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+    "internal/sdk/chain_handler.go": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+    "internal/sdk/close_transport.go": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+    "internal/sdk/concurrent_session.go": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+    "internal/sdk/concurrent_shutdown.go": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+    "internal/sdk/concurrent_transport.go": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+    "internal/sdk/concurrent_worker.go": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+    "internal/sdk/downloader_host.go": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+    "internal/sdk/downloader_host_connection.go": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+    "internal/sdk/downloader_host_delete_files.go": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+    "internal/sdk/downloader_host_trackers.go": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+    "internal/sdk/downloader_tasks.go": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+    "internal/sdk/events.go": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+    "internal/sdk/file_item.go": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+    "internal/sdk/frontend.go": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+    "internal/sdk/history_host.go": "c68cd2d612b3ecd3aed6c7a2cdefc75f88bb314d93f82e326b16fadb5b5b6a52",
+    "internal/sdk/identity.go": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+    "internal/sdk/input_interaction.go": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+    "internal/sdk/jsonrpc.go": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+    "internal/sdk/log.go": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+    "internal/sdk/manager_resources.go": "4d9ec61a1300203f5975be8f4b598c18422e2b9a2ea834d918c777fabf8a3089",
+    "internal/sdk/media_host.go": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+    "internal/sdk/media_images.go": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+    "internal/sdk/media_info.go": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+    "internal/sdk/message_inbound.go": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+    "internal/sdk/module_bytes.go": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+    "internal/sdk/module_result.go": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+    "internal/sdk/module_transfer.go": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+    "internal/sdk/mutable_event.go": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+    "internal/sdk/network_host.go": "1ac0fdb7bae5cea8fe9267ae96eb834c1a8c2df43e2a80dc55dcfc23e38b1cdb",
+    "internal/sdk/network_proxy_host.go": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+    "internal/sdk/notification.go": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+    "internal/sdk/ocr_host.go": "f854c582e02a11f1c8bd5fcd0e1e090c74892d89cb8b4c5cb1c2a738f8acd68f",
+    "internal/sdk/pending_call.go": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+    "internal/sdk/plugin_host.go": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+    "internal/sdk/protocol.go": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+    "internal/sdk/runner_budget.go": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+    "internal/sdk/runner_observation.go": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+    "internal/sdk/runtime_support.go": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+    "internal/sdk/service_progress.go": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+    "internal/sdk/settings_host.go": "b9b500ac565ef98f98d8e32b5c2285cdc7fa869a5be6df8be2199846bcc78137",
+    "internal/sdk/site_host.go": "db86becbad6e142887d572ed566c01301d1cbdf12ac10f833821048b85a82fd8",
+    "internal/sdk/site_http_host.go": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+    "internal/sdk/storage_host.go": "878a1a0d8e123078f7ce8989ab0ef360536702910801ff0055c39d3d1c751049",
+    "internal/sdk/storage_operation.go": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+    "internal/sdk/subscription_host.go": "518ef5fb6e95d820d9b1c521ab588891208a955a86577b0cf3d8ccdae2b4e937",
+    "internal/sdk/title_torrent_filter.go": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+    "internal/sdk/transport.go": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+    "internal/sdk/worker.go": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+    "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+    "internal/sdk/base_instance_metadata_test.go": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+    "internal/sdk/base_test.go": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+    "internal/sdk/broadcast_handler_test.go": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+    "internal/sdk/chain_handler_test.go": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+    "internal/sdk/concurrent_cancel_fence_test.go": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+    "internal/sdk/concurrent_session_test.go": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+    "internal/sdk/downloader_host_connection_test.go": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+    "internal/sdk/downloader_host_test.go": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+    "internal/sdk/downloader_tasks_test.go": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+    "internal/sdk/form_model_policy_test.go": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+    "internal/sdk/frontend_test.go": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+    "internal/sdk/handler_order_test.go": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+    "internal/sdk/log_test.go": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+    "internal/sdk/message_inbound_test.go": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+    "internal/sdk/module_bytes_test.go": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+    "internal/sdk/module_result_test.go": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+    "internal/sdk/module_scope_test.go": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+    "internal/sdk/mutable_event_test.go": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+    "internal/sdk/pending_call_test.go": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+    "internal/sdk/protocol_test.go": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+    "internal/sdk/runner_budget_test.go": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+    "internal/sdk/runner_observation_test.go": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+    "internal/sdk/runtime_support_test.go": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+    "internal/sdk/session_options_test.go": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+    "internal/sdk/session_test.go": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+    "internal/sdk/subscription_host_test.go": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+    "internal/sdk/sourcejson/model.go": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+    "internal/sdk/testdata/owned-concurrent-fixture/main.go": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c"
+  },
+  "review_artifacts": {
+    "work/migration-20261105/category-review/FINAL-REVIEW-20261105.md": {
+      "sha256": "56dc3c6ef1d2380a0a6895feffc47f47d0091cc70c12174e403185264f5ecd65",
+      "bytes": 8462
+    },
+    "work/migration-20261105/category-review/REVIEW.md": {
+      "sha256": "72d8281213bb62ef6e0f431732110263cb0063d36a72ababea46f89240e96f10",
+      "bytes": 11176
+    },
+    "work/migration-20261105/category-review/_replay/target_replay.go": {
+      "sha256": "59aabe9d076daabecd8f4dd1a86bd6b08f627de7d47d8736bb7f9dea334887a4",
+      "bytes": 6258
+    },
+    "work/migration-20261105/category-review/artifact-manifest.json": {
+      "sha256": "ddac09b2c1f4aa040e3a4e70a3c100b8d7409bd12ea28c3a19ace4fdae2dd5f9",
+      "bytes": 3432
+    },
+    "work/migration-20261105/category-review/binary-reproduction-probe.json": {
+      "sha256": "1b1a6cbb69907a591fd371cfb4e4c6f9ccea1980f7676a517fc4474c77597fa5",
+      "bytes": 761
+    },
+    "work/migration-20261105/category-review/compare.py": {
+      "sha256": "ad6b6d14645720b51304efdb06b97ae31e3faf31869ad242cfc9bb23763404d0",
+      "bytes": 1537
+    },
+    "work/migration-20261105/category-review/comparison.json": {
+      "sha256": "e46cedcb563273d770638008f999ca5f5e4d9fb1f5d54f85fde63983bccc95d4",
+      "bytes": 1605
+    },
+    "work/migration-20261105/category-review/current-category-manifest.json": {
+      "sha256": "79fc21d0f652a973eb4a74800b3863e3bce3b6dc535caa475da8e63ec0368b6e",
+      "bytes": 694
+    },
+    "work/migration-20261105/category-review/current-category-nm.txt": {
+      "sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "bytes": 257277
+    },
+    "work/migration-20261105/category-review/current-category-tests.jsonl": {
+      "sha256": "093810a90bb37d9e43f525d1374660476b15684d11bae5d63137df200ec2f0f6",
+      "bytes": 72406
+    },
+    "work/migration-20261105/category-review/current-category-vet.log": {
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    "work/migration-20261105/category-review/current-dependency-audit.json": {
+      "sha256": "7d9c2d2d2ecd5e948f4512bbacb3d272ccac32b7de57025fc3f0c857816b7a60",
+      "bytes": 9422
+    },
+    "work/migration-20261105/category-review/current-dependency-audit.py": {
+      "sha256": "59fdcd9da3877cd97dcc8a63fc26e828aec24ed45aa123f2547d04c7d60c4509",
+      "bytes": 4914
+    },
+    "work/migration-20261105/category-review/current-origin-metadata-binding.json": {
+      "sha256": "06bd58244af9f07131845de27dce90fe92a8975aa6040da5943dc6a884400e23",
+      "bytes": 1875
+    },
+    "work/migration-20261105/category-review/final-evidence-audit.json": {
+      "sha256": "9eda112e3c62d15592c6a7f8e9f01c7e1391c996bd97e3a56f41e26f41ece4e9",
+      "bytes": 17418
+    },
+    "work/migration-20261105/category-review/final-evidence-audit.py": {
+      "sha256": "bc6fd2c7a79e01aa3045fc032a149842d0b1bbaa0186465b7de73548efedd7d5",
+      "bytes": 11234
+    },
+    "work/migration-20261105/category-review/frozen-minus-new-file-category-nm.txt": {
+      "sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "bytes": 257277
+    },
+    "work/migration-20261105/category-review/inputs.json": {
+      "sha256": "a442c3af3548202effa1b4a89b75b4e73487df9ad81d54991101671bc675f409",
+      "bytes": 14369
+    },
+    "work/migration-20261105/category-review/live-dependency-binding.json": {
+      "sha256": "335a25a47ed3e6fd6cf9d6d3e15dc6b9afa035583df61c2b309ba770c29ff91f",
+      "bytes": 29755
+    },
+    "work/migration-20261105/category-review/live_binding.py": {
+      "sha256": "21e23b30e44a3e53ff6d3eaa0321f3bcc6ce04f9d0b66701e3d1216e5e017220",
+      "bytes": 5350
+    },
+    "work/migration-20261105/category-review/mutated-categoryeditor.go.txt": {
+      "sha256": "a34927e8163ccd6c36090c1a2539aec9035af040c9d733ba7b553a7acb3c6246",
+      "bytes": 7879
+    },
+    "work/migration-20261105/category-review/mutation-comparison.json": {
+      "sha256": "3cc065f9bcae56349c6b43817d8106d01990ceac7fe5593c2b19db1464593f39",
+      "bytes": 10635
+    },
+    "work/migration-20261105/category-review/mutation-overlay.json": {
+      "sha256": "9b7b6dcc7b6cf08e39bf0a177263dff02aa7720ea71e6a7119fc092d9d637739",
+      "bytes": 218
+    },
+    "work/migration-20261105/category-review/mutation-target-observations.json": {
+      "sha256": "8f2a0b45e561af7d5f2a4447317e0f00be434b70a8e218a5cca366207446a71b",
+      "bytes": 84135
+    },
+    "work/migration-20261105/category-review/mutation.log": {
+      "sha256": "409631ac09de26f5ff4f4dce957ed979c4992d12c1074a551cbdb17a3bd6eccf",
+      "bytes": 1356
+    },
+    "work/migration-20261105/category-review/mutation_control.py": {
+      "sha256": "562bdad006025ce0fc06f6daed9f7956456630d6aca9507fab7312530129ce19",
+      "bytes": 1720
+    },
+    "work/migration-20261105/category-review/origin-reconstruction-probes.json": {
+      "sha256": "4da18f7526e65b3a7d63ac77152602a4a31002db39695064a7e5b3d4aca98ee3",
+      "bytes": 915
+    },
+    "work/migration-20261105/category-review/packages.log": {
+      "sha256": "c623b88e8bd561a5f22085e52985998fe566b3e002115c360af69ee6bfc1b243",
+      "bytes": 298
+    },
+    "work/migration-20261105/category-review/source-observations.json": {
+      "sha256": "8aa77413a55f035fa534cb7a3b65e44b081332c75d4c922355abde51cf312701",
+      "bytes": 98081
+    },
+    "work/migration-20261105/category-review/source_replay.py": {
+      "sha256": "25d6acb05e887cf5c0277f6f5b2fbd1f2d9d84543482ae28b3a57aa116edb003",
+      "bytes": 6994
+    },
+    "work/migration-20261105/category-review/static-audit.json": {
+      "sha256": "bd89f4d942fa6b5ca0255b95ceeb0338b7503be1cc678ceeaf237dac783cc057",
+      "bytes": 5350
+    },
+    "work/migration-20261105/category-review/static_audit.py": {
+      "sha256": "2dd162225134db6079971ae34f8099505df96cf05d14e0bbde2258369523dc75",
+      "bytes": 4424
+    },
+    "work/migration-20261105/category-review/target-observations.json": {
+      "sha256": "89cbd8b8f2ad773a333bb1fe920445383f9764387dee66caf4ea0034ca18020d",
+      "bytes": 84205
+    },
+    "work/migration-20261105/category-review/unit-tests-sdk-frozen.log": {
+      "sha256": "1abb7a82c9d593ef908dd2b12abf8d77daf4c21ef2eeb2003006169e461948c4",
+      "bytes": 10348
+    },
+    "work/migration-20261105/category-review/unit-tests.log": {
+      "sha256": "6cebf60f2a59d68d24b3d9794743ad36b93cd881ecef0f77b516dff12c9525a3",
+      "bytes": 10333
+    }
+  },
+  "closed": [
+    "source discovery and exact form",
+    "one-shot state/config/error semantics",
+    "live helper and builtin-default identity",
+    "actual Mac/Linux main install/file/cache/message/config/lifecycle",
+    "actual browser source and clone failure/recovery/config isolation",
+    "cold no replay; clone reset/uninstall; source reinstall retention",
+    "actual source/build/binary/test/evidence binding",
+    "nonimpact of new downloader SDK source methods"
+  ],
+  "not_claimed": [
+    "strict no-difference Python replication outside approved boundaries",
+    "current NAS Python runtime execution",
+    "private user configuration/data migration or production deployment",
+    "all installed plugin migration completion",
+    "upstream CategoryEditor1.3.1",
+    "new remote ZIP release publication",
+    "byte-for-byte rebuild of historical worker binaries",
+    "acceptance/publication of new source-downloader host increment"
+  ],
+  "remaining_product_blockers": [],
+  "central_state_changed": false
+}

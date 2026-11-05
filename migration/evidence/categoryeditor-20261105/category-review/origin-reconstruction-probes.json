@@ -1,0 +1,17 @@
+{
+  "kind": "non-acceptance metadata reconstruction probes; existing SDK metadata untouched",
+  "expected_historical_document_sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+  "probes": [
+    {
+      "candidate_sha256": "aad7169f33790b5f209b77cc253b93799550b3b5d7c6e6d99c985f10c30ce941",
+      "matched": false,
+      "scope": "remove new top-level fields and file entries; restore original schema/scope"
+    },
+    {
+      "candidate_sha256": "2c9181f34baf67bd1754acbe481573093f46a88a79e05e31319f5e19ba68121b",
+      "matched": false,
+      "scope": "also remove per-file source_commit annotations from current and business entries"
+    }
+  ],
+  "disposition": "No reconstructed original document was written or claimed; exact historical digest was observed and verified in live-dependency-binding before extension, and all84 original content files remain independently hash-exact."
+}
