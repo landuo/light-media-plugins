@@ -16290,6 +16290,16 @@
       "status": "approved",
       "authorization": "User explicitly answered that official authentication levels and RSA authorization are not required.",
       "impact": "Preserve ordinary site/service credentials and plugin API login; do not copy closed official authorization."
+    },
+    {
+      "id": "adapt.http-field-ows",
+      "status": "recorded_necessary_go_transport_adaptation",
+      "authority": "Coordinator technical implementation choice under userclause2 permittingnecessaryGo stackadaptations; no separateuserapproval claimed. No alternative HTTPstack/header-rewriteframework introduced.",
+      "source_behavior": "Actual333 originalRequestUtils/rawTCP sendsCookie末尾SP aftercookie_parse percent20; originalsourceoracle/initialGo1leafredretained. LeadingSP/TAB inrawCookie/UA differs: originalInvalidHeader returnsNone/0HTTP and mustbe implemented, not coveredbythisdecision.",
+      "target_behavior": "ExistingGo net/http/header.go uses textproto.TrimString beforewritingfieldvalues; realrawsocket confirmsendsSPremoved, internalSPunchanged.",
+      "standard": "https://www.rfc-editor.org/rfc/rfc9110.html#name-field-values section5.5: fieldvalues excludeouterwhitespace; receivers discarditbeforeinterpretation. VerifiedprimaryRFC20261106.",
+      "impact": "Explicitraw-wire difference fornonstandardservices inspectingouterOWS; normalHTTP fieldvalue semantics unchanged. No byte-exact wireequivalenceclaim. Typedtestmay allow onlyknownsingletrailingSProw; sourceoracle remains unchanged.",
+      "evidence": "work/source-browser-ocr-20261106/source.stdout,go-header-wire-diagnostic.json andfreshsource11rawsocketcases; finalfreeze/independentverification pending"
     }
   ],
   "evidence": [
@@ -62308,29 +62318,29 @@
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "8a820558",
+      "host_HEAD": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
       "minimum_host_code_revision": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
       "SDK98_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
-      "SDK_source_host_commit": "96f4c7769b783a104addcb59ed0ce5a49681e036",
+      "SDK_source_host_commit": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
       "SDK98_real_files_unchanged": false,
       "delivery": "UserauthorizedNASdeployment20261106 completed forpaired166/09ab+824SDK101seveninstances inactive; new8a platform/unfinishedASI notdeployed; GitHubmain notpushed",
       "latest_Rlk_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
       "latest_Rlk_independent_composite_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
       "latest_Rlk_copy_manifest_sha256": "9bebb547ca725d00706333f18b365aa7e8b22a6e521bf459c9ea16db7a8706f4",
       "current_six_revalidation": "source_interfaces.current_six_revalidation.20261106 plus final_metadata_registration; original business/UI/network proof remains original binding",
-      "tests_running": "No activeagentwork: all3agents stoppedbyusagelimit. Deployment completed. Root composedcore pure first runcompleted; parse results before next run.",
-      "saved_new_host_code_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
-      "new_host_code_scope": "saved8a820558 tenfile sharedTEMP/interval increment afterindependent96b791/27495 and trueApp13named+1pkg race/2556stable, schedule72race/vet0; SDK101still96f4 Origin6b0053, no scheduler snapshot sync claimed",
-      "host_current_ELF_sha256": "a044240c8abd8325aa18a92555ffdbcd6d59411e08dc59413c16ef74c38dba74",
+      "tests_running": "Root alltrue Go unchanged afterfiniteOCR integration/normal6188. JSON consumer-only candidate63pure race plus source74/185HTTP, actualLinuxSDK typed-domain gate running bynotice_api. Native14 sealedingest/source optin projection candidate inwork byhttp_status. Ordinaryrender sourceRef/rawtimeout work bysite_review. RootcurrentTrueEmptyMain37 retainsbeforeprivacy/OCR882e/e6b6 binding; ownedNASroots cleaned. No runningRootMain/browser test.",
+      "saved_new_host_code_revision": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
+      "new_host_code_scope": "SavedSourceSite7 9ae0/CookieURI3fce9/RouSi3b3d. Privacy7 saved643e5db9: public315proof cd9048,currenttrue12race/9roots/3612stable. OCR4+SDKwrapper saved56d02c7b: public351proof d10ff8,currenttrueLinux96nodes/8roots/2596stable,source34/native58/inflight4; Pbackendprivacy/OCRmerged5c2b. No fullASI/newMain/UI acceptance.",
+      "host_current_ELF_sha256": "882ea401bf3dba1a737efa296e003d4f88275edc3fee4b3644120cec1bc5c79f",
       "functional_verified_count_scope": "current local seven-instance baseline with SDK101 finite dependency increment saved824180f; historical business/UI/package executions retain original binding; ASI and original private config/data import unaccepted",
-      "SDK_current_files": 101,
-      "SDK_current_origin_sha256": "6b0053dd29596a2b14c3b1ab2d4fd784ccfb1606f2b26fd7088ee8dc87141de5",
-      "SDK_current_status": "savedsourcePublicGET onefileSDK101 c26a189f/Origin6b0053, core32a/unusedsixcbe7/proposal39e93;47associations guarded exactapply f3c35/6948checks, finalassociationonlynewpublicfixture/artifact refs, alloldexecutionspreserved",
+      "SDK_current_files": 102,
+      "SDK_current_origin_sha256": "575d130687b1002a3647f6ab242c31bab1d4e9a8fb0e6f159ea2bb0ed7f17dfd",
+      "SDK_current_status": "True102 files exacthost56d02c7b,2allowedimportrelocations; old101Origin retainedhistorical. Threeexistingwrapperchanges(network/status/OCR)+newSourceDTO. Currenttrue6188normal/4pkg849stable includes6025ASI+SDK163;17physicalSDKfixture gates skipped,separate6notestpackages. Current-siximpact/canonicalpackaging notsigned; deployedseven remainoldpairedSDK101.",
       "SDK_tested_pre_metadata_origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
       "previous_functional_baseline_revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b",
-      "host_current_ELF_scope": "No new fullMain ELF for8a820558; actualLinux sourceSite final3d1d7 is96f4+its7candidate files, priorUnicode a044 compileonly; actualSDK101 current7Main retains166/09ab original binding",
+      "host_current_ELF_scope": "Truehostb3d normalLinuxMain built5.61s/2481stable, actualownedemptyASI Main37named/36sourceAPIcases8.32s with trueworker e6b6, noUI/PT/OCR/timers/update claim. Old166/09ab actualaccepted7/production retainsitsoriginalbinding.",
       "new_host_code_scope_previous": "saved96f4 publicGET, fdd9numeric/24d8Unicode/166metadata/b696parallel preserved as historical dependencies",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "NAS_deployment_report": "migration/evidence/nas-deployment-20261106/DEPLOYMENT.json",
@@ -62353,15 +62363,15 @@
     },
     "next_complete_slice": "AutoSignIn2.9.15 full business and native integrations, then remaining15discovered plugins. Do not mark AutoSignIn or all23 complete from pure/SDK tests.",
     "active_ownership": {
-      "Root": "uniqueledger andlocalintegration: savedhost8a820558 TEMP3+interval7; independentlyreviewedregex7716 ebb b572; composedworker branches in newwork no trueASI changes. Noticehost2 afterSourceDisc seal. NativeMain/UI/currenthostconsumer impact pending.; agentturns ended onusagelimit, no background progress claim",
-      "/root/plugin_sdk": "TEMP96b791 finalindependentreview passed; ordinarySDKHTTPstatus100..999 actualsource1808wire thenminimal2clientcandidates, true untouched; agentturns ended onusagelimit, no background progress claim",
-      "/root/plugin_source_discovery": "Rootnoticeeb12 independent fresh12source/actualApp20nodes passed, finalseal pending; next minimal sourceAPI-nativeDTO binding workonly; agentturns ended onusagelimit, no background progress claim",
-      "/root/torrent_transfer": "SourceSite ad2b6ac9/286 frozen7prod, finalNASnetworknone126nodes pass, priorMac unisolatedincident preserved. Consumer wiring workonly; independentproviderreview pending; agentturns ended onusagelimit, no background progress claim"
+      "Root": "uniqueledger; hostSourceSite7 saved9ae0 andCookie/URI3savedfce9 (current95App race). NonauthorCookie/URI/API reviewc207 exact130/100/60; SDKsync/RouSi review and fullworker truecomposition/API/Main/UI remain.",
+      "/root/site_review": "Cookie3authora5b45/130 Rootindependentreviewc207passedfinite; host2trueintegrated fce9, workerhunkpending. NewindependentSourceprivacy actualb.log2naturalchunks reveals realshortsecret leak, actualpersistentAppsingle rootthenreviewauthorrepair. No truewrites.",
+      "/root/http_status": "Sourceprivacy7host+1worker scoped33namednormal/race/2822stable plus2compiledcontrols, notclosed: independentnatural2048chunk shortsecret red; newsharedprivate prechunkdelta inprogress. Native rawprovenance source DB/SitesHelper discoverynext afterprivacy; no truewrites.",
+      "/root/notice_api": "notice/API/URI completedfinitework; API2composeddf79, hostURIfce9 integratedcurrent95App. RouSi4files16source18wire/29actualLinuxnamed,oldconsumer13trueleafreds,oldhostfirstwire redrestsetupcascade; freezeinprogress thenBrowser/OCR originalsource discovery/minimalexistinghostreuse. No truewrites."
     },
     "AutoSignIn_current": {
       "source_files": 26,
       "source_version": "2.9.15",
-      "unaccepted_product_scope": "cmd/auto-sign-in,plugins/autosignin untracked; no registry entry/rootmodulechanges/actual Main",
+      "unaccepted_product_scope": "Truecmd/auto-sign-in+plugins/autosignin nowapplied (oldr4preimages backedup), rootgo.modadds x/imageonly/vendoredregex; no registry/canonicalpackage/privateimport or fullASIacceptance. Actualnormal/race6025named+3pkg/847stable, sixhelper/CLInoTestpackage eventsseparate. Tests sourcefixtures31byteexactrelocatedfromwork torepo testdata; predicates unchanged.",
       "r4": "572fixedinputs; normal/race2539pass but independently91newsourcecomparisonnodes red plus4malformedhistory cases; no full source equivalence claim",
       "independent_review": "work/independent-autosignin-business-review-20261106/freeze.json59ec306b40159007c16e7bf44a822084e8cc410d167e7dac49193fa14bac7216",
       "independent_findings_sha256": "35a9c6120c011829677bf352fe1f85b2fa2970bcfaf7fae8d8782e7dcea9551c",
@@ -62401,9 +62411,11 @@
         "sha256": "ad2b6ac9e6946586e1dfafce07b039a30f860b41e579683f35f2fb8f800ee8c5",
         "files": 286,
         "production": 7,
-        "status": "implemented_pending_independent_review_and_consumer_wiring",
+        "status": "Saved9ae0b58a7files/535publicproof; immutablead2b/e557/84a0/MT3bindingspreserved, actualtruecanonical101namedwith1missingfixtureexit1 andrecordedfocusedStats1+pkg pass byteidentical2216. StrictCA/publicHTTPS explicitdifferences remain; noASI/Main/privateprovenance claim.",
         "actual": "NASfinalr3 explicitGoELF only, netnone/readonly/nooriginalmount/UID1000/onlylo/zeroexternalroutes, ordinary102nodes21root23.56s plusTLS24nodes1root4.79s,0fail/skip, bundle stable/0containers. Linuxbuild96f4+7candidate2213stable; notpost8a target relabel.",
-        "incident": "Earlier Mac alias/TLS tests erroneously set onlyuppercase proxy after lowercaseempty; original getproxies semantics removesuppercase. May have attempted public DNS/TCP/TLS, HTTP unobserved; synthetic credentials only. Old104/22fail and26passes retained as unisolated limitedfixture results, not fullisolation acceptance. Moved final to realnetnone; sourceproduction untouched."
+        "incident": "Earlier Mac alias/TLS tests erroneously set onlyuppercase proxy after lowercaseempty; original getproxies semantics removesuppercase. May have attempted public DNS/TCP/TLS, HTTP unobserved; synthetic credentials only. Old104/22fail and26passes retained as unisolated limitedfixture results, not fullisolation acceptance. Moved final to realnetnone; sourceproduction untouched.",
+        "new_delta": "Root12fixedprofiles independently84a0b7db/94; MTdefault443/uppercase/physicalHost3b664 authorSiteReview, RootnonauthorcheckedsourceAST/prepareURL/realTLSwire5 andold3Hostred/newLinux21pass. GoaliasURL/CONNECTretains443, HTTPHostomits443; ordinarypathunchanged.",
+        "current_canonical": "Root actualtrueGo/testonlyoverlay21selectedroots: initialdrivercountmissing6oldroots(preAppsetup), then73pass/3missing-oraclefail, then101pass/1missingcustomstatsfixture. OldPLAN6oracleswasnotfinalcomplete; stoppedrepeatingwhole suite afterthirdfixturefix. Next collectactualoraclecalls andrunonlyStats1 withsame7productionbytes; nevermarkwholeexistingfailedcommandpassed."
       },
       "notification_history_work": {
         "freeze": "/Users/accidia/projects/light-media/work/source-notice-unicode-20261106/freeze.json",
@@ -62411,14 +62423,85 @@
         "files": 136,
         "production": "host2+worker2 workonly",
         "actual": "source40ORM/SQLite plus4positions; actualSDKApp55race; realNAS5initialsign_in notices crosspairs eachold2trueleafreds,newnew5green. Plugin events restoreCP beforepost_message; originalsource privateUTF8error beforehistory. Callback RPC error remains sanitized by existingprotocol.",
-        "independent": "Fresh12source/App20nodes passed fromagentmessage; finalseal mustreadactualdisk afteragentusagelimit. Not trueintegrated.",
-        "limits": "Finite save_history stringcolumn encoding gate; username/targets/save_history:false rawCP event/queue semantics NOT signed. Native initialsign_in notices do not execute __do tail aftertwohistoryeffects. Known register_apis_failed inallnativepairlogs unresolved, handledseparately bySourceDisc."
+        "independent": "bcf63e3eb7ab059ec426f88724bf410961b75c8c8afb2dbc5d8ea85690c4b48d/51 was actuallysealedbeforeoldusagelimit, freshagentexactreadback confirmed; old20App observationbinding notrelabeled.",
+        "limits": "Finite save_history stringcolumn encoding gate; username/targets/save_history:false rawCP event/queue semantics NOT signed. Native initialsign_in notices do not execute __do tail aftertwohistoryeffects. Known register_apis_failed inallnativepairlogs unresolved, handledseparately bySourceDisc.",
+        "status": "host2trueintegratedandsaved6a50; worker2includedhunkcomposition, nofullASI historytail acceptance"
       },
       "core_composition": {
         "path": "work/autosignin-composed-core-20261106",
-        "status": "pure worker race running; no trueASI/module/registry change",
+        "status": "WorkerCore initialcombined race completed:5963namedpass+3packages, five packages no tests (not skippedbusinessrows); now supersededbydf79 newbindings but retainsoriginalinputbinding.",
         "merged_plugin_sha256": "5f1dabf5d32698b6606ee96bcb2a413439aeaa3c368bcfacd8974d4b504cc38e",
-        "basis": "908cache,7716regex,TEMP2,Rootnotice2. Two git merge-file disjoint-hunk merges withf10base6463 both0; six oldtypedfrontend replacement deletions inherited fromauthorcompleteoverlay. First2bindingrecorder assumptions failed andpreserved; valid64entryoverlay was written beforefirstGo run; no false inputstable claim forfirst run."
+        "basis": "908cache,7716regex,TEMP2,Rootnotice2. Two git merge-file disjoint-hunk merges withf10base6463 both0; six oldtypedfrontend replacement deletions inherited fromauthorcompleteoverlay. First2bindingrecorder assumptions failed andpreserved; valid64entryoverlay was written beforefirstGo run; no false inputstable claim forfirst run.",
+        "new_source_bindings": {
+          "freeze": "work/autosignin-source-bindings-20261106/freeze.json",
+          "sha256": "df79f4cc8827a00354b504a74f13c6cdbf46279a58f04dfbb26e9158a0d63820",
+          "own_production": 4,
+          "normal_race": "5990named+3packages each; race402inputs stable60.76s; protocol/workerfixtures, nofullMain",
+          "independent": "work/independent-source-site-consumer-review-20261106/seal.json c33760e81a4cf1155fc1b305eb5abc6545739a0003e4727c59bdd6e97e05a7db/50 changes_required:timeout9leaf(8controls),MTeamFormOrder1,RouSi8(1control). Source17timeouts8wire+source9RouSi constructorrecorder(nonwire), Custom/deepcopy/stats8race positive.",
+          "root_refinement": "work/autosignin-source-timeout-refinement-20261106/overlay.json: two prod rawinvalidtimeout errors beforeRPC +MTeamFormOrder +preparedMTeamauthoritylowercase. Independent19namedrace+2compilednegativecontrols snapshots inreview/delta-snapshot.json. Not trueintegrated; RouSi/Cookie branches willmergebyhunk."
+        }
+      },
+      "new_api_and_initial_uri": {
+        "API2": "P/work/notice-api-20261106/seal.json b26225b84bca2cc88e3f4b27040e1f89d02d83025e34dce2bbcda32406b64d70/60; get_api nativeDTO +sourceResponse.data={} twohunks composed; source36->App59named+pkg normal/race, old58DTO/20nullreds; Rootnonauthorcode/source review done nofullcurrentASIRouteclaim",
+        "URI1": "H/work/source-public-initial-uri-20261106/freeze.json a79a896aa12436d3cc4c20680aa6b6aa0f48fd78984bf45c7d63ced3758d2774/100; sourceprofiles-only prepareURL fragment/percent/Unicode/dot/rawlength; ordinaryguardbyteunchanged. source32->App70named+pkg normal/race/2541stable; old45namedred, current6fragment+1postquotecapcompilednegative; SourceinitialstalestrictSDKfixtureandparsed-pathsetupfailureskept. Rootnonauthorreadhelperdelta, canonicaltrueintegrationpending."
+      },
+      "remaining_current_integration": [
+        "Rousi finite str/strip/apikey-vs-token policy (actualordinaryapikey-onlylogin currentlyred) and401/403fallback",
+        "CookieNames mustdefaultnil; originalHDChina cookieoverride mustsourceparse, hdchina/zhuque/u2threeadditionalfixedorigins (notfoldedintoold12proof)",
+        "Custom secretregistration/redaction atactualSDK/host log sinks; native rawURL/timeout provenance beforewholeASI",
+        "SOURCEinitialURI1trueintegration; actualSDK102/schedule snapshotsync, moduledependency gate/current6consumerimpact, callermaxpayloadbudget/paralleldrain",
+        "Browser/OCR source/customrefs/rawtimeoutprovider implementation, fullASInativeMain/UI/clone/restart/updates/notificationtail andoriginalprivate config/dataimport withoutactivatingdoublewrites"
+      ],
+      "source_cookie_uri_integration": {
+        "host_commit": "fce9aed0",
+        "host_report": "/Users/accidia/projects/light-media/testdata/plugin-source-cookie-uri-20261106/INTEGRATION.json",
+        "host_report_sha256": "f1aff09150dc880da7c061f64031188fb074101b38f58389943e4a6a42f7c62a",
+        "review": "work/root-source-cookie-uri-api-review-20261106/REVIEW.json",
+        "review_sha256": "c207391b3bbc293f309b80132b0334d85b9ea0d875c13a64674de456772bc486",
+        "actual": "95named+package race,0skip,2220stable, actualtrue3hostfiles only tests overlay; originalsourceURI32,HDChina14cases24preparedcalls,source3profiles9; authorLinux13 originalbindings retained",
+        "worker_status": "CookieNamesnil+3aliases andAPI2 source36/App59normalrace still work-only composed; no truefullworker/Main/UI acceptance"
+      },
+      "actual_empty_Main": {
+        "status": "executed_passed_pending_independent_review",
+        "root": "work/autosignin-real-integration-20261106",
+        "raw": "empty-main-actual",
+        "worker_sha256": "e6b6c247e5cd17019263a20e2dfe5c52afe33075e0511f5a5f8f597f117c5509",
+        "host_sha256": "882ea401bf3dba1a737efa296e003d4f88275edc3fee4b3644120cec1bc5c79f",
+        "actual": "37named36sourceFastAPIcases actualordinarycmd/server+productionworker; install/defaultform/VAlert/page/save/samePID/cloneindependentPID/registeredAPI/reload/cold/reset/uninstall passed8.32s",
+        "first_failure": "empty-main-attempt1:19businessobservations successfulthenwrongdriverPUT/api/settings/system404, no productred; fixedexactactualweb/src/components/ApiTokenSettings.vue50-56 GET+PUT/api/settings removingsecret_state",
+        "not_covered": [
+          "UI",
+          "ownedsite/PTexecutions",
+          "timers",
+          "update",
+          "OCR/browser",
+          "privateoriginaldata"
+        ]
+      },
+      "source_privacy_work": {
+        "F1": "oldH7 ab9cb225/P1 9973120 frozenchanges_required_short_chunk; Pnew4 79aad788/82 F1 sharedPluginregistry/sourcegetters/b.logprechunk independently8UTF8boundaryactualApp11.18s/3620stable+9pure703stable; author6048normalrace/3pkg plusfocusedexportsnormalrace. Notfinalprivacy: F2 next.",
+        "F2": "independentknowncredentialcsrf/token destroysgeneratedlabelsbeforemask:2sourceformatleaf+parentrace red703stable. Newminimalhunksource-log-dynamic-before-static8namednormalrace/704stable, realSDKclosure/independentsignaturepending. F1oldfreezeimmutable, no trueprivacy7+4integration yet.",
+        "status": "TrueintegratedH7+P4/F2 afterd038/95 independent; currenttests-onlyoverlay realApp12namedrace65.93s3612stable. Savedhost643e5db9/publictestdata/plugin-source-log-secrets-20261106/INTEGRATIONcd9048; Ppure6025normal/race847stable. No newMain/Linuxproof."
+      },
+      "source_OCR_finite_integration": {
+        "status": "integrated_scoped_current_true_verified_not_fullOCR",
+        "host_commit": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
+        "report": "/Users/accidia/projects/light-media/testdata/plugin-source-ocr-20261106/INTEGRATION.json",
+        "report_sha256": "d10ff873ec1ca95acc002651ad429b028a42c23d6116318603b3f23876635e66",
+        "review": "2de548/104,currenttrueb7f313/54",
+        "actual": "source34+native58+inflightfence4=96named8rootsLinuxnetnone0skip2596stable; currentPprobe84057f6c/HApp27a0a1b2 no productionoverlay. Hostsource4+consumer2+pairedSDK=7actualfiles",
+        "not_signed": [
+          "completeOCRJSONvalues",
+          "browser/render",
+          "App-race/fullHandle/Main/UI",
+          "privateoriginalimport",
+          "allheaderexceptiontaxonomy"
+        ]
+      },
+      "local_progress_report": {
+        "path": "migration/evidence/autosignin-local-progress-20261106/PROGRESS.json",
+        "sha256": "91d7d1bca536096a44109c5567871f73af5983c8f5514d6c877b88cc20213802",
+        "status": "inprogress_notaccepted"
       }
     },
     "parallel_SDK_work_only": {

@@ -1,14 +1,18 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (2026-11-06, seventh plugin saved)
+## Current resume (2026-11-06, seven accepted instances)
 
-UserauthorizedNASdeployment on2026-11-06 is completed: production uses previously native-tested host1661b1c6/09ab and exactpairedSDK101 prebuilt sixfamilies/seveninactiveinstances, withconsistentNAS-private backup and finalcoldrestore aftertemporaryartifactserver stopped. New8a platform andunfinishedASI not deployed; GitHubmain notpushed. See migration/evidence/nas-deployment-20261106/DEPLOYMENT.json. Allthreeagentturns ended atusagelimit; do notclaim backgroundprogress.
+最新本地保存准备：宿主56d02c7b已保存当前隐私与OCR有限实现；SDK102/Origin575d与该提交逐文件吻合。隐私真实App12项race/3612稳定、OCR真实Linux96项/2596稳定；当前ASI+SDK普通回归6188项/4包/849输入稳定，SDK17个独占夹具门未执行另列。JSON/OCR完整值域、普通浏览器引用、native14原字段私有导入仍在独占work开发，没有更新生产NAS或推送。详见同一ledger.resume；下文前一检查点与所有旧证明保留原绑定。
 
-Current saved host is8a820558: shared TEMP3 and source interval7/f316 are actually integrated after independent96b791/27495. True App tests-only-overlay race13named+1package passes with2556 stable inputs; ordinary schedule72named race andvet0. Public485exact proof files, source/failed generations and explicit Go adaptations are in host testdata/plugin-source-temp-interval-20261106. Four owned fixture binaries15933832bytes removed after hashes/no-open. Standalone SDK101 remains savedc26a189f/Origin6b0053 from96f4, no schedule sync yet. Accepted baseline remains7/23; no new fullMain/UI/ASI or originalprivate import accepted.
 
-Root independently closed regex7716 finite delta: fresh immutable-source15patterns/169searches,185named+1package race,2compiled mutants,200author files checked. Review ebb b572 (full seal in ledger) explicitly preserves worker-local versus sourceglobal cache adaptation. Cache908 and TEMPconsumer2 remain separate independent closures. New work/autosignin-composed-core-20261106 merges cache/regex/TEMP/notice by hunk, no trueASI/module/registry edit; pure race in progress. First recorder mistakes about empty overlay entries are retained; six oldfrontend replacements are inherited, not arbitrary feature deletion.
+当前功能验收基线仍为7/23；AutoSignIn尚未验收，原私人配置/数据导入仍not_run。本轮不推送、不新增生产部署；NAS仍为上次166/09ab与SDK101配对的七个停用实例。恢复先读唯一ledger.resume，不把历史执行重新标成当前代码证明。
 
-SourceSite provider ad2b6ac9/286 now has actual final Linux networknone126nodes,0fail/skip, UID1000/onlyloopback/noexternalroute, one readonly owned bind, no original config/service. Its96f4+7candidate Linux input2213 binding is not relabeled after8a. Earlier Mac proxy-case mistakes could have attempted public DNS/TCP/TLS using synthetic credentials only; HTTP was unobserved. Old unisolated runs and setup failures are retained and not accepted as networkisolation proof. Provider needs independent review and worker wiring. SDK status100..999 two-client source-first repair is in flight. SourceDisc closes noticeeb12 independent review and then API registration. FullASI/Main/UI/OCR/private migration still gates completion.
+宿主已本地保存SourceSite7（9ae0b58a）、Cookie/初始URL3（fce9aed0）、RouSi3（b3d27057）。分别有535/248/182个精确公开证据文件，原失败和原绑定保留；当前RouSi真实Linux禁网29项通过。StandaloneSDK当前实际102文件，仍需更新旧SDK_ORIGIN和完成当前消费者影响闭口。
+
+AutoSignIn已真正合入工作树：core/cache/regex/TEMP/notice/timeout/order/Cookie/RouSi/API，31个源oracle移到仓库测试目录，仅新增x/image外部依赖。真实源码无overlay无modfile的normal/race各6025项、3包通过，847输入稳定；无测试helper/CLI包单独记录。新LinuxMain882ea4+worker e6b6已真实跑空站点生命周期：安装、配置、默认表单/数据页、分身、36项源API、重载、重启恢复、重置和卸载，37项通过/8.32秒；尚无UI、更新、实际站点/定时/OCR验收。首次驱动误用settings/system的404已保存，修复严格使用现前端GET+PUT/settings流程。
+
+日志F1分段漏洞的新4文件已通过作者和独立真实UTF8边界，但独审又发现F2：已知值先替换会破坏CSRF/token标签，使动态值漏出。最小顺序修复正在独立闭口；H7+P4尚未真正集成。OCR正在真实禁网验证，另有source-only请求首空白拒绝、结果JSON类型与浏览器引用要补；native rawURL/timeout以固定源码和实际DB/API可达性继续核实。Go标准HTTP对末尾OWS规整明确记为必要技术适配，原oracle和差异保留，禁止称逐字节等价。
+
 
 ## Historical checkpoints (retain original bindings; not current state)
 

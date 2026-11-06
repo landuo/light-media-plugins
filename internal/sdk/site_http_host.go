@@ -63,7 +63,7 @@ type SiteHTTPResultV1 struct {
 func (s Sites) Request(ctx context.Context, input SiteHTTPRequestV1) (SiteHTTPResultV1, error) {
 	var out SiteHTTPResultV1
 	err := hostBusinessCall(ctx, s.Host, SitesRequestCapability, input, &out)
-	if err == nil && (out.SchemaVersion != 1 || out.RequestState != "completed" && out.RequestState != "unknown" || out.Response != nil && (out.Response.StatusCode < 100 || out.Response.StatusCode > 599 || out.Response.Content == nil)) {
+	if err == nil && (out.SchemaVersion != 1 || out.RequestState != "completed" && out.RequestState != "unknown" || out.Response != nil && (out.Response.StatusCode < 100 || out.Response.StatusCode > 999 || out.Response.Content == nil)) {
 		err = errors.New("invalid host site HTTP response")
 	}
 	return out, err

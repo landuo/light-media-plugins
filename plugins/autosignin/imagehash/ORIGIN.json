@@ -1,0 +1,101 @@
+{
+  "status": "private candidate, not final accepted",
+  "installed_tjupt_sha256": "ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0",
+  "source_image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+  "runtime_python": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]",
+  "pillow": "12.2.0",
+  "libwebp": "1.6.0",
+  "pillow_source_reference": [
+    {
+      "path": "src/libImaging/Resample.c",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/12.2.0/src/libImaging/Resample.c",
+      "sha256": "94ad3ea42e7343ad18183e4d4f0d85e34d88e482609953ead01b503b350dcad7"
+    },
+    {
+      "path": "src/libImaging/Convert.c",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/12.2.0/src/libImaging/Convert.c",
+      "sha256": "a3ef696c48fc5047f61ad657551cfe4f49e32382f79d53964d47ac599d2ea782"
+    },
+    {
+      "path": "src/PIL/Image.py",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/12.2.0/src/PIL/Image.py",
+      "sha256": "1a3d2ef3dbcbd056fbb4de3415302873348c60e90129a9a107b8829395ea47ea"
+    },
+    {
+      "path": "src/libImaging/Geometry.c",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/12.2.0/src/libImaging/Geometry.c",
+      "sha256": "5ca2151823ca7b89e6cfd253d969791b276f564b34bad2bf15f1c75ce93486f1"
+    },
+    {
+      "path": "src/PIL/GifImagePlugin.py",
+      "url": "https://raw.githubusercontent.com/python-pillow/Pillow/12.2.0/src/PIL/GifImagePlugin.py",
+      "sha256": "fe956c85ac3a65ba9f01daec1acc3fc58b485dabcf25c90fe9b686039acae361"
+    }
+  ],
+  "libwebp_source_reference": {
+    "src/dsp/upsampling.c": {
+      "url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/src/dsp/upsampling.c",
+      "sha256": "21b05126aff3fbe902655a7081e3a538f8d1ca6cc9e0907c607e1c4c50ba0a9f"
+    },
+    "src/dsp/yuv.h": {
+      "url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/src/dsp/yuv.h",
+      "sha256": "5805c01f84a677e50bf0d16cd903b78d25c2a0c46fe17c67ce0e48f11f3d512b"
+    },
+    "COPYING": {
+      "url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/COPYING",
+      "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+    },
+    "PATENTS": {
+      "url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/PATENTS",
+      "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+    },
+    "AUTHORS": {
+      "url": "https://raw.githubusercontent.com/webmproject/libwebp/v1.6.0/AUTHORS",
+      "sha256": "f251be89fd442bd9d701360730aea163cc8e2076ff03528f59267dc2c4f8b60a"
+    }
+  },
+  "pure_go_dependencies": {
+    "classification": "candidate only, temporary modfile; not integrated shared modules",
+    "module": "golang.org/x/image",
+    "version": "v0.24.0",
+    "go": "1.18",
+    "requires": {
+      "golang.org/x/text": "v0.22.0"
+    },
+    "selected_x_text": "v0.43.0 (already existing root dependency)",
+    "packages": [
+      "bmp",
+      "tiff",
+      "webp"
+    ],
+    "internal_package_closure": [
+      "ccitt",
+      "tiff/lzw",
+      "riff",
+      "vp8",
+      "vp8l"
+    ],
+    "files": {
+      "go.mod": "b2bdaadc6c6fc54df036c76a0ee438fe171f3b3e24e794f97394a40fb4ce7645",
+      "LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "PATENTS": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+    },
+    "source_need": "Actual installed Pillow accepts BMP/TIFF/WebP; prior reused Go helper rejects all. Native codec hashes are differential-tested against actual333 original Tjupt AST."
+  },
+  "original_source_expected": {
+    "fixture": "testdata/pillow-source-images-r3.json",
+    "sha256": "71e689cec86b793e68786b95d31df2ab3f2be4190e5c105c4ac85c24b9cc2ffd",
+    "format_cases": 19,
+    "default_bomb_cases": 5
+  },
+  "adaptations": [
+    "Pillow decompression warning category/message goes to worker stderr once per message. Python filename/line and process-global warnings registry are not retained.",
+    "No encoded input, 8192 dimension, 16Mpixel, or 64MiB working-buffer policy is added by this helper. Actual SDK transport/body limits remain host-owned.",
+    "Pure x/image BMP/TIFF/VP8/VP8L codecs plus Pillow-mode/resize mapping and libwebp YUV conversion. No CGo or Python product runtime."
+  ],
+  "remaining_unimplemented_or_unverified": [
+    "JPEG2000 and other installed Pillow image plugins outside verified PNG/GIF/JPEG/BMP/TIFF/WebP subset.",
+    "TIFF compression/sample-depth variants outside x/image decoder and current source fixtures.",
+    "Malformed image exception classes/messages beyond covered source cases."
+  ]
+}

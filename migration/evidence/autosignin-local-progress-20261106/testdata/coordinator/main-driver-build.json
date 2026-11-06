@@ -1,0 +1,19 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-p=1",
+    "-c",
+    "-ldflags=-s -w",
+    "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/main-driver-overlay.json",
+    "-o",
+    "/Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/main-driver-linux.test",
+    "./tests/integration"
+  ],
+  "exit": 0,
+  "seconds": 1.4072677921503782,
+  "driver_source_sha256": "e231bbbde2091badec65d4b5acf607270a8fb0ee603e0ea29941c7e574eae33d",
+  "binary_sha256": "39b221fe082d6fbc7e59a773b30ffe96beec9fac662303c6b8baf079c7a21cc0",
+  "production_overlay": false,
+  "scope": "compilation only, unmodified publicintegrationhelpers reused; no Main run claim"
+}

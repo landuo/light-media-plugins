@@ -1,0 +1,86 @@
+{
+  "checks": {
+    "driver_fresh_source_matches": true,
+    "driver_fresh_equals_actual_bom": true,
+    "driver_395_input_stable": true,
+    "cleanup_two_marked_roots": true,
+    "original_services_unchanged": true
+  },
+  "all_pass": true,
+  "driver_binding": {
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=work/autosignin-real-integration-20261106/main-driver-overlay.json",
+      "-o",
+      "work/autosignin-real-integration-20261106/main-driver-linux.test",
+      "./tests/integration"
+    ],
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOPROXY": "off",
+      "GOFLAGS": "<inherited-unset>"
+    },
+    "exit": 0,
+    "seconds": 0.37958495784550905,
+    "source_sha256": "a0f6df85566debd68140b0f78b639c49f9dd08148ef18ef032346fc1133ba932",
+    "prior_successfully_run_binary_sha256": "12dad59a578ca55029f2cae58a38c3be2292a9e3fd6120023a595dfdc79414d8",
+    "fresh_rebuild_binary_sha256": "12dad59a578ca55029f2cae58a38c3be2292a9e3fd6120023a595dfdc79414d8",
+    "byte_identical_to_actual_Main2_input": true,
+    "inputs": 395,
+    "stable": true,
+    "method": "Fresh actual rebuild with exact second toolargv. Historical second shellcompile itself had no separate receipt/time/GOFLAGS snapshot; not fabricated. Oldbuildreceipt andfirst failedsource preserved. Current rebuild verifies same correctedsource produces actualsuccessrun2 ELF, allinputs stable."
+  },
+  "cleanup": {
+    "owned_main_cleanup": [
+      {
+        "root": "/home/admin/light-media-plugins-root-asi-empty-20261106",
+        "marker_verified": true,
+        "artifact_hashes_verified": 5,
+        "active_task_pids": [],
+        "files": 23,
+        "bytes": 105653105,
+        "owned_no_data_counts": [
+          {
+            "database": "light-media.db",
+            "ASI_data_rows": 1
+          }
+        ],
+        "private_DB_and_auth_keys_excluded_from_evidence": true,
+        "production_touched": false,
+        "removed": true
+      },
+      {
+        "root": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2",
+        "marker_verified": true,
+        "artifact_hashes_verified": 5,
+        "active_task_pids": [],
+        "files": 22,
+        "bytes": 92948356,
+        "owned_no_data_counts": [
+          {
+            "database": "light-media.db",
+            "ASI_data_rows": 1
+          }
+        ],
+        "private_DB_and_auth_keys_excluded_from_evidence": true,
+        "production_touched": false,
+        "removed": true
+      }
+    ],
+    "source_original_services_unmodified": true
+  },
+  "cleanup_bytes": 198601461,
+  "data_count_explanation": {
+    "SQL": "SELECT count(*) FROM plugin_values WHERE instance_id IN ('AutoSignIn','AutoSignIncopy') AND kind='data'",
+    "extraction": "fetchone()[0], Root actual cleanup input; no len(fetchall) mistake",
+    "observed_count_per_root": 1,
+    "source_supported_inference": "original get_service enabled+emptycron ->_get_random_schedule ->save_data random_schedule; target services.go129/random.go203 equivalent",
+    "not_certified": "specific prior item_key/sealed contents, actual timer execution; owned DBs removed"
+  }
+}

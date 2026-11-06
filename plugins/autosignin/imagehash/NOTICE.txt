@@ -1,0 +1,16 @@
+AutoSignIn Tjupt image helper (private migration candidate)
+
+Pillow mode conversion/resampling algorithms are translated from Pillow12.2.0;
+PILLOW-LICENSE.txt retains its license. Exact source pins are in ORIGIN.json.
+The jpegport subpackage retains the Go JPEG decoder and libjpeg-compatible
+algorithm notices/licenses in that directory.
+
+The pure Go BMP/TIFF/WebP codecs are golang.org/x/image v0.24.0, used through
+imports, not vendored source. XIMAGE-LICENSE and XIMAGE-PATENTS are retained.
+This module is currently in an isolated temporary validation modfile only;
+shared module/packaging integration remains Root-owned and unapproved.
+
+webp.go translates the limited YUV conversion/fancy upsampling leaf of
+libwebp1.6.0 src/dsp/yuv.h and upsampling.c. Copyright2010-2011 Google Inc.
+LIBWEBP-COPYING, LIBWEBP-PATENTS and LIBWEBP-AUTHORS retain upstream notices.
+No native libwebp library, CGo or Python runtime is required by the product.

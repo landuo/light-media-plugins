@@ -35,8 +35,9 @@ type NetworkGetRequestV1 struct {
 }
 
 type NetworkResponseV1 struct {
-	StatusCode int    `json:"status_code"`
-	Content    []byte `json:"content"`
+	StatusCode  int    `json:"status_code"`
+	Content     []byte `json:"content"`
+	ContentType string `json:"content_type,omitempty"`
 }
 
 type NetworkGetResultV1 struct {
@@ -52,7 +53,7 @@ func (n Network) Get(ctx context.Context, request NetworkGetRequestV1) (NetworkG
 		return out, errors.New("invalid host network profile")
 	}
 	err := hostBusinessCall(ctx, n.Host, NetworkGetCapability, request, &out)
-	if err == nil && (out.SchemaVersion != 1 || out.Response != nil && (out.Response.StatusCode < 100 || out.Response.StatusCode > 599 || out.Response.Content == nil)) {
+	if err == nil && (out.SchemaVersion != 1 || out.Response != nil && (out.Response.StatusCode < 100 || out.Response.StatusCode > 999 || out.Response.Content == nil)) {
 		err = errors.New("invalid host network response")
 	}
 	return out, err
