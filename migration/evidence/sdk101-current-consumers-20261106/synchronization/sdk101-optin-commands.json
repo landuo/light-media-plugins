@@ -1,0 +1,98 @@
+[
+  {
+    "name": "optin-normal-build",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture",
+      "./internal/sdk/testdata/owned-concurrent-fixture"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-optin",
+      "LIGHT_MEDIA_CONCURRENT_FIXTURE": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture"
+    },
+    "exit": 0,
+    "seconds": 0.6461448748596013,
+    "pass": 0,
+    "fail": 0,
+    "skip": 0
+  },
+  {
+    "name": "optin-normal-tests",
+    "command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "./internal/sdk",
+      "-run",
+      "^TestOwned(Concurrent|PendingCall)",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-optin",
+      "LIGHT_MEDIA_CONCURRENT_FIXTURE": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture"
+    },
+    "exit": 0,
+    "seconds": 3.747902208007872,
+    "pass": 16,
+    "fail": 0,
+    "skip": 0
+  },
+  {
+    "name": "optin-race-build",
+    "command": [
+      "go",
+      "build",
+      "-race",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture-race",
+      "./internal/sdk/testdata/owned-concurrent-fixture"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-optin",
+      "LIGHT_MEDIA_CONCURRENT_FIXTURE": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture-race"
+    },
+    "exit": 0,
+    "seconds": 0.291700666770339,
+    "pass": 0,
+    "fail": 0,
+    "skip": 0
+  },
+  {
+    "name": "optin-race-tests",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-json",
+      "-count=1",
+      "./internal/sdk",
+      "-run",
+      "^TestOwned(Concurrent|PendingCall)",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-optin",
+      "LIGHT_MEDIA_CONCURRENT_FIXTURE": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/owned-concurrent-fixture-race"
+    },
+    "exit": 0,
+    "seconds": 23.016486916225404,
+    "pass": 16,
+    "fail": 0,
+    "skip": 0
+  }
+]

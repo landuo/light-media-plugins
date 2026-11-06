@@ -11,16 +11,19 @@ import (
 )
 
 type concurrentWorkerCall struct {
-	cleanup     bool
-	request     Frame
-	ctx         context.Context
-	cancel      context.CancelFunc
-	phase       callbackPhase
-	account     concurrentAccount
-	gate        chan struct{}
-	mu          sync.Mutex
-	pending     map[string]chan Frame
-	cleanupRoot *cleanupWorkerRoot
+	cleanup        bool
+	request        Frame
+	ctx            context.Context
+	cancel         context.CancelFunc
+	phase          callbackPhase
+	account        concurrentAccount
+	gate           chan struct{}
+	mu             sync.Mutex
+	pending        map[string]chan Frame
+	cleanupRoot    *cleanupWorkerRoot
+	reverseClosed  bool
+	reverseHosts   sync.WaitGroup
+	cancelNotified bool
 }
 
 type concurrentWorker struct {
@@ -197,7 +200,11 @@ func (w *concurrentWorker) readLoop() {
 			return
 		}
 		ctx, cancel := context.WithCancel(w.ctx)
-		call := &concurrentWorkerCall{request: request, ctx: ctx, cancel: cancel, account: concurrentAccount{limits: w.transport.wire.limits, worker: true}, gate: make(chan struct{}, 1), pending: map[string]chan Frame{}}
+		window := 1
+		if w.proposal.MaxParallelHostCalls > 0 {
+			window = w.proposal.MaxParallelHostCalls
+		}
+		call := &concurrentWorkerCall{request: request, ctx: ctx, cancel: cancel, account: concurrentAccount{limits: w.transport.wire.limits, worker: true}, gate: make(chan struct{}, window), pending: map[string]chan Frame{}}
 		if err = call.account.receive(count); err != nil {
 			cancel()
 			w.finish(err)
@@ -242,6 +249,9 @@ func (w *concurrentWorker) readLoop() {
 			ancestor.slots++
 			ancestor.children.Add(1)
 		}
+		if w.proposal.MaxParallelHostCalls > 0 {
+			call.ctx = context.WithValue(call.ctx, hostCallBudgetKey{}, &hostCallBudgetView{worker: w, call: call})
+		}
 		if request.Method == "stop" {
 			w.stopping = true
 			for id, other := range w.calls {
@@ -268,13 +278,24 @@ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
 		return w.host(call, ctx, method, payload)
 	}
 	result, err := w.handle(call.ctx, call.request.Method, call.request.Payload, host)
+	if w.proposal.MaxParallelHostCalls > 0 {
+		// Seal WG registration without moving the cleanup root's atomic
+		// phase.closed/bodyReturned transition out of its existing w.mu scope.
+		call.mu.Lock()
+		call.reverseClosed = true
+		call.mu.Unlock()
+	}
 	w.finishCleanupRoot(call, err)
 	call.phase.closed.Store(true)
 	canceled := call.ctx.Err() != nil
 	call.cancel()
 	// A Handler may have launched a callback goroutine. Revoke first and join
 	// that callback before sending its result, so it cannot become a new phase.
-	call.gate <- struct{}{}
+	if w.proposal.MaxParallelHostCalls > 0 {
+		call.reverseHosts.Wait()
+	} else {
+		call.gate <- struct{}{}
+	}
 	reply := Frame{Protocol: ProtocolVersion, ID: call.request.ID, Type: "result", Identity: w.transport.wire.identity}
 	if canceled {
 		reply.Error = &ReplyError{Code: "EXECUTION_CANCELED"}
@@ -306,13 +327,21 @@ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
 		reply.Error = &ReplyError{Code: code}
 		_, sendErr = w.transport.write(reply, nil)
 	}
-	<-call.gate
+	if w.proposal.MaxParallelHostCalls == 0 {
+		<-call.gate
+	}
 	if sendErr != nil {
 		w.finish(sendErr)
 	}
 }
 
 func (w *concurrentWorker) host(call *concurrentWorkerCall, ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
+	if w.proposal.MaxParallelHostCalls > 0 {
+		return w.hostParallel(call, ctx, method, payload)
+	}
+	return w.hostSerial(call, ctx, method, payload)
+}
+func (w *concurrentWorker) hostSerial(call *concurrentWorkerCall, ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
 	if ctx == nil || ctx.Err() != nil || call.phase.closed.Load() || call.ctx.Err() != nil || !methodPattern.MatchString(method) || strings.HasPrefix(method, "transport.") || len(payload) > 0 && !json.Valid(payload) {
 		return nil, failure("invalid_host_call")
 	}
@@ -366,6 +395,84 @@ func (w *concurrentWorker) host(call *concurrentWorkerCall, ctx context.Context,
 		_, e := w.transport.write(Frame{Protocol: ProtocolVersion, ID: call.request.ID, Type: "host_call", Identity: w.transport.wire.identity, Method: "transport.cancel", Payload: json.RawMessage(`null`)}, nil)
 		if e != nil {
 			w.finish(e)
+		}
+		return nil, failure("execution_canceled")
+	case <-call.ctx.Done():
+		return nil, failure("execution_canceled")
+	}
+}
+
+func (w *concurrentWorker) hostParallel(call *concurrentWorkerCall, ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
+	if ctx == nil || ctx.Err() != nil || call.phase.closed.Load() || call.ctx.Err() != nil || !methodPattern.MatchString(method) || strings.HasPrefix(method, "transport.") || len(payload) > 0 && !json.Valid(payload) {
+		return nil, failure("invalid_host_call")
+	}
+	select {
+	case call.gate <- struct{}{}:
+	case <-ctx.Done():
+		return nil, failure("execution_canceled")
+	case <-call.ctx.Done():
+		return nil, failure("execution_canceled")
+	}
+	call.mu.Lock()
+	if call.reverseClosed || call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
+		call.mu.Unlock()
+		<-call.gate
+		return nil, failure("invalid_host_call")
+	}
+	call.reverseHosts.Add(1)
+	call.mu.Unlock()
+	defer func() { <-call.gate; call.reverseHosts.Done() }()
+	if err := call.account.host(w.proposal.MaxHostCalls); err != nil {
+		return nil, err
+	}
+	suffix, err := randomID()
+	if err != nil {
+		return nil, err
+	}
+	id := call.request.ID + "." + suffix
+	pending := make(chan Frame, 1)
+	call.mu.Lock()
+	call.pending[id] = pending
+	call.mu.Unlock()
+	defer func() { call.mu.Lock(); delete(call.pending, id); call.mu.Unlock() }()
+	_, err = w.transport.write(Frame{Protocol: ProtocolVersion, ID: id, Type: "host_call", Identity: w.transport.wire.identity, Method: method, Payload: append(json.RawMessage(nil), payload...)}, func(n concurrentWireCount) error {
+		call.mu.Lock()
+		closed := call.reverseClosed
+		call.mu.Unlock()
+		if closed || call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
+			return failure("execution_canceled")
+		}
+		return call.account.send(n)
+	})
+	if err != nil {
+		return nil, err
+	}
+	select {
+	case reply := <-pending:
+		call.mu.Lock()
+		closed := call.reverseClosed
+		call.mu.Unlock()
+		if closed || call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
+			return nil, failure("execution_canceled")
+		}
+		if reply.Error != nil {
+			return nil, failure("host_operation_failed")
+		}
+		return reply.Result, nil
+	case <-ctx.Done():
+		call.phase.closed.Store(true)
+		call.cancel()
+		// A callback deadline revokes this invocation, not the process or an
+		// unrelated invocation. The host must cancel its in-flight authority.
+		call.mu.Lock()
+		notify := !call.cancelNotified
+		call.cancelNotified = true
+		call.mu.Unlock()
+		if notify {
+			_, e := w.transport.write(Frame{Protocol: ProtocolVersion, ID: call.request.ID, Type: "host_call", Identity: w.transport.wire.identity, Method: "transport.cancel", Payload: json.RawMessage(`null`)}, nil)
+			if e != nil {
+				w.finish(e)
+			}
 		}
 		return nil, failure("execution_canceled")
 	case <-call.ctx.Done():

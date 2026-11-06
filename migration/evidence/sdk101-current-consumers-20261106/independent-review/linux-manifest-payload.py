@@ -1,0 +1,13 @@
+EXPECTED=[{'id': 'CategoryEditor', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-CategoryEditor-linux', 'sha256': 'a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924'}, {'id': 'TorrentTransfer', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-TorrentTransfer-linux', 'sha256': '4893f26b744f769cfd9b90e25fa8b2a615a342f95af900738d615224f3aaf200'}, {'id': 'SiteStatistic', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-SiteStatistic-linux', 'sha256': '0f228ea641505402e3b681a5cd431558c2eb6f7f74dd632a0e8e5771b9075ce5'}, {'id': 'MPServerStatus', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-MPServerStatus-linux', 'sha256': 'a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e'}, {'id': 'PluginUnInstall', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-linux', 'sha256': '9eed432654887b23628fac4b814784bac513263324a27c1a1729a8a058a27d1b'}, {'id': 'RemoveLink', 'path': '/home/admin/light-media-plugins-migration-removelink-20261105/bin/sdk101-RemoveLink-linux', 'sha256': '00ee2a42628d6e7a50bccd8a9004298331929b0ce9ab713948465b1252040d0c'}, {'id': 'RemoveLink-update', 'path': '/home/admin/light-media-plugins-migration-removelink-20261105/bin/sdk101-RemoveLink-update-linux', 'sha256': 'a53232587dc2a9c51047b3cfe92dc58b1f848d7ca0cb1c21f8cc26b611c22ff7'}, {'id': 'PluginUnInstall-update', 'path': '/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-update-linux', 'sha256': '9ce444233436d691d721c7ab74fb8545686261da71b98d7bcd886d55ebce7375'}]
+
+import os,pathlib,hashlib,json,subprocess
+assert os.getuid()==1000
+for root,marker in [('/home/admin/light-media-plugins-migration-removelink-20261105','light-media-plugins/RemoveLink/20261105/owned-only'),('/home/admin/light-media-plugins-migration-sdk98-20261105','light-media-plugins/SDK98/20261105/owned-only')]:
+ assert(pathlib.Path(root)/'.task-owned').read_text().strip()==marker
+rows=[]
+for item in EXPECTED:
+ p=pathlib.Path(item['path']);assert p.is_file()and not p.is_symlink();before=hashlib.sha256(p.read_bytes()).hexdigest();assert before==item['sha256']
+ q=subprocess.run([str(p),'--manifest'],capture_output=True,timeout=5)
+ after=hashlib.sha256(p.read_bytes()).hexdigest();assert after==before
+ rows.append(dict(item,exit=q.returncode,stdout=q.stdout.decode(),stderr=q.stderr.decode(),unchanged=after==before))
+print(json.dumps({'classification':'independent actual NAS UID1000 eight exact currentSDK101 --manifest entries only; no init/network/host/App execution or runtime writes','rows':rows},indent=2))

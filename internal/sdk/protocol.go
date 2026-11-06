@@ -245,6 +245,7 @@ type Frame struct {
 }
 
 type Handshake struct {
+	ParallelHostCalls   int                     `json:"parallel_host_calls,omitempty"`
 	CleanupContinuation int                     `json:"cleanup_continuation,omitempty"`
 	TransportClose      int                     `json:"transport_close,omitempty"`
 	ConcurrentSession   int                     `json:"concurrent_session,omitempty"`
@@ -773,6 +774,15 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	if runner.ConcurrentCalls || runner.RequireConcurrent {
 		if agreed.ConcurrentSession == 1 {
 			proposal := concurrentProposal{Version: 1, MaxCalls: maxConcurrentCalls, MaxHostCalls: runner.MaxHostCalls}
+			if agreed.ParallelHostCalls != 0 && agreed.ParallelHostCalls != 1 {
+				return nil, failure("parallel_host_call_mismatch")
+			}
+			if agreed.ParallelHostCalls == 1 {
+				proposal.MaxParallelHostCalls = min(maxParallelHostCalls, runner.MaxHostCalls)
+				if proposal.MaxParallelHostCalls < 2 {
+					return nil, failure("parallel_host_call_limits")
+				}
+			}
 			rawProposal, _ := json.Marshal(proposal)
 			raw, err = s.exchange("transport.concurrent", rawProposal)
 			if err != nil {

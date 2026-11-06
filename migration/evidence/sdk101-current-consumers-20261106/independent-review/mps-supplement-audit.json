@@ -1,0 +1,37 @@
+{
+  "scope": "actual native standalone executable/SDK/ownedTLS + current101; Main only disabled startup/state/cold witness. No public-page/browser Main acceptance. Test source comment lifetime256 is historical shorthand; actual budgets per incoming, not session total.",
+  "modes": {
+    "normal": {
+      "raw_test_sha256": "5fcfb407abd81e3f89c8ce51591fa11c1b7ad35ebdbf88078a7187472a7b024e",
+      "observation_sha256": "76f1cda5038703b572e3d65ae97e6b8a732de92a5cf3a4d35718d49e4161a107",
+      "test_start": "2026-11-06T06:53:54.838355+08:00",
+      "test_end": "2026-11-06T06:53:56.837133+08:00",
+      "observation_calls": 172,
+      "host_calls": 494,
+      "max_host_calls": 3,
+      "owned_http_requests": 165,
+      "expired_host_calls": 0,
+      "unexpected_network": 0,
+      "observed_time_min": "2026-11-06T06:53:56.609055+08:00",
+      "observed_time_max": "2026-11-06T06:53:56.800752+08:00",
+      "within_test_window": true,
+      "classification": "real standalone executable and original SDK budgets; real owned TLS+strict CONNECT; synthetic HostHandler/instance binding; no ordinary Main/browser acceptance"
+    },
+    "race": {
+      "raw_test_sha256": "347ee085fd399db7ee0a3bd08b3bfade9231ba049d49d63f3aa3be9e9f141f77",
+      "observation_sha256": "20b03356cb6a4b33b194c559e61c5054bcadf6f55f22ae9e8642870abb8b6224",
+      "test_start": "2026-11-06T06:54:08.399127+08:00",
+      "test_end": "2026-11-06T06:54:15.123112+08:00",
+      "observation_calls": 172,
+      "host_calls": 494,
+      "max_host_calls": 3,
+      "owned_http_requests": 165,
+      "expired_host_calls": 0,
+      "unexpected_network": 0,
+      "observed_time_min": "2026-11-06T06:54:11.412291+08:00",
+      "observed_time_max": "2026-11-06T06:54:14.054749+08:00",
+      "within_test_window": true,
+      "classification": "real standalone executable and original SDK budgets; real owned TLS+strict CONNECT; synthetic HostHandler/instance binding; no ordinary Main/browser acceptance"
+    }
+  }
+}

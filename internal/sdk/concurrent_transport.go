@@ -24,20 +24,28 @@ type concurrentTransport struct {
 type concurrentWireCount struct{ bytes, chunks int }
 
 type concurrentProposal struct {
-	Version      int `json:"version"`
-	MaxCalls     int `json:"max_calls"`
-	MaxHostCalls int `json:"max_host_calls"`
+	Version              int `json:"version"`
+	MaxParallelHostCalls int `json:"max_parallel_host_calls,omitempty"`
+	MaxCalls             int `json:"max_calls"`
+	MaxHostCalls         int `json:"max_host_calls"`
 }
 
 const maxConcurrentCalls = 32
+const maxParallelHostCalls = 64
 
 func (p concurrentProposal) valid() bool {
-	return p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
+	return (p.MaxParallelHostCalls == 0 || p.MaxParallelHostCalls >= 2 && p.MaxParallelHostCalls <= min(maxParallelHostCalls, p.MaxHostCalls)) && p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
 }
 
-func (t *concurrentTransport) write(frame Frame, charge func(concurrentWireCount) error) (count concurrentWireCount, err error) {
+func (t *concurrentTransport) write(frame Frame, charge func(concurrentWireCount) error, beforePublish ...func() error) (count concurrentWireCount, err error) {
 	t.writeMu.Lock()
 	defer t.writeMu.Unlock()
+	publishing := false
+	defer func() {
+		if publishing && len(beforePublish) > 1 && beforePublish[1] != nil {
+			_ = beforePublish[1]()
+		}
+	}()
 	if len(frame.Payload) > t.wire.limits.LogicalBytes || len(frame.Result) > t.wire.limits.LogicalBytes {
 		return concurrentWireCount{}, failure("message_limit")
 	}
@@ -53,6 +61,12 @@ func (t *concurrentTransport) write(frame Frame, charge func(concurrentWireCount
 			if err := charge(concurrentWireCount{bytes: len(raw) + 1}); err != nil {
 				return count, err
 			}
+		}
+		if len(beforePublish) > 0 && beforePublish[0] != nil {
+			if err := beforePublish[0](); err != nil {
+				return count, err
+			}
+			publishing = true
 		}
 		return t.writeLine(raw)
 	}
@@ -101,6 +115,12 @@ func (t *concurrentTransport) write(frame Frame, charge func(concurrentWireCount
 			return concurrentWireCount{}, err
 		}
 	}
+	if len(beforePublish) > 0 && beforePublish[0] != nil {
+		if err := beforePublish[0](); err != nil {
+			return concurrentWireCount{}, err
+		}
+		publishing = true
+	}
 	var written concurrentWireCount
 	for _, line := range lines {
 		part, err := t.writeLine(line)
@@ -145,7 +165,9 @@ func (t *concurrentTransport) readLine() (frame Frame, count concurrentWireCount
 			continue
 		}
 		if e != nil {
-			if errors.Is(e, io.EOF) && len(raw) == 0 { return frame, count, io.EOF }
+			if errors.Is(e, io.EOF) && len(raw) == 0 {
+				return frame, count, io.EOF
+			}
 			return frame, count, failure("worker_io_failed")
 		}
 		break
@@ -165,7 +187,9 @@ func (t *concurrentTransport) read() (frame Frame, count concurrentWireCount, er
 		current, part, err := t.readLine()
 		count.bytes += part.bytes
 		if err != nil {
-			if assembly != nil && errors.Is(err, io.EOF) { return frame, count, failure("incomplete_transport_message") }
+			if assembly != nil && errors.Is(err, io.EOF) {
+				return frame, count, failure("incomplete_transport_message")
+			}
 			return frame, count, err
 		}
 		if count.bytes > t.wire.maxOutput {

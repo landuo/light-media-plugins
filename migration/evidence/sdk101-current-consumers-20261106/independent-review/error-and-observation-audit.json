@@ -1,0 +1,350 @@
+{
+  "event_counts": {
+    "historicalSDK98": {
+      "four": {
+        "WARN:command_registration_unavailable": 2,
+        "ERROR:http_completed": 1,
+        "WARN:site_icon_unavailable": 1,
+        "ERROR:notification_failed": 1,
+        "ERROR:submitted_method_failed": 2
+      },
+      "pui": {
+        "WARN:command_registration_unavailable": 8,
+        "WARN:request_completed": 3,
+        "ERROR:request_failed": 2
+      },
+      "rlk": {
+        "WARN:command_registration_unavailable": 2,
+        "ERROR:notification_failed": 1,
+        "ERROR:plugin_message": 1,
+        "ERROR:storage_host_INVALID_PATH": 1,
+        "ERROR:submitted_method_failed": 3
+      }
+    },
+    "currentSDK101": {
+      "four": {
+        "WARN:command_registration_unavailable": 2,
+        "ERROR:http_completed": 1,
+        "WARN:site_icon_unavailable": 1,
+        "ERROR:notification_failed": 1,
+        "ERROR:submitted_method_failed": 2
+      },
+      "pui": {
+        "WARN:command_registration_unavailable": 8,
+        "WARN:request_completed": 3,
+        "ERROR:request_failed": 2
+      },
+      "rlk": {
+        "WARN:command_registration_unavailable": 2,
+        "ERROR:notification_failed": 1,
+        "ERROR:plugin_message": 1,
+        "ERROR:storage_host_INVALID_PATH": 1,
+        "ERROR:submitted_method_failed": 3
+      }
+    }
+  },
+  "event_multisets_equal": true,
+  "observation_delta": {
+    "old_four": 76,
+    "current_four": 74,
+    "old_minus_current": [
+      {
+        "method": "GET",
+        "path": "/api/sites/manage/sdk98-nexus/history",
+        "status": 200,
+        "count": 1
+      },
+      {
+        "method": "GET",
+        "path": "/api/notifications",
+        "status": 200,
+        "count": 1
+      }
+    ],
+    "current_minus_old": [],
+    "explanation": "one fewer ordinary asynchronous SQLite-history poll and one fewer notification/receipt poll; all other event/stage counts identical, no stage removed"
+  },
+  "classification": [
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 4,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 30,
+      "level": "ERROR",
+      "event": "http_completed",
+      "request_id": "request-3c3a1e9dd0cd7cd1a325b23e677ae59e-2",
+      "plugin_call_id": null,
+      "note": "owned site-icon404 path during create; peer records favicon and source icon fallback; same historical count"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 31,
+      "level": "WARN",
+      "event": "site_icon_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "owned icon fallback, same historical count"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 35,
+      "level": "ERROR",
+      "event": "notification_failed",
+      "request_id": null,
+      "plugin_call_id": "pc_TZ7q4Ko9TfRhmd8xquWMfS8J",
+      "note": "no external channel success claimed; persisted notice/receipt and dispatch are distinct, same event count as historical run"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 39,
+      "level": "ERROR",
+      "event": "submitted_method_failed",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "unattributed: no method/cause/callID; do not infer source branch from temporal association"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-1.log",
+      "line": 41,
+      "level": "ERROR",
+      "event": "submitted_method_failed",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "unattributed: no method/cause/callID; do not infer source branch from temporal association"
+    },
+    {
+      "phase": "four",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/four/evidence/host-2.log",
+      "line": 1,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 4,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 11,
+      "level": "WARN",
+      "event": "request_completed",
+      "request_id": "req_Ki1xFlX_86C-NzH4WImNSE_M",
+      "plugin_call_id": null,
+      "note": "HTTP404/500 negative outcomes; corresponding PUI request expectations retained"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 25,
+      "level": "ERROR",
+      "event": "request_failed",
+      "request_id": "req_EMN7FwU1puKNoCpipN_ZFUXR",
+      "plugin_call_id": null,
+      "note": "expected deliberate invalid-config/partial-cleanup HTTP500; exact requestID matched"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 26,
+      "level": "WARN",
+      "event": "request_completed",
+      "request_id": "req_EMN7FwU1puKNoCpipN_ZFUXR",
+      "plugin_call_id": null,
+      "note": "HTTP404/500 negative outcomes; corresponding PUI request expectations retained"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 29,
+      "level": "ERROR",
+      "event": "request_failed",
+      "request_id": "req_03pfwiRmedI3u-DnA-wkUuEo",
+      "plugin_call_id": null,
+      "note": "expected deliberate invalid-config/partial-cleanup HTTP500; exact requestID matched"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-1.log",
+      "line": 30,
+      "level": "WARN",
+      "event": "request_completed",
+      "request_id": "req_03pfwiRmedI3u-DnA-wkUuEo",
+      "plugin_call_id": null,
+      "note": "HTTP404/500 negative outcomes; corresponding PUI request expectations retained"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-2.log",
+      "line": 2,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-3.log",
+      "line": 1,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-4.log",
+      "line": 2,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-5.log",
+      "line": 1,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-6.log",
+      "line": 4,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-7.log",
+      "line": 2,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "pui",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/pui/evidence/host-8.log",
+      "line": 3,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 1,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 147,
+      "level": "ERROR",
+      "event": "notification_failed",
+      "request_id": null,
+      "plugin_call_id": "pc_WbTRkTxPFxygzqDaZEOi2-ds",
+      "note": "no external channel success claimed; persisted notice/receipt and dispatch are distinct, same event count as historical run"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 174,
+      "level": "ERROR",
+      "event": "plugin_message",
+      "request_id": null,
+      "plugin_call_id": "pc_zvi8jNl3_Tyrnwgfxtqjo0Nc",
+      "note": "explicit owned EACCES negative; source continues and same observer later recovers"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 241,
+      "level": "ERROR",
+      "event": "storage_host_INVALID_PATH",
+      "request_id": null,
+      "plugin_call_id": "pc_6hWUDIgSV8sk0DPW46K3c4Em",
+      "note": "INVALID_PATH authority denial during explicit current-root-withdrawal negative; aliases preserved. Event has callID but no path/method, so individual selector/unique cause is not independently attributable"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 242,
+      "level": "ERROR",
+      "event": "submitted_method_failed",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "unattributed: no method/cause/callID; do not infer source branch from temporal association"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 261,
+      "level": "ERROR",
+      "event": "submitted_method_failed",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "unattributed: no method/cause/callID; do not infer source branch from temporal association"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-1.log",
+      "line": 378,
+      "level": "ERROR",
+      "event": "submitted_method_failed",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "unattributed: no method/cause/callID; do not infer source branch from temporal association"
+    },
+    {
+      "phase": "rlk",
+      "file": "/Users/accidia/projects/light-media-plugins/work/sdk101-current-consumers-20261106/actual-harvest/rlk/evidence/host-2.log",
+      "line": 8,
+      "level": "WARN",
+      "event": "command_registration_unavailable",
+      "request_id": null,
+      "plugin_call_id": null,
+      "note": "existing platform menu-provider warning, same historical count; no command-menu completion claim"
+    }
+  ],
+  "generic_background_unattributed": 5
+}

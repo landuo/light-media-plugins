@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
-  "scope": "98 complete SDK/test/fixture files: original95 plus3 finite cleanup/HOME tests/helper;6 existing files changed for conditional cleanup transport/HOME and source local metadata client. Full files match committed host plus only2 declared import relocations; no host App/business implementation copied.",
+  "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+  "scope": "101 complete SDK/test/fixture files: previous98 plus1 opt-in reverse-call budget helper and2 actual parallel regressions;5 previous productionfiles changed. Full files match committed host plus only2 declared import relocations; no host App/business implementation copied. Existing legacy workers remain serial unless they explicitly opt in.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -155,10 +155,10 @@
     {
       "source_path": "internal/plugins/concurrent_session.go",
       "path": "internal/sdk/concurrent_session.go",
-      "source_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
-      "sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "source_sha256": "9ad2f56480e02c95b37b91e6ccce96d1b3dabc3ca0365b2d4d13290c9398781c",
+      "sha256": "9ad2f56480e02c95b37b91e6ccce96d1b3dabc3ca0365b2d4d13290c9398781c",
       "changes": [],
-      "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
     },
     {
       "source_path": "internal/plugins/concurrent_session_test.go",
@@ -179,18 +179,18 @@
     {
       "source_path": "internal/plugins/concurrent_transport.go",
       "path": "internal/sdk/concurrent_transport.go",
-      "source_sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
-      "sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "source_sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
+      "sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
     },
     {
       "source_path": "internal/plugins/concurrent_worker.go",
       "path": "internal/sdk/concurrent_worker.go",
-      "source_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
-      "sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "source_sha256": "50eb321c7f349b8085bafe8d4d05a01aa63796d57bb8204c83511f439c98f9d4",
+      "sha256": "50eb321c7f349b8085bafe8d4d05a01aa63796d57bb8204c83511f439c98f9d4",
       "changes": [],
-      "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
     },
     {
       "source_path": "internal/plugins/downloader_configurations.go",
@@ -400,6 +400,14 @@
       "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
     },
     {
+      "source_path": "internal/plugins/host_call_budget.go",
+      "path": "internal/sdk/host_call_budget.go",
+      "source_sha256": "6cf9a32f4a4d4e23755e03d7b7e44d1d1f935043b9f99185f80921d1126708dd",
+      "sha256": "6cf9a32f4a4d4e23755e03d7b7e44d1d1f935043b9f99185f80921d1126708dd",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
+    },
+    {
       "source_path": "internal/plugins/identity.go",
       "path": "internal/sdk/identity.go",
       "source_sha256": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
@@ -586,6 +594,22 @@
       "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
     },
     {
+      "source_path": "internal/plugins/parallel_host_calls_independent_test.go",
+      "path": "internal/sdk/parallel_host_calls_independent_test.go",
+      "source_sha256": "84e668e59a405a4113cfdfe56a3a54f8eac5a89669e87849a1f505bde5e6a5ab",
+      "sha256": "84e668e59a405a4113cfdfe56a3a54f8eac5a89669e87849a1f505bde5e6a5ab",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
+    },
+    {
+      "source_path": "internal/plugins/parallel_host_calls_test.go",
+      "path": "internal/sdk/parallel_host_calls_test.go",
+      "source_sha256": "6104156408bfb03529ab37b24eb7e396af41132938b889db455c7ff858b2d235",
+      "sha256": "6104156408bfb03529ab37b24eb7e396af41132938b889db455c7ff858b2d235",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
+    },
+    {
       "source_path": "internal/plugins/pending_call.go",
       "path": "internal/sdk/pending_call.go",
       "source_sha256": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
@@ -612,10 +636,10 @@
     {
       "source_path": "internal/plugins/protocol.go",
       "path": "internal/sdk/protocol.go",
-      "source_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
-      "sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "source_sha256": "c18ac5d4c580a71ebdce76f73b5e63268785fdb92800830910dc602a4d26911b",
+      "sha256": "c18ac5d4c580a71ebdce76f73b5e63268785fdb92800830910dc602a4d26911b",
       "changes": [],
-      "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
     },
     {
       "source_path": "internal/plugins/protocol_test.go",
@@ -814,10 +838,10 @@
     {
       "source_path": "internal/plugins/worker.go",
       "path": "internal/sdk/worker.go",
-      "source_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
-      "sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "source_sha256": "653a1d6d767ecde2aae143abe9f68cbe2936b64e99dc75edf64b305fcd05a12e",
+      "sha256": "653a1d6d767ecde2aae143abe9f68cbe2936b64e99dc75edf64b305fcd05a12e",
       "changes": [],
-      "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
     }
   ],
   "business_source_provenance": {
@@ -4736,9 +4760,11 @@
     "source_service_increment": "Ordered read-only public configurations, cached SourceConnection constructor facts and SourceFindByTag are finite capabilities pinned to404daade. Stateless current-scope native clients and existing guards/quotas remain. No selected write replay, no native global client/session cache.",
     "source_sites_increment": "Five finite Sites.SourceIndexer/Indexers/Refresh/RefreshAll/Accounts capabilities; exact current DTO/null and consumed historical projection, current canonical identity/credentials stay host-owned. Metadata alone grants no network authority. Existing host default budgets and prior93 SDK bytes unchanged.",
     "cleanup_home_increment": "True same-Client/live-root cleanup only,2 host D-charged child slots and bounded3 child publishing bridge, every phase keeps64/default and256hard, no persistence/replay/lifecycle submission. Conditional nonconsumer handshake/header omission preserved. HOME is the only new inherited env field on2Runner spawn paths; empty/absent retained. ActualSDK/App/source/kernel evidence classified separately, source minhost f7b34c33 unpublished.",
-    "local_metadata_increment": "Complete plugin_host.go.Local from19910 as present in f7b34c33: finite original local metadata read, no market/version lookup. Existing four accepted-family workers do not call it; its standalone typedclient proof and code/ELF reachability impact are separate from earlier98 author tests."
+    "local_metadata_increment": "Complete plugin_host.go.Local from19910 as present in f7b34c33: finite original local metadata read, no market/version lookup. Existing four accepted-family workers do not call it; its standalone typedclient proof and code/ELF reachability impact are separate from earlier98 author tests.",
+    "parallel_host_calls_increment": "Opt-in source-compatible concurrent reverse host calls: one session publisher, bounded charged calls per incoming invocation, actual callback drain ownership and finite typed App guard recovery. Legacy workers remain serial unless explicitly opting in. This SDK snapshot itself contains no host SiteHTTP/OCR implementation. Source host b69663; independent core/integrationfbc57ee1/3e44311d and exact-copy/current-consumer71ed5a3b are separate evidence.",
+    "sdk101_metadata_close": "Runtime tests and native builds used SDK_ORIGIN predecessor b417c613; the local publication changes only this explanatory source_state and adds these two boundary notes. All101 runtime/test/fixture bytes and host sourcecommit are unchanged. The full predecessor and exact metadata-only delta binding are retained in migration/evidence/sdk101-current-consumers-20261106."
   },
   "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
   "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Local committed host f7b34c33 (includes manager helper19910); not merged to main, pushed or deployed. Shared cleanup/HOME reviewed with actual protocol/App gates; current accepted-family dependency impact and real RemoveLink main/browser remain pending."
+  "source_state": "Local committed host b69663ab349de0547c34680a68b66c8486bacd51 supplies this exact101-file SDK. It is not merged to main, pushed or deployed. Current six-family/seven-instance finite SDK dependency impact has actual source/standalone and native Main evidence, independently closed71ed5a3b; original parallel core/integration reviewed separatelyfbc57ee1/3e44311d. Historical RemoveLink/Main/UI and SDK98 remain bound to their own inputs. No AutoSignIn full/native Main/UI or private original-state migration acceptance is inferred."
 }

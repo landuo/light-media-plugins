@@ -1,0 +1,12 @@
+{
+  "predecessor_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+  "current_origin_sha256": "f976e8249cff84776ef6ad666c6a8b7ba3db541fd4838478f26da471d6f055a8",
+  "changed_fields": [
+    "source_state",
+    "closure_boundaries.parallel_host_calls_increment",
+    "closure_boundaries.sdk101_metadata_close"
+  ],
+  "all101_bytes_unchanged": true,
+  "host_source_commit_unchanged": "b69663ab349de0547c34680a68b66c8486bacd51",
+  "reason": "replace stale f7/pendingSourceState with actual b696/current71ed finite closure; metadata only, not a runtime proof rebind"
+}

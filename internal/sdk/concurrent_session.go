@@ -14,29 +14,32 @@ type concurrentOutcome struct {
 	err   error
 }
 type concurrentHostCall struct {
-	id              string
-	method          string
-	ctx             context.Context
-	cancel          context.CancelFunc
-	finish          context.CancelFunc
-	stopLife        func() bool
-	budget          *runnerBudget
-	host            HostHandler
-	account         concurrentAccount
-	result          chan concurrentOutcome
-	sent            chan struct{}
-	mu              sync.Mutex
-	closed          bool
-	received        bool
-	wasCanceled     bool
-	cleanup         bool
-	inHost          bool
-	seen            map[string]bool
-	hosts           sync.WaitGroup
-	cleanupRoot     *cleanupHostRoot
-	cleanupReleased bool
-	cleanupReturned bool
-	cleanupParentID string
+	id                string
+	method            string
+	ctx               context.Context
+	cancel            context.CancelFunc
+	finish            context.CancelFunc
+	stopLife          func() bool
+	budget            *runnerBudget
+	host              HostHandler
+	account           concurrentAccount
+	result            chan concurrentOutcome
+	sent              chan struct{}
+	mu                sync.Mutex
+	closed            bool
+	received          bool
+	wasCanceled       bool
+	cleanup           bool
+	inHost            bool
+	reversePending    int
+	reversePublishing bool
+	hostBudgetUsers   int
+	seen              map[string]bool
+	hosts             sync.WaitGroup
+	cleanupRoot       *cleanupHostRoot
+	cleanupReleased   bool
+	cleanupReturned   bool
+	cleanupParentID   string
 }
 
 type concurrentClient struct {
@@ -67,6 +70,11 @@ func newConcurrentClient(c *Client, proposal concurrentProposal) *concurrentClie
 
 // SupportsConcurrent reports completed negotiation, not a manifest claim.
 func (c *Client) SupportsConcurrent() bool { return c != nil && c.concurrent != nil }
+
+// SupportsParallelHostCalls reports completed opt-in negotiation only.
+func (c *Client) SupportsParallelHostCalls() bool {
+	return c != nil && c.concurrent != nil && c.concurrent.proposal.MaxParallelHostCalls > 0
+}
 
 func (m *concurrentClient) abort(err error) {
 	m.mu.Lock()
@@ -185,7 +193,7 @@ func (m *concurrentClient) readLoop() {
 				return
 			}
 			call.mu.Lock()
-			if call.seen[frame.ID] || call.inHost {
+			if call.seen[frame.ID] || m.proposal.MaxParallelHostCalls == 0 && call.inHost || m.proposal.MaxParallelHostCalls > 0 && call.reversePending >= m.proposal.MaxParallelHostCalls {
 				call.mu.Unlock()
 				m.abort(failure("invalid_host_call"))
 				return
@@ -202,12 +210,20 @@ func (m *concurrentClient) readLoop() {
 				go func() { defer m.writes.Done(); m.replyDenied(call, frame.ID) }()
 				continue
 			}
-			call.inHost = true
+			if m.proposal.MaxParallelHostCalls > 0 {
+				call.reversePending++
+			} else {
+				call.inHost = true
+			}
 			host := call.host
 			call.hosts.Add(1)
 			m.hosts.Add(1)
 			call.mu.Unlock()
-			go m.callHost(call, host, frame)
+			if m.proposal.MaxParallelHostCalls > 0 {
+				go m.callHostParallel(call, host, frame)
+			} else {
+				go m.callHost(call, host, frame)
+			}
 		default:
 			m.abort(failure("invalid_reply"))
 			return
@@ -628,4 +644,93 @@ func InvocationID(ctx context.Context) string {
 	}
 	id, _ := ctx.Value(concurrentCallIDKey{}).(string)
 	return id
+}
+
+// Only the negotiated path uses these counters. The serial path and its
+// budget pause behavior remain unchanged.
+func (call *concurrentHostCall) beginParallelHostBudget() bool {
+	call.mu.Lock()
+	defer call.mu.Unlock()
+	if call.closed || call.ctx.Err() != nil {
+		return false
+	}
+	if call.hostBudgetUsers == 0 && call.budget != nil && !call.budget.pause() {
+		return false
+	}
+	call.hostBudgetUsers++
+	return true
+}
+func (call *concurrentHostCall) endParallelHostBudget() {
+	call.mu.Lock()
+	defer call.mu.Unlock()
+	call.hostBudgetUsers--
+	if call.hostBudgetUsers == 0 && call.budget != nil {
+		call.budget.resume()
+	}
+}
+func (m *concurrentClient) callHostParallel(call *concurrentHostCall, host HostHandler, frame Frame) {
+	defer m.hosts.Done()
+	defer call.hosts.Done()
+	released := false
+	defer func() {
+		call.mu.Lock()
+		if !released {
+			call.reversePending--
+			released = true
+		}
+		call.mu.Unlock()
+	}()
+	reply := Frame{Protocol: ProtocolVersion, ID: frame.ID, Type: "host_result", Identity: m.client.binding.Identity}
+	var err error
+	if !call.beginParallelHostBudget() {
+		err = failure("execution_canceled")
+	} else {
+		func() {
+			defer call.endParallelHostBudget()
+			reply.Result, err = host(call.ctx, m.client.binding.Identity, frame.Method, frame.Payload)
+		}()
+	}
+	call.mu.Lock()
+	closed := call.closed || call.ctx.Err() != nil
+	call.mu.Unlock()
+	if closed {
+		return
+	}
+	if err != nil {
+		reply.Result = nil
+		reply.Error = &ReplyError{Code: "HOST_DENIED"}
+	} else if len(reply.Result) == 0 {
+		reply.Result = json.RawMessage(`null`)
+	}
+	dropped := false
+	before := func() error {
+		call.mu.Lock()
+		defer call.mu.Unlock()
+		if call.closed || call.ctx.Err() != nil {
+			dropped = true
+			return failure("execution_canceled")
+		}
+		if !released {
+			call.reversePending--
+			released = true
+		}
+		call.reversePublishing = true
+		return nil
+	}
+	after := func() error { call.mu.Lock(); call.reversePublishing = false; call.mu.Unlock(); return nil }
+	sent, sendErr := m.transport.write(reply, call.account.send, before, after)
+	if dropped && sent.bytes == 0 {
+		return
+	}
+	if sendErr != nil && sent.bytes == 0 && concurrentReplyError(sendErr) != "" {
+		reply.Result = nil
+		reply.Error = &ReplyError{Code: "HOST_DENIED"}
+		sent, sendErr = m.transport.write(reply, nil, before, after)
+		if dropped && sent.bytes == 0 {
+			return
+		}
+	}
+	if sendErr != nil {
+		m.abort(sendErr)
+	}
 }

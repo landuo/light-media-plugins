@@ -1,0 +1,47 @@
+{
+  "classification": "actual native UID1000 SDK101 rebuilt current7 workers against host166 metadata193 plus shared parallel8; finite dependency impact only; no ASI business or MPS publicpage/UI acceptance; oldSDK98 test drivers and ownedPUI helper explicitly retained",
+  "host_base": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
+  "host_product_delta": "shared parallel8 b696 plus metadata193 166; SDK101 Originb417",
+  "host_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+  "worker_inputs": {
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-source-metadata-linux": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-CategoryEditor-linux": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-TorrentTransfer-linux": "4893f26b744f769cfd9b90e25fa8b2a615a342f95af900738d615224f3aaf200",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-SiteStatistic-linux": "0f228ea641505402e3b681a5cd431558c2eb6f7f74dd632a0e8e5771b9075ce5",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-linux": "9eed432654887b23628fac4b814784bac513263324a27c1a1729a8a058a27d1b",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-update-linux": "9ce444233436d691d721c7ab74fb8545686261da71b98d7bcd886d55ebce7375",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-MPServerStatus-linux": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-owned-pui-fixture-linux": "b4d23deb2ba9d58dbd30dc56d6f212c5498cad35272160716dc0c85650ec7744",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/pluginuninstall-current-main-linux.test": "01ba473ce2aeb5da61c299dded7a7be74cc22816a9a9f3c4edcb2e8cc26dd57b",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/sdk101-RemoveLink-linux": "00ee2a42628d6e7a50bccd8a9004298331929b0ce9ab713948465b1252040d0c",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/sdk101-RemoveLink-update-linux": "a53232587dc2a9c51047b3cfe92dc58b1f848d7ca0cb1c21f8cc26b611c22ff7",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d"
+  },
+  "historical_driver_labels": "retain raw SDK98/f7/current3c wording; actual new host binding is this command, no relabeling historical executions",
+  "UI": "explicitly skipped; all original browser artifacts retain historical host/source bindings",
+  "MPS": "disabled witness startup/state/cold only, no network/status/dashboard revalidation",
+  "name": "pui",
+  "command": [
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/pluginuninstall-current-main-linux.test",
+    "-test.run=^TestPluginUninstallOrdinaryMain$",
+    "-test.v",
+    "-test.timeout=20m"
+  ],
+  "environment": {
+    "PLUGINUNINSTALL_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-source-metadata-linux",
+    "PLUGINUNINSTALL_EXPECT_HOST_SHA256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+    "PLUGINUNINSTALL_WORKER_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-linux",
+    "PLUGINUNINSTALL_UPDATE_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-PluginUnInstall-update-linux",
+    "PLUGINUNINSTALL_MPS_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/sdk101-MPServerStatus-linux",
+    "PLUGINUNINSTALL_FIXTURE_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/source-declarations-owned-pui-fixture-linux",
+    "PLUGINUNINSTALL_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-sdk98-20261105/sdk101-current-consumers-1/pui",
+    "PLUGINUNINSTALL_LISTEN": "127.0.0.1:36258",
+    "PLUGINUNINSTALL_SKIP_UI": "1",
+    "PLUGINUNINSTALL_EXPECT_WORKER_SHA256": "9eed432654887b23628fac4b814784bac513263324a27c1a1729a8a058a27d1b",
+    "PLUGINUNINSTALL_EXPECT_MPS_SHA256": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e"
+  },
+  "started_utc": "2026-11-06T00:39:36.668304+00:00",
+  "exit_code": 0,
+  "seconds": 22.55611404404044,
+  "ended_utc": "2026-11-06T00:39:59.224925+00:00"
+}

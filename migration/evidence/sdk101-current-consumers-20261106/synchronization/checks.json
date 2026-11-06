@@ -1,0 +1,66 @@
+[
+  {
+    "name": "sdk101-normal",
+    "command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "./internal/sdk",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp"
+    },
+    "origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+    "exit": 0,
+    "seconds": 14.716105292085558,
+    "pass": 163,
+    "fail": 0,
+    "skip": 17
+  },
+  {
+    "name": "sdk101-race",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-json",
+      "-count=1",
+      "./internal/sdk",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp"
+    },
+    "origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+    "exit": 0,
+    "seconds": 67.60268279211596,
+    "pass": 163,
+    "fail": 0,
+    "skip": 17
+  },
+  {
+    "name": "sdk101-vet",
+    "command": [
+      "go",
+      "vet",
+      "./internal/sdk"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp"
+    },
+    "origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+    "exit": 0,
+    "seconds": 0.22703170916065574,
+    "pass": 0,
+    "fail": 0,
+    "skip": 0
+  }
+]
