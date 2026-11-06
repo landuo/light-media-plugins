@@ -129,7 +129,7 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "c26a189f7b3a4cbd17ad73eaa9fe17320ed503dc",
+    "revision": "67ebe9480f9367bfd022ea66b69e3d1ed063d583",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
@@ -137,7 +137,7 @@
       "migration/ledger.json",
       "docs/migration-task.md"
     ],
-    "revision_scope": "Local seven-instance/six-family saved functional baseline plus independently closed SDK101 finite current-dependency increment (71ed/dcb1/978f/b727). Historical source/business/UI/package observations retain original inputs; no new full UI/MPS public-page/ASI/private-state migration/remote deployment claim.",
+    "revision_scope": "Local saved seven-instance historical accepted baseline plus current unfinished AutoSignIn and SDK105 finite increments. Current integrated ASI/consumer/private-state acceptance pending; no main push or new production deployment.",
     "deployment": "NASpairedverified166/09ab+824workers installed7inactive; currentcodebranch/mainrelease distinct, details resume.deployment_20261106"
   },
   "inventory": [
@@ -65220,41 +65220,27 @@
       "functional_verified_instances": 7,
       "total_installed_instances": 23,
       "business_families_verified": 6,
-      "private_original_config_data_import": "not_run; must be separately validated without replaying one-shots or duplicate scheduled writes",
+      "functional_verified_count_scope": "Historical accepted seven-instance baseline retained; new shared SDK105 and whole AutoSignIn still require current integrated/consumer/package verification before new acceptance.",
+      "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "c26a189f7b3a4cbd17ad73eaa9fe17320ed503dc",
-      "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+      "tested_saved_code_revision": "67ebe9480f9367bfd022ea66b69e3d1ed063d583",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
-      "minimum_host_code_revision": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
+      "host_HEAD": "913eb082ead2c931d56f88f30b51ed631ae195e2",
+      "SDK_source_host_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
+      "SDK_current_files": 105,
+      "SDK_current_origin_sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
+      "SDK_current_status": "All105 committed host blobs match target under two declared import relocations. This is an association, not new Main/runtime acceptance. SDK104/current-private package results retain old bindings.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
-      "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
-      "SDK98_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
-      "SDK_source_host_commit": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
-      "SDK98_real_files_unchanged": false,
-      "delivery": "UserauthorizedNASdeployment20261106 completed forpaired166/09ab+824SDK101seveninstances inactive; new8a platform/unfinishedASI notdeployed; GitHubmain notpushed",
-      "latest_Rlk_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
-      "latest_Rlk_independent_composite_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
-      "latest_Rlk_copy_manifest_sha256": "9bebb547ca725d00706333f18b365aa7e8b22a6e521bf459c9ea16db7a8706f4",
-      "current_six_revalidation": "source_interfaces.current_six_revalidation.20261106 plus final_metadata_registration; original business/UI/network proof remains original binding",
-      "tests_running": "No Root Main/UI process. Nativecandidate finalnormal/race24named each3722stable; actualCLIstdin/SDKfixture/compilednegative gates underwaybyhttp_status. Independentnative source/targetreviewnotice_api. Ordinarybrowser sourceexecution/site_review underway. All27productpackages saved03fnormal/race pass, explicit40optinskips remain separatelyrecorded.",
-      "saved_new_host_code_revision": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
-      "new_host_code_scope": "SavedSourceSite7 9ae0/CookieURI3fce9/RouSi3b3d. Privacy7 saved643e5db9: public315proof cd9048,currenttrue12race/9roots/3612stable. OCR4+SDKwrapper saved56d02c7b: public351proof d10ff8,currenttrueLinux96nodes/8roots/2596stable,source34/native58/inflight4; Pbackendprivacy/OCRmerged5c2b. No fullASI/newMain/UI acceptance.",
-      "host_current_ELF_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
-      "functional_verified_count_scope": "current local seven-instance baseline with SDK101 finite dependency increment saved824180f; historical business/UI/package executions retain original binding; ASI and original private config/data import unaccepted",
-      "SDK_current_files": 102,
-      "SDK_current_origin_sha256": "575d130687b1002a3647f6ab242c31bab1d4e9a8fb0e6f159ea2bb0ed7f17dfd",
-      "SDK_current_status": "True102 files exacthost56d02c7b,2allowedimportrelocations; old101Origin retainedhistorical. Threeexistingwrapperchanges(network/status/OCR)+newSourceDTO. Currenttrue6188normal/4pkg849stable includes6025ASI+SDK163;17physicalSDKfixture gates skipped,separate6notestpackages. Current-siximpact/canonicalpackaging notsigned; deployedseven remainoldpairedSDK101.",
-      "SDK_tested_pre_metadata_origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
-      "previous_functional_baseline_revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b",
-      "host_current_ELF_scope": "Current H56d ordinary Linux Main build2.009s/16707tracked inputs+driver stable, same bytes as prior currentH ownedMain. CurrentP JSON5 worker a4524236; r3 once attendance/success history passed before fixture clone-envelope failure. No fullMain/ASI/UI acceptance; production remains166/09ab.",
-      "new_host_code_scope_previous": "saved96f4 publicGET, fdd9numeric/24d8Unicode/166metadata/b696parallel preserved as historical dependencies",
+      "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+      "remote_read_date": "2026-11-07; not a current network reread",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
-      "NAS_deployment_report": "migration/evidence/nas-deployment-20261106/DEPLOYMENT.json",
-      "NAS_deployment_report_sha256": "d7fb7585191d777c16127489212d93627ac16faadd54644bc70a1694a832a019",
-      "latest_local_progress_revision": "03f39c4"
+      "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+      "deployed_SDK": 101,
+      "delivery": "Only local checkpoints; no new push, merge or production deployment. Seven previously deployed instances remain inactive; AutoSignIn not deployed.",
+      "tests_running": "No Root Main/UI process. ordinary entry work-only repair and independent source global-order verification active; source public archive is evidence-only.",
+      "latest_detail": "resume.AutoSignIn_current.latest_20261107; all historical raw tuples remain unchanged"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -65273,10 +65259,10 @@
     },
     "next_complete_slice": "AutoSignIn2.9.15 full business and native integrations, then remaining15discovered plugins. Do not mark AutoSignIn or all23 complete from pure/SDK tests.",
     "active_ownership": {
-      "Root": "H11c evidenceonly/e97code/P94 SDK104Origin531 saved; current true stable. Waitingnewpubliccandidate; noMainUI yet, no remote/deploy. Soleledger being saved as metadata.",
-      "/root/site_review": "Source-public-service-retention workonly newgeneration after3 fixture failures+indepreview; addcompiledactualpublicoptin/directionalABI+boundedcapturedClientgetter. No finalbefore untilRootnewHEAD.",
-      "/root/http_status": "Publicactual source385/target977red closed; staticprecheck685969b5/preliminary25pins on earlierunfrozen candidate, clone data/no200 andABI direction noted. No productwrite/App window.",
-      "/root/notice_api": "Notice197b/privatef5a publicarchivescomplete/frozen; idle, no code/Origin/HEAD writes."
+      "Root": "H913eb/P67ebe true public saved, SDK105 Origin3503; sole ledger/doc save then true package no-overlay regression. No Main/UI/prod/push.",
+      "/root/site_review": "Work-only ordinary entry exact admission/lease repair and source global-order check; no true/HEAD/Origin writes. Await final Root metadata checkpoint before final BOM.",
+      "/root/http_status": "source44c/actual targetf515 red sealed/App released; independent full global ordinary close/source review, then candidate review. No true/HEAD/Origin writes.",
+      "/root/notice_api": "Evidence-only public431+31bf+Root6c archive; no build/NAS/true/HEAD/Origin/ledger writes."
     },
     "AutoSignIn_current": {
       "source_files": 26,
@@ -65468,8 +65454,8 @@
       "latest_20261107": {
         "accepted_instances": 7,
         "whole_ASI": "implementing, not accepted",
-        "H_head": "11c54c5a0900f96ba8dc7e0715b64f9c7050e6cc; evidence-only private903 save; actual published-private/notice code source e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b",
-        "P_head": "94f30035354eaeaaff1279eac9517bd4d5c69f06; private SDK104/ASI opt-in/tests+metadata savedlocal; no push",
+        "H_head": "913eb082ead2c931d56f88f30b51ed631ae195e2; public service19+permanent tests saved; prior notice/private source e97c5ad3 and evidence-only11c retained",
+        "P_head": "67ebe9480f9367bfd022ea66b69e3d1ed063d583; public opt-in/paired SDK105/owned fixture and Origin saved local",
         "applications": {
           "native19": {
             "path": "H/work/root-native-browser-composition-20261106/application.json",
@@ -65486,6 +65472,10 @@
           "interval1": {
             "path": "work/root-interval-producer-integration-20261107/application.json",
             "sha256": "8c8d20c0818e407b95eff6a5b563abceb51b81cc5b35c374f6e5f3c8ed6134cb"
+          },
+          "public_service19_plus6": {
+            "path": "H/work/root-public-service-integration-20261107/application.json",
+            "sha256": "6c7582eee4092c751f5c8d49f16f3b5de2ccc44c353552611e1e1a663211ea2e"
           }
         },
         "finite_results": {
@@ -65496,7 +65486,7 @@
           "clone_current_GUI": "actual82.974s currentthenbrowser-onlyMain/worker/newdist; defaults+fivefieldtrim/persist/cold/workers; independent5bf. Currentnative/H4 notretroactivelyincluded.",
           "source_Main_contract": "96506846 originalactual333 probes; private+globalstop defaultwaitTrue, public removejob doesnotjoin; Webbroadcast allenabledclones, retryempty repeats; sameversionforce allowed; API DBsave precedesinit. No targetMain acceptance."
         },
-        "next": "Save current published-private/notice checkpoint and current104SDK association after public-safe archive; independently reviewedwork-onlypublic service retention fix→apply→fresh Main/browser/fullconsumer/package. No privateimport/newpush/productiondeploy. WholeASI unaccepted.",
+        "next": "Close actual admitted registered command and external API individual-stop cancellation red (source44c/targetf515), independently verify original global close order without putting ordinary roots in scheduler WG; guarded apply only after frozen proof/review. Then current Main/browser/consumer/package/canonical packaging. No private import/new push/production deployment.",
         "remote_main_read_20261107": {
           "H": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
           "P": "4453f821ba32d5d4cc949e68d08d970e6ee7c975"
@@ -65615,19 +65605,35 @@
           "operation_mutex_limit": "Global private-owner Close releases existing operation mutex after backup before join. Individual HTTP force/reload/config retains existing outer operation serialization; current ASI Base/Submit callback path measured green. Not a general lock-free managed-callback claim."
         },
         "SDK_ORIGIN_current": {
-          "host_commit": "e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b",
-          "files": 104,
-          "sha256": "5310a8b6a55e4233baa1f3e9e037fd08c7924c296ea90066853dadc051161be8",
+          "host_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
+          "files": 105,
           "changed_or_new": [
-            "protocol.go",
-            "concurrent_session.go",
-            "concurrent_worker.go",
-            "manager_resources.go",
-            "worker.go",
-            "private_scheduler.go",
-            "source_private_scheduler_test.go"
+            "internal/sdk/concurrent_session.go",
+            "internal/sdk/concurrent_worker.go",
+            "internal/sdk/private_scheduler.go",
+            "internal/sdk/protocol.go",
+            "internal/sdk/source_public_service_sdk_test.go",
+            "internal/sdk/worker.go"
           ],
-          "verification": "work/sdk-private-origin-20261107/verification.json;104 committedhost blobs→target exact after2declaredimportrelocations;9previoussnapshots untouched+old102 appended; metadata association only, no newruntime"
+          "allowed_changes": [
+            {
+              "kind": "module_import_relocation",
+              "from": "light-media/internal/plugins",
+              "to": "github.com/landuo/light-media-plugins/internal/sdk"
+            },
+            {
+              "kind": "module_import_relocation",
+              "from": "light-media/internal/sourcejson",
+              "to": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson"
+            }
+          ],
+          "all_committed_host_blobs_match_target": true,
+          "prior_snapshots_unchanged": 10,
+          "previous_document_sha256": "5310a8b6a55e4233baa1f3e9e037fd08c7924c296ea90066853dadc051161be8",
+          "current_document_sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
+          "runtime_claim": false,
+          "sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
+          "verification": "migration/evidence/sdk105-public-20261107/verification.json"
         },
         "actual_Main_r3": {
           "status": "finite_current_public_scheduler_Main_pass; private/wholeASI stillimplementing",
@@ -65670,13 +65676,16 @@
           "independent_static": "ad8cb2b5 limited static only; actual browser must supply both created-pending and saved one-shot evidence, whitespace5fields, exclusive retry config and reset isolation, not markers alone."
         },
         "ordinary_public_individual_stop": {
-          "status": "actual source/target behavior red confirmed; work-only faithful retention correction started; blockswholeASI",
+          "status": "finite source-public-service correction independently reviewed, true applied and saved; wholeASI remains unaccepted",
           "read_only_seal": "H/work/independent-public-individual-stop-review-20261107/seal.json1ac0f07ffaa42534c8ebde6d8f3560f7e5bd0148295417bf79cf3fe3febb12e1",
           "finding": "965 proves remove_job+direct stop_service only, not full manager stop. Fixed8a PM.stop close(pass)+ASI.stop_service(None) does not revoke active public bound callback; target individual object stop cancels ordinary root and Submitted continuation. Need actual paired full manager behavior, not assume equivalence from global/private gates.",
           "older_record": "Host testdata/plugin-module-no-official-auth-20261026/services38-result.json explicitly documented Go worker lifecycle cancel adaptation and was closed historically; no current explicit user acceptance of lost callback history found. Preserve historical evidence without treating it as current behavioral pair.",
           "actual_pair": "H/work/independent-public-individual-stop-review-20261107/actual-pair-index.json: source385257f2 fixedfullPM.stop returns0.000212s while callbackheld then64calls/twohistorykeys/configsave; target977d088a currenttrueprivate20+notice6 remove-registration control64success vs fullstop1/64/0history/progressfailed; no privateleases,5259compiled stable; not Main/realPT",
           "new_work": "H/work/source-public-service-retention-20261107; source-admitted actual root/realSubmitdescendants retainexact oldClient untilreturn, individualclose→stop_service→logicaldetach/nonjoin, finaltransport-onlyreap; global WG joins roots+descendants; newSDKnegotiated feature; ordinarySubmit/cleanup unchanged; public+GoCleanup combination explicitlyunsupported. Workonly no truebefore/final proof yet.",
-          "work_progress": "First workpublic candidate trueprodunchanged;3development fixture failures preserved (wrong Spec.IntervalSeconds field, clone prior hook baseline, clone-uninstall baseline mustbe deleted). Stopped blind reruns and independent staticreview685969b5/25pins. Newgeneration adds actual compiled managed_public_services opt-in plus real public_service_stop negotiation for both compatibility directions; actualsourceASI/fixturesopt-in, defaultnonoptinGo behavior preserved. Latestcandidateunfrozen/notaccepted."
+          "work_progress": "Opt-in431freeze c94e7f14, final-review31bf6718. 19production+6permanent Rootapplication6c7582ee; localH913eb/P67ebe. Source-admitted exact roots+real descendants retain oldClient through physical completion; individualclose→stop_service→logical detach nonjoin→transport-only reap; global scheduler counts roots+descendants. Legacy Submit/cleanup unchanged. Ordinary command/API separately red.",
+          "work_progress_previous_3failures": "First workpublic candidate trueprodunchanged;3development fixture failures preserved (wrong Spec.IntervalSeconds field, clone prior hook baseline, clone-uninstall baseline mustbe deleted). Stopped blind reruns and independent staticreview685969b5/25pins. Newgeneration adds actual compiled managed_public_services opt-in plus real public_service_stop negotiation for both compatibility directions; actualsourceASI/fixturesopt-in, defaultnonoptinGo behavior preserved. Latestcandidateunfrozen/notaccepted.",
+          "verification": "Actual normal5345 and race5349 ABI1/SDK25/App32 pass0skip; original Linux5337 ABI/SDK/nonforce32 green but force fixture failed before held business; corrected focusedforce normal1/race1/Linux2 separately bound. Composite Linux, never a single33-green run. ActualSDK before/build/runtime and nine ELFs each verified. No current real Main/browser.",
+          "independent_review": "H/work/independent-public-service-retention-review-20261107/final-review/seal.json31bf67185ca9b3102efb57a82ca3446f116700a170daa4f3f0bd374fdf2ccfd9"
         },
         "current_private_package_normal": {
           "path": "H/work/current-private-sdk-package-regression-20261107/normal-result.json",
@@ -65692,6 +65701,30 @@
           "seal": "f5a2e40ba33a9dc3ac7982818182c244d9fca7f38b93550cf909cb6a82423e05",
           "files": 903,
           "scope": "891 original UTF8 projections/147deterministicgzip,51wholefile exclusions;source74fec407/independent2db/gen/gap/SDK101/failedinit/Root244c27/fullnormal/965refs. Public stop385/977 separateOPEN. Rootverify --sources0. SavedH11c evidenceonly, no runtime retag."
+        },
+        "SDK_ORIGIN_previous_104": {
+          "host_commit": "e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b",
+          "files": 104,
+          "sha256": "5310a8b6a55e4233baa1f3e9e037fd08c7924c296ea90066853dadc051161be8",
+          "changed_or_new": [
+            "protocol.go",
+            "concurrent_session.go",
+            "concurrent_worker.go",
+            "manager_resources.go",
+            "worker.go",
+            "private_scheduler.go",
+            "source_private_scheduler_test.go"
+          ],
+          "verification": "work/sdk-private-origin-20261107/verification.json;104 committedhost blobs→target exact after2declaredimportrelocations;9previoussnapshots untouched+old102 appended; metadata association only, no newruntime"
+        },
+        "ordinary_entry_individual_stop": {
+          "status": "source actual pair confirms source retains calls; current true target Web command/API uninstall business red; work-only minimal repair in progress",
+          "source": "H/work/independent-ordinary-entry-stop-review-20261107/source/seal.json44c4cfff (full SHA remains sealed file); actual333 controlled site/memory EventManager+bound API methods, not full original FastAPI",
+          "target": "H/work/independent-ordinary-entry-stop-review-20261107/target-run/seal.json f5152afb04d8857bc3f3c45b044af06c45805867956fc2350240cb0056de6190;24files; actual-pair-index49b8be3d",
+          "actual_target": "5277actual compiled/tools/module/embeds stable before-build-runtime; App link10.448s/run5.127s; two no-stop controls green, Web/API uninstall two business leaves red (parents also red),0skip. Web uninstall1HTTP vs control64, no64history or terminal reply, config marker remains/revision unchanged; API502/canceled vs control200/dualtrue. Wrongkey401/foreign404/newrequests denied controls green.",
+          "API_post_guard": "Additional post-call loaded/gen/routes discard risk is static; actual502 in target pair is HTTP cancellation. Preserve this distinction.",
+          "global_source_order": "Fixed lifecycle125–131 scheduler→plugins→modules; modules_initializer145–149 EventManager.stop→ThreadHelper.shutdown(wait=True)→message stop. Ordinary roots must not inherit service scheduler-WG order; full HTTP/global contract still being independently verified.",
+          "scope": "No expanded arbitrary SDKSubmit/default cleanup, no new framework/AI/workflow; ordinary admission must bind real authorized current object/client; individual finite proof first."
         }
       }
     },
@@ -66133,6 +66166,46 @@
         "local_plugin_cleanup_sha256": "c72d61613e6438c00d8bfbf16bacecefb4f042ca6499d1faf7fd14ef155e54e4",
         "central_current_inputs": "work/migration-20261106/current-acceptance-inputs",
         "target_code_commit": "pending local save; no push/deploy"
+      },
+      "superseded_resume_current_before_SDK105_20261107": {
+        "functional_verified_instances": 7,
+        "total_installed_instances": 23,
+        "business_families_verified": 6,
+        "private_original_config_data_import": "not_run; must be separately validated without replaying one-shots or duplicate scheduled writes",
+        "target_worktree": "/Users/accidia/projects/light-media-plugins",
+        "target_branch": "codex/installed-plugins-20261105",
+        "tested_saved_code_revision": "c26a189f7b3a4cbd17ad73eaa9fe17320ed503dc",
+        "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+        "host_worktree": "/Users/accidia/projects/light-media",
+        "host_branch": "codex/plugin-source-error-outcomes-20261105",
+        "host_HEAD": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
+        "minimum_host_code_revision": "881f02673dd6bbab37f41e54ac66e6ed8e657688",
+        "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+        "host_ELF_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+        "SDK98_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+        "SDK_source_host_commit": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
+        "SDK98_real_files_unchanged": false,
+        "delivery": "UserauthorizedNASdeployment20261106 completed forpaired166/09ab+824SDK101seveninstances inactive; new8a platform/unfinishedASI notdeployed; GitHubmain notpushed",
+        "latest_Rlk_acceptance": "evidence/removelink-20261106/ACCEPTANCE.json",
+        "latest_Rlk_independent_composite_sha256": "f954323b456d16f812be112b2d0e42a62ee5ab38695a8a82904e6fd06128a5b4",
+        "latest_Rlk_copy_manifest_sha256": "9bebb547ca725d00706333f18b365aa7e8b22a6e521bf459c9ea16db7a8706f4",
+        "current_six_revalidation": "source_interfaces.current_six_revalidation.20261106 plus final_metadata_registration; original business/UI/network proof remains original binding",
+        "tests_running": "No Root Main/UI process. Nativecandidate finalnormal/race24named each3722stable; actualCLIstdin/SDKfixture/compilednegative gates underwaybyhttp_status. Independentnative source/targetreviewnotice_api. Ordinarybrowser sourceexecution/site_review underway. All27productpackages saved03fnormal/race pass, explicit40optinskips remain separatelyrecorded.",
+        "saved_new_host_code_revision": "56d02c7be35a41957cb98525a4dc9be9891bdd24",
+        "new_host_code_scope": "SavedSourceSite7 9ae0/CookieURI3fce9/RouSi3b3d. Privacy7 saved643e5db9: public315proof cd9048,currenttrue12race/9roots/3612stable. OCR4+SDKwrapper saved56d02c7b: public351proof d10ff8,currenttrueLinux96nodes/8roots/2596stable,source34/native58/inflight4; Pbackendprivacy/OCRmerged5c2b. No fullASI/newMain/UI acceptance.",
+        "host_current_ELF_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "functional_verified_count_scope": "current local seven-instance baseline with SDK101 finite dependency increment saved824180f; historical business/UI/package executions retain original binding; ASI and original private config/data import unaccepted",
+        "SDK_current_files": 102,
+        "SDK_current_origin_sha256": "575d130687b1002a3647f6ab242c31bab1d4e9a8fb0e6f159ea2bb0ed7f17dfd",
+        "SDK_current_status": "True102 files exacthost56d02c7b,2allowedimportrelocations; old101Origin retainedhistorical. Threeexistingwrapperchanges(network/status/OCR)+newSourceDTO. Currenttrue6188normal/4pkg849stable includes6025ASI+SDK163;17physicalSDKfixture gates skipped,separate6notestpackages. Current-siximpact/canonicalpackaging notsigned; deployedseven remainoldpairedSDK101.",
+        "SDK_tested_pre_metadata_origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+        "previous_functional_baseline_revision": "c2601f122c40edf7f3d67c0e0aeb2939bc08357b",
+        "host_current_ELF_scope": "Current H56d ordinary Linux Main build2.009s/16707tracked inputs+driver stable, same bytes as prior currentH ownedMain. CurrentP JSON5 worker a4524236; r3 once attendance/success history passed before fixture clone-envelope failure. No fullMain/ASI/UI acceptance; production remains166/09ab.",
+        "new_host_code_scope_previous": "saved96f4 publicGET, fdd9numeric/24d8Unicode/166metadata/b696parallel preserved as historical dependencies",
+        "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
+        "NAS_deployment_report": "migration/evidence/nas-deployment-20261106/DEPLOYMENT.json",
+        "NAS_deployment_report_sha256": "d7fb7585191d777c16127489212d93627ac16faadd54644bc70a1694a832a019",
+        "latest_local_progress_revision": "03f39c4"
       }
     },
     "resource_condition": {
