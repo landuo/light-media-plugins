@@ -1,0 +1,2 @@
+import datetime, json, os, platform, time, zoneinfo
+print(json.dumps(dict(classification='owned immutable333 environment metadata only; no app imports, config, DB or network',python=platform.python_version(),TZ=os.environ.get('TZ'),tzname=time.tzname,local_datetime=datetime.datetime.now().isoformat(),utc_datetime=datetime.datetime.now(datetime.timezone.utc).isoformat(),local_zoneinfo_key=getattr(datetime.datetime.now().astimezone().tzinfo,'key',None)),indent=2))

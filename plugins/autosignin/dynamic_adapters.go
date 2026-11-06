@@ -44,7 +44,7 @@ func DynamicSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVi
 		return AdapterResult{false, message}, nil
 	}
 	routes := fixedPolicies[kind].Routes
-	var page string
+	var page any
 	cookie := ""
 	if kind == AdapterHDChina {
 		raw, ok := site["cookie"].(string)
@@ -79,18 +79,22 @@ func DynamicSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVi
 		page = responseUTF8(response)
 	} else {
 		var err error
-		page, err = BasePageSource(ctx, site, routes[0].URL, h)
+		page, err = sourceBasePageValue(ctx, site, routes[0].URL, h)
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		if page == "" {
+		if !Truth(page) {
 			return fail("签到失败，请检查站点连通性")
 		}
-		if strings.Contains(page, "login.php") {
+		expired, err := sourcePageContains(page, "login.php")
+		if err != nil {
+			return AdapterResult{}, err
+		}
+		if expired {
 			return fail("签到失败，Cookie已失效")
 		}
 	}
-	yes, err := SignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
+	yes, err := sourcePageSignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -99,7 +103,7 @@ func DynamicSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVi
 		return AdapterResult{true, "今日已签到"}, nil
 	}
 	if kind == AdapterHDChina {
-		doc, err := parseHTML(page)
+		doc, err := sourcePageParseHTML(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}
@@ -134,8 +138,12 @@ func DynamicSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVi
 		siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，不正确的CSRF / Incorrect CSRF token")
 		return fail("签到失败")
 	}
-	timestamp := ttgTimestamp.FindStringSubmatch(page)
-	token := ttgToken.FindStringSubmatch(page)
+	pageString, err := sourcePageRegexInput(page)
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	timestamp := ttgTimestamp.FindStringSubmatch(pageString)
+	token := ttgToken.FindStringSubmatch(pageString)
 	if timestamp == nil || token == nil {
 		return AdapterResult{}, errors.New("'NoneType' object has no attribute 'group'")
 	}

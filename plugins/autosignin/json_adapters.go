@@ -224,6 +224,10 @@ func RousiVisit(ctx context.Context, site Object, h SiteVisitHooks, login bool) 
 	return fail(action + "失败，无法访问网站")
 }
 func JSONSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisitHooks) (AdapterResult, error) {
+	if kind == AdapterPTerClub && h.SourcePageValue != nil {
+		return sourcePTerSignin(ctx, site, h)
+	}
+
 	if kind == AdapterRousiPro {
 		return RousiVisit(ctx, site, h, false)
 	}
@@ -237,7 +241,7 @@ func JSONSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 		return AdapterResult{false, message}, nil
 	}
 	routes := fixedPolicies[kind].Routes
-	page, err := BasePageSource(ctx, site, routes[0].URL, h)
+	page, err := sourceBasePageValue(ctx, site, routes[0].URL, h)
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -248,14 +252,18 @@ func JSONSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 			prefix = "模拟登录"
 		}
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail(prefix + "失败，请检查站点连通性")
 	}
-	if strings.Contains(page, "login.php") {
+	expired, err := sourcePageContains(page, "login.php")
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if expired {
 		return fail(prefix + "失败，Cookie已失效")
 	}
 	if kind == AdapterPTerClub {
-		v, err := parseSiteJSON(page)
+		v, err := sourcePageJSON(page)
 		if err != nil {
 			siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回数据异常，错误信息："+err.Error())
 			return fail("签到失败，签到接口返回数据异常")
@@ -309,7 +317,7 @@ func JSONSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 		return fail("签到失败，签到接口未返回明确的成功或重复签到结果")
 	}
 	if kind == AdapterZhuQue {
-		doc, err := parseHTML(page)
+		doc, err := sourcePageParseHTML(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}

@@ -6,6 +6,7 @@ import (
 	"errors"
 	"fmt"
 	"math"
+	"strconv"
 	"strings"
 	"sync"
 	"time"
@@ -393,20 +394,33 @@ func (p *Plugin) services(ctx context.Context, host sdk.HostCaller, e *Engine, b
 			trigger["fields"] = Object{"hour": fmt.Sprint(kwargs["hour"]), "minute": fmt.Sprint(kwargs["minute"])}
 		} else {
 			hours, ok := kwargs["hours"].(float64)
-			if !ok || math.IsNaN(hours) || math.IsInf(hours, 0) {
-				return nil, errors.New("source interval overflow")
+			// Services retains the offline reference's nonfinite Object encoding.
+			// Restore its float only at this actual host transport boundary.
+			if encoded, tagged := kwargs["hours"].(Object); !ok && tagged && len(encoded) == 1 {
+				switch encoded["nonfinite"] {
+				case "nan":
+					hours, ok = math.NaN(), true
+				case "inf":
+					hours, ok = math.Inf(1), true
+				case "-inf":
+					hours, ok = math.Inf(-1), true
+				}
 			}
-			micros := math.RoundToEven(hours * 3600000000)
-			if micros < 0 || micros > float64(math.MaxInt64/1000) || math.Mod(micros, 1000) != 0 {
-				return nil, &MissingCapability{"ordinary interval precision/range", "host trigger supports nonnegative integer milliseconds; source timedelta retains microseconds"}
+			if !ok {
+				return nil, errors.New("invalid source interval descriptor")
 			}
-			trigger["kind"] = "interval"
-			trigger["interval_ms"] = int64(micros / 1000)
+			// Do not pre-construct timedelta, round to milliseconds or supply a
+			// timezone/start. The host's existing source owner registers the logical
+			// method before applying the source APS trigger/clock semantics.
+			trigger["kind"] = "source_interval"
+			trigger["source_interval_hours"] = strconv.FormatFloat(hours, 'g', -1, 64)
 		}
-		if zone == "local" {
-			trigger["local_timezone"] = true
-		} else {
-			trigger["timezone"] = zone
+		if trigger["kind"] != "source_interval" {
+			if zone == "local" {
+				trigger["local_timezone"] = true
+			} else {
+				trigger["timezone"] = zone
+			}
 		}
 		out = append(out, Object{"id": job["id"], "name": job["name"], "handler": "sign_in", "trigger": trigger, "kwargs": Object{}})
 	}

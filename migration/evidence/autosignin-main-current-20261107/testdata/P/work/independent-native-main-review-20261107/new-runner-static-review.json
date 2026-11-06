@@ -1,0 +1,104 @@
+{
+  "runner_sha256": "c3ad8098010dd4b594b20da041c70a1f2ec699f06a73770734b680f2f0ead8e2",
+  "body_sha256": "2230f84168ab57e0b5ccccb30c2555def091e53352e72c24fbd564f81b0ecf8f",
+  "module_preflight": {
+    "path": "runner-v2.py",
+    "syntax_ok": true,
+    "unbound": [],
+    "limits": "static module globals only; conditional assignments, exec/eval/embedded scripts and external subprocess behavior require separate review"
+  },
+  "embedded_preflight": [
+    {
+      "path": "network-readback.py",
+      "syntax_ok": true,
+      "unbound": [],
+      "limits": "static module globals only; conditional assignments, exec/eval/embedded scripts and external subprocess behavior require separate review"
+    }
+  ],
+  "refs": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/runner-v2.py",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/runner-v2.py",
+      "sha256": "c3ad8098010dd4b594b20da041c70a1f2ec699f06a73770734b680f2f0ead8e2",
+      "bytes": 9179
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/remote-body-v2.py",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/remote-body-v2.py",
+      "sha256": "2230f84168ab57e0b5ccccb30c2555def091e53352e72c24fbd564f81b0ecf8f",
+      "bytes": 8406
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/prepare-runner-v2.py",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/prepare-runner-v2.py",
+      "sha256": "a6acfc8539e7eb349522cdc1cfdaa3043724c7b59fe2c7b0c4b214003f5ae705",
+      "bytes": 1523
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/runner-v2-preflight.json",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/runner-v2-preflight.json",
+      "sha256": "46848d2da0d3a6c492cd79911e80e719972510554dd22029763bf4ff1e021fac",
+      "bytes": 325
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/driver.go",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/driver.go",
+      "sha256": "d06eabb5724e538e7b8db0bac9f9030c3ed72aa5c89bc6a8316757233e1acf9f",
+      "bytes": 14804
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/owned_tls_test.go",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/owned_tls_test.go",
+      "sha256": "56887601d500d65c580ab87858b55b45834b1cd315b8c3e7aaebc2120a42c9f4",
+      "bytes": 6927
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/testhost_main_helpers_test.go",
+      "copy": "/Users/accidia/projects/light-media-plugins/work/independent-native-main-review-20261107/reviewed-v2-static/testhost_main_helpers_test.go",
+      "sha256": "542ed3ccd84c0d159e546a53e7893b5136b99512222aaab081de1bed9a56b3d1",
+      "bytes": 9290
+    }
+  ],
+  "config_preview": {
+    "root": "/home/admin/light-media-plugins-root-asi-native-20261107",
+    "marker": "light-media-plugins/root-asi-native/20261107/owned-only",
+    "name": "lm-root-asi-native-20261107",
+    "owned_dir": "owned-r2",
+    "out_dir": "attempt3",
+    "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+    "bom": {
+      "bin/host": {
+        "sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+        "bytes": 57200802
+      },
+      "bin/worker": {
+        "sha256": "02ece64a7ecb85c64b126279014d026d5684591cd19237b24e12af8108481269",
+        "bytes": 12779682
+      },
+      "bin/cli": {
+        "sha256": "72ee655a8aa706fa487201047bba360902886828d608f4efac31a40e0f8d5865",
+        "bytes": 25215138
+      },
+      "bin/driver": {
+        "sha256": "97e544e53901c666d9654e237cd09079ac5040a2918bfa46f90ca37610e030ef",
+        "bytes": 9707682
+      }
+    }
+  },
+  "review": {
+    "status": "static control-flow review passes after required finally fixes; not executed and old driver BOM is preview only",
+    "constant_prefix": "exact CONFIG literal+body, no placeholder replacement",
+    "failure_paths": [
+      "Popen error leaves process None and writes record",
+      "inspect/network readback/driver timeout caught",
+      "stop timeout/nonzero rechecks immutable owned ID before force remove",
+      "client wait/terminate/kill failures caught",
+      "final ps query/BOM read errors recorded; command written after catch"
+    ],
+    "setup": "pre-Popen root/BOM/fresh-dir failures intentionally remain outer stderr, never business run success",
+    "scope": "newdriver pre-delete enabled, helper clears tofalse; exact repo GET or hhanclub CONNECT allowed, not all loopback",
+    "runtime_approval": false,
+    "requires_fresh_driver_BOM": true,
+    "old_bundle_preview": "97e54 must not be run as new d06 driver"
+  }
+}

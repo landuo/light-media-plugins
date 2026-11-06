@@ -1,0 +1,60 @@
+{
+  "root": "/home/admin/light-media-plugins-root-asi-native-20261107",
+  "marker_exact": true,
+  "bundle": [
+    {
+      "path": "/home/admin/light-media-plugins-root-asi-native-20261107/bundle/bin/host",
+      "sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+      "bytes": 57200802
+    },
+    {
+      "path": "/home/admin/light-media-plugins-root-asi-native-20261107/bundle/bin/worker",
+      "sha256": "02ece64a7ecb85c64b126279014d026d5684591cd19237b24e12af8108481269",
+      "bytes": 12779682
+    },
+    {
+      "path": "/home/admin/light-media-plugins-root-asi-native-20261107/bundle/bin/cli",
+      "sha256": "72ee655a8aa706fa487201047bba360902886828d608f4efac31a40e0f8d5865",
+      "bytes": 25215138
+    },
+    {
+      "path": "/home/admin/light-media-plugins-root-asi-native-20261107/bundle/bin/driver",
+      "sha256": "97e544e53901c666d9654e237cd09079ac5040a2918bfa46f90ca37610e030ef",
+      "bytes": 9707682
+    }
+  ],
+  "files": [
+    {
+      "path": "actual.stdout",
+      "bytes": 222,
+      "sha256": "b5299b975dde66ff2a9e5132690fcba428d10456b8b16b5b5ebc8c7fd48b6ee9"
+    },
+    {
+      "path": "actual.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+    },
+    {
+      "path": "owned/runtime/evidence/host-1.log",
+      "bytes": 3073,
+      "sha256": "bd6ef38138620ef8e182e3e0f5e9a96a6fb5f5c74580fabfa0e52981dcfb195b"
+    },
+    {
+      "path": "owned/runtime/evidence/host-2.log",
+      "bytes": 5464,
+      "sha256": "cbe085bd349ec7cddd528c5a67222e36bde8c1ccafef1bdfb8e528dd9e3aff63"
+    },
+    {
+      "path": "owned/runtime/evidence/host-3.log",
+      "bytes": 1829,
+      "sha256": "a2dafae7e795b5f089e51df841f0339acae4961d1e7677b918bf4a5186fa8877"
+    },
+    {
+      "path": "owned/runtime/evidence/observations.jsonl",
+      "bytes": 48934,
+      "sha256": "f3760b3b4ee90342d5c3695c74925258f5fe46e72a876b0707298857911350ef"
+    }
+  ],
+  "owned_container_ids": "",
+  "read_scope": "only exact owned marker/bundle BOM; actual.stdout/stderr and owned/runtime/evidence contents; no runtime DB/key/config or old service reads"
+}

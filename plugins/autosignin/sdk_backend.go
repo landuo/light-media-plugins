@@ -36,7 +36,7 @@ func (b sdkBackend) fatal(err error) {
 	}
 }
 func (b sdkBackend) configured() []Object {
-	result, err := (sdk.Sites{Host: b.host}).Read(b.ctx, sdk.SiteHostRequestV1{OrderByPriority: true})
+	result, err := (sdk.Sites{Host: b.host}).Read(b.ctx, sdk.SiteHostRequestV1{OrderByPriority: true, SourceProjection: true})
 	b.fatal(err)
 	out := make([]Object, 0, len(result.Items))
 	for _, row := range result.Items {
@@ -46,7 +46,24 @@ func (b sdkBackend) configured() []Object {
 		if row.SourceID != 0 {
 			id = json.Number(fmt.Sprint(row.SourceID))
 		}
-		out = append(out, Object{"id": id, "name": row.Name, "url": row.URL, "domain": row.Domain, "is_active": row.Enabled, "public": row.Public, "proxy": row.Proxy, "render": row.Render, "_host_site_id": row.ID})
+		value := Object{"id": id, "name": row.Name, "url": row.URL, "domain": row.Domain, "is_active": row.Enabled, "public": row.Public, "proxy": row.Proxy, "render": row.Render, "_host_site_id": row.ID}
+		if len(row.SourceFields) > 0 {
+			restored, err := sourceRestoreSavedJSON(row.SourceFields)
+			b.fatal(err)
+			fields, ok := restored.(Object)
+			if !ok {
+				b.fatal(errors.New("source native metadata must be an object"))
+			}
+			for _, key := range []string{"id", "name", "domain", "url", "pri", "is_active", "public", "proxy", "render"} {
+				v, ok := fields[key]
+				if !ok {
+					b.fatal(errors.New("source native metadata field missing"))
+				}
+				value[key] = v
+			}
+			value["_host_source_projection"] = true
+		}
+		out = append(out, value)
 	}
 	return out
 }
@@ -106,7 +123,7 @@ func (b sdkBackend) project(indexer sdk.SiteSourceIndexerV1, configured []Object
 	for _, row := range configured {
 		if row["_host_site_id"] == id {
 			for _, key := range []string{"public", "proxy", "render"} {
-				if _, exists := fields[key]; !exists {
+				if _, exists := fields[key]; !exists && !(key == "public" && Truth(row["_host_source_projection"])) {
 					fields[key] = row[key]
 				}
 			}
@@ -317,29 +334,14 @@ func (s sdkSiteTransport) Do(ctx context.Context, request PageRequest) (*PageRes
 }
 
 func (s sdkSiteTransport) Page(ctx context.Context, request PageRequest) (string, error) {
-	id := s.identity()
-	s.checkMetadata()
-	if _, ok := request.Timeout.(string); ok {
-		s.backend.fatal(&MissingCapability{"raw browser timeout/provider", "source FlareSolverr coerces int but CloakBrowser consumes the raw timeout; current renderer DTO cannot retain that distinction"})
+	if _, bound := s.site["_host_source_reference"].(sdk.SiteSourceReferenceV1); !bound {
+		// Keep the existing fail-closed legacy metadata path. A selected
+		// original row already has its raw fields and scoped reference.
+		s.checkMetadata()
 	}
-	if number, ok := numeric(request.Timeout); ok && !number.IsInt() {
-		s.backend.fatal(&MissingCapability{"fractional browser timeout", "source networkidle wait can use fractional seconds; current SiteRenderRequest only carries integer seconds"})
-	}
-	seconds, err := sourceInteger(request.Timeout)
-	if err != nil {
-		return "", err
-	}
-	if !seconds.IsInt64() {
-		return "", errors.New("browser timeout overflow")
-	}
-	n := int(seconds.Int64())
-	result, err := sdk.RenderSite(ctx, s.backend.host, sdk.SiteRenderRequest{ID: id, Path: s.path(request.URL), TimeoutSeconds: &n})
-	s.backend.fatal(err)
-	if result.HTML == nil {
-		return "", nil
-	}
-	return *result.HTML, nil
+	return s.sourcePage(ctx, request)
 }
+
 func (s sdkSiteTransport) Post(ctx context.Context, plan RequestPlan) (*AdapterResponse, error) {
 	headers := Object{}
 	for key, value := range plan.Headers {
@@ -354,7 +356,7 @@ func (s sdkSiteTransport) Post(ctx context.Context, plan RequestPlan) (*AdapterR
 }
 func (b sdkBackend) visitor(site Object) SiteVisitor {
 	transport := sdkSiteTransport{backend: b, site: site}
-	hooks := SiteVisitHooks{HTTP: transport, Browser: transport, MTeam: transport, Now: time.Now}
+	hooks := SiteVisitHooks{HTTP: transport, Browser: transport, SourcePageValue: transport.sourcePageValue, MTeam: transport, Now: time.Now}
 	if b.now != nil {
 		hooks.Now = b.now
 	}

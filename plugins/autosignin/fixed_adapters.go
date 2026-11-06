@@ -136,11 +136,11 @@ func FixedSignin(kind FixedAdapter) func(context.Context, Object, SiteVisitHooks
 		if !ok {
 			return AdapterResult{}, ErrAdapterNotReady
 		}
-		var page string
-		pageText := func() string { return page }
+		var page any
+		pageText := func() any { return page }
 		if kind == AdapterHDCity {
 			var err error
-			page, err = BasePageSource(ctx, site, p.Routes[0].URL, h)
+			page, err = sourceBasePageValue(ctx, site, p.Routes[0].URL, h)
 			if err != nil {
 				return AdapterResult{}, err
 			}
@@ -160,9 +160,9 @@ func FixedSignin(kind FixedAdapter) func(context.Context, Object, SiteVisitHooks
 				siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，请检查站点连通性")
 				return AdapterResult{false, "签到失败，请检查站点连通性"}, nil
 			}
-			pageText = response.text
+			pageText = func() any { return response.text() }
 		}
-		if page == "" {
+		if !Truth(page) {
 			if kind == AdapterHDCity {
 				siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，请检查站点连通性")
 				return AdapterResult{false, "签到失败，请检查站点连通性"}, nil
@@ -172,7 +172,11 @@ func FixedSignin(kind FixedAdapter) func(context.Context, Object, SiteVisitHooks
 		if kind == AdapterHDCity {
 			expired = "login"
 		}
-		if strings.Contains(pageText(), expired) {
+		isExpired, err := sourcePageContains(pageText(), expired)
+		if err != nil {
+			return AdapterResult{}, err
+		}
+		if isExpired {
 			siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，Cookie已失效")
 			return AdapterResult{false, "签到失败，Cookie已失效"}, nil
 		}
@@ -181,7 +185,7 @@ func FixedSignin(kind FixedAdapter) func(context.Context, Object, SiteVisitHooks
 			if len(patterns) == 0 {
 				return AdapterResult{}, errors.New("missing pinned adapter patterns")
 			}
-			yes, err := SignInResult(pageText(), patterns)
+			yes, err := sourcePageSignInResult(pageText(), patterns)
 			if err != nil {
 				return AdapterResult{}, err
 			}
@@ -190,7 +194,7 @@ func FixedSignin(kind FixedAdapter) func(context.Context, Object, SiteVisitHooks
 				return AdapterResult{true, step.message}, nil
 			}
 		}
-		siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+pageText())
+		siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+pythonScalar(pageText()))
 		return AdapterResult{false, "签到失败"}, nil
 	}
 }

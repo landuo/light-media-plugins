@@ -5,7 +5,6 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
-	"strings"
 	"time"
 
 	"golang.org/x/net/html"
@@ -111,21 +110,25 @@ func OCRSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisitH
 		return AdapterResult{false, message}, nil
 	}
 	routes := fixedPolicies[kind].Routes
-	page, err := BasePageSource(ctx, site, routes[0].URL, h)
+	page, err := sourceBasePageValue(ctx, site, routes[0].URL, h)
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
-	if strings.Contains(page, "login.php") {
+	expired, err := sourcePageContains(page, "login.php")
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if expired {
 		return fail("签到失败，Cookie已失效")
 	}
 	var signed bool
 	if kind == AdapterHDSky {
-		signed, err = SignInResult(page, htmlData.Regexes["HDSky._sign_regex"])
+		signed, err = sourcePageSignInResult(page, htmlData.Regexes["HDSky._sign_regex"])
 	} else {
-		signed, err = HasSigninEvidence(page)
+		signed, err = sourcePageSigninEvidence(page)
 	}
 	if err != nil {
 		return AdapterResult{}, err
@@ -174,14 +177,14 @@ func OCRSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisitH
 	} else {
 		checking := clone(site).(Object)
 		checking["timeout"] = nil
-		page, err = BasePageSource(ctx, checking, routes[1].URL, h)
+		page, err = sourceBasePageValue(ctx, checking, routes[1].URL, h)
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		if page == "" {
+		if !Truth(page) {
 			return fail("签到失败，请检查站点连通性")
 		}
-		doc, err := parseHTML(page)
+		doc, err := sourcePageParseHTML(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}

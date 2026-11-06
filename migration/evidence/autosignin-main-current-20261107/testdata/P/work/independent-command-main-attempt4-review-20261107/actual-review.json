@@ -1,0 +1,132 @@
+{
+  "observations": {
+    "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual/owned-r3/runtime/evidence/observations.jsonl",
+    "sha256": "433c7d756f6b22896bfdc225f16f4f940bda4375bfa3045fe669a1957789e62e"
+  },
+  "actual_stdout": {
+    "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual/attempt4/actual.stdout",
+    "sha256": "cd5e3a39a28bdffde00951a88e7489b5b69b121d202fe87572a1072fe4c3b4fb"
+  },
+  "command": {
+    "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual/attempt4/command.json",
+    "sha256": "2e464eb549f136e5af9ed37cba3cdea95228516da03e2f040e53d1020cbd2142"
+  },
+  "launch_seal": {
+    "path": "/Users/accidia/projects/light-media-plugins/work/independent-command-update-launch-review-20261107/seal.json",
+    "sha256": "b003ee720ac31ed833f8d30d11dd29055194aa31171db0447ea03db4f038b7e0"
+  },
+  "driver_input_sha256": "f8bde7f9b59ac476c22aa392b55c6ea09ac804bb07bdd98cc7266db85442e430",
+  "source_pending_page_exact_equals_actual_clone_page": true,
+  "messages3": [
+    {
+      "action": 1,
+      "channel": "Web",
+      "id": 18,
+      "image": null,
+      "link": null,
+      "mtype": "",
+      "note": {},
+      "reg_time": "2026-11-07 03:17:31",
+      "source": null,
+      "text": null,
+      "title": "站点签到完成！",
+      "userid": "category-owned"
+    },
+    {
+      "action": 1,
+      "channel": "Web",
+      "id": 17,
+      "image": null,
+      "link": null,
+      "mtype": "",
+      "note": {},
+      "reg_time": "2026-11-07 03:17:30",
+      "source": null,
+      "text": null,
+      "title": "开始站点签到 ...",
+      "userid": "category-owned"
+    },
+    {
+      "action": 0,
+      "channel": "Web",
+      "id": 15,
+      "image": null,
+      "link": null,
+      "mtype": "",
+      "note": {},
+      "reg_time": "2026-11-07 03:17:30",
+      "source": "category-owned",
+      "text": "/site_signin",
+      "title": null,
+      "userid": "category-owned"
+    }
+  ],
+  "peer": {
+    "proxy_hosts": [
+      "127.0.0.1:39647",
+      "127.0.0.1:39647",
+      "hhanclub.net:443",
+      "hhanclub.net:443"
+    ],
+    "proxy_requests": [
+      {
+        "host": "127.0.0.1:39647",
+        "method": "GET",
+        "uri": "http://127.0.0.1:39647/index"
+      },
+      {
+        "host": "127.0.0.1:39647",
+        "method": "GET",
+        "uri": "http://127.0.0.1:39647/worker"
+      },
+      {
+        "host": "hhanclub.net:443",
+        "method": "CONNECT",
+        "uri": "hhanclub.net:443"
+      },
+      {
+        "host": "hhanclub.net:443",
+        "method": "CONNECT",
+        "uri": "hhanclub.net:443"
+      }
+    ],
+    "scope": "loopback TLS/proxy only, certificate verification enabled; hosts include denied executable-repository HTTP attempts",
+    "wire": [
+      {
+        "cookie": "owned_session=synthetic",
+        "host": "hhanclub.net",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      },
+      {
+        "cookie": "owned_session=synthetic",
+        "host": "hhanclub.net",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      }
+    ]
+  },
+  "wrapper": {
+    "exit": 1,
+    "exception": null,
+    "seconds": 21.378913935041055,
+    "owned_container_remaining": false,
+    "bundle_unchanged": true,
+    "observed_states": [
+      "created",
+      "running"
+    ]
+  },
+  "before_build_runtime_inputs": 7064,
+  "source_get_page_cases": 3,
+  "classification": "fixture assertion mismatch: selected disabled clone has no records but gets pending row; no product red at this stop",
+  "remaining_stages_not_run": [
+    "both-enabled Web rounds",
+    "force same-version update",
+    "public interval",
+    "global shutdown drain",
+    "later native delete/uninstall tail"
+  ]
+}

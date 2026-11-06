@@ -1,0 +1,52 @@
+--- reviewed-ba885
++++ current-f8b
+@@ -279,19 +279,6 @@
+ 	if attendance != 1 {
+ 		t.Fatal("cold source once replayed", attendance)
+ 	}
+-	repoOrigin, err := url.Parse(repo.URL)
+-	if err != nil {
+-		t.Fatal(err)
+-	}
+-	for _, request := range peer.proxySnapshot() {
+-		if request["method"] == "CONNECT" && request["host"] == "hhanclub.net:443" {
+-			continue
+-		}
+-		if request["method"] == "GET" && request["host"] == repoOrigin.Host && strings.HasPrefix(request["uri"], repo.URL+"/") {
+-			continue
+-		}
+-		t.Fatal("foreign proxy request", request)
+-	}
+ 	// Original965 contracts: command is broadcast to every enabled ASI class;
+ 	// nonempty nonmatching retry_keyword causes same-day dedup; an empty keyword
+ 	// deliberately repeats a successful selected site. HTTP success is insufficient.
+@@ -552,6 +539,20 @@
+ 	h.ok("DELETE", "/api/plugins/"+clone, nil)
+ 	observer.code(clone, false)
+ 
++	repoOrigin, err := url.Parse(repo.URL)
++	if err != nil {
++		t.Fatal(err)
++	}
++	for _, request := range peer.proxySnapshot() {
++		if request["method"] == "CONNECT" && request["host"] == "hhanclub.net:443" {
++			continue
++		}
++		if request["method"] == "GET" && request["host"] == repoOrigin.Host && strings.HasPrefix(request["uri"], repo.URL+"/") {
++			continue
++		}
++		t.Fatal("foreign proxy request", request)
++	}
++
+ 	// The fixed manager disables all ordinary handlers when get_state is false.
+ 	// Enable this one class with a distant cron before testing SiteDeleted.
+ 	newConfig["enabled"] = true
+@@ -586,7 +587,7 @@
+ 		t.Fatal("uninstalled worker survived", remaining)
+ 	}
+ 	h.stop()
+-	h.record("native_source_Main_complete", map[string]any{"original_id": 501, "native_local_id": 1, "source_form": true, "actual_attendance": attendance, "private_init_waited": true, "cold_no_replay_ms": 3500, "site_deleted_selection_cleared": true, "scope": "actual Go Main+worker+offlineCLI+owned TLS peer; not all ASI/UI/PT/commands/timer/update/globaldrain"})
++	h.record("actual_Main_commands_update_timer_complete", map[string]any{"original_id": 501, "native_local_id": 1, "source_form": true, "initial_private_attendance": attendance, "private_init_waited": true, "cold_no_replay_ms": 3500, "site_deleted_selection_cleared": true, "scope": "actual Go Main+worker+offlineCLI+owned TLS peer; bounded Web broadcast/retry, same-version force update, public timer/global drain; not full ASI/UI/live PT/private import"})
+ }
+ 
+ // Source get_page1441-1529: inspect the named row, exact status chip and

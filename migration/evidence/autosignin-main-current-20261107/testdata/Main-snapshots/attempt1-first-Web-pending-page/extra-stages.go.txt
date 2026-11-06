@@ -1,0 +1,111 @@
+// Original965 contracts: command is broadcast to every enabled ASI class;
+// nonempty nonmatching retry_keyword causes same-day dedup; an empty keyword
+// deliberately repeats a successful selected site. HTTP success is insufficient.
+clone := id + "cmd"
+var cloned map[string]any
+if json.Unmarshal(h.ok("POST", "/api/plugins/"+id+"/clone", map[string]any{"suffix":"cmd", "name":"Owned ASI command clone", "version":"2.9.15"}), &cloned) != nil || cloned["created"] != true || cloned["instance_id"] != clone { t.Fatal("clone identity", cloned) }
+baseConfig := map[string]any{}
+for key, value := range newConfig { baseConfig[key] = value }
+baseConfig["enabled"], baseConfig["retry_keyword"] = true, ""
+cloneConfig := map[string]any{}
+for key, value := range baseConfig { cloneConfig[key] = value }
+cloneConfig["enabled"] = false
+h.ok("POST","/api/plugins/"+id+"/reset",map[string]any{})
+if !asiOwnedEmptyPage(t,h.ok("GET","/api/plugins/"+id+"/page",nil)) {t.Fatal("first Web precondition: private success history was not cleared")}
+h.ok("PUT", "/api/plugins/"+id, baseConfig)
+h.ok("PUT", "/api/plugins/"+clone, cloneConfig)
+attendanceCount := func() int { wire, _ := peer.snapshot(); count:=0;for _, row:=range wire { if row["path"]=="/attendance.php" { count++ } };return count }
+waitAttendance := func(want int) { t.Helper();until:=time.Now().Add(5*time.Second);for attendanceCount()!=want { if attendanceCount()>want || time.Now().After(until) { t.Fatal("physical attendance count",attendanceCount(),want) };time.Sleep(20*time.Millisecond) } }
+readMessages := func() []map[string]any { t.Helper(); var rows []map[string]any;if json.Unmarshal(h.ok("GET","/api/message/web?count=100",nil),&rows)!=nil {t.Fatal("message history")};return rows }
+waitMessages := func(want int) []map[string]any { t.Helper();until:=time.Now().Add(5*time.Second);for {rows:=readMessages();if len(rows)==want{return rows};if len(rows)>want||time.Now().After(until){t.Fatal("source message count",len(rows),want)};time.Sleep(20*time.Millisecond)} }
+assertCommandMessages := func(rows []map[string]any, incoming,starts,completed int) { t.Helper(); in, start, complete:=0,0,0;for _,row:=range rows {
+    if row["channel"]!="Web"||row["userid"]!=ownedUser {t.Fatal("source Web user/channel",row)}
+    if row["action"]==float64(0) {in++;if row["source"]!=ownedUser||row["text"]!="/site_signin" {t.Fatal("source incoming",row)};continue}
+    if row["action"]!=float64(1)||row["source"]!=nil {t.Fatal("source outgoing",row)}
+    title,_:=row["title"].(string);text,_:=row["text"].(string)
+    switch title+text {case "开始站点签到 ...":start++;case "站点签到完成！":complete++;default:t.Fatal("unexpected Web output",row)}
+};if in!=incoming||start!=starts||complete!=completed {t.Fatal("command message effects",in,start,complete,incoming,starts,completed)} }
+if len(readMessages())!=0 {t.Fatal("private notify=false should not generate Web replies")}
+h.ok("POST","/api/message/web",map[string]any{"text":"/site_signin"})
+waitAttendance(2)
+assertCommandMessages(waitMessages(3),1,1,1)
+if !asiOwnedEmptyPage(t,h.ok("GET","/api/plugins/"+clone+"/page",nil)) {t.Fatal("disabled clone consumed command")}
+cloneConfig["enabled"]=true
+h.ok("PUT","/api/plugins/"+clone,cloneConfig)
+h.ok("POST","/api/message/web",map[string]any{"text":"/site_signin"})
+waitAttendance(4)
+assertCommandMessages(waitMessages(8),2,3,3)
+if !asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+id+"/page",nil))||!asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+clone+"/page",nil)) {t.Fatal("broadcast history isolation")}
+baseConfig["retry_keyword"],cloneConfig["retry_keyword"]="错误|失败","错误|失败"
+h.ok("PUT","/api/plugins/"+id,baseConfig);h.ok("PUT","/api/plugins/"+clone,cloneConfig)
+h.ok("POST","/api/message/web",map[string]any{"text":"/site_signin"})
+// Source first consumes the previous pass's retry IDs. The last empty-keyword
+// pass saved [501]; this nonempty-keyword pass executes them and writes [].
+waitAttendance(6)
+assertCommandMessages(waitMessages(13),3,5,5)
+h.ok("POST","/api/message/web",map[string]any{"text":"/site_signin"})
+assertCommandMessages(waitMessages(16),4,7,5)
+time.Sleep(150*time.Millisecond)
+if attendanceCount()!=6 {t.Fatal("source same-day dedup failed")}
+h.record("ordinary_Web_broadcast_complete",map[string]any{"commands":4,"attendance":6,"incoming":4,"start_replies":7,"complete_replies":5,"disabled_clone_ignored":true,"both_enabled_broadcast":true,"source_retry_transition":true,"source_dedup":true})
+
+// A second owned executable changes only its real --manifest description.
+// Business source and version are unchanged. This proves actual artifact and
+// process replacement, not a new upstream release or version semantics.
+updatedWorker:=os.Getenv("AUTOSIGNIN_UPDATED_WORKER_BINARY")
+updatedBytes,err:=os.ReadFile(updatedWorker);if err!=nil {t.Fatal(err)}
+updatedRaw,err:=exec.Command(updatedWorker,"--manifest").Output();if err!=nil {t.Fatal(err)}
+var updatedManifest map[string]any
+if json.Unmarshal(updatedRaw,&updatedManifest)!=nil||updatedManifest["version"]!=manifest["version"]||updatedManifest["description"]==manifest["description"] {t.Fatal("owned same-version executable variant")}
+oldPIDs:=observer.pids();if len(oldPIDs)!=2||oldPIDs[id]==0||oldPIDs[clone]==0 {t.Fatal("base/clone PIDs",oldPIDs)}
+baseEntry:=filepath.Join(h.dir,"plugin-packages",id,"auto-sign-in")
+cloneEntry:=filepath.Join(h.dir,"plugin-packages",clone,"auto-sign-in")
+if fileHash(t,baseEntry)!=digest||fileHash(t,cloneEntry)!=digest {t.Fatal("pre-update actual code hash")}
+repoMu.Lock();activeBin=updatedBytes;activeDigest=fileHash(t,updatedWorker);activeManifest=updatedManifest;repoMu.Unlock()
+h.ok("POST","/api/plugins/install",map[string]any{"plugin_id":id,"repo_url":repo.URL+"/index","force":true})
+newPIDs:=observer.pids();if len(newPIDs)!=2||newPIDs[id]==0||newPIDs[id]==oldPIDs[id]||newPIDs[clone]!=oldPIDs[clone] {t.Fatal("same-version update process isolation",oldPIDs,newPIDs)}
+observer.waitDead(oldPIDs[id])
+if fileHash(t,baseEntry)!=activeDigest||fileHash(t,cloneEntry)!=digest {t.Fatal("same-version update executable isolation")}
+if fileHash(t,fmt.Sprintf("/proc/%d/exe",newPIDs[id]))!=activeDigest||fileHash(t,fmt.Sprintf("/proc/%d/exe",newPIDs[clone]))!=digest {t.Fatal("actual running executable differs from installed update bytes")}
+h.config(id,baseConfig);h.config(clone,cloneConfig)
+if !asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+id+"/page",nil))||!asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+clone+"/page",nil)) {t.Fatal("update lost history")}
+h.record("same_version_force_update_complete",map[string]any{"version":manifest["version"],"before_sha256":digest,"after_sha256":activeDigest,"base_pid_before":oldPIDs[id],"base_pid_after":newPIDs[id],"clone_pid_unchanged":newPIDs[clone],"clone_code_unchanged":true,"config_history_preserved":true,"variant":"test-only --manifest description marker; no true product source modification"})
+
+// Whole scheduler shutdown waits for an already-running public timer callback.
+// Unlike single-plugin remove_job, source lifespan stops the global scheduler
+// before stopping plugins. A real attendance barrier distinguishes waiting from
+// cancellation and tests that history persists after actual callback completion.
+cloneConfig["enabled"]=false;h.ok("PUT","/api/plugins/"+clone,cloneConfig)
+h.ok("POST","/api/plugins/"+id+"/reset",map[string]any{})
+if !asiOwnedEmptyPage(t,h.ok("GET","/api/plugins/"+id+"/page",nil)) {t.Fatal("timer precondition: old base history survived reset")}
+if !asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+clone+"/page",nil)) {t.Fatal("base reset changed clone history")}
+timerGate:=peer.blockAttendance(t)
+baseConfig["cron"],baseConfig["retry_keyword"]="0.001",""
+beforeTimer:=attendanceCount();registered:=time.Now()
+h.ok("PUT","/api/plugins/"+id,baseConfig)
+timerPIDs:=observer.pids();if len(timerPIDs)!=2||timerPIDs[id]==0||timerPIDs[clone]!=newPIDs[clone] {t.Fatal("timer worker identity",timerPIDs)}
+select {case <-timerGate.entered:case <-time.After(10*time.Second):t.Fatal("actual public interval never reached TLS peer")}
+enteredAfter:=time.Since(registered)
+if enteredAfter<3400*time.Millisecond {t.Fatal("0.001-hour interval fired early",enteredAfter)}
+stopped:=make(chan struct{});go func(){h.stop();close(stopped)}()
+select {case <-stopped:t.Fatal("global stop returned before in-flight public callback");case <-time.After(200*time.Millisecond):}
+timerGate.unblock()
+select {case <-stopped:case <-time.After(10*time.Second):t.Fatal("global stop did not drain public callback")}
+for _,pid:=range timerPIDs {observer.waitDead(pid)}
+if attendanceCount()!=beforeTimer+1 {t.Fatal("public callback count before stop",attendanceCount(),beforeTimer)}
+if len(observer.pids())!=0 {t.Fatal("worker survived global stop")}
+h.start()
+baseConfig["enabled"]=false
+h.ok("PUT","/api/plugins/"+id,baseConfig)
+if !asiOwnedSuccessfulRow(t,h.ok("GET","/api/plugins/"+id+"/page",nil)) {t.Fatal("public callback history missing after cold restart")}
+if attendanceCount()!=beforeTimer+1 {t.Fatal("cold timer started before history verification; cannot attribute history to shutdown callback")}
+if fileHash(t,baseEntry)!=activeDigest||fileHash(t,cloneEntry)!=digest {t.Fatal("cold update executable persistence")}
+afterColdPIDs:=observer.pids();if len(afterColdPIDs)!=2||afterColdPIDs[id]==0||afterColdPIDs[clone]==0||fileHash(t,fmt.Sprintf("/proc/%d/exe",afterColdPIDs[id]))!=activeDigest||fileHash(t,fmt.Sprintf("/proc/%d/exe",afterColdPIDs[clone]))!=digest {t.Fatal("cold running executable update persistence",afterColdPIDs)}
+h.config(id,baseConfig)
+if len(readMessages())!=16 {t.Fatal("timer invented Web command replies")}
+h.record("public_timer_global_shutdown_complete",map[string]any{"source_hours":"0.001","first_enter_ms":enteredAfter.Milliseconds(),"observed_stop_wait_ms":200,"callback_completed_before_exit":true,"cold_history":true,"cold_additional_attendance":0,"cold_update_hashes":true,"Web_replies_unchanged":true})
+baseConfig["cron"]="58 23 31 12 *"
+h.ok("PUT","/api/plugins/"+id,baseConfig)
+newConfig=baseConfig
+h.ok("DELETE","/api/plugins/"+clone,nil)
+observer.code(clone,false)

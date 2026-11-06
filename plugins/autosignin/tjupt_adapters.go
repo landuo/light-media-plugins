@@ -51,17 +51,21 @@ func TjuptSignin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterRes
 	if err := d.Cache.Ensure(ctx); err != nil {
 		return AdapterResult{}, err
 	}
-	page, err := BasePageSource(ctx, site, fixedPolicies[AdapterTjupt].Routes[0].URL, h)
+	page, err := sourceBasePageValue(ctx, site, fixedPolicies[AdapterTjupt].Routes[0].URL, h)
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
-	if strings.Contains(page, "login.php") {
+	expired, err := sourcePageContains(page, "login.php")
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if expired {
 		return fail("签到失败，Cookie已失效")
 	}
-	signed, err := SignInResult(page, htmlData.Regexes["Tjupt._sign_regex"])
+	signed, err := sourcePageSignInResult(page, htmlData.Regexes["Tjupt._sign_regex"])
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -69,7 +73,7 @@ func TjuptSignin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterRes
 		siteLog(h, "INFO", pythonScalar(site["name"])+" 今日已签到")
 		return AdapterResult{true, "今日已签到"}, nil
 	}
-	doc, err := parseHTML(page)
+	doc, err := sourcePageParseHTML(page)
 	if err != nil {
 		return AdapterResult{}, err
 	}

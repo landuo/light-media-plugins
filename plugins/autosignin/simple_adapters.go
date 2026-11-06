@@ -3,9 +3,6 @@ package autosignin
 import (
 	"context"
 	"regexp"
-	"strings"
-
-	legacyanime "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue"
 )
 
 const (
@@ -63,7 +60,7 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	get := func(i int) (string, error) { return BasePageSource(ctx, site, routes[i].URL, h) }
+	get := func(i int) (any, error) { return sourceBasePageValue(ctx, site, routes[i].URL, h) }
 	if kind == AdapterHaiDan {
 		if _, err = get(0); err != nil {
 			return AdapterResult{}, err
@@ -77,18 +74,18 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
 	if kind == AdapterBTSchool {
-		logged, err := LegacySiteLoggedIn(page)
+		logged, err := sourcePageLoggedIn(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}
 		if !logged {
 			return fail("签到失败，Cookie已失效")
 		}
-		signed, err := HasSigninEvidence(page)
+		signed, err := sourcePageSigninEvidence(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}
@@ -100,15 +97,15 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		if page == "" {
+		if !Truth(page) {
 			return fail("签到失败，签到接口请求失败")
 		}
-		logged, err = LegacySiteLoggedIn(page)
+		logged, err = sourcePageLoggedIn(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}
 		if logged {
-			signed, err = HasSigninEvidence(page)
+			signed, err = sourcePageSigninEvidence(page)
 			if err != nil {
 				return AdapterResult{}, err
 			}
@@ -119,14 +116,18 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 		}
 		return fail("签到失败，未确认签到结果")
 	}
-	if strings.Contains(page, "login.php") {
+	expired, err := sourcePageContains(page, "login.php")
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if expired {
 		return fail("签到失败，Cookie已失效")
 	}
 	key := "_succeed_regex"
 	if kind == AdapterHDUpt {
 		key = "_sign_regex"
 	}
-	signed, err := SignInResult(page, htmlData.Regexes[string(kind)+"."+key])
+	signed, err := sourcePageSignInResult(page, htmlData.Regexes[string(kind)+"."+key])
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -139,23 +140,27 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 		return AdapterResult{true, message}, nil
 	}
 	if kind != AdapterHDUpt {
-		siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+page)
+		siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+pythonScalar(page))
 		return fail("签到失败")
 	}
 	page, err = get(1)
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
-	siteLog(h, "DEBUG", pythonScalar(site["name"])+" 签到接口返回 "+page)
-	if hdUptNumeric.MatchString(legacyanime.Strip(page)) {
+	siteLog(h, "DEBUG", pythonScalar(site["name"])+" 签到接口返回 "+pythonScalar(page))
+	stripped, err := sourcePageStrip(page)
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if hdUptNumeric.MatchString(stripped) {
 		checked, err := get(0)
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		yes, err := SignInResult(checked, htmlData.Regexes[string(kind)+"._sign_regex"])
+		yes, err := sourcePageSignInResult(checked, htmlData.Regexes[string(kind)+"._sign_regex"])
 		if err != nil {
 			return AdapterResult{}, err
 		}
@@ -164,6 +169,6 @@ func SimpleSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVis
 			return AdapterResult{true, "签到成功"}, nil
 		}
 	}
-	siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+page)
+	siteLog(h, "ERROR", pythonScalar(site["name"])+" 签到失败，签到接口返回 "+pythonScalar(page))
 	return fail("签到失败")
 }

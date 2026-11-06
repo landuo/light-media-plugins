@@ -1,0 +1,60 @@
+[
+  {
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-compiled",
+      "-json",
+      "./cmd/server"
+    ],
+    "cwd": "/Users/accidia/projects/light-media"
+  },
+  {
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-compiled",
+      "-json",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins"
+  },
+  {
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-compiled",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/updated-worker-overlay.json",
+      "-json",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins"
+  },
+  {
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-compiled",
+      "-json",
+      "./cmd/source-sites-migrate-owned"
+    ],
+    "cwd": "/Users/accidia/projects/light-media"
+  },
+  {
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-compiled",
+      "-test",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/driver-overlay.json",
+      "-json",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins"
+  }
+]

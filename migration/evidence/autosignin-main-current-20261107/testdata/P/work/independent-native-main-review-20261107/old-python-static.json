@@ -1,0 +1,29 @@
+[
+  {
+    "path": "work/autosignin-native-main-20261107/attempt1-runner-setup/remote-runner.py",
+    "syntax_ok": false,
+    "error": {
+      "type": "SyntaxError",
+      "line": 10,
+      "offset": 302,
+      "message": "':' expected after dictionary key"
+    },
+    "unbound": []
+  },
+  {
+    "path": "work/autosignin-native-main-20261107/remote-runner.py",
+    "syntax_ok": true,
+    "unbound": [
+      {
+        "symbol": "NAME",
+        "scope": "top",
+        "scope_line": 0,
+        "load_lines": [
+          20,
+          30
+        ]
+      }
+    ],
+    "limits": "static module globals only; conditional assignments, exec/eval/embedded scripts and external subprocess behavior require separate review"
+  }
+]

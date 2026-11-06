@@ -1,0 +1,205 @@
+{
+  "actual_driver": "FAIL14.09s, not whole chain pass",
+  "repo_url": "http://127.0.0.1:41037/index",
+  "owned_repo_authority": "127.0.0.1:41037",
+  "raw_proxy_host_records": [
+    "127.0.0.1:41037",
+    "127.0.0.1:41037",
+    "hhanclub.net:443"
+  ],
+  "proxy_list_is_not_method_attested": true,
+  "actual_TLS_site_wire": [
+    {
+      "cookie": "owned_session=synthetic",
+      "host": "hhanclub.net",
+      "method": "GET",
+      "path": "/attendance.php",
+      "ua": "Owned-ASI/1"
+    }
+  ],
+  "named_success_pages": 2,
+  "worker_pids": [
+    {
+      "at": "2026-11-06T17:31:25.789407627Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 71
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:27.087517266Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 88
+      }
+    }
+  ],
+  "main_lifecycle": [
+    {
+      "at": "2026-11-06T17:31:18.274378069Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:36322",
+        "binary_sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+        "generation": 1,
+        "pid": 26
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:18.434234815Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 26
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:20.961370021Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:36322",
+        "binary_sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+        "generation": 2,
+        "pid": 61
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:25.933260427Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 61
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:26.99227625Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:36322",
+        "binary_sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+        "generation": 3,
+        "pid": 78
+      }
+    },
+    {
+      "at": "2026-11-06T17:31:30.98614899Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 78
+      }
+    }
+  ],
+  "http": [
+    {
+      "at": "2026-11-06T17:31:18.40777002Z",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:18.409939083Z",
+      "method": "GET",
+      "path": "/api/settings",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:18.417155092Z",
+      "method": "PUT",
+      "path": "/api/settings",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:18.423613488Z",
+      "method": "POST",
+      "path": "/api/sites/import",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:21.102829974Z",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:22.031789649Z",
+      "method": "POST",
+      "path": "/api/plugins/install",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:22.041995135Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn/form",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:22.124788771Z",
+      "method": "PUT",
+      "path": "/api/plugins/AutoSignIn",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:22.128145406Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:25.741379788Z",
+      "method": "PUT",
+      "path": "/api/plugins/AutoSignIn",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:25.743786368Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:25.785992408Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn/page",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:27.086322535Z",
+      "method": "POST",
+      "path": "/api/auth/login",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:27.089490839Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn",
+      "status": 200
+    },
+    {
+      "at": "2026-11-06T17:31:27.134430919Z",
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIn/page",
+      "status": 200
+    }
+  ],
+  "private_wait_record": {
+    "at": "2026-11-06T17:31:25.610806848Z",
+    "event": "private_init_waited",
+    "value": {
+      "observed_block_ms": 200,
+      "source_stop_wait": true
+    }
+  },
+  "partial_source": "Exact historical bound driver before fail line278 plus direct evidence; no third run",
+  "tail_not_executed": [
+    "site deletion/selection clear",
+    "plugin uninstall/process/code checks",
+    "native_source_Main_complete"
+  ],
+  "source_tail_correction": {
+    "before_delete": "enabled=true required for class event admission",
+    "after_delete": "enabled=false correct when __remove_site_id empties prior nonempty [501]",
+    "my_withdrawn_suggestion": "do not change final enabled check to true; full helper2045–2051 setsFalse",
+    "original_raw_unchanged": true
+  }
+}

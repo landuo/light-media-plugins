@@ -69,17 +69,21 @@ func QuizSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 		return AdapterResult{false, message}, nil
 	}
 	routes := fixedPolicies[kind].Routes
-	page, err := BasePageSource(ctx, site, routes[0].URL, h)
+	page, err := sourceBasePageValue(ctx, site, routes[0].URL, h)
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
-	if strings.Contains(page, "login.php") {
+	expired, err := sourcePageContains(page, "login.php")
+	if err != nil {
+		return AdapterResult{}, err
+	}
+	if expired {
 		return fail("签到失败，Cookie已失效")
 	}
-	yes, err := SignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
+	yes, err := sourcePageSignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -91,7 +95,7 @@ func QuizSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 		siteLog(h, "INFO", message)
 		return AdapterResult{true, "今日已签到"}, nil
 	}
-	doc, err := parseHTML(page)
+	doc, err := sourcePageParseHTML(page)
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -161,11 +165,11 @@ func QuizSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisit
 		if kind == AdapterCHDBits {
 			checking["timeout"] = nil
 		}
-		page, err = BasePageSource(ctx, checking, routes[0].URL, h)
+		page, err = sourceBasePageValue(ctx, checking, routes[0].URL, h)
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		confirmed, err := SignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
+		confirmed, err := sourcePageSignInResult(page, htmlData.Regexes[string(kind)+"._sign_regex"])
 		if err != nil {
 			return AdapterResult{}, err
 		}
@@ -202,15 +206,16 @@ func U2SuccessResponse(text string) bool {
 	u, err := url.Parse(address)
 	return err == nil && u.User == nil && strings.ToLower(u.Host) == "u2.dmhy.org" && u.EscapedPath() == "/showup.php"
 }
-func U2SignedState(page string) (bool, error) {
-	if page == "" {
+func U2SignedState(page string) (bool, error) { return sourceU2SignedState(page) }
+func sourceU2SignedState(page any) (bool, error) {
+	if !Truth(page) {
 		return false, nil
 	}
-	logged, err := LegacySiteLoggedIn(page)
+	logged, err := sourcePageLoggedIn(page)
 	if err != nil || !logged {
 		return false, err
 	}
-	doc, err := parseHTML(page)
+	doc, err := sourcePageParseHTML(page)
 	if err != nil {
 		return false, err
 	}
@@ -219,7 +224,7 @@ func U2SignedState(page string) (bool, error) {
 			return false, nil
 		}
 	}
-	return SignInResult(page, htmlData.Regexes["U2._sign_regex"])
+	return sourcePageSignInResult(page, htmlData.Regexes["U2._sign_regex"])
 }
 func U2Signin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterResult, error) {
 	fail := func(message string) (AdapterResult, error) {
@@ -236,21 +241,21 @@ func U2Signin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterResult
 		return fail("签到失败，9点前不签到")
 	}
 	routes := fixedPolicies[AdapterU2].Routes
-	page, err := BasePageSource(ctx, site, routes[0].URL, h)
+	page, err := sourceBasePageValue(ctx, site, routes[0].URL, h)
 	if err != nil {
 		return AdapterResult{}, err
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("签到失败，请检查站点连通性")
 	}
-	logged, err := LegacySiteLoggedIn(page)
+	logged, err := sourcePageLoggedIn(page)
 	if err != nil {
 		return AdapterResult{}, err
 	}
 	if !logged {
 		return fail("签到失败，Cookie已失效")
 	}
-	yes, err := U2SignedState(page)
+	yes, err := sourceU2SignedState(page)
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -258,7 +263,7 @@ func U2Signin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterResult
 		siteLog(h, "INFO", pythonScalar(site["name"])+" 今日已签到")
 		return AdapterResult{true, "今日已签到"}, nil
 	}
-	doc, err := parseHTML(page)
+	doc, err := sourcePageParseHTML(page)
 	if err != nil {
 		return AdapterResult{}, err
 	}
@@ -298,11 +303,11 @@ func U2Signin(ctx context.Context, site Object, h SiteVisitHooks) (AdapterResult
 		return fail("签到失败，签到接口请求失败")
 	}
 	if U2SuccessResponse(response.text()) {
-		page, err = BasePageSource(ctx, site, routes[0].URL, h)
+		page, err = sourceBasePageValue(ctx, site, routes[0].URL, h)
 		if err != nil {
 			return AdapterResult{}, err
 		}
-		confirmed, err := U2SignedState(page)
+		confirmed, err := sourceU2SignedState(page)
 		if err != nil {
 			return AdapterResult{}, err
 		}

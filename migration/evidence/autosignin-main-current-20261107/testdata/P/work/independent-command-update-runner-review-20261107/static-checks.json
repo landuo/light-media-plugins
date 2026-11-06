@@ -1,0 +1,25 @@
+{
+  "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/remote-body.py",
+  "sha256": "43c699c0d70fa8bf04bf78fd911412eba68600685d84e224d79cf11f370a1d61",
+  "bytes": 11301,
+  "syntax": "pass",
+  "recursive_symtable_unbound_global": [],
+  "checks": {
+    "one_30s_monotonic_startup_deadline": true,
+    "startup_inspect_timeout_capped_by_remaining": true,
+    "created_first_owner_verified_id_binds_before_return": true,
+    "subsequent_inspect_uses_bound_id": true,
+    "inspect_raw_and_exception_finally_persisted": true,
+    "only_NoSuch_nonzero_is_absence": true,
+    "late_creation_observer_after_absence_while_client_running": true,
+    "owner_reverified_before_stop_remove": true,
+    "final_remaining_unknown_until_complete_queries": true,
+    "final_name_and_label_independently_requested": true,
+    "final_checks_saved_before_nonzero_assert": true,
+    "verified_id_final_read_before_final_remaining_assignment": true,
+    "never_bound_id_and_started_client_stays_unknown": true,
+    "final_gate_requires_explicit_false": true,
+    "command_written_after_cleanup_sections": true
+  },
+  "class": "static source inspection only; no CONFIG/BOM/remote execution"
+}

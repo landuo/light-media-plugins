@@ -1,0 +1,17 @@
+{
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=8",
+    "admin@192.168.8.129",
+    "docker ps -aq --filter label=migration.review=independent-source-main-contract-20261107"
+  ],
+  "exit": 0,
+  "seconds": 0.2549794167280197,
+  "stdout": "",
+  "stderr": "",
+  "owned_containers_remaining": 0,
+  "cleanup": "all five successful and three failed source containers used --rm; no mounts or persistent runtime roots, tmpfs deleted on exit"
+}

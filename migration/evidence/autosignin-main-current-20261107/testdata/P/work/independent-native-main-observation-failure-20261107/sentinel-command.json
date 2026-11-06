@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=8",
+    "admin@192.168.8.129",
+    "python3 -"
+  ],
+  "stdin_sha256": "2e7adbefad33b882201e706058bd1be1432380add443f00fbc458c9c8c8b0762",
+  "exit": 0,
+  "seconds": 18.271169625222683,
+  "classification": "one authorized no-bind print/sleep lifecycle probe; not a fourth Main run"
+}

@@ -1,0 +1,314 @@
+{
+  "classification": "finite actual R3 public-scheduler-stopping-boundary Main accepted; private global stop excluded",
+  "launch_seal": "fcb4d5e5bbcca8ed987de4a826ec57c065e7297e8e1335337c5dcfc56638b643",
+  "five_ELFs_verified": {
+    "bin/host": {
+      "sha256": "c31f8f43480a3cf297598af401eaa16899f65aa2b5b09fe138545613334c42c6",
+      "bytes": 57225378
+    },
+    "bin/worker": {
+      "sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+      "bytes": 12796066
+    },
+    "bin/worker-updated": {
+      "sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+      "bytes": 12796066
+    },
+    "bin/cli": {
+      "sha256": "7044b75a4cb61768538c0dcf764ef6a038254edb75f820b46ace98035abe0c84",
+      "bytes": 25215138
+    },
+    "bin/driver": {
+      "sha256": "75fe4f1ecddc27f3249d2ec8266798ff34cfcb596cbe1f0d9f9a056dd85d637f",
+      "bytes": 9756834
+    }
+  },
+  "before_afterbuild_afterruntime_equal": true,
+  "inputs": 7064,
+  "embeds": 811,
+  "runtime_streams": [
+    {
+      "name": "host",
+      "packages": 482,
+      "paths": 6302,
+      "embeds": 506,
+      "raw_sha256": "feb3d16cf7a32ad1f484fcf38b6bcb27a74ef061c9fb6f58c57fd5134653259b",
+      "runtime_selection_equals_build": true
+    },
+    {
+      "name": "worker",
+      "packages": 169,
+      "paths": 2144,
+      "embeds": 305,
+      "raw_sha256": "9149ab9eddde1948cedd5a75952d3fb322e77b892992f7b0f318f03926564dac",
+      "runtime_selection_equals_build": true
+    },
+    {
+      "name": "worker-updated",
+      "packages": 169,
+      "paths": 2144,
+      "embeds": 305,
+      "raw_sha256": "9149ab9eddde1948cedd5a75952d3fb322e77b892992f7b0f318f03926564dac",
+      "runtime_selection_equals_build": true
+    },
+    {
+      "name": "cli",
+      "packages": 480,
+      "paths": 6158,
+      "embeds": 369,
+      "raw_sha256": "f9555391aecdbb8be9305c8319578386348751854798aada329215e06c45c503",
+      "runtime_selection_equals_build": true
+    },
+    {
+      "name": "driver",
+      "packages": 222,
+      "paths": 2273,
+      "embeds": 0,
+      "raw_sha256": "9212942b274c10904821b7671e88fac71006b0122339307d7d62b88cb669214f",
+      "runtime_selection_equals_build": true
+    }
+  ],
+  "actual_seconds": 26.53,
+  "wrapper_seconds": 34.16401722910814,
+  "observations": 100,
+  "stopping_log": {
+    "app_version": "0.4.19",
+    "event": "scheduler_stopping",
+    "id": "log_hNWKTvswFkia5EvE_q49cPPl",
+    "instance_id": "instance_Jb_f0wjO2M4O-vV_1nkeJPa4",
+    "job_id": "",
+    "level": "INFO",
+    "message": "正在停止定时任务...",
+    "module": "plugins",
+    "time": "2026-11-06T20:00:08.273895701Z",
+    "workflow_id": ""
+  },
+  "checkpoint": {
+    "at": "2026-11-06T20:00:08.285271844Z",
+    "event": "public_scheduler_stop_observed",
+    "value": {
+      "checkpoint": "actual runtime INFO before public lifetime wait, before code backup",
+      "event": "scheduler_stopping",
+      "held_callback": true
+    }
+  },
+  "first_success_after_boundary_ms": 317.481,
+  "first_success_after_observed_marker_ms": 306.105,
+  "callback_complete_before_Main_exit": true,
+  "pages": [
+    [
+      21,
+      "2026-11-06T19:59:54.520245336Z",
+      "/api/plugins/AutoSignIn/page",
+      "success"
+    ],
+    [
+      28,
+      "2026-11-06T19:59:56.384124703Z",
+      "/api/plugins/AutoSignIn/page",
+      "success"
+    ],
+    [
+      31,
+      "2026-11-06T20:00:01.762474888Z",
+      "/api/plugins/AutoSignIn/page",
+      "empty"
+    ],
+    [
+      41,
+      "2026-11-06T20:00:02.012343495Z",
+      "/api/plugins/AutoSignIncmd/page",
+      "pending"
+    ],
+    [
+      51,
+      "2026-11-06T20:00:02.24123427Z",
+      "/api/plugins/AutoSignIn/page",
+      "success"
+    ],
+    [
+      52,
+      "2026-11-06T20:00:02.282904554Z",
+      "/api/plugins/AutoSignIncmd/page",
+      "success"
+    ],
+    [
+      67,
+      "2026-11-06T20:00:04.150443855Z",
+      "/api/plugins/AutoSignIn/page",
+      "success"
+    ],
+    [
+      68,
+      "2026-11-06T20:00:04.191765496Z",
+      "/api/plugins/AutoSignIncmd/page",
+      "success"
+    ],
+    [
+      72,
+      "2026-11-06T20:00:04.580063214Z",
+      "/api/plugins/AutoSignIn/page",
+      "empty"
+    ],
+    [
+      73,
+      "2026-11-06T20:00:04.633509344Z",
+      "/api/plugins/AutoSignIncmd/page",
+      "success"
+    ],
+    [
+      82,
+      "2026-11-06T20:00:10.937704216Z",
+      "/api/plugins/AutoSignIn/page",
+      "success"
+    ],
+    [
+      85,
+      "2026-11-06T20:00:11.26933969Z",
+      "/api/plugins/AutoSignIncmd/page",
+      "success"
+    ]
+  ],
+  "Web": [
+    {
+      "round": 1,
+      "history": 3,
+      "incoming_start_complete": [
+        1,
+        1,
+        1
+      ],
+      "consumer_instances": [
+        "AutoSignIn"
+      ],
+      "cumulative_attendance_in_passed_driver": 2
+    },
+    {
+      "round": 2,
+      "history": 8,
+      "incoming_start_complete": [
+        2,
+        3,
+        3
+      ],
+      "consumer_instances": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_in_passed_driver": 4
+    },
+    {
+      "round": 3,
+      "history": 13,
+      "incoming_start_complete": [
+        3,
+        5,
+        5
+      ],
+      "consumer_instances": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_in_passed_driver": 6
+    },
+    {
+      "round": 4,
+      "history": 16,
+      "incoming_start_complete": [
+        4,
+        7,
+        5
+      ],
+      "consumer_instances": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_in_passed_driver": 6
+    }
+  ],
+  "PIDs": [
+    {
+      "AutoSignIn": 82
+    },
+    {
+      "AutoSignIn": 99
+    },
+    {
+      "AutoSignIn": 121,
+      "AutoSignIncmd": 113
+    },
+    {
+      "AutoSignIn": 135,
+      "AutoSignIncmd": 113
+    },
+    {
+      "AutoSignIn": 142,
+      "AutoSignIncmd": 113
+    },
+    {},
+    {
+      "AutoSignIn": 159,
+      "AutoSignIncmd": 165
+    },
+    {
+      "AutoSignIn": 159
+    },
+    {}
+  ],
+  "timer": {
+    "Web_replies_unchanged": true,
+    "callback_completed_before_exit": true,
+    "clone_cold_history_config": true,
+    "cold_additional_attendance": 0,
+    "cold_history": true,
+    "cold_update_hashes": true,
+    "first_enter_ms": 3637,
+    "observed_stop_wait_after_stage_ms": 200,
+    "source_hours": "0.001",
+    "source_scheduler_stage_observed": true
+  },
+  "wire_requests": 7,
+  "CLI": [
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "validated",
+      "writes": 0
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "ready",
+      "writes": 0
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "imported",
+      "writes": 2
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "already_imported",
+      "writes": 0
+    }
+  ],
+  "notification_failed_count": 12,
+  "notification_error_code_in_original_raw": false,
+  "notification_runtime_exact_cause": "unknown: original records omit code/cause; unavailable provider is source/fixture inference only",
+  "Main_reruns": 0,
+  "App_runs": 0,
+  "source_reruns": 0,
+  "NAS_reads": 0,
+  "NAS_writes": 0,
+  "true_writes": 0,
+  "ledger_writes": 0,
+  "external_delivery_accepted": false,
+  "private_global_stop_accepted": false,
+  "full_ASI_accepted": false
+}

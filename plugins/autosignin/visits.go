@@ -53,6 +53,9 @@ type BrowserTransport interface {
 	Page(context.Context, PageRequest) (string, error)
 }
 type SiteVisitHooks struct {
+	// Concrete source consumer value path; ordinary Browser remains string-only.
+	SourcePageValue func(context.Context, PageRequest) (any, error)
+
 	Log     func(string, string) error
 	HTTP    PageTransport
 	Browser BrowserTransport
@@ -211,7 +214,7 @@ func GenericSignin(ctx context.Context, site Object, h SiteVisitHooks) (result R
 		}
 	}
 	siteLog(h, "INFO", fmt.Sprintf("开始站点签到：%s，地址：%s...", pythonScalar(name), address))
-	page, res, err := requestSitePage(ctx, site, PageRequest{Method: "GET", URL: address, Timeout: pageTimeout(site)}, h)
+	page, res, err := sourceRequestSitePageValue(ctx, site, PageRequest{Method: "GET", URL: address, Timeout: pageTimeout(site)}, h)
 	if err != nil {
 		siteLog(h, "WARNING", fmt.Sprintf("%s 签到失败：%s", pythonScalar(name), err.Error()))
 		return failed("签到失败：" + err.Error() + "！")
@@ -232,24 +235,24 @@ func GenericSignin(ctx context.Context, site Object, h SiteVisitHooks) (result R
 		}
 		page = res.text()
 	}
-	if page == "" {
+	if !Truth(page) {
 		return failed("签到失败，站点返回空页面")
 	}
-	challenge, err := checkChallenge(page, h)
+	challenge, err := sourcePageChallenge(page, h)
 	if err != nil {
 		return failed("签到失败：" + err.Error() + "！")
 	}
 	if challenge {
 		return failed("签到失败，无法通过Cloudflare！")
 	}
-	logged, err := HasLoginEvidence(page)
+	logged, err := sourcePageLoginEvidence(page)
 	if err != nil {
 		return failed("签到失败：" + err.Error() + "！")
 	}
 	if !logged {
 		return failed("签到失败，未识别到登录状态")
 	}
-	signed, err := HasSigninEvidence(page)
+	signed, err := sourcePageSigninEvidence(page)
 	if err != nil {
 		return failed("签到失败：" + err.Error() + "！")
 	}
@@ -288,7 +291,7 @@ func GenericLogin(ctx context.Context, site Object, h SiteVisitHooks) (result Ad
 		}
 	}
 	siteLog(h, "INFO", fmt.Sprintf("开始站点模拟登录：%s，地址：%s...", pythonScalar(site["name"]), address))
-	page, res, err := requestSitePage(ctx, site, PageRequest{Method: "GET", URL: address, Timeout: pageTimeout(site)}, h)
+	page, res, err := sourceRequestSitePageValue(ctx, site, PageRequest{Method: "GET", URL: address, Timeout: pageTimeout(site)}, h)
 	if err != nil {
 		siteLog(h, "WARNING", fmt.Sprintf("%s 模拟登录失败：%s", pythonScalar(site["name"]), err.Error()))
 		return fail("模拟登录失败：" + err.Error() + "！")
@@ -309,22 +312,22 @@ func GenericLogin(ctx context.Context, site Object, h SiteVisitHooks) (result Ad
 		}
 		page = res.text()
 	}
-	if page == "" {
+	if !Truth(page) {
 		return fail("模拟登录失败，站点返回空页面")
 	}
-	challenge, err := checkChallenge(page, h)
+	challenge, err := sourcePageChallenge(page, h)
 	if err != nil {
 		return fail("模拟登录失败：" + err.Error() + "！")
 	}
 	if challenge {
 		return fail("模拟登录失败，无法通过Cloudflare！")
 	}
-	logged, err := HasLoginEvidence(page)
+	logged, err := sourcePageLoginEvidence(page)
 	if err != nil {
 		return fail("模拟登录失败：" + err.Error() + "！")
 	}
 	if !logged {
-		form, err := HasLoginForm(page)
+		form, err := sourcePageLoginForm(page)
 		if err != nil {
 			return fail("模拟登录失败：" + err.Error() + "！")
 		}
