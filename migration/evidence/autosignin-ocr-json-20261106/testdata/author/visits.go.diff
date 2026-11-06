@@ -1,0 +1,10 @@
+--- /Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/visits.go
++++ plugins/autosignin/visits.go
+@@ -32,6 +32,7 @@
+ 	Binary               bool
+ 	Form                 map[string]string
+ 	RawForm              map[string]json.RawMessage
++	FormValues           map[string][]string `json:"form_values,omitempty"`
+ 	FormOrder            []string
+ 	Timeout              any
+ }

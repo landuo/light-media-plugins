@@ -1,0 +1,4090 @@
+[
+  {
+    "ImportPath": "internal/goarch",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/goarch",
+    "GoFiles": [
+      "goarch.go",
+      "goarch_arm64.go",
+      "zgoarch_arm64.go"
+    ]
+  },
+  {
+    "ImportPath": "unsafe",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/unsafe",
+    "GoFiles": [
+      "unsafe.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/abi",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/abi",
+    "GoFiles": [
+      "abi.go",
+      "abi_arm64.go",
+      "bounds.go",
+      "compiletype.go",
+      "escape.go",
+      "funcpc.go",
+      "iface.go",
+      "map.go",
+      "rangefuncconsts.go",
+      "runtime.go",
+      "stack.go",
+      "switch.go",
+      "symtab.go",
+      "type.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "abi_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/unsafeheader",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/unsafeheader",
+    "GoFiles": [
+      "unsafeheader.go"
+    ],
+    "XTestGoFiles": [
+      "unsafeheader_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/cpu",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/cpu",
+    "GoFiles": [
+      "cpu.go",
+      "cpu_arm64.go",
+      "cpu_arm64_darwin.go",
+      "cpu_darwin.go",
+      "cpu_no_name.go",
+      "datacache_unsupported.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "cpu_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/bytealg",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/bytealg",
+    "GoFiles": [
+      "bytealg.go",
+      "compare_native.go",
+      "count_native.go",
+      "equal_generic.go",
+      "equal_native.go",
+      "index_arm64.go",
+      "index_native.go",
+      "indexbyte_native.go",
+      "lastindexbyte_generic.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/byteorder",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/byteorder",
+    "GoFiles": [
+      "byteorder.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/chacha8rand",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/chacha8rand",
+    "GoFiles": [
+      "chacha8.go",
+      "chacha8_generic.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "rand_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/coverage/rtcov",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/coverage/rtcov",
+    "GoFiles": [
+      "rtcov.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/godebugs",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/godebugs",
+    "GoFiles": [
+      "table.go"
+    ],
+    "XTestGoFiles": [
+      "godebugs_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/goexperiment",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/goexperiment",
+    "GoFiles": [
+      "exp_arenas_off.go",
+      "exp_boringcrypto_off.go",
+      "exp_cgocheck2_off.go",
+      "exp_dwarf5_off.go",
+      "exp_fieldtrack_off.go",
+      "exp_goroutineleakprofile_off.go",
+      "exp_greenteagc_on.go",
+      "exp_heapminimum512kib_off.go",
+      "exp_jsonv2_off.go",
+      "exp_loopvar_off.go",
+      "exp_newinliner_off.go",
+      "exp_preemptibleloops_off.go",
+      "exp_randomizedheapbase64_on.go",
+      "exp_regabiargs_on.go",
+      "exp_regabiwrappers_on.go",
+      "exp_runtimefreegc_off.go",
+      "exp_runtimesecret_off.go",
+      "exp_simd_off.go",
+      "exp_sizespecializedmalloc_off.go",
+      "exp_staticlockranking_off.go",
+      "flags.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/goos",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/goos",
+    "GoFiles": [
+      "goos.go",
+      "unix.go",
+      "zgoos_darwin.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/profilerecord",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/profilerecord",
+    "GoFiles": [
+      "profilerecord.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/atomic",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/atomic",
+    "GoFiles": [
+      "atomic_arm64.go",
+      "doc.go",
+      "stubs.go",
+      "types.go",
+      "types_64bit.go",
+      "unaligned.go",
+      "xchg8.go"
+    ],
+    "XTestGoFiles": [
+      "atomic_andor_test.go",
+      "atomic_test.go",
+      "bench_test.go",
+      "xchg8_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/exithook",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/exithook",
+    "GoFiles": [
+      "hooks.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/gc",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/gc",
+    "GoFiles": [
+      "malloc.go",
+      "scan.go",
+      "sizeclasses.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/sys",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/sys",
+    "GoFiles": [
+      "consts.go",
+      "consts_norace.go",
+      "dit_arm64.go",
+      "intrinsics.go",
+      "nih.go",
+      "sys.go",
+      "zversion.go"
+    ],
+    "XTestGoFiles": [
+      "intrinsics_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/gc/scan",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/gc/scan",
+    "GoFiles": [
+      "expand_reference.go",
+      "filter.go",
+      "scan_generic.go",
+      "scan_go.go",
+      "scan_reference.go"
+    ],
+    "XTestGoFiles": [
+      "expand_test.go",
+      "filter_test.go",
+      "mem_unix_test.go",
+      "scan_generic_test.go",
+      "scan_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/asan",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/asan",
+    "GoFiles": [
+      "doc.go",
+      "noasan.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/msan",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/msan",
+    "GoFiles": [
+      "doc.go",
+      "nomsan.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/race",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/race",
+    "GoFiles": [
+      "doc.go",
+      "norace.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/math",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/math",
+    "GoFiles": [
+      "math.go"
+    ],
+    "XTestGoFiles": [
+      "math_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/maps",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/maps",
+    "GoFiles": [
+      "group.go",
+      "map.go",
+      "runtime.go",
+      "runtime_fast32.go",
+      "runtime_fast64.go",
+      "runtime_faststr.go",
+      "table.go",
+      "table_debug.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "fuzz_test.go",
+      "map_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/runtime/pprof/label",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/runtime/pprof/label",
+    "GoFiles": [
+      "labelset.go"
+    ]
+  },
+  {
+    "ImportPath": "math/bits",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/math/bits",
+    "GoFiles": [
+      "bits.go",
+      "bits_errors.go",
+      "bits_tables.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "bits_test.go",
+      "example_math_test.go",
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/strconv",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/strconv",
+    "GoFiles": [
+      "atob.go",
+      "atoc.go",
+      "atof.go",
+      "atofeisel.go",
+      "atoi.go",
+      "ctoa.go",
+      "decimal.go",
+      "deps.go",
+      "ftoa.go",
+      "ftoadbox.go",
+      "ftoafixed.go",
+      "itoa.go",
+      "math.go",
+      "pow10tab.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "atob_test.go",
+      "atoc_test.go",
+      "atof_test.go",
+      "atoi_test.go",
+      "ctoa_test.go",
+      "decimal_test.go",
+      "fp_test.go",
+      "ftoa_test.go",
+      "import_test.go",
+      "itoa_test.go",
+      "math_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/stringslite",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/stringslite",
+    "GoFiles": [
+      "strings.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/trace/tracev2",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/trace/tracev2",
+    "GoFiles": [
+      "doc.go",
+      "events.go",
+      "spec.go"
+    ],
+    "XTestGoFiles": [
+      "events_test.go"
+    ]
+  },
+  {
+    "ImportPath": "runtime",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/runtime",
+    "GoFiles": [
+      "alg.go",
+      "arena.go",
+      "asan0.go",
+      "atomic_pointer.go",
+      "badlinkname.go",
+      "cgo.go",
+      "cgocall.go",
+      "cgocallback.go",
+      "cgocheck.go",
+      "cgroup_stubs.go",
+      "chan.go",
+      "checkptr.go",
+      "compiler.go",
+      "complex.go",
+      "coro.go",
+      "covercounter.go",
+      "covermeta.go",
+      "cpuflags.go",
+      "cpuflags_arm64.go",
+      "cpuprof.go",
+      "create_file_unix.go",
+      "debug.go",
+      "debugcall.go",
+      "debuglog.go",
+      "debuglog_off.go",
+      "defs_darwin_arm64.go",
+      "dit.go",
+      "env_posix.go",
+      "error.go",
+      "extern.go",
+      "fastlog2.go",
+      "fastlog2table.go",
+      "fds_unix.go",
+      "fipsbypass.go",
+      "float.go",
+      "hash64.go",
+      "heapdump.go",
+      "hexdump.go",
+      "histogram.go",
+      "iface.go",
+      "lfstack.go",
+      "linkname.go",
+      "linkname_shim.go",
+      "linkname_unix.go",
+      "list.go",
+      "list_manual.go",
+      "lock_sema.go",
+      "lock_spinbit.go",
+      "lockrank.go",
+      "lockrank_off.go",
+      "malloc.go",
+      "malloc_generated.go",
+      "malloc_stubs.go",
+      "malloc_tables_generated.go",
+      "map.go",
+      "map_fast32.go",
+      "map_fast64.go",
+      "map_faststr.go",
+      "mbarrier.go",
+      "mbitmap.go",
+      "mcache.go",
+      "mcentral.go",
+      "mcheckmark.go",
+      "mcleanup.go",
+      "mem.go",
+      "mem_darwin.go",
+      "mem_nonsbrk.go",
+      "metrics.go",
+      "mfinal.go",
+      "mfixalloc.go",
+      "mgc.go",
+      "mgclimit.go",
+      "mgcmark.go",
+      "mgcmark_greenteagc.go",
+      "mgcpacer.go",
+      "mgcscavenge.go",
+      "mgcstack.go",
+      "mgcsweep.go",
+      "mgcwork.go",
+      "mheap.go",
+      "minmax.go",
+      "mpagealloc.go",
+      "mpagealloc_64bit.go",
+      "mpagecache.go",
+      "mpallocbits.go",
+      "mprof.go",
+      "mranges.go",
+      "msan0.go",
+      "msize.go",
+      "mspanset.go",
+      "mstats.go",
+      "mwbbuf.go",
+      "nbpipe_pipe.go",
+      "netpoll.go",
+      "netpoll_kqueue.go",
+      "netpoll_kqueue_event.go",
+      "nonwindows_stub.go",
+      "note_other.go",
+      "os_darwin.go",
+      "os_darwin_arm64.go",
+      "os_nonopenbsd.go",
+      "os_unix.go",
+      "os_unix_nonlinux.go",
+      "panic.go",
+      "pinner.go",
+      "plugin.go",
+      "preempt.go",
+      "preempt_arm64.go",
+      "preempt_nonwindows.go",
+      "preempt_xreg.go",
+      "print.go",
+      "proc.go",
+      "profbuf.go",
+      "proflabel.go",
+      "race0.go",
+      "rand.go",
+      "rdebug.go",
+      "retry.go",
+      "runtime.go",
+      "runtime1.go",
+      "runtime2.go",
+      "runtime_boring.go",
+      "runtime_noclearenv.go",
+      "rwmutex.go",
+      "secret_asm.go",
+      "secret_nosecret.go",
+      "security_issetugid.go",
+      "security_unix.go",
+      "select.go",
+      "sema.go",
+      "set_vma_name_stub.go",
+      "signal_arm64.go",
+      "signal_darwin.go",
+      "signal_darwin_arm64.go",
+      "signal_unix.go",
+      "sigqueue.go",
+      "slice.go",
+      "softfloat64.go",
+      "stack.go",
+      "stkframe.go",
+      "string.go",
+      "stubs.go",
+      "stubs_arm64.go",
+      "stubs_nonlinux.go",
+      "stubs_nonwasm.go",
+      "symtab.go",
+      "symtabinl.go",
+      "synctest.go",
+      "sys_arm64.go",
+      "sys_darwin.go",
+      "sys_darwin_arm64.go",
+      "sys_libc.go",
+      "sys_nonppc64x.go",
+      "tagptr.go",
+      "tagptr_64bit.go",
+      "test_stubs.go",
+      "time.go",
+      "time_nofake.go",
+      "timestub.go",
+      "tls_stub.go",
+      "trace.go",
+      "traceallocfree.go",
+      "traceback.go",
+      "tracebuf.go",
+      "tracecpu.go",
+      "traceevent.go",
+      "tracemap.go",
+      "traceregion.go",
+      "traceruntime.go",
+      "tracestack.go",
+      "tracestatus.go",
+      "tracestring.go",
+      "tracetime.go",
+      "tracetype.go",
+      "type.go",
+      "unsafe.go",
+      "utf8.go",
+      "valgrind0.go",
+      "vdso_in_none.go",
+      "vgetrandom_unsupported.go",
+      "write_err.go"
+    ],
+    "TestGoFiles": [
+      "align_runtime_test.go",
+      "export_darwin_test.go",
+      "export_debuglog_test.go",
+      "export_mmap_test.go",
+      "export_pipe_test.go",
+      "export_test.go",
+      "export_unix_test.go",
+      "importx_test.go",
+      "proc_runtime_test.go",
+      "symtabinl_test.go",
+      "tracebackx_test.go"
+    ],
+    "XTestGoFiles": [
+      "abi_test.go",
+      "align_test.go",
+      "arena_test.go",
+      "bitcursor_test.go",
+      "callers_test.go",
+      "chan_test.go",
+      "chanbarrier_test.go",
+      "checkptr_test.go",
+      "closure_test.go",
+      "complex_test.go",
+      "coro_test.go",
+      "crash_cgo_test.go",
+      "crash_test.go",
+      "crash_unix_test.go",
+      "debuglog_test.go",
+      "decoratemappings_test.go",
+      "defer_test.go",
+      "ehooks_test.go",
+      "env_test.go",
+      "example_test.go",
+      "fastlog2_test.go",
+      "fds_test.go",
+      "float_test.go",
+      "gc_test.go",
+      "gcinfo_test.go",
+      "goroutineleakprofile_test.go",
+      "hash_test.go",
+      "heap_test.go",
+      "hexdump_test.go",
+      "histogram_test.go",
+      "iface_test.go",
+      "import_test.go",
+      "lfstack_test.go",
+      "list_manual_test.go",
+      "list_test.go",
+      "lockrank_test.go",
+      "malloc_test.go",
+      "map_benchmark_test.go",
+      "map_test.go",
+      "mcleanup_test.go",
+      "memmove_test.go",
+      "metrics_cgo_test.go",
+      "metrics_test.go",
+      "mfinal_test.go",
+      "mgclimit_test.go",
+      "mgcpacer_test.go",
+      "mgcscavenge_test.go",
+      "minmax_test.go",
+      "mpagealloc_test.go",
+      "mpagecache_test.go",
+      "mpallocbits_test.go",
+      "mranges_test.go",
+      "nbpipe_pipe_test.go",
+      "nbpipe_test.go",
+      "netpoll_os_test.go",
+      "norace_test.go",
+      "panic_test.go",
+      "panicnil_test.go",
+      "pinner_test.go",
+      "print_quoted_test.go",
+      "print_test.go",
+      "proc_test.go",
+      "profbuf_test.go",
+      "rand_test.go",
+      "runtime-gdb_test.go",
+      "runtime-gdb_unix_test.go",
+      "runtime-lldb_test.go",
+      "runtime_mmap_test.go",
+      "runtime_test.go",
+      "runtime_unix_test.go",
+      "rwmutex_test.go",
+      "security_test.go",
+      "sema_test.go",
+      "semasleep_test.go",
+      "sizeof_test.go",
+      "slice_test.go",
+      "softfloat64_test.go",
+      "stack_test.go",
+      "start_line_test.go",
+      "string_test.go",
+      "symtab_test.go",
+      "synctest_test.go",
+      "syscall_test.go",
+      "syscall_unix_test.go",
+      "time_test.go",
+      "trace2map_test.go",
+      "trace_cgo_test.go",
+      "traceback_system_test.go",
+      "traceback_test.go",
+      "tracestack_test.go",
+      "unsafepoint_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/reflectlite",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/reflectlite",
+    "GoFiles": [
+      "swapper.go",
+      "type.go",
+      "value.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "all_test.go",
+      "reflect_mirror_test.go",
+      "set_test.go",
+      "tostring_test.go"
+    ]
+  },
+  {
+    "ImportPath": "errors",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/errors",
+    "GoFiles": [
+      "errors.go",
+      "join.go",
+      "wrap.go"
+    ],
+    "XTestGoFiles": [
+      "errors_test.go",
+      "example_test.go",
+      "join_test.go",
+      "wrap_test.go"
+    ]
+  },
+  {
+    "ImportPath": "sync/atomic",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/sync/atomic",
+    "GoFiles": [
+      "doc.go",
+      "doc_64.go",
+      "type.go",
+      "value.go"
+    ],
+    "XTestGoFiles": [
+      "atomic_test.go",
+      "example_test.go",
+      "value_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/sync",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/sync",
+    "GoFiles": [
+      "hashtriemap.go",
+      "mutex.go",
+      "runtime.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "hashtriemap_bench_test.go",
+      "hashtriemap_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/synctest",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/synctest",
+    "GoFiles": [
+      "synctest.go"
+    ],
+    "XTestGoFiles": [
+      "synctest_test.go"
+    ]
+  },
+  {
+    "ImportPath": "sync",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/sync",
+    "GoFiles": [
+      "cond.go",
+      "map.go",
+      "mutex.go",
+      "once.go",
+      "oncefunc.go",
+      "pool.go",
+      "poolqueue.go",
+      "runtime.go",
+      "runtime2.go",
+      "rwmutex.go",
+      "waitgroup.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "cond_test.go",
+      "example_pool_test.go",
+      "example_test.go",
+      "map_bench_test.go",
+      "map_reference_test.go",
+      "map_test.go",
+      "mutex_test.go",
+      "once_test.go",
+      "oncefunc_test.go",
+      "pool_test.go",
+      "runtime_sema_test.go",
+      "rwmutex_test.go",
+      "waitgroup_test.go"
+    ]
+  },
+  {
+    "ImportPath": "io",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/io",
+    "GoFiles": [
+      "io.go",
+      "multi.go",
+      "pipe.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "io_test.go",
+      "multi_test.go",
+      "pipe_test.go"
+    ]
+  },
+  {
+    "ImportPath": "iter",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/iter",
+    "GoFiles": [
+      "iter.go"
+    ],
+    "XTestGoFiles": [
+      "pull_test.go"
+    ]
+  },
+  {
+    "ImportPath": "unicode",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/unicode",
+    "GoFiles": [
+      "casetables.go",
+      "digit.go",
+      "graphic.go",
+      "letter.go",
+      "tables.go"
+    ],
+    "XTestGoFiles": [
+      "digit_test.go",
+      "example_test.go",
+      "graphic_test.go",
+      "letter_test.go",
+      "script_test.go"
+    ]
+  },
+  {
+    "ImportPath": "unicode/utf8",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/unicode/utf8",
+    "GoFiles": [
+      "utf8.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "utf8_test.go"
+    ]
+  },
+  {
+    "ImportPath": "bytes",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/bytes",
+    "GoFiles": [
+      "buffer.go",
+      "bytes.go",
+      "iter.go",
+      "reader.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "buffer_test.go",
+      "bytes_test.go",
+      "compare_test.go",
+      "example_test.go",
+      "iter_test.go",
+      "reader_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/bisect",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/bisect",
+    "GoFiles": [
+      "bisect.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/godebug",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/godebug",
+    "GoFiles": [
+      "godebug.go"
+    ],
+    "XTestGoFiles": [
+      "godebug_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/oserror",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/oserror",
+    "GoFiles": [
+      "errors.go"
+    ]
+  },
+  {
+    "ImportPath": "syscall",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/syscall",
+    "GoFiles": [
+      "badlinkname_unix.go",
+      "bpf_bsd.go",
+      "dirent.go",
+      "env_unix.go",
+      "exec_libc2.go",
+      "exec_unix.go",
+      "flock_bsd.go",
+      "forkpipe.go",
+      "linkname_bsd.go",
+      "linkname_darwin.go",
+      "linkname_libc.go",
+      "linkname_unix.go",
+      "net.go",
+      "rlimit.go",
+      "rlimit_darwin.go",
+      "route_bsd.go",
+      "route_darwin.go",
+      "sockcmsg_unix.go",
+      "sockcmsg_unix_other.go",
+      "syscall.go",
+      "syscall_bsd.go",
+      "syscall_darwin.go",
+      "syscall_darwin_arm64.go",
+      "syscall_unix.go",
+      "time_nofake.go",
+      "timestruct.go",
+      "zerrors_darwin_arm64.go",
+      "zsyscall_darwin_arm64.go",
+      "zsysnum_darwin_arm64.go",
+      "ztypes_darwin_arm64.go"
+    ],
+    "TestGoFiles": [
+      "export_bsd_test.go",
+      "export_rlimit_test.go"
+    ],
+    "XTestGoFiles": [
+      "dirent_test.go",
+      "env_unix_test.go",
+      "exec_unix_test.go",
+      "getdirentries_test.go",
+      "mmap_unix_test.go",
+      "rlimit_test.go",
+      "syscall_bsd_test.go",
+      "syscall_ptrace_test.go",
+      "syscall_test.go",
+      "syscall_unix_test.go"
+    ]
+  },
+  {
+    "ImportPath": "time",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/time",
+    "GoFiles": [
+      "format.go",
+      "format_rfc3339.go",
+      "sleep.go",
+      "sys_unix.go",
+      "tick.go",
+      "time.go",
+      "zoneinfo.go",
+      "zoneinfo_goroot.go",
+      "zoneinfo_read.go",
+      "zoneinfo_unix.go"
+    ],
+    "TestGoFiles": [
+      "abs_test.go",
+      "export_test.go",
+      "internal_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "format_test.go",
+      "linkname_test.go",
+      "mono_test.go",
+      "sleep_test.go",
+      "tick_test.go",
+      "time_test.go",
+      "tzdata_test.go",
+      "zoneinfo_test.go",
+      "zoneinfo_unix_test.go"
+    ]
+  },
+  {
+    "ImportPath": "context",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/context",
+    "GoFiles": [
+      "context.go"
+    ],
+    "TestGoFiles": [
+      "context_test.go"
+    ],
+    "XTestGoFiles": [
+      "afterfunc_test.go",
+      "benchmark_test.go",
+      "example_test.go",
+      "net_test.go",
+      "x_test.go"
+    ]
+  },
+  {
+    "ImportPath": "hash",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/hash",
+    "GoFiles": [
+      "hash.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "marshal_test.go"
+    ]
+  },
+  {
+    "ImportPath": "strconv",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/strconv",
+    "GoFiles": [
+      "bytealg.go",
+      "doc.go",
+      "isprint.go",
+      "number.go",
+      "quote.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "import_test.go",
+      "number_test.go",
+      "quote_test.go",
+      "strconv_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto",
+    "GoFiles": [
+      "crypto.go"
+    ],
+    "XTestGoFiles": [
+      "crypto_test.go",
+      "issue21104_test.go",
+      "purego_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140deps/godebug",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140deps/godebug",
+    "GoFiles": [
+      "godebug.go"
+    ]
+  },
+  {
+    "ImportPath": "strings",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/strings",
+    "GoFiles": [
+      "builder.go",
+      "clone.go",
+      "compare.go",
+      "iter.go",
+      "reader.go",
+      "replace.go",
+      "search.go",
+      "strings.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "builder_test.go",
+      "clone_test.go",
+      "compare_test.go",
+      "example_test.go",
+      "iter_test.go",
+      "reader_test.go",
+      "replace_test.go",
+      "search_test.go",
+      "strings_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140",
+    "GoFiles": [
+      "cast.go",
+      "fips140.go",
+      "indicator.go",
+      "notasan.go",
+      "notboring.go",
+      "notpurego.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/alias",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/alias",
+    "GoFiles": [
+      "alias.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140deps/byteorder",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140deps/byteorder",
+    "GoFiles": [
+      "byteorder.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140deps/cpu",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140deps/cpu",
+    "GoFiles": [
+      "cpu.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/impl",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/impl",
+    "GoFiles": [
+      "impl.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/sha256",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/sha256",
+    "GoFiles": [
+      "cast.go",
+      "sha256.go",
+      "sha256block.go",
+      "sha256block_arm64.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/constanttime",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/constanttime",
+    "GoFiles": [
+      "constant_time.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/subtle",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/subtle",
+    "GoFiles": [
+      "constant_time.go",
+      "xor.go",
+      "xor_asm.go"
+    ],
+    "TestGoFiles": [
+      "constant_time_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/sha3",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/sha3",
+    "GoFiles": [
+      "cast.go",
+      "hashes.go",
+      "keccakf.go",
+      "sha3.go",
+      "sha3_arm64.go",
+      "shake.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/sha512",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/sha512",
+    "GoFiles": [
+      "cast.go",
+      "sha512.go",
+      "sha512block.go",
+      "sha512block_arm64.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/hmac",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/hmac",
+    "GoFiles": [
+      "cast.go",
+      "hmac.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/check",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/check",
+    "GoFiles": [
+      "check.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/aes",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/aes",
+    "GoFiles": [
+      "aes.go",
+      "aes_asm.go",
+      "aes_generic.go",
+      "cast.go",
+      "cbc.go",
+      "cbc_noasm.go",
+      "const.go",
+      "ctr.go",
+      "ctr_asm.go"
+    ],
+    "TestGoFiles": [
+      "aes_test.go"
+    ],
+    "XTestGoFiles": [
+      "interface_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140deps/time",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140deps/time",
+    "GoFiles": [
+      "time.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/entropy/v1.0.0",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/entropy/v1.0.0",
+    "GoFiles": [
+      "entropy.go",
+      "sha384.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/syscall/unix",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/syscall/unix",
+    "GoFiles": [
+      "arc4random_darwin.go",
+      "at_darwin.go",
+      "at_libc2.go",
+      "at_sysnum_darwin.go",
+      "constants.go",
+      "eaccess.go",
+      "faccessat_darwin.go",
+      "fcntl_unix.go",
+      "kernel_version_ge.go",
+      "kernel_version_other.go",
+      "net.go",
+      "net_darwin.go",
+      "nofollow_posix.go",
+      "nonblocking_unix.go",
+      "pty_darwin.go",
+      "syscall.go",
+      "tcsetpgrp_bsd.go",
+      "user_darwin.go",
+      "utimes.go"
+    ],
+    "XTestGoFiles": [
+      "fchmodat_test.go",
+      "kernel_version_ge_test.go"
+    ]
+  },
+  {
+    "ImportPath": "path",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/path",
+    "GoFiles": [
+      "match.go",
+      "path.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "match_test.go",
+      "path_test.go"
+    ]
+  },
+  {
+    "ImportPath": "cmp",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/cmp",
+    "GoFiles": [
+      "cmp.go"
+    ],
+    "XTestGoFiles": [
+      "cmp_test.go"
+    ]
+  },
+  {
+    "ImportPath": "slices",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/slices",
+    "GoFiles": [
+      "iter.go",
+      "slices.go",
+      "sort.go",
+      "zsortanyfunc.go",
+      "zsortordered.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "iter_test.go",
+      "slices_test.go",
+      "sort_benchmark_test.go",
+      "sort_test.go"
+    ]
+  },
+  {
+    "ImportPath": "io/fs",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/io/fs",
+    "GoFiles": [
+      "format.go",
+      "fs.go",
+      "glob.go",
+      "readdir.go",
+      "readfile.go",
+      "readlink.go",
+      "stat.go",
+      "sub.go",
+      "walk.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "format_test.go",
+      "fs_test.go",
+      "glob_test.go",
+      "readdir_test.go",
+      "readfile_test.go",
+      "readlink_test.go",
+      "stat_test.go",
+      "sub_test.go",
+      "walk_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/filepathlite",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/filepathlite",
+    "GoFiles": [
+      "path.go",
+      "path_nonwindows.go",
+      "path_unix.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/poll",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/poll",
+    "GoFiles": [
+      "errno_unix.go",
+      "fd.go",
+      "fd_fsync_darwin.go",
+      "fd_mutex.go",
+      "fd_opendir_darwin.go",
+      "fd_poll_runtime.go",
+      "fd_posix.go",
+      "fd_unix.go",
+      "fd_unixjs.go",
+      "fd_writev_libc.go",
+      "fstatat_unix.go",
+      "hook_unix.go",
+      "iovec_unix.go",
+      "sendfile.go",
+      "sendfile_unix.go",
+      "sockopt.go",
+      "sockopt_unix.go",
+      "sockoptip.go",
+      "sys_cloexec.go",
+      "writev.go"
+    ],
+    "TestGoFiles": [
+      "export_posix_test.go",
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "error_stub_test.go",
+      "error_test.go",
+      "fd_mutex_test.go",
+      "fd_posix_test.go",
+      "read_test.go",
+      "writev_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/syscall/execenv",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/syscall/execenv",
+    "GoFiles": [
+      "execenv_default.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/testlog",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/testlog",
+    "GoFiles": [
+      "exit.go",
+      "log.go"
+    ]
+  },
+  {
+    "ImportPath": "os",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/os",
+    "GoFiles": [
+      "dir.go",
+      "dir_darwin.go",
+      "eloop_other.go",
+      "env.go",
+      "error.go",
+      "error_errno.go",
+      "exec.go",
+      "exec_nohandle.go",
+      "exec_posix.go",
+      "exec_unix.go",
+      "executable.go",
+      "executable_darwin.go",
+      "file.go",
+      "file_open_unix.go",
+      "file_posix.go",
+      "file_unix.go",
+      "getwd.go",
+      "path.go",
+      "path_unix.go",
+      "pidfd_other.go",
+      "pipe_unix.go",
+      "proc.go",
+      "rawconn.go",
+      "removeall_at.go",
+      "removeall_unix.go",
+      "root.go",
+      "root_nonwindows.go",
+      "root_openat.go",
+      "root_unix.go",
+      "stat.go",
+      "stat_darwin.go",
+      "stat_unix.go",
+      "statat.go",
+      "statat_unix.go",
+      "sticky_bsd.go",
+      "sys.go",
+      "sys_bsd.go",
+      "sys_unix.go",
+      "tempfile.go",
+      "types.go",
+      "types_unix.go",
+      "wait_unimp.go",
+      "zero_copy_posix.go",
+      "zero_copy_stub.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go",
+      "export_unix_test.go"
+    ],
+    "XTestGoFiles": [
+      "copy_test.go",
+      "env_test.go",
+      "env_unix_test.go",
+      "error_test.go",
+      "error_unix_test.go",
+      "example_test.go",
+      "exec_nohandle_test.go",
+      "exec_test.go",
+      "exec_unix_test.go",
+      "executable_test.go",
+      "fifo_test.go",
+      "file_test.go",
+      "getwd_unix_test.go",
+      "os_test.go",
+      "os_unix_test.go",
+      "path_test.go",
+      "pipe_test.go",
+      "rawconn_test.go",
+      "read_test.go",
+      "removeall_test.go",
+      "root_test.go",
+      "root_unix_test.go",
+      "stat_test.go",
+      "tempfile_test.go",
+      "timeout_test.go",
+      "timeout_unix_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/sysrand",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/sysrand",
+    "GoFiles": [
+      "rand.go",
+      "rand_arc4random.go"
+    ],
+    "TestGoFiles": [
+      "rand_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/drbg",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/drbg",
+    "GoFiles": [
+      "cast.go",
+      "ctrdrbg.go",
+      "rand.go"
+    ],
+    "TestGoFiles": [
+      "rand_test.go"
+    ]
+  },
+  {
+    "ImportPath": "math",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/math",
+    "GoFiles": [
+      "abs.go",
+      "acosh.go",
+      "asin.go",
+      "asinh.go",
+      "atan.go",
+      "atan2.go",
+      "atanh.go",
+      "bits.go",
+      "cbrt.go",
+      "const.go",
+      "copysign.go",
+      "dim.go",
+      "dim_asm.go",
+      "erf.go",
+      "erfinv.go",
+      "exp.go",
+      "exp2_asm.go",
+      "exp_asm.go",
+      "expm1.go",
+      "floor.go",
+      "floor_asm.go",
+      "fma.go",
+      "frexp.go",
+      "gamma.go",
+      "hypot.go",
+      "hypot_noasm.go",
+      "j0.go",
+      "j1.go",
+      "jn.go",
+      "ldexp.go",
+      "lgamma.go",
+      "log.go",
+      "log10.go",
+      "log1p.go",
+      "log_stub.go",
+      "logb.go",
+      "mod.go",
+      "modf.go",
+      "nextafter.go",
+      "pow.go",
+      "pow10.go",
+      "remainder.go",
+      "signbit.go",
+      "sin.go",
+      "sincos.go",
+      "sinh.go",
+      "sqrt.go",
+      "stubs.go",
+      "tan.go",
+      "tanh.go",
+      "trig_reduce.go",
+      "unsafe.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "all_test.go",
+      "const_test.go",
+      "example_test.go",
+      "huge_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140/aes/gcm",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140/aes/gcm",
+    "GoFiles": [
+      "cast.go",
+      "cmac.go",
+      "ctrkdf.go",
+      "gcm.go",
+      "gcm_asm.go",
+      "gcm_generic.go",
+      "gcm_nonces.go",
+      "ghash.go"
+    ],
+    "XTestGoFiles": [
+      "interface_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/fips140",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/fips140",
+    "GoFiles": [
+      "enforcement.go",
+      "fips140.go"
+    ],
+    "TestGoFiles": [
+      "fips140_test.go"
+    ],
+    "XTestGoFiles": [
+      "enforcement_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140only",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140only",
+    "GoFiles": [
+      "fips140only.go"
+    ],
+    "XTestGoFiles": [
+      "fips140only_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/subtle",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/subtle",
+    "GoFiles": [
+      "constant_time.go",
+      "dit.go",
+      "xor.go"
+    ],
+    "TestGoFiles": [
+      "constant_time_test.go",
+      "dit_test.go"
+    ],
+    "XTestGoFiles": [
+      "xor_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/cipher",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/cipher",
+    "GoFiles": [
+      "cbc.go",
+      "cfb.go",
+      "cipher.go",
+      "ctr.go",
+      "gcm.go",
+      "io.go",
+      "ofb.go"
+    ],
+    "XTestGoFiles": [
+      "benchmark_test.go",
+      "cbc_aes_test.go",
+      "cbc_test.go",
+      "cfb_test.go",
+      "common_test.go",
+      "ctr_aes_test.go",
+      "ctr_test.go",
+      "example_test.go",
+      "gcm_fips140v1.26_test.go",
+      "gcm_test.go",
+      "modes_test.go",
+      "ofb_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/boring/sig",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/boring/sig",
+    "GoFiles": [
+      "sig.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/boring",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/boring",
+    "GoFiles": [
+      "doc.go",
+      "notboring.go"
+    ],
+    "TestGoFiles": [
+      "boring_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/sha3",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/sha3",
+    "GoFiles": [
+      "sha3.go"
+    ],
+    "XTestGoFiles": [
+      "sha3_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/fips140hash",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/fips140hash",
+    "GoFiles": [
+      "hash.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/hmac",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/hmac",
+    "GoFiles": [
+      "hmac.go"
+    ],
+    "TestGoFiles": [
+      "hmac_test.go"
+    ]
+  },
+  {
+    "ImportPath": "math/rand/v2",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/math/rand/v2",
+    "GoFiles": [
+      "chacha8.go",
+      "exp.go",
+      "normal.go",
+      "pcg.go",
+      "rand.go",
+      "zipf.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "auto_test.go",
+      "chacha8_test.go",
+      "example_test.go",
+      "pcg_test.go",
+      "race_test.go",
+      "rand_test.go",
+      "regress_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/randutil",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/randutil",
+    "GoFiles": [
+      "randutil.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/internal/rand",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/internal/rand",
+    "GoFiles": [
+      "rand.go",
+      "rand_fips140v1.26.go"
+    ]
+  },
+  {
+    "ImportPath": "reflect",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/reflect",
+    "GoFiles": [
+      "abi.go",
+      "badlinkname.go",
+      "deepequal.go",
+      "float32reg_generic.go",
+      "iter.go",
+      "makefunc.go",
+      "map.go",
+      "swapper.go",
+      "type.go",
+      "value.go",
+      "visiblefields.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "abi_test.go",
+      "all_test.go",
+      "benchmark_test.go",
+      "example_test.go",
+      "iter_test.go",
+      "map_test.go",
+      "nih_test.go",
+      "set_test.go",
+      "tostring_test.go",
+      "type_test.go",
+      "visiblefields_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/fmtsort",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/fmtsort",
+    "GoFiles": [
+      "sort.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "sort_test.go"
+    ]
+  },
+  {
+    "ImportPath": "fmt",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/fmt",
+    "GoFiles": [
+      "doc.go",
+      "errors.go",
+      "format.go",
+      "print.go",
+      "scan.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "errors_test.go",
+      "example_test.go",
+      "fmt_test.go",
+      "gostringer_example_test.go",
+      "scan_test.go",
+      "state_test.go",
+      "stringer_example_test.go",
+      "stringer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "math/rand",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/math/rand",
+    "GoFiles": [
+      "exp.go",
+      "normal.go",
+      "rand.go",
+      "rng.go",
+      "zipf.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "auto_test.go",
+      "default_test.go",
+      "example_test.go",
+      "race_test.go",
+      "rand_test.go",
+      "regress_test.go"
+    ]
+  },
+  {
+    "ImportPath": "math/big",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/math/big",
+    "GoFiles": [
+      "accuracy_string.go",
+      "arith.go",
+      "arith_decl.go",
+      "decimal.go",
+      "doc.go",
+      "float.go",
+      "floatconv.go",
+      "floatmarsh.go",
+      "ftoa.go",
+      "int.go",
+      "intconv.go",
+      "intmarsh.go",
+      "nat.go",
+      "natconv.go",
+      "natdiv.go",
+      "natmul.go",
+      "prime.go",
+      "rat.go",
+      "ratconv.go",
+      "ratmarsh.go",
+      "roundingmode_string.go",
+      "sqrt.go"
+    ],
+    "TestGoFiles": [
+      "arith_test.go",
+      "bits_test.go",
+      "calibrate_test.go",
+      "decimal_test.go",
+      "escape_test.go",
+      "float_test.go",
+      "floatconv_test.go",
+      "floatmarsh_test.go",
+      "gcd_test.go",
+      "hilbert_test.go",
+      "int_test.go",
+      "intconv_test.go",
+      "intmarsh_test.go",
+      "link_test.go",
+      "nat_test.go",
+      "natconv_test.go",
+      "prime_test.go",
+      "rat_test.go",
+      "ratconv_test.go",
+      "ratmarsh_test.go",
+      "sqrt_test.go"
+    ],
+    "XTestGoFiles": [
+      "alias_test.go",
+      "example_rat_test.go",
+      "example_test.go",
+      "floatexample_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/rand",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/rand",
+    "GoFiles": [
+      "rand.go",
+      "text.go",
+      "util.go"
+    ],
+    "TestGoFiles": [
+      "rand_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "text_test.go",
+      "util_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/sha1",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/sha1",
+    "GoFiles": [
+      "sha1.go",
+      "sha1block.go",
+      "sha1block_arm64.go"
+    ],
+    "TestGoFiles": [
+      "sha1_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "crypto/sha256",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/crypto/sha256",
+    "GoFiles": [
+      "sha256.go"
+    ],
+    "TestGoFiles": [
+      "sha256_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "embed",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/embed",
+    "GoFiles": [
+      "embed.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "encoding/base64",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/encoding/base64",
+    "GoFiles": [
+      "base64.go"
+    ],
+    "TestGoFiles": [
+      "base64_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "encoding/hex",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/encoding/hex",
+    "GoFiles": [
+      "hex.go"
+    ],
+    "TestGoFiles": [
+      "hex_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "encoding",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/encoding",
+    "GoFiles": [
+      "encoding.go"
+    ]
+  },
+  {
+    "ImportPath": "unicode/utf16",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/unicode/utf16",
+    "GoFiles": [
+      "utf16.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "utf16_test.go"
+    ]
+  },
+  {
+    "ImportPath": "encoding/json",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/encoding/json",
+    "GoFiles": [
+      "decode.go",
+      "encode.go",
+      "fold.go",
+      "indent.go",
+      "scanner.go",
+      "stream.go",
+      "tables.go",
+      "tags.go"
+    ],
+    "TestGoFiles": [
+      "bench_test.go",
+      "decode_test.go",
+      "encode_test.go",
+      "fold_test.go",
+      "fuzz_test.go",
+      "number_test.go",
+      "scanner_test.go",
+      "stream_test.go",
+      "tagkey_test.go",
+      "tags_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_marshaling_test.go",
+      "example_test.go",
+      "example_text_marshaling_test.go"
+    ]
+  },
+  {
+    "ImportPath": "bufio",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/bufio",
+    "GoFiles": [
+      "bufio.go",
+      "scan.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "bufio_test.go",
+      "example_test.go",
+      "net_test.go",
+      "scan_test.go"
+    ]
+  },
+  {
+    "ImportPath": "sort",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/sort",
+    "GoFiles": [
+      "search.go",
+      "slice.go",
+      "sort.go",
+      "zsortfunc.go",
+      "zsortinterface.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_interface_test.go",
+      "example_keys_test.go",
+      "example_multi_test.go",
+      "example_search_test.go",
+      "example_test.go",
+      "example_wrapper_test.go",
+      "search_test.go",
+      "sort_slices_benchmark_test.go",
+      "sort_test.go"
+    ]
+  },
+  {
+    "ImportPath": "regexp/syntax",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/regexp/syntax",
+    "GoFiles": [
+      "compile.go",
+      "doc.go",
+      "op_string.go",
+      "parse.go",
+      "perl_groups.go",
+      "prog.go",
+      "regexp.go",
+      "simplify.go"
+    ],
+    "TestGoFiles": [
+      "parse_test.go",
+      "prog_test.go",
+      "simplify_test.go"
+    ]
+  },
+  {
+    "ImportPath": "regexp",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/regexp",
+    "GoFiles": [
+      "backtrack.go",
+      "exec.go",
+      "onepass.go",
+      "regexp.go"
+    ],
+    "TestGoFiles": [
+      "all_test.go",
+      "exec2_test.go",
+      "exec_test.go",
+      "find_test.go",
+      "onepass_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+    "Dir": "/Users/accidia/projects/light-media-plugins/internal/sdk/sourcejson",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "model.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/internal/tag",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/internal/tag",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "tag.go"
+    ],
+    "TestGoFiles": [
+      "tag_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/internal/language",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/internal/language",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "common.go",
+      "compact.go",
+      "compose.go",
+      "coverage.go",
+      "language.go",
+      "lookup.go",
+      "match.go",
+      "parse.go",
+      "tables.go",
+      "tags.go"
+    ],
+    "TestGoFiles": [
+      "compose_test.go",
+      "language_test.go",
+      "lookup_test.go",
+      "match_test.go",
+      "parse_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/internal/language/compact",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/internal/language/compact",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "compact.go",
+      "language.go",
+      "parents.go",
+      "tables.go",
+      "tags.go"
+    ],
+    "TestGoFiles": [
+      "gen_test.go",
+      "language_test.go",
+      "parse_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/language",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/language",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "coverage.go",
+      "doc.go",
+      "language.go",
+      "match.go",
+      "parse.go",
+      "tables.go",
+      "tags.go"
+    ],
+    "TestGoFiles": [
+      "coverage_test.go",
+      "language_test.go",
+      "lookup_test.go",
+      "match_test.go",
+      "parse_test.go"
+    ],
+    "XTestGoFiles": [
+      "examples_test.go",
+      "httpexample_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/internal",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/internal",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "internal.go",
+      "match.go"
+    ],
+    "TestGoFiles": [
+      "internal_test.go",
+      "match_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/transform",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/transform",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "transform.go"
+    ],
+    "TestGoFiles": [
+      "transform_test.go"
+    ],
+    "XTestGoFiles": [
+      "examples_test.go"
+    ]
+  },
+  {
+    "ImportPath": "encoding/binary",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/encoding/binary",
+    "GoFiles": [
+      "binary.go",
+      "native_endian_little.go",
+      "varint.go"
+    ],
+    "TestGoFiles": [
+      "binary_test.go",
+      "varint_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/unicode/norm",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/unicode/norm",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "composition.go",
+      "forminfo.go",
+      "input.go",
+      "iter.go",
+      "normalize.go",
+      "readwriter.go",
+      "tables15.0.0.go",
+      "transform.go",
+      "trie.go"
+    ],
+    "TestGoFiles": [
+      "composition_test.go",
+      "data15.0.0_test.go",
+      "iter_test.go",
+      "normalize_test.go",
+      "readwriter_test.go",
+      "transform_test.go",
+      "ucd_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_iter_test.go",
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/text/cases",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/cases",
+    "Module": {
+      "Path": "golang.org/x/text",
+      "Version": "v0.43.0",
+      "Time": "2026-10-09T15:18:32Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/text/@v/v0.43.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=",
+      "GoModSum": "h1:hbSIYA/amXcRXTFSZqh8tWHEoqRvvbKPJ2uz/KU+a+s="
+    },
+    "GoFiles": [
+      "cases.go",
+      "context.go",
+      "fold.go",
+      "info.go",
+      "map.go",
+      "tables15.0.0.go",
+      "trieval.go"
+    ],
+    "TestGoFiles": [
+      "context_test.go",
+      "fold_test.go",
+      "map_test.go",
+      "tables15.0.0_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "maps",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/maps",
+    "GoFiles": [
+      "iter.go",
+      "maps.go"
+    ],
+    "TestGoFiles": [
+      "iter_test.go",
+      "maps_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "mime",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/mime",
+    "GoFiles": [
+      "encodedword.go",
+      "grammar.go",
+      "mediatype.go",
+      "type.go",
+      "type_unix.go"
+    ],
+    "TestGoFiles": [
+      "encodedword_test.go",
+      "mediatype_test.go",
+      "type_test.go",
+      "type_unix_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "weak",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/weak",
+    "GoFiles": [
+      "doc.go",
+      "pointer.go"
+    ],
+    "XTestGoFiles": [
+      "pointer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "unique",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/unique",
+    "GoFiles": [
+      "canonmap.go",
+      "clone.go",
+      "doc.go",
+      "handle.go"
+    ],
+    "TestGoFiles": [
+      "canonmap_test.go",
+      "clone_test.go",
+      "handle_bench_test.go",
+      "handle_test.go"
+    ]
+  },
+  {
+    "ImportPath": "net/netip",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/net/netip",
+    "GoFiles": [
+      "netip.go",
+      "uint128.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go",
+      "inlining_test.go",
+      "netip_pkg_test.go",
+      "uint128_test.go"
+    ],
+    "XTestGoFiles": [
+      "fuzz_test.go",
+      "netip_test.go",
+      "slow_test.go"
+    ]
+  },
+  {
+    "ImportPath": "net/url",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/net/url",
+    "GoFiles": [
+      "encoding_table.go",
+      "url.go"
+    ],
+    "TestGoFiles": [
+      "url_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "path/filepath",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/path/filepath",
+    "GoFiles": [
+      "match.go",
+      "path.go",
+      "path_unix.go",
+      "symlink.go",
+      "symlink_unix.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "example_unix_test.go",
+      "example_unix_walk_test.go",
+      "match_test.go",
+      "path_test.go"
+    ]
+  },
+  {
+    "ImportPath": "os/exec",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/os/exec",
+    "GoFiles": [
+      "exec.go",
+      "exec_unix.go",
+      "lookpath.go",
+      "lp_unix.go"
+    ],
+    "TestGoFiles": [
+      "bench_test.go",
+      "env_test.go",
+      "internal_test.go",
+      "lp_test.go"
+    ],
+    "XTestGoFiles": [
+      "dot_test.go",
+      "example_test.go",
+      "exec_posix_test.go",
+      "exec_test.go",
+      "exec_unix_test.go",
+      "lp_unix_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/internal/sdk",
+    "Dir": "/Users/accidia/projects/light-media-plugins/internal/sdk",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "api.go",
+      "auth.go",
+      "base.go",
+      "broadcast_handler.go",
+      "browser_host.go",
+      "brush_inventory.go",
+      "category_policy.go",
+      "chain_handler.go",
+      "cleanup_continuation.go",
+      "close_transport.go",
+      "concurrent_session.go",
+      "concurrent_shutdown.go",
+      "concurrent_transport.go",
+      "concurrent_worker.go",
+      "downloader_configurations.go",
+      "downloader_host.go",
+      "downloader_host_connection.go",
+      "downloader_host_delete_files.go",
+      "downloader_host_trackers.go",
+      "downloader_source.go",
+      "downloader_source_connection.go",
+      "downloader_source_find_by_tag.go",
+      "downloader_tasks.go",
+      "events.go",
+      "file_item.go",
+      "frontend.go",
+      "history_host.go",
+      "host_call_budget.go",
+      "identity.go",
+      "input_interaction.go",
+      "jsonrpc.go",
+      "log.go",
+      "manager_resources.go",
+      "media_host.go",
+      "media_images.go",
+      "media_info.go",
+      "message_inbound.go",
+      "module_bytes.go",
+      "module_result.go",
+      "module_transfer.go",
+      "mutable_event.go",
+      "network_host.go",
+      "network_proxy_host.go",
+      "notification.go",
+      "ocr_host.go",
+      "pending_call.go",
+      "plugin_host.go",
+      "protocol.go",
+      "runner_budget.go",
+      "runner_observation.go",
+      "runtime_support.go",
+      "service_progress.go",
+      "settings_host.go",
+      "site_host.go",
+      "site_http_host.go",
+      "site_source.go",
+      "site_source_request.go",
+      "storage_host.go",
+      "storage_operation.go",
+      "subscription_host.go",
+      "title_torrent_filter.go",
+      "transport.go",
+      "worker.go"
+    ],
+    "TestGoFiles": [
+      "api_test.go",
+      "base_instance_metadata_test.go",
+      "base_test.go",
+      "broadcast_handler_test.go",
+      "chain_handler_test.go",
+      "cleanup_continuation_test.go",
+      "concurrent_cancel_fence_test.go",
+      "concurrent_session_test.go",
+      "downloader_configurations_test.go",
+      "downloader_host_connection_test.go",
+      "downloader_host_test.go",
+      "downloader_source_connection_test.go",
+      "downloader_source_labels_test.go",
+      "downloader_source_test.go",
+      "downloader_source_wire_test.go",
+      "downloader_tasks_test.go",
+      "form_model_policy_test.go",
+      "frontend_test.go",
+      "handler_order_test.go",
+      "log_test.go",
+      "message_inbound_test.go",
+      "module_bytes_test.go",
+      "module_result_test.go",
+      "module_scope_test.go",
+      "mutable_event_test.go",
+      "parallel_host_calls_independent_test.go",
+      "parallel_host_calls_test.go",
+      "pending_call_test.go",
+      "protocol_test.go",
+      "runner_budget_test.go",
+      "runner_home_test.go",
+      "runner_observation_test.go",
+      "runtime_support_test.go",
+      "session_options_test.go",
+      "session_test.go",
+      "site_source_test.go",
+      "subscription_host_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/imagehash/jpegport",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "dct.go",
+      "huffman.go",
+      "idct_islow.go",
+      "raster.go",
+      "reader.go",
+      "scan.go",
+      "standard_huffman.go"
+    ]
+  },
+  {
+    "ImportPath": "image/color",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/color",
+    "GoFiles": [
+      "color.go",
+      "ycbcr.go"
+    ],
+    "TestGoFiles": [
+      "color_test.go",
+      "ycbcr_test.go"
+    ]
+  },
+  {
+    "ImportPath": "image",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image",
+    "GoFiles": [
+      "format.go",
+      "geom.go",
+      "image.go",
+      "names.go",
+      "ycbcr.go"
+    ],
+    "TestGoFiles": [
+      "geom_test.go",
+      "image_test.go",
+      "ycbcr_test.go"
+    ],
+    "XTestGoFiles": [
+      "decode_example_test.go",
+      "decode_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/bmp",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/bmp",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "reader_test.go",
+      "writer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "compress/flate",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/compress/flate",
+    "GoFiles": [
+      "deflate.go",
+      "deflatefast.go",
+      "dict_decoder.go",
+      "huffman_bit_writer.go",
+      "huffman_code.go",
+      "inflate.go",
+      "token.go"
+    ],
+    "TestGoFiles": [
+      "deflate_test.go",
+      "dict_decoder_test.go",
+      "flate_test.go",
+      "huffman_bit_writer_test.go",
+      "inflate_test.go",
+      "reader_test.go",
+      "writer_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "hash/adler32",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/hash/adler32",
+    "GoFiles": [
+      "adler32.go"
+    ],
+    "TestGoFiles": [
+      "adler32_test.go"
+    ]
+  },
+  {
+    "ImportPath": "compress/zlib",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/compress/zlib",
+    "GoFiles": [
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "reader_test.go",
+      "writer_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/ccitt",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/ccitt",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "reader.go",
+      "table.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "reader_test.go",
+      "table_test.go",
+      "writer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/tiff/lzw",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/tiff/lzw",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "reader.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/tiff",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/tiff",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "buffer.go",
+      "compress.go",
+      "consts.go",
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "buffer_test.go",
+      "reader_test.go",
+      "writer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "io/ioutil",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/io/ioutil",
+    "GoFiles": [
+      "ioutil.go",
+      "tempfile.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "ioutil_test.go",
+      "tempfile_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/riff",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/riff",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "riff.go"
+    ],
+    "TestGoFiles": [
+      "riff_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/vp8",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/vp8",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "decode.go",
+      "filter.go",
+      "idct.go",
+      "partition.go",
+      "pred.go",
+      "predfunc.go",
+      "quant.go",
+      "reconstruct.go",
+      "token.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/vp8l",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/vp8l",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "decode.go",
+      "huffman.go",
+      "transform.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/image/webp",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0/webp",
+    "Module": {
+      "Path": "golang.org/x/image",
+      "Version": "v0.24.0",
+      "Time": "2025-02-04T19:03:00Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/image@v0.24.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/image/@v/v0.24.0.mod",
+      "GoVersion": "1.18",
+      "Sum": "h1:AN7zRgVsbvmTfNyqIbbOraYL8mSwcKncEj8ofjgzcMQ=",
+      "GoModSum": "h1:4b/ITuLfqYq1hqZcjofwctIhi7sZh2WaCjvsBNjjya8="
+    },
+    "GoFiles": [
+      "decode.go",
+      "doc.go"
+    ],
+    "TestGoFiles": [
+      "decode_test.go"
+    ]
+  },
+  {
+    "ImportPath": "compress/lzw",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/compress/lzw",
+    "GoFiles": [
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "reader_test.go",
+      "writer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "image/color/palette",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/color/palette",
+    "GoFiles": [
+      "generate.go",
+      "palette.go"
+    ]
+  },
+  {
+    "ImportPath": "image/internal/imageutil",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/internal/imageutil",
+    "GoFiles": [
+      "imageutil.go",
+      "impl.go"
+    ]
+  },
+  {
+    "ImportPath": "image/draw",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/draw",
+    "GoFiles": [
+      "draw.go"
+    ],
+    "TestGoFiles": [
+      "bench_test.go",
+      "clip_test.go",
+      "draw_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "image/gif",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/gif",
+    "GoFiles": [
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "fuzz_test.go",
+      "reader_test.go",
+      "writer_test.go"
+    ]
+  },
+  {
+    "ImportPath": "hash/crc32",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/hash/crc32",
+    "GoFiles": [
+      "crc32.go",
+      "crc32_arm64.go",
+      "crc32_generic.go",
+      "gen.go"
+    ],
+    "TestGoFiles": [
+      "crc32_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "image/png",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/image/png",
+    "GoFiles": [
+      "paeth.go",
+      "reader.go",
+      "writer.go"
+    ],
+    "TestGoFiles": [
+      "fuzz_test.go",
+      "paeth_test.go",
+      "reader_test.go",
+      "writer_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/imagehash",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "decode.go",
+      "decode_jpeg.go",
+      "gray16.go",
+      "hash.go",
+      "webp.go"
+    ],
+    "TestGoFiles": [
+      "source_images_test.go"
+    ]
+  },
+  {
+    "ImportPath": "container/list",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/container/list",
+    "GoFiles": [
+      "list.go"
+    ],
+    "TestGoFiles": [
+      "list_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/syntax",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/syntax",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "charclass.go",
+      "code.go",
+      "ecma_unicode.go",
+      "ecma_unicode_tables.go",
+      "escape.go",
+      "grapheme.go",
+      "optimizations.go",
+      "parser.go",
+      "prefix.go",
+      "prefixanalyzer.go",
+      "replacerdata.go",
+      "source_tree.go",
+      "tree.go",
+      "unicode_alias_tables.go",
+      "writer.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/helpers",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/helpers",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "ascii.go",
+      "indexof.go",
+      "math.go",
+      "runes.go",
+      "searchvalues.go"
+    ]
+  },
+  {
+    "ImportPath": "log/internal",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/log/internal",
+    "GoFiles": [
+      "internal.go"
+    ]
+  },
+  {
+    "ImportPath": "log",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/log",
+    "GoFiles": [
+      "log.go"
+    ],
+    "TestGoFiles": [
+      "log_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "bufferpool.go",
+      "decode.go",
+      "fastclock.go",
+      "match.go",
+      "options.go",
+      "prefixsearch.go",
+      "regexp.go",
+      "regexp_codegen.go",
+      "replace.go",
+      "runner.go",
+      "source_codepoints.go",
+      "source_tree.go",
+      "split.go",
+      "stringprefixfilter.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "codec.go",
+      "codec_extra.go",
+      "iso2022.go",
+      "models.go",
+      "stages.go"
+    ],
+    "TestGoFiles": [
+      "requests_reference_test.go"
+    ],
+    "EmbedFiles": [
+      "models/confusion.bin",
+      "models/idf.bin",
+      "models/models.bin",
+      "reference/generated/codecs/ascii-ignore.bin.z",
+      "reference/generated/codecs/ascii-replace.bin.z",
+      "reference/generated/codecs/ascii-strict.bin.z",
+      "reference/generated/codecs/big5-ignore.bin.z",
+      "reference/generated/codecs/big5-replace.bin.z",
+      "reference/generated/codecs/big5-strict.bin.z",
+      "reference/generated/codecs/big5hkscs-ignore.bin.z",
+      "reference/generated/codecs/big5hkscs-replace.bin.z",
+      "reference/generated/codecs/big5hkscs-strict.bin.z",
+      "reference/generated/codecs/charmap-ignore.bin.z",
+      "reference/generated/codecs/charmap-replace.bin.z",
+      "reference/generated/codecs/charmap-strict.bin.z",
+      "reference/generated/codecs/cp037-ignore.bin.z",
+      "reference/generated/codecs/cp037-replace.bin.z",
+      "reference/generated/codecs/cp037-strict.bin.z",
+      "reference/generated/codecs/cp1006-ignore.bin.z",
+      "reference/generated/codecs/cp1006-replace.bin.z",
+      "reference/generated/codecs/cp1006-strict.bin.z",
+      "reference/generated/codecs/cp1026-ignore.bin.z",
+      "reference/generated/codecs/cp1026-replace.bin.z",
+      "reference/generated/codecs/cp1026-strict.bin.z",
+      "reference/generated/codecs/cp1125-ignore.bin.z",
+      "reference/generated/codecs/cp1125-replace.bin.z",
+      "reference/generated/codecs/cp1125-strict.bin.z",
+      "reference/generated/codecs/cp1140-ignore.bin.z",
+      "reference/generated/codecs/cp1140-replace.bin.z",
+      "reference/generated/codecs/cp1140-strict.bin.z",
+      "reference/generated/codecs/cp1250-ignore.bin.z",
+      "reference/generated/codecs/cp1250-replace.bin.z",
+      "reference/generated/codecs/cp1250-strict.bin.z",
+      "reference/generated/codecs/cp1251-ignore.bin.z",
+      "reference/generated/codecs/cp1251-replace.bin.z",
+      "reference/generated/codecs/cp1251-strict.bin.z",
+      "reference/generated/codecs/cp1252-ignore.bin.z",
+      "reference/generated/codecs/cp1252-replace.bin.z",
+      "reference/generated/codecs/cp1252-strict.bin.z",
+      "reference/generated/codecs/cp1253-ignore.bin.z",
+      "reference/generated/codecs/cp1253-replace.bin.z",
+      "reference/generated/codecs/cp1253-strict.bin.z",
+      "reference/generated/codecs/cp1254-ignore.bin.z",
+      "reference/generated/codecs/cp1254-replace.bin.z",
+      "reference/generated/codecs/cp1254-strict.bin.z",
+      "reference/generated/codecs/cp1255-ignore.bin.z",
+      "reference/generated/codecs/cp1255-replace.bin.z",
+      "reference/generated/codecs/cp1255-strict.bin.z",
+      "reference/generated/codecs/cp1256-ignore.bin.z",
+      "reference/generated/codecs/cp1256-replace.bin.z",
+      "reference/generated/codecs/cp1256-strict.bin.z",
+      "reference/generated/codecs/cp1257-ignore.bin.z",
+      "reference/generated/codecs/cp1257-replace.bin.z",
+      "reference/generated/codecs/cp1257-strict.bin.z",
+      "reference/generated/codecs/cp1258-ignore.bin.z",
+      "reference/generated/codecs/cp1258-replace.bin.z",
+      "reference/generated/codecs/cp1258-strict.bin.z",
+      "reference/generated/codecs/cp273-ignore.bin.z",
+      "reference/generated/codecs/cp273-replace.bin.z",
+      "reference/generated/codecs/cp273-strict.bin.z",
+      "reference/generated/codecs/cp424-ignore.bin.z",
+      "reference/generated/codecs/cp424-replace.bin.z",
+      "reference/generated/codecs/cp424-strict.bin.z",
+      "reference/generated/codecs/cp437-ignore.bin.z",
+      "reference/generated/codecs/cp437-replace.bin.z",
+      "reference/generated/codecs/cp437-strict.bin.z",
+      "reference/generated/codecs/cp500-ignore.bin.z",
+      "reference/generated/codecs/cp500-replace.bin.z",
+      "reference/generated/codecs/cp500-strict.bin.z",
+      "reference/generated/codecs/cp720-ignore.bin.z",
+      "reference/generated/codecs/cp720-replace.bin.z",
+      "reference/generated/codecs/cp720-strict.bin.z",
+      "reference/generated/codecs/cp737-ignore.bin.z",
+      "reference/generated/codecs/cp737-replace.bin.z",
+      "reference/generated/codecs/cp737-strict.bin.z",
+      "reference/generated/codecs/cp775-ignore.bin.z",
+      "reference/generated/codecs/cp775-replace.bin.z",
+      "reference/generated/codecs/cp775-strict.bin.z",
+      "reference/generated/codecs/cp850-ignore.bin.z",
+      "reference/generated/codecs/cp850-replace.bin.z",
+      "reference/generated/codecs/cp850-strict.bin.z",
+      "reference/generated/codecs/cp852-ignore.bin.z",
+      "reference/generated/codecs/cp852-replace.bin.z",
+      "reference/generated/codecs/cp852-strict.bin.z",
+      "reference/generated/codecs/cp855-ignore.bin.z",
+      "reference/generated/codecs/cp855-replace.bin.z",
+      "reference/generated/codecs/cp855-strict.bin.z",
+      "reference/generated/codecs/cp856-ignore.bin.z",
+      "reference/generated/codecs/cp856-replace.bin.z",
+      "reference/generated/codecs/cp856-strict.bin.z",
+      "reference/generated/codecs/cp857-ignore.bin.z",
+      "reference/generated/codecs/cp857-replace.bin.z",
+      "reference/generated/codecs/cp857-strict.bin.z",
+      "reference/generated/codecs/cp858-ignore.bin.z",
+      "reference/generated/codecs/cp858-replace.bin.z",
+      "reference/generated/codecs/cp858-strict.bin.z",
+      "reference/generated/codecs/cp860-ignore.bin.z",
+      "reference/generated/codecs/cp860-replace.bin.z",
+      "reference/generated/codecs/cp860-strict.bin.z",
+      "reference/generated/codecs/cp861-ignore.bin.z",
+      "reference/generated/codecs/cp861-replace.bin.z",
+      "reference/generated/codecs/cp861-strict.bin.z",
+      "reference/generated/codecs/cp862-ignore.bin.z",
+      "reference/generated/codecs/cp862-replace.bin.z",
+      "reference/generated/codecs/cp862-strict.bin.z",
+      "reference/generated/codecs/cp863-ignore.bin.z",
+      "reference/generated/codecs/cp863-replace.bin.z",
+      "reference/generated/codecs/cp863-strict.bin.z",
+      "reference/generated/codecs/cp864-ignore.bin.z",
+      "reference/generated/codecs/cp864-replace.bin.z",
+      "reference/generated/codecs/cp864-strict.bin.z",
+      "reference/generated/codecs/cp865-ignore.bin.z",
+      "reference/generated/codecs/cp865-replace.bin.z",
+      "reference/generated/codecs/cp865-strict.bin.z",
+      "reference/generated/codecs/cp866-ignore.bin.z",
+      "reference/generated/codecs/cp866-replace.bin.z",
+      "reference/generated/codecs/cp866-strict.bin.z",
+      "reference/generated/codecs/cp869-ignore.bin.z",
+      "reference/generated/codecs/cp869-replace.bin.z",
+      "reference/generated/codecs/cp869-strict.bin.z",
+      "reference/generated/codecs/cp874-ignore.bin.z",
+      "reference/generated/codecs/cp874-replace.bin.z",
+      "reference/generated/codecs/cp874-strict.bin.z",
+      "reference/generated/codecs/cp875-ignore.bin.z",
+      "reference/generated/codecs/cp875-replace.bin.z",
+      "reference/generated/codecs/cp875-strict.bin.z",
+      "reference/generated/codecs/cp932-ignore.bin.z",
+      "reference/generated/codecs/cp932-replace.bin.z",
+      "reference/generated/codecs/cp932-strict.bin.z",
+      "reference/generated/codecs/cp949-ignore.bin.z",
+      "reference/generated/codecs/cp949-replace.bin.z",
+      "reference/generated/codecs/cp949-strict.bin.z",
+      "reference/generated/codecs/cp950-ignore.bin.z",
+      "reference/generated/codecs/cp950-replace.bin.z",
+      "reference/generated/codecs/cp950-strict.bin.z",
+      "reference/generated/codecs/euc_jis_2004-ignore.bin.z",
+      "reference/generated/codecs/euc_jis_2004-replace.bin.z",
+      "reference/generated/codecs/euc_jis_2004-strict.bin.z",
+      "reference/generated/codecs/euc_jisx0213-ignore.bin.z",
+      "reference/generated/codecs/euc_jisx0213-replace.bin.z",
+      "reference/generated/codecs/euc_jisx0213-strict.bin.z",
+      "reference/generated/codecs/euc_jp-ignore.bin.z",
+      "reference/generated/codecs/euc_jp-replace.bin.z",
+      "reference/generated/codecs/euc_jp-strict.bin.z",
+      "reference/generated/codecs/gb2312-ignore.bin.z",
+      "reference/generated/codecs/gb2312-replace.bin.z",
+      "reference/generated/codecs/gb2312-strict.bin.z",
+      "reference/generated/codecs/gbk-ignore.bin.z",
+      "reference/generated/codecs/gbk-replace.bin.z",
+      "reference/generated/codecs/gbk-strict.bin.z",
+      "reference/generated/codecs/hp-roman8-ignore.bin.z",
+      "reference/generated/codecs/hp-roman8-replace.bin.z",
+      "reference/generated/codecs/hp-roman8-strict.bin.z",
+      "reference/generated/codecs/hz-ignore.bin.z",
+      "reference/generated/codecs/hz-replace.bin.z",
+      "reference/generated/codecs/hz-strict.bin.z",
+      "reference/generated/codecs/iso8859-1-ignore.bin.z",
+      "reference/generated/codecs/iso8859-1-replace.bin.z",
+      "reference/generated/codecs/iso8859-1-strict.bin.z",
+      "reference/generated/codecs/iso8859-10-ignore.bin.z",
+      "reference/generated/codecs/iso8859-10-replace.bin.z",
+      "reference/generated/codecs/iso8859-10-strict.bin.z",
+      "reference/generated/codecs/iso8859-11-ignore.bin.z",
+      "reference/generated/codecs/iso8859-11-replace.bin.z",
+      "reference/generated/codecs/iso8859-11-strict.bin.z",
+      "reference/generated/codecs/iso8859-13-ignore.bin.z",
+      "reference/generated/codecs/iso8859-13-replace.bin.z",
+      "reference/generated/codecs/iso8859-13-strict.bin.z",
+      "reference/generated/codecs/iso8859-14-ignore.bin.z",
+      "reference/generated/codecs/iso8859-14-replace.bin.z",
+      "reference/generated/codecs/iso8859-14-strict.bin.z",
+      "reference/generated/codecs/iso8859-15-ignore.bin.z",
+      "reference/generated/codecs/iso8859-15-replace.bin.z",
+      "reference/generated/codecs/iso8859-15-strict.bin.z",
+      "reference/generated/codecs/iso8859-16-ignore.bin.z",
+      "reference/generated/codecs/iso8859-16-replace.bin.z",
+      "reference/generated/codecs/iso8859-16-strict.bin.z",
+      "reference/generated/codecs/iso8859-2-ignore.bin.z",
+      "reference/generated/codecs/iso8859-2-replace.bin.z",
+      "reference/generated/codecs/iso8859-2-strict.bin.z",
+      "reference/generated/codecs/iso8859-3-ignore.bin.z",
+      "reference/generated/codecs/iso8859-3-replace.bin.z",
+      "reference/generated/codecs/iso8859-3-strict.bin.z",
+      "reference/generated/codecs/iso8859-4-ignore.bin.z",
+      "reference/generated/codecs/iso8859-4-replace.bin.z",
+      "reference/generated/codecs/iso8859-4-strict.bin.z",
+      "reference/generated/codecs/iso8859-5-ignore.bin.z",
+      "reference/generated/codecs/iso8859-5-replace.bin.z",
+      "reference/generated/codecs/iso8859-5-strict.bin.z",
+      "reference/generated/codecs/iso8859-6-ignore.bin.z",
+      "reference/generated/codecs/iso8859-6-replace.bin.z",
+      "reference/generated/codecs/iso8859-6-strict.bin.z",
+      "reference/generated/codecs/iso8859-7-ignore.bin.z",
+      "reference/generated/codecs/iso8859-7-replace.bin.z",
+      "reference/generated/codecs/iso8859-7-strict.bin.z",
+      "reference/generated/codecs/iso8859-8-ignore.bin.z",
+      "reference/generated/codecs/iso8859-8-replace.bin.z",
+      "reference/generated/codecs/iso8859-8-strict.bin.z",
+      "reference/generated/codecs/iso8859-9-ignore.bin.z",
+      "reference/generated/codecs/iso8859-9-replace.bin.z",
+      "reference/generated/codecs/iso8859-9-strict.bin.z",
+      "reference/generated/codecs/johab-ignore.bin.z",
+      "reference/generated/codecs/johab-replace.bin.z",
+      "reference/generated/codecs/johab-strict.bin.z",
+      "reference/generated/codecs/koi8-r-ignore.bin.z",
+      "reference/generated/codecs/koi8-r-replace.bin.z",
+      "reference/generated/codecs/koi8-r-strict.bin.z",
+      "reference/generated/codecs/koi8-t-ignore.bin.z",
+      "reference/generated/codecs/koi8-t-replace.bin.z",
+      "reference/generated/codecs/koi8-t-strict.bin.z",
+      "reference/generated/codecs/koi8-u-ignore.bin.z",
+      "reference/generated/codecs/koi8-u-replace.bin.z",
+      "reference/generated/codecs/koi8-u-strict.bin.z",
+      "reference/generated/codecs/kz1048-ignore.bin.z",
+      "reference/generated/codecs/kz1048-replace.bin.z",
+      "reference/generated/codecs/kz1048-strict.bin.z",
+      "reference/generated/codecs/mac-arabic-ignore.bin.z",
+      "reference/generated/codecs/mac-arabic-replace.bin.z",
+      "reference/generated/codecs/mac-arabic-strict.bin.z",
+      "reference/generated/codecs/mac-croatian-ignore.bin.z",
+      "reference/generated/codecs/mac-croatian-replace.bin.z",
+      "reference/generated/codecs/mac-croatian-strict.bin.z",
+      "reference/generated/codecs/mac-cyrillic-ignore.bin.z",
+      "reference/generated/codecs/mac-cyrillic-replace.bin.z",
+      "reference/generated/codecs/mac-cyrillic-strict.bin.z",
+      "reference/generated/codecs/mac-farsi-ignore.bin.z",
+      "reference/generated/codecs/mac-farsi-replace.bin.z",
+      "reference/generated/codecs/mac-farsi-strict.bin.z",
+      "reference/generated/codecs/mac-greek-ignore.bin.z",
+      "reference/generated/codecs/mac-greek-replace.bin.z",
+      "reference/generated/codecs/mac-greek-strict.bin.z",
+      "reference/generated/codecs/mac-iceland-ignore.bin.z",
+      "reference/generated/codecs/mac-iceland-replace.bin.z",
+      "reference/generated/codecs/mac-iceland-strict.bin.z",
+      "reference/generated/codecs/mac-latin2-ignore.bin.z",
+      "reference/generated/codecs/mac-latin2-replace.bin.z",
+      "reference/generated/codecs/mac-latin2-strict.bin.z",
+      "reference/generated/codecs/mac-roman-ignore.bin.z",
+      "reference/generated/codecs/mac-roman-replace.bin.z",
+      "reference/generated/codecs/mac-roman-strict.bin.z",
+      "reference/generated/codecs/mac-romanian-ignore.bin.z",
+      "reference/generated/codecs/mac-romanian-replace.bin.z",
+      "reference/generated/codecs/mac-romanian-strict.bin.z",
+      "reference/generated/codecs/mac-turkish-ignore.bin.z",
+      "reference/generated/codecs/mac-turkish-replace.bin.z",
+      "reference/generated/codecs/mac-turkish-strict.bin.z",
+      "reference/generated/codecs/palmos-ignore.bin.z",
+      "reference/generated/codecs/palmos-replace.bin.z",
+      "reference/generated/codecs/palmos-strict.bin.z",
+      "reference/generated/codecs/ptcp154-ignore.bin.z",
+      "reference/generated/codecs/ptcp154-replace.bin.z",
+      "reference/generated/codecs/ptcp154-strict.bin.z",
+      "reference/generated/codecs/shift_jis-ignore.bin.z",
+      "reference/generated/codecs/shift_jis-replace.bin.z",
+      "reference/generated/codecs/shift_jis-strict.bin.z",
+      "reference/generated/codecs/shift_jis_2004-ignore.bin.z",
+      "reference/generated/codecs/shift_jis_2004-replace.bin.z",
+      "reference/generated/codecs/shift_jis_2004-strict.bin.z",
+      "reference/generated/codecs/shift_jisx0213-ignore.bin.z",
+      "reference/generated/codecs/shift_jisx0213-replace.bin.z",
+      "reference/generated/codecs/shift_jisx0213-strict.bin.z",
+      "reference/generated/codecs/tis-620-ignore.bin.z",
+      "reference/generated/codecs/tis-620-replace.bin.z",
+      "reference/generated/codecs/tis-620-strict.bin.z",
+      "reference/generated/iso/iso2022_jp-192.bin.z",
+      "reference/generated/iso/iso2022_jp-194.bin.z",
+      "reference/generated/iso/iso2022_jp-74.bin.z",
+      "reference/generated/iso/iso2022_jp_1-192.bin.z",
+      "reference/generated/iso/iso2022_jp_1-194.bin.z",
+      "reference/generated/iso/iso2022_jp_1-196.bin.z",
+      "reference/generated/iso/iso2022_jp_1-74.bin.z",
+      "reference/generated/iso/iso2022_jp_2-192.bin.z",
+      "reference/generated/iso/iso2022_jp_2-193.bin.z",
+      "reference/generated/iso/iso2022_jp_2-194.bin.z",
+      "reference/generated/iso/iso2022_jp_2-195.bin.z",
+      "reference/generated/iso/iso2022_jp_2-196.bin.z",
+      "reference/generated/iso/iso2022_jp_2-74.bin.z",
+      "reference/generated/iso/iso2022_jp_2-g2A.bin.z",
+      "reference/generated/iso/iso2022_jp_2-g2F.bin.z",
+      "reference/generated/iso/iso2022_jp_2004-194.bin.z",
+      "reference/generated/iso/iso2022_jp_2004-208.bin.z",
+      "reference/generated/iso/iso2022_jp_2004-209.bin.z",
+      "reference/generated/iso/iso2022_jp_3-194.bin.z",
+      "reference/generated/iso/iso2022_jp_3-207.bin.z",
+      "reference/generated/iso/iso2022_jp_3-208.bin.z",
+      "reference/generated/iso/iso2022_jp_ext-192.bin.z",
+      "reference/generated/iso/iso2022_jp_ext-194.bin.z",
+      "reference/generated/iso/iso2022_jp_ext-196.bin.z",
+      "reference/generated/iso/iso2022_jp_ext-73.bin.z",
+      "reference/generated/iso/iso2022_jp_ext-74.bin.z",
+      "reference/generated/iso/iso2022_kr-195.bin.z",
+      "reference/generated/python-aliases.json",
+      "reference/generated/registry.json",
+      "reference/generated/special-codecs.json.z",
+      "reference/generated/unicode-flags.bin.z",
+      "reference/generated/unicode-names.bin.z"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/pyregex",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "compile.go",
+      "sre_codepoints.go",
+      "sre_escapes.go",
+      "sre_lower.go",
+      "sre_oracle.go",
+      "sre_parse.go",
+      "sre_parser.go",
+      "sre_ranges.go",
+      "sre_tokenizer.go",
+      "sre_types.go",
+      "sre_warnings.go"
+    ],
+    "TestGoFiles": [
+      "root_independent_codepoints_test.go",
+      "sre_boundary_test.go",
+      "sre_codepoint_refinement_test.go",
+      "sre_executor_test.go",
+      "sre_ipc_boundary_test.go",
+      "sre_parser_test.go"
+    ],
+    "EmbedFiles": [
+      "sre_characters.json"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyvalue",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "data.go",
+      "integer.go",
+      "json.go",
+      "space.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/net/html/atom",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/html/atom",
+    "Module": {
+      "Path": "golang.org/x/net",
+      "Version": "v0.61.0",
+      "Time": "2026-10-09T17:07:24Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/net/@v/v0.61.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=",
+      "GoModSum": "h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI="
+    },
+    "GoFiles": [
+      "atom.go",
+      "table.go"
+    ],
+    "TestGoFiles": [
+      "atom_test.go",
+      "table_test.go"
+    ]
+  },
+  {
+    "ImportPath": "golang.org/x/net/html",
+    "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/html",
+    "Module": {
+      "Path": "golang.org/x/net",
+      "Version": "v0.61.0",
+      "Time": "2026-10-09T17:07:24Z",
+      "Dir": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0",
+      "GoMod": "/Users/accidia/go/pkg/mod/cache/download/golang.org/x/net/@v/v0.61.0.mod",
+      "GoVersion": "1.26.0",
+      "Sum": "h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=",
+      "GoModSum": "h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI="
+    },
+    "GoFiles": [
+      "const.go",
+      "doc.go",
+      "doctype.go",
+      "entity.go",
+      "escape.go",
+      "foreign.go",
+      "iter.go",
+      "node.go",
+      "nodetype_string.go",
+      "parse.go",
+      "render.go",
+      "token.go"
+    ],
+    "TestGoFiles": [
+      "comment_test.go",
+      "entity_test.go",
+      "escape_test.go",
+      "iter_test.go",
+      "node_test.go",
+      "parse_test.go",
+      "render_test.go",
+      "token_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "html",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/html",
+    "GoFiles": [
+      "entity.go",
+      "escape.go"
+    ],
+    "TestGoFiles": [
+      "entity_test.go",
+      "escape_test.go",
+      "fuzz_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "time/tzdata",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/time/tzdata",
+    "GoFiles": [
+      "tzdata.go",
+      "zzipdata.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "codec_diagnostics.go",
+      "config.go",
+      "content.go",
+      "cron.go",
+      "cron_diagnostics.go",
+      "dynamic_adapters.go",
+      "effects.go",
+      "entrypoints.go",
+      "errors.go",
+      "fixed_adapters.go",
+      "html.go",
+      "json_adapters.go",
+      "locale.go",
+      "log_redaction.go",
+      "logging.go",
+      "mteam.go",
+      "ocr_adapters.go",
+      "ocr_value.go",
+      "page.go",
+      "pass.go",
+      "plugin.go",
+      "quiz_adapters.go",
+      "random.go",
+      "registry.go",
+      "request_encoding.go",
+      "run.go",
+      "sdk_backend.go",
+      "services.go",
+      "simple_adapters.go",
+      "source_cache_json.go",
+      "source_cache_recursion.go",
+      "source_http_json.go",
+      "source_ocr_response.go",
+      "source_python_string.go",
+      "source_repr.go",
+      "source_site_binding.go",
+      "source_tjupt_public.go",
+      "state.go",
+      "text_utf8.go",
+      "timezone.go",
+      "tjupt_adapters.go",
+      "tjupt_cache.go",
+      "visits.go"
+    ],
+    "TestGoFiles": [
+      "adapter_oracle_helpers_test.go",
+      "adapter_oracles_test.go",
+      "cache_recursion_refinement_test.go",
+      "independent_refinement_cache_format_test.go",
+      "independent_refinement_cache_stage_test.go",
+      "independent_refinement_cache_test.go",
+      "independent_rousi_test.go",
+      "independent_timeout_test.go",
+      "log_redaction_test.go",
+      "refinement_boundary_test.go",
+      "refinement_independent_boundaries_test.go",
+      "refinement_independent_consumer_edges_test.go",
+      "refinement_independent_depth_test.go",
+      "refinement_independent_public_getter_test.go",
+      "regex_init_bridge_test.go",
+      "retry_regex_test.go",
+      "runtime_test.go",
+      "shared_temp_consumer_test.go",
+      "source_cache_refinement_test.go",
+      "source_cookie_override_test.go",
+      "source_diagnostics_test.go",
+      "source_edge_fixes_test.go",
+      "source_form_test.go",
+      "source_log_edges_test.go",
+      "source_logs_test.go",
+      "source_main_test.go",
+      "source_ocr_integrated_value_test.go",
+      "source_oracle_test.go",
+      "source_public_text_test.go",
+      "source_site_binding_test.go"
+    ],
+    "EmbedFiles": [
+      "charmap-source-modules.json",
+      "form.json",
+      "html-data.json",
+      "locales/en-US.json",
+      "locales/zh-CN.json",
+      "locales/zh-TW.json",
+      "mteam-protocol.json",
+      "page.css"
+    ]
+  },
+  {
+    "ImportPath": "flag",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/flag",
+    "GoFiles": [
+      "flag.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_flagset_test.go",
+      "example_func_test.go",
+      "example_test.go",
+      "example_textvar_test.go",
+      "example_value_test.go",
+      "flag_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/sysinfo",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/sysinfo",
+    "GoFiles": [
+      "cpuinfo_bsd.go",
+      "sysinfo.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go"
+    ],
+    "XTestGoFiles": [
+      "sysinfo_test.go"
+    ]
+  },
+  {
+    "ImportPath": "runtime/debug",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/runtime/debug",
+    "GoFiles": [
+      "garbage.go",
+      "mod.go",
+      "stack.go",
+      "stubs.go"
+    ],
+    "XTestGoFiles": [
+      "example_monitor_test.go",
+      "garbage_test.go",
+      "heapdump_test.go",
+      "mod_test.go",
+      "panic_test.go",
+      "stack_test.go"
+    ]
+  },
+  {
+    "ImportPath": "runtime/trace",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/runtime/trace",
+    "GoFiles": [
+      "annotation.go",
+      "batch.go",
+      "encoding.go",
+      "flightrecorder.go",
+      "recorder.go",
+      "subscribe.go",
+      "trace.go"
+    ],
+    "XTestGoFiles": [
+      "annotation_test.go",
+      "example_test.go",
+      "flightrecorder_test.go",
+      "subscribe_test.go",
+      "trace_test.go"
+    ]
+  },
+  {
+    "ImportPath": "testing",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/testing",
+    "GoFiles": [
+      "allocs.go",
+      "benchmark.go",
+      "cover.go",
+      "example.go",
+      "fuzz.go",
+      "match.go",
+      "newcover.go",
+      "run_example.go",
+      "testing.go",
+      "testing_other.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go",
+      "loop_test.go",
+      "match_test.go",
+      "sub_test.go"
+    ],
+    "XTestGoFiles": [
+      "allocs_test.go",
+      "benchmark_test.go",
+      "example_loop_test.go",
+      "flag_test.go",
+      "helper_test.go",
+      "helperfuncs_test.go",
+      "panic_test.go",
+      "testing_test.go"
+    ]
+  },
+  {
+    "ImportPath": "go/token",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/token",
+    "GoFiles": [
+      "position.go",
+      "serialize.go",
+      "token.go",
+      "tree.go"
+    ],
+    "TestGoFiles": [
+      "export_test.go",
+      "position_test.go",
+      "serialize_test.go",
+      "token_test.go",
+      "tree_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "position_bench_test.go"
+    ]
+  },
+  {
+    "ImportPath": "go/internal/scannerhooks",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/internal/scannerhooks",
+    "GoFiles": [
+      "hooks.go"
+    ]
+  },
+  {
+    "ImportPath": "go/scanner",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/scanner",
+    "GoFiles": [
+      "errors.go",
+      "scanner.go"
+    ],
+    "TestGoFiles": [
+      "scanner_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "go/ast",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/ast",
+    "GoFiles": [
+      "ast.go",
+      "commentmap.go",
+      "directive.go",
+      "filter.go",
+      "import.go",
+      "print.go",
+      "resolve.go",
+      "scope.go",
+      "walk.go"
+    ],
+    "TestGoFiles": [
+      "ast_test.go",
+      "directive_test.go",
+      "print_test.go"
+    ],
+    "XTestGoFiles": [
+      "commentmap_test.go",
+      "example_test.go",
+      "filter_test.go",
+      "import_test.go",
+      "issues_test.go",
+      "walk_test.go"
+    ]
+  },
+  {
+    "ImportPath": "go/build/constraint",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/build/constraint",
+    "GoFiles": [
+      "expr.go",
+      "vers.go"
+    ],
+    "TestGoFiles": [
+      "expr_test.go",
+      "vers_test.go"
+    ]
+  },
+  {
+    "ImportPath": "go/parser",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/go/parser",
+    "GoFiles": [
+      "interface.go",
+      "parser.go",
+      "resolver.go"
+    ],
+    "TestGoFiles": [
+      "error_test.go",
+      "parser_test.go",
+      "performance_test.go",
+      "resolver_test.go",
+      "short_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "internal/fuzz",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/internal/fuzz",
+    "GoFiles": [
+      "counters_supported.go",
+      "coverage.go",
+      "encoding.go",
+      "fuzz.go",
+      "mem.go",
+      "minimize.go",
+      "mutator.go",
+      "mutators_byteslice.go",
+      "pcg.go",
+      "queue.go",
+      "sys_posix.go",
+      "trace.go",
+      "worker.go"
+    ],
+    "TestGoFiles": [
+      "encoding_test.go",
+      "minimize_test.go",
+      "mutator_test.go",
+      "mutators_byteslice_test.go",
+      "queue_test.go",
+      "worker_test.go"
+    ]
+  },
+  {
+    "ImportPath": "os/signal",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/os/signal",
+    "GoFiles": [
+      "doc.go",
+      "signal.go",
+      "signal_unix.go"
+    ],
+    "TestGoFiles": [
+      "signal_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "example_unix_test.go",
+      "signal_cgo_test.go"
+    ]
+  },
+  {
+    "ImportPath": "compress/gzip",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/compress/gzip",
+    "GoFiles": [
+      "gunzip.go",
+      "gzip.go"
+    ],
+    "TestGoFiles": [
+      "fuzz_test.go",
+      "gunzip_test.go",
+      "gzip_test.go",
+      "issue14937_test.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go"
+    ]
+  },
+  {
+    "ImportPath": "text/tabwriter",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/text/tabwriter",
+    "GoFiles": [
+      "tabwriter.go"
+    ],
+    "XTestGoFiles": [
+      "example_test.go",
+      "tabwriter_test.go"
+    ]
+  },
+  {
+    "ImportPath": "runtime/pprof",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/runtime/pprof",
+    "GoFiles": [
+      "defs_darwin_arm64.go",
+      "elf.go",
+      "label.go",
+      "map.go",
+      "pe.go",
+      "pprof.go",
+      "pprof_rusage.go",
+      "proto.go",
+      "proto_darwin.go",
+      "protobuf.go",
+      "protomem.go",
+      "runtime.go",
+      "vminfo_darwin.go"
+    ],
+    "TestGoFiles": [
+      "label_test.go",
+      "mprof_test.go",
+      "pprof_test.go",
+      "proto_test.go",
+      "protomem_test.go",
+      "runtime_test.go",
+      "rusage_test.go",
+      "vminfo_darwin_test.go"
+    ]
+  },
+  {
+    "ImportPath": "testing/internal/testdeps",
+    "Dir": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/testing/internal/testdeps",
+    "GoFiles": [
+      "deps.go"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin [github.com/landuo/light-media-plugins/plugins/autosignin.test]",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "codec_diagnostics.go",
+      "config.go",
+      "content.go",
+      "cron.go",
+      "cron_diagnostics.go",
+      "dynamic_adapters.go",
+      "effects.go",
+      "entrypoints.go",
+      "errors.go",
+      "fixed_adapters.go",
+      "html.go",
+      "json_adapters.go",
+      "locale.go",
+      "log_redaction.go",
+      "logging.go",
+      "mteam.go",
+      "ocr_adapters.go",
+      "ocr_value.go",
+      "page.go",
+      "pass.go",
+      "plugin.go",
+      "quiz_adapters.go",
+      "random.go",
+      "registry.go",
+      "request_encoding.go",
+      "run.go",
+      "sdk_backend.go",
+      "services.go",
+      "simple_adapters.go",
+      "source_cache_json.go",
+      "source_cache_recursion.go",
+      "source_http_json.go",
+      "source_ocr_response.go",
+      "source_python_string.go",
+      "source_repr.go",
+      "source_site_binding.go",
+      "source_tjupt_public.go",
+      "state.go",
+      "text_utf8.go",
+      "timezone.go",
+      "tjupt_adapters.go",
+      "tjupt_cache.go",
+      "visits.go",
+      "adapter_oracle_helpers_test.go",
+      "adapter_oracles_test.go",
+      "cache_recursion_refinement_test.go",
+      "independent_refinement_cache_format_test.go",
+      "independent_refinement_cache_stage_test.go",
+      "independent_refinement_cache_test.go",
+      "independent_rousi_test.go",
+      "independent_timeout_test.go",
+      "log_redaction_test.go",
+      "refinement_boundary_test.go",
+      "refinement_independent_boundaries_test.go",
+      "refinement_independent_consumer_edges_test.go",
+      "refinement_independent_depth_test.go",
+      "refinement_independent_public_getter_test.go",
+      "regex_init_bridge_test.go",
+      "retry_regex_test.go",
+      "runtime_test.go",
+      "shared_temp_consumer_test.go",
+      "source_cache_refinement_test.go",
+      "source_cookie_override_test.go",
+      "source_diagnostics_test.go",
+      "source_edge_fixes_test.go",
+      "source_form_test.go",
+      "source_log_edges_test.go",
+      "source_logs_test.go",
+      "source_main_test.go",
+      "source_ocr_integrated_value_test.go",
+      "source_oracle_test.go",
+      "source_public_text_test.go",
+      "source_site_binding_test.go"
+    ],
+    "TestGoFiles": [
+      "adapter_oracle_helpers_test.go",
+      "adapter_oracles_test.go",
+      "cache_recursion_refinement_test.go",
+      "independent_refinement_cache_format_test.go",
+      "independent_refinement_cache_stage_test.go",
+      "independent_refinement_cache_test.go",
+      "independent_rousi_test.go",
+      "independent_timeout_test.go",
+      "log_redaction_test.go",
+      "refinement_boundary_test.go",
+      "refinement_independent_boundaries_test.go",
+      "refinement_independent_consumer_edges_test.go",
+      "refinement_independent_depth_test.go",
+      "refinement_independent_public_getter_test.go",
+      "regex_init_bridge_test.go",
+      "retry_regex_test.go",
+      "runtime_test.go",
+      "shared_temp_consumer_test.go",
+      "source_cache_refinement_test.go",
+      "source_cookie_override_test.go",
+      "source_diagnostics_test.go",
+      "source_edge_fixes_test.go",
+      "source_form_test.go",
+      "source_log_edges_test.go",
+      "source_logs_test.go",
+      "source_main_test.go",
+      "source_ocr_integrated_value_test.go",
+      "source_oracle_test.go",
+      "source_public_text_test.go",
+      "source_site_binding_test.go"
+    ],
+    "EmbedFiles": [
+      "charmap-source-modules.json",
+      "form.json",
+      "html-data.json",
+      "locales/en-US.json",
+      "locales/zh-CN.json",
+      "locales/zh-TW.json",
+      "mteam-protocol.json",
+      "page.css"
+    ]
+  },
+  {
+    "ImportPath": "github.com/landuo/light-media-plugins/plugins/autosignin.test",
+    "Dir": "/Users/accidia/projects/light-media-plugins/plugins/autosignin",
+    "Module": {
+      "Path": "github.com/landuo/light-media-plugins",
+      "Main": true,
+      "Dir": "/Users/accidia/projects/light-media-plugins",
+      "GoMod": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "GoVersion": "1.26.0"
+    },
+    "GoFiles": [
+      "/Users/accidia/Library/Caches/go-build/3a/3a082800b20dfd22a4573215b57d8dbe22a91c8853c31039a1a6e6cd57e40461-d"
+    ]
+  }
+]

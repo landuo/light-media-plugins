@@ -1,0 +1,337 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-json",
+    "-p=1",
+    "-count=1",
+    "./..."
+  ],
+  "cwd": "/Users/accidia/projects/light-media-plugins",
+  "exit": 0,
+  "seconds": 60.369441125076264,
+  "inputs": 4020,
+  "stable": true,
+  "test_pass": 7621,
+  "package_pass": [
+    "github.com/landuo/light-media-plugins/cmd/category-editor",
+    "github.com/landuo/light-media-plugins/cmd/mp-server-status",
+    "github.com/landuo/light-media-plugins/cmd/site-statistic",
+    "github.com/landuo/light-media-plugins/cmd/torrent-transfer",
+    "github.com/landuo/light-media-plugins/internal/sdk",
+    "github.com/landuo/light-media-plugins/plugins/autosignin",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/pyregex",
+    "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+    "github.com/landuo/light-media-plugins/plugins/pluginuninstall",
+    "github.com/landuo/light-media-plugins/plugins/removelink",
+    "github.com/landuo/light-media-plugins/plugins/sitestatistic",
+    "github.com/landuo/light-media-plugins/plugins/torrenttransfer",
+    "github.com/landuo/light-media-plugins/tests/integration",
+    "github.com/landuo/light-media-plugins/tests/sourceinterfaces"
+  ],
+  "skipped_tests": [
+    {
+      "Time": "2026-11-06T21:03:10.562866+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/cmd/category-editor",
+      "Test": "TestWorkerProtocolSmoke",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.661928+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentSameWorkerOverlapAndChunkIsolation",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.66194+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentCancelIsolatedAndObjectReusable",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.661952+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentErrorsAndRetainedAuthority",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662005+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentCallbackDeadlineDoesNotKillOtherCalls",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662014+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentStopRevokesJoinsAndUsesFreshCleanup",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662052+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentStopDeadlineReapsUncooperativeWorker",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662077+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentNegotiatesFallbackAndStrictRequirement",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662111+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentCallerDeadlineOnlyIsExplicit",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662132+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentFullCapacityDoesNotBlockCleanup",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662162+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentShutdownReservedManagerPhasesAtCapacity",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662174+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentShutdownCloseFailurePolicyStaysInManager",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.662182+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedConcurrentShutdownAPIAuthorityAndLegacyBoundary",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:28.735072+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestParallelOverlayFixtureWorker",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:29.644051+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedPendingCallActualAdmissionAndFullCapacity",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:29.644069+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedPendingCallLostParentReplyDoesNotRollbackChild",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:29.644089+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedPendingCallCanceledAdmissionAndLegacy",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:29.644099+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "Test": "TestOwnedPendingCallTransportRetirementInvokesNoHandler",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:50.978681+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestSource312ConstructorHomeBranches",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:50.988791+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestObserverMatchesExecutedSourceMatrix/actual-source-selected",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:55.994396+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-move",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:55.994424+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-delete",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:55.994459+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/hardlink-path-delete",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:59.20589+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestActualWorkerObserverToOwnedFilesystemCleanup",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:59.205993+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestActualWorkerObserverRenameAndStopBeforeDue",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:03:59.206015+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestActualWorkerObserverRealTimerDoesNotRunEarly",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:00.331823+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+      "Test": "TestActualWorkerFailedWatchStopSourceLogSequence",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.196934+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestCategoryEditorActualMain",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.197012+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestMPServerStatusActualMainOwnedNamespace",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.20231+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestPluginUninstallOrdinaryMain",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.314296+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestPluginUninstallCanonicalPackageOrdinaryMain",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.314403+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestRemoveLinkActualMain",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.314452+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestRemoveLinkCanonicalPackageOrdinaryMain",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.913655+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestSDK98ImpactOrdinaryMainFourInstances",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.91372+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestSDK98ImpactActualProcesses",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.913736+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestSiteStatisticActualMainOwnedHTTPS",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.913753+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestTorrentTransferOwnedDaemonPreflight",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.913781+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestTorrentTransferActualMainDaemons",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.9138+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestTorrentTransferResumeOwnedLifecycle",
+      "Elapsed": 0
+    },
+    {
+      "Time": "2026-11-06T21:04:06.913817+08:00",
+      "Action": "skip",
+      "Package": "github.com/landuo/light-media-plugins/tests/integration",
+      "Test": "TestTorrentTransferRetainedDataAndUninstallTail",
+      "Elapsed": 0
+    }
+  ],
+  "no_test_packages": [
+    "github.com/landuo/light-media-plugins/cmd/auto-sign-in",
+    "github.com/landuo/light-media-plugins/cmd/plugin-uninstall",
+    "github.com/landuo/light-media-plugins/cmd/remove-link",
+    "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/helpers",
+    "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/syntax",
+    "github.com/landuo/light-media-plugins/plugins/mpserverstatus/requestsproxy"
+  ],
+  "failures": [],
+  "environment": {
+    "GOPROXY": "off",
+    "GOFLAGS": "",
+    "go": "go version go1.26.2 darwin/arm64"
+  },
+  "production_overlay": false,
+  "modfile": false
+}

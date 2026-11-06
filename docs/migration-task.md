@@ -2,6 +2,10 @@
 
 ## Current resume (2026-11-06, seven accepted instances)
 
+最新已验证有限进度：JSON5真实SDK/App75项（74条件/185HTTP）通过，公开274文件证据`migration/evidence/autosignin-ocr-json-20261106/INTEGRATION.json`；常规3源样本测试已固化。所有27产品包normal/race各7621项通过，40个实机opt-in跳过及10无测试包另列，4020输入稳定。证据与work模块边界修复仅隔离历史源码/负控，不修改旧证明。Main第四轮12.65秒真实通过一次签到/历史/分身空页/冷启/3.5秒无额外签到/reset；各阶段PID与普通卸载重装保留将另补新轮实测，不能从ack推断。总数仍7/23，不推送、不生产部署。
+
+最新继续点：P11772d31已本地保存ASI真实实现与SDK102；JSON/OCR5已按独立审查实际集成，真63项normal/race通过，当前LinuxSDK/App闭口正在执行。Root真实Main第三轮确认一次attendance约3.02秒发出、凭据与成功历史正确，随后在测试helper误读已解包page处失败；连续三次夹具失败后停止重试，先独立复查剩余驱动，冷启/重置未执行。native14仍需原字段更新后保真与ID稳定，普通浏览器仍在work；7/23保持。生产NAS/远端main未变。下文历史检查点按原绑定保留。
+
 最新本地保存准备：宿主56d02c7b已保存当前隐私与OCR有限实现；SDK102/Origin575d与该提交逐文件吻合。隐私真实App12项race/3612稳定、OCR真实Linux96项/2596稳定；当前ASI+SDK普通回归6188项/4包/849输入稳定，SDK17个独占夹具门未执行另列。JSON/OCR完整值域、普通浏览器引用、native14原字段私有导入仍在独占work开发，没有更新生产NAS或推送。详见同一ledger.resume；下文前一检查点与所有旧证明保留原绑定。
 
 

@@ -32,6 +32,7 @@ type PageRequest struct {
 	Binary               bool
 	Form                 map[string]string
 	RawForm              map[string]json.RawMessage
+	FormValues           map[string][]string `json:"form_values,omitempty"`
 	FormOrder            []string
 	Timeout              any
 }

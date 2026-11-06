@@ -1,0 +1,87 @@
+{
+  "scope": "finite offline pure OCR JSON type/truth/str/repr/length/form tests only",
+  "test_source": {
+    "original_path": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/value_domain_test.go",
+    "original_sha256": "39806e1f893490d5901ae04883a5fa66944a3503cead18ed5aa6249ce6c49ce2",
+    "bytes": 3365,
+    "recommended_target": "plugins/autosignin/source_ocr_value_domain_test.go",
+    "functions": [
+      "TestSourceOCRFullJSONValueDomain47",
+      "TestSourceOCRFullJSONMixedDepth9",
+      "TestSourceOCRFullJSONEmptyDepth4"
+    ],
+    "note": "These three pure test functions are in ONE file; do not fabricate three distinct source files."
+  },
+  "fixtures": [
+    {
+      "original_path": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/source.stdout",
+      "original_sha256": "4df6b4545339fe25ea73eae1c37e94ec6a5aa84747646c7acdf7c9a6479a9775",
+      "bytes": 1410581,
+      "rows": 47,
+      "recommended_target": "plugins/autosignin/testdata/source-ocr-json-values/source.json",
+      "copy_bytes_unchanged": true
+    },
+    {
+      "original_path": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/depth-source.stdout",
+      "original_sha256": "1a93d3720faafbe6f5732cb71f4eeafc8ebf563110eba6d0db17e097c0785f2a",
+      "bytes": 3106530,
+      "rows": 9,
+      "recommended_target": "plugins/autosignin/testdata/source-ocr-json-values/mixed-depth.json",
+      "copy_bytes_unchanged": true
+    },
+    {
+      "original_path": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/empty-depth-source.stdout",
+      "original_sha256": "f4d5953736248a27cb55c17d15d79313b0e2645caa5c3a13457b64db23738e82",
+      "bytes": 723882,
+      "rows": 4,
+      "recommended_target": "plugins/autosignin/testdata/source-ocr-json-values/empty-depth.json",
+      "copy_bytes_unchanged": true
+    }
+  ],
+  "necessary_test_edits": [
+    {
+      "before": "checkSourceOCRValueDomain(t, \"source.stdout\", 47)",
+      "after": "checkSourceOCRValueDomain(t, \"source.json\", 47)"
+    },
+    {
+      "before": "checkSourceOCRValueDomain(t, \"depth-source.stdout\", 9)",
+      "after": "checkSourceOCRValueDomain(t, \"mixed-depth.json\", 9)"
+    },
+    {
+      "before": "checkSourceOCRValueDomain(t, \"empty-depth-source.stdout\", 4)",
+      "after": "checkSourceOCRValueDomain(t, \"empty-depth.json\", 4)"
+    },
+    {
+      "before": "os.ReadFile(\"/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/\" + filename)",
+      "after": "os.ReadFile(\"testdata/source-ocr-json-values/\" + filename)"
+    }
+  ],
+  "no_other_behavior_changes": true,
+  "expected_gate": "63 named nodes (3 roots +60 conditions),1 package,0skip; native normal and race",
+  "commands": [
+    [
+      "go",
+      "test",
+      "-p=1",
+      "-count=1",
+      "-run=^TestSourceOCRFullJSON(ValueDomain47|MixedDepth9|EmptyDepth4)$",
+      "./plugins/autosignin"
+    ],
+    [
+      "go",
+      "test",
+      "-p=1",
+      "-race",
+      "-count=1",
+      "-run=^TestSourceOCRFullJSON(ValueDomain47|MixedDepth9|EmptyDepth4)$",
+      "./plugins/autosignin"
+    ]
+  ],
+  "not_default_tests": [
+    "domain_app_test.go (actual SDK/App TLS+CONNECT/HTTP peers, explicit Linux networknone opt-in)",
+    "probe_bridge.go / probe_main.go (test-only standalone SDK fixture)",
+    "hdsky-source.stdout (14 complete synthetic caller flows, consumed by explicit actualSDK/App gate only)"
+  ],
+  "oracle_provenance": "Existing freeze3c365: immutable333 actual source105HTTP across60 pure conditions, from original OcrHelper/RequestUtils/Requests. Copy these raw source observations byte-for-byte; do not derive expected from current production. Full target canonical freeze f578 uses same old original oracle bytes and all74conditions/185HTTP.",
+  "production_changes_by_child": false
+}

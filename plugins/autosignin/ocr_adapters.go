@@ -7,7 +7,6 @@ import (
 	"fmt"
 	"strings"
 	"time"
-	"unicode/utf8"
 
 	"golang.org/x/net/html"
 )
@@ -45,11 +44,13 @@ func sourceLength(v any) (int, error) {
 	case *sourceOCRValue:
 		return sourceLength(n.value)
 	case string:
-		return utf8.RuneCountInString(n), nil
+		return len(sourceCodepoints(n)), nil
 	case []any:
 		return len(n), nil
 	case Object:
 		return len(n), nil
+	case sourceHTTPMap:
+		return len(n.values), nil
 	}
 	return 0, fmt.Errorf("object of type '%s' has no len()", typeName(v))
 }
@@ -221,7 +222,14 @@ func OCRSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisitH
 	}
 	form := map[string]string{"imagehash": pythonScalar(imageHash)}
 	var rawForm map[string]json.RawMessage
-	if text, ok := result.(string); ok {
+	var formValues map[string][]string
+	if source, ok := result.(*sourceOCRValue); ok && source.fromHTTP {
+		values, err := sourceOCRFormValues(source.value)
+		if err != nil {
+			return AdapterResult{}, err
+		}
+		formValues = map[string][]string{"imagestring": values}
+	} else if text, ok := result.(string); ok {
 		form["imagestring"] = text
 	} else {
 		value, err := rawOCRValue(result)
@@ -238,7 +246,7 @@ func OCRSignin(kind FixedAdapter, ctx context.Context, site Object, h SiteVisitH
 		order = []string{"action", "imagehash", "imagestring"}
 		referer = textValue(site["url"])
 	}
-	response, err := getHTTP(ctx, h, PageRequest{Method: "POST", URL: address, Form: form, RawForm: rawForm, FormOrder: order, Referer: referer})
+	response, err := getHTTP(ctx, h, PageRequest{Method: "POST", URL: address, Form: form, RawForm: rawForm, FormValues: formValues, FormOrder: order, Referer: referer})
 	if err != nil {
 		return AdapterResult{}, err
 	}

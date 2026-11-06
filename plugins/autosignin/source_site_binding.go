@@ -161,6 +161,12 @@ func (s sdkSiteTransport) sourceDo(ctx context.Context, request PageRequest) (*P
 		sort.Strings(keys)
 	}
 	for _, key := range keys {
+		if values, ok := request.FormValues[key]; ok {
+			for _, value := range values {
+				input.Form = append(input.Form, sdk.SiteHTTPPairV1{Name: key, Value: value})
+			}
+			continue
+		}
 		if raw, ok := request.RawForm[key]; ok {
 			values, e := pyvalue.RequestFormValues(raw)
 			if e != nil {

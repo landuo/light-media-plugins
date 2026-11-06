@@ -1,0 +1,37 @@
+{
+  "container_id": "2574702d03f0640f136dd0829eda30e56bea98d03bb2a13ffedd3de81986b19d",
+  "network": "none",
+  "readonly": true,
+  "capdrop": [
+    "ALL"
+  ],
+  "security": [
+    "no-new-privileges"
+  ],
+  "user": "1000:1000",
+  "entrypoint": [
+    "/bin/sh"
+  ],
+  "healthcheck": {
+    "Test": [
+      "NONE"
+    ],
+    "Interval": 30000000000,
+    "Timeout": 5000000000,
+    "StartPeriod": 60000000000,
+    "Retries": 3
+  },
+  "privileged": false,
+  "mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/admin/light-media-plugins-source-ocr-value-domain-20261106/bundle",
+      "Destination": "/owned",
+      "RW": false
+    }
+  ],
+  "tmpfs": {
+    "/config": "rw,exec,nosuid,nodev,uid=1000,gid=1000,mode=0700",
+    "/tmp": "rw,exec,nosuid,nodev,uid=1000,gid=1000,mode=0700"
+  }
+}

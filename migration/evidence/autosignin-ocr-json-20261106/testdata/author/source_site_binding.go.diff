@@ -1,0 +1,15 @@
+--- /Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/source_site_binding.go
++++ plugins/autosignin/source_site_binding.go
+@@ -161,6 +161,12 @@
+ 		sort.Strings(keys)
+ 	}
+ 	for _, key := range keys {
++		if values, ok := request.FormValues[key]; ok {
++			for _, value := range values {
++				input.Form = append(input.Form, sdk.SiteHTTPPairV1{Name: key, Value: value})
++			}
++			continue
++		}
+ 		if raw, ok := request.RawForm[key]; ok {
+ 			values, e := pyvalue.RequestFormValues(raw)
+ 			if e != nil {

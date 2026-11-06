@@ -19,13 +19,7 @@ func sourceOCRServiceResult(content []byte, contentType string) (any, error) {
 	if !Truth(result) {
 		return "", nil
 	}
-	raw, err := sourceHTTPJSONBytes(result)
-	if err != nil {
-		return nil, err
-	}
-	result, err = sourceRestoreSavedJSON(raw)
-	if err != nil {
-		return nil, err
-	}
-	return &sourceOCRValue{value: result, raw: raw}, nil
+	// Keep the already-decoded source HTTP value. It may legally include
+	// nonfinite floats, ordered maps, huge integers or lone codepoints.
+	return &sourceOCRValue{value: result, fromHTTP: true}, nil
 }
