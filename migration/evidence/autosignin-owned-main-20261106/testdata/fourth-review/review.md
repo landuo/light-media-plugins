@@ -1,0 +1,33 @@
+# Independent R4 bounded acceptance and remaining observation gaps
+
+R4 actually passes the single owned Main test in12.65seconds with host b0a9a175, true AutoSignIn worker a4524236 and test-only driver f56e825b. The three build snapshots are equal before/after (worker/driver4015, host16707; broad recorded boundaries). Binary SHA values are read and compared here; the driver patch remains test-only. R1/R2/R3 failures are not reclassified or deleted. This review does not run the test again or edit true source, SDK or ledger.
+
+## Accepted finite behavior
+
+| Original/source behavior | Target | Actual evidence |
+| --- | --- | --- |
+| Installed ASI init82-134: onlyonce schedules3seconds and saves false before execution; generic1856-1916 GET attendance.php confirms login+signin. | P plugin/config and sdk source transport; H ordinary plugin config/init/host source chain. | Config GET onlyonce=false; exactly one physical GET /attendance.php with correct Cookie/UA; driver delay3.024286912s. All four physical requests are retained; the other homepage/favicon calls are host site.updated, not plugin attendance. |
+| ASI __do1648-1738 result/history and page675-759/1441-1529. | P autosignin histories and page. | Before cold and after cold the named source row has exact success chip/icon and11月6日 success dot, and its distinct login row is also successful. Current-day selected site is1. This verifies rendered persisted history, not every raw plugin KV byte. |
+| Clone1905-1999 copies only nonempty config, disables it, separate KV; page759-771 empty condition. | H clone namespace; P empty page. | Clone created before base config; actual clone config{} and source-exact empty VAlert despite base successful history. It does not verify all configured-clone forms/files/isolation or worker PID separation. |
+| Stop/start reload and no one-shot replay with persisted false flag. | H actual executable and same owned data-dir. | Main PID2677045 cleanly exits, then2677101 starts same host bytes and loads same config+success page. Recorder has no further attendance through3.5second no-replay window. This is bounded absence of physical attendance; successful-day dedup can also suppress visits, so it does not independently prove sign_in was never entered. |
+| Reset739-761: compensation, stop, force config/data delete, reload/register. | H reset/config/lifecycle and P default state. | Reset call is followed by actual GET config{} and exact empty page. Own post-test read-only DB shows no plugin_values in either namespace, supporting final removal of these synthetic values. The test does not record reset worker PID transition. |
+
+## PID and uninstall evidence limits
+
+There are exactly two recorded Main PIDs and no worker PID snapshots in R4. The logs do not reveal plugin worker PIDs. Consequently R4 cannot retroactively prove that save retained the same worker, clone had another PID, cold joined both old workers, reset replaced one worker, or uninstall stopped each process at its operation boundary. Those require contemporaneous /proc/readlink observations; post-Main-stop absence is only cleanup evidence.
+
+I made one minimal read-only query of the marked own R4 directory after Main stopped: SQLite mode=ro/query_only, metadata counts only, code Lstat and /proc executable paths only under this exact owned root. Both installed flags are0; both plugin_values namespaces are empty; ordinary AutoSignIn code directory remains, clone directory is absent; no executable under the own root and neither recorded Main PID remains. No runtime DB/key/private config payload is copied. These final states supplement the two uninstall acknowledgements, but do not recover the missing operation-time worker states.
+
+Fixed plugin.py992-1030 explicitly deletes code/config/data only for clones. Ordinary uninstall retains them, then stops and clears the in-memory object/class. H plugin_original_uninstall.go matches. Thus data_retained=true is a policy flag, not evidence that reset left rows, and ordinary code presence is expected. Do not require all code directories to disappear. A minimal next observation can reuse existing puiMain pids/readlink, waitDead and code helpers; no new runtime framework is necessary. This readback does not count a PUI business test.
+
+## R5 source preconditions (static, not run)
+
+Source supports ordinary base uninstall/reinstall between cold/no-replay and reset: use the same ID and valid compatible same-version repo; retain saved onlyonce=false, future Dec31 cron and managed source ID. Uninstall keeps this fixture's config and successful-day history/code. stop156-184 removes memory class, so non-force reinstall must supply a nonempty valid repo (install576-624), then installed-list update, reload/init and register. Restored false once must not schedule an immediate job, and the existing success page can reappear without another attendance. Check retained config plus this visible source history, not all unseeded plugin data. Keep clone PID/config/code unchanged. After final ordinary base uninstall code must remain; clone code must disappear. OS PID replacement/isolation is the Go SDK process adaptation of original object identity, not a literal MP multi-process contract.
+
+The existing puiMain pids helper only reads executable paths under s.dir/plugin-packages and registers every seen PID in allPIDs; its map stores one PID per instance. Initialize puiMain with the current mainHost and an empty allPIDs map, use only pids/code/waitDead, capture pre-operation nonzero PIDs and wait for them after stop/reset/uninstall, then check expected surviving/new instances. Reusing this observer is narrower than adding an observer plugin or general framework. Current R4 has not supplied those future observations.
+
+## Regular JSON pure test relocation
+
+application00ad899d is byte-correct: all three oracle files equal the frozen raw bytes4df6b454/1a93d372/f4d59537; the new Go test filec67d2a53 equals original39806e1f with exactly the four planned filename/path replacements. No semantic assertion or source expected value changed. The test remains one file/three functions and local file reads only; actualSDK/App fixture, bridge and14 HDSky flows were not placed into default tests. This review verifies bytes and path existence, not a new execution of relocated permanent tests. See regular-tests-byte-review.json.
+
+Accepted scope is the finite generic/once/visible-history/empty-clone/cold/reset functional slice and documented final metadata. Whole AutoSignIn, real PT, browser/OCR/UI, update, complete scheduling, operation-time worker lifecycle and broader23-instance acceptance are not signed by R4.

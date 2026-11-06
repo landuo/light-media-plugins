@@ -1,0 +1,383 @@
+{
+  "command": {
+    "argv": [
+      "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/bundle/bin/main-driver-linux.test",
+      "-test.v",
+      "-test.timeout=3m",
+      "-test.run=^TestAutoSignInActualMainOwnedSiteOnceAndClone$"
+    ],
+    "exit": 0,
+    "seconds": 14.766623488161713,
+    "env": {
+      "TMPDIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/tmp",
+      "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/bundle/bin/host-main-linux",
+      "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/runtime",
+      "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/bundle/bin/auto-sign-in-linux",
+      "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/bundle/source/form.json",
+      "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5/bundle/source/api-oracle.json"
+    },
+    "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+    "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+  },
+  "pid_stages": [
+    {
+      "stage": "clone_two_workers",
+      "at": "2026-11-06T13:14:01.847316791Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680611,
+        "AutoSignIncopy": 2680669
+      }
+    },
+    {
+      "stage": "save_keeps_workers",
+      "at": "2026-11-06T13:14:01.966804761Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680611,
+        "AutoSignIncopy": 2680669
+      }
+    },
+    {
+      "stage": "cold_stop_no_workers",
+      "at": "2026-11-06T13:14:05.423259047Z",
+      "event": "pui_worker_pids",
+      "value": {}
+    },
+    {
+      "stage": "cold_new_workers",
+      "at": "2026-11-06T13:14:07.391561023Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680707,
+        "AutoSignIncopy": 2680715
+      }
+    },
+    {
+      "stage": "ordinary_uninstall_clone_survives",
+      "at": "2026-11-06T13:14:11.021029805Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIncopy": 2680715
+      }
+    },
+    {
+      "stage": "reinstall_base_new_clone_same",
+      "at": "2026-11-06T13:14:11.918890346Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680727,
+        "AutoSignIncopy": 2680715
+      }
+    },
+    {
+      "stage": "reset_base_new_clone_same",
+      "at": "2026-11-06T13:14:12.507747374Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680765,
+        "AutoSignIncopy": 2680715
+      }
+    },
+    {
+      "stage": "clone_uninstall_base_survives",
+      "at": "2026-11-06T13:14:12.579895029Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2680765
+      }
+    },
+    {
+      "stage": "final_uninstall_no_workers",
+      "at": "2026-11-06T13:14:12.600059814Z",
+      "event": "pui_worker_pids",
+      "value": {}
+    }
+  ],
+  "unique_workers": [
+    2680611,
+    2680669,
+    2680707,
+    2680715,
+    2680727,
+    2680765
+  ],
+  "main_start": [
+    {
+      "at": "2026-11-06T13:13:59.329668224Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:38721",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 1,
+        "pid": 2680553
+      }
+    },
+    {
+      "at": "2026-11-06T13:14:07.289368501Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:38721",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 2,
+        "pid": 2680696
+      }
+    }
+  ],
+  "main_exit": [
+    {
+      "at": "2026-11-06T13:14:05.398025939Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2680553
+      }
+    },
+    {
+      "at": "2026-11-06T13:14:12.612031834Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2680696
+      }
+    }
+  ],
+  "config_reads": [
+    {
+      "at": "2026-11-06T13:14:01.958139587Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "59 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_CAzbLKnqwBf-oGaynLnHTYTy"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T13:14:07.393877768Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "59 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_XVtbM5UApTr-q_CPh6fcR2BL"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T13:14:11.920973551Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "59 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_5a48R91KgN6IhQvXV6pNIJ2m"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T13:14:12.560348457Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {},
+          "request_id": "req_UKmOCEvSCepp_3FVMl9pxStZ"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "page_observations": [
+    {
+      "at": "2026-11-06T13:14:05.303050295Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "successful_named_today_row": true,
+      "source_exact_empty": false
+    },
+    {
+      "at": "2026-11-06T13:14:05.362019701Z",
+      "path": "/api/plugins/AutoSignIncopy/page",
+      "successful_named_today_row": false,
+      "source_exact_empty": true
+    },
+    {
+      "at": "2026-11-06T13:14:07.459426013Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "successful_named_today_row": true,
+      "source_exact_empty": false
+    },
+    {
+      "at": "2026-11-06T13:14:11.985046518Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "successful_named_today_row": true,
+      "source_exact_empty": false
+    },
+    {
+      "at": "2026-11-06T13:14:12.555257113Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "successful_named_today_row": false,
+      "source_exact_empty": true
+    }
+  ],
+  "all_physical_peer": {
+    "at": "2026-11-06T13:14:12.616334582Z",
+    "event": "owned_peer_observations",
+    "value": [
+      {
+        "arrived_at": "2026-11-06T21:14:01.903553875+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:14:01.910801584+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/favicon.ico",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:14:01.924853665+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "Owned-ASI/1"
+      },
+      {
+        "arrived_at": "2026-11-06T21:14:04.963292457+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      }
+    ]
+  },
+  "completion": {
+    "at": "2026-11-06T13:14:12.614791424Z",
+    "event": "asi_owned_site_once_complete",
+    "value": {
+      "attendance_delay_seconds": 3.036474844,
+      "cold_no_replay_observation_ms": 3500,
+      "elapsed_seconds": 10.687968455,
+      "physical_paths": [
+        "/attendance.php"
+      ],
+      "scope": "owned protocol peer, trueMain/once/history/clone/cold/no-replay/reset; not realPT/browser/OCR or completeASI",
+      "source_id": 1,
+      "worker_sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918"
+    }
+  },
+  "all_joined": {
+    "at": "2026-11-06T13:14:12.613770631Z",
+    "event": "asi_all_workers_joined",
+    "value": {
+      "base_code_retained": true,
+      "clone_code_removed": true,
+      "observed_workers": 6,
+      "pui_observer_reuse": "generic existing /proc+Lstat methods only; not PUI business execution"
+    }
+  },
+  "post_owned_metadata": {
+    "at": "2026-11-06T13:16:33.797185+00:00",
+    "scope": "post-r5 owned root read-only metadata; no private value/DB/key payload exported",
+    "root": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5",
+    "sqlite_mode": "ro/query_only",
+    "installed": [
+      [
+        "AutoSignIn",
+        0
+      ],
+      [
+        "AutoSignIncopy",
+        0
+      ]
+    ],
+    "plugin_value_counts": [],
+    "code": {
+      "AutoSignIn": {
+        "exists": true,
+        "is_dir": true,
+        "is_symlink": false,
+        "top_entries": [
+          ".acquired.json",
+          "auto-sign-in"
+        ]
+      },
+      "AutoSignIncopy": {
+        "exists": false
+      }
+    },
+    "owned_executable_processes": [],
+    "recorded_pid_exists": {
+      "2680553": false,
+      "2680696": false,
+      "2680611": false,
+      "2680669": false,
+      "2680707": false,
+      "2680715": false,
+      "2680727": false,
+      "2680765": false
+    }
+  },
+  "reinstall_observation_tail_seconds": 0.701494,
+  "limits": [
+    "OS process stages are the necessary Go SDK adaptation of original per-instance objects; MP does not require one Python OS process per plugin.",
+    "Only the synthetic fixture config and rendered same-day successful history retention are established.",
+    "Post-cold physical no-replay is observed for3500ms; reinstall tail is less than3seconds and is not a second independent3-second wait. Successful-day dedup can suppress HTTP even if sign_in is entered.",
+    "Reset leaves clone PID unchanged; this fixture clone starts empty and does not prove preservation of independently seeded clone KV/files.",
+    "Code checks are directory existence/Lstat, not byte-equivalence of all package files."
+  ]
+}

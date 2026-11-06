@@ -2,6 +2,21 @@
 
 ## Current resume (2026-11-06, seven accepted instances)
 
+Resume the unique `migration/ledger.json` first. Accepted baseline remains7/23 instances (6 families); AutoSignIn2.9.15 and original private configuration/data import are not accepted. Only local development/save is authorized in this continuation: no push, merge or new production deployment. Production NAS retains the earlier paired166/09ab host +SDK101 seven inactive instances.
+
+H primary worktree is `/Users/accidia/projects/light-media`, branch `codex/plugin-source-error-outcomes-20261105`, saved56d02c7b. P is `/Users/accidia/projects/light-media-plugins`, branch `codex/installed-plugins-20261105`, saved03f39c4 for source OCR JSON5 integration/SDK102. All27 product packages normal/race pass7621 named+17packages per mode,4020 stable inputs;40 explicit opt-in skips and10 no-test packages remain separately recorded. Actual finite JSON/OCR SDK/App74 conditions/185HTTP and source-derived permanent tests are public under `migration/evidence/autosignin-ocr-json-20261106/INTEGRATION.json`.
+
+Owned Main r5 actually passes14.77s/51 observations: one delayed physical signin, saved history, initially empty clone, cold recovery,3500ms without extra attendance, ordinary base uninstall/reinstall retains this fixture's code/config/history, reset clears it, clone uninstall removes only its code. Six workers/two Main PIDs join. Independent review858b closes this finite slice; see `migration/evidence/autosignin-owned-main-20261106/INTEGRATION.json`. This is not UI, real PT/OCR, cron/update/drain, all prepopulated clone data, or whole AutoSignIn acceptance. First three failed fixture attempts remain unchanged. Five owned NAS roots and nine old local ELFs are cleaned after ownership/hash/no-open checks; only one current r5 H/P/driver set remains.
+
+Next: finish independent native14 source/update/provenance/CLI gates, ordinary browser Page raw timeout/reference gates, then guarded integration and current SDK/accepted-consumer/package closure. Complete actual current Main/UI/failure/update/event/timer/drain chains before count8. `ledger.resume.active_ownership` identifies the live agents; their candidates stay in ignored work until reviewed. Original services/source remain read-only. Workflow/AI/official authentication grades/RSA remain excluded; ordinary events, commands and timers remain included.
+
+## Historical checkpoints (retain original bindings; not current state)
+
+### Earlier continuation notes, superseded by current resume
+
+
+最新恢复点：JSON5与全部产品normal/race已保存本地03f39c4；Main第五轮真实14.77秒/51观察、6worker+2Main完整阶段链经独审858b通过，公开189文件`migration/evidence/autosignin-owned-main-20261106/INTEGRATION.json`。普通卸载保留本fixture代码/配置/历史，重装恢复；分身卸载删自身代码，reset清数据。只签有限真实链，不签UI/PT/更新/全分身数据。五个自建NAS运行目录和九旧本机ELF已核hash/无进程后清理，仅留当前单套；旧失败与原绑定不动。native14候选24项normal/race已过，真实CLI/负控/独审继续；普通浏览器原程序验证继续。7/23，未推送或生产部署。
+
 最新已验证有限进度：JSON5真实SDK/App75项（74条件/185HTTP）通过，公开274文件证据`migration/evidence/autosignin-ocr-json-20261106/INTEGRATION.json`；常规3源样本测试已固化。所有27产品包normal/race各7621项通过，40个实机opt-in跳过及10无测试包另列，4020输入稳定。证据与work模块边界修复仅隔离历史源码/负控，不修改旧证明。Main第四轮12.65秒真实通过一次签到/历史/分身空页/冷启/3.5秒无额外签到/reset；各阶段PID与普通卸载重装保留将另补新轮实测，不能从ack推断。总数仍7/23，不推送、不生产部署。
 
 最新继续点：P11772d31已本地保存ASI真实实现与SDK102；JSON/OCR5已按独立审查实际集成，真63项normal/race通过，当前LinuxSDK/App闭口正在执行。Root真实Main第三轮确认一次attendance约3.02秒发出、凭据与成功历史正确，随后在测试helper误读已解包page处失败；连续三次夹具失败后停止重试，先独立复查剩余驱动，冷启/重置未执行。native14仍需原字段更新后保真与ID稳定，普通浏览器仍在work；7/23保持。生产NAS/远端main未变。下文历史检查点按原绑定保留。
@@ -18,7 +33,9 @@ AutoSignIn已真正合入工作树：core/cache/regex/TEMP/notice/timeout/order/
 日志F1分段漏洞的新4文件已通过作者和独立真实UTF8边界，但独审又发现F2：已知值先替换会破坏CSRF/token标签，使动态值漏出。最小顺序修复正在独立闭口；H7+P4尚未真正集成。OCR正在真实禁网验证，另有source-only请求首空白拒绝、结果JSON类型与浏览器引用要补；native rawURL/timeout以固定源码和实际DB/API可达性继续核实。Go标准HTTP对末尾OWS规整明确记为必要技术适配，原oracle和差异保留，禁止称逐字节等价。
 
 
-## Historical checkpoints (retain original bindings; not current state)
+
+### Earlier saved checkpoints
+
 
 Latest saved code: pluginSDK publicGET c26a189f/Origin6b0053 and host96f4c776 (includesnumericfdd9/Unicode24d8) are local only;7/23 remains unchanged. GET hostactualSDK/App canonical99nodes passes; standalone163normalpass/17explicitfixture skips. Current-six unusedGET gate cbe7 proves allnon-noteELFbytes equal, NOTwholeELF identity/newMain/UI;47currentassociations independently39e93 proposed thenRootguarded exactappliedf3c35/6948targetchecks, alloldfullbindings/raw/commands/env/binaries/fixtures preserved. OriginalSDK101 saved824180f is historical, not overwritten.
 

@@ -1,0 +1,22 @@
+{
+  "release_safe_now": true,
+  "performed_cleanup": false,
+  "retain_before_cleanup": [
+    "all raw stdout/stderr/observations/logs, original FAILs, commands/env/before-after input manifests",
+    "binary SHA/buildinfo/recipes and this independent review seal",
+    "one Root-selected current H/P binary pair only if next gate needs reuse"
+  ],
+  "owned_remote_root": "/home/admin/light-media-plugins-root-asi-owned-20261106-r5",
+  "marker": "light-media-plugins/root-asi-owned/20261106/owned-only",
+  "eligible": [
+    "r5 redundant local/remote driver executable",
+    "r5 synthetic runtime DB/auth keys/site data/owned base package and tmp directory after preserving existing sanitized evidence",
+    "r5 local/remote host+worker duplicates if Root retains no active reuse dependency"
+  ],
+  "guards": [
+    "verify exact own marker/path/no symlink before removal",
+    "match expected binary SHA and no process/open handle; do not touch production NAS containers/directories",
+    "leave frozen original evidence bytes and prior failure history intact"
+  ],
+  "note": "Root owns cleanup execution and can keep one current binary pair for immediate next tests; no test artifacts need remain for this review."
+}

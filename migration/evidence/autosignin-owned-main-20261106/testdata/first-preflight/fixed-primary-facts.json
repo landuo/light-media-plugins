@@ -1,0 +1,90 @@
+[
+  {
+    "repo": "/Users/accidia/projects/MoviePilot",
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/api/endpoints/site.py",
+    "sha256": "c352a148fd418f7eb6c91f490d8db4319c91c6ac2d68b920b35b525d1d8372a8",
+    "snippets": [
+      {
+        "lines": [
+          50,
+          86
+        ],
+        "text": "@router.post(\"/\", summary=\"新增站点\", response_model=schemas.Response)\nasync def add_site(\n    *,\n    db: AsyncSession = Depends(get_async_db),\n    site_in: schemas.Site,\n    _: User = Depends(get_current_active_manage_user_async),\n) -> Any:\n    \"\"\"\n    新增站点\n    \"\"\"\n    if not site_in.url:\n        return schemas.Response(success=False, message=\"站点地址不能为空\")\n    if SitesHelper().auth_level < 2:\n        return schemas.Response(\n            success=False, message=\"用户未通过认证，无法使用站点功能！\"\n        )\n    domain = StringUtils.get_url_domain(site_in.url)\n    site_info = await SitesHelper().async_get_indexer(domain)\n    if not site_info:\n        return schemas.Response(\n            success=False, message=\"该站点不支持，请检查站点域名是否正确\"\n        )\n    if await Site.async_get_by_domain(db, domain):\n        return schemas.Response(success=False, message=f\"{domain} 站点己存在\")\n    # 保存站点信息\n    site_in.domain = domain\n    # 校正地址格式\n    _scheme, _netloc = StringUtils.get_url_netloc(site_in.url)\n    site_in.url = f\"{_scheme}://{_netloc}/\"\n    site_in.name = site_info.get(\"name\")\n    site_in.id = None\n    site_in.public = 1 if site_info.get(\"public\") else 0\n    site = Site(**site_in.model_dump())\n    site.create(db)\n    # 通知站点更新\n    await eventmanager.async_send_event(EventType.SiteUpdated, {\"domain\": domain})\n    return schemas.Response(success=True)"
+      }
+    ]
+  },
+  {
+    "repo": "/Users/accidia/projects/MoviePilot",
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/chain/site.py",
+    "sha256": "06358a8fd070d46ab254015a2f8c7a34f07c35dd240bd2b3fef38cbf219252fa",
+    "snippets": [
+      {
+        "lines": [
+          377,
+          407
+        ],
+        "text": "    def __parse_favicon(url: str, cookie: str, ua: str) -> Tuple[str, Optional[str]]:\n        \"\"\"\n        解析站点favicon,返回base64 fav图标\n        :param url: 站点地址\n        :param cookie: Cookie\n        :param ua: User-Agent\n        :return:\n        \"\"\"\n        favicon_url = urljoin(url, \"favicon.ico\")\n        res = RequestUtils(cookies=cookie, timeout=30, ua=ua).get_res(url=url)\n        if res:\n            html_text = res.text\n        else:\n            logger.error(f\"获取站点页面失败：{url}\")\n            return favicon_url, None\n        html = etree.HTML(html_text)\n        try:\n            if StringUtils.is_valid_html_element(html):\n                fav_link = html.xpath('//head/link[contains(@rel, \"icon\")]/@href')\n                if fav_link:\n                    favicon_url = urljoin(url, fav_link[0])\n\n            res = RequestUtils(cookies=cookie, timeout=15, ua=ua).get_res(url=favicon_url)\n            if res:\n                return favicon_url, base64.b64encode(res.content).decode()\n            else:\n                logger.error(f\"获取站点图标失败：{favicon_url}\")\n        finally:\n            if html is not None:\n                del html\n        return favicon_url, None"
+      },
+      {
+        "lines": [
+          590,
+          630
+        ],
+        "text": "    @eventmanager.register(EventType.SiteUpdated)\n    def cache_site_icon(self, event: Event):\n        \"\"\"\n        缓存站点图标\n        \"\"\"\n        if not event:\n            return\n        event_data = event.event_data or {}\n        # 主域名\n        domain = event_data.get(\"domain\")\n        if not domain:\n            return\n        if str(domain).startswith(\"http\"):\n            domain = StringUtils.get_url_domain(domain)\n        # 站点信息\n        siteoper = SiteOper()\n        siteshelper = SitesHelper()\n        siteinfo = siteoper.get_by_domain(domain)\n        if not siteinfo:\n            logger.warn(f\"未维护站点 {domain} 信息！\")\n            return\n        # Cookie\n        cookie = siteinfo.cookie\n        # 索引器\n        indexer = siteshelper.get_indexer(domain)\n        if not indexer:\n            logger.warn(f\"站点 {domain} 索引器不存在！\")\n            return\n        # 查询站点图标\n        logger.info(f\"开始缓存站点 {indexer.get('name')} 图标 ...\")\n        icon_url, icon_base64 = self.__parse_favicon(url=indexer.get(\"domain\"),\n                                                     cookie=cookie,\n                                                     ua=settings.USER_AGENT)\n        if icon_url:\n            siteoper.update_icon(name=indexer.get(\"name\"),\n                                 domain=domain,\n                                 icon_url=icon_url,\n                                 icon_base64=icon_base64)\n            logger.info(f\"缓存站点 {indexer.get('name')} 图标成功\")\n        else:\n            logger.warn(f\"缓存站点 {indexer.get('name')} 图标失败\")"
+      },
+      {
+        "lines": [
+          654,
+          672
+        ],
+        "text": "    @eventmanager.register(EventType.SiteUpdated)\n    def cache_site_userdata(self, event: Event):\n        \"\"\"\n        缓存站点用户数据\n        \"\"\"\n        if not event:\n            return\n        event_data = event.event_data or {}\n        # 主域名\n        domain = event_data.get(\"domain\")\n        if not domain:\n            return\n        if str(domain).startswith(\"http\"):\n            domain = StringUtils.get_url_domain(domain)\n        indexer = SitesHelper().get_indexer(domain)\n        if not indexer:\n            return\n        # 刷新站点用户数据\n        self.refresh_userdata(site=indexer) or {}"
+      }
+    ]
+  },
+  {
+    "repo": "/Users/accidia/projects/MoviePilot",
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/api/endpoints/plugin.py",
+    "sha256": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+    "snippets": [
+      {
+        "lines": [
+          560,
+          573
+        ],
+        "text": "@router.get(\n    \"/reload/{plugin_id}\", summary=\"重新加载插件\", response_model=schemas.Response\n)\ndef reload_plugin(\n    plugin_id: str, _: User = Depends(get_current_active_superuser)\n) -> Any:\n    \"\"\"\n    重新加载插件\n    \"\"\"\n    # 重新加载插件\n    PluginManager().reload_plugin(plugin_id)\n    # 注册插件服务\n    register_plugin(plugin_id)\n    return schemas.Response(success=True)"
+      },
+      {
+        "lines": [
+          739,
+          761
+        ],
+        "text": "@router.get(\n    \"/reset/{plugin_id}\", summary=\"重置插件配置及数据\", response_model=schemas.Response\n)\ndef reset_plugin(\n    plugin_id: str, _: User = Depends(get_current_active_superuser)\n) -> Any:\n    \"\"\"\n    根据插件ID重置插件配置及数据\n    \"\"\"\n    plugin_manager = PluginManager()\n    eventmanager.send_event(\n        ChainEventType.PluginDataReset,\n        PluginDataResetEventData(plugin_id=plugin_id, reset_config=True, reset_data=True),\n    )\n    # 事件处理器需要运行中插件完成补偿；补偿后先停止插件，避免删除数据时仍有任务读写旧状态。\n    plugin_manager.stop(plugin_id)\n    # 删除配置\n    plugin_manager.delete_plugin_config(plugin_id, force=True)\n    # 删除插件所有数据\n    plugin_manager.delete_plugin_data(plugin_id, force=True)\n    # 重新加载插件\n    reload_plugin(plugin_id)\n    return schemas.Response(success=True)"
+      }
+    ]
+  },
+  {
+    "repo": "/Users/accidia/projects/MoviePilot",
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/core/plugin.py",
+    "sha256": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7",
+    "snippets": [
+      {
+        "lines": [
+          641,
+          651
+        ],
+        "text": "    def reload_plugin(self, plugin_id: str):\n        \"\"\"\n        将一个插件重新加载到内存\n        :param plugin_id: 插件ID\n        \"\"\"\n        # 先移除插件实例\n        self.stop(plugin_id)\n        # 重新加载\n        self.start(plugin_id)\n        # 广播事件\n        eventmanager.send_event(EventType.PluginReload, data={\"plugin_id\": plugin_id})"
+      },
+      {
+        "lines": [
+          1905,
+          1999
+        ],
+        "text": "    def clone_plugin(self, plugin_id: str, suffix: str, name: str, description: str,\n                     version: str = None, icon: str = None) -> Tuple[bool, str]:\n        \"\"\"\n        创建插件分身\n        :param plugin_id: 原插件ID\n        :param suffix: 分身后缀\n        :param name: 分身名称\n        :param description: 分身描述\n        :param version: 自定义版本号\n        :param icon: 自定义图标URL\n        :return: (是否成功, 错误信息)\n        \"\"\"\n        try:\n            # 验证参数\n            if not plugin_id or not suffix:\n                return False, \"插件ID和分身后缀不能为空\"\n\n            # 检查原插件是否存在\n            if plugin_id not in self._plugins:\n                return False, f\"原插件 {plugin_id} 不存在\"\n\n            # 生成分身插件ID\n            clone_id = f\"{plugin_id}{suffix.lower()}\"\n\n            # 检查分身插件是否已存在\n            if self.is_plugin_exists(clone_id):\n                return False, f\"分身插件 {clone_id} 已存在\"\n\n            # 获取原插件目录\n            original_plugin_dir = Path(settings.ROOT_PATH) / \"app\" / \"plugins\" / plugin_id.lower()\n            if not original_plugin_dir.exists():\n                return False, f\"原插件目录 {original_plugin_dir} 不存在\"\n\n            # 创建分身插件目录\n            clone_plugin_dir = Path(settings.ROOT_PATH) / \"app\" / \"plugins\" / clone_id.lower()\n\n            # 复制插件目录\n            import shutil\n            shutil.copytree(original_plugin_dir, clone_plugin_dir)\n            logger.info(f\"已复制插件目录：{original_plugin_dir} -> {clone_plugin_dir}\")\n\n            # 修改插件文件内容\n            success, msg = self._modify_plugin_files(\n                plugin_dir=clone_plugin_dir,\n                original_id=plugin_id,\n                suffix=suffix.lower(),\n                name=name,\n                description=description,\n                version=version,\n                icon=icon\n            )\n\n            if not success:\n                # 如果修改失败，清理已创建的目录\n                if clone_plugin_dir.exists():\n                    shutil.rmtree(clone_plugin_dir)\n                return False, msg\n\n            # 将分身插件添加到已安装列表\n            systemconfig = SystemConfigOper()\n            installed_plugins = systemconfig.get(SystemConfigKey.UserInstalledPlugins) or []\n            if clone_id not in installed_plugins:\n                installed_plugins.append(clone_id)\n                systemconfig.set(SystemConfigKey.UserInstalledPlugins, installed_plugins)\n\n            # 为分身插件创建初始配置（从原插件复制配置）\n            logger.info(f\"正在为分身插件 {clone_id} 创建初始配置...\")\n            original_config = self.get_plugin_config(plugin_id)\n            if original_config:\n                # 复制原插件配置作为分身插件的初始配置\n                clone_config = original_config.copy()\n                # 可以在这里修改一些默认值，比如禁用分身插件\n                # 默认禁用分身插件，让用户手动配置\n                clone_config['enable'] = False\n                clone_config['enabled'] = False\n                self.save_plugin_config(clone_id, clone_config, force=True)\n                logger.info(f\"已为分身插件 {clone_id} 设置初始配置\")\n            else:\n                logger.info(f\"原插件 {plugin_id} 没有配置，分身插件 {clone_id} 将使用默认配置\")\n\n            # 注册分身插件的API和服务\n            logger.info(f\"正在注册分身插件 {clone_id} ...\")\n            PluginManager().reload_plugin(clone_id)\n            # 确保分身插件正确初始化配置\n            if clone_id in self._running_plugins:\n                clone_instance = self._running_plugins[clone_id]\n                clone_config = self.get_plugin_config(clone_id)\n                if clone_config:\n                    logger.info(f\"正在为分身插件 {clone_id} 重新初始化配置...\")\n                    clone_instance.init_plugin(clone_config)\n                    logger.info(f\"分身插件 {clone_id} 配置重新初始化完成\")\n\n            logger.info(f\"插件分身 {clone_id} 创建成功\")\n            return True, clone_id\n"
+      }
+    ]
+  }
+]

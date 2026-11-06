@@ -1,0 +1,58 @@
+[
+  {
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/api/endpoints/plugin.py",
+    "sha256": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+    "snippets": [
+      {
+        "lines": [
+          576,
+          624
+        ],
+        "text": "@router.get(\"/install/{plugin_id}\", summary=\"安装插件\", response_model=schemas.Response)\nasync def install(\n    plugin_id: str,\n    repo_url: Optional[str] = \"\",\n    release_version: Optional[str] = None,\n    force: Optional[bool] = False,\n    _: User = Depends(get_current_active_superuser_async),\n) -> Any:\n    \"\"\"\n    安装插件\n    \"\"\"\n    # 已安装插件\n    install_plugins = SystemConfigOper().get(SystemConfigKey.UserInstalledPlugins) or []\n    # 首先检查插件是否已经存在，并且是否强制安装，否则只进行安装统计\n    plugin_helper = PluginHelper()\n    if not force and plugin_id in PluginManager().get_plugin_ids():\n        if repo_url:\n            compatible_message = await plugin_helper.async_get_plugin_system_version_check_message(\n                plugin_id, repo_url\n            )\n            if compatible_message:\n                return schemas.Response(success=False, message=compatible_message)\n        await MoviePilotServerHelper.async_install_plugin_reg(plugin_id=plugin_id, repo_url=repo_url)\n    else:\n        # 插件不存在或需要强制安装，下载安装并注册插件\n        if repo_url:\n            state, msg = await plugin_helper.async_install(\n                pid=plugin_id, repo_url=repo_url, release_version=release_version, force_install=force\n            )\n            # 安装失败则直接响应\n            if not state:\n                return schemas.Response(success=False, message=msg)\n            await MoviePilotServerHelper.async_install_plugin_reg(plugin_id=plugin_id, repo_url=repo_url)\n        else:\n            # repo_url 为空时，也直接响应\n            return schemas.Response(\n                success=False, message=\"没有传入仓库地址，无法正确安装插件，请检查配置\"\n            )\n    # 安装插件\n    if plugin_id not in install_plugins:\n        install_plugins.append(plugin_id)\n        # 保存设置\n        await SystemConfigOper().async_set(\n            SystemConfigKey.UserInstalledPlugins, install_plugins\n        )\n    # 重新加载插件\n    await run_in_threadpool(reload_plugin, plugin_id)\n    return schemas.Response(success=True)\n"
+      },
+      {
+        "lines": [
+          739,
+          761
+        ],
+        "text": "@router.get(\n    \"/reset/{plugin_id}\", summary=\"重置插件配置及数据\", response_model=schemas.Response\n)\ndef reset_plugin(\n    plugin_id: str, _: User = Depends(get_current_active_superuser)\n) -> Any:\n    \"\"\"\n    根据插件ID重置插件配置及数据\n    \"\"\"\n    plugin_manager = PluginManager()\n    eventmanager.send_event(\n        ChainEventType.PluginDataReset,\n        PluginDataResetEventData(plugin_id=plugin_id, reset_config=True, reset_data=True),\n    )\n    # 事件处理器需要运行中插件完成补偿；补偿后先停止插件，避免删除数据时仍有任务读写旧状态。\n    plugin_manager.stop(plugin_id)\n    # 删除配置\n    plugin_manager.delete_plugin_config(plugin_id, force=True)\n    # 删除插件所有数据\n    plugin_manager.delete_plugin_data(plugin_id, force=True)\n    # 重新加载插件\n    reload_plugin(plugin_id)\n    return schemas.Response(success=True)"
+      },
+      {
+        "lines": [
+          992,
+          1030
+        ],
+        "text": "@router.delete(\"/{plugin_id}\", summary=\"卸载插件\", response_model=schemas.Response)\ndef uninstall_plugin(\n    plugin_id: str, _: User = Depends(get_current_active_superuser)\n) -> Any:\n    \"\"\"\n    卸载插件\n    \"\"\"\n    config_oper = SystemConfigOper()\n    # 删除已安装信息\n    install_plugins = config_oper.get(SystemConfigKey.UserInstalledPlugins) or []\n    for plugin in install_plugins:\n        if plugin == plugin_id:\n            install_plugins.remove(plugin)\n            break\n    config_oper.set(SystemConfigKey.UserInstalledPlugins, install_plugins)\n    # 移除插件API\n    remove_plugin_api(plugin_id)\n    # 移除插件服务\n    Scheduler().remove_plugin_job(plugin_id)\n    # 判断是否为分身\n    plugin_manager = PluginManager()\n    plugin_class = plugin_manager.plugins.get(plugin_id)\n    if getattr(plugin_class, \"is_clone\", False):\n        # 如果是分身插件，则删除分身数据和配置\n        plugin_manager.delete_plugin_config(plugin_id)\n        plugin_manager.delete_plugin_data(plugin_id)\n        # 删除分身文件\n        plugin_base_dir = settings.ROOT_PATH / \"app\" / \"plugins\" / plugin_id.lower()\n        if plugin_base_dir.exists():\n            try:\n                shutil.rmtree(plugin_base_dir)\n                plugin_manager.plugins.pop(plugin_id, None)\n            except Exception as e:\n                logger.error(f\"删除插件分身目录 {plugin_base_dir} 失败: {str(e)}\")\n    # 从插件文件夹中移除该插件\n    _remove_plugin_from_folders(plugin_id)\n    # 移除插件\n    plugin_manager.remove_plugin(plugin_id)\n    return schemas.Response(success=True)"
+      }
+    ]
+  },
+  {
+    "commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "path": "app/core/plugin.py",
+    "sha256": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7",
+    "snippets": [
+      {
+        "lines": [
+          156,
+          190
+        ],
+        "text": "    def stop(self, pid: Optional[str] = None):\n        \"\"\"\n        停止插件服务\n        :param pid: 插件ID，为空停止所有插件\n        \"\"\"\n        # 停止插件\n        if pid:\n            logger.info(f\"正在停止插件 {pid}...\")\n            plugin_obj = self._running_plugins.get(pid)\n            if not plugin_obj:\n                # 指定插件可能在上次加载时已导入模块但初始化失败，此时不会进入运行态列表。\n                # 仍需继续清理类缓存和 sys.modules，避免后续热重载反复复用旧模块。\n                logger.debug(f\"插件 {pid} 不存在或未加载\")\n                plugins = {}\n            else:\n                plugins = {pid: plugin_obj}\n        else:\n            logger.info(\"正在停止所有插件...\")\n            plugins = self._running_plugins\n        for plugin_id, plugin in plugins.items():\n            eventmanager.disable_event_handler(type(plugin))\n            self.__stop_plugin(plugin)\n        # 清空对象\n        if pid:\n            # 清空指定插件\n            self._plugins.pop(pid, None)\n            self._running_plugins.pop(pid, None)\n            # 清除插件模块缓存，包括所有子模块\n            self._clear_plugin_modules(pid)\n        else:\n            # 清空\n            self._plugins = {}\n            self._running_plugins = {}\n            # 清除所有插件模块缓存\n            self._clear_plugin_modules()"
+      },
+      {
+        "lines": [
+          634,
+          651
+        ],
+        "text": "    def remove_plugin(self, plugin_id: str):\n        \"\"\"\n        从内存中移除一个插件\n        :param plugin_id: 插件ID\n        \"\"\"\n        self.stop(plugin_id)\n\n    def reload_plugin(self, plugin_id: str):\n        \"\"\"\n        将一个插件重新加载到内存\n        :param plugin_id: 插件ID\n        \"\"\"\n        # 先移除插件实例\n        self.stop(plugin_id)\n        # 重新加载\n        self.start(plugin_id)\n        # 广播事件\n        eventmanager.send_event(EventType.PluginReload, data={\"plugin_id\": plugin_id})"
+      },
+      {
+        "lines": [
+          1905,
+          1999
+        ],
+        "text": "    def clone_plugin(self, plugin_id: str, suffix: str, name: str, description: str,\n                     version: str = None, icon: str = None) -> Tuple[bool, str]:\n        \"\"\"\n        创建插件分身\n        :param plugin_id: 原插件ID\n        :param suffix: 分身后缀\n        :param name: 分身名称\n        :param description: 分身描述\n        :param version: 自定义版本号\n        :param icon: 自定义图标URL\n        :return: (是否成功, 错误信息)\n        \"\"\"\n        try:\n            # 验证参数\n            if not plugin_id or not suffix:\n                return False, \"插件ID和分身后缀不能为空\"\n\n            # 检查原插件是否存在\n            if plugin_id not in self._plugins:\n                return False, f\"原插件 {plugin_id} 不存在\"\n\n            # 生成分身插件ID\n            clone_id = f\"{plugin_id}{suffix.lower()}\"\n\n            # 检查分身插件是否已存在\n            if self.is_plugin_exists(clone_id):\n                return False, f\"分身插件 {clone_id} 已存在\"\n\n            # 获取原插件目录\n            original_plugin_dir = Path(settings.ROOT_PATH) / \"app\" / \"plugins\" / plugin_id.lower()\n            if not original_plugin_dir.exists():\n                return False, f\"原插件目录 {original_plugin_dir} 不存在\"\n\n            # 创建分身插件目录\n            clone_plugin_dir = Path(settings.ROOT_PATH) / \"app\" / \"plugins\" / clone_id.lower()\n\n            # 复制插件目录\n            import shutil\n            shutil.copytree(original_plugin_dir, clone_plugin_dir)\n            logger.info(f\"已复制插件目录：{original_plugin_dir} -> {clone_plugin_dir}\")\n\n            # 修改插件文件内容\n            success, msg = self._modify_plugin_files(\n                plugin_dir=clone_plugin_dir,\n                original_id=plugin_id,\n                suffix=suffix.lower(),\n                name=name,\n                description=description,\n                version=version,\n                icon=icon\n            )\n\n            if not success:\n                # 如果修改失败，清理已创建的目录\n                if clone_plugin_dir.exists():\n                    shutil.rmtree(clone_plugin_dir)\n                return False, msg\n\n            # 将分身插件添加到已安装列表\n            systemconfig = SystemConfigOper()\n            installed_plugins = systemconfig.get(SystemConfigKey.UserInstalledPlugins) or []\n            if clone_id not in installed_plugins:\n                installed_plugins.append(clone_id)\n                systemconfig.set(SystemConfigKey.UserInstalledPlugins, installed_plugins)\n\n            # 为分身插件创建初始配置（从原插件复制配置）\n            logger.info(f\"正在为分身插件 {clone_id} 创建初始配置...\")\n            original_config = self.get_plugin_config(plugin_id)\n            if original_config:\n                # 复制原插件配置作为分身插件的初始配置\n                clone_config = original_config.copy()\n                # 可以在这里修改一些默认值，比如禁用分身插件\n                # 默认禁用分身插件，让用户手动配置\n                clone_config['enable'] = False\n                clone_config['enabled'] = False\n                self.save_plugin_config(clone_id, clone_config, force=True)\n                logger.info(f\"已为分身插件 {clone_id} 设置初始配置\")\n            else:\n                logger.info(f\"原插件 {plugin_id} 没有配置，分身插件 {clone_id} 将使用默认配置\")\n\n            # 注册分身插件的API和服务\n            logger.info(f\"正在注册分身插件 {clone_id} ...\")\n            PluginManager().reload_plugin(clone_id)\n            # 确保分身插件正确初始化配置\n            if clone_id in self._running_plugins:\n                clone_instance = self._running_plugins[clone_id]\n                clone_config = self.get_plugin_config(clone_id)\n                if clone_config:\n                    logger.info(f\"正在为分身插件 {clone_id} 重新初始化配置...\")\n                    clone_instance.init_plugin(clone_config)\n                    logger.info(f\"分身插件 {clone_id} 配置重新初始化完成\")\n\n            logger.info(f\"插件分身 {clone_id} 创建成功\")\n            return True, clone_id\n"
+      }
+    ]
+  }
+]

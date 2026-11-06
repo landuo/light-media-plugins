@@ -1,0 +1,10 @@
+/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106/driver: go1.26.2
+	path	github.com/landuo/light-media-plugins/tests/integration.test
+	mod	github.com/landuo/light-media-plugins	(devel)	
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-ldflags="-s -w"
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

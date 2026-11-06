@@ -1,0 +1,367 @@
+{
+  "actual_command": {
+    "argv": [
+      "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/bundle/bin/main-driver-linux.test",
+      "-test.v",
+      "-test.timeout=3m",
+      "-test.run=^TestAutoSignInActualMainOwnedSiteOnceAndClone$"
+    ],
+    "exit": 0,
+    "seconds": 12.652148080058396,
+    "env": {
+      "TMPDIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/tmp",
+      "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/bundle/bin/host-main-linux",
+      "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/runtime",
+      "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/bundle/bin/auto-sign-in-linux",
+      "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/bundle/source/form.json",
+      "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4/bundle/source/api-oracle.json"
+    },
+    "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+    "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+  },
+  "main_starts": [
+    {
+      "at": "2026-11-06T13:05:47.896756997Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:43733",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 1,
+        "pid": 2677045
+      }
+    },
+    {
+      "at": "2026-11-06T13:05:54.749406429Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:43733",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 2,
+        "pid": 2677101
+      }
+    }
+  ],
+  "main_exits": [
+    {
+      "at": "2026-11-06T13:05:53.234210462Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2677045
+      }
+    },
+    {
+      "at": "2026-11-06T13:05:58.88895144Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2677101
+      }
+    }
+  ],
+  "worker_pid_snapshots_in_r4": 0,
+  "successful_and_empty_pages": [
+    {
+      "at": "2026-11-06T13:05:53.16365706Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "empty_exact": false,
+      "site_rows": [
+        {
+          "chips": [
+            {
+              "component": "VChip",
+              "props": {
+                "color": "success",
+                "prepend-icon": "mdi-check-circle",
+                "size": "x-small",
+                "variant": "tonal"
+              },
+              "text": "签到成功"
+            }
+          ],
+          "first_day": [
+            {
+              "class": "autosignin-dot autosignin-dot--success",
+              "title": "11月6日 签到成功"
+            }
+          ],
+          "records": [
+            "1 条记录"
+          ]
+        },
+        {
+          "chips": [
+            {
+              "component": "VChip",
+              "props": {
+                "color": "success",
+                "prepend-icon": "mdi-check-circle",
+                "size": "x-small",
+                "variant": "tonal"
+              },
+              "text": "登录成功"
+            }
+          ],
+          "first_day": [
+            {
+              "class": "autosignin-dot autosignin-dot--success",
+              "title": "11月6日 登录成功"
+            }
+          ],
+          "records": [
+            "1 条记录"
+          ]
+        }
+      ],
+      "stats": [
+        [
+          "mdi-calendar-check",
+          "今日签到",
+          "1/1",
+          "失败 0 · 未确认 0 · 未记录 0"
+        ],
+        [
+          "mdi-alert-circle-outline",
+          "签到未完成",
+          "0",
+          "失败 0 · 未确认 0"
+        ],
+        [
+          "mdi-login-variant",
+          "今日登录",
+          "1/1",
+          "异常 0 · 未记录 0"
+        ],
+        [
+          "mdi-history",
+          "历史范围",
+          "14天",
+          "矩阵显示最近7天"
+        ]
+      ]
+    },
+    {
+      "at": "2026-11-06T13:05:53.207490489Z",
+      "path": "/api/plugins/AutoSignIncopy/page",
+      "empty_exact": true,
+      "site_rows": [],
+      "stats": []
+    },
+    {
+      "at": "2026-11-06T13:05:54.924849472Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "empty_exact": false,
+      "site_rows": [
+        {
+          "chips": [
+            {
+              "component": "VChip",
+              "props": {
+                "color": "success",
+                "prepend-icon": "mdi-check-circle",
+                "size": "x-small",
+                "variant": "tonal"
+              },
+              "text": "签到成功"
+            }
+          ],
+          "first_day": [
+            {
+              "class": "autosignin-dot autosignin-dot--success",
+              "title": "11月6日 签到成功"
+            }
+          ],
+          "records": [
+            "1 条记录"
+          ]
+        },
+        {
+          "chips": [
+            {
+              "component": "VChip",
+              "props": {
+                "color": "success",
+                "prepend-icon": "mdi-check-circle",
+                "size": "x-small",
+                "variant": "tonal"
+              },
+              "text": "登录成功"
+            }
+          ],
+          "first_day": [
+            {
+              "class": "autosignin-dot autosignin-dot--success",
+              "title": "11月6日 登录成功"
+            }
+          ],
+          "records": [
+            "1 条记录"
+          ]
+        }
+      ],
+      "stats": [
+        [
+          "mdi-calendar-check",
+          "今日签到",
+          "1/1",
+          "失败 0 · 未确认 0 · 未记录 0"
+        ],
+        [
+          "mdi-alert-circle-outline",
+          "签到未完成",
+          "0",
+          "失败 0 · 未确认 0"
+        ],
+        [
+          "mdi-login-variant",
+          "今日登录",
+          "1/1",
+          "异常 0 · 未记录 0"
+        ],
+        [
+          "mdi-history",
+          "历史范围",
+          "14天",
+          "矩阵显示最近7天"
+        ]
+      ]
+    },
+    {
+      "at": "2026-11-06T13:05:58.859013842Z",
+      "path": "/api/plugins/AutoSignIn/page",
+      "empty_exact": true,
+      "site_rows": [],
+      "stats": []
+    }
+  ],
+  "all_physical_peer": {
+    "at": "2026-11-06T13:05:58.881541269Z",
+    "event": "owned_peer_observations",
+    "value": [
+      {
+        "arrived_at": "2026-11-06T21:05:49.792150209+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:05:49.797320821+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/favicon.ico",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:05:49.803921931+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "Owned-ASI/1"
+      },
+      {
+        "arrived_at": "2026-11-06T21:05:52.830663155+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      }
+    ]
+  },
+  "completion_record": {
+    "at": "2026-11-06T13:05:58.880475382Z",
+    "event": "asi_owned_site_once_complete",
+    "value": {
+      "attendance_delay_seconds": 3.024286912,
+      "cold_no_replay_observation_ms": 3500,
+      "elapsed_seconds": 9.074093493,
+      "physical_paths": [
+        "/attendance.php"
+      ],
+      "scope": "owned protocol peer, trueMain/once/history/clone/cold/no-replay/reset; not realPT/browser/OCR or completeASI",
+      "source_id": 1,
+      "worker_sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918"
+    }
+  },
+  "post_main_stop_owned_metadata": {
+    "at": "2026-11-06T13:09:26.797588+00:00",
+    "scope": "read-only post-r4 own-root metadata; no file or DB payloads exported; after Main stop, not per-uninstall process evidence",
+    "root": "/home/admin/light-media-plugins-root-asi-owned-20261106-r4",
+    "sqlite_uri_mode": "ro",
+    "sqlite_query_only": true,
+    "installations": [
+      [
+        "AutoSignIn",
+        "AutoSignIn",
+        "2.9.15",
+        0
+      ],
+      [
+        "AutoSignIncopy",
+        "AutoSignIn",
+        "2.9.15",
+        0
+      ]
+    ],
+    "plugin_value_counts": [],
+    "code": {
+      "AutoSignIn": {
+        "exists": true,
+        "is_dir": true,
+        "is_symlink": false,
+        "mode": "0o700",
+        "top_entries": [
+          ".acquired.json",
+          "auto-sign-in"
+        ]
+      },
+      "AutoSignIncopy": {
+        "exists": false
+      }
+    },
+    "owned_executable_processes": [],
+    "recorded_main_pid_exists": {
+      "2677045": false,
+      "2677101": false
+    }
+  },
+  "uninstall_ack": [
+    {
+      "at": "2026-11-06T13:05:58.87255768Z",
+      "event": "http",
+      "value": {
+        "method": "POST",
+        "path": "/api/plugins/AutoSignIncopy/uninstall",
+        "request": {},
+        "response": {
+          "data": {
+            "data_retained": false,
+            "success": true,
+            "uninstalled": true
+          },
+          "request_id": "req_czBXFDwL7hH7Au2btMvgCJEb"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T13:05:58.879589395Z",
+      "event": "http",
+      "value": {
+        "method": "POST",
+        "path": "/api/plugins/AutoSignIn/uninstall",
+        "request": {},
+        "response": {
+          "data": {
+            "data_retained": true,
+            "success": true,
+            "uninstalled": true
+          },
+          "request_id": "req_MB0VgbxK0HaOrRchOl0C29-M"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "scope": "finite native Main synthetic generic attendance/once/same-day visible history/empty-clone/cold/page reset; no full AutoSignIn/PID chronology/code-byte data equivalence"
+}
