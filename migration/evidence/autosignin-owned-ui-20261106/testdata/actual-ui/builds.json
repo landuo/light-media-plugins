@@ -1,0 +1,30 @@
+[
+  {
+    "name": "driver",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/driver-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/driver",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 1.302083875052631,
+    "inputs": 4492,
+    "stable": true,
+    "sha256": "8c35277a0e61623801e762b55aeab1e5de8b4d214b267738ab38bcb64e21f669",
+    "production_overlay": false
+  }
+]

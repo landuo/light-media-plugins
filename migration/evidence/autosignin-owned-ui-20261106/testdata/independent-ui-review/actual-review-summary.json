@@ -1,0 +1,1488 @@
+{
+  "command": {
+    "argv": [
+      "/home/admin/light-media-plugins-root-asi-ui-20261106/bundle/bin/main-driver-linux.test",
+      "-test.v",
+      "-test.timeout=15m",
+      "-test.run=^TestAutoSignInActualMainBrowserAndPopulatedClone$"
+    ],
+    "exit": 0,
+    "seconds": 595.2132545770146,
+    "env": {
+      "TMPDIR": "/home/admin/light-media-plugins-root-asi-ui-20261106/tmp",
+      "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-ui-20261106/bundle/bin/host-main-linux",
+      "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-ui-20261106/runtime",
+      "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-ui-20261106/bundle/bin/auto-sign-in-linux",
+      "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-ui-20261106/bundle/source/form.json",
+      "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-ui-20261106/bundle/source/api-oracle.json"
+    },
+    "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+    "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+  },
+  "driver": {
+    "name": "driver",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/driver-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/driver",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 1.302083875052631,
+    "inputs": 4492,
+    "stable": true,
+    "sha256": "8c35277a0e61623801e762b55aeab1e5de8b4d214b267738ab38bcb64e21f669",
+    "production_overlay": false
+  },
+  "artifact_bom": {
+    "bin/host-main-linux": {
+      "sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+      "bytes": 57106594
+    },
+    "bin/auto-sign-in-linux": {
+      "sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918",
+      "bytes": 12783778
+    },
+    "bin/main-driver-linux.test": {
+      "sha256": "8c35277a0e61623801e762b55aeab1e5de8b4d214b267738ab38bcb64e21f669",
+      "bytes": 9683106
+    },
+    "source/form.json": {
+      "sha256": "ee966c497f70b49c36718ba959e59ebffd73bec586c7788d5cfed3c5317413bb",
+      "bytes": 8338
+    },
+    "source/api-oracle.json": {
+      "sha256": "e7c756dde6796f5e840600e61b878e156d9d5aa9e71910dcf31b6b7dc65495a3",
+      "bytes": 18304
+    }
+  },
+  "main_starts": [
+    {
+      "at": "2026-11-06T13:51:28.856200781Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:36320",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 1,
+        "pid": 2704256
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:17.856175888Z",
+      "event": "main_start",
+      "value": {
+        "base": "http://127.0.0.1:36320",
+        "binary_sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+        "generation": 2,
+        "pid": 2709685
+      }
+    }
+  ],
+  "main_exits": [
+    {
+      "at": "2026-11-06T14:01:16.197222499Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2704256
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.740669477Z",
+      "event": "main_exit",
+      "value": {
+        "error": "<nil>",
+        "pid": 2709685
+      }
+    }
+  ],
+  "worker_pid_stages": [
+    {
+      "at": "2026-11-06T13:51:30.888368787Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2704276,
+        "AutoSignIncopy": 2704312
+      }
+    },
+    {
+      "at": "2026-11-06T13:51:30.96513574Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2704276,
+        "AutoSignIncopy": 2704312
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:16.173248379Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2704276,
+        "AutoSignIncopy": 2704312
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:16.222155616Z",
+      "event": "pui_worker_pids",
+      "value": {}
+    },
+    {
+      "at": "2026-11-06T14:01:17.974600444Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2709695,
+        "AutoSignIncopy": 2709703
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:21.531624624Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIncopy": 2709703
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.173823747Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2709756,
+        "AutoSignIncopy": 2709703
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.585156789Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2709763,
+        "AutoSignIncopy": 2709703
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.72154455Z",
+      "event": "pui_worker_pids",
+      "value": {
+        "AutoSignIn": 2709763
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.733060375Z",
+      "event": "pui_worker_pids",
+      "value": {}
+    }
+  ],
+  "GUI_ready": {
+    "at": "2026-11-06T13:51:34.260261157Z",
+    "event": "asi_UI_ready",
+    "value": {
+      "private_ready_file": "/home/admin/light-media-plugins-root-asi-ui-20261106/runtime/ui-ready.json",
+      "scope": "actualbrowser required; syntheticlogin, no production"
+    }
+  },
+  "GUI_saved": {
+    "at": "2026-11-06T14:01:16.174148588Z",
+    "event": "asi_GUI_saved_and_clone_once",
+    "value": {
+      "attendance_count": 2,
+      "base_cron": "58 23 31 12 *",
+      "clone_cron": "57 23 31 12 *",
+      "clone_enabled": false,
+      "clone_history": "actualsuccess"
+    }
+  },
+  "GUI_config_reads": [
+    {
+      "at": "2026-11-06T14:01:16.124406446Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "58 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_gKhU1UISGWWzKo1wlTGp3l72"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:16.128358718Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIncopy",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "57 23 31 12 *",
+            "enabled": false,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 5,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_yUAAq5Q0_okKt8je7suSPvsO"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:17.976900082Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "58 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_Z63u1mu6fMJ8dENcCuOdfd5O"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.196076154Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "58 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_GYIC3CcZxWByd23NQrXWVGsQ"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.658952461Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIn",
+        "request": null,
+        "response": {
+          "data": {},
+          "request_id": "req_t53o6zgFrzX6LMEBbYrXuTf9"
+        },
+        "status": 200
+      }
+    },
+    {
+      "at": "2026-11-06T14:01:22.66127149Z",
+      "event": "http",
+      "value": {
+        "method": "GET",
+        "path": "/api/plugins/AutoSignIncopy",
+        "request": null,
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "57 23 31 12 *",
+            "enabled": false,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 5,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_VkPUC75w0NP5XOF0ddvdbRZP"
+        },
+        "status": 200
+      }
+    }
+  ],
+  "post_base_reset_populated_clone_page": {
+    "at": "2026-11-06T14:01:22.702276295Z",
+    "event": "http",
+    "value": {
+      "method": "GET",
+      "path": "/api/plugins/AutoSignIncopy/page",
+      "request": null,
+      "response": {
+        "data": {
+          "page": [
+            {
+              "component": "style",
+              "text": "\n                .autosignin-page {\n                    display: flex;\n                    flex-direction: column;\n                    gap: 12px;\n                }\n                .autosignin-summary {\n                    display: grid;\n                    grid-template-columns: repeat(4, minmax(0, 1fr));\n                    gap: 8px;\n                }\n                .autosignin-stat {\n                    min-width: 0;\n                    padding: 10px 12px;\n                }\n                .autosignin-stat__head {\n                    display: flex;\n                    align-items: center;\n                    gap: 6px;\n                    min-width: 0;\n                    color: rgba(var(--v-theme-on-surface), var(--v-medium-emphasis-opacity));\n                    font-size: .75rem;\n                    font-weight: 600;\n                    line-height: 1.25;\n                    overflow: hidden;\n                    text-overflow: ellipsis;\n                    white-space: nowrap;\n                }\n                .autosignin-stat__head .v-icon {\n                    color: rgb(var(--app-card-accent-rgb));\n                }\n                .autosignin-stat__value {\n                    margin-top: 8px;\n                    font-size: 1.25rem;\n                    font-weight: 700;\n                    line-height: 1;\n                    letter-spacing: 0;\n                }\n                .autosignin-stat__meta {\n                    margin-top: 4px;\n                    color: rgba(var(--v-theme-on-surface), .56);\n                    font-size: .72rem;\n                    line-height: 1.25;\n                    white-space: nowrap;\n                    overflow: hidden;\n                    text-overflow: ellipsis;\n                }\n                .autosignin-section {\n                    min-width: 0;\n                }\n                .autosignin-section-head {\n                    display: flex;\n                    align-items: center;\n                    gap: 8px;\n                    min-height: 30px;\n                    margin-bottom: 6px;\n                }\n                .autosignin-section-title {\n                    font-size: .95rem;\n                    font-weight: 700;\n                    letter-spacing: 0;\n                }\n                .autosignin-table-wrap {\n                    overflow-x: auto;\n                    border: 1px solid rgba(var(--v-theme-on-surface), .08);\n                    border-radius: 8px;\n                }\n                .autosignin-table {\n                    min-width: 620px;\n                }\n                html[data-theme=\"transparent\"] .autosignin-table-wrap,\n                .v-theme--transparent .autosignin-table-wrap {\n                    backdrop-filter: blur(var(--transparent-blur, 10px));\n                    background-color: rgba(var(--v-theme-surface), 0) !important;\n                }\n                html[data-theme=\"transparent\"] .autosignin-table,\n                html[data-theme=\"transparent\"] .autosignin-table .v-table__wrapper,\n                html[data-theme=\"transparent\"] .autosignin-table table,\n                html[data-theme=\"transparent\"] .autosignin-table tbody tr,\n                .v-theme--transparent .autosignin-table,\n                .v-theme--transparent .autosignin-table .v-table__wrapper,\n                .v-theme--transparent .autosignin-table table,\n                .v-theme--transparent .autosignin-table tbody tr {\n                    background-color: transparent !important;\n                }\n                .autosignin-table th {\n                    height: 34px !important;\n                    padding: 0 8px !important;\n                    color: rgba(var(--v-theme-on-surface), .62);\n                    font-size: .75rem;\n                    font-weight: 600 !important;\n                    white-space: nowrap;\n                }\n                .autosignin-table td {\n                    height: 38px !important;\n                    padding: 0 8px !important;\n                    vertical-align: middle;\n                }\n                .autosignin-table tbody tr:last-child td {\n                    border-bottom: 0 !important;\n                }\n                .autosignin-site-name {\n                    max-width: 160px;\n                    overflow: hidden;\n                    text-overflow: ellipsis;\n                    white-space: nowrap;\n                    font-weight: 600;\n                    line-height: 1.2;\n                }\n                .autosignin-site-meta {\n                    margin-top: 2px;\n                    color: rgba(var(--v-theme-on-surface), .52);\n                    font-size: .68rem;\n                    line-height: 1.1;\n                }\n                .autosignin-status-cell {\n                    min-width: 92px;\n                }\n                .autosignin-dot-cell {\n                    width: 40px;\n                    text-align: center;\n                }\n                .autosignin-dot {\n                    width: 22px;\n                    height: 22px;\n                    display: inline-flex;\n                    align-items: center;\n                    justify-content: center;\n                    border-radius: 999px;\n                    border: 1px solid transparent;\n                    font-weight: 700;\n                }\n                .autosignin-dot .v-icon {\n                    opacity: 1;\n                }\n                .autosignin-dot--success {\n                    color: rgb(var(--v-theme-success));\n                    background: rgba(var(--v-theme-success), .24);\n                    border-color: rgba(var(--v-theme-success), .38);\n                }\n                .autosignin-dot--warning {\n                    color: rgb(var(--v-theme-warning));\n                    background: rgba(var(--v-theme-warning), .30);\n                    border-color: rgba(var(--v-theme-warning), .48);\n                }\n                .autosignin-dot--error {\n                    color: rgb(var(--v-theme-error));\n                    background: rgba(var(--v-theme-error), .26);\n                    border-color: rgba(var(--v-theme-error), .42);\n                }\n                .autosignin-dot--none {\n                    color: rgba(var(--v-theme-on-surface), .68);\n                    background: rgba(var(--v-theme-on-surface), .14);\n                    border-color: rgba(var(--v-theme-on-surface), .22);\n                }\n                @media (max-width: 720px) {\n                    .autosignin-page {\n                        gap: 10px;\n                    }\n                    .autosignin-summary {\n                        grid-template-columns: repeat(2, minmax(0, 1fr));\n                    }\n                    .autosignin-stat {\n                        padding: 8px 10px;\n                    }\n                    .autosignin-stat__value {\n                        font-size: 1.08rem;\n                    }\n                    .autosignin-table {\n                        min-width: 560px;\n                    }\n                    .autosignin-table th,\n                    .autosignin-table td {\n                        padding-left: 6px !important;\n                        padding-right: 6px !important;\n                    }\n                    .autosignin-site-name {\n                        max-width: 126px;\n                    }\n                    .autosignin-dot-cell {\n                        width: 34px;\n                    }\n                }\n                "
+            },
+            {
+              "component": "div",
+              "content": [
+                {
+                  "component": "div",
+                  "content": [
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "div",
+                          "content": [
+                            {
+                              "component": "VIcon",
+                              "props": {
+                                "color": "success",
+                                "size": "x-small"
+                              },
+                              "text": "mdi-calendar-check"
+                            },
+                            {
+                              "component": "span",
+                              "text": "今日签到"
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-stat__head"
+                          }
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__value text-success"
+                          },
+                          "text": "1/1"
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__meta"
+                          },
+                          "text": "失败 0 · 未确认 0 · 未记录 0"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-stat app-card-shell app-card-colorful",
+                        "style": "--app-card-accent-rgb: var(--v-theme-success);"
+                      }
+                    },
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "div",
+                          "content": [
+                            {
+                              "component": "VIcon",
+                              "props": {
+                                "color": "warning",
+                                "size": "x-small"
+                              },
+                              "text": "mdi-alert-circle-outline"
+                            },
+                            {
+                              "component": "span",
+                              "text": "签到未完成"
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-stat__head"
+                          }
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__value text-warning"
+                          },
+                          "text": "0"
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__meta"
+                          },
+                          "text": "失败 0 · 未确认 0"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-stat app-card-shell app-card-colorful",
+                        "style": "--app-card-accent-rgb: var(--v-theme-warning);"
+                      }
+                    },
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "div",
+                          "content": [
+                            {
+                              "component": "VIcon",
+                              "props": {
+                                "color": "success",
+                                "size": "x-small"
+                              },
+                              "text": "mdi-login-variant"
+                            },
+                            {
+                              "component": "span",
+                              "text": "今日登录"
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-stat__head"
+                          }
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__value text-success"
+                          },
+                          "text": "1/1"
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__meta"
+                          },
+                          "text": "异常 0 · 未记录 0"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-stat app-card-shell app-card-colorful",
+                        "style": "--app-card-accent-rgb: var(--v-theme-success);"
+                      }
+                    },
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "div",
+                          "content": [
+                            {
+                              "component": "VIcon",
+                              "props": {
+                                "color": "info",
+                                "size": "x-small"
+                              },
+                              "text": "mdi-history"
+                            },
+                            {
+                              "component": "span",
+                              "text": "历史范围"
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-stat__head"
+                          }
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__value text-info"
+                          },
+                          "text": "14天"
+                        },
+                        {
+                          "component": "div",
+                          "props": {
+                            "class": "autosignin-stat__meta"
+                          },
+                          "text": "矩阵显示最近7天"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-stat app-card-shell app-card-colorful",
+                        "style": "--app-card-accent-rgb: var(--v-theme-info);"
+                      }
+                    }
+                  ],
+                  "props": {
+                    "class": "autosignin-summary"
+                  }
+                },
+                {
+                  "component": "div",
+                  "content": [
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "VIcon",
+                          "props": {
+                            "color": "primary",
+                            "size": "small"
+                          },
+                          "text": "mdi-calendar-check"
+                        },
+                        {
+                          "component": "span",
+                          "props": {
+                            "class": "autosignin-section-title"
+                          },
+                          "text": "签到状态"
+                        },
+                        {
+                          "component": "VSpacer"
+                        },
+                        {
+                          "component": "VChip",
+                          "props": {
+                            "color": "primary",
+                            "size": "x-small",
+                            "variant": "tonal"
+                          },
+                          "text": "1 个站点"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-section-head"
+                      }
+                    },
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "VTable",
+                          "content": [
+                            {
+                              "component": "thead",
+                              "content": [
+                                {
+                                  "component": "tr",
+                                  "content": [
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-start"
+                                      },
+                                      "text": "站点"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-start"
+                                      },
+                                      "text": "今日"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/6"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/5"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/4"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/3"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/2"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/1"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "10/31"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "component": "tbody",
+                              "content": [
+                                {
+                                  "component": "tr",
+                                  "content": [
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "div",
+                                          "props": {
+                                            "class": "autosignin-site-name",
+                                            "title": "Owned ASI source peer"
+                                          },
+                                          "text": "Owned ASI source peer"
+                                        },
+                                        {
+                                          "component": "div",
+                                          "props": {
+                                            "class": "autosignin-site-meta"
+                                          },
+                                          "text": "1 条记录"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "VChip",
+                                          "props": {
+                                            "color": "success",
+                                            "prepend-icon": "mdi-check-circle",
+                                            "size": "x-small",
+                                            "variant": "tonal"
+                                          },
+                                          "text": "签到成功"
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-status-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-check-circle"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--success",
+                                            "title": "11月6日 签到成功"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月5日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月4日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月3日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月2日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月1日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "10月31日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-table",
+                            "density": "compact",
+                            "hover": true
+                          }
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-table-wrap"
+                      }
+                    }
+                  ],
+                  "props": {
+                    "class": "autosignin-section"
+                  }
+                },
+                {
+                  "component": "div",
+                  "content": [
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "VIcon",
+                          "props": {
+                            "color": "primary",
+                            "size": "small"
+                          },
+                          "text": "mdi-login-variant"
+                        },
+                        {
+                          "component": "span",
+                          "props": {
+                            "class": "autosignin-section-title"
+                          },
+                          "text": "登录状态"
+                        },
+                        {
+                          "component": "VSpacer"
+                        },
+                        {
+                          "component": "VChip",
+                          "props": {
+                            "color": "primary",
+                            "size": "x-small",
+                            "variant": "tonal"
+                          },
+                          "text": "1 个站点"
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-section-head"
+                      }
+                    },
+                    {
+                      "component": "div",
+                      "content": [
+                        {
+                          "component": "VTable",
+                          "content": [
+                            {
+                              "component": "thead",
+                              "content": [
+                                {
+                                  "component": "tr",
+                                  "content": [
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-start"
+                                      },
+                                      "text": "站点"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-start"
+                                      },
+                                      "text": "今日"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/6"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/5"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/4"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/3"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/2"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "11/1"
+                                    },
+                                    {
+                                      "component": "th",
+                                      "props": {
+                                        "class": "text-center"
+                                      },
+                                      "text": "10/31"
+                                    }
+                                  ]
+                                }
+                              ]
+                            },
+                            {
+                              "component": "tbody",
+                              "content": [
+                                {
+                                  "component": "tr",
+                                  "content": [
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "div",
+                                          "props": {
+                                            "class": "autosignin-site-name",
+                                            "title": "Owned ASI source peer"
+                                          },
+                                          "text": "Owned ASI source peer"
+                                        },
+                                        {
+                                          "component": "div",
+                                          "props": {
+                                            "class": "autosignin-site-meta"
+                                          },
+                                          "text": "1 条记录"
+                                        }
+                                      ]
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "VChip",
+                                          "props": {
+                                            "color": "success",
+                                            "prepend-icon": "mdi-check-circle",
+                                            "size": "x-small",
+                                            "variant": "tonal"
+                                          },
+                                          "text": "登录成功"
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-status-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-check-circle"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--success",
+                                            "title": "11月6日 登录成功"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月5日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月4日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月3日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月2日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "11月1日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    },
+                                    {
+                                      "component": "td",
+                                      "content": [
+                                        {
+                                          "component": "span",
+                                          "content": [
+                                            {
+                                              "component": "VIcon",
+                                              "props": {
+                                                "size": "x-small"
+                                              },
+                                              "text": "mdi-minus-circle-outline"
+                                            }
+                                          ],
+                                          "props": {
+                                            "class": "autosignin-dot autosignin-dot--none",
+                                            "title": "10月31日 未记录"
+                                          }
+                                        }
+                                      ],
+                                      "props": {
+                                        "class": "autosignin-dot-cell"
+                                      }
+                                    }
+                                  ]
+                                }
+                              ]
+                            }
+                          ],
+                          "props": {
+                            "class": "autosignin-table",
+                            "density": "compact",
+                            "hover": true
+                          }
+                        }
+                      ],
+                      "props": {
+                        "class": "autosignin-table-wrap"
+                      }
+                    }
+                  ],
+                  "props": {
+                    "class": "autosignin-section"
+                  }
+                }
+              ],
+              "props": {
+                "class": "autosignin-page"
+              }
+            }
+          ],
+          "render_mode": "vuetify"
+        },
+        "request_id": "req_U-ibQQ4kLFS7wvsuA6t5yvjY"
+      },
+      "status": 200
+    }
+  },
+  "physical_peer": {
+    "at": "2026-11-06T14:01:22.743750643Z",
+    "event": "owned_peer_observations",
+    "value": [
+      {
+        "arrived_at": "2026-11-06T21:51:30.900053249+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:51:30.903250782+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/favicon.ico",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "arrived_at": "2026-11-06T21:51:30.909248934+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/",
+        "ua": "Owned-ASI/1"
+      },
+      {
+        "arrived_at": "2026-11-06T21:51:33.952498046+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      },
+      {
+        "arrived_at": "2026-11-06T21:58:12.430920344+08:00",
+        "cookie": "owned_session=synthetic",
+        "method": "GET",
+        "path": "/attendance.php",
+        "ua": "Owned-ASI/1"
+      }
+    ]
+  },
+  "instance_attributed_logs": [
+    {
+      "time": "2026-11-06T13:51:30.927024927Z",
+      "event": "plugin_message",
+      "message": "站点自动签到服务启动，立即运行一次",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIn",
+      "operation": "init",
+      "plugin_call_id": "pc_D8z8NPs7LUcfWBfQK1AKXd0v"
+    },
+    {
+      "time": "2026-11-06T13:51:33.944951351Z",
+      "event": "plugin_message",
+      "message": "开始执行签到任务 ...",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIn",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NLNW1pZ-5Dyhq3oIaFZyDloA"
+    },
+    {
+      "time": "2026-11-06T13:51:34.049465013Z",
+      "event": "plugin_message",
+      "message": "Owned ASI source peer 签到成功，已确认站点返回的签到状态",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIn",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NLNW1pZ-5Dyhq3oIaFZyDloA"
+    },
+    {
+      "time": "2026-11-06T13:51:34.054121961Z",
+      "event": "plugin_message",
+      "message": "站点签到任务完成！",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIn",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NLNW1pZ-5Dyhq3oIaFZyDloA"
+    },
+    {
+      "time": "2026-11-06T13:58:09.413172074Z",
+      "event": "plugin_message",
+      "message": "站点自动签到服务启动，立即运行一次",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIncopy",
+      "operation": "init",
+      "plugin_call_id": "pc_7BI-7K4ORibPAr8JBHS2E99l"
+    },
+    {
+      "time": "2026-11-06T13:58:12.426706812Z",
+      "event": "plugin_message",
+      "message": "开始执行签到任务 ...",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIncopy",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NyTa1OjTYVHDufGu9c9jhVo-"
+    },
+    {
+      "time": "2026-11-06T13:58:12.521263279Z",
+      "event": "plugin_message",
+      "message": "Owned ASI source peer 签到成功，已确认站点返回的签到状态",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIncopy",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NyTa1OjTYVHDufGu9c9jhVo-"
+    },
+    {
+      "time": "2026-11-06T13:58:12.525846522Z",
+      "event": "plugin_message",
+      "message": "站点签到任务完成！",
+      "plugin_id": "AutoSignIn",
+      "plugin_instance_id": "AutoSignIncopy",
+      "operation": "signin_continue",
+      "plugin_call_id": "pc_NyTa1OjTYVHDufGu9c9jhVo-"
+    }
+  ],
+  "clone_arrival_minus_own_init_log_seconds": 3.017748,
+  "all_joined": {
+    "at": "2026-11-06T14:01:22.742013671Z",
+    "event": "asi_all_workers_joined",
+    "value": {
+      "base_code_retained": true,
+      "clone_code_removed": true,
+      "observed_workers": 6,
+      "pui_observer_reuse": "generic existing /proc+Lstat methods only; not PUI business execution"
+    }
+  },
+  "completion": {
+    "at": "2026-11-06T14:01:22.742804534Z",
+    "event": "asi_owned_site_once_complete",
+    "value": {
+      "attendance_delay_seconds": 3.041641288,
+      "cold_no_replay_observation_ms": 3500,
+      "elapsed_seconds": 591.831942793,
+      "physical_paths": [
+        "/attendance.php"
+      ],
+      "scope": "owned protocol peer, trueMain/once/history/clone/cold/no-replay/reset; not realPT/browser/OCR or completeASI",
+      "source_id": 1,
+      "worker_sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918"
+    }
+  },
+  "screenshot_readback": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/browser/base-config-saved.jpg",
+      "sha256": "b12071cd740672f1d356b5fbbf66dfb321d58621e8e828d9286ac6032be80bc8",
+      "bytes": 29367,
+      "viewed_by_reviewer": true
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/browser/base-data-after-clone.jpg",
+      "sha256": "5eb167af85364893d9345f99d665220a85e7af37ff4992e74c743b47b272d5eb",
+      "bytes": 29336,
+      "viewed_by_reviewer": true
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/browser/clone-after-once.jpg",
+      "sha256": "938ed80441271a7b5818cc416280a4c62c05c185aa0ad3d82f65875e9c49a06b",
+      "bytes": 29217,
+      "viewed_by_reviewer": true
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/browser/clone-data.jpg",
+      "sha256": "5eb167af85364893d9345f99d665220a85e7af37ff4992e74c743b47b272d5eb",
+      "bytes": 29336,
+      "viewed_by_reviewer": true
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-ui-main-20261106/browser/clone-dialog-before-fix.jpg",
+      "sha256": "37118f5034b401fd34bde92350a46dbc8930dca1ff40c85cce332d168235f4f8",
+      "bytes": 39096,
+      "viewed_by_reviewer": true
+    }
+  ],
+  "post_owned_metadata": {
+    "at": "2026-11-06T14:07:49.385649+00:00",
+    "scope": "post-UI own-root read-only metadata only; no DB/private values/key exported",
+    "root": "/home/admin/light-media-plugins-root-asi-ui-20261106",
+    "sqlite_mode": "ro/query_only",
+    "installed": [
+      [
+        "AutoSignIn",
+        0
+      ],
+      [
+        "AutoSignIncopy",
+        0
+      ]
+    ],
+    "plugin_value_counts": [],
+    "code": {
+      "AutoSignIn": {
+        "exists": true,
+        "is_dir": true,
+        "is_symlink": false,
+        "top_entries": [
+          ".acquired.json",
+          "auto-sign-in"
+        ]
+      },
+      "AutoSignIncopy": {
+        "exists": false
+      }
+    },
+    "owned_executable_processes": [],
+    "recorded_pid_exists": {
+      "2704256": false,
+      "2709685": false,
+      "2704276": false,
+      "2704312": false,
+      "2709695": false,
+      "2709703": false,
+      "2709756": false,
+      "2709763": false
+    }
+  },
+  "receipt_limits": [
+    "command.json scope string was inherited from the no-UI driver and says no UI acceptance; preserve raw and use this browser-specific addendum.",
+    "completion physical_paths was sampled before browser stage and contains one; complete final peer capture contains two actual attendance calls.",
+    "Saved aria DOM/screen titles are shared by base/clone and do not include instance IDs; file labels/Root actual tool actions supply screenshot identity, separate unique API paths/host logs prove instance effects.",
+    "Five static screenshots and recorded DOM verify only these selected controls/data views; no independent new browser action occurs in this review.",
+    "CloneDialog prefill gap shown before fix remains separately pending and is not counted passed."
+  ]
+}

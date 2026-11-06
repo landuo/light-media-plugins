@@ -1,0 +1,96 @@
+- banner:
+  - button "返回":
+  - search:
+    - button "搜索影视":
+    - textbox "搜索电影、剧集":
+      - /placeholder: 搜索电影、剧集…
+  - button "用户界面设置":
+  - button "捷径":
+  - button "通知中心":
+  - button "退出登录":
+- main:
+  - tablist:
+    - tab "我的插件" [selected]:
+      - generic: 我的插件
+    - tab "插件市场":
+      - generic: 插件市场
+  - button "搜索插件":
+  - button "筛选已安装插件":
+  - button "排序插件":
+  - generic "站点自动签到 v2.9.15":
+    - generic: 站点自动签到 v2.9.15
+  - generic "自动模拟登录、签到站点。"
+  - link "thsrite":
+    - /url: https://github.com/thsrite
+  - button "站点自动签到操作":
+  - generic "站点自动签到 v2.9.15":
+    - generic: 站点自动签到 v2.9.15
+  - generic "自动模拟登录、签到站点。"
+  - link "thsrite":
+    - /url: https://github.com/thsrite
+  - button "站点自动签到操作":
+  - button "新建文件夹":
+- navigation "应用导航":
+  - link "首页":
+    - /url: "#dashboard"
+    - generic: 首页
+  - link "推荐":
+    - /url: "#discover"
+    - generic: 推荐
+  - link "探索":
+    - /url: "#explore"
+    - generic: 探索
+  - link "更多":
+    - /url: "#apps"
+    - generic: 更多
+- status
+- dialog:
+  - generic: 站点自动签到 - 插件配置
+  - button "关闭配置":
+  - separator
+  - alert:
+    - generic: 当前构建声明的支持范围：平台 Linux；存储 本地（local）。以此范围为准，原版表单中的其他平台或存储示例不代表当前已支持。
+  - checkbox "启用插件" [checked]
+  - generic: 启用插件
+  - checkbox "发送通知"
+  - generic: 发送通知
+  - checkbox "立即运行一次"
+  - generic: 立即运行一次
+  - checkbox "清理本日缓存"
+  - generic: 清理本日缓存
+  - textbox "执行周期 执行周期":
+    - /placeholder: 5位cron表达式，留空自动
+    - text: 58 23 31 12 *
+  - button "Clear 执行周期"
+  - generic: 执行周期
+  - textbox "队列数量 队列数量": "1"
+  - generic: 队列数量
+  - textbox "重试关键词 重试关键词":
+    - /placeholder: 支持正则表达式，命中才重签
+    - text: 错误|失败
+  - generic: 重试关键词
+  - textbox "自动优选 自动优选":
+    - /placeholder: 命中重试关键词次数（0-关闭）
+    - text: "0"
+  - generic: 自动优选
+  - combobox:
+    - generic: Owned ASI source peer
+    - textbox "Open": "1"
+    - generic: 签到站点
+  - alert:
+    - generic: 选择全部后自动包含后续新增站点
+  - combobox:
+    - generic: 登录站点
+    - textbox "Open"
+  - alert:
+    - generic: 选择全部后自动包含后续新增站点
+  - alert:
+    - generic: 执行周期支持：1、5位cron表达式；2、配置间隔（小时），如2.3/9-23（9-23点之间每隔2.3小时执行一次）；3、周期不填默认9-23点随机执行2次。每天首次全量执行，其余重试未确认登录或命中重试关键词的站点。已确认登录但签到未确认的站点会单独记录登录成功。
+  - alert:
+    - generic: 自动优选：0-关闭，命中重试关键词次数大于该数量时自动执行Cloudflare IP优选（需要开启且则正确配置Cloudflare IP优选插件和自定义Hosts插件）
+  - alert:
+    - generic: 不是所有的站点都会把程序自动登录/签到定义为用户活跃（比如馒头），提示签到/登录成功仍然存在掉号风险！请结合站点公告说明自行把握。
+  - button "查看数据":
+    - generic: 查看数据
+  - button "保存":
+    - generic: 保存

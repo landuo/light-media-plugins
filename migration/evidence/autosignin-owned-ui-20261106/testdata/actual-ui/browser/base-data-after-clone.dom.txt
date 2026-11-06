@@ -1,0 +1,132 @@
+- banner:
+  - button "返回":
+  - search:
+    - button "搜索影视":
+    - textbox "搜索电影、剧集":
+      - /placeholder: 搜索电影、剧集…
+  - button "用户界面设置":
+  - button "捷径":
+  - button "通知中心":
+  - button "退出登录":
+- main:
+  - tablist:
+    - tab "我的插件" [selected]:
+      - generic: 我的插件
+    - tab "插件市场":
+      - generic: 插件市场
+  - button "搜索插件":
+  - button "筛选已安装插件":
+  - button "排序插件":
+  - generic "站点自动签到 v2.9.15":
+    - generic: 站点自动签到 v2.9.15
+  - generic "自动模拟登录、签到站点。"
+  - link "thsrite":
+    - /url: https://github.com/thsrite
+  - button "站点自动签到操作":
+  - generic "站点自动签到 v2.9.15":
+    - generic: 站点自动签到 v2.9.15
+  - generic "自动模拟登录、签到站点。"
+  - link "thsrite":
+    - /url: https://github.com/thsrite
+  - button "站点自动签到操作":
+  - button "新建文件夹":
+- navigation "应用导航":
+  - link "首页":
+    - /url: "#dashboard"
+    - generic: 首页
+  - link "推荐":
+    - /url: "#discover"
+    - generic: 推荐
+  - link "探索":
+    - /url: "#explore"
+    - generic: 探索
+  - link "更多":
+    - /url: "#apps"
+    - generic: 更多
+- status
+- dialog:
+  - generic: 站点自动签到
+  - button "关闭插件详情":
+  - generic: 今日签到
+  - generic: 1/1
+  - generic: 失败 0 · 未确认 0 · 未记录 0
+  - generic: 签到未完成
+  - generic: "0"
+  - generic: 失败 0 · 未确认 0
+  - generic: 今日登录
+  - generic: 1/1
+  - generic: 异常 0 · 未记录 0
+  - generic: 历史范围
+  - generic: 14天
+  - generic: 矩阵显示最近7天
+  - generic: 签到状态
+  - generic: 1 个站点
+  - table:
+    - rowgroup:
+      - row "站点 今日 11/6 11/5 11/4 11/3 11/2 11/1 10/31":
+        - columnheader "站点"
+        - columnheader "今日"
+        - columnheader "11/6"
+        - columnheader "11/5"
+        - columnheader "11/4"
+        - columnheader "11/3"
+        - columnheader "11/2"
+        - columnheader "11/1"
+        - columnheader "10/31"
+    - rowgroup:
+      - row "Owned ASI source peer 1 条记录 签到成功":
+        - cell "Owned ASI source peer 1 条记录":
+          - generic "Owned ASI source peer"
+          - generic: 1 条记录
+        - cell "签到成功":
+          - generic: 签到成功
+        - cell:
+          - generic "11月6日 签到成功":
+        - cell:
+          - generic "11月5日 未记录":
+        - cell:
+          - generic "11月4日 未记录":
+        - cell:
+          - generic "11月3日 未记录":
+        - cell:
+          - generic "11月2日 未记录":
+        - cell:
+          - generic "11月1日 未记录":
+        - cell:
+          - generic "10月31日 未记录":
+  - generic: 登录状态
+  - generic: 1 个站点
+  - table:
+    - rowgroup:
+      - row "站点 今日 11/6 11/5 11/4 11/3 11/2 11/1 10/31":
+        - columnheader "站点"
+        - columnheader "今日"
+        - columnheader "11/6"
+        - columnheader "11/5"
+        - columnheader "11/4"
+        - columnheader "11/3"
+        - columnheader "11/2"
+        - columnheader "11/1"
+        - columnheader "10/31"
+    - rowgroup:
+      - row "Owned ASI source peer 1 条记录 登录成功":
+        - cell "Owned ASI source peer 1 条记录":
+          - generic "Owned ASI source peer"
+          - generic: 1 条记录
+        - cell "登录成功":
+          - generic: 登录成功
+        - cell:
+          - generic "11月6日 登录成功":
+        - cell:
+          - generic "11月5日 未记录":
+        - cell:
+          - generic "11月4日 未记录":
+        - cell:
+          - generic "11月3日 未记录":
+        - cell:
+          - generic "11月2日 未记录":
+        - cell:
+          - generic "11月1日 未记录":
+        - cell:
+          - generic "10月31日 未记录":
+  - button "插件设置":

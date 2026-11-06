@@ -1,0 +1,53 @@
+{
+  "status": "passed_finite_real_browser_and_populated_clone; whole_AutoSignIn_implementing",
+  "source": {
+    "core_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "installed_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "locations": [
+      "autosignin/__init__.py init82-134, page640-1529, generic1856-1931",
+      "app/core/plugin.py clone1905-1999",
+      "app/api/endpoints/plugin.py install576-624/reset739-761/uninstall992-1030"
+    ]
+  },
+  "implementation": [
+    "plugins/autosignin/{plugin,config,services,sdk_backend,visits}.go",
+    "host56d cmd/server and existing plugin configuration/data/clone UI"
+  ],
+  "ELFs": {
+    "host": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+    "worker": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918",
+    "driver": "8c35277a0e61623801e762b55aeab1e5de8b4d214b267738ab38bcb64e21f669"
+  },
+  "actual_run": {
+    "seconds": 595.2136,
+    "exit": 0,
+    "browser": "real IAB, five JPEG/DOM pairs",
+    "target": "owned Linux UID1000 Main/SQLite/loopback protocol peer, port36320"
+  },
+  "observations": [
+    "Actual base config save/reopen: cron58. Actual initially empty clone configured separately: cron57, queue5, onlyonce. Base keeps cron58/queue1.",
+    "Clone attendance GET arrives after3.017748s; login/signin success history is visible in real data page. Reopened onlyonce is false. Base history remains separate.",
+    "Driver checks literal saved base/clone fields after UI, two physical attendance GETs, cold restore and3500ms without another attendance.",
+    "Base ordinary uninstall/reinstall restores its history. Reset clears base configuration/history while populated clone config/history/PID remain unchanged.",
+    "Clone uninstall removes only its code/config/KV; ordinary base uninstall retains code. Six worker/two Main PIDs all join; independent readonly final state confirms no installed instances/KV."
+  ],
+  "independent_review_sha256": "a854ea3174c0fe6e39c69ad17cfa14bf28441573bc68ab7e9e44def413d2cae9",
+  "compiler_supplement": "Fresh deterministic production rebuilds with4650 selected inputs/811 embeds stable match both exact executed Main/worker bytes. Historical runs retain their original tracked-only captures; this is a new reproduction, not invented historical closure.",
+  "preserved_raw_limitations": [
+    "command.json inherited a noUI scope string; actual runner/UI-ready gate, real screenshots/DOM and driver identify this UI run. Raw command remains unchanged.",
+    "physical_paths snapshot was captured before browser actions and shows one; final peer observations record two. Runner omitted UI env keys from summary but runner source records them.",
+    "Browser screenshots do not independently show instance IDs; Root navigation and API/log paths establish base/clone identity. Reviewer did not re-run browser.",
+    "Old bundle clone dialog lacks source prefills. Separate local frontend correction is not validated by this old-bundle run."
+  ],
+  "not_claimed": [
+    "real PT/OCR/provider access, timer firing/update/drain/all22 adapters",
+    "new native14/browser candidate integration, future frontend bundle or all GUI",
+    "original private import, complete AutoSignIn, remote main delivery or new deployment"
+  ],
+  "cleanup_supplement": "Separate exact-owned OCR binary cleanup receipt3f9dae3d; old committed OCR proofs/copy maps retain their original bytes.",
+  "accepted_instances": 7,
+  "copied_files": 86,
+  "copied_bytes": 6042708,
+  "copy_map_sha256": "44dfe693bb8e410556a75969860ecdb66741cf52ae4c8f6636eb6b6813fe12e5"
+}
