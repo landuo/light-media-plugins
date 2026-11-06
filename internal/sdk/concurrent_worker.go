@@ -213,7 +213,7 @@ func (w *concurrentWorker) readLoop() {
 		}
 		w.mu.Lock()
 		rootCleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
-		privateStop := !w.draining && w.manifest.ManagedPrivateScheduler && !cleanupDeclared(w.manifest) && (request.Method == "close" || request.Method == "stop_service")
+		privateStop := !w.draining && (w.manifest.ManagedPrivateScheduler || w.manifest.ManagedPublicServices) && !cleanupDeclared(w.manifest) && (request.Method == "close" || request.Method == "stop_service")
 		var ancestor *cleanupWorkerRoot
 		if request.CleanupRoot != "" {
 			parent := w.calls[request.CleanupRoot]

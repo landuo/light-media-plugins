@@ -43,6 +43,7 @@ type concurrentHostCall struct {
 }
 
 type concurrentClient struct {
+	publicServiceStop    bool
 	privateSchedulerStop bool
 	transportClose       bool
 	cleanupContinuations bool

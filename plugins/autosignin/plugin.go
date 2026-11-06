@@ -15,7 +15,7 @@ import (
 )
 
 func Manifest() sdk.Manifest {
-	return sdk.Manifest{ManagedPrivateScheduler: true, SchemaVersion: 1, PluginID: "AutoSignIn", Name: "站点自动签到", Description: "自动模拟登录、签到站点。", Icon: "signin.png", Version: "2.9.15", Author: "thsrite", AuthorURL: "https://github.com/thsrite", Runtime: "go-executable", Entry: "auto-sign-in", HostAPIMin: 1, HostAPIMax: 1, HasPage: true,
+	return sdk.Manifest{ManagedPublicServices: true, ManagedPrivateScheduler: true, SchemaVersion: 1, PluginID: "AutoSignIn", Name: "站点自动签到", Description: "自动模拟登录、签到站点。", Icon: "signin.png", Version: "2.9.15", Author: "thsrite", AuthorURL: "https://github.com/thsrite", Runtime: "go-executable", Entry: "auto-sign-in", HostAPIMin: 1, HostAPIMax: 1, HasPage: true,
 		Methods:           []string{"init", "get_state", "get_form", "get_page", "get_service", "get_command", "get_api", "get_render_mode", "sign_in", "site_deleted", "http", "stop_service", "stop", "close", "private_once", "signin_continue"},
 		Capabilities:      []string{sdk.BaseGetConfig, sdk.BaseUpdateConfig, sdk.BaseGetData, sdk.BaseSaveData, sdk.BaseDelData, sdk.SettingsReadCapability, sdk.BaseGetInstanceMetadata, sdk.SitesReadCapability, sdk.SitesSourceIndexerCapability, sdk.SitesSourceIndexersCapability, sdk.SitesSourceCustomConfigCapability, sdk.SitesSourceCredentialsCapability, sdk.SitesSourceRequestCapability, sdk.SitesSourceResultWriteCapability, sdk.NetworkGetCapability, sdk.SiteRenderCapability, sdk.CaptchaOCRTextCapability, sdk.EventSendCapability, sdk.PostMessageCapability, sdk.LogWriteCapability, sdk.BackgroundSubmitCapability},
 		BroadcastHandlers: []sdk.BroadcastHandler{{Event: "plugin.action", Method: "sign_in"}, {Event: "site.deleted", Method: "site_deleted"}},

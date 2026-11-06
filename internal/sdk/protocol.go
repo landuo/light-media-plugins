@@ -73,6 +73,9 @@ func (h PluginDataResetHandler) Order() int {
 }
 
 type Manifest struct {
+	// ManagedPublicServices requires the negotiated bound public-call lifetime.
+	// Ordinary SDK services and Submit retain their existing default semantics.
+	ManagedPublicServices bool `json:"managed_public_services,omitempty"`
 	// ManagedPrivateScheduler opts this compiled object into source-owned private
 	// scheduler stop. Ordinary Submit and cleanup continuations remain separate.
 	ManagedPrivateScheduler bool `json:"managed_private_scheduler,omitempty"`
@@ -115,6 +118,9 @@ type Manifest struct {
 }
 
 func (m Manifest) Validate() error {
+	if m.ManagedPublicServices && cleanupDeclared(m) {
+		return failure("invalid_manifest")
+	}
 	if m.ManagedPrivateScheduler && (!slices.Contains(m.Methods, "stop_service") || !slices.Contains(m.Capabilities, BackgroundSubmitCapability)) {
 		return failure("invalid_manifest")
 	}
@@ -251,6 +257,7 @@ type Frame struct {
 }
 
 type Handshake struct {
+	PublicServiceStop    int                     `json:"public_service_stop,omitempty"`
 	PrivateSchedulerStop int                     `json:"private_scheduler_stop,omitempty"`
 	ParallelHostCalls    int                     `json:"parallel_host_calls,omitempty"`
 	CleanupContinuation  int                     `json:"cleanup_continuation,omitempty"`
@@ -750,6 +757,9 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	if json.Unmarshal(raw, &agreed) != nil || agreed.Protocol != ProtocolVersion || agreed.HostAPI != HostAPIVersion || agreed.PluginID != manifest.PluginID || agreed.Version != manifest.Version || !sameSet(agreed.Methods, manifest.Methods) || !sameSet(agreed.Capabilities, manifest.Capabilities) {
 		return nil, failure("handshake_mismatch")
 	}
+	if agreed.PublicServiceStop != 0 && agreed.PublicServiceStop != 1 {
+		return nil, failure("public_service_mismatch")
+	}
 	if agreed.PrivateSchedulerStop != 0 && agreed.PrivateSchedulerStop != 1 {
 		return nil, failure("private_scheduler_mismatch")
 	}
@@ -804,11 +814,15 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 			}
 			c.concurrent = newConcurrentClient(c, proposal)
 			c.concurrent.transportClose = agreed.TransportClose == 1
+			c.concurrent.publicServiceStop = agreed.PublicServiceStop == 1
 			c.concurrent.privateSchedulerStop = agreed.PrivateSchedulerStop == 1
 			c.concurrent.cleanupContinuations = cleanupDeclared(manifest) && agreed.CleanupContinuation == 1
 		} else if runner.RequireConcurrent {
 			return nil, failure("concurrent_session_unsupported")
 		}
+	}
+	if manifest.ManagedPublicServices && !c.SupportsPublicServiceStop() {
+		return nil, failure("public_service_unsupported")
 	}
 	if manifest.ManagedPrivateScheduler && !c.SupportsPrivateSchedulerStop() {
 		return nil, failure("private_scheduler_unsupported")

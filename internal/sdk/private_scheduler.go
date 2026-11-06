@@ -19,6 +19,26 @@ func (c *Client) CallPrivateSchedulerStop(ctx context.Context, method string, pa
 	if ctx == nil || c == nil || !c.SupportsPrivateSchedulerStop() || cleanupDeclared(c.manifest) || method != "close" && method != "stop_service" || !slices.Contains(c.manifest.Methods, method) || len(payload) > MaxLogicalMessageBytes || len(payload) > 0 && !json.Valid(payload) {
 		return RunResult{}, failure("invalid_invocation")
 	}
+	return c.callManagerPreStop(ctx, method, payload, host)
+}
+
+// SupportsPublicServiceStop is an actual concurrent SDK feature. No manifest
+// claim, private scheduler ownership or cleanup authority is inferred from it.
+func (c *Client) SupportsPublicServiceStop() bool {
+	return c != nil && c.manifest.ManagedPublicServices && c.concurrent != nil && c.concurrent.publicServiceStop && c.concurrent.transportClose && !cleanupDeclared(c.manifest)
+}
+
+// CallPublicServiceStop runs source close/stop_service while accepted public
+// callbacks still own their normal phases. It shares the single reserved lane;
+// it neither fences ordinary calls nor creates a cleanup continuation grant.
+func (c *Client) CallPublicServiceStop(ctx context.Context, method string, payload json.RawMessage, host HostHandler) (RunResult, error) {
+	if ctx == nil || c == nil || !c.SupportsPublicServiceStop() || method != "close" && method != "stop_service" || !slices.Contains(c.manifest.Methods, method) || len(payload) > MaxLogicalMessageBytes || len(payload) > 0 && !json.Valid(payload) {
+		return RunResult{}, failure("invalid_invocation")
+	}
+	return c.callManagerPreStop(ctx, method, payload, host)
+}
+
+func (c *Client) callManagerPreStop(ctx context.Context, method string, payload json.RawMessage, host HostHandler) (RunResult, error) {
 	if c.stopRequested.Load() {
 		return RunResult{}, failure("session_closed")
 	}

@@ -74,6 +74,9 @@ func serve(ctx context.Context, input io.Reader, output io.Writer, manifest Mani
 		advertisedConcurrent = 1
 	}
 	helloResponse := Handshake{TransportClose: advertisedConcurrent, ConcurrentSession: advertisedConcurrent, Protocol: ProtocolVersion, PluginID: manifest.PluginID, Version: manifest.Version, HostAPI: HostAPIVersion, Methods: manifest.Methods, Capabilities: manifest.Capabilities, Transport: &transportAdvertisement{Version: 1}, PersistentSession: 1}
+	if advertisedConcurrent == 1 && manifest.ManagedPublicServices && !cleanupDeclared(manifest) {
+		helloResponse.PublicServiceStop = 1
+	}
 	if advertisedConcurrent == 1 && manifest.ManagedPrivateScheduler {
 		helloResponse.PrivateSchedulerStop = 1
 	}
