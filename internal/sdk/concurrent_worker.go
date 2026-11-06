@@ -11,19 +11,20 @@ import (
 )
 
 type concurrentWorkerCall struct {
-	cleanup        bool
-	request        Frame
-	ctx            context.Context
-	cancel         context.CancelFunc
-	phase          callbackPhase
-	account        concurrentAccount
-	gate           chan struct{}
-	mu             sync.Mutex
-	pending        map[string]chan Frame
-	cleanupRoot    *cleanupWorkerRoot
-	reverseClosed  bool
-	reverseHosts   sync.WaitGroup
-	cancelNotified bool
+	privateSchedulerStop bool
+	cleanup              bool
+	request              Frame
+	ctx                  context.Context
+	cancel               context.CancelFunc
+	phase                callbackPhase
+	account              concurrentAccount
+	gate                 chan struct{}
+	mu                   sync.Mutex
+	pending              map[string]chan Frame
+	cleanupRoot          *cleanupWorkerRoot
+	reverseClosed        bool
+	reverseHosts         sync.WaitGroup
+	cancelNotified       bool
 }
 
 type concurrentWorker struct {
@@ -212,6 +213,7 @@ func (w *concurrentWorker) readLoop() {
 		}
 		w.mu.Lock()
 		rootCleanup := w.draining && (request.Method == "close" || request.Method == "stop_service")
+		privateStop := !w.draining && w.manifest.ManagedPrivateScheduler && !cleanupDeclared(w.manifest) && (request.Method == "close" || request.Method == "stop_service")
 		var ancestor *cleanupWorkerRoot
 		if request.CleanupRoot != "" {
 			parent := w.calls[request.CleanupRoot]
@@ -224,13 +226,17 @@ func (w *concurrentWorker) readLoop() {
 			ancestor = parent.cleanupRoot
 		}
 		cleanup := rootCleanup || ancestor != nil
-		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || rootCleanup && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup {
+		if w.stopping || w.retiring || w.calls[request.ID] != nil || w.draining && !cleanup && request.Method != "stop" || (rootCleanup || privateStop) && w.cleanupActive || len(w.calls) >= w.proposal.MaxCalls && request.Method != "stop" && !cleanup && !privateStop {
 			w.mu.Unlock()
 			cancel()
 			w.finish(failure("concurrent_call_limit"))
 			return
 		}
 		w.calls[request.ID] = call
+		if privateStop {
+			w.cleanupActive = true
+			call.privateSchedulerStop = true
+		}
 		if cleanup {
 			call.cleanup = true
 		}
@@ -317,7 +323,7 @@ func (w *concurrentWorker) invoke(call *concurrentWorkerCall) {
 			root.closed = true
 		}
 	}
-	if call.cleanup && (call.cleanupRoot == nil || call.cleanupRoot.root == call) {
+	if call.privateSchedulerStop || call.cleanup && (call.cleanupRoot == nil || call.cleanupRoot.root == call) {
 		w.cleanupActive = false
 	}
 	w.mu.Unlock()

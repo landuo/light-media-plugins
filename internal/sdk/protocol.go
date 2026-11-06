@@ -73,6 +73,9 @@ func (h PluginDataResetHandler) Order() int {
 }
 
 type Manifest struct {
+	// ManagedPrivateScheduler opts this compiled object into source-owned private
+	// scheduler stop. Ordinary Submit and cleanup continuations remain separate.
+	ManagedPrivateScheduler bool `json:"managed_private_scheduler,omitempty"`
 	// Source licensing metadata is retained only for saved manifest compatibility.
 	// The user excluded official authorization: these fields never gate discovery or loading.
 	AuthLevel       *int   `json:"auth_level,omitempty"`
@@ -112,6 +115,9 @@ type Manifest struct {
 }
 
 func (m Manifest) Validate() error {
+	if m.ManagedPrivateScheduler && (!slices.Contains(m.Methods, "stop_service") || !slices.Contains(m.Capabilities, BackgroundSubmitCapability)) {
+		return failure("invalid_manifest")
+	}
 	if m.DashboardParameters != nil {
 		if len(*m.DashboardParameters) > 64 || !slices.Contains(m.Methods, "get_dashboard") {
 			return failure("invalid_manifest")
@@ -245,18 +251,19 @@ type Frame struct {
 }
 
 type Handshake struct {
-	ParallelHostCalls   int                     `json:"parallel_host_calls,omitempty"`
-	CleanupContinuation int                     `json:"cleanup_continuation,omitempty"`
-	TransportClose      int                     `json:"transport_close,omitempty"`
-	ConcurrentSession   int                     `json:"concurrent_session,omitempty"`
-	Protocol            int                     `json:"protocol"`
-	PluginID            string                  `json:"plugin_id"`
-	Version             string                  `json:"version"`
-	HostAPI             int                     `json:"host_api"`
-	Methods             []string                `json:"methods"`
-	Capabilities        []string                `json:"capabilities"`
-	Transport           *transportAdvertisement `json:"transport,omitempty"`
-	PersistentSession   int                     `json:"persistent_session,omitempty"`
+	PrivateSchedulerStop int                     `json:"private_scheduler_stop,omitempty"`
+	ParallelHostCalls    int                     `json:"parallel_host_calls,omitempty"`
+	CleanupContinuation  int                     `json:"cleanup_continuation,omitempty"`
+	TransportClose       int                     `json:"transport_close,omitempty"`
+	ConcurrentSession    int                     `json:"concurrent_session,omitempty"`
+	Protocol             int                     `json:"protocol"`
+	PluginID             string                  `json:"plugin_id"`
+	Version              string                  `json:"version"`
+	HostAPI              int                     `json:"host_api"`
+	Methods              []string                `json:"methods"`
+	Capabilities         []string                `json:"capabilities"`
+	Transport            *transportAdvertisement `json:"transport,omitempty"`
+	PersistentSession    int                     `json:"persistent_session,omitempty"`
 }
 
 // Error deliberately contains only a local code. Worker output, command paths,
@@ -743,6 +750,9 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	if json.Unmarshal(raw, &agreed) != nil || agreed.Protocol != ProtocolVersion || agreed.HostAPI != HostAPIVersion || agreed.PluginID != manifest.PluginID || agreed.Version != manifest.Version || !sameSet(agreed.Methods, manifest.Methods) || !sameSet(agreed.Capabilities, manifest.Capabilities) {
 		return nil, failure("handshake_mismatch")
 	}
+	if agreed.PrivateSchedulerStop != 0 && agreed.PrivateSchedulerStop != 1 {
+		return nil, failure("private_scheduler_mismatch")
+	}
 	if agreed.PersistentSession != 1 {
 		return nil, failure("persistent_session_unsupported")
 	}
@@ -794,10 +804,14 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 			}
 			c.concurrent = newConcurrentClient(c, proposal)
 			c.concurrent.transportClose = agreed.TransportClose == 1
+			c.concurrent.privateSchedulerStop = agreed.PrivateSchedulerStop == 1
 			c.concurrent.cleanupContinuations = cleanupDeclared(manifest) && agreed.CleanupContinuation == 1
 		} else if runner.RequireConcurrent {
 			return nil, failure("concurrent_session_unsupported")
 		}
+	}
+	if manifest.ManagedPrivateScheduler && !c.SupportsPrivateSchedulerStop() {
+		return nil, failure("private_scheduler_unsupported")
 	}
 	if cleanupDeclared(manifest) && !c.SupportsCleanupContinuations() {
 		return nil, failure("cleanup_continuation_unsupported")
@@ -808,11 +822,14 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	return c, nil
 }
 
-// CallOptions changes only the current invocation's time budget, not the
-// negotiated wire/resource limits or worker lifetime. Unless CallerDeadlineOnly
+// CallOptions normally changes only the current invocation time budget. Its
+// private manager bit is set only by CallPrivateSchedulerStop, never by a frame.
+// It does not change negotiated limits or worker lifetime. Unless CallerDeadlineOnly
 // is explicit, Timeout zero inherits Start's timeout. ExcludeHostTime is the
 // explicit per-call policy, not a change to other invocations.
 type CallOptions struct {
+	// Host-only reserved pre-stop dispatch; never serialized or worker supplied.
+	privateSchedulerStop bool
 	// CallerDeadlineOnly is explicit source-owned business timing. It never
 	// changes startup or Stop resource deadlines. Timeout must be zero.
 	CallerDeadlineOnly bool

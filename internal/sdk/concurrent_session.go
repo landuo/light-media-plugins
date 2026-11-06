@@ -43,6 +43,7 @@ type concurrentHostCall struct {
 }
 
 type concurrentClient struct {
+	privateSchedulerStop bool
 	transportClose       bool
 	cleanupContinuations bool
 	client               *Client
@@ -382,7 +383,7 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 	} else if cleanup && m.cleanupContinuations && (method == "close" || method == "stop_service") {
 		call.cleanupRoot = &cleanupHostRoot{root: call, slotChanged: make(chan struct{})}
 	}
-	if m.terminal != nil || (m.draining || m.stopping) && !cleanup || m.stopping && method != "stop" || len(m.calls) >= m.proposal.MaxCalls && !cleanup {
+	if m.terminal != nil || (m.draining || m.stopping) && !cleanup || m.stopping && method != "stop" || len(m.calls) >= m.proposal.MaxCalls && !cleanup && !options.privateSchedulerStop {
 		reason := m.terminal
 		if reason == nil {
 			if m.draining || m.stopping {

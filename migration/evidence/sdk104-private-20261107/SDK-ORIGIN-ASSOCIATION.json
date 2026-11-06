@@ -1,0 +1,30 @@
+{
+  "host_commit": "e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b",
+  "files": 104,
+  "changed_or_new": [
+    "internal/sdk/concurrent_session.go",
+    "internal/sdk/concurrent_worker.go",
+    "internal/sdk/manager_resources.go",
+    "internal/sdk/private_scheduler.go",
+    "internal/sdk/protocol.go",
+    "internal/sdk/source_private_scheduler_test.go",
+    "internal/sdk/worker.go"
+  ],
+  "allowed_changes": [
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/plugins",
+      "to": "github.com/landuo/light-media-plugins/internal/sdk"
+    },
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/sourcejson",
+      "to": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson"
+    }
+  ],
+  "all_committed_host_blobs_match_target": true,
+  "prior_snapshots_unchanged": 9,
+  "previous_document_sha256": "858266fab01a5c5a71384adbb4c6be56739f694273e0eafbffae9bcc0d25c098",
+  "current_document_sha256": "5310a8b6a55e4233baa1f3e9e037fd08c7924c296ea90066853dadc051161be8",
+  "runtime_claim": false
+}
