@@ -1,0 +1,54 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "2f62dd35d48a14b6dd5e63272c7449e1b80cb0a8",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "a884d15b257d4c61ab259cb3fdd9dca68c3deaec3042752c358cf3d8fc00ba08",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static inspection of the fixed MoviePilot commit. Original service was not executed or modified for this scenario.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1325–1330,1512–1530,3451–3484",
+      "target": "internal/app/plugin_original_subscribe_chat.go, plugin_original_subscribe_chat_paused.go and subscription_runtime.go",
+      "behavior": "Explicit sid loads a paused source S row. Search all selects N/R/P and ordinary scheduling still skips paused rows. The no-match manual path keeps S. The runtime test verifies the explicit no-match path only."
+    },
+    {
+      "source": "app/helper/torrent.py:103–126,172–190,387–398; app/chain/torrents.py:514–520,565–592",
+      "target": "internal/sites/plugin_host_resources.go, internal/app/plugin_original_subscribe_chat_rss_invalid.go and plugin_original_subscribe_chat_refresh*.go",
+      "behavior": "A definitive failure except HTTP 429 marks the final exact enclosure URL invalid. The next cache read removes old invalid URLs before the title+description dedupe. A fresh relisted enclosure may be recognized. The runtime test verifies the 404 followed by an accepted relist with a different tracker ID."
+    },
+    {
+      "source": "app/chain/torrents.py:448–454,713–750; app/helper/rss.py:299–308,434–444",
+      "target": "internal/app/plugin_original_host_sites.go",
+      "behavior": "The fixed helper rejects the three literal plain-text expiry messages as non-XML before its unreachable None return can call renewal. No new passkey renewal behavior is added."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "native Linux x86_64 App and indexed plugin subprocess with owned Lark, tracker, TMDB and qBittorrent protocol peers",
+    "environment": "Read-only Alpine 3.22 container with tmpfs and loopback only; no original or production credentials.",
+    "test": "TestOriginalLarkPausedSearchAndRSSReplacementLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_chat_rss_linux_test.go",
+    "seconds": 2.39,
+    "host_elf_sha256": "f5101dade8ff09d28861e73c9719ee2dddb8279bdc37b775133e3bae6c4b49d2",
+    "worker_elf_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "runner_sha256": "024d09e38e0fbbb93c69d6955384f17b550be29e557084552073c9f845317549",
+    "runtime_log_sha256": "5ced137af48eb07d6d22deb8ba0d3a0063a7d8a39d8a9db57288c5559fd5c67a",
+    "observations": [
+      "The started Linux App installed the indexed worker and admitted verified Lark webhook events. The paused subscription was selected by its source numeric alias. Three keyword tracker requests completed, the exact revision-bound native job succeeded, no torrent was added, and the row retained its paused state, revision and next-check value.",
+      "After the fixture explicitly resumed the subscription, the first RSS refresh fetched one feed and one enclosure, which returned HTTP 404. The job did not call the downloader Add endpoint.",
+      "The next feed relisted the same title and description with a new tracker resource ID and enclosure. The old URL was not retried. The actual native downloader worker sent one Add containing the exact replacement metainfo and configured save path. The Lark completion card followed downloader acceptance and exposed no private enclosure token."
+    ]
+  },
+  "adaptations_and_open": [
+    "Go retains an in-process 24-hour, 128-entry URL-hash cache with no reinsert extension and limits redirects to at most 30 same-origin 301/302 hops under existing credential and cancellation guards. Capacity, TTL expiration, process restart, redirect status and HTTP 429 classification were inspected in code only in this slice.",
+    "Paused acquisition and ordinary completion are wired to the exact manual search root. Successful paused Add/completion, search-all, and scheduler exclusion were not exercised by this native scenario.",
+    "Ordinary same-tracker-ID download failure cooldown is independent of URL invalidation (app/chain/download.py:493–559,883–891,1204–1217). The relist uses another tracker ID to isolate URL eviction and does not claim cooldown parity.",
+    "Source first-download form retry and magnet outcomes from RSS material, multi-season package, and alternate-provider-to-download acceptance remain open. Reuse earlier accepted movie, TV partial pack, provider selection, site, and transfer evidence."
+  ]
+}

@@ -117,8 +117,13 @@ Synchronous chat searched Douban, Bangumi and AniList in source priority.
 Selecting one of three same-title results requested the exact AniList ID and
 committed a TMDB-backed subscription with both identities sealed. See
 `migration/evidence/lark-messager-providers-20261108.json`.
-Continue with explicit paused subscription search and RSS enclosure recovery.
-Reuse earlier passing evidence for the completed paths.
+Native Lark search by numeric ID reached the tracker and retained the
+unmatched subscription's paused state. A separate RSS refresh rejected one
+404 enclosure, then accepted the same release title relisted with a new
+tracker ID. See
+`migration/evidence/lark-messager-subscribes-rss-20261108.json`.
+Continue with the ordinary same-resource failure cooldown, successful
+paused acquisition and remaining Lark paths. Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
