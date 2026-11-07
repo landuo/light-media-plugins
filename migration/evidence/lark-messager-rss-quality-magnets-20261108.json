@@ -1,0 +1,84 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App, installed indexed worker and native SDK observer. All provider, tracker and qB endpoints owned loopback with real local filesystem operations.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:2032–2043,2069–2088; app/chain/download.py:1425–1465",
+      "target": "light-media internal/app/{subscription_acquisition_batch,subscription_acquisition_scope,subscription_rss_magnet,search_download,plugin_original_subscribe_chat_refresh_match}.go",
+      "behavior": "The active source-owned RSS acquisition seals title-listed scope, source priority and exact material. Whole quality selection retains source subset/superset behavior. File-dependent inspection treats a valid magnet as a skipped candidate."
+    },
+    {
+      "source": "app/chain/subscribe.py:2071–2088",
+      "target": "light-media internal/app/{plugin_original_subscribe_chat_rss_completion,subscription_quality_completion_run,job_completion}.go",
+      "behavior": "The active RSS root commits success before the dependent completion job may retire the unchanged subscription, using actual downloader acceptance."
+    }
+  ],
+  "runs": [
+    {
+      "status": "passed",
+      "test": "TestOriginalLarkRSSQualityMagnetLinuxAMD64",
+      "seconds": 3.33,
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "601c8bdb7eb2a42356c58bff0fa48b7c41776d87",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "b54ce79da633584e0ae91f2740e627987f0bb51194a2d72a5ce92e5af4232cc6",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      },
+      "host_elf_sha256": "4ecc83bb02bfac18e055bc0c93f79961fbc19db9e819fad275730ebca99a0bc9",
+      "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+      "observer_elf_sha256": "a2cb89d1093f43ae585f5980c4f1de8509fbc6fb11f36445bf5ec46fd38b11db",
+      "runner_sha256": "4aa823b6b04366d1bb1d8b223ba1d5823b65c7285404b2bd15c3ee940226ea61",
+      "runtime_log_sha256": "619e062463d6980f2157d305c1fee67b3d9cd85b314f6f69aef48e7d34606cda",
+      "observations": [
+        "A verified Lark refresh consulted a no-episode pack, skipped its magnet at the file-inspection branch, and submitted one whole unpaused Add of the exact title-proven S01E02 URI.",
+        "The SDK observer received the magnet as a string. Only E02 reached priority 100; E01 stayed unchanged. Before completion the old managed E02 file and its original download source remained.",
+        "After qB reported complete files, the native App validated the scope and performed an actual hardlink replacement. The old and new download sources remained available."
+      ]
+    },
+    {
+      "status": "passed",
+      "test": "TestOriginalLarkRSSQualityFullMagnetLinuxAMD64",
+      "seconds": 4.58,
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "9ec6a295308e43f6bfe091f54e1052a28a6159a1",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "b54ce79da633584e0ae91f2740e627987f0bb51194a2d72a5ce92e5af4232cc6",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      },
+      "host_elf_sha256": "4f1e7c4fd283e038265be34d6b00af4450bb8595bee69db6161b6eb2445ee8a8",
+      "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+      "observer_elf_sha256": "a2cb89d1093f43ae585f5980c4f1de8509fbc6fb11f36445bf5ec46fd38b11db",
+      "runner_sha256": "4aa823b6b04366d1bb1d8b223ba1d5823b65c7285404b2bd15c3ee940226ea61",
+      "runtime_log_sha256": "1fefdbba61f678de6a0ac8f20d7360929e3b00df228ba99cd89fb30912d0f8a1",
+      "observations": [
+        "An active full-quality subscription requested E02. Its fixed-source complete-coverage rule authorized one exact whole E01–E02 magnet, with no file selection.",
+        "The exact RSS root succeeded before its linked preparation and completion jobs. A source-shaped history and completion receipt refer to the actual accepted intent, and the subscription was retired before the daemon exposed completed files.",
+        "The native App later checked both completed files and created real hardlinks. E01 was added as a declared extra; only the old managed E02 slot was replaced. The old download source was preserved."
+      ]
+    }
+  ],
+  "superseded_attempt": {
+    "test": "TestOriginalLarkRSSQualityFullMagnetLinuxAMD64",
+    "status": "failed",
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "601c8bdb7eb2a42356c58bff0fa48b7c41776d87",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "b54ce79da633584e0ae91f2740e627987f0bb51194a2d72a5ce92e5af4232cc6",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "runtime_log_sha256": "619e062463d6980f2157d305c1fee67b3d9cd85b314f6f69aef48e7d34606cda",
+    "cause": "The first native matcher rejected a title containing a known episode outside the subscription start range before full-coverage quality selection. Corrected RSS filtering separates release identity from requested episode scope. The already passing episode scenario was not rerun."
+  },
+  "adaptations_and_open": [
+    "The target independently confirms actual on-disk files before applying quality replacement. Subscription progress and completion follow the real Add receipt and source priority even when files are not yet complete.",
+    "Recovery for already queued quality completion from a pre-fix experimental host was not separately exercised. The new active RSS preparation is enqueued atomically from its exact successful root."
+  ]
+}

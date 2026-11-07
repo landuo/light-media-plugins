@@ -68054,6 +68054,86 @@
         "fixture_sha256": "d7996d8336fd12ec602152ef5a1684ef9bbb027b4ef8bd19e196416e024c5d92",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_rss_episode_quality_magnet.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSQualityMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "A verified Lark refresh consulted a no-episode pack, skipped its magnet at the file-inspection branch, and submitted one whole unpaused Add of the exact title-proven S01E02 URI.",
+        "The SDK observer received the magnet as a string. Only E02 reached priority 100; E01 stayed unchanged. Before completion the old managed E02 file and its original download source remained.",
+        "After qB reported complete files, the native App validated the scope and performed an actual hardlink replacement. The old and new download sources remained available."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-rss-quality-magnets-20261108.json": "af9be28bd9810c9c0a6de0939116197793f86e5830ac4eab8f2191dddddff1d7"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "601c8bdb7eb2a42356c58bff0fa48b7c41776d87",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "b54ce79da633584e0ae91f2740e627987f0bb51194a2d72a5ce92e5af4232cc6",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
+    },
+    {
+      "id": "larkmessager.native_rss_full_quality_magnet.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSQualityFullMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "An active full-quality subscription requested E02. Its fixed-source complete-coverage rule authorized one exact whole E01–E02 magnet, with no file selection.",
+        "The exact RSS root succeeded before its linked preparation and completion jobs. A source-shaped history and completion receipt refer to the actual accepted intent, and the subscription was retired before the daemon exposed completed files.",
+        "The native App later checked both completed files and created real hardlinks. E01 was added as a declared extra; only the old managed E02 slot was replaced. The old download source was preserved."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-rss-quality-magnets-20261108.json": "af9be28bd9810c9c0a6de0939116197793f86e5830ac4eab8f2191dddddff1d7"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "9ec6a295308e43f6bfe091f54e1052a28a6159a1",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "b54ce79da633584e0ae91f2740e627987f0bb51194a2d72a5ce92e5af4232cc6",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
+    },
+    {
+      "id": "larkmessager.native_chat_single_episode_magnet.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkChatEpisodeMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "Verified ordinary Lark search chose a season and title-numbered S01E01 resource. The exact authenticated tracker redirect reached qB in one whole unpaused Add, with no file-selection operation.",
+        "The sealed download retained exactly season 1 episode 1. The real native App verified the downloaded file and organized one local hardlink in the owned library."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-chat-episode-magnet-20261108.json": "d80b0fde26766c7da58b346e879d4566df0e9b483fbf52e89a401e4fd2b21147"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "9ec6a295308e43f6bfe091f54e1052a28a6159a1",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "542badf823fd2057bdb45b540b4ac5df3d2a370c280f5ec10823fc44eba22eca",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -68127,7 +68207,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "5bd490eed2c35857068923b04749a4af469967b6",
+      "host_HEAD": "9ec6a295308e43f6bfe091f54e1052a28a6159a1",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68138,12 +68218,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native ordinary Lark movie and complete multi-season magnet Add and organization passed; ordinary TV RSS magnet and multi-season refresh exclusion also passed. All code and evidence are local.",
-      "tests_running": "None. The ordinary TV RSS case passed on its first run. The two native chat cases passed after repairing their qB login and asynchronous import observer; the passing RSS case was not rerun.",
-      "latest_detail": "migration/evidence/lark-messager-chat-magnets-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Lark episode and full RSS quality magnets, guarded local replacement, ordered retirement, and ordinary chat single-episode Add/import passed. Code and evidence remain local.",
+      "tests_running": "None. Episode quality passed on the first run and was not repeated. Corrected full quality and direct chat episode scenarios both passed on the focused run.",
+      "latest_detail": "migration/evidence/lark-messager-rss-quality-magnets-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with the same worker 319ca00 and indexed package in work/lark-worker-browser-form-20261108/packaging/linux-amd64, and host 5bd490ee. Reuse direct-chat movie and multi-season magnet Add/organization and ordinary TV RSS evidence. Next implement the pinned title-numbered BestVersion RSS magnet branch, preserve file-dependent skips, and close provider-only mutation differences and the legacy material reacquisition confirmation. Cover direct listed TV episodes where new evidence is needed. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager with worker 319ca00 and indexed package in work/lark-worker-browser-form-20261108/packaging/linux-amd64 and host 9ec6a295. Reuse all ordinary and quality magnet evidence. Next implement the provider-only mutation identity path from pinned title recognition through durable source-keyed subscription creation, matching and actual safe download/organization, without fake TMDB IDs or retired ingress. Legacy empty-reference tracker confirmation has been aligned in code; verify the distinct recovery branch only if needed. Register only after agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

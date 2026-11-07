@@ -195,10 +195,19 @@ See `migration/evidence/lark-messager-chat-magnets-20261108.json`.
 An ordinary TV RSS refresh skipped a multi-season candidate before material
 and sent the exact single-season S01E02 magnet to qB and the SDK callback.
 See `migration/evidence/lark-messager-rss-single-season-magnet-20261108.json`.
-BestVersion RSS, separate direct listed-TV evidence and provider-only writes
-are still open. Source branches that need a file list still skip magnet
-material. Current previews archive exact material. The older empty-ref
-reacquisition path has a first-download confirmation difference.
+Native BestVersion RSS now passes both episode and full-quality cases.
+The episode case skipped a file-dependent magnet, advanced only E02 and
+replaced its managed hardlink after completion. The full-quality case took
+the title-proven E01–E02 scope for an E02-only subscription. Its exact RSS
+root succeeded before retirement and history, and verified files later
+organized both episodes. See
+`migration/evidence/lark-messager-rss-quality-magnets-20261108.json`.
+A separate ordinary Lark selection submitted and organized only S01E01. See
+`migration/evidence/lark-messager-chat-episode-magnet-20261108.json`.
+Current previews archive exact material. The legacy empty-reference fallback
+now uses the same tracker confirmation path for ordinary subscriptions and
+chat, with its own distinct recovery evidence still open. Provider-only
+writes remain open and must preserve the selected or recognized source key.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
