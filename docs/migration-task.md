@@ -94,8 +94,14 @@ durable numbering, keyword search, newest-resource browse and accepted Add,
 paused metadata refresh, and deletion with queue fencing. Source differences
 and remaining checks are in
 `migration/evidence/lark-messager-subscribes-20261108.json`.
-Continue the same plugin with ordinary media interaction and transfer retry.
-Earlier site and worker evidence remains separately bound.
+Ordinary movie chat also passed on native Linux. The indexed worker paged
+nine results, rejected another sender and a replaced card, showed one
+matched torrent, then confirmed exact material and save path at the
+downloader. Fullwidth selection created a new subscription and Add event.
+Continue with transfer failure, retry and /redo, then close the remaining
+media and subscription gaps listed in
+`migration/evidence/lark-messager-media-20261108.json`.
+Reuse earlier passing site, subscription and worker evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

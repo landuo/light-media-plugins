@@ -16081,7 +16081,8 @@
         "larkmessager.native_amd64_message_path.20261108",
         "larkmessager.test_card_webhook_failure.20261108",
         "larkmessager.sites_native_browser.20261108",
-        "larkmessager.subscribes_native_cache_add.20261108"
+        "larkmessager.subscribes_native_cache_add.20261108",
+        "larkmessager.media_native_download_subscribe.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67491,6 +67492,34 @@
         "fixture_sha256": "f1a7981c63b2fa29482496d1b24ee86dd5f73bb54fa6d4e5c5862f956fcd9374",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.media_native_download_subscribe.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkMediaInteractionLinuxAMD64"
+      ],
+      "observations": [
+        "The started App installed the exact indexed worker. A verified webhook searched and rendered nine metadata results in two pages. A second sender's card click caused no tracker search. The owner used a card to go forward and text to go back.",
+        "Selection sent the source-shaped start notice and a fresh resource card. The tracker saw three requests across listing and native rechecks, with one torrent fetch. The downloader received exactly one matching torrent byte stream at the isolated configured save path. The native download job reached succeeded before the chat success notice.",
+        "A new subscription request invalidated the old download card. Fullwidth numeric selection saved the selected movie as N and emitted the durable subscription.added event. No second Add occurred.",
+        "The App stopped after the assertions. Its teardown logged one module declaration failure during stop, after the verified paths. No previous Lark /sites or /subscribes suite ran."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-media-20261108.json": "985fef370c30d98eb018025df534cb4bcf110e5a173acccedc569cf0dad1ed71"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "c1ee61ad964b06cc874d17c88080ebfde0d581ae",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "88a38a4191bb37239f90cc41e13ba2ab0dcee64c44b3f74ac85b98a7d52f03e1",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67564,7 +67593,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "8d96369c60536b4f11506e1ffa6086f26a226292",
+      "host_HEAD": "c1ee61ad964b06cc874d17c88080ebfde0d581ae",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67575,12 +67604,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark /subscribes main native search, cached spider Add, metadata and delete passed with unchanged worker ZIP. Paired host and evidence committed locally.",
-      "tests_running": "None. The exact native /subscribes fixture passed and its isolated app stopped.",
-      "latest_detail": "migration/evidence/lark-messager-subscribes-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. The native Lark ordinary movie search, card selection, verified download Add and ordinary subscription passed. Host and evidence stay local.",
+      "tests_running": "None. The exact native Lark movie media fixture passed and its isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-media-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager ordinary media interaction and transfer retry, starting with one real media search → media card → selected torrent card → guarded native download or subscription. Source app/chain/message.py:2083–3488. /subscribes known remaining edges are in latest_detail. Do not rerun completed /sites or core /subscribes.",
+      "next_complete_slice": "Continue the same LarkMessager plugin with transfer failure, retry callback and /redo from fixed app/chain/message.py:694–704,811–860,972–1019 and app/chain/transfer.py:1135–1216,1858–1887,3698–3774. Use a real guarded native failed history and a successful retry, bind aliases to current failed execution. Then close media attribution, alternate-provider/series and remaining /subscribes gaps. Reuse the passing worker, /sites, /subscribes and movie media evidence.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
