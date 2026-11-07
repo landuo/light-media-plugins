@@ -11036,24 +11036,28 @@
       ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "implementing",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "mediaserverrefresh.native_amd64_batch.20261107"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby, /root/kodi and /root/jellyfin",
+        "evidence_ids": [
+          "mediaserverrefresh.native_amd64_batch.20261107"
+        ]
       },
       "original_instance_id": "MediaServerRefresh",
       "family": "MediaServerRefresh",
       "source_version": "1.3.3",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
+      "source_metadata_only": false,
+      "discovery_note": "Installed fixed source lifecycle and configured fnOS scope verified, including native transfer, pending core follow-up and uninstall flush.",
       "standalone_worker_increment": {
-        "status": "implemented_pending_acceptance",
+        "status": "verified",
         "source_sha256": "ea92f39a852aa0333cb625885e0fbf7b2a679f4f7449463bb6126afe6694a3fc",
         "worker_commit": "0aeedee1c78394d0e21162c50411015431703d3f",
-        "host_commit": "34298d01de7e7ef8d420425a065c423f14a9210e",
+        "host_commit": "bdc649c6111cdb8f8da1b226c85a1454cf69788e",
         "host_paths": [
           "internal/app/plugin_original_transfer_events.go",
           "internal/app/plugin_original_bound_entry.go",
@@ -11067,11 +11071,7 @@
           "The scoped media list request has an optional connectivity-only check. It reuses fnOS login and user info without enumerating libraries. The existing item refresh performs source path matching, deduplication and fallback.",
           "The existing host exposes only its fnOS slot. The prior private reference mapping for the installed instance is documented by the host in docs/plugin-media-server-refresh-delivery.txt. The worker branches by service kind but no Emby, Jellyfin or Plex host providers are part of this change."
         ],
-        "open": [
-          "A normal scraped import may trigger both the standard plugin refresh and the core fnos_sync scan. The old confirmation receipt depended on retired legacy deliveries. Reconcile or verify scan ownership while preserving the independent core visibility check before accepting the plugin.",
-          "One source-derived actual App run using the standard Linux amd64 ZIP, owned TransferComplete inputs, existing embedded form and an isolated fnOS protocol fixture. Verify initial inactivity, pending coalescence, stop drain, exact scan cardinality and no global fallback on the owned paths.",
-          "Register the local build after acceptance. No production configuration or private-state import in this continuation."
-        ],
+        "open": [],
         "source_oracle": {
           "path": "plugins/mediaserverrefresh/reference/stop-batch-original.json",
           "sha256": "d1849a9ccd1d88fea9050db7a362be10c93211b711c089a990a91b47c61fc8f3",
@@ -11087,8 +11087,15 @@
             "Read the current delay after the first connectivity check and transfer item projection.",
             "Use the existing transport request bound for one complete refresh batch; avoid dividing it into repeated library scans."
           ],
-          "open": "A normal scraped import may trigger both the standard plugin refresh and the core fnos_sync scan. The old confirmation receipt depended on retired legacy deliveries. Reconcile or verify scan ownership while preserving the independent core visibility check before accepting the plugin."
+          "resolved": "An actual connected selected callback owns the automatic scan for its exact native transfer. The actual App verified the published asset without a second scan."
         }
+      },
+      "accepted_native_package": {
+        "status": "verified",
+        "path": "migration/evidence/mediaserverrefresh-acceptance-20261107.json",
+        "sha256": "c35863c3ac9c606254b7dd6f28194b8d5bc8c65d5b2ab788ed695d795e1c39bc",
+        "archive_sha256": "9dc99fcd69f9b8e8a76ed3c4cdb29ea004f940875abec014894f7738b2b9c39d",
+        "host_test_commit": "bd2c00268f0793b230322006bd0eafb6cedee1a8"
       }
     },
     {
@@ -66240,6 +66247,40 @@
         "evidence/systemprocess-acceptance-20261107.json": "ef278a1a7eb44ce688913cb709a07b306d409ac704544d9a11d21d0d9afa4b2b"
       },
       "reviewer": "/root/emby independent source and Vue review, /root native browser and ZIP run"
+    },
+    {
+      "id": "mediaserverrefresh.native_amd64_batch.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.MediaServerRefresh"
+      ],
+      "commands": [
+        "TestMediaServerRefreshInstalledAMD64Package on isolated native Linux amd64 with canonical ZIP and loopback fnOS fixture"
+      ],
+      "inputs": "Fixed installed source replay, exact package, native form config, two independent owned native transfers and an owned fnOS protocol peer.",
+      "observations": "The exact canonical package installed and initialized disabled. The actual authenticated App route exposed the Vuetify form, defaults and configured fnOS option, then saved enabled with source-typed string delay 10. Two native hardlink imports committed in separate owned libraries. The first automatic scrape published its NFO. Its core job waited with its original attempt budget and the same committed transfer reference. Both actual event callbacks confirmed the selected fnOS slot before entering debounce. Before uninstall there were zero provider preflights or scans. The follower had returned while the first accepted source callback still owned the batch. The actual uninstall triggered stop_service. Before the follower deadline, the retained callback made one preflight and one empty-body POST per owned GUID. There was no root scan or separate core scan. The actual core worker resumed after the callback group drained and verified the first published video by library GUID, item identity and exact file path. The saved asset became visible, and the worker was removed.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "source_sha256": "ea92f39a852aa0333cb625885e0fbf7b2a679f4f7449463bb6126afe6694a3fc",
+        "worker_product_commit": "0aeedee1c78394d0e21162c50411015431703d3f",
+        "host_product_commit": "bdc649c6111cdb8f8da1b226c85a1454cf69788e",
+        "host_test_commit": "bd2c00268f0793b230322006bd0eafb6cedee1a8",
+        "archive_sha256": "9dc99fcd69f9b8e8a76ed3c4cdb29ea004f940875abec014894f7738b2b9c39d",
+        "target_files": {
+          "plugins/mediaserverrefresh/plugin.go": "3a276a54a132ad932ff348f94d52ec1daf86e2e6a380f6fa0463361c80749523",
+          "plugins/mediaserverrefresh/refresh.go": "eb0e9ae1c6e36ba72211c832f879033648482db4278e9ffd8ca1dd55270cf7d3",
+          "plugins/mediaserverrefresh/form.json": "01ed1051b9943bd8b0dcc7e0838b938a09ecf046db1036efd3dcf01189e8b98d",
+          "plugins/mediaserverrefresh/ORIGIN.json": "94d412fb31aa4c264ba658117e1cbb4f6e9a0e42a06a33fb337fe11d2df90ca6",
+          "cmd/media-server-refresh/main.go": "4d7425765dc96562f12f8ce99bfb1560f2d6a21359a2755ae7f5a90af2761c6d",
+          "internal/sdk/media_host.go": "6b0bb5c1abed64b68e3c71b1f087fd85e13f0560bd38e021b692ece032de5e0b",
+          "build-plugins.json": "fd2bf8fe1005b935c033e0fde2457b35871b91a8a05a740d0841903c77a1bfa6"
+        }
+      },
+      "artifacts": {
+        "evidence/mediaserverrefresh-acceptance-20261107.json": "c35863c3ac9c606254b7dd6f28194b8d5bc8c65d5b2ab788ed695d795e1c39bc"
+      },
+      "reviewer": "/root independent source/host/package evidence and actual native acceptance"
     }
   ],
   "scope": {
@@ -66286,21 +66327,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 10,
+      "functional_verified_instances": 11,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 9,
-      "functional_verified_count_scope": "Ten of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 10,
+      "functional_verified_count_scope": "Eleven of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "34298d01de7e7ef8d420425a065c423f14a9210e",
+      "host_HEAD": "bd2c00268f0793b230322006bd0eafb6cedee1a8",
       "SDK_source_host_commit": "39b874069acaf9ec21ad80c36d3792cb68a0b615",
       "SDK_current_files": 106,
       "SDK_current_origin_sha256": "8590a2060775994506b31c1806b988b7e6a9f784ebba8345f4c045ff90ff9223",
@@ -66311,12 +66352,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Ten of 22 in scope accepted. SystemProcess 1.1 standard ZIP and actual Chrome passed and is registered locally. MediaServerRefresh 1.3.3 implementation is saved and pending runtime acceptance. No push or deployment.",
-      "tests_running": "None. SystemProcess passed. MediaServerRefresh source-only stop-batch replay passed, while actual Go package and App acceptance remain open.",
-      "latest_detail": "features[plugin.MediaServerRefresh].standalone_worker_increment",
+      "delivery": "Eleven of 22 in scope accepted. MediaServerRefresh 1.3.3 standard native amd64 ZIP, App form, real transfer batch and independent verification passed against an owned fnOS protocol peer. Registry and companion host commits local only.",
+      "tests_running": "None. Corrected isolated fixture passed a single MediaServerRefresh business run. Earlier passing suites were not rerun.",
+      "latest_detail": "features[plugin.MediaServerRefresh].accepted_native_package",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Finish MediaServerRefresh 1.3.3. Reconcile the standard plugin refresh with core fnos_sync to avoid duplicate scans without weakening independent visibility. Then run one source-derived standard Linux amd64 App/ZIP case with owned fnOS and native form, reusing valid host evidence and the pinned stop-batch oracle. Keep MergeMessageNotify deferred.",
+      "next_complete_slice": "Start RemoteIdentifiers 2.4.1 from the fixed installed source, actual recognition/shared-rule call chain, and existing host capabilities. Reuse prior evidence, no repeated MediaServerRefresh tests. Keep MergeMessageNotify deferred.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66338,7 +66379,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Finish MediaServerRefresh 1.3.3. Reconcile the standard plugin refresh with core fnos_sync to avoid duplicate scans without weakening independent visibility. Then run one source-derived standard Linux amd64 App/ZIP case with owned fnOS and native form, reusing valid host evidence and the pinned stop-batch oracle. Keep MergeMessageNotify deferred.",
+    "next_complete_slice": "Start RemoteIdentifiers 2.4.1 from the fixed installed source, actual recognition/shared-rule call chain, and existing host capabilities. Reuse prior evidence, no repeated MediaServerRefresh tests. Keep MergeMessageNotify deferred.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

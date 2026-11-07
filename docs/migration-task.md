@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (ten of 22 in scope accepted)
+## Current resume (eleven of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -22,14 +22,16 @@ The 12 fixed-source cases and earlier Linux ARM64 lifecycle run were reused.
 The local build registry includes SystemProcess. See
 `migration/evidence/systemprocess-acceptance-20261107.json`.
 
-MediaServerRefresh 1.3.3 is in progress. The standalone Go worker uses
-the standard TransferComplete event and the existing fnOS item refresh.
-Its connectivity-only probe, source debounce and stop behavior are
-implemented. The pinned source replay supplies the expected ordered
-stop-time batch. A normal import may also enqueue the core fnOS scan, so
-reconcile scan ownership while preserving independent visibility checks
-before the focused package/App acceptance. The legacy installed reference
-mapping to fnOS is documented by the host.
+MediaServerRefresh 1.3.3 is accepted for the installed fnOS configuration.
+The exact Linux amd64 ZIP and native App form passed. Two real transfers
+queued one plugin batch. On uninstall the retained callback issued one
+preflight and two owned library scans against an isolated fnOS protocol
+peer. The core job verified the published file without sending another
+scan. The registry and paired host changes are local.
+See `migration/evidence/mediaserverrefresh-acceptance-20261107.json`.
+
+Next: RemoteIdentifiers 2.4.1 from the fixed installed recognition and
+shared-rule paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
