@@ -149,11 +149,25 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseServerChanService(raw)
 	case "psafer", "psafers":
 		service, valid = parsePushSaferService(raw)
+	case "join":
+		service, valid = parseJoinService(raw)
+	case "ifttt":
+		service, valid = parseIFTTTService(raw)
+	case "pover":
+		service, valid = parsePushoverService(raw)
+	case "discord":
+		service, valid = parseDiscordService(raw)
+	case "pjet", "pjets":
+		service, valid = parsePushjetService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
 		} else if native, ok := ntfyNativeURL(raw); ok {
 			service, valid = parseNtfyService(native)
+		} else if native, ok := iftttNativeURL(raw); ok {
+			service, valid = parseIFTTTService(native)
+		} else if native, ok := discordNativeURL(raw); ok {
+			service, valid = parseDiscordService(native)
 		} else {
 			return false, ErrUnsupported
 		}
@@ -196,16 +210,15 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	requests := make([]requestGroup, 0, len(c.services))
 	hasCalls := false
 	for _, service := range c.services {
-		if len(attachments) != 0 {
-			if provider, ok := service.(attachmentChunkService); ok {
-				hasCalls = true
-				requests = append(requests, requestGroup{service: service, attached: provider})
-				continue
-			}
-			if bodyText == "" {
-				requests = append(requests, requestGroup{service: service})
-				continue
-			}
+		_, orderedText := service.(interface{ sendTextInOrder() })
+		if provider, ok := service.(attachmentChunkService); ok && (len(attachments) != 0 || orderedText) {
+			hasCalls = true
+			requests = append(requests, requestGroup{service: service, attached: provider})
+			continue
+		}
+		if len(attachments) != 0 && bodyText == "" {
+			requests = append(requests, requestGroup{service: service})
+			continue
 		}
 		calls, err := service.requests(titleText, bodyText)
 		if err != nil {
@@ -251,7 +264,7 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 			return sendResult{err: err}
 		}
 		sources := attachments
-		if group.attached.truncateAttachments() {
+		if len(sources) != 0 && group.attached.truncateAttachments() {
 			sources = sources[:1]
 		}
 		success := len(chunks) != 0

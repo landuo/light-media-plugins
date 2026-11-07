@@ -112,3 +112,11 @@ The BLP reader derives from the CC0 Pillow plugin; source attribution is retaine
 with the implementation. These are Go implementations, with no WASM or native
 codec dependency. Root Go minimum1.26.4 is a build prerequisite, not a runtime
 interpreter requirement.
+
+## MergeMessageNotify Markdown conversion
+
+Pushover's Apprise adapter uses Goldmark v1.8.7, commit
+`6dafb0cf955a823afd513a641b6747424c40ee5d`, under the MIT license.
+The license is in `third_party/goldmark-LICENSE` and belongs in the
+MergeMessageNotify package's notice inventory. The conversion reference is the
+installed Python-Markdown 3.11.2. The worker uses Goldmark at runtime.

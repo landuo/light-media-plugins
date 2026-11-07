@@ -20,7 +20,13 @@
     "pbul",
     "schan",
     "psafer",
-    "psafers"
+    "psafers",
+    "join",
+    "ifttt",
+    "pjet",
+    "pjets",
+    "discord",
+    "pover"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -131,6 +137,51 @@
       ],
       "source_observations": "testdata/url-list-1.9.9.json",
       "reason": "Recognize service URL lists in one configuration line while retaining supported services when an unknown URL was rejected. Ordered attachment providers receive the HTTP response for source upload handshakes and provider-specific success checks."
+    },
+    {
+      "file": "join.go",
+      "original_path": "apprise/plugins/join.py",
+      "original_sha256": "19783aa7173578a59a7a8186ca6bc23130a60bfc726f36a723e80e9e4a813014",
+      "source_observations": "testdata/join-ifttt-1.9.9.json",
+      "reason": "Port device and group selection, normalized target ordering, icon/priority queries, 1000-character overflow and status-only delivery."
+    },
+    {
+      "file": "ifttt.go",
+      "original_path": "apprise/plugins/ifttt.py",
+      "original_sha256": "3d4b2f6a97d702b79663228a4c08c314b1cfd4eb3dbeef553873dc30a1d59da0",
+      "source_observations": "testdata/join-ifttt-1.9.9.json",
+      "reason": "Port sorted Webhook events and native maker URL handling. URL ingredient keys retain the original parser-to-constructor behavior.",
+      "source_boundary_observations": "testdata/ifttt-dot-1.9.9.json"
+    },
+    {
+      "file": "pushjet.go",
+      "original_path": "apprise/plugins/pushjet.py",
+      "original_sha256": "b520f92f29872bc12e5eb5a2c58042ddee62773dc1457db2cec629aceb206365",
+      "source_observations": "testdata/pushjet-1.9.9.json",
+      "reason": "Port HTTP(S) endpoint/port and secret selection, optional Basic auth, zero send interval and exact JSON-in-form-content-type request."
+    },
+    {
+      "file": "discord.go",
+      "original_path": "apprise/plugins/discord.py",
+      "original_sha256": "e28790c06e5daa23539b7a2a9e2f6c6e27e08c3f030635cec9f475c780ddfaab",
+      "source_observations": "testdata/discord-1.9.9.json",
+      "reason": "Port native webhook parsing, threads, embeds, mentions, multipart, first failure and one-shot rate-limit retry."
+    },
+    {
+      "file": "pushover.go",
+      "original_path": "apprise/plugins/pushover.py",
+      "original_sha256": "75d8164357e714a4d27209ee9bb7ace132c4db9d363a4178b5bfac302aedea8c",
+      "source_observations": "testdata/pushover-1.9.9.json",
+      "reason": "Port emergency priorities, source attachment and timeout behavior, and Markdown conversion with source-derived Go renderer adaptation.",
+      "markdown_reference": {
+        "installed_version": "Python-Markdown 3.11.2",
+        "target_module": "github.com/yuin/goldmark v1.8.7",
+        "target_source_commit": "6dafb0cf955a823afd513a641b6747424c40ee5d",
+        "target_license": "third_party/goldmark-LICENSE",
+        "target_license_sha256": "c1d6f653c38c80294dc7994647ba0dcc508ce64a86996303c804efa2f7982bff",
+        "source": "https://github.com/yuin/goldmark/releases/tag/v1.8.7",
+        "remaining": "Additional Python-Markdown and CommonMark dialect differences remain open."
+      }
     }
   ]
 }

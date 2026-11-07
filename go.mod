@@ -11,4 +11,5 @@ require (
 
 require (
 	github.com/gen2brain/gav1d v0.2.6
+	github.com/yuin/goldmark v1.8.7
 )

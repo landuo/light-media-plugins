@@ -136,6 +136,10 @@ func notificationRequests(title, body string, emojis bool, overflow, format stri
 type notificationChunk struct{ title, body string }
 
 func notificationChunks(title, body string, emojis bool, overflow, format string) ([]notificationChunk, error) {
+	return notificationChunksWithBodyLimit(title, body, emojis, overflow, format, 32768)
+}
+
+func notificationChunksWithBodyLimit(title, body string, emojis bool, overflow, format string, bodyLimit int) ([]notificationChunk, error) {
 	if emojis {
 		var err error
 		body, err = applyEmojis(body)
@@ -156,11 +160,11 @@ func notificationChunks(title, body string, emojis bool, overflow, format string
 			title = strings.TrimRightFunc(string(r[:250]), sourceSpace)
 		}
 		r = []rune(body)
-		if len(r) > 32768 {
+		if len(r) > bodyLimit {
 			if overflow == "split" {
-				chunks = smartSplit(body, 32768, format)
+				chunks = smartSplit(body, bodyLimit, format)
 			} else {
-				chunks = []string{strings.TrimRightFunc(strings.TrimLeft(string(r[:32768]), "\r\n\v\f"), sourceSpace)}
+				chunks = []string{strings.TrimRightFunc(strings.TrimLeft(string(r[:bodyLimit]), "\r\n\v\f"), sourceSpace)}
 			}
 		}
 	}
@@ -168,7 +172,7 @@ func notificationChunks(title, body string, emojis bool, overflow, format string
 	count := len(chunks)
 	for i, chunk := range chunks {
 		chunkTitle := title
-		if overflow == "split" && len([]rune(body)) > 32768 {
+		if overflow == "split" && len([]rune(body)) > bodyLimit {
 			chunk = strings.TrimRightFunc(strings.TrimLeft(chunk, "\r\n\v\f"), sourceSpace)
 			if title != "" {
 				digits := len(strconv.Itoa(count))

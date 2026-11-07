@@ -13,13 +13,16 @@ CPython-style ASCII JSON serialization, long-message smart splitting and the
 JSON/JSONS provider are implemented in Go. Source aliases/uppercase emoji
 KeyError behavior is intentionally preserved, not silently corrected.
 
-Only JSON/JSONS providers are presently implemented. Registered provider names
-in catalog.json identify remaining native dependencies; enabled flags in that
-reference catalog describe the owned oracle environment, not production NAS
-availability. Other valid providers and valid local/HTTP attachments are not
-yet implemented and raise ErrUnsupported. Invalid attachment preparation
-returns False; an empty attachment list is allowed, matching the original
-AppriseAttachment constructor. No Python runtime is used.
+ORIGIN.json lists the native provider schemes. The reference catalog under
+testdata lists original schemes and their availability in the isolated oracle.
+Valid unported schemes return ErrUnsupported. Supported providers can resolve
+HTTP attachments and host-authorized local files. Invalid attachment
+preparation returns False and an empty attachment list is allowed.
+
+Pushover's Markdown-to-HTML conversion uses Goldmark v1.8.7 under the MIT
+license in third_party/goldmark-LICENSE. The Go renderer adapts line breaks,
+tables and code spans against the installed Python-Markdown 3.11.2 behavior.
+The package requires no Python runtime.
 
 The native HTTP port has owned wire evidence for methods, redirects, cookies,
 Latin-1 headers/basic auth, TLS verification, read timeout and cancellation.
