@@ -1,0 +1,91 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_source_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "original_behavior": {
+    "configuration_save_origin": "channel/__init__.py:112–133 checks app.api.endpoints.plugin.set_plugin_config on the stack. channel/custom/__init__.py:57–76 sends once and clears test_once in finally. Startup/reload lacks this origin.",
+    "event": "__init__.py:505–end reads the ordinary NoticeMessage, selects source type or mtype and sends through configured channels. OneBot sender in channel/custom/onebot11.py:253–326."
+  },
+  "actual_host": {
+    "evidence_kind": "actual standalone Linux Main and canonical installed worker. All recipients are local synthetic HTTP; test producer uses ordinary host Base.PostMessage.",
+    "inputs": {
+      "product_commit": "cb823a7848d33b293ed6b5d93809fb59408b1d2a",
+      "host_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
+      "manifest_sha256": "e93bfcaf986d677a602314fcc07f68f6f3e01e7ecba087f7b32a0a1aeca557af",
+      "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+      "bundle": {
+        "bin/worker": "1e8df456d89b65f0b1e366df61b5013cf080ec5d035eea7e742889cc59f7c6c9",
+        "bin/host": "ee330f60615393bbd8a582f774edc4e0f108f61663fd50293887288770debd07",
+        "bin/driver": "b159ee7c69803ce7cfc56b7979708036430bf17ccde1c8490aaa4325bacdd686",
+        "bin/owned-merge-notice": "190069395aaa991a470c105d3794545bbc7957bc0004269067acb8a3551349a5",
+        "merge-package.zip": "9c270f5ee16dadf14819f90000651603dcb16b0428dbeab21bd17385c72fbaa1",
+        "merge-index.json": "7d5a19d3faa83aa7e8665f7308ef229025a237d3f0da59bcbfbfd6a4e6c9956c"
+      },
+      "driver_source_sha256": "0a8d58de79251fb430ac01073011edf09bb122baf95c8897bc53b6c5634811ad",
+      "producer_source_sha256": "7ff4f9e235120fb3493eb6bfe36ce1ce51ff349949974f064c3fc396b26ae08d"
+    },
+    "run": {
+      "exit": 0,
+      "seconds": 10.3437077968847,
+      "container_absent": true,
+      "network": "none"
+    },
+    "observations": {
+      "merge_canonical_zip_worker": {
+        "pid": 30,
+        "worker_sha256": "1e8df456d89b65f0b1e366df61b5013cf080ec5d035eea7e742889cc59f7c6c9"
+      },
+      "merge_form_from_loaded_worker": {
+        "access_token": true,
+        "mode": "vuetify"
+      },
+      "merge_save_once": {
+        "physical_onebot_sends": 1,
+        "stored_test_once": false
+      },
+      "merge_reload_preserved_true": {
+        "new_pid": 50,
+        "old_pid": 30,
+        "stored_test_once": true
+      },
+      "merge_real_notice_and_shutdown": {
+        "history_notices": 1,
+        "physical_onebot_sends_total": 2,
+        "post_message_path": true,
+        "true_flag_not_replayed": true,
+        "worker_processes_reaped": true
+      }
+    },
+    "raw_observations": "work/mergemessagenotify-20261107/main-driver/actual/observations.jsonl",
+    "raw_observations_sha256": "89e35779d9850bf734308a2f2ae610e932b6d5a85b6a4195458c615e55812393",
+    "scope": "Actual ZIP acquisition, native form, save triggers one message and clears, reload does not replay, genuine notice gives a second send and one host history record, both workers reaped."
+  },
+  "independent_review": {
+    "reviewer": "/root/merge_origin_review",
+    "scope": "Reviewed live initializer/identity binding and independently checked exact Linux run observations. Found explicit-manager init needs a bound false lease, corrected after real run.",
+    "manager_fix_commit": "204dc6dc6c29071544a12b5e0cacb0772f917e3e",
+    "manager_fix_scope": "Direct manager init with supplied config now calls the shared real initializer with a non-save lease. This distinct entry was not in the executed Linux package gate."
+  },
+  "gateway_differential": {
+    "source": "Fixed Apprise 1.9.9 apprise/plugins/apprise_api.py, SHA256 14f12b4f55089599e22eaa53e3dab23571b2560b3b9494ed796a99cd6b4ffad9",
+    "target": "plugins/mergemessagenotify/apprise/gateway.go",
+    "source_fixture": "plugins/mergemessagenotify/apprise/testdata/gateway-1.9.9.json",
+    "source_fixture_sha256": "1d6098f72ff3b739a6bba72382640e8df91451f475828bcbe86d1deaa4706020",
+    "target_output": "work/mergemessagenotify-20261107/apprise-gateway-target.stdout",
+    "target_output_sha256": "483a95f4764986faf69d926f7eea3404389d201e1dd66e496a550941b8a2d5e2",
+    "result": "Nine targeted differential cases passed with no external sends. Form/JSON, Basic auth, query precedence, tag rejection, status 200 and native URL aliases."
+  },
+  "delivery": {
+    "branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "registered_for_release": false,
+    "remote_pushed": false,
+    "deployed": false,
+    "original_private_state_imported": false
+  },
+  "remaining": [
+    "Browser interaction and final package lifecycle/clone proof.",
+    "Apprise Bark, attachments and other supported providers beyond JSON/JSONS and Apprise gateway.",
+    "Mako valid language branches still unsupported, plus inherited finite SMTP and Requests differences."
+  ]
+}
