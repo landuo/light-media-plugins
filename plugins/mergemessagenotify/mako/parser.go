@@ -3,9 +3,11 @@ package mako
 import "strings"
 
 type templateParser struct {
-	tokens []templateToken
-	at     int
-	loops  int
+	tokens     []templateToken
+	at         int
+	loops      int
+	blockLines map[int]bool
+	pageFilter templateFilters
 }
 
 func controlName(s string) string {
@@ -181,18 +183,37 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 		case "tag":
 			switch t.text {
 			case "def", "block":
-				signature := t.attrs["name"]
-				if signature == "" {
-					return nil, nil, ErrUnsupported
+				signature, named := t.attrs["name"]
+				var name string
+				var params []parameter
+				var err error
+				if t.text == "block" && !named {
+					if t.attrs["args"] != "" || p.blockLines[t.line] {
+						return nil, nil, fault("CompileException")
+					}
+					if p.blockLines == nil {
+						p.blockLines = map[int]bool{}
+					}
+					p.blockLines[t.line] = true
+				} else {
+					if signature == "" {
+						return nil, nil, ErrUnsupported
+					}
+					name, params, err = parseSignature(signature, t.text == "block")
+					if err != nil {
+						return nil, nil, err
+					}
 				}
-				name, params, err := parseSignature(signature, t.text == "block")
-				if err != nil {
-					return nil, nil, err
-				}
-				priorLoops := p.loops
+				priorLoops, priorBlocks := p.loops, p.blockLines
 				p.loops = 0
+				if t.text == "def" {
+					p.blockLines = nil
+				}
 				body, end, err := p.nodes(map[string]bool{"/" + t.text: true})
 				p.loops = priorLoops
+				if t.text == "def" {
+					p.blockLines = priorBlocks
+				}
 				if err != nil {
 					return nil, nil, err
 				}
@@ -200,12 +221,11 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 					return nil, nil, fault("SyntaxError")
 				}
 				n := defNode{name: name, params: params, body: body, buffered: t.attrs["buffered"] == "True", block: t.text == "block"}
-				if f := t.attrs["filter"]; f != "" {
-					n.filters, err = parseFilters(f)
-					if err != nil {
-						return nil, nil, err
-					}
+				filters, err := parseFilters(t.attrs["filter"])
+				if err != nil {
+					return nil, nil, err
 				}
+				n.filters = filters.values
 				for _, key := range []string{"cached", "cache_key", "decorator"} {
 					if _, ok := t.attrs[key]; ok {
 						return nil, nil, ErrUnsupported
@@ -222,9 +242,14 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 						out = append(out, pageArgNode{param})
 					}
 				}
-				if t.attrs["expression_filter"] != "" || t.attrs["enable_loop"] != "" {
+				if t.attrs["enable_loop"] != "" {
 					return nil, nil, ErrUnsupported
 				}
+				filters, err := parseFilters(t.attrs["expression_filter"])
+				if err != nil {
+					return nil, nil, err
+				}
+				p.pageFilter = filters
 			case "include", "inherit":
 				out = append(out, failNode{})
 			case "namespace":
@@ -384,19 +409,33 @@ func splitTop(s string, separator byte) []string {
 	}
 	return append(out, s[start:])
 }
-func parseFilters(s string) ([]expression, error) {
-	out := []expression{}
-	for _, f := range splitTop(s, ',') {
+
+type templateFilters struct {
+	values    []expression
+	noDefault bool
+}
+
+func parseFilters(s string) (templateFilters, error) {
+	var out templateFilters
+	parts := splitTop(s, ',')
+	for i, f := range parts {
 		f = strings.TrimSpace(f)
 		switch f {
+		case "":
+			if i == len(parts)-1 {
+				continue
+			}
+		case "n":
+			out.noDefault = true
+			continue
 		case "h", "x", "u", "trim", "entity", "unicode", "str":
 			f = "__filter_" + f
 		}
 		x, err := parseExpression(f)
 		if err != nil {
-			return nil, err
+			return templateFilters{}, err
 		}
-		out = append(out, x)
+		out.values = append(out.values, x)
 	}
 	return out, nil
 }
@@ -411,19 +450,13 @@ func parseExprNode(s string) (exprNode, error) {
 		return n, fault("SyntaxError")
 	}
 	if len(parts) > 1 {
-		filters := []string{}
-		for _, f := range splitTop(parts[1], ',') {
-			if strings.TrimSpace(f) == "n" {
-				n.noDefault = true
-			} else {
-				filters = append(filters, f)
-			}
+		filters, err := parseFilters(parts[1])
+		if err != nil {
+			return n, err
 		}
-		if len(filters) > 0 {
-			n.filters, err = parseFilters(strings.Join(filters, ","))
-		}
+		n.filters, n.noDefault = filters.values, filters.noDefault
 	}
-	return n, err
+	return n, nil
 }
 
 func executeCode(e *environment, text string) (flow, error) {

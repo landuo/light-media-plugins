@@ -38,12 +38,13 @@ type Field struct {
 type OrderedObject []Field
 type callable func(*environment, []any, map[string]any) (any, error)
 type environment struct {
-	ctx    context.Context
-	values map[string]any
-	parent *environment
-	output *strings.Builder
-	module *environment
-	strict bool
+	ctx        context.Context
+	values     map[string]any
+	parent     *environment
+	output     *strings.Builder
+	module     *environment
+	strict     bool
+	pageFilter templateFilters // Set on the module scope.
 }
 
 func (e *environment) get(k string) any {

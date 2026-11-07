@@ -28,7 +28,7 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 		return fallback(text, err)
 	}
 	b := &strings.Builder{}
-	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true}
+	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true, pageFilter: p.pageFilter}
 	module.module = module
 	for _, n := range nodes {
 		if c, ok := n.(codeNode); ok && c.module {
@@ -66,10 +66,12 @@ func fallback(text string, err error) (string, error) {
 type templateToken struct {
 	kind, text, extra string
 	attrs             map[string]string
+	line              int
 }
 
 func scanTemplate(s string) ([]templateToken, error) {
 	out := []templateToken{}
+	tagLine, previousTag := 1, 0
 	var text strings.Builder
 	flush := func() {
 		if text.Len() > 0 {
@@ -164,6 +166,7 @@ func scanTemplate(s string) ([]templateToken, error) {
 		}
 		if strings.HasPrefix(s[i:], "<%") {
 			flush()
+			tagStart := i
 			at := i + 2
 			tag := ""
 			for at < len(s) && s[at] >= 'a' && s[at] <= 'z' {
@@ -210,7 +213,9 @@ func scanTemplate(s string) ([]templateToken, error) {
 				i += end + len(tag) + 4
 				continue
 			}
-			out = append(out, templateToken{kind: "tag", text: tag, attrs: attrs})
+			tagLine += strings.Count(s[previousTag:tagStart], "\n")
+			previousTag = tagStart
+			out = append(out, templateToken{kind: "tag", text: tag, attrs: attrs, line: tagLine})
 			if selfClosing {
 				out[len(out)-1].extra = "self"
 			}
@@ -362,25 +367,23 @@ func (n exprNode) render(e *environment) (flow, error) {
 	if err != nil {
 		return normal, err
 	}
+	var page templateFilters
 	if !n.noDefault {
+		page = e.module.pageFilter
+	}
+	if !n.noDefault && !page.noDefault {
 		v, err = pyString(v)
 		if err != nil {
 			return normal, err
 		}
 	}
-	for _, f := range n.filters {
-		fn, er := f.eval(e)
-		if er != nil {
-			return normal, er
-		}
-		c, ok := fn.(callable)
-		if !ok {
-			return normal, fault("NameError")
-		}
-		v, err = c(e, []any{v}, nil)
-		if err != nil {
-			return normal, err
-		}
+	v, err = applyFilters(e, v, page.values, "NameError")
+	if err != nil {
+		return normal, err
+	}
+	v, err = applyFilters(e, v, n.filters, "NameError")
+	if err != nil {
+		return normal, err
 	}
 	s, ok := v.(string)
 	if !ok {
@@ -388,6 +391,24 @@ func (n exprNode) render(e *environment) (flow, error) {
 	}
 	e.output.WriteString(s)
 	return normal, nil
+}
+
+func applyFilters(e *environment, value any, filters []expression, invalidClass string) (any, error) {
+	for _, filter := range filters {
+		fn, err := filter.eval(e)
+		if err != nil {
+			return nil, err
+		}
+		call, ok := fn.(callable)
+		if !ok {
+			return nil, fault(invalidClass)
+		}
+		value, err = call(e, []any{value}, nil)
+		if err != nil {
+			return nil, err
+		}
+	}
+	return value, nil
 }
 
 type ifBranch struct {
@@ -527,25 +548,44 @@ type defNode struct {
 }
 
 func (n defNode) render(e *environment) (flow, error) {
-	if n.block {
-		fn := e.get(n.name).(callable)
-		_, err := fn(e, nil, nil)
+	if !n.block {
+		return normal, nil
+	}
+	if n.name == "" {
+		fn, err := n.bind(e)
+		if err != nil {
+			return normal, err
+		}
+		_, err = fn(e, nil, nil)
 		return normal, err
 	}
-	return normal, nil
+	fn, ok := e.get(n.name).(callable)
+	if !ok {
+		return normal, fault("TypeError")
+	}
+	_, err := fn(e, nil, nil)
+	return normal, err
 }
 func (n defNode) install(e *environment) error {
+	fn, err := n.bind(e)
+	if err != nil {
+		return err
+	}
+	e.values[n.name] = fn
+	return nil
+}
+func (n defNode) bind(e *environment) (callable, error) {
 	defaults := map[string]any{}
 	for _, p := range n.params {
 		if p.defaultValue != nil {
 			v, err := p.defaultValue.eval(e.module)
 			if err != nil {
-				return err
+				return nil, err
 			}
 			defaults[p.name] = v
 		}
 	}
-	e.values[n.name] = callable(func(caller *environment, args []any, kw map[string]any) (any, error) {
+	return func(caller *environment, args []any, kw map[string]any) (any, error) {
 		if len(args) > len(n.params) {
 			return nil, fault("TypeError")
 		}
@@ -590,20 +630,9 @@ func (n defNode) install(e *environment) error {
 			return nil, err
 		}
 		if n.buffered || len(n.filters) > 0 {
-			var result any = buffer.String()
-			for _, f := range n.filters {
-				fn, err := f.eval(scope)
-				if err != nil {
-					return nil, err
-				}
-				call, ok := fn.(callable)
-				if !ok {
-					return nil, fault("TypeError")
-				}
-				result, err = call(scope, []any{result}, nil)
-				if err != nil {
-					return nil, err
-				}
+			result, err := applyFilters(scope, buffer.String(), n.filters, "TypeError")
+			if err != nil {
+				return nil, err
 			}
 			if n.buffered {
 				return result, nil
@@ -615,13 +644,15 @@ func (n defNode) install(e *environment) error {
 			caller.output.WriteString(s)
 		}
 		return "", nil
-	})
-	return nil
+	}, nil
 }
 func installDefinitions(e *environment, nodes []templateNode) error {
 	for _, n := range nodes {
 		switch x := n.(type) {
 		case defNode:
+			if x.name == "" {
+				continue
+			}
 			if err := x.install(e); err != nil {
 				return err
 			}

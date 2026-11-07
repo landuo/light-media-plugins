@@ -71,5 +71,25 @@
       "host_sha256": "f79c253f88b1e90933b2a26bc088cab63b17e07b87b64de5df29abd434c55a86"
     }
   },
-  "selection": "Go runtime and required embedded data, license and provenance files. Historical tests and their data remain in the host reference."
+  "selection": "Go runtime and required embedded data, license and provenance files. Historical tests and their data remain in the host reference.",
+  "adaptations": [
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Implement anonymous block buffering/filtering and page expression filters from fixed Mako 1.4.1. The expression n marker skips page/default filters; a page n marker skips only default string conversion.",
+      "target_files": [
+        "parser.go",
+        "template.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d"
+      },
+      "source_observations": "testdata/source-filters-1.4.1.json",
+      "source_observations_sha256": "1f94ef9bf6f2588cb6294887b047f549b8e4499f159616ef8069e3e3bc3ea762",
+      "scope": "Ten original TemplateUtil cases. Cached/decorated blocks, call tags and other unported constructs remain outside this proof."
+    }
+  ]
 }
