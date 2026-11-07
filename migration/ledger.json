@@ -9748,7 +9748,8 @@
       ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "implementing",
+      "status": "excluded",
+      "decision_id": "defer.merge-message-notify",
       "evidence_ids": [
         "mergemessagenotify.actual_host_save_origin.20261107"
       ],
@@ -10090,6 +10091,16 @@
           "Mako inline and module namespaces, additional paired tag syntax and advanced scope remain open. The installed string-template entry has no file lookup; actual external file loading is outside that original entry.",
           "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
         ]
+      },
+      "deferred_checkpoint": {
+        "previous_status": "implementing",
+        "saved_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
+        "checkpoint_commit": "9f32c271c629918a42dd6f79e41de2aa5f3f750f",
+        "uncommitted_work": {
+          "path": "work/mergemessagenotify-20261107/deferred-9f32c27/files.json",
+          "sha256": "30ac0001758f7dd31c83dd46106608680e1e6b62130044a47b91f0cff6193ed1"
+        },
+        "scope": "Temporarily deferred by the user. Prior evidence is retained for possible resumption."
       }
     },
     {
@@ -10520,10 +10531,14 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "plugins/iyuuautoseed/helper.go",
+        "plugins/iyuuautoseed/json.go",
+        "plugins/iyuuautoseed/source_clock.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
+      "status": "implementing",
       "evidence_ids": [],
       "review": {
         "status": "pending",
@@ -10534,8 +10549,23 @@
       "original_instance_id": "IYUUAutoSeed",
       "family": "IYUUAutoSeed",
       "source_version": "2.22",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
+      "portable_helper_and_qb_projection": {
+        "status": "partial_verified",
+        "evidence": {
+          "path": "migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json",
+          "sha256": "f318160b20d743a5f7a924ef726211bfe99f60c719f38009c0d7d3e8980e802c"
+        },
+        "plugin_commit": "b994d0ed4f4951ab12f69e750e0b5de4fab184b2",
+        "paired_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+        "scope": "Byte-identical installed API helper replay and opt-in qB pack fields for the forthcoming 2.22 worker. Business acceptance remains open.",
+        "remaining": [
+          "Port the 2.22 worker run and recheck lifecycle. All completed hashes precede candidate filtering and are reused across 200-row batches. Preserve qB availability and completed byte checks, and once-per-init deferred qB rechecks.",
+          "Bind fixed IYUU token-header GET/JSON POST transport, host-owned site credentials and specialized tracker/metainfo flows. The existing 2.19 host app or old relay does not establish a standalone 2.22 worker.",
+          "Port native form, private/public scheduling, site deletion, storage and restart behavior. Verify actual worker, browser, package and affected host paths."
+        ]
+      }
     },
     {
       "id": "plugin.SystemProcess",
@@ -16793,6 +16823,12 @@
     }
   ],
   "decisions": [
+    {
+      "id": "defer.merge-message-notify",
+      "status": "approved",
+      "authorization": "The user updated the active objective with 聚合消息先不实现.",
+      "impact": "Defer only MergeMessageNotify for the current migration. Preserve its existing code, pinned inventory and partial evidence. Other installed instances remain in scope."
+    },
     {
       "id": "exclude.workflow-ai",
       "status": "approved",
@@ -65807,6 +65843,8 @@
   ],
   "scope": {
     "instances": 23,
+    "current_migration_instances": 22,
+    "deferred_instances": ["MergeMessageNotify"],
     "business_families": 22,
     "source_files": 190,
     "language": "Go",
@@ -65847,31 +65885,33 @@
     "current": {
       "functional_verified_instances": 8,
       "total_installed_instances": 23,
+      "current_migration_instances": 22,
+      "deferred_instances": ["MergeMessageNotify"],
       "business_families_verified": 7,
-      "functional_verified_count_scope": "Eight functional instances accepted, including AutoSignIn 2.9.15 with the paired SDK105 host. Private state and deployment remain separate.",
+      "functional_verified_count_scope": "Eight of 22 in current scope accepted. Original inventory has 23 and includes deferred MergeMessageNotify. Private state and deployment remain separate.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "fcc5995a32582047d08db1b50e962e64effde84f",
-      "SDK_source_host_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+      "host_HEAD": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+      "SDK_source_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
       "SDK_current_files": 106,
-      "SDK_current_origin_sha256": "1c1d84f5887dbe60ebc212a3a391c032a9cf8ea77d8eafb8bf1aeb0b0a6d2b54",
-      "SDK_current_status": "SDK106 mirrors the committed local host file-grant resource. Exact Linux package and host proof is bound to the Merge local-attachment increment. Earlier SDK105 and SDK101 acceptance/deployment bindings retained.",
+      "SDK_current_origin_sha256": "dc605efb2d52613fec55d573e1dcc7c919eb037704030bb2e82c472feb77a4b4",
+      "SDK_current_status": "The 106-file paired SDK now supports opt-in native qB pack fields. Previous SDK bindings remain historical. No actual IYUU worker acceptance at this revision.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-07 fresh target ls-remote P4453f821; host main from previous H75e13686 check. No push.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight accepted instances. Merge adds custom form, custom XML and Home Assistant in six schemes and aligns the installed Mako external-reference behavior without TemplateLookup. Whole Merge acceptance remains open.",
-      "tests_running": "None. This increment recorded 85 new source-derived replay rows and an exact Linux build. Review follow-ups ran only newly captured rows. The first Mako Go attempt stopped before executing cases.",
-      "latest_detail": "features[plugin.MergeMessageNotify].form_xml_home_assistant_external_templates_increment",
+      "delivery": "Eight of 22 current-scope instances accepted. IYUUAutoSeed 2.22 has the relocated API helper and a paired host pack-field projection. MergeMessageNotify is deferred by user instruction.",
+      "tests_running": "None. The relocated helper passed one 24-row source replay. The qB projection was checked once per wire shape, with the opt-in contract replacing the preliminary response.",
+      "latest_detail": "features[plugin.IYUUAutoSeed].portable_helper_and_qb_projection",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue fixed-source MergeMessageNotify provider coverage with Emby, Jellyfin and Kodi. Port installed Mako inline namespaces without file lookup. Browser, clone, explicit manager and final integrated package acceptance remain open. Reuse only applicable unchanged observations.",
+      "next_complete_slice": "Continue IYUUAutoSeed 2.22 with fixed-origin IYUU transport, native form and lifecycle, and the worker run/recheck adapters. Use the opted-in qB completed-row projection for pack checks. Keep MergeMessageNotify deferred.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621"
     },
     "current_artifact_inputs": {
@@ -65889,7 +65929,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue fixed-source MergeMessageNotify provider coverage with Emby, Jellyfin and Kodi. Port installed Mako inline namespaces without file lookup. Browser, clone, explicit manager and final integrated package acceptance remain open. Reuse only applicable unchanged observations.",
+    "next_complete_slice": "Continue IYUUAutoSeed 2.22 with fixed-origin IYUU transport, native form and lifecycle, and the worker run/recheck adapters. Use the opted-in qB completed-row projection for pack checks. Keep MergeMessageNotify deferred.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

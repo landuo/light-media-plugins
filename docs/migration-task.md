@@ -1,16 +1,30 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (2026-11-07; eight accepted instances)
+## Current resume (eight of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
-authority. AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
+authority. The user deferred MergeMessageNotify. The installed inventory
+still has 23 instances, of which 22 are in the current migration. The saved
+Merge evidence and four local work-in-progress files are retained separately.
+
+IYUUAutoSeed 2.22 is the next active plugin. Its installed API helper is
+byte-identical to the 2.19 original and the Go helper has a source replay in
+this checkout. The paired host projection can opt in to qBittorrent's
+native availability and completed-byte fields. The 2.22 run loop,
+transport and host binding, lifecycle, form and acceptance remain open.
+See `migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json`
+for the paired revisions and observations.
+
+AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
 it. `migration/evidence/autosignin-acceptance-20261107.json` binds the executed
 worker, notice-only package restaging, reused evidence and independent review.
 Image comparisons are source-derived and finite. The prior browser deadline
 and package observer failures retain their original records.
 
-MergeMessageNotify is implementing from the pinned 23-file installed
+## Deferred MergeMessageNotify checkpoint
+
+MergeMessageNotify was implementing from the pinned 23-file installed
 1.20.3 snapshot. Its earlier Linux package run verified native form, save-only
 trial and persisted reset, ordinary reload without replay, and a genuine
 host notice reaching OneBot. The evidence retains that exact artifact.
