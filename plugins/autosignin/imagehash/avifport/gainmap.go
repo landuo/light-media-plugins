@@ -170,7 +170,7 @@ func (f *file) gainMap(o Options) (*GainMap, error) {
 
 	var pic *av1.Picture
 	if gain.typ == "grid" {
-		pic, err = f.decodeGrid(gain)
+		pic, err = f.decodeGrid(gain, false)
 	} else {
 		pic, err = f.decodeItem(gain)
 	}

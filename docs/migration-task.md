@@ -37,17 +37,16 @@ RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
 fixtures and one source rejection. The earlier Main, browser and package runs
 apply to their tested revisions.
 
-The current codec checkpoint uses the original default AVIF image selection,
-including tracks without a primary item, legacy alpha identifiers, and
-ICC plus nclx metadata. The same-height coded-alpha width mismatch follows
-the original scaling rule. TIFF compression 6 now handles the verified
-single-strip interchange streams, including grayscale split streams and
-color 4:2:0. The prior installation and browser records retain their bindings.
+The current codec checkpoint scales AVIF color and alpha to declared
+dimensions for still images, default tracks, and grid tiles. TIFF compression
+6 reconstructs the verified contiguous gray and YCbCr 4:2:0 strips from
+interchange headers or scattered tables. The prior installation and browser
+records retain their bindings.
 
 The read-only installed list still has 23 instances. MergeMessageNotify is
 now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
 their turns arrive. AutoSignIn is the current plugin. Check the remaining
-concrete AVIF scaling and TIFF6 stream-layout differences before one package
+TIFF6 layout differences against the fixed libtiff before one package
 acceptance. Reuse applicable evidence and rerun a test only when the behavior
 it checks changes.
 

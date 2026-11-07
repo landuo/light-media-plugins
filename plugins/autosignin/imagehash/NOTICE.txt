@@ -23,7 +23,7 @@ port. GAV1D-COPYING/PATENTS retain its BSD2 notices and AV1 patent text.
 The pinned AVIF container decoder in avifport exposes the native planes
 before color conversion. avifport/ORIGIN.json records the local adaptation.
 The RGB helper translates fixed libyuv YuvPixel and ScaleRowUp2 leaves.
-The AVIF horizontal alpha filter follows libyuv ScaleSlope and ScaleFilterCols.
+AVIF coded-plane scaling follows libyuv ScalePlane and its ratio filters.
 LIBYUV-LICENSE/PATENTS/AUTHORS retain upstream notices. The scalar conversion
 and chromaticity calculation follow libavif 1.4.1 reformat.c and colr.c;
 LIBAVIF-LICENSE retains its BSD-2-Clause terms. Other default-image

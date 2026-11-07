@@ -148,12 +148,14 @@
       "files": {
         "source/row_common.cc": "203f5025bd9e76faf2b6e8f20f3dea16f2c64c17f56007e23c8a2e75dcfe2279",
         "source/scale_common.cc": "e9111faec0ee83fa0dda65f49e91bb3beecf52717965c1f0a2ffa210f136f49a",
+        "source/scale.cc": "a90c9524df664b77db0810dfaf21ca57a7150eeb3f89f9ff4858e62aedbb7f1a",
+        "source/scale_gcc.cc": "e3edbe9ebf76444b1c2f77d3517d5a220879eb8529f6a13b3d6edc977c38ff0c",
         "source/convert_argb.cc": "cee4dda07819d3c0002224461bc14f3da47c0bf92a6b33265870b3eefc5bef7f",
         "LICENSE": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f",
         "PATENTS": "4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495",
         "AUTHORS": "9bb006eaa8cc06d145c5234ae6b12f8fed6109e0b744d2c530f9b774c607e931"
       },
-      "scope": "YuvPixel constants and ScaleRowUp2_Bilinear/Linear only, no native runtime; actual Pillow source samples validate exact resulting RGB bytes"
+      "scope": "YuvPixel constants, chroma interpolation, and coded AVIF plane scaling. Ratio filters preserve the installed AVX2 rounding and scalar tails. No native runtime."
     },
     "original_libavif_version": "1.4.1, actual immutable333 PIL._avif.libavif_version in transform-source/expected.json",
     "orientation": "Pillow exposes irot/imir as EXIF metadata, without applying them in Image.open/load. AutoRotate false, checked against8 actual source orientation controls."

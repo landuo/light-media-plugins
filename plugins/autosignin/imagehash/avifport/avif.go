@@ -341,7 +341,7 @@ func (f *file) gridOf(it *item) (gridInfo, []uint32, error) {
 	return g, tiles, nil
 }
 
-func (f *file) decodeGrid(it *item) (*av1.Picture, error) {
+func (f *file) decodeGrid(it *item, alpha bool) (*av1.Picture, error) {
 	if it.unsupported {
 		return nil, ErrUnsupported
 	}
@@ -351,10 +351,10 @@ func (f *file) decodeGrid(it *item) (*av1.Picture, error) {
 		return nil, err
 	}
 
-	return f.decodeTiles(g, tiles)
+	return f.decodeTiles(g, tiles, alpha)
 }
 
-func (f *file) decodeTiles(g gridInfo, tiles []uint32) (*av1.Picture, error) {
+func (f *file) decodeTiles(g gridInfo, tiles []uint32, alpha bool) (*av1.Picture, error) {
 	if g.w <= 0 || g.h <= 0 || g.rows <= 0 || g.cols <= 0 || len(tiles) != g.rows*g.cols {
 		return nil, ErrInvalid
 	}
@@ -380,16 +380,31 @@ func (f *file) decodeTiles(g gridInfo, tiles []uint32) (*av1.Picture, error) {
 		if err != nil {
 			return nil, err
 		}
+		w, h, err := f.dimensions(t)
+		if err != nil {
+			p.Release()
+			return nil, err
+		}
+		scaled, err := f.normalizePicture(p, w, h, alpha)
+		if err != nil {
+			p.Release()
+			return nil, err
+		}
+		p = scaled
 		if out == nil {
 			tw, th = p.Width, p.Height
-			if int64(tw)*int64(g.cols) < int64(g.w) || int64(th)*int64(g.rows) < int64(g.h) ||
+			sx, sy := subsampling(p.Layout)
+			if tw < 64 || th < 64 || (tw|g.w)&sx != 0 || (th|g.h)&sy != 0 ||
+				int64(tw)*int64(g.cols) < int64(g.w) || int64(th)*int64(g.rows) < int64(g.h) ||
 				int64(tw)*int64(g.cols-1) >= int64(g.w) || int64(th)*int64(g.rows-1) >= int64(g.h) {
 				p.Release()
 
 				return nil, ErrInvalid
 			}
 			out = newGrid(p, g)
-		} else if p.Width != tw || p.Height != th || p.Layout != out.Layout || p.BitDepth != out.BitDepth {
+		} else if p.Width != tw || p.Height != th || p.Layout != out.Layout || p.BitDepth != out.BitDepth ||
+			p.FullRange != out.FullRange || p.ColorPrimaries != out.ColorPrimaries ||
+			p.Transfer != out.Transfer || p.MatrixCoeffs != out.MatrixCoeffs {
 			p.Release()
 
 			return nil, ErrInvalid
@@ -492,7 +507,7 @@ func (f *file) gridAlpha(it *item) (*av1.Picture, error) {
 		ids[i] = a.id
 	}
 
-	return f.decodeTiles(g, ids)
+	return f.decodeTiles(g, ids, true)
 }
 
 func (f *file) decodePrimary() (*av1.Picture, *av1.Picture, error) {
@@ -510,7 +525,7 @@ func (f *file) decodePictures(it *item) (*av1.Picture, *av1.Picture, error) {
 	var pic *av1.Picture
 	var err error
 	if it.typ == "grid" {
-		pic, err = f.decodeGrid(it)
+		pic, err = f.decodeGrid(it, false)
 	} else {
 		pic, err = f.decodeItem(it)
 	}
@@ -523,10 +538,12 @@ func (f *file) decodePictures(it *item) (*av1.Picture, *av1.Picture, error) {
 		pic.Release()
 		return nil, nil, err
 	}
-	if w != pic.Width || h != pic.Height {
+	scaled, err := f.normalizePicture(pic, w, h, false)
+	if err != nil {
 		pic.Release()
-		return nil, nil, ErrUnsupported
+		return nil, nil, err
 	}
+	pic = scaled
 	var alpha *av1.Picture
 	if a := f.alphaFor(it.id); a != nil {
 		aw, ah, err := f.dimensions(a)
@@ -535,7 +552,7 @@ func (f *file) decodePictures(it *item) (*av1.Picture, *av1.Picture, error) {
 			return nil, nil, ErrInvalid
 		}
 		if a.typ == "grid" {
-			alpha, err = f.decodeGrid(a)
+			alpha, err = f.decodeGrid(a, true)
 		} else {
 			alpha, err = f.decodeItem(a)
 		}
@@ -556,7 +573,7 @@ func (f *file) decodePictures(it *item) (*av1.Picture, *av1.Picture, error) {
 			alpha.Release()
 			return nil, nil, ErrInvalid
 		}
-		scaled, err := normalizeAlpha(alpha, w, h)
+		scaled, err := f.normalizePicture(alpha, w, h, true)
 		if err != nil {
 			pic.Release()
 			alpha.Release()

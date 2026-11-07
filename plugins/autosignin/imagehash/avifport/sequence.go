@@ -434,10 +434,12 @@ func (f *file) decodeFirstFrame(o Options) (image.Image, ColorInfo, error) {
 	if err != nil {
 		return nil, ColorInfo{}, err
 	}
-	if pic.Width != t.width || pic.Height != t.height {
+	scaled, err := f.normalizePicture(pic, t.width, t.height, false)
+	if err != nil {
 		pic.Release()
-		return nil, ColorInfo{}, ErrUnsupported
+		return nil, ColorInfo{}, err
 	}
+	pic = scaled
 	var alpha *av1.Picture
 	aux := f.movie.alphaTrack(t.id)
 	if aux != nil {
@@ -455,7 +457,7 @@ func (f *file) decodeFirstFrame(o Options) (image.Image, ColorInfo, error) {
 			alpha.Release()
 			return nil, ColorInfo{}, ErrInvalid
 		}
-		scaled, err := normalizeAlpha(alpha, pic.Width, pic.Height)
+		scaled, err := f.normalizePicture(alpha, t.width, t.height, true)
 		if err != nil {
 			pic.Release()
 			alpha.Release()

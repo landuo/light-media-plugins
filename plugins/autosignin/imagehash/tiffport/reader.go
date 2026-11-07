@@ -1206,11 +1206,6 @@ func (d *decoder) loadBlockData(b tiffBlock, limit int64, compression uint) erro
 }
 
 func (d *decoder) decodeCompressedJPEG(img image.Image, b tiffBlock, limit int64, compression uint) error {
-	if compression == cJPEGOld && d.mode == mGray && d.bpp == 8 {
-		if source := d.oldJPEGInterchange(b); source != nil {
-			return d.decodeJPEGBlock(img, source, b.x, b.y, b.width, b.height)
-		}
-	}
 	if compression == cJPEGOld || len(d.tables) == 0 {
 		return d.decodeJPGOld(img, b.offset, b.n, limit, b.x, b.y, b.width, b.height)
 	}
@@ -1286,6 +1281,18 @@ func decode(d *decoder) (image.Image, error) {
 	limit, ok := checkedMul3(l.width, l.height, maxBytesPerPixel)
 	if !ok {
 		return nil, FormatError("block data size too large")
+	}
+	if d.firstVal(tCompression) == cJPEGOld && d.mode == mGray && d.bpp == 8 && d.planarSamples() == 1 {
+		source, err := d.oldJPEGSource(l, 1, 1, 1)
+		if err != nil {
+			return nil, err
+		}
+		if source != nil {
+			if err := d.decodeJPEGBlock(img, source, 0, 0, d.config.Width, d.config.Height); err != nil {
+				return nil, err
+			}
+			return img, nil
+		}
 	}
 	if err := d.decodeBlocks(img, l, limit); err != nil {
 		return nil, err
