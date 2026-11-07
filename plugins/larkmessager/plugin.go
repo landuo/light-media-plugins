@@ -19,11 +19,12 @@ type KV interface {
 	Delete(context.Context, string) error
 }
 type PluginHost struct {
-	API     Host
-	KV      KV
-	Forward func(context.Context, Object) error
-	Sleep   func(context.Context, time.Duration) error
-	Now     func() time.Time
+	API        Host
+	KV         KV
+	Forward    func(context.Context, Object) error
+	LogFailure func(context.Context, string)
+	Sleep      func(context.Context, time.Duration) error
+	Now        func() time.Time
 }
 type ConfigState struct {
 	Enabled                                                                  bool
@@ -427,17 +428,20 @@ func (p *Plugin) DispatchTrusted(ctx context.Context, body Object) (_error error
 		c.RememberUserIDType(text(sender["open_id"]), text(sender["user_id"]))
 		c.RememberTarget(text(first(sender["open_id"], sender["user_id"])), text(payload["chat_id"]))
 	}
-	if test {
-		if c == nil {
-			return nil
+	if test && c != nil {
+		_, err := c.ReplyMessage(ctx, text(payload["message_id"]), "text", Object{"text": "✅ 测试确认成功！LarkMessager 插件卡片交互正常工作。"})
+		if err != nil && p.host.LogFailure != nil {
+			p.host.LogFailure(ctx, "回复测试卡片确认消息失败")
 		}
-		_, e = c.ReplyMessage(ctx, text(payload["message_id"]), "text", Object{"text": "✅ 测试确认成功！LarkMessager 插件卡片交互正常工作。"})
-		return e
+		return nil
 	}
 	if p.host.Forward == nil {
 		return ErrDependency
 	}
-	return p.host.Forward(ctx, clone(payload))
+	if err := p.host.Forward(ctx, clone(payload)); err != nil && p.host.LogFailure != nil {
+		p.host.LogFailure(ctx, "LarkMessager 转发消息到 MessageChain 失败")
+	}
+	return nil
 }
 func (p *Plugin) ParseMessage(ctx context.Context, source string, message Object) (_out Object, _error error) {
 	defer sourceErrors(&_error)

@@ -30,7 +30,7 @@ func Manifest() sdk.Manifest {
 		HasPage: true, APIs: httpAPIs, ManagedPrivateScheduler: true,
 		Methods: append(methods, moduleNames...),
 		Capabilities: []string{endpointCapability, sdk.BaseGetInstanceMetadata, sdk.BaseGetData, sdk.BaseSaveData, sdk.BaseDelData,
-			sdk.BackgroundSubmitCapability, sdk.MessageReceiveCapability, sdk.NetworkGetCapability, sdk.StorageLocalReadGrantCapability},
+			sdk.BackgroundSubmitCapability, sdk.MessageReceiveCapability, sdk.NetworkGetCapability, sdk.StorageLocalReadGrantCapability, sdk.LogWriteCapability},
 		BroadcastHandlers: []sdk.BroadcastHandler{{Event: "message.action", Method: "message_action"}},
 	}
 }
@@ -149,7 +149,9 @@ func (w *Worker) initialize(ctx context.Context, raw json.RawMessage, host sdk.H
 	if err != nil {
 		return err
 	}
-	p := New(PluginHost{API: peer, KV: scopedKV{}, Forward: forwardMessage})
+	p := New(PluginHost{API: peer, KV: scopedKV{}, Forward: forwardMessage, LogFailure: func(ctx context.Context, message string) {
+		_ = (sdk.Logger{Host: currentInvocation(ctx).host}).Log(ctx, sdk.LogError, message)
+	}})
 	epoch, err := p.Init(config)
 	if err != nil {
 		return err
