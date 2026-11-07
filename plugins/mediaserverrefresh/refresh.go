@@ -92,9 +92,10 @@ func (p *Plugin) refresh(ctx context.Context, raw json.RawMessage, caller sdk.Ho
 		TargetPath: &eventData.Transfer.Target.Path,
 	}
 	items := []sdk.MediaRefreshItem{item}
-	if removelink.Truth(config.Delay) {
-		_ = logger.Log(ctx, sdk.LogInfo, fmt.Sprintf("延迟 %v 秒后刷新媒体库... ", config.Delay))
-		items, err = p.debounce(ctx, config.Delay, item)
+	delay := p.configuration().Delay
+	if removelink.Truth(delay) {
+		_ = logger.Log(ctx, sdk.LogInfo, fmt.Sprintf("延迟 %v 秒后刷新媒体库... ", delay))
+		items, err = p.debounce(ctx, delay, item)
 		if err != nil || items == nil {
 			return err
 		}
