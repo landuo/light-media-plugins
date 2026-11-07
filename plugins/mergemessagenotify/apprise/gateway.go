@@ -114,12 +114,12 @@ func parseGatewayService(raw string) (gatewayService, bool) {
 		s.headers = orderedPairSet(s.headers, header[0], header[1])
 	}
 	if tags := u.query["tags"]; tags != "" {
-		s.tags = strings.FieldsFunc(tags, gatewayTagDelimiter)
+		s.tags = strings.FieldsFunc(tags, sourceListDelimiter)
 		for i, tag := range s.tags {
 			s.tags[i] = sourceUnquote(tag)
 		}
 		// URLBase.parse_list and NotifyAppriseAPI.__init__ each parse tags.
-		s.tags = strings.FieldsFunc(strings.Join(s.tags, ","), gatewayTagDelimiter)
+		s.tags = strings.FieldsFunc(strings.Join(s.tags, ","), sourceListDelimiter)
 		slices.Sort(s.tags)
 		s.tags = slices.Compact(s.tags)
 	}
@@ -159,7 +159,7 @@ func parseGatewayService(raw string) (gatewayService, bool) {
 	return s, true
 }
 
-func gatewayTagDelimiter(r rune) bool {
+func sourceListDelimiter(r rune) bool {
 	return sourceSpace(r) || strings.ContainsRune("[];,", r)
 }
 

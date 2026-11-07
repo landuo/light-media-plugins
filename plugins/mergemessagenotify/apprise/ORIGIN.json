@@ -8,7 +8,9 @@
     "json",
     "jsons",
     "apprise",
-    "apprises"
+    "apprises",
+    "bark",
+    "barks"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -36,6 +38,13 @@
       "original_path": "apprise/plugins/apprise_api.py",
       "original_sha256": "14f12b4f55089599e22eaa53e3dab23571b2560b3b9494ed796a99cd6b4ffad9",
       "source_observations": "testdata/gateway-1.9.9.json"
+    },
+    {
+      "file": "bark.go",
+      "reason": "Port fixed NotifyBark device targets and text/Markdown payloads with strict HTTP status and per-provider send interval. Reuse native HTTP transport and common overflow planner.",
+      "original_path": "apprise/plugins/bark.py",
+      "original_sha256": "07ea6b9509005f67f2a584d9f40887f8058c25f5c79631b723af55fa632d9b46",
+      "source_observations": "testdata/bark-1.9.9.json"
     }
   ]
 }

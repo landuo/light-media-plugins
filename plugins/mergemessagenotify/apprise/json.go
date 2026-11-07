@@ -110,6 +110,24 @@ func (s jsonService) requests(title, body string) ([]Request, error) {
 }
 
 func notificationRequests(title, body string, emojis bool, overflow, format string, request func(string, string) (Request, error)) ([]Request, error) {
+	chunks, err := notificationChunks(title, body, emojis, overflow, format)
+	if err != nil {
+		return nil, err
+	}
+	requests := make([]Request, 0, len(chunks))
+	for _, chunk := range chunks {
+		call, err := request(chunk.title, chunk.body)
+		if err != nil {
+			return nil, err
+		}
+		requests = append(requests, call)
+	}
+	return requests, nil
+}
+
+type notificationChunk struct{ title, body string }
+
+func notificationChunks(title, body string, emojis bool, overflow, format string) ([]notificationChunk, error) {
 	if emojis {
 		var err error
 		body, err = applyEmojis(body)
@@ -138,7 +156,7 @@ func notificationRequests(title, body string, emojis bool, overflow, format stri
 			}
 		}
 	}
-	requests := make([]Request, 0, len(chunks))
+	parts := make([]notificationChunk, 0, len(chunks))
 	count := len(chunks)
 	for i, chunk := range chunks {
 		chunkTitle := title
@@ -156,13 +174,9 @@ func notificationRequests(title, body string, emojis bool, overflow, format stri
 				}
 			}
 		}
-		call, err := request(chunkTitle, chunk)
-		if err != nil {
-			return nil, err
-		}
-		requests = append(requests, call)
+		parts = append(parts, notificationChunk{title: chunkTitle, body: chunk})
 	}
-	return requests, nil
+	return parts, nil
 }
 func zeroPad(n, width int) string { v := strconv.Itoa(n); return strings.Repeat("0", width-len(v)) + v }
 func (s jsonService) request(title, body string) (Request, error) {

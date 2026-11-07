@@ -73,6 +73,8 @@ func (c *Client) Add(raw string) (bool, error) {
 		service, valid, err = parseJSONService(raw)
 	case "apprise", "apprises":
 		service, valid = parseGatewayService(raw)
+	case "bark", "barks":
+		service, valid = parseBarkService(raw)
 	case "http", "https":
 		native, ok := gatewayNativeURL(raw)
 		if !ok {
@@ -135,7 +137,11 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	}
 	send := func(group requestGroup) bool {
 		success := len(group.calls) != 0
+		throttle, _ := group.service.(interface{ waitToSend(context.Context) error })
 		for _, request := range group.calls {
+			if throttle != nil && throttle.waitToSend(ctx) != nil {
+				return false
+			}
 			reply, err := c.transport(ctx, request)
 			success = (err == nil && group.service.successful(reply.Status)) && success
 		}

@@ -9739,7 +9739,8 @@
         "plugins/mergemessagenotify/smtp/ORIGIN.json",
         "cmd/merge-message-notify/main.go",
         "plugins/mergemessagenotify/sdk.go",
-        "plugins/mergemessagenotify/apprise/gateway.go"
+        "plugins/mergemessagenotify/apprise/gateway.go",
+        "plugins/mergemessagenotify/apprise/bark.go"
       ],
       "scenarios": [],
       "facet_checks": {},
@@ -9844,6 +9845,17 @@
         "current_host_commit": "204dc6dc6c29071544a12b5e0cacb0772f917e3e",
         "manager_fix_verification": "Linux amd64 compile of ./internal/app succeeded; explicit-manager live path not executed in the earlier package run.",
         "scope": "Actual scoped host and original source differential. Browser, clone, additional channel/dependency parity and explicit manager runtime verification remain open."
+      },
+      "apprise_bark": {
+        "source": "Fixed Apprise 1.9.9 apprise/plugins/bark.py, SHA256 07ea6b9509005f67f2a584d9f40887f8058c25f5c79631b723af55fa632d9b46",
+        "target": "plugins/mergemessagenotify/apprise/bark.go",
+        "fixture": "plugins/mergemessagenotify/apprise/testdata/bark-1.9.9.json",
+        "fixture_sha256": "43bebb9c8e5e6dab3768c726b43f45f3d15ce005f47ad5927307f0a1d72fe371",
+        "target_evidence": "work/mergemessagenotify-20261107/apprise-bark-target.stdout",
+        "target_evidence_sha256": "72032130352edf74fdb912246ea746ecc2f94b07af39d5aafda2ccf1f28ec89a",
+        "command": "go test ./plugins/mergemessagenotify/apprise -run '^TestSourceBark199$' -v -count=1",
+        "result": "Seven fixed-source cases passed. Auth, text/Markdown, reverse sorted unique devices, continue after a failed device and strict HTTP 200. The actual interval was 5.50 seconds. Transport was isolated; no external send.",
+        "scope": "Added after the exact cb823a7 real host artifact. Existing native form, save/reload and OneBot route evidence remains at that artifact. Attachment handling and other supported Apprise providers remain unimplemented."
       }
     },
     {
@@ -65620,12 +65632,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight functional instances accepted. MergeMessageNotify 1.20.3 standard worker and focused real Linux save/reload/notice run completed; plugin still implementing.",
-      "tests_running": "The scoped Linux package and gateway source runs have finished. Owned test processes and remote attempt are removed.",
-      "latest_detail": "features[plugin.MergeMessageNotify].host_port and migration/evidence/mergemessagenotify-host-20261107.json",
+      "delivery": "Eight accepted instances. MergeMessageNotify standard worker and scoped real Linux save/reload/notice proof saved. Apprise gateway and Bark use the fixed source. Whole Merge acceptance remains open.",
+      "tests_running": "None. Actual Linux runtime and focused Apprise gateway/Bark source checks completed. Temporary test workers and task-owned Linux run removed.",
+      "latest_detail": "features[plugin.MergeMessageNotify].host_port and apprise_bark",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue MergeMessageNotify Apprise Bark and attachment/provider parity, then remaining Mako and focused browser/clone coverage. Reuse completed Linux package/save/reload/ordinary notice proof when routes are unchanged."
+      "next_complete_slice": "Continue the fixed Apprise 1.9.9 attachment behavior and remaining providers for MergeMessageNotify. Reuse existing actual Linux OneBot route and distinct SDK source bindings; browser/clone and Mako gaps remain."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

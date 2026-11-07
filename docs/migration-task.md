@@ -16,9 +16,10 @@ save-only trial and persisted flag reset, ordinary reload without replay,
 and a genuine host notice reaching OneBot. The exact package, host revision
 and separate manager direct-init fix are bound in
 `migration/evidence/mergemessagenotify-host-20261107.json`. Apprise gateway
-source differential passed. Browser, clone, other Apprise providers and
-attachments, and unported Mako branches remain open. The original installed
-list has 23 instances. Private configuration/data import and production
+and Bark source differential passed. The host evidence predates the Bark
+increment and remains pinned to its tested artifact. Browser, clone, other
+Apprise providers and attachments, and unported Mako branches remain open.
+The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
 grades/RSA are excluded. Reuse applicable evidence and rerun only when the
