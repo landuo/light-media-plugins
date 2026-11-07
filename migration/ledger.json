@@ -16093,7 +16093,8 @@
         "larkmessager.provider_native_download.20261108",
         "larkmessager.manual_search_rejected_paused_quality.20261108",
         "larkmessager.same_manual_search_candidate_fallback.20261108",
-        "larkmessager.rss_magnet_native_add_import.20261108"
+        "larkmessager.rss_magnet_native_add_import.20261108",
+        "larkmessager.rss_batch_fallback_safe_detail.20261108"
       ],
       "review": {
         "status": "pending",
@@ -16110,7 +16111,7 @@
       "family": "LarkMessager",
       "source_version": "0.9.1",
       "source_metadata_only": false,
-      "discovery_note": "Ordinary worker, /sites and the main /subscribes flows have isolated native evidence. Media interaction, transfer retry and the remaining source differences and distinct worker checks are open."
+      "discovery_note": "Exact indexed worker and native sites, subscriptions, manual/RSS candidate fallback, ordinary media/provider/TV pack download, and transfer retry have scoped evidence. Distinct worker behavior and remaining host source differences are still open."
     },
     {
       "id": "plugin.CleanInvalidSeed",
@@ -67831,6 +67832,33 @@
         "fixture_sha256": "6eb01ac48f219e0abe0af951ad39611620d5139f0bfeeec85cc6d940abd303f8",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.rss_batch_fallback_safe_detail.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSBatchFallbackLinuxAMD64"
+      ],
+      "observations": [
+        "The started Linux App and indexed Lark worker fetched one RSS feed and no keyword search. Two releases for the same active subscription were attempted in one bound matching job. The first Add was definitively refused and cooled, and the second was accepted using its exact metainfo and configured local save path.",
+        "The refresh callback waited for the accepted download and the successful subscription completion event. The fixture held the completion notice response and observed no premature refresh reply. The final redraw showed the original subscription had been removed.",
+        "Both real SDK resource.download events were observed. The first release had a foreign details link and exposed no page URL. The accepted release carried the normalized same-site /details.php?hit=1&id=102 in resource.download, download.added and the actual download_added module call. Private tracker query, fragment, enclosure and site Cookie were omitted, and the native log contained no private or foreign fixture marker."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-rss-batch-fallback-20261108.json": "f8ae63a6172b1f4ce1d8703c946e88b57d1ef03414178fcddd158f6b7f1483fc"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "68cba95043e6b039fac5a1042e6848cccbc1c470",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "5dad39df6514f4e4fb69cf0bf30c006f8257ba18d6d53e32a6807127b3fa2fd6",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67904,7 +67932,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "9584a3a50962c76d36142f7ac16774f8cedd44cc",
+      "host_HEAD": "68cba95043e6b039fac5a1042e6848cccbc1c470",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67915,12 +67943,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native RSS magnet variants, one qB Add, string callback and delayed local hardlink passed. Host and evidence stay local.",
-      "tests_running": "None. The distinct native RSS magnet scenario passed on its first run and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-rss-magnet-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native RSS same-batch fallback, completion order and safe pre/post-Add detail Context passed. Host and evidence stay local.",
+      "tests_running": "None. The distinct native RSS fallback scenario passed after repairing the root event correlation, and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-rss-batch-fallback-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with source RSS refresh candidate fallback and safe detail-page projection in trusted download Context. Reuse exact latest-batch sealed evidence and owned native child settlement so a definite refusal can try the next current candidate, and refresh ordering follows real outcomes without replaying uncertain writes. One distinct fixture should cover that RSS path; do not repeat the passing magnet scenario. Keep remaining source failure notice, post-preview reacquisition, additional magnet variants and provider-without-TMDB differences visible.",
+      "next_complete_slice": "Continue LarkMessager worker closure. Reuse exact d1815f9 ordinary reaction cleanup and plain webhook evidence plus prior source crypto/admin/attachment leaf cases. Compare FetchChats failure code/malformed-items mapping at plugins/larkmessager/endpoints.go against installed __init__.py:2409–2413, then cover one distinct installed-worker scenario for verified encrypted/admin behavior and/or disabled FetchChats/attachment/clone. Keep remaining host source notice, post-preview reacquisition, additional magnet variants and provider-without-TMDB differences visible.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

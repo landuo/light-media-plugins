@@ -152,8 +152,12 @@ One direct magnet reached qBittorrent, kept its encrypted reference, delivered
 the exact string to the SDK callback and organized a matching local file after
 the downloader reported completion. See
 `migration/evidence/lark-messager-rss-magnet-20261108.json`.
-Continue with same-batch RSS fallback and safe detail-page projection.
-Reuse earlier passing evidence.
+One native RSS refresh then waited for the first candidate's definite refusal,
+accepted the second from the same batch and completed before replying. The
+selected same-site detail page reached both SDK events and the callback,
+with the foreign page and tracker secrets filtered. See
+`migration/evidence/lark-messager-rss-batch-fallback-20261108.json`.
+Continue with remaining installed-worker behavior. Reuse earlier evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
