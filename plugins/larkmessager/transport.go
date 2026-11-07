@@ -54,14 +54,20 @@ func newProvider(origin, id, secret string) (*provider, error) {
 	return &provider{origin: origin, appID: id, secret: secret, client: client}, nil
 }
 
-func (a *provider) tokenFor(ctx context.Context, force bool) (string, error) {
+// The list action uses the saved credentials even while messaging is disabled.
+// Its temporary provider shares the guarded HTTP transport and owns its token.
+func (a *provider) withChatCredentials(id, secret string) Host {
+	return &provider{origin: a.origin, appID: id, secret: secret, client: a.client}
+}
+
+func (a *provider) tokenFor(ctx context.Context) (string, error) {
 	a.tokenMu.Lock()
 	defer a.tokenMu.Unlock()
 	if err := ctx.Err(); err != nil {
 		return "", err
 	}
 	now := time.Now().Unix()
-	if a.token != "" && !force && a.expires-now > 60 {
+	if a.token != "" && a.expires-now > 60 {
 		return a.token, nil
 	}
 	r, err := a.request(ctx, "POST", "/auth/v3/tenant_access_token/internal", nil, Object{"app_id": a.appID, "app_secret": a.secret}, nil, "", 10*time.Second)
@@ -148,7 +154,7 @@ func (a *provider) API(ctx context.Context, r Request) (_out Response, _error er
 	if r.Op == "chats" {
 		query = Object{"user_id_type": "open_id", "page_size": 100}
 	}
-	token, err := a.tokenFor(ctx, r.Op == "chats")
+	token, err := a.tokenFor(ctx)
 	if err != nil {
 		return Response{}, err
 	}

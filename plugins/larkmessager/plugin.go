@@ -19,12 +19,13 @@ type KV interface {
 	Delete(context.Context, string) error
 }
 type PluginHost struct {
-	API        Host
-	KV         KV
-	Forward    func(context.Context, Object) error
-	LogFailure func(context.Context, string)
-	Sleep      func(context.Context, time.Duration) error
-	Now        func() time.Time
+	API         Host
+	KV          KV
+	Forward     func(context.Context, Object) error
+	LogFailure  func(context.Context, string)
+	Sleep       func(context.Context, time.Duration) error
+	Now         func() time.Time
+	newChatsAPI func(appID, appSecret string) Host
 }
 type ConfigState struct {
 	Enabled                                                                  bool
@@ -34,6 +35,7 @@ type ConfigState struct {
 }
 type Plugin struct {
 	mu       sync.Mutex
+	results  sync.Mutex
 	host     PluginHost
 	state    ConfigState
 	client   *Client

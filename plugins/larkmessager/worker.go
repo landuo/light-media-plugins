@@ -149,7 +149,7 @@ func (w *Worker) initialize(ctx context.Context, raw json.RawMessage, host sdk.H
 	if err != nil {
 		return err
 	}
-	p := New(PluginHost{API: peer, KV: scopedKV{}, Forward: forwardMessage, LogFailure: func(ctx context.Context, message string) {
+	p := New(PluginHost{API: peer, newChatsAPI: peer.withChatCredentials, KV: scopedKV{}, Forward: forwardMessage, LogFailure: func(ctx context.Context, message string) {
 		_ = (sdk.Logger{Host: currentInvocation(ctx).host}).Log(ctx, sdk.LogError, message)
 	}})
 	epoch, err := p.Init(config)

@@ -3,11 +3,15 @@ package larkmessager
 import (
 	"context"
 	_ "embed"
+	"encoding/json"
+	"errors"
 	"strings"
 )
 
 //go:embed page-templates.json
 var pageTemplatesJSON []byte
+
+var errChatListTransport = errors.New("Lark transport failed")
 
 func (p *Plugin) Page(ctx context.Context) ([]any, error) {
 	s, c, _ := p.snapshot()
@@ -27,6 +31,8 @@ func (p *Plugin) Page(ctx context.Context) ([]any, error) {
 	if p.host.KV == nil {
 		return nil, ErrDependency
 	}
+	p.results.Lock()
+	defer p.results.Unlock()
 	for _, spec := range []struct {
 		key, title string
 		chats      bool
@@ -75,6 +81,8 @@ func (p *Plugin) Status(ctx context.Context) (_out Object, _error error) {
 	if p.host.KV == nil {
 		return nil, ErrDependency
 	}
+	p.results.Lock()
+	defer p.results.Unlock()
 	if e := p.host.KV.Delete(ctx, "last_test_result"); e != nil {
 		return nil, e
 	}
@@ -100,6 +108,8 @@ func (p *Plugin) storeResult(ctx context.Context, key string, v Object) (_out Ob
 	if p.host.KV == nil {
 		return nil, ErrDependency
 	}
+	p.results.Lock()
+	defer p.results.Unlock()
 	if e := p.host.KV.Put(ctx, key, v); e != nil {
 		return nil, e
 	}
@@ -108,46 +118,87 @@ func (p *Plugin) storeResult(ctx context.Context, key string, v Object) (_out Ob
 func (p *Plugin) FetchChats(ctx context.Context) (_out Object, _error error) {
 	defer sourceErrors(&_error)
 	s, _, _ := p.snapshot()
-	result := Object{}
-	chats := []any{}
-	if s.AppID == "" || s.AppSecret == "" {
-		result = Object{"ok": false, "msg": "请先在插件配置中填写 App ID 和 App Secret 并保存。", "chats": chats}
-	} else {
-		c := NewClient(p.host.API)
-		_, data, e := c.call(ctx, Request{Op: "chats", Query: Object{"user_id_type": "open_id", "page_size": 100}})
-		if e != nil {
-			result = Object{"ok": false, "msg": "请求失败：Lark transport failed", "chats": chats}
-		} else if !zero(data["code"]) {
-			result = Object{"ok": false, "msg": "Lark API 错误：请求被拒绝", "chats": chats}
-		} else {
-			for _, v := range arr(obj(data["data"])["items"]) {
-				item := obj(v)
-				if item == nil {
-					return nil, ErrUnsupported
-				}
-				get := func(k, defaultValue string) any {
-					if v, ok := item[k]; ok {
-						return v
-					}
-					return defaultValue
-				}
-				chats = append(chats, Object{"chat_id": get("chat_id", ""), "name": get("name", "(未命名)"), "description": get("description", "")})
+	result := failedChatList("请先在插件配置中填写 App ID 和 App Secret 并保存。")
+	if s.AppID != "" && s.AppSecret != "" {
+		api := p.host.API
+		if p.host.newChatsAPI != nil {
+			api = p.host.newChatsAPI(s.AppID, s.AppSecret)
+		}
+		var err error
+		result, err = requestChatList(ctx, api)
+		if err != nil {
+			if p.host.LogFailure != nil {
+				p.host.LogFailure(ctx, "LarkMessager 获取群聊失败")
 			}
-			if len(chats) == 0 {
-				result = Object{"ok": false, "msg": "Lark 返回空列表。请确认：本应用已被添加为群聊机器人。", "chats": chats}
-			} else {
-				lines := []string{}
-				for _, v := range chats {
-					c := obj(v)
-					s := "- " + str(c["name"]) + " (" + str(c["chat_id"]) + ")"
-					if truth(c["description"]) {
-						s += "\n  " + str(c["description"])
-					}
-					lines = append(lines, s)
-				}
-				result = Object{"ok": true, "msg": "共 " + str(len(chats)) + " 个群聊：\n" + strings.Join(lines, "\n"), "chats": chats}
+			message := "Lark 返回的群聊数据无效"
+			if errors.Is(err, errChatListTransport) {
+				message = errChatListTransport.Error()
 			}
+			result = failedChatList("请求失败：" + message)
 		}
 	}
 	return p.storeResult(ctx, "last_chats", result)
+}
+
+func failedChatList(message string) Object {
+	return Object{"ok": false, "msg": message, "chats": []any{}}
+}
+
+func requestChatList(ctx context.Context, api Host) (_out Object, _error error) {
+	defer sourceErrors(&_error)
+	if api == nil {
+		return nil, errChatListTransport
+	}
+	response, err := api.API(ctx, Request{Op: "chats", Query: Object{"user_id_type": "open_id", "page_size": 100}})
+	if err != nil {
+		return nil, errChatListTransport
+	}
+	var data Object
+	if decode(response.Body, &data) != nil || data == nil {
+		return nil, ErrUnsupported
+	}
+	if code := data["code"]; !zero(code) {
+		message := "Lark API 错误：请求被拒绝"
+		if number, ok := code.(json.Number); ok && len(number) <= 32 {
+			message += "（code=" + number.String() + "）"
+		}
+		return failedChatList(message), nil
+	}
+	var items []any
+	if raw := data["data"]; truth(raw) {
+		body := obj(raw)
+		if body == nil {
+			return nil, ErrUnsupported
+		}
+		if rawItems := body["items"]; truth(rawItems) {
+			items = arr(rawItems)
+			if items == nil {
+				return nil, ErrUnsupported
+			}
+		}
+	}
+	if len(items) == 0 {
+		return failedChatList("Lark 返回空列表。请确认：本应用已被添加为群聊机器人。"), nil
+	}
+	chats := make([]any, 0, len(items))
+	lines := make([]string, 0, len(items))
+	for _, value := range items {
+		item := obj(value)
+		if item == nil {
+			return nil, ErrUnsupported
+		}
+		chat := Object{"chat_id": "", "name": "(未命名)", "description": ""}
+		for _, key := range []string{"chat_id", "name", "description"} {
+			if value, ok := item[key]; ok {
+				chat[key] = value
+			}
+		}
+		line := "- " + str(chat["name"]) + " (" + str(chat["chat_id"]) + ")"
+		if truth(chat["description"]) {
+			line += "\n  " + str(chat["description"])
+		}
+		chats = append(chats, chat)
+		lines = append(lines, line)
+	}
+	return Object{"ok": true, "msg": "共 " + str(len(chats)) + " 个群聊：\n" + strings.Join(lines, "\n"), "chats": chats}, nil
 }
