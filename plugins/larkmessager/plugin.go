@@ -4,7 +4,6 @@ import (
 	"context"
 	_ "embed"
 	"encoding/json"
-	"errors"
 	"strings"
 	"sync"
 	"time"
@@ -387,15 +386,11 @@ func (p *Plugin) Post(ctx context.Context, n Notification) (_error error) {
 		copy := n
 		copy.FilePath = ""
 		copy.FileName = ""
-		_, e1 := c.SendNotification(ctx, copy, t, nil)
-		if e1 != nil && !errors.Is(e1, ErrRejected) {
-			return e1
+		if _, err := c.SendNotification(ctx, copy, t, nil); err != nil {
+			return err
 		}
-		_, e2 := c.SendFile(ctx, n.FilePath, "", "", n.FileName, t)
-		if e2 != nil {
-			return e2
-		}
-		return e1
+		_, err := c.SendFile(ctx, n.FilePath, "", "", n.FileName, t)
+		return err
 	}
 	switch {
 	case n.FilePath != "":

@@ -259,10 +259,7 @@ func (c *Client) SendFile(ctx context.Context, ref, title, text, name string, t 
 			}
 		}
 	}
-	if r == nil {
-		return &Result{}, e
-	}
-	return c.fallbackChat(r, t), e
+	return c.fallbackChat(r, t), c.ignoreRejection(ctx, e, "Lark 附件发送失败")
 }
 func (c *Client) SendVoice(ctx context.Context, ref, caption string, t Target) (_out *Result, _error error) {
 	defer sourceErrors(&_error)
@@ -275,7 +272,7 @@ func (c *Client) SendVoice(ctx context.Context, ref, caption string, t Target) (
 	}
 	key, e := c.UploadFile(ctx, b, b.Name, "stream")
 	if e != nil || key == "" {
-		return &Result{}, e
+		return &Result{}, c.ignoreRejection(ctx, e, "Lark 语音消息发送失败")
 	}
 	r, e := c.send(ctx, "audio", Object{"file_key": key}, t)
 	if r != nil && caption != "" {
@@ -284,7 +281,7 @@ func (c *Client) SendVoice(ctx context.Context, ref, caption string, t Target) (
 			return c.fallbackChat(r, t), err
 		}
 	}
-	return c.fallbackChat(r, t), e
+	return c.fallbackChat(r, t), c.ignoreRejection(ctx, e, "Lark 语音消息发送失败")
 }
 func (c *Client) remoteImage(ctx context.Context, ref string) (_out string, _error error) {
 	defer sourceErrors(&_error)
@@ -331,7 +328,7 @@ func (c *Client) SendNotification(ctx context.Context, n Notification, t Target,
 		}
 	}
 	r, e := c.send(ctx, "interactive", buildCard(CardInput{Title: n.Title, Text: n.Text, Link: n.Link, Buttons: n.Buttons, ImageKey: key, HeaderTemplate: HeaderTemplate(n.MType), ImageItems: built}), t)
-	return c.fallbackChat(r, t), e
+	return c.fallbackChat(r, t), c.ignoreRejection(ctx, e, "Lark 通知发送失败")
 }
 func (c *Client) EditMessage(ctx context.Context, id, title, text string, buttons [][]Button) (_out bool, _error error) {
 	defer sourceErrors(&_error)
