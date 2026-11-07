@@ -1,0 +1,146 @@
+{
+  "feature": "plugin.BrushFlowLanduo",
+  "status": "implementing",
+  "installed_version": "5.2.18",
+  "source": {
+    "moviepilot_plugins_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+    "installed_entry_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+    "source_manifest": "migration/evidence/brushflowlanduo-source-5.2.18.json",
+    "source_locations": [
+      "__init__.py:718–735",
+      "__init__.py:1845–1877",
+      "__init__.py:2779–2812"
+    ]
+  },
+  "worker_product_commit": "a4182d03ff593ecc67e88d0504b95068dead7e42",
+  "host_product_commit": "71161167345877837ee3062d4850429574bf9fa4",
+  "host_site_tip_commit": "0e20a3ba",
+  "host_fixture_commit": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
+  "sdk_source_host_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
+  "standard_package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "brush-flow-landuo",
+      "dist/assets/AppPage-CQJjeupX.js",
+      "dist/assets/BrushFlowWorkbench-Bmyw-FFf.js",
+      "dist/assets/BrushFlowWorkbench-DXCRiXbI.css",
+      "dist/assets/Config-CKUlJQbx.js",
+      "dist/assets/Dashboard-BF4A7g-y.css",
+      "dist/assets/Dashboard-CCqSKt-v.js",
+      "dist/assets/Page-m3F8uHxo.js",
+      "dist/assets/_plugin-vue_export-helper-1_Y3tC5L.js",
+      "dist/assets/_virtual_mf-localSharedImportMap___mfe_internal__BrushFlowLanduo__mf_owner__1-C0DSOgfn.js",
+      "dist/assets/helpers-_Ccnm3rP.js",
+      "dist/assets/index-Cezq_yMy.js",
+      "dist/assets/index-pSqlufH5.js",
+      "dist/assets/remoteEntry.js",
+      "dist/assets/vite-preload-helper-BelkbqnE.js",
+      "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+      "plugins/brushflowlanduo/ORIGIN.json",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode",
+      "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+      "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523",
+    "archive_size": 3970274,
+    "capabilities": 29,
+    "entry": "brush-flow-landuo",
+    "frontend": {
+      "api_contract": "light-media.plugin-api/v1",
+      "contract": "light-media.vue-federation/v1",
+      "entry": "remoteEntry.js",
+      "exposes": [
+        "Config",
+        "Page",
+        "Dashboard",
+        "AppPage"
+      ],
+      "root": "dist/assets",
+      "shared": [
+        "vue",
+        "vuetify",
+        "vuetify/styles"
+      ]
+    },
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "BrushFlowLanduo",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "21f8657044af716bc08272f574f76b0c85b546da70bd1061ec19017e6d77e167",
+    "methods": 20,
+    "notice_sha256": "88fec4aaedf97a06cd24a1f5e5f6ea42bba7ff7e325a5988ce80c090ee2bc405",
+    "notice_size": 55850,
+    "plugin_source": "a4182d03ff593ecc67e88d0504b95068dead7e42",
+    "version": "5.2.18",
+    "worker_sha256": "2ac387d6ed3ba616bc496638765521da480507ad5ed4763d1dad3e5b4d7fe06a",
+    "worker_size": 7084584
+  },
+  "protected_native_app_case": {
+    "test": "TestBrushFlowInstalledAMD64Package",
+    "result": "PASS 16.40s",
+    "host_ELF_sha256": "b1ef976753bac041193e6bf292706d29394d74810135a8e6788d100dc9fca6b8",
+    "environment": "Actual light-media App and installed Go worker on isolated Linux amd64 Alpine with loopback tracker and qBittorrent protocol peers, owned synthetic SQLite and filesystem.",
+    "observations": [
+      "Actual package install accepted its fourteen Vue assets and ten endpoint declarations.",
+      "Authenticated plugin API saved global enable and created a protected task with a resolved site source ID.",
+      "The actual plugin run sampled downloader bandwidth five times. The qBittorrent wire saw exactly one Add with both stopped=True and paused=True, exact torrent bytes and task label.",
+      "At the first Start request, the stored SQLite task record for the exact infohash already had promotion_clock_version=2."
+    ],
+    "attempts": [
+      {
+        "name": "attempt-01",
+        "result": "fixture setup rejected",
+        "reason": "Ordinary generic tracker settings reject the loopback URL before install. Switched the fixture to the existing supported loopback adapter."
+      },
+      {
+        "name": "attempt-02",
+        "result": "fixture assertion mismatch",
+        "reason": "Installed worker completed Add and Start. Fixture compared Python multipart True to lowercase true."
+      },
+      {
+        "name": "final",
+        "result": "passed",
+        "reason": "Exact source wire spelling and real saved-before-start ordering matched."
+      }
+    ],
+    "artifacts": {
+      "SHA256SUMS": "ea360ecae3034d0834b2593c90d32c836780d4c5410220b78afd2471263e68ab",
+      "build-source.txt": "d0dfaa57794f004dcc46ff2c2726bbbab4b3995a3cc38739e10af9dd24b80553",
+      "build.sha256": "d0f656be15965381da87ea5ad1030b908b6cea1ae80b183a357845ebf48ba4ea",
+      "runtime.stdout": "b7a86f12cc9ebb95bbce7cb29bcaa51806b695466c23aaaf9c7af1f50bad20ac",
+      "send-bundle.py": "5a47905b0e2e351dfd9cabd3bdd2daa4bdcd3bd666a6f1f956163c9d1d200a29",
+      "run-remote.sh": "82dd9cf3a71485e3b6a7bb4676af7359407a4dfc34d4b3461d3c9c099e38fedc",
+      "attempt-01-runtime.stdout": "6420a773ccd2b7765474c26caa6643fe7a816e24a5da3493d2fe711432558c4f",
+      "attempt-02-runtime.stdout": "79e1e8c2aa8f5f3b74ea89f84e67cc985aac581d9beca6e6a2f8f732d9728cf4",
+      "attempt-02-build-source.txt": "46120606d1805a527e808a8c82739bef495ca9e75967d2023741fefea4997bb2"
+    },
+    "cleanup": "Owned native container and staged files removed after each attempt. The local test executable was removed after hashing."
+  },
+  "frontend_compile": {
+    "typecheck": "pass",
+    "vite": "pass",
+    "compiled_shell_manifest_sha256": "bb8608385ee7675f33ee97f9d3247999d7f15b0d253900a5efe097fd4eb9f32b",
+    "browser": "requires a separate current-bundle browser case"
+  },
+  "open": [
+    "Current Module Federation browser interaction and source clone limitation recorded in FRONTEND_ORIGIN.json.",
+    "Existing standard callback ceiling truncates long source candidate runs. Adapt the finite Brush transport or continuation to preserve complete source behavior without changing other workers.",
+    "Same-origin non-M-Team provider recipes inside bracket-encoded material still require the scoped executor. General cross-origin credentials remain subject to the existing host grant.",
+    "Deletion accepts current-instance ownership receipts from actual adds. Legacy source torrents have no receipt; explicit safe ownership migration and failure-path evidence are pending."
+  ],
+  "delivery": "Local only. Public build registry and main have not been updated."
+}

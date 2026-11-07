@@ -13497,7 +13497,9 @@
       "scenarios": [],
       "facet_checks": {},
       "status": "implementing",
-      "evidence_ids": [],
+      "evidence_ids": [
+        "brushflowlanduo.native_protected_add.20261108"
+      ],
       "review": {
         "status": "pending",
         "independent": true,
@@ -13508,7 +13510,7 @@
       "family": "BrushFlowLanduo",
       "source_version": "5.2.18",
       "source_metadata_only": false,
-      "discovery_note": "Fixed 5.2.18 backend, frontend and installed package reviewed against the previously verified 5.2.15 Go core. Source-accurate promotion and new remote assets implemented. Acceptance remains pending on the actual package and App.",
+      "discovery_note": "The current 5.2.18 standard ZIP installed and the real App verified the protected qBittorrent Add, persistent v2 record and Start ordering. See pending_acceptance before marking the complete plugin verified.",
       "source_refresh": {
         "prior_version": "5.2.16",
         "prior_source_paths": [
@@ -13550,7 +13552,13 @@
         "manifest": "migration/evidence/brushflowlanduo-source-5.2.18.json",
         "manifest_sha256": "54b7e89102602c19e3f96916f4da8488975151dfb126f0768660d989f5f2a7a0",
         "method": "Query-only installed ID and static SHA-256 on live source. All thirty-three package files match the fixed repository revision. No production config/data rows or plugin initialization."
-      }
+      },
+      "pending_acceptance": [
+        "Current Module Federation browser interaction and source clone limitation recorded in FRONTEND_ORIGIN.json.",
+        "Existing standard callback ceiling truncates long source candidate runs. Adapt the finite Brush transport or continuation to preserve complete source behavior without changing other workers.",
+        "Same-origin non-M-Team provider recipes inside bracket-encoded material still require the scoped executor. General cross-origin credentials remain subject to the existing host grant.",
+        "Deletion accepts current-instance ownership receipts from actual adds. Legacy source torrents have no receipt; explicit safe ownership migration and failure-path evidence are pending."
+      ]
     },
     {
       "id": "plugin.MergeSiteSwitch",
@@ -66769,6 +66777,29 @@
         "evidence/autobackup-acceptance-20261107.json": "6ef0be2e20e3699cf77c5c52325f65ef56737657bfd8ba0f36726b97ad740606"
       },
       "reviewer": "Independent source, host and form review plus coordinator targeted execution"
+    },
+    {
+      "id": "brushflowlanduo.native_protected_add.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestBrushFlowInstalledAMD64Package on isolated native Linux amd64"
+      ],
+      "inputs": "Exact local Linux ZIP, synthetic loopback tracker and downloader, actual App and SQLite.",
+      "observations": "Actual package install accepted its fourteen Vue assets and ten endpoint declarations. Authenticated plugin API saved global enable and created a protected task with a resolved site source ID. The actual plugin run sampled downloader bandwidth five times. The qBittorrent wire saw exactly one Add with both stopped=True and paused=True, exact torrent bytes and task label. At the first Start request, the stored SQLite task record for the exact infohash already had promotion_clock_version=2.",
+      "artifacts": {
+        "evidence/brushflowlanduo-native-protected-20261108.json": "16417d72dd856a04737bec33996a5b6c92abf1bfcabb9f6c1d3c68076216ebf0"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "worker_product_commit": "a4182d03ff593ecc67e88d0504b95068dead7e42",
+        "host_fixture_commit": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
+        "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523"
+      }
     }
   ],
   "scope": {
@@ -66842,7 +66873,7 @@
       "tested_saved_code_revision": "9adada51cae381b01aef6368c540563ab9e6f455",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "b2a843bea5e3130907787ff1632c48ce1802daba",
+      "host_HEAD": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
       "SDK_source_host_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "27643514429d261687da77c9635716ee08e4cfd37db2d43ad7d9dcfab01259f5",
@@ -66853,12 +66884,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Fourteen of 22 accepted. AutoBackup 2.1.4 indexed native ZIP, actual private once, public scheduler, authenticated API, local directory grant, consistent SQLite snapshot and ctime rotation passed. Registry and paired host remain local. No push or deployment.",
-      "tests_running": "None. AutoBackup passed one native App case. No prior passing suite was repeated.",
-      "latest_detail": "features[plugin.AutoBackup].accepted_native_package",
+      "delivery": "Fourteen of 22 accepted. BrushFlowLanduo 5.2.18 product and paired host are local with a passing protected qBittorrent path. It remains outside the release registry and verification count.",
+      "tests_running": "Protected native App case passed. The exact current workbench browser case and full-scope source gaps are pending.",
+      "latest_detail": "features[plugin.BrushFlowLanduo].protected_native_app_case",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18 from its exact installed source and existing Go worker. Finish native App installation, the protected qBittorrent source ordering and current Vue runtime verification before registry/acceptance. Do not rerun accepted AutoBackup tests.",
+      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the accepted protected Add evidence, finish the actual current-workbench browser case, then close callback volume, bound provider recipes and legacy ownership requirements before the full acceptance gate.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66885,7 +66916,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18 from its exact installed source and existing Go worker. Finish native App installation, the protected qBittorrent source ordering and current Vue runtime verification before registry/acceptance. Do not rerun accepted AutoBackup tests.",
+    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the accepted protected Add evidence, finish the actual current-workbench browser case, then close callback volume, bound provider recipes and legacy ownership requirements before the full acceptance gate.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
