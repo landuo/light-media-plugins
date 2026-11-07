@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"fmt"
+	"os"
 	"path"
 	"strings"
 	"sync"
@@ -517,7 +518,13 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 		}
 		if len(successes) > 0 {
 			if e := c.saveHistory(ctx, currentHash, service.Name, successes); e != nil {
-				return e
+				var malformed historyShapeError
+				if ctx.Err() != nil || !errors.As(e, &malformed) {
+					return e
+				}
+				// MoviePilot prints this exception and continues the pass. The
+				// Go worker's stdout belongs to the protocol, so print to stderr.
+				fmt.Fprintln(os.Stderr, malformed)
 			}
 		}
 	}
@@ -856,6 +863,11 @@ func (c *Core) checkService(ctx context.Context, service Service) error {
 	}
 	return nil
 }
+
+type historyShapeError string
+
+func (e historyShapeError) Error() string { return string(e) }
+
 func (c *Core) saveHistory(ctx context.Context, currentHash, downloader string, success []string) error {
 	history, e := c.host.LoadHistory(ctx, currentHash)
 	if e != nil {
@@ -866,7 +878,11 @@ func (c *Core) saveHistory(ctx context.Context, currentHash, downloader string, 
 	}
 	rows, ok := history.([]any)
 	if !ok {
-		return sourceFault("AttributeError", "seed_history.append")
+		kind := formatType(history)
+		if kind == "str" || kind == "dict" {
+			return historyShapeError(fmt.Sprintf("'%s' object has no attribute 'append'", kind))
+		}
+		return historyShapeError(fmt.Sprintf("object of type '%s' has no len()", kind))
 	}
 	fresh := true
 	for _, raw := range rows {
@@ -875,10 +891,16 @@ func (c *Core) saveHistory(ctx context.Context, currentHash, downloader string, 
 			continue
 		}
 		if pyString(row["downloader"]) == downloader {
-			values, e := sourceList(or(row["torrents"], []any{}))
-			if e != nil {
-				return e
+			old := or(row["torrents"], []any{})
+			values, ok := old.([]any)
+			if !ok {
+				kind := formatType(old)
+				if kind == "str" {
+					return historyShapeError(`can only concatenate str (not "list") to str`)
+				}
+				return historyShapeError(fmt.Sprintf("unsupported operand type(s) for +: '%s' and 'list'", kind))
 			}
+			values = append([]any{}, values...)
 			for _, s := range success {
 				values = append(values, s)
 			}
@@ -913,7 +935,7 @@ func historySet(values []any) ([]any, error) {
 	for _, v := range values {
 		k, e := scalarKey(v)
 		if e != nil {
-			return nil, sourceFault("TypeError", "history.set")
+			return nil, historyShapeError(fmt.Sprintf("unhashable type: '%s'", formatType(v)))
 		}
 		if !seen[k] {
 			seen[k] = true

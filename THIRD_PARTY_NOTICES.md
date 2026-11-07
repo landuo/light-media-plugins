@@ -120,3 +120,23 @@ The Pushover and Matrix Apprise adapters use Goldmark v1.8.7, commit
 The license is in `third_party/goldmark-LICENSE` and belongs in the
 MergeMessageNotify package's notice inventory. The conversion reference is the
 installed Python-Markdown 3.11.2. The worker uses Goldmark at runtime.
+
+## IYUUAutoSeed business source and compatibility helpers
+
+The installed IYUUAutoSeed 2.22 MoviePilot source identifies jxxghp and CKun
+as its authors. The fixed `__init__.py` SHA-256 is
+`3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7`.
+The installed source inventory and the Go adaptation's provenance are recorded
+in `plugins/iyuuautoseed/ORIGIN.json`. The executable retains the authors in
+its manifest and uses the GPLv3 SDK under this repository's `LICENSE`.
+
+The detail-page parser retains the libxml2 2.14.6 MIT notice in
+`plugins/iyuuautoseed/compat/htmlextract/LICENSE.libxml2`. The Go dependencies
+include `golang.org/x/net` for HTML tokenization, `golang.org/x/text`, and
+Brotli. Their license and patent texts are under `third_party/`. The shared
+encoding detector retains its CPython, Unicode, and chardet notices under
+`plugins/mpserverstatus/encodingdetector/`. The reused source value and regular
+expression helpers retain their CPython, Unicode, and regexp2 notices under
+`plugins/autosignin/`. The package includes the APScheduler and Requests
+notices for the adapted calendar and HTTP behavior. These are Go implementations
+and embedded data. The worker requires no Python runtime.
