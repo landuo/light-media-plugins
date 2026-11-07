@@ -11,12 +11,13 @@ Image comparisons are source-derived and finite. The prior browser deadline
 and package observer failures retain their original records.
 
 MergeMessageNotify is implementing from the pinned 23-file installed
-1.20.3 snapshot. The standalone component core reuses the host's Go
-configuration and channel code, with 17 forms generated from the refreshed
-source. Targeted loopback checks cover OneBot-11 bearer authorization and
-the two changed credential guards. The standard SDK worker, trusted
-configuration-save origin, actual host/browser and unported Apprise/Mako
-branches remain open. The original installed
+1.20.3 snapshot. A focused real Linux package run verified native form,
+save-only trial and persisted flag reset, ordinary reload without replay,
+and a genuine host notice reaching OneBot. The exact package, host revision
+and separate manager direct-init fix are bound in
+`migration/evidence/mergemessagenotify-host-20261107.json`. Apprise gateway
+source differential passed. Browser, clone, other Apprise providers and
+attachments, and unported Mako branches remain open. The original installed
 list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official

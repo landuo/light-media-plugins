@@ -9736,12 +9736,17 @@
         "plugins/mergemessagenotify/native_apprise.go",
         "plugins/mergemessagenotify/apprise/ORIGIN.json",
         "plugins/mergemessagenotify/mako/ORIGIN.json",
-        "plugins/mergemessagenotify/smtp/ORIGIN.json"
+        "plugins/mergemessagenotify/smtp/ORIGIN.json",
+        "cmd/merge-message-notify/main.go",
+        "plugins/mergemessagenotify/sdk.go",
+        "plugins/mergemessagenotify/apprise/gateway.go"
       ],
       "scenarios": [],
       "facet_checks": {},
       "status": "implementing",
-      "evidence_ids": [],
+      "evidence_ids": [
+        "mergemessagenotify.actual_host_save_origin.20261107"
+      ],
       "review": {
         "status": "pending",
         "independent": true,
@@ -9771,7 +9776,7 @@
         "method": "Read-only installed-list membership and static source files. No plugin import, settings, history, recipients or production dispatch.",
         "previous_version_inventory": "1.20.1 original fixed baseline retained. Same source paths, 21 changed files; exact 1.20.3 per-file SHAs in receipt."
       },
-      "implementation_note": "Ported standalone business core and all 17 channel definitions from the tracked host base, updating confirmed 1.20.3 behavior. OneBot-11 loopback transport and original credential guard cases pass. Production worker/host dispatch and whole feature acceptance remain open.",
+      "implementation_note": "Standard Go worker and trusted host save origin now integrated. Scoped actual Linux package run proves OneBot trial on save, no replay on reload, real notice/history and native form. Apprise gateway differential passed. Whole-plugin acceptance remains open.",
       "routing_progress": {
         "source": "1.20.3 __init__.py:61,239,505–end; module.py ChannelStrategy",
         "target": "plugins/mergemessagenotify/routing.go",
@@ -9828,7 +9833,17 @@
           "Compose the ordinary standalone SDK worker and trusted configuration-save origin. Host currently calls the same init entry with raw config for save and startup. Preserve one-shot gating, ordinary broadcast, config encryption and dotted-key forms.",
           "Expand Apprise beyond JSON/JSONS, including documented apprise:// and bark:// examples, attachments and the other source-supported providers. Reused Mako has unsupported valid language branches.",
           "Verify current standard Linux host package, browser form, stop/reload and clone only after the affected routes are ready. Do not repeat old isolated proofs for unchanged leaves."
-        ]
+        ],
+        "status": "Historical component checkpoint. Ordinary host and native form progress superseded by host_port; dependency gaps remain open."
+      },
+      "host_port": {
+        "evidence": "migration/evidence/mergemessagenotify-host-20261107.json",
+        "sha256": "ee9e6eabd63cd6c9c17f7a9d6d13ece5ef792f207c2bb0a8d788935d2bbd6f51",
+        "tested_host_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
+        "tested_plugin_commit": "cb823a7848d33b293ed6b5d93809fb59408b1d2a",
+        "current_host_commit": "204dc6dc6c29071544a12b5e0cacb0772f917e3e",
+        "manager_fix_verification": "Linux amd64 compile of ./internal/app succeeded; explicit-manager live path not executed in the earlier package run.",
+        "scope": "Actual scoped host and original source differential. Browser, clone, additional channel/dependency parity and explicit manager runtime verification remain open."
       }
     },
     {
@@ -65509,6 +65524,39 @@
       },
       "reviewer": "/root/autosignin_closure",
       "observations": "Verified source identity, all 22 compiled site adapters, ordinary init/config/form/page/API/command/service/PluginAction/SiteDeleted/stop paths and current actual package identity. Reuse Main179, same-data Chrome tail and login-only/cold/reinstall because compared runtime differences are image decoding only. License and attribution requested and included in restaged archive with identical worker."
+    },
+    {
+      "id": "mergemessagenotify.actual_host_save_origin.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.MergeMessageNotify"
+      ],
+      "commands": [
+        "TestMergeMessageNotifyActualMain in owned net-none Linux",
+        "TestSourceGateway199 once on fixed source-derived fixture"
+      ],
+      "inputs": "Fixed installed 1.20.3 and Apprise 1.9.9. Paired Linux host, exact archive, test-only SDK notice producer and synthetic OneBot receiver.",
+      "observations": "Actual ZIP acquisition, native form, save triggers one message and clears, reload does not replay, genuine notice gives a second send and one host history record, both workers reaped.",
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "environment": "Linux amd64 UID1000 read-only container and fresh local state; fixed source snapshot with 23 files.",
+        "target_files": {
+          "internal/sdk/base.go": "878d4dd0f82f0978b2826d1d05b6f40f1ece632bc33e50f0f083bfac3785fa4e",
+          "cmd/merge-message-notify/main.go": "a95ea469448a99cca4a40cddf4981cd2039f921df93713270ad01bc23f960b98",
+          "plugins/mergemessagenotify/sdk.go": "884bd1d544e292748fb2ab4ff693837359e4256282049728f29c3e8ff09e5603",
+          "plugins/mergemessagenotify/plugin.go": "65aae707f440f4ecd47c5bf9690bc102e94e75da6fcefb905949d4d9652424eb",
+          "plugins/mergemessagenotify/routing.go": "1c47408d7058598537a1283fbc7222628ae9d67cb10b290e0acd2518f0f44f97",
+          "plugins/mergemessagenotify/apprise/gateway.go": "00c8ce2959431beb0a73a4694ab1e187ee0c85660df6589b56f97ac6d0c1eaed"
+        },
+        "fixture_files": {
+          "evidence/mergemessagenotify-host-20261107.json": "ee9e6eabd63cd6c9c17f7a9d6d13ece5ef792f207c2bb0a8d788935d2bbd6f51"
+        }
+      },
+      "artifacts": {
+        "evidence/mergemessagenotify-host-20261107.json": "ee9e6eabd63cd6c9c17f7a9d6d13ece5ef792f207c2bb0a8d788935d2bbd6f51"
+      },
+      "reviewer": "/root/merge_origin_review"
     }
   ],
   "scope": {
@@ -65561,23 +65609,23 @@
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
-      "SDK_source_host_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
+      "host_HEAD": "204dc6dc6c29071544a12b5e0cacb0772f917e3e",
+      "SDK_source_host_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
       "SDK_current_files": 105,
-      "SDK_current_origin_sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
-      "SDK_current_status": "All105 committed host blobs match target under two declared import relocations. This is an association, not new Main/runtime acceptance. SDK104/current-private package results retain old bindings.",
+      "SDK_current_origin_sha256": "06bd7be472f2e2edaee8d6d9bb3d1c5068212784dc8080e0c7a1d6a3543f52c5",
+      "SDK_current_status": "105 standalone SDK files. Base save-origin method is bound to committed host SDK source. Real Merge package used host 62e870cc; later explicit manager path fix recorded separately. Unaffected earlier acceptance bindings retained.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-07 fresh ls-remote H75e13686/P4453f821 in this continuation, no push",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight functional instances accepted. MergeMessageNotify 1.20.3 standalone component core, source forms and changed channel behavior saved locally; host and complete dependency acceptance remain open.",
-      "tests_running": "None. New standalone core compiled and affected source/loopback tests completed.",
-      "latest_detail": "features[plugin.MergeMessageNotify].component_port",
+      "delivery": "Eight functional instances accepted. MergeMessageNotify 1.20.3 standard worker and focused real Linux save/reload/notice run completed; plugin still implementing.",
+      "tests_running": "The scoped Linux package and gateway source runs have finished. Owned test processes and remote attempt are removed.",
+      "latest_detail": "features[plugin.MergeMessageNotify].host_port and migration/evidence/mergemessagenotify-host-20261107.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Compose MergeMessageNotify standard SDK worker and its trusted save-only origin. Connect the ordinary notification and form paths, then resolve concrete Apprise/Mako dependency gaps from the fixed installed source."
+      "next_complete_slice": "Continue MergeMessageNotify Apprise Bark and attachment/provider parity, then remaining Mako and focused browser/clone coverage. Reuse completed Linux package/save/reload/ordinary notice proof when routes are unchanged."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
