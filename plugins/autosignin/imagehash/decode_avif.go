@@ -20,7 +20,7 @@ func decodeAVIF(data []byte) (Raster, error) {
 	// Pillow checks the container transform before loading. Do not silently add
 	// an independent decoder allocation quota below that existing source limit.
 	img, ci, err := avif.DecodeColor(bytes.NewReader(data), avif.Options{
-		ToYCbCr: true, FrameSizeLimit: cfg.Width * cfg.Height, ConvertPicture: opaqueHighDepthAVIF,
+		ToYCbCr: true, FrameSizeLimit: cfg.Width * cfg.Height, ConvertPicture: highDepthAVIF,
 	})
 	if err != nil {
 		return Raster{}, err
@@ -77,11 +77,10 @@ func decodeAVIF(data []byte) (Raster, error) {
 	return r, nil
 }
 
-// Pillow requests RGB8 from libavif. For opaque color frames, libavif
-// reduces the original YUV samples to eight bits before libyuv does chroma
-// interpolation. Monochrome uses libavif's full-depth luma conversion.
-func opaqueHighDepthAVIF(pic, alpha *av1.Picture, ci avif.ColorInfo) image.Image {
-	if alpha != nil || (pic.BitDepth != 10 && pic.BitDepth != 12) {
+// Pillow requests RGB8 or RGBA8 from libavif. Opaque color uses byte-plane
+// chroma interpolation, and opaque monochrome uses full-depth luma.
+func highDepthAVIF(pic, alpha *av1.Picture, ci avif.ColorInfo, premultiplied bool) image.Image {
+	if pic.BitDepth != 10 && pic.BitDepth != 12 {
 		return nil
 	}
 	coeff, ok := avifYUVConstants(ci.Matrix, ci.FullRange)
@@ -90,6 +89,22 @@ func opaqueHighDepthAVIF(pic, alpha *av1.Picture, ci avif.ColorInfo) image.Image
 	}
 	rect := image.Rect(0, 0, pic.Width, pic.Height)
 	shift := pic.BitDepth - 8
+	sx, sy := 1, 1
+	switch pic.Layout {
+	case av1.LayoutI420:
+		sx, sy = 2, 2
+	case av1.LayoutI422:
+		sx = 2
+	case av1.LayoutI400, av1.LayoutI444:
+	default:
+		return nil
+	}
+	if alpha != nil {
+		if alpha.Layout != av1.LayoutI400 || alpha.BitDepth != pic.BitDepth {
+			return nil
+		}
+		return highDepthAVIFAlpha(pic, alpha, rect, sx, sy, coeff, premultiplied)
+	}
 	if pic.Layout == av1.LayoutI400 {
 		bias, scale := 0, (1<<pic.BitDepth)-1
 		if !ci.FullRange {
@@ -105,16 +120,6 @@ func opaqueHighDepthAVIF(pic, alpha *av1.Picture, ci avif.ColorInfo) image.Image
 			}
 		}
 		return out
-	}
-	sx, sy := 1, 1
-	switch pic.Layout {
-	case av1.LayoutI420:
-		sx, sy = 2, 2
-	case av1.LayoutI422:
-		sx = 2
-	case av1.LayoutI444:
-	default:
-		return nil
 	}
 	out := image.NewRGBA(rect)
 	cb := func(x, y int) int { return avifSample16(pic, 1, x, y) >> shift }
@@ -132,12 +137,79 @@ func opaqueHighDepthAVIF(pic, alpha *av1.Picture, ci avif.ColorInfo) image.Image
 	return out
 }
 
+// Pillow asks libavif for straight RGBA8. libyuv uses native high-depth
+// conversion for 10-bit color and 12-bit 4:2:0, and byte planes otherwise.
+func highDepthAVIFAlpha(pic, alpha *av1.Picture, rect image.Rectangle, sx, sy int, coeff [6]int, premultiplied bool) image.Image {
+	shift := pic.BitDepth - 8
+	maxSample := (1 << pic.BitDepth) - 1
+	mono := pic.Layout == av1.LayoutI400
+	nearest := pic.BitDepth == 12 && pic.Layout == av1.LayoutI420
+	highDepth := !mono && (pic.BitDepth == 10 || nearest)
+	roundedAlpha := mono || nearest
+	chroma := func(plane, x, y int) int {
+		if nearest {
+			return avifSample16(pic, plane, x/sx, y/sy) >> shift
+		}
+		sample := func(cx, cy int) int {
+			value := avifSample16(pic, plane, cx, cy)
+			if !highDepth {
+				value >>= shift
+			}
+			return value
+		}
+		value := interpolateAVIFChroma(rect, sx, sy, x, y, sample)
+		if highDepth {
+			value >>= shift
+		}
+		return value
+	}
+	out := image.NewNRGBA(rect)
+	for y := 0; y < pic.Height; y++ {
+		for x := 0; x < pic.Width; x++ {
+			luma := avifSample16(pic, 0, x, y)
+			word := (luma >> shift) * 257
+			if highDepth {
+				word = (luma << (16 - pic.BitDepth)) | (luma >> (2*pic.BitDepth - 16))
+			}
+			u, v := 0, 0
+			if !mono {
+				u, v = chroma(1, x, y)-128, chroma(2, x, y)-128
+			}
+			r, g, b := avifRGBFromWord(word, u, v, coeff)
+			a := avifSample16(alpha, 0, x, y)
+			if !alpha.FullRange {
+				span := 219 << shift
+				a = (min(span, max(0, a-(16<<shift)))*maxSample + span/2) / span
+			}
+			a8 := a >> shift
+			if roundedAlpha {
+				a8 = int(float32(float32(a)/float32(maxSample)*255) + 0.5)
+			}
+			if premultiplied && a8 != 255 {
+				inverse := 0
+				if a8 > 0 {
+					inverse = min(65535, 65536/a8)
+				}
+				unattenuate := func(c byte) byte { return byte(min(255, int(c)*257*inverse>>16)) }
+				r, g, b = unattenuate(r), unattenuate(g), unattenuate(b)
+			}
+			at := out.PixOffset(x, y)
+			out.Pix[at], out.Pix[at+1], out.Pix[at+2], out.Pix[at+3] = r, g, b, byte(a8)
+		}
+	}
+	return out
+}
+
 func avifSample16(pic *av1.Picture, plane, x, y int) int {
 	return int(binary.NativeEndian.Uint16(pic.Data[plane][y*pic.Stride[plane]+2*x:]))
 }
 
 func avifRGB8(luma, u, v int, coeff [6]int) (byte, byte, byte) {
-	y := (luma * 257 * coeff[0] >> 16) + coeff[1]
+	return avifRGBFromWord(luma*257, u, v, coeff)
+}
+
+func avifRGBFromWord(word, u, v int, coeff [6]int) (byte, byte, byte) {
+	y := (word * coeff[0] >> 16) + coeff[1]
 	clamp := func(value int) byte { return byte(min(255, max(0, value>>6))) }
 	return clamp(y + v*coeff[5]), clamp(y - u*coeff[3] - v*coeff[4]), clamp(y + u*coeff[2])
 }
@@ -189,7 +261,9 @@ func avifChroma(p *image.YCbCr, plane []byte, x, y int) int {
 func interpolateAVIFChroma(rect image.Rectangle, sx, sy, x, y int, at func(int, int) int) int {
 	x0, y0 := x/sx, y/sy
 	x1, y1 := x0, y0
-	if sx == 2 {
+	// The filtered libyuv rows copy the final source column at the right
+	// edge, including when the destination width is odd.
+	if sx == 2 && x < rect.Max.X-1 {
 		x1 += x%2*2 - 1
 	}
 	if sy == 2 {

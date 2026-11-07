@@ -103,6 +103,7 @@ type bits struct {
 
 type decoder struct {
 	dimensionCheck func(int, int) error
+	tiffGrayAlpha  bool
 	r              io.Reader
 	bits           bits
 	// bytes is a byte buffer, similar to a bufio.Reader, except that it
@@ -308,9 +309,17 @@ func (d *decoder) processSOF(n int) error {
 	if d.nComp != 0 {
 		return FormatError("multiple SOF markers")
 	}
+	if d.tiffGrayAlpha && n != 6+3*2 {
+		return FormatError("TIFF grayscale-alpha JPEG requires two components")
+	}
 	switch n {
 	case 6 + 3*1: // Grayscale image.
 		d.nComp = 1
+	case 6 + 3*2: // Grayscale and unassociated alpha in TIFF.
+		if !d.tiffGrayAlpha {
+			return UnsupportedError("number of components")
+		}
+		d.nComp = 2
 	case 6 + 3*3: // YCbCr or RGB image.
 		d.nComp = 3
 	case 6 + 3*4: // YCbCrK or CMYK image.
@@ -368,7 +377,10 @@ func (d *decoder) processSOF(n int) error {
 			// the nominal (h, v) is (2, 1), a 20x5 image is encoded in three 8x8
 			// MCUs, not two 16x8 MCUs.
 			h, v = 1, 1
-
+		case 2:
+			if h != 1 || v != 1 {
+				return UnsupportedError("TIFF grayscale-alpha JPEG subsampling")
+			}
 		}
 
 		d.comp[i].h = h

@@ -65260,12 +65260,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seven accepted installed instances. Local AutoSignIn continuation adds verified TIFF LA and four opaque high-depth AVIF source cases. Private-state import and remote/production delivery remain separate.",
-      "tests_running": "None. Initial imagehash and AVIF passes followed by targeted guard fixes and an amd64 Linux build. Temporary build binaries removed.",
+      "delivery": "Seven accepted installed instances. Local AutoSignIn adds five transparent high-depth AVIF cases and six TIFF JPEG/Group 3 outcomes. Private-state import and remote/production delivery remain separate.",
+      "tests_running": "None. Targeted AVIF and TIFF source fixture checks completed. Temporary Linux worker removed.",
       "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
-      "local_codec_base": "89750790296a8252996488f8f58c6022eb2326b9; checkpoint commit containing this ledger adds the tested codec increment",
+      "local_codec_base": "45d2a8b09896323ed9891ec4e1fea7b8f75057e8; checkpoint commit containing this ledger adds the tested codec increment",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Complete AutoSignIn source-supported remaining decoder branches, then check changed entry paths and run one final package acceptance. Reuse existing valid Main and browser proof. Next sequential plugin is installed MergeMessageNotify 1.20.3 with a refreshed source snapshot."
+      "next_complete_slice": "Finish remaining concrete AutoSignIn image format differences and one final package acceptance, reusing applicable Main and browser proof. Then proceed with installed MergeMessageNotify 1.20.3 and a refreshed source snapshot."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66255,7 +66255,7 @@
             "verified": "Seven source-positive layouts match loaded mode, dimensions, pixels, resized grayscale and 100-bit hash. The raw reversed 2-bit palette rejection also matches. go test ./plugins/autosignin/imagehash passed.",
             "remaining": "TIFF variants outside the tested layouts, high-bit AVIF conversion, uncommon CICP and other reachable default-image inputs. Full AutoSignIn acceptance remains open."
           },
-          "current_continuation_increment": {
+          "opaque_avif_tiff_checkpoint": {
             "status": "TIFF LA and four opaque high-depth AVIF cases verified in the development imagehash entry. Whole AutoSignIn remains implementing.",
             "base": "b97e026c219aa7ca01090cb2d1b69a716c93946e",
             "source": "Fixed installed tjupt.py SHA ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0 with Pillow 12.2.0 and libtiff 4.7.1 / libavif 1.4.1 and libyuv 1922.",
@@ -66315,6 +66315,111 @@
               "method": "Read-only source and target code inspection; no duplicate test run.",
               "changes": "Check the color matrix before the monochrome fast path. Return Unsupported for JPEG-compressed LA TIFF until its alpha strip decode is implemented. Previously copied JPEG stripes would otherwise silently return a fully transparent image.",
               "scope": "Opaque high-depth AVIF input lifetime/stride and TIFF LA interleaving/predictor reviewed. Separate-planes LA and JPEG LA remain outside verified layouts."
+            }
+          },
+          "current_continuation_increment": {
+            "status": "Implemented and source-differential checked for nine positive and two rejected synthetic inputs. AutoSignIn stays implementing; current count is 7/23.",
+            "source": {
+              "site": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–259",
+              "site_sha256": "ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0",
+              "reference_image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+              "reference_scope": "Actual installed-source algorithm on synthetic images in the fixed isolated reference image. No production PT traffic or private state.",
+              "avif": {
+                "actual_pinned_source_run": "work/avif-alpha-continuation/command.json",
+                "expected": "work/avif-alpha-continuation/expected.json",
+                "expected_sha256": "2939329c5732ec0bd9b568085322d729b3c4615349593cd409c98682b7bf64c0",
+                "source_payload_sha256": "312ac42fb04fc72aa3c947183b6a8940a556cb8255be6a848588791996d5a16f",
+                "duration_seconds": 1.815,
+                "cases": [
+                  "AVIF-alpha-420-10",
+                  "AVIF-alpha-444-prem-10",
+                  "AVIF-alpha-420-12",
+                  "AVIF-alpha-422-12",
+                  "AVIF-alpha-400-12"
+                ],
+                "versions": "Pillow 12.2.0, libavif 1.4.1, libyuv 1922",
+                "behavior": "Decodes 10/12-bit alpha as straight RGBA8 with chroma-dependent conversion and alpha rounding. The 444 prem input uses the primary item prem reference."
+              },
+              "tiff_header_edges": {
+                "actual_pinned_source_run": "work/avif-alpha-continuation/tiff-header-edges/command.json",
+                "expected": "work/avif-alpha-continuation/tiff-header-edges/expected.json",
+                "expected_sha256": "b6daa7c914a1c0bd92b80f453d9f68e7a43a8605386e46d6edc7349036859fb2",
+                "source_payload_sha256": "4f547c299994017aed299ac94be1b0dd9712d7af9fb08ebeade0bef77957f81c",
+                "duration_seconds": 2.964,
+                "cases": [
+                  "TIFF-LA-JPEG7-spp1",
+                  "TIFF-LA-JPEG7-single-bits",
+                  "TIFF-G3-2D-bits8"
+                ]
+              },
+              "tiff": {
+                "actual_pinned_source_run": "work/autosignin-image-gap-20261107/tiff-la-jpeg-g3-2d-source/command.json",
+                "expected": "work/autosignin-image-gap-20261107/tiff-la-jpeg-g3-2d-source/expected.json",
+                "expected_sha256": "fe1f201c09ccf6b409751cbff717f56c1f05eb69264ea7bf8e2f8a9d46a8d440",
+                "source_payload_sha256": "64534cdadc5e9d469ca0bff9abea04545f720df67300b05c76ff8c04a77990d9",
+                "duration_seconds": 2.251,
+                "cases": [
+                  "TIFF-LA-JPEG7",
+                  "TIFF-G3-2D",
+                  "TIFF-G3-2D-EOL-fill-LSB"
+                ],
+                "versions": "Pillow 12.2.0, libtiff 4.7.1",
+                "behavior": "LA JPEG compression 7 uses two untransformed components and shared JPEGTables. T4Options 1 and 5 each have 12 actual two-dimensional lines."
+              }
+            },
+            "implementation": "Pure Go. Convert original AV1 planes with alpha item metadata, copy the odd-width filtered right edge, decode the two TIFF JPEG components using existing JPEG reconstruction, and dispatch each Group 3 mixed scan line by its EOL mode bit.",
+            "verified": {
+              "avif": "20 source AVIF cases and reserved-matrix rejection passed. An odd-width filter edge differed in two new cases and was repaired before this targeted pass.",
+              "tiff": "13 targeted source cases passed, including the three new TIFF layouts and existing LA, JPEG7 and CCITT inputs.",
+              "linux_build_before_jpeg_guard": {
+                "go": "go1.26.10",
+                "env": {
+                  "GOOS": "linux",
+                  "GOARCH": "amd64",
+                  "CGO_ENABLED": "0"
+                },
+                "command": "go build -trimpath ./cmd/auto-sign-in",
+                "exit": 0,
+                "worker_sha256": "9d34884cbf990f67e3373bb695aaaec44adc46a70ff445199cf9970d22731661",
+                "bytes": 19009150,
+                "scope": "Initial codec increment, before the explicit unscanned JPEG component guard. Temporary ELF removed."
+              },
+              "linux_build_final": {
+                "go": "go1.26.10",
+                "env": {
+                  "GOOS": "linux",
+                  "GOARCH": "amd64",
+                  "CGO_ENABLED": "0"
+                },
+                "command": "go build -trimpath ./cmd/auto-sign-in",
+                "exit": 0,
+                "worker_sha256": "b683cdbf21d6153c192354481518aa3a46f925a2d1aea597e6e7e2ec4ac4fdb1",
+                "bytes": 19009462,
+                "scope": "Linux build of current codec changes after review fixes; temporary ELF removed."
+              },
+              "permanent_fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
+            },
+            "target_sha256": {
+              "plugins/autosignin/imagehash/avifport/avif.go": "0582613b6faaa666cfc6950f9a8661ad45bd30da3c98c5b5de08e3ecc92c9e22",
+              "plugins/autosignin/imagehash/avifport/ORIGIN.json": "3a50e2b08190150dee18a89433ec4f107698f3f7ca3415d545960df0048e5ec2",
+              "plugins/autosignin/imagehash/decode_avif.go": "de83ba9c1c5d5255fb4ce89c9c6ef86698ef220fffba7763c4e0272f75358a11",
+              "plugins/autosignin/imagehash/jpegport/raster.go": "1a46d7e6958304f41487e1add59d6086d932d5c8ba370985d1e13db7d1dc886b",
+              "plugins/autosignin/imagehash/jpegport/reader.go": "abbb986063f9534d801d6a09b401921a1d8db3c8b8c089e84d2f2934f58f172e",
+              "plugins/autosignin/imagehash/tiffport/ccitt_group3.go": "2a28e1674ec2c6311e24f5b42773245ad71e7cd52a00baf4eca126dd5c4a00e4",
+              "plugins/autosignin/imagehash/tiffport/reader.go": "6823bb92973746948ef3a967a36030001f000dafdb249cd3dcad8d4bc2406b2d",
+              "plugins/autosignin/imagehash/tiffport/reader_config.go": "aced564799c49894112b216cdfd199aed9da3ecd06f692347e25dc54cd5018a6",
+              "plugins/autosignin/imagehash/tiffport/ORIGIN.json": "35657906e226fbefb21d4dfb280f36668672ab6f2a14c886a2612f8bd29732f7",
+              "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "45f77297e491b4fb2c0d52d687445361bfc07efa65e540a77dd357e33351b23e"
+            },
+            "remaining": "Unverified source-supported CICP matrices, AVIF item/layout variants and TIFF layouts including separate-plane LA and old JPEG. Complete concrete source gaps and run one final isolated package acceptance when the plugin is ready. Reuse applicable host and browser evidence.",
+            "final_review": {
+              "reviewer": "/root/notice_api",
+              "scope": "Independent static review of added AVIF and TIFF paths, original sample bytes and expected output. No duplicate test run by the reviewer.",
+              "confirmed": "AVIF alpha item association, buffer ownership, alpha range and odd-width filtering. TIFF SOF component order and Group 3 EOL, bit order, and polarity. Prior 94 fixture entries preserved.",
+              "fixes": "Require a single one-bit sample for the Group 3 mixed path. Validate the TIFF JPEG grayscale-alpha sample count before decode, and accept the original single BitsPerSample value for both bands. Guard against missing JPEG component scans.",
+              "after_fixes": "Six affected TIFF cases passed, including two original rejections and the single BitsPerSample positive case.",
+              "target_log": "work/avif-alpha-continuation/tiff-header-edges/target.stdout",
+              "target_log_sha256": "a5783f8ad88a59e3e648d0c0654d93863d98c88d3efb71808ab72a439d0e5d82"
             }
           }
         }

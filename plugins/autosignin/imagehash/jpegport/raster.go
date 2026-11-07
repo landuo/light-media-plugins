@@ -122,3 +122,29 @@ func DecodeRasterChecked(r io.Reader, check func(int, int) error) (Raster, error
 	}
 	return out, nil
 }
+
+// DecodeTIFFGrayAlpha reads the two untransformed JPEG components of a
+// continuous TIFF grayscale-alpha block, with a dimension check before allocation.
+func DecodeTIFFGrayAlpha(r io.Reader, width, height int) ([]byte, error) {
+	d := decoder{tiffGrayAlpha: true, dimensionCheck: func(w, h int) error {
+		if w != width || h != height {
+			return FormatError("JPEG dimensions do not match TIFF block")
+		}
+		return nil
+	}}
+	if err := d.decode(r); err != nil {
+		return nil, err
+	}
+	if !d.componentQuantDefined[0] || !d.componentQuantDefined[1] {
+		return nil, FormatError("missing TIFF grayscale-alpha JPEG component")
+	}
+	pixels := make([]byte, width*height*2)
+	for y := 0; y < height; y++ {
+		for x := 0; x < width; x++ {
+			at := (y*width + x) * 2
+			pixels[at] = d.planes[0][y*d.strides[0]+x]
+			pixels[at+1] = d.planes[1][y*d.strides[1]+x]
+		}
+	}
+	return pixels, nil
+}

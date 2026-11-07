@@ -22,6 +22,7 @@ import (
 	"math"
 	"math/bits"
 
+	jpegport "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport"
 	"github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/tiffport/internal/lzw"
 	"golang.org/x/image/ccitt"
 )
@@ -318,6 +319,7 @@ func (d *decoder) parseIFD(p []byte) (int, error) {
 	switch tag {
 	case 274, // Orientation is consumed after lossless sample decoding.
 		tBitsPerSample,
+		tSamplesPerPixel,
 		tPlanarConfiguration,
 		tExtraSamples,
 		tPhotometricInterpretation,
@@ -810,9 +812,6 @@ func (d *decoder) ccittOptions(compression uint) (*ccitt.Options, error) {
 	switch compression {
 	case cG3:
 		t4Options := d.firstVal(tT4Options)
-		if t4Options&1 != 0 {
-			return nil, UnsupportedError("CCITT Group 3 2-D coding")
-		}
 		if t4Options&2 != 0 {
 			return nil, UnsupportedError("CCITT Group 3 uncompressed mode")
 		}
@@ -911,6 +910,11 @@ func (d *decoder) prepJPEG(offset, n, lim int64, needAPP14, needTables bool) (jp
 		}
 	}
 	source := d.preparedJPEGSource(offset, n, split, needAPP14, needTables)
+	if d.mode == mGrayAlpha {
+		// The TIFF-specific decoder checks the two-component SOF before
+		// allocating, as the standard JPEG config reader rejects two components.
+		return source, nil
+	}
 	// JPEG headers can exceed the uncompressed block size; bound decoded dimensions instead.
 	c, err := jpeg.DecodeConfig(source())
 	if err != nil {
@@ -924,6 +928,14 @@ func (d *decoder) prepJPEG(offset, n, lim int64, needAPP14, needTables bool) (jp
 }
 
 func (d *decoder) decodeJPEGBlock(img image.Image, source jpegSource, x, y, width, height int) error {
+	if d.mode == mGrayAlpha {
+		pixels, err := jpegport.DecodeTIFFGrayAlpha(source(), width, height)
+		if err != nil {
+			return err
+		}
+		d.buf = pixels
+		return d.decodePixels(img, x, y, x+width, y+height)
+	}
 	c, err := jpeg.DecodeConfig(source())
 	if err != nil {
 		return err
@@ -1111,11 +1123,20 @@ func (d *decoder) loadFaxBlock(b tiffBlock, limit int64, compression uint) error
 	// 	order = ccitt.LSB
 	// }
 	order := ccittFillOrder(d.firstVal(tFillOrder))
+	block := io.NewSectionReader(d.r, b.offset, b.n)
+	if compression == cG3 && d.firstVal(tT4Options)&1 != 0 {
+		samples := d.features[tSamplesPerPixel]
+		if d.bpp != 1 || (len(samples) != 0 && (len(samples) != 1 || samples[0] != 1)) {
+			return UnsupportedError("CCITT Group 3 requires one 1-bit sample per pixel")
+		}
+		d.buf, err = decodeGroup3Mixed(block, order, b.width, b.height, opts.Invert, limit)
+		return err
+	}
 	subFormat := ccitt.Group3
 	if compression == cG4 {
 		subFormat = ccitt.Group4
 	}
-	r := ccitt.NewReader(io.NewSectionReader(d.r, b.offset, b.n), order, subFormat, b.width, b.height, opts)
+	r := ccitt.NewReader(block, order, subFormat, b.width, b.height, opts)
 	d.buf, err = readBuf(r, d.buf, limit)
 	return err
 }

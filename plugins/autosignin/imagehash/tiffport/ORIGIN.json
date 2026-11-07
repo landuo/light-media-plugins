@@ -49,8 +49,8 @@
   "license": "BSD3, retained LICENSE and original file headers",
   "local_adaptations": [
     "I/F scalar decoding and original float/integer predictors",
-    "Pillow/libtiff fax photometric polarity",
-    "JPEG strips use existing Pillow-compatible JPEG port",
+    "Pillow/libtiff fax photometric polarity and mixed Group 3 lines. The reference transition search follows golang.org/x/image v0.24.0 ccitt/reader.go.",
+    "JPEG strips use the existing Pillow-compatible JPEG port, including untransformed two-component grayscale-alpha strips.",
     "Expose native Orientation tag; parent applies ImageOps.exif_transpose semantics",
     "BigTIFF first-IFD normalization happens in the parent decoder",
     "Packed grayscale and palette samples follow the Pillow raw unpacker table in https://github.com/python-pillow/Pillow/blob/12.2.0/src/libImaging/Unpack.c",
