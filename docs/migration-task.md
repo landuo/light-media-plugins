@@ -66,7 +66,12 @@ Mako now binds variadic page signatures from the supplied keyword arguments
 and keeps the root Context separate from generated render locals. The
 source replays and Linux build are recorded in
 `migration/evidence/mergemessagenotify-line-qq-webex-page-variadic-20261107.json`.
-The other 133 schemes, further Mako behavior, browser, clone and final
+Custom Form, Custom XML and Home Assistant bring the count to 56 of 183.
+The installed Mako entry creates templates without a file lookup. The Go
+port preserves the observed include, inheritance and file namespace
+behavior at that entry. The targeted replays and Linux build are recorded in
+`migration/evidence/mergemessagenotify-form-xml-home-assistant-external-templates-20261107.json`.
+The other 127 schemes, further Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,

@@ -1,0 +1,196 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "mako_product_commit": "c33d28bfe7b8984e13c4d2cb5011516c4d510b2b",
+  "combined_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Offline original-source captures, targeted Go replays, independent source review and exact Linux/amd64 build. No new host execution, browser, real provider account or final package run.",
+  "new_replayed_cases": 85,
+  "apprise": {
+    "version": "1.9.9",
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 56,
+    "schemes_without_native_implementation": 127,
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/apprise/ORIGIN.json",
+      "sha256": "e5edd6fc509f272f136b4d44d17c049cfb574f5e2729bef98fdba35d47e8fa94"
+    },
+    "custom_form": {
+      "source": [
+        "apprise/plugins/custom_form.py:64–97,179–274,278–447,523–561"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/custom_form.go",
+      "test": "TestSourceCustomForm199",
+      "cases": 19,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/custom-form-1.9.9.json",
+        "sha256": "124b1847b993d104e6ca32b74de88c4c6a64d7a3377d52824fb031841014492a"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-form-source.json",
+        "sha256": "124b1847b993d104e6ca32b74de88c4c6a64d7a3377d52824fb031841014492a"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-form-target.stdout",
+        "sha256": "0a48b4f6bbaff75f0fb4fd81292663d3d4dca77d745db2452052265cffbe2cea"
+      },
+      "independent_reviewers": [
+        "/root/custom_xml",
+        "/root/home_assistant"
+      ],
+      "scope": "Both schemes, ordered GET merge and non-GET body, field renames/removal, auth and headers, multipart names/patterns, granted local and remote attachments, attachment-only delivery, truncation, strict status and failure. Multipart boundary normalization was limited to the nondeterministic boundary. Source rate is zero."
+    },
+    "custom_xml": {
+      "source": [
+        "apprise/plugins/custom_xml.py:61–86,155–245,248–439,512–545"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/custom_xml.go",
+      "test": "TestSourceCustomXML199",
+      "cases": 19,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/custom-xml-1.9.9.json",
+        "sha256": "32b7c811cf56646640eb64567b44643f54c7ac3111b783006d0d0cfbe1fcdaff"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-xml-source.json",
+        "sha256": "5eeb3284989cbe6e78624878fb97b5f23a05f310b989999c37a8505ee224d825"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-xml-target.stdout",
+        "sha256": "8bee94bbceafdec5fa64abc1b152e6217efd6f6e96303f41546d661acd0d8016"
+      },
+      "independent_reviewers": [
+        "/root/custom_form",
+        "/root/home_assistant"
+      ],
+      "scope": "Both schemes, XML and SOAP/XSD, escaping and field remapping, auth and headers, Base64 attachments, attachment-only delivery, truncation and failures. Original parses but omits prefixed -query fields from requests and uses zero delay. One new review row verifies lowercase host and literal dot-segment normalization.",
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-xml-url-source.json",
+        "sha256": "ba08ca504e12dfb626c31872f70487935d4c34f7af29a47ed6003cdeb179c3cf"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-custom-xml-url-target.stdout",
+        "sha256": "209a9e4a85dc9c4c1b88c4abf921dbfdffb91fc1afdf25d91bd15caf044d818d"
+      }
+    },
+    "home_assistant": {
+      "source": [
+        "apprise/plugins/home_assistant.py:52–59,120–239,317–350"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/home_assistant.go",
+      "test": "TestSourceHomeAssistant199",
+      "cases": 21,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/home-assistant-1.9.9.json",
+        "sha256": "e66530df940511442752b666eb94e21517b5f66b697d01dcd3e9fcfb427b1f41"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-home-assistant-source.json",
+        "sha256": "e2304410d92e0dcc5cd70daa342861cf11650cf9ae6f54e7b7d4b1778827d76c"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-home-assistant-target.stdout",
+        "sha256": "0be0ac918b8eca6a59835d92039afddd31d2b9e5b48ec91c91f1780b645a776a"
+      },
+      "independent_reviewers": [
+        "/root/custom_form",
+        "/root/custom_xml"
+      ],
+      "scope": "Both schemes, default ports, reverse proxy and path override, exact Bearer/Basic precedence, JSON, fixed identifier and distinct UUID4, token validation, ignored attachment, strict 200 and failures. One row observes a physical 5.5 second wait. Two review rows verify Requests percent normalization and malformed escapes.",
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-home-assistant-path-source.json",
+        "sha256": "daabd3743cd38e6d2171555a8cbbf03f22d15a37d3accf3e8d7a657e2e91db80"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-home-assistant-path-target.stdout",
+        "sha256": "b4cefb986f576fb5b8a7b0415f0bce6d37829451b07dc28a5cc6683b0893cef0"
+      }
+    }
+  },
+  "mako": {
+    "version": "1.4.1",
+    "reference_runtime": "CPython 3.12.13 with MarkupSafe 3.0.4, no Beaker",
+    "source": [
+      "installed util.py:11–25",
+      "installed channel/custom/__init__.py:104–111",
+      "mako/parsetree.py:373–425,624–630",
+      "mako/codegen.py:174–200,273–281,346–448,498–553,913–927",
+      "mako/runtime.py:554–579,769–851"
+    ],
+    "target": [
+      "plugins/mergemessagenotify/mako/external.go",
+      "plugins/mergemessagenotify/mako/parser.go",
+      "plugins/mergemessagenotify/mako/template.go",
+      "plugins/mergemessagenotify/mako/definitions.go",
+      "plugins/mergemessagenotify/mako/builtins.go",
+      "plugins/mergemessagenotify/mako/value.go"
+    ],
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/mako/ORIGIN.json",
+      "sha256": "118e27df9dd4c6015b16d91338a0e7685f24a55c0606d879a273dcc1bfd9af5f"
+    },
+    "test": "TestSourceExternalTemplate141",
+    "cases": 26,
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-external-template-1.4.1.json",
+      "sha256": "3bfef2c629b8b63c355a9483d6d3c22035f99d8657024b87ae75970fc2dcaf78"
+    },
+    "original_capture": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-source.json",
+      "sha256": "2847a6b1f50f34b9f353c7cd477c20dd9df6c7037bc53447325f02daf588e1e9"
+    },
+    "generated_module_code": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-module-code.json",
+      "sha256": "5f5354c89ee5ca84aa4cbe6ee3ba3a600784317a78a7ef5158c7cde9af25a8a8"
+    },
+    "typed_catch_source": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-typed-catch-source.json",
+      "sha256": "e467904feba5995bba5b1094dbff20e9ba4e1a31ff7df5786277452fe1cd25f4"
+    },
+    "target_compile_only_setup": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-target-build-setup.stdout",
+      "sha256": "93e27314118e056772f2f6414539c3658e195fe5f4e5c4e655253af5e34f04b5"
+    },
+    "replay": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-target.stdout",
+      "sha256": "7a6f29a4d05ec099aebd46213df65a7efa4bf6bd10f3abceb25227d8f0d217de"
+    },
+    "review_source": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-review-source.json",
+      "sha256": "438b51b7d0a24501098bb04ed70de320ab3100dfaa209c30a8a31a0142107311"
+    },
+    "review_replay": {
+      "path": "work/mergemessagenotify-20261107/mako-external-template-review-target.stdout",
+      "sha256": "22f5d126304bfca4722e270e69eb12f599a691052f3b761af0f1952ab09cab80"
+    },
+    "independent_reviewer": "/root/home_assistant",
+    "scope": "Original Template(text=...) supplies no TemplateLookup. A reached include evaluates file and argument expressions first. The selected inheritance runs before the body even when its tag is in an inactive branch or unused def. Nil inheritance skips lookup. File namespace references and imports trigger generation at the original scope; local definitions can take precedence, and namespace definition defaults precede the constructor. Four initial typed-catch templates generated invalid Python with two except clauses in the pinned source, so those observations were preserved and only four single-handler inputs were recaptured before target replay. The first Go attempt stopped at compilation on a removed type reference and executed no rows.",
+    "remaining": [
+      "Inline namespaces without a file, module namespaces, paired include/inherit syntax and other advanced scope behavior are outside these observations. Multiple except-clause code generation remains a separately observed Mako boundary."
+    ]
+  },
+  "linux_build": {
+    "output": {
+      "path": "work/mergemessagenotify-20261107/linux-form-xml-home-assistant-build.json",
+      "sha256": "c28c1f8bf5b3774964cd4298672022966dd75c928f550500b2e4ceabf763c0e2"
+    },
+    "binary_sha256": "bd395702e00e7410add124157441df53c4e66f3ed75e7123504bc68894421f91",
+    "binary_bytes": 15210604,
+    "runtime_execution": false,
+    "temporary_binary_removed": true
+  },
+  "remaining": [
+    "127 Apprise schemes lack Go implementations. Common split-chunk parallelism, provider-specific edge behavior and real account runs remain open.",
+    "Mako inline and module namespaces, additional paired tag syntax and advanced scope remain open. The installed string-template entry has no file lookup; actual external file loading is outside that original entry.",
+    "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
+  ],
+  "delivery": {
+    "fully_accepted_instances": 8,
+    "installed_instances": 23,
+    "plugin_acceptance": "implementing",
+    "target_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "pushed": false,
+    "deployed": false
+  }
+}
