@@ -15,7 +15,7 @@
       "behavior": "A first-download prompt submits the first action=\"?\" form to its original URL. Valid metainfo continues, invalid content does not mark the enclosure URL invalid, and the normal material failure can be recorded separately."
     },
     {
-      "source": "app/chain/torrents.py:464–475; app/chain/download.py:493–559,563–592,1204–1223,1300–1309; app/db/download_failure_oper.py",
+      "source": "app/chain/torrents.py:464–475; app/chain/download.py:493–559,563–592,1204–1223,1300–1309; app/db/downloadfailure_oper.py:12–45; app/db/models/downloadfailure.py",
       "target": "internal/app/plugin_original_host_sites.go, subscription_acquisition_batch.go, subscription_material_failure.go, subscription_runtime.go and search_download.go",
       "behavior": "The stable resource key prefers the detail link to the enclosure. A confirmed empty material result is durably cooled for 24 hours. The next eligible pass checks the same source identity before fetching and permits other resource IDs."
     }
