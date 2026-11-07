@@ -126,8 +126,9 @@
   },
   "source_extra_expected": {
     "fixture": "testdata/source-extra-codecs.json",
-    "positive_cases": 79,
-    "classification": "actual immutable333/Pillow12.2 default-image source controls; current79 source cases plus separate BLP1/legacy finite fixtures"
+    "positive_cases": 86,
+    "rejection_cases": 1,
+    "classification": "Actual immutable333/Pillow 12.2 default-image source controls, including the TIFF layout increment. BLP1 and legacy fixtures are stored separately."
   },
   "avif": {
     "module": "github.com/gen2brain/gav1d",

@@ -27,6 +27,7 @@ func TestSourceExtraImageCodecs(t *testing.T) {
 			Size      [2]int `json:"loaded_size"`
 			Mode      string `json:"loaded_mode"`
 			LoadedSHA string `json:"loaded_sha256"`
+			Error     string `json:"error"`
 		}
 	}
 	if err := json.Unmarshal(raw, &doc); err != nil {
@@ -42,6 +43,12 @@ func TestSourceExtraImageCodecs(t *testing.T) {
 				t.Fatal("source fixture bytes changed")
 			}
 			r, err := Decode(data)
+			if c.Error != "" {
+				if err == nil {
+					t.Fatalf("source rejected image: %s", c.Error)
+				}
+				return
+			}
 			if err != nil {
 				t.Fatal(err)
 			}

@@ -66228,6 +66228,15 @@
             ],
             "independent_review": "work/autosignin-final-review-20261107.md; original review is pre-final codec parts; current normal/race/Linux and package outcomes are separate actual tests",
             "go_runtime": "linux amd64 CGO0 Go1.26.10, min1.26.4 for gav1d; no new SDK bytes, no native codec/Python/WASM runtime"
+          },
+          "tiff_layout_increment": {
+            "status": "Verified TIFF layout increment. AutoSignIn remains in implementation and accepted count remains 7/23.",
+            "previous_checkpoint": "9dda52c binds the earlier 79-case fixture and its Main, browser and ZIP results.",
+            "source": "Fixed Pillow 12.2.0 image sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 and installed tjupt.py _tohash. All eight inputs are synthetic TIFF containers.",
+            "target": "plugins/autosignin/imagehash/tiffport/reader_config.go, reader.go and reader_planar.go",
+            "fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json, TIFF-gray2 through TIFF-planar-RGB16-raw",
+            "verified": "Seven source-positive layouts match loaded mode, dimensions, pixels, resized grayscale and 100-bit hash. The raw reversed 2-bit palette rejection also matches. go test ./plugins/autosignin/imagehash passed.",
+            "remaining": "TIFF variants outside the tested layouts, high-bit AVIF conversion, uncommon CICP and other reachable default-image inputs. Full AutoSignIn acceptance remains open."
           }
         }
       }

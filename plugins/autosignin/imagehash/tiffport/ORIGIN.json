@@ -52,6 +52,8 @@
     "Pillow/libtiff fax photometric polarity",
     "JPEG strips use existing Pillow-compatible JPEG port",
     "Expose native Orientation tag; parent applies ImageOps.exif_transpose semantics",
-    "BigTIFF first-IFD normalization happens in parent before this unchanged TIFF strip parser"
+    "BigTIFF first-IFD normalization happens in the parent decoder",
+    "Packed grayscale and palette samples follow the Pillow raw unpacker table in https://github.com/python-pillow/Pillow/blob/12.2.0/src/libImaging/Unpack.c",
+    "Separate RGB/RGBA strips and tiles undo the predictor per band and then assemble one pixel block. Raw 16-bit planar TIFF retains the byte-oriented channel reads in TiffImagePlugin._setup."
   ]
 }

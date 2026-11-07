@@ -118,6 +118,13 @@ func (d *decoder) initBitsPerSample() error {
 		return FormatError("BitsPerSample must not be 0")
 	case 1, 8, 16:
 		return nil
+	case 2, 4:
+		photo := d.firstVal(tPhotometricInterpretation)
+		if len(d.features[tBitsPerSample]) == 1 && (photo == pWhiteIsZero || photo == pBlackIsZero || photo == pPaletted) &&
+			d.firstVal(tSampleFormat) <= 1 {
+			return nil
+		}
+		return UnsupportedError("packed sample layout")
 	case 32, 64:
 		if d.firstVal(tSampleFormat) == 2 || d.firstVal(tSampleFormat) == 3 {
 			return nil
@@ -145,6 +152,14 @@ func (d *decoder) initColorModel() error {
 	case pRGB:
 		return d.initRGB()
 	case pPaletted:
+		if d.bpp > 8 || len(d.palette) != 1<<d.bpp {
+			return FormatError("invalid palette layout")
+		}
+		// Pillow names these raw modes in OPEN_INFO but registers only the
+		// non-reversed sub-byte palette unpackers.
+		if d.bpp < 8 && d.firstVal(tFillOrder) == 2 && d.uncompressed() {
+			return UnsupportedError("reversed raw packed palette")
+		}
 		d.mode = mPaletted
 		d.config.ColorModel = color.Palette(d.palette)
 	case pWhiteIsZero, pBlackIsZero:
@@ -181,7 +196,12 @@ func (d *decoder) initRGB() error {
 	// RGB images normally have 3 samples per pixel.
 	// If there are more, ExtraSamples (p. 31-32 of the spec)
 	// gives their meaning (usually an alpha channel).
-	switch len(d.features[tBitsPerSample]) {
+	samples := len(d.features[tBitsPerSample])
+	extra := d.features[tExtraSamples]
+	if samples == 4 && d.planarSamples() == 4 && len(extra) == 1 && extra[0] == 0 {
+		samples = 3 // Pillow skips the unspecified extra band in separate planes.
+	}
+	switch samples {
 	case 3:
 		d.mode = mRGB
 		d.config.ColorModel = color.RGBAModel

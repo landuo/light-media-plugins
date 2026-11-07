@@ -3,7 +3,7 @@
 ## Current resume (2026-11-07; seven accepted instances)
 
 Read `migration/ledger.json` → `resume.current` and
-`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_checkpoint`.
+`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.tiff_layout_increment`.
 That ledger is the only status authority. AutoSignIn is still implementing;
 accepted count stays7/23 (6 families). No original private-state import,
 workflow, AI, official grades/RSA, remote push or production deployment.
@@ -32,10 +32,15 @@ host regression and stale historical ledger bindings are not reported green.
 Do not repeat seals, projections, archives, per-run approvals, Main179, or UI
 for unaffected changes. Only one working tree and one ledger.
 
-Next: close the specific remaining TIFF layout and variant gaps, high-bit AVIF
-and other reachable default-image inputs listed in the ledger. Keep source
-read-only and use a minimal stable test entrance. Do not promote AutoSignIn
-or the registry until whole-plugin review closes; then continue the next plugin.
+This TIFF increment covers packed grayscale and palette samples and separate
+RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
+16-bit planar reader. The imagehash package passed with seven new positive
+fixtures and one source rejection. The earlier Main, browser and package runs
+apply to their tested revisions.
+
+Next, address the remaining TIFF variants, high-bit AVIF and other reachable
+default-image inputs listed in the ledger. Verify changed paths and reuse
+applicable acceptance evidence.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

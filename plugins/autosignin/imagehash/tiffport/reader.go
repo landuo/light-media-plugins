@@ -20,6 +20,7 @@ import (
 	"image/jpeg"
 	"io"
 	"math"
+	"math/bits"
 
 	"github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/tiffport/internal/lzw"
 	"golang.org/x/image/ccitt"
@@ -317,6 +318,7 @@ func (d *decoder) parseIFD(p []byte) (int, error) {
 	switch tag {
 	case 274, // Orientation is consumed after lossless sample decoding.
 		tBitsPerSample,
+		tPlanarConfiguration,
 		tExtraSamples,
 		tPhotometricInterpretation,
 		tCompression,
@@ -425,7 +427,11 @@ func (d *decoder) readBits(n uint) (v uint32, ok bool) {
 		if d.off >= len(d.buf) {
 			return 0, false
 		}
-		d.v |= uint32(d.buf[d.off])
+		sample := d.buf[d.off]
+		if d.firstVal(tFillOrder) == 2 && d.uncompressed() {
+			sample = bits.Reverse8(sample)
+		}
+		d.v |= uint32(sample)
 		d.off++
 		d.nbits += 8
 	}
@@ -471,9 +477,9 @@ func checkedMul3(a, b, c int) (int64, bool) {
 	return int64(ab * c), true
 }
 
-func (d *decoder) applyPredictor16(xmin, ymin, xmax, ymax int) error {
+func (d *decoder) applyPredictor16(xmin, ymin, xmax, ymax, samples int) error {
 	var off int
-	n := 2 * len(d.features[tBitsPerSample]) // bytes per sample times samples per pixel
+	n := 2 * samples
 	for y := ymin; y < ymax; y++ {
 		off += n
 		for x := 0; x < (xmax-xmin-1)*n; x += 2 {
@@ -489,9 +495,9 @@ func (d *decoder) applyPredictor16(xmin, ymin, xmax, ymax int) error {
 	return nil
 }
 
-func (d *decoder) applyPredictor8(xmin, ymin, xmax, ymax int) error {
+func (d *decoder) applyPredictor8(xmin, ymin, xmax, ymax, samples int) error {
 	var off int
-	n := len(d.features[tBitsPerSample]) // bytes per sample times samples per pixel
+	n := samples
 	for y := ymin; y < ymax; y++ {
 		off += n
 		for x := 0; x < (xmax-xmin-1)*n; x++ {
@@ -506,7 +512,7 @@ func (d *decoder) applyPredictor8(xmin, ymin, xmax, ymax int) error {
 }
 
 // applyPredictor reverses the horizontal differences in d.buf; see pages 64-65 of the specification.
-func (d *decoder) applyPredictor(xmin, ymin, xmax, ymax int) error {
+func (d *decoder) applyPredictor(xmin, ymin, xmax, ymax, samples int) error {
 	if d.mode == mScalar && (d.firstVal(tPredictor) == prHorizontal || d.firstVal(tPredictor) == 3) {
 		return d.applyScalarPredictor(xmin, ymin, xmax, ymax)
 	}
@@ -515,13 +521,12 @@ func (d *decoder) applyPredictor(xmin, ymin, xmax, ymax int) error {
 	}
 	switch d.bpp {
 	case 16:
-		return d.applyPredictor16(xmin, ymin, xmax, ymax)
+		return d.applyPredictor16(xmin, ymin, xmax, ymax, samples)
 	case 8:
-		return d.applyPredictor8(xmin, ymin, xmax, ymax)
-	case 1:
-		return UnsupportedError("horizontal predictor with 1 BitsPerSample")
+		return d.applyPredictor8(xmin, ymin, xmax, ymax, samples)
+	default:
+		return UnsupportedError(fmt.Sprintf("horizontal predictor with %d BitsPerSample", d.bpp))
 	}
-	return nil
 }
 
 type decodeRegion struct {
@@ -704,11 +709,14 @@ func (d *decoder) decodeCMYKPixels(dst image.Image, region decodeRegion) error {
 // decode decodes the raw data of an image.
 // It reads from d.buf and writes the strip or tile into dst.
 func (d *decoder) decode(dst image.Image, xmin, ymin, xmax, ymax int) error {
-	d.off = 0
-	if err := d.applyPredictor(xmin, ymin, xmax, ymax); err != nil {
+	if err := d.applyPredictor(xmin, ymin, xmax, ymax, len(d.features[tBitsPerSample])); err != nil {
 		return err
 	}
+	return d.decodePixels(dst, xmin, ymin, xmax, ymax)
+}
 
+func (d *decoder) decodePixels(dst image.Image, xmin, ymin, xmax, ymax int) error {
+	d.off = 0
 	// Bytes in a full-width, single-component row, including right-edge tile padding.
 	region := decodeRegion{
 		xmin: xmin, ymin: ymin, xmax: xmax,
@@ -973,10 +981,11 @@ func (d *decoder) tileLayout() (blockLayout, error) {
 	}
 	l.across = (d.config.Width + l.width - 1) / l.width
 	l.down = (d.config.Height + l.height - 1) / l.height
-	if l.offsets, err = d.parseIFDOffsets(tTileOffsets, l.across*l.down); err != nil {
+	segments := l.across * l.down * d.planarSamples()
+	if l.offsets, err = d.parseIFDOffsets(tTileOffsets, segments); err != nil {
 		return l, err
 	}
-	l.counts, err = d.parseIFDOffsets(tTileByteCounts, l.across*l.down)
+	l.counts, err = d.parseIFDOffsets(tTileByteCounts, segments)
 	return l, err
 }
 
@@ -995,10 +1004,11 @@ func (d *decoder) stripLayout() (blockLayout, error) {
 		l.down = (d.config.Height + l.height - 1) / l.height
 	}
 	var err error
-	if l.offsets, err = d.parseIFDOffsets(tStripOffsets, l.down); err != nil {
+	segments := l.down * d.planarSamples()
+	if l.offsets, err = d.parseIFDOffsets(tStripOffsets, segments); err != nil {
 		return l, err
 	}
-	l.counts, err = d.parseIFDOffsets(tStripByteCounts, l.down)
+	l.counts, err = d.parseIFDOffsets(tStripByteCounts, segments)
 	return l, err
 }
 
@@ -1014,7 +1024,7 @@ func (d *decoder) readBlockLayout() (blockLayout, error) {
 		return l, err
 	}
 	// Check if we have the right number of strips/tiles, offsets and counts.
-	if n := l.across * l.down; l.offsets.count < n || l.counts.count < n {
+	if n := l.across * l.down * d.planarSamples(); l.offsets.count < n || l.counts.count < n {
 		return l, FormatError("inconsistent header")
 	}
 	return l, nil
@@ -1100,8 +1110,8 @@ func (d *decoder) loadLZWBlock(b tiffBlock, limit int64) error {
 	return err
 }
 
-func (d *decoder) blockDataSize(b tiffBlock, limit int64) int64 {
-	rowBits, ok := checkedMul3(b.width, len(d.features[tBitsPerSample]), int(d.bpp))
+func (d *decoder) blockDataSize(b tiffBlock, limit int64, samples int) int64 {
+	rowBits, ok := checkedMul3(b.width, samples, int(d.bpp))
 	if !ok || rowBits <= 0 || rowBits > int64(maxInt()-7) {
 		return limit
 	}
@@ -1171,13 +1181,15 @@ func (d *decoder) decodeBlock(img image.Image, b tiffBlock, limit int64) error {
 	if compression == cJPEGOld || compression == cJPEG {
 		return d.decodeCompressedJPEG(img, b, limit, compression)
 	}
-	if err := d.loadBlockData(b, d.blockDataSize(b, limit), compression); err != nil {
+	if err := d.loadBlockData(b, d.blockDataSize(b, limit, len(d.features[tBitsPerSample])), compression); err != nil {
 		return err
 	}
 	return d.decode(img, b.x, b.y, b.x+b.width, b.y+b.height)
 }
 
 func (d *decoder) decodeBlocks(img image.Image, l blockLayout, limit int64) error {
+	planar := d.planarSamples() > 1
+	var interleaved []byte
 	for j := 0; j < l.down; j++ {
 		height := l.height
 		if !l.padding && j == l.down-1 && d.config.Height%l.height != 0 {
@@ -1189,6 +1201,13 @@ func (d *decoder) decodeBlocks(img image.Image, l blockLayout, limit int64) erro
 				width = d.config.Width % l.width
 			}
 			index := j*l.across + i
+			b := tiffBlock{x: i * l.width, y: j * l.height, width: width, height: height}
+			if planar {
+				if err := d.decodePlanarBlock(img, b, l, index, limit, &interleaved); err != nil {
+					return err
+				}
+				continue
+			}
 			offset, err := l.offsets.value(index)
 			if err != nil {
 				return err
@@ -1197,10 +1216,7 @@ func (d *decoder) decodeBlocks(img image.Image, l blockLayout, limit int64) erro
 			if err != nil {
 				return err
 			}
-			b := tiffBlock{
-				offset: int64(offset), n: int64(n),
-				x: i * l.width, y: j * l.height, width: width, height: height,
-			}
+			b.offset, b.n = int64(offset), int64(n)
 			if err := d.decodeBlock(img, b, limit); err != nil {
 				return err
 			}
