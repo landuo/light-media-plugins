@@ -1,0 +1,38 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "389053e3c8ad9b186f487a160b2385bfbaf13aac",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "fixture_sha256": "779f5a61b0a4f8275a7e1487301c3c3b0007ee45d660e5ec471f30989c63942f",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+  },
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2539–2641; app/chain/media.py:699–722",
+      "target": "light-media internal/app/plugin_original_chat_media_identity.go, plugin_original_chat_provider_search.go, search_download.go and plugin_original_media_resource_search.go",
+      "behavior": "Keep the selected provider's identity and season information when TMDB supplementation cannot identify a matching media entry. Reuse ordinary title matching and resource filtering."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Installed indexed Linux amd64 worker and real App with owned AniList, TMDB, tracker, downloader and Lark protocol peers",
+    "test": "TestOriginalLarkProviderWithoutTMDBLinuxAMD64",
+    "seconds": 1.4,
+    "host_elf_sha256": "0e7ebe12094219829f42147284083a0dbb4f69f9f59e8467131cc96c9f292016",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "runner_sha256": "c740fd1600f8eeb3817a20c8864fcececc8ac36ffacc60cf7ab69c0ddba23762",
+    "runtime_log_sha256": "7642949e72abbf5660d64a24868ddc5e775f2b57f8533b846aa394787069581d",
+    "observations": [
+      "A verified webhook search selected an AniList TV identity, preserved the provider episode scope, and reached a live tracker request even though TMDB returned no match. The resource card showed the matching release and excluded the unrelated release.",
+      "Even with auto-download enabled for all users, the provider-only selection produced no download or subscription. Manual download and subscription responses asked for a verified native identity. The fixture saw no material fetch, downloader Add, reservation authority, download preview, or invalid media key."
+    ],
+    "shared_command": "The same runner executed a separate download outcome fixture, which failed. This individual test passed on the first run. The unrelated failure is not credited by this evidence."
+  },
+  "adaptations_and_open": [
+    "Light-media continues to require a verified native TMDB identity for mutations. The source accepts a provider model in its search path and can also invoke source subscription recognition without a TMDB ID. Read-only provider search is implemented; the remaining write behavior has not been accepted."
+  ]
+}

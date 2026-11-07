@@ -1,0 +1,45 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "a305d84db50410da321d60ead200a503224573d6",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "fixture_sha256": "8b77776ce499d6600421bd5f2be126d1d4b1294993fa38b6ea27428c365d491a",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+  },
+  "mapping": [
+    {
+      "source": "app/chain/download.py:739–783,1028–1053,1204–1247",
+      "target": "light-media internal/app/plugin_original_chat_download_notice.go, plugin_original_chat_media_download.go, plugin_original_chat_media_auto.go, search_download.go and job_completion.go",
+      "behavior": "Separate material-fetch and downloader refusal notices, settle the exact failed attempt, and continue the ordered candidate loop only when no download was accepted."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Exact indexed Linux amd64 worker in a native App, with owned loopback tracker, qBittorrent and Lark protocol peers",
+    "test": "TestOriginalLarkDownloadFailureLinuxAMD64",
+    "seconds": 1.76,
+    "host_elf_sha256": "36283873486a967167d4755e3f77299303d3263c7bfcb8633a6f0ced96444b04",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "runner_sha256": "c740fd1600f8eeb3817a20c8864fcececc8ac36ffacc60cf7ab69c0ddba23762",
+    "runtime_log_sha256": "70910e4f8c03e3da3ed6f16707cf850353056b3b6c0717fd7254fd33668f254f",
+    "observations": [
+      "A verified installed-worker interaction searched four sorted candidates. A tracker 404 emitted the source-shaped material failure card. The first Add returned a definite refusal and emitted a different, source-shaped Manual notice.",
+      "The rejected child finished once and released only its own reservation. The same ordered candidate loop fetched and attempted the next torrent. Its malformed acknowledgment produced a distinct unconfirmed card, kept its reservation and did not fetch the fourth resource.",
+      "The App persisted one failed attempt per actual Add, retained the unknown intent for reconciliation and wrote no download-accepted fact."
+    ]
+  },
+  "superseded_attempt": {
+    "status": "failed",
+    "host_commit": "389053e3c8ad9b186f487a160b2385bfbaf13aac",
+    "log_sha256": "7642949e72abbf5660d64a24868ddc5e775f2b57f8533b846aa394787069581d",
+    "observation": "The 404 notice appeared, but the synthetic torrent names did not reach downloader Add. The corrected fixture used known identity-matched file names and asserted candidate order. Host product logic was unchanged between attempts."
+  },
+  "adaptations_and_open": [
+    "Go distinguishes a malformed or ambiguous write acknowledgment from an explicit no-effect refusal. Unknown effects retain their download intent and reserve its scope instead of triggering another Add or a misleading definitive failure.",
+    "Current previews archive and pin the exact material. Older records with an empty archive reference can reacquire it using the guarded legacy path, which still differs in tracker first-download confirmation. No verified archive is substituted on recovery."
+  ]
+}

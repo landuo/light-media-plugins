@@ -174,7 +174,24 @@ detail actions. The isolated native provider received one test card and one
 group lookup. Status returned masked IDs and the refreshed page cleared the
 transient result. See
 `migration/evidence/lark-messager-browser-settings-detail-20261108.json`.
-Continue with remaining native download and provider-specific behavior.
+The installed worker also searched a selected AniList TV series against a
+tracker when TMDB found no match. It kept the source episode scope and did
+not create a preview, task, or subscription. The target still requires
+verified native identity for writes. See
+`migration/evidence/lark-messager-provider-only-search-20261108.json`.
+One isolated downloader scenario verified separate source-shaped notices for
+tracker material failure and explicit downloader rejection. The rejection
+released only its own reservation. A subsequent ambiguous acknowledgment
+retained its reservation and stopped the candidate loop without another Add.
+The initial fixture stopped before Add because its synthetic filenames did
+not pass identity checks. The corrected scenario passed without rerunning the
+provider or Chrome checks. See
+`migration/evidence/lark-messager-native-download-outcomes-20261108.json`.
+Remaining source coverage includes ordinary direct-chat magnets, explicit
+episode RSS magnets, and provider-only writes. The pinned RSS matcher excludes
+multi-season candidates before downloading and file-dependent branches skip
+magnet material. Current previews archive exact bytes; the older empty-ref
+reacquisition path has a first-download confirmation difference.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
