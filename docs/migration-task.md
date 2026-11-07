@@ -84,14 +84,14 @@ root loss in a distinct Linux scenario. The original source-only download
 file event and host protections are recorded in
 `migration/evidence/scrape-file-clean-runtime-20261108.json`.
 
-LarkMessager 0.9.1 is implementing. Its indexed Linux amd64 worker ran
-in an isolated native App. The form, authenticated test card, one-time
-result page, bad webhook token, ordinary plugin callback and host notice
-passed. Independent review found the bare test-card reply failure path.
-A distinct Go test verified the source acknowledgement behavior after
-the correction. Continue this same plugin with native site, subscription,
-media and transfer retry interactions. The exact package, open checks
-and source mappings are in
+LarkMessager 0.9.1 is implementing. The indexed worker passed its ordinary
+message, test-card, and configuration paths on native Linux. The isolated
+`/sites` scenario passed pagination, ownership, edit fallback, site toggling,
+and real Chromium login with a second OTP page, atomic Cookie and UA save,
+and blocked credential egress. The host requires verified Lark ingress for
+native site actions. Continue the same plugin with `/subscribes`, then media
+and transfer retry. See
+`migration/evidence/lark-messager-sites-20261108.json` and
 `migration/evidence/lark-messager-runtime-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
