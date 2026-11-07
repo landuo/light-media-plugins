@@ -1,0 +1,176 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "installed_version": "2.22",
+  "plugin_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
+  "paired_host_checkout": "a501340553ed067325f2be40e11d06e0b6c18c55",
+  "host_evidence_commit": "8332fa4fd56acaec903c0901f671c13e417b2448",
+  "source_back_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "source_front_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+  "installed_source_sha256": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+  "origin": {
+    "path": "plugins/iyuuautoseed/ORIGIN.json",
+    "sha256": "e9654347b69e09741469f5e66d0d62ae17521978ed86f1ab7734ebb8fa94c3b8"
+  },
+  "source_behavior_followup": {
+    "history": {
+      "source": "Installed __init__.py:1007–1056 prints malformed history errors and preserves later seed processing.",
+      "target": "plugins/iyuuautoseed/core.go",
+      "fixture": {
+        "path": "plugins/iyuuautoseed/reference/history-shape-oracle.json",
+        "sha256": "40c6e8914b9dd7f9b6fac5a2d537879c59c633183d9314e560f46b73c1fed141"
+      },
+      "test": "TestSourceIYUUHistoryShapeKeepsSuccessfulPass222",
+      "status": "passed",
+      "output": {
+        "path": "work/iyuuautoseed-20261107/history-shape-target.stdout",
+        "sha256": "e57aa67dfcbb865761e19370f06fa5cabca00bba8850061adb19edfe94ba3a76"
+      },
+      "observed": "A truthy string in old torrents cannot concatenate with the success list. Leave the old row unchanged, continue to the next row, then save both successful hashes and notify."
+    },
+    "recheck": {
+      "source": "Installed __init__.py:144–148,860–883 resets queue and already-rechecked hashes but leaves the running flag in the same object.",
+      "target": "plugins/iyuuautoseed/plugin.go",
+      "verified": "Source and Go field transfer reviewed. The earlier sticky no-downloader branch remains bound to core-recheck-lookups-oracle.json. No separate replay of the previous branch."
+    },
+    "remaining_technical_adaptations": [
+      "Malformed local history follows the source. Unclassified SDK persistence errors are fenced rather than treated as local shape failures.",
+      "Whole-pass serialization protects shared config and queue. Source jobs can overlap. Reinit can wait on the active pass.",
+      "Per-instance torrent cache and authorized HTTPS origin and material grants remain distinct from the original shared cache and permissive transfer boundaries."
+    ],
+    "reviewer": "/root/emby"
+  },
+  "actual_linux_lifecycle_and_browser": {
+    "source": [
+      "Installed __init__.py:103–174,743–858,1544–1558 for init, private one-shot, data updates and stop",
+      "Fixed MoviePilot app/core/plugin.py clone_plugin and reload/start implementation for separate instance identity and disabled clone config",
+      "Fixed MoviePilot-Frontend src/components/dialog/PluginConfigDialog.vue for native form and save"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/plugin.go",
+      "plugins/iyuuautoseed/private_scheduler.go",
+      "plugins/iyuuautoseed/sdk_config.go",
+      "plugins/iyuuautoseed/torrent_cache.go",
+      "/Users/accidia/projects/light-media/web/src/components/PluginConfigDialog.vue"
+    ],
+    "test": "TestIYUULinuxLifecycleAndClone",
+    "test_source": {
+      "path": "/Users/accidia/projects/light-media/internal/app/plugin_iyuu_lifecycle_process_test.go",
+      "sha256": "dee7815e5febc782251df3b043422c973e313915447661ea263941c8bffbb7ca"
+    },
+    "status": "passed",
+    "environment": "Linux arm64 App, separate real source and clone Go worker processes, network-none Docker, owned loopback qB endpoints. Chrome 157 used the actual embedded Vue/Vuetify UI over a loopback-only byte bridge.",
+    "observed": "Clone inherited disabled configuration and acquired its own worker and empty data namespace. Source and clone executed one scheduled scan each. Both reloads replaced their sessions. Cold startup reopened two sessions with independent config, history and same-key material files. No consumed one-shot replayed.",
+    "browser_observed": "The actual clone card opened 19 native Vuetify labels. Chrome made one configuration PUT and reopened the persisted label. Host readback verified clone marker and unchanged source config with no scan replay.",
+    "log": {
+      "path": "work/iyuuautoseed-20261107/linux-lifecycle/runtime.stdout",
+      "sha256": "ba7ad53fb3cc5b08eedbfd670b7932d8499bf5125f3e904cb40fe39b1b795006"
+    },
+    "build": {
+      "path": "work/iyuuautoseed-20261107/linux-lifecycle/build.sha256",
+      "sha256": "c30a29fe7f14b66ecc186577d9d3a55743ed176b89e3c7afee7d849ca478bc21"
+    },
+    "source_binding": {
+      "path": "work/iyuuautoseed-20261107/linux-lifecycle/build-source.txt",
+      "sha256": "5a5f052a72fa00666fba60c19a18f074b69bf41a2b72320706d37b3e8229146b"
+    },
+    "browser_result": {
+      "path": "work/iyuuautoseed-20261107/browser-lifecycle/browser-result.json",
+      "sha256": "f4d47bd6ccfea4ce440e62920d71f144730442317a5c7435210c44062edb4435"
+    },
+    "browser_driver": {
+      "path": "work/iyuuautoseed-20261107/browser-lifecycle/verify.mjs",
+      "sha256": "1d4c75660606e941165e5a90bf85b890031eeadea342230f19dd561e2f3333b8"
+    },
+    "browser_image": {
+      "path": "work/iyuuautoseed-20261107/browser-lifecycle/native-form.png",
+      "sha256": "853ddd26b77af0ab3efbb6eec4574ed17f694589c6bdebbc93bc70bbaf5e432f"
+    },
+    "earlier_runs": [
+      {
+        "status": "stopped",
+        "log": {
+          "path": "work/iyuuautoseed-20261107/linux-lifecycle/runtime-superseded-stopped.stdout",
+          "sha256": "c7cad47fed5767c573b53476f9b9450d1dccac78ff6bc7b309ebc37c8f3bd9e8"
+        },
+        "cause": "Superseded worker stopped before browser gate."
+      },
+      {
+        "status": "stopped",
+        "log": {
+          "path": "work/iyuuautoseed-20261107/linux-lifecycle/runtime-harness-wait-stopped.stdout",
+          "sha256": "514701ec464602b913587a9e4099d16a251b6169b12a079e046f1ca347651f41"
+        },
+        "cause": "Fixture waited on the App waitgroup while a recurring private lease was alive. Final driver uses lifecycle results and finite no-replay checks."
+      }
+    ],
+    "browser_observer_notes": "Initial browser route used an extra slash and timed out. The subsequent real save returned HTTP 200. The script initially checked the wrong response envelope, then reopened and verified the already saved value without a second write. Host confirmed it before the passing result.",
+    "reviewer": "/root/kodi (lifecycle) and coordinator (Chrome)"
+  },
+  "linux_amd64_package": {
+    "status": "partial_verified",
+    "build_config_candidate": {
+      "path": "work/iyuuautoseed-20261107/packaging/build-iyuu.json",
+      "sha256": "6efeecf9db64e6df3acefabbd877c13c4089c51fd904910a48a6adf71fbeadc5"
+    },
+    "package": {
+      "path": "work/iyuuautoseed-20261107/packaging/linux-amd64/IYUUAutoSeed-2.22-linux-amd64.zip",
+      "sha256": "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6"
+    },
+    "manifest_and_package_report": {
+      "path": "work/iyuuautoseed-20261107/packaging/amd64-package.json",
+      "sha256": "34a00676c3287f5a25fa4a67a42362cd12972a867140b10370ad97cd22060f00"
+    },
+    "notices": {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "sha256": "7c6115d4435a677d986c7b23dcf00cd8bd1ee3d2a355e33f400468b58aab3f54"
+    },
+    "verified": "The exact archive and extracted executable matched the manifest, permissions and all 25 file digests. Acquisition through actual amd64 App wrote and authenticated the installed files. The exact packaged ELF returned its manifest and completed managed SDK concurrent handshake and empty init under both native arm64 and emulated amd64 Runner parents.",
+    "first_app_run": {
+      "status": "failed",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/packaging/amd64-package-host.stdout",
+        "sha256": "aff3cb4d7fe6c806a4b0aa12f44471caa941cd7087d98077258d80530f5f71a0"
+      },
+      "cause": "Local amd64 emulated App crashed in Go runtime.memmove during optional installation reporting."
+    },
+    "affected_app_run": {
+      "status": "failed",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/packaging/amd64-package-host-no-report.stdout",
+        "sha256": "2087f8849c17fac9e90ff28255c5bc2606c47030948734164a54684d340b7698"
+      },
+      "cause": "With optional reporting disabled, acquisition and installed file verification succeeded. App logged load_failed before the native form returned 404. Current log collapses prepare, worker startup and init, so the cause remains unproven."
+    },
+    "entry_diagnostic": {
+      "status": "passed",
+      "scope": "Does not reinstall the package. Uses the verified executable extracted from that same ZIP, in a network-none Linux container.",
+      "driver": {
+        "path": "work/iyuuautoseed-20261107/packaging/entry-diagnostic/main.go",
+        "sha256": "a6c02663cb29c8d43b45e82e20704d446ba3517d9e18e4215355bbd492bf15a7"
+      },
+      "build": {
+        "path": "work/iyuuautoseed-20261107/packaging/entry-diagnostic/build.sha256.json",
+        "sha256": "3559cce39af3660a907f6b115d81b0849098cfa6d866a73a3d646403e84db0f2"
+      },
+      "arm64_parent": {
+        "path": "work/iyuuautoseed-20261107/packaging/entry-diagnostic/runtime.stdout",
+        "sha256": "a5dab0283146349043a9cc69eabe23a488d4af09b24382e43617afbebc0ec452"
+      },
+      "amd64_parent": {
+        "path": "work/iyuuautoseed-20261107/packaging/entry-diagnostic/runtime-amd64-parent.stdout",
+        "sha256": "a5dab0283146349043a9cc69eabe23a488d4af09b24382e43617afbebc0ec452"
+      }
+    },
+    "reviewer": "/root/jellyfin (package and App) and coordinator (entry diagnostics)",
+    "open": "A full App must start the installed amd64 artifact and expose the native form. Determine the precise failing stage with targeted diagnostics or a native test environment. Do not rerun the passing seeded, lifecycle or browser cases."
+  },
+  "delivery": {
+    "target_local_branch": "codex/installed-plugins-20261105",
+    "host_local_branch": "codex/plugin-source-error-outcomes-20261105",
+    "registry_status": "candidate not added to build registry before closing the amd64 App gate",
+    "pushed": false,
+    "deployed": false,
+    "cleanup": "Owned containers, Chrome profile, bridge and generated test executables removed. Candidate ZIP and evidence retained."
+  }
+}
