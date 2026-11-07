@@ -210,8 +210,14 @@ chat, with its own distinct recovery evidence still open. A native Lark
 run now confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. The source-aware subscription editor builds. Its browser
-and restart acceptance, provider-only downloads and local organization remain
-open. See `migration/evidence/lark-messager-provider-native-subscription-20261108.json`.
+and restart acceptance remain open. See
+`migration/evidence/lark-messager-provider-native-subscription-20261108.json`.
+A separate native Lark selection sent the exact AniList-only torrent to an
+owned qB peer and created a real S01E01 hardlink with the same provider key.
+The first attempt exposed a missing computed field during naming. Only that
+failed scenario was retried after repair. Provider-triggered ordinary and
+BestVersion subscription downloads and provider-specific scraping remain open.
+See `migration/evidence/lark-messager-provider-native-download-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

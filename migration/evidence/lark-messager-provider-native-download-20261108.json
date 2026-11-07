@@ -1,0 +1,66 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and indexed worker, real SQLite and local filesystem. Lark, AniList, TMDB, tracker and qBittorrent protocol peers were isolated owned loopback fixtures.",
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2578–2682,2743–2806,2979–3042",
+      "target": "light-media internal/app/{plugin_original_chat_media,plugin_original_chat_media_download,plugin_original_chat_media_identity,plugin_original_chat_provider_search}.go",
+      "behavior": "Manual selection carries the selected provider identity into the download path. The existing automatic branch can use the same proof; its episode and batch branches were not exercised by this manual case."
+    },
+    {
+      "source": "app/chain/download.py:908–967",
+      "target": "light-media internal/app/{download_provider_target,search_download,download_events,material_store}.go",
+      "behavior": "Material, real downloader acceptance and history stay bound to the selected provider source and number. No synthetic TMDB identity is allocated."
+    },
+    {
+      "source": "app/chain/transfer.py:1945–1962,2333–2375; app/helper/message.py:132–134; app/core/context.py:1051–1073,1087–1112",
+      "target": "light-media internal/app/{search_download,import_provider,import_plan,plugin_original_transfer_context}.go",
+      "behavior": "Completion checks files within the accepted season scope. The namespaced provider key remains in the library slot. The rename template computes source-style image fields without adding them to the frozen MediaInfo dictionary."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderNativeDownloadLinuxAMD64",
+    "seconds": 1.92,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "ac12100810eeb6554827a2ef7ce2a12811fb070d",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "dd3aadff950bc1a6fce4fee0a2e22a65829a177ccfed22e581b20857a6f50f9d",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_elf_sha256": "0ca4a6579ff4c7301d04d59f0b28885963f7c3a28bfda586cbfa1ab66ecda379",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "51ad4c44d6311f9f1f33b96097a44c27b9298dcabe5eeb4894f326beb6345d3d",
+    "runtime_log_sha256": "e19f0a3bf32ba7a22e43569b30aec43746ef01fb5a991a465d2cd88d30815712",
+    "observations": [
+      "An installed native Lark worker handled one real webhook selection. AniList 777 was verified and no TMDB identity was returned. The authenticated tracker supplied exact bencoded material, and the local downloader protocol peer received one whole Add of those bytes.",
+      "The accepted intent, sealed media model, archived material and download.accepted event retained the AniList namespace and S01E01 scope. No asset slot existed before completion.",
+      "After the loopback downloader reported completion, the actual App verified the local file and wrote one library hardlink with the same inode. The library slot and asset preserved tv:anilist:777 and S01E01. The source file remained and there was no extra material fetch or Add."
+    ]
+  },
+  "superseded_attempt": {
+    "status": "failed",
+    "test": "TestOriginalLarkProviderNativeDownloadLinuxAMD64",
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "fea6ad782cecccb8097a059e72c41257cff85ca3",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "dd3aadff950bc1a6fce4fee0a2e22a65829a177ccfed22e581b20857a6f50f9d",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_elf_sha256": "50278cc7dc7f0c56dd2a88ac157d4ad9daaa8d050ceaaf95277be5caf8808c66",
+    "runtime_log_sha256": "59041676cc428128c4e2ecbac341f4d5c603e0e936b66640c07cde557c281dfc",
+    "cause": "The original torrent was accepted and history was saved. Naming failed before import because the frozen provider MediaInfo omitted computed poster and backdrop attributes. The template input now computes them from the frozen paths, as the fixed getter does. Only this failed test was retried."
+  },
+  "adaptations_and_open": [
+    "The source can query the stored provider pair again before transfer. The host uses the sealed accepted MediaInfo and checks exact namespaced identity, avoiding dependence on a second live provider lookup while retaining its known season membership. No provider episode ID is fabricated.",
+    "TV search can still display title-only results with no provider episode membership. Download requires verifiable season scope. Original no-season fallback has not been validated.",
+    "The run observed the scrape job start but ended before its sidecar result. Provider-specific scraping, automatic/direct pack variants, live downloader validation, browser and restart were not accepted by this case. Provider-only ordinary and BestVersion subscription downloads are still open."
+  ]
+}
