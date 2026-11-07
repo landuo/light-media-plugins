@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
-  "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf.",
+  "source_commit": "714984d815f388224e802ef17d2a254f0774fefd",
+  "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf. CleanInvalidSeed also negotiates sequential scanning for its exact command and scheduler phases.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -187,10 +187,10 @@
     {
       "source_path": "internal/plugins/concurrent_transport.go",
       "path": "internal/sdk/concurrent_transport.go",
-      "source_sha256": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
-      "sha256": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
+      "source_sha256": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe",
+      "sha256": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe",
       "changes": [],
-      "source_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54"
+      "source_commit": "714984d815f388224e802ef17d2a254f0774fefd"
     },
     {
       "source_path": "internal/plugins/concurrent_worker.go",

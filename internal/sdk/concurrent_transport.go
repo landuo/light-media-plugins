@@ -43,7 +43,8 @@ func (p concurrentProposal) valid() bool {
 
 func SupportsSequentialHostStream(m Manifest) bool {
 	return m.PluginID == "BrushFlowLanduo" && m.ManagedPublicServices && slices.Contains(m.Capabilities, BrushSourceCandidatesCapability) ||
-		m.PluginID == "ScrapeFileClean" && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, ScrapeCleanRemoveCapability)
+		m.PluginID == "ScrapeFileClean" && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, ScrapeCleanRemoveCapability) ||
+		m.PluginID == "CleanInvalidSeed" && m.ManagedPublicServices && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, "clean_seed.tasks")
 }
 
 func (p concurrentProposal) streamsHostCalls(method string) bool {
@@ -51,7 +52,8 @@ func (p concurrentProposal) streamsHostCalls(method string) bool {
 		return false
 	}
 	switch method {
-	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "private_watch":
+	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "private_watch",
+		"handle_commands", "clean_invalid_seed", "private_once":
 		return true
 	}
 	return false
