@@ -11,12 +11,13 @@ const NetworkGetCapability = "network.get"
 // calls used by AutoSignIn Tjupt. Empty Profile preserves ordinary Network.Get.
 const NetworkGetSourcePublicProfile = "source_public"
 const NetworkGetSourceDoubanImageProfile = "source_douban_image"
+const NetworkGetSourceRemoteIdentifiersProfile = "source_remote_identifiers"
 
 func validNetworkGetProfile(request NetworkGetRequestV1) bool {
 	switch request.Profile {
 	case "":
 		return true
-	case NetworkGetSourcePublicProfile, NetworkGetSourceDoubanImageProfile:
+	case NetworkGetSourcePublicProfile, NetworkGetSourceDoubanImageProfile, NetworkGetSourceRemoteIdentifiersProfile:
 		return !request.GitHubHeaders
 	default:
 		return false
@@ -25,7 +26,9 @@ func validNetworkGetProfile(request NetworkGetRequestV1) bool {
 
 // NetworkGetRequestV1 selects a finite GET. Empty Profile retains the saved
 // host proxy/15s mode; the two source profiles are env-only/default20s.
-// Credentials and arbitrary headers are never transported into the worker.
+// The RemoteIdentifiers profile uses the saved host proxy/15s mode and selects
+// headers on the host from the source URL. The host never returns its stored
+// credentials or accepts arbitrary headers from the worker.
 // GitHubHeaders uses the global GitHub credential only for an official HTTPS
 // origin; it does not select repository tokens or the package mirror strategy.
 type NetworkGetRequestV1 struct {
