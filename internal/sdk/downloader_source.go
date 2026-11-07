@@ -75,6 +75,23 @@ func (d Downloaders) SourceCompleted(ctx context.Context, request DownloaderComp
 	return d.sourceTasks(ctx, DownloaderSourceCompletedCapability, request, request.DownloaderID, request.Hashes)
 }
 
+type DownloaderSourceCompletedRequestV1 struct {
+	DownloaderCompletedRequestV1
+	IncludeQBPackFields bool `json:"include_qb_pack_fields,omitempty"`
+}
+
+// SourceCompletedWithQBPackFields retains qBittorrent's native completed and
+// availability values. The ordinary projection stays stable for older workers.
+func (d Downloaders) SourceCompletedWithQBPackFields(ctx context.Context, request DownloaderCompletedRequestV1) (DownloaderSourceTasksResultV1, error) {
+	if err := request.Validate(); err != nil {
+		return DownloaderSourceTasksResultV1{}, err
+	}
+	return d.sourceTasks(ctx, DownloaderSourceCompletedCapability, DownloaderSourceCompletedRequestV1{
+		DownloaderCompletedRequestV1: request,
+		IncludeQBPackFields:          true,
+	}, request.DownloaderID, request.Hashes)
+}
+
 func (d Downloaders) sourceTasks(ctx context.Context, capability string, request any, id string, selected []string) (DownloaderSourceTasksResultV1, error) {
 	var wire struct {
 		DownloaderTasksV1

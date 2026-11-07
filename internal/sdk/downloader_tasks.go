@@ -82,6 +82,8 @@ type QBittorrentTaskInfoV1 struct {
 	SavePath     *string      `json:"save_path,omitempty"`
 	Size         *json.Number `json:"size,omitempty"`
 	TotalSize    *json.Number `json:"total_size,omitempty"`
+	Completed    *json.Number `json:"completed,omitempty"`
+	Availability *json.Number `json:"availability,omitempty"`
 	Progress     *json.Number `json:"progress,omitempty"`
 	AmountLeft   *json.Number `json:"amount_left,omitempty"`
 	Downloaded   *json.Number `json:"downloaded,omitempty"`

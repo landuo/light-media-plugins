@@ -1,0 +1,42 @@
+{
+  "installed_version": "2.22",
+  "installed_source": {
+    "README.md": "8dc1fc812693a607972b3412356cc292bdc4cdb7441f4ca6b14bc592d1774b6e",
+    "__init__.py": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+    "iyuu_helper.py": "74f0cbde2789eab6a6c0d0edcc6fe3364a5e4ccceb909b5c8842492dc11cdcf0"
+  },
+  "source_snapshot": "work/migration-20261105/source-snapshot/iyuuautoseed",
+  "host_reuse_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "relocation": {
+    "helper.go": {
+      "host_path": "internal/plugins/iyuuautoseed/helper.go",
+      "host_sha256": "c65e2f641bdc325b75184dbb1efca6e321c9d17bb0e5219490070168a52aa4c9",
+      "target_sha256": "bdac897169b0bbb4a463f07d119546d76a3c03c779f3d7c84e9168b14726a0f1"
+    },
+    "json.go": {
+      "host_path": "internal/plugins/iyuuautoseed/json.go",
+      "host_sha256": "ff9a6395e84dce06f490760075315feb83e6e3e52e764d78374910633728ff79",
+      "target_sha256": "ff9a6395e84dce06f490760075315feb83e6e3e52e764d78374910633728ff79"
+    },
+    "source_clock.go": {
+      "host_path": "internal/plugins/iyuuautoseed/source_clock.go",
+      "host_sha256": "8f253094668cd7b4e0b7545f1f50587feb38e1416bced8486e6935fc78ff1bd4",
+      "target_sha256": "ebd3a726e58e5d22859604bc76a39a590a34a156588116648d5a44dbd1ff34e1"
+    },
+    "helper_test.go": {
+      "host_path": "internal/plugins/iyuuautoseed/helper_test.go",
+      "host_sha256": "a1d49b38a32663e832443ee72097e44e83372fcfcc52255b1d9d91b6fd1f1a2a",
+      "target_sha256": "a1d49b38a32663e832443ee72097e44e83372fcfcc52255b1d9d91b6fd1f1a2a"
+    },
+    "reference/helper-oracle.json": {
+      "host_path": "internal/plugins/iyuuautoseed/reference/helper-oracle.json",
+      "host_sha256": "c5664d216ada746dcb9c1c43c55906ec123f03507158ad30fb4852e772175cf3",
+      "target_sha256": "c5664d216ada746dcb9c1c43c55906ec123f03507158ad30fb4852e772175cf3"
+    }
+  },
+  "adaptation": [
+    "The fixed installed 2.22 iyuu_helper.py matches the original 2.19 helper byte for byte. Reuse the host port and exact source oracle.",
+    "Keep the source clock interface and conversion. The prior host DurableAPI adapter stays in its owning host journal."
+  ],
+  "scope": "API helper, JSON and source clock behavior. Host lifecycle, transport binding, and reseeding orchestration are separate migration slices."
+}

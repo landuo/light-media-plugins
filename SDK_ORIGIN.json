@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
-  "scope": "106 standalone SDK files. This increment adds a finite local regular-file read grant. Other files retain their source and exact paired commit; only the two declared import relocations.",
+  "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+  "scope": "106 standalone SDK files. The current increment adds opt-in native qBittorrent pack fields to source-completed reads. Other files retain their exact paired commits and the two declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -261,12 +261,12 @@
     {
       "source_path": "internal/plugins/downloader_source.go",
       "path": "internal/sdk/downloader_source.go",
-      "source_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+      "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
       "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "source_branch": "codex/plugin-source-error-outcomes-20261105",
       "source_state": "locally committed; not main/pushed/deployed",
-      "source_sha256": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
-      "sha256": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+      "source_sha256": "bad211716d927bfd8537cbc869f3047b6cafb7d12bc338445f27852c332c2862",
+      "sha256": "bad211716d927bfd8537cbc869f3047b6cafb7d12bc338445f27852c332c2862",
       "changes": []
     },
     {
@@ -330,10 +330,10 @@
     {
       "source_path": "internal/plugins/downloader_tasks.go",
       "path": "internal/sdk/downloader_tasks.go",
-      "source_sha256": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
-      "sha256": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+      "source_sha256": "61e105005e1f08ffc73db8bd103a34ee375199c65b47c163af0a6a43b87ca97c",
+      "sha256": "61e105005e1f08ffc73db8bd103a34ee375199c65b47c163af0a6a43b87ca97c",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996"
     },
     {
       "source_path": "internal/plugins/downloader_tasks_test.go",
@@ -929,6 +929,13 @@
     ]
   },
   "historical_snapshots": [
+    {
+      "source_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+      "manifest_sha256": "1c1d84f5887dbe60ebc212a3a391c032a9cf8ea77d8eafb8bf1aeb0b0a6d2b54",
+      "scope": "106 standalone SDK files. This increment adds a finite local regular-file read grant. Other files retain their source and exact paired commit; only the two declared import relocations.",
+      "target_commit": "9f32c271c629918a42dd6f79e41de2aa5f3f750f",
+      "target_path": "SDK_ORIGIN.json"
+    },
     {
       "source_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
       "manifest_sha256": "06bd7be472f2e2edaee8d6d9bb3d1c5068212784dc8080e0c7a1d6a3543f52c5",
@@ -9034,7 +9041,7 @@
     "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn.",
     "storage_local_read_increment": "The host validates the scoped capability and current roots, protects private app state, and returns file identity only. The worker reopens beneath the granted root and verifies identity before and after reading."
   },
-  "source_base_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "source_base_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
   "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Local read grant SDK paired with the host read-grant dispatcher on the local host branch."
+  "source_state": "Local qBittorrent pack-field projection paired with the host source-completed dispatcher. The previous file-grant snapshot remains historical."
 }
