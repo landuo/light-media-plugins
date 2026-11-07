@@ -1,0 +1,60 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "5bd490eed2c35857068923b04749a4af469967b6",
+    "host_product_commit": "7ec00454cd82de0c3c5fd330144849265c21ca73",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "fixture_sha256": "d7996d8336fd12ec602152ef5a1684ef9bbb027b4ef8bd19e196416e024c5d92",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+  },
+  "mapping": [
+    {
+      "source": "app/helper/torrent.py:83–126; app/chain/message.py:2789–2806; app/chain/download.py:868–894,1227–1245",
+      "target": "light-media internal/sites/{client,plugin_host_resources}.go and internal/app/{search_download,subscription_rss_magnet,material_store}.go",
+      "behavior": "The verified site can supply a magnet rather than bytes. Ordinary direct chat passes the exact URI through the native unpaused Add and stores a reference for recovery."
+    },
+    {
+      "source": "app/chain/download.py:1297–1314,1358–1377,1425–1465,1526–1541",
+      "target": "light-media internal/app/download_season_scope.go, search_download.go and plugin_original_download_added.go",
+      "behavior": "Title-proven whole multi-season candidates can Add without inspecting files. Branches that require file inspection or selective Add skip magnets. Native completion measures actual episode coverage before local organization."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App and installed indexed worker, with owned loopback tracker, qBittorrent and Lark peers and actual local files",
+    "tests": [
+      {
+        "name": "TestOriginalLarkChatMagnetLinuxAMD64",
+        "seconds": 1.58
+      },
+      {
+        "name": "TestOriginalLarkChatMultiSeasonMagnetLinuxAMD64",
+        "seconds": 1.69
+      }
+    ],
+    "host_elf_sha256": "61ecc62f70932368af9991742c74ebd5c928737e6f28da5f16dcd6fb156c2ef1",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "runner_sha256": "ad60f6f6be7afebe0f768fdf856a47a73aeffba886634a7fa2931d00a9154f55",
+    "runtime_log_sha256": "aafe4dcd8615a7f3c93fe637476ab21417fab0b21b484f83b487fdd78ab82c7c",
+    "observations": [
+      "The real installed Lark worker accepted a verified ordinary movie selection. A cookie-authenticated tracker request returned a magnet redirect. qBittorrent received the exact whole unpaused URI, with no tracker Cookie or torrent file. The URI was archived as private typed material.",
+      "The same installed-worker path in a separate two-season automatic selection issued one Add. The sealed provisional proof held S01E01 and S02E01 and no file list. The first completed daemon inventory omitted one season and created no import or completion proof.",
+      "After the second season appeared, the native App wrote a separate measured-file proof and created one real local hardlink per season. The movie also produced a hardlink after daemon file validation. No case requested files before completion, selected files, or repeated Add."
+    ]
+  },
+  "superseded_attempt": {
+    "status": "failed",
+    "host_commit": "03f4ed6a9ba70ef666955777f1e646a2a64bc5a7",
+    "host_elf_sha256": "c626791e3401628d514f82499a1b859dd15d0c589614f057397024d42dbc9268",
+    "runtime_log_sha256": "ed3f209f01d95e27c7db62ad618b3db0d62f930d5e9b3c75aaf5cf8813c13b1b",
+    "cause": "The fixture omitted an ordinary qB authentication route and checked the previous review error before asynchronous import finished. The movie Add and hardlink were observed in this run. The corrected native command reran only these two fixtures and made no host product change."
+  },
+  "adaptations_and_open": [
+    "The source accepts the whole fileless magnet first. Light-media separately seals expected native episode scopes before Add and validates real files before local hardlink. It rejects incomplete or mismatched completion and leaves the immutable Add proof intact.",
+    "A title-proven direct single-season episode branch is implemented and separate native coverage is still open. Quality RSS, provider-only writes and other magnet downloader variants remain separate scope."
+  ]
+}

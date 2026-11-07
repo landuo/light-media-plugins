@@ -187,10 +187,17 @@ The initial fixture stopped before Add because its synthetic filenames did
 not pass identity checks. The corrected scenario passed without rerunning the
 provider or Chrome checks. See
 `migration/evidence/lark-messager-native-download-outcomes-20261108.json`.
-Remaining source coverage includes ordinary direct-chat magnets, explicit
-episode RSS magnets, and provider-only writes. The pinned RSS matcher excludes
-multi-season candidates before downloading and file-dependent branches skip
-magnet material. Current previews archive exact bytes; the older empty-ref
+Native Linux verified ordinary Lark movie and two-season magnet Adds and
+local hardlink organization. The multi-season Add sealed expected seasons
+without a file list. An incomplete daemon inventory produced no import.
+Complete files were measured and sealed separately before organization.
+See `migration/evidence/lark-messager-chat-magnets-20261108.json`.
+An ordinary TV RSS refresh skipped a multi-season candidate before material
+and sent the exact single-season S01E02 magnet to qB and the SDK callback.
+See `migration/evidence/lark-messager-rss-single-season-magnet-20261108.json`.
+BestVersion RSS, separate direct listed-TV evidence and provider-only writes
+are still open. Source branches that need a file list still skip magnet
+material. Current previews archive exact material. The older empty-ref
 reacquisition path has a first-download confirmation difference.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome

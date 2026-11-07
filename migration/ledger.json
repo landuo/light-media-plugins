@@ -67998,6 +67998,62 @@
         "fixture_sha256": "8b77776ce499d6600421bd5f2be126d1d4b1294993fa38b6ea27428c365d491a",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_rss_single_season_magnet.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSSingleSeasonMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "One verified Lark /subscribes refresh recognized a TV candidate with explicit S01E02 and excluded a higher-seeded S01–S02 candidate before any material request.",
+        "A same-origin authenticated tracker material request returned the magnet. qBittorrent received one exact whole URI without tracker Cookie, and the native SDK observer received it as a string.",
+        "This run verified TV Add and the ordinary callback. It did not test TV import or BestVersion replacement."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-rss-single-season-magnet-20261108.json": "1d79ea37846390f229513b826f9462ff8de1592abf18c32a1d8bc31e0533a9da"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "03f4ed6a9ba70ef666955777f1e646a2a64bc5a7",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "bdacd6c91b15e1fd8337b4281a58e6f32824ce34a3348ab7b86cfd61154c9ee1",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
+    },
+    {
+      "id": "larkmessager.native_chat_whole_magnets.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkChatMagnetLinuxAMD64",
+        "TestOriginalLarkChatMultiSeasonMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "The real installed Lark worker accepted a verified ordinary movie selection. A cookie-authenticated tracker request returned a magnet redirect. qBittorrent received the exact whole unpaused URI, with no tracker Cookie or torrent file. The URI was archived as private typed material.",
+        "The same installed-worker path in a separate two-season automatic selection issued one Add. The sealed provisional proof held S01E01 and S02E01 and no file list. The first completed daemon inventory omitted one season and created no import or completion proof.",
+        "After the second season appeared, the native App wrote a separate measured-file proof and created one real local hardlink per season. The movie also produced a hardlink after daemon file validation. No case requested files before completion, selected files, or repeated Add."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-chat-magnets-20261108.json": "2bfb335df7e33ec065c45aedf19a507cf82795f357904ca159cc8d77d9b5036e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "5bd490eed2c35857068923b04749a4af469967b6",
+        "host_product_commit": "7ec00454cd82de0c3c5fd330144849265c21ca73",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "d7996d8336fd12ec602152ef5a1684ef9bbb027b4ef8bd19e196416e024c5d92",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -68071,7 +68127,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "a305d84db50410da321d60ead200a503224573d6",
+      "host_HEAD": "5bd490eed2c35857068923b04749a4af469967b6",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68082,12 +68138,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Real Lark Chrome settings/detail, provider-only search, and isolated tracker/downloader failure outcomes passed. Host and worker changes stay local.",
-      "tests_running": "None. Provider-only search passed on the first run; the download outcome scenario passed after correcting its material fixture. No previously accepted scenarios were rerun.",
-      "latest_detail": "migration/evidence/lark-messager-native-download-outcomes-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native ordinary Lark movie and complete multi-season magnet Add and organization passed; ordinary TV RSS magnet and multi-season refresh exclusion also passed. All code and evidence are local.",
+      "tests_running": "None. The ordinary TV RSS case passed on its first run. The two native chat cases passed after repairing their qB login and asynchronous import observer; the passing RSS case was not rerun.",
+      "latest_detail": "migration/evidence/lark-messager-chat-magnets-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with worker 319ca00 and indexed package in work/lark-worker-browser-form-20261108/packaging/linux-amd64, and host a305d84d. Reuse existing native and Chrome evidence. Prioritize typed authenticated magnet material for ordinary direct-chat media where the source can Add without inspecting files, then title-proven RSS TV/quality evidence and provider-only mutation differences. Pinned SubscribeChain.match excludes RSS multi-season releases, and DownloadChain skips magnet branches requiring file inspection or split selection. Register only after the agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager with the same worker 319ca00 and indexed package in work/lark-worker-browser-form-20261108/packaging/linux-amd64, and host 5bd490ee. Reuse direct-chat movie and multi-season magnet Add/organization and ordinary TV RSS evidence. Next implement the pinned title-numbered BestVersion RSS magnet branch, preserve file-dependent skips, and close provider-only mutation differences and the legacy material reacquisition confirmation. Cover direct listed TV episodes where new evidence is needed. Register only after agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
