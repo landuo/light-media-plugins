@@ -1,0 +1,75 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and installed indexed Lark worker. Provider, Lark and qBittorrent protocol peers were owned loopback fixtures.",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
+    "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+    "packaging_checkout": "ee864d9188d18b646f571de4130d1ccdaeeb5d8c",
+    "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+    "worker_elf_sha256": "b37d02d330ad0b2445ad5196ecd9ee5e78fb011825d0ca4a71d9da32925b63d5",
+    "index_sha256": "6688ae2042bd995888c0a0a03a26767e8084df436a80128d5980eaf5c110912a",
+    "runner_sha256": "4ffedfa843fdaa498307995294f5ea583734970a0c0b5e157c60c5afb5ed3a2e"
+  },
+  "runs": [
+    {
+      "id": "larkmessager.native_provider_late_scope.20261108",
+      "test": "TestOriginalLarkProviderLateScopeLinuxAMD64",
+      "status": "passed",
+      "seconds": 1.68,
+      "source": "app/chain/transfer.py:1793–1856,2333–2379; app/chain/download.py:1599,1647–1662",
+      "target": "light-media internal/app/{download_unscoped_completion,search_download,import_plan,import_run,plugin_original_transfer_context}.go",
+      "fixture_sha256": "5bcdeae3fd00b4ab17040056c97754cdd05c04d527778c853f193ff544707986",
+      "shared_fixture_sha256": "8fab028c68301f6f2bdf160f813f1a06f3209011854ef389ee23384c196bed56",
+      "observations": [
+        "Two initial exact AniList lookups supplied no season map, so an authenticated numbered Lark selection performed one whole Add with no guessed episodes. At completion the same AniList 777 supplied S01 coverage through episode 8.",
+        "The host checked the actual path and size against archived torrent material, resolved the same-season S01E07–E08 range, and persisted a sealed completion scope separately from the immutable accepted intent.",
+        "One actual hardlink published at the local library, with two owned slots under tv:anilist:777. The intent reached imported with its acquisition digest unchanged. One new exact provider lookup and one downloader file lookup occurred. Tracker retrieval and Add were not repeated."
+      ]
+    },
+    {
+      "id": "larkmessager.native_provider_episode_replacement.20261108",
+      "test": "TestOriginalLarkProviderEpisodeQualityReplacementLinuxAMD64",
+      "status": "passed",
+      "seconds": 2.23,
+      "source": "app/chain/subscribe.py:468–484,548–614,748–785,1569–1618; app/chain/transfer.py:2365–2379",
+      "target": "light-media internal/app/{subscription_quality_replace,subscription_quality_download,subscription_acquisition_receipt,search_download,import_run}.go",
+      "fixture_sha256": "06710dcec2c642eecc58545613f76b4836e916abcc6f4ce1166865a94c658a26",
+      "shared_fixture_sha256": "8fab028c68301f6f2bdf160f813f1a06f3209011854ef389ee23384c196bed56",
+      "observations": [
+        "A genuine Lark-created per-episode quality subscription used Bangumi 777. An older S01E01 local hardlink was published through the real import worker. Its quality history was seeded at priority 99.",
+        "One fresh RSS episode reached the downloader as the exact torrent, advanced only E01 to priority 100, and kept the older video and slot before completion. The other three episodes kept the subscription and acquisition coverage incomplete.",
+        "After completion the new hardlink replaced the old library path, the old asset became superseded, and both download sources retained their exact bytes. The provider namespace and E01 ownership survived.",
+        "The first batch observed the successful Add but the fixture wrongly required whole-subscription coverage. Only this failed case was rerun after correcting the expectation to match the source's per-episode behavior."
+      ]
+    },
+    {
+      "id": "larkmessager.native_rejection_and_uninstall.20261108",
+      "test": "TestInstalledLarkRejectionAndUninstallLinuxAMD64",
+      "status": "passed",
+      "seconds": 2.05,
+      "source": "larkmessager/client.py:278–280,325–327,413–429; larkmessager/__init__.py:308–364,954–958; app/api/endpoints/plugin.py:993; app/core/plugin.py base uninstall lifecycle",
+      "target": "plugins/larkmessager/{client,plugin,worker}.go; light-media indexed plugin lifecycle and ordinary message module",
+      "fixture_sha256": "f6d0ff495ac5b0bf6f605b87d6386b27bebedbce570701cb484569b1b3b50cef",
+      "observations": [
+        "The changed indexed worker logged a definite numeric rejection once without the provider's diagnostic, then uploaded and sent the exact owned attachment bytes. An opaque code attempted one card and stopped before any attachment or replay.",
+        "Actual DELETE uninstall stopped the old worker PID, removed webhook routing and cleared installed membership. Base code, configuration and data remained. A subsequent ordinary notification made no provider write."
+      ]
+    }
+  ],
+  "run_artifacts": {
+    "batch_host_elf_sha256": "a2a7d10c1d2182e04346acd0a41be2633a4db6a9d1b4bf38f52c0a20774d5a64",
+    "batch_log_sha256": "b0f9ee2f713f2463c37389d1ca2387dc1b41cbf83cc7e67d7d4b3994d36d799d",
+    "batch_quality_fixture_before_correction_sha256": "23a7dc6fb10ac289a2a624bd0da569ff7e20ce7739c79936e07ebc94546528fe",
+    "quality_host_elf_sha256": "bc5ec063675ad63b0ec06fa235b4719d880d82c738832dadf8788b759b0297fd",
+    "quality_log_sha256": "0c704cbe7508bd92a0ae1fff8e0f48e094236a56a95b28af665c7a9a4f53419c"
+  },
+  "adaptations_and_open": [
+    "The App bypasses the provider cache warmed by selection for the completion lookup while preserving the original module cache argument. Unverified, overlapping, noncontiguous or cross-season file scopes stay in review. The dedicated proof permits verified same-season contiguous combined files without changing the other import entry points.",
+    "The automated completion guard keeps the independently confirmed linked-download correction route. That explicit correction and late-scope magnet completion were not separately executed here.",
+    "The source statements derive from the pinned repository and installed file snapshot. Native Linux used test peers, not production recipients. The completed package does not establish the remaining ordinary host preset behavior."
+  ]
+}

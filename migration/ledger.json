@@ -3843,7 +3843,7 @@
       "chain": [
         "Fixed MoviePilot reload and uninstall entrypoints app/api/endpoints/plugin.py:563,993 invoke platform instance lifecycle.",
         "Set stop flag and clear the instance client/crypto. Route and code ownership are platform responsibilities.",
-        "Target: plugins/larkmessager/worker.go and light-media instance lifecycle; native clone and reload evidence. Dedicated Lark uninstall evidence is open."
+        "Target: plugins/larkmessager/worker.go and light-media instance lifecycle; native clone and reload evidence. Changed indexed Linux worker uninstall verified the PID, webhook and retained base state."
       ]
     },
     {
@@ -3938,7 +3938,7 @@
       "chain": [
         "Fixed MoviePilot app/chain/__init__.py:1631 -> installed post_message; filter configured notice types and resolve reply/user/chat/default targets.",
         "Build a normal card or source-ordered image/file/voice operations; client.py:218-429 supplies provider upload and message transport.",
-        "Target: plugins/larkmessager/plugin.go, client.go, attachment.go and transport.go. Native ordinary notice and rooted attachment evidence. Definite API rejection now logs and returns through the source failure path. Focused worker loopback passed; changed indexed-worker evidence is pending."
+        "Target: plugins/larkmessager/plugin.go, client.go, attachment.go and transport.go. Native ordinary notice and rooted attachment evidence. Definite API rejection now logs and returns through the source failure path. Changed indexed Linux worker verified definite rejection, redacted logging, attachment continuation and opaque acknowledgement fencing."
       ]
     },
     {
@@ -16289,7 +16289,10 @@
         "larkmessager.native_legacy_material.20261108",
         "larkmessager.native_provider_redo.20261108",
         "larkmessager.ordinary_notification_rejection_worker.20261108",
-        "larkmessager.native_download_commands.20261108"
+        "larkmessager.native_download_commands.20261108",
+        "larkmessager.native_provider_late_scope.20261108",
+        "larkmessager.native_provider_episode_replacement.20261108",
+        "larkmessager.native_rejection_and_uninstall.20261108"
       ],
       "review": {
         "status": "pending",
@@ -68619,6 +68622,87 @@
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
         "fixture_sha256": "c56d118df7424025aca8b9dcaac340740abaed18111d51dcb0bf5467289a74bd"
       }
+    },
+    {
+      "id": "larkmessager.native_provider_late_scope.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderLateScopeLinuxAMD64"
+      ],
+      "observations": [
+        "Two initial exact AniList lookups supplied no season map, so an authenticated numbered Lark selection performed one whole Add with no guessed episodes. At completion the same AniList 777 supplied S01 coverage through episode 8.",
+        "The host checked the actual path and size against archived torrent material, resolved the same-season S01E07–E08 range, and persisted a sealed completion scope separately from the immutable accepted intent.",
+        "One actual hardlink published at the local library, with two owned slots under tv:anilist:777. The intent reached imported with its acquisition digest unchanged. One new exact provider lookup and one downloader file lookup occurred. Tracker retrieval and Add were not repeated."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-late-scope-quality-uninstall-20261108.json": "5f9f0c693a2930882c87ba2016b9e7065b98edeaf0e960df973ad9fcffaa7c0e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "5bcdeae3fd00b4ab17040056c97754cdd05c04d527778c853f193ff544707986"
+      }
+    },
+    {
+      "id": "larkmessager.native_provider_episode_replacement.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderEpisodeQualityReplacementLinuxAMD64"
+      ],
+      "observations": [
+        "A genuine Lark-created per-episode quality subscription used Bangumi 777. An older S01E01 local hardlink was published through the real import worker. Its quality history was seeded at priority 99.",
+        "One fresh RSS episode reached the downloader as the exact torrent, advanced only E01 to priority 100, and kept the older video and slot before completion. The other three episodes kept the subscription and acquisition coverage incomplete.",
+        "After completion the new hardlink replaced the old library path, the old asset became superseded, and both download sources retained their exact bytes. The provider namespace and E01 ownership survived.",
+        "The first batch observed the successful Add but the fixture wrongly required whole-subscription coverage. Only this failed case was rerun after correcting the expectation to match the source's per-episode behavior."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-late-scope-quality-uninstall-20261108.json": "5f9f0c693a2930882c87ba2016b9e7065b98edeaf0e960df973ad9fcffaa7c0e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "06710dcec2c642eecc58545613f76b4836e916abcc6f4ce1166865a94c658a26"
+      }
+    },
+    {
+      "id": "larkmessager.native_rejection_and_uninstall.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestInstalledLarkRejectionAndUninstallLinuxAMD64"
+      ],
+      "observations": [
+        "The changed indexed worker logged a definite numeric rejection once without the provider's diagnostic, then uploaded and sent the exact owned attachment bytes. An opaque code attempted one card and stopped before any attachment or replay.",
+        "Actual DELETE uninstall stopped the old worker PID, removed webhook routing and cleared installed membership. Base code, configuration and data remained. A subsequent ordinary notification made no provider write."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-late-scope-quality-uninstall-20261108.json": "5f9f0c693a2930882c87ba2016b9e7065b98edeaf0e960df973ad9fcffaa7c0e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "f6d0ff495ac5b0bf6f605b87d6386b27bebedbce570701cb484569b1b3b50cef"
+      }
     }
   ],
   "scope": {
@@ -68689,10 +68773,10 @@
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
+      "tested_saved_code_revision": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "2dfc05cb1bc6716b718c35bffc89b18954f7214d",
+      "host_HEAD": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68703,12 +68787,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 instances accepted. Indexed Lark native Bangumi /redo, /downloading and /transfer passed against an isolated Linux App. Ordinary provider rejection handling passed one worker-only check; its indexed artifact is pending. Code and evidence remain local.",
-      "tests_running": "None. One passing native download-command run followed two incomplete fixture runs. Earlier accepted Lark suites were not rerun.",
-      "latest_detail": "migration/evidence/lark-messager-download-commands-20261108.json",
+      "delivery": "17/22 instances accepted. The changed indexed Lark package passed late AniList episode recovery, Bangumi RSS per-episode replacement, and rejection/uninstall on isolated native Linux. Code and evidence are local.",
+      "tests_running": "None. Late recovery and indexed rejection/uninstall passed in the combined native batch. Only the quality fixture was rerun after correcting its whole-coverage assertion.",
+      "latest_detail": "migration/evidence/lark-messager-late-scope-quality-uninstall-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager at host 2dfc05cb and worker 9fe068d. Reuse 38 linked evidence rows, including the native /downloading, /transfer and Bangumi /redo. Next close exact-provider late episode recovery after an unscoped download, then the old-slot replacement for provider per-episode quality. Audit remaining fixed non-AI host preset boundaries. Stage the changed worker once and bind ordinary rejection and uninstall without rerunning accepted browser/chat scenarios.",
+      "next_complete_slice": "Continue LarkMessager at host 96a23ca3 and exact indexed worker 9fe068d. Reuse 41 linked evidence rows. Finish source audit of remaining non-AI host presets and reuse existing app capabilities where allowed; do not build unrelated credential-sync/inventory systems. Complete independent closure, then register. Do not rerun the three newly passed native cases.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

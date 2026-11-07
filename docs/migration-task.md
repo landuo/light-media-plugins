@@ -221,7 +221,13 @@ the empty list, ordered transfer notices and one actual hardlink from a seeded
 owned download. See `migration/evidence/lark-messager-download-commands-20261108.json`.
 The worker's definite Feishu rejection now logs a redacted failure and may
 continue with the separate attachment. The opaque-write fence remains. A
-focused worker loopback passed; the changed indexed worker is pending.
+focused worker loopback passed. The changed indexed package now also verified
+the exact attachment and opaque receipt behavior, and native uninstall
+removed the worker and webhook while retaining base code and data. A native
+late AniList scope linked S01E07–E08 from the original whole Add. A separate
+Bangumi RSS episode replaced an actual older local hardlink only after
+completion and preserved both source files. See
+`migration/evidence/lark-messager-late-scope-quality-uninstall-20261108.json`.
 A native Lark run confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. See
