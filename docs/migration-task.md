@@ -215,9 +215,12 @@ and restart acceptance remain open. See
 A separate native Lark selection sent the exact AniList-only torrent to an
 owned qB peer and created a real S01E01 hardlink with the same provider key.
 The first attempt exposed a missing computed field during naming. Only that
-failed scenario was retried after repair. Provider-triggered ordinary and
-BestVersion subscription downloads and provider-specific scraping remain open.
-See `migration/evidence/lark-messager-provider-native-download-20261108.json`.
+failed scenario was retried after repair. See
+`migration/evidence/lark-messager-provider-native-download-20261108.json`.
+The native ordinary RSS flow now fetches only the Bangumi enclosure, keeps
+its subscription revision and provider key through Add and organizes S01E01.
+BestVersion and provider subscription retirement code await focused verification.
+See `migration/evidence/lark-messager-provider-rss-download-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
