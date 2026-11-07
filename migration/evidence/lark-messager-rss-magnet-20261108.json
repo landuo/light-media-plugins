@@ -1,0 +1,49 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "9584a3a50962c76d36142f7ac16774f8cedd44cc",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "6eb01ac48f219e0abe0af951ad39611620d5139f0bfeeec85cc6d940abd303f8",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with the fixed source and independent call-chain review. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/helper/torrent.py:83–126; app/chain/torrents.py:464–475; app/chain/download.py:739–769,1301–1313,1532–1541",
+      "target": "internal/sites/plugin_host_resources.go, internal/app/plugin_original_host_sites.go, plugin_original_subscribe_chat_refresh_match.go and subscription_rss_magnet.go",
+      "behavior": "Direct, redirect and text magnets stay typed and do not enter the bencoded material failure path. File-inspection packs and splits do not treat a magnet as an empty torrent."
+    },
+    {
+      "source": "app/chain/__init__.py:1350–1400; app/modules/qbittorrent/__init__.py; app/modules/transmission/__init__.py",
+      "target": "internal/metainfo/magnet.go, internal/download/{client,metainfo,qbittorrent,transmission}.go and internal/app/{search_download,material_store,plugin_original_download,plugin_original_download_added}.go",
+      "behavior": "The original URI becomes a typed daemon Add and string in explicit module kwargs, with a bounded stable hash, authenticated material storage and normal download acceptance. No bencoded file inventory is manufactured."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App, indexed worker and SDK observer with owned HTTP peers and actual local hardlink",
+    "environment": "Read-only Alpine 3.22, tmpfs and loopback only. Owned Lark, tracker, TMDB and qBittorrent protocol peers. No original or production credentials.",
+    "test": "TestOriginalLarkRSSMagnetLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_magnet_linux_test.go",
+    "seconds": 3.43,
+    "host_elf_sha256": "8897a0343f2c13f8448c143570a7036f4e0d1cb7adb730bc85a96e654ebf04dc",
+    "observer_elf_sha256": "abc7bd1fdce916fa5cc4f04ee1f0f37759b92e35b57b6a9e5403bd3b11a619d5",
+    "runner_sha256": "32065a2e9b061dca0acf8f14556068fccf9b9642f7ced46423b37451693f51c3",
+    "runtime_log_sha256": "506c55420886df01a920a49861d3e8239b5541e26d3f34cd79018091a83fabae",
+    "observations": [
+      "The native HTTP tracker adapter returned the exact magnet from a same-origin 302 Location and a 200 text body with no invalid-enclosure marker. The verified Lark /subscribes refresh then read a direct RSS magnet without making another tracker material request.",
+      "The exact magnet and local save directory reached one native qBittorrent multipart urls Add. No bencoded file or tracker Cookie was sent to the daemon. The expected v1 hash was observed in the daemon task list and accepted before the refresh reply.",
+      "The actual SDK download_added callback received the raw magnet as a JSON string. The core kept material encrypted, the Lark card and native log did not expose the synthetic tracker marker, and valid magnet acceptance recorded neither an invalid URL nor a resource cooldown.",
+      "No library asset existed before task completion. The daemon files API later supplied one matching 1024-byte movie, and the normal local importer created a verified hardlink to the exact owned source file."
+    ]
+  },
+  "adaptations_and_open": [
+    "MoviePilot allows a title-matched magnet without an initial file inventory. The native host follows that Add behavior and delays actual file identity, local path, file-size and episode-coverage checks until completed files can be verified.",
+    "The first runtime fixture covers a BTIH movie on qBittorrent. Title-scoped single-season TV, Transmission, hybrid/pure-v2, cold acceptance and malformed magnets were compiled or reviewed in code only. Transmission keeps its existing pure-v2 boundary; qB hybrid verifies its BTIH identity.",
+    "The safe source detail page is still absent from RSS download Context. Refresh/background same-batch fallback, exact source failure notice, post-preview material reacquisition and provider-without-TMDB remain open. Previous accepted scenarios were not repeated."
+  ]
+}

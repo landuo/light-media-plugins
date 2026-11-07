@@ -147,7 +147,13 @@ and cooled that exact resource, tried a second candidate in the same search
 and finished the subscription after a real Add. The rejection fingerprint is
 sealed before the downloader call. See
 `migration/evidence/lark-messager-same-search-fallback-20261108.json`.
-Continue with native RSS magnet handling. Reuse earlier passing evidence.
+A new native RSS fixture verified direct, redirect and body magnet sources.
+One direct magnet reached qBittorrent, kept its encrypted reference, delivered
+the exact string to the SDK callback and organized a matching local file after
+the downloader reported completion. See
+`migration/evidence/lark-messager-rss-magnet-20261108.json`.
+Continue with same-batch RSS fallback and safe detail-page projection.
+Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

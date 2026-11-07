@@ -16092,7 +16092,8 @@
         "larkmessager.paused_completion_whole_multiseason.20261108",
         "larkmessager.provider_native_download.20261108",
         "larkmessager.manual_search_rejected_paused_quality.20261108",
-        "larkmessager.same_manual_search_candidate_fallback.20261108"
+        "larkmessager.same_manual_search_candidate_fallback.20261108",
+        "larkmessager.rss_magnet_native_add_import.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67802,6 +67803,34 @@
         "fixture_sha256": "593fa0d546b87cef3a1d609530e4db8dd4684949493023dd7a8866f84df280d8",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.rss_magnet_native_add_import.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSMagnetLinuxAMD64"
+      ],
+      "observations": [
+        "The native HTTP tracker adapter returned the exact magnet from a same-origin 302 Location and a 200 text body with no invalid-enclosure marker. The verified Lark /subscribes refresh then read a direct RSS magnet without making another tracker material request.",
+        "The exact magnet and local save directory reached one native qBittorrent multipart urls Add. No bencoded file or tracker Cookie was sent to the daemon. The expected v1 hash was observed in the daemon task list and accepted before the refresh reply.",
+        "The actual SDK download_added callback received the raw magnet as a JSON string. The core kept material encrypted, the Lark card and native log did not expose the synthetic tracker marker, and valid magnet acceptance recorded neither an invalid URL nor a resource cooldown.",
+        "No library asset existed before task completion. The daemon files API later supplied one matching 1024-byte movie, and the normal local importer created a verified hardlink to the exact owned source file."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-rss-magnet-20261108.json": "5b8f00a70117681b02268b5d712776a983623a403ee33d6e5467e64b97305620"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "9584a3a50962c76d36142f7ac16774f8cedd44cc",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "6eb01ac48f219e0abe0af951ad39611620d5139f0bfeeec85cc6d940abd303f8",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67875,7 +67904,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "9f543ddb38b53d4e79002715b3ed427cf42e697d",
+      "host_HEAD": "9584a3a50962c76d36142f7ac16774f8cedd44cc",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67886,12 +67915,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native one-search definitive refusal and second-candidate acceptance/completion passed. Host and evidence stay local.",
-      "tests_running": "None. The distinct native two-candidate fallback fixture passed on its first run and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-same-search-fallback-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native RSS magnet variants, one qB Add, string callback and delayed local hardlink passed. Host and evidence stay local.",
+      "tests_running": "None. The distinct native RSS magnet scenario passed on its first run and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-rss-magnet-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager RSS magnets. Pinned TorrentHelper accepts direct magnet, 301/302 Location magnet and 200 magnet text. Use typed material with stable hash, sealed private URI, native downloader Add and accepted receipts. Do not synthesize metainfo or incorrectly cool magnets; preserve source skip of file-inspection pack/split paths and design guarded delayed file verification. Verify one distinct real RSS movie scenario first; keep supported title-scoped TV and other open differences visible.",
+      "next_complete_slice": "Continue LarkMessager with source RSS refresh candidate fallback and safe detail-page projection in trusted download Context. Reuse exact latest-batch sealed evidence and owned native child settlement so a definite refusal can try the next current candidate, and refresh ordering follows real outcomes without replaying uncertain writes. One distinct fixture should cover that RSS path; do not repeat the passing magnet scenario. Keep remaining source failure notice, post-preview reacquisition, additional magnet variants and provider-without-TMDB differences visible.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
