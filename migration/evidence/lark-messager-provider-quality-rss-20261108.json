@@ -1,0 +1,52 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and indexed worker, real database and hardlinks. Lark, metadata, tracker and downloader used isolated owned loopback protocol peers.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:589–614,722–761,1443–1508,2020–2088; app/chain/download.py:526–560",
+      "target": "light-media internal/app/{subscription_quality_check,subscription_acquisition_batch,subscription_acquisition_scope,subscription_quality_snapshot,search_download}.go",
+      "behavior": "The exact recognized provider model drives priority and file scope and survives acquisition serialization. Cooldown and ownership use the source namespace."
+    },
+    {
+      "source": "app/chain/subscribe.py:54–100,1569–1616,2806–2864; app/helper/message.py:126–134",
+      "target": "light-media internal/app/{subscription_quality_completion,subscription_quality_completion_run,subscription_quality_completion_event,core_business_source_facts,subscription_stats}.go",
+      "behavior": "Completion validates the actual accepted Add, source subscription revision and namespaced media. It retires the active subscription with a durable completion event and preserves source-specific history fields."
+    },
+    {
+      "source": "app/chain/transfer.py:1945–1962,2333–2375",
+      "target": "light-media internal/app/{search_download,import_provider,subscription_quality_replace}.go",
+      "behavior": "Post-completion organization uses authenticated provider membership and guarded local slots. This scenario has no existing slot to replace."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderBestVersionRSSLinuxAMD64",
+    "seconds": 2.88,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "d836051f0ab2141b781c286a7e862b86517fba38",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "2afc63036918aab3b027d68753d151a7a600a13e23af4d57adf79ebd1bb0cbb2",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_product_commit": "afec02bc2966b01c9c62537476f913f3d237f29f",
+    "host_elf_sha256": "16fc4130404f6de5f9509ebbeda8c7743aa292e7e5131b374d3b520235af9b42",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "2dad9ded1ba049c01e3d5329c44acd9190bb00309cad26d1ded323ca13551f86",
+    "runtime_log_sha256": "1676843b6420dd7b08a27125130ad3900ce2857af3d2e8871bb8803fa3ce477c",
+    "observations": [
+      "The real Lark worker created a full-quality Bangumi subscription with one known episode and no TMDB ID. The fixture advanced its state to running and supplied an initial quality priority of 20.",
+      "One actual RSS root filtered the exact Bangumi enclosure, preserved its original bytes through one whole Add, and sealed the provider model, root, revision and accepted intent. Source-derived 1080P WEB-DL rules produced priority 100 and verified full coverage.",
+      "The exact successful root enqueued the dependent completion preparation. The guarded completion removed the live subscription and emitted tv:bangumi:777 in subscription.completed before the downloader exposed completed files. The receipt referenced the accepted intent. The App later verified the file and created one real S01E01 hardlink under the same provider key."
+    ]
+  },
+  "adaptations_and_open": [
+    "This single case verifies full-quality acquisition and retirement, not provider-only per-episode quality replacement, ordinary retirement, browser editing or process restart. The matched source model was read back from the seal within the same process.",
+    "The isolated fixture did not provision external sharing settings. Registration and completion statistics reported SUBSCRIPTION_STATS_DEPENDENCY. The teardown cancelled a late downloader completion tag check. Sidecar and downloader tag delivery were not accepted here.",
+    "The pinned source can re-recognize provider identity on transfer and selects SCRAP_SOURCE separately. Provider-specific local scraping, unknown-season fallback, and legacy empty-reference recovery are still open."
+  ]
+}

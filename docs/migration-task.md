@@ -219,8 +219,13 @@ failed scenario was retried after repair. See
 `migration/evidence/lark-messager-provider-native-download-20261108.json`.
 The native ordinary RSS flow now fetches only the Bangumi enclosure, keeps
 its subscription revision and provider key through Add and organizes S01E01.
-BestVersion and provider subscription retirement code await focused verification.
 See `migration/evidence/lark-messager-provider-rss-download-20261108.json`.
+The distinct provider full BestVersion run accepted one exact RSS release at
+priority 100. The root succeeded before retirement, and the completion receipt
+and event refer to the original Bangumi key and accepted intent. A later
+verified S01E01 file created a real hardlink. Provider sidecars and priority
+replacement of an existing slot were outside this run. See
+`migration/evidence/lark-messager-provider-quality-rss-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

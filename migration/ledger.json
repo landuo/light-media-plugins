@@ -68215,6 +68215,33 @@
         "fixture_sha256": "4768597bd36c5313b956bf1fc05994318cf86643998c2719dcaaaab0bd519e29",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_provider_quality_rss.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderBestVersionRSSLinuxAMD64"
+      ],
+      "observations": [
+        "The real Lark worker created a full-quality Bangumi subscription with one known episode and no TMDB ID. The fixture advanced its state to running and supplied an initial quality priority of 20.",
+        "One actual RSS root filtered the exact Bangumi enclosure, preserved its original bytes through one whole Add, and sealed the provider model, root, revision and accepted intent. Source-derived 1080P WEB-DL rules produced priority 100 and verified full coverage.",
+        "The exact successful root enqueued the dependent completion preparation. The guarded completion removed the live subscription and emitted tv:bangumi:777 in subscription.completed before the downloader exposed completed files. The receipt referenced the accepted intent. The App later verified the file and created one real S01E01 hardlink under the same provider key."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-provider-quality-rss-20261108.json": "2a85d5287ab5056b6983137ce41709b96cf2a1a7bc2fbd5f51b4c110ca66ae57"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "d836051f0ab2141b781c286a7e862b86517fba38",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "2afc63036918aab3b027d68753d151a7a600a13e23af4d57adf79ebd1bb0cbb2",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -68288,7 +68315,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "afec02bc2966b01c9c62537476f913f3d237f29f",
+      "host_HEAD": "d836051f0ab2141b781c286a7e862b86517fba38",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68299,12 +68326,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark ordinary provider-only RSS acquisition, source collision isolation and local organization passed. BestVersion acquisition and provider completion code await distinct verification. Local only.",
-      "tests_running": "None at ordinary checkpoint. One new native Linux provider RSS test passed. Existing direct and TMDB scenarios were not repeated.",
-      "latest_detail": "migration/evidence/lark-messager-provider-rss-download-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Lark ordinary provider RSS and full BestVersion provider RSS each passed material acquisition and local organization; full quality also passed exact rooted retirement. Code and evidence remain local.",
+      "tests_running": "None. One new native Linux scenario passed for ordinary RSS and one for full BestVersion. Older accepted direct and TMDB scenarios were not repeated.",
+      "latest_detail": "migration/evidence/lark-messager-provider-quality-rss-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with the same indexed worker 319ca00 and host afec02bc. Reuse accepted provider manual and ordinary RSS Add/import. Verify BestVersion with one source-only acquisition and guarded completion case. Browser/restart, provider scraper/no-season behavior and the separate legacy empty-reference recovery remain open. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host d836051f. Reuse accepted manual, ordinary RSS and full BestVersion source-only Add/import. Implement local provider metadata behavior from fixed chain/media.py:1514\u20131527, config.py:207\u2013209 and helper/scraper.py:16\u2013179 using the independent SCRAP_SOURCE selection, and confirm one distinct provider sidecar scenario. Browser/restart, no-season fallback and distinct legacy empty-reference recovery remain open. Confirm quality replacement and remaining chat source variants from actual evidence before registering.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
