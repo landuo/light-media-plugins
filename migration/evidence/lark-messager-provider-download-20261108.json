@@ -1,0 +1,52 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "583792d5b14c945c725bdf91bb549abdb8d1f18e",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "784a06e5138b0c2a2cb0032f63529698476bff3d905393a1716a0de215f753ee",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with the fixed MoviePilot source. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2565–2650,2789–2806; app/chain/search.py:1276–1279,1543–1547",
+      "target": "internal/app/plugin_original_chat_media.go, plugin_original_chat_media_identity.go, plugin_original_chat_media_download.go, plugin_original_chat_media_view.go and plugin_original_media_resource_search.go",
+      "behavior": "The selected provider stays primary in source search and returned Context. Native reservations use the separately verified local TMDB identity."
+    },
+    {
+      "source": "app/chain/media.py:660–722; app/chain/download.py:821–841,937–956,1001–1028",
+      "target": "internal/app/plugin_original_chat_media_identity.go, plugin_original_chat_media_download.go and search_download.go",
+      "behavior": "Auxiliary TMDB fields supplement the primary MediaInfo. The same primary provider identity survives the mutable resource hook, accepted download and DownloadAdded."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App, exact indexed Lark worker and real SDK observer with owned protocol peers",
+    "environment": "Read-only Alpine 3.22 container with tmpfs and loopback only. Synthetic Douban TLS, TMDB, tracker, Lark and qBittorrent peers. No original or production credentials.",
+    "test": "TestOriginalLarkProviderDownloadLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_provider_download_linux_test.go",
+    "seconds": 2.49,
+    "host_elf_sha256": "5056efdd650c0a3a3c76e2c22b1fb9c85477d3fe20a163724ebb231a0066d437",
+    "observer_elf_sha256": "92322827b33c90ff329695e9670e81e4dc7021d8d1469baf8868eee609919cb3",
+    "runner_sha256": "ea642a63157bbca602b6973a44bbb4f7fbf12965462de6ea9fce24b593057864",
+    "runtime_log_sha256": "4418c55dbe415dea6ad2cd201de15461473afa0c7ff3afbc5dfa6650a70ab4a4",
+    "observations": [
+      "A verified Lark selection requested the exact Douban movie detail once. Its distinct source IMDb ID found an owned TMDB movie with a different title. Actual tracker queries used the selected Douban primary title and never substituted the native title.",
+      "One material request supplied exact metainfo bytes to one qBittorrent Add. The native accepted intent retained TMDB ID 123, the native title, the expected hash and the configured save path. The Lark download notice displayed the primary Douban title.",
+      "The sealed accepted Context and both actual SDK resource.download and download.added observations retained source=douban, media_id and douban_id=771, the Douban title, overview and original IMDb ID, plus TMDB ID 123, raw detail and missing TVDB auxiliary data."
+    ]
+  },
+  "prior_failure": {
+    "observation": "The fixture initially omitted the required configured directory name and stopped before testing any business action. Only the failed new fixture was rerun after correcting its configuration.",
+    "runtime_log_sha256": "4033065451920bef47c588e9b33dddfbb9fa54beda6eade48c8eef8a5066771e"
+  },
+  "adaptations_and_open": [
+    "The native host requires an unambiguous verified TMDB mapping for existing paths, reservations and duplicate protection. The source can still retain a provider-only identity when TMDB augmentation has no result. Earlier sealed native-primary sidecars remain readable.",
+    "This fixture covers positive Douban Add, notice and events. Earlier evidence covers selection and exact AniList subscription identity. Other provider combinations and failed/ambiguous mapping were not rerun here.",
+    "Remaining Lark work includes active manual search settlement, paused best-version admission, known downloader rejection versus unconfirmed work, explicit daemon failure cooldown, post-preview reacquisition and RSS magnet handling."
+  ]
+}

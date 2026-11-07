@@ -132,7 +132,12 @@ completion notice observed history written and the live row removed before
 the final search reply. Two wholly missing seasons used one complete Add
 and subsequently published two distinct local hardlinks. See
 `migration/evidence/lark-messager-paused-completion-multiseason-20261108.json`.
-Continue with alternate-provider-to-Add and the remaining Lark paths.
+A separate native Douban download kept the selected primary title in
+tracker queries and Lark notices, and the exact provider identity in the
+sealed accepted context and both SDK events. Local acquisition used the
+verified TMDB identity. See
+`migration/evidence/lark-messager-provider-download-20261108.json`.
+Continue with active manual search settlement and paused best-version.
 Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome

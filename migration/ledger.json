@@ -16089,7 +16089,8 @@
         "larkmessager.provider_native_selection.20261108",
         "larkmessager.subscribes_paused_rss_replacement.20261108",
         "larkmessager.subscribes_prompt_cooldown.20261108",
-        "larkmessager.paused_completion_whole_multiseason.20261108"
+        "larkmessager.paused_completion_whole_multiseason.20261108",
+        "larkmessager.provider_native_download.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67718,6 +67719,33 @@
         "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.provider_native_download.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderDownloadLinuxAMD64"
+      ],
+      "observations": [
+        "A verified Lark selection requested the exact Douban movie detail once. Its distinct source IMDb ID found an owned TMDB movie with a different title. Actual tracker queries used the selected Douban primary title and never substituted the native title.",
+        "One material request supplied exact metainfo bytes to one qBittorrent Add. The native accepted intent retained TMDB ID 123, the native title, the expected hash and the configured save path. The Lark download notice displayed the primary Douban title.",
+        "The sealed accepted Context and both actual SDK resource.download and download.added observations retained source=douban, media_id and douban_id=771, the Douban title, overview and original IMDb ID, plus TMDB ID 123, raw detail and missing TVDB auxiliary data."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-provider-download-20261108.json": "5b12b6d81402512ab68486be7ce09ff1a4d81a0d159a6ee709cfcdb4e06dc233"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "583792d5b14c945c725bdf91bb549abdb8d1f18e",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "784a06e5138b0c2a2cb0032f63529698476bff3d905393a1716a0de215f753ee",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67791,7 +67819,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "ba988d53041c724cb9c46155a4578aa5556d9517",
+      "host_HEAD": "583792d5b14c945c725bdf91bb549abdb8d1f18e",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67802,12 +67830,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native exact indexed-worker paused completion and two-season whole-pack Add/local hardlinks passed. Host and evidence stay local.",
-      "tests_running": "None. Both distinct native fixtures passed and the isolated Apps stopped.",
-      "latest_detail": "migration/evidence/lark-messager-paused-completion-multiseason-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native positive Douban provider search-to-Add, Lark notice, SDK event identities and sealed Context passed. Host and evidence stay local.",
+      "tests_running": "None. The distinct native Douban download fixture passed and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-provider-download-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with the distinct alternate-provider search-to-Add fixture for sealed primary provider fields and auxiliary TMDB identity. Then review RSS magnets, explicit daemon failure cooldown, post-preview reacquisition, and paused best-version/active completion ordering. Reuse already passed fixtures.",
+      "next_complete_slice": "Continue LarkMessager: settle active manual /subscribes search after its exact native Add and completion descendants, distinguish known no-effect rejection from unconfirmed work, and admit the existing exact paused grant in the quality preview. Keep explicit daemon cooldown, post-preview reacquisition, RSS magnets and provider-without-TMDB difference visible. Reuse previously passed native evidence.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
