@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (nine of 22 in scope accepted)
+## Current resume (ten of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -14,11 +14,16 @@ replays and actual seeded, reload, clone and Chrome evidence were reused.
 The local build registry now includes IYUU. See
 `migration/evidence/iyuuautoseed-acceptance-20261107.json`.
 
-SystemProcess 1.1 is the active implementation. The Go entry passed the
-12 fixed-source form/state/detail/dashboard cases and a real isolated Linux
-App run with an owned process. Native browser interaction and the standard
-amd64 ZIP and notice inventory remain open. See
-`migration/evidence/systemprocess-worker-linux-20261107.json`.
+SystemProcess 1.1 is accepted. The standard Linux amd64 ZIP installed on
+a native isolated App. Chrome saved enable and a 9-second refresh, showed the
+same owned PID in detail and dashboard, and observed a scheduled refresh.
+The App verified persistence and the browser's source-shaped responses.
+The 12 fixed-source cases and earlier Linux ARM64 lifecycle run were reused.
+The local build registry includes SystemProcess. See
+`migration/evidence/systemprocess-acceptance-20261107.json`.
+
+Next: MediaServerRefresh 1.3.3, starting from the installed source and the
+MoviePilot media-server and TransferComplete call chain.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

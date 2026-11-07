@@ -10856,21 +10856,25 @@
       ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "implementing",
+      "status": "verified",
       "evidence_ids": [
-        "systemprocess.owned_linux_app.20261107"
+        "systemprocess.owned_linux_app.20261107",
+        "systemprocess.native_amd64_browser.20261107"
       ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby",
+        "evidence_ids": [
+          "systemprocess.owned_linux_app.20261107",
+          "systemprocess.native_amd64_browser.20261107"
+        ]
       },
       "original_instance_id": "SystemProcess",
       "family": "SystemProcess",
       "source_version": "1.1",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
+      "source_metadata_only": false,
+      "discovery_note": "Fixed installed source and host page/dashboard call paths verified for this instance. Configuration/data at the original live service were not touched.",
       "standalone_worker_linux_increment": {
         "status": "partial_verified",
         "evidence": {
@@ -10880,10 +10884,18 @@
         "worker_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
         "source_replay": "passed (12 cases)",
         "actual_linux_app": "passed",
-        "whole_plugin_accepted": false,
-        "open": [
-          "Verify one browser config/detail/dashboard path, then build and verify the standard amd64 ZIP and package license inventory. No prior cases need repetition."
-        ]
+        "whole_plugin_accepted": true,
+        "open": []
+      },
+      "accepted_native_browser_package": {
+        "status": "verified",
+        "evidence": {
+          "path": "migration/evidence/systemprocess-acceptance-20261107.json",
+          "sha256": "ef278a1a7eb44ce688913cb709a07b306d409ac704544d9a11d21d0d9afa4b2b"
+        },
+        "archive_sha256": "7d5cdc06c4a10015af2a9589aba76585ba5ef3c0d00986d7cf96a00cfefc533a",
+        "worker_sha256": "e1ec8a55b71fc14c1fb8867d34068f0f36f350ba40dda26be1cf55612b51bd4d",
+        "host_test_commit": "9b8e636d63df8721e829706390916ce2a6658e9f"
       }
     },
     {
@@ -66132,6 +66144,39 @@
         "evidence/systemprocess-worker-linux-20261107.json": "b52a93cc7a9de8418a81ce2b293c4f91a1bf78cfe625caeb0dab8aa93a9bb0b5"
       },
       "reviewer": "/root/emby source audit and /root/jellyfin actual Linux App"
+    },
+    {
+      "id": "systemprocess.native_amd64_browser.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SystemProcess"
+      ],
+      "commands": [
+        "TestSystemProcessLinuxAMD64BrowserPackage on isolated native Linux amd64 with actual standard ZIP and Google Chrome"
+      ],
+      "inputs": "Exact installed SystemProcess 1.1 source, canonical ZIP/index, unprivileged owned process and fresh App.",
+      "observations": "Exact installed ZIP and initially disabled state verified. Chrome saved enable and refresh 9, rendered the owned PID in both tables, and requested a scheduled refresh. App read back saved values and browser table payloads.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "source_sha256": "d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac",
+        "host_test_commit": "9b8e636d63df8721e829706390916ce2a6658e9f",
+        "worker_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
+        "archive_sha256": "7d5cdc06c4a10015af2a9589aba76585ba5ef3c0d00986d7cf96a00cfefc533a",
+        "target_files": {
+          "plugins/systemprocess/plugin.go": "c199aba49ddcb05520dc62d9d0f0d6bd93d36b34d194a69648f19850868e1d75",
+          "plugins/systemprocess/sample.go": "10e316d77d6de61abe2e5a3e61de8496c27ba6b6424047a28ebf791f51e7f6b9",
+          "plugins/systemprocess/table.go": "4d56d5c1054440b1bffe4faad708347c8410fbf7c8577a0056ee3a33b4ec26bf",
+          "plugins/systemprocess/form.json": "9c0384b7d4b398649ca2776a224624f4e4e6cacb2538c535ea4592cc6aeb75c7",
+          "plugins/systemprocess/ORIGIN.json": "4ea42519813d58e7745eef48389db408b884253f520ed0dfe407bf0dbc0ce203",
+          "cmd/system-process/main.go": "8a37b95faa12cc374206611591788d902cedc0e55570e7646ed51cf9c680bd13",
+          "build-plugins.json": "6587e285a94d421706f9d650a954c8ed884476cfe24bee27fb1ddfe78682d98f"
+        }
+      },
+      "artifacts": {
+        "evidence/systemprocess-acceptance-20261107.json": "ef278a1a7eb44ce688913cb709a07b306d409ac704544d9a11d21d0d9afa4b2b"
+      },
+      "reviewer": "/root/emby independent source and Vue review, /root native browser and ZIP run"
     }
   ],
   "scope": {
@@ -66178,37 +66223,37 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 9,
+      "functional_verified_instances": 10,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 8,
-      "functional_verified_count_scope": "Nine of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 9,
+      "functional_verified_count_scope": "Ten of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "9816ad9b609a57942c6eaa900cd5f7fb4e84aab3",
+      "host_HEAD": "9b8e636d63df8721e829706390916ce2a6658e9f",
       "SDK_source_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
       "SDK_current_files": 106,
       "SDK_current_origin_sha256": "ca37a259ece8a7213cc35a01d35371b0cd2e3be6e38bc9177072204d74a14eb5",
-      "SDK_current_status": "106 files; two exact paired source site DTOs changed. Current IYUU executable and scoped Linux empty-pass lifecycle observed. No full IYUU acceptance.",
+      "SDK_current_status": "106 files from the exact existing host SDK export. IYUU and SystemProcess acceptance now complete with no SDK changes.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-      "remote_read_date": "2026-11-07 fresh read-only ls-remote for both repositories. No push.",
+      "remote_read_date": "2026-11-07 fresh read-only ls-remote confirmed both main refs unchanged. No push.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Nine of 22 current-scope instances accepted. IYUU native amd64 package gate closed and local build registered. SystemProcess 1.1 Go implementation and owned Linux ARM64 process table, config and dashboard passed. Browser and standard package gates remain. No push or deployment.",
-      "tests_running": "None. Native IYUU package test passed and cleanup verified. New SystemProcess 12-case source replay and one real owned Linux App case passed. Previously accepted suites were not rerun.",
-      "latest_detail": "features[plugin.SystemProcess].standalone_worker_linux_increment",
+      "delivery": "Ten of 22 in scope accepted. SystemProcess 1.1 standard amd64 ZIP, real Linux App, native Chrome detail/config/dashboard, and notice inventory passed. Registry updated locally. No push or deployment.",
+      "tests_running": "None. New combined native ZIP and Chrome SystemProcess run passed. The first unsaved browser form input error was corrected in the same installed App. Earlier passing cases were reused.",
+      "latest_detail": "features[plugin.SystemProcess].accepted_native_browser_package",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Finish SystemProcess 1.1 with one browser configuration/detail/dashboard flow and native amd64 ZIP package/notice verification. Reuse the 12 fixed-source cases and passed actual Linux process table and dashboard evidence. IYUU 2.22 is accepted. Keep MergeMessageNotify deferred.",
+      "next_complete_slice": "Start MediaServerRefresh 1.3.3 from the installed source and its host media-server/TransferComplete call chain. Keep MergeMessageNotify deferred and reuse the accepted SystemProcess evidence without rerunning.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66229,7 +66274,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Finish SystemProcess 1.1 with one browser configuration/detail/dashboard flow and native amd64 ZIP package/notice verification. Reuse the 12 fixed-source cases and passed actual Linux process table and dashboard evidence. IYUU 2.22 is accepted. Keep MergeMessageNotify deferred.",
+    "next_complete_slice": "Start MediaServerRefresh 1.3.3 from the installed source and its host media-server/TransferComplete call chain. Keep MergeMessageNotify deferred and reuse the accepted SystemProcess evidence without rerunning.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
