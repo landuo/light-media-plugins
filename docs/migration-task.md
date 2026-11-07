@@ -211,6 +211,10 @@ empty. Another native run confirms one provider-only whole Add after an
 exact-source episode lookup still returned no seasons. It left the completed
 file for review and created no invented slot. See
 `migration/evidence/lark-messager-native-download-boundaries-20261108.json`.
+A separate Linux run passed explicit Bangumi `/redo` from a failed Lark
+history card. The job kept the provider identity, published the actual
+S01E01 hardlink and made no TMDB conversion request. See
+`migration/evidence/lark-messager-provider-redo-20261108.json`.
 A native Lark run confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. See

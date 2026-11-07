@@ -1,0 +1,46 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and installed indexed Lark worker. Lark, Bangumi and TMDB protocol peers used isolated fixtures.",
+  "source": [
+    "app/chain/transfer.py:3714,3748–3761,3820–3866",
+    "app/utils/media.py:4–44",
+    "larkmessager/__init__.py:768–779,1805–1922"
+  ],
+  "target": [
+    "light-media internal/app/plugin_original_chat_transfer_redo.go",
+    "light-media internal/app/plugin_original_transfer_retry.go",
+    "light-media internal/app/{organize_manual,import_plan,import_provider}.go"
+  ],
+  "scenario": "TestOriginalLarkProviderRedoLinuxAMD64",
+  "status": "passed",
+  "seconds": 1.53,
+  "observations": [
+    "An owned file initially failed automatic identification. The actual installed Lark worker returned a failure card with its numeric history alias.",
+    "The signed admission boundary used the configured webhook token. The ordinary text event sent /redo for that exact alias with bangumi:777 and the TV type. One exact Bangumi detail call occurred and the TMDB request count stayed unchanged.",
+    "The new job succeeded against the same stable history row, retained tv:bangumi:777 with TMDB ID zero, recorded S01E01, and published a physical hardlink at the authorized local library. The source remained. No extra reply card was observed before completion."
+  ],
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "4b7871c28ab67e4d8ed427c888bde0d54615501a",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+    "fixture_sha256": "09e2b9e01af2643749e471f00046dd4aa4c4c7d38d04fefd37ed4d15b80633ea"
+  },
+  "run_artifacts": {
+    "host_elf_sha256": "b5a9eab45bddc62e8cf13a9c0a6d58f446d44d4b13ba17ead7ec60bc0617d5f1",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "525e2f889dac3e6dac7c1d90c5679fb950fdca5007c6b28697aa6c551cc88e9f",
+    "runtime_log_sha256": "9a5b920f8635ed568fbb6e87d6ed42839b0d62784b5bbe3875aac592dcce7f04",
+    "setup_index_name_log_sha256": "00af32fed3aa95846847d204644ab43ebbc8ad9ed20b58136505cb4491138925",
+    "setup_worker_name_log_sha256": "3f013e09de9d2d179f43342afcdd28f8ae91c0a1750ae65c887e59e20a54e10b"
+  },
+  "adaptations_and_open": [
+    "Only an already verified history retry can use a source-native manual import identity. The file path and source snapshot, authorization, episode membership and history generation are still verified by the native import chain.",
+    "Two setup invocations failed before installing the worker because the package inputs did not use the fixture's local filenames. After correcting both names and verifying index size/hash, the business scenario ran once and passed.",
+    "The App logged a module-declaration read failure during shutdown after the successful file publication and job completion. This scenario does not certify all stop or uninstall behavior.",
+    "Bangumi was the exercised source. AniList and Douban share the import admission, but their explicit redo runs were not repeated. Existing TMDB redo and retry evidence remains bound to its earlier test."
+  ]
+}

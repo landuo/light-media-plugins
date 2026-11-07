@@ -3778,12 +3778,12 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:877",
+      "source_location": "larkmessager/__init__.py:877-949",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase init_plugin / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed MoviePilot app/core/plugin.py:121,641 initializes or reloads the current plugin instance.",
+        "Read enabled, application credentials, recipient and legacy administrator fields, verification settings and notice filter. Missing required credentials disable messaging.",
+        "Create a client and optional crypto; resolve ordinary recipient and command-allowlist identifiers. AI-only system notification synchronization is excluded.",
+        "Target: plugins/larkmessager/worker.go and plugin.go; native runtime, encrypted administrator and Chrome settings evidence."
       ]
     },
     {
@@ -3791,12 +3791,11 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:963",
+      "source_location": "larkmessager/__init__.py:963-1204",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_form / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed frontend PluginConfigDialog.vue:95 loads app/api/endpoints/plugin.py:649.",
+        "Return Vuetify schema and defaults; save the configured instance through the ordinary plugin manager.",
+        "Target: plugins/larkmessager/form.json and worker.go; native Chrome settings and detail evidence."
       ]
     },
     {
@@ -3804,12 +3803,11 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:1209",
+      "source_location": "larkmessager/__init__.py:1209-1620",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_page / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed frontend PluginDataDialog.vue:95 loads app/api/endpoints/plugin.py:681.",
+        "Render configuration state, detail actions, and per-instance test/group results with their one-read display behavior.",
+        "Target: plugins/larkmessager/page-templates.json, endpoints.go and worker.go; native Chrome and clone evidence."
       ]
     },
     {
@@ -3817,12 +3815,11 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:1625",
+      "source_location": "larkmessager/__init__.py:1625-1659",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_api / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed MoviePilot app/api/endpoints/plugin.py:114-130 registers routes from app/core/plugin.py:873 under the plugin instance prefix.",
+        "Register anonymous GET/POST webhook and bearer GET test, status and fetch_chats; preserve route registration on reload.",
+        "Target: plugins/larkmessager/worker.go and light-media native plugin HTTP bridge."
       ]
     },
     {
@@ -3830,12 +3827,11 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:951",
+      "source_location": "larkmessager/__init__.py:951-952",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_state / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed MoviePilot PluginManager and module discovery read the loaded plugin state.",
+        "Report enabled state after normal initialization and required credential checks.",
+        "Target: plugins/larkmessager/plugin.go and worker.go; native install, status and disabled group lookup evidence."
       ]
     },
     {
@@ -3843,12 +3839,154 @@
       "feature_ids": [
         "plugin.LarkMessager"
       ],
-      "source_location": "larkmessager/__init__.py:954",
+      "source_location": "larkmessager/__init__.py:954-958",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase stop_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed MoviePilot reload and uninstall entrypoints app/api/endpoints/plugin.py:563,993 invoke platform instance lifecycle.",
+        "Set stop flag and clear the instance client/crypto. Route and code ownership are platform responsibilities.",
+        "Target: plugins/larkmessager/worker.go and light-media instance lifecycle; native clone and reload evidence. Dedicated Lark uninstall evidence is open."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.get_module",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:70-96",
+      "chain": [
+        "Fixed MoviePilot app/chain/__init__.py:470 consumes active plugin module registrations.",
+        "Only initialized and enabled instances export the ordinary parser, notice, media, torrent, edit and processing hooks. Agent-only direct/stream/finalize/inbound media methods are excluded.",
+        "Target: plugins/larkmessager/worker.go, dispatch.go and modules.go; installed native worker evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.webhook",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:1664-1798",
+      "chain": [
+        "Anonymous webhook GET/POST -> Lark challenge, envelope decoding, signature/token checks and event discrimination; crypto.py implements signature and AES.",
+        "Message ingress and card actions use 1805-1922 and 2022-2122; forwarding at 768-779 enters the fixed MessageChain. Read/reaction/recall/bot-entry events are silent.",
+        "Target: plugins/larkmessager/plugin.go, receive.go and crypto.go; light-media internal/app/plugin_original_lark_endpoint.go and plugin_original_host_message_inbound.go. Native signed cases and focused bare test_ok failure evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.test_endpoint",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:2190-2372",
+      "chain": [
+        "Bearer GET test -> verify configured app -> resolve explicit/default recipients -> send the source interactive connection test and persist a transient test result.",
+        "Bare test_ok replies to the original message at 2096-2107. The host [PLUGIN] event uses the separate MessageAction handler.",
+        "Target: plugins/larkmessager/test_endpoint.go, test-card.json and plugin.go; native Chrome and message-path evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.status_endpoint",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:2376-2388",
+      "chain": [
+        "Bearer GET status clears the saved transient results and exposes enabled/client/crypto state and masked configuration.",
+        "Target: plugins/larkmessager/endpoints.go; native Chrome settings and detail evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.fetch_chats_endpoint",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:2393-2455",
+      "chain": [
+        "Bearer GET fetch_chats uses a fresh Lark client even while the instance is disabled.",
+        "Read one source-shaped group list and persist a one-read result. Provider freeform errors are redacted by the Go adapter while numeric codes are retained.",
+        "Target: plugins/larkmessager/endpoints.go and transport.go; native disabled and active group lookup evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.message_action",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:103-142",
+      "chain": [
+        "Fixed MoviePilot app/chain/message.py:761-778 converts a [PLUGIN] callback to MessageAction scoped to its plugin identity.",
+        "The current instance handles test_ok and replies to the original provider message.",
+        "Target: plugins/larkmessager/worker.go and modules.go; real indexed native worker evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.message_parser",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:148-247",
+      "chain": [
+        "Forwarded Lark payload reaches fixed app/chain/message.py:111,164,280 through the active Lark parser.",
+        "Preserve source, sender, chat, callback and ordinary user-message semantics. Slash commands are subject to the plugin administrator allowlist at 856-872.",
+        "Target: plugins/larkmessager/notification.go, plugin.go and receive.go; light-media internal/app/plugin_original_host_message_inbound.go."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.ordinary_notification",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:252-364",
+      "chain": [
+        "Fixed MoviePilot app/chain/__init__.py:1631 -> installed post_message; filter configured notice types and resolve reply/user/chat/default targets.",
+        "Build a normal card or source-ordered image/file/voice operations; client.py:218-429 supplies provider upload and message transport.",
+        "Target: plugins/larkmessager/plugin.go, client.go, attachment.go and transport.go. Native ordinary notice and rooted attachment evidence. Known rejection fallback differs and is still open."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.ordinary_interactive_modules",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:369-498",
+      "chain": [
+        "Fixed MoviePilot app/chain/__init__.py:1863,1883,1926 invokes installed media-card, torrent-card and edit modules.",
+        "Resolve notification target, paginate/render media and torrent lists, issue action callbacks and edit the provider's original card.",
+        "Target: plugins/larkmessager/modules.go, card.go and dispatch.go; native media/resource pages and subscription edits evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.processing_reaction",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:609-665",
+      "chain": [
+        "Fixed MoviePilot app/chain/message.py:623-676 invokes the ordinary processing hooks around inbound messages.",
+        "Add GLANCE for ordinary text, preserve reaction identity and remove it after handling. Skip callbacks. Installed source client.py:494-526 logs provider failures and returns empty/false.",
+        "Target: plugins/larkmessager/modules.go and client.go; native encrypted administrator command evidence."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.ordinary_host_interaction",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:768-779",
+      "chain": [
+        "Fixed MoviePilot app/chain/message.py:280-456,678-792 routes ordinary commands, text selections and callbacks.",
+        "Host SiteChain, SubscribeChain and DownloadChain serve site and subscription cards and media search, selection, manual/automatic Add, post-Add events and transfer completion.",
+        "Target: light-media internal/app/plugin_original_host_message_inbound.go, plugin_original_chat_media*.go and provider download/subscription/import paths; native evidence linked to this feature. Core preset command consumers are separate from plugin command forwarding."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.ordinary_transfer_retry",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "larkmessager/__init__.py:2022-2122",
+      "chain": [
+        "Fixed MoviePilot app/chain/message.py:812-861,972-1021 retries transfer history; app/command.py:93-97 separately binds ordinary /redo.",
+        "Fixed app/chain/transfer.py:3698-3761,3795-3866 re-recognizes current path or exact explicit provider identity, obtains images and performs real transfer.",
+        "Target: light-media internal/app/plugin_original_chat_transfer.go, plugin_original_chat_transfer_redo.go and plugin_original_transfer_retry.go. TMDB path has native evidence; current provider-only transfer retry requires closure."
       ]
     },
     {
@@ -16038,7 +16176,19 @@
         "plugin.LarkMessager.get_page",
         "plugin.LarkMessager.get_api",
         "plugin.LarkMessager.get_state",
-        "plugin.LarkMessager.stop_service"
+        "plugin.LarkMessager.stop_service",
+        "plugin.LarkMessager.get_module",
+        "plugin.LarkMessager.webhook",
+        "plugin.LarkMessager.test_endpoint",
+        "plugin.LarkMessager.status_endpoint",
+        "plugin.LarkMessager.fetch_chats_endpoint",
+        "plugin.LarkMessager.message_action",
+        "plugin.LarkMessager.message_parser",
+        "plugin.LarkMessager.ordinary_notification",
+        "plugin.LarkMessager.ordinary_interactive_modules",
+        "plugin.LarkMessager.processing_reaction",
+        "plugin.LarkMessager.ordinary_host_interaction",
+        "plugin.LarkMessager.ordinary_transfer_retry"
       ],
       "dependencies": [],
       "owner": "/root",
@@ -16096,7 +16246,24 @@
         "larkmessager.rss_magnet_native_add_import.20261108",
         "larkmessager.rss_batch_fallback_safe_detail.20261108",
         "larkmessager.encrypted_admin_isolated_fetch_chats.20261108",
-        "larkmessager.native_clone_rooted_attachments.20261108"
+        "larkmessager.native_clone_rooted_attachments.20261108",
+        "larkmessager.native_browser_settings_detail.20261108",
+        "larkmessager.native_provider_only_search.20261108",
+        "larkmessager.native_download_failure_outcomes.20261108",
+        "larkmessager.native_rss_single_season_magnet.20261108",
+        "larkmessager.native_chat_whole_magnets.20261108",
+        "larkmessager.native_rss_episode_quality_magnet.20261108",
+        "larkmessager.native_rss_full_quality_magnet.20261108",
+        "larkmessager.native_chat_single_episode_magnet.20261108",
+        "larkmessager.native_provider_subscription.20261108",
+        "larkmessager.native_provider_download.20261108",
+        "larkmessager.native_provider_rss_download.20261108",
+        "larkmessager.native_provider_quality_rss.20261108",
+        "larkmessager.native_provider_scrape_sidecars.20261108",
+        "larkmessager.native_provider_browser_restart.20261108",
+        "larkmessager.native_unscoped.20261108",
+        "larkmessager.native_legacy_material.20261108",
+        "larkmessager.native_provider_redo.20261108"
       ],
       "review": {
         "status": "pending",
@@ -68351,6 +68518,33 @@
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
         "fixture_sha256": "528ebfaa9276946525d167f72c41f5fc0248c740f5046c2a747956be4f060415"
       }
+    },
+    {
+      "id": "larkmessager.native_provider_redo.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderRedoLinuxAMD64"
+      ],
+      "observations": [
+        "An owned file initially failed automatic identification. The actual installed Lark worker returned a failure card with its numeric history alias.",
+        "The signed admission boundary used the configured webhook token. The ordinary text event sent /redo for that exact alias with bangumi:777 and the TV type. One exact Bangumi detail call occurred and the TMDB request count stayed unchanged.",
+        "The new job succeeded against the same stable history row, retained tv:bangumi:777 with TMDB ID zero, recorded S01E01, and published a physical hardlink at the authorized local library. The source remained. No extra reply card was observed before completion."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-provider-redo-20261108.json": "3329d35ed0909bd1bc6bc77f483872f3027be7137578d4a872affac1cf5fbd62"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "4b7871c28ab67e4d8ed427c888bde0d54615501a",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "09e2b9e01af2643749e471f00046dd4aa4c4c7d38d04fefd37ed4d15b80633ea"
+      }
     }
   ],
   "scope": {
@@ -68424,7 +68618,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "3a215e0885094569f53b03b18131ab139b9ced37",
+      "host_HEAD": "4b7871c28ab67e4d8ed427c888bde0d54615501a",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68435,12 +68629,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native Lark no-season manual whole Add and legacy tracker material recovery/callback passed. Code and evidence remain local.",
-      "tests_running": "None. Only the two new native Linux scenarios ran, both passing on the first runtime attempt.",
-      "latest_detail": "migration/evidence/lark-messager-native-download-boundaries-20261108.json",
+      "delivery": "17/22 instances accepted. The indexed Lark package and isolated Linux App passed the native Bangumi /redo path in addition to the recorded download boundaries. Code and evidence remain local.",
+      "tests_running": "None. The provider redo scenario ran once after two package input naming corrections. Previous passing paths were not repeated.",
+      "latest_detail": "migration/evidence/lark-messager-provider-redo-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host 3a215e08. Reuse accepted manual, RSS, full BestVersion, sidecar, Chrome and new boundary cases. Close remaining installed Lark behavior using the authoritative ledger and independent audit, including per-episode provider replacement, source detail actions, and recovery or explicit review when authoritative episodes become available. Avoid counting generic host expansion as Lark acceptance without the pinned call chain. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager at host 4b7871c2 and worker 319ca00. Reuse the 36 linked evidence rows. Close ordinary Feishu API rejection handling and audit the fixed command table for /downloading and /transfer. Keep generic host commands, per-episode provider replacement and unscoped completion recovery explicitly open pending source-call-chain review. Standalone Explore detail actions are separate from Lark media list cards. Register only after agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
