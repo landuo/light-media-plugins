@@ -46,8 +46,13 @@ join, send and logout. The first driver explicitly set an empty image and
 was corrected to omit that field with the same worker and ZIP. Mako named
 blocks have source evidence for page arguments and generated defaults. See
 `migration/evidence/mergemessagenotify-matrix-named-blocks-20261107.json`.
-Additional Apprise schemes and Mako behavior, browser, clone and final
-package acceptance remain open.
+PushPlus, Feishu, DingTalk, PagerDuty and Twist bring the Apprise count to
+40 of 183 schemes with Go implementations. Mako named blocks now cover
+reserved names, module bindings and the explicit `pageargs` collision.
+The 59 new source cases and the Linux build are recorded in
+`migration/evidence/mergemessagenotify-cn-pagerduty-twist-mako-edges-20261107.json`.
+The other 143 schemes, shared timezone parsing, further Mako behavior,
+browser, clone and final package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
