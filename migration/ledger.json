@@ -16042,22 +16042,59 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "plugins/larkmessager/LICENSE-JITER.txt",
+        "plugins/larkmessager/LICENSE-PYDANTIC.txt",
+        "plugins/larkmessager/LICENSE-PYTHON.txt",
+        "plugins/larkmessager/ORIGIN.json",
+        "plugins/larkmessager/attachment.go",
+        "plugins/larkmessager/card.go",
+        "plugins/larkmessager/client.go",
+        "plugins/larkmessager/crypto.go",
+        "plugins/larkmessager/dispatch.go",
+        "plugins/larkmessager/endpoints.go",
+        "plugins/larkmessager/form.json",
+        "plugins/larkmessager/mime-registry.json",
+        "plugins/larkmessager/mime.go",
+        "plugins/larkmessager/model_integer.go",
+        "plugins/larkmessager/modules.go",
+        "plugins/larkmessager/notification.go",
+        "plugins/larkmessager/page-templates.json",
+        "plugins/larkmessager/plugin.go",
+        "plugins/larkmessager/python_helpers.go",
+        "plugins/larkmessager/python_printable15.go",
+        "plugins/larkmessager/python_value.go",
+        "plugins/larkmessager/receive.go",
+        "plugins/larkmessager/source_error.go",
+        "plugins/larkmessager/test-card.json",
+        "plugins/larkmessager/test_endpoint.go",
+        "plugins/larkmessager/transport.go",
+        "plugins/larkmessager/types.go",
+        "plugins/larkmessager/worker.go",
+        "cmd/lark-messager/main.go",
+        "plugins/larkmessager/webhook_test.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "implementing",
+      "evidence_ids": [
+        "larkmessager.native_amd64_message_path.20261108",
+        "larkmessager.test_card_webhook_failure.20261108"
+      ],
       "review": {
         "status": "pending",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby (source and candidate, acceptance still open)",
+        "evidence_ids": [
+          "larkmessager.native_amd64_message_path.20261108",
+          "larkmessager.test_card_webhook_failure.20261108"
+        ]
       },
       "original_instance_id": "LarkMessager",
       "family": "LarkMessager",
       "source_version": "0.9.1",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Ordinary SDK worker and paired host admission run in a real App. Remaining standard host interactions and distinct runtime checks are listed in migration/evidence/lark-messager-runtime-20261108.json."
     },
     {
       "id": "plugin.CleanInvalidSeed",
@@ -67340,6 +67377,57 @@
           "internal/sdk/worker.go": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd"
         }
       }
+    },
+    {
+      "id": "larkmessager.native_amd64_message_path.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestLarkMessagerInstalledLinuxAMD64MessagePath"
+      ],
+      "observations": [
+        "An isolated native App installed the indexed ZIP, served the native form, saved synthetic configuration and rejected an unauthenticated test call.",
+        "The loopback peer received the tenant token request and an interactive test card for the configured chat. The page showed the resulting message ID once.",
+        "The wrong token returned 403. The anonymous signed-route boundary accepted a source-exempt card event, ran the real parser and plugin MessageAction, and sent the reply to the original message ID.",
+        "The started host used its ordinary notification path and the isolated provider received the title at the configured chat."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-runtime-20261108.json": "bde0ae9a592ff1fac6b3ad11d88fcf613b903cbe354d08acf235415c75d2ee62"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "d9f6a1078706b03dc97247450a8084a8c67f07dbfccb675235fc0e1b91b18372",
+        "worker_commit": "d4f3e8256dc19e74b8cbf6015b87b27d0064a81d",
+        "host_commit": "7fd8cdff381bbf2b7794914e5ceba4b10991a38b",
+        "fixture_sha256": "b14a92082f2a370b56bb8e5d41919d69cbca64a76d3fa1897424956325de0df0"
+      }
+    },
+    {
+      "id": "larkmessager.test_card_webhook_failure.20261108",
+      "kind": "synthetic",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "go test -mod=readonly ./plugins/larkmessager -run '^TestConnectionCardWebhookAcknowledgesFailedReply$' -count=1"
+      ],
+      "observations": [
+        "The real worker HTTP method returned success after one failed direct reply to the original test-card message. A generic error was logged and no second outbound write occurred.",
+        "Without a client, bare test_ok fell through to ordinary forwarding. A forwarding error was logged without changing the webhook acknowledgement."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-runtime-20261108.json": "bde0ae9a592ff1fac6b3ad11d88fcf613b903cbe354d08acf235415c75d2ee62"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "d9f6a1078706b03dc97247450a8084a8c67f07dbfccb675235fc0e1b91b18372",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "d1996d163c28e0fdb9dd7112d87e3404557f841355c4bd450a7cc63ab38c0e8d"
+      }
     }
   ],
   "scope": {
@@ -67410,10 +67498,10 @@
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "4950be37d694b961024b27d3c474db7dfd150b4f",
+      "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "eaf55bacea1c31de4294579dced6770e5d1e933f",
+      "host_HEAD": "7fd8cdff381bbf2b7794914e5ceba4b10991a38b",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67424,12 +67512,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seventeen of 22 accepted. ScrapeFileClean Go worker, Linux package, and paired host are local. No push or production deployment.",
-      "tests_running": "None. ScrapeFileClean Linux delayed cleanup, stop, Chrome and distinct safety/asset cases passed.",
-      "latest_detail": "migration/evidence/scrape-file-clean-runtime-20261108.json",
+      "delivery": "Seventeen of 22 accepted. LarkMessager Go worker and paired host ingress are committed locally and passed the isolated native ordinary message path. No remote push or production deployment.",
+      "tests_running": "None. Native Lark ordinary message path and one distinct test-card failure check completed. Full Lark acceptance remains open.",
+      "latest_detail": "migration/evidence/lark-messager-runtime-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start LarkMessager 0.9.1 from the installed source. Preserve all accepted evidence. Use isolated provider endpoints and do not send production messages.",
+      "next_complete_slice": "Continue only LarkMessager. Connect the ordinary site, subscription, media and transfer-retry interactions to existing native host paths. Reuse the accepted Lark ordinary message evidence and verify only the new behavior and outstanding checks.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -67441,7 +67529,8 @@
       "brushflowlanduo_source_revision": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
-      "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f"
+      "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
+      "latest_LarkMessager_product_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

@@ -84,7 +84,15 @@ root loss in a distinct Linux scenario. The original source-only download
 file event and host protections are recorded in
 `migration/evidence/scrape-file-clean-runtime-20261108.json`.
 
-Next: LarkMessager 0.9.1, starting with the installed source identity.
+LarkMessager 0.9.1 is implementing. Its indexed Linux amd64 worker ran
+in an isolated native App. The form, authenticated test card, one-time
+result page, bad webhook token, ordinary plugin callback and host notice
+passed. Independent review found the bare test-card reply failure path.
+A distinct Go test verified the source acknowledgement behavior after
+the correction. Continue this same plugin with native site, subscription,
+media and transfer retry interactions. The exact package, open checks
+and source mappings are in
+`migration/evidence/lark-messager-runtime-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
