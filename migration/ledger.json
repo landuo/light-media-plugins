@@ -65263,9 +65263,9 @@
       "delivery": "Seven accepted instances. Current local AutoSignIn adds TIFF6 split headers, restarts, tiles, separate planes and first-tile frames. Isolated current-codec ZIP ran successfully through the combined package lifecycle with dedicated login history. Registry, private-state import, remote and production delivery remain separate.",
       "tests_running": "None. Seventeen new TIFF6 comparisons and the scoped isolated package gate finished. Task-owned Linux binaries and temporary test runtimes removed.",
       "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
-      "local_codec_base": "9f11b10ba91da49eaea7b35158be38a1bedff701; the ledger commit also contains the two new first-tile-frame cases",
+      "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Check the concrete single-strile separate JPEG restart-tag difference, finish AutoSignIn against the single source ledger and reuse applicable package/Main/browser evidence. Once accepted, refresh the installed MergeMessageNotify 1.20.3 source snapshot."
+      "next_complete_slice": "Final AutoSignIn closure review and affected package-worker verification after the TIFF6 single-strile restart fix, then refresh the installed MergeMessageNotify 1.20.3 source."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66798,7 +66798,7 @@
             "remaining": "Complete the confirmed TIFF6 source layouts in tiff_old_jpeg.remaining, then one isolated AutoSignIn package acceptance with the existing host and browser evidence. Reuse the source-confirmed AVIF scaling results."
           },
           "current_continuation_increment": {
-            "status": "Seventeen new synthetic TIFF6 cases match the fixed source, and one owned local-probe ZIP has actual package lifecycle evidence. AutoSignIn remains implementing; seven of 23 instances accepted.",
+            "status": "Nineteen new TIFF6 examples agree with the original across the current layout increments. Exact install evidence for the previous ZIP remains bound to its code. AutoSignIn is implementing; seven of 23 instances accepted.",
             "source": {
               "plugin": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262",
               "Pillow": "12.2.0 Image.open/load before _tohash",
@@ -66861,7 +66861,7 @@
               "plugins/autosignin/imagehash/jpegport/raster.go",
               "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
             ],
-            "remaining": "Check separate old JPEG planes with tag515 in the single-strile path and any other concrete valid default-image mismatch. This ZIP is from before the two first-tile-only cases. Reuse the proven host lifecycle and browser routes, rebuilding only the final candidate when ready. Original private state and remote delivery remain separate and were not performed.",
+            "remaining": "Independent whole-plugin closure review and scoped install/hash verification for the final Linux artifact. No repeated Main, browser or cold/uninstall lifecycle runs. Original private state and remote delivery are separate.",
             "package_gate": {
               "artifact": {
                 "source_commit": "9f11b10ba91da49eaea7b35158be38a1bedff701",
@@ -66956,6 +66956,22 @@
                 "TIFF6-YCbCr420-grid-header-in-first-tile"
               ],
               "scope": "Two new Go cases matched mode, size, pixels, gray and hash. Added after the isolated package gate; the ZIP above is bound to the preceding codec revision."
+            },
+            "planar_restart_tag": {
+              "source": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262; Pillow 12.2.0/libtiff 4.7.1 tif_ojpeg.c OJPEGVSetField, OJPEGReadHeaderInfo, OJPEGReadHeaderInfoSecStreamDri. The separate YCbCr reader seeds the JPEG DRI from TIFF tag 515, and inline DRI overrides it.",
+              "target": "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go:222",
+              "kind": "Fixed source and Go differential on isolated synthetic TIFF6 inputs. Pixel bytes, grayscale, shape and Tjupt hash match.",
+              "cases": [
+                "TIFF6-YCbCr111-separate-interchange-single-strip-restart-tag",
+                "TIFF6-YCbCr111-separate-interchange-single-strip-inline-overrides-tag"
+              ],
+              "evidence": {
+                "expected.json": "e853449572ffb909dbd67bf827e26877174c62e15d84de10be615728d3799a59",
+                "command.json": "dcc96b3840dfbbd465a72656de8d8f93aff9316b69d095aadd1acc3bc4a3ba8f",
+                "target.stdout": "01f1be9400fba826743cfd97f873543828c75afb7f110886f3e2bfb5f08a3777"
+              },
+              "evidence_directory": "work/tiff6-planar-restart-tag",
+              "command": "go test ./plugins/autosignin/imagehash -run ^TestSourceExtraImageCodecs/TIFF6-YCbCr111-separate-interchange-single-strip-.*-tag$ -v -count=1"
             }
           }
         }

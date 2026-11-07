@@ -232,7 +232,7 @@ func (d *decoder) decodeOldJPEGPlanarYCbCr(l ycbcrLayout) (image.Image, error) {
 		}
 		stream.add(int64(offset), int64(size), false)
 	}
-	var header oldJPEGPlanarHeader
+	header := oldJPEGPlanarHeader{restart: d.oldJPEGRestart()}
 	if l.height < d.config.Height {
 		interval := ((width + 7) / 8) * (l.height / 8)
 		if interval > 65535 {

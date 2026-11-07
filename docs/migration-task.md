@@ -43,14 +43,14 @@ dimensions for still images, default tracks, and grid tiles. TIFF compression
 interchange headers or scattered tables. The prior installation and browser
 records retain their bindings.
 
-Seventeen additional TIFF6 samples match the pinned Pillow and libtiff
+Nineteen additional TIFF6 samples match the pinned Pillow and libtiff
 output. They cover split interchange headers, restart precedence, contiguous
 tile grids, first-tile frames and separate YCbCr 1:1 strips and tiles. The
 canonical ZIP at the preceding code revision passed actual install/force
 update, config/form/page, login-only operation, cold history recovery and
 uninstall/reinstall. The initial observer error and same-ZIP tail both remain
-in the ledger. The two first-tile cases were checked directly against source
-without replaying the package, Main or Chrome flows.
+in the ledger. The two first-tile and two planar restart-tag cases were checked directly
+against source without replaying the package, Main or Chrome flows.
 
 The read-only installed list still has 23 instances. MergeMessageNotify is
 now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
