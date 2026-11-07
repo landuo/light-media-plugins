@@ -1,0 +1,151 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "installed_version": "2.22",
+  "source_sha256": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+  "plugin_product_commit": "eac186a1e156562ef67e76ccc2ff4cf61200b681",
+  "paired_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+  "target_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+  "provenance": {
+    "path": "plugins/iyuuautoseed/ORIGIN.json",
+    "sha256": "9074d7c8b29c0f2faa0541eef4e61a0332af7d66dc04373dc20d8d5bb1b33335"
+  },
+  "configuration_and_form": {
+    "source": [
+      "iyuuautoseed/__init__.py:103–174,232–251,253–687,1559–1592",
+      "app/helper/service.py:95–107"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/config.go",
+      "plugins/iyuuautoseed/form.go",
+      "plugins/iyuuautoseed/form.json"
+    ],
+    "fixture": {
+      "path": "plugins/iyuuautoseed/reference/config-form-source-2.22.json",
+      "sha256": "7e059bf4b7c3ddba1f50694cd8deec427c9b4dcf096ebf760b1b3cbd863639e4"
+    },
+    "capture_driver": {
+      "path": "work/iyuu-config-20261107/capture.py",
+      "sha256": "ba8532e8e8c28bb3249d120f3f4a1d7c021402c580dbd2188d6191cfda5c944c"
+    },
+    "cases": 21,
+    "replay": {
+      "path": "work/iyuu-config-20261107/target.stdout",
+      "sha256": "1b1561747a67fff046fab814430c1db3d7987cade14098ee15e3d5f6fc0174b5"
+    },
+    "scope": "Executed the pinned class with owned configuration, form, scheduler and host boundaries. Replayed 13 init, 7 delete and 1 native form scenario. Proves configuration and form values and invocation order represented by the pure layer. Actual scheduler execution remains open."
+  },
+  "transport": {
+    "source": [
+      "iyuuautoseed/iyuu_helper.py:19–130",
+      "MoviePilot 8a83efe app/utils/http.py:324–376,395–463,511–596"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/api_http.go",
+      "plugins/iyuuautoseed/api_response.go",
+      "plugins/iyuuautoseed/json_encode.go"
+    ],
+    "fixture": {
+      "path": "plugins/iyuuautoseed/reference/api-http-wire-oracle.json",
+      "sha256": "265a68f21242ded7641c3be61662eb840a89b4f93bbcd4ea32d405b46d57d91e"
+    },
+    "capture_driver": {
+      "path": "work/iyuuautoseed-20261107/api-http-wire-oracle.py",
+      "sha256": "716885d0eb1669a50da8a6160260c88afa373f4e19a1be5053e937179f305831"
+    },
+    "source_setup_failures": [
+      {
+        "path": "work/iyuuautoseed-20261107/api-http-wire-source-setup.stderr",
+        "sha256": "3cf5716977adc5b8cd0cffb812cb6d33f3874a4e1c26cd046f30fbfb2a415bc3"
+      },
+      {
+        "path": "work/iyuuautoseed-20261107/api-http-wire-source-setup-2.stderr",
+        "sha256": "5c55eadccbfb1b4876c8b0e25fd6f6edd7bded14ad391241fc76dfbe63c98f21"
+      }
+    ],
+    "owned_socket_replay": {
+      "path": "work/iyuuautoseed-20261107/api-http-wire-target.stdout",
+      "sha256": "985d370a59108816c7b07df32f563e1db9055786f2f55978a0fdde9cf24bb882"
+    },
+    "failure_fixture": {
+      "path": "plugins/iyuuautoseed/reference/api-http-network-failure-oracle.json",
+      "sha256": "b4b1f293e197e4d9c67ca3dd8a8bae2cb3f008aabacbf894d213936760e1e3ec"
+    },
+    "scope": "Three fixed-origin operations plus 429 reason, gzip/UTF-16/CP1252, closed authority and denied redirect. Actual loopback TLS/HTTP only. The network follow-up preserves ordinary source no-response behavior for connection/read errors, with the prior verified TLS and finite size policies. The original Requests capture used a Brotli header-availability shim, no native Brotli decoding claim.",
+    "independent_reviewer": "/root/kodi"
+  },
+  "core": {
+    "source": [
+      "iyuuautoseed/__init__.py:743–858,860–1005"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/core.go",
+      "plugins/iyuuautoseed/logging.go",
+      "plugins/iyuuautoseed/url_domain.go",
+      "plugins/iyuuautoseed/urljoin.go"
+    ],
+    "fixture": {
+      "path": "plugins/iyuuautoseed/reference/core-oracle.json",
+      "sha256": "07f6fba503516aeac74a2d5e5b6ac2dc229cb9a92497246a8277dcb907adef93"
+    },
+    "capture_driver": {
+      "path": "work/iyuuautoseed-20261107/capture_core.py",
+      "sha256": "6d1a3f65ecd8d04cd3ede2c331754e8a64424b94fe0d39e6131d52d5f792d172"
+    },
+    "replay": {
+      "path": "work/iyuuautoseed-20261107/core-target.stdout",
+      "sha256": "485c2f570c171358ecd4388eea91566d7da526d38645f365c066f2eb4645f7af"
+    },
+    "repeat_lookup_fixture": {
+      "path": "plugins/iyuuautoseed/reference/core-recheck-lookups-oracle.json",
+      "sha256": "7152d3cb0662b5c2aba765cf595d43bd9122c4d666db4ae22f6423fc219e3e96"
+    },
+    "scope": "Pinned offline replay covers availability=-1, partial availability, exact completed counters beyond 2^53, full per-downloader exclusion across 200-row batches, ordered start/recheck, no duplicate recheck until new initialization and source log sequence. Review corrected repeat native property reads before choosing the destination or selected services.",
+    "independent_reviewer": "/root/jellyfin"
+  },
+  "source_review_followups": {
+    "api_failure_cases": 2,
+    "recheck_lookup_cases": 3,
+    "replay": {
+      "path": "work/iyuuautoseed-20261107/source-review-target.stdout",
+      "sha256": "40820d729b259a7d03aaab1cd9d9664d13d1f313e6a174bc64fd63d8c1f4c66f"
+    },
+    "scope": "Ran only newly captured ordinary transport failures and repeated destination/service reads. No prior passing rows or helper suite were rerun."
+  },
+  "sdk_boundaries": {
+    "source": [
+      "iyuuautoseed/__init__.py:103–145,258–264,395,415,893,1567–1592",
+      "app/helper/service.py:95–107"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/sdk_config.go",
+      "plugins/iyuuautoseed/sdk_downloader_reads.go"
+    ],
+    "replay": {
+      "path": "work/iyuuautoseed-20261107/sdk-source-target.stdout",
+      "sha256": "e138510f72069ef2f1081fef32e869546ff7c0e5f87b95c2d59c0b0d096bb71b"
+    },
+    "review_replay": {
+      "path": "work/iyuuautoseed-20261107/sdk-source-native-sites-target.stdout",
+      "sha256": "1d017d9c2368c5d91b4a30c899db618afe58d7ce9b0973d182d4c89dc1e9cb98"
+    },
+    "scope": "Synthetic SDK resource replay covers independent downloader reads, source option order, type/credential boundaries, pre-stop write, site-delete saved selection against live settings, native qB pack values and empty failed query result. Review added fallback for managed sites without imported provenance. Not a running plugin or host acceptance."
+  },
+  "linux_component_build": {
+    "path": "work/iyuuautoseed-20261107/linux-component-build.stdout",
+    "sha256": "9726bdb773b8c55f3864032d215df8a9d32d3f45c930069d7b609d82d5b202d4"
+  },
+  "remaining": [
+    "Wire a standalone worker and private/public scheduling, including callback ownership, stop/reload and state shared by source config, site deletion and run caches.",
+    "Implement the host-bound downloader mutations and exact selected-service queries, and port site resolution and torrent material. M-Team, Monika, magnet/redirect/form paths and the source site rate policy need constrained adapters.",
+    "Verify the actual worker on the paired Linux host and browser through config save, scheduled/recheck behavior, runtime state, restart and package acceptance.",
+    "Track source differences: pure Core currently serializes reseed and recheck; set ordering is deterministic; ambiguous host mutations remain fenced. The size threshold log may omit Python float .0. Keep the fixed transport verification/redirect/size limits and distinguish total timeout and connection reuse."
+  ],
+  "delivery": {
+    "accepted": 8,
+    "current_scope": 22,
+    "installed": 23,
+    "pushed": false,
+    "deployed": false
+  }
+}

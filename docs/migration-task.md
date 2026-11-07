@@ -7,13 +7,19 @@ authority. The user deferred MergeMessageNotify. The installed inventory
 still has 23 instances, of which 22 are in the current migration. The saved
 Merge evidence and four local work-in-progress files are retained separately.
 
-IYUUAutoSeed 2.22 is the next active plugin. Its installed API helper is
+IYUUAutoSeed 2.22 is the active plugin. Its installed API helper is
 byte-identical to the 2.19 original and the Go helper has a source replay in
 this checkout. The paired host projection can opt in to qBittorrent's
-native availability and completed-byte fields. The 2.22 run loop,
-transport and host binding, lifecycle, form and acceptance remain open.
+native availability and completed-byte fields.
 See `migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json`
 for the paired revisions and observations.
+
+The next increment implements the fixed-origin IYUU HTTP transport, 2.22
+selection and recheck core, configuration and native form, and SDK read-side
+adapters. Source, owned socket and synthetic SDK evidence are kept separate
+in `migration/evidence/iyuuautoseed-transport-core-config-20261107.json`.
+Standalone worker lifecycle, scheduling, host-bound mutations, site
+resolution and torrent material handling remain open.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

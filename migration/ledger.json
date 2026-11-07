@@ -10534,7 +10534,19 @@
       "target_paths": [
         "plugins/iyuuautoseed/helper.go",
         "plugins/iyuuautoseed/json.go",
-        "plugins/iyuuautoseed/source_clock.go"
+        "plugins/iyuuautoseed/source_clock.go",
+        "plugins/iyuuautoseed/api_http.go",
+        "plugins/iyuuautoseed/api_response.go",
+        "plugins/iyuuautoseed/json_encode.go",
+        "plugins/iyuuautoseed/core.go",
+        "plugins/iyuuautoseed/logging.go",
+        "plugins/iyuuautoseed/url_domain.go",
+        "plugins/iyuuautoseed/urljoin.go",
+        "plugins/iyuuautoseed/config.go",
+        "plugins/iyuuautoseed/form.go",
+        "plugins/iyuuautoseed/form.json",
+        "plugins/iyuuautoseed/sdk_config.go",
+        "plugins/iyuuautoseed/sdk_downloader_reads.go"
       ],
       "scenarios": [],
       "facet_checks": {},
@@ -10564,6 +10576,22 @@
           "Port the 2.22 worker run and recheck lifecycle. All completed hashes precede candidate filtering and are reused across 200-row batches. Preserve qB availability and completed byte checks, and once-per-init deferred qB rechecks.",
           "Bind fixed IYUU token-header GET/JSON POST transport, host-owned site credentials and specialized tracker/metainfo flows. The existing 2.19 host app or old relay does not establish a standalone 2.22 worker.",
           "Port native form, private/public scheduling, site deletion, storage and restart behavior. Verify actual worker, browser, package and affected host paths."
+        ]
+      },
+      "transport_core_and_config_increment": {
+        "status": "partial_verified",
+        "evidence": {
+          "path": "migration/evidence/iyuuautoseed-transport-core-config-20261107.json",
+          "sha256": "e25e8e44644629499edf7d0f47582ec0d6a121d56d071e7662e1da6cd6608d65"
+        },
+        "plugin_commit": "eac186a1e156562ef67e76ccc2ff4cf61200b681",
+        "paired_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+        "scope": "IYUU fixed-origin API, native config and form, 2.22 run/recheck business core and SDK read-side adapter. Focused source replay and component build. Full worker and acceptance remain open.",
+        "remaining": [
+          "Wire a standalone worker and private/public scheduling, including callback ownership, stop/reload and state shared by source config, site deletion and run caches.",
+          "Implement the host-bound downloader mutations and exact selected-service queries, and port site resolution and torrent material. M-Team, Monika, magnet/redirect/form paths and the source site rate policy need constrained adapters.",
+          "Verify the actual worker on the paired Linux host and browser through config save, scheduled/recheck behavior, runtime state, restart and package acceptance.",
+          "Track source differences: pure Core currently serializes reseed and recheck; set ordering is deterministic; ambiguous host mutations remain fenced. The size threshold log may omit Python float .0. Keep the fixed transport verification/redirect/size limits and distinguish total timeout and connection reuse."
         ]
       }
     },
@@ -65906,12 +65934,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight of 22 current-scope instances accepted. IYUUAutoSeed 2.22 has the relocated API helper and a paired host pack-field projection. MergeMessageNotify is deferred by user instruction.",
-      "tests_running": "None. The relocated helper passed one 24-row source replay. The qB projection was checked once per wire shape, with the opt-in contract replacing the preliminary response.",
-      "latest_detail": "features[plugin.IYUUAutoSeed].portable_helper_and_qb_projection",
+      "delivery": "Eight of 22 current-scope instances accepted. IYUUAutoSeed 2.22 adds fixed API transport, source core, native config/form and SDK read-side methods. Worker lifecycle, mutation and site adapter are open.",
+      "tests_running": "None. Focused source config/form, core, owned HTTP and SDK boundary replays passed. Only newly captured review rows ran. Linux/amd64 component package built.",
+      "latest_detail": "features[plugin.IYUUAutoSeed].transport_core_and_config_increment",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue IYUUAutoSeed 2.22 with fixed-origin IYUU transport, native form and lifecycle, and the worker run/recheck adapters. Use the opted-in qB completed-row projection for pack checks. Keep MergeMessageNotify deferred.",
+      "next_complete_slice": "Wire the IYUUAutoSeed 2.22 worker lifecycle and host-bound mutations, then site resolution/metainfo, with source ownership and shared live config. Connect the completed API, core, form and read-side SDK pieces. Verify one scoped actual host flow when the executable works. Keep MergeMessageNotify deferred.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621"
     },
     "current_artifact_inputs": {
@@ -65929,7 +65957,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue IYUUAutoSeed 2.22 with fixed-origin IYUU transport, native form and lifecycle, and the worker run/recheck adapters. Use the opted-in qB completed-row projection for pack checks. Keep MergeMessageNotify deferred.",
+    "next_complete_slice": "Wire the IYUUAutoSeed 2.22 worker lifecycle and host-bound mutations, then site resolution/metainfo, with source ownership and shared live config. Connect the completed API, core, form and read-side SDK pieces. Verify one scoped actual host flow when the executable works. Keep MergeMessageNotify deferred.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
