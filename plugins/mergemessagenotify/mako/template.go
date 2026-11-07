@@ -6,6 +6,7 @@ import (
 	"maps"
 	"math/big"
 	"net/url"
+	"slices"
 	"strconv"
 	"strings"
 	"unicode"
@@ -92,6 +93,14 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 			return fallback(text, fault("TypeError"))
 		}
 	}
+	pageKeywords := dictionary{}
+	for _, name := range slices.Sorted(maps.Keys(variables)) {
+		if !e.parameters[name] {
+			pageKeywords = append(pageKeywords, entry{name, e.values[name]})
+		}
+	}
+	e.values["pageargs"] = pageKeywords
+	e.parameters["pageargs"] = true
 	if p.pageCached {
 		return fallback(text, unavailableTemplateCache())
 	}
@@ -594,17 +603,18 @@ type parameter struct {
 	defaultValue expression
 }
 type defNode struct {
-	name      string
-	params    []parameter
-	body      []templateNode
-	buffered  bool
-	filters   []expression
-	block     bool
-	cached    bool
-	decorator expression
-	anonymous int
-	root      bool
-	line      int
+	name        string
+	params      []parameter
+	blockParams []callbackParameter
+	body        []templateNode
+	buffered    bool
+	filters     []expression
+	block       bool
+	cached      bool
+	decorator   expression
+	anonymous   int
+	root        bool
+	line        int
 }
 
 func (n defNode) render(e *environment) (flow, error) {
@@ -619,20 +629,7 @@ func (n defNode) render(e *environment) (flow, error) {
 		_, err = fn(e, nil, nil)
 		return normal, err
 	}
-	fn, ok := asCallable(e.get(n.name))
-	if n.root {
-		fn, ok = e.module.rootCalls[n.name]
-	}
-	if !ok {
-		return normal, fault("TypeError")
-	}
-	var err error
-	if n.root {
-		_, err = callWithDefinitionContext(e, e.definitionContext, fn, nil, nil)
-	} else {
-		_, err = fn(e, nil, nil)
-	}
-	return normal, err
+	return normal, n.renderNamedBlock(e)
 }
 func (n defNode) install(e *environment) error {
 	fn, err := n.bind(e)
@@ -679,8 +676,11 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 		for _, param := range n.params {
 			scope.parameters[param.name] = true
 		}
-		if err := bindDefArguments(scope, n.params, defaults, args, kw); err != nil {
+		if err := n.bindArguments(scope, defaults, args, kw, caller.keywordOrder, true); err != nil {
 			return nil, err
+		}
+		if n.blockParams != nil {
+			scope.parameters["pageargs"] = true
 		}
 		if topLevel {
 			scope.values["context"] = renderContext{lexical}
@@ -695,7 +695,14 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 			if _, isParameter := scope.values["caller"]; !isParameter {
 				scope.values["caller"] = scope.callers
 			}
-			if err := installDefinitions(scope, n.body); err != nil {
+			ownerBlock := ""
+			if n.blockParams != nil {
+				ownerBlock = n.name
+			}
+			if err := installForwardingDefinitions(scope, n.body, ownerBlock); err != nil {
+				return err
+			}
+			if err := installScopeDefinitions(scope, n.body, false); err != nil {
 				return err
 			}
 			_, err := renderNodes(scope, n.body)
@@ -735,7 +742,7 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 			return nil, err
 		}
 		return func(active *environment, args []any, kw map[string]any) (any, error) {
-			if err := bindDefArguments(e.child(), n.params, cacheDefaults, args, kw); err != nil {
+			if err := n.bindArguments(e.child(), cacheDefaults, args, kw, active.keywordOrder, true); err != nil {
 				return nil, err
 			}
 			return nil, unavailableTemplateCache()
@@ -806,7 +813,7 @@ func (n defNode) anonymousCallable(e *environment) (callable, error) {
 }
 
 func installDefinitions(e *environment, nodes []templateNode) error {
-	if err := installForwardingDefinitions(e, nodes); err != nil {
+	if err := installForwardingDefinitions(e, nodes, ""); err != nil {
 		return err
 	}
 	return installScopeDefinitions(e, nodes, false)

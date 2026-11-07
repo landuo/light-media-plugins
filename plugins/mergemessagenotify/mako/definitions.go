@@ -63,6 +63,11 @@ func installRootDefinitions(e *environment, nodes []templateNode) error {
 					roots = append(roots, n)
 				}
 			}
+			if n, ok := node.(defNode); ok && n.block {
+				if err := visit(n.body); err != nil {
+					return err
+				}
+			}
 			for _, body := range definitionControlBodies(node) {
 				if err := visit(body); err != nil {
 					return err
@@ -89,13 +94,23 @@ func installRootDefinitions(e *environment, nodes []templateNode) error {
 // Mako emits a forwarding declaration before a scope renders, only for
 // referenced root defs. The declaration evaluates its own argument defaults
 // in that scope; self.f bypasses it and uses the module render function.
-func installForwardingDefinitions(e *environment, nodes []templateNode) error {
+func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlock string) error {
 	if len(e.module.rootDefs) == 0 {
 		return nil
 	}
-	refs := scopeReferences{reads: map[string]bool{}, declared: map[string]bool{}, assigned: map[string]bool{}}
+	refs := scopeReferences{reads: map[string]bool{}, declared: map[string]bool{}, assigned: map[string]bool{}, blockArguments: map[string]bool{}}
 	refs.nodes(nodes)
+	if ownerBlock != "" {
+		refs.reads[ownerBlock] = true
+	}
 	if e.parent == e.module {
+		for name := range refs.blockArguments {
+			if !e.parameters[name] {
+				// render_body initializes its local context before executing
+				// any template statement, even when a block is never reached.
+				return fault("NameError")
+			}
+		}
 		e.contextLocals = refs.assigned
 		for name := range e.parameters {
 			e.contextLocals[name] = true
@@ -122,12 +137,8 @@ func installForwardingDefinitions(e *environment, nodes []templateNode) error {
 		e.forwarding[n.name] = true
 		e.values[n.name] = namedCallable{n.name, func(active *environment, args []any, kwargs map[string]any) (any, error) {
 			scope := e.child()
-			if err := bindDefArguments(scope, n.params, defaults, args, kwargs); err != nil {
+			if err := n.bindArguments(scope, defaults, args, kwargs, active.keywordOrder, false); err != nil {
 				return nil, err
-			}
-			values := make([]any, len(n.params))
-			for i, param := range n.params {
-				values[i] = scope.values[param.name]
 			}
 			contextScope := e.definitionContext
 			if len(e.contextLocals) != 0 {
@@ -138,6 +149,19 @@ func installForwardingDefinitions(e *environment, nodes []templateNode) error {
 					}
 				}
 				contextScope.definitionContext = contextScope
+			}
+			if n.blockParams != nil {
+				args, kwargs, order, err := n.forwardBlockArguments(scope, false)
+				if err != nil {
+					return nil, err
+				}
+				call := *active
+				call.keywordOrder = order
+				return callWithDefinitionContext(&call, contextScope, root, args, kwargs)
+			}
+			values := make([]any, len(n.params))
+			for i, param := range n.params {
+				values[i] = scope.values[param.name]
 			}
 			return callWithDefinitionContext(active, contextScope, root, values, nil)
 		}}
@@ -167,7 +191,7 @@ func hasLexicalDeclaration(e *environment, name string) bool {
 // Python parser. The compiler collects references across control branches,
 // but a definition body and a call body have their own generated scopes.
 type scopeReferences struct {
-	reads, declared, assigned map[string]bool
+	reads, declared, assigned, blockArguments map[string]bool
 }
 
 func (r scopeReferences) nodes(nodes []templateNode) {
@@ -201,6 +225,12 @@ func (r scopeReferences) nodes(nodes []templateNode) {
 			}
 			if n.root && n.block {
 				r.reads[n.name] = true
+				for _, param := range n.params {
+					r.blockArguments[param.name] = true
+				}
+			}
+			if n.block {
+				r.nodes(n.body)
 			}
 			for _, p := range n.params {
 				r.expressions(p.defaultValue)

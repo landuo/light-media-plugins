@@ -211,6 +211,31 @@
       "source_observations": "testdata/source-definition-context-1.4.1.json",
       "source_observations_sha256": "4644e049d5ce0b4100582aac62bab7d1ed60176f3e386ef3820b3324f3c80b31",
       "scope": "Five additional original TemplateUtil cases for lexical page context, root-to-root context forwarding, decorator Context, direct named block and mixed def/block compile failure. Advanced Python declaration analysis and other template context copying paths remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Port named block signatures, generated namespace arguments and page keywords, lexical forwarding, original and cached default declarations, and the default evaluation inside a named block body.",
+      "target_files": [
+        "block.go",
+        "parser.go",
+        "definitions.go",
+        "template.go",
+        "call.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d",
+        "mako/cache.py": "0e7a30b905b44dc9c06b9bb9b4d37b0ffaaf5a3a9f3ca72c4c80a202a7038e83",
+        "mako/ext/beaker_cache.py": "4ca18af1570ca3eb29c257039f004dfc6ea6856a93b12c0e9916e18c3315d93e",
+        "mako/ast.py": "f0248c12c8827349ea6d1b7d88dcf325743c589d04d50fcde63e982a5e44395b",
+        "mako/pyparser.py": "6c0319ab7a64674b58c3be700396c4ad5f0a9df91f6e679b0264a0642df3db66"
+      },
+      "source_observations": "testdata/source-named-block-1.4.1.json",
+      "source_observations_sha256": "ce9ba81dfb106aa9571a26b2ce6794deac0288626f5b50e859fcabb79554f096",
+      "scope": "Eighteen original TemplateUtil cases with Mako 1.4.1, CPython 3.12.13, MarkupSafe 3.0.4 and no Beaker. Covers named and nested block rendering, implicit page keywords, namespace versus lexical calls, default timing, uncaught source fallback, cached binding before the missing backend, positional-only omission, and bare-star lowering. The Go Render API receives a map, so the generated page-keyword dictionary uses sorted keys. External template inheritance and its parent-block override guard, explicit variadic page declarations, positional-only lowering in other tag kinds and advanced Python declaration syntax remain outside this proof."
     }
   ]
 }

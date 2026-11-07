@@ -7,6 +7,7 @@ type templateParser struct {
 	at                   int
 	loops                int
 	defDepth             int
+	defTagDepth          int
 	calls                int
 	callDefs             map[int]defNode
 	blockLines           map[int]bool
@@ -192,11 +193,12 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 			switch t.text {
 			case "def", "block":
 				signature, named := t.attrs["name"]
-				if t.text == "block" && named && p.calls > 0 {
+				if t.text == "block" && named && (p.calls > 0 || p.defTagDepth > 0) {
 					return nil, nil, fault("CompileException")
 				}
 				var name string
 				var params []parameter
+				var blockParams []callbackParameter
 				var err error
 				if t.text == "block" && !named {
 					if t.attrs["args"] != "" || p.blockLines[t.line] {
@@ -214,17 +216,29 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 					if err != nil {
 						return nil, nil, err
 					}
+					if t.text == "block" {
+						blockParams, err = parseNamedBlockParameters(t.attrs["args"])
+						if err != nil {
+							return nil, nil, err
+						}
+						for _, param := range blockParams {
+							params = append(params, param.parameter)
+						}
+						blockParams = append(blockParams, callbackParameter{parameter: parameter{name: "pageargs"}, kind: "kwargs"})
+					}
 				}
 				priorLoops, priorBlocks := p.loops, p.blockLines
 				p.loops = 0
 				if t.text == "def" {
 					p.blockLines = nil
+					p.defTagDepth++
 				}
 				p.defDepth++
 				body, end, err := p.nodes(map[string]bool{"/" + t.text: true})
 				p.defDepth--
 				p.loops = priorLoops
 				if t.text == "def" {
+					p.defTagDepth--
 					p.blockLines = priorBlocks
 				}
 				if err != nil {
@@ -234,6 +248,9 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 					return nil, nil, fault("SyntaxError")
 				}
 				n := defNode{name: name, params: params, body: body, block: t.text == "block", root: name != "" && p.defDepth == 0 && p.calls == 0, line: t.line}
+				if blockParams != nil {
+					n.blockParams, n.root = blockParams, true
+				}
 				if n.block && n.name == "" {
 					n.anonymous = at
 				}
@@ -347,8 +364,9 @@ func parseTargets(s string) ([]string, error) {
 }
 func parseSignature(s string, block bool) (string, []parameter, error) {
 	if block {
-		if strings.Contains(s, "(") {
-			return "", nil, fault("SyntaxError")
+		tokens, err := lex(s)
+		if err != nil || len(tokens) != 2 || tokens[0].kind != "name" || tokens[0].text != s {
+			return "", nil, fault("CompileException")
 		}
 		return s, nil, nil
 	}

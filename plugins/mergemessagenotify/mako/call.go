@@ -184,7 +184,7 @@ func (n callNode) render(e *environment) (flow, error) {
 		for _, param := range n.params {
 			scope.parameters[param.name] = true
 		}
-		if err := installForwardingDefinitions(scope, n.body); err != nil {
+		if err := installForwardingDefinitions(scope, n.body, ""); err != nil {
 			return nil, err
 		}
 		_, err := renderNodes(scope, n.body)
@@ -282,7 +282,8 @@ func visitCallerExports(scope *environment, ns *callerNamespace, nodes []*callEx
 
 type callbackParameter struct {
 	parameter
-	kind string
+	kind           string
+	forwardKeyword bool
 }
 
 func parseCallbackParameters(raw string) ([]callbackParameter, error) {
