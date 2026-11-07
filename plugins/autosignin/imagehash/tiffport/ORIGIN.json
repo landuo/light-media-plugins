@@ -57,6 +57,6 @@
     "Separate RGB/RGBA strips and tiles undo the predictor per band and then assemble one pixel block. Raw 16-bit planar TIFF retains the byte-oriented channel reads in TiffImagePlugin._setup.",
     "Separate grayscale-alpha planes match Pillow 12.2.0 TiffDecode.c _pickUnpackers: compressed planes are read and checked, but the second plane populates the internal green byte rather than the returned alpha. The raw separate layout is rejected by the original unpacker.",
     "Compression 6 reads a JPEG interchange stream or reconstructs baseline headers from scattered quantization and Huffman tables. Verified continuous strips insert restart markers and an EOI. The YCbCr420 path expands native JPEG chroma and follows libtiff tif_color.c fixed-point conversion.",
-    "Pillow 12.2.0 uses libtiff 4.7.1 tif_ojpeg.c for old JPEG. Follow its split interchange/first-strile header, contiguous restart interval precedence, tiled stack ordering and single-component scans for 1:1 separate YCbCr. Crop each TIFF edge tile after expanding samples."
+    "Pillow 12.2.0 uses libtiff 4.7.1 tif_ojpeg.c for old JPEG. Follow its split interchange/first-strile header, contiguous restart interval precedence, tiled stack ordering including a frame in the first tile, and single-component scans for 1:1 separate YCbCr. Crop each TIFF edge tile after expanding samples."
   ]
 }

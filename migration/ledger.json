@@ -65242,11 +65242,11 @@
       "functional_verified_instances": 7,
       "total_installed_instances": 23,
       "business_families_verified": 6,
-      "functional_verified_count_scope": "Historical accepted seven-instance baseline retained; new shared SDK105 and whole AutoSignIn still require current integrated/consumer/package verification before new acceptance.",
+      "functional_verified_count_scope": "Seven-instance baseline. The AutoSignIn local-probe package and login-only host path pass in isolation, bound to the exact ZIP; source codec checks and final assembly remain open.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "67ebe9480f9367bfd022ea66b69e3d1ed063d583",
+      "tested_saved_code_revision": "9f11b10ba91da49eaea7b35158be38a1bedff701",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
       "host_HEAD": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
@@ -65260,12 +65260,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seven accepted installed instances. This AutoSignIn checkpoint adds TIFF6 split headers, restart tags, contiguous tiles and separate YCbCr strips and tiles. Private-state import and remote/production delivery remain separate.",
-      "tests_running": "None. Fifteen new TIFF6 synthetic source comparisons completed. Current package gate is next.",
+      "delivery": "Seven accepted instances. Current local AutoSignIn adds TIFF6 split headers, restarts, tiles, separate planes and first-tile frames. Isolated current-codec ZIP ran successfully through the combined package lifecycle with dedicated login history. Registry, private-state import, remote and production delivery remain separate.",
+      "tests_running": "None. Seventeen new TIFF6 comparisons and the scoped isolated package gate finished. Task-owned Linux binaries and temporary test runtimes removed.",
       "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
-      "local_codec_base": "aab227d; the commit containing this checkpoint adds the verified TIFF6 layout increment",
+      "local_codec_base": "9f11b10ba91da49eaea7b35158be38a1bedff701; the ledger commit also contains the two new first-tile-frame cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Run one isolated current AutoSignIn canonical package acceptance with the previously unverified login-only host path. Review recorded outstanding differences before the sequential MergeMessageNotify 1.20.3 source refresh."
+      "next_complete_slice": "Check the concrete single-strile separate JPEG restart-tag difference, finish AutoSignIn against the single source ledger and reuse applicable package/Main/browser evidence. Once accepted, refresh the installed MergeMessageNotify 1.20.3 source snapshot."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66798,7 +66798,7 @@
             "remaining": "Complete the confirmed TIFF6 source layouts in tiff_old_jpeg.remaining, then one isolated AutoSignIn package acceptance with the existing host and browser evidence. Reuse the source-confirmed AVIF scaling results."
           },
           "current_continuation_increment": {
-            "status": "Fifteen new synthetic TIFF6 cases matched fixed source size, mode, pixels, grayscale and hash. AutoSignIn remains implementing, seven of 23 installed instances accepted.",
+            "status": "Seventeen new synthetic TIFF6 cases match the fixed source, and one owned local-probe ZIP has actual package lifecycle evidence. AutoSignIn remains implementing; seven of 23 instances accepted.",
             "source": {
               "plugin": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262",
               "Pillow": "12.2.0 Image.open/load before _tohash",
@@ -66861,7 +66861,102 @@
               "plugins/autosignin/imagehash/jpegport/raster.go",
               "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
             ],
-            "remaining": "One current canonical package run, adding the missing isolated login-only host call, history and cold persistence. No original private configuration or state import. Multiple-column old JPEG tiles without a usable frame are outside verified layouts."
+            "remaining": "Check separate old JPEG planes with tag515 in the single-strile path and any other concrete valid default-image mismatch. This ZIP is from before the two first-tile-only cases. Reuse the proven host lifecycle and browser routes, rebuilding only the final candidate when ready. Original private state and remote delivery remain separate and were not performed.",
+            "package_gate": {
+              "artifact": {
+                "source_commit": "9f11b10ba91da49eaea7b35158be38a1bedff701",
+                "worker_sha256": "d3554bd3f84c7f807ac6d6625ccae80a49c587a14092961fc5ae850460c23a6e",
+                "zip_sha256": "c94f33da863cbd86157af35177fe236f950f15cce3e34c251fd04f0a0b0c8c3c",
+                "manifest_sha256": "b870f6212fa191f7692ee5ff6a82cee64aebf667f4256ed83fa6ed3a14083755",
+                "archive": "work/autosignin-package-current-continuation/AutoSignIn-2.9.15-linux-amd64.zip",
+                "platform": "linux-amd64 CGO_ENABLED=0",
+                "distribution": "Owned local probe with canonical ZIP schema. Build registry and remote release remain unchanged."
+              },
+              "host": {
+                "commit": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+                "actual_binary_sha256": "37944e759b99fdcfa16faf3da590ac8ca883a2bb389331bbda964e194f5faaf0",
+                "SDK": 105,
+                "environment": "Real isolated Linux host and worker with a loopback HTTPS peer and TLS verification, network none. Owned fixture only."
+              },
+              "original_behavior": {
+                "lifecycle": "MoviePilot fixed 8a83efe plugin install/remove/load; AutoSignIn 2.9.15 init_plugin:82–134",
+                "login": "AutoSignIn fixed installed source __init__.py:727–756, 1531–1665, 1729–1735, 1948–2001. Selected login task sends an authenticated home visit, persists login separately and clears onlyonce."
+              },
+              "initial_observation": {
+                "result": {
+                  "exit": 1,
+                  "seconds": 18.71370904892683,
+                  "container_absent": true,
+                  "network": "none",
+                  "bundle_sha_verified": true
+                },
+                "failure": "Test observer traversed data.content instead of the real data.page envelope. Go host already installed and invoked the exact archive, cleared onlyonce and performed one authenticated GET. Cold/uninstall/reinstall were not reached. No product-code fix was made for this observer failure.",
+                "observations": "work/autosignin-package-current-continuation/actual/observations.jsonl",
+                "sha256": "11184b33497ed7127a95c158dd43b1dbdda9018e2a348efd937759cb80e099ee",
+                "retained_install": {
+                  "actual_executable_sha256": "d3554bd3f84c7f807ac6d6625ccae80a49c587a14092961fc5ae850460c23a6e",
+                  "old_PID_reaped": true,
+                  "real_config_form_page": true,
+                  "zip_sha256": "c94f33da863cbd86157af35177fe236f950f15cce3e34c251fd04f0a0b0c8c3c"
+                },
+                "recorded_response_replay": "work/autosignin-package-current-continuation/tail/recorded-page-check.json"
+              },
+              "limited_tail": {
+                "result": {
+                  "exit": 0,
+                  "seconds": 16.392433180939406,
+                  "container_absent": true,
+                  "network": "none",
+                  "bundle_sha_verified": true
+                },
+                "observations": "work/autosignin-package-current-continuation/tail/actual/observations.jsonl",
+                "sha256": "847074be59c19912a46c71eac6db6d01b62e6c8082708385a434e2f87379235a",
+                "login_only": {
+                  "authenticated_home_requests": 1,
+                  "login_history": true,
+                  "one_shot_cleared": true,
+                  "sign_in_requests": 0,
+                  "today_login": "1/1",
+                  "today_sign_in": "0/0"
+                },
+                "lifecycle": {
+                  "base_code_retained_on_uninstall": true,
+                  "cold_and_reinstall_actual_calls": true,
+                  "publication_or_production_deployment": false,
+                  "source_config_retained": true
+                },
+                "scope": "Same ZIP reused. Synthetic state recreated because the first owned run was cleaned up. Only needed path to cold start and uninstall/reinstall was run. No repeat of Main179, Chrome or full codec regression."
+              },
+              "cleanup": {
+                "first": {
+                  "owned_attempt_removed": true,
+                  "test_containers_absent": true
+                },
+                "tail": {
+                  "owned_attempt_removed": true,
+                  "test_containers_absent": true
+                },
+                "local_ELFs_removed": true
+              }
+            },
+            "first_tile_inline_frame": {
+              "source": "Fixed libtiff 4.7.1 tif_ojpeg.c:1195–1252 and OJPEGReadBufferFill can take SOF/SOS from the first strile without interchange tags 513/514. Two actual source-positive synthetic 31×25 samples.",
+              "target": [
+                "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go",
+                "plugins/autosignin/imagehash/tiffport/reader_ojpeg_tiles.go",
+                "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
+              ],
+              "source_fixture": "work/ojpeg-first-tile-header/expected.json",
+              "source_fixture_sha256": "49ce34b83b8f8eda088830dbb3e82c9f000d49d7aea3b51902cb8b626dd44ed4",
+              "source_command": "work/ojpeg-first-tile-header/command.json",
+              "target_output": "work/ojpeg-first-tile-header/target.stdout",
+              "target_sha256": "bc8d95550904f9e2b1bef35360e466a74bebe94410b65f1d37683c7cacd3cba0",
+              "inputs": [
+                "TIFF6-L-grid-header-in-first-tile",
+                "TIFF6-YCbCr420-grid-header-in-first-tile"
+              ],
+              "scope": "Two new Go cases matched mode, size, pixels, gray and hash. Added after the isolated package gate; the ZIP above is bound to the preceding codec revision."
+            }
           }
         }
       }

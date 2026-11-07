@@ -50,8 +50,13 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 		return nil, nil
 	}
 	interchange := d.oldJPEGInterchange()
+	first, err := d.oldJPEGFirstBlock(l)
+	if err != nil {
+		return nil, err
+	}
+	inlineHeader := interchange != nil || readJPEGStart(first) == nil
 	restart := d.oldJPEGRestart()
-	if interchange == nil && len(restart) == 0 {
+	if !inlineHeader && len(restart) == 0 {
 		if _, found := d.ifd[tJPEGQTables]; !found {
 			return nil, nil
 		}
@@ -85,22 +90,13 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 		}
 		strips[i] = [2]int64{int64(offset), int64(length)}
 	}
-	inlineHeader := interchange != nil
-	if !inlineHeader && l.down == 1 {
-		strip := sectionJPEGSource(d.r, strips[0][0], strips[0][1])
-		// A self-contained JPEG strip takes precedence over separate tables.
-		if readJPEGStart(strip()) == nil {
-			if len(restart) == 0 {
-				if components == 1 {
-					return nil, nil // Use the existing grayscale strip decoder.
-				}
-				return strip, nil
-			}
-			inlineHeader = true
+	if inlineHeader && interchange == nil && l.down == 1 && len(restart) == 0 {
+		if components == 1 {
+			return nil, nil // Use the existing grayscale strip decoder.
 		}
+		return sectionJPEGSource(d.r, strips[0][0], strips[0][1]), nil
 	}
 	var prefix []byte
-	var err error
 	if !inlineHeader {
 		prefix, err = d.oldJPEGTableHeader(components, horizontal, vertical, restart)
 	} else if l.down > 1 || len(restart) != 0 {
@@ -132,6 +128,18 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 		}
 		return io.MultiReader(append(readers, bytes.NewReader([]byte{0xff, 0xd9}))...)
 	}, nil
+}
+
+func (d *decoder) oldJPEGFirstBlock(l blockLayout) (*io.SectionReader, error) {
+	offset, err := l.offsets.value(0)
+	if err != nil {
+		return nil, err
+	}
+	length, err := l.counts.value(0)
+	if err != nil {
+		return nil, err
+	}
+	return io.NewSectionReader(d.r, int64(offset), int64(length)), nil
 }
 
 // oldJPEGHeaderFromSections reads a header split between the interchange area

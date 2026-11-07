@@ -4,6 +4,7 @@ import (
 	"image"
 	"image/color"
 	"image/draw"
+	"image/jpeg"
 
 	jpegport "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport"
 )
@@ -14,15 +15,22 @@ func (d *decoder) oldJPEGTiledSource(l blockLayout, components, horizontal, vert
 	if l.across <= 0 || l.down <= 0 || l.height <= 0 || l.across > 65535/l.height/l.down {
 		return nil, 0, FormatError("old JPEG tile stack exceeds JPEG frame size")
 	}
-	if l.across != 1 && d.oldJPEGInterchange() == nil {
-		// Without an SOF, libtiff synthesizes only the padded image height.
-		// Keep the existing per-tile fallback for standalone gray JPEGs.
-		return nil, 0, nil
+	height := l.height * l.down * l.across
+	if d.oldJPEGInterchange() == nil {
+		first, err := d.oldJPEGFirstBlock(l)
+		if err != nil {
+			return nil, 0, err
+		}
+		// A frame in the first tile may describe the entire tile stack.
+		// Without that frame, libtiff only has the padded image height.
+		frame, err := jpeg.DecodeConfig(first)
+		if (err != nil && l.across != 1) || (err == nil && (frame.Width != l.width || frame.Height != height)) {
+			return nil, 0, nil
+		}
 	}
 	virtual := *d
 	l.down *= l.across
 	l.across, l.padding = 1, false
-	height := l.height * l.down
 	if _, ok := checkedMul3(l.width, height, maxBytesPerPixel); !ok {
 		return nil, 0, FormatError("old JPEG tile stack is too large")
 	}
