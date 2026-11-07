@@ -236,6 +236,18 @@
       "source_observations": "testdata/source-named-block-1.4.1.json",
       "source_observations_sha256": "ce9ba81dfb106aa9571a26b2ce6794deac0288626f5b50e859fcabb79554f096",
       "scope": "Eighteen original TemplateUtil cases with Mako 1.4.1, CPython 3.12.13, MarkupSafe 3.0.4 and no Beaker. Covers named and nested block rendering, implicit page keywords, namespace versus lexical calls, default timing, uncaught source fallback, cached binding before the missing backend, positional-only omission, and bare-star lowering. The Go Render API receives a map, so the generated page-keyword dictionary uses sorted keys. External template inheritance and its parent-block override guard, explicit variadic page declarations, positional-only lowering in other tag kinds and advanced Python declaration syntax remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Port the generated Python signature collision with implicit pageargs and the lexical priority of named blocks over module variables. Route invalid block declaration names through the original raw-text fallback.",
+      "target_files": ["definitions.go", "parser.go"],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1"
+      },
+      "source_observations": "testdata/source-named-block-edges-1.4.1.json",
+      "source_observations_sha256": "c6823109da589069c0422dace396c39a5c1946df51eb16a533c3893538a06610",
+      "scope": "Ten original TemplateUtil cases with Mako 1.4.1, CPython 3.12.13, MarkupSafe 3.0.4 and no Beaker. Covers ordinary explicit pageargs collisions, named block versus module and page-local bindings, and hard, soft and case-sensitive block names. The source keyword insertion order cannot be recovered from the Go Render API's input map. Explicit variadic page signatures remain outside this proof."
     }
   ]
 }

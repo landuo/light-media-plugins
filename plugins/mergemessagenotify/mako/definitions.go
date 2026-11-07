@@ -98,10 +98,13 @@ func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlo
 	if len(e.module.rootDefs) == 0 {
 		return nil
 	}
-	refs := scopeReferences{reads: map[string]bool{}, declared: map[string]bool{}, assigned: map[string]bool{}, blockArguments: map[string]bool{}}
+	refs := scopeReferences{
+		reads: map[string]bool{}, declared: map[string]bool{}, assigned: map[string]bool{},
+		namedBlocks: map[string]bool{}, blockArguments: map[string]bool{},
+	}
 	refs.nodes(nodes)
 	if ownerBlock != "" {
-		refs.reads[ownerBlock] = true
+		refs.namedBlocks[ownerBlock] = true
 	}
 	if e.parent == e.module {
 		for name := range refs.blockArguments {
@@ -117,10 +120,13 @@ func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlo
 		}
 	}
 	for _, n := range e.module.rootDefs {
-		if !refs.reads[n.name] || refs.declared[n.name] || e.parameters[n.name] {
+		isBlockDeclaration := refs.namedBlocks[n.name]
+		if (!refs.reads[n.name] && !isBlockDeclaration) || refs.declared[n.name] || e.parameters[n.name] {
 			continue
 		}
-		if _, moduleName := e.module.values[n.name]; moduleName {
+		// Mako declares a block visited in this scope even when the module
+		// has a value with that name. An ordinary read keeps the module value.
+		if _, moduleName := e.module.values[n.name]; moduleName && !isBlockDeclaration {
 			continue
 		}
 		if !e.independentDef && hasLexicalDeclaration(e.parent, n.name) {
@@ -191,7 +197,7 @@ func hasLexicalDeclaration(e *environment, name string) bool {
 // Python parser. The compiler collects references across control branches,
 // but a definition body and a call body have their own generated scopes.
 type scopeReferences struct {
-	reads, declared, assigned, blockArguments map[string]bool
+	reads, declared, assigned, namedBlocks, blockArguments map[string]bool
 }
 
 func (r scopeReferences) nodes(nodes []templateNode) {
@@ -224,7 +230,7 @@ func (r scopeReferences) nodes(nodes []templateNode) {
 				r.declared[n.name] = true
 			}
 			if n.root && n.block {
-				r.reads[n.name] = true
+				r.namedBlocks[n.name] = true
 				for _, param := range n.params {
 					r.blockArguments[param.name] = true
 				}

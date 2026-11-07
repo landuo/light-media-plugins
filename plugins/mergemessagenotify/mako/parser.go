@@ -291,6 +291,10 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 						return nil, nil, err
 					}
 					for _, param := range params {
+						// render_body appends **pageargs to this page signature.
+						if param.name == "pageargs" {
+							return nil, nil, fault("SyntaxError")
+						}
 						out = append(out, pageArgNode{param})
 					}
 				}
@@ -367,6 +371,15 @@ func parseSignature(s string, block bool) (string, []parameter, error) {
 		tokens, err := lex(s)
 		if err != nil || len(tokens) != 2 || tokens[0].kind != "name" || tokens[0].text != s {
 			return "", nil, fault("CompileException")
+		}
+		// Mako emits this name in both a Python declaration and an
+		// attribute access. Python soft keywords are valid in these places.
+		switch s {
+		case "False", "None", "True", "__debug__", "and", "as", "assert", "async", "await",
+			"break", "class", "continue", "def", "del", "elif", "else", "except", "finally",
+			"for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal",
+			"not", "or", "pass", "raise", "return", "try", "while", "with", "yield":
+			return "", nil, fault("SyntaxError")
 		}
 		return s, nil, nil
 	}
