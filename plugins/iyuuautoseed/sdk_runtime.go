@@ -41,7 +41,7 @@ func Manifest() sdk.Manifest {
 		Methods: []string{
 			"init", "get_state", "get_form", "get_render_mode", "get_service",
 			"get_page", "get_api", "get_command", "auto_seed", "site_deleted",
-			"private_scheduler", "close", "stop_service", "stop",
+			"private_scheduler", "pass_continue", "close", "stop_service", "stop",
 		},
 		Capabilities: []string{
 			sdk.BaseGetConfig, sdk.BaseUpdateConfig, sdk.BaseGetDataPath, sdk.BaseGetData, sdk.BaseSaveData,

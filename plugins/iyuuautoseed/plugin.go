@@ -29,12 +29,14 @@ type Plugin struct {
 	mu          sync.RWMutex
 	runtime     *pluginRuntime
 	generation  uint64
+	nextPass    uint64
+	passes      map[uint64]*hostPass
 	now         func() time.Time
 }
 
 func NewPlugin() *Plugin {
 	core, _ := newCore(NewConfig(), nil, nil)
-	return &Plugin{runtime: &pluginRuntime{core: core}, now: time.Now}
+	return &Plugin{runtime: &pluginRuntime{core: core}, passes: make(map[uint64]*hostPass), now: time.Now}
 }
 
 func (p *Plugin) current() *pluginRuntime {
@@ -63,6 +65,12 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 		return json.RawMessage(`null`), nil
 	case "auto_seed":
 		return nil, p.run(ctx, p.current(), caller, false, time.Time{})
+	case "pass_continue":
+		var input passPhaseRequest
+		if err := json.Unmarshal(raw, &input); err != nil {
+			return nil, err
+		}
+		return nil, p.continueHostPass(ctx, caller, input)
 	case "site_deleted":
 		p.lifecycleMu.Lock()
 		defer p.lifecycleMu.Unlock()
@@ -222,11 +230,13 @@ func (p *Plugin) run(ctx context.Context, runtime *pluginRuntime, caller sdk.Hos
 	if err != nil {
 		return err
 	}
-	ctx = bindSourceLog(ctx, caller, token)
-	core.host = newRuntimeHost(caller, runtime.cache, core.config.skipRaw)
-	defer func() { core.host = nil }()
-	if recheck {
-		return core.checkRecheck(ctx)
-	}
-	return core.autoSeed(ctx)
+	return p.withHostPass(ctx, caller, func(owner context.Context, host sdk.HostCaller) error {
+		owner = bindSourceLog(owner, host, token)
+		core.host = newRuntimeHost(host, runtime.cache, core.config.skipRaw)
+		defer func() { core.host = nil }()
+		if recheck {
+			return core.checkRecheck(owner)
+		}
+		return core.autoSeed(owner)
+	})
 }
