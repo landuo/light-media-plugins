@@ -22,8 +22,13 @@ The unchanged artifact then passed the previously unreached symlink and
 private-directory checks. See
 `migration/evidence/mergemessagenotify-attachment-providers-20261107.json`.
 Mako anonymous-block and page filters match the fixed source cases.
-Additional Apprise and Mako behavior, browser, clone and final package
-acceptance remain open.
+The next increment adds Pushbullet, PushSafer and ServerChan, with
+source-derived checks for the upload handshake, batched images and one-line
+destination lists. Mako call tags and caller namespaces have fixed-source
+comparisons. See
+`migration/evidence/mergemessagenotify-providers-mako-calls-20261107.json`.
+Additional Apprise schemes and Mako behavior, browser, clone and final
+package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
