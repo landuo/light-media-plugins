@@ -71,7 +71,9 @@ type coreReplayHost struct {
 	calls     []recheckCall
 }
 
-func (h *coreReplayHost) Inventory(context.Context) ([]Service, error) { return h.services, nil }
+func (h *coreReplayHost) Inventory(context.Context, string, any) ([]Service, error) {
+	return h.services, nil
+}
 func (h *coreReplayHost) Completed(_ context.Context, service Service) ([]NativeTorrent, error) {
 	return h.completed[service.Name], nil
 }
@@ -122,7 +124,7 @@ type recheckLookupHost struct {
 	checked   []string
 }
 
-func (h *recheckLookupHost) Inventory(context.Context) ([]Service, error) {
+func (h *recheckLookupHost) Inventory(context.Context, string, any) ([]Service, error) {
 	if h.reads == len(h.inventory) {
 		return nil, errors.New("unexpected inventory query")
 	}

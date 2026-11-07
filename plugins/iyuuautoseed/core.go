@@ -13,10 +13,11 @@ import (
 )
 
 type Service struct {
-	Ref      string `json:"ref"`
-	Name     string `json:"name"`
-	Kind     string `json:"kind"`
-	Inactive bool   `json:"inactive"`
+	Ref         string `json:"ref"`
+	Name        string `json:"name"`
+	Kind        string `json:"kind"`
+	RuntimeKind string `json:"runtime_kind,omitempty"`
+	Inactive    bool   `json:"inactive"`
 }
 type NativeTorrent struct {
 	Fields map[string]any `json:"fields"`
@@ -33,6 +34,7 @@ type AddSpec struct {
 	Paused              bool
 	Tags                []string
 	SkipChecking        any
+	SkipCheckingRaw     json.RawMessage
 	IgnoreCategoryCheck bool
 }
 type AddReceipt struct {
@@ -63,7 +65,7 @@ type SeedAPI interface {
 // the trusted host; this interface alone does not close the compiled SitesHelper
 // dependency or claim that a remote side effect has a durable receipt.
 type Host interface {
-	Inventory(context.Context) ([]Service, error)
+	Inventory(context.Context, string, any) ([]Service, error)
 	Completed(context.Context, Service) ([]NativeTorrent, error)
 	Torrents(context.Context, Service, []string) ([]NativeTorrent, error)
 	AddPaused(context.Context, Service, AddSpec) (AddReceipt, error)
@@ -122,12 +124,16 @@ func NewCore(config Config, host Host, api SeedAPI) (*Core, error) {
 	if config.values == nil || host == nil || api == nil {
 		return nil, errors.New("IYUU config, host and helper required")
 	}
+	return newCore(config, host, api)
+}
+
+func newCore(config Config, host Host, api SeedAPI) (*Core, error) {
 	snap, e := config.Snapshot()
 	if e != nil {
 		return nil, e
 	}
 	return &Core{
-		config: Config{values: snap}, host: host, api: api,
+		config: Config{values: snap, skipRaw: append(json.RawMessage(nil), config.skipRaw...)}, host: host, api: api,
 		queue: map[string][]string{}, autoRechecked: map[string]bool{}, attempts: []Attempt{},
 	}, nil
 }
@@ -179,7 +185,11 @@ func (c *Core) active(ctx context.Context, logMode string) ([]Service, *Service,
 		c.logInventory(ctx, nil, logMode)
 		return nil, nil, nil
 	}
-	inventory, e := c.host.Inventory(ctx)
+	selection := c.config.values["downloaders"]
+	if logMode == "auto" {
+		selection = c.config.values["auto_downloader"]
+	}
+	inventory, e := c.host.Inventory(ctx, logMode, selection)
 	if e != nil {
 		return nil, nil, e
 	}
@@ -206,8 +216,11 @@ func selectedName(v any, name string) bool {
 	switch x := v.(type) {
 	case []any:
 		return containsScalar(x, name)
+	case map[string]any:
+		_, ok := x[name]
+		return ok
 	case string:
-		return strings.Contains(x, name)
+		return len([]rune(name)) == 1 && strings.Contains(x, name)
 	default:
 		return false
 	}
@@ -235,6 +248,10 @@ func (c *Core) guard(ctx context.Context) error {
 func (c *Core) AutoSeed(ctx context.Context) error {
 	c.runMu.Lock()
 	defer c.runMu.Unlock()
+	return c.autoSeed(ctx)
+}
+
+func (c *Core) autoSeed(ctx context.Context) error {
 	if e := c.guard(ctx); e != nil {
 		return e
 	}
@@ -656,12 +673,16 @@ func (c *Core) download(ctx context.Context, service Service, content TorrentCon
 			spec.Category = nil
 		}
 		spec.SkipChecking = c.config.values["skipverify"]
+		spec.SkipCheckingRaw = c.config.skipRaw
 		spec.IgnoreCategoryCheck = !reuse
 		r, e := c.host.AddPaused(ctx, service, spec)
-		if e != nil {
+		if e != nil && r.Outcome == "" {
 			return "", e
 		}
-		if e = c.record("add", service, r.Hash, EffectReceipt{Accepted: r.Accepted, Outcome: r.Outcome, ReceiptID: r.ReceiptID}); e != nil {
+		if recorded := c.record("add", service, r.Hash, EffectReceipt{Accepted: r.Accepted, Outcome: r.Outcome, ReceiptID: r.ReceiptID}); recorded != nil {
+			return "", recorded
+		}
+		if e != nil {
 			return "", e
 		}
 		if !r.SourceTruthy {
@@ -689,14 +710,20 @@ func (c *Core) download(ctx context.Context, service Service, content TorrentCon
 	if service.Kind == "transmission" {
 		spec.Category = nil
 		r, e := c.host.AddPaused(ctx, service, spec)
-		if e != nil {
+		if e != nil && r.Outcome == "" {
 			return "", e
 		}
-		if e = c.record("add", service, r.Hash, EffectReceipt{Accepted: r.Accepted, Outcome: r.Outcome, ReceiptID: r.ReceiptID}); e != nil {
+		if recorded := c.record("add", service, r.Hash, EffectReceipt{Accepted: r.Accepted, Outcome: r.Outcome, ReceiptID: r.ReceiptID}); recorded != nil {
+			return "", recorded
+		}
+		if e != nil {
 			return "", e
 		}
 		if !r.SourceTruthy {
 			return "", nil
+		}
+		if service.RuntimeKind == "qbittorrent" {
+			return "", sourceFault("AttributeError", "added torrent.hashString")
 		}
 		return r.Hash, nil
 	}

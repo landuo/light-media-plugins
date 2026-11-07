@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
-  "scope": "106 standalone SDK files. The current increment adds opt-in native qBittorrent pack fields to source-completed reads. Other files retain their exact paired commits and the two declared import relocations.",
+  "source_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
+  "scope": "106 standalone SDK files. This increment updates the paired source site HTTP DTOs for private redirect Location and shared source site rate checks. Other leaves retain their original paired commits and declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -756,10 +756,10 @@
     {
       "source_path": "internal/plugins/site_http_host.go",
       "path": "internal/sdk/site_http_host.go",
-      "source_sha256": "0cf57a3942b9099fc7ab33edfe8f4698cf7b0eaece606129dcd7d233fcbcd175",
-      "sha256": "0cf57a3942b9099fc7ab33edfe8f4698cf7b0eaece606129dcd7d233fcbcd175",
+      "source_sha256": "f80e9bc5ac95d6d95b4db24fb651a652ef2566ae3c4369bf7ba2a5694d6d7fd5",
+      "sha256": "f80e9bc5ac95d6d95b4db24fb651a652ef2566ae3c4369bf7ba2a5694d6d7fd5",
       "changes": [],
-      "source_commit": "6a50ec21bdcb680b62eee90705691799f8c4024a"
+      "source_commit": "7be161f91f329d640e0d222b5af23787fffc3a29"
     },
     {
       "source_path": "internal/plugins/site_source.go",
@@ -773,9 +773,9 @@
       "source_path": "internal/plugins/site_source_request.go",
       "path": "internal/sdk/site_source_request.go",
       "changes": [],
-      "source_sha256": "5ffd39c57f0940a9ab9cc0236388520d99bde10e12d8fbe3bd0793951ac03c17",
-      "sha256": "5ffd39c57f0940a9ab9cc0236388520d99bde10e12d8fbe3bd0793951ac03c17",
-      "source_commit": "b3d27057cd0264c6e1ced7eeb60b7621f0c1fb51"
+      "source_sha256": "07cb6d9b42df547da4e31d563803dc9752422704247f1112458202141979c257",
+      "sha256": "07cb6d9b42df547da4e31d563803dc9752422704247f1112458202141979c257",
+      "source_commit": "7be161f91f329d640e0d222b5af23787fffc3a29"
     },
     {
       "source_path": "internal/plugins/site_source_test.go",
@@ -9021,6 +9021,13 @@
       "scope": "105 standalone owned SDK/test/fixture files. The opted-in public service increment changes five existing protocol/client leaves and adds its exact paired source-derived SDK test. Only the two declared module import relocations; no host App or business implementation copied.",
       "target_commit": "8f7115cb9abf0966917ea470bdfa7ad5ec5720d3",
       "target_path": "SDK_ORIGIN.json"
+    },
+    {
+      "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+      "manifest_sha256": "dc605efb2d52613fec55d573e1dcc7c919eb037704030bb2e82c472feb77a4b4",
+      "scope": "106 standalone SDK files. The current increment adds opt-in native qBittorrent pack fields to source-completed reads. Other files retain their exact paired commits and the two declared import relocations.",
+      "target_commit": "b994d0ed4f4951ab12f69e750e0b5de4fab184b2",
+      "target_path": "SDK_ORIGIN.json"
     }
   ],
   "closure_boundaries": {
@@ -9041,7 +9048,7 @@
     "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn.",
     "storage_local_read_increment": "The host validates the scoped capability and current roots, protects private app state, and returns file identity only. The worker reopens beneath the granted root and verifies identity before and after reading."
   },
-  "source_base_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+  "source_base_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
   "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Local qBittorrent pack-field projection paired with the host source-completed dispatcher. The previous file-grant snapshot remains historical."
+  "source_state": "Local host pairing for IYUUAutoSeed 2.22. M-Team material aliases require an exact current-call grant and never forward site credentials."
 }

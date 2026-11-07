@@ -11,6 +11,7 @@ const (
 	SitesSourceCustomConfigCapability = "sites.source.custom_config"
 	SitesSourceCredentialsCapability  = "sites.source.credentials"
 	SitesSourceRequestCapability      = "sites.source.request"
+	SitesSourceCheckCapability        = "sites.source.check"
 	SitesSourceResultWriteCapability  = "sites.source.result.write"
 )
 
@@ -43,11 +44,20 @@ type SiteSourceHTTPRequestV1 struct {
 	// ID and ordinary UA selector flags must be empty; Reference and UserAgent
 	// select the source owner. Other bounded HTTP material keeps the old DTO.
 	Request         SiteHTTPRequestV1 `json:"request"`
-	CookieMode      string            `json:"cookie_mode,omitempty"` // parsed(default), raw, none
-	UserAgent       string            `json:"user_agent,omitempty"`  // source(default), none, session, host
+	CookieMode      string            `json:"cookie_mode,omitempty"`      // parsed(default), raw, none
+	UserAgent       string            `json:"user_agent,omitempty"`       // source(default), none, session, host
+	IncludeLocation bool              `json:"include_location,omitempty"` // bound GET with redirects disabled
 	ExplicitHeaders bool              `json:"explicit_headers,omitempty"`
-	OriginProfile   string            `json:"origin_profile,omitempty"`  // site(default), tjupt, opencd, hdsky, mteam
+	OriginProfile   string            `json:"origin_profile,omitempty"`  // site(default) or a finite source profile
 	CredentialMode  string            `json:"credential_mode,omitempty"` // empty orfinite rouSi auth normalization
+}
+type SiteSourceCheckRequestV1 struct {
+	Domain string `json:"domain"`
+}
+type SiteSourceCheckResultV1 struct {
+	SchemaVersion int    `json:"schema_version"`
+	Limited       bool   `json:"limited"`
+	Message       string `json:"message"`
 }
 type SiteSourceAccessResultV1 struct {
 	Reference SiteSourceReferenceV1 `json:"reference"`
@@ -97,6 +107,21 @@ func (s Sites) SourceRequest(ctx context.Context, in SiteSourceHTTPRequestV1) (S
 	}
 	return out, err
 }
+
+// SourceCheck is the source helper's consuming site rate check. It does not
+// make a site request or provide a grant to another URL.
+func (s Sites) SourceCheck(ctx context.Context, domain string) (SiteSourceCheckResultV1, error) {
+	var out SiteSourceCheckResultV1
+	if domain == "" || len(domain) > 512 || !utf8.ValidString(domain) {
+		return out, errors.New("invalid source site check domain")
+	}
+	err := hostBusinessCall(ctx, s.Host, SitesSourceCheckCapability, SiteSourceCheckRequestV1{Domain: domain}, &out)
+	if err == nil && (out.SchemaVersion != 1 || !utf8.ValidString(out.Message)) {
+		err = errors.New("invalid source site check response")
+	}
+	return out, err
+}
+
 func (s Sites) SourceRecordAccess(ctx context.Context, in SiteSourceAccessResultV1) (SiteHostAccessV1, error) {
 	var out SiteHostAccessV1
 	if !siteSourceReferenceValid(in.Reference, false) {

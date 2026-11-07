@@ -3,6 +3,7 @@ package iyuuautoseed
 import (
 	"encoding/json"
 	"errors"
+	"maps"
 	"math"
 	"math/big"
 	"strconv"
@@ -17,7 +18,10 @@ var configKeys = []string{"enabled", "skipverify", "onlyonce", "clearcache", "cr
 // Config retains JSON presence/value semantics until the source consumes a
 // particular field. A configuration is host-owned secret material; it must not
 // be returned through an unredacted public API or written to ordinary logs.
-type Config struct{ values map[string]any }
+type Config struct {
+	values  map[string]any
+	skipRaw json.RawMessage
+}
 
 func NewConfig() Config { return classConfig() }
 
@@ -61,6 +65,15 @@ func (c Config) Snapshot() (map[string]any, error) {
 	}
 	return v.(map[string]any), nil
 }
+func withRawSkip(values map[string]any, raw json.RawMessage) map[string]any {
+	if len(raw) == 0 {
+		return values
+	}
+	out := maps.Clone(values)
+	out["skipverify"] = raw
+	return out
+}
+
 func (c Config) String(key string) (string, error) {
 	v := c.values[key]
 	if v == nil {

@@ -12,9 +12,16 @@ import (
 // names consumed by the original selection and recheck logic.
 type sourceDownloaderReads struct{ client sdk.Downloaders }
 
+func (s Service) actualKind() string {
+	if s.RuntimeKind != "" {
+		return s.RuntimeKind
+	}
+	return s.Kind
+}
+
 func (d sourceDownloaderReads) Completed(ctx context.Context, service Service) ([]NativeTorrent, error) {
 	request := sdk.DownloaderCompletedRequestV1{DownloaderID: service.Ref}
-	if service.Kind == "qbittorrent" {
+	if service.actualKind() == "qbittorrent" {
 		reply, err := d.client.SourceCompletedWithQBPackFields(ctx, request)
 		return projectSourceTasks(service, reply, err)
 	}
@@ -31,7 +38,7 @@ func projectSourceTasks(service Service, reply sdk.DownloaderSourceTasksResultV1
 	if err != nil {
 		return nil, err
 	}
-	if reply.Kind != service.Kind {
+	if reply.Kind != service.actualKind() {
 		return nil, errors.New("IYUU downloader kind changed")
 	}
 	// Original native query failures become an empty task list. In particular,

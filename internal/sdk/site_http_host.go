@@ -50,6 +50,7 @@ type SiteHTTPResponseV1 struct {
 	StatusCode  int              `json:"status_code"`
 	Content     []byte           `json:"content"`
 	ContentType string           `json:"content_type"`
+	Location    *string          `json:"location,omitempty"` // private, opted-in source redirect
 	Cookies     []SiteHTTPPairV1 `json:"cookies"`
 }
 

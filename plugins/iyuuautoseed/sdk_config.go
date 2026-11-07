@@ -119,6 +119,13 @@ func prepareConfigFromHost(ctx context.Context, host sdk.HostCaller, config *Con
 	if err != nil {
 		return err
 	}
+	if len(input) > 0 {
+		var fields map[string]json.RawMessage
+		if err := json.Unmarshal(raw, &fields); err != nil {
+			return err
+		}
+		config.skipRaw = fields["skipverify"]
+	}
 	sites := sdk.Sites{Host: host}
 	write, err := config.PrepareInit(input, func() ([]any, error) {
 		managed, err := managedSiteOptions(ctx, sites)
@@ -140,7 +147,7 @@ func prepareConfigFromHost(ctx context.Context, host sdk.HostCaller, config *Con
 	if err != nil || write == nil {
 		return err
 	}
-	_, err = (sdk.Base{Host: host}).UpdateConfig(ctx, write)
+	_, err = (sdk.Base{Host: host}).UpdateConfig(ctx, withRawSkip(write, config.skipRaw))
 	return err
 }
 
@@ -174,7 +181,7 @@ func siteDeletedFromHost(ctx context.Context, host sdk.HostCaller, config *Confi
 	if err != nil {
 		return err
 	}
-	_, err = base.UpdateConfig(ctx, write)
+	_, err = base.UpdateConfig(ctx, withRawSkip(write, config.skipRaw))
 	return err
 }
 
