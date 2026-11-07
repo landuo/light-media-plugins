@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (fifteen of 22 in scope accepted)
+## Current resume (sixteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -66,7 +66,15 @@ installed snapshot fits the 16 MiB single-value SDK boundary. Source
 clone naming and legacy ownership restrictions are recorded in
 `migration/evidence/brushflowlanduo-acceptance-20261108.json`.
 
-Next: MergeSiteSwitch, starting with the installed source identity.
+MergeSiteSwitch 1.2 is accepted within the recorded native site-ID mapping.
+One isolated Linux scenario used the indexed package and actual host routes
+for form, explicit save, exact installed peer reinitialization, site update
+and deletion. A Chrome save retained numeric selections. A separate case
+verified event admission during a lifecycle operation. Source-only optional
+peers and stale site-ID handling are described in
+`migration/evidence/merge-site-switch-runtime-20261108.json`.
+
+Next: ScrapeFileClean 1.0.7, starting with the installed source identity.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

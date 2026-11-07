@@ -1,0 +1,154 @@
+{
+  "feature": "plugin.MergeSiteSwitch",
+  "installed_version": "1.2",
+  "source": {
+    "path": "mergesiteswitch/__init__.py",
+    "baseline_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "baseline_kind": "Local content snapshot of the installed source.",
+    "git_blob": "be4f7d075a8643adbc346b438269e975d6434622",
+    "sha256": "52d798421eabe57a88f3d0fc448289309fdfc8ecd6ea50d98cd5436d93289ab0",
+    "locations": [
+      "__init__.py:61–75,457–476",
+      "__init__.py:97–445,597–642",
+      "__init__.py:644–887",
+      "__init__.py:889–1000,1049–1088"
+    ],
+    "host_basis": {
+      "moviepilot": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "moviepilot_frontend": "2829e3b08214348f05ff2f5beae644882eccad58"
+    }
+  },
+  "source_oracle": {
+    "kind": "Previously executed fixed-source scenarios and independent call-chain review",
+    "path": "light-media:testdata/plugins/merge-sites-typed-original-oracle.json",
+    "sha256": "7ea3428140797551fcf789dbe3c99ad1b94c2ec6f5b29af4ea91166979a8d322",
+    "new_source_execution": false
+  },
+  "target": {
+    "worker_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+    "host_product_commit": "aed98074826f1d6046aade68f6435f06ccd97aed",
+    "host_runtime_fixture_commit": "87eb176cd4c87f84e5b4e9fd781a7f8e7966ebc4",
+    "worker": "plugins/mergesiteswitch/{plugin,event,form}.go",
+    "host": "internal/app/plugin_original_merge_site_switch.go",
+    "fixture": "internal/app/plugin_merge_site_switch_linux_test.go",
+    "fixture_sha256": "6735e95326747cb2dd1ad29abce3e77cd89a31a6f1b5677b85f0a556e445591f",
+    "final_host_product_commit": "532e0d8bcf79f166c7d068b80644a287071d3423",
+    "host_browser_fixture_saved_commit": "0e5caf97f8be0fa229b64ebf292cfb1bc0564fff",
+    "build_registry_commit": "bb6fc90e294801df0aeada67467b296ce286cebc"
+  },
+  "package": {
+    "archive_members": [
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md",
+      "merge-site-switch",
+      "plugins/mergesiteswitch/ORIGIN.json",
+      "third_party/Go-LICENSE"
+    ],
+    "archive_sha256": "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b",
+    "archive_size": 2674193,
+    "capabilities": 6,
+    "entry": "merge-site-switch",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "MergeSiteSwitch",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "87b3c647e3e7bae674879ea8d40862e4c4703824dc5b08fd2973e2fe8932c1dd",
+    "methods": 13,
+    "notice_sha256": "a0718b4b4b4dc27df95b1ad550d3dec11b5933a5b56b57e9e6eef0c8bb9f65b8",
+    "notice_size": 18246,
+    "plugin_source": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+    "version": "1.2",
+    "worker_sha256": "2ad571f2e84dc71daeb790cd1d896ce0f34e3885105c9b2f67d2073b0f405feb",
+    "worker_size": 4722025,
+    "path": "work/merge-site-switch-20261108/packaging/linux-amd64/MergeSiteSwitch-1.2-linux-amd64.zip"
+  },
+  "runtime": {
+    "kind": "Isolated real App on native Linux amd64, disconnected Docker container, real indexed worker ZIPs, ordinary authenticated App API handlers",
+    "test": "TestMergeSiteSwitchInstalledAMD64FormAndEvents",
+    "result": "PASS 6.75s",
+    "runtime_stdout_sha256": "902b28364386e05a9e92c4c1bf1ea942269818b2444bfbd176f2300e0830e980",
+    "input_hashes": [
+      "8092ff11fcfb5e8d036c57fc041a49f15f6c15f197abc64f1bfc6ec862f8d587  app-native.test",
+      "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b  MergeSiteSwitch/worker.zip",
+      "cc7c940235f118e0e20c84a7ec930d5eabcb9a9767b30bad85c416316cda5d1f  AutoSignIn/worker.zip",
+      "a0c68d4fc080c1fa7b621da11b7e810c8086fa2479ddf792c0c8e7af2ddbc022  SiteStatistic/worker.zip",
+      "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6  IYUUAutoSeed/worker.zip",
+      "dd9333b22f4c173054696f7ca015a73a9446dde811b38d6f81c3af4d2d19fe2c  MergeSiteSwitch/index.json",
+      "b49693319507760ff3005382ecc2942fcd24aae12aa6eedcc24135cb04305fcd  AutoSignIn/index.json",
+      "012ba10dca6264d722fbb5c1b752b8b8ed55a5ce7062e3b4f963fcccc0c5f621  SiteStatistic/index.json",
+      "13683043ab0b4e8e3dfa0dfc895dc4b17385be9c580e3c87cb4e0ebc626db431  IYUUAutoSeed/index.json"
+    ],
+    "observations": [
+      "The exact four package indexes and ZIP hashes were verified before startup. The installed MergeSiteSwitch opened the native Vuetify form with live priority-ordered numeric site IDs and exposed only the three installed exact peers.",
+      "One explicit public save disabled beta, selected alpha for Search and all four peer slots, and left RSS independently set to beta.",
+      "The normal SiteUpdated route enabled beta. Search and SiteStatistic appended beta. AutoSignIn and IYUU persisted beta before alpha in their original priority-order reinitializers. The normal SiteDeleted route removed alpha, preserving beta in RSS and the following settings.",
+      "All input and site data were synthetic, all writes stayed in the temporary instance, and the stopped container and its bundle were removed."
+    ]
+  },
+  "prior_attempts": [
+    {
+      "result": "failed",
+      "input_worker_commit": "eae5029811c8faadc96970629779353f47636d16",
+      "observed": "The first worker advertised ManagedPublicServices from a serial entry point. Linux installed files and rejected the process during handshake before init. The worker now negotiates the concurrent managed event path.",
+      "runtime_stdout_sha256": "30188c4ff0822dbe67c5946275d31350354d1bd290e0e71e83bf7cd498bca476"
+    },
+    {
+      "result": "failed assertion after source SiteUpdated",
+      "input_worker_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+      "observed": "The fixture expected all peer lists to keep append order. Fixed AutoSignIn and IYUUAutoSeed source initializers filter by priority order and save the filtered list. The final fixture checks separate priority order and append order, with product code unchanged for this correction.",
+      "runtime_stdout_sha256": "3edba45cf59b49ff4249ce29318ecd11652683149ad98d8710634b659a6a8059"
+    }
+  ],
+  "adaptations": [
+    "The authenticated host save origin replaces Python inspect.stack. Peer fields are allowlisted and updated individually. Only site selections and CustomSites ID/name are projected; complete peer configuration does not cross the worker boundary.",
+    "Stable native site IDs are mapped to numeric source IDs. Search and RSS writes require IDs that still resolve to a host site; source SystemConfig permits stale numbers. The site-enable loop ignores unmatched valid numeric IDs. Configured custom IDs preserve their numeric/string type in peer lists.",
+    "Exact peer IDs are used. Source BrushFlow is not the installed BrushFlowLanduo. CustomSites, BrushFlow and CrossSeed were absent from the observed installation. Their form and gate behavior is fixed-source-reviewed. SiteStatistic 1.9.7 retains the written statistic_sites field and does not consume it as a filter.",
+    "Host registration and process lifetime use the existing managed public-event contract. Reinitialization and job refresh operate on the existing exact peer object. Source authorization level is excluded by user scope."
+  ],
+  "delivery": "Local only. No production state copied or changed. No push, deployment, or published index change.",
+  "browser": {
+    "kind": "Chrome on the actual isolated Linux App and unmodified existing Vuetify frontend",
+    "test": "TestMergeSiteSwitchLinuxAMD64BrowserPackage",
+    "result": "PASS 9.36s",
+    "host_product_and_runtime_base": "87eb176cd4c87f84e5b4e9fd781a7f8e7966ebc4",
+    "fixture": "internal/app/plugin_merge_site_switch_browser_linux_test.go",
+    "fixture_sha256": "b42b66ce46e5be47c729f589b59ea40f2d8bd340c63a1e4844a7e554b9593a60",
+    "chrome": "Chrome/157.0.8103.38",
+    "artifacts": {
+      "browser-result.json": "359ee31ec25244f71e24855fb75d0aca56691f861c636a9cf11dcb67ecce90dc",
+      "runtime.stdout": "57085afb39a071ae6b47751324245da9da446a3a67b98f63eb871d0ddb14e3ae",
+      "vselect.png": "62f84b5452f775be974597ebf3ddad803cb7f690c51938731bc778178d5ad63a",
+      "verify.mjs": "d29818472610a97a5b9a96e0f4e835886fae8a1e404ae1fa04a8b8900d74b359",
+      "SHA256SUMS": "522352a080ff550b3ab87087f630f4f07435d0bfd6b634eb6a5fdd7d6963e469"
+    },
+    "observation": "Real selection of the second site sent numeric IDs [1,2] in the authenticated PUT. The GET and host store read back the same IDs, both sites became enabled, and unrelated follow settings stayed disabled. No JavaScript exception. The later host delta affects registered event dispatch only."
+  },
+  "contended_event": {
+    "kind": "Distinct actual Linux App run with an owned in-flight lifecycle operation and real SiteUpdated from the site management route",
+    "test": "TestMergeSiteSwitchSiteUpdatedWaitsForLifecycle",
+    "result": "PASS 1.73s",
+    "host_commit": "532e0d8bcf79f166c7d068b80644a287071d3423",
+    "fixture": "internal/app/plugin_merge_site_switch_linux_test.go",
+    "fixture_sha256": "3d66efdba235ae7d1b03e3724135c20917dc265402016949e4332db752f80e79",
+    "runtime_stdout_sha256": "2d2f707071f8db920de819db39a891fbb974e68a3022449c90db887ff61b90f4",
+    "input_hashes": [
+      "8390c3f4f998314b6c3714e1878516c1792da260ea377901d2d464b255a2065e  app-native.test",
+      "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b  MergeSiteSwitch/worker.zip",
+      "cc7c940235f118e0e20c84a7ec930d5eabcb9a9767b30bad85c416316cda5d1f  AutoSignIn/worker.zip",
+      "a0c68d4fc080c1fa7b621da11b7e810c8086fa2479ddf792c0c8e7af2ddbc022  SiteStatistic/worker.zip",
+      "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6  IYUUAutoSeed/worker.zip",
+      "dd9333b22f4c173054696f7ca015a73a9446dde811b38d6f81c3af4d2d19fe2c  MergeSiteSwitch/index.json",
+      "b49693319507760ff3005382ecc2942fcd24aae12aa6eedcc24135cb04305fcd  AutoSignIn/index.json",
+      "012ba10dca6264d722fbb5c1b752b8b8ed55a5ce7062e3b4f963fcccc0c5f621  SiteStatistic/index.json",
+      "13683043ab0b4e8e3dfa0dfc895dc4b17385be9c580e3c87cb4e0ebc626db431  IYUUAutoSeed/index.json"
+    ],
+    "observation": "Before the manager is released the event makes no partial Search selection write. After release the ordinary callback updates Search and SiteStatistic. This validates admission before the worker callback, independent of the already accepted ordinary save, update and deletion run."
+  },
+  "review": {
+    "source_reviewer": "/root/emby",
+    "host_author_and_handshake_diagnosis": "/root/kodi",
+    "browser_operator": "/root/jellyfin",
+    "scope": "The independent source reviewer traced form persistence, actual public save origin, typed first removal, exact peer IDs and host call sequence. Evidence hashes matched the source oracle, ZIP, Linux fixture and output. A concurrency review found a possible partial event write, closed by managed operation admission before dispatch and a distinct actual scenario."
+  },
+  "status": "accepted_for_installed_scope_with_documented_host_id_mapping"
+}

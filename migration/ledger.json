@@ -136,15 +136,16 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
+    "revision": "bb6fc90e294801df0aeada67467b296ce286cebc",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
     "metadata_paths": [
       "migration/ledger.json",
-      "docs/migration-task.md"
+      "docs/migration-task.md",
+      "migration/evidence/merge-site-switch-runtime-20261108.json"
     ],
-    "revision_scope": "Eight functional instances accepted locally, including AutoSignIn on the paired SDK105 host; release registration and notice-only restaging are tracked separately. No remote main push or new production deployment.",
+    "revision_scope": "Sixteen installed instances accepted in the 22-instance scope on the paired host, local build registration included. Published remote index and both main refs unchanged.",
     "deployment": "NASpairedverified166/09ab+824workers installed7inactive; currentcodebranch/mainrelease distinct, details resume.deployment_20261106"
   },
   "inventory": [
@@ -4508,6 +4509,32 @@
         "MoviePilot installed instance and registered API, ordinary event or public scheduler",
         "BrushFlowLanduo task settings, state, resource and data logic",
         "Source result or external side effect"
+      ]
+    },
+    {
+      "id": "plugin.MergeSiteSwitch.listen_site_updated_event",
+      "feature_ids": [
+        "plugin.MergeSiteSwitch"
+      ],
+      "source_location": "mergesiteswitch/__init__.py:1049",
+      "chain": [
+        "Committed native site edit publishes ordinary SiteUpdated",
+        "Managed original broadcast with bound source-event lease",
+        "Resolve current row by stored source domain",
+        "Update following core/installed peer selections in source slot order"
+      ]
+    },
+    {
+      "id": "plugin.MergeSiteSwitch.listen_site_deleted_event",
+      "feature_ids": [
+        "plugin.MergeSiteSwitch"
+      ],
+      "source_location": "mergesiteswitch/__init__.py:1072",
+      "chain": [
+        "Committed native site removal publishes ordinary SiteDeleted",
+        "Managed original broadcast with bound source-event lease",
+        "Use the typed source site ID to remove the first matching item",
+        "Persist following core/peer fields and reinitialize peer jobs only on change"
       ]
     }
   ],
@@ -14126,26 +14153,56 @@
         "plugin.MergeSiteSwitch.get_service",
         "plugin.MergeSiteSwitch.get_api",
         "plugin.MergeSiteSwitch.get_state",
-        "plugin.MergeSiteSwitch.stop_service"
+        "plugin.MergeSiteSwitch.stop_service",
+        "plugin.MergeSiteSwitch.listen_site_updated_event",
+        "plugin.MergeSiteSwitch.listen_site_deleted_event"
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/merge-site-switch/main.go",
+        "plugins/mergesiteswitch/plugin.go",
+        "plugins/mergesiteswitch/form.go",
+        "plugins/mergesiteswitch/form.json",
+        "plugins/mergesiteswitch/event.go",
+        "plugins/mergesiteswitch/ORIGIN.json"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "mergesiteswitch.native_amd64_form_and_events.20261108",
+        "mergesiteswitch.chrome_numeric_selection.20261108",
+        "mergesiteswitch.contended_site_event.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby and /root/jellyfin",
+        "evidence_ids": [
+          "mergesiteswitch.native_amd64_form_and_events.20261108",
+          "mergesiteswitch.chrome_numeric_selection.20261108",
+          "mergesiteswitch.contended_site_event.20261108"
+        ]
       },
       "original_instance_id": "MergeSiteSwitch",
       "family": "MergeSiteSwitch",
       "source_version": "1.2",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Fixed installed source, real Linux install/form/save and ordinary update/delete, Chrome typed selection, and a distinct actual contended event case accepted. Source-only optional peers and live native ID mapping are documented.",
+      "paired_host_paths": [
+        "internal/app/plugin_original_merge_site_switch.go",
+        "internal/app/plugin_original_base_session.go",
+        "internal/app/plugin_original_base.go",
+        "internal/app/plugin_original_resources.go",
+        "internal/app/plugin_original_event_call.go"
+      ],
+      "adaptations": [
+        "The authenticated host save origin replaces Python inspect.stack. Peer fields are allowlisted and updated individually. Only site selections and CustomSites ID/name are projected; complete peer configuration does not cross the worker boundary.",
+        "Stable native site IDs are mapped to numeric source IDs. Search and RSS writes require IDs that still resolve to a host site; source SystemConfig permits stale numbers. The site-enable loop ignores unmatched valid numeric IDs. Configured custom IDs preserve their numeric/string type in peer lists.",
+        "Exact peer IDs are used. Source BrushFlow is not the installed BrushFlowLanduo. CustomSites, BrushFlow and CrossSeed were absent from the observed installation. Their form and gate behavior is fixed-source-reviewed. SiteStatistic 1.9.7 retains the written statistic_sites field and does not consume it as a filter.",
+        "Host registration and process lifetime use the existing managed public-event contract. Reinitialization and job refresh operate on the existing exact peer object. Source authorization level is excluded by user scope."
+      ]
     },
     {
       "id": "plugin.TorrentTransfermusic",
@@ -66979,6 +67036,109 @@
         "test_sha256": "1e6a10903cbff8ad1149ff529ddad9731491e7d069b33cd71c42ac5519fee2f3",
         "target_sha256": "a2381afadd444bfa3480280e9060df940fea9942bb9eba40bdd715835567fa1a"
       }
+    },
+    {
+      "id": "mergesiteswitch.native_amd64_form_and_events.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.MergeSiteSwitch"
+      ],
+      "commands": [
+        "TestMergeSiteSwitchInstalledAMD64FormAndEvents"
+      ],
+      "observations": [
+        "The exact four package indexes and ZIP hashes were verified before startup. The installed MergeSiteSwitch opened the native Vuetify form with live priority-ordered numeric site IDs and exposed only the three installed exact peers.",
+        "One explicit public save disabled beta, selected alpha for Search and all four peer slots, and left RSS independently set to beta.",
+        "The normal SiteUpdated route enabled beta. Search and SiteStatistic appended beta. AutoSignIn and IYUU persisted beta before alpha in their original priority-order reinitializers. The normal SiteDeleted route removed alpha, preserving beta in RSS and the following settings.",
+        "All input and site data were synthetic, all writes stayed in the temporary instance, and the stopped container and its bundle were removed."
+      ],
+      "artifacts": {
+        "evidence/merge-site-switch-runtime-20261108.json": "2def3fb5a47fda4f69622ed1f0a792af1c380b2b8515cb1fcb614250594165b6"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "52d798421eabe57a88f3d0fc448289309fdfc8ecd6ea50d98cd5436d93289ab0",
+        "worker_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+        "host_product_commit": "aed98074826f1d6046aade68f6435f06ccd97aed",
+        "host_fixture_commit": "87eb176cd4c87f84e5b4e9fd781a7f8e7966ebc4",
+        "archive_sha256": "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b",
+        "target_files": {
+          "cmd/merge-site-switch/main.go": "84e5f582248c584cee812517e6349c909b8cabadac9e747645b5779864f9f022",
+          "plugins/mergesiteswitch/plugin.go": "89889ea43423bdca3e788be67ec5469d4d4091050eb9eb5a82dab9a5839447ce",
+          "plugins/mergesiteswitch/form.go": "e6fae4f962bd7b672243d4d9e4ff2a0467cd2b97dbe6abf7a46536771bd68a00",
+          "plugins/mergesiteswitch/form.json": "aefc90d03c2df8a13ae751e358d2de1b995d00fddc6488276a2b17bc9a292c79",
+          "plugins/mergesiteswitch/event.go": "f25ea163b13ee792757cfadeb9ecebbc8ed30f29996946004b76439e6825d275",
+          "plugins/mergesiteswitch/ORIGIN.json": "466c556b0b3979b7c87c184f02f3a8718d00f2c4677a8d0686940d13ab69f962"
+        },
+        "environment": "Isolated real App on native Linux amd64, disconnected Docker container, real indexed worker ZIPs, ordinary authenticated App API handlers"
+      }
+    },
+    {
+      "id": "mergesiteswitch.chrome_numeric_selection.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.MergeSiteSwitch"
+      ],
+      "commands": [
+        "TestMergeSiteSwitchLinuxAMD64BrowserPackage"
+      ],
+      "observations": "Real selection of the second site sent numeric IDs [1,2] in the authenticated PUT. The GET and host store read back the same IDs, both sites became enabled, and unrelated follow settings stayed disabled. No JavaScript exception. The later host delta affects registered event dispatch only.",
+      "artifacts": {
+        "evidence/merge-site-switch-runtime-20261108.json": "2def3fb5a47fda4f69622ed1f0a792af1c380b2b8515cb1fcb614250594165b6"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "52d798421eabe57a88f3d0fc448289309fdfc8ecd6ea50d98cd5436d93289ab0",
+        "worker_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+        "host_product_commit": "aed98074826f1d6046aade68f6435f06ccd97aed",
+        "host_fixture_commit": "87eb176cd4c87f84e5b4e9fd781a7f8e7966ebc4",
+        "archive_sha256": "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b",
+        "target_files": {
+          "cmd/merge-site-switch/main.go": "84e5f582248c584cee812517e6349c909b8cabadac9e747645b5779864f9f022",
+          "plugins/mergesiteswitch/plugin.go": "89889ea43423bdca3e788be67ec5469d4d4091050eb9eb5a82dab9a5839447ce",
+          "plugins/mergesiteswitch/form.go": "e6fae4f962bd7b672243d4d9e4ff2a0467cd2b97dbe6abf7a46536771bd68a00",
+          "plugins/mergesiteswitch/form.json": "aefc90d03c2df8a13ae751e358d2de1b995d00fddc6488276a2b17bc9a292c79",
+          "plugins/mergesiteswitch/event.go": "f25ea163b13ee792757cfadeb9ecebbc8ed30f29996946004b76439e6825d275",
+          "plugins/mergesiteswitch/ORIGIN.json": "466c556b0b3979b7c87c184f02f3a8718d00f2c4677a8d0686940d13ab69f962"
+        },
+        "environment": "Chrome on the actual isolated Linux App and unmodified existing Vuetify frontend",
+        "host_fixture_sha256": "b42b66ce46e5be47c729f589b59ea40f2d8bd340c63a1e4844a7e554b9593a60"
+      }
+    },
+    {
+      "id": "mergesiteswitch.contended_site_event.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.MergeSiteSwitch"
+      ],
+      "commands": [
+        "TestMergeSiteSwitchSiteUpdatedWaitsForLifecycle"
+      ],
+      "observations": "Before the manager is released the event makes no partial Search selection write. After release the ordinary callback updates Search and SiteStatistic. This validates admission before the worker callback, independent of the already accepted ordinary save, update and deletion run.",
+      "artifacts": {
+        "evidence/merge-site-switch-runtime-20261108.json": "2def3fb5a47fda4f69622ed1f0a792af1c380b2b8515cb1fcb614250594165b6"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "52d798421eabe57a88f3d0fc448289309fdfc8ecd6ea50d98cd5436d93289ab0",
+        "worker_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+        "host_product_commit": "532e0d8bcf79f166c7d068b80644a287071d3423",
+        "host_fixture_commit": "532e0d8bcf79f166c7d068b80644a287071d3423",
+        "archive_sha256": "38e2b5cc7b1b7c85e3b46beb3ed1da5aedffa1511c3fe0a62dc8df362c2e898b",
+        "target_files": {
+          "cmd/merge-site-switch/main.go": "84e5f582248c584cee812517e6349c909b8cabadac9e747645b5779864f9f022",
+          "plugins/mergesiteswitch/plugin.go": "89889ea43423bdca3e788be67ec5469d4d4091050eb9eb5a82dab9a5839447ce",
+          "plugins/mergesiteswitch/form.go": "e6fae4f962bd7b672243d4d9e4ff2a0467cd2b97dbe6abf7a46536771bd68a00",
+          "plugins/mergesiteswitch/form.json": "aefc90d03c2df8a13ae751e358d2de1b995d00fddc6488276a2b17bc9a292c79",
+          "plugins/mergesiteswitch/event.go": "f25ea163b13ee792757cfadeb9ecebbc8ed30f29996946004b76439e6825d275",
+          "plugins/mergesiteswitch/ORIGIN.json": "466c556b0b3979b7c87c184f02f3a8718d00f2c4677a8d0686940d13ab69f962"
+        },
+        "environment": "Distinct actual Linux App run with an owned in-flight lifecycle operation and real SiteUpdated from the site management route",
+        "host_fixture_sha256": "3d66efdba235ae7d1b03e3724135c20917dc265402016949e4332db752f80e79"
+      }
     }
   ],
   "scope": {
@@ -67038,21 +67198,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 15,
+      "functional_verified_instances": 16,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 14,
-      "functional_verified_count_scope": "Fifteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 15,
+      "functional_verified_count_scope": "Sixteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+      "tested_saved_code_revision": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "a9ed3014acd685870407635765077403923b4dab",
+      "host_HEAD": "0e5caf97f8be0fa229b64ebf292cfb1bc0564fff",
       "SDK_source_host_commit": "4ae9d95e736038115d44c2c60288783a1915776f",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "3c57714c4ee65c0af6c2843d81802afecc8e7e526dee36fe871a42202aa2fce1",
@@ -67063,12 +67223,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Fifteen of 22 accepted. BrushFlowLanduo 5.2.18 final package and paired host are local. Guarded legacy adoption, longer source passes and local material recipes verified. No push or deployment.",
-      "tests_running": "None. BrushFlow native long pass, legacy ownership, partial failure branch and final navigation/dashboard passed. Existing passed workbench and recipe cases were not repeated.",
-      "latest_detail": "migration/evidence/brushflowlanduo-acceptance-20261108.json",
+      "delivery": "Sixteen of 22 accepted locally. MergeSiteSwitch 1.2 Go package and paired host are saved locally. No remote push or deployment.",
+      "tests_running": "None. Linux form/save/events, Chrome numeric selection and a separate contended site event passed.",
+      "latest_detail": "migration/evidence/merge-site-switch-runtime-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start MergeSiteSwitch from its installed source. Keep the fixed scope and the already accepted BrushFlow evidence. Do not rerun passing suites.",
+      "next_complete_slice": "Start ScrapeFileClean 1.0.7 from the installed source. Preserve the accepted BrushFlow and MergeSiteSwitch cases and run only new relevant cases.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -67078,7 +67238,8 @@
       "latest_SubscribeGroup_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
       "latest_AutoBackup_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455",
       "brushflowlanduo_source_revision": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
-      "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f"
+      "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+      "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -67095,7 +67256,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start MergeSiteSwitch from its installed source. Keep the fixed scope and the already accepted BrushFlow evidence. Do not rerun passing suites.",
+    "next_complete_slice": "Start ScrapeFileClean 1.0.7 from the installed source. Preserve the accepted BrushFlow and MergeSiteSwitch cases and run only new relevant cases.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
