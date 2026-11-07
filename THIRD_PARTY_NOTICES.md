@@ -160,3 +160,13 @@ distributed under Apache License 2.0.
 The `golang.org/x/sys v0.49.0` BSD license and patent grant are byte-identical
 to those of `golang.org/x/text v0.43.0`. The package uses the shared
 `third_party/x-text-LICENSE` and `third_party/x-text-PATENTS` files for both.
+
+## AutoBackup business source
+
+The installed AutoBackup 2.1.4 MoviePilot source identifies thsrite as its
+author. The fixed `__init__.py` SHA-256 is
+`dedab53b1adf96dc59879ebdd67f77fe67ea773981d4befb04ca000889f607e4`.
+`plugins/autobackup/ORIGIN.json` records the original source and the scoped Go
+implementation. The worker reuses the repository's native cron and JSON-value
+helpers. Its manifest retains the original author attribution. No upstream icon
+or Python runtime is included in the package.

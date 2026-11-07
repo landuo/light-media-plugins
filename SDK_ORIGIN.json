@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "b9dc4f4bf994ee9254dde7cc9cd06b66829f6373",
-  "scope": "106 standalone SDK files. This increment pairs accepted-download source projections and atomic SubscribeGroup patch/history writes. Other leaves retain their original paired commits and declared import relocations.",
+  "source_commit": "ec70784cd9d0e14de6b65e9d916ce4e0a9e9009b",
+  "scope": "107 standalone SDK files. This increment pairs the finite local backup archive and retention capability. Other leaves retain their original paired commits and declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -430,6 +430,14 @@
       "sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
       "changes": [],
       "source_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f"
+    },
+    {
+      "source_path": "internal/plugins/local_backup.go",
+      "path": "internal/sdk/local_backup.go",
+      "source_sha256": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6",
+      "sha256": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6",
+      "changes": [],
+      "source_commit": "ec70784cd9d0e14de6b65e9d916ce4e0a9e9009b"
     },
     {
       "source_path": "internal/plugins/log.go",
