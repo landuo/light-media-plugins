@@ -47,7 +47,10 @@
     "twist",
     "chanify",
     "pushme",
-    "wxpusher"
+    "wxpusher",
+    "wecombot",
+    "lark",
+    "pushy"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -358,6 +361,27 @@
         "keys": 598,
         "provenance": "Isolated original Python zoneinfo.available_timezones, sorted and identical to the pinned Go 1.26.10 zoneinfo.zip key set."
       }
+    },
+    {
+      "file": "wecombot.go",
+      "original_path": "apprise/plugins/wecombot.py",
+      "original_sha256": "1b5801338240ce52121e6ad106e2360d2a1d2613cba594a8de5e5435cc28ef2c",
+      "source_observations": "testdata/wecombot-1.9.9.json",
+      "reason": "Port WeCom Bot key and native HTTP(S) URLs, titleless formats, strict response status and source request JSON."
+    },
+    {
+      "file": "lark.go",
+      "original_path": "apprise/plugins/lark.py",
+      "original_sha256": "25d014e18a5e5cad9b42dbd7d4141da8b27d0eeb5eb1abdde144934e18b09b2f",
+      "source_observations": "testdata/lark-1.9.9.json",
+      "reason": "Port fixed Lark global webhook URL, native alias, title/body merge and two original throttle calls per delivery."
+    },
+    {
+      "file": "pushy.go",
+      "original_path": "apprise/plugins/pushy.py",
+      "original_sha256": "8c53c286217d53598754f62cadb89c7564a0191de43eb32040620901fee3420a",
+      "source_observations": "testdata/pushy-1.9.9.json",
+      "reason": "Port target parsing and ordered dispatch, status and JSON truthiness, title/body truncation and source request encoding."
     }
   ]
 }

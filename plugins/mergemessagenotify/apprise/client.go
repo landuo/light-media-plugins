@@ -218,6 +218,12 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parsePushMeService(raw)
 	case "wxpusher":
 		service, valid = parseWxPusherService(raw)
+	case "lark":
+		service, valid = parseLarkService(raw)
+	case "wecombot":
+		service, valid = parseWeComBotService(raw)
+	case "pushy":
+		service, valid = parsePushyService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -239,6 +245,10 @@ func (c *Client) addService(raw string) (bool, error) {
 			service, valid = parseMatrixService(native)
 		} else if native, ok := pushPlusNativeURL(raw); ok {
 			service, valid = parsePushPlusService(native)
+		} else if native, ok := larkNativeURL(raw); ok {
+			service, valid = parseLarkService(native)
+		} else if native, ok := weComBotNativeURL(raw); ok {
+			service, valid = parseWeComBotService(native)
 		} else {
 			return false, ErrUnsupported
 		}
