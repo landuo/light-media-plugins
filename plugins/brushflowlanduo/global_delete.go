@@ -2,6 +2,7 @@ package brushflowlanduo
 
 import (
 	"context"
+	"errors"
 	"fmt"
 	"sort"
 	"strings"
@@ -286,6 +287,7 @@ func (p *Core) GlobalDelete(ctx context.Context) (int, error) {
 		groups[name] = append(groups[name], v)
 	}
 	deleted := []deleteEntry{}
+	var stopped error
 	for _, name := range order {
 		entries := groups[name]
 		service, ok := services[name]
@@ -300,7 +302,8 @@ func (p *Core) GlobalDelete(ctx context.Context) (int, error) {
 		if service.Kind == "qbittorrent" {
 			if e = p.h.Reannounce(ctx, name, hashes); e != nil {
 				if boundary(e) {
-					return 0, e
+					stopped = e
+					break
 				}
 				p.h.Log(ctx, "warning", fmt.Sprintf("全局动态删种重新汇报下载器 [%s] 失败：%s", name, e))
 			}
@@ -308,7 +311,8 @@ func (p *Core) GlobalDelete(ctx context.Context) (int, error) {
 		ok, e := p.h.Delete(ctx, name, hashes, true)
 		if e != nil {
 			if boundary(e) {
-				return 0, e
+				stopped = e
+				break
 			}
 			p.h.Log(ctx, "error", fmt.Sprintf("全局动态删种调用下载器 [%s] 删除失败：%s", name, e))
 			continue
@@ -358,12 +362,17 @@ func (p *Core) GlobalDelete(ctx context.Context) (int, error) {
 	for _, t := range cfg.Tasks {
 		if affected[t.ID()] {
 			if e = p.put(ctx, t.ID(), "torrents", records[t.ID()]); e != nil {
-				return 0, e
+				return 0, errors.Join(stopped, e)
 			}
 			if _, e = p.recalculate(ctx, t.ID()); e != nil {
-				return 0, e
+				return 0, errors.Join(stopped, e)
 			}
 		}
+	}
+	if stopped != nil {
+		// An uncertain later daemon operation blocks further external effects.
+		// Earlier confirmed deletions still belong in the source records.
+		return len(recorded), stopped
 	}
 	for _, n := range notices {
 		if e = p.deleteNotice(ctx, n.task, n.record, n.why); e != nil {
