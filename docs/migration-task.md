@@ -31,17 +31,16 @@ an inherited HTTP/2 ALPN mismatch in the Requests-compatible transport, fixed
 and verified with the same owned case. See
 `migration/evidence/iyuuautoseed-seeded-capacity-20261107.json`.
 
-IYUU reload, cold startup, clone instance/config/history/material isolation,
-one-shot consumption and native Chrome form save/readback passed. The package
-candidate uses the standard Go SDK contract and has a verified Linux amd64
-ZIP manifest, entry and notice inventory. The extracted worker initialized
-under the SDK with both arm64 and amd64 parents. A complete emulated amd64
-App still reported an unexplained post-acquisition init failure, so the
-package startup gate and build registry entry remain open. See
-`migration/evidence/iyuuautoseed-lifecycle-browser-package-20261107.json`.
+IYUU reload, cold startup, clone isolation and native Chrome save passed.
+The exact amd64 ZIP also passed the stage-specific installed SDK handshake
+and initializer in the emulated App. The emulated Go host then crashed in
+request logging and, with that wrapper isolated, in its garbage collector.
+The complete native amd64 install response and form remain open. Reuse the
+passed evidence and do not repeat the emulator runs.
+`migration/evidence/iyuuautoseed-amd64-startup-diagnostic-20261107.json`.
 
-Close only the amd64 App startup gate. Reuse the passed seeded Linux,
-lifecycle and Chrome evidence. Then resume the next installed plugin.
+SystemProcess 1.1 is the next implementation. The IYUU build registry
+entry remains gated on its native amd64 check.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

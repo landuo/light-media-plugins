@@ -10664,6 +10664,17 @@
         "amd64_package_acquisition_and_exact_entry_sdk": "passed",
         "amd64_full_app_after_install": "unverified",
         "whole_plugin_accepted": false
+      },
+      "amd64_installed_startup_diagnostic": {
+        "status": "partial_verified",
+        "evidence": {
+          "path": "migration/evidence/iyuuautoseed-amd64-startup-diagnostic-20261107.json",
+          "sha256": "c0e159c1d50ef5943e182801ef637d13b4865adc6c0ff0ce62eda8f1c70f9dce"
+        },
+        "actual_installed_initializer": "passed",
+        "full_amd64_install_response_and_form": "unverified",
+        "remaining": "Native isolated Linux amd64 App verification. Do not repeat local emulator cases.",
+        "whole_plugin_accepted": false
       }
     },
     {
@@ -66103,8 +66114,8 @@
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
       "delivery": "Eight of 22 current-scope instances accepted. IYUU reload, cold restart, clone isolation and native Chrome save passed. Linux amd64 candidate ZIP validated, installed files verified, and exact entry SDK init passed. Full amd64 App startup after installation remains unverified. No push.",
-      "tests_running": "None. One scoped source history replay, final Linux lifecycle/browser and exact packaged entry SDK diagnostics passed. Two package App observations retained, including optional-report emulator crash and unresolved initialization failure. Earlier passing seeded tests reused.",
-      "latest_detail": "features[plugin.IYUUAutoSeed].lifecycle_browser_package_increment",
+      "tests_running": "None for IYUU. Stage-specific install and init passed before emulated host faults. All prior passed scenarios reused.",
+      "latest_detail": "features[plugin.IYUUAutoSeed].amd64_installed_startup_diagnostic",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
       "next_complete_slice": "Close the IYUUAutoSeed 2.22 amd64 full-App installed startup gate with a stage-specific diagnostic or native isolated Linux amd64. The exact ZIP entry passed SDK init under two parent architectures, and Linux arm64 lifecycle and Chrome are closed. Reuse all passed evidence without repeating those runs. Add the package build registry only after this gate. Then move to SystemProcess 1.1. Keep MergeMessageNotify deferred.",

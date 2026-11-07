@@ -1,0 +1,60 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "worker_commit": "96185e27b56756a53e7b79043b086c860e851000",
+  "host_checkout": "8332fa4fd56acaec903c0901f671c13e417b2448",
+  "artifact_sha256": "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6",
+  "source": "Installed IYUU 2.22 __init__.py:103–174 and fixed MoviePilot app/core/plugin.py load/reload. Source startup catches initializer failures and leaves no running instance.",
+  "target": "Actual App install, package verification, directory lookup, object preparation, manager config, SDK Runner.Start and worker init. Stage logging was added through an owned Go test overlay only.",
+  "environment": "Linux amd64 binaries under the local Linux arm64 Docker Desktop emulator. Network none with loopback artifact repository and temporary SQLite storage.",
+  "first_stage_diagnostic": {
+    "status": "emulated_host_crash",
+    "log": {
+      "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/runtime.stdout",
+      "sha256": "bf31b0e4e6f884130b879116ba88bda7b2575c5287b684699d88c25cec18ae25"
+    },
+    "build": {
+      "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/build.sha256",
+      "sha256": "ba947b15673f0970cf1a5ab64a3c0fb97c57e019811e1170528d53dbf32c6f60"
+    },
+    "observed": "Actual ZIP extracted, installation row resolved, object prepared, manager read empty config, SDK negotiation completed and init returned success. Go host then segfaulted in net/url via proxySecrets and request log sanitization while finishing the HTTP request."
+  },
+  "isolations": [
+    {
+      "status": "same_emulated_host_crash",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/runtime-serial.stdout",
+        "sha256": "7203e7c298817033b56c66b8af57989b8b6b188a0cb788ce8f49bdc0fb640927"
+      },
+      "change": "GOMAXPROCS=1 and disabled async preemption in the emulated host only. Startup stages again succeeded. Same outer logging stack faulted."
+    },
+    {
+      "status": "emulated_host_gc_crash",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/runtime-routes.stdout",
+        "sha256": "4006fd09a447997d302269a93f50e31b55cc4372224d45334593f02aa066f749"
+      },
+      "build": {
+        "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/build-routes.sha256",
+        "sha256": "4350778072a88ae50083810185e17282473fae6b852c4b24fb7d0363a4308b59"
+      },
+      "change": "Kept production mounted API handlers and isolated their outer request logger in the test driver. The amd64 Go runtime then reported a pointer to a free object. This is not an install or form pass."
+    }
+  ],
+  "test_driver": {
+    "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/package_stage_test.go",
+    "sha256": "f9142e8b3a96192d601559b07394dba87ff9e454939fd5449b99031705581592"
+  },
+  "original_driver": {
+    "path": "work/iyuuautoseed-20261107/packaging/full-app-diagnostic/package_stage_test_with_request_logging.go.txt",
+    "sha256": "b98c180c507735a31cd7c312908073df18b1682c813296eb69751dfd4e6826f7"
+  },
+  "prior_evidence": "migration/evidence/iyuuautoseed-lifecycle-browser-package-20261107.json",
+  "diagnosis": "The successful stage-specific observation proves the installed exact ZIP entry initializes through the real amd64 App in this run. The full install response and form route remain unproven in that architecture. Local emulator instability is observed; the cause and any native reproduction are unproven.",
+  "remaining": "Run only the outstanding exact ZIP install and form on a native isolated Linux amd64 host. Stop repeating this emulation path. Memos searches found no designated isolated amd64 test host. Continue SystemProcess implementation while this environment gate remains open.",
+  "cleanup": "Owned Docker containers exited. Generated executable diagnostics were removed after hashing. No host or plugin production files were changed by the overlay.",
+  "reviewers": [
+    "/root/jellyfin",
+    "/root/emby"
+  ]
+}
