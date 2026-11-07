@@ -2,10 +2,12 @@ package larkmessager
 
 import (
 	"context"
-	legacyanime "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue"
+	"errors"
 	"path"
 	"strings"
 	"sync"
+
+	legacyanime "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue"
 )
 
 // APIError retains only a source-recognized permission fact. The raw server
@@ -40,12 +42,23 @@ type Host interface {
 }
 type Client struct {
 	host                            Host
+	logFailure                      func(context.Context, string)
 	mu                              sync.Mutex
 	userChats, userTypes, chatUsers map[string]string
 }
 
 func NewClient(host Host) *Client {
 	return &Client{host: host, userChats: map[string]string{}, userTypes: map[string]string{}, chatUsers: map[string]string{}}
+}
+
+func (c *Client) ignoreRejection(ctx context.Context, err error, message string) error {
+	if !errors.Is(err, ErrRejected) {
+		return err
+	}
+	if c.logFailure != nil {
+		c.logFailure(ctx, message)
+	}
+	return nil
 }
 func (c *Client) RememberTarget(user, chat string) {
 	user, chat = strip(user), strip(chat)
@@ -240,7 +253,10 @@ func (c *Client) SendFile(ctx context.Context, ref, title, text, name string, t 
 			r, e = c.send(ctx, "file", Object{"file_key": key}, t)
 		}
 		if r != nil && (title != "" || text != "") {
-			_, _ = c.SendText(ctx, BuildMessageText(title, text, ""), t)
+			_, captionErr := c.SendText(ctx, BuildMessageText(title, text, ""), t)
+			if err := c.ignoreRejection(ctx, captionErr, "Lark 文本消息发送失败"); err != nil {
+				return c.fallbackChat(r, t), err
+			}
 		}
 	}
 	if r == nil {
@@ -263,7 +279,10 @@ func (c *Client) SendVoice(ctx context.Context, ref, caption string, t Target) (
 	}
 	r, e := c.send(ctx, "audio", Object{"file_key": key}, t)
 	if r != nil && caption != "" {
-		_, _ = c.SendText(ctx, caption, t)
+		_, captionErr := c.SendText(ctx, caption, t)
+		if err := c.ignoreRejection(ctx, captionErr, "Lark 文本消息发送失败"); err != nil {
+			return c.fallbackChat(r, t), err
+		}
 	}
 	return c.fallbackChat(r, t), e
 }
@@ -297,12 +316,19 @@ func (c *Client) SendNotification(ctx context.Context, n Notification, t Target,
 	defer sourceErrors(&_error)
 	built := []ImageItem{}
 	for _, item := range items {
-		key, _ := c.remoteImage(ctx, item.URL)
+		key, err := c.remoteImage(ctx, item.URL)
+		if errors.Is(err, ErrUnknown) {
+			return nil, err
+		}
 		built = append(built, ImageItem{Title: item.Title, ImageKey: key})
 	}
 	key := ""
 	if len(built) == 0 {
-		key, _ = c.remoteImage(ctx, n.Image)
+		var err error
+		key, err = c.remoteImage(ctx, n.Image)
+		if errors.Is(err, ErrUnknown) {
+			return nil, err
+		}
 	}
 	r, e := c.send(ctx, "interactive", buildCard(CardInput{Title: n.Title, Text: n.Text, Link: n.Link, Buttons: n.Buttons, ImageKey: key, HeaderTemplate: HeaderTemplate(n.MType), ImageItems: built}), t)
 	return c.fallbackChat(r, t), e
@@ -313,7 +339,10 @@ func (c *Client) EditMessage(ctx context.Context, id, title, text string, button
 		return false, nil
 	}
 	_, d, e := c.call(ctx, Request{Op: "edit", IDs: []string{id}, Payload: Object{"content": buildCard(CardInput{Title: title, Text: text, Buttons: buttons})}})
-	return e == nil && zero(d["code"]), e
+	if e == nil && !zero(d["code"]) {
+		e = ErrRejected
+	}
+	return e == nil, c.ignoreRejection(ctx, e, "Lark 消息更新失败")
 }
 func (c *Client) AddReaction(ctx context.Context, id, emoji string) (_out string, _error error) {
 	defer sourceErrors(&_error)
@@ -321,13 +350,17 @@ func (c *Client) AddReaction(ctx context.Context, id, emoji string) (_out string
 		return "", nil
 	}
 	_, d, e := c.call(ctx, Request{Op: "reaction_add", IDs: []string{id}, Payload: Object{"reaction_type": Object{"emoji_type": emoji}}})
+	if e == nil && !zero(d["code"]) {
+		e = ErrRejected
+	}
 	if e != nil {
-		return "", e
+		return "", c.ignoreRejection(ctx, e, "Lark 表情添加失败")
 	}
-	if !zero(d["code"]) {
-		return "", nil
+	id, _ = obj(d["data"])["reaction_id"].(string)
+	if !safeSegment(id) {
+		return "", ErrUnknown
 	}
-	return text(obj(d["data"])["reaction_id"]), nil
+	return id, nil
 }
 func (c *Client) DeleteReaction(ctx context.Context, id, reaction string) (_out bool, _error error) {
 	defer sourceErrors(&_error)
@@ -335,7 +368,10 @@ func (c *Client) DeleteReaction(ctx context.Context, id, reaction string) (_out 
 		return false, nil
 	}
 	_, d, e := c.call(ctx, Request{Op: "reaction_delete", IDs: []string{id, reaction}})
-	return e == nil && zero(d["code"]), e
+	if e == nil && !zero(d["code"]) {
+		e = ErrRejected
+	}
+	return e == nil, c.ignoreRejection(ctx, e, "Lark 表情删除失败")
 }
 func (c *Client) BatchGetID(ctx context.Context, emails, mobiles, employees []string) (map[string]string, error) {
 	out := map[string]string{}

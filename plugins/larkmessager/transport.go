@@ -159,15 +159,56 @@ func (a *provider) API(ctx context.Context, r Request) (_out Response, _error er
 		return Response{}, err
 	}
 	result, err := a.request(ctx, method, path, query, payload, r.Blob, token, timeout)
-	if write {
-		var decoded Object
-		if err != nil || decode(result.Body, &decoded) != nil || decoded == nil || decoded["code"] == nil {
-			call.uncertain = true
-			return Response{}, ErrUnknown
-		}
+	if write && (err != nil || !acknowledgedWrite(r.Op, result)) {
+		call.uncertain = true
+		return Response{}, ErrUnknown
 	}
 	return result, err
 }
+
+func acknowledgedWrite(operation string, response Response) bool {
+	status := response.Status
+	if status < 200 || status >= 500 || status >= 300 && status < 400 || status == http.StatusRequestTimeout {
+		return false
+	}
+	var envelope Object
+	if decode(response.Body, &envelope) != nil {
+		return false
+	}
+	number, ok := envelope["code"].(json.Number)
+	if !ok {
+		return false
+	}
+	code, err := number.Int64()
+	if err != nil {
+		return false
+	}
+	if code != 0 {
+		return true
+	}
+	if status >= 400 {
+		return false
+	}
+	data := obj(envelope["data"])
+	switch operation {
+	case "send", "reply":
+		// The source permits a missing data member but requires an object
+		// when present. A malformed receipt may follow a committed send.
+		_, present := envelope["data"]
+		return !present || data != nil
+	case "reaction_add":
+		id, _ := data["reaction_id"].(string)
+		return safeSegment(id)
+	case "upload_image":
+		key, _ := data["image_key"].(string)
+		return key != ""
+	case "upload_file":
+		key, _ := data["file_key"].(string)
+		return key != ""
+	}
+	return true
+}
+
 func includes(v []string, s string) bool {
 	for _, x := range v {
 		if x == s {

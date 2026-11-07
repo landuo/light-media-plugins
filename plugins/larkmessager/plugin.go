@@ -4,6 +4,7 @@ import (
 	"context"
 	_ "embed"
 	"encoding/json"
+	"errors"
 	"strings"
 	"sync"
 	"time"
@@ -155,6 +156,7 @@ func (p *Plugin) Init(raw Object) (uint64, error) {
 	p.crypto = nil
 	if s.Enabled {
 		p.client = NewClient(p.host.API)
+		p.client.logFailure = p.host.LogFailure
 		if s.EncryptKey != "" {
 			p.crypto = NewCrypto(s.EncryptKey)
 		}
@@ -386,11 +388,14 @@ func (p *Plugin) Post(ctx context.Context, n Notification) (_error error) {
 		copy.FilePath = ""
 		copy.FileName = ""
 		_, e1 := c.SendNotification(ctx, copy, t, nil)
-		_, e2 := c.SendFile(ctx, n.FilePath, "", "", n.FileName, t)
-		if e1 != nil {
+		if e1 != nil && !errors.Is(e1, ErrRejected) {
 			return e1
 		}
-		return e2
+		_, e2 := c.SendFile(ctx, n.FilePath, "", "", n.FileName, t)
+		if e2 != nil {
+			return e2
+		}
+		return e1
 	}
 	switch {
 	case n.FilePath != "":
