@@ -8,7 +8,6 @@ import (
 
 const joinEndpoint = "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush"
 
-var joinDevice = regexp.MustCompile(`(?i)^[a-z0-9]{32}$`)
 var joinGroup = regexp.MustCompile(`(?i)^(?:group\.)?(all|android|chrome|windows10|phone|tablet|pc)`)
 
 type joinService struct {
@@ -24,7 +23,7 @@ func parseJoinService(raw string) (*joinService, bool) {
 		return nil, false
 	}
 	key, targets := recipientCredentialAndTargets(u)
-	if !joinDevice.MatchString(strings.TrimSuffix(key, "\n")) {
+	if !alphanumericToken32.MatchString(strings.TrimSuffix(key, "\n")) {
 		return nil, false
 	}
 	s := &joinService{key: strings.TrimFunc(key, sourceSpace), priority: "0", targets: targets, includeImage: true}
@@ -61,7 +60,7 @@ func (s *joinService) requests(title, body string) ([]Request, error) {
 	for _, chunk := range chunks {
 		for _, target := range s.targets {
 			key := "deviceNames"
-			if joinGroup.MatchString(target) || joinDevice.MatchString(strings.TrimSuffix(target, "\n")) {
+			if joinGroup.MatchString(target) || alphanumericToken32.MatchString(strings.TrimSuffix(target, "\n")) {
 				key = "deviceId"
 			}
 			query := "apikey=" + url.QueryEscape(s.key) + "&priority=" + s.priority +

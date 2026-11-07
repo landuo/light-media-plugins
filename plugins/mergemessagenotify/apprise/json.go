@@ -140,6 +140,10 @@ func notificationChunks(title, body string, emojis bool, overflow, format string
 }
 
 func notificationChunksWithBodyLimit(title, body string, emojis bool, overflow, format string, bodyLimit int) ([]notificationChunk, error) {
+	return notificationChunksWithLimits(title, body, emojis, overflow, format, 250, bodyLimit)
+}
+
+func notificationChunksWithLimits(title, body string, emojis bool, overflow, format string, titleLimit, bodyLimit int) ([]notificationChunk, error) {
 	if emojis {
 		var err error
 		body, err = applyEmojis(body)
@@ -153,15 +157,15 @@ func notificationChunksWithBodyLimit(title, body string, emojis bool, overflow, 
 	}
 	title = strings.TrimFunc(title, sourceSpace)
 	body = strings.TrimRightFunc(body, sourceSpace)
-	return splitNotificationChunks(title, body, overflow, format, bodyLimit), nil
+	return splitNotificationChunks(title, body, overflow, format, titleLimit, bodyLimit), nil
 }
 
-func splitNotificationChunks(title, body, overflow, format string, bodyLimit int) []notificationChunk {
+func splitNotificationChunks(title, body, overflow, format string, titleLimit, bodyLimit int) []notificationChunk {
 	chunks := []string{body}
 	if overflow != "upstream" {
 		r := []rune(title)
-		if len(r) > 250 {
-			title = strings.TrimRightFunc(string(r[:250]), sourceSpace)
+		if len(r) > titleLimit {
+			title = strings.TrimRightFunc(string(r[:titleLimit]), sourceSpace)
 		}
 		r = []rune(body)
 		if len(r) > bodyLimit {
@@ -178,13 +182,13 @@ func splitNotificationChunks(title, body, overflow, format string, bodyLimit int
 		chunkTitle := title
 		if overflow == "split" && len([]rune(body)) > bodyLimit {
 			chunk = strings.TrimRightFunc(strings.TrimLeft(chunk, "\r\n\v\f"), sourceSpace)
-			if title != "" {
+			if title != "" && titleLimit > 130 {
 				digits := len(strconv.Itoa(count))
 				width := 4 + digits*2
 				if width <= 12 {
 					v := []rune(chunkTitle)
-					if len(v) > 250-width {
-						chunkTitle = string(v[:250-width])
+					if len(v) > titleLimit-width {
+						chunkTitle = string(v[:titleLimit-width])
 					}
 					chunkTitle += " [" + zeroPad(i+1, digits) + "/" + zeroPad(count, digits) + "]"
 				}

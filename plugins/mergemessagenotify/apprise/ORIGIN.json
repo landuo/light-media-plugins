@@ -31,7 +31,8 @@
     "mmosts",
     "gchat",
     "slack",
-    "tgram"
+    "tgram",
+    "zulip"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -224,6 +225,13 @@
         "bytes": 43331,
         "license": "APPRISE-LICENSE"
       }
+    },
+    {
+      "file": "zulip.go",
+      "original_path": "apprise/plugins/zulip.py",
+      "original_sha256": "a6cc435d7f25ba8a2d1ea88495256dbcc445610f3f5d92cca464b90987bed830",
+      "source_observations": "testdata/zulip-1.9.9.json",
+      "reason": "Port default and self-hosted organization URLs, scoped Basic auth, stream and private recipients, payload order, and source size/response rules."
     }
   ]
 }

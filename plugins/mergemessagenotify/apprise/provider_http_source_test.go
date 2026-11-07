@@ -22,6 +22,10 @@ func TestSourceIFTTTDotSegments199(t *testing.T) {
 	testSourceHTTPProvider(t, "testdata/ifttt-dot-1.9.9.json")
 }
 
+func TestSourceZulip199(t *testing.T) {
+	testSourceHTTPProvider(t, "testdata/zulip-1.9.9.json")
+}
+
 func testSourceHTTPProvider(t *testing.T, path string) {
 	t.Helper()
 	var fixture struct {

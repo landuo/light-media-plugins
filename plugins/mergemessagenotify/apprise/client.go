@@ -176,6 +176,8 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseSlackService(raw)
 	case "tgram":
 		service, valid = parseTelegramService(raw)
+	case "zulip":
+		service, valid = parseZulipService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)

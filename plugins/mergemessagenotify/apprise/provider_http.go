@@ -3,6 +3,7 @@ package apprise
 import (
 	"context"
 	"net/http"
+	"regexp"
 	"slices"
 	"strconv"
 	"strings"
@@ -10,6 +11,8 @@ import (
 )
 
 const appriseInfoIcon72 = "https://github.com/caronc/apprise/raw/master/apprise/assets/themes/default/apprise-info-72x72.png"
+
+var alphanumericToken32 = regexp.MustCompile(`(?i)^[a-z0-9]{32}$`)
 
 type providerHTTPOptions struct {
 	overflow, format string
@@ -101,5 +104,5 @@ func titlelessNotificationChunks(title, body string, options *providerHTTPOption
 		}
 		body = title + "\r\n" + body
 	}
-	return splitNotificationChunks("", body, options.overflow, options.format, bodyLimit), nil
+	return splitNotificationChunks("", body, options.overflow, options.format, 0, bodyLimit), nil
 }
