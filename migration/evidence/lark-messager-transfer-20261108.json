@@ -1,0 +1,74 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "host_commit": "ef7bcdaf2ee39340bbbdaac7be4f331c8b3982c1",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/chain/transfer.py:1135–1216,1858–1887,3777–3793",
+      "target": "internal/app/plugin_original_transfer_callback.go, organize_manual.go, plugin_original_chat_transfer.go",
+      "observed": "Both the physical failure and the earlier recognition failure produced ordinary failure notices after committing native history. The notice carried a source-format numeric retry callback, command fallback and history link. AI action excluded by user."
+    },
+    {
+      "source": "app/chain/message.py:694–704,811–860,972–1019; app/db/transferhistory_oper.py add_force; app/chain/transfer.py:3795–3868",
+      "target": "internal/app/plugin_original_host_message_inbound.go, plugin_original_chat_transfer_retry.go, plugin_original_transfer_retry.go, import_run.go, jobs.go and plugin_original_transfer_failure.go",
+      "observed": "Verified Lark callback waits for actual native transfer. A terminal overwrite refusal retains the unknown destination and releases only the unpublished task reservation. Retry re-recognizes and publishes a new hardlink; the stable history gains a fresh execution and the old callback cannot launch another job."
+    },
+    {
+      "source": "app/command.py:93–97, app/chain/transfer.py:3698–3774 and 3811–3868",
+      "target": "internal/app/plugin_original_chat_transfer_redo.go and plugin_original_transfer_retry.go",
+      "observed": "Verified /redo with source-prefixed TMDB identity reruns the recorded recognition failure through current native local directory rules. Successful command is silent; no callback-style replies."
+    }
+  ],
+  "source_replay": {
+    "kind": "fixed source functions extracted verbatim via AST with isolated dependencies",
+    "paths": [
+      "app/chain/message.py:_parse_transfer_callback,_retry_transfer_history",
+      "app/chain/transfer.py:build_failed_transfer_buttons,remote_transfer"
+    ],
+    "sha256": "d217f18be4a966931d287e13eb71d3fe4d5a3dd8aef7367220b13084553bf2f2",
+    "observations": [
+      "Decimal and fullwidth decimal aliases parse to the same numeric ID, while a non-numeric callback does not parse.",
+      "Button start notice is followed by the redo invocation and the terminal notice. History is suppressed for both replies.",
+      "The ordinary command invokes the same redo and produces no success notice. Failure includes the reason and history link."
+    ]
+  },
+  "native": {
+    "status": "passed",
+    "kind": "native Linux amd64 App and exact indexed Lark worker with loopback Lark and TMDB peers and actual POSIX filesystem",
+    "seconds": 2.38,
+    "environment": "Native x86_64, read-only alpine:3.22, tmpfs and loopback only. No production data, external messages or deployment.",
+    "test": "TestOriginalLarkTransferRetryLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_transfer_linux_test.go",
+    "fixture_sha256": "9048573e6264b4f5296900a677909580a24cc05c20dfbb5858a0898026c3cb78",
+    "host_elf_sha256": "6e692e5538263c83d689049e9ae917cc3efaa88afd4e8c5f6182d66687974da2",
+    "runner_sha256": "b055c9c2385bcec8889076978e2f29aa458af435f5e55743002c2356dfb260db",
+    "runtime_log_sha256": "fd3a5ea03759817d790f0e0cf93b85d71dbd4fb0ab8e7078b6bf5ca8e66ccd72",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "A real destination blocker created after preview triggered TRANSFER_OVERWRITE_DENIED. The exact worker delivered a failure card with one ordinary retry button and /redo fallback. The old job ended failed, unrelated target contents stayed unchanged, and the unpublished plan's media reservation cleared.",
+      "Removing the fixture's own blocker and clicking the button caused a verified Lark webhook, a new actual import and a success reply after the native job reached succeeded. File identity verified an actual hardlink. The public history ID was unchanged. Clicking the old card again did not create a third import.",
+      "A different real video failed native recognition, wrote a blocked history and produced its own card. A verified /redo with tmdb:124 then published the file under the specified identity using the current directory rule. No success reply was sent by the command.",
+      "The fixture stopped the isolated App. One module declaration warning occurred during teardown. Earlier Lark /sites, /subscribes and media suites were not repeated."
+    ]
+  },
+  "prior_failures": [
+    {
+      "observation": "The first runtime observed a real overwrite refusal and failure card, but the host moved the old job to retry_wait. The final path treats an explicit import overwrite refusal as terminal.",
+      "log_sha256": "3cef7eed82be7e828bb46abfee094358ffe31c4b6408bc05f3052f4a40d04bd6"
+    },
+    {
+      "observation": "The next runtime observed a terminal job, but a naming-only planned receipt prevented release of its obsolete reservation. The final guard recognizes an exact unpublished receipt with no staged bytes, overwrite operation or owned destination.",
+      "log_sha256": "372c4c5b53f1e935208cbcf974627d237140e1edc40ac8208c0110b7c2972e46"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "The source allocates a new numeric history record on a new attempt. Native public history remains a stable file ID. Persisted numeric Lark aliases bind the exact failed execution and generation. The existing host transfer event still exposes the native stable history ID.",
+    "The run covered local regular files. Directory-type preparation failures still need the frozen directory digest, explicit TV episode-group routing and verified alternate source identity remain open, and success after a real restart and history cleanup of a prior published destination were not exercised in this scenario.",
+    "Ordinary media source attribution, automatic and multi-season downloads, remaining /subscribes behavior and Lark worker edges remain listed in the preceding evidence."
+  ]
+}

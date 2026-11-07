@@ -98,10 +98,15 @@ Ordinary movie chat also passed on native Linux. The indexed worker paged
 nine results, rejected another sender and a replaced card, showed one
 matched torrent, then confirmed exact material and save path at the
 downloader. Fullwidth selection created a new subscription and Add event.
-Continue with transfer failure, retry and /redo, then close the remaining
-media and subscription gaps listed in
+Transfer failure, retry and explicit TMDB /redo also passed on native Linux.
+A real overwrite refusal preserved the unrelated file. The new import
+published a hardlink and the old card could no longer submit another job.
+A separate failed recognition used the same native path with the selected
+TMDB identity. See `migration/evidence/lark-messager-transfer-20261108.json`.
+Continue with download notification attribution and ordering, then the
+remaining auto, series and subscription differences in
 `migration/evidence/lark-messager-media-20261108.json`.
-Reuse earlier passing site, subscription and worker evidence.
+Reuse earlier passing worker, site, subscription, movie and transfer evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
