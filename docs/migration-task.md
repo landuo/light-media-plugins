@@ -167,7 +167,14 @@ process replacement on reload, and rooted image, document and voice uploads.
 A malformed caption acknowledgment reported failure without repeating either
 write, and protected data never reached the provider. See
 `migration/evidence/lark-messager-clone-attachments-20261108.json`.
-Continue with the remaining source and acceptance audit.
+Chrome found that the indexed worker returned an empty settings layout.
+After correcting the form tuple, Chrome opened the real installed form,
+toggled password visibility, saved configuration and exercised all three
+detail actions. The isolated native provider received one test card and one
+group lookup. Status returned masked IDs and the refreshed page cleared the
+transient result. See
+`migration/evidence/lark-messager-browser-settings-detail-20261108.json`.
+Continue with remaining native download and provider-specific behavior.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

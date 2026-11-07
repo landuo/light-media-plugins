@@ -67915,6 +67915,36 @@
         "fixture_sha256": "e68c3d6af34e15b3786614160f4b1da7a7253b83a16b0a40152b724f86ab401c",
         "package_sha256": "da81e3e234e6c5f80dbcf8aa39066dba25ae4fcf8be36f6d96d5aefa62b12642"
       }
+    },
+    {
+      "id": "larkmessager.native_browser_settings_detail.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestInstalledLarkBrowser",
+        "Owned Chrome native settings and detail actions"
+      ],
+      "observations": [
+        "The installed package produced the original Vuetify defaults. Chrome changed the App Secret visibility twice, saved the enabled configuration once and the native worker used the exact synthetic credentials.",
+        "Chrome clicked all three detail actions. The native provider received one interactive test message and one group query. The detail showed the test and group results and then cleared them on refresh.",
+        "The native status response masked the application and chat IDs and reported an initialized client. Chrome recorded no unhandled exception."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-browser-settings-detail-20261108.json": "ae8efab89742b958fa77b13115454272aea73b3f5b53a30b4924be0734a789c1"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "frontend_source_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+        "host_commit": "384a196ce4915f28fce1e09378cbaedee2c7629e",
+        "host_web_dist_tree": "b689f0fd230d0c49dbfcdcb0502dde8c46efbf11",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "7d81ba5b44df973175eb7d693a94090e7a14d4e0fadcf7f4a2325d12bc204370",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -67985,7 +68015,7 @@
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "9f101b336305c3973ffed43e61f70e11f864c850",
+      "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
       "host_HEAD": "384a196ce4915f28fce1e09378cbaedee2c7629e",
@@ -67999,12 +68029,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native exact indexed Lark clone/reload, isolated storage, rooted image/file/voice and uncertain caption behavior passed. Host and evidence stay local.",
-      "tests_running": "None. The distinct native clone/attachment scenario passed on its first run and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-clone-attachments-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. The exact Lark worker passed real Chrome settings and detail with the native App. Host and worker changes stay local.",
+      "tests_running": "None. The isolated browser and native App stopped after the passing settings and detail scenario.",
+      "latest_detail": "migration/evidence/lark-messager-browser-settings-detail-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager final per-feature source audit with exact worker 9f101b3 and indexed package in work/lark-worker-clone-attachments-20261108/packaging/linux-amd64. Reuse passing indexed evidence for crypto/admin/FetchChats and clone/attachments without rerunning it. Fix concrete remaining source gaps before acceptance, including source send/receive branches and relevant host failure notice, post-preview reacquisition, remaining magnet combinations and provider-without-TMDB distinctions. Register the build entry only after accepted scope is complete.",
+      "next_complete_slice": "Continue LarkMessager with worker 319ca00 and its indexed candidate in work/lark-worker-browser-form-20261108/packaging/linux-amd64. Reuse passing browser, crypto/admin/FetchChats and clone/attachments evidence. Verify the host changes for native Add refusal versus unknown outcome and provider-only search. Review unsupported source magnet paths and provider-only mutations before acceptance. Register the build entry only after accepted scope is complete.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -68017,7 +68047,7 @@
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
-      "latest_LarkMessager_product_commit": "9f101b336305c3973ffed43e61f70e11f864c850"
+      "latest_LarkMessager_product_commit": "319ca00e3f726d084db38c55f53b8902113db748"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

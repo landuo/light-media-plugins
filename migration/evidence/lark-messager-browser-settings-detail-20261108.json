@@ -1,0 +1,116 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_source_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "host_commit": "384a196ce4915f28fce1e09378cbaedee2c7629e",
+    "host_web_dist_tree": "b689f0fd230d0c49dbfcdcb0502dde8c46efbf11",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "fixture_sha256": "7d81ba5b44df973175eb7d693a94090e7a14d4e0fadcf7f4a2325d12bc204370",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+  },
+  "mapping": [
+    {
+      "source": "installed larkmessager/__init__.py:963–1208; MoviePilot-Frontend PluginConfigDialog and FormRender",
+      "target": "plugins/larkmessager/{worker.go,form.json}; light-media web/src/components/{PluginConfigDialog,PluginFormRenderer}.vue",
+      "behavior": "Source config node/default tuple, password show and hide, and save to the real host."
+    },
+    {
+      "source": "installed larkmessager/__init__.py:1209–1520,2376–2393 onward; MoviePilot-Frontend PluginDataDialog and PageRender",
+      "target": "plugins/larkmessager/{endpoints,test_endpoint}.go; light-media web/src/components/PluginDataDialog.vue",
+      "behavior": "Test message, group lookup, one-shot results, and refreshed status with masked IDs."
+    }
+  ],
+  "environment": "Chrome CDP with a temporary profile on macOS, connected only through an owned loopback bridge to native Linux amd64 App and indexed worker in a read-only container with no network. Lark protocol peer used synthetic credentials and loopback.",
+  "package": {
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349"
+  },
+  "test": {
+    "status": "passed",
+    "seconds": 9.8,
+    "name": "TestInstalledLarkBrowser",
+    "host_elf_sha256": "8e0ad36f11c8af4a46026805ba4ef7c88240bc5817922575d09ca8b933abab74",
+    "browser": "Chrome/157.0.8103.38",
+    "checks": {
+      "settings": {
+        "source_defaults": true,
+        "visible_secret_round_trip": true,
+        "saved": true
+      },
+      "detail": {
+        "masked_status": true,
+        "test_card_once": true,
+        "group_list": true,
+        "refresh_removed_results": true
+      }
+    },
+    "responses": [
+      {
+        "path": "/api/plugins/LarkMessager/form",
+        "status": 200
+      },
+      {
+        "path": "/api/plugins/LarkMessager/config",
+        "status": 200
+      },
+      {
+        "path": "/api/plugins/LarkMessager/page",
+        "status": 200
+      },
+      {
+        "path": "/api/v1/plugin/LarkMessager/test",
+        "status": 200
+      },
+      {
+        "path": "/api/plugins/LarkMessager/page",
+        "status": 200
+      },
+      {
+        "path": "/api/v1/plugin/LarkMessager/fetch_chats",
+        "status": 200
+      },
+      {
+        "path": "/api/plugins/LarkMessager/page",
+        "status": 200
+      },
+      {
+        "path": "/api/v1/plugin/LarkMessager/status",
+        "status": 200
+      },
+      {
+        "path": "/api/plugins/LarkMessager/page",
+        "status": 200
+      }
+    ],
+    "observations": [
+      "The installed package produced the original Vuetify defaults. Chrome changed the App Secret visibility twice, saved the enabled configuration once and the native worker used the exact synthetic credentials.",
+      "Chrome clicked all three detail actions. The native provider received one interactive test message and one group query. The detail showed the test and group results and then cleared them on refresh.",
+      "The native status response masked the application and chat IDs and reported an initialized client. Chrome recorded no unhandled exception."
+    ],
+    "local_evidence_hashes": {
+      "browser-result.json": "00a5993121c1bc0d93ac22fa710b3e511b306c25fcf98a76984b9ca48388f942",
+      "runtime.log": "98537159fb46f5afb6031c901c78fb10aeda32569bdd56e068962e0712c258cd",
+      "verify.mjs": "35330afd7f22d14cfc570b0299723e4a1f067aca1a890e336051361629db2b1d",
+      "settings.png": "9657d187fdd3064bb111d8736180f898cc50e70a45e55bc00b329b9fe31782f4",
+      "detail.png": "0b1116a2135d80f0f903c6882f4c8481436410a534cf081133b91d62426a8fb7",
+      "bridge.py": "efde7f1d469458ff22a09568bef85732e4f69d578a102ba9764bae7654294288",
+      "run-remote.sh": "8c296f00ea9132f8086e11ed433f7e5cc6ed4a34cc948ee81fc7b0627360e878"
+    }
+  },
+  "superseded_attempt": {
+    "status": "failed",
+    "worker_commit": "5bf6c6a30011ae92a405d453fd954e216703d88f",
+    "package_sha256": "c70042ed3ee3fadd3338d53146df6db350a58fdbe0186e9c931dd1134c600eb4",
+    "result_sha256": "dcb4fee9d0393a6f8809087c111c49d45f5d7cf5e72c141e1be3d5140649fee7",
+    "cause": "The worker emitted a null form node list by reading the wrong asset field. Settings showed an invalid format and no save or provider request occurred."
+  },
+  "adaptations_and_open": [
+    "The notification selector and administrator help omit AI-only behavior. The base-instance page actions inherit the original literal URLs for clones and this browser run covers the base instance.",
+    "The local fixture intentionally has an unreachable market override. The three native plugin actions and all browser assertions passed independently of that isolated market.",
+    "The passing browser artifact changes only the settings copy and return tuple compared with the prior clone/attachment worker. The earlier distinct native behavior evidence was reused."
+  ]
+}
