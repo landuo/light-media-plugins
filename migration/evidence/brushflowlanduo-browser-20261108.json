@@ -1,0 +1,43 @@
+{
+  "feature": "plugin.BrushFlowLanduo",
+  "status": "passed_scoped_browser_case",
+  "installed_version": "5.2.18",
+  "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+  "source_locations": [
+    "src/components/Config.vue",
+    "src/components/Page.vue",
+    "src/components/BrushFlowWorkbench.vue",
+    "__init__.py:308–410,531–554"
+  ],
+  "worker_commit": "a4182d03ff593ecc67e88d0504b95068dead7e42",
+  "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523",
+  "paired_host_revision": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
+  "host_fixture_commit": "3df13a3f45a6a373adc78979ac9d469e06e34623",
+  "host_fixture": "internal/app/plugin_brush_flow_browser_linux_test.go",
+  "host_fixture_sha256": "51cbcb9f4effd2d9bef4e37d704388e85bb7da3cf445367059e910af3aba7b9d",
+  "host_fixture_ELF_sha256": "e338a24ddd3f0af8df58e697cffff8962a0960c19ce75a0188e20128b4f57523",
+  "environment": {
+    "browser": "Chrome/157.0.8103.38",
+    "host": "Native Linux amd64 Alpine and actual installed standalone worker in network-none read-only container. Dedicated Chrome profile and localhost bridge."
+  },
+  "result": "PASS TestBrushFlowLinuxAMD64BrowserPackage 13.40s",
+  "observations": [
+    "Actual package assets mounted and produced the Config and Page workbenches.",
+    "The live input switch saved show_sidebar_nav=false through the ordinary authenticated settings endpoint, and the host read back the saved value. BrushFlow remained disabled.",
+    "No JavaScript exceptions. The actual manifest, workbench JavaScript, styles, and both exact source exposed modules loaded."
+  ],
+  "first_attempt": "Config rendered with actual asset requests. The automation clicked the label rather than the live Vuetify input and timed out waiting for a changed value. The later case corrected only the input target.",
+  "cleanup": "Chrome profile, bridge, App process, owned container and temporary bundle removed. Local browser fixture executable removed after hashing.",
+  "artifacts": {
+    "SHA256SUMS": "a8aef6f228eaf520ecd2cb6e8853fe616578b254f76a94b874200ab444981377",
+    "browser-result.json": "f8ac2133cb294d96872277c89599c8fec5840d6ac514c444f813ccbe9f4ae021",
+    "runtime.stdout": "a7ecefaf7a04f39efe2472f081f90b9f589c70cd5cf5dbb2907268d3a1d9eaa2",
+    "verify.mjs": "862eb802c70b58e02b352b5ae1ecf8d9f47632ca093e9928f544976f282909db",
+    "config.png": "c790b690eccdb6dd6557ca2f2e60e9a4e0a3f27297b89741ab0d00078b8d5090",
+    "page.png": "e67c72c8914e0dd71f7e90e6e00f0c266b6acffb13555fe5a93c16ee045b9261",
+    "attempt-01/browser-result.json": "0b7004d251407088fd050b629ded6dac68f539509a9f77dd893c3c5f58a22738",
+    "attempt-01/runtime.stdout": "c897fefa41e51aaa017e042fd89f1bd53db94115b3fd52ac5fc27cbe6ee4c71c"
+  },
+  "local_artifact_dir": "/Users/accidia/projects/light-media/work/brushflowlanduo-20261108/native-amd64-browser",
+  "limits": "Default instance Config/Page and one persisted setting. The fixed source clone filename limitation is recorded in FRONTEND_ORIGIN.json. No repeat of the passing protected native App case."
+}

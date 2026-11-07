@@ -13498,7 +13498,8 @@
       "facet_checks": {},
       "status": "implementing",
       "evidence_ids": [
-        "brushflowlanduo.native_protected_add.20261108"
+        "brushflowlanduo.native_protected_add.20261108",
+        "brushflowlanduo.chrome_current_workbench.20261108"
       ],
       "review": {
         "status": "pending",
@@ -13510,7 +13511,7 @@
       "family": "BrushFlowLanduo",
       "source_version": "5.2.18",
       "source_metadata_only": false,
-      "discovery_note": "The current 5.2.18 standard ZIP installed and the real App verified the protected qBittorrent Add, persistent v2 record and Start ordering. See pending_acceptance before marking the complete plugin verified.",
+      "discovery_note": "Actual 5.2.18 protected App workflow and current default-instance Chrome workbench passed. The remaining scope is recorded under pending_acceptance.",
       "source_refresh": {
         "prior_version": "5.2.16",
         "prior_source_paths": [
@@ -13554,10 +13555,12 @@
         "method": "Query-only installed ID and static SHA-256 on live source. All thirty-three package files match the fixed repository revision. No production config/data rows or plugin initialization."
       },
       "pending_acceptance": [
-        "Current Module Federation browser interaction and source clone limitation recorded in FRONTEND_ORIGIN.json.",
         "Existing standard callback ceiling truncates long source candidate runs. Adapt the finite Brush transport or continuation to preserve complete source behavior without changing other workers.",
         "Same-origin non-M-Team provider recipes inside bracket-encoded material still require the scoped executor. General cross-origin credentials remain subject to the existing host grant.",
         "Deletion accepts current-instance ownership receipts from actual adds. Legacy source torrents have no receipt; explicit safe ownership migration and failure-path evidence are pending."
+      ],
+      "source_limitations": [
+        "The fixed original replacement of class names in JavaScript and lowercase-only asset renaming can break clones of the new Pascal-case virtual federation filename. The default instance is verified. See FRONTEND_ORIGIN.json."
       ]
     },
     {
@@ -66800,6 +66803,28 @@
         "host_fixture_commit": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
         "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523"
       }
+    },
+    {
+      "id": "brushflowlanduo.chrome_current_workbench.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestBrushFlowLinuxAMD64BrowserPackage with owned Chrome fixture on isolated native Linux amd64"
+      ],
+      "inputs": "Exact indexed 5.2.18 ZIP, current compiled host web, isolated actual App and Chrome.",
+      "observations": "Actual package assets mounted and produced the Config and Page workbenches. The live input switch saved show_sidebar_nav=false through the ordinary authenticated settings endpoint, and the host read back the saved value. BrushFlow remained disabled. No JavaScript exceptions. The actual manifest, workbench JavaScript, styles, and both exact source exposed modules loaded.",
+      "artifacts": {
+        "evidence/brushflowlanduo-browser-20261108.json": "92be4b2a0f7e42d61184b33dbdb7e28edfac120c24ee7ea0313a854467b0e771"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "worker_product_commit": "a4182d03ff593ecc67e88d0504b95068dead7e42",
+        "host_fixture_commit": "3df13a3f45a6a373adc78979ac9d469e06e34623",
+        "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523"
+      }
     }
   ],
   "scope": {
@@ -66873,7 +66898,7 @@
       "tested_saved_code_revision": "9adada51cae381b01aef6368c540563ab9e6f455",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "3996ed6e1ab9440062cbb3360fab529b4c132af6",
+      "host_HEAD": "3df13a3f45a6a373adc78979ac9d469e06e34623",
       "SDK_source_host_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "27643514429d261687da77c9635716ee08e4cfd37db2d43ad7d9dcfab01259f5",
@@ -66884,12 +66909,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Fourteen of 22 accepted. BrushFlowLanduo 5.2.18 product and paired host are local with a passing protected qBittorrent path. It remains outside the release registry and verification count.",
-      "tests_running": "Protected native App case passed. The exact current workbench browser case and full-scope source gaps are pending.",
-      "latest_detail": "features[plugin.BrushFlowLanduo].protected_native_app_case",
+      "delivery": "Fourteen of 22 accepted. BrushFlow 5.2.18 protected flow and workbench verified locally. Large calls, scoped material recipes and ownership still open. No build registry change, push or deployment.",
+      "tests_running": "None. The protected native App and current Chrome workbench passed in isolated instances. No accepted suite rerun.",
+      "latest_detail": "features[plugin.BrushFlowLanduo].protected_native_app_and_current_browser",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the accepted protected Add evidence, finish the actual current-workbench browser case, then close callback volume, bound provider recipes and legacy ownership requirements before the full acceptance gate.",
+      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App and default-instance Chrome evidence. Integrate the guarded same-origin recipe draft, preserve long source call sequences, and close legacy ownership requirements before registering this package.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66916,7 +66941,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the accepted protected Add evidence, finish the actual current-workbench browser case, then close callback volume, bound provider recipes and legacy ownership requirements before the full acceptance gate.",
+    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App and default-instance Chrome evidence. Integrate the guarded same-origin recipe draft, preserve long source call sequences, and close legacy ownership requirements before registering this package.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
