@@ -22,8 +22,14 @@ The 12 fixed-source cases and earlier Linux ARM64 lifecycle run were reused.
 The local build registry includes SystemProcess. See
 `migration/evidence/systemprocess-acceptance-20261107.json`.
 
-Next: MediaServerRefresh 1.3.3, starting from the installed source and the
-MoviePilot media-server and TransferComplete call chain.
+MediaServerRefresh 1.3.3 is in progress. The standalone Go worker uses
+the standard TransferComplete event and the existing fnOS item refresh.
+Its connectivity-only probe, source debounce and stop behavior are
+implemented. The pinned source replay supplies the expected ordered
+stop-time batch. A normal import may also enqueue the core fnOS scan, so
+reconcile scan ownership while preserving independent visibility checks
+before the focused package/App acceptance. The legacy installed reference
+mapping to fnOS is documented by the host.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
