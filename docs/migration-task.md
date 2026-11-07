@@ -61,7 +61,12 @@ uses the final page tag for the render signature, filters and caching while
 retaining earlier declarations in the generated scopes. The source replay,
 review follow-ups and exact Linux build are recorded in
 `migration/evidence/mergemessagenotify-wecom-lark-pushy-multiple-pages-20261107.json`.
-The other 137 schemes, further Mako behavior, browser, clone and final
+LINE, QQ and both Webex Teams schemes bring the count to 50 of 183.
+Mako now binds variadic page signatures from the supplied keyword arguments
+and keeps the root Context separate from generated render locals. The
+source replays and Linux build are recorded in
+`migration/evidence/mergemessagenotify-line-qq-webex-page-variadic-20261107.json`.
+The other 133 schemes, further Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
