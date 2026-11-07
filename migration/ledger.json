@@ -13499,7 +13499,8 @@
       "status": "implementing",
       "evidence_ids": [
         "brushflowlanduo.native_protected_add.20261108",
-        "brushflowlanduo.chrome_current_workbench.20261108"
+        "brushflowlanduo.chrome_current_workbench.20261108",
+        "brushflowlanduo.bound_provider_recipe.20261108"
       ],
       "review": {
         "status": "pending",
@@ -13511,7 +13512,7 @@
       "family": "BrushFlowLanduo",
       "source_version": "5.2.18",
       "source_metadata_only": false,
-      "discovery_note": "Actual 5.2.18 protected App workflow and current default-instance Chrome workbench passed. The remaining scope is recorded under pending_acceptance.",
+      "discovery_note": "Actual protected App and current Chrome workbench passed. Scoped recipe behavior passed with a real local HTTP peer. See remaining large call and legacy ownership requirements.",
       "source_refresh": {
         "prior_version": "5.2.16",
         "prior_source_paths": [
@@ -13556,11 +13557,13 @@
       },
       "pending_acceptance": [
         "Existing standard callback ceiling truncates long source candidate runs. Adapt the finite Brush transport or continuation to preserve complete source behavior without changing other workers.",
-        "Same-origin non-M-Team provider recipes inside bracket-encoded material still require the scoped executor. General cross-origin credentials remain subject to the existing host grant.",
         "Deletion accepts current-instance ownership receipts from actual adds. Legacy source torrents have no receipt; explicit safe ownership migration and failure-path evidence are pending."
       ],
       "source_limitations": [
         "The fixed original replacement of class names in JavaScript and lowercase-only asset renaming can break clones of the new Pascal-case virtual federation filename. The default instance is verified. See FRONTEND_ORIGIN.json."
+      ],
+      "adaptations": [
+        "Host-bound recipe material stays within the configured credential origin. Separate native provider paths keep their own finite endpoints."
       ]
     },
     {
@@ -66825,6 +66828,28 @@
         "host_fixture_commit": "3df13a3f45a6a373adc78979ac9d469e06e34623",
         "archive_sha256": "5b5d602993bbe92e5c4e48e18e3ba1c29244ddcda8d94c27bc81314565617523"
       }
+    },
+    {
+      "id": "brushflowlanduo.bound_provider_recipe.20261108",
+      "kind": "integration",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "go test ./internal/app -run ^TestBrushFlowGuardedSourceRecipeSameOrigin$ -count=1 -v"
+      ],
+      "inputs": "Actual saved test-site config and real local HTTP peers. Source-pinned recipe and request behavior.",
+      "observations": "POST retained the source recipe query fields and its selected Cookie. The host followed a same-origin redirect, extracted the nested JSON token, fetched exact bencoded material with letdown=1, and retained its hash. The final GET did not send recipe or configured-site cookies. [] skipped the first request. Cross-origin redirect was rejected before the other HTTP peer received a request.",
+      "artifacts": {
+        "evidence/brushflowlanduo-bound-recipe-20261108.json": "b3b947664fa1a127453159f0daa20ccf3329f6891011bfb15e88b0a482be14db"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "host_commit": "95a7df46f96f2aca5df6c3c067edd5de6ea41dfb",
+        "host_fixture": "internal/app/plugin_original_brush_recipe_test.go",
+        "host_fixture_sha256": "0aac7c5303b40c3282d5d1f86e096479e78970c36bde6af749e22a6853e7c578"
+      }
     }
   ],
   "scope": {
@@ -66898,23 +66923,23 @@
       "tested_saved_code_revision": "9adada51cae381b01aef6368c540563ab9e6f455",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "3df13a3f45a6a373adc78979ac9d469e06e34623",
+      "host_HEAD": "95a7df46f96f2aca5df6c3c067edd5de6ea41dfb",
       "SDK_source_host_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "27643514429d261687da77c9635716ee08e4cfd37db2d43ad7d9dcfab01259f5",
       "SDK_current_status": "108 files. Scoped BrushFlow candidates/ownership, tracker/official M-Team and Vue federation styles contracts.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-      "remote_read_date": "2026-11-07 fresh read-only ls-remote confirmed both main refs unchanged. No push.",
+      "remote_read_date": "2026-11-08 Shanghai local date. Read-only ls-remote confirmed both main refs unchanged.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Fourteen of 22 accepted. BrushFlow 5.2.18 protected flow and workbench verified locally. Large calls, scoped material recipes and ownership still open. No build registry change, push or deployment.",
-      "tests_running": "None. The protected native App and current Chrome workbench passed in isolated instances. No accepted suite rerun.",
-      "latest_detail": "features[plugin.BrushFlowLanduo].protected_native_app_and_current_browser",
+      "delivery": "Fourteen of 22 accepted. BrushFlow 5.2.18 protected flow, workbench and scoped recipe paths verified locally. Large calls and legacy ownership still open. No build registry change, push or deployment.",
+      "tests_running": "None. The protected native App, current Chrome workbench and independent same-origin recipe case passed. Earlier passing suites were not repeated.",
+      "latest_detail": "features[plugin.BrushFlowLanduo].bound_provider_recipe",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App and default-instance Chrome evidence. Integrate the guarded same-origin recipe draft, preserve long source call sequences, and close legacy ownership requirements before registering this package.",
+      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App, default-instance Chrome and guarded recipe evidence. Preserve long source call sequences and safely recognize legacy torrent ownership before registering the complete package.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66941,7 +66966,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App and default-instance Chrome evidence. Integrate the guarded same-origin recipe draft, preserve long source call sequences, and close legacy ownership requirements before registering this package.",
+    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App, default-instance Chrome and guarded recipe evidence. Preserve long source call sequences and safely recognize legacy torrent ownership before registering the complete package.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

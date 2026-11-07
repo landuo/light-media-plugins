@@ -1,0 +1,31 @@
+{
+  "feature": "plugin.BrushFlowLanduo",
+  "status": "passed_scoped_host_integration",
+  "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+  "source_locations": [
+    "brushflowlanduo/__init__.py:2967–3050",
+    "MoviePilot@8a83efe:app/utils/http.py"
+  ],
+  "host_commit": "95a7df46f96f2aca5df6c3c067edd5de6ea41dfb",
+  "host_paths": {
+    "internal/app/plugin_original_brush_add.go": "e47ae2f4186c15180bf18808721b215a5dfe732c34b46cfa77fdd9dd34089444",
+    "internal/app/plugin_original_brush_recipe.go": "69a1b2a1542ccbbd62809755ba95018456c6f251643d19297e2238e3c81d0406",
+    "internal/app/plugin_original_brush_recipe_test.go": "0aac7c5303b40c3282d5d1f86e096479e78970c36bde6af749e22a6853e7c578",
+    "internal/sites/client.go": "6d2b97ce394a986a74b9e0dd0532c4fb97e46e954b05a637871ff0999e917413",
+    "internal/sites/brush_material.go": "55a2000e0ed0a7aa04a3a0d1d89e7a029c0070a3d11e3e5f00683289f74371e7",
+    "internal/plugins/iyuuautoseed/site_http.go": "42bfd22273d5384bc15d3c147c25a0ba2c13d338e625529b3966b4549e170b2b"
+  },
+  "test": "TestBrushFlowGuardedSourceRecipeSameOrigin",
+  "result": "PASS 0.08s",
+  "environment": "Actual host material leaf with a saved owned site configuration and real isolated local HTTP peers. No new package or browser suite execution.",
+  "observations": [
+    "POST retained the source recipe query fields and its selected Cookie.",
+    "The host followed a same-origin redirect, extracted the nested JSON token, fetched exact bencoded material with letdown=1, and retained its hash.",
+    "The final GET did not send recipe or configured-site cookies. [] skipped the first request. Cross-origin redirect was rejected before the other HTTP peer received a request."
+  ],
+  "adaptation": "Only the configured origin may receive authenticated recipe requests or their redirects. Native provider paths such as M-Team keep their separate existing boundaries.",
+  "artifact": {
+    "path": "/Users/accidia/projects/light-media/work/brushflowlanduo-20261108/recipe-draft/evidence.txt",
+    "sha256": "d91c309718f5c05803a473ebafcbce19b668259106812f940c17fd9a3b8ecbc2"
+  }
+}

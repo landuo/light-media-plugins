@@ -59,11 +59,10 @@ matched all 33 files of `landuo/MoviePilot-Plugins@3795f104` (5.2.18).
 The standard Linux ZIP passed the actual protected qBittorrent flow. A
 paused Add occurred once, and the SQLite v2 promotion record existed when
 Start reached the owned downloader peer. Actual Chrome opened both installed
-workbench pages and persisted a settings change. Large call volumes,
-additional provider recipes and legacy ownership are still pending. See
-`migration/evidence/brushflowlanduo-native-protected-20261108.json`,
-`migration/evidence/brushflowlanduo-browser-20261108.json`, and
-`migration/evidence/brushflowlanduo-source-5.2.18.json`.
+workbench pages and persisted a settings change. A separate local HTTP case
+verified guarded same-origin provider recipes. Large call volumes and
+legacy ownership remain pending. The source, native App, browser and
+recipe evidence is under `migration/evidence/brushflowlanduo-*`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
