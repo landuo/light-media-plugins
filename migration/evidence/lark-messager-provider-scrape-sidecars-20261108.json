@@ -1,0 +1,51 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and indexed worker. Lark, recognition, tracker and downloader used isolated owned loopback peers. SQLite, hardlink and NFO file operations were real.",
+  "mapping": [
+    {
+      "source": "app/core/config.py:203–209; app/modules/anilist/__init__.py:531–563; app/modules/bangumi/__init__.py:267–299; app/modules/douban/__init__.py:1075–1095; app/modules/themoviedb/__init__.py:860–881",
+      "target": "light-media internal/app/{plugin_original_host_media_cache,plugin_original_host_settings,plugin_original_metadata_scrape,plugin_original_metadata_nfo}.go",
+      "behavior": "Scraper selection uses MediaInfo.scrape_source first and startup SCRAP_SOURCE second. It is independent of configured recognition. Plugin NFO module precedence and system-only image dispatch are retained."
+    },
+    {
+      "source": "app/chain/media.py:1095–1144,1485–1552; app/chain/__init__.py:637–745; app/chain/transfer.py:2333–2377",
+      "target": "light-media internal/app/{asset_scrape,asset_provider_scrape,plugin_original_metadata_event,plugin_original_metadata_scrape}.go",
+      "behavior": "Inherited transfer media drives the season. A TV episode reparses the file path and uses ordinary recognition with nullable TMDB ID. The asset itself keeps its accepted download identity. Retry code can reconstruct an authorized one-asset event from recorded transfer and download context."
+    },
+    {
+      "source": "app/helper/scraper.py:16–179; app/modules/douban/scraper.py:14–144; app/modules/themoviedb/scraper.py:34–84,236–462; app/utils/dom.py:23–31",
+      "target": "light-media internal/app/{plugin_original_metadata_provider_nfo,plugin_original_metadata_sparse_tmdb,plugin_original_metadata_scrape}.go",
+      "behavior": "Native provider XML and image targets follow the selected scraper, including source-dependent IDs, Douban season NFO, and the sparse default TMDB case when no ID is available. Fixed-source None is retained as a literal in the sparse episode shell."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderScrapeSidecarsLinuxAMD64",
+    "seconds": 1.78,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "fcb7d31bd8693c0aee6a84dd774015ab97edf47f",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "938a6d9e03bbc2911c7fd850f0e5e099d3a9729090963e31f2d21fabe4826e57",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_elf_sha256": "d406588c3069b3813857989862f60f60d840c037c716ed50cf8e6b8b95e4b9f1",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "f8e77cc73d5873e2e45591a3e12dfc670ee4ac90f2b27b05f30f1382b45e601d",
+    "runtime_log_sha256": "eb1d65a575ca7e68e730af64ff9d8d4bf945774cbd63075aaf5d92d6bb28874e",
+    "observations": [
+      "An installed Lark worker selected AniList 777 and the actual host completed a real local hardlink from the accepted torrent. The isolated fixture configured RECOGNIZE_SOURCE=bangumi and SCRAP_SOURCE=anilist at startup.",
+      "The source-owned post-import scrape job wrote season.nfo with AniList 777 and seasonnumber 1 using the acquired media. After file completion, one configured Bangumi title/detail lookup resolved Bangumi 778 from the local episode path. The episode NFO used that provider identity and carried S01E01 and showtitle under the same AniList scraper selection.",
+      "Both actual XML files had one default provider uniqueid and no tmdbid element. The asset and its scrape.completed event retained tv:anilist:777. The native job reached succeeded."
+    ]
+  },
+  "adaptations_and_open": [
+    "The Go encoder recreates the original minidom output without a Python runtime. The focused case verifies the shared AniList and Bangumi NFO format using an AniList-configured scraper and an independently recognized Bangumi episode.",
+    "Other provider scraper selections, sparse TMDB NFO output, manual or retry scrape reconstruction, and image downloads were implemented from source but were not exercised in this run. The same prior Add and RSS cases were not rerun.",
+    "Browser edit and process restart, unknown-season behavior, provider per-episode replacement, and distinct legacy material recovery remain open."
+  ]
+}

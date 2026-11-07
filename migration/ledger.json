@@ -68242,6 +68242,33 @@
         "fixture_sha256": "2afc63036918aab3b027d68753d151a7a600a13e23af4d57adf79ebd1bb0cbb2",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_provider_scrape_sidecars.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderScrapeSidecarsLinuxAMD64"
+      ],
+      "observations": [
+        "An installed Lark worker selected AniList 777 and the actual host completed a real local hardlink from the accepted torrent. The isolated fixture configured RECOGNIZE_SOURCE=bangumi and SCRAP_SOURCE=anilist at startup.",
+        "The source-owned post-import scrape job wrote season.nfo with AniList 777 and seasonnumber 1 using the acquired media. After file completion, one configured Bangumi title/detail lookup resolved Bangumi 778 from the local episode path. The episode NFO used that provider identity and carried S01E01 and showtitle under the same AniList scraper selection.",
+        "Both actual XML files had one default provider uniqueid and no tmdbid element. The asset and its scrape.completed event retained tv:anilist:777. The native job reached succeeded."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-provider-scrape-sidecars-20261108.json": "4fb3011b41b16be6199983e601904930c46501b9d0227d5694daeed0fa011eaa"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "fcb7d31bd8693c0aee6a84dd774015ab97edf47f",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "938a6d9e03bbc2911c7fd850f0e5e099d3a9729090963e31f2d21fabe4826e57",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -68315,7 +68342,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "d836051f0ab2141b781c286a7e862b86517fba38",
+      "host_HEAD": "fcb7d31bd8693c0aee6a84dd774015ab97edf47f",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68326,12 +68353,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark ordinary provider RSS and full BestVersion provider RSS each passed material acquisition and local organization; full quality also passed exact rooted retirement. Code and evidence remain local.",
-      "tests_running": "None. One new native Linux scenario passed for ordinary RSS and one for full BestVersion. Older accepted direct and TMDB scenarios were not repeated.",
-      "latest_detail": "migration/evidence/lark-messager-provider-quality-rss-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Lark native provider post-import NFO job passed with independent recognition and scrape source. Code and evidence remain local.",
+      "tests_running": "None. Only the new native provider sidecar scenario ran and passed. No older acquisition scenario was separately rerun.",
+      "latest_detail": "migration/evidence/lark-messager-provider-scrape-sidecars-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host d836051f. Reuse accepted manual, ordinary RSS and full BestVersion source-only Add/import. Implement local provider metadata behavior from fixed chain/media.py:1514\u20131527, config.py:207\u2013209 and helper/scraper.py:16\u2013179 using the independent SCRAP_SOURCE selection, and confirm one distinct provider sidecar scenario. Browser/restart, no-season fallback and distinct legacy empty-reference recovery remain open. Confirm quality replacement and remaining chat source variants from actual evidence before registering.",
+      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host fcb7d31b. Reuse prior manual, ordinary RSS, full BestVersion, and post-import provider NFO evidence. Verify source subscription edit and restart with the same persisted identity in one browser scenario. Then close unknown-season fallback, distinct legacy empty-reference recovery, provider per-episode replacement and remaining chat variants. Record unverified scraper variants, manual retry and images; register only after the agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
