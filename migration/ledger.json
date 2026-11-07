@@ -136,16 +136,17 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "bb6fc90e294801df0aeada67467b296ce286cebc",
+    "revision": "129692ad16407df7636027e6fbb5a9bcab65502f",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
     "metadata_paths": [
       "migration/ledger.json",
       "docs/migration-task.md",
-      "migration/evidence/merge-site-switch-runtime-20261108.json"
+      "migration/evidence/merge-site-switch-runtime-20261108.json",
+      "migration/evidence/scrape-file-clean-runtime-20261108.json"
     ],
-    "revision_scope": "Sixteen installed instances accepted in the 22-instance scope on the paired host, local build registration included. Published remote index and both main refs unchanged.",
+    "revision_scope": "Seventeen installed instances accepted in the 22-instance scope on paired local host revisions. Published remote index and both main refs unchanged.",
     "deployment": "NASpairedverified166/09ab+824workers installed7inactive; currentcodebranch/mainrelease distinct, details resume.deployment_20261106"
   },
   "inventory": [
@@ -4535,6 +4536,30 @@
         "Managed original broadcast with bound source-event lease",
         "Use the typed source site ID to remove the first matching item",
         "Persist following core/peer fields and reinitialize peer jobs only on change"
+      ]
+    },
+    {
+      "id": "plugin.ScrapeFileClean.inotify",
+      "feature_ids": [
+        "plugin.ScrapeFileClean"
+      ],
+      "source_location": "scrapefileclean/__init__.py:186",
+      "chain": [
+        "Linux root observers start before full file scan",
+        "File events update source device/inode state and dispatch deletion",
+        "Owned callback enters machine and guarded storage/history/event effects"
+      ]
+    },
+    {
+      "id": "plugin.ScrapeFileClean.delayed_deletion",
+      "feature_ids": [
+        "plugin.ScrapeFileClean"
+      ],
+      "source_location": "scrapefileclean/__init__.py:669",
+      "chain": [
+        "Tracked deletion freezes known same-inode paths",
+        "Private timer revalidates same/replaced inode and new hardlink paths",
+        "Apply source side effects or skip, then consume task"
       ]
     }
   ],
@@ -15048,26 +15073,66 @@
         "plugin.ScrapeFileClean.get_command",
         "plugin.ScrapeFileClean.get_api",
         "plugin.ScrapeFileClean.get_state",
-        "plugin.ScrapeFileClean.stop_service"
+        "plugin.ScrapeFileClean.stop_service",
+        "plugin.ScrapeFileClean.inotify",
+        "plugin.ScrapeFileClean.delayed_deletion"
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/scrape-file-clean/main.go",
+        "plugins/scrapefileclean/UNICODE-LICENSE.txt",
+        "plugins/scrapefileclean/alnum.go",
+        "plugins/scrapefileclean/form.json",
+        "plugins/scrapefileclean/local.go",
+        "plugins/scrapefileclean/machine.go",
+        "plugins/scrapefileclean/observer_linux.go",
+        "plugins/scrapefileclean/observer_other.go",
+        "plugins/scrapefileclean/plugin.go",
+        "plugins/scrapefileclean/scrap.go",
+        "plugins/scrapefileclean/types.go",
+        "plugins/scrapefileclean/ORIGIN.json",
+        "internal/sdk/concurrent_transport.go",
+        "internal/sdk/storage_host.go",
+        "internal/sdk/protocol.go",
+        "internal/sdk/worker.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "scrapefileclean.native_amd64_delay_and_stop.20261108",
+        "scrapefileclean.chrome_configuration.20261108",
+        "scrapefileclean.native_amd64_guards_and_index.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby and /root/jellyfin",
+        "evidence_ids": [
+          "scrapefileclean.native_amd64_delay_and_stop.20261108",
+          "scrapefileclean.chrome_configuration.20261108",
+          "scrapefileclean.native_amd64_guards_and_index.20261108"
+        ]
       },
       "original_instance_id": "ScrapeFileClean",
       "family": "ScrapeFileClean",
       "source_version": "1.0.7",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Fixed installed source. Go worker passed real Linux inotify delay, cleanup, stop, safe identity/continuity and asset-index cases; browser configuration retained from unchanged UI path.",
+      "paired_host_paths": [
+        "internal/app/plugin_original_scrape_clean_storage.go",
+        "internal/app/plugin_original_host_storage.go",
+        "internal/app/plugin_original_session.go",
+        "internal/app/plugin_original_lifecycle.go"
+      ],
+      "adaptations": [
+        "Compiled Linux inotify with one recursive observer per admitted root. The installed Linux original had watchdog and selected inotify. Non-Linux/Python import fallback is outside the migration runtime.",
+        "Local roots must be canonical, inside the host’s current granted roots and safe to open without symlink traversal. The exact dev/inode and quarantine snapshots protect against path replacement; active import/download and nested roots are protected. Definitive denials allow later events; ambiguous effects fence the watch.",
+        "The optional seed switch emits the original src-only DownloadFileDeleted broadcast. The pinned core requires hash to remove a torrent, and the separately mentioned DownloaderHelper is absent from the installed set. There is no inferred torrent deletion authority.",
+        "Pending queue is volatile like the source and intentionally dropped on disable/reload/stop. Local managed storage is the only filesystem backend.",
+        "An inaccessible, symlinked, or replaced monitored path is treated as unknown. The native worker refuses its delayed deletion and stops active effects on lost inotify observation continuity until a reload can rebuild state. Confirmed managed-file effects update the matching native asset only, independent of source optional history/seed settings."
+      ]
     },
     {
       "id": "plugin.LarkMessager",
@@ -67139,6 +67204,142 @@
         "environment": "Distinct actual Linux App run with an owned in-flight lifecycle operation and real SiteUpdated from the site management route",
         "host_fixture_sha256": "3d66efdba235ae7d1b03e3724135c20917dc265402016949e4332db752f80e79"
       }
+    },
+    {
+      "id": "scrapefileclean.native_amd64_delay_and_stop.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.ScrapeFileClean"
+      ],
+      "commands": [
+        "TestScrapeFileCleanInstalledAMD64DelayedAndStop"
+      ],
+      "observations": [
+        "An unavailable configured root logged an independent start failure. The other source/library roots still started and caught two real deletions.",
+        "The first owned hardlink stayed present after the source event entered the 10-second queue. After the due time the exact old hardlink, custom named sidecar, nested trickplay directory, and original transfer history row were removed. The unrelated inode and both monitor roots survived.",
+        "The second owned deletion reached the queue. Disabling through the ordinary config route dropped that queue item, left its hardlink present, and returned false from the worker’s actual get_state.",
+        "The isolated App, container and upload directory were removed. No production file, config, daemon, or history was touched."
+      ],
+      "artifacts": {
+        "evidence/scrape-file-clean-runtime-20261108.json": "f6218fb963fdcda96c6becee6becc74e079e0b87779ba36e94cf34cdb5a1952e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "c14c36e17112605e6c856614e88ea425530be2462123126a85e1adfea009a3af",
+        "worker_commit": "4b508242877f54a7e1bd15993b295780415df59b",
+        "host_commit": "27fd4d4a51c8dabbcaa5c06211811ef6feb7ac9c",
+        "fixture_sha256": "93cd738bba1cb72f57cbb07ccb61b84bcecc549d2c2977aa2a09dd288616dcad",
+        "archive_sha256": "adf3dbdd633d0ac663f854dd8239aac9f0d1b617a4bd370db5c3b6314826b723",
+        "environment": "Exact indexed ZIP installed in a real isolated App on native Linux x86_64. Actual inotify, hardlink, App transfer history, and write authority. Network-disabled fixture.",
+        "target_files": {
+          "cmd/scrape-file-clean/main.go": "4448300a8aa83f0954287d8ee5433477c2ec9d331eb73073957c447598c4043d",
+          "plugins/scrapefileclean/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+          "plugins/scrapefileclean/alnum.go": "62f3e1ffb462625c514a92d570e8d526611591ef0f11cc0113257396630b9252",
+          "plugins/scrapefileclean/form.json": "808bdf039d18266063f8bf28cf1f7dd905de8344e7c3c8fd48062e41eb4ba636",
+          "plugins/scrapefileclean/local.go": "643a60057bcb2139e6f88033e52858925ce9318b5de0027fd8480b710dab2dcf",
+          "plugins/scrapefileclean/machine.go": "4d562b019f466f1a0fc7760a9ba9a70a49e4cdc6a7c453b36d06d5fea3441180",
+          "plugins/scrapefileclean/observer_linux.go": "37de50b078d60c6aacbcd4b1b7098da76b4e7d33921d4bddebb7125eb089a1cf",
+          "plugins/scrapefileclean/observer_other.go": "41f84d58b94b8fa5e9d690e9c38b9f16acc038f10ed8f9fd4a9a2c9aaaeb67f2",
+          "plugins/scrapefileclean/plugin.go": "6ede9d67e801b1a62c38a80af07b01d2f731d055a52a0b50956614a9a8dc36dd",
+          "plugins/scrapefileclean/scrap.go": "8e2911f7be30bf394af80de0dc174baab4aa1a1c4980fc3e7a115f076c6c10ba",
+          "plugins/scrapefileclean/types.go": "a4fe2e7c303a17fef232279b20f108eda2085ac9f8827556f2922011ccd955db",
+          "plugins/scrapefileclean/ORIGIN.json": "5ff255cc5c8731770f8edd24aee7b766ffeb6131868f9a085e5163c648d7c875",
+          "internal/sdk/concurrent_transport.go": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
+          "internal/sdk/storage_host.go": "c0902ce314add87c5145dcc21901be02b4d30b33801476e46845c8e8f49366f9",
+          "internal/sdk/protocol.go": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
+          "internal/sdk/worker.go": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd"
+        }
+      }
+    },
+    {
+      "id": "scrapefileclean.chrome_configuration.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.ScrapeFileClean"
+      ],
+      "commands": [
+        "TestScrapeFileCleanLinuxAMD64BrowserPackage"
+      ],
+      "observations": "The form displayed original disabled and 30-second defaults. One authenticated browser save and App readback preserved both multiline fields, the 47-second field, and disabled state. No JavaScript exceptions. Later Go changes are only the active monitor and safe deletion branches.",
+      "artifacts": {
+        "evidence/scrape-file-clean-runtime-20261108.json": "f6218fb963fdcda96c6becee6becc74e079e0b87779ba36e94cf34cdb5a1952e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "c14c36e17112605e6c856614e88ea425530be2462123126a85e1adfea009a3af",
+        "worker_commit": "4b508242877f54a7e1bd15993b295780415df59b",
+        "host_commit": "27fd4d4a51c8dabbcaa5c06211811ef6feb7ac9c",
+        "fixture_sha256": "f85f5ccca6fd0e326e83ac4e2af57e08f1948d0f7306aace67565d6e739b8357",
+        "archive_sha256": "adf3dbdd633d0ac663f854dd8239aac9f0d1b617a4bd370db5c3b6314826b723",
+        "environment": "Real Chrome on the isolated Linux App with unchanged host Vuetify renderer",
+        "target_files": {
+          "cmd/scrape-file-clean/main.go": "4448300a8aa83f0954287d8ee5433477c2ec9d331eb73073957c447598c4043d",
+          "plugins/scrapefileclean/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+          "plugins/scrapefileclean/alnum.go": "62f3e1ffb462625c514a92d570e8d526611591ef0f11cc0113257396630b9252",
+          "plugins/scrapefileclean/form.json": "808bdf039d18266063f8bf28cf1f7dd905de8344e7c3c8fd48062e41eb4ba636",
+          "plugins/scrapefileclean/local.go": "643a60057bcb2139e6f88033e52858925ce9318b5de0027fd8480b710dab2dcf",
+          "plugins/scrapefileclean/machine.go": "4d562b019f466f1a0fc7760a9ba9a70a49e4cdc6a7c453b36d06d5fea3441180",
+          "plugins/scrapefileclean/observer_linux.go": "37de50b078d60c6aacbcd4b1b7098da76b4e7d33921d4bddebb7125eb089a1cf",
+          "plugins/scrapefileclean/observer_other.go": "41f84d58b94b8fa5e9d690e9c38b9f16acc038f10ed8f9fd4a9a2c9aaaeb67f2",
+          "plugins/scrapefileclean/plugin.go": "6ede9d67e801b1a62c38a80af07b01d2f731d055a52a0b50956614a9a8dc36dd",
+          "plugins/scrapefileclean/scrap.go": "8e2911f7be30bf394af80de0dc174baab4aa1a1c4980fc3e7a115f076c6c10ba",
+          "plugins/scrapefileclean/types.go": "a4fe2e7c303a17fef232279b20f108eda2085ac9f8827556f2922011ccd955db",
+          "plugins/scrapefileclean/ORIGIN.json": "5ff255cc5c8731770f8edd24aee7b766ffeb6131868f9a085e5163c648d7c875",
+          "internal/sdk/concurrent_transport.go": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
+          "internal/sdk/storage_host.go": "c0902ce314add87c5145dcc21901be02b4d30b33801476e46845c8e8f49366f9",
+          "internal/sdk/protocol.go": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
+          "internal/sdk/worker.go": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd"
+        }
+      }
+    },
+    {
+      "id": "scrapefileclean.native_amd64_guards_and_index.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.ScrapeFileClean"
+      ],
+      "commands": [
+        "TestScrapeFileCleanInstalledAMD64IndexAndLostWatch"
+      ],
+      "observations": [
+        "Actual guarded unlink of an imported managed video updated its matching asset to missing_pending and fnOS needs_attention. Optional transfer history deletion was off and history stayed present.",
+        "The next real source deletion entered the 10-second queue. Recreating its path as a symlink to the original inode preserved the existing hardlink after the timer ran.",
+        "Another real delayed event was queued. The watched root moved and was replaced. The native watcher reported the identity loss, no timer effect occurred after the due time, and the hardlink remained.",
+        "The isolated App and container exited and the upload bundle was removed. This case did not rerun the original delay/sidecar/history/stop case."
+      ],
+      "artifacts": {
+        "evidence/scrape-file-clean-runtime-20261108.json": "f6218fb963fdcda96c6becee6becc74e079e0b87779ba36e94cf34cdb5a1952e"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "c14c36e17112605e6c856614e88ea425530be2462123126a85e1adfea009a3af",
+        "worker_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
+        "host_commit": "de31c8be15bcecedb0c3433e406dfde03029f46e",
+        "fixture_sha256": "434c42640476344d2165a7a05ea21b5b1fe2475f2c3e90e6028b8ae3334c974c",
+        "archive_sha256": "0bfaf604dbb2b4127811544490c9c9e0dd4f1a6348cb1503990c813789a4b376",
+        "environment": "Distinct final ZIP run on actual Linux App, real inotify, same-inode replacement and SQLite asset index",
+        "target_files": {
+          "cmd/scrape-file-clean/main.go": "4448300a8aa83f0954287d8ee5433477c2ec9d331eb73073957c447598c4043d",
+          "plugins/scrapefileclean/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+          "plugins/scrapefileclean/alnum.go": "62f3e1ffb462625c514a92d570e8d526611591ef0f11cc0113257396630b9252",
+          "plugins/scrapefileclean/form.json": "808bdf039d18266063f8bf28cf1f7dd905de8344e7c3c8fd48062e41eb4ba636",
+          "plugins/scrapefileclean/local.go": "f0e554c1c57e1356676c8531d31448448654a8cf8c054258de470255696cfb19",
+          "plugins/scrapefileclean/machine.go": "7b9a594eb91f8b5083a28e5395671846e070f58f10e59c82f507cee0f0081903",
+          "plugins/scrapefileclean/observer_linux.go": "57ba0dcc583fa806365b16736e13ef7875bb0b353306fe17ec0fb042374bc06c",
+          "plugins/scrapefileclean/observer_other.go": "7d1e004e032809cd0cded8e78845a9ab0ded94249d27dd7b7c1a71dd32406b27",
+          "plugins/scrapefileclean/plugin.go": "994332b0186752d093d339cbf37d8db25c312a49162be45f3cc07ffc00095c85",
+          "plugins/scrapefileclean/scrap.go": "8e2911f7be30bf394af80de0dc174baab4aa1a1c4980fc3e7a115f076c6c10ba",
+          "plugins/scrapefileclean/types.go": "a4fe2e7c303a17fef232279b20f108eda2085ac9f8827556f2922011ccd955db",
+          "plugins/scrapefileclean/ORIGIN.json": "152e4fb81bdb356775e4fc09b9d3ca5fceee2fdae44820776391a8feadb0d9e7",
+          "internal/sdk/concurrent_transport.go": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
+          "internal/sdk/storage_host.go": "c0902ce314add87c5145dcc21901be02b4d30b33801476e46845c8e8f49366f9",
+          "internal/sdk/protocol.go": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
+          "internal/sdk/worker.go": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd"
+        }
+      }
     }
   ],
   "scope": {
@@ -67198,37 +67399,37 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 16,
+      "functional_verified_instances": 17,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 15,
-      "functional_verified_count_scope": "Sixteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 16,
+      "functional_verified_count_scope": "Seventeen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+      "tested_saved_code_revision": "4950be37d694b961024b27d3c474db7dfd150b4f",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "0e5caf97f8be0fa229b64ebf292cfb1bc0564fff",
-      "SDK_source_host_commit": "4ae9d95e736038115d44c2c60288783a1915776f",
+      "host_HEAD": "eaf55bacea1c31de4294579dced6770e5d1e933f",
+      "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
-      "SDK_current_origin_sha256": "3c57714c4ee65c0af6c2843d81802afecc8e7e526dee36fe871a42202aa2fce1",
-      "SDK_current_status": "108 files. BrushFlow sequential streaming retains per-message and authority checks.",
+      "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
+      "SDK_current_status": "108 files. Existing sequential stream retains per-message checks; ScrapeFileClean uses the bound watcher phase and exact guarded removal capability.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-08 Shanghai local date. Read-only ls-remote confirmed both main refs unchanged.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Sixteen of 22 accepted locally. MergeSiteSwitch 1.2 Go package and paired host are saved locally. No remote push or deployment.",
-      "tests_running": "None. Linux form/save/events, Chrome numeric selection and a separate contended site event passed.",
-      "latest_detail": "migration/evidence/merge-site-switch-runtime-20261108.json",
+      "delivery": "Seventeen of 22 accepted. ScrapeFileClean Go worker, Linux package, and paired host are local. No push or production deployment.",
+      "tests_running": "None. ScrapeFileClean Linux delayed cleanup, stop, Chrome and distinct safety/asset cases passed.",
+      "latest_detail": "migration/evidence/scrape-file-clean-runtime-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start ScrapeFileClean 1.0.7 from the installed source. Preserve the accepted BrushFlow and MergeSiteSwitch cases and run only new relevant cases.",
+      "next_complete_slice": "Start LarkMessager 0.9.1 from the installed source. Preserve all accepted evidence. Use isolated provider endpoints and do not send production messages.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -67239,7 +67440,8 @@
       "latest_AutoBackup_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455",
       "brushflowlanduo_source_revision": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
-      "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8"
+      "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
+      "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -67256,7 +67458,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start ScrapeFileClean 1.0.7 from the installed source. Preserve the accepted BrushFlow and MergeSiteSwitch cases and run only new relevant cases.",
+    "next_complete_slice": "Start LarkMessager 0.9.1 from the installed source. Preserve all accepted evidence. Use isolated provider endpoints and do not send production messages.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (sixteen of 22 in scope accepted)
+## Current resume (seventeen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -74,7 +74,17 @@ verified event admission during a lifecycle operation. Source-only optional
 peers and stale site-ID handling are described in
 `migration/evidence/merge-site-switch-runtime-20261108.json`.
 
-Next: ScrapeFileClean 1.0.7, starting with the installed source identity.
+ScrapeFileClean 1.0.7 is accepted for guarded local Linux storage.
+An actual indexed package observed owned source deletion, preserved the
+hardlink during the delay, cleaned the paired hardlink, custom sidecar,
+trickplay and transfer history, and discarded a queued task on disable.
+Chrome verified the native multiline configuration. The final ZIP covered
+managed asset reconciliation, same-entity symlink replacement and watcher
+root loss in a distinct Linux scenario. The original source-only download
+file event and host protections are recorded in
+`migration/evidence/scrape-file-clean-runtime-20261108.json`.
+
+Next: LarkMessager 0.9.1, starting with the installed source identity.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
