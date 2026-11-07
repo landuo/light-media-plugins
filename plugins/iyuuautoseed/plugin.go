@@ -134,6 +134,9 @@ func (p *Plugin) init(ctx context.Context, caller sdk.HostCaller, raw json.RawMe
 		core, err = newCore(old.core.config, nil, nil)
 	}
 	if err == nil {
+		// Source init clears the queue and checked hashes, but retains the
+		// running guard for the lifetime of the same loaded plugin object.
+		core.recheckRunning = old.core.recheckRunning
 		old.core.Stop()
 	}
 	old.core.runMu.Unlock()

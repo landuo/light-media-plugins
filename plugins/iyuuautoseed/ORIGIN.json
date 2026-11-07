@@ -46,7 +46,7 @@
     "core.go": {
       "host_path": "internal/plugins/iyuuautoseed/core.go",
       "host_sha256": "0a4c668d4d4295a77e41b6020b1e4380b35b98a5b9a9304550796bf7e2b85e3a",
-      "target_sha256": "e7c9cb64a3f3fb5c6f13f7503b0b996f124b0fd70473f2238b421a268e3f4f0f"
+      "target_sha256": "acae927023142a71321a52f40fd9d87f1c75d1590b3c75862033154abaf482ec"
     },
     "logging.go": {
       "host_path": "internal/plugins/iyuuautoseed/logging.go",
@@ -89,11 +89,12 @@
     "Keep the source clock interface and conversion. The prior host DurableAPI adapter stays in its owning host journal.",
     "The fixed IYUU API transport preserves the trusted Go TLS, redirect and response limit boundaries. Ordinary connection and body read failures reach the installed helper as no response. Linux Requests connect/read timeout, proxy behavior and session policy are not asserted byte-for-byte.",
     "The standalone core starts from the host 2.19 implementation and ports the installed 2.22 native pack checks, full completed hash exclusion, per-init auto-recheck and repeat service lookups.",
-    "The native SDK boundary uses opt-in qB pack projection, original site ID types and separate ordered form inventories. Worker lifecycle and mutation/site bindings are pending.",
+    "The native SDK boundary uses opt-in qB pack projection, original site ID types and separate ordered form inventories. Worker lifecycle and mutation/site bindings use the paired host SDK.",
     "The concurrent standalone worker separates public cron and privately owned date/interval leases. Each interval gets a fresh host callback. Config deletion and cache writes share the current worker config. Shutdown drains active scoped work.",
-    "The 2.22 resolver uses source site references and finite M-Team GET grants. Torrent files and invalid URLs are scoped to one plugin instance. TLS verification, payload limits and explicit origin controls remain necessary host adaptations."
+    "The 2.22 resolver uses source site references and finite M-Team GET grants. Torrent files and invalid URLs are scoped to one plugin instance. TLS verification, payload limits and explicit origin controls remain necessary host adaptations.",
+    "Long passes keep one source execution stack while renewing host call budgets. The M-Team material chain remains in its originating host callback. Recoverable malformed history rows follow the source diagnostic-and-continue behavior; unclassified SDK storage or authority errors stay fenced."
   ],
-  "scope": "Actual standalone worker and host lifecycle increment. Source-controlled adapter replay and isolated Linux no-seed execution passed. A complete live seed-write pass, long-pass callback capacity and full acceptance remain open.",
+  "scope": "IYUUAutoSeed 2.22 standalone Go worker with native form and host-bound effects. The installed source oracle, worker/lifecycle evidence, seeded owned Linux run and package acceptance are tracked in the migration ledger.",
   "source_observations": {
     "reference/api-http-wire-oracle.json": "265a68f21242ded7641c3be61662eb840a89b4f93bbcd4ea32d405b46d57d91e",
     "reference/api-http-network-failure-oracle.json": "b4b1f293e197e4d9c67ca3dd8a8bae2cb3f008aabacbf894d213936760e1e3ec",
@@ -102,7 +103,8 @@
     "reference/core-recheck-lookups-oracle.json": "7152d3cb0662b5c2aba765cf595d43bd9122c4d666db4ae22f6423fc219e3e96",
     "reference/resolver-source-2.22.json": "313d44212706dcf49e92d14009f1793a954104458deb4f8ca5f1557533d76b25",
     "reference/sdk-downloader-oracle.json": "435a671bcca7189793724c74aad10a5e3e5e73caaf214bf1577d206aed550e78",
-    "reference/torrent-material-oracle.json": "ecdd28de62b09e6e55f49049e47a722ea8eade39dc1892de7e16a16ad9276d6b"
+    "reference/torrent-material-oracle.json": "ecdd28de62b09e6e55f49049e47a722ea8eade39dc1892de7e16a16ad9276d6b",
+    "reference/history-shape-oracle.json": "40c6e8914b9dd7f9b6fac5a2d537879c59c633183d9314e560f46b73c1fed141"
   },
-  "paired_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29"
+  "paired_host_commit": "a501340553ed067325f2be40e11d06e0b6c18c55"
 }
