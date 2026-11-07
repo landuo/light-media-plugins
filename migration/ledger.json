@@ -16087,7 +16087,8 @@
         "larkmessager.download_added_native_attribution.20261108",
         "larkmessager.tv_native_split_fallback.20261108",
         "larkmessager.provider_native_selection.20261108",
-        "larkmessager.subscribes_paused_rss_replacement.20261108"
+        "larkmessager.subscribes_paused_rss_replacement.20261108",
+        "larkmessager.subscribes_prompt_cooldown.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67664,6 +67665,30 @@
         "fixture_sha256": "a884d15b257d4c61ab259cb3fdd9dca68c3deaec3042752c358cf3d8fc00ba08",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.subscribes_prompt_cooldown.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRSSPromptAndStableFailureCooldownLinux"
+      ],
+      "observations": [
+        "The started Linux App executed the native refresh action used by /subscribes. A matching RSS enclosure returned the UTF-8 first-download prompt. The host sent one POST to its exact URL with the configured Cookie and only the two expected form fields. A 200 response containing HTML instead of torrent bytes did not call Add and did not poison the separate invalid-enclosure cache.",
+        "The same failed operation wrote one sealed failure record with a retry time approximately 24 hours ahead. A newly recognized release-group suffix with the same detail-page ID but changed enclosure ID/token hit the explicit cooldown decision without any second tracker material request, Add, count increase or expiry renewal.",
+        "A different detail-page resource ID got a fresh GET and one first-download form POST. Its valid torrent bytes reached one native downloader Add with the configured save path and the host received its accepted task identity."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-subscribes-cooldown-20261108.json": "642b427ad9e28a3bf1cd36335a7602b6b3af98130d92841b163aeb8ffa7d383f"
+      },
+      "binding": {
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "84b41ddc2b7e9679b01e56ceafc0e905ab06307d",
+        "fixture_sha256": "c79cb74ac9a8e62d657db8cf7f4e48d8be298cbe1407321cc9c63a3d015e8017"
+      }
     }
   ],
   "scope": {
@@ -67737,7 +67762,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "2f62dd35d48a14b6dd5e63272c7449e1b80cb0a8",
+      "host_HEAD": "84b41ddc2b7e9679b01e56ceafc0e905ab06307d",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67748,12 +67773,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native Lark explicit paused search and RSS same-title replacement with a new tracker ID passed. Host and evidence stay local.",
-      "tests_running": "None. One distinct native paused search and RSS replacement scenario passed and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-subscribes-rss-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native host first-download form and stable RSS resource failure cooldown passed. Prior exact indexed-worker evidence reused. Host and evidence stay local.",
+      "tests_running": "None. One distinct native prompt and failure-cooldown scenario passed and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-subscribes-cooldown-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager: bind ordinary subscription failure cooldown to a sealed source tracker resource key using the existing durable best-version acquisition fingerprint and receipts; verify same-ID token rotation is suppressed without blocking a new ID. Successful paused acquisition/completion, first-download prompt/magnet, one-Add multi-season packages and alternate-provider-to-download remain open. Reuse passed native evidence.",
+      "next_complete_slice": "Continue LarkMessager: use a distinct positive paused-subscription real acquisition/completion fixture to check the existing explicit search proof through its accepted Add and completion worker; then cover one-Add multi-season packages and provider-to-download. Keep explicit daemon failure cooldown, post-preview reacquisition and RSS magnet differences visible. Reuse prior native evidence and do not repeat passing scenarios.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

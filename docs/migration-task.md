@@ -122,8 +122,13 @@ unmatched subscription's paused state. A separate RSS refresh rejected one
 404 enclosure, then accepted the same release title relisted with a new
 tracker ID. See
 `migration/evidence/lark-messager-subscribes-rss-20261108.json`.
-Continue with the ordinary same-resource failure cooldown, successful
-paused acquisition and remaining Lark paths. Reuse earlier passing evidence.
+An independent native host refresh then submitted the source first-download
+form, persisted a 24-hour failure after invalid content, skipped a rotated
+enclosure with the same detail-page ID, and accepted the valid confirmation
+for a different resource. See
+`migration/evidence/lark-messager-subscribes-cooldown-20261108.json`.
+Continue with successful paused acquisition and the remaining Lark paths.
+Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

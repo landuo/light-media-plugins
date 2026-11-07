@@ -1,0 +1,49 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "84b41ddc2b7e9679b01e56ceafc0e905ab06307d",
+    "fixture_sha256": "c79cb74ac9a8e62d657db8cf7f4e48d8be298cbe1407321cc9c63a3d015e8017"
+  },
+  "source_oracle": "Static comparison with fixed MoviePilot source. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/helper/torrent.py:120–190; app/chain/download.py:879–891",
+      "target": "internal/sites/subscription_material_confirmation.go, subscription_material_failure.go, plugin_host_resources.go and client.go",
+      "behavior": "A first-download prompt submits the first action=\"?\" form to its original URL. Valid metainfo continues, invalid content does not mark the enclosure URL invalid, and the normal material failure can be recorded separately."
+    },
+    {
+      "source": "app/chain/torrents.py:464–475; app/chain/download.py:493–559,563–592,1204–1223,1300–1309; app/db/download_failure_oper.py",
+      "target": "internal/app/plugin_original_host_sites.go, subscription_acquisition_batch.go, subscription_material_failure.go, subscription_runtime.go and search_download.go",
+      "behavior": "The stable resource key prefers the detail link to the enclosure. A confirmed empty material result is durably cooled for 24 hours. The next eligible pass checks the same source identity before fetching and permits other resource IDs."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App and native job workers with owned tracker, TMDB and qBittorrent protocol peers",
+    "environment": "Read-only Alpine 3.22 container with tmpfs and loopback only; no original or production credentials.",
+    "test": "TestOriginalLarkRSSPromptAndStableFailureCooldownLinux",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_failure_linux_test.go",
+    "entry": "The same host refresh method used by the plugin slash action. This increment does not reinstall or retest the Lark worker. The earlier indexed-worker webhook evidence is reused separately.",
+    "seconds": 0.47,
+    "host_elf_sha256": "9ce00ab794c3a0a0840761fee32208a59a1ca04ff6583ef0b6f8bda326d7c8b0",
+    "runner_sha256": "5d69bb220f2126737bb34e65d9c0985f3879684e99797b21a8f401ccef55e145",
+    "runtime_log_sha256": "83bc41ef6105fd9b75791303ac5693d090e78dfcb2ed9310870b54eeaae621a7",
+    "observations": [
+      "The started Linux App executed the native refresh action used by /subscribes. A matching RSS enclosure returned the UTF-8 first-download prompt. The host sent one POST to its exact URL with the configured Cookie and only the two expected form fields. A 200 response containing HTML instead of torrent bytes did not call Add and did not poison the separate invalid-enclosure cache.",
+      "The same failed operation wrote one sealed failure record with a retry time approximately 24 hours ahead. A newly recognized release-group suffix with the same detail-page ID but changed enclosure ID/token hit the explicit cooldown decision without any second tracker material request, Add, count increase or expiry renewal.",
+      "A different detail-page resource ID got a fresh GET and one first-download form POST. Its valid torrent bytes reached one native downloader Add with the configured save path and the host received its accepted task identity."
+    ]
+  },
+  "reused_evidence": [
+    "larkmessager.subscribes_paused_rss_replacement.20261108"
+  ],
+  "adaptations_and_open": [
+    "Confirmation submits once on the same origin and exact URL with no redirected credential replay. It retains native request size, cancellation, permission and budget guards.",
+    "Confirmed upstream HTTP responses and invalid material are eligible for cooldown. Local guard rejections and indeterminate transport failures retain their native outcome. The native fixture exercised an invalid 200 confirmation and a valid 200 confirmation, not other upstream HTTP statuses or direct spider material.",
+    "Existing sealed material without the new page key uses the enclosure as a compatibility fallback until a new feed fetch writes its page-derived key. No configuration or private state was imported.",
+    "Explicit downloader refusal, post-preview reacquisition, magnet outcomes, successful paused acquisition/completion, one-Add multi-season packages and alternate-provider-to-download remain open."
+  ]
+}
