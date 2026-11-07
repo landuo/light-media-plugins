@@ -9740,7 +9740,11 @@
         "cmd/merge-message-notify/main.go",
         "plugins/mergemessagenotify/sdk.go",
         "plugins/mergemessagenotify/apprise/gateway.go",
-        "plugins/mergemessagenotify/apprise/bark.go"
+        "plugins/mergemessagenotify/apprise/bark.go",
+        "plugins/mergemessagenotify/apprise/attachment.go",
+        "plugins/mergemessagenotify/apprise/gotify.go",
+        "plugins/mergemessagenotify/mako/parser.go",
+        "plugins/mergemessagenotify/mako/template.go"
       ],
       "scenarios": [],
       "facet_checks": {},
@@ -9777,7 +9781,7 @@
         "method": "Read-only installed-list membership and static source files. No plugin import, settings, history, recipients or production dispatch.",
         "previous_version_inventory": "1.20.1 original fixed baseline retained. Same source paths, 21 changed files; exact 1.20.3 per-file SHAs in receipt."
       },
-      "implementation_note": "Standard Go worker and trusted host save origin now integrated. Scoped actual Linux package run proves OneBot trial on save, no replay on reload, real notice/history and native form. Apprise gateway differential passed. Whole-plugin acceptance remains open.",
+      "implementation_note": "Standard worker and scoped actual Linux host evidence retained. Added original Apprise attachment payloads, Gotify provider and Mako filter behavior. Feature remains implementing.",
       "routing_progress": {
         "source": "1.20.3 __init__.py:61,239,505–end; module.py ChannelStrategy",
         "target": "plugins/mergemessagenotify/routing.go",
@@ -9856,6 +9860,83 @@
         "command": "go test ./plugins/mergemessagenotify/apprise -run '^TestSourceBark199$' -v -count=1",
         "result": "Seven fixed-source cases passed. Auth, text/Markdown, reverse sorted unique devices, continue after a failed device and strict HTTP 200. The actual interval was 5.50 seconds. Transport was isolated; no external send.",
         "scope": "Added after the exact cb823a7 real host artifact. Existing native form, save/reload and OneBot route evidence remains at that artifact. Attachment handling and other supported Apprise providers remain unimplemented."
+      },
+      "dependency_increment": {
+        "source_version": "Installed MergeMessageNotify 1.20.3, Apprise 1.9.9 and Mako 1.4.1",
+        "target_commit": "f3879988cfc2d122a8e478a7ab11d70d67afb0b7",
+        "attachments": {
+          "source_locations": [
+            "apprise/apprise.py:562–565",
+            "apprise/apprise_attachment.py:51,117–289",
+            "apprise/attachment/base.py:192–256,261–303,394–451",
+            "apprise/attachment/http.py:63–245",
+            "apprise/plugins/base.py:516–575",
+            "apprise/plugins/custom_json.py:202–257",
+            "apprise/plugins/apprise_api.py:273–398"
+          ],
+          "target": "plugins/mergemessagenotify/apprise/attachment.go",
+          "original_fixtures": [
+            {
+              "path": "plugins/mergemessagenotify/apprise/testdata/attachment-1.9.9.json",
+              "sha256": "f3114a0401b97e037857c3e44762cf2691d10e1d570816d6b0a5fe68c1b8195f"
+            },
+            {
+              "path": "plugins/mergemessagenotify/apprise/testdata/attachment-review-1.9.9.json",
+              "sha256": "e82c540b5d733842b8c154c3ea95c0076c5a4b88e9c3b3987916a02bec15c178"
+            }
+          ],
+          "target_results": [
+            {
+              "path": "work/mergemessagenotify-20261107/apprise-attachment-target.stdout",
+              "sha256": "827fe8c36127917861be92dd96968798d8e718ba6cfd745c8dfe51778f8bccf3"
+            },
+            {
+              "path": "work/mergemessagenotify-20261107/apprise-attachment-transport.stdout",
+              "sha256": "c5a71ea6ef38b3641a101216ec8622dce073968cd5462a468935ba1b0ff61757"
+            },
+            {
+              "path": "work/mergemessagenotify-20261107/apprise-attachment-review-target.stdout",
+              "sha256": "54cb61c96b68d0d27b5a4128d5dcc938ac9144bc96991801de6dcfeaa66371d3"
+            }
+          ],
+          "scope": "Fourteen original replay cases and a real loopback JSON upload/oversize rejection passed on the initial attachment increment. The independent review led to two new original cases and one real redirect case, all passed on the final attachment increment. No unchanged source, host or full-suite replay.",
+          "result": "Shared successful download cache, only consumer fails on missing attachment, abort before I/O on malformed input, per-chunk retry after a transient failure, final-response size bound and case-preserved parameters. Hosted JSON/base64 and gateway multipart are bound. Local file protocol is verified with an owned read-grant test adapter; the production Worker has no local reader until the host scope is bound.",
+          "reviewer": "/root/attachment_oracle"
+        },
+        "gotify": {
+          "source": "Apprise 1.9.9 apprise/plugins/gotify.py",
+          "target": "plugins/mergemessagenotify/apprise/gotify.go",
+          "fixture": {
+            "path": "plugins/mergemessagenotify/apprise/testdata/gotify-1.9.9.json",
+            "sha256": "1363905fade6d6b204fbce43ab2f63e782fc4c89b2c3f538f9eed69b9e1897e8"
+          },
+          "target_result": {
+            "path": "work/mergemessagenotify-20261107/apprise-gotify-target.stdout",
+            "sha256": "da9835403d5666f95dea9268f2ca2f2fae2e50b10894a222155a1f8f146fff0b"
+          },
+          "result": "Nine original request/response observations passed once. Actual configured service was not contacted."
+        },
+        "mako_filters": {
+          "source": "Mako 1.4.1 mako/parsetree.py and codegen.py through fixed installed 1.20.3 util.py TemplateUtil",
+          "target": [
+            "plugins/mergemessagenotify/mako/parser.go",
+            "plugins/mergemessagenotify/mako/template.go"
+          ],
+          "fixture": {
+            "path": "plugins/mergemessagenotify/mako/testdata/source-filters-1.4.1.json",
+            "sha256": "1f94ef9bf6f2588cb6294887b047f549b8e4499f159616ef8069e3e3bc3ea762"
+          },
+          "target_result": {
+            "path": "work/mergemessagenotify-20261107/mako-filters-target.stdout",
+            "sha256": "f29d4b7569eaae13dd12d9dca5661024408a97fa43d7c3894936e41141fe9a63"
+          },
+          "result": "Ten original cases for anonymous block and page expression filters, buffering and n bypass passed once."
+        },
+        "remaining": [
+          "Bind production local attachment reading to the host authorized file scope and verify the exact file grant path.",
+          "Remaining Apprise providers and their attachment formats, Mako call tags/cache/decorators and other valid constructs.",
+          "Browser, clone, explicit manager runtime path and final installable archive acceptance. Existing actual Linux OneBot route stays bound to cb823a7."
+        ]
       }
     },
     {
@@ -65632,12 +65713,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight accepted instances. MergeMessageNotify standard worker and scoped real Linux save/reload/notice proof saved. Apprise gateway and Bark use the fixed source. Whole Merge acceptance remains open.",
-      "tests_running": "None. Actual Linux runtime and focused Apprise gateway/Bark source checks completed. Temporary test workers and task-owned Linux run removed.",
-      "latest_detail": "features[plugin.MergeMessageNotify].host_port and apprise_bark",
+      "delivery": "Eight accepted instances. MergeMessageNotify adds verified HTTP attachments, protocol Gotify and Mako filters. Whole Merge acceptance remains open.",
+      "tests_running": "None. New source differential and loopback checks completed. No repeated real host test.",
+      "latest_detail": "features[plugin.MergeMessageNotify].dependency_increment",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue the fixed Apprise 1.9.9 attachment behavior and remaining providers for MergeMessageNotify. Reuse existing actual Linux OneBot route and distinct SDK source bindings; browser/clone and Mako gaps remain."
+      "next_complete_slice": "Bind local Apprise attachment reading to host authorized local roots and continue remaining provider and Mako source behaviors. Real OneBot host evidence remains reusable."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

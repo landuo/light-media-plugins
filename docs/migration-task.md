@@ -11,14 +11,13 @@ Image comparisons are source-derived and finite. The prior browser deadline
 and package observer failures retain their original records.
 
 MergeMessageNotify is implementing from the pinned 23-file installed
-1.20.3 snapshot. A focused real Linux package run verified native form,
-save-only trial and persisted flag reset, ordinary reload without replay,
-and a genuine host notice reaching OneBot. The exact package, host revision
-and separate manager direct-init fix are bound in
-`migration/evidence/mergemessagenotify-host-20261107.json`. Apprise gateway
-and Bark source differential passed. The host evidence predates the Bark
-increment and remains pinned to its tested artifact. Browser, clone, other
-Apprise providers and attachments, and unported Mako branches remain open.
+1.20.3 snapshot. Its earlier Linux package run verified native form, save-only
+trial and persisted reset, ordinary reload without replay, and a genuine
+host notice reaching OneBot. The evidence retains that exact artifact.
+Apprise hosted attachments, JSON/multipart, gateway, Bark and Gotify have
+source comparisons. Mako anonymous-block and page filters also match the
+fixed source cases. Production local-file authorization, additional Apprise
+and Mako behavior, browser, clone and final package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
