@@ -85,12 +85,17 @@ func observeTracker(value any, errs []string) (trackerObservation, error) {
 		Message: msg, ExplicitError: eq(status, 4) && contains(errs, msg), Valid: true}, nil
 }
 
-func (m *Machine) inspectTorrent(t *Object, kind string, working map[string]bool, errs []string) (invalid, trackerWorking bool, details []string, e error) {
+func (m *Machine) inspectTorrent(ctx context.Context, t *Object, kind string, working map[string]bool, errs []string) (invalid, trackerWorking bool, details []string, e error) {
 	trackers := m.TrackerInfo(t, kind)
-	if Truth(m.Config["more_logs"]) {
-		if _, e = required(t, "name"); e != nil {
+	moreLogs := Truth(m.Config["more_logs"])
+	var name string
+	if moreLogs {
+		var value any
+		if value, e = required(t, "name"); e != nil {
 			return
 		}
+		name = diagnosticText(value)
+		m.log(ctx, "debug", fmt.Sprintf("种子 [%s] 获取到 %d 个tracker信息", name, len(trackers)))
 	}
 	valid := false
 	details = []string{}
@@ -114,12 +119,18 @@ func (m *Machine) inspectTorrent(t *Object, kind string, working map[string]bool
 		}
 	}
 	invalid = !valid
-	if Truth(m.Config["more_logs"]) {
-		if _, e = Category(t, kind); e != nil {
+	if moreLogs {
+		var category, tags any
+		if category, e = Category(t, kind); e != nil {
 			return
 		}
-		if _, e = Tags(t, kind); e != nil {
+		if tags, e = Tags(t, kind); e != nil {
 			return
+		}
+		m.log(ctx, "info", fmt.Sprintf("处理 [%s]: 分类: [%s], 标签: [%s], is_invalid: [%s], is_working: [%s]",
+			name, diagnosticText(category), diagnosticText(tags), str(invalid), str(trackerWorking)))
+		if invalid {
+			m.log(ctx, "debug", fmt.Sprintf("种子 [%s] 被标记为无效", name))
 		}
 	}
 	if !invalid && !trackerWorking {
@@ -154,6 +165,9 @@ func (m *Machine) inspectTorrent(t *Object, kind string, working map[string]bool
 						details = append(details, tracker.Display+"("+desc+")")
 					}
 				}
+			}
+			if moreLogs {
+				m.log(ctx, "debug", fmt.Sprintf("种子 [%s] tracker未工作: %s", name, diagnosticText(strings.Join(details, ", "))))
 			}
 		} else {
 			details = nil
@@ -192,11 +206,18 @@ func (m *Machine) Clean(ctx context.Context) error {
 		if e != nil {
 			return e
 		}
+		if Truth(m.Config["more_logs"]) {
+			// Configured match strings can include tracker credentials. Show
+			// the public defaults and rule counts, never the custom values.
+			m.log(ctx, "debug", fmt.Sprintf("默认错误消息: %q", errorMessages))
+			m.log(ctx, "debug", fmt.Sprintf("自定义错误消息: %d 条（内容已隐藏）", len(errs)-len(errorMessages)))
+			m.log(ctx, "debug", fmt.Sprintf("合并后错误消息列表: %d 条", len(errs)))
+		}
 		for index, t := range all {
 			if (index+1)%50 == 0 {
 				m.log(ctx, "info", fmt.Sprintf("正在处理第 %d/%d 个种子...", index+1, len(all)))
 			}
-			invalid, active, details, err := m.inspectTorrent(t, s.Kind, working, errs)
+			invalid, active, details, err := m.inspectTorrent(ctx, t, s.Kind, working, errs)
 			if err != nil {
 				m.log(ctx, "error", "处理种子tracker时出错: "+err.Error())
 				continue

@@ -5,6 +5,7 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"fmt"
 	"io"
 	"math"
 	"path/filepath"
@@ -214,6 +215,15 @@ func (h *liveHost) TrackerObservations(torrent *Object, kind string) ([]any, err
 		}
 		rows = append(rows, tracker)
 	}
+	if kind == "transmission" && Truth(h.config["more_logs"]) {
+		value, _ := attr(torrent, "name", "Unknown")
+		name := diagnosticText(value)
+		h.Log(h.ctx, "debug", fmt.Sprintf("种子 [%s] Transmission tracker信息: %d 个", name, len(response.Trackers)))
+		for i, tracker := range response.Trackers {
+			h.Log(h.ctx, "debug", fmt.Sprintf("种子 [%s] tracker[%d] 错误检查: status=%s, tier=%s, last_announce_result=%q, is_error_msg=%s",
+				name, i, str(tracker.Status), str(tracker.Tier), diagnosticText(tracker.Message), str(tracker.ExplicitError)))
+		}
+	}
 	return rows, nil
 }
 
@@ -259,9 +269,6 @@ func (h *liveHost) DeleteTorrent(ctx context.Context, service Service, hash any,
 }
 
 func (h *liveHost) control(ctx context.Context, request controlRequest) (bool, error) {
-	if h.failure != nil {
-		return false, h.failure
-	}
 	var applied *bool
 	if err := h.call(ctx, controlCapability, request, &applied); err != nil {
 		return false, err
