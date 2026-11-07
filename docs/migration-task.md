@@ -33,6 +33,12 @@ Markdown, with dialect differences tracked in the ledger. Mako decorated
 definitions and the installed environment's lazy missing-Beaker behavior
 have separate source evidence. See
 `migration/evidence/mergemessagenotify-providers-mako-decorators-20261107.json`.
+Mattermost, Google Chat, Slack, Telegram and Zulip now have native Go
+delivery paths and targeted original-source comparisons. Mako's definition
+defaults and callable names have separate evidence from its lexical and
+namespace Context behavior. The Telegram timing observer correction and
+Mako's initial failures retain separate logs. See
+`migration/evidence/mergemessagenotify-chat-mako-defaults-20261107.json`.
 Additional Apprise schemes and Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production

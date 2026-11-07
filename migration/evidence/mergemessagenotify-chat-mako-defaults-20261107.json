@@ -1,0 +1,228 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "apprise_product_commits": [
+    "757ba6f5b3a1bdcc8eccc5cfc2fe32d7f5f2625e",
+    "65a675234eb9d19915b54abb037bfb0bed2fbd10"
+  ],
+  "combined_product_commit": "31b45db739389b8948fbc1a7856b578f2e2839fc",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Original Apprise and Mako offline execution, synthetic HTTP response replay, independent source review and a combined Linux build.",
+  "apprise": {
+    "providers": {
+      "mattermost_googlechat": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/mattermost-googlechat-1.9.9.json",
+          "sha256": "c9bf6cdf851caf448ab24eae09a1c02e00d147082cf0db6dedc09af3a891c915"
+        },
+        "target_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-mattermost-googlechat-target.stdout",
+          "sha256": "2e26f4fbe9fa2a56d91fe922061396841f5de14839158556557e928bc6d6b551"
+        },
+        "test": "TestSourceMattermostAndGoogleChat199",
+        "cases": 18,
+        "scope": "Webhook and bot routing, Mattermost native port rewrite and per-object channel cache, channel lookup failure continuation, Google Chat native aliases and thread payload, title/body composition, overflow and attachment omission.",
+        "source": [
+          "apprise/plugins/mattermost.py:231–554,638–760",
+          "apprise/plugins/google_chat.py:150–290,323–408"
+        ],
+        "target": [
+          "plugins/mergemessagenotify/apprise/mattermost.go",
+          "plugins/mergemessagenotify/apprise/googlechat.go",
+          "plugins/mergemessagenotify/apprise/provider_http.go"
+        ],
+        "reviewer": "/root/slack",
+        "cache_scope": "Installed Merge creates a fresh default Apprise client for each send. Source asset.py:182 and persistent_store.py:407–418 use memory without storage_path, so cached channel IDs are retained only within a provider object."
+      },
+      "titleless_boundaries": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/titleless-boundary-1.9.9.json",
+          "sha256": "cdedf5fcf84ee2e53bfe973407f9d493274d60e8994522cbfdc36e20dd072913"
+        },
+        "target_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-titleless-boundary-target.stdout",
+          "sha256": "7302431257ad08a52998d7dc46e99c8c683a9733eeed4d98966fd369fcb0fbcb"
+        },
+        "test": "TestSourceTitlelessBoundary199",
+        "cases": 4,
+        "scope": "Preserved title separator with a whitespace body, exact case-sensitive channel ID and abort for a valid non-object lookup response.",
+        "source": [
+          "apprise/plugins/base.py:617–699",
+          "apprise/plugins/mattermost.py:318–409"
+        ]
+      },
+      "slack": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/slack-1.9.9.json",
+          "sha256": "3081cafa5a59d6e692b5781c35a590e061c22602824b57ead66b5f505f99345c"
+        },
+        "target_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-slack-target.stdout",
+          "sha256": "187de40e9999368ebcf4da4d8dd1f3e52d3dbd54793c9ef1b1ae6602ccc8aa37"
+        },
+        "test": "TestSourceSlack199",
+        "cases": 26,
+        "scope": "Webhook, Gov alias and bot routes, email cache and thread behavior, rich payloads, status/body result, attachment handshake and original completion after a failed upload, and source send interval.",
+        "source": [
+          "apprise/plugins/slack.py:343–469,470–822,823–980,981–1148,1217–1351"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/slack.go",
+        "reviewer": "/root",
+        "initial_source_probe": {
+          "path": "work/mergemessagenotify-20261107/apprise-slack-source-initial.stderr",
+          "sha256": "1aefadbae6177690ebecf2e1245fad934cb88f41e9e7f8738066a6cbfb0c8458"
+        },
+        "remaining": [
+          "Malformed scalar API JSON, unusual replacement escapes and generic overflow boundaries beyond these cases."
+        ]
+      },
+      "telegram": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/telegram-1.9.9.json",
+          "sha256": "cbb0cb626348b91a4423ca7eba82b92d2992cab3f581c1bc8738a0128821c94f"
+        },
+        "test": "TestSourceTelegram199",
+        "cases": 27,
+        "initial_target_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-telegram-target.stdout",
+          "sha256": "8f16d5894de1e65da182fa8c06310b436333397890b6803f225fb03096e041a4"
+        },
+        "target_observer_followup": {
+          "path": "work/mergemessagenotify-20261107/apprise-telegram-timing-followup.stdout",
+          "sha256": "fdca7256f69534c50af150537b2c01a46d643e7a11f57466dec9fa1a1ada999e"
+        },
+        "source": [
+          "apprise/plugins/telegram.py:228–337,416–662,664–784,786–1040,1098–1207",
+          "apprise/plugins/base.py:518–579,617–818"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/telegram.go",
+        "reviewer": "/root",
+        "installed_default_icon": {
+          "path": "plugins/mergemessagenotify/apprise/telegram-info.png",
+          "sha256": "079aff3b877d3070a64966707dba908194a9f997ad4dd8814b029c3131756850"
+        },
+        "scope": "Explicit and discovered recipients, source per-object reuse, topics, text and media, exact installed image bytes, MIME and caption/ordering, missing files, failures and overflow.",
+        "observer_fix": "The first replay timed after multipart decoding, so five interval comparisons failed. The corrected transport-entry probe passed those five. Other passing cases and product implementation were left as bound to the first replay.",
+        "remaining": [
+          "Split chunks are serialized by the Go dispatcher; default original asynchronous scheduling can run them independently. The split source oracle fixes executor order for the comparison.",
+          "Unexpected owner lookup JSON shapes beyond the protocol remain open."
+        ]
+      },
+      "zulip": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/zulip-1.9.9.json",
+          "sha256": "2ab0dd0d299e17b485c8a43c0fc37fd4d3524eaa3563ec9477b6285f395fa9a1"
+        },
+        "target_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-zulip-target.stdout",
+          "sha256": "85f9ac8330b9bcab7e6805c4a08c9fc01d477d1f24cef72d6a5a8174f41964a1"
+        },
+        "test": "TestSourceZulip199",
+        "cases": 7,
+        "scope": "Cloud and self-hosted organization routing, auth, default stream, private targets, query token override, 60-character title truncation, strict HTTP 200, failure continuation and send interval.",
+        "source": [
+          "apprise/plugins/zulip.py:179–339,386–427"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/zulip.go"
+      }
+    },
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 28,
+    "schemes_without_native_implementation": 155
+  },
+  "mako": {
+    "fixtures": [
+      {
+        "path": "plugins/mergemessagenotify/mako/testdata/source-defaults-and-names-1.4.1.json",
+        "sha256": "4f5a0ee869df83613a00cbbd9b2a5044ebcc40314d85f86e54b6f53955b4b18e"
+      },
+      {
+        "path": "plugins/mergemessagenotify/mako/testdata/source-definition-context-1.4.1.json",
+        "sha256": "4644e049d5ce0b4100582aac62bab7d1ed60176f3e386ef3820b3324f3c80b31"
+      }
+    ],
+    "target_tests": [
+      "TestSourceDefaultsAndNames141",
+      "TestSourceDefinitionContext141"
+    ],
+    "original_observations": [
+      {
+        "path": "work/mergemessagenotify-20261107/mako-defaults-source.json",
+        "sha256": "4f5a0ee869df83613a00cbbd9b2a5044ebcc40314d85f86e54b6f53955b4b18e"
+      },
+      {
+        "path": "work/mergemessagenotify-20261107/mako-definition-context-source.json",
+        "sha256": "4644e049d5ce0b4100582aac62bab7d1ed60176f3e386ef3820b3324f3c80b31"
+      }
+    ],
+    "original_locations": [
+      "Installed 1.20.3 util.py:20–24",
+      "Mako 1.4.1 codegen.py:105–145,284–336,458–591,595–768,881–910,925–941,1041–1252",
+      "runtime.py:626–640,739–765"
+    ],
+    "target_locations": [
+      "plugins/mergemessagenotify/mako/definitions.go",
+      "plugins/mergemessagenotify/mako/template.go",
+      "plugins/mergemessagenotify/mako/builtins.go",
+      "plugins/mergemessagenotify/mako/call.go",
+      "plugins/mergemessagenotify/mako/context.go",
+      "plugins/mergemessagenotify/mako/value.go"
+    ],
+    "unique_cases": 23,
+    "replays": {
+      "defaults_first": {
+        "output": {
+          "path": "work/mergemessagenotify-20261107/mako-defaults-target.stdout",
+          "sha256": "e2195f438a900b140b99b452ed8ae08147d507fd9b7ee1a1e5bb1ee1a9e81af1"
+        },
+        "passed": 17,
+        "failed": 1
+      },
+      "defaults_followup": {
+        "output": {
+          "path": "work/mergemessagenotify-20261107/mako-defaults-target-followup.stdout",
+          "sha256": "0e84350c85bb40922ddb7030a0bbb08e1fa9d10400d037564cfc22a9d7993e1f"
+        },
+        "passed": 1,
+        "failed": 0
+      },
+      "context_first": {
+        "output": {
+          "path": "work/mergemessagenotify-20261107/mako-definition-context-target.stdout",
+          "sha256": "a52605d4c75804229159e601b1f758675215398bf8c8dc7f5b23a9fd66575a72"
+        },
+        "passed": 2,
+        "failed": 1
+      },
+      "context_followup": {
+        "output": {
+          "path": "work/mergemessagenotify-20261107/mako-definition-context-target-followup.stdout",
+          "sha256": "fc5450100fa4a0a9ef69b863d1042fa36341c16395892eed8c48b0541fd80656"
+        },
+        "passed": 3,
+        "failed": 0
+      }
+    },
+    "reviewer": "/root/slack",
+    "scope": "Module, cache and lexical stub defaults; definition/callable names and namespace partial metadata; original versus page-local Context; duplicate named block collision fallback.",
+    "replay_scope": "Replayed the failed Python partial attribute case after correction. In a separate five-case suite, repaired the decorated original invocation Context after a panic, then ran its failed row and two previously unreached rows. Prior passing rows were not repeated.",
+    "remaining": [
+      "Multiple independent forwarding declarations use deterministic source order rather than Python set iteration order.",
+      "Unported Python scope, signature and template constructs, including the remaining named-block args and cache declaration boundaries."
+    ]
+  },
+  "combined_linux_build": {
+    "path": "work/mergemessagenotify-20261107/linux-chat-defaults-build.stdout",
+    "sha256": "2f7f2f190471bc2ba42d9bd9dcd91bad886d89c05e43212fd11c6d82cf9ae81d"
+  },
+  "execution_scope": "No provider service was contacted. Real host observations remain attached to the earlier exact revisions. Browser, clone, explicit manager initialization and final package verification remain open on the integrated implementation.",
+  "delivery": {
+    "working_branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "local_only": true,
+    "release_registered": false,
+    "deployed": false,
+    "external_notifications_sent": false
+  }
+}
