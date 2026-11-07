@@ -92,6 +92,28 @@ func planar(pic, alpha *av1.Picture) (image.Image, bool) {
 }
 
 func toImage(f *file, it *item, pic, alpha *av1.Picture, ycbcr bool) (image.Image, error) {
+	return toImageColor(pic, alpha, f.colorInfo(it, pic), ycbcr)
+}
+
+func convertPictures(o Options, pic, alpha *av1.Picture, ci ColorInfo, premultiplied, ycbcr bool) (image.Image, error) {
+	var img image.Image
+	var err error
+	if o.ConvertPicture != nil {
+		img, err = o.ConvertPicture(pic, alpha, ci, premultiplied)
+	}
+	if img == nil && err == nil {
+		img, err = toImageColor(pic, alpha, ci, ycbcr)
+	}
+	if !aliasesPicture(img) {
+		pic.Release()
+		if alpha != nil {
+			alpha.Release()
+		}
+	}
+	return img, err
+}
+
+func toImageColor(pic, alpha *av1.Picture, ci ColorInfo, ycbcr bool) (image.Image, error) {
 	if ycbcr {
 		if img, ok := planar(pic, alpha); ok {
 			return img, nil
@@ -103,7 +125,7 @@ func toImage(f *file, it *item, pic, alpha *av1.Picture, ycbcr bool) (image.Imag
 		outDepth = 16
 	}
 
-	cs := newColorState(pic, f.colorInfo(it, pic), outDepth)
+	cs := newColorState(pic, ci, outDepth)
 	if cs.unsupportedSpace {
 		return nil, ErrUnsupported
 	}

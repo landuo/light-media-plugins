@@ -1206,6 +1206,11 @@ func (d *decoder) loadBlockData(b tiffBlock, limit int64, compression uint) erro
 }
 
 func (d *decoder) decodeCompressedJPEG(img image.Image, b tiffBlock, limit int64, compression uint) error {
+	if compression == cJPEGOld && d.mode == mGray && d.bpp == 8 {
+		if source := d.oldJPEGInterchange(b); source != nil {
+			return d.decodeJPEGBlock(img, source, b.x, b.y, b.width, b.height)
+		}
+	}
 	if compression == cJPEGOld || len(d.tables) == 0 {
 		return d.decodeJPGOld(img, b.offset, b.n, limit, b.x, b.y, b.width, b.height)
 	}

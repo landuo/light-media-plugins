@@ -18,8 +18,9 @@ func decodeAVIF(data []byte) (Raster, error) {
 		return Raster{}, err
 	}
 	// Pillow keeps irot/imir as EXIF metadata and requests eight-bit output.
+	// The codec's own area limit permits coded planes to differ from ispe.
 	img, _, err := avif.DecodeColor(bytes.NewReader(data), avif.Options{
-		FrameSizeLimit: cfg.Width * cfg.Height, ConvertPicture: renderAVIFPicture,
+		ConvertPicture: renderAVIFPicture,
 	})
 	if err != nil {
 		return Raster{}, err

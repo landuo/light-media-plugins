@@ -155,7 +155,7 @@ func (d *decoder) checkYCbCrStorage() error {
 	if err != nil {
 		return err
 	}
-	if compression[0] != cJPEG {
+	if compression[0] != cJPEG && compression[0] != cJPEGOld {
 		return UnsupportedError(fmt.Sprintf("YCbCr compression %d", compression[0]))
 	}
 	planar, err := d.ycbcrShorts(tPlanarConfiguration, 1, 1)
@@ -334,6 +334,9 @@ func (d *decoder) decodeYCbCr() (image.Image, error) {
 	l, err := d.ycbcrLayout()
 	if err != nil {
 		return nil, err
+	}
+	if d.firstVal(tCompression) == cJPEGOld {
+		return d.decodeOldJPEGYCbCr(l)
 	}
 	tables, err := d.jpegTables()
 	if err != nil {

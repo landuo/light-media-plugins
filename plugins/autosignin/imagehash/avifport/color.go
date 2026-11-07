@@ -68,26 +68,41 @@ type colorState struct {
 }
 
 func (f *file) colorInfo(it *item, pic *av1.Picture) ColorInfo {
-	ci := ColorInfo{
+	ci := pictureColor(pic)
+	if it != nil {
+		for _, association := range it.props {
+			if association.idx < len(f.meta.props) {
+				ci.applyProperty(f.meta.props[association.idx].colr)
+			}
+		}
+	}
+	return ci
+}
+
+func pictureColor(pic *av1.Picture) ColorInfo {
+	return ColorInfo{
 		Primaries: uint16(pic.ColorPrimaries),
 		Transfer:  uint16(pic.Transfer),
 		Matrix:    uint16(pic.MatrixCoeffs),
 		FullRange: pic.FullRange,
 	}
+}
 
-	p := f.meta.prop(it, "colr")
-	if p == nil || p.colr == nil {
-		return ci
+// The ICC profile is metadata, while nclx selects conversion. Both may be
+// present in the same image item or track sample description.
+func (ci *ColorInfo) applyProperty(p *colorInfo) {
+	if p == nil {
+		return
 	}
-	if p.colr.hasNCLX {
-		ci.Primaries = p.colr.primaries
-		ci.Transfer = p.colr.transfer
-		ci.Matrix = p.colr.matrix
-		ci.FullRange = p.colr.fullRange
+	if p.hasNCLX {
+		ci.Primaries = p.primaries
+		ci.Transfer = p.transfer
+		ci.Matrix = p.matrix
+		ci.FullRange = p.fullRange
 	}
-	ci.ICCP = p.colr.icc
-
-	return ci
+	if p.icc != nil {
+		ci.ICCP = p.icc
+	}
 }
 
 func newColorState(pic *av1.Picture, ci ColorInfo, outDepth int) *colorState {

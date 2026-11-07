@@ -18,12 +18,11 @@ orientation and AVIF EXIF metadata-only semantics are separately verified.
 The DDS/DIB and BLP1 sources verify exact read outcomes and the actual TGA1bit
 RLE rejection. No Python, native codec, CGo or WASM product dependency.
 
-Current normal/race tests and actual Linux decoder checks passed. The rebuilt
-canonical AutoSignIn ZIP passed real force-update, config/form/page calls, cold
-restart, uninstall and reinstall in the isolated NAS test instance; running
-worker bytes were checked. It is an unpublished candidate for the paired
-current SDK105 host, not a release for production SDK101. H30bf6ae8 and the
-SDK105 source inventory were not changed by this increment.
+An earlier canonical AutoSignIn ZIP passed force-update, config/form/page
+calls, cold restart, uninstall and reinstall in the isolated NAS test
+instance, with its running worker bytes checked. That evidence is bound to
+the earlier candidate and paired SDK105 host. The current codec changes need
+one new package check when ready.
 
 Reuse completed Main60/62 and Main179, real Chrome clone/save/once/log, and
 same-data cold/reset/clone-uninstall evidence. The original browser deadline
@@ -38,19 +37,19 @@ RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
 fixtures and one source rejection. The earlier Main, browser and package runs
 apply to their tested revisions.
 
-The current codec checkpoint matches the source AVIF matrix selection,
-float and integer conversions, alpha ordering, and reformat rejection.
-TIFF separate grayscale-alpha planes now match the source for compressed
-strips, tiles and JPEG7, including the zero alpha output. The raw layout and
-a damaged alpha plane are rejected. The prior installation and browser
-records remain bound to their own revisions.
+The current codec checkpoint uses the original default AVIF image selection,
+including tracks without a primary item, legacy alpha identifiers, and
+ICC plus nclx metadata. The same-height coded-alpha width mismatch follows
+the original scaling rule. TIFF compression 6 now handles the verified
+single-strip interchange streams, including grayscale split streams and
+color 4:2:0. The prior installation and browser records retain their bindings.
 
 The read-only installed list still has 23 instances. MergeMessageNotify is
 now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
-their turns arrive. AutoSignIn is the current plugin. Resolve the AVIF
-default track and alternate alpha item type, and verify any remaining
-concrete source-supported layouts before one package acceptance. Reuse
-applicable evidence and rerun a test only when the behavior it checks changes.
+their turns arrive. AutoSignIn is the current plugin. Check the remaining
+concrete AVIF scaling and TIFF6 stream-layout differences before one package
+acceptance. Reuse applicable evidence and rerun a test only when the behavior
+it checks changes.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

@@ -90,6 +90,7 @@ package avif
 import (
 	"errors"
 	"image"
+	"image/color"
 	"io"
 	"math"
 	"slices"
@@ -97,12 +98,15 @@ import (
 	"github.com/gen2brain/gav1d/av1"
 )
 
-const alphaURN = "urn:mpeg:mpegB:cicp:systems:auxiliary:alpha"
+func isAlphaURN(urn string) bool {
+	return urn == "urn:mpeg:mpegB:cicp:systems:auxiliary:alpha" || urn == "urn:mpeg:hevc:2015:auxid:1"
+}
 
 type file struct {
-	src   *source
-	meta  *metaBox
-	movie *movie
+	src        *source
+	meta       *metaBox
+	movie      *movie
+	majorBrand string
 
 	frameSizeLimit int
 	maxFrames      int
@@ -128,7 +132,7 @@ const DefaultMaxFrames = 1024
 
 func parse(src *source) (*file, error) {
 	f := &file{src: src}
-	var brandOK bool
+	var needsMeta, needsMovie bool
 
 	err := src.eachBox(func(typ string, off, n uint64) error {
 		switch typ {
@@ -145,6 +149,7 @@ func parse(src *source) (*file, error) {
 		case "ftyp":
 			r := &reader{b: b}
 			major := r.str4()
+			f.majorBrand = major
 			r.u32()
 			brands := []string{major}
 			for r.remaining() >= 4 {
@@ -152,8 +157,10 @@ func parse(src *source) (*file, error) {
 			}
 			for _, br := range brands {
 				switch br {
-				case "avif", "avis", "mif1", "msf1", "miaf":
-					brandOK = true
+				case "avif":
+					needsMeta = true
+				case "avis":
+					needsMovie = true
 				}
 			}
 
@@ -177,8 +184,11 @@ func parse(src *source) (*file, error) {
 	if err != nil {
 		return nil, err
 	}
-	if !brandOK || f.meta == nil {
+	if (!needsMeta && !needsMovie) || (needsMeta && f.meta == nil) || (needsMovie && f.movie == nil) {
 		return nil, ErrInvalid
+	}
+	if f.meta == nil {
+		f.meta = &metaBox{}
 	}
 
 	return f, nil
@@ -233,7 +243,7 @@ func (f *file) alphaFor(id uint32) *item {
 		if it == nil {
 			continue
 		}
-		if p := m.prop(it, "auxC"); p != nil && p.auxC == alphaURN {
+		if p := m.prop(it, "auxC"); p != nil && isAlphaURN(p.auxC) {
 			return it
 		}
 	}
@@ -510,36 +520,50 @@ func (f *file) decodePictures(it *item) (*av1.Picture, *av1.Picture, error) {
 
 	w, h, err := f.dimensions(it)
 	if err != nil {
+		pic.Release()
 		return nil, nil, err
 	}
-	if w > pic.Width || h > pic.Height {
-		return nil, nil, ErrInvalid
+	if w != pic.Width || h != pic.Height {
+		pic.Release()
+		return nil, nil, ErrUnsupported
 	}
-	pic.Width, pic.Height = w, h
-
 	var alpha *av1.Picture
 	if a := f.alphaFor(it.id); a != nil {
+		aw, ah, err := f.dimensions(a)
+		if err != nil || aw != w || ah != h {
+			pic.Release()
+			return nil, nil, ErrInvalid
+		}
 		if a.typ == "grid" {
 			alpha, err = f.decodeGrid(a)
 		} else {
 			alpha, err = f.decodeItem(a)
 		}
 		if err != nil {
+			pic.Release()
 			return nil, nil, err
 		}
 	} else if it.typ == "grid" {
 		alpha, err = f.gridAlpha(it)
 		if err != nil {
+			pic.Release()
 			return nil, nil, err
 		}
 	}
 	if alpha != nil {
-		if alpha.Width < w || alpha.Height < h {
+		if alpha.BitDepth != pic.BitDepth {
+			pic.Release()
+			alpha.Release()
 			return nil, nil, ErrInvalid
 		}
-		alpha.Width, alpha.Height = w, h
+		scaled, err := normalizeAlpha(alpha, w, h)
+		if err != nil {
+			pic.Release()
+			alpha.Release()
+			return nil, nil, err
+		}
+		alpha = scaled
 	}
-
 	return pic, alpha, nil
 }
 
@@ -614,7 +638,7 @@ func Decode(r io.Reader, opts ...Options) (image.Image, error) {
 	o := options(opts)
 	f.frameSizeLimit = o.FrameSizeLimit
 
-	img, _, err := f.decodeStill(o)
+	img, _, err := f.decodeDefault(o)
 
 	return img, err
 }
@@ -634,7 +658,7 @@ func DecodeColor(r io.Reader, opts ...Options) (image.Image, ColorInfo, error) {
 	o := options(opts)
 	f.frameSizeLimit = o.FrameSizeLimit
 
-	return f.decodeStill(o)
+	return f.decodeDefault(o)
 }
 
 // DecodeAll reads every frame of an AVIF file. A still image gives one frame.
@@ -727,6 +751,17 @@ func DecodeConfig(r io.Reader) (image.Config, error) {
 	if err != nil {
 		return image.Config{}, err
 	}
+	if f.usesTracks() {
+		t := f.movie.colorTrack()
+		if t == nil || t.width == 0 || t.height == 0 {
+			return image.Config{}, ErrInvalid
+		}
+		model := color.NRGBAModel
+		if p := t.property("av1C"); p != nil && p.av1C.highBitdepth {
+			model = color.NRGBA64Model
+		}
+		return image.Config{Width: t.width, Height: t.height, ColorModel: model}, nil
+	}
 	it := f.primary()
 	if it == nil {
 		return image.Config{}, ErrInvalid
@@ -761,6 +796,13 @@ func (f *file) decodeStill(o Options) (image.Image, ColorInfo, error) {
 	return f.decodeImage(it, o)
 }
 
+func (f *file) decodeDefault(o Options) (image.Image, ColorInfo, error) {
+	if f.usesTracks() {
+		return f.decodeFirstFrame(o)
+	}
+	return f.decodeStill(o)
+}
+
 // decodeImage decodes one image item with its alpha and converts the result.
 func (f *file) decodeImage(it *item, o Options) (image.Image, ColorInfo, error) {
 	pic, alpha, err := f.decodePictures(it)
@@ -768,21 +810,9 @@ func (f *file) decodeImage(it *item, o Options) (image.Image, ColorInfo, error) 
 		return nil, ColorInfo{}, err
 	}
 	ci := f.colorInfo(it, pic)
-	var img image.Image
-	if o.ConvertPicture != nil {
-		aux := f.alphaFor(it.id)
-		premultiplied := aux != nil && slices.Contains(f.meta.refsTo("prem", it.id), aux.id)
-		img, err = o.ConvertPicture(pic, alpha, ci, premultiplied)
-	}
-	if img == nil && err == nil {
-		img, err = toImage(f, it, pic, alpha, o.ycbcrFor(f, it))
-	}
-	if !aliasesPicture(img) {
-		pic.Release()
-		if alpha != nil {
-			alpha.Release()
-		}
-	}
+	aux := f.alphaFor(it.id)
+	premultiplied := aux != nil && slices.Contains(f.meta.refsTo("prem", it.id), aux.id)
+	img, err := convertPictures(o, pic, alpha, ci, premultiplied, o.ycbcrFor(f, it))
 	if err != nil {
 		return nil, ColorInfo{}, err
 	}

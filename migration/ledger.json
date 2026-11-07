@@ -65260,12 +65260,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seven accepted installed instances. Local AutoSignIn aligns the source AVIF color matrices and TIFF separate grayscale-alpha layouts. Private-state import and remote/production delivery remain separate.",
-      "tests_running": "None. Source-driven affected codec comparisons and the Linux worker build are complete. Temporary ELF removed.",
+      "delivery": "Seven accepted installed instances. Local AutoSignIn adds AVIF track/alpha support and old TIFF JPEG single-strip interchange decoding. Private-state import and remote/production delivery remain separate.",
+      "tests_running": "None. Affected codec comparisons and Linux build completed. Temporary ELF removed.",
       "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
-      "local_codec_base": "85cbe53f36fca6a49e6c19bf1185c1a03afba25d; checkpoint commit containing this ledger adds the tested codec increment",
+      "local_codec_base": "73e6939c826cc6a888d3ec2e0c36c468648ec5e5; checkpoint commit containing this ledger adds the tested codec increment",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Resolve the concrete AutoSignIn AVIF default-track and alpha-item differences. Verify any remaining TIFF source-supported layout gaps, then run one final isolated package acceptance. Next sequential plugin is installed MergeMessageNotify 1.20.3 with a refreshed source snapshot."
+      "next_complete_slice": "Resolve the remaining concrete AVIF coded-size rescaling and TIFF6 stream layout gaps, then one final isolated AutoSignIn package acceptance. Next sequential plugin is installed MergeMessageNotify 1.20.3 with refreshed source."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66422,7 +66422,7 @@
               "target_log_sha256": "a5783f8ad88a59e3e648d0c0654d93863d98c88d3efb71808ab72a439d0e5d82"
             }
           },
-          "current_continuation_increment": {
+          "avif_matrix_planar_tiff_checkpoint": {
             "status": "Implemented and source-differential checked for 12 positive and five rejected synthetic inputs. AutoSignIn remains implementing. 7/23 installed instances accepted.",
             "source_binding": {
               "site": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–259",
@@ -66514,6 +66514,132 @@
               "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "06650cc5df92c8f769f2c3a0b59be14074dc9a3dbf46117e72c2cb60da30497c"
             },
             "remaining": "Original libavif recognizes the alternate alpha URN and AVIS default track frame zero. Go currently recognizes a single URN and selects the primary item. Original single-image alpha dimensions must agree with coded color dimensions; Go can crop oversized alpha. Verify remaining concrete TIFF/container layouts such as old JPEG, then run one final isolated package acceptance. Do not repeat applicable host/browser evidence."
+          },
+          "current_continuation_increment": {
+            "status": "Implemented and source-differential checked for eleven positive synthetic inputs. AutoSignIn remains implementing. 7/23 installed instances accepted.",
+            "source_binding": {
+              "site": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–259",
+              "site_sha256": "ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0",
+              "reference_image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+              "scope": "Isolated original-source image reads and Tjupt hashes. No live site traffic or private state."
+            },
+            "avif": {
+              "source_selection": {
+                "command": {
+                  "path": "work/avif-track-source-continuation/command.json",
+                  "sha256": "ec329d38fb92056877f1b32c68eec4a4dc62a1ac25d33a0bb20f5cbce4f673e5"
+                },
+                "expected": {
+                  "path": "work/avif-track-source-continuation/expected.json",
+                  "sha256": "e3601b94cd30cc919a2c96695ef05e0ae4df747da84bb0df7263149bce80c1c5"
+                },
+                "payload_sha256": "ca994c042366557031b9b70e622e3c626dfc8047cc76517c5ae009c95e521e1e",
+                "seconds": 2.621,
+                "exit": 1,
+                "pillow": "12.2.0",
+                "cases": [
+                  "AVIF-avis-first-track",
+                  "AVIF-avif-primary-despite-tracks",
+                  "AVIF-avis-legacy-alpha-track",
+                  "AVIF-alt-alpha-urn",
+                  "AVIF-alpha-coded-size-mismatch"
+                ],
+                "outcome": "All five original decode/hash observations were produced. The reference harness exited after output because an expected coded-alpha size rejection was contradicted by successful source scaling. The failed assertion and the observations are preserved. No repeat run."
+              },
+              "source_metadata": {
+                "command": {
+                  "path": "work/avif-track-source-continuation/track-metadata/command.json",
+                  "sha256": "6f705a79e25511c0903b2c6b6053d147e8ecf6b410fc1bce45666f0d6d2d4a23"
+                },
+                "expected": {
+                  "path": "work/avif-track-source-continuation/track-metadata/expected.json",
+                  "sha256": "5eaa8012be0bac0241ef71b90f37e0addd80e075bccfcdf68e9d635b037473a6"
+                },
+                "payload_sha256": "d76f3eec4ab24b9139ec19fea367192d85334177e1b1b34b7dbaa4f59d625fc7",
+                "seconds": 5.993,
+                "exit": 0,
+                "pillow": "12.2.0",
+                "cases": [
+                  "AVIF-track-ICC-and-nclx",
+                  "AVIF-track-compatible-major",
+                  "AVIF-track-without-primary"
+                ]
+              },
+              "reference": "libavif 1.4.1 read.c:1944,6090–6246,6750–6768 and scale.c. Pillow 12.2 AvifImagePlugin.py:_accept/_open.",
+              "implementation": "Select primary item or first AV1 track sample by the major brand. Associate alpha by references, accept both alpha URNs and legacy track without auxi, keep ICC and nclx, and match x86 libyuv horizontal alpha scaling. The output size uses the selected track header, with color-size mismatch remaining unsupported.",
+              "target": {
+                "path": "work/avif-track-source-continuation/target.stdout",
+                "sha256": "ccbd4d30a355c9de72c461d0b0c625f2e5e28462ddac4e1022792cad2bfa10f4"
+              },
+              "target_metadata": {
+                "path": "work/avif-track-source-continuation/track-metadata/target.stdout",
+                "sha256": "7e3317069bad1a3883ebe770d58a9d2d64f82399e01f228adab3c2910d7a6b0c"
+              },
+              "target_after_guard": {
+                "path": "work/avif-track-source-continuation/target-dimension-guard.stdout",
+                "sha256": "3bb43e9e651b3bdb9ae94a47a1541b67cf66c6de56fcb5929f23e09a3703fff0"
+              },
+              "outcome": "Eight distinct source inputs match mode, dimensions, pixel bytes, grayscale and Tjupt hash. After guarding unsupported color resizes, only the affected still and track entry representatives reran.",
+              "independent_review": "/root/avif_review checked source routing, alpha width normalization, ICC/nclx and fixture hashes, then identified the color frame-size mismatch guard. No duplicate tests by reviewer."
+            },
+            "tiff_old_jpeg": {
+              "command": {
+                "path": "work/autosignin-image-gap-20261107/tiff-old-jpeg-source/command.json",
+                "sha256": "30fc643542a69aabc276ea12ee2994d4c5a1542f96013970dd4536a915dfb38a"
+              },
+              "expected": {
+                "path": "work/autosignin-image-gap-20261107/tiff-old-jpeg-source/expected.json",
+                "sha256": "00a81780b54fa3f4e8dbcdba3bcc7514bc2d451dfb312e040663709edec51ab9"
+              },
+              "payload_sha256": "a780788340302620bd89e803411550581d8d14a67f5a0b1617e956b62b948f41",
+              "seconds": 2.691,
+              "exit": 0,
+              "pillow": "12.2.0",
+              "cases": [
+                "TIFF-old-JPEG6-L-interchange-full",
+                "TIFF-old-JPEG6-L-interchange-split",
+                "TIFF-old-JPEG6-YCbCr420-interchange-full"
+              ],
+              "reference": "libtiff 4.7.1 tif_ojpeg.c interchange/strip read and tif_color.c default YCbCr conversion.",
+              "implementation": "Use interchange bytes and one strip for JPEG6, including full or separate gray header/entropy streams. The color 4:2:0 path uses JPEG native planes and the source libtiff default color transform.",
+              "target_gray": {
+                "path": "work/autosignin-image-gap-20261107/tiff-old-jpeg-source/go-after-gray.stdout",
+                "sha256": "e75fb080fff014a869e1cc96cca9cd26271d30f94ee20dee55febbc00de70807"
+              },
+              "target_color": {
+                "path": "work/autosignin-image-gap-20261107/tiff-old-jpeg-source/go-color-native.stdout",
+                "sha256": "c0b7fd18ef82eb1534cf19c61609d93aa577320e0c19d9380226ec8c689bac14"
+              },
+              "outcome": "Two gray cases matched the source. The color case was initially still unsupported and then matched on the sole affected rerun. Three exact fixture inputs were added without repeating the same target comparisons."
+            },
+            "linux_build": {
+              "worker_sha256": "a27eb6a1898c28f510288695401d0e9fc5f2ac66306cd5fd17d391d7644c84ce",
+              "bytes": 19066031,
+              "exit": 0,
+              "command": "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -buildvcs=false ./cmd/auto-sign-in",
+              "go": "go1.26.10",
+              "scope": "Current AVIF and TIFF Go worker compilation. Temporary ELF removed. No package or runtime acceptance."
+            },
+            "permanent_fixtures": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+            "target_sha256": {
+              "plugins/autosignin/imagehash/NOTICE.txt": "c71c38a4c2aa8264296214336121e9c74bf98a265edd11f35d68da078f259046",
+              "plugins/autosignin/imagehash/decode.go": "025ffc9e2ad75f8242f3a07f16fae25bf9862e5c4cfd324d330b8eedac7ad77e",
+              "plugins/autosignin/imagehash/decode_avif.go": "bad1411265ca143987a0e83e8396aeec70246aa55991aa1aee3ffd939c63acaa",
+              "plugins/autosignin/imagehash/avifport/ORIGIN.json": "d85df6fc2d6765fb3f129c8ea390bf1540e5048be5c4e6500cbdf24db6463fa2",
+              "plugins/autosignin/imagehash/avifport/avif.go": "bc6bc67011ca47fd1c87d2bbef4b5206510b85ca3f78a32c1e3dc760d9ef58b6",
+              "plugins/autosignin/imagehash/avifport/alpha_scale.go": "8715779fdf78f57e636459077ba430a7cde032dab407e1520250faca0a423b81",
+              "plugins/autosignin/imagehash/avifport/color.go": "b2dfe884affaf85626253e0d1708febaaba2be471c34970b6d444e200eba4156",
+              "plugins/autosignin/imagehash/avifport/image.go": "4447f2f0266b0d3e8d6ea4767faa4dd560b04bd9e7b541cf6f63139388c1bac7",
+              "plugins/autosignin/imagehash/avifport/isobmff.go": "48022f9d8a675db20c88caef87a9d2f8a910c1597a0dbe8e969b35a0eae1e143",
+              "plugins/autosignin/imagehash/avifport/sequence.go": "f7b8eebfd994f5f4a66861c0fc2418adc6cf0248ccd5d7a66589c32e1ffc89fc",
+              "plugins/autosignin/imagehash/jpegport/raster.go": "f010a53080269e3cc6552a8833867547ebcbcd2af7c366e51a2e36fafeaa6ddb",
+              "plugins/autosignin/imagehash/tiffport/ORIGIN.json": "70f4d7cbf212a426c9babf8f1b2fbf22d1a97f5122ebf1e7aae6f2970b46f33f",
+              "plugins/autosignin/imagehash/tiffport/reader.go": "8f3ad91682f813d8a85732279b5e81ce37aaf101e8cde00c19d615067b00bc9b",
+              "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go": "15baa7540074270c5d7998039f5bdf97ecd79fc5c81772fd55fc458d4ffd5ec1",
+              "plugins/autosignin/imagehash/tiffport/reader_ycbcr.go": "5872827ff0dc25d067775b1b320178cd0d425c9d46b38d4938d2fd1d27648b06",
+              "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "7673a7a29cc90d80497122e9697b633087ae90d04e05d30bc1dacd612ab90b70"
+            },
+            "remaining": "Original rescales coded color frames and alpha planes to declared tile dimensions. Go handles same-height alpha width changes and explicitly rejects color dimension mismatches or alpha height changes. Original TIFF6 can reconstruct multi-strip and scattered JPEG tables and handle additional color layouts. Those paths need source-supported specimens and verification. One final isolated package check remains; reuse applicable host and browser evidence."
           }
         }
       }

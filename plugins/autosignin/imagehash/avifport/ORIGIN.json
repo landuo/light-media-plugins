@@ -34,5 +34,5 @@
     "tonemap.go": "8d29d978453a57de08008aa3c46e48f245a17e2b57da2bd63aa4e120408fab39",
     "transform.go": "42e3a3975064a7b8e4fee7988dedbb2e5a9b2d079e83182c1cd3d04030185619"
   },
-  "local_adaptation": "avif.go offers the decoded pictures and the associated alpha item's premultiplication flag to the caller before RGB quantization. The callback can return a conversion error. Pictures are released when neither the callback nor the fallback result aliases them."
+  "local_adaptation": "avif.go and sequence.go select the default image by major brand, read only the first AV1 track sample for the default frame, and offer owned decoded planes and alpha association to the caller before quantization. Item and track color metadata keep both ICC and nclx. Alpha items accept both source URNs. alpha_scale.go translates the installed libyuv equal-height alpha scaling path."
 }

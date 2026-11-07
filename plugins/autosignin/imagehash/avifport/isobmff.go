@@ -548,7 +548,7 @@ func (m *metaBox) parseIpco(b []byte) error {
 				p.pixi = append(p.pixi, r.u8())
 			}
 
-		case "auxC":
+		case "auxC", "auxi":
 			r.fullBox()
 			p.auxC = r.cstr()
 

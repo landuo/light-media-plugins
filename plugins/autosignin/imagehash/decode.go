@@ -29,8 +29,11 @@ func Hash(encoded []byte) (string, error) {
 }
 
 func Decode(encoded []byte) (Raster, error) {
-	if len(encoded) >= 12 && string(encoded[4:8]) == "ftyp" && (bytes.Contains(encoded[8:min(len(encoded), 64)], []byte("avif")) || bytes.Contains(encoded[8:min(len(encoded), 64)], []byte("avis"))) {
-		return decodeAVIF(encoded)
+	if len(encoded) >= 12 && string(encoded[4:8]) == "ftyp" {
+		switch string(encoded[8:12]) {
+		case "avif", "avis", "mif1", "msf1":
+			return decodeAVIF(encoded)
+		}
 	}
 	if len(encoded) == 0 {
 		return Raster{}, ErrInvalid

@@ -1,6 +1,9 @@
 package jpeg
 
-import "io"
+import (
+	"image"
+	"io"
+)
 
 type Raster struct {
 	Mode          string
@@ -147,4 +150,32 @@ func DecodeTIFFGrayAlpha(r io.Reader, width, height int) ([]byte, error) {
 		}
 	}
 	return pixels, nil
+}
+
+// DecodeTIFFYCbCr420 returns the native sample planes of an old-style TIFF
+// JPEG stream. The TIFF reader expands the subsampled chroma groups itself.
+func DecodeTIFFYCbCr420(r io.Reader, width, height int) (*image.YCbCr, error) {
+	var d decoder
+	d.dimensionCheck = func(w, h int) error {
+		if w != width || h != height {
+			return FormatError("JPEG dimensions do not match TIFF block")
+		}
+		if d.progressive || d.nComp != 3 || d.comp[0].h != 2 || d.comp[0].v != 2 ||
+			d.comp[1].h != 1 || d.comp[1].v != 1 || d.comp[2].h != 1 || d.comp[2].v != 1 {
+			return UnsupportedError("old TIFF JPEG YCbCr sampling layout")
+		}
+		return nil
+	}
+	if err := d.decode(r); err != nil {
+		return nil, err
+	}
+	if !d.componentQuantDefined[0] || !d.componentQuantDefined[1] || !d.componentQuantDefined[2] {
+		return nil, FormatError("missing TIFF YCbCr JPEG component")
+	}
+	return &image.YCbCr{
+		Y: d.planes[0], Cb: d.planes[1], Cr: d.planes[2],
+		YStride: d.strides[0], CStride: d.strides[1],
+		SubsampleRatio: image.YCbCrSubsampleRatio420,
+		Rect:           image.Rect(0, 0, width, height),
+	}, nil
 }

@@ -1,24 +1,27 @@
 package avif
 
 import (
+	"image"
 	"math"
 
 	"github.com/gen2brain/gav1d/av1"
 )
 
 type track struct {
-	id          uint32
-	handler     string
-	timescale   uint32
-	samples     []extent
-	timing      []timeRun
-	sizes       []uint32
-	offsets     []uint64
-	chunks      []chunkRun
-	sampleCount int
-	sampleSize  uint32
-	auxl        []uint32
-	auxType     string
+	id            uint32
+	width, height int
+	timescale     uint32
+	samples       []extent
+	timing        []timeRun
+	sizes         []uint32
+	offsets       []uint64
+	chunks        []chunkRun
+	sampleCount   int
+	sampleSize    uint32
+	auxFor        uint32
+	premBy        uint32
+	av01          bool
+	properties    []property
 
 	duration   uint64
 	hasEdits   bool
@@ -89,6 +92,9 @@ func parseTrak(b []byte) (track, error) {
 		case "tkhd":
 			r := &reader{b: b}
 			v, _ := r.fullBox()
+			if v > 1 {
+				return ErrInvalid
+			}
 			if v == 1 {
 				r.skip(16)
 			} else {
@@ -104,6 +110,8 @@ func parseTrak(b []byte) (track, error) {
 					t.duration = indefiniteDuration
 				}
 			}
+			r.skip(52)
+			t.width, t.height = int(r.u32()>>16), int(r.u32()>>16)
 			if r.err {
 				return ErrInvalid
 			}
@@ -138,12 +146,15 @@ func parseTrak(b []byte) (track, error) {
 
 		case "tref":
 			return eachBox(b, func(typ string, b []byte) error {
-				if typ != "auxl" {
-					return nil
-				}
 				r := &reader{b: b}
-				for r.remaining() >= 4 {
-					t.auxl = append(t.auxl, r.u32())
+				switch typ {
+				case "auxl":
+					t.auxFor = r.u32()
+				case "prem":
+					t.premBy = r.u32()
+				}
+				if r.err {
+					return ErrInvalid
 				}
 
 				return nil
@@ -164,12 +175,6 @@ func parseTrak(b []byte) (track, error) {
 					if r.err {
 						return ErrInvalid
 					}
-
-				case "hdlr":
-					r := &reader{b: b}
-					r.fullBox()
-					r.u32()
-					t.handler = r.str4()
 
 				case "minf":
 					return eachBox(b, func(typ string, b []byte) error {
@@ -258,21 +263,23 @@ func (t *track) parseStbl(b []byte) error {
 		case "stsd":
 			r.fullBox()
 			r.u32()
+			if r.err {
+				return ErrInvalid
+			}
 
 			return eachBox(b[r.i:], func(typ string, b []byte) error {
-				if len(b) < 78 {
+				if typ != "av01" || t.av01 {
 					return nil
 				}
-
-				return eachBox(b[78:], func(typ string, b []byte) error {
-					if typ == "auxi" {
-						rr := &reader{b: b}
-						rr.fullBox()
-						t.auxType = rr.cstr()
-					}
-
-					return nil
-				})
+				if len(b) < 78 {
+					return ErrInvalid
+				}
+				var props metaBox
+				if err := props.parseIpco(b[78:]); err != nil {
+					return err
+				}
+				t.av01, t.properties = true, props.props
+				return nil
 			})
 
 		case "stsc":
@@ -365,10 +372,14 @@ func (t *track) layout(fileSize uint64) error {
 	return nil
 }
 
-func (m *movie) pictTrack() *track {
+func (m *movie) colorTrack() *track {
+	if m == nil {
+		return nil
+	}
 	for i := range m.tracks {
-		if m.tracks[i].handler == "pict" && m.tracks[i].sampleCount > 0 {
-			return &m.tracks[i]
+		t := &m.tracks[i]
+		if t.hasAV1Samples() && t.auxFor == 0 {
+			return t
 		}
 	}
 
@@ -378,17 +389,113 @@ func (m *movie) pictTrack() *track {
 func (m *movie) alphaTrack(id uint32) *track {
 	for i := range m.tracks {
 		t := &m.tracks[i]
-		if t.handler != "auxv" || t.sampleCount == 0 || t.auxType != alphaURN {
+		if !t.hasAV1Samples() || t.auxFor != id {
 			continue
 		}
-		for _, to := range t.auxl {
-			if to == id {
-				return t
-			}
+		if aux := t.property("auxi"); aux == nil || isAlphaURN(aux.auxC) {
+			return t
 		}
 	}
 
 	return nil
+}
+
+func (t *track) hasAV1Samples() bool {
+	return t.av01 && t.id != 0 && len(t.offsets) > 0 && t.sampleCount > 0
+}
+
+func (t *track) property(typ string) *property {
+	for i := range t.properties {
+		if t.properties[i].typ == typ {
+			return &t.properties[i]
+		}
+	}
+	return nil
+}
+
+func (t *track) colorInfo(pic *av1.Picture) ColorInfo {
+	ci := pictureColor(pic)
+	for _, p := range t.properties {
+		ci.applyProperty(p.colr)
+	}
+	return ci
+}
+
+func (f *file) usesTracks() bool {
+	return f.majorBrand == "avis" || (f.majorBrand != "avif" && f.movie != nil && len(f.movie.tracks) > 0)
+}
+
+func (f *file) decodeFirstFrame(o Options) (image.Image, ColorInfo, error) {
+	t := f.movie.colorTrack()
+	if t == nil || t.width == 0 || t.height == 0 {
+		return nil, ColorInfo{}, ErrInvalid
+	}
+	pic, err := f.firstTrackPicture(t)
+	if err != nil {
+		return nil, ColorInfo{}, err
+	}
+	if pic.Width != t.width || pic.Height != t.height {
+		pic.Release()
+		return nil, ColorInfo{}, ErrUnsupported
+	}
+	var alpha *av1.Picture
+	aux := f.movie.alphaTrack(t.id)
+	if aux != nil {
+		if aux.width != t.width || aux.height != t.height {
+			pic.Release()
+			return nil, ColorInfo{}, ErrInvalid
+		}
+		alpha, err = f.firstTrackPicture(aux)
+		if err != nil {
+			pic.Release()
+			return nil, ColorInfo{}, err
+		}
+		if alpha.BitDepth != pic.BitDepth {
+			pic.Release()
+			alpha.Release()
+			return nil, ColorInfo{}, ErrInvalid
+		}
+		scaled, err := normalizeAlpha(alpha, pic.Width, pic.Height)
+		if err != nil {
+			pic.Release()
+			alpha.Release()
+			return nil, ColorInfo{}, err
+		}
+		alpha = scaled
+	}
+	ci := t.colorInfo(pic)
+	img, err := convertPictures(o, pic, alpha, ci, aux != nil && t.premBy == aux.id, o.ToYCbCr)
+	return img, ci, err
+}
+
+// Read the first sample only. The default image does not require decoding
+// later frames, which may be inter-predicted or may fail independently.
+func (f *file) firstTrackPicture(t *track) (*av1.Picture, error) {
+	if err := t.layout(f.src.size); err != nil {
+		return nil, err
+	}
+	if len(t.samples) == 0 {
+		return nil, ErrInvalid
+	}
+	s := t.samples[0]
+	b, err := f.src.at(s.off, s.len)
+	if err != nil {
+		return nil, err
+	}
+	d := av1.Decoder{FrameSizeLimit: f.frameSizeLimit}
+	pics, err := d.DecodeOBUs(b)
+	if err != nil {
+		return nil, err
+	}
+	if len(pics) == 0 {
+		return nil, ErrInvalid
+	}
+	for _, pic := range pics[1:] {
+		if pic != pics[0] {
+			pic.Release()
+		}
+	}
+	return pics[0], nil
 }
 
 // sequenceBound refuses a picture or alpha track longer than Options.MaxFrames.
@@ -398,7 +505,7 @@ func (f *file) sequenceBound() error {
 		return nil
 	}
 
-	t := f.movie.pictTrack()
+	t := f.movie.colorTrack()
 	if t == nil {
 		return nil
 	}
@@ -416,7 +523,7 @@ func (f *file) sequenceBound() error {
 
 // decodeSequence decodes an image sequence track.
 func (f *file) decodeSequence(o Options) (*AVIF, error) {
-	t := f.movie.pictTrack()
+	t := f.movie.colorTrack()
 	if t == nil || t.timescale == 0 {
 		return nil, nil
 	}
@@ -435,7 +542,7 @@ func (f *file) decodeSequence(o Options) (*AVIF, error) {
 
 	out := &AVIF{LoopCount: t.loopCount()}
 	if len(colors) > 0 {
-		out.Color = f.colorInfo(f.primary(), colors[0])
+		out.Color = t.colorInfo(colors[0])
 	}
 	// A track can show the same picture more than once, so nothing may go back
 	// to the pool until every frame referencing it has been converted, and a
@@ -462,7 +569,7 @@ func (f *file) decodeSequence(o Options) (*AVIF, error) {
 		if i < len(alphas) {
 			alpha = alphas[i]
 		}
-		img, err := toImage(f, f.primary(), pic, alpha, o.ycbcrFor(f, f.primary()))
+		img, err := toImageColor(pic, alpha, t.colorInfo(pic), o.ycbcrFor(f, f.primary()))
 		if err != nil {
 			return nil, err
 		}
