@@ -9,6 +9,8 @@ import (
 	"time"
 )
 
+const appriseInfoIcon72 = "https://github.com/caronc/apprise/raw/master/apprise/assets/themes/default/apprise-info-72x72.png"
+
 type providerHTTPOptions struct {
 	overflow, format string
 	emojis, verify   bool
@@ -85,4 +87,19 @@ func recipientCredentialAndTargets(u sourceURL) (string, []string) {
 	}
 	slices.Sort(targets)
 	return credential, slices.Compact(targets)
+}
+
+func titlelessNotificationChunks(title, body string, options *providerHTTPOptions, bodyLimit int) ([]notificationChunk, error) {
+	tidy, err := notificationChunks(title, body, options.emojis, "upstream", options.format)
+	if err != nil {
+		return nil, err
+	}
+	title, body = tidy[0].title, tidy[0].body
+	if title != "" {
+		if options.format == "html" {
+			title = "<b>" + title + "</b><br />"
+		}
+		body = title + "\r\n" + body
+	}
+	return splitNotificationChunks("", body, options.overflow, options.format, bodyLimit), nil
 }

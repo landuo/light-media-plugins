@@ -36,8 +36,17 @@ type Response struct {
 type Transport func(context.Context, Request) (Response, error)
 
 type notificationService interface {
-	requests(title, body string) ([]Request, error)
 	successful(status int) bool
+}
+
+type plannedNotificationService interface {
+	notificationService
+	requests(title, body string) ([]Request, error)
+}
+
+type orderedNotificationService interface {
+	notificationService
+	sendText(title, body string, deliver func(Request) (Response, bool)) (bool, error)
 }
 
 type attachmentChunkService interface {
@@ -159,6 +168,14 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseDiscordService(raw)
 	case "pjet", "pjets":
 		service, valid = parsePushjetService(raw)
+	case "mmost", "mmosts":
+		service, valid = parseMattermostService(raw)
+	case "gchat":
+		service, valid = parseGoogleChatService(raw)
+	case "slack":
+		service, valid = parseSlackService(raw)
+	case "tgram":
+		service, valid = parseTelegramService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -168,6 +185,12 @@ func (c *Client) addService(raw string) (bool, error) {
 			service, valid = parseIFTTTService(native)
 		} else if native, ok := discordNativeURL(raw); ok {
 			service, valid = parseDiscordService(native)
+		} else if native, ok := mattermostNativeURL(raw); ok {
+			service, valid = parseMattermostService(native)
+		} else if native, ok := googleChatNativeURL(raw); ok {
+			service, valid = parseGoogleChatService(native)
+		} else if native, ok := slackNativeURL(raw); ok {
+			service, valid = parseSlackService(native)
 		} else {
 			return false, ErrUnsupported
 		}
@@ -206,6 +229,7 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 		service  notificationService
 		calls    []Request
 		attached attachmentChunkService
+		ordered  orderedNotificationService
 	}
 	requests := make([]requestGroup, 0, len(c.services))
 	hasCalls := false
@@ -220,7 +244,16 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 			requests = append(requests, requestGroup{service: service})
 			continue
 		}
-		calls, err := service.requests(titleText, bodyText)
+		if provider, ok := service.(orderedNotificationService); ok {
+			hasCalls = true
+			requests = append(requests, requestGroup{service: service, ordered: provider})
+			continue
+		}
+		provider, ok := service.(plannedNotificationService)
+		if !ok {
+			return nil, ErrUnsupported
+		}
+		calls, err := provider.requests(titleText, bodyText)
 		if err != nil {
 			return nil, err
 		}
@@ -236,9 +269,18 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	}
 	send := func(group requestGroup) sendResult {
 		throttle, _ := group.service.(interface{ waitToSend(context.Context) error })
+		requestThrottle, _ := group.service.(interface {
+			waitForRequest(context.Context, Request) error
+		})
 		responseCheck, _ := group.service.(interface{ successfulResponse(Response) bool })
 		deliver := func(request Request) (Response, bool) {
-			if throttle != nil && throttle.waitToSend(ctx) != nil {
+			var waitErr error
+			if requestThrottle != nil {
+				waitErr = requestThrottle.waitForRequest(ctx, request)
+			} else if throttle != nil {
+				waitErr = throttle.waitToSend(ctx)
+			}
+			if waitErr != nil {
 				return Response{}, false
 			}
 			reply, err := c.transport(ctx, request)
@@ -246,6 +288,10 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 				return reply, false
 			}
 			return reply, responseCheck == nil || responseCheck.successfulResponse(reply)
+		}
+		if group.ordered != nil {
+			sent, err := group.ordered.sendText(titleText, bodyText, deliver)
+			return sendResult{success: sent, err: err}
 		}
 		if group.attached == nil {
 			if len(group.calls) == 0 {

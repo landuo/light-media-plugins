@@ -26,7 +26,12 @@
     "pjet",
     "pjets",
     "discord",
-    "pover"
+    "pover",
+    "mmost",
+    "mmosts",
+    "gchat",
+    "slack",
+    "tgram"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -181,6 +186,43 @@
         "target_license_sha256": "c1d6f653c38c80294dc7994647ba0dcc508ce64a86996303c804efa2f7982bff",
         "source": "https://github.com/yuin/goldmark/releases/tag/v1.8.7",
         "remaining": "Additional Python-Markdown and CommonMark dialect differences remain open."
+      }
+    },
+    {
+      "file": "mattermost.go",
+      "original_path": "apprise/plugins/mattermost.py",
+      "original_sha256": "1d2959a51bfb7c34717fe64898fd89871eea456568c44e147f6d1ba344765bca",
+      "source_observations": "testdata/mattermost-googlechat-1.9.9.json",
+      "reason": "Port incoming webhooks and bot sends, response-driven channel lookup, scoped memory caching and exact continuation/abort behavior.",
+      "source_boundary_observations": "testdata/titleless-boundary-1.9.9.json"
+    },
+    {
+      "file": "googlechat.go",
+      "original_path": "apprise/plugins/google_chat.py",
+      "original_sha256": "2c923514b1d645c5f7823b299c5df1542aae5adeced15dc9483b7421c7cb8cf5",
+      "source_observations": "testdata/mattermost-googlechat-1.9.9.json",
+      "reason": "Port native URL alias, path and query credentials, title composition, optional thread payload and response handling.",
+      "source_boundary_observations": "testdata/titleless-boundary-1.9.9.json"
+    },
+    {
+      "file": "slack.go",
+      "original_path": "apprise/plugins/slack.py",
+      "original_sha256": "e52509ad487214e66e54705c4a50834a7e636d1819cca68c0dba8a1d55fbfed2",
+      "source_observations": "testdata/slack-1.9.9.json",
+      "reason": "Port webhook/Gov and bot modes, channel resolution, rich message formatting, response-sensitive upload and completion."
+    },
+    {
+      "file": "telegram.go",
+      "original_path": "apprise/plugins/telegram.py",
+      "original_sha256": "f5d0a5a8fc1214b529604b6787d57695d6498980dc77728cbd255113d8e836d4",
+      "source_observations": "testdata/telegram-1.9.9.json",
+      "reason": "Port explicit and discovered recipients, topics, message format, exact optional icon, attachment MIME/order and source throttle rules.",
+      "installed_icon": {
+        "source_path": "apprise/assets/themes/default/apprise-info-256x256.png",
+        "target_path": "telegram-info.png",
+        "sha256": "079aff3b877d3070a64966707dba908194a9f997ad4dd8814b029c3131756850",
+        "bytes": 43331,
+        "license": "APPRISE-LICENSE"
       }
     }
   ]

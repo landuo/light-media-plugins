@@ -7,7 +7,6 @@ import (
 )
 
 const joinEndpoint = "https://joinjoaomgcd.appspot.com/_ah/api/messaging/v1/sendPush"
-const joinInfoIcon = "https://github.com/caronc/apprise/raw/master/apprise/assets/themes/default/apprise-info-72x72.png"
 
 var joinDevice = regexp.MustCompile(`(?i)^[a-z0-9]{32}$`)
 var joinGroup = regexp.MustCompile(`(?i)^(?:group\.)?(all|android|chrome|windows10|phone|tablet|pc)`)
@@ -68,7 +67,7 @@ func (s *joinService) requests(title, body string) ([]Request, error) {
 			query := "apikey=" + url.QueryEscape(s.key) + "&priority=" + s.priority +
 				"&title=" + url.QueryEscape(chunk.title) + "&text=" + url.QueryEscape(chunk.body) + "&" + key + "=" + url.QueryEscape(target)
 			if s.includeImage {
-				query += "&icon=" + url.QueryEscape(joinInfoIcon)
+				query += "&icon=" + url.QueryEscape(appriseInfoIcon72)
 			}
 			calls = append(calls, s.post(joinEndpoint+"?"+query, "application/x-www-form-urlencoded", nil))
 		}

@@ -153,6 +153,10 @@ func notificationChunksWithBodyLimit(title, body string, emojis bool, overflow, 
 	}
 	title = strings.TrimFunc(title, sourceSpace)
 	body = strings.TrimRightFunc(body, sourceSpace)
+	return splitNotificationChunks(title, body, overflow, format, bodyLimit), nil
+}
+
+func splitNotificationChunks(title, body, overflow, format string, bodyLimit int) []notificationChunk {
 	chunks := []string{body}
 	if overflow != "upstream" {
 		r := []rune(title)
@@ -188,7 +192,7 @@ func notificationChunksWithBodyLimit(title, body string, emojis bool, overflow, 
 		}
 		parts = append(parts, notificationChunk{title: chunkTitle, body: chunk})
 	}
-	return parts, nil
+	return parts
 }
 func zeroPad(n, width int) string { v := strconv.Itoa(n); return strings.Repeat("0", width-len(v)) + v }
 func (s jsonService) request(title, body string, attachments []attachment) (Request, error) {
