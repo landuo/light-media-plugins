@@ -10546,12 +10546,27 @@
         "plugins/iyuuautoseed/form.go",
         "plugins/iyuuautoseed/form.json",
         "plugins/iyuuautoseed/sdk_config.go",
-        "plugins/iyuuautoseed/sdk_downloader_reads.go"
+        "plugins/iyuuautoseed/sdk_downloader_reads.go",
+        "plugins/iyuuautoseed/plugin.go",
+        "plugins/iyuuautoseed/private_scheduler.go",
+        "plugins/iyuuautoseed/sdk_instance.go",
+        "plugins/iyuuautoseed/sdk_runtime.go",
+        "plugins/iyuuautoseed/sdk_downloader_inventory.go",
+        "plugins/iyuuautoseed/sdk_downloader_mutations.go",
+        "plugins/iyuuautoseed/resolve.go",
+        "plugins/iyuuautoseed/site_sdk.go",
+        "plugins/iyuuautoseed/torrent_helper.go",
+        "plugins/iyuuautoseed/torrent_bencode.go",
+        "plugins/iyuuautoseed/torrent_sdk.go",
+        "plugins/iyuuautoseed/torrent_cache.go",
+        "cmd/iyuu-auto-seed/main.go"
       ],
       "scenarios": [],
       "facet_checks": {},
       "status": "implementing",
-      "evidence_ids": [],
+      "evidence_ids": [
+        "iyuuautoseed.owned_linux_lifecycle.20261107"
+      ],
       "review": {
         "status": "pending",
         "independent": true,
@@ -10592,6 +10607,28 @@
           "Implement the host-bound downloader mutations and exact selected-service queries, and port site resolution and torrent material. M-Team, Monika, magnet/redirect/form paths and the source site rate policy need constrained adapters.",
           "Verify the actual worker on the paired Linux host and browser through config save, scheduled/recheck behavior, runtime state, restart and package acceptance.",
           "Track source differences: pure Core currently serializes reseed and recheck; set ordering is deterministic; ambiguous host mutations remain fenced. The size threshold log may omit Python float .0. Keep the fixed transport verification/redirect/size limits and distinguish total timeout and connection reuse."
+        ]
+      },
+      "worker_runtime_increment": {
+        "plugin_product_commit": "e616a2885ca69eb58b28c2ceee35d9d0d14bc028",
+        "paired_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
+        "evidence": {
+          "path": "migration/evidence/iyuuautoseed-worker-runtime-20261107.json",
+          "sha256": "a427dcec54f4348a2d6460fededcb9710cb3b60d46fc599020c2b97ac94e7538"
+        },
+        "status": "partial_verified",
+        "scoped_source_replays": {
+          "downloaders": 11,
+          "site_resolver": 15,
+          "torrent_material": 10
+        },
+        "actual_linux_owned_no_seed_lifecycle": "passed",
+        "whole_plugin_accepted": false,
+        "open": [
+          "Rotate host callback capacity within one large IYUU pass. The per-scheduler-cycle renewal does not remove the 64-host-call per-invocation limit on one pass.",
+          "Persist the source-legal maximum three 10000-hash caches through the host config limit without reducing the original capacity.",
+          "Exercise one owned seed-add/recheck/start chain including tracker rate and material behavior on the paired host. Verify plugin-specific failure, reload/restart, clone isolation and native browser form before acceptance.",
+          "Resolve or document remaining origin/catalog-only, TLS/encoding, cache, timeout and live configuration ordering adaptations. Build and registry release remain gated."
         ]
       }
     },
@@ -65867,12 +65904,42 @@
         "evidence/mergemessagenotify-host-20261107.json": "ee9e6eabd63cd6c9c17f7a9d6d13ece5ef792f207c2bb0a8d788935d2bbd6f51"
       },
       "reviewer": "/root/merge_origin_review"
+    },
+    {
+      "id": "iyuuautoseed.owned_linux_lifecycle.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.IYUUAutoSeed"
+      ],
+      "commands": [
+        "TestIYUUSourceWorkerInstalledOnceAndStopped on a network-none Linux arm64 container with the actual standalone Go worker"
+      ],
+      "inputs": "Installed 2.22 source, MoviePilot fixed host helper, owned qB peer returning empty native completed list, loopback artifact and temporary config.",
+      "observations": "Manager installed the real executable. Native form contains the selected downloader. Config save clears both flags and old success cache. Actual cron declaration is process-local. One +3s private date reaches the owned downloader. Its successor holds a separate private lease while the date scan is active. Uninstall removes the object and worker session. This is the empty-download branch only.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "environment": "Linux arm64, CGO disabled, Docker network none, temporary App storage, actual Go plugin executable and owned loopback qB protocol peer returning no completed torrents.",
+        "target_files": {
+          "plugins/iyuuautoseed/plugin.go": "643e458afd14a0b986768917a25ebe949df34eb4a04ce21dcf990dfe2954e350",
+          "plugins/iyuuautoseed/private_scheduler.go": "c0e2975f8c088b348b0cbfaed98ae281dc97ccea51254ef6dba39e0f05f4899f",
+          "plugins/iyuuautoseed/sdk_runtime.go": "949d0143534011e2fa5d2910f42a29cc9f73cb28a9e754bf44e51e70331b80a3"
+        },
+        "plugin_product_commit": "e616a2885ca69eb58b28c2ceee35d9d0d14bc028",
+        "paired_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29"
+      },
+      "artifacts": {
+        "evidence/iyuuautoseed-worker-runtime-20261107.json": "a427dcec54f4348a2d6460fededcb9710cb3b60d46fc599020c2b97ac94e7538"
+      },
+      "reviewer": "/root/emby (runtime and ownership); /root/jellyfin (scoped site authority)"
     }
   ],
   "scope": {
     "instances": 23,
     "current_migration_instances": 22,
-    "deferred_instances": ["MergeMessageNotify"],
+    "deferred_instances": [
+      "MergeMessageNotify"
+    ],
     "business_families": 22,
     "source_files": 190,
     "language": "Go",
@@ -65914,7 +65981,9 @@
       "functional_verified_instances": 8,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
-      "deferred_instances": ["MergeMessageNotify"],
+      "deferred_instances": [
+        "MergeMessageNotify"
+      ],
       "business_families_verified": 7,
       "functional_verified_count_scope": "Eight of 22 in current scope accepted. Original inventory has 23 and includes deferred MergeMessageNotify. Private state and deployment remain separate.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
@@ -65923,24 +65992,25 @@
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "ef7ea9b756da752d8647d07c7a57859fe0781996",
-      "SDK_source_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+      "host_HEAD": "7be161f91f329d640e0d222b5af23787fffc3a29",
+      "SDK_source_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
       "SDK_current_files": 106,
-      "SDK_current_origin_sha256": "dc605efb2d52613fec55d573e1dcc7c919eb037704030bb2e82c472feb77a4b4",
-      "SDK_current_status": "The 106-file paired SDK now supports opt-in native qB pack fields. Previous SDK bindings remain historical. No actual IYUU worker acceptance at this revision.",
+      "SDK_current_origin_sha256": "ca37a259ece8a7213cc35a01d35371b0cd2e3be6e38bc9177072204d74a14eb5",
+      "SDK_current_status": "106 files; two exact paired source site DTOs changed. Current IYUU executable and scoped Linux empty-pass lifecycle observed. No full IYUU acceptance.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-07 fresh target ls-remote P4453f821; host main from previous H75e13686 check. No push.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight of 22 current-scope instances accepted. IYUUAutoSeed 2.22 adds fixed API transport, source core, native config/form and SDK read-side methods. Worker lifecycle, mutation and site adapter are open.",
-      "tests_running": "None. Focused source config/form, core, owned HTTP and SDK boundary replays passed. Only newly captured review rows ran. Linux/amd64 component package built.",
-      "latest_detail": "features[plugin.IYUUAutoSeed].transport_core_and_config_increment",
+      "delivery": "Eight of 22 current-scope instances accepted. IYUU 2.22 has an actual standalone worker. Linux owned install, save, date, fresh private interval and uninstall passed. Long pass, maximum config and full seeded run remain open. No push.",
+      "tests_running": "None. Newly added source replays 11/15/10 passed; owned Linux IYUU empty pass and synthetic material grant passed. Prior passing suites not rerun.",
+      "latest_detail": "features[plugin.IYUUAutoSeed].worker_runtime_increment",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Wire the IYUUAutoSeed 2.22 worker lifecycle and host-bound mutations, then site resolution/metainfo, with source ownership and shared live config. Connect the completed API, core, form and read-side SDK pieces. Verify one scoped actual host flow when the executable works. Keep MergeMessageNotify deferred.",
-      "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621"
+      "next_complete_slice": "Finish IYUUAutoSeed 2.22 large-pass callback renewal and the source-sized config cache budget. Then run one controlled seeded host flow with add/recheck/start, checking failure, reload/restart and instance isolation with the minimum new cases. Keep MergeMessageNotify deferred.",
+      "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
+      "latest_IYUU_product_commit": "e616a2885ca69eb58b28c2ceee35d9d0d14bc028"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -65957,7 +66027,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Wire the IYUUAutoSeed 2.22 worker lifecycle and host-bound mutations, then site resolution/metainfo, with source ownership and shared live config. Connect the completed API, core, form and read-side SDK pieces. Verify one scoped actual host flow when the executable works. Keep MergeMessageNotify deferred.",
+    "next_complete_slice": "Finish IYUUAutoSeed 2.22 large-pass callback renewal and the source-sized config cache budget. Then run one controlled seeded host flow with add/recheck/start, checking failure, reload/restart and instance isolation with the minimum new cases. Keep MergeMessageNotify deferred.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

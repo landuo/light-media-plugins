@@ -14,12 +14,18 @@ native availability and completed-byte fields.
 See `migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json`
 for the paired revisions and observations.
 
-The next increment implements the fixed-origin IYUU HTTP transport, 2.22
-selection and recheck core, configuration and native form, and SDK read-side
-adapters. Source, owned socket and synthetic SDK evidence are kept separate
-in `migration/evidence/iyuuautoseed-transport-core-config-20261107.json`.
-Standalone worker lifecycle, scheduling, host-bound mutations, site
-resolution and torrent material handling remain open.
+The standalone IYUU 2.22 Go worker now binds the source lifecycle, public cron,
+private one-shot and interval, downloader operations, site lookup and torrent
+material handling. The paired host records a real isolated Linux install,
+native form, config save, a single empty downloader pass with a renewed private
+lease, and uninstall. Downloaders, site resolution and torrent handling have
+separate controlled source replays. See
+`migration/evidence/iyuuautoseed-worker-runtime-20261107.json`.
+
+IYUU remains in progress. A single long pass still needs host callback renewal,
+and source-sized caches need the paired storage capacity. A seeded host pass,
+failure and lifecycle/instance isolation, and browser form acceptance remain
+open. Release build registry remains gated on acceptance.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
