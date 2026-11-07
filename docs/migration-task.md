@@ -204,10 +204,14 @@ organized both episodes. See
 `migration/evidence/lark-messager-rss-quality-magnets-20261108.json`.
 A separate ordinary Lark selection submitted and organized only S01E01. See
 `migration/evidence/lark-messager-chat-episode-magnet-20261108.json`.
-Current previews archive exact material. The legacy empty-reference fallback
-now uses the same tracker confirmation path for ordinary subscriptions and
-chat, with its own distinct recovery evidence still open. A native Lark
-run now confirms provider-only chat subscription creation after configured
+Current previews archive exact material. A separate native legacy chat run
+confirms tracker form submission, exact hash verification, protected material
+pinning and the ordinary SDK byte callback. The old Intent reference remained
+empty. Another native run confirms one provider-only whole Add after an
+exact-source episode lookup still returned no seasons. It left the completed
+file for review and created no invented slot. See
+`migration/evidence/lark-messager-native-download-boundaries-20261108.json`.
+A native Lark run confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. See
 `migration/evidence/lark-messager-provider-native-subscription-20261108.json`.

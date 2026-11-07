@@ -68297,6 +68297,60 @@
         "fixture_sha256": "61370ee92a650918c1552fa7925bb05060b0edeb0ead654414683f7b5c113458",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_unscoped.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderUnscopedDownloadLinuxAMD64"
+      ],
+      "observations": [
+        "A real Lark worker selected AniList 777 with no seasons or TMDB. The native host performed a second exact AniList detail lookup. Still without seasons, it searched by the verified title and exposed the matching S03E07 release without manufacturing a season scope.",
+        "The numbered resource selection submitted one whole unpaused Add with the exact tracker torrent bytes. The intent, sealed context and download.accepted event retained tv:anilist:777. Season, episode and selected file scope remained unset.",
+        "The completed torrent remained downloaded for review. No reservation, asset slot, asset or import plan was created from the release filename alone."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-native-download-boundaries-20261108.json": "513b9b48e3e97cb1b417ee5e704774d90eba1a4ff1ccdea79cf47f201e25d694"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "3a215e0885094569f53b03b18131ab139b9ced37",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "fbf2c94057434d0d784edd9601f45b2b2ab83deeabe93317a00993a7e36a62d1"
+      }
+    },
+    {
+      "id": "larkmessager.native_legacy_material.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkLegacyMaterialRecoveryLinuxAMD64"
+      ],
+      "observations": [
+        "The fixture constructed an older confirmed Lark intent, deliberately removing the preview and intent material references, archived bytes and preview memory cache. This case uses a seeded old record and real SDK observer, not a live legacy Lark account.",
+        "The actual host retrieved the tracker prompt with its owned cookie and posted the exact confirmation form once. The resulting torrent kept the original infohash and had different exact top-level bytes from the seed material. One qB protocol Add received those bytes.",
+        "The same bytes were encrypted and pinned in the submission transaction and reached the actual SDK download_added callback as bytes. The old Intent.MaterialRef stayed empty and its guarded legacy shape was preserved."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-native-download-boundaries-20261108.json": "513b9b48e3e97cb1b417ee5e704774d90eba1a4ff1ccdea79cf47f201e25d694"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "3a215e0885094569f53b03b18131ab139b9ced37",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "528ebfaa9276946525d167f72c41f5fc0248c740f5046c2a747956be4f060415"
+      }
     }
   ],
   "scope": {
@@ -68370,7 +68424,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "532a786ffff7708bb1350aa5d9df39f9953c6ad1",
+      "host_HEAD": "3a215e0885094569f53b03b18131ab139b9ced37",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68381,12 +68435,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark provider subscription keyword edit, normal detail navigation and a full App close/reopen on Linux passed in Chrome. Code and evidence remain local.",
-      "tests_running": "None. One distinct native Linux plus Chrome edit and reopen scenario passed. No acquisition cases were rerun.",
-      "latest_detail": "migration/evidence/lark-messager-provider-browser-restart-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native Lark no-season manual whole Add and legacy tracker material recovery/callback passed. Code and evidence remain local.",
+      "tests_running": "None. Only the two new native Linux scenarios ran, both passing on the first runtime attempt.",
+      "latest_detail": "migration/evidence/lark-messager-native-download-boundaries-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host 532a786f. Reuse accepted Add/import, full BestVersion, provider NFO and Chrome edit/App reopen. Implement the fixed get_no_exists_info retry when the entire source seasons map is absent (app/chain/download.py:1647\u20131662) and preserve ordinary search with no invented seasons. Align whole manual Add (app/chain/message.py:2789\u20132806 and download.py:859\u2013874) with verified source identity and material; no automatic Add or import may assume nonexistent episode scope. Restore legacy empty-reference tracker material with exact hash and archive it for download_added. Provider detail subscription status/actions, provider per-episode replacement, remaining chat variants and scraper side effects remain open. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager with indexed worker 319ca00 and host 3a215e08. Reuse accepted manual, RSS, full BestVersion, sidecar, Chrome and new boundary cases. Close remaining installed Lark behavior using the authoritative ledger and independent audit, including per-episode provider replacement, source detail actions, and recovery or explicit review when authoritative episodes become available. Avoid counting generic host expansion as Lark acceptance without the pinned call chain. Register only after agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
