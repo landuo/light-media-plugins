@@ -16091,7 +16091,8 @@
         "larkmessager.subscribes_prompt_cooldown.20261108",
         "larkmessager.paused_completion_whole_multiseason.20261108",
         "larkmessager.provider_native_download.20261108",
-        "larkmessager.manual_search_rejected_paused_quality.20261108"
+        "larkmessager.manual_search_rejected_paused_quality.20261108",
+        "larkmessager.same_manual_search_candidate_fallback.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67774,6 +67775,33 @@
         "fixture_sha256": "3b05285e18753db1834de2fead30c35ddab734f6a1555837ec335db6d171b798",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.same_manual_search_candidate_fallback.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkSameSearchFallbackLinuxAMD64"
+      ],
+      "observations": [
+        "A started Linux App installed the indexed worker and accepted one authenticated manual /subscribes action. A keyword tracker response contained two matching releases, with the first ahead in the source order.",
+        "The first torrent reached one actual qBittorrent Add with the configured save path. After its explicit Fails. response, the exact intent was failed and its reservation removed. One sealed rejection and one resource cooldown were present.",
+        "The second candidate was fetched and accepted exactly once within that same search job. Both actual download children had the same parent, and no first-resource acceptance was fabricated. The accepted resource produced one subscription completion event and an empty live list after the Lark completion notice and search summary."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-same-search-fallback-20261108.json": "2658b04b56a9bc1c18ba44d04d2f67ab290a5eb96a88f60e785ff4cac6e95ea4"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "9f543ddb38b53d4e79002715b3ed427cf42e697d",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "593fa0d546b87cef3a1d609530e4db8dd4684949493023dd7a8866f84df280d8",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67847,7 +67875,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "ebf42deaa0a47a1c16c63e92e606247674b37300",
+      "host_HEAD": "9f543ddb38b53d4e79002715b3ed427cf42e697d",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67858,12 +67886,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native explicit manual search waits for definite rejection, releases reservation/cools resource, and completes paused quality priority 100 before reply. Host and evidence stay local.",
-      "tests_running": "None. The one distinct native manual search settlement scenario passed on its first run and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-manual-search-settlement-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native one-search definitive refusal and second-candidate acceptance/completion passed. Host and evidence stay local.",
+      "tests_running": "None. The distinct native two-candidate fallback fixture passed on its first run and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-same-search-fallback-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with source same-search ordinary fallback after definite Add rejection. Use exact owned child execution or the sealed acquisition journal so parent workers cannot starve queued children; only accepted facts credit coverage, confirmed refusal releases only its reservation/cools its fingerprint, uncertainty stops. Preserve existing-hash and cold recovery. Verify one distinct two-candidate scenario. Keep RSS magnets, post-preview reacquisition, provider-without-TMDB and remaining failure notice differences visible.",
+      "next_complete_slice": "Continue LarkMessager RSS magnets. Pinned TorrentHelper accepts direct magnet, 301/302 Location magnet and 200 magnet text. Use typed material with stable hash, sealed private URI, native downloader Add and accepted receipts. Do not synthesize metainfo or incorrectly cool magnets; preserve source skip of file-inspection pack/split paths and design guarded delayed file verification. Verify one distinct real RSS movie scenario first; keep supported title-scoped TV and other open differences visible.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

@@ -142,8 +142,12 @@ released the failed reservation and saved a one-hour resource cooldown. The
 next paused best-version acquisition confirmed priority 100 and completed
 before the Lark search summary. See
 `migration/evidence/lark-messager-manual-search-settlement-20261108.json`.
-Continue with same-search candidate fallback after definite Add refusal.
-Reuse earlier passing evidence.
+One distinct native movie search then received a definite refusal, released
+and cooled that exact resource, tried a second candidate in the same search
+and finished the subscription after a real Add. The rejection fingerprint is
+sealed before the downloader call. See
+`migration/evidence/lark-messager-same-search-fallback-20261108.json`.
+Continue with native RSS magnet handling. Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
