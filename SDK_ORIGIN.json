@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
-  "scope": "106 standalone SDK files. This increment updates the paired source site HTTP DTOs for private redirect Location and shared source site rate checks. Other leaves retain their original paired commits and declared import relocations.",
+  "source_commit": "39b874069acaf9ec21ad80c36d3792cb68a0b615",
+  "scope": "106 standalone SDK files. This increment updates the paired media-server list DTO for an optional source connectivity-only probe. Other leaves retain their original paired commits and declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -458,10 +458,10 @@
     {
       "source_path": "internal/plugins/media_host.go",
       "path": "internal/sdk/media_host.go",
-      "source_sha256": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
-      "sha256": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+      "source_sha256": "6b0bb5c1abed64b68e3c71b1f087fd85e13f0560bd38e021b692ece032de5e0b",
+      "sha256": "6b0bb5c1abed64b68e3c71b1f087fd85e13f0560bd38e021b692ece032de5e0b",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "39b874069acaf9ec21ad80c36d3792cb68a0b615"
     },
     {
       "source_path": "internal/plugins/media_images.go",
