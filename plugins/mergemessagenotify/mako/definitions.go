@@ -95,18 +95,35 @@ func installRootDefinitions(e *environment, nodes []templateNode) error {
 // referenced root defs. The declaration evaluates its own argument defaults
 // in that scope; self.f bypasses it and uses the module render function.
 func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlock string) error {
-	if len(e.module.rootDefs) == 0 {
+	if len(e.module.rootDefs) == 0 && !e.module.hasPageArguments {
 		return nil
 	}
 	refs := scopeReferences{
 		reads: map[string]bool{}, declared: map[string]bool{}, assigned: map[string]bool{},
-		namedBlocks: map[string]bool{}, blockArguments: map[string]bool{},
+		namedBlocks: map[string]bool{}, blockArguments: map[string]bool{}, pageArguments: map[string]bool{},
+		controlTargets: map[string]bool{},
 	}
 	refs.nodes(nodes)
 	if ownerBlock != "" {
 		refs.namedBlocks[ownerBlock] = true
 	}
-	if e.parent == e.module {
+	body := e.parent == e.module
+	for name := range refs.pageArguments {
+		if e.parameters[name] || name == "context" {
+			continue
+		}
+		// An earlier declaration suppresses the generated Context lookup.
+		// render_body also reads every declaration when building __M_locals.
+		value := e.module.get(name)
+		if _, missing := value.(undefined); missing || refs.assigned[name] || refs.controlTargets[name] {
+			if body {
+				return fault("NameError")
+			}
+			value = unboundPageArgument{}
+		}
+		e.values[name] = value
+	}
+	if body {
 		for name := range refs.blockArguments {
 			if !e.parameters[name] {
 				// render_body initializes its local context before executing
@@ -116,6 +133,19 @@ func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlo
 		}
 		e.contextLocals = refs.assigned
 		for name := range e.parameters {
+			if name == "pageargs" || refs.pageArguments[name] || refs.blockArguments[name] {
+				e.contextLocals[name] = true
+				continue
+			}
+			// A page tag inside a definition can change the body signature
+			// without declaring the argument in the body's identifier pass.
+			// In that case a direct read still generates a Context lookup.
+			_, moduleName := e.module.values[name]
+			if !refs.declared[name] && refs.reads[name] && !moduleName {
+				e.values[name] = e.module.contextData.get(name)
+			}
+		}
+		for name := range refs.pageArguments {
 			e.contextLocals[name] = true
 		}
 	}
@@ -198,6 +228,7 @@ func hasLexicalDeclaration(e *environment, name string) bool {
 // but a definition body and a call body have their own generated scopes.
 type scopeReferences struct {
 	reads, declared, assigned, namedBlocks, blockArguments map[string]bool
+	pageArguments, controlTargets                          map[string]bool
 }
 
 func (r scopeReferences) nodes(nodes []templateNode) {
@@ -214,12 +245,14 @@ func (r scopeReferences) nodes(nodes []templateNode) {
 			r.expressions(n.sequence)
 			for _, name := range n.names {
 				r.declared[name] = true
+				r.controlTargets[name] = true
 			}
 		case whileNode:
 			r.expressions(n.condition)
 		case tryNode:
 			for _, branch := range n.handlers {
 				r.declared[branch.name] = true
+				r.controlTargets[branch.name] = true
 			}
 		case codeNode:
 			if !n.module {
@@ -248,8 +281,8 @@ func (r scopeReferences) nodes(nodes []templateNode) {
 				r.expressions(p.defaultValue)
 			}
 		case pageArgNode:
-			r.declared[n.param.name] = true
-			r.expressions(n.param.defaultValue)
+			r.declared[n.name] = true
+			r.pageArguments[n.name] = true
 		}
 		for _, body := range definitionControlBodies(node) {
 			r.nodes(body)

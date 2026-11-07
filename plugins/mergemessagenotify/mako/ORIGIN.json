@@ -248,6 +248,29 @@
       "source_observations": "testdata/source-named-block-edges-1.4.1.json",
       "source_observations_sha256": "c6823109da589069c0422dace396c39a5c1946df51eb16a533c3893538a06610",
       "scope": "Ten original TemplateUtil cases with Mako 1.4.1, CPython 3.12.13, MarkupSafe 3.0.4 and no Beaker. Covers ordinary explicit pageargs collisions, named block versus module and page-local bindings, and hard, soft and case-sensitive block names. The source keyword insertion order cannot be recovered from the Go Render API's input map. Explicit variadic page signatures remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Use the final page tag for the generated signature, filter and cache options. Preserve stale declaration lookups, context locals and the installed loop default.",
+      "target_files": [
+        "parser.go",
+        "template.go",
+        "definitions.go",
+        "value.go",
+        "expression.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d",
+        "mako/cache.py": "0e7a30b905b44dc9c06b9bb9b4d37b0ffaaf5a3a9f3ca72c4c80a202a7038e83",
+        "mako/ext/beaker_cache.py": "4ca18af1570ca3eb29c257039f004dfc6ea6856a93b12c0e9916e18c3315d93e"
+      },
+      "source_observations": "testdata/source-multiple-pages-1.4.1.json",
+      "source_observations_sha256": "ef84c50d7afea95781a5b181cff62dfacbd5f80cfa06cb034071774e917ef4d7",
+      "scope": "Twenty-four original TemplateUtil cases. Covers old-only names and fallback, module values, nested signature lookup, cache options, loop defaults and scope forwarding. Explicit variadic signatures, advanced Python declaration forms and external template inheritance remain outside this proof."
     }
   ]
 }

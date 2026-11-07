@@ -59,6 +59,7 @@ type environment struct {
 	contextData       *environment // Root Context data before template locals.
 	strict            bool
 	pageFilter        templateFilters // Set on the module scope.
+	hasPageArguments  bool            // Set on the module scope.
 	callers           *callerStack    // Shared by the render and its lexical scopes.
 	callerFrame       *callerNamespace
 	keywordOrder      []string

@@ -12,6 +12,9 @@ type templateParser struct {
 	callDefs             map[int]defNode
 	blockLines           map[int]bool
 	pageFilter           templateFilters
+	pageTag              templateToken
+	pageArgs             []parameter
+	hasPageArguments     bool
 	compile              *environment
 	pageCached           bool
 	pageCacheTimeout     expression
@@ -282,25 +285,20 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				if _, exists := t.attrs["decorator"]; exists {
 					return nil, nil, fault("CompileException")
 				}
-				if _, err := p.readCacheOptions(t); err != nil {
-					return nil, nil, err
-				}
+				p.pageTag, p.pageArgs = t, nil
 				if args := t.attrs["args"]; args != "" {
 					_, params, err := parseSignature("page("+args+")", false)
 					if err != nil {
 						return nil, nil, err
 					}
+					p.pageArgs = params
 					for _, param := range params {
-						// render_body appends **pageargs to this page signature.
-						if param.name == "pageargs" {
-							return nil, nil, fault("SyntaxError")
-						}
-						out = append(out, pageArgNode{param})
+						out = append(out, pageArgNode{param.name})
 					}
+					p.hasPageArguments = p.hasPageArguments || len(params) > 0
 				}
-				if t.attrs["enable_loop"] != "" {
-					return nil, nil, ErrUnsupported
-				}
+				// TemplateUtil uses Mako's default enable_loop=True. The
+				// compiler short-circuits before reading the page option.
 				filters, err := parseFilters(t.attrs["expression_filter"])
 				if err != nil {
 					return nil, nil, err
@@ -417,22 +415,11 @@ func parseSignature(s string, block bool) (string, []parameter, error) {
 	return name, params, nil
 }
 
-type pageArgNode struct{ param parameter }
+// Page arguments affect generated scopes, with no instruction at the tag.
+type pageArgNode struct{ name string }
 
-func (n pageArgNode) render(e *environment) (flow, error) {
-	if _, ok := e.values[n.param.name]; ok {
-		return normal, nil
-	}
-	if n.param.defaultValue == nil {
-		return normal, fault("TypeError")
-	}
-	v, err := n.param.defaultValue.eval(e.module)
-	if err != nil {
-		return normal, err
-	}
-	e.values[n.param.name] = v
-	return normal, nil
-}
+func (pageArgNode) render(*environment) (flow, error) { return normal, nil }
+
 func splitTop(s string, separator byte) []string {
 	out := []string{}
 	start, depth := 0, 0

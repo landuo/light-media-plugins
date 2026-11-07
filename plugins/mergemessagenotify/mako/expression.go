@@ -192,9 +192,13 @@ type literal struct{ v any }
 func (x literal) eval(e *environment) (any, error) { return x.v, e.check() }
 
 type nameExpr string
+type unboundPageArgument struct{}
 
 func (x nameExpr) eval(e *environment) (any, error) {
 	v := e.get(string(x))
+	if _, unbound := v.(unboundPageArgument); unbound {
+		return nil, fault("NameError")
+	}
 	if _, ok := v.(undefined); ok && e.strict {
 		return nil, fault("NameError")
 	}

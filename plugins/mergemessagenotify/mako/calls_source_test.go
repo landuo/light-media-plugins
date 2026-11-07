@@ -34,6 +34,10 @@ func TestSourceNamedBlockEdges141(t *testing.T) {
 	runSourceCallFixture(t, "testdata/source-named-block-edges-1.4.1.json")
 }
 
+func TestSourceMultiplePages141(t *testing.T) {
+	runSourceCallFixture(t, "testdata/source-multiple-pages-1.4.1.json")
+}
+
 func runSourceCallFixture(t *testing.T, path string) {
 	t.Helper()
 	file, err := os.Open(path)

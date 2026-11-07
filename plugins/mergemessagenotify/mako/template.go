@@ -32,13 +32,24 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	if err != nil {
 		return fallback(text, err)
 	}
+	if p.pageTag.text != "" {
+		if _, err = p.readCacheOptions(p.pageTag); err != nil {
+			return fallback(text, err)
+		}
+	}
+	for _, arg := range p.pageArgs {
+		// Mako adds the implicit context and pageargs parameters.
+		if arg.name == "context" || arg.name == "pageargs" {
+			return fallback(text, fault("SyntaxError"))
+		}
+	}
 	if p.pageCached || p.usesPageCacheTimeout {
 		if err = p.validateCacheTimeout(p.pageCacheTimeout); err != nil {
 			return fallback(text, err)
 		}
 	}
 	b := &strings.Builder{}
-	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true, pageFilter: p.pageFilter}
+	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true, pageFilter: p.pageFilter, hasPageArguments: p.hasPageArguments}
 	module.module = module
 	for _, n := range nodes {
 		if c, ok := n.(codeNode); ok && c.module {
@@ -65,12 +76,7 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	originalContext.parent, originalContext.values = module, maps.Clone(e.values)
 	originalContext.definitionContext = originalContext
 	e.definitionContext = originalContext
-	pageArgs := []parameter{}
-	for _, node := range nodes {
-		if arg, ok := node.(pageArgNode); ok {
-			pageArgs = append(pageArgs, arg.param)
-		}
-	}
+	pageArgs := p.pageArgs
 	pageDefaults, err := parameterDefaults(module, pageArgs)
 	if err == nil && p.pageCached {
 		pageDefaults, err = parameterDefaults(module, pageArgs)
