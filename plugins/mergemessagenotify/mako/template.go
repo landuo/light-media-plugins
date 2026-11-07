@@ -46,8 +46,16 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 			return fallback(text, err)
 		}
 	}
+	for _, ns := range p.externalNamespaces {
+		if _, err = p.compileFlag(ns.tag, "inheritable"); err != nil {
+			return fallback(text, err)
+		}
+	}
 	b := &strings.Builder{}
-	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true, pageFilter: p.pageFilter, hasPageArguments: p.hasPageArguments}
+	module := &environment{
+		ctx: ctx, values: map[string]any{}, output: b, strict: true,
+		pageFilter: p.pageFilter, hasPageArguments: p.hasPageArguments, externalNamespaces: p.externalNamespaces,
+	}
 	module.module = module
 	for _, n := range nodes {
 		if c, ok := n.(codeNode); ok && c.module {
@@ -102,6 +110,11 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 		// of Template.render, Context and _render_context.
 		if reservedMakoName(name) || name == "self" || name == "buffer" || name == "tmpl" || name == "callable_" {
 			return fallback(text, fault("TypeError"))
+		}
+	}
+	if p.inheritFile != nil {
+		if err = e.inheritWithoutLookup(p.inheritFile); err != nil {
+			return fallback(text, err)
 		}
 	}
 	// TemplateUtil.render uses keyword arguments exclusively. An input key
@@ -617,17 +630,6 @@ func (n whileNode) render(e *environment) (flow, error) {
 type flowNode flow
 
 func (n flowNode) render(e *environment) (flow, error) { return flow(n), nil }
-
-type failNode struct{}
-type missingNamespace struct{}
-type namespaceNode struct{ name string }
-
-func (n namespaceNode) render(e *environment) (flow, error) {
-	e.values[n.name] = missingNamespace{}
-	return normal, nil
-}
-
-func (failNode) render(e *environment) (flow, error) { return normal, fault("TemplateLookupException") }
 
 type codeNode struct {
 	text   string

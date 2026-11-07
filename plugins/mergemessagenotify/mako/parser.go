@@ -15,6 +15,8 @@ type templateParser struct {
 	pageTag              templateToken
 	pageArgs             []callbackParameter
 	hasPageArguments     bool
+	inheritFile          expression
+	externalNamespaces   []externalNamespace
 	compile              *environment
 	pageCached           bool
 	pageCacheTimeout     expression
@@ -307,19 +309,21 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 					return nil, nil, err
 				}
 				p.pageFilter = filters
-			case "include", "inherit":
-				out = append(out, failNode{})
+			case "include":
+				include, err := parseInclude(t)
+				if err != nil {
+					return nil, nil, err
+				}
+				out = append(out, include)
+			case "inherit":
+				file, err := externalFile(t)
+				if err != nil {
+					return nil, nil, err
+				}
+				p.inheritFile = file
 			case "namespace":
-				if t.attrs["file"] != "" {
-					if t.attrs["import"] != "" {
-						out = append(out, failNode{})
-					} else if t.attrs["name"] != "" {
-						out = append(out, namespaceNode{name: t.attrs["name"]})
-					} else {
-						return nil, nil, fault("CompileException")
-					}
-				} else {
-					return nil, nil, ErrUnsupported
+				if err := p.addExternalNamespace(t); err != nil {
+					return nil, nil, err
 				}
 			default:
 				if t.text != "call" && !strings.Contains(t.text, ":") {

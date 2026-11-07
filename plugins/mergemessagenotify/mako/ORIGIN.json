@@ -294,6 +294,30 @@
       "source_observations": "testdata/source-page-variadic-1.4.1.json",
       "source_observations_sha256": "2ce1c3f5f933d7802bb55c8d0c2cfb812c4a6d93281a74837eaa2c069abebf4c",
       "scope": "Thirty-three original TemplateUtil cases. Covers explicit and implicit kwargs, empty variadic positional tuple, required keyword-only arguments, bare-star and positional-only lowering, annotations, named-block forwarding, reserved names and top-level Context data. Arbitrary Python declaration expressions, nested Context extensions, external inheritance and the original input keyword insertion order remain open."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Preserve no-TemplateLookup behavior at the actual installed Template(text=...) entry, including reached includes, pre-render inheritance and lazy/eager namespace generation. Evaluate original expressions and declaration defaults at their source boundaries.",
+      "target_files": [
+        "external.go",
+        "parser.go",
+        "template.go",
+        "definitions.go",
+        "builtins.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/ast.py": "f0248c12c8827349ea6d1b7d88dcf325743c589d04d50fcde63e982a5e44395b",
+        "mako/pyparser.py": "6c0319ab7a64674b58c3be700396c4ad5f0a9df91f6e679b0264a0642df3db66",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d"
+      },
+      "source_observations": "testdata/source-external-template-1.4.1.json",
+      "source_observations_sha256": "3bfef2c629b8b63c355a9483d6d3c22035f99d8657024b87ae75970fc2dcaf78",
+      "scope": "Twenty-six original TemplateUtil cases. Installed entry creates no filesystem lookup. Includes expression and call binding, inheritance selection and nil behavior, named file namespace generation, inline declarations and root def precedence. Inline namespaces without a file, module namespaces, additional paired tag syntax and advanced scope behavior remain open."
     }
   ]
 }

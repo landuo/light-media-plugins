@@ -509,9 +509,6 @@ func getAttribute(v any, name string) (any, error) {
 	if caller, ok := v.(*callerNamespace); ok {
 		return caller.attribute(name)
 	}
-	if _, ok := v.(missingNamespace); ok {
-		return nil, fault("TemplateLookupException")
-	}
 	if loop, ok := v.(*loopState); ok {
 		return loop.attribute(name)
 	}

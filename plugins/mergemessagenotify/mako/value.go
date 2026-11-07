@@ -51,28 +51,29 @@ func asCallable(value any) (callable, bool) {
 }
 
 type environment struct {
-	ctx               context.Context
-	values            map[string]any
-	parent            *environment
-	output            *strings.Builder
-	module            *environment
-	contextData       *environment // Root Context data before template locals.
-	strict            bool
-	pageFilter        templateFilters // Set on the module scope.
-	hasPageArguments  bool            // Set on the module scope.
-	callers           *callerStack    // Shared by the render and its lexical scopes.
-	callerFrame       *callerNamespace
-	keywordOrder      []string
-	anonymousDefs     map[int]callable
-	rootDefs          []defNode
-	rootCalls         map[string]callable
-	globals           map[string]bool
-	parameters        map[string]bool
-	variadicPageargs  bool
-	forwarding        map[string]bool
-	independentDef    bool
-	definitionContext *environment
-	contextLocals     map[string]bool
+	ctx                context.Context
+	values             map[string]any
+	parent             *environment
+	output             *strings.Builder
+	module             *environment
+	contextData        *environment // Root Context data before template locals.
+	strict             bool
+	pageFilter         templateFilters // Set on the module scope.
+	hasPageArguments   bool            // Set on the module scope.
+	externalNamespaces []externalNamespace
+	callers            *callerStack // Shared by the render and its lexical scopes.
+	callerFrame        *callerNamespace
+	keywordOrder       []string
+	anonymousDefs      map[int]callable
+	rootDefs           []defNode
+	rootCalls          map[string]callable
+	globals            map[string]bool
+	parameters         map[string]bool
+	variadicPageargs   bool
+	forwarding         map[string]bool
+	independentDef     bool
+	definitionContext  *environment
+	contextLocals      map[string]bool
 }
 
 func (e *environment) get(k string) any {

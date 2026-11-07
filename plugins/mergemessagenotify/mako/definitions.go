@@ -95,7 +95,7 @@ func installRootDefinitions(e *environment, nodes []templateNode) error {
 // referenced root defs. The declaration evaluates its own argument defaults
 // in that scope; self.f bypasses it and uses the module render function.
 func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlock string) error {
-	if len(e.module.rootDefs) == 0 && !e.module.hasPageArguments {
+	if len(e.module.rootDefs) == 0 && !e.module.hasPageArguments && len(e.module.externalNamespaces) == 0 {
 		return nil
 	}
 	refs := scopeReferences{
@@ -147,6 +147,14 @@ func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlo
 		}
 		for name := range refs.pageArguments {
 			e.contextLocals[name] = true
+		}
+	}
+	for _, ns := range e.module.externalNamespaces {
+		_, moduleName := e.module.values[ns.name]
+		_, rootDefinition := e.module.rootCalls[ns.name]
+		referenced := refs.reads[ns.name] && !refs.declared[ns.name] && !e.parameters[ns.name] && !moduleName && !rootDefinition
+		if ns.imports || referenced {
+			return e.generateExternalNamespaces()
 		}
 	}
 	for _, n := range e.module.rootDefs {
@@ -280,6 +288,8 @@ func (r scopeReferences) nodes(nodes []templateNode) {
 			for _, p := range n.params {
 				r.expressions(p.defaultValue)
 			}
+		case includeNode:
+			r.expressions(n.invocation)
 		case pageArgNode:
 			r.declared[n.name] = true
 			r.pageArguments[n.name] = true
