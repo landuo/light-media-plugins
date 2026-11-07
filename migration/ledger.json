@@ -4012,6 +4012,30 @@
       ]
     },
     {
+      "id": "plugin.LarkMessager.version_and_cache_commands",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "app/command.py:98–113,326–343,441–468; app/chain/system.py:25–35,165–192,219–296; app/chain/__init__.py:470–490,2045–2049",
+      "chain": [
+        "Verified Lark webhook enters ordinary /version or /clear_cache dispatcher.",
+        "Version sends two component lines without history. Cache invokes plugin modules followed by system caches when source module result allows continuation.",
+        "Target light-media internal/app/plugin_original_chat_system.go, internal/systemversion/version.go, web/version.go, cmd/server/main.go. Evidence larkmessager.native_version_cache_commands.20261108."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.restart_command",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "app/command.py:104–109; app/chain/system.py:37–56,194–217; app/helper/system.py:284–321; app/startup/lifecycle.py:41–57",
+      "chain": [
+        "Verified Lark webhook sends start and freezes original sender/account before asking the ordinary app supervisor to reopen.",
+        "Startup loads plugin instance before consuming encrypted one-shot receipt and sending the versioned completion.",
+        "Target light-media internal/app/{plugin_original_chat_restart,plugin_original_host_message_inbound,runtime}.go and the existing cmd/server/main.go supervisor. Evidence larkmessager.native_restart_command.20261108."
+      ]
+    },
+    {
       "id": "plugin.CleanInvalidSeed.init_plugin",
       "feature_ids": [
         "plugin.CleanInvalidSeed"
@@ -16212,7 +16236,9 @@
         "plugin.LarkMessager.ordinary_host_interaction",
         "plugin.LarkMessager.ordinary_transfer_retry",
         "plugin.LarkMessager.downloading_command",
-        "plugin.LarkMessager.transfer_command"
+        "plugin.LarkMessager.transfer_command",
+        "plugin.LarkMessager.version_and_cache_commands",
+        "plugin.LarkMessager.restart_command"
       ],
       "dependencies": [],
       "owner": "/root",
@@ -16292,7 +16318,9 @@
         "larkmessager.native_download_commands.20261108",
         "larkmessager.native_provider_late_scope.20261108",
         "larkmessager.native_provider_episode_replacement.20261108",
-        "larkmessager.native_rejection_and_uninstall.20261108"
+        "larkmessager.native_rejection_and_uninstall.20261108",
+        "larkmessager.native_version_cache_commands.20261108",
+        "larkmessager.native_restart_command.20261108"
       ],
       "review": {
         "status": "pending",
@@ -68703,6 +68731,59 @@
         "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
         "fixture_sha256": "f6d0ff495ac5b0bf6f605b87d6386b27bebedbce570701cb484569b1b3b50cef"
       }
+    },
+    {
+      "id": "larkmessager.native_version_cache_commands.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkSystemCommandsLinuxAMD64"
+      ],
+      "observations": [
+        "Actual indexed Lark webhook /version sent the exact backend and frontend version lines to the initiating user. One HTTPS request to the canonical release route selected the numerically highest tag within the installed major.",
+        "Actual indexed /clear_cache cleared generic SQLite metadata, persisted and in-memory recognition, and provider cache state. A provider entry refetched. An encrypted existing notification remained unchanged and neither system response entered notice history."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-system-commands-20261108.json": "7df3e3a1003119f2eb46a2e0fa2f03d5eddef32a343aae85f8f4bc3ac626ee13"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "2ff19968163627866d495b2cb82cd36e46d38d43",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "df51c34e7d96ff449527ddc6b5f966458db66dc68993cfc408af750a2192bd05"
+      }
+    },
+    {
+      "id": "larkmessager.native_restart_command.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkRestartLinuxAMD64"
+      ],
+      "observations": [
+        "A verified cloned worker webhook sent a start notice and the host signaled its existing supervisor. The same sender and instance were stored in the encrypted pending receipt before closing the first App.",
+        "A fresh native App reopened the same data, started a new clone worker PID and consumed the pending receipt. Only the clone account sent one versioned completion to the original sender. The base and clone tokens were distinct.",
+        "The first batch reached the expected restart and completion, but its fixture rejected the base account's token fetch in the ordinary processing reaction chain. The corrected fixture accepts separate base authentication and still requires both actual restart writes to use only the clone token. Only this case was rerun."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-system-commands-20261108.json": "7df3e3a1003119f2eb46a2e0fa2f03d5eddef32a343aae85f8f4bc3ac626ee13"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "2ff19968163627866d495b2cb82cd36e46d38d43",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "6739c4a86add66811658d383e233182420bc25ee53c71acd0c3454c1296992bb"
+      }
     }
   ],
   "scope": {
@@ -68776,7 +68857,7 @@
       "tested_saved_code_revision": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "96a23ca3de7ecd3b7705f76b615f5fb0456e72e8",
+      "host_HEAD": "2ff19968163627866d495b2cb82cd36e46d38d43",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68787,12 +68868,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 instances accepted. The changed indexed Lark package passed late AniList episode recovery, Bangumi RSS per-episode replacement, and rejection/uninstall on isolated native Linux. Code and evidence are local.",
-      "tests_running": "None. Late recovery and indexed rejection/uninstall passed in the combined native batch. Only the quality fixture was rerun after correcting its whole-coverage assertion.",
-      "latest_detail": "migration/evidence/lark-messager-late-scope-quality-uninstall-20261108.json",
+      "delivery": "17/22 instances accepted. Indexed Lark native /version, /clear_cache and /restart passed. Exact package stays local until Lark closure.",
+      "tests_running": "None. System version/cache passed in the first batch. Only restart reran after the fixture account split.",
+      "latest_detail": "migration/evidence/lark-messager-system-commands-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager at host 96a23ca3 and exact indexed worker 9fe068d. Reuse 41 linked evidence rows. Finish source audit of remaining non-AI host presets and reuse existing app capabilities where allowed; do not build unrelated credential-sync/inventory systems. Complete independent closure, then register. Do not rerun the three newly passed native cases.",
+      "next_complete_slice": "Reuse 43 linked Lark evidence rows. Close the native bare test_ok success branch and independent review. Record separate host CookieCloud/inventory exclusions by the user scope. Register only after closure, then start CleanInvalidSeed.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

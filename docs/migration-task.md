@@ -228,6 +228,12 @@ late AniList scope linked S01E07–E08 from the original whole Add. A separate
 Bangumi RSS episode replaced an actual older local hardlink only after
 completion and preserved both source files. See
 `migration/evidence/lark-messager-late-scope-quality-uninstall-20261108.json`.
+Native Lark `/version`, `/clear_cache` and `/restart` passed. The restart
+fixture consumed the supervisor signal, reopened an App on the same data,
+and delivered one versioned completion through the originating clone.
+CookieCloud credential sync and complete media-library inventory ingestion
+are separate host systems outside the current scope. See
+`migration/evidence/lark-messager-system-commands-20261108.json`.
 A native Lark run confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. See
