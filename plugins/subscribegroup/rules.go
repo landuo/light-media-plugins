@@ -72,6 +72,14 @@ func ParseRules(text string, sites []Site) map[string]Rule {
 	return rules
 }
 func has(value *string) bool { return value != nil && *value != "" }
+
+var resolutionRules = []string{`1080[pi]|x1080`, `4K|2160p|x2160`, `720[pi]|x720`}
+var qualityRules = []string{`Blu-?Ray.+VC-?1|Blu-?Ray.+AVC|UHD.+blu-?ray.+HEVC|MiniBD`, `Remux`, `Blu-?Ray`, `UHD|UltraHD`, `WEB-?DL|WEB-?RIP`, `HDTV`, `[Hx].?265|HEVC`, `[Hx].?264|AVC`}
+
+// Raw Python match patterns and ordinary replacement literals have different escaping.
+var effectMatchRules = []string{`Dolby[\\s.]+Vision|DOVI|[\\s.]+DV[\\s.]+`, `Dolby[\\s.]*\+?Atmos|Atmos`, `[\\s.]+HDR[\\s.]+|HDR10|HDR10\+`, `[\\s.]+SDR[\\s.]+`}
+var effectRules = []string{`Dolby[\s.]+Vision|DOVI|[\s.]+DV[\s.]+`, `Dolby[\s.]*\+?Atmos|Atmos`, `[\s.]+HDR[\s.]+|HDR10|HDR10\+`, `[\s.]+SDR[\s.]+`}
+
 func compileRules(expressions []string) []*regexp.Regexp {
 	out := make([]*regexp.Regexp, len(expressions))
 	for i, s := range expressions {
