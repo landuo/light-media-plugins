@@ -181,7 +181,7 @@ func (w *Worker) Handle(ctx context.Context, method string, raw json.RawMessage,
 		return nil, w.initialize(ctx, raw, host)
 	case "get_form":
 		form, err := Form()
-		return marshalResult([2]any{form["conf"], form["defaults"]}, err)
+		return marshalResult([2]any{form["form"], form["defaults"]}, err)
 	case "get_render_mode":
 		return json.RawMessage(`["vuetify",null]`), nil
 	case "get_api":
