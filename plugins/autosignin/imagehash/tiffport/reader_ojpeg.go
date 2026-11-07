@@ -3,15 +3,13 @@ package tiff
 import (
 	"bytes"
 	"encoding/binary"
-	"image"
 	"io"
-
-	jpegport "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport"
 )
 
 const (
 	tJPEGInterchangeFormat       = 513
 	tJPEGInterchangeFormatLength = 514
+	tJPEGRestartInterval         = 515
 	tJPEGQTables                 = 519
 	tJPEGDCTables                = 520
 	tJPEGACTables                = 521
@@ -33,6 +31,18 @@ func (d *decoder) oldJPEGInterchange() *io.SectionReader {
 	return io.NewSectionReader(d.r, offset, length)
 }
 
+func (d *decoder) oldJPEGRestart() []byte {
+	p := d.ifd[tJPEGRestartInterval]
+	if d.byteOrder.Uint16(p[2:4]) != dtShort || d.byteOrder.Uint32(p[4:8]) != 1 {
+		return nil
+	}
+	interval := d.byteOrder.Uint16(p[8:10])
+	if interval == 0 {
+		return nil
+	}
+	return binary.BigEndian.AppendUint16(nil, interval)
+}
+
 // oldJPEGSource rebuilds the continuous JPEG scan from contiguous sample strips.
 // libtiff tif_ojpeg.c inserts a restart marker between entropy-coded strips.
 func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical int) (jpegSource, error) {
@@ -40,7 +50,8 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 		return nil, nil
 	}
 	interchange := d.oldJPEGInterchange()
-	if interchange == nil {
+	restart := d.oldJPEGRestart()
+	if interchange == nil && len(restart) == 0 {
 		if _, found := d.ifd[tJPEGQTables]; !found {
 			return nil, nil
 		}
@@ -48,7 +59,6 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 	if d.config.Width > 65535 || d.config.Height > 65535 {
 		return nil, FormatError("old JPEG dimensions exceed JPEG frame size")
 	}
-	var restart []byte
 	if l.down > 1 {
 		mcuWidth, mcuHeight := 8*horizontal, 8*vertical
 		if l.height%mcuHeight != 0 {
@@ -75,22 +85,30 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 		}
 		strips[i] = [2]int64{int64(offset), int64(length)}
 	}
-	if interchange == nil && l.down == 1 {
+	inlineHeader := interchange != nil
+	if !inlineHeader && l.down == 1 {
 		strip := sectionJPEGSource(d.r, strips[0][0], strips[0][1])
 		// A self-contained JPEG strip takes precedence over separate tables.
 		if readJPEGStart(strip()) == nil {
-			if components == 1 {
-				return nil, nil // Use the existing grayscale strip decoder.
+			if len(restart) == 0 {
+				if components == 1 {
+					return nil, nil // Use the existing grayscale strip decoder.
+				}
+				return strip, nil
 			}
-			return strip, nil
+			inlineHeader = true
 		}
 	}
 	var prefix []byte
 	var err error
-	if interchange == nil {
+	if !inlineHeader {
 		prefix, err = d.oldJPEGTableHeader(components, horizontal, vertical, restart)
-	} else if l.down > 1 {
-		prefix, err = oldJPEGStripHeader(interchange, restart)
+	} else if l.down > 1 || len(restart) != 0 {
+		first := io.NewSectionReader(d.r, strips[0][0], strips[0][1])
+		prefix, err = oldJPEGHeaderFromSections(interchange, first, restart)
+		consumed, _ := first.Seek(0, io.SeekCurrent)
+		strips[0][0] += consumed
+		strips[0][1] -= consumed
 	}
 	if err != nil {
 		return nil, err
@@ -116,8 +134,17 @@ func (d *decoder) oldJPEGSource(l blockLayout, components, horizontal, vertical 
 	}, nil
 }
 
-// oldJPEGStripHeader rebuilds the header ahead of a multi-strip scan. A DRI
-// already present in the interchange stream overrides the computed interval.
+// oldJPEGHeaderFromSections reads a header split between the interchange area
+// and the first strip. The positions of both sections mark the scan data.
+func oldJPEGHeaderFromSections(interchange, first *io.SectionReader, restart []byte) ([]byte, error) {
+	if interchange == nil {
+		return oldJPEGStripHeader(first, restart)
+	}
+	return oldJPEGStripHeader(io.MultiReader(interchange, first), restart)
+}
+
+// oldJPEGStripHeader rebuilds the header before the scan. An inline DRI
+// overrides the interval from the TIFF tag or the strip geometry.
 func oldJPEGStripHeader(r io.Reader, restart []byte) ([]byte, error) {
 	if err := readJPEGStart(r); err != nil {
 		return nil, err
@@ -163,39 +190,4 @@ func appendJPEGRestart(prefix, restart []byte) []byte {
 		return appendJPEGMarker(prefix, 0xdd, restart)
 	}
 	return prefix
-}
-
-func (d *decoder) decodeOldJPEGYCbCr(l ycbcrLayout) (image.Image, error) {
-	if l.tiled || d.ycbcr.horizontal != 2 || d.ycbcr.vertical != 2 {
-		return nil, UnsupportedError("old JPEG YCbCr storage layout")
-	}
-	source, err := d.oldJPEGSource(blockLayout{width: l.width, height: l.height, across: l.across, down: l.down, offsets: l.offsets, counts: l.counts}, 3, 2, 2)
-	if err != nil {
-		return nil, err
-	}
-	if source == nil {
-		return nil, UnsupportedError("missing old JPEG interchange stream")
-	}
-	samples, err := jpegport.DecodeTIFFYCbCr420(source(), d.config.Width, d.config.Height)
-	if err != nil {
-		return nil, err
-	}
-	img := image.NewRGBA(samples.Rect)
-	for y := 0; y < d.config.Height; y++ {
-		for x := 0; x < d.config.Width; x++ {
-			s := samples.YCbCrAt(x, y)
-			luma, cb, cr := int(s.Y), int(s.Cb)-128, int(s.Cr)-128
-			// libtiff tif_color.c uses separately rounded red and blue
-			// deltas and a single rounding for the combined green delta.
-			r := luma + ((91881*cr + 32768) >> 16)
-			g := luma + ((-22553*cb - 46802*cr + 32768) >> 16)
-			b := luma + ((116130*cb + 32768) >> 16)
-			i := img.PixOffset(x, y)
-			img.Pix[i] = byte(min(max(r, 0), 255))
-			img.Pix[i+1] = byte(min(max(g, 0), 255))
-			img.Pix[i+2] = byte(min(max(b, 0), 255))
-			img.Pix[i+3] = 255
-		}
-	}
-	return img, nil
 }

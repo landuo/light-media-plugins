@@ -65260,12 +65260,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seven accepted installed instances. Local AutoSignIn aligns AVIF coded-size scaling and TIFF6 continuous multi-strip and scattered tables. Private-state import and remote/production delivery remain separate.",
-      "tests_running": "None. Affected source comparisons and the Linux worker build completed. Temporary ELF removed.",
+      "delivery": "Seven accepted installed instances. This AutoSignIn checkpoint adds TIFF6 split headers, restart tags, contiguous tiles and separate YCbCr strips and tiles. Private-state import and remote/production delivery remain separate.",
+      "tests_running": "None. Fifteen new TIFF6 synthetic source comparisons completed. Current package gate is next.",
       "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
-      "local_codec_base": "d634b145f7798e4f65e09465c78625ed1dd5c18a; checkpoint commit containing this ledger adds the tested codec increment",
+      "local_codec_base": "aab227d; the commit containing this checkpoint adds the verified TIFF6 layout increment",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Complete the confirmed TIFF6 split-header, restart-tag and tiled or separated stream layouts, then one isolated AutoSignIn package acceptance. Next sequential plugin is installed MergeMessageNotify 1.20.3 with refreshed source."
+      "next_complete_slice": "Run one isolated current AutoSignIn canonical package acceptance with the previously unverified login-only host path. Review recorded outstanding differences before the sequential MergeMessageNotify 1.20.3 source refresh."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66641,7 +66641,7 @@
             },
             "remaining": "Original rescales coded color frames and alpha planes to declared tile dimensions. Go handles same-height alpha width changes and explicitly rejects color dimension mismatches or alpha height changes. Original TIFF6 can reconstruct multi-strip and scattered JPEG tables and handle additional color layouts. Those paths need source-supported specimens and verification. One final isolated package check remains; reuse applicable host and browser evidence."
           },
-          "current_continuation_increment": {
+          "avif_scaling_and_tiff6_strips_checkpoint": {
             "status": "Implemented and source-differential checked for fifteen additional positive inputs. AutoSignIn remains implementing. Seven of 23 installed instances accepted.",
             "source_binding": {
               "site": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–259",
@@ -66796,6 +66796,72 @@
               "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "eaa27503a8bfc06ecf9c7441553f21eaac64ed9ef22dc3c73a80572e9a56224a"
             },
             "remaining": "Complete the confirmed TIFF6 source layouts in tiff_old_jpeg.remaining, then one isolated AutoSignIn package acceptance with the existing host and browser evidence. Reuse the source-confirmed AVIF scaling results."
+          },
+          "current_continuation_increment": {
+            "status": "Fifteen new synthetic TIFF6 cases matched fixed source size, mode, pixels, grayscale and hash. AutoSignIn remains implementing, seven of 23 installed instances accepted.",
+            "source": {
+              "plugin": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262",
+              "Pillow": "12.2.0 Image.open/load before _tohash",
+              "libtiff": "4.7.1 tif_ojpeg.c; header and stream at 1195–1306 and 2468–2600; tif_getimage.c separate planes",
+              "NAS_image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881"
+            },
+            "evidence_kind": "Actual fixed source image and Go differential on owned synthetic inputs. No PT traffic.",
+            "cases": {
+              "split_header_restart": {
+                "count": 6,
+                "source_fixture": "work/autosignin-image-gap-20261107/tiff-old-jpeg-header-restart-source/expected.json",
+                "source_sha256": "e91ab95bf184b5c8ed1f31f5850f07c6373326c1865cf4d7e3edb9028ac9aaef",
+                "target_output": "work/autosignin-image-gap-20261107/tiff-old-jpeg-header-restart-source/go-after.stdout",
+                "target_sha256": "1ef04833ae7caf7e895ddd5fd7d7fd7168c27624346a36da66486d41dfb1a096",
+                "inputs": [
+                  "TIFF6-L-cross-interchange-header-multistrip-overrides-515",
+                  "TIFF6-YCbCr420-cross-interchange-header-multistrip-overrides-515",
+                  "TIFF6-L-single-scattered-515",
+                  "TIFF6-YCbCr420-single-interchange-515",
+                  "TIFF6-L-single-strip-inline-DRI-overrides-515",
+                  "TIFF6-L-single-strip-supplies-515-without-interchange"
+                ]
+              },
+              "separate_strips": {
+                "count": 4,
+                "source_fixture": "work/tiff6-planar-source-continuation/expected.json",
+                "source_sha256": "dfc53a35633658ee8338d091551a4353678c540eba4d9ca2d10a5d8c3a099094",
+                "target_output": "work/tiff6-planar-source-continuation/target.log",
+                "target_sha256": "25cdd6b9618e4353cbc38cffabf950e863e33c2142709973f6b91602b82ef77e",
+                "inputs": [
+                  "TIFF6-YCbCr111-separate-interchange-one-strip",
+                  "TIFF6-YCbCr111-separate-interchange-two-strips",
+                  "TIFF6-YCbCr111-separate-raw-tables-one-strip",
+                  "TIFF6-YCbCr111-separate-missing-secondary-sos"
+                ]
+              },
+              "separate_tiles": {
+                "count": 1,
+                "source_fixture": "work/tiff6-planar-tile-source-continuation/expected.json",
+                "source_sha256": "7e412263c6a1265c867a2607983871ddc2e649a60d791ab91481c9ada8b383cf",
+                "target_output": "work/tiff6-planar-tile-source-continuation/target.log",
+                "target_sha256": "7eb39d2cd49150a1f3de0bc664d93ac9a1b6cc3c4cec9382e07fc1b395ddecf1",
+                "inputs": [
+                  "TIFF6-YCbCr111-separate-interchange-cropped-2x2-tiles"
+                ]
+              },
+              "contiguous_tiles": {
+                "count": 4,
+                "source_fixture": "work/ojpeg-tile-continuation/expected.json",
+                "source_sha256": "2fbddce64622fe2e14d394079eead99c4da633d385f5f0c26f5caee824ea1b4a",
+                "target_output": "work/ojpeg-tile-continuation/target.stdout",
+                "target_sha256": "521e28c68c9446b376c4849bfbc04a7b68cb7b3dadb9ffd89839430105f81353",
+                "scope": "Four distinct tiled inputs and one existing affected YCbCr420 control. No broad codec rerun."
+              }
+            },
+            "target_paths": [
+              "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go",
+              "plugins/autosignin/imagehash/tiffport/reader_ojpeg_tiles.go",
+              "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go",
+              "plugins/autosignin/imagehash/jpegport/raster.go",
+              "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
+            ],
+            "remaining": "One current canonical package run, adding the missing isolated login-only host call, history and cold persistence. No original private configuration or state import. Multiple-column old JPEG tiles without a usable frame are outside verified layouts."
           }
         }
       }

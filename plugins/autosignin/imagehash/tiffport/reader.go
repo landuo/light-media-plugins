@@ -1283,6 +1283,15 @@ func decode(d *decoder) (image.Image, error) {
 		return nil, FormatError("block data size too large")
 	}
 	if d.firstVal(tCompression) == cJPEGOld && d.mode == mGray && d.bpp == 8 && d.planarSamples() == 1 {
+		if l.padding {
+			handled, err := d.decodeOldJPEGGrayTiles(img.(*image.Gray), l)
+			if err != nil {
+				return nil, err
+			}
+			if handled {
+				return img, nil
+			}
+		}
 		source, err := d.oldJPEGSource(l, 1, 1, 1)
 		if err != nil {
 			return nil, err

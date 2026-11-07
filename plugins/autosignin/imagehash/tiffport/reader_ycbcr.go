@@ -165,7 +165,9 @@ func (d *decoder) checkYCbCrStorage() error {
 	switch planar[0] {
 	case 1:
 	case 2:
-		return UnsupportedError("YCbCr separate component planes")
+		if compression[0] != cJPEGOld {
+			return UnsupportedError("YCbCr separate component planes")
+		}
 	default:
 		return FormatError("invalid YCbCr PlanarConfiguration")
 	}
@@ -199,7 +201,7 @@ func (d *decoder) checkYCbCrSubSampling() error {
 	if position[0] != 1 && position[0] != 2 {
 		return FormatError("invalid YCbCrPositioning")
 	}
-	if position[0] == 2 && (h != 1 || v != 1) {
+	if position[0] == 2 && (h != 1 || v != 1) && d.firstVal(tPlanarConfiguration) != 2 {
 		return UnsupportedError("cosited YCbCr subsampling")
 	}
 	d.ycbcr = &ycbcrConfig{horizontal: h, vertical: v}
@@ -287,12 +289,20 @@ func (d *decoder) ycbcrLayout() (ycbcrLayout, error) {
 	if _, ok := checkedMul3(l.width, l.height, maxBytesPerPixel); !ok {
 		return l, FormatError("YCbCr segment too large")
 	}
+	planes := 1
+	if d.firstVal(tPlanarConfiguration) == 2 {
+		planes = 3
+	}
+	count, ok := checkedMul3(l.across, l.down, planes)
+	if !ok {
+		return l, FormatError("too many YCbCr segments")
+	}
 	var err error
-	l.offsets, err = d.ycbcrOffsets(offsetTag, l.across*l.down)
+	l.offsets, err = d.ycbcrOffsets(offsetTag, int(count))
 	if err != nil {
 		return l, err
 	}
-	l.counts, err = d.ycbcrOffsets(countTag, l.across*l.down)
+	l.counts, err = d.ycbcrOffsets(countTag, int(count))
 	if err != nil {
 		return l, err
 	}
@@ -322,8 +332,12 @@ func (d *decoder) ycbcrStripLayout(l *ycbcrLayout) error {
 	}
 	if rows > 0 && rows < l.height {
 		l.height = rows
+		vertical := int(d.ycbcr.vertical)
+		if d.firstVal(tPlanarConfiguration) == 2 {
+			vertical = 1
+		}
 		// See TIFF Technical Note #2: JPEG strip boundaries must align with MCUs.
-		if rows%(8*int(d.ycbcr.vertical)) != 0 {
+		if rows%(8*vertical) != 0 {
 			return FormatError("YCbCr JPEG RowsPerStrip is not MCU aligned")
 		}
 	}
@@ -336,7 +350,10 @@ func (d *decoder) decodeYCbCr() (image.Image, error) {
 		return nil, err
 	}
 	if d.firstVal(tCompression) == cJPEGOld {
-		return d.decodeOldJPEGYCbCr(l)
+		if d.firstVal(tPlanarConfiguration) == 2 {
+			return d.decodeOldJPEGPlanarYCbCr(l)
+		}
+		return d.decodeOldJPEGColor(l)
 	}
 	tables, err := d.jpegTables()
 	if err != nil {

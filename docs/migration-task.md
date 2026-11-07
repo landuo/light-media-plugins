@@ -43,12 +43,18 @@ dimensions for still images, default tracks, and grid tiles. TIFF compression
 interchange headers or scattered tables. The prior installation and browser
 records retain their bindings.
 
+Fifteen additional TIFF6 samples match the pinned Pillow and libtiff
+output. They cover split interchange headers, restart precedence, contiguous
+tile grids and separate YCbCr 1:1 strips and tiles. Results retain their
+individual source and target bindings in the ledger. The current package
+check combines the canonical lifecycle with an isolated login-only task and
+its separate persisted history. The earlier Main and Chrome evidence is
+reused for unchanged paths.
+
 The read-only installed list still has 23 instances. MergeMessageNotify is
 now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
-their turns arrive. AutoSignIn is the current plugin. Check the remaining
-TIFF6 layout differences against the fixed libtiff before one package
-acceptance. Reuse applicable evidence and rerun a test only when the behavior
-it checks changes.
+their turns arrive. AutoSignIn is the current plugin. Rerun a test only when
+the behavior it checks changes.
 
 ## Historical checkpoints (retain original bindings; not current state)
 
