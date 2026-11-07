@@ -137,7 +137,12 @@ tracker queries and Lark notices, and the exact provider identity in the
 sealed accepted context and both SDK events. Local acquisition used the
 verified TMDB identity. See
 `migration/evidence/lark-messager-provider-download-20261108.json`.
-Continue with active manual search settlement and paused best-version.
+One new native two-ID manual search waited for explicit downloader refusal,
+released the failed reservation and saved a one-hour resource cooldown. The
+next paused best-version acquisition confirmed priority 100 and completed
+before the Lark search summary. See
+`migration/evidence/lark-messager-manual-search-settlement-20261108.json`.
+Continue with same-search candidate fallback after definite Add refusal.
 Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome

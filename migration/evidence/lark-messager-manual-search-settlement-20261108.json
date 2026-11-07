@@ -1,0 +1,52 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "ebf42deaa0a47a1c16c63e92e606247674b37300",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "3b05285e18753db1834de2fead30c35ddab734f6a1555837ec335db6d171b798",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with fixed MoviePilot source and independent source/host call-chain review. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1325–1330,1505–1528,3099–3119,3448–3494",
+      "target": "internal/app/plugin_original_subscribe_chat.go, plugin_original_subscribe_chat_settlement.go and plugin_original_subscribe_chat_paused.go",
+      "behavior": "Explicit IDs execute in input order and the result follows actual download outcomes and completion for the current search. Known no-effect and unconfirmed work have distinct outcomes."
+    },
+    {
+      "source": "app/chain/download.py:39–40,493–592,1028–1053,1204–1247",
+      "target": "internal/app/subscription_download_rejection.go, subscription_acquisition_batch.go and search_download.go",
+      "behavior": "An explicit downloader refusal records a resource failure and does not count as accepted. The Go host commits rejection and releases only this intent reservation with its sealed fingerprint cooldown."
+    },
+    {
+      "source": "app/chain/subscribe.py:1607–1618,2806–2864",
+      "target": "internal/app/search_download.go, subscription_quality_check.go and subscription_quality_completion_run.go",
+      "behavior": "Exact paused manual authority can admit a quality download. Completion is triggered from proved highest priority after acquisition, with history, delete, notice and event."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App, exact indexed worker and owned protocol peers",
+    "environment": "Read-only Alpine 3.22 container with tmpfs and loopback-only Lark, tracker, TMDB and qBittorrent protocol peers. No original or production credentials.",
+    "test": "TestOriginalLarkManualSearchRejectedAndPausedQualityLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_manual_settlement_linux_test.go",
+    "seconds": 2.29,
+    "host_elf_sha256": "6588bc762f0a3b465252e99be70cda9ebe5cd1dbb2d09ebe9f1b378f88f5ce8a",
+    "runner_sha256": "e16d0aa9f276a090430861c94f7d5ffd48e8f7726f18cc6facea4238cf086d90",
+    "runtime_log_sha256": "1b8eb415b559ff27e9303259dfdf6072402e7021186b1e7b57ab03ba6ce516f7",
+    "observations": [
+      "A started Linux App installed the exact indexed Lark worker and received an authenticated /subscribes search for numeric IDs 1 and 2. The first active movie reached one actual qBittorrent Add. While its response was held, the search did not start the second ID or send a final summary.",
+      "The owned downloader returned explicit Fails. The first subscription stayed active. The failed intent had exactly one authenticated rejection record, no accepted event, no remaining reservation and a single persisted one-hour transient source cooldown.",
+      "The second ID was paused with best version enabled. Its actual 1080p Add matched priority 100. The completion receipt bound the same paused revision, priority and one real accepted fact. The Lark completion notice came before the two-search summary and the final list contained only the first title."
+    ]
+  },
+  "adaptations_and_open": [
+    "The manual action waits the exact job tree rather than running on the Lark callback stack. It checks actual accepted events, sealed completion and cold-acquisition receipt identities. The native fixture tested a direct successful quality child and definite ordinary failure. Unknown, cancellation, cold-receipt traversal and all-search ordering were checked in code only in this increment.",
+    "Definite ordinary native rejection atomically ends its job and releases its reservation. The source can continue with the next candidate in the same batch; native ordinary same-round fallback and the exact source failure notice remain pending. Pre-Add failures and uncertain acknowledgments do not qualify for the new refusal record.",
+    "Existing sealed RSS material provides its page-derived failure key. Concurrent reuse of the same enclosure with a different detail page during a rejection, post-preview reacquisition and RSS magnets remain open. Reuse the earlier exact RSS, provider and ordinary paused acceptance evidence."
+  ]
+}
