@@ -282,6 +282,22 @@ func (h *liveHost) control(ctx context.Context, request controlRequest) (bool, e
 	return true, nil
 }
 
+func (h *liveHost) BeginFileScan(ctx context.Context) error {
+	var reset bool
+	request := struct {
+		Reset bool `json:"reset"`
+	}{true}
+	if err := h.call(ctx, filesCapability, request, &reset); err != nil {
+		return err
+	}
+	if !reset {
+		return errors.New("CleanInvalidSeed could not begin a fresh local file scan")
+	}
+	clear(h.files)
+	clear(h.fileScans)
+	return nil
+}
+
 func (h *liveHost) scan(path string, recursive bool) (fileScan, error) {
 	key := scanKey{path, recursive}
 	if existing, ok := h.fileScans[key]; ok {

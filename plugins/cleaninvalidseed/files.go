@@ -61,6 +61,11 @@ func (m *Machine) Size(p string) (*big.Int, error) {
 }
 func (m *Machine) DetectFiles(ctx context.Context) error {
 	m.log(ctx, "info", "开始检测未做种的无效源文件")
+	if host, ok := m.Host.(interface{ BeginFileScan(context.Context) error }); ok {
+		if err := host.BeginFileScan(ctx); err != nil {
+			return err
+		}
+	}
 	services, e := m.services(ctx)
 	if e != nil {
 		return e
