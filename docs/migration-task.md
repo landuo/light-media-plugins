@@ -103,10 +103,14 @@ A real overwrite refusal preserved the unrelated file. The new import
 published a hardlink and the old card could no longer submit another job.
 A separate failed recognition used the same native path with the selected
 TMDB identity. See `migration/evidence/lark-messager-transfer-20261108.json`.
-Continue with download notification attribution and ordering, then the
-remaining auto, series and subscription differences in
-`migration/evidence/lark-messager-media-20261108.json`.
-Reuse earlier passing worker, site, subscription, movie and transfer evidence.
+Automatic selection and explicit local-directory download also passed.
+Acceptance was already durable with sealed sender attribution when the
+original-template notice reached the initiating open ID. The actual SDK
+post-Add call and DownloadAdded followed the notice response. See
+`migration/evidence/lark-messager-download-added-20261108.json`.
+Continue with TV missing-episode selection and the remaining source-provider
+and subscription differences in `migration/evidence/lark-messager-media-20261108.json`.
+Reuse earlier passing evidence for the completed paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

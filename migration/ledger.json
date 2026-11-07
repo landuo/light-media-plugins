@@ -16083,7 +16083,8 @@
         "larkmessager.sites_native_browser.20261108",
         "larkmessager.subscribes_native_cache_add.20261108",
         "larkmessager.media_native_download_subscribe.20261108",
-        "larkmessager.transfer_native_retry_redo.20261108"
+        "larkmessager.transfer_native_retry_redo.20261108",
+        "larkmessager.download_added_native_attribution.20261108"
       ],
       "review": {
         "status": "pending",
@@ -67549,6 +67550,34 @@
         "fixture_sha256": "9048573e6264b4f5296900a677909580a24cc05c20dfbb5858a0898026c3cb78",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.download_added_native_attribution.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkDownloadAddedLinuxAMD64"
+      ],
+      "observations": [
+        "Auto selection displayed two real local locations plus automatic matching. There was no material fetch or Add before the selected second location. The downloader then received the exact torrent bytes once at that path.",
+        "While the real Lark worker's success request waited for a response, the accepted Intent and one durable download.accepted fact were visible. The source and original user were readable from the sealed context and absent as plaintext in its stored bytes. The success card was addressed to the initiating open ID.",
+        "Before letting the notice return, the observer saw resource.selection and ResourceDownload with the correct sender and directory, with no post-Add module or DownloadAdded. After the response it observed the exact material and directory in the post-Add module, one attributed DownloadAdded, one successful job and no duplicate card.",
+        "The isolated App stopped. Earlier Lark worker, site, subscription, single-movie and transfer suites were not repeated."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-download-added-20261108.json": "179c9adbc7ade1980093c09d63abaf163a90449a7560d795a9c37f7951d7dec7"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "0c60b79ca03037c112898aeaa0b20789eb6971ed",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "fcefe5349e6688d2e1ab88806244cd56dd50a968436accea597b323d7ca04a6b",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67622,7 +67651,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "ef7bcdaf2ee39340bbbdaac7be4f331c8b3982c1",
+      "host_HEAD": "0c60b79ca03037c112898aeaa0b20789eb6971ed",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67633,12 +67662,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark physical transfer failure, retry to actual hardlink, stale card refusal and explicit recognition /redo passed on native Linux. Host and evidence stay local.",
-      "tests_running": "None. The isolated native transfer fixture passed and its App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-transfer-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native Lark auto selection and explicit local directory passed, including sealed sender, default success template and notification-before-external-event ordering. Host and evidence stay local.",
+      "tests_running": "None. The isolated native DownloadAdded fixture passed and its App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-download-added-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager. Freeze verified Lark user/source through the native download intent and dispatch the source downloadAdded notification after durable acceptance but before the external DownloadAdded event, using app/chain/download.py:935–1048 and the existing native snapshot/material transaction. Run one distinct auto/directory or notification-order scenario and reuse the passing basic movie, transfer, /sites and /subscribes fixtures. Remaining directory/TV/provider redo differences are in latest_detail.",
+      "next_complete_slice": "Continue LarkMessager with original TV missing-episode selection and partial torrent file selection. Use fixed app/chain/message.py:2565–2683, app/chain/download.py:1180 onward, and existing native post-Add file-selection receipts. Validate one distinct TV resource path with actual subset and fallback; preserve earlier movie, auto-directory, site, subscription and transfer evidence. Then close other provider, subscription and worker edge cases.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
