@@ -38,17 +38,18 @@ type Field struct {
 type OrderedObject []Field
 type callable func(*environment, []any, map[string]any) (any, error)
 type environment struct {
-	ctx          context.Context
-	values       map[string]any
-	parent       *environment
-	output       *strings.Builder
-	module       *environment
-	contextData  *environment // Root Context data before template locals.
-	strict       bool
-	pageFilter   templateFilters // Set on the module scope.
-	callers      *callerStack    // Shared by the render and its lexical scopes.
-	callerFrame  *callerNamespace
-	keywordOrder []string
+	ctx           context.Context
+	values        map[string]any
+	parent        *environment
+	output        *strings.Builder
+	module        *environment
+	contextData   *environment // Root Context data before template locals.
+	strict        bool
+	pageFilter    templateFilters // Set on the module scope.
+	callers       *callerStack    // Shared by the render and its lexical scopes.
+	callerFrame   *callerNamespace
+	keywordOrder  []string
+	anonymousDefs map[int]callable
 }
 
 func (e *environment) get(k string) any {

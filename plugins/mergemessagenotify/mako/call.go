@@ -278,6 +278,10 @@ type callbackParameter struct {
 }
 
 func parseCallbackParameters(raw string) ([]callbackParameter, error) {
+	return parsePythonParameters(raw, false)
+}
+
+func parsePythonParameters(raw string, preserveKeywordOnly bool) ([]callbackParameter, error) {
 	tokens, err := lex(raw)
 	if err != nil {
 		return nil, err
@@ -305,6 +309,7 @@ func parseCallbackParameters(raw string) ([]callbackParameter, error) {
 				if p.is("EOF") || p.is("**") {
 					return nil, fault("SyntaxError")
 				}
+				keywordOnly = preserveKeywordOnly
 				continue
 			}
 			kind = "varargs"
@@ -384,8 +389,8 @@ func bindCallbackArguments(e *environment, params []callbackParameter, defaults 
 	if rest != "" {
 		extras := dictionary{}
 		for _, key := range keywordOrder {
-			if !used[key] {
-				extras = append(extras, entry{key, kwargs[key]})
+			if value, supplied := kwargs[key]; supplied && !used[key] {
+				extras = append(extras, entry{key, value})
 			}
 		}
 		e.values[rest] = extras

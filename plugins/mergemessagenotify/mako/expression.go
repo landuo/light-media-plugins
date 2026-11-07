@@ -569,11 +569,12 @@ type lambdaExpr struct {
 }
 
 func (x lambdaExpr) eval(e *environment) (any, error) {
-	return callable(func(_ *environment, a []any, k map[string]any) (any, error) {
+	return callable(func(active *environment, a []any, k map[string]any) (any, error) {
 		if len(a)+len(k) != len(x.parameters) {
 			return nil, fault("TypeError")
 		}
 		scope := e.child()
+		scope.ctx, scope.output = active.ctx, active.output
 		for i, n := range x.parameters {
 			if i < len(a) {
 				scope.values[n] = a[i]
@@ -693,7 +694,10 @@ func (p *parser) pop() token {
 	}
 	return t
 }
-func (p *parser) is(s string) bool { t := p.peek(); return t.text == s || t.kind == s }
+func (p *parser) is(s string) bool {
+	t := p.peek()
+	return t.kind == s || t.kind == "name" && t.text == s
+}
 func (p *parser) take(s string) bool {
 	if p.is(s) {
 		p.pop()

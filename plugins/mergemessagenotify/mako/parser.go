@@ -3,13 +3,17 @@ package mako
 import "strings"
 
 type templateParser struct {
-	tokens     []templateToken
-	at         int
-	loops      int
-	calls      int
-	callDefs   map[int]defNode
-	blockLines map[int]bool
-	pageFilter templateFilters
+	tokens               []templateToken
+	at                   int
+	loops                int
+	calls                int
+	callDefs             map[int]defNode
+	blockLines           map[int]bool
+	pageFilter           templateFilters
+	compile              *environment
+	pageCached           bool
+	pageCacheTimeout     expression
+	usesPageCacheTimeout bool
 }
 
 func controlName(s string) string {
@@ -226,17 +230,27 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				if end == nil {
 					return nil, nil, fault("SyntaxError")
 				}
-				n := defNode{name: name, params: params, body: body, buffered: t.attrs["buffered"] == "True", block: t.text == "block"}
+				n := defNode{name: name, params: params, body: body, block: t.text == "block"}
+				if n.block && n.name == "" {
+					n.anonymous = at
+				}
+				if n.buffered, err = p.compileFlag(t, "buffered"); err != nil {
+					return nil, nil, err
+				}
+				if n.cached, err = p.readCacheOptions(t); err != nil {
+					return nil, nil, err
+				}
+				if decorator := t.attrs["decorator"]; decorator != "" {
+					n.decorator, err = parseExpression(decorator)
+					if err != nil {
+						return nil, nil, err
+					}
+				}
 				filters, err := parseFilters(t.attrs["filter"])
 				if err != nil {
 					return nil, nil, err
 				}
 				n.filters = filters.values
-				for _, key := range []string{"cached", "cache_key", "decorator"} {
-					if _, ok := t.attrs[key]; ok {
-						return nil, nil, ErrUnsupported
-					}
-				}
 				if p.calls != 0 && n.name != "" {
 					if p.callDefs == nil {
 						p.callDefs = map[int]defNode{}
@@ -245,6 +259,12 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				}
 				out = append(out, n)
 			case "page":
+				if _, exists := t.attrs["decorator"]; exists {
+					return nil, nil, fault("CompileException")
+				}
+				if _, err := p.readCacheOptions(t); err != nil {
+					return nil, nil, err
+				}
 				if args := t.attrs["args"]; args != "" {
 					_, params, err := parseSignature("page("+args+")", false)
 					if err != nil {
@@ -477,10 +497,28 @@ func parseExprNode(s string) (exprNode, error) {
 }
 
 func executeCode(e *environment, text string) (flow, error) {
+	return executeCodeResult(e, text, nil)
+}
+
+func executeCodeResult(e *environment, text string, result *any) (flow, error) {
 	// Code blocks are dedented by Mako before compilation. Top-level multiline
 	// assignments are evaluated in their original order, not as interpolation.
-	lines := splitTop(strings.TrimSpace(text), '\n')
-	for _, line := range lines {
+	lines := splitTop(text, '\n')
+	for at := 0; at < len(lines); at++ {
+		line := lines[at]
+		if strings.HasPrefix(strings.TrimSpace(line), "def ") {
+			decl, next, err := readPythonFunction(lines, at)
+			if err != nil {
+				return normal, err
+			}
+			fn, err := decl.bind(e)
+			if err != nil {
+				return normal, err
+			}
+			e.values[decl.name] = fn
+			at = next - 1
+			continue
+		}
 		for _, statement := range splitTop(line, ';') {
 			s := strings.TrimSpace(statement)
 			if s == "" || strings.HasPrefix(s, "#") {
@@ -506,7 +544,10 @@ func executeCode(e *environment, text string) (flow, error) {
 				if err != nil {
 					return normal, err
 				}
-				_, err = x.eval(e)
+				value, err := x.eval(e)
+				if err == nil && result != nil {
+					*result = value
+				}
 				return flowReturn, err
 			}
 			if strings.HasPrefix(s, "import ") || strings.HasPrefix(s, "from ") || strings.HasPrefix(s, "def ") || strings.HasPrefix(s, "class ") || strings.HasPrefix(s, "with ") || strings.HasSuffix(s, ":") {
@@ -601,7 +642,20 @@ func executeCode(e *environment, text string) (flow, error) {
 	return normal, nil
 }
 func validateCodeContext(text string, loops int, module bool) error {
-	for _, line := range splitTop(text, '\n') {
+	lines := splitTop(text, '\n')
+	for at := 0; at < len(lines); at++ {
+		line := lines[at]
+		if strings.HasPrefix(strings.TrimSpace(line), "def ") {
+			decl, next, err := readPythonFunction(lines, at)
+			if err != nil {
+				return err
+			}
+			if err := validateCodeContext(decl.body, 0, false); err != nil {
+				return err
+			}
+			at = next - 1
+			continue
+		}
 		for _, stmt := range splitTop(line, ';') {
 			stmt = strings.TrimSpace(splitTop(stmt, '#')[0])
 			if loops == 0 && (stmt == "break" || stmt == "continue") {

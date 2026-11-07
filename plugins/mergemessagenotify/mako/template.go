@@ -25,10 +25,15 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	if err != nil {
 		return fallback(text, err)
 	}
-	p := templateParser{tokens: tokens}
+	p := templateParser{tokens: tokens, compile: &environment{ctx: ctx, strict: true}}
 	nodes, _, err := p.nodes(nil)
 	if err != nil {
 		return fallback(text, err)
+	}
+	if p.pageCached || p.usesPageCacheTimeout {
+		if err = p.validateCacheTimeout(p.pageCacheTimeout); err != nil {
+			return fallback(text, err)
+		}
 	}
 	b := &strings.Builder{}
 	module := &environment{ctx: ctx, values: map[string]any{}, output: b, strict: true, pageFilter: p.pageFilter}
@@ -54,6 +59,16 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	e.values["caller"] = callers
 	module.contextData = &environment{values: maps.Clone(e.values), callers: callers}
 	filtersEnvironment(e)
+	if p.pageCached {
+		for _, node := range nodes {
+			if arg, ok := node.(pageArgNode); ok {
+				if _, err := arg.render(e); err != nil {
+					return fallback(text, err)
+				}
+			}
+		}
+		return fallback(text, unavailableTemplateCache())
+	}
 	if err = installDefinitions(e, nodes); err == nil {
 		_, err = renderNodes(e, nodes)
 	}
@@ -553,12 +568,15 @@ type parameter struct {
 	defaultValue expression
 }
 type defNode struct {
-	name     string
-	params   []parameter
-	body     []templateNode
-	buffered bool
-	filters  []expression
-	block    bool
+	name      string
+	params    []parameter
+	body      []templateNode
+	buffered  bool
+	filters   []expression
+	block     bool
+	cached    bool
+	decorator expression
+	anonymous int
 }
 
 func (n defNode) render(e *environment) (flow, error) {
@@ -566,7 +584,7 @@ func (n defNode) render(e *environment) (flow, error) {
 		return normal, nil
 	}
 	if n.name == "" {
-		fn, err := n.bind(e)
+		fn, err := n.anonymousCallable(e)
 		if err != nil {
 			return normal, err
 		}
@@ -589,10 +607,27 @@ func (n defNode) install(e *environment) error {
 	return nil
 }
 func (n defNode) bind(e *environment) (callable, error) {
-	return n.bindWithDefaults(e, e.module)
+	defaultsScope := e.module
+	if n.decorator != nil && (n.name == "" || e.parent != e.module) {
+		defaultsScope = e
+	}
+	return n.bindWithDefaults(e, defaultsScope)
 }
 
 func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, error) {
+	topLevel := n.name != "" && e.parent == e.module
+	var decorator any
+	if n.decorator != nil {
+		decoratorScope := e
+		if topLevel {
+			decoratorScope = e.module
+		}
+		var err error
+		decorator, err = n.decorator.eval(decoratorScope)
+		if err != nil {
+			return nil, err
+		}
+	}
 	defaults := map[string]any{}
 	for _, p := range n.params {
 		if p.defaultValue != nil {
@@ -603,13 +638,13 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 			defaults[p.name] = v
 		}
 	}
-	return func(caller *environment, args []any, kw map[string]any) (any, error) {
-		if len(args) > len(n.params) {
-			return nil, fault("TypeError")
-		}
+	bindArgs := func(caller *environment, args []any, kw map[string]any) (*environment, error) {
 		scope := e.child()
 		scope.ctx = caller.ctx
 		scope.output = caller.output
+		if len(args) > len(n.params) {
+			return nil, fault("TypeError")
+		}
 		for k, v := range defaults {
 			scope.values[k] = v
 		}
@@ -636,11 +671,18 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 				return nil, fault("TypeError")
 			}
 		}
+		return scope, nil
+	}
+	body := callable(func(caller *environment, args []any, kw map[string]any) (any, error) {
+		scope, err := bindArgs(caller, args, kw)
+		if err != nil {
+			return nil, err
+		}
 		var buffer strings.Builder
 		if n.buffered || len(n.filters) > 0 {
 			scope.output = &buffer
 		}
-		err := func() error {
+		err = func() error {
 			scope.callerFrame = scope.callers.push()
 			defer scope.callers.pop()
 			if _, isParameter := scope.values["caller"]; !isParameter {
@@ -670,19 +712,138 @@ func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, erro
 			caller.output.WriteString(s)
 		}
 		return "", nil
-	}, nil
+	})
+	if n.decorator != nil && !topLevel {
+		wrapped, err := invokeDecorator(e, decorator, body)
+		if err != nil {
+			return nil, err
+		}
+		contextScope := e
+		for contextScope.parent != nil && contextScope.parent != contextScope.module {
+			contextScope = contextScope.parent
+		}
+		body = func(active *environment, args []any, kw map[string]any) (any, error) {
+			return invokeDecorated(active, renderContext{contextScope}, wrapped, args, kw)
+		}
+	}
+	if n.cached {
+		return func(active *environment, args []any, kw map[string]any) (any, error) {
+			if _, err := bindArgs(active, args, kw); err != nil {
+				return nil, err
+			}
+			return nil, unavailableTemplateCache()
+		}, nil
+	}
+	if n.decorator != nil && topLevel {
+		return func(active *environment, args []any, kw map[string]any) (any, error) {
+			scope, err := bindArgs(active, args, kw)
+			if err != nil {
+				return nil, err
+			}
+			// The generated local stub binds defaults and forwards positional
+			// arguments into Mako's top-level decoration wrapper.
+			values := make([]any, len(n.params))
+			for i, p := range n.params {
+				values[i] = scope.values[p.name]
+			}
+			wrapped, err := invokeDecorator(active, decorator, body)
+			if err != nil {
+				return nil, err
+			}
+			return invokeDecorated(active, renderContext{e}, wrapped, values, nil)
+		}, nil
+	}
+	return body, nil
 }
+
+func invokeDecorator(active *environment, decorator any, body callable) (any, error) {
+	fn, ok := decorator.(callable)
+	if !ok {
+		return nil, fault("TypeError")
+	}
+	return fn(active, []any{body}, nil)
+}
+
+func invokeDecorated(active *environment, ctx renderContext, wrapped any, args []any, kw map[string]any) (any, error) {
+	fn, ok := wrapped.(callable)
+	if !ok {
+		return nil, fault("TypeError")
+	}
+	return fn(active, append([]any{ctx}, args...), kw)
+}
+
+func (n defNode) anonymousCallable(e *environment) (callable, error) {
+	if n.decorator == nil {
+		return n.bind(e)
+	}
+	if fn, exists := e.anonymousDefs[n.anonymous]; exists {
+		return fn, nil
+	}
+	fn, err := n.bind(e)
+	if err != nil {
+		return nil, err
+	}
+	if e.anonymousDefs == nil {
+		e.anonymousDefs = map[int]callable{}
+	}
+	e.anonymousDefs[n.anonymous] = fn
+	return fn, nil
+}
+
 func installDefinitions(e *environment, nodes []templateNode) error {
+	return installScopeDefinitions(e, nodes, false)
+}
+
+// The generated render function declares modified blocks and defs at scope
+// entry, even when the control path that contains their body is not entered.
+func installScopeDefinitions(e *environment, nodes []templateNode, inControl bool) error {
 	for _, n := range nodes {
 		switch x := n.(type) {
 		case defNode:
 			if x.name == "" {
+				if x.decorator != nil {
+					if _, err := x.anonymousCallable(e); err != nil {
+						return err
+					}
+				}
+				continue
+			}
+			if inControl && x.decorator == nil && !x.cached {
 				continue
 			}
 			if err := x.install(e); err != nil {
 				return err
 			}
+		default:
+			for _, body := range definitionControlBodies(n) {
+				if err := installScopeDefinitions(e, body, true); err != nil {
+					return err
+				}
+			}
 		}
+	}
+	return nil
+}
+
+func definitionControlBodies(node templateNode) [][]templateNode {
+	switch n := node.(type) {
+	case ifNode:
+		bodies := make([][]templateNode, 0, len(n.branches)+1)
+		for _, branch := range n.branches {
+			bodies = append(bodies, branch.body)
+		}
+		return append(bodies, n.otherwise)
+	case forNode:
+		return [][]templateNode{n.body, n.otherwise}
+	case whileNode:
+		return [][]templateNode{n.body, n.otherwise}
+	case tryNode:
+		bodies := make([][]templateNode, 1, len(n.handlers)+3)
+		bodies[0] = n.body
+		for _, handler := range n.handlers {
+			bodies = append(bodies, handler.body)
+		}
+		return append(bodies, n.otherwise, n.finally)
 	}
 	return nil
 }

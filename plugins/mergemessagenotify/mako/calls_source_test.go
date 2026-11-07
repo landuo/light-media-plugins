@@ -14,6 +14,10 @@ func TestSourceCallBoundaries141(t *testing.T) {
 	runSourceCallFixture(t, "testdata/source-call-boundaries-1.4.1.json")
 }
 
+func TestSourceDecoratorCache141(t *testing.T) {
+	runSourceCallFixture(t, "testdata/source-decorator-cache-1.4.1.json")
+}
+
 func runSourceCallFixture(t *testing.T, path string) {
 	t.Helper()
 	file, err := os.Open(path)
