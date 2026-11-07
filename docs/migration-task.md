@@ -38,18 +38,19 @@ RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
 fixtures and one source rejection. The earlier Main, browser and package runs
 apply to their tested revisions.
 
-The current codec checkpoint adds five source-verified transparent 10/12-bit
-AVIF cases, Group 3 mixed 1D/2D TIFF, and two-component TIFF grayscale-alpha
-JPEG. Targeted checks compare decoded bytes, resized grayscale, the installed
-Tjupt hash, and the two TIFF header rejection outcomes. The prior installation
-and browser records remain bound to their own revisions.
+The current codec checkpoint matches the source AVIF matrix selection,
+float and integer conversions, alpha ordering, and reformat rejection.
+TIFF separate grayscale-alpha planes now match the source for compressed
+strips, tiles and JPEG7, including the zero alpha output. The raw layout and
+a damaged alpha plane are rejected. The prior installation and browser
+records remain bound to their own revisions.
 
 The read-only installed list still has 23 instances. MergeMessageNotify is
 now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
-their turns arrive. AutoSignIn is the current plugin. Resolve its remaining
-source-supported color matrix and image layout differences, then run one
-package acceptance. Reuse applicable evidence and rerun a test only when
-the behavior it checks changes.
+their turns arrive. AutoSignIn is the current plugin. Resolve the AVIF
+default track and alternate alpha item type, and verify any remaining
+concrete source-supported layouts before one package acceptance. Reuse
+applicable evidence and rerun a test only when the behavior it checks changes.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

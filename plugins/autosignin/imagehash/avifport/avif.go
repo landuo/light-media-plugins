@@ -595,9 +595,9 @@ type Options struct {
 	// DecodeColor reports what the samples actually are.
 	ToYCbCr bool
 	// ConvertPicture can render the original planes before RGB quantization.
-	// A nil result uses the normal decoder conversion. The returned image
+	// Returning (nil, nil) uses the normal decoder conversion. The returned image
 	// must own its pixels because the decoder releases the input pictures.
-	ConvertPicture func(picture, alpha *av1.Picture, color ColorInfo, alphaPremultiplied bool) image.Image
+	ConvertPicture func(picture, alpha *av1.Picture, color ColorInfo, alphaPremultiplied bool) (image.Image, error)
 }
 
 // Decode reads an AVIF image as *image.NRGBA, or *image.NRGBA64 above 8 bits.
@@ -772,19 +772,19 @@ func (f *file) decodeImage(it *item, o Options) (image.Image, ColorInfo, error) 
 	if o.ConvertPicture != nil {
 		aux := f.alphaFor(it.id)
 		premultiplied := aux != nil && slices.Contains(f.meta.refsTo("prem", it.id), aux.id)
-		img = o.ConvertPicture(pic, alpha, ci, premultiplied)
+		img, err = o.ConvertPicture(pic, alpha, ci, premultiplied)
 	}
-	if img == nil {
+	if img == nil && err == nil {
 		img, err = toImage(f, it, pic, alpha, o.ycbcrFor(f, it))
-	}
-	if err != nil {
-		return nil, ColorInfo{}, err
 	}
 	if !aliasesPicture(img) {
 		pic.Release()
 		if alpha != nil {
 			alpha.Release()
 		}
+	}
+	if err != nil {
+		return nil, ColorInfo{}, err
 	}
 	if !o.AutoRotate {
 		return img, ci, nil

@@ -23,7 +23,9 @@ port. GAV1D-COPYING/PATENTS retain its BSD2 notices and AV1 patent text.
 The pinned AVIF container decoder in avifport exposes the native planes
 before color conversion. avifport/ORIGIN.json records the local adaptation.
 The RGB helper translates fixed libyuv YuvPixel and ScaleRowUp2 leaves;
-LIBYUV-LICENSE/PATENTS/AUTHORS retain upstream notices. Other default-image
+LIBYUV-LICENSE/PATENTS/AUTHORS retain upstream notices. The scalar conversion
+and chromaticity calculation follow libavif 1.4.1 reformat.c and colr.c;
+LIBAVIF-LICENSE retains its BSD-2-Clause terms. Other default-image
 format readers retain Pillow source attribution, and four selected MIT
 Picsetgo leaves retain legacycodec/PICSETGO-LICENSE.txt and PROVENANCE.json.
 This is finite source-derived input evidence, not a certification of the full

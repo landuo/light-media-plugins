@@ -54,6 +54,7 @@
     "Expose native Orientation tag; parent applies ImageOps.exif_transpose semantics",
     "BigTIFF first-IFD normalization happens in the parent decoder",
     "Packed grayscale and palette samples follow the Pillow raw unpacker table in https://github.com/python-pillow/Pillow/blob/12.2.0/src/libImaging/Unpack.c",
-    "Separate RGB/RGBA strips and tiles undo the predictor per band and then assemble one pixel block. Raw 16-bit planar TIFF retains the byte-oriented channel reads in TiffImagePlugin._setup."
+    "Separate RGB/RGBA strips and tiles undo the predictor per band and then assemble one pixel block. Raw 16-bit planar TIFF retains the byte-oriented channel reads in TiffImagePlugin._setup.",
+    "Separate grayscale-alpha planes match Pillow 12.2.0 TiffDecode.c _pickUnpackers: compressed planes are read and checked, but the second plane populates the internal green byte rather than the returned alpha. The raw separate layout is rejected by the original unpacker."
   ]
 }

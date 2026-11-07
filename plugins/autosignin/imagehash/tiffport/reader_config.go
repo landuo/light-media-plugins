@@ -168,10 +168,10 @@ func (d *decoder) initColorModel() error {
 		grayAlpha := d.firstVal(tPhotometricInterpretation) == pBlackIsZero && d.firstVal(tFillOrder) <= 1 &&
 			d.bpp == 8 && len(extra) == 1 && extra[0] == 2
 		compression := d.firstVal(tCompression)
-		if grayAlpha && compression == cJPEG {
+		if grayAlpha && (compression == cJPEG || d.firstVal(tPlanarConfiguration) == 2) {
 			samples := d.features[tSamplesPerPixel]
 			if len(samples) != 1 || samples[0] != 2 || len(bits) > 2 || (len(bits) == 2 && bits[1] != 8) {
-				return FormatError("invalid grayscale-alpha JPEG sample layout")
+				return FormatError("invalid grayscale-alpha sample layout")
 			}
 			// A single BitsPerSample value applies to both bands.
 			bits = []uint{8, 8}
