@@ -26,7 +26,7 @@ func main() {
 		return
 	}
 	plugin := mergesiteswitch.New()
-	if err := plugins.Serve(context.Background(), os.Stdin, os.Stdout, manifest, plugin.Handle); err != nil {
+	if err := plugins.ServeConcurrent(context.Background(), os.Stdin, os.Stdout, manifest, plugin.Handle); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
