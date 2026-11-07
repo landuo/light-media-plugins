@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (twelve of 22 in scope accepted)
+## Current resume (thirteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -39,7 +39,14 @@ observed whole-list retry and ordered continuation. The sealed shared
 store and live matcher received the exact updated rules, retaining the
 local prefix. See `migration/evidence/remoteidentifiers-acceptance-20261107.json`.
 
-Next: SubscribeGroup 2.8.7 from the fixed subscription event and rule paths.
+SubscribeGroup 2.8.7 is accepted. The native amd64 ZIP used actual
+subscription creation and accepted download routes in one isolated App.
+Category rules overwrote the selected fields, download rules filled only
+empty values, and the original history and clear switches worked. A distinct
+App database check verified the acquisition-parent wait and frozen season
+data. See `migration/evidence/subscribegroup-worker-linux-20261107.json`.
+
+Next: AutoBackup 2.1.4 from the installed local backup and scheduling paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

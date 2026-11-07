@@ -4216,6 +4216,31 @@
         "Replace remote suffix after first RemoteIdentifiers marker",
         "Publish shared recognition rules to the actual host matcher"
       ]
+    },
+    {
+      "id": "plugin.SubscribeGroup.subscribe_notice",
+      "feature_ids": [
+        "plugin.SubscribeGroup"
+      ],
+      "source_location": "subscribegroup/__init__.py:141–227",
+      "chain": [
+        "SubscribeAdded after actual subscription creation",
+        "Category rules and optional recognition fallback",
+        "Apply ordered source patch and record history"
+      ]
+    },
+    {
+      "id": "plugin.SubscribeGroup.download_notice",
+      "feature_ids": [
+        "plugin.SubscribeGroup"
+      ],
+      "source_location": "subscribegroup/__init__.py:229–359",
+      "chain": [
+        "DownloadAdded after accepted Add",
+        "Read exact accepted history and source season",
+        "Fill empty TV subscription fields only",
+        "Apply ordered patches and record per-subscription handled identity"
+      ]
     }
   ],
   "features": [
@@ -11432,26 +11457,65 @@
         "plugin.SubscribeGroup.get_command",
         "plugin.SubscribeGroup.get_api",
         "plugin.SubscribeGroup.get_state",
-        "plugin.SubscribeGroup.stop_service"
+        "plugin.SubscribeGroup.stop_service",
+        "plugin.SubscribeGroup.subscribe_notice",
+        "plugin.SubscribeGroup.download_notice"
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "plugins/subscribegroup/plugin.go",
+        "plugins/subscribegroup/rules.go",
+        "plugins/subscribegroup/subscribe.go",
+        "plugins/subscribegroup/download.go",
+        "plugins/subscribegroup/form.json",
+        "plugins/subscribegroup/view.go",
+        "plugins/subscribegroup/ORIGIN.json",
+        "cmd/subscribe-group/main.go",
+        "internal/sdk/history_host.go",
+        "internal/sdk/subscription_host.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "subscribegroup.native_amd64_producers.20261107",
+        "subscribegroup.acquisition_wait.20261107"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby, /root/kodi and /root/jellyfin",
+        "evidence_ids": [
+          "subscribegroup.native_amd64_producers.20261107",
+          "subscribegroup.acquisition_wait.20261107"
+        ]
       },
       "original_instance_id": "SubscribeGroup",
       "family": "SubscribeGroup",
       "source_version": "2.8.7",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Fixed source handlers, native subscription/download producer effects and active acquisition handoff verified.",
+      "standalone_worker_increment": {
+        "status": "verified",
+        "worker_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
+        "host_product_commit": "a149ffa417cbb0fb3f8baeaa48c19a1b2580daf2",
+        "host_test_commit": "02c08ac340337c73e54981e6e0490b6aec05822e",
+        "source_sha256": "06870f20e39237e4a69c9615ce005411feaa5e1a97cad50fd3b7b0645bead383",
+        "native_evidence": {
+          "path": "migration/evidence/subscribegroup-worker-linux-20261107.json",
+          "sha256": "7c9806f88b60223f35081dd39aa32a39639872a82b7839354b9eed1d78efb90a"
+        },
+        "open": []
+      },
+      "accepted_native_package": {
+        "status": "verified",
+        "path": "migration/evidence/subscribegroup-worker-linux-20261107.json",
+        "sha256": "7c9806f88b60223f35081dd39aa32a39639872a82b7839354b9eed1d78efb90a",
+        "archive_sha256": "48d0bdfbd46d3acee98be351dfe560da2bf32155786b214049283259291336a0",
+        "host_test_commit": "02c08ac340337c73e54981e6e0490b6aec05822e",
+        "host_compatibility_test_commit": "5508baf8c9e5dcf74c7c2d73d467cfd17be59b01"
+      }
     },
     {
       "id": "plugin.AutoBackup",
@@ -66366,6 +66430,66 @@
         "evidence/remoteidentifiers-acceptance-20261107.json": "41aa7af8016f5c7f8e5259ad1fec4a54adeb447548185fdae90e70062d64438c"
       },
       "reviewer": "Independent source and host review with coordinator native acceptance"
+    },
+    {
+      "id": "subscribegroup.native_amd64_producers.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SubscribeGroup"
+      ],
+      "commands": [
+        "TestSubscribeGroupInstalledAMD64Package on isolated native Linux amd64"
+      ],
+      "inputs": "Fixed installed source, standard ZIP, real App subscription/download producer routes and isolated synthetic protocol peers.",
+      "observations": "Exact indexed package installed and original native form returned. Actual HTTP subscription creation emitted SubscribeAdded. Category rule overwrote the existing resolution and exclusion. Actual HTTP native Add and accepted download job emitted DownloadAdded. Source site 1 mapped to stable producer-site, existing resolution stayed and missing filters filled. Only one downloader Add occurred. Encrypted history and handled identity matched source field order and types. Native detail returned the history. Explicit clear removed both keys, reset both switches and retained the existing subscription.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "source_sha256": "06870f20e39237e4a69c9615ce005411feaa5e1a97cad50fd3b7b0645bead383",
+        "host_product_commit": "a149ffa417cbb0fb3f8baeaa48c19a1b2580daf2",
+        "host_test_commit": "02c08ac340337c73e54981e6e0490b6aec05822e",
+        "worker_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
+        "archive_sha256": "48d0bdfbd46d3acee98be351dfe560da2bf32155786b214049283259291336a0",
+        "target_files": {
+          "plugins/subscribegroup/plugin.go": "0102f08e9f444ccd9e221562e8683a4bf77f85252c35ea3feac29bdf2f651a9b",
+          "plugins/subscribegroup/rules.go": "f7933dc526c5e30cacc95b35a4b47a068edcb2cf09516c28ef834ec5f96484fc",
+          "plugins/subscribegroup/subscribe.go": "ac6af72e5c561cf3828710eb6ac2f0304feaf21c74c87944ebe801ba01476bc9",
+          "plugins/subscribegroup/download.go": "a6e4108d05a7a2bf6f0f1b7f5940522a2da5588858e41b11bf8323d8ad9d1716",
+          "plugins/subscribegroup/form.json": "e130d69a918fa7a847e17d50e6fb66c1dbe3c652165a19ba2d9ddb4ba69fb731",
+          "plugins/subscribegroup/view.go": "da424ee6c395b2d19987437fdb434872b168efcdfb949dfe5c79821caa2e46a4",
+          "plugins/subscribegroup/ORIGIN.json": "6b8bc587d9b29330d6f9d5e9bdb2438cb3486c66c583ea8a5b1ba49ca183d622",
+          "cmd/subscribe-group/main.go": "938f08abae52ea9a8afc9b033566bfec81f33dc17fcfe65a6a2176e3e0a00050",
+          "internal/sdk/history_host.go": "a7696d802b7840e622f947d28bd5aadf34320a561ef0bc1a9e477d491fa75f56",
+          "internal/sdk/subscription_host.go": "d04ca9d7742208ec2055d0640ee4bc296fe1cf9755254464e5e72f971d072ae6"
+        }
+      },
+      "artifacts": {
+        "evidence/subscribegroup-worker-linux-20261107.json": "7c9806f88b60223f35081dd39aa32a39639872a82b7839354b9eed1d78efb90a"
+      },
+      "reviewer": "Independent source and host review with coordinator native acceptance"
+    },
+    {
+      "id": "subscribegroup.acquisition_wait.20261107",
+      "kind": "integration",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SubscribeGroup"
+      ],
+      "commands": [
+        "go test -mod=readonly -count=1 -run ^TestSubscribeGroupDownloadHistoryWaitsForAcquisition$ -v ./internal/app"
+      ],
+      "inputs": "Actual App database with an owned synthetic accepted Intent and running subscription acquisition parent.",
+      "observations": "The actual history read waits while the parent is running. The parent commits its terminal state using the same database connection, proving no open transaction blocks it. The accepted source season range then returns and the frozen Intent is unchanged.",
+      "binding": {
+        "host_product_commit": "a149ffa417cbb0fb3f8baeaa48c19a1b2580daf2",
+        "host_test_commit": "5508baf8c9e5dcf74c7c2d73d467cfd17be59b01",
+        "host_fixture": "internal/app/plugin_subscribe_group_acquisition_test.go",
+        "host_fixture_sha256": "61ab4e7be6d279c06a75a4d409a72661dccb10c2b2df4f9960ab6eb9a1368f9b"
+      },
+      "artifacts": {
+        "evidence/subscribegroup-worker-linux-20261107.json": "7c9806f88b60223f35081dd39aa32a39639872a82b7839354b9eed1d78efb90a"
+      },
+      "reviewer": "Independent fixture plus coordinator targeted execution"
     }
   ],
   "scope": {
@@ -66425,43 +66549,44 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 12,
+      "functional_verified_instances": 13,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 11,
-      "functional_verified_count_scope": "Twelve of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 12,
+      "functional_verified_count_scope": "Thirteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "e8eabd81be813ccc935a9b27332ae1c395bfc850",
-      "SDK_source_host_commit": "e4517b16295cc09cf207a3f49ad66d9bea95f302",
+      "host_HEAD": "5508baf8c9e5dcf74c7c2d73d467cfd17be59b01",
+      "SDK_source_host_commit": "b9dc4f4bf994ee9254dde7cc9cd06b66829f6373",
       "SDK_current_files": 106,
-      "SDK_current_origin_sha256": "0f34ad34cf92a0fb5764dcad58b024c6ca2587d666fefe85d55a03d804253a67",
-      "SDK_current_status": "106 files. Paired RemoteIdentifiers network profile and atomic remote rule suffix publication.",
+      "SDK_current_origin_sha256": "eb458508dd63453570ee208e6e385986741250f6f4061f45582a563d2dabfb5d",
+      "SDK_current_status": "106 files. Paired accepted-download source projection and scoped subscription/history updates.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-07 fresh read-only ls-remote confirmed both main refs unchanged. No push.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Twelve of 22 accepted. RemoteIdentifiers 2.4.1 actual native ZIP, private/public callbacks, whole-list retry, continuation and recognition publication passed. Local build registry updated. No push or deployment.",
-      "tests_running": "None. The exact RemoteIdentifiers candidate passed one native App case. No previously passing suite was rerun.",
-      "latest_detail": "features[plugin.RemoteIdentifiers].accepted_native_package",
+      "delivery": "Thirteen of 22 accepted. SubscribeGroup 2.8.7 canonical ZIP, both actual native producer paths and acquisition waiting guard passed. Registry and companion host are local. No push or deployment.",
+      "tests_running": "None. SubscribeGroup passed one native App case and one distinct App database acquisition-ordering check. No previous passing suite was repeated.",
+      "latest_detail": "features[plugin.SubscribeGroup].accepted_native_package",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start SubscribeGroup 2.8.7 (订阅规则自动填充) from its fixed installed source, subscription event and rule application chain. Keep MergeMessageNotify deferred, fnOS-only media libraries and local directories. Do not rerun accepted RemoteIdentifiers tests.",
+      "next_complete_slice": "Start AutoBackup 2.1.4 from the fixed installed source and its Go host backup, restore and cron call chain. Scope only fnOS and local directories, keep MergeMessageNotify deferred, and do not rerun accepted SubscribeGroup tests.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_SystemProcess_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
       "latest_MediaServerRefresh_product_commit": "0aeedee1c78394d0e21162c50411015431703d3f",
-      "latest_RemoteIdentifiers_product_commit": "a5b7d3f8e3b745447c2fc54ec4db23b4451f69fa"
+      "latest_RemoteIdentifiers_product_commit": "a5b7d3f8e3b745447c2fc54ec4db23b4451f69fa",
+      "latest_SubscribeGroup_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66478,7 +66603,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start SubscribeGroup 2.8.7 (订阅规则自动填充) from its fixed installed source, subscription event and rule application chain. Keep MergeMessageNotify deferred, fnOS-only media libraries and local directories. Do not rerun accepted RemoteIdentifiers tests.",
+    "next_complete_slice": "Start AutoBackup 2.1.4 from the fixed installed source and its Go host backup, restore and cron call chain. Scope only fnOS and local directories, keep MergeMessageNotify deferred, and do not rerun accepted SubscribeGroup tests.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
