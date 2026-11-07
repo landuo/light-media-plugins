@@ -202,6 +202,16 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseRocketChatService(raw)
 	case "matrix", "matrixs":
 		service, valid = parseMatrixService(raw)
+	case "pushplus":
+		service, valid = parsePushPlusService(raw)
+	case "feishu":
+		service, valid = parseFeishuService(raw)
+	case "dingtalk":
+		service, valid = parseDingTalkService(raw)
+	case "pagerduty":
+		service, valid = parsePagerDutyService(raw)
+	case "twist":
+		service, valid = parseTwistService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -221,6 +231,8 @@ func (c *Client) addService(raw string) (bool, error) {
 			service, valid = parseFlockService(native)
 		} else if native, ok := matrixNativeURL(raw); ok {
 			service, valid = parseMatrixService(native)
+		} else if native, ok := pushPlusNativeURL(raw); ok {
+			service, valid = parsePushPlusService(native)
 		} else {
 			return false, ErrUnsupported
 		}

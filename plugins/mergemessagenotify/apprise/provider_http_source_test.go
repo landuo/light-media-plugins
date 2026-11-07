@@ -34,10 +34,15 @@ func TestSourceFlockImage199(t *testing.T) {
 	testSourceHTTPProvider(t, "testdata/flock-image-1.9.9.json")
 }
 
+func TestSourcePushPlusFeishuDingTalk199(t *testing.T) {
+	testSourceHTTPProvider(t, "testdata/cn-webhooks-1.9.9.json")
+}
+
 func testSourceHTTPProvider(t *testing.T, path string) {
 	t.Helper()
 	var fixture struct {
-		Cases []struct {
+		FixedTimeMS int64 `json:"fixed_time_ms"`
+		Cases       []struct {
 			Name, URL, Title, Body string
 			Attach                 any
 			Statuses               []int
@@ -81,6 +86,13 @@ func testSourceHTTPProvider(t *testing.T, path string) {
 			})
 			if added, err := client.Add(row.URL); err != nil || added != row.Added {
 				t.Fatalf("Add = %v, %v, source %v", added, err, row.Added)
+			}
+			if fixture.FixedTimeMS != 0 {
+				for _, service := range client.services {
+					if dingTalk, ok := service.(*dingTalkService); ok {
+						dingTalk.clock = func() time.Time { return time.UnixMilli(fixture.FixedTimeMS) }
+					}
+				}
 			}
 			if sent, err := client.Notify(t.Context(), row.Title, row.Body, row.Attach); err != nil || sent != row.Result {
 				t.Fatalf("Notify = %v, %v, source %v", sent, err, row.Result)

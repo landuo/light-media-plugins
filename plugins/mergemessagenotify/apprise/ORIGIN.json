@@ -39,7 +39,12 @@
     "rocket",
     "rockets",
     "matrix",
-    "matrixs"
+    "matrixs",
+    "pushplus",
+    "feishu",
+    "dingtalk",
+    "pagerduty",
+    "twist"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -277,6 +282,41 @@
       "source_observations": "testdata/matrix-1.9.9.json",
       "reason": "Port three webhook formats, direct v2/v3, discovery, acquired-token session, rooms, media, retry and cleanup.",
       "markdown_reference": "Installed Python-Markdown 3.11.2 default conversion; Go Goldmark v1.8.7, with differences beyond sampled dialect cases still open."
+    },
+    {
+      "file": "pushplus.go",
+      "original_path": "apprise/plugins/pushplus.py",
+      "original_sha256": "8870129d7710d7176b7fc3a9cf4340d03271b0e4a5548ad49faba09e5a6eb6d6",
+      "source_observations": "testdata/cn-webhooks-1.9.9.json",
+      "reason": "Port the token URL and native alias, title fallback, webhook JSON and strict response status."
+    },
+    {
+      "file": "feishu.go",
+      "original_path": "apprise/plugins/feishu.py",
+      "original_sha256": "92a3e38adc2651fd9c6badaefcd2ad89117c155150fb3c9e26406b8df6b88d84",
+      "source_observations": "testdata/cn-webhooks-1.9.9.json",
+      "reason": "Port token and query override, titleless message sizing and strict webhook response status."
+    },
+    {
+      "file": "dingtalk.go",
+      "original_path": "apprise/plugins/dingtalk.py",
+      "original_sha256": "85dd8b1c10da3c0cb6e35f8d5edbe0ae6a5e82fa4f3c42a4116ac56bce327d97",
+      "source_observations": "testdata/cn-webhooks-1.9.9.json",
+      "reason": "Port recipient phone normalization, text and Markdown payloads, per-send timestamp and HMAC signing."
+    },
+    {
+      "file": "pagerduty.go",
+      "original_path": "apprise/plugins/pagerduty.py",
+      "original_sha256": "4fe41a293188fc7c3c62fe7d2f99bf23297f222985d29eb8f18a31c1c9217d00",
+      "source_observations": "testdata/pagerduty-1.9.9.json",
+      "reason": "Port Events API v2 trigger, US/EU routing, token credentials, severity, ordered custom details and response conditions."
+    },
+    {
+      "file": "twist.go",
+      "original_path": "apprise/plugins/twist.py",
+      "original_sha256": "44cef94d16e2a0df4f3c6be4298e74df5201d6e4014d5693320c849a30779993",
+      "source_observations": "testdata/twist-1.9.9.json",
+      "reason": "Port password login, workspace and channel discovery, Markdown thread creation and notification client cleanup."
     }
   ]
 }

@@ -14,6 +14,13 @@ const appriseInfoIcon72 = "https://github.com/caronc/apprise/raw/master/apprise/
 
 var alphanumericToken32 = regexp.MustCompile(`(?i)^[a-z0-9]{32}$`)
 
+func queryToken(u sourceURL) string {
+	if token := u.query["token"]; token != "" {
+		return sourceUnquote(token)
+	}
+	return u.host
+}
+
 func providerPriority(value string) string {
 	value = strings.ToLower(value)
 	for _, pair := range [][2]string{{"l", "-2"}, {"m", "-1"}, {"n", "0"}, {"h", "1"}, {"e", "2"}, {"-2", "-2"}, {"-1", "-1"}, {"0", "0"}, {"1", "1"}, {"2", "2"}} {
