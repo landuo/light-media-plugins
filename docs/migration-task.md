@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (seventeen of 22 in scope accepted)
+## Current resume (eighteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -84,7 +84,12 @@ root loss in a distinct Linux scenario. The original source-only download
 file event and host protections are recorded in
 `migration/evidence/scrape-file-clean-runtime-20261108.json`.
 
-LarkMessager 0.9.1 is implementing. The indexed worker passed its ordinary
+LarkMessager 0.9.1 is accepted for the current ordinary-plugin scope. The
+exact indexed Linux worker is registered in the local build manifest. Native
+checks and the independent review are bound in
+`migration/evidence/lark-messager-acceptance-20261108.json`.
+
+The indexed worker passed its ordinary
 message, test-card, and configuration paths on native Linux. The isolated
 `/sites` scenario passed pagination, ownership, edit fallback, site toggling,
 and real Chromium login with a second OTP page, atomic Cookie and UA save,

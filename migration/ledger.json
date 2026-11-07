@@ -136,7 +136,7 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "129692ad16407df7636027e6fbb5a9bcab65502f",
+    "revision": "dd3cdaf59996a4c9a5894d18b593a4ddfa2216fa",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
@@ -144,9 +144,10 @@
       "migration/ledger.json",
       "docs/migration-task.md",
       "migration/evidence/merge-site-switch-runtime-20261108.json",
-      "migration/evidence/scrape-file-clean-runtime-20261108.json"
+      "migration/evidence/scrape-file-clean-runtime-20261108.json",
+      "migration/evidence/lark-messager-acceptance-20261108.json"
     ],
-    "revision_scope": "Seventeen installed instances accepted in the 22-instance scope on paired local host revisions. Published remote index and both main refs unchanged.",
+    "revision_scope": "Eighteen installed instances accepted in the 22-instance scope on paired local host revisions. Published remote index and both main refs unchanged.",
     "deployment": "NASpairedverified166/09ab+824workers installed7inactive; currentcodebranch/mainrelease distinct, details resume.deployment_20261106"
   },
   "inventory": [
@@ -16274,9 +16275,109 @@
         "cmd/lark-messager/main.go",
         "plugins/larkmessager/webhook_test.go"
       ],
-      "scenarios": [],
-      "facet_checks": {},
-      "status": "implementing",
+      "scenarios": [
+        {
+          "id": "ordinary_message",
+          "source": "larkmessager/__init__.py:70–665,1664–2122",
+          "evidence_ids": [
+            "larkmessager.native_amd64_message_path.20261108",
+            "larkmessager.native_rejection_and_uninstall.20261108",
+            "larkmessager.native_bare_test_confirmation.20261108"
+          ]
+        },
+        {
+          "id": "config_and_endpoints",
+          "source": "larkmessager/__init__.py:877–1659,2190–2455",
+          "evidence_ids": [
+            "larkmessager.native_browser_settings_detail.20261108",
+            "larkmessager.encrypted_admin_isolated_fetch_chats.20261108",
+            "larkmessager.native_clone_rooted_attachments.20261108"
+          ]
+        },
+        {
+          "id": "owned_chat_operations",
+          "source": "app/chain/message.py:678–1021,2579–3042; app/command.py:63–113",
+          "evidence_ids": [
+            "larkmessager.sites_native_browser.20261108",
+            "larkmessager.native_provider_episode_replacement.20261108",
+            "larkmessager.native_provider_late_scope.20261108",
+            "larkmessager.native_download_commands.20261108",
+            "larkmessager.native_restart_command.20261108"
+          ]
+        }
+      ],
+      "facet_checks": {
+        "data": {
+          "applicable": true,
+          "reason": "Source-shaped card, sealed source namespaces and exact attachment bytes.",
+          "evidence_ids": [
+            "larkmessager.native_bare_test_confirmation.20261108",
+            "larkmessager.native_rejection_and_uninstall.20261108",
+            "larkmessager.native_provider_late_scope.20261108"
+          ]
+        },
+        "state": {
+          "applicable": true,
+          "reason": "Installed configuration, durable subscriptions and actual publication before retirement.",
+          "evidence_ids": [
+            "larkmessager.native_browser_settings_detail.20261108",
+            "larkmessager.native_provider_episode_replacement.20261108"
+          ]
+        },
+        "errors": {
+          "applicable": true,
+          "reason": "Definite and ambiguous Feishu responses plus actual rejected download outcomes.",
+          "evidence_ids": [
+            "larkmessager.native_rejection_and_uninstall.20261108",
+            "larkmessager.native_download_failure_outcomes.20261108"
+          ]
+        },
+        "concurrency": {
+          "applicable": true,
+          "reason": "Ownership, pending command scope, persisted acquisition and stale button rejection.",
+          "evidence_ids": [
+            "larkmessager.transfer_native_retry_redo.20261108",
+            "larkmessager.native_provider_episode_replacement.20261108"
+          ]
+        },
+        "restart": {
+          "applicable": true,
+          "reason": "Independent App reopen, retained instance data and one completion receipt.",
+          "evidence_ids": [
+            "larkmessager.native_provider_browser_restart.20261108",
+            "larkmessager.native_restart_command.20261108",
+            "larkmessager.native_rejection_and_uninstall.20261108"
+          ]
+        },
+        "compatibility": {
+          "applicable": true,
+          "reason": "Original webhook button, API/form and old torrent material recovery.",
+          "evidence_ids": [
+            "larkmessager.native_bare_test_confirmation.20261108",
+            "larkmessager.native_legacy_material.20261108",
+            "larkmessager.native_browser_settings_detail.20261108"
+          ]
+        },
+        "security": {
+          "applicable": true,
+          "reason": "Authenticated callback, encrypted administration, clone separation and rooted local attachments.",
+          "evidence_ids": [
+            "larkmessager.encrypted_admin_isolated_fetch_chats.20261108",
+            "larkmessager.native_clone_rooted_attachments.20261108",
+            "larkmessager.native_restart_command.20261108"
+          ]
+        },
+        "performance": {
+          "applicable": true,
+          "reason": "Source paging and bounded request counts under owned native fixtures. No broad throughput claim.",
+          "evidence_ids": [
+            "larkmessager.native_amd64_message_path.20261108",
+            "larkmessager.sites_native_browser.20261108",
+            "larkmessager.native_provider_late_scope.20261108"
+          ]
+        }
+      },
+      "status": "verified",
       "evidence_ids": [
         "larkmessager.native_amd64_message_path.20261108",
         "larkmessager.test_card_webhook_failure.20261108",
@@ -16320,24 +16421,43 @@
         "larkmessager.native_provider_episode_replacement.20261108",
         "larkmessager.native_rejection_and_uninstall.20261108",
         "larkmessager.native_version_cache_commands.20261108",
-        "larkmessager.native_restart_command.20261108"
+        "larkmessager.native_restart_command.20261108",
+        "larkmessager.native_bare_test_confirmation.20261108",
+        "larkmessager.independent_scope_review.20261108"
       ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "/root/emby (source and candidate, acceptance still open)",
+        "reviewer": "/root/emby, /root/lark_finish_audit and /root/lark_worker_close",
         "evidence_ids": [
-          "larkmessager.native_amd64_message_path.20261108",
-          "larkmessager.test_card_webhook_failure.20261108",
-          "larkmessager.sites_native_browser.20261108",
-          "larkmessager.subscribes_native_cache_add.20261108"
+          "larkmessager.independent_scope_review.20261108",
+          "larkmessager.native_bare_test_confirmation.20261108",
+          "larkmessager.native_restart_command.20261108",
+          "larkmessager.native_rejection_and_uninstall.20261108"
         ]
       },
       "original_instance_id": "LarkMessager",
       "family": "LarkMessager",
       "source_version": "0.9.1",
       "source_metadata_only": false,
-      "discovery_note": "Native sites, subscriptions, RSS/manual fallback, media/provider/TV downloads, transfer retry, encrypted administrator scope, isolated group lookup, clone reload and rooted attachment behavior have scoped evidence. Remaining worker/host differences and full review are still open."
+      "discovery_note": "Native sites, subscriptions, RSS/manual fallback, media/provider/TV downloads, transfer retry, encrypted administrator scope, isolated group lookup, clone reload and rooted attachment behavior have scoped evidence. Remaining worker/host differences and full review are still open.",
+      "paired_host_paths": [
+        "internal/app/plugin_original_host_message_inbound.go",
+        "internal/app/plugin_original_chat_transfer_redo.go",
+        "internal/app/download_unscoped_completion.go",
+        "internal/app/plugin_original_chat_system.go",
+        "internal/app/plugin_original_chat_restart.go",
+        "internal/app/search_download.go",
+        "internal/app/import_run.go",
+        "cmd/server/main.go"
+      ],
+      "adaptations": [
+        "Ordinary commands use the originating verified webhook and loaded Lark instance. Add/organization retain the host's local path and ownership gates, preserve exact provider namespaces and keep unclear files in review. Confirmed linked manual correction retains its separate authorization.",
+        "Known ordinary provider rejection uses the source failure result and redacted log. An ambiguous outbound response fences subsequent writes instead of replaying. Restart sends once from the same account and claims its receipt before the provider write.",
+        "The native application uses a monorepo release for both component version lines and the bundled frontend's version data. The App supervisor gracefully reopens in the same OS process. The host clears the metadata cache providers it implements.",
+        "AI-specific input material retrieval, direct/stream/finalize hooks and AI settings are excluded. Independent CookieCloud site credential synchronization and complete media-library inventory scanning remain outside the requested plugin scope.",
+        "Exact provider late-scope magnet, manual linked correction and every remote provider permutation were not repeated as standalone runs. Existing guarded admission, loopback evidence and source mapping are recorded separately. No real tenant credentials, production Lark messages, or private configuration/data import were used."
+      ]
     },
     {
       "id": "plugin.CleanInvalidSeed",
@@ -68784,6 +68904,199 @@
         "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
         "fixture_sha256": "6739c4a86add66811658d383e233182420bc25ee53c71acd0c3454c1296992bb"
       }
+    },
+    {
+      "id": "larkmessager.native_bare_test_confirmation.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestInstalledLarkBareTestConfirmationLinuxAMD64"
+      ],
+      "observations": [
+        "The actual indexed worker sent its real connection card. Its literal bare test_ok callback entered the installed webhook and sent exactly one source-shaped reply to the original Lark provider message."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-acceptance-20261108.json": "ef5016c50fa3f0bdf4cce36187390095fdd80cc2ee20bbb7934fe133913f9db5"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "d7066e7be72ae8c5de4aa2c7515bef2a1d010f7b",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "fixture_sha256": "a0f6dac1791cff6ed78a7b24207e4f408ed17e32bf62f8a82c00d82b0ffd090a"
+      }
+    },
+    {
+      "id": "larkmessager.independent_scope_review.20261108",
+      "kind": "review",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "observations": [
+        "Compared the exact installed file snapshot, MoviePilot core and frontend call chains, and host/plugin implementation against the single ledger. The remaining original bare-confirmation branch has now passed at its real entry.",
+        "Reused the prior native/Chrome evidence by path. The updated package was exercised for Lark rejection and uninstall, late source episodes, existing provider slot replacement, ordinary system presets, and direct confirmation. Existing passed flows were not replayed merely for final registration.",
+        "Restart's verified boundary is native App close/reopen on the same directory after its actual supervisor signal. The test does not exercise listener rebinding or relaunch the OS process. The first App shutdown logged module failures. The new App, scoped notification and receipt consumption passed."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-acceptance-20261108.json": "ef5016c50fa3f0bdf4cce36187390095fdd80cc2ee20bbb7934fe133913f9db5"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "d7066e7be72ae8c5de4aa2c7515bef2a1d010f7b",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+        "target_files": {
+          "SDK_ORIGIN.json": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
+          "build-plugins.json": "a479b30dce670e39336aa7ca6e0eda1fb5fb8fecf1ef8b319f9dda9b86a0fe7d",
+          "cmd/lark-messager/main.go": "5eecbaa5c81c2f950df0a4aae2968dadd86f564e7fa96f00e3c8f8865243588b",
+          "go.mod": "0b3ea685662f19958ca61808199fa9d48ae490ef711fedc889f4e576fd69d632",
+          "go.sum": "b8d95a666ed0f749a5a3fd5842e524fd20c2d23006561229615d81cf64134b1d",
+          "internal/sdk/api.go": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+          "internal/sdk/api_test.go": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+          "internal/sdk/auth.go": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+          "internal/sdk/base.go": "878d4dd0f82f0978b2826d1d05b6f40f1ece632bc33e50f0f083bfac3785fa4e",
+          "internal/sdk/base_instance_metadata_test.go": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+          "internal/sdk/base_test.go": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+          "internal/sdk/broadcast_handler.go": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+          "internal/sdk/broadcast_handler_test.go": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+          "internal/sdk/browser_host.go": "efa385ed049b5b540a8c1dc53c00454cf3c3cd4e60bb5323a5b994b0ab52e762",
+          "internal/sdk/brush_inventory.go": "82ed871f847d19cf4bd604418fbd6502408769d58bf9ed0dc7de4383865d0c6f",
+          "internal/sdk/brush_source.go": "75b0bee88f168c72c1bfb7d55502733306184a310251b97f853a5d535b6aeb69",
+          "internal/sdk/category_policy.go": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+          "internal/sdk/chain_handler.go": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+          "internal/sdk/chain_handler_test.go": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+          "internal/sdk/cleanup_continuation.go": "fd78e6ff04bdaafd296b03619ea99af6a4c4387bb8fcf422db78689a814e2e13",
+          "internal/sdk/cleanup_continuation_test.go": "16c76ce2890f9e049c35db17f2becc49080773dc0996759258c39e90304c831d",
+          "internal/sdk/close_transport.go": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+          "internal/sdk/concurrent_cancel_fence_test.go": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+          "internal/sdk/concurrent_session.go": "a47f14481053788e276d8e1fc32e872a783a0dad93b70ad9622d513ce8ca1504",
+          "internal/sdk/concurrent_session_test.go": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+          "internal/sdk/concurrent_shutdown.go": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+          "internal/sdk/concurrent_transport.go": "658726e4886b1806baf8bf8002b098900fc9126eab960a20160c9ec4ca66987a",
+          "internal/sdk/concurrent_worker.go": "10c295641e76d0397a01833dd8434ef36277bb41cf264c13fdb4424329b7b0d7",
+          "internal/sdk/downloader_configurations.go": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+          "internal/sdk/downloader_configurations_test.go": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+          "internal/sdk/downloader_host.go": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+          "internal/sdk/downloader_host_connection.go": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+          "internal/sdk/downloader_host_connection_test.go": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+          "internal/sdk/downloader_host_delete_files.go": "2768cc58a49cfc3155d0132f8ef9fa73e00649668011624129fda59db6ce012f",
+          "internal/sdk/downloader_host_test.go": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+          "internal/sdk/downloader_host_trackers.go": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+          "internal/sdk/downloader_source.go": "bad211716d927bfd8537cbc869f3047b6cafb7d12bc338445f27852c332c2862",
+          "internal/sdk/downloader_source_connection.go": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+          "internal/sdk/downloader_source_connection_test.go": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+          "internal/sdk/downloader_source_find_by_tag.go": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+          "internal/sdk/downloader_source_labels_test.go": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+          "internal/sdk/downloader_source_test.go": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+          "internal/sdk/downloader_source_wire_test.go": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+          "internal/sdk/downloader_tasks.go": "69f77c7ae9fbd1bfbb34c9e27a675751f98d24d46ced7c197dc4e3fa26ec7d70",
+          "internal/sdk/downloader_tasks_test.go": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+          "internal/sdk/events.go": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+          "internal/sdk/file_item.go": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+          "internal/sdk/form_model_policy_test.go": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+          "internal/sdk/frontend.go": "3068b5d21316f73dcf8cc776e1812ec039003ec83c83bd6c1d4fac3ed0104c7c",
+          "internal/sdk/frontend_test.go": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+          "internal/sdk/handler_order_test.go": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+          "internal/sdk/history_host.go": "a7696d802b7840e622f947d28bd5aadf34320a561ef0bc1a9e477d491fa75f56",
+          "internal/sdk/host_call_budget.go": "6cf9a32f4a4d4e23755e03d7b7e44d1d1f935043b9f99185f80921d1126708dd",
+          "internal/sdk/identity.go": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+          "internal/sdk/input_interaction.go": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+          "internal/sdk/jsonrpc.go": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+          "internal/sdk/local_backup.go": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6",
+          "internal/sdk/log.go": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+          "internal/sdk/log_test.go": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+          "internal/sdk/manager_resources.go": "d6349ad647463c8d321f1a990476e2142a12cf99d71c5885fba83d7a6b6826fa",
+          "internal/sdk/media_host.go": "6b0bb5c1abed64b68e3c71b1f087fd85e13f0560bd38e021b692ece032de5e0b",
+          "internal/sdk/media_images.go": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+          "internal/sdk/media_info.go": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+          "internal/sdk/message_inbound.go": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+          "internal/sdk/message_inbound_test.go": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+          "internal/sdk/module_bytes.go": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+          "internal/sdk/module_bytes_test.go": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+          "internal/sdk/module_result.go": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+          "internal/sdk/module_result_test.go": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+          "internal/sdk/module_scope_test.go": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+          "internal/sdk/module_transfer.go": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+          "internal/sdk/mutable_event.go": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+          "internal/sdk/mutable_event_test.go": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+          "internal/sdk/network_host.go": "1c00f0438a46ca182e423abb0b016f4e84b7ca47c32dfc3030386db630b34175",
+          "internal/sdk/network_proxy_host.go": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+          "internal/sdk/notification.go": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+          "internal/sdk/ocr_host.go": "4962ef9b761e4bf42d745746681004a55be8f65b04d26796e5aa1d8fbb284709",
+          "internal/sdk/parallel_host_calls_independent_test.go": "84e668e59a405a4113cfdfe56a3a54f8eac5a89669e87849a1f505bde5e6a5ab",
+          "internal/sdk/parallel_host_calls_test.go": "6104156408bfb03529ab37b24eb7e396af41132938b889db455c7ff858b2d235",
+          "internal/sdk/pending_call.go": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+          "internal/sdk/pending_call_test.go": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+          "internal/sdk/plugin_host.go": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+          "internal/sdk/private_scheduler.go": "9dfbb653184fc468d10a444ac83f82d87f6c1fcfac7c9867e7784106a6368d83",
+          "internal/sdk/protocol.go": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
+          "internal/sdk/protocol_test.go": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+          "internal/sdk/runner_budget.go": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+          "internal/sdk/runner_budget_test.go": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+          "internal/sdk/runner_home_test.go": "7392762335ce77581480dd2489c26fd6384b86596824eafc9be8515508ab5480",
+          "internal/sdk/runner_observation.go": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+          "internal/sdk/runner_observation_test.go": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+          "internal/sdk/runtime_support.go": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+          "internal/sdk/runtime_support_test.go": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+          "internal/sdk/service_progress.go": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+          "internal/sdk/session_options_test.go": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+          "internal/sdk/session_test.go": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+          "internal/sdk/settings_host.go": "7cdfa9777476a5e3b5a79ace3cb38b451140f08b504cf4ea5f7163bb709e87f4",
+          "internal/sdk/site_host.go": "3a998d09214d06d621b548f6ed7ca5048d8b677e511be41299a27b32e136add4",
+          "internal/sdk/site_http_host.go": "f80e9bc5ac95d6d95b4db24fb651a652ef2566ae3c4369bf7ba2a5694d6d7fd5",
+          "internal/sdk/site_source.go": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+          "internal/sdk/site_source_request.go": "26952ef04db479bac0e0dd9b05d2339af6ba348d7284b16eb2202d38c21cb8ff",
+          "internal/sdk/site_source_test.go": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+          "internal/sdk/source_private_scheduler_test.go": "50abc751de3e1581445ed3f703f75b9fc0cbbdeef06ee89fd2e8819595c73192",
+          "internal/sdk/source_public_service_sdk_test.go": "05a98ae80feec7ceb2d3efff2b9fcbd48d6fb7414bf08b43a5c8ec8f18875970",
+          "internal/sdk/sourcejson/model.go": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+          "internal/sdk/storage_host.go": "c0902ce314add87c5145dcc21901be02b4d30b33801476e46845c8e8f49366f9",
+          "internal/sdk/storage_local_read.go": "5a872bf26a603761d7877b1d0dc2442513cd43ebe2ebbb203e715eb7f197de7b",
+          "internal/sdk/storage_operation.go": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+          "internal/sdk/subscription_host.go": "d04ca9d7742208ec2055d0640ee4bc296fe1cf9755254464e5e72f971d072ae6",
+          "internal/sdk/subscription_host_test.go": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+          "internal/sdk/testdata/owned-concurrent-fixture/main.go": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c",
+          "internal/sdk/title_torrent_filter.go": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+          "internal/sdk/transport.go": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+          "internal/sdk/worker.go": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd",
+          "plugins/larkmessager/LICENSE-JITER.txt": "7c7134b9f7b978c03fca875517cf398db91f19bbb8109b6685e742aa3f57468e",
+          "plugins/larkmessager/LICENSE-PYDANTIC.txt": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a",
+          "plugins/larkmessager/LICENSE-PYTHON.txt": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "plugins/larkmessager/ORIGIN.json": "efca8fd84e22f9953b2c2a3a64b66cc384e537748725348ac235fa4a4c4c6edb",
+          "plugins/larkmessager/attachment.go": "9eab99c0fad32b97a90f15d3a64a480933619e1b5b621adcd7ac6c63fb110451",
+          "plugins/larkmessager/card.go": "c58ad8b1f1d3ed6c5e4915c62b7094213406849dbcd53d7a23cda83d30b89ce7",
+          "plugins/larkmessager/client.go": "4a57ea1fb331ef29fdd0460318f954d5ead7326140d6e528d581a46559729c49",
+          "plugins/larkmessager/crypto.go": "96c9c7a27237202755faa6896bd92769eeef64a84109a61ad9f33dd01e9daa46",
+          "plugins/larkmessager/dispatch.go": "37ff751dbb25f125ee0b707a021513ade071f487f56809425650ec0814167001",
+          "plugins/larkmessager/endpoints.go": "8ce5c96acb78bbfcaef594177a4e8793ac6afdea798488c0a6000302897ff8db",
+          "plugins/larkmessager/form.json": "2266f742f2162b431ac98ae8b395d69d7c8a5a3981ac453c6a33f51cbb166152",
+          "plugins/larkmessager/mime-registry.json": "c72c99f412b726080d32388fb0688b1bfee5eed566a762e63ebe60e65df2c5ff",
+          "plugins/larkmessager/mime.go": "bc1cc5c707b69fb1d7865e34d1babab633045fdd47cc0fcd8ef8d23e7baa0998",
+          "plugins/larkmessager/model_integer.go": "fcfabd5017e9137ac8c7eed5efc66ec75a8953576f480d38e415853931753b2e",
+          "plugins/larkmessager/modules.go": "5fff3aa7b464e24fcb646422d8b2bd5981c3d05699f9945e63460cce0354fe19",
+          "plugins/larkmessager/notification.go": "d40383ba24c3b045cb7352a85002bde5cda151bd73e46ba13f342efe759e2e99",
+          "plugins/larkmessager/notification_test.go": "9c8a090718a4c436c9e3d10fc8b23c038e66f112ec3e0a71cc743d33c8448681",
+          "plugins/larkmessager/page-templates.json": "8b6ab97994ab3d0a5d19ba29453adc27aa2ea076657cd0b0587139b4be0d9101",
+          "plugins/larkmessager/plugin.go": "986506939f37ac3f589725916be62599900f04e38c7682da25f0d9865553ec12",
+          "plugins/larkmessager/python_helpers.go": "744bc9add8035d58c0c58d50a3ed9100d6b523f91ab8d90004cad2fd6bff3870",
+          "plugins/larkmessager/python_printable15.go": "8b302dfb37a10daec2960795c8cf3c8bb761490e00e21a50aa1f0803ece7283b",
+          "plugins/larkmessager/python_value.go": "bd54c9faf805bcb33069c001df0080d0a0c49e55473e743219756e9410093343",
+          "plugins/larkmessager/receive.go": "ec37bab9cc2a7b012e3c0681c68f62be0c28f8920035104bc3c90a6cceaff7cc",
+          "plugins/larkmessager/source_error.go": "9bd10d2e409b498f7c655598cfaffb55cd59cd8d9d406d877527f88345a0315f",
+          "plugins/larkmessager/test-card.json": "9718bd44b9e77a224acbb219130e6e2ff1af300e1358a0bdf53841fadf07dcd5",
+          "plugins/larkmessager/test_endpoint.go": "e5a9b7519b81d8fbce2b2de16e778c88d4f98a36742471142e780e8eed36f378",
+          "plugins/larkmessager/transport.go": "d4165d8b9b5b8ea3a18cf74513d0710947dfde3e4a74ccabb62923dd4a478d3a",
+          "plugins/larkmessager/types.go": "06f1b8092b631a8c0c29f5021e78733faa42380823992d359bbdef5a5581158f",
+          "plugins/larkmessager/webhook_test.go": "d1996d163c28e0fdb9dd7112d87e3404557f841355c4bd450a7cc63ab38c0e8d",
+          "plugins/larkmessager/worker.go": "2e21ded3a52be314cbe03d0c4e8b7e34dae5e66ac81aff0e280c07dd4d328a32"
+        }
+      }
     }
   ],
   "scope": {
@@ -68843,21 +69156,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 17,
+      "functional_verified_instances": 18,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 16,
-      "functional_verified_count_scope": "Seventeen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 17,
+      "functional_verified_count_scope": "Eighteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "2ff19968163627866d495b2cb82cd36e46d38d43",
+      "host_HEAD": "d7066e7be72ae8c5de4aa2c7515bef2a1d010f7b",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68868,12 +69181,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 instances accepted. Indexed Lark native /version, /clear_cache and /restart passed. Exact package stays local until Lark closure.",
-      "tests_running": "None. System version/cache passed in the first batch. Only restart reran after the fixture account split.",
-      "latest_detail": "migration/evidence/lark-messager-system-commands-20261108.json",
+      "delivery": "18/22 instances accepted. LarkMessager 0.9.1 is registered in the local Linux build manifest at dd3cdaf with paired host d7066e7. Both remote main refs and production remain unchanged.",
+      "tests_running": "None. The final native bare confirmation passed on its single run. All earlier evidence and failed fixture logs retain their exact bindings.",
+      "latest_detail": "migration/evidence/lark-messager-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Reuse 43 linked Lark evidence rows. Close the native bare test_ok success branch and independent review. Record separate host CookieCloud/inventory exclusions by the user scope. Register only after closure, then start CleanInvalidSeed.",
+      "next_complete_slice": "Start CleanInvalidSeed 2.1. Source and tracked host algorithm hashes match. Reuse the proven detection algorithm and finite guards. Add the standard external worker, host-authorized downloader tracker facts, mapped traversal and cleanup receipts. Begin with one non-destructive native Linux detection scenario. No earlier Lark suites need to be repeated for this next plugin.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
