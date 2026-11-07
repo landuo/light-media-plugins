@@ -106,7 +106,15 @@ func (s jsonService) successful(status int) bool {
 	return status >= 200 && status < 300
 }
 func (s jsonService) requests(title, body string) ([]Request, error) {
-	return notificationRequests(title, body, s.emojis, s.overflow, s.format, s.request)
+	return notificationRequests(title, body, s.emojis, s.overflow, s.format, func(title, body string) (Request, error) {
+		return s.request(title, body, nil)
+	})
+}
+
+func (s jsonService) truncateAttachments() bool { return s.overflow == "truncate" }
+
+func (s jsonService) attachmentChunks(title, body string) ([]notificationChunk, error) {
+	return notificationChunks(title, body, s.emojis, s.overflow, s.format)
 }
 
 func notificationRequests(title, body string, emojis bool, overflow, format string, request func(string, string) (Request, error)) ([]Request, error) {
@@ -179,8 +187,8 @@ func notificationChunks(title, body string, emojis bool, overflow, format string
 	return parts, nil
 }
 func zeroPad(n, width int) string { v := strconv.Itoa(n); return strings.Repeat("0", width-len(v)) + v }
-func (s jsonService) request(title, body string) (Request, error) {
-	payload := object{{"version", "1.0"}, {"title", title}, {"message", body}, {"attachments", []any{}}, {"type", "info"}}
+func (s jsonService) request(title, body string, attachments []attachment) (Request, error) {
+	payload := object{{"version", "1.0"}, {"title", title}, {"message", body}, {"attachments", attachmentPayload(attachments)}, {"type", "info"}}
 	for _, extra := range s.extras {
 		at := -1
 		for i, p := range payload {

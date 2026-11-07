@@ -215,20 +215,30 @@ func (h *HTTPTransport) Send(ctx context.Context, request Request) (Response, er
 			}
 			return Response{}, errHTTP
 		}
-		raw, e := io.ReadAll(res.Body)
-		closeErr := res.Body.Close()
-		if e != nil || closeErr != nil {
-			if ctx.Err() != nil {
-				return Response{}, ctx.Err()
-			}
-			return Response{}, errHTTP
-		}
-		raw, e = decodeHTTPContent(raw, res.Header.Get("Content-Encoding"))
-		if e != nil {
-			return Response{}, errHTTP
-		}
 		location := res.Header.Get("Location")
 		redirect := res.StatusCode == 301 || res.StatusCode == 302 || res.StatusCode == 303 || res.StatusCode == 307 || res.StatusCode == 308
+		var raw []byte
+		if request.MaxResponseBytes > 0 && redirect && location != "" {
+			// Requests applies attachment size checks to the final response.
+			_ = res.Body.Close()
+		} else {
+			if request.MaxResponseBytes > 0 && res.ContentLength > request.MaxResponseBytes {
+				_ = res.Body.Close()
+				return Response{}, errHTTP
+			}
+			raw, e = readHTTPBody(res.Body, request.MaxResponseBytes)
+			closeErr := res.Body.Close()
+			if e != nil || closeErr != nil {
+				if ctx.Err() != nil {
+					return Response{}, ctx.Err()
+				}
+				return Response{}, errHTTP
+			}
+			raw, e = decodeHTTPContent(raw, res.Header.Get("Content-Encoding"), request.MaxResponseBytes)
+			if e != nil {
+				return Response{}, errHTTP
+			}
+		}
 		if !redirect || location == "" {
 			out := Response{Status: res.StatusCode, Content: raw, Headers: map[string]string{}}
 			for k, v := range res.Header {
@@ -338,7 +348,18 @@ func stripHTTPAuth(old, next *url.URL) bool {
 	}
 	return old.Scheme != next.Scheme || old.Port() != next.Port()
 }
-func decodeHTTPContent(data []byte, encoding string) ([]byte, error) {
+func readHTTPBody(reader io.Reader, limit int64) ([]byte, error) {
+	if limit > 0 {
+		reader = io.LimitReader(reader, limit+1)
+	}
+	data, err := io.ReadAll(reader)
+	if err == nil && limit > 0 && int64(len(data)) > limit {
+		return nil, errHTTP
+	}
+	return data, err
+}
+
+func decodeHTTPContent(data []byte, encoding string, limit int64) ([]byte, error) {
 	encodings := strings.Split(encoding, ",")
 	for i := len(encodings) - 1; i >= 0; i-- {
 		enc := strings.TrimSpace(strings.ToLower(encodings[i]))
@@ -367,7 +388,7 @@ func decodeHTTPContent(data []byte, encoding string) ([]byte, error) {
 		default:
 			continue
 		}
-		decoded, e := io.ReadAll(reader)
+		decoded, e := readHTTPBody(reader, limit)
 		if close != nil {
 			_ = close()
 		}

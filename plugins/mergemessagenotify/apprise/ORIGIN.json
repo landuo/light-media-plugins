@@ -45,6 +45,35 @@
       "original_path": "apprise/plugins/bark.py",
       "original_sha256": "07ea6b9509005f67f2a584d9f40887f8058c25f5c79631b723af55fa632d9b46",
       "source_observations": "testdata/bark-1.9.9.json"
+    },
+    {
+      "file": "gotify.go",
+      "original_path": "apprise/plugins/gotify.py",
+      "original_sha256": "5e04ccd856654d0c115c3e307ccbd861c22e8cff1d704a983397038678f480de",
+      "source_observations": "testdata/gotify-1.9.9.json",
+      "reason": "Port the original Gotify HTTP provider, response predicate, auth, query options, format and overflow."
+    },
+    {
+      "file": "attachment.go",
+      "original_paths": [
+        "apprise/apprise_attachment.py",
+        "apprise/attachment/base.py",
+        "apprise/attachment/http.py",
+        "apprise/attachment/file.py",
+        "apprise/plugins/custom_json.py",
+        "apprise/plugins/apprise_api.py"
+      ],
+      "source_observations": [
+        "testdata/attachment-1.9.9.json",
+        "testdata/attachment-review-1.9.9.json"
+      ],
+      "mime_reference": {
+        "host_revision": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+        "host_path": "internal/plugins/mergemessagenotify/apprise/testdata/original-linux-mimetypes.json",
+        "local_path": "mimetypes-linux.json",
+        "sha256": "ba02be18b5d7a76a40783fd701d56ef415e1d9681474d81ad6bff4b7a1e5a630"
+      },
+      "reason": "Resolve hosted attachments with original source query/cache and limits, and encode JSON/base64 or multipart. File URL parsing and injected authorized reading are covered. Production worker storage authorization remains open."
     }
   ]
 }

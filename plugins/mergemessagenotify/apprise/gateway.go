@@ -1,9 +1,12 @@
 package apprise
 
 import (
+	"bytes"
 	"crypto/rand"
 	"fmt"
+	"mime/multipart"
 	"net/http"
+	"net/textproto"
 	"net/url"
 	"regexp"
 	"slices"
@@ -167,18 +170,33 @@ func (s gatewayService) successful(status int) bool { return status == http.Stat
 
 func (s gatewayService) requests(title, body string) ([]Request, error) {
 	if s.method == "json" && len(s.tags) != 0 {
-		// The source adds tags after serializing the payload to a string.
-		// Its caught TypeError fails this service without touching the wire.
 		return nil, nil
 	}
-	return notificationRequests(title, body, s.emojis, s.overflow, s.format, s.request)
+	return notificationRequests(title, body, s.emojis, s.overflow, s.format, func(title, body string) (Request, error) {
+		return s.request(title, body, nil)
+	})
 }
 
-func (s gatewayService) request(title, body string) (Request, error) {
+func (s gatewayService) truncateAttachments() bool { return s.overflow == "truncate" }
+
+func (s gatewayService) attachmentChunks(title, body string) ([]notificationChunk, error) {
+	return notificationChunks(title, body, s.emojis, s.overflow, s.format)
+}
+
+func (s gatewayService) request(title, body string, attachments []attachment) (Request, error) {
+	if s.method == "json" && len(s.tags) != 0 {
+		// The source adds tags after JSON serialization, after resolving
+		// attachments. The caught TypeError suppresses this upload.
+		return Request{}, errAttachmentUnavailable
+	}
 	fields := object{{"title", title}, {"body", body}, {"type", "info"}, {"format", s.format}}
 	headers := slices.Clone(s.headers)
 	var data []byte
+	contentType := "application/x-www-form-urlencoded"
 	if s.method == "json" {
+		if len(attachments) != 0 {
+			fields = append(fields, field{"attachments", attachmentPayload(attachments)})
+		}
 		var err error
 		data, err = pythonJSON(fields)
 		if err != nil {
@@ -186,17 +204,25 @@ func (s gatewayService) request(title, body string) (Request, error) {
 		}
 		headers = orderedPairSet(headers, "Content-Type", "application/json")
 	} else {
-		var form strings.Builder
-		for i, field := range fields {
-			if i > 0 {
-				form.WriteByte('&')
-			}
-			form.WriteString(field.key + "=" + url.QueryEscape(field.value.(string)))
-		}
 		for _, tag := range s.tags {
-			form.WriteString("&tag=" + url.QueryEscape(tag))
+			fields = append(fields, field{"tag", tag})
 		}
-		data = []byte(form.String())
+		if len(attachments) != 0 {
+			var err error
+			data, contentType, err = gatewayMultipart(fields, attachments)
+			if err != nil {
+				return Request{}, err
+			}
+		} else {
+			var form strings.Builder
+			for i, field := range fields {
+				if i > 0 {
+					form.WriteByte('&')
+				}
+				form.WriteString(field.key + "=" + url.QueryEscape(field.value.(string)))
+			}
+			data = []byte(form.String())
+		}
 	}
 	for _, header := range [][2]string{
 		{"Accept", "application/json"},
@@ -212,7 +238,6 @@ func (s gatewayService) request(title, body string) (Request, error) {
 		hasContentType = hasContentType || strings.EqualFold(header[0], "Content-Type")
 	}
 	if s.method == "form" && !hasContentType {
-		contentType := "application/x-www-form-urlencoded"
 		headers = append(headers, [2]string{"Content-Type", contentType})
 		headerValues["Content-Type"] = contentType
 	}
@@ -221,4 +246,39 @@ func (s gatewayService) request(title, body string) (Request, error) {
 		Headers: headerValues, HeaderOrder: headers, Auth: s.auth,
 		Verify: s.verify, Timeout: s.timeout,
 	}, nil
+}
+
+func gatewayMultipart(fields object, attachments []attachment) ([]byte, string, error) {
+	var buffer bytes.Buffer
+	writer := multipart.NewWriter(&buffer)
+	for _, field := range fields {
+		if err := writer.WriteField(field.key, field.value.(string)); err != nil {
+			return nil, "", err
+		}
+	}
+	for i, item := range attachments {
+		name := item.name
+		if name == "" {
+			name = fmt.Sprintf("file%03d.dat", i+1)
+		}
+		// urllib3 escapes CR, LF and double quotes in MIME form parameters.
+		name = strings.NewReplacer("\r", "%0D", "\n", "%0A", "\"", "%22").Replace(name)
+		if strings.ContainsAny(item.mediaType, "\r\n") {
+			return nil, "", errAttachmentUnavailable
+		}
+		part, err := writer.CreatePart(textproto.MIMEHeader{
+			"Content-Disposition": {fmt.Sprintf(`form-data; name="file%02d"; filename="%s"`, i+1, name)},
+			"Content-Type":        {item.mediaType},
+		})
+		if err != nil {
+			return nil, "", err
+		}
+		if _, err := part.Write(item.data); err != nil {
+			return nil, "", err
+		}
+	}
+	if err := writer.Close(); err != nil {
+		return nil, "", err
+	}
+	return buffer.Bytes(), writer.FormDataContentType(), nil
 }

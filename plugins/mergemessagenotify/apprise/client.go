@@ -25,6 +25,7 @@ type Request struct {
 	Auth                    []any
 	Verify                  bool
 	Timeout                 [2]float64
+	MaxResponseBytes        int64 // zero preserves the ordinary provider response contract.
 }
 type Response struct {
 	Status  int
@@ -38,9 +39,17 @@ type notificationService interface {
 	successful(status int) bool
 }
 
+type attachmentService interface {
+	notificationService
+	attachmentChunks(title, body string) ([]notificationChunk, error)
+	request(title, body string, attachments []attachment) (Request, error)
+	truncateAttachments() bool
+}
+
 type Client struct {
-	transport Transport
-	services  []notificationService
+	transport           Transport
+	services            []notificationService
+	ReadLocalAttachment LocalAttachmentReader
 }
 
 func New(transport Transport) *Client { return &Client{transport: transport} }
@@ -75,6 +84,8 @@ func (c *Client) Add(raw string) (bool, error) {
 		service, valid = parseGatewayService(raw)
 	case "bark", "barks":
 		service, valid = parseBarkService(raw)
+	case "gotify", "gotifys":
+		service, valid = parseGotifyService(raw)
 	case "http", "https":
 		native, ok := gatewayNativeURL(raw)
 		if !ok {
@@ -100,28 +111,37 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	if len(c.services) == 0 {
 		return false, nil
 	}
-	wanted, validAttach := attachmentRequest(attach)
+	attachments, validAttach := attachmentSources(attach)
 	if !validAttach {
 		return false, nil
-	}
-	if wanted {
-		return nil, ErrUnsupported
 	}
 	titleText, ok := sourceText(title)
 	if !ok {
 		return false, nil
 	}
 	bodyText, ok := sourceText(body)
-	if !ok || bodyText == "" {
+	if !ok || bodyText == "" && len(attachments) == 0 {
 		return false, nil
 	}
 	type requestGroup struct {
-		service notificationService
-		calls   []Request
+		service  notificationService
+		calls    []Request
+		attached attachmentService
 	}
 	requests := make([]requestGroup, 0, len(c.services))
 	hasCalls := false
 	for _, service := range c.services {
+		if len(attachments) != 0 {
+			if provider, ok := service.(attachmentService); ok {
+				hasCalls = true
+				requests = append(requests, requestGroup{service: service, attached: provider})
+				continue
+			}
+			if bodyText == "" {
+				requests = append(requests, requestGroup{service: service})
+				continue
+			}
+		}
 		calls, err := service.requests(titleText, bodyText)
 		if err != nil {
 			return nil, err
@@ -135,24 +155,67 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	if c.transport == nil {
 		return nil, ErrUnsupported
 	}
-	send := func(group requestGroup) bool {
-		success := len(group.calls) != 0
+	type sendResult struct {
+		success bool
+		err     error
+	}
+	send := func(group requestGroup) sendResult {
 		throttle, _ := group.service.(interface{ waitToSend(context.Context) error })
-		for _, request := range group.calls {
+		deliver := func(request Request) bool {
 			if throttle != nil && throttle.waitToSend(ctx) != nil {
 				return false
 			}
 			reply, err := c.transport(ctx, request)
-			success = (err == nil && group.service.successful(reply.Status)) && success
+			return err == nil && group.service.successful(reply.Status)
 		}
-		return success
+		if group.attached == nil {
+			success := len(group.calls) != 0
+			for _, request := range group.calls {
+				success = deliver(request) && success
+			}
+			return sendResult{success: success}
+		}
+		chunks, err := group.attached.attachmentChunks(titleText, bodyText)
+		if err != nil {
+			return sendResult{err: err}
+		}
+		sources := attachments
+		if group.attached.truncateAttachments() {
+			sources = sources[:1]
+		}
+		success := len(chunks) != 0
+		for _, chunk := range chunks {
+			files, err := resolveAttachments(ctx, sources, c.transport, c.ReadLocalAttachment)
+			if errors.Is(err, errAttachmentUnavailable) {
+				// NotifyBase attempts every chunk, even after a failed send.
+				// Failed downloads are never cached and can recover here.
+				success = false
+				continue
+			}
+			if err != nil {
+				return sendResult{err: err}
+			}
+			request, err := group.attached.request(chunk.title, chunk.body, files)
+			if errors.Is(err, errAttachmentUnavailable) {
+				success = false
+				continue
+			}
+			if err != nil {
+				return sendResult{err: err}
+			}
+			success = deliver(request) && success
+		}
+		return sendResult{success: success}
 	}
 	if len(requests) == 1 {
-		success := send(requests[0])
+		result := send(requests[0])
 		if ctx.Err() != nil {
 			return nil, ctx.Err()
 		}
-		return success, nil
+		if result.err != nil {
+			return nil, result.err
+		}
+		return result.success, nil
 	}
 	// The original default asset uses ThreadPoolExecutor's CPython 3.12 bound.
 	// Reserve workers before sending; no unbounded waiting goroutine per URL.
@@ -164,7 +227,7 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 		workers = len(requests)
 	}
 	jobs := make(chan requestGroup)
-	results := make(chan bool, len(requests))
+	results := make(chan sendResult, len(requests))
 	var group sync.WaitGroup
 	for i := 0; i < workers; i++ {
 		group.Add(1)
@@ -182,36 +245,22 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	group.Wait()
 	close(results)
 	success := true
-	for ok := range results {
-		success = success && ok
+	var sendErr error
+	for result := range results {
+		success = success && result.success
+		if sendErr == nil {
+			sendErr = result.err
+		}
 	}
 	if ctx.Err() != nil {
 		return nil, ctx.Err()
 	}
+	if sendErr != nil {
+		return nil, sendErr
+	}
 	return success, nil
 }
-func attachmentRequest(value any) (wanted, valid bool) {
-	if value == nil {
-		return false, true
-	}
-	validate := func(s string) bool { return s != "" }
-	if s, ok := value.(string); ok {
-		return true, validate(s)
-	}
-	r := reflect.ValueOf(value)
-	if r.Kind() != reflect.Slice && r.Kind() != reflect.Array {
-		return false, false
-	}
-	for i := 0; i < r.Len(); i++ {
-		s, ok := r.Index(i).Interface().(string)
-		if !ok || !validate(s) {
-			return false, false
-		}
-	}
-	// __init__ requires successful add(); an empty list is successful, while
-	// invalid element types make the entire preparation fail before any IO.
-	return r.Len() > 0, true
-}
+
 func sourceText(v any) (string, bool) {
 	if v == nil {
 		return "", true

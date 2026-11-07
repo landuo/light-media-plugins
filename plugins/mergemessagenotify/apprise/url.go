@@ -14,6 +14,7 @@ type sourceURL struct {
 	user, password           *string
 	query                    map[string]string
 	headers, params, extras  [][2]string
+	queryPairs               [][2]string
 }
 
 var sourcePortPattern = regexp.MustCompile(`^([\[][0-9a-f:]+[\]]|[^:]+):([^:]*)$`)
@@ -116,6 +117,7 @@ func parseSourceURL(raw string) (sourceURL, bool) {
 			key = sourceUnquote(key)
 			value = strings.TrimFunc(sourceUnquote(value), sourceSpace)
 			u.query[strings.ToLower(strings.TrimFunc(key, sourceSpace))] = value
+			u.queryPairs = orderedPairSet(u.queryPairs, key, value)
 			if len(key) > 0 {
 				k := sourceUnquote(key[1:])
 				v := sourceUnquote(value)
