@@ -79,6 +79,10 @@ func parseJSONService(raw string) (jsonService, bool, error) {
 			}
 		case "emojis":
 			s.emojis = parseBool(value, false)
+		case "tz":
+			if !validSourceTimezone(value) {
+				return s, false, nil
+			}
 		}
 	}
 	switch s.method {

@@ -82,10 +82,7 @@ func parsePushDeerService(raw string) (*pushDeerService, bool) {
 		case "emojis":
 			s.emojis = parseBool(value, false)
 		case "tz":
-			if value == "" {
-				return nil, false
-			}
-			if _, err := time.LoadLocation(value); err != nil {
+			if !validSourceTimezone(value) {
 				return nil, false
 			}
 		}

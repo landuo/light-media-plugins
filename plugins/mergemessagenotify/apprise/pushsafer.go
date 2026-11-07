@@ -195,10 +195,7 @@ func parsePushSaferService(raw string) (*pushSaferService, bool) {
 				return nil, false
 			}
 		case "tz":
-			if value == "" || value == "Local" {
-				return nil, false
-			}
-			if _, err := time.LoadLocation(value); err != nil {
+			if !validSourceTimezone(value) {
 				return nil, false
 			}
 		}

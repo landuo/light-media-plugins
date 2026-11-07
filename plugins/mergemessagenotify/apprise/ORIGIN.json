@@ -44,7 +44,10 @@
     "feishu",
     "dingtalk",
     "pagerduty",
-    "twist"
+    "twist",
+    "chanify",
+    "pushme",
+    "wxpusher"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -317,6 +320,44 @@
       "original_sha256": "44cef94d16e2a0df4f3c6be4298e74df5201d6e4014d5693320c849a30779993",
       "source_observations": "testdata/twist-1.9.9.json",
       "reason": "Port password login, workspace and channel discovery, Markdown thread creation and notification client cleanup."
+    },
+    {
+      "file": "chanify.go",
+      "original_path": "apprise/plugins/chanify.py",
+      "original_sha256": "95404cecc5d6be304934bdff21222836f66702b4c5a4412704f25c181856716c",
+      "source_observations": "testdata/chanify-1.9.9.json",
+      "reason": "Port token parsing and overrides, titleless notifications, form encoding, and strict HTTP status."
+    },
+    {
+      "file": "pushme.go",
+      "original_path": "apprise/plugins/pushme.py",
+      "original_sha256": "85f9cafbd0d0ce0ac2707b43c6e6318c8ecdd7f660b50a595a750492311a23f1",
+      "source_observations": "testdata/pushme-1.9.9.json",
+      "reason": "Port token precedence, status prefix, format selection, and exact POST query and status behavior."
+    },
+    {
+      "file": "wxpusher.go",
+      "original_path": "apprise/plugins/wxpusher.py",
+      "original_sha256": "623f9b87a7fb231788099ef68c306d4f74222c704bed937995d4a7ba127b5162",
+      "source_observations": [
+        "testdata/wxpusher-1.9.9.json",
+        "testdata/wxpusher-encoded-replies-1.9.9.json"
+      ],
+      "reason": "Port AppToken overrides, UID/topic targets, three content formats, exact request JSON, and status and numeric response code handling.",
+      "response_encoding": "Go x/text decoders implement CPython json.detect_encoding for valid UTF-8/16/32 bytes, preserving byte order detection with or without a BOM."
+    },
+    {
+      "file": "timezone.go",
+      "original_path": "apprise/utils/time.py",
+      "original_sha256": "5b7ff2df7f21a5a02b26a36bd942071a33e29c43a2da8781885da147796f17d3",
+      "source_observations": "testdata/timezone-1.9.9.json",
+      "reason": "Validate original UTC aliases, case-insensitive full names and one/two-part region suffixes without a Python runtime.",
+      "timezone_catalog": {
+        "file": "timezone-names.txt",
+        "sha256": "8725722643bf1f4ff4fc4b22268ade98b6fae047a86897219c3a13d4c4ced93d",
+        "keys": 598,
+        "provenance": "Isolated original Python zoneinfo.available_timezones, sorted and identical to the pinned Go 1.26.10 zoneinfo.zip key set."
+      }
     }
   ]
 }

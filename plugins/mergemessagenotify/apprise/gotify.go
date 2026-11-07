@@ -4,7 +4,6 @@ import (
 	"net/http"
 	"strconv"
 	"strings"
-	"time"
 )
 
 type gotifyService struct {
@@ -80,10 +79,7 @@ func parseGotifyService(raw string) (gotifyService, bool) {
 		case "emojis":
 			s.emojis = parseBool(value, false)
 		case "tz":
-			if value == "" {
-				return s, false
-			}
-			if _, err := time.LoadLocation(value); err != nil {
+			if !validSourceTimezone(value) {
 				return s, false
 			}
 		}

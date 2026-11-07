@@ -62,13 +62,8 @@ func (s *providerHTTPOptions) configure(u sourceURL) bool {
 		// These providers expose read-only URL identities in NotifyBase.
 		return false
 	}
-	if value, ok := u.query["tz"]; ok {
-		if value == "" {
-			return false
-		}
-		if _, err := time.LoadLocation(value); err != nil {
-			return false
-		}
+	if value, ok := u.query["tz"]; ok && !validSourceTimezone(value) {
+		return false
 	}
 	return true
 }

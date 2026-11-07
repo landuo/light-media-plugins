@@ -212,6 +212,12 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parsePagerDutyService(raw)
 	case "twist":
 		service, valid = parseTwistService(raw)
+	case "chanify":
+		service, valid = parseChanifyService(raw)
+	case "pushme":
+		service, valid = parsePushMeService(raw)
+	case "wxpusher":
+		service, valid = parseWxPusherService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)

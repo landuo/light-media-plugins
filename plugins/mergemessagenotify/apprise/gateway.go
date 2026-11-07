@@ -13,7 +13,6 @@ import (
 	"strconv"
 	"strings"
 	"sync"
-	"time"
 )
 
 // NotifyAppriseAPI in the pinned Apprise 1.9.9 source defines the gateway
@@ -151,10 +150,7 @@ func parseGatewayService(raw string) (gatewayService, bool) {
 		case "emojis":
 			s.emojis = parseBool(value, false)
 		case "tz":
-			if value == "" {
-				return s, false
-			}
-			if _, err := time.LoadLocation(value); err != nil {
+			if !validSourceTimezone(value) {
 				return s, false
 			}
 		}

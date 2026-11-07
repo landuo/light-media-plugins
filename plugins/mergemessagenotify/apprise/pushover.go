@@ -125,7 +125,7 @@ func parsePushoverService(raw string) (*pushoverService, bool) {
 				return nil, false
 			}
 		case "tz":
-			if _, err := time.LoadLocation(value); value == "" || err != nil {
+			if !validSourceTimezone(value) {
 				return nil, false
 			}
 		}
