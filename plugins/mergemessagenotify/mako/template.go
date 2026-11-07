@@ -37,11 +37,9 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 			return fallback(text, err)
 		}
 	}
-	for _, arg := range p.pageArgs {
-		// Mako adds the implicit context and pageargs parameters.
-		if arg.name == "context" || arg.name == "pageargs" {
-			return fallback(text, fault("SyntaxError"))
-		}
+	pageSignature, err := pageParameters(p.pageArgs)
+	if err != nil {
+		return fallback(text, err)
 	}
 	if p.pageCached || p.usesPageCacheTimeout {
 		if err = p.validateCacheTimeout(p.pageCacheTimeout); err != nil {
@@ -60,23 +58,28 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	}
 	callers := &callerStack{frames: []*callerNamespace{nil}}
 	e := &environment{ctx: ctx, values: map[string]any{}, output: b, parent: module, module: module, callers: callers}
+	kwargs := make(map[string]any, len(variables))
 	for k, v := range variables {
-		e.values[k] = normalize(v)
+		kwargs[k] = normalize(v)
+		e.values[k] = kwargs[k]
 	}
-	e.values["UNDEFINED"] = undefined{}
-	e.values["STOP_RENDERING"] = ""
-	e.values["context"] = renderContext{e}
 	e.values["self"] = selfNamespace{e}
 	e.values["local"] = selfNamespace{e}
 	e.values["capture"] = callable(captureFunction)
 	e.values["caller"] = callers
 	module.contextData = &environment{values: maps.Clone(e.values), callers: callers}
+	e.values["UNDEFINED"] = undefined{}
+	e.values["STOP_RENDERING"] = ""
+	e.values["context"] = renderContext{module.contextData}
 	filtersEnvironment(e)
 	originalContext := e.child()
 	originalContext.parent, originalContext.values = module, maps.Clone(e.values)
 	originalContext.definitionContext = originalContext
 	e.definitionContext = originalContext
-	pageArgs := p.pageArgs
+	pageArgs := make([]parameter, 0, len(pageSignature))
+	for _, param := range pageSignature {
+		pageArgs = append(pageArgs, param.parameter)
+	}
 	pageDefaults, err := parameterDefaults(module, pageArgs)
 	if err == nil && p.pageCached {
 		pageDefaults, err = parameterDefaults(module, pageArgs)
@@ -88,25 +91,24 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 		return fallback(text, err)
 	}
 	e.parameters = make(map[string]bool, len(pageArgs))
-	for _, param := range pageArgs {
+	for _, param := range pageSignature {
 		e.parameters[param.name] = true
-		if _, supplied := e.values[param.name]; supplied {
-			continue
+		if param.name == "pageargs" && param.kind == "kwargs" {
+			e.variadicPageargs = true
 		}
-		if value, ok := pageDefaults[param.name]; ok {
-			e.values[param.name] = value
-		} else {
+	}
+	for name := range kwargs {
+		// The original render call also reserves the positional parameters
+		// of Template.render, Context and _render_context.
+		if reservedMakoName(name) || name == "self" || name == "buffer" || name == "tmpl" || name == "callable_" {
 			return fallback(text, fault("TypeError"))
 		}
 	}
-	pageKeywords := dictionary{}
-	for _, name := range slices.Sorted(maps.Keys(variables)) {
-		if !e.parameters[name] {
-			pageKeywords = append(pageKeywords, entry{name, e.values[name]})
-		}
+	// TemplateUtil.render uses keyword arguments exclusively. An input key
+	// equal to the variadic positional name still belongs to the keyword map.
+	if err = bindCallbackArguments(e, pageSignature, pageDefaults, nil, kwargs, slices.Sorted(maps.Keys(kwargs))); err != nil {
+		return fallback(text, err)
 	}
-	e.values["pageargs"] = pageKeywords
-	e.parameters["pageargs"] = true
 	if p.pageCached {
 		return fallback(text, unavailableTemplateCache())
 	}
@@ -118,6 +120,36 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	}
 	return b.String(), nil
 }
+
+func pageParameters(params []callbackParameter) ([]callbackParameter, error) {
+	implicitKeywords := len(params) == 0 || params[len(params)-1].kind != "kwargs"
+	signature := make([]callbackParameter, 0, len(params)+1)
+	var varargs, positionalDefault bool
+	for _, param := range params {
+		if implicitKeywords && param.name == "pageargs" {
+			return nil, fault("SyntaxError")
+		}
+		if param.kind == "varargs" {
+			varargs = true
+		}
+		if param.kind == "keyword" && !varargs {
+			// Mako does not emit a bare star when regenerating a signature.
+			param.kind = "positional"
+		}
+		if param.kind == "positional" {
+			if positionalDefault && param.defaultValue == nil {
+				return nil, fault("SyntaxError")
+			}
+			positionalDefault = positionalDefault || param.defaultValue != nil
+		}
+		signature = append(signature, param)
+	}
+	if implicitKeywords {
+		signature = append(signature, callbackParameter{parameter: parameter{name: "pageargs"}, kind: "kwargs"})
+	}
+	return signature, nil
+}
+
 func fallback(text string, err error) (string, error) {
 	if errors.Is(err, ErrUnsupported) || errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded) {
 		return "", err

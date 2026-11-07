@@ -68,6 +68,7 @@ type environment struct {
 	rootCalls         map[string]callable
 	globals           map[string]bool
 	parameters        map[string]bool
+	variadicPageargs  bool
 	forwarding        map[string]bool
 	independentDef    bool
 	definitionContext *environment

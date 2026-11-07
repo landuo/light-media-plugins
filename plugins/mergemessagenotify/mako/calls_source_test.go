@@ -38,6 +38,10 @@ func TestSourceMultiplePages141(t *testing.T) {
 	runSourceCallFixture(t, "testdata/source-multiple-pages-1.4.1.json")
 }
 
+func TestSourcePageVariadic141(t *testing.T) {
+	runSourceCallFixture(t, "testdata/source-page-variadic-1.4.1.json")
+}
+
 func runSourceCallFixture(t *testing.T, path string) {
 	t.Helper()
 	file, err := os.Open(path)

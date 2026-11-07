@@ -133,7 +133,7 @@ func installForwardingDefinitions(e *environment, nodes []templateNode, ownerBlo
 		}
 		e.contextLocals = refs.assigned
 		for name := range e.parameters {
-			if name == "pageargs" || refs.pageArguments[name] || refs.blockArguments[name] {
+			if name == "pageargs" && e.variadicPageargs || refs.pageArguments[name] || refs.blockArguments[name] {
 				e.contextLocals[name] = true
 				continue
 			}

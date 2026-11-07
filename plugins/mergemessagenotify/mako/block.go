@@ -2,7 +2,7 @@ package mako
 
 import "strings"
 
-func parseNamedBlockParameters(raw string) ([]callbackParameter, error) {
+func parseMakoParameters(raw string) ([]callbackParameter, error) {
 	// Mako's FunctionArgs discards positional-only names and keeps the
 	// remaining defaults aligned with the end of its generated signature.
 	parts := splitTop(raw, ',')
@@ -31,7 +31,14 @@ func parseNamedBlockParameters(raw string) ([]callbackParameter, error) {
 			return nil, fault("SyntaxError")
 		}
 	}
-	params = params[omitted:]
+	return params[omitted:], nil
+}
+
+func parseNamedBlockParameters(raw string) ([]callbackParameter, error) {
+	params, err := parseMakoParameters(raw)
+	if err != nil {
+		return nil, err
+	}
 	var varargs, positionalDefault bool
 	for i := range params {
 		param := &params[i]

@@ -271,6 +271,29 @@
       "source_observations": "testdata/source-multiple-pages-1.4.1.json",
       "source_observations_sha256": "ef84c50d7afea95781a5b181cff62dfacbd5f80cfa06cb034071774e917ef4d7",
       "scope": "Twenty-four original TemplateUtil cases. Covers old-only names and fallback, module values, nested signature lookup, cache options, loop defaults and scope forwarding. Explicit variadic signatures, advanced Python declaration forms and external template inheritance remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Bind the generated page signature from the original keyword arguments, preserve explicit and implicit variadics, lower positional-only and bare-star syntax, and keep root Context data separate from generated page locals.",
+      "target_files": [
+        "block.go",
+        "parser.go",
+        "template.go",
+        "definitions.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/ast.py": "f0248c12c8827349ea6d1b7d88dcf325743c589d04d50fcde63e982a5e44395b",
+        "mako/pyparser.py": "6c0319ab7a64674b58c3be700396c4ad5f0a9df91f6e679b0264a0642df3db66",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d"
+      },
+      "source_observations": "testdata/source-page-variadic-1.4.1.json",
+      "source_observations_sha256": "2ce1c3f5f933d7802bb55c8d0c2cfb812c4a6d93281a74837eaa2c069abebf4c",
+      "scope": "Thirty-three original TemplateUtil cases. Covers explicit and implicit kwargs, empty variadic positional tuple, required keyword-only arguments, bare-star and positional-only lowering, annotations, named-block forwarding, reserved names and top-level Context data. Arbitrary Python declaration expressions, nested Context extensions, external inheritance and the original input keyword insertion order remain open."
     }
   ]
 }

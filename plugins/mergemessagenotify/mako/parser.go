@@ -13,7 +13,7 @@ type templateParser struct {
 	blockLines           map[int]bool
 	pageFilter           templateFilters
 	pageTag              templateToken
-	pageArgs             []parameter
+	pageArgs             []callbackParameter
 	hasPageArguments     bool
 	compile              *environment
 	pageCached           bool
@@ -287,12 +287,15 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				}
 				p.pageTag, p.pageArgs = t, nil
 				if args := t.attrs["args"]; args != "" {
-					_, params, err := parseSignature("page("+args+")", false)
+					params, err := parseMakoParameters(args)
 					if err != nil {
 						return nil, nil, err
 					}
 					p.pageArgs = params
 					for _, param := range params {
+						if reservedMakoName(param.name) || reservedPythonName(param.name) {
+							return nil, nil, fault("SyntaxError")
+						}
 						out = append(out, pageArgNode{param.name})
 					}
 					p.hasPageArguments = p.hasPageArguments || len(params) > 0
@@ -364,6 +367,25 @@ func parseTargets(s string) ([]string, error) {
 	}
 	return names, nil
 }
+func reservedMakoName(name string) bool {
+	switch name {
+	case "context", "loop", "UNDEFINED", "STOP_RENDERING":
+		return true
+	}
+	return false
+}
+
+func reservedPythonName(name string) bool {
+	switch name {
+	case "False", "None", "True", "__debug__", "and", "as", "assert", "async", "await",
+		"break", "class", "continue", "def", "del", "elif", "else", "except", "finally",
+		"for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal",
+		"not", "or", "pass", "raise", "return", "try", "while", "with", "yield":
+		return true
+	}
+	return false
+}
+
 func parseSignature(s string, block bool) (string, []parameter, error) {
 	if block {
 		tokens, err := lex(s)
@@ -372,11 +394,7 @@ func parseSignature(s string, block bool) (string, []parameter, error) {
 		}
 		// Mako emits this name in both a Python declaration and an
 		// attribute access. Python soft keywords are valid in these places.
-		switch s {
-		case "False", "None", "True", "__debug__", "and", "as", "assert", "async", "await",
-			"break", "class", "continue", "def", "del", "elif", "else", "except", "finally",
-			"for", "from", "global", "if", "import", "in", "is", "lambda", "nonlocal",
-			"not", "or", "pass", "raise", "return", "try", "while", "with", "yield":
+		if reservedPythonName(s) {
 			return "", nil, fault("SyntaxError")
 		}
 		return s, nil, nil
