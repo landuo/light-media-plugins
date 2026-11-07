@@ -54,8 +54,12 @@ prior browser and clone evidence is recorded separately. The installed
 plugin declares no restore entry. WebDAV is outside scope. See
 `migration/evidence/autobackup-acceptance-20261107.json`.
 
-Next: BrushFlowLanduo. Confirm the installed version and source identity
-before relying on the earlier 5.2.16 inventory.
+BrushFlowLanduo is in progress. The latest read-only installed metadata
+matched all 33 files of `landuo/MoviePilot-Plugins@3795f104` (5.2.18).
+The Go worker and exact reachable Vue workbench are saved locally. The
+standard host, protected downloader ordering and current browser need
+acceptance before this plugin changes the count. The installed source
+manifest is `migration/evidence/brushflowlanduo-source-5.2.18.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
