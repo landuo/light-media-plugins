@@ -27,6 +27,12 @@ source-derived checks for the upload handshake, batched images and one-line
 destination lists. Mako call tags and caller namespaces have fixed-source
 comparisons. See
 `migration/evidence/mergemessagenotify-providers-mako-calls-20261107.json`.
+Join, IFTTT, Pushjet, Discord and Pushover now have Go implementations and
+targeted source replay. Pushover uses the pinned Goldmark Go renderer for
+Markdown, with dialect differences tracked in the ledger. Mako decorated
+definitions and the installed environment's lazy missing-Beaker behavior
+have separate source evidence. See
+`migration/evidence/mergemessagenotify-providers-mako-decorators-20261107.json`.
 Additional Apprise schemes and Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
