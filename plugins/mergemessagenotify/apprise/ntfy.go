@@ -57,7 +57,7 @@ func ntfyNativeURL(raw string) (string, bool) {
 
 func parseNtfyService(raw string) (*ntfyService, bool) {
 	u, valid := parseSourceURLWithHostVerification(strings.ReplaceAll(raw, "/#", "/%23"), false)
-	if !valid || u.rawHost == "" && u.path == "" {
+	if !valid {
 		return nil, false
 	}
 	s := &ntfyService{overflow: "upstream", format: "text", verify: true, timeout: [2]float64{4, 4}}
@@ -73,23 +73,25 @@ func parseNtfyService(raw string) (*ntfyService, bool) {
 		topics = append(topics, sourceUnquote(entry))
 	}
 	_, validHost := sourceHostname(u.rawHost)
-	mode := strings.ToLower(strings.TrimFunc(get("mode"), sourceSpace))
+	mode := sourceUnquote(strings.ToLower(strings.TrimFunc(u.query["mode"], sourceSpace)))
 	if u.query["mode"] == "" {
 		mode = "cloud"
 		if validHost && len(topics) > 0 {
 			mode = "private"
 		}
 	}
+	// URL parsing uses the decoded value before the constructor normalizes it.
+	if mode == "cloud" && !strings.Contains(strings.ToLower(u.rawHost), "ntfy.sh") {
+		topics = append(topics, u.rawHost)
+	}
+	if mode == "private" && !validHost {
+		return nil, false
+	}
+	mode = strings.ToLower(strings.TrimFunc(mode, sourceSpace))
 	switch mode {
 	case "cloud":
 		s.endpoint = ntfyCloudURL
-		if !strings.Contains(strings.ToLower(u.rawHost), "ntfy.sh") {
-			topics = append(topics, u.rawHost)
-		}
 	case "private":
-		if !validHost {
-			return nil, false
-		}
 		scheme := "http"
 		if u.scheme == "ntfys" {
 			scheme = "https"
@@ -163,6 +165,10 @@ func parseNtfyService(raw string) (*ntfyService, bool) {
 			}
 		case "emojis":
 			s.emojis = parseBool(value, false)
+		case "store":
+			if !parseBool(value, false) {
+				return nil, false
+			}
 		case "tz":
 			if value == "" {
 				return nil, false
@@ -187,11 +193,18 @@ func (s *ntfyService) setAuth(u sourceURL, mode string) bool {
 	auth := "basic"
 	switch {
 	case u.query["auth"] != "":
-		auth = strings.ToLower(strings.TrimFunc(sourceUnquote(u.query["auth"]), sourceSpace))
+		auth = sourceUnquote(strings.ToLower(strings.TrimFunc(u.query["auth"], sourceSpace)))
 	case token != "", rawPassword == "" && ntfyToken.MatchString(rawUser):
 		auth = "token"
 	}
-	switch auth {
+	if auth == "token" && token == "" {
+		if rawPassword != "" {
+			token = sourceUnquote(rawPassword)
+		} else {
+			token = sourceUnquote(rawUser)
+		}
+	}
+	switch strings.ToLower(strings.TrimFunc(auth, sourceSpace)) {
 	case "basic":
 		if mode == "private" && u.user != nil && *u.user != "" {
 			var password any
@@ -202,13 +215,6 @@ func (s *ntfyService) setAuth(u sourceURL, mode string) bool {
 		}
 	case "token":
 		if mode == "private" {
-			if token == "" {
-				if rawPassword != "" {
-					token = sourceUnquote(rawPassword)
-				} else {
-					token = sourceUnquote(rawUser)
-				}
-			}
 			s.token = token
 			s.missingToken = token == ""
 		}
@@ -323,7 +329,7 @@ func (s *ntfyService) requests(title, body string) ([]Request, error) {
 	return calls, nil
 }
 
-func (s *ntfyService) sendAttachments(title, body string, sources []*attachmentSource, resolve func(*attachmentSource) (attachment, error), deliver func(Request) bool) (bool, error) {
+func (s *ntfyService) sendAttachments(title, body string, sources []*attachmentSource, resolve func(*attachmentSource) (attachment, error), deliver func(Request) (Response, bool)) (bool, error) {
 	if len(s.topics) == 0 {
 		return false, nil
 	}
@@ -338,8 +344,11 @@ func (s *ntfyService) sendAttachments(title, body string, sources []*attachmentS
 				fileTitle, fileBody = title, body
 			}
 			call, err := s.topicRequest(topic, fileTitle, fileBody, &file)
-			if err != nil || !deliver(call) {
+			if err != nil {
 				return false, err
+			}
+			if _, sent := deliver(call); !sent {
+				return false, nil
 			}
 		}
 	}

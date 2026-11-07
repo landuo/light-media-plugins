@@ -9,6 +9,7 @@ import (
 	"encoding/json"
 	"errors"
 	"reflect"
+	"regexp"
 	"runtime"
 	"strings"
 	"sync"
@@ -52,7 +53,7 @@ type attachmentService interface {
 
 type orderedAttachmentService interface {
 	attachmentChunkService
-	sendAttachments(title, body string, sources []*attachmentSource, resolve func(*attachmentSource) (attachment, error), deliver func(Request) bool) (bool, error)
+	sendAttachments(title, body string, sources []*attachmentSource, resolve func(*attachmentSource) (attachment, error), deliver func(Request) (Response, bool)) (bool, error)
 }
 
 type Client struct {
@@ -77,7 +78,50 @@ var knownSchemas = func() map[string]bool {
 	return out
 }()
 
-func (c *Client) Add(raw string) (bool, error) {
+var sourceURLStart = regexp.MustCompile(`[A-Za-z0-9İıſK]+://`)
+
+// Apprise.add accepts multiple URLs in one configuration line. A separator
+// only terminates a URL when a new scheme follows, so URL values can contain
+// whitespace and commas without starting another service.
+func sourceURLs(line string) []string {
+	starts := sourceURLStart.FindAllStringIndex(line, -1)
+	if len(starts) == 0 {
+		return nil
+	}
+	var urls []string
+	start := starts[0][0]
+	for _, next := range starts[1:] {
+		if len([]rune(line[next[0]:next[1]-3])) > 32 {
+			continue
+		}
+		previous := strings.TrimRightFunc(line[start:next[0]], func(r rune) bool {
+			return r == ',' || sourceSpace(r)
+		})
+		if len(previous) != next[0]-start {
+			urls = append(urls, previous)
+			start = next[0]
+		}
+	}
+	return append(urls, line[start:])
+}
+
+func (c *Client) Add(line string) (bool, error) {
+	urls := sourceURLs(line)
+	if len(urls) == 0 {
+		return false, nil
+	}
+	accepted := true
+	for _, raw := range urls {
+		added, err := c.addService(strings.ReplaceAll(raw, "/#", "/%23"))
+		if err != nil {
+			return false, err
+		}
+		accepted = added && accepted
+	}
+	return accepted, nil
+}
+
+func (c *Client) addService(raw string) (bool, error) {
 	sep := strings.Index(raw, "://")
 	if sep <= 0 {
 		return false, nil
@@ -99,6 +143,12 @@ func (c *Client) Add(raw string) (bool, error) {
 		service, valid = parseNtfyService(raw)
 	case "pushdeer", "pushdeers":
 		service, valid = parsePushDeerService(raw)
+	case "pbul":
+		service, valid = parsePushBulletService(raw)
+	case "schan":
+		service, valid = parseServerChanService(raw)
+	case "psafer", "psafers":
+		service, valid = parsePushSaferService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -164,10 +214,7 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 		hasCalls = hasCalls || len(calls) != 0
 		requests = append(requests, requestGroup{service: service, calls: calls})
 	}
-	if !hasCalls {
-		return false, nil
-	}
-	if c.transport == nil {
+	if hasCalls && c.transport == nil {
 		return nil, ErrUnsupported
 	}
 	type sendResult struct {
@@ -176,17 +223,26 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	}
 	send := func(group requestGroup) sendResult {
 		throttle, _ := group.service.(interface{ waitToSend(context.Context) error })
-		deliver := func(request Request) bool {
+		responseCheck, _ := group.service.(interface{ successfulResponse(Response) bool })
+		deliver := func(request Request) (Response, bool) {
 			if throttle != nil && throttle.waitToSend(ctx) != nil {
-				return false
+				return Response{}, false
 			}
 			reply, err := c.transport(ctx, request)
-			return err == nil && group.service.successful(reply.Status)
+			if err != nil || !group.service.successful(reply.Status) {
+				return reply, false
+			}
+			return reply, responseCheck == nil || responseCheck.successfulResponse(reply)
 		}
 		if group.attached == nil {
-			success := len(group.calls) != 0
+			if len(group.calls) == 0 {
+				empty, _ := group.service.(interface{ emptyNotificationSuccessful() bool })
+				return sendResult{success: empty != nil && empty.emptyNotificationSuccessful()}
+			}
+			success := true
 			for _, request := range group.calls {
-				success = deliver(request) && success
+				_, sent := deliver(request)
+				success = sent && success
 			}
 			return sendResult{success: success}
 		}
@@ -213,7 +269,9 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 				if err == nil {
 					var request Request
 					request, err = group.attached.(attachmentService).request(chunk.title, chunk.body, files)
-					sent = err == nil && deliver(request)
+					if err == nil {
+						_, sent = deliver(request)
+					}
 				}
 			}
 			if errors.Is(err, errAttachmentUnavailable) {

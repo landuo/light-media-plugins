@@ -16,6 +16,15 @@ import (
 )
 
 func TestSourceNtfy199(t *testing.T) {
+	testSourceNtfy199(t, "testdata/ntfy-1.9.9.json")
+}
+
+func TestSourceNtfyBoundary199(t *testing.T) {
+	testSourceNtfy199(t, "testdata/ntfy-boundary-1.9.9.json")
+}
+
+func testSourceNtfy199(t *testing.T, path string) {
+	t.Helper()
 	type observation struct {
 		Method, URL string
 		Headers     map[string]string
@@ -36,7 +45,7 @@ func TestSourceNtfy199(t *testing.T) {
 			Requests         []observation
 		}
 	}
-	raw, err := os.ReadFile("testdata/ntfy-1.9.9.json")
+	raw, err := os.ReadFile(path)
 	if err != nil {
 		t.Fatal(err)
 	}
