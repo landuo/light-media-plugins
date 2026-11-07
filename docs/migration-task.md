@@ -127,7 +127,12 @@ form, persisted a 24-hour failure after invalid content, skipped a rotated
 enclosure with the same detail-page ID, and accepted the valid confirmation
 for a different resource. See
 `migration/evidence/lark-messager-subscribes-cooldown-20261108.json`.
-Continue with successful paused acquisition and the remaining Lark paths.
+A paused movie completed from the confirmed Add with no inventory. The
+completion notice observed history written and the live row removed before
+the final search reply. Two wholly missing seasons used one complete Add
+and subsequently published two distinct local hardlinks. See
+`migration/evidence/lark-messager-paused-completion-multiseason-20261108.json`.
+Continue with alternate-provider-to-Add and the remaining Lark paths.
 Reuse earlier passing evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
