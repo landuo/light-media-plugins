@@ -1,0 +1,285 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "apprise_product_commit": "13dab6cebe24e91f741b6e442fd3e9f4bae823c6",
+  "combined_product_commit": "942332925c69baf56bff201801af4fb2662900a4",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Pinned original offline captures, scoped Go replays, independent read-only review and real Linux host package execution against an owned loopback receiver.",
+  "apprise": {
+    "providers": {
+      "flock_and_prowl": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/flock-prowl-1.9.9.json",
+          "sha256": "6f7b1240f0d630f36e4973f6ea5567135b42cffc46ca25cda917b7a86a9177a4"
+        },
+        "initial_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-flock-prowl-target.stdout",
+          "sha256": "4518efe601abe84dc69ffbb902c57b47d9f65e13dd6a5eda8f4a000bfdcf557f"
+        },
+        "followup": {
+          "path": "work/mergemessagenotify-20261107/apprise-flock-prowl-target-followup.stdout",
+          "sha256": "2ceefd1fbf3e4754d0d6a7bc726c1acbeb9c6a5e66313bcb8c060ee405166923"
+        },
+        "test": "TestSourceFlockAndProwl199",
+        "cases": 14,
+        "source": [
+          "apprise/plugins/flock.py:147–308,344–397",
+          "apprise/plugins/prowl.py:149–264,296–319"
+        ],
+        "target": [
+          "plugins/mergemessagenotify/apprise/flock.go",
+          "plugins/mergemessagenotify/apprise/prowl.go"
+        ],
+        "reviewer": "/root/rocketchat",
+        "setup_failure": {
+          "path": "work/mergemessagenotify-20261107/apprise-flock-prowl-source-setup.stderr",
+          "sha256": "1d300b08b8e15970a84ca9295887bdd8f24ea369133610a9a4d79b48cffded3f"
+        },
+        "scope": "Flock webhook/API recipients and native alias, text/HTML FlockML, Prowl API/provider keys, priority, sizing and zero interval.",
+        "observer_fix": "The first target run indexed an empty wait list on the source no-delay Prowl case and stopped before the long Flock row finished. After fixing the observer, only the failed and unreached rows were replayed."
+      },
+      "flock_image_flags": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/flock-image-1.9.9.json",
+          "sha256": "22dfc3cdc8e7c3e8e46c803c6573d46de5a69203f6f49a96c4397d053cbfac0a"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-flock-image-target.stdout",
+          "sha256": "9642c5d00a014d9346240f7590791b27c48695cfb4bcdeec563a1cf9f0c6a80d"
+        },
+        "test": "TestSourceFlockImage199",
+        "cases": 2,
+        "scope": "Explicit empty or unknown image options disable the icon; absent image enables it."
+      },
+      "simplepush": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/simplepush-1.9.9.json",
+          "sha256": "079064ab76007d23db40be48bba47ec03c922c286e50496900ff1c52d46b3476"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-simplepush-target.stdout",
+          "sha256": "d97c4c0379e0b004ed78e431b2a9f8f0ed9d98b8f3726b827a497831bbed19de"
+        },
+        "test": "TestSourceSimplePush199",
+        "cases": 10,
+        "scope": "Plaintext, event, exact encrypted Unicode and empty-title payloads, same-object IV reuse, response status, and transport failures.",
+        "source": [
+          "apprise/plugins/simplepush.py:132–314,353–371"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/simplepush.go",
+        "original_dependency_metadata": {
+          "path": "work/mergemessagenotify-20261107/live-simplepush-dependencies-20261107.json",
+          "sha256": "62d88bbf4455149c718407c6ea6663039f8e8ee35bf2ba3a3d95d769dd9033ad"
+        },
+        "crypto": "Original cryptography 49.0.0. Go standard library AES-CBC, PKCS7, SHA-1 key derivation, URL-safe Base64 and per-object IV lifetime.",
+        "remaining": [
+          "Nonstandard response JSON encodings remain outside the fixture."
+        ]
+      },
+      "rocketchat": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/rocketchat-1.9.9.json",
+          "sha256": "58c7ed28955299ccc07778bcf84a2aa440a646e970e1a454db5dcccac73a37f5"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-rocketchat-target.stdout",
+          "sha256": "d1e2394dc018c99a876cd72b1b56c408e8c376e9f3370ea52215dbb4d405a1ac"
+        },
+        "test": "TestSourceRocketChat199",
+        "cases": 19,
+        "scope": "Webhook and native token syntax, API token mode, password login, grouped recipients, titleless overflow, avatar, throttle and logout failure behavior.",
+        "source": [
+          "apprise/plugins/rocketchat.py:195–323,407–598,600–723,725–800",
+          "apprise/url.py:285–319"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/rocketchat.go",
+        "reviewer": "/root",
+        "remaining": [
+          "Source default per-chunk concurrency and unusual JSON/URL boundaries."
+        ]
+      },
+      "matrix": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/matrix-1.9.9.json",
+          "sha256": "bedb6357459fc102d8010f2cd5a504e7c156cffab614341358ed5da945b25666"
+        },
+        "initial_replay": {
+          "path": "work/mergemessagenotify-20261107/apprise-matrix-target.stdout",
+          "sha256": "4dc824562160e1e8d89036488555e0b986585e142f651943754415c488192cd6"
+        },
+        "followup": {
+          "path": "work/mergemessagenotify-20261107/apprise-matrix-target-followup.stdout",
+          "sha256": "8eab1dd787861874fd02cc1845eae14e791921db6bcfe3345d891ad77ae3f9bb"
+        },
+        "test": "TestSourceMatrix199",
+        "cases": 20,
+        "source": [
+          "apprise/plugins/matrix.py:316–899,900–1332,1333–1553,1628–1972"
+        ],
+        "target": [
+          "plugins/mergemessagenotify/apprise/matrix.go",
+          "plugins/mergemessagenotify/native_apprise.go"
+        ],
+        "reviewer": "/root",
+        "scope": "Three webhook formats, direct v2/v3 login/register and logout, token handling, room lookup/create, delegated discovery, MIME delivery and retry delay including terminal 429.",
+        "followup_scope": "Only the initially failing unqualified delegated URL case reran after the source-style throttle and rejection behavior was corrected.",
+        "remaining": [
+          "Goldmark/Python-Markdown dialect differences, nonstandard reply JSON and source per-chunk concurrency.",
+          "Source cleanup uses Python object destruction; native Go closes the per-notification client under its call context."
+        ]
+      }
+    },
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 35,
+    "schemes_without_native_implementation": 148
+  },
+  "mako": {
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-named-block-1.4.1.json",
+      "sha256": "ce9ba81dfb106aa9571a26b2ce6794deac0288626f5b50e859fcabb79554f096"
+    },
+    "output": {
+      "path": "work/mergemessagenotify-20261107/mako-named-block-target.stdout",
+      "sha256": "d3db35a5ad3a799f3121d2a644ad3413506afca31bfa0c984399fdb9bcb2397e"
+    },
+    "test": "TestSourceNamedBlock141",
+    "cases": 18,
+    "scope": "Page argument and implicit kwargs forwarding, named-block runtime namespace, nested blocks, generated default timing, source positional-only and bare-star lowering, and cache binding before fallback.",
+    "source": [
+      "installed util.py:20–24",
+      "Mako 1.4.1 parsetree.py:507–564",
+      "ast.py:130–217",
+      "pyparser.py:228–250",
+      "codegen.py:113–145,284–336,475–534,576–593,692–768,933–947,1190–1225",
+      "runtime.py:853–892"
+    ],
+    "target": [
+      "plugins/mergemessagenotify/mako/block.go",
+      "plugins/mergemessagenotify/mako/definitions.go",
+      "plugins/mergemessagenotify/mako/parser.go",
+      "plugins/mergemessagenotify/mako/template.go"
+    ],
+    "reviewer": "/root/rocketchat",
+    "remaining": [
+      "Explicit pageargs conflicts, module variable versus named block lookup, Python keyword block names and source pageargs insertion ordering.",
+      "External inheritance and remaining variadic and other tag signatures."
+    ]
+  },
+  "actual_matrix_host": {
+    "environment": "Actual Linux amd64 cmd/server and canonical ZIP worker, network=none. Public configuration and install routes and actual Base.PostMessage producer.",
+    "original_fixture_row": "matrix-v3-password-joined-room-cache-logout, first send plus logout, with one per-event native client.",
+    "runs": [
+      {
+        "inputs": {
+          "product_commit": "942332925c69baf56bff201801af4fb2662900a4",
+          "host_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+          "manifest_sha256": "a9b8af4b962f8401cc3791b04e0821ffcbc47a6f693769d34cb16a393723c3fb",
+          "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+          "bundle": {
+            "bin/worker": "b425d546ba6087650b82c9ac5b79df3c54d6175d9c6b1577c7eb911f5fcc201e",
+            "bin/host": "0927f25990e79202fc36ba6cfa375a7056ef1526a7b789179d4589e079365bf6",
+            "bin/driver": "94c46ed2791366032cb37a1721e6634bbab006aa66013994c1452aebc7f74407",
+            "bin/owned-merge-notice": "6a9ee6e2ee15a19768ad240ff53e7e160f603d376c3df71c4538f18d1fca443e",
+            "merge-package.zip": "edd5c06a73689ea52334aef1bf2c1513d8f5a701e8ee26a47f044e9a926fdf87",
+            "merge-index.json": "e9bbc8978746b15b9ab1b1b67beb5f0799f601427c8b3efeafd36f5bf70558d2"
+          },
+          "driver_source_sha256": "3df056b725422337b8cad4be941ce88cdb907170ee2b746734570fc87acafdf7",
+          "producer_source_sha256": "1339e99b82c6deab80192673d95f29361ebce26e8c861ff48a05b17611184abb"
+        },
+        "run": {
+          "exit": 1,
+          "seconds": 16.222819299902767,
+          "container_absent": true,
+          "network": "none"
+        },
+        "worker": {
+          "pid": 33,
+          "sha256": "b425d546ba6087650b82c9ac5b79df3c54d6175d9c6b1577c7eb911f5fcc201e"
+        },
+        "observations": {
+          "path": "work/mergemessagenotify-20261107/matrix-main/actual/observations.jsonl",
+          "sha256": "b11b01c5298856607c016a39eb7646cf0633ee66aa4b55a96335c587e88ae21a"
+        },
+        "target_output": {
+          "path": "work/mergemessagenotify-20261107/matrix-main/actual/main.stdout",
+          "sha256": "574ce0fbb14b70a6e6e34b32636fc9a1f643de2f752304f1c391ff0ed0007f85"
+        },
+        "cleanup": {
+          "owned_attempt_removed": true,
+          "container_absent": true
+        },
+        "lifecycle": null,
+        "failure": "The synthetic producer explicitly sent image=\"\" instead of omitting the optional image. Original Apprise also rejects this attachment before any HTTP request. The real plugin completed the event with a failed channel and no Matrix request.",
+        "original_empty_attachment": {
+          "path": "work/mergemessagenotify-20261107/apprise-matrix-empty-image-source.json",
+          "sha256": "4e2b5618400b40eaa0ca6ab851b65947599b4236b2201aabb3f030217c950ef7"
+        }
+      },
+      {
+        "inputs": {
+          "product_commit": "942332925c69baf56bff201801af4fb2662900a4",
+          "host_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+          "manifest_sha256": "a9b8af4b962f8401cc3791b04e0821ffcbc47a6f693769d34cb16a393723c3fb",
+          "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+          "bundle": {
+            "bin/host": "0927f25990e79202fc36ba6cfa375a7056ef1526a7b789179d4589e079365bf6",
+            "bin/driver": "94c46ed2791366032cb37a1721e6634bbab006aa66013994c1452aebc7f74407",
+            "bin/owned-merge-notice": "98910748477c4c32ba985e3bcdb5eb1c979c0e0ab08fe9554753af7cc40a99fd",
+            "merge-package.zip": "edd5c06a73689ea52334aef1bf2c1513d8f5a701e8ee26a47f044e9a926fdf87",
+            "merge-index.json": "e9bbc8978746b15b9ab1b1b67beb5f0799f601427c8b3efeafd36f5bf70558d2",
+            "bin/worker": "b425d546ba6087650b82c9ac5b79df3c54d6175d9c6b1577c7eb911f5fcc201e"
+          },
+          "driver_source_sha256": "3df056b725422337b8cad4be941ce88cdb907170ee2b746734570fc87acafdf7",
+          "producer_source_sha256": "727daad23d65d1c98edcaf632451746b68f5498ed3191b95d7735e018d9d97ee"
+        },
+        "run": {
+          "exit": 0,
+          "seconds": 11.34029552899301,
+          "container_absent": true,
+          "network": "none"
+        },
+        "worker": {
+          "pid": 32,
+          "sha256": "b425d546ba6087650b82c9ac5b79df3c54d6175d9c6b1577c7eb911f5fcc201e"
+        },
+        "observations": {
+          "path": "work/mergemessagenotify-20261107/matrix-main-no-image/actual/observations.jsonl",
+          "sha256": "393514999a2f425b1a41dc80b30e002e8ace7f9cb1875057855761f58eddb51a"
+        },
+        "target_output": {
+          "path": "work/mergemessagenotify-20261107/matrix-main-no-image/actual/main.stdout",
+          "sha256": "0eb491bf3f7a4bb0fbf80bd8eb666b6ae2b4392c803828605dac7c8c701745bc"
+        },
+        "cleanup": {
+          "owned_attempt_removed": true,
+          "container_absent": true
+        },
+        "lifecycle": {
+          "delivery_succeeded": true,
+          "exact_wire_requests": 5,
+          "logout_status": 401,
+          "real_notice": true,
+          "steps": [
+            "login",
+            "joined_rooms",
+            "join",
+            "send",
+            "logout"
+          ],
+          "worker_processes_reaped": true
+        },
+        "scope": "With only the producer input corrected, the same Linux host, driver, ZIP and worker received a real notice and matched all five Matrix HTTP requests. An M_UNKNOWN_TOKEN logout reply did not change delivery success. The driver verified worker process cleanup."
+      }
+    ]
+  },
+  "execution_scope": "No external provider was contacted. Existing real host checks remain attached to the artifacts that ran. Browser, clone, explicit manager initialization and final integrated release acceptance remain open.",
+  "delivery": {
+    "working_branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "local_only": true,
+    "release_registered": false,
+    "deployed": false,
+    "external_notifications_sent": false
+  }
+}

@@ -39,6 +39,13 @@ defaults and callable names have separate evidence from its lexical and
 namespace Context behavior. The Telegram timing observer correction and
 Mako's initial failures retain separate logs. See
 `migration/evidence/mergemessagenotify-chat-mako-defaults-20261107.json`.
+Matrix, Rocket.Chat, Flock, Prowl and SimplePush have Go implementations
+with fixed-source comparisons. An isolated Linux host loaded the candidate
+ZIP and delivered an ordinary notice through Matrix login, room discovery,
+join, send and logout. The first driver explicitly set an empty image and
+was corrected to omit that field with the same worker and ZIP. Mako named
+blocks have source evidence for page arguments and generated defaults. See
+`migration/evidence/mergemessagenotify-matrix-named-blocks-20261107.json`.
 Additional Apprise schemes and Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
