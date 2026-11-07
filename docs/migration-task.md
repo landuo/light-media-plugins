@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (thirteen of 22 in scope accepted)
+## Current resume (fourteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -46,7 +46,16 @@ empty values, and the original history and clear switches worked. A distinct
 App database check verified the acquisition-parent wait and frozen season
 data. See `migration/evidence/subscribegroup-worker-linux-20261107.json`.
 
-Next: AutoBackup 2.1.4 from the installed local backup and scheduling paths.
+AutoBackup 2.1.4 is accepted for local SQLite and local directories. The
+exact native amd64 ZIP installed on a started App. One isolated scenario
+covered immediate backup while disabled, SQLite integrity, retention, a
+manual public scheduler run, API authentication and local path grants. The
+prior browser and clone evidence is recorded separately. The installed
+plugin declares no restore entry. WebDAV is outside scope. See
+`migration/evidence/autobackup-acceptance-20261107.json`.
+
+Next: BrushFlowLanduo. Confirm the installed version and source identity
+before relying on the earlier 5.2.16 inventory.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

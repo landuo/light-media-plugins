@@ -11699,16 +11699,27 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "plugins/autobackup/plugin.go",
+        "plugins/autobackup/form.go",
+        "plugins/autobackup/form.json",
+        "plugins/autobackup/ORIGIN.json",
+        "cmd/auto-backup/main.go",
+        "internal/sdk/local_backup.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "autobackup.native_amd64_local.20261107"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby, /root/kodi and /root/jellyfin",
+        "evidence_ids": [
+          "autobackup.native_amd64_local.20261107"
+        ]
       },
       "original_instance_id": "AutoBackup",
       "family": "AutoBackup",
@@ -66490,6 +66501,39 @@
         "evidence/subscribegroup-worker-linux-20261107.json": "7c9806f88b60223f35081dd39aa32a39639872a82b7839354b9eed1d78efb90a"
       },
       "reviewer": "Independent fixture plus coordinator targeted execution"
+    },
+    {
+      "id": "autobackup.native_amd64_local.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.AutoBackup"
+      ],
+      "commands": [
+        "TestAutoBackupInstalledAMD64Package on isolated native Linux amd64"
+      ],
+      "inputs": "Fixed installed source, exact indexed ZIP, actual started App, SQLite and local storage in an owned fixture.",
+      "observations": "Installed the exact indexed Linux amd64 ZIP through the App repository install endpoint. Read its native local-only form with VCronField and the source immediate switch. With enabled=false, initialization persisted onlyonce=false and the private +3-second callback produced a private timestamped ZIP. ctime rotation deleted the old bk file and retained an unrelated file. SQLite integrity_check passed, the committed marker and category were present, and the archived encryption key matched the owned store. Enabled plus cron registered the public service. Manual invocation through the actual host scheduler published another archive, including same-second atomic replacement. The framework rejected a bad key, and a valid header plus mismatched query reached the plugin-specific failure. A valid key could not create the ungranted destination. After a local root grant, the same saved config produced a private ZIP and the source success tuple. The default archive remained in place.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "source_sha256": "dedab53b1adf96dc59879ebdd67f77fe67ea773981d4befb04ca000889f607e4",
+        "host_product_commit": "544a9e4bb184ce3fe82c42f569b97b9e46ad71c5",
+        "host_test_commit": "b2a843bea5e3130907787ff1632c48ce1802daba",
+        "worker_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455",
+        "archive_sha256": "bcd39740ed7034d969d2e22f32022d6f0420c37cf7114ce34643c7e4586d7863",
+        "target_files": {
+          "plugins/autobackup/plugin.go": "2eac0b14922e44574ab48f97f7ceab4af2b77c9888d5be14f11b5015dbb4ad88",
+          "plugins/autobackup/form.go": "a927757c44eb9d7c38379365c3989fc1dc68099b74b21988527fe148bf1acafe",
+          "plugins/autobackup/form.json": "01e8874e5082dd80377d1a76f400049637edd815e7402c4ca28761b4a4b58fde",
+          "plugins/autobackup/ORIGIN.json": "d33069bf3fc92fb987f63f572f40309f7c7f78436dd982d9e969e80bcd13a20b",
+          "cmd/auto-backup/main.go": "7cc6363bb7f20f95f67220fb2cd708a4f5c6c9943d0905312ee7915f7b6fd96f",
+          "internal/sdk/local_backup.go": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6"
+        }
+      },
+      "artifacts": {
+        "evidence/autobackup-acceptance-20261107.json": "6ef0be2e20e3699cf77c5c52325f65ef56737657bfd8ba0f36726b97ad740606"
+      },
+      "reviewer": "Independent source, host and form review plus coordinator targeted execution"
     }
   ],
   "scope": {
@@ -66549,44 +66593,45 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 13,
+      "functional_verified_instances": 14,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 12,
-      "functional_verified_count_scope": "Thirteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 13,
+      "functional_verified_count_scope": "Fourteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
+      "tested_saved_code_revision": "9adada51cae381b01aef6368c540563ab9e6f455",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "5508baf8c9e5dcf74c7c2d73d467cfd17be59b01",
-      "SDK_source_host_commit": "b9dc4f4bf994ee9254dde7cc9cd06b66829f6373",
-      "SDK_current_files": 106,
-      "SDK_current_origin_sha256": "eb458508dd63453570ee208e6e385986741250f6f4061f45582a563d2dabfb5d",
-      "SDK_current_status": "106 files. Paired accepted-download source projection and scoped subscription/history updates.",
+      "host_HEAD": "b2a843bea5e3130907787ff1632c48ce1802daba",
+      "SDK_source_host_commit": "ec70784cd9d0e14de6b65e9d916ce4e0a9e9009b",
+      "SDK_current_files": 107,
+      "SDK_current_origin_sha256": "7869a9e95a8be8d70fbfec797d69000f680ba4bd155e6398ca41072d4fcda29a",
+      "SDK_current_status": "107 files. Paired the finite local backup archive and retention capability.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-07 fresh read-only ls-remote confirmed both main refs unchanged. No push.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Thirteen of 22 accepted. SubscribeGroup 2.8.7 canonical ZIP, both actual native producer paths and acquisition waiting guard passed. Registry and companion host are local. No push or deployment.",
-      "tests_running": "None. SubscribeGroup passed one native App case and one distinct App database acquisition-ordering check. No previous passing suite was repeated.",
-      "latest_detail": "features[plugin.SubscribeGroup].accepted_native_package",
+      "delivery": "Fourteen of 22 accepted. AutoBackup 2.1.4 indexed native ZIP, actual private once, public scheduler, authenticated API, local directory grant, consistent SQLite snapshot and ctime rotation passed. Registry and paired host remain local. No push or deployment.",
+      "tests_running": "None. AutoBackup passed one native App case. No prior passing suite was repeated.",
+      "latest_detail": "features[plugin.AutoBackup].accepted_native_package",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start AutoBackup 2.1.4 from the fixed installed source and its Go host backup, restore and cron call chain. Scope only fnOS and local directories, keep MergeMessageNotify deferred, and do not rerun accepted SubscribeGroup tests.",
+      "next_complete_slice": "Start BrushFlowLanduo. Recheck the installed version and exact source before using the earlier 5.2.16 inventory. Keep fnOS Film and local directory scope, MergeMessageNotify deferred, and do not rerun accepted AutoBackup tests.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_SystemProcess_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
       "latest_MediaServerRefresh_product_commit": "0aeedee1c78394d0e21162c50411015431703d3f",
       "latest_RemoteIdentifiers_product_commit": "a5b7d3f8e3b745447c2fc54ec4db23b4451f69fa",
-      "latest_SubscribeGroup_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26"
+      "latest_SubscribeGroup_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
+      "latest_AutoBackup_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66603,7 +66648,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start AutoBackup 2.1.4 from the fixed installed source and its Go host backup, restore and cron call chain. Scope only fnOS and local directories, keep MergeMessageNotify deferred, and do not rerun accepted SubscribeGroup tests.",
+    "next_complete_slice": "Start BrushFlowLanduo. Recheck the installed version and exact source before using the earlier 5.2.16 inventory. Keep fnOS Film and local directory scope, MergeMessageNotify deferred, and do not rerun accepted AutoBackup tests.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
