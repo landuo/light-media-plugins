@@ -113,7 +113,11 @@ The downloader added one torrent paused, disabled the three unwanted files,
 and started only the selected E02. E03 stayed uncovered and a durable R
 subscription was created with the original pack's note. See
 `migration/evidence/lark-messager-tv-missing-20261108.json`.
-Continue with native chat search and selection for the remaining media providers.
+Synchronous chat searched Douban, Bangumi and AniList in source priority.
+Selecting one of three same-title results requested the exact AniList ID and
+committed a TMDB-backed subscription with both identities sealed. See
+`migration/evidence/lark-messager-providers-20261108.json`.
+Continue with explicit paused subscription search and RSS enclosure recovery.
 Reuse earlier passing evidence for the completed paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
