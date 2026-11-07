@@ -230,6 +230,12 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseQQService(raw)
 	case "wxteams", "webex":
 		service, valid = parseWebexTeamsService(raw)
+	case "form", "forms":
+		service, valid = parseFormService(raw)
+	case "xml", "xmls":
+		service, valid = parseCustomXMLService(raw)
+	case "hassio", "hassios":
+		service, valid = parseHomeAssistantService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
