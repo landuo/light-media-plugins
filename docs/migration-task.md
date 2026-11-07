@@ -162,7 +162,12 @@ commands, denied non-admin and unsigned native writes, and fetched groups
 with a separate bearer while disabled or messaging was active. The native
 page consumed the result once and provider freeform errors were filtered. See
 `migration/evidence/lark-messager-encrypted-admin-fetch-chats-20261108.json`.
-Continue with installed clone/reload and rooted attachment evidence.
+A second indexed native worker proved isolated clone config, results and
+process replacement on reload, and rooted image, document and voice uploads.
+A malformed caption acknowledgment reported failure without repeating either
+write, and protected data never reached the provider. See
+`migration/evidence/lark-messager-clone-attachments-20261108.json`.
+Continue with the remaining source and acceptance audit.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

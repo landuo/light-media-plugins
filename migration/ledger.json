@@ -16095,7 +16095,8 @@
         "larkmessager.same_manual_search_candidate_fallback.20261108",
         "larkmessager.rss_magnet_native_add_import.20261108",
         "larkmessager.rss_batch_fallback_safe_detail.20261108",
-        "larkmessager.encrypted_admin_isolated_fetch_chats.20261108"
+        "larkmessager.encrypted_admin_isolated_fetch_chats.20261108",
+        "larkmessager.native_clone_rooted_attachments.20261108"
       ],
       "review": {
         "status": "pending",
@@ -16112,7 +16113,7 @@
       "family": "LarkMessager",
       "source_version": "0.9.1",
       "source_metadata_only": false,
-      "discovery_note": "Native sites, subscriptions, RSS/manual candidate fallback, media/provider/TV pack download, transfer retry, encrypted administrator scope and temporary group lookup have scoped evidence. Attachment, clone/reload and remaining worker/host source differences are open."
+      "discovery_note": "Native sites, subscriptions, RSS/manual fallback, media/provider/TV downloads, transfer retry, encrypted administrator scope, isolated group lookup, clone reload and rooted attachment behavior have scoped evidence. Remaining worker/host differences and full review are still open."
     },
     {
       "id": "plugin.CleanInvalidSeed",
@@ -67887,6 +67888,33 @@
         "fixture_sha256": "d7fcb67f9bbdf3870ee28822795cfa61020c1e548c803e8c459f515c048a5e57",
         "package_sha256": "0f9d87c10a6ba9a1b7c19b458be55f6473d2c93ac2526c3beb3ae338c6cbc2e2"
       }
+    },
+    {
+      "id": "larkmessager.native_clone_rooted_attachments.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestInstalledLarkCloneAndTrustedAttachmentsLinuxAMD64"
+      ],
+      "observations": [
+        "The exact indexed worker was installed and cloned by the native app. Base stayed disabled with the same PID. The clone used a separate process and configuration, and a native reload reaped the exact old clone process. Its data page consumed only its own persisted result.",
+        "Trusted rooted attachment sends used only the clone account and destination. The peer observed exact PNG, document and voice multipart bytes with source-ordered image/card/file and voice/caption messages. A protected path produced no provider calls.",
+        "In a distinct voice sequence the provider accepted the upload and audio, then returned a malformed nonnumeric caption acknowledgment. The host observed one failed module delivery. Exactly one upload, audio and caption were attempted; neither accepted audio nor the unconfirmed caption was repeated."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-clone-attachments-20261108.json": "7269f09f976fc3793aca78afe143a42bedd946606e15ca4cb6d54277eeaba979"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "384a196ce4915f28fce1e09378cbaedee2c7629e",
+        "worker_commit": "9f101b336305c3973ffed43e61f70e11f864c850",
+        "fixture_sha256": "e68c3d6af34e15b3786614160f4b1da7a7253b83a16b0a40152b724f86ab401c",
+        "package_sha256": "da81e3e234e6c5f80dbcf8aa39066dba25ae4fcf8be36f6d96d5aefa62b12642"
+      }
     }
   ],
   "scope": {
@@ -67957,10 +67985,10 @@
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "e6a4681479da8315c2c6596b4bd4cb71e6cbc172",
+      "tested_saved_code_revision": "9f101b336305c3973ffed43e61f70e11f864c850",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "218f688bbc4d21e4237c62a54084e8f50d64f4d3",
+      "host_HEAD": "384a196ce4915f28fce1e09378cbaedee2c7629e",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67971,12 +67999,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Native exact e6a4681 indexed worker passed encrypted administrator scope and isolated disabled/warm group lookup. Host and evidence stay local.",
-      "tests_running": "None. One distinct native worker crypto/admin/group fixture passed on its first run and the isolated App stopped.",
-      "latest_detail": "migration/evidence/lark-messager-encrypted-admin-fetch-chats-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Native exact indexed Lark clone/reload, isolated storage, rooted image/file/voice and uncertain caption behavior passed. Host and evidence stay local.",
+      "tests_running": "None. The distinct native clone/attachment scenario passed on its first run and the isolated App stopped.",
+      "latest_detail": "migration/evidence/lark-messager-clone-attachments-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with one distinct installed-worker clone/reload and actual rooted attachment fixture. Reuse exact e6a4681 worker package from work/lark-worker-crypto-admin-20261108/packaging/linux-amd64. Do not repeat encrypted administrator or FetchChats evidence. Check fixed source known notification/reaction failure outcome versus opaque-write fencing.",
+      "next_complete_slice": "Continue LarkMessager final per-feature source audit with exact worker 9f101b3 and indexed package in work/lark-worker-clone-attachments-20261108/packaging/linux-amd64. Reuse passing indexed evidence for crypto/admin/FetchChats and clone/attachments without rerunning it. Fix concrete remaining source gaps before acceptance, including source send/receive branches and relevant host failure notice, post-preview reacquisition, remaining magnet combinations and provider-without-TMDB distinctions. Register the build entry only after accepted scope is complete.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -67989,7 +68017,7 @@
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
-      "latest_LarkMessager_product_commit": "e6a4681479da8315c2c6596b4bd4cb71e6cbc172"
+      "latest_LarkMessager_product_commit": "9f101b336305c3973ffed43e61f70e11f864c850"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
