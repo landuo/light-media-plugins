@@ -1,0 +1,131 @@
+{
+  "feature": "plugin.RemoteIdentifiers",
+  "status": "verified",
+  "installed_version": "2.4.1",
+  "source": {
+    "installed_path": "remoteidentifiers/__init__.py",
+    "installed_sha256": "14ec7f5f2964ebd1674305d5294ffa56fb61e2cd1021ea31e50d9675813891a4",
+    "backend_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "locations": [
+      "__init__.py:48–72,74–147,149–163,165–311,313–330,335–362",
+      "app/utils/common.py:10–58",
+      "app/utils/http.py:328–373,397–455",
+      "app/api/endpoints/plugin.py:984–988",
+      "app/core/plugin.py:919–931"
+    ],
+    "reused_original_oracle": {
+      "repository": "light-media",
+      "path": "internal/app/testdata/remote-identifiers-original.json",
+      "sha256": "5d669dc497f728eef6758d4d6a08a652a2b8be4502ee826f45af8fb02e155859"
+    }
+  },
+  "target": {
+    "worker_product_commit": "a5b7d3f8e3b745447c2fc54ec4db23b4451f69fa",
+    "host_product_commit": "980d00007bce7b93b857e2a9866d394906c5ef12",
+    "host_test_saved_commit": "e8eabd81be813ccc935a9b27332ae1c395bfc850",
+    "sdk_source_host_commit": "e4517b16295cc09cf207a3f49ad66d9bea95f302",
+    "plugin_paths": {
+      "plugins/remoteidentifiers/plugin.go": "92c43fdd5fe5840acd8f5a8af59e99b6f1e61237ede7f8430929646d000f2b82",
+      "plugins/remoteidentifiers/task.go": "156277930b5ae57a3538aa2548ae6697c26e00581a18bef78e0f7119d6516d60",
+      "plugins/remoteidentifiers/state.go": "b8fd90c96132f57cfe126cf4b7ad2849ee56bf9e844c36bfb21a5a494ec6c423",
+      "plugins/remoteidentifiers/collect.go": "730207b061b2c6b5e545c7fbdfcb01fe91f63ec9c8f5ffffdd0c9a17ff2e2bf9",
+      "plugins/remoteidentifiers/form.json": "c7aed91019ccc0a7428740aa9375021ff32c60f1eb600fc7902b96448733696c",
+      "plugins/remoteidentifiers/ORIGIN.json": "bfc36cc8224de7e828acccea1337613464974071b6dc0facadf224266996b9c7",
+      "cmd/remote-identifiers/main.go": "3d8562c12dfb624a160e381a5d4fc93385fdd908f166268e82e9aedfe2998cd4",
+      "internal/sdk/network_host.go": "1c00f0438a46ca182e423abb0b016f4e84b7ca47c32dfc3030386db630b34175",
+      "internal/sdk/settings_host.go": "7cdfa9777476a5e3b5a79ace3cb38b451140f08b504cf4ea5f7163bb709e87f4",
+      "build-plugins.json": "ffea606d8a8738d498627f3c39354cc788f915a8d42ed4111ac5d6e4d552a6b1"
+    },
+    "host_paths": {
+      "internal/app/plugin_original_host_network.go": "95b3a73a9861890257626a19ca20ca8d82aeb384557b42b1921f1e791d025a5d",
+      "internal/app/plugin_original_remote_identifiers_network.go": "7dac96c185f589f39779c23d9a49216c9ca7b4ed7a2252a559e1a2682fcb0627",
+      "internal/app/plugin_original_host_settings.go": "0ae60323df8f93ecaade5f8bfacab16e459651c95dddcee15a2ec61bbb5e4713",
+      "internal/app/plugin_original_remote_identifiers_config.go": "e2cd6b69e6f0713daad865e3389b4b2c3879b9d463b9a463433e6c119f88e016",
+      "internal/app/plugin_original_config.go": "1827ae75ede555373f4412bbd7c22ae3f1fdeac7e181bd35a3c475fd00a6f7ba",
+      "internal/app/plugin_original_services.go": "96e25c62cc10d4ddc8aef4e8e6b0c3badb085d1c06037cdb643b815b508d5a59",
+      "internal/app/recognition_words.go": "49919f9b4d9435f24fa4f94c19123096e5048e7657df6970f0d1321ef15ad685",
+      "internal/app/plugin_remote_identifiers_package_linux_test.go": "bed21818ce9c1354a75603a9d8c8a4da781ad609a3588d4c5a9ddc9073833259"
+    }
+  },
+  "standard_package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/remoteidentifiers/ORIGIN.json",
+      "remote-identifiers",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "67373bed226f519678e0cbca0a02c24713538a63ab9b5f1897e5bfed9b4c62cb",
+    "archive_size": 3897584,
+    "capabilities": 6,
+    "entry": "remote-identifiers",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "RemoteIdentifiers",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "464509c982648cd063eb3ec1d06ee77515a89e3f87129c22737dea56e1a7c7ba",
+    "methods": 14,
+    "notice_sha256": "9b013d088965a88b817c007dbf188763915c386ade0f8e7086f0b9a43bfd55ba",
+    "notice_size": 32257,
+    "plugin_source": "a5b7d3f8e3b745447c2fc54ec4db23b4451f69fa",
+    "version": "2.4.1",
+    "worker_sha256": "28e4721a5cf98d026080a316f438ab0660c20fca807d7cedd254302446857ecb",
+    "worker_size": 7166549,
+    "path": "work/remoteidentifiers-20261107/packaging/linux-amd64/RemoteIdentifiers-2.4.1-linux-amd64.zip",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/remoteidentifiers/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ]
+  },
+  "actual_host": {
+    "test": "TestRemoteIdentifiersInstalledAMD64Package",
+    "result": "PASS 9.15s",
+    "environment": "Native Linux x86_64 Alpine, network-none read-only container, isolated tmpfs and synthetic loopback peer. Actual light-media App, normal plugin package/API routes, standalone Go process and actual recognition matcher.",
+    "test_ELF_sha256": "bf1349540abc886ea6b5b4ac9182562ac0c4a8def7e3b5818b8dff2e0b82221c",
+    "observations": [
+      "Actual indexed ZIP installed, and the authenticated App returned the original native form/defaults. The private URL was masked in the form, persisted as configured, and its Basic credentials arrived as Latin-1 bytes on the isolated peer.",
+      "Saving onlyonce consumed the flag before execution. Invalid public cron did not register any job. The private callback began after 3.009 seconds.",
+      "The first collection encountered the owned HTTP failure after earlier successful reads. After 5.005 seconds the whole collection restarted. 31 ordered requests demonstrated duplicate index key replacement, Etherpad export, and continuation beyond one callback segment.",
+      "The shared store retained the local prefix, replaced the old remote suffix once, preserved exact order and line semantics in 30 persisted entries, and updated the actual recognition matcher.",
+      "The valid public cron registered. Its normal service action made one distinct owned GET, retained the source trailing empty line when filtering was off, and updated the same actual matcher."
+    ],
+    "evidence_type": "Real local App/Go executable with protocol fixture. This run did not use a browser or a live third-party source.",
+    "receipt_files": {
+      "SHA256SUMS": "a8f1f7f9f737ae2dc12c52921dad412648dfb26c598a953a5c8d87573fbfc03c",
+      "build-source.txt": "0de0338b60081526f9a8576c0bd5f91e4a857c7ba6433b5f5ddab5e50f6e6170",
+      "runtime.stdout": "c97d475fb2a72dfe8e0ea6b80e43cf4441e1f902a5c8a2ab7451ebd99a0e669e",
+      "run-remote.sh": "ac12b1e32f71759b14b6be7c096b928bc6ea2707ecb29454ffd411fe54f85d96",
+      "send-bundle.py": "d598f98382f5cf5a4793ebe784342361f967c2efd4fd0c99b0608df85b3736ac",
+      "superseded-fixture-build-source.txt": "47df23561b5f07cb60dc69d109db1c2c7be778036e86d296c74802ef189ac663",
+      "superseded-fixture-build.sha256": "b6f67421150754fdd8f6e629c5c95f35444d274305cb4ab81cc7e924039d2a0c"
+    },
+    "fixture_note": "An earlier fixture binary was compiled before the assertion separated raw CR preservation from the active matcher rule. That binary was never run. The final fixture ran once.",
+    "cleanup": "Owned native container and staged bundle removed. Local temporary App test executable removed after hashing."
+  },
+  "adaptations": [
+    "Read CustomIdentifiers before network as source does. At commit retain the latest local prefix transactionally, following the prior light-media adapter, so a user edit during network delay is not overwritten.",
+    "Use native host proxy and official GitHub settings. Verified TLS, fenced private redirects, bounded payloads, and private-URL masking and log redaction apply. The fixture uses owned loopback HTTP; no real GitHub or Etherpad service was called.",
+    "Keep one ordered collection with 5/10-second whole-list retry across bounded SDK callbacks. The actual public job/private once owns completion. Host constructs the cron trigger before publication and rejects malformed expressions without affecting private once."
+  ],
+  "review": {
+    "reviewers": [
+      "/root/emby",
+      "/root/jellyfin",
+      "/root/kodi"
+    ],
+    "resolved": [
+      "Invalid cron would otherwise register a manually callable job.",
+      "Opaque private path tokens now share the redirect and configuration masking classification.",
+      "Configuration masking binds the initial class identity."
+    ]
+  },
+  "delivery": "Local registry and paired host only. No release, push, deployment or live configuration migration."
+}

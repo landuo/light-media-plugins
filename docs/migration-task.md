@@ -1,11 +1,14 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (eleven of 22 in scope accepted)
+## Current resume (twelve of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
 still has 23 instances, of which 22 are in the current migration. The saved
 Merge evidence and four local work-in-progress files are retained separately.
+The user limits media libraries to fnOS Film and local directories.
+Other media-server providers and cloud-drive storage are outside the
+current acceptance scope. Ordinary network inputs for plugins remain in scope.
 
 IYUUAutoSeed 2.22 is accepted. The exact Linux amd64 package installed,
 initialized and served its source-native form on an isolated native x86_64
@@ -30,8 +33,13 @@ peer. The core job verified the published file without sending another
 scan. The registry and paired host changes are local.
 See `migration/evidence/mediaserverrefresh-acceptance-20261107.json`.
 
-Next: RemoteIdentifiers 2.4.1 from the fixed installed recognition and
-shared-rule paths.
+RemoteIdentifiers 2.4.1 is accepted. The native amd64 ZIP passed the
+actual App's private once and public service paths. The owned HTTP peer
+observed whole-list retry and ordered continuation. The sealed shared
+store and live matcher received the exact updated rules, retaining the
+local prefix. See `migration/evidence/remoteidentifiers-acceptance-20261107.json`.
+
+Next: SubscribeGroup 2.8.7 from the fixed subscription event and rule paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
