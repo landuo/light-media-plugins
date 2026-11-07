@@ -39,11 +39,20 @@ type notificationService interface {
 	successful(status int) bool
 }
 
-type attachmentService interface {
+type attachmentChunkService interface {
 	notificationService
 	attachmentChunks(title, body string) ([]notificationChunk, error)
-	request(title, body string, attachments []attachment) (Request, error)
 	truncateAttachments() bool
+}
+
+type attachmentService interface {
+	attachmentChunkService
+	request(title, body string, attachments []attachment) (Request, error)
+}
+
+type orderedAttachmentService interface {
+	attachmentChunkService
+	sendAttachments(title, body string, sources []*attachmentSource, resolve func(*attachmentSource) (attachment, error), deliver func(Request) bool) (bool, error)
 }
 
 type Client struct {
@@ -86,12 +95,18 @@ func (c *Client) Add(raw string) (bool, error) {
 		service, valid = parseBarkService(raw)
 	case "gotify", "gotifys":
 		service, valid = parseGotifyService(raw)
+	case "ntfy", "ntfys":
+		service, valid = parseNtfyService(raw)
+	case "pushdeer", "pushdeers":
+		service, valid = parsePushDeerService(raw)
 	case "http", "https":
-		native, ok := gatewayNativeURL(raw)
-		if !ok {
+		if native, ok := gatewayNativeURL(raw); ok {
+			service, valid = parseGatewayService(native)
+		} else if native, ok := ntfyNativeURL(raw); ok {
+			service, valid = parseNtfyService(native)
+		} else {
 			return false, ErrUnsupported
 		}
-		service, valid = parseGatewayService(native)
 	default:
 		if knownSchemas[scheme] {
 			return false, ErrUnsupported
@@ -126,13 +141,13 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	type requestGroup struct {
 		service  notificationService
 		calls    []Request
-		attached attachmentService
+		attached attachmentChunkService
 	}
 	requests := make([]requestGroup, 0, len(c.services))
 	hasCalls := false
 	for _, service := range c.services {
 		if len(attachments) != 0 {
-			if provider, ok := service.(attachmentService); ok {
+			if provider, ok := service.(attachmentChunkService); ok {
 				hasCalls = true
 				requests = append(requests, requestGroup{service: service, attached: provider})
 				continue
@@ -185,25 +200,31 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 		}
 		success := len(chunks) != 0
 		for _, chunk := range chunks {
-			files, err := resolveAttachments(ctx, sources, c.transport, c.ReadLocalAttachment)
+			var sent bool
+			var err error
+			if provider, ok := group.attached.(orderedAttachmentService); ok {
+				resolve := func(source *attachmentSource) (attachment, error) {
+					return source.resolve(ctx, c.transport, c.ReadLocalAttachment)
+				}
+				sent, err = provider.sendAttachments(chunk.title, chunk.body, sources, resolve, deliver)
+			} else {
+				var files []attachment
+				files, err = resolveAttachments(ctx, sources, c.transport, c.ReadLocalAttachment)
+				if err == nil {
+					var request Request
+					request, err = group.attached.(attachmentService).request(chunk.title, chunk.body, files)
+					sent = err == nil && deliver(request)
+				}
+			}
 			if errors.Is(err, errAttachmentUnavailable) {
-				// NotifyBase attempts every chunk, even after a failed send.
-				// Failed downloads are never cached and can recover here.
+				// Failed downloads are never cached. NotifyBase still tries later chunks.
 				success = false
 				continue
 			}
 			if err != nil {
 				return sendResult{err: err}
 			}
-			request, err := group.attached.request(chunk.title, chunk.body, files)
-			if errors.Is(err, errAttachmentUnavailable) {
-				success = false
-				continue
-			}
-			if err != nil {
-				return sendResult{err: err}
-			}
-			success = deliver(request) && success
+			success = sent && success
 		}
 		return sendResult{success: success}
 	}

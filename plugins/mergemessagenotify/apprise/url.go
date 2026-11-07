@@ -11,7 +11,9 @@ import (
 // denotes a header, values keep literal +, and custom values unquote twice.
 type sourceURL struct {
 	scheme, host, port, path string
+	rawHost                  string
 	user, password           *string
+	rawUser, rawPassword     *string
 	query                    map[string]string
 	headers, params, extras  [][2]string
 	queryPairs               [][2]string
@@ -51,6 +53,10 @@ func orderedPairSet(o [][2]string, key, value string) [][2]string {
 	return append(o, [2]string{key, value})
 }
 func parseSourceURL(raw string) (sourceURL, bool) {
+	return parseSourceURLWithHostVerification(raw, true)
+}
+
+func parseSourceURLWithHostVerification(raw string, verifyHost bool) (sourceURL, bool) {
 	u := sourceURL{query: map[string]string{}}
 	raw = strings.TrimFunc(raw, sourceSpace)
 	sep := strings.Index(raw, "://")
@@ -96,18 +102,22 @@ func parseSourceURL(raw string) (sourceURL, bool) {
 		}
 	}
 	if match := sourcePortPattern.FindStringSubmatch(authority); match != nil {
-		authority = match[1]
-		p, e := strconv.ParseInt(match[2], 10, 64)
-		if e != nil {
+		if p, err := strconv.ParseInt(strings.TrimFunc(match[2], sourceSpace), 10, 64); err == nil {
+			authority = match[1]
+			u.port = ":" + strconv.FormatInt(p, 10)
+		} else if verifyHost {
 			return u, false
 		}
-		u.port = ":" + strconv.FormatInt(p, 10)
 	}
-	host, ok := sourceHostname(authority)
-	if !ok {
-		return u, false
+	if verifyHost {
+		host, ok := sourceHostname(authority)
+		if !ok {
+			return u, false
+		}
+		authority = host
 	}
-	u.host = sourceUnquote(host)
+	u.rawHost = authority
+	u.host = sourceUnquote(authority)
 	if hasQS {
 		for _, part := range strings.FieldsFunc(strings.TrimFunc(qs, sourceSpace), func(r rune) bool { return r == '&' || r == ';' }) {
 			key, value, _ := strings.Cut(part, "=")
@@ -144,6 +154,7 @@ func parseSourceURL(raw string) (sourceURL, bool) {
 			u.password = stringPointer(pass)
 		}
 	}
+	u.rawUser, u.rawPassword = u.user, u.password
 	if u.user != nil {
 		u.user = stringPointer(sourceUnquote(*u.user))
 	}

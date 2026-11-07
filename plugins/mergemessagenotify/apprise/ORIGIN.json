@@ -10,7 +10,13 @@
     "apprise",
     "apprises",
     "bark",
-    "barks"
+    "barks",
+    "gotify",
+    "gotifys",
+    "ntfy",
+    "ntfys",
+    "pushdeer",
+    "pushdeers"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -34,7 +40,7 @@
     },
     {
       "file": "gateway.go",
-      "reason": "Port fixed NotifyAppriseAPI gateway parsing and text notifications, including recognized native HTTP(S) aliases. Reuse the native HTTP transport, process-wide UUID4, and overflow planner. The common attachment dependency is not implemented.",
+      "reason": "Port fixed NotifyAppriseAPI gateway parsing and notification delivery, including native HTTP(S) aliases, multipart attachments, and common overflow behavior.",
       "original_path": "apprise/plugins/apprise_api.py",
       "original_sha256": "14f12b4f55089599e22eaa53e3dab23571b2560b3b9494ed796a99cd6b4ffad9",
       "source_observations": "testdata/gateway-1.9.9.json"
@@ -73,7 +79,21 @@
         "local_path": "mimetypes-linux.json",
         "sha256": "ba02be18b5d7a76a40783fd701d56ef415e1d9681474d81ad6bff4b7a1e5a630"
       },
-      "reason": "Resolve hosted attachments with original source query/cache and limits, and encode JSON/base64 or multipart. File URL parsing and injected authorized reading are covered. Production worker storage authorization remains open."
+      "reason": "Resolve HTTP attachments using original query/cache behavior and size limits. Local attachment paths require the paired host file grant. Encode JSON/base64 or multipart as the selected provider requires."
+    },
+    {
+      "file": "ntfy.go",
+      "original_path": "apprise/plugins/ntfy.py",
+      "original_sha256": "9db4fe5c7985f0f198a833317618c5681fcd7f6077257644772df679a1fd3f4c",
+      "source_observations": "testdata/ntfy-1.9.9.json",
+      "reason": "Port cloud and private topics, native HTTP(S) aliases, auth, notification options, JSON and ordered attachments."
+    },
+    {
+      "file": "pushdeer.go",
+      "original_path": "apprise/plugins/pushdeer.py",
+      "original_sha256": "029dd1d885637dcc95cd28292c2e6d6329b453848da1a953b5b3a0b35eb298be",
+      "source_observations": "testdata/pushdeer-1.9.9.json",
+      "reason": "Port both service schemes, request form and response status, auth-free request, and per-service send interval."
     }
   ]
 }
