@@ -253,9 +253,14 @@ func (p *Plugin) Form(ctx context.Context) ([]any, map[string]any, error) {
 		return r
 	}
 	elements = walk(elements)
-	p.mu.Lock()
-	stored := cloneMap(p.stored)
-	p.mu.Unlock()
+	stored := p.StoredConfig()
+	if p.host.LoadConfig != nil {
+		var err error
+		stored, err = p.host.LoadConfig(ctx)
+		if err != nil {
+			return nil, nil, err
+		}
+	}
 	if stored == nil {
 		stored = map[string]any{}
 	}

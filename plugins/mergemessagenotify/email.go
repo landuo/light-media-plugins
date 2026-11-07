@@ -49,7 +49,11 @@ func (p *Plugin) email(ctx context.Context, get func(string) any, m Message, ext
 	if p.host.SMTP == nil {
 		return nil, ErrDependency
 	}
-	e = p.host.SMTP(ctx, SMTPRequest{Host: str(get("smtp_host")), Encrypt: str(encrypt), Port: get("smtp_port"), Username: str(get("username")), Password: str(get("password")), From: str(get("username")), To: to, Title: str(or(m.Title, "")), Text: text, HTML: html, FromName: str(or(get("from_name"), "")), Date: date})
+	config := map[string]any{}
+	for _, key := range []string{"smtp_host", "smtp_port", "smtp_encrypt_type", "username", "password", "to_addrs", "from_name"} {
+		config[key] = get(key)
+	}
+	e = p.host.SMTP(ctx, config, SMTPRequest{Host: str(get("smtp_host")), Encrypt: str(encrypt), Port: get("smtp_port"), Username: str(get("username")), Password: str(get("password")), From: str(get("username")), To: to, Title: str(or(m.Title, "")), Text: text, HTML: html, FromName: str(or(get("from_name"), "")), Date: date})
 	if e != nil {
 		var quit SMTPQuitError
 		if errors.As(e, &quit) {

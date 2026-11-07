@@ -57,6 +57,18 @@ func (p *Plugin) dispatch(ctx context.Context, event map[string]any, send func(c
 		if name, ok := v["$enum"].(string); ok {
 			message.Type = NotifyType(name)
 		}
+	case string:
+		// Ordinary host notifications serialize the source enum's display
+		// value. Keep the original fields unchanged for channel templates.
+		for _, kind := range NotificationTypes {
+			if kind.Value == v {
+				message.Type = &kind
+				break
+			}
+		}
+		if message.Type == nil {
+			message.RawType = v
+		}
 	case nil:
 	default:
 		message.RawType = v

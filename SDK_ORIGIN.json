@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
-  "scope": "105 standalone owned SDK/test/fixture files. The opted-in public service increment changes five existing protocol/client leaves and adds its exact paired source-derived SDK test. Only the two declared module import relocations; no host App or business implementation copied.",
+  "source_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
+  "scope": "105 standalone SDK files. This increment adds the trusted configuration-save origin reader to the existing Base SDK. Other files retain their source and exact paired commit; only the two declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -43,10 +43,10 @@
     {
       "source_path": "internal/plugins/base.go",
       "path": "internal/sdk/base.go",
-      "source_sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
-      "sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+      "source_sha256": "878d4dd0f82f0978b2826d1d05b6f40f1ece632bc33e50f0f083bfac3785fa4e",
+      "sha256": "878d4dd0f82f0978b2826d1d05b6f40f1ece632bc33e50f0f083bfac3785fa4e",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "879273853fa08a2e409f06e9788d95d4f4f61daf"
     },
     {
       "source_path": "internal/plugins/base_instance_metadata_test.go",
@@ -8992,6 +8992,13 @@
           "source_commit": "e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b"
         }
       ]
+    },
+    {
+      "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
+      "manifest_sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
+      "scope": "105 standalone owned SDK/test/fixture files. The opted-in public service increment changes five existing protocol/client leaves and adds its exact paired source-derived SDK test. Only the two declared module import relocations; no host App or business implementation copied.",
+      "target_commit": "8f7115cb9abf0966917ea470bdfa7ad5ec5720d3",
+      "target_path": "SDK_ORIGIN.json"
     }
   ],
   "closure_boundaries": {
@@ -9011,7 +9018,7 @@
     "published_private_scheduler_lifecycle": "Explicit compiled managed_private_scheduler plus negotiated private_scheduler_stop:1 and optional existing Submit private ownership. Only active same-object old-Client leases and real descendants retain authority until private stop joins; single reserved pre-stop lane, default Submit and cleanup unchanged, hybrid rejected. Generic failed-init process behavior remains a stated difference; ordinary individual public services not fixed by this increment.",
     "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn."
   },
-  "source_base_commit": "e97c5ad3b9cce3d43b1e984d532c6a8f21d5f10b",
+  "source_base_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
   "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Exact committed host 913eb082 bytes match all105 current files after only two declared import relocations. The104/e97c5ad3 and earlier snapshots remain historical. Finite public source/App/normal/race/Linux evidence retains its own bindings; this association is not a new runtime. Ordinary registered command and external API cancellation on individual stop is confirmed red and is being repaired separately. AutoSignIn/private import/whole migration remain unaccepted; no push or production deployment."
+  "source_state": "Committed SDK Base bound to the host save-origin grant. The paired host isolates the exact initializer call from reentrant ordinary event calls."
 }

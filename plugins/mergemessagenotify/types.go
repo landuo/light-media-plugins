@@ -91,9 +91,10 @@ type AppriseRequest struct {
 // Apprise return original library success/errors; adapters require separate proof.
 type Host struct {
 	HTTP       func(context.Context, Request) (Response, error)
-	SMTP       func(context.Context, SMTPRequest) error
+	SMTP       func(context.Context, map[string]any, SMTPRequest) error
 	Apprise    func(context.Context, AppriseRequest) (any, error)
 	SaveConfig func(context.Context, map[string]any) (bool, error)
+	LoadConfig func(context.Context) (map[string]any, error)
 	Log        func(context.Context, string, string)
 	Render     func(context.Context, any, map[string]any) (any, error)
 	Now        func() time.Time
