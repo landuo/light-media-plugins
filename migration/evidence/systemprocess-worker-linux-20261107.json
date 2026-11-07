@@ -1,0 +1,102 @@
+{
+  "feature": "plugin.SystemProcess",
+  "status": "partial_verified",
+  "installed_version": "1.1",
+  "worker_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
+  "host_test_saved_commit": "9816ad9b609a57942c6eaa900cd5f7fb4e84aab3",
+  "source_sha256": "d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac",
+  "host_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "frontend_source_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+  "origin": {
+    "path": "plugins/systemprocess/ORIGIN.json",
+    "sha256": "4ea42519813d58e7745eef48389db408b884253f520ed0dfe407bf0dbc0ce203"
+  },
+  "source_replay": {
+    "status": "passed",
+    "cases": 12,
+    "test": "TestSystemProcessWorkerReplaysInstalledSource",
+    "source": "Installed __init__.py:38–57,84–165,179–237,275–416. Host source oracle previously captured against psutil 7.2.2.",
+    "target": [
+      {
+        "path": "plugins/systemprocess/plugin.go",
+        "sha256": "c199aba49ddcb05520dc62d9d0f0d6bd93d36b34d194a69648f19850868e1d75"
+      },
+      {
+        "path": "plugins/systemprocess/form.json",
+        "sha256": "9c0384b7d4b398649ca2776a224624f4e4e6cacb2538c535ea4592cc6aeb75c7"
+      },
+      {
+        "path": "plugins/systemprocess/table.go",
+        "sha256": "4d56d5c1054440b1bffe4faad708347c8410fbf7c8577a0056ee3a33b4ec26bf"
+      },
+      {
+        "path": "plugins/systemprocess/source_test.go",
+        "sha256": "e7d49f19eff7ba9e6899aaa04189431aaa8d3979f247412ffc8bb7fb4d2f391e"
+      }
+    ],
+    "fixture": {
+      "path": "plugins/systemprocess/reference/system-process-original.json",
+      "sha256": "0c2897a3e992dd539efd47da46749ef937156aeb7f4a2c3e6bc93f645ccab036"
+    },
+    "observed": "Source-native form tuple and 12 state, page and dashboard cases preserve falsy values, width and refresh types, reset and empty table behavior."
+  },
+  "linux_arm64": {
+    "status": "passed",
+    "test": "TestSystemProcessLinuxOwnedApp",
+    "source": "Installed __init__.py:239–272 for process list and PID order, :275–416 for detail/dashboard. Fixed MoviePilot app/core/plugin.py dashboard metadata fallback.",
+    "target": [
+      {
+        "path": "plugins/systemprocess/sample.go",
+        "sha256": "10e316d77d6de61abe2e5a3e61de8496c27ba6b6424047a28ebf791f51e7f6b9"
+      },
+      {
+        "path": "plugins/systemprocess/plugin.go",
+        "sha256": "c199aba49ddcb05520dc62d9d0f0d6bd93d36b34d194a69648f19850868e1d75"
+      },
+      {
+        "path": "/Users/accidia/projects/light-media/internal/app/plugin_system_process_owned_linux_test.go",
+        "sha256": "f1b232419980f1273506cda5eaf89ff1a382bc37ca2f8ce6d6aa9d5d8f3f1b72"
+      }
+    ],
+    "environment": "Linux ARM64 network-none container, actual App and standalone Go worker, synthetic owned child PID and temporary configuration.",
+    "observed": "Actual package route installed the Go executable. Disabled detail and native form rendered and metadata stayed absent. Saving enable, width 6 and refresh 9 made source default metadata and dashboard visible. The disabled named clone direct dashboard retained its own title. Detail, dashboard and clone tables contained the owned PID and were strictly descending.",
+    "log": {
+      "path": "work/systemprocess-20261107/linux-arm64-app/runtime.stdout",
+      "sha256": "567138832766015bfbb1a54859245cadfc322ccf7505cfd3e57c6ee4179d8f0e"
+    },
+    "build": {
+      "path": "work/systemprocess-20261107/linux-arm64-app/build.sha256",
+      "sha256": "2350d2d12e16ccb3bbe595a6667053142cf2903e9d7d4f026abe0d66798731ae"
+    },
+    "source_binding": {
+      "path": "work/systemprocess-20261107/linux-arm64-app/build-source.txt",
+      "sha256": "d8d68d97893e50bfc5e502f978780ff0ba955dceba6988fa8b0997e0bf75b0fe"
+    },
+    "initial_fixture": {
+      "status": "stopped_before_app",
+      "log": {
+        "path": "work/systemprocess-20261107/linux-arm64-app/fixture-first.stdout",
+        "sha256": "66106b6519546344dc7a249da12fbbc40242f65930a0cd87fa490ea3ff0d053c"
+      },
+      "cause": "BusyBox comm setup wrote a newline separately and cleared the synthetic name. The corrected fixture was the only run that reached actual App installation."
+    }
+  },
+  "adaptations": [
+    "Existing read-only gopsutil v4.26.9 adapter is local to the Linux namespace. The source makes two CPU samples per row, and measured values depend on scheduling and tick timing.",
+    "Process display-name expansion can inspect argv[0]. Raw process arguments and environment do not enter the worker output.",
+    "Verified instance metadata supplies the source class display name in each clone dashboard. Host produces the inherited empty metadata key."
+  ],
+  "open": [
+    "Verify one browser config/detail/dashboard path, then build and verify the standard amd64 ZIP and package license inventory. No prior cases need repetition."
+  ],
+  "reviewers": [
+    "/root/emby (independent source audit)",
+    "/root/kodi (Linux sampler)",
+    "/root/jellyfin (owned Linux host)"
+  ],
+  "delivery": {
+    "branch": "codex/installed-plugins-20261105",
+    "pushed": false,
+    "deployed": false
+  }
+}

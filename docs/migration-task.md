@@ -14,9 +14,11 @@ replays and actual seeded, reload, clone and Chrome evidence were reused.
 The local build registry now includes IYUU. See
 `migration/evidence/iyuuautoseed-acceptance-20261107.json`.
 
-SystemProcess 1.1 is the active implementation. The Go entry uses the
-verified Linux sampler and the source-native form, detail and dashboard.
-Verify the actual owned host before package and browser acceptance.
+SystemProcess 1.1 is the active implementation. The Go entry passed the
+12 fixed-source form/state/detail/dashboard cases and a real isolated Linux
+App run with an owned process. Native browser interaction and the standard
+amd64 ZIP and notice inventory remain open. See
+`migration/evidence/systemprocess-worker-linux-20261107.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
