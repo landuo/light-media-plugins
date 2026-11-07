@@ -22,10 +22,19 @@ lease, and uninstall. Downloaders, site resolution and torrent handling have
 separate controlled source replays. See
 `migration/evidence/iyuuautoseed-worker-runtime-20261107.json`.
 
-IYUU remains in progress. A single long pass still needs host callback renewal,
-and source-sized caches need the paired storage capacity. A seeded host pass,
-failure and lifecycle/instance isolation, and browser form acceptance remain
-open. Release build registry remains gated on acceptance.
+IYUU now renews reverse-call capacity within a large pass and persists all
+three source-sized caches, including authenticated clone lineage after exact-ID
+updates. An isolated Linux run reached the late seed after 24 existing
+candidates and executed paused add, marker cleanup, recheck and start once.
+It also verified the 429 cache and success history. The first Linux run exposed
+an inherited HTTP/2 ALPN mismatch in the Requests-compatible transport, fixed
+and verified with the same owned case. See
+`migration/evidence/iyuuautoseed-seeded-capacity-20261107.json`.
+
+IYUU remains in progress. Reload/restart, per-instance runtime isolation,
+native browser form and package acceptance remain open. Reuse the accepted
+seeded evidence and verify only remaining gaps. The release registry remains
+gated on acceptance.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

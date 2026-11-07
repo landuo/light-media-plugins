@@ -1,0 +1,126 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "installed_version": "2.22",
+  "fixed_moviepilot_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_sha256": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+  "plugin_product_commit": "b1915273b84c9e63a4b222be544bc7f62f8965d5",
+  "paired_host_local_commit": "a501340553ed067325f2be40e11d06e0b6c18c55",
+  "sdk_origin": {
+    "path": "SDK_ORIGIN.json",
+    "sha256": "ca37a259ece8a7213cc35a01d35371b0cd2e3be6e38bc9177072204d74a14eb5"
+  },
+  "worker_callback_renewal": {
+    "source": "Installed __init__.py:745–858,874–925,1129–1240. One source pass retains counters, iteration order, effect order and recheck queue.",
+    "target": [
+      "cmd/iyuu-auto-seed/main.go",
+      "plugins/iyuuautoseed/pass.go",
+      "plugins/iyuuautoseed/plugin.go",
+      "plugins/iyuuautoseed/sdk_runtime.go"
+    ],
+    "observed": "Use the existing host-owned background submission protocol for fresh reverse callbacks. Move only the next unsent request. Preserve the same callback for the M-Team token and material aliases. Cancel queued requests before sending and join active callbacks. No effect replay or credential payload in the continuation.",
+    "focused_synthetic_tests": [
+      {
+        "case": "TestIYUUHostPassKeepsMaterialGrantAcrossBudgetBoundary",
+        "status": "passed",
+        "scope": "47 calls before a forced fresh token phase, exact API and CDN phase continuity, another renewal before the next add request. The later synchronous cancellation guard does not change routing."
+      },
+      {
+        "case": "TestIYUUHostPassSkipsCanceledQueuedMutation",
+        "status": "passed",
+        "scope": "An already canceled queued add receives context.Canceled without issuing a host call."
+      }
+    ],
+    "reviewer": "/root/emby"
+  },
+  "configuration_capacity": {
+    "source": "Installed __init__.py:88–100,128–139 and __trim_seed_cache/__append_seed_cache. Three capped 10,000-row arrays are part of update_config.",
+    "target": [
+      "/Users/accidia/projects/light-media/internal/app/plugin_instances.go",
+      "/Users/accidia/projects/light-media/internal/app/plugin_original_base.go",
+      "/Users/accidia/projects/light-media/internal/app/plugin_original_config.go",
+      "/Users/accidia/projects/light-media/internal/app/plugin_original_source_site_reference.go",
+      "/Users/accidia/projects/light-media/internal/app/plugin_store.go"
+    ],
+    "bounded_size_bytes": 2097152,
+    "observed": "Canonical IYUU and authenticated clone ancestry retain the source-sized configuration through saves, cold reads, same-ID version changes, uninstall retention, clone copy and exact-ID changes. Each lineage hop authenticates the stored marker and source row. Ordinary plugin storage remains 1 MiB.",
+    "tests": [
+      {
+        "case": "TestOriginalIYUUFullConfigCapacity",
+        "status": "passed",
+        "revision": "ff68198166e32fde0483ac56dee8e9a8944d4544",
+        "scope": "Full 30,000 hashes, Base/manager writes and reads, version changes, uninstall retention, ordinary cap, copied clone and exact 2 MiB boundary."
+      },
+      {
+        "case": "TestOriginalIYUUExactIDCloneUpdateKeepsConfigCapacity",
+        "status": "passed",
+        "revision": "a501340553ed067325f2be40e11d06e0b6c18c55",
+        "scope": "Actual host store exact-ID update, retained config, Base write and cold reread. Nested clone copies over 1 MiB after parent exact-ID update and survives its own exact-ID update."
+      }
+    ],
+    "reviewer": "/root/emby"
+  },
+  "seeded_actual_linux_host": {
+    "source": [
+      "Installed __init__.py:745–858 (scan/batch/cache write),874–925 (check then start),1129–1240 (site selection and add)",
+      "Installed iyuu_helper.py:29–59,72–126 (fixed origin and request envelopes)",
+      "Fixed app/helper/torrent.py:182–190 (429 retryable failure)"
+    ],
+    "test": "TestIYUUSeededLinuxSourceWorker",
+    "host_test": {
+      "path": "/Users/accidia/projects/light-media/internal/app/plugin_iyuu_seeded_process_test.go",
+      "sha256": "d6b0d207e73ed66c9bff6984e478a4fd59557591dc6631e3f7924c1da30b546c"
+    },
+    "environment": "Linux arm64, actual light-media App HTTP server and child Go worker, isolated Docker network none, owned TLS IYUU/HTTPS tracker peers and loopback qB protocol peer, generated temporary CA.",
+    "first_run": {
+      "status": "failed",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/runtime-before-alpn.stdout",
+        "sha256": "ef3ede44533436b8d9ae3b37900a75b27edb0a63a923bf54a4578fe94fc20c55"
+      },
+      "build": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/build-before-alpn.sha256",
+        "sha256": "84a95a7a40636e1a78319d03bf6ba8d5d523bd9e892c1985ab72335911aa0dc0"
+      },
+      "observed": "24 candidate lookups completed across three pass callbacks. Both tracker GETs failed at TLS protocol negotiation. Go cloned an already initialized h2 ALPN list but spoke HTTP/1.1."
+    },
+    "host_fix": "c832edb174886cb2f07115e7c2a7fba1ab310115",
+    "target_transport": "/Users/accidia/projects/light-media/internal/networkproxy/requests_timeout.go",
+    "affected_case_after_fix": {
+      "status": "passed",
+      "log": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/runtime.stdout",
+        "sha256": "628d466a62f12f95a20e74f12da424f491ac533d3059d37a173ab8e98dde89da"
+      },
+      "build": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/build.sha256",
+        "sha256": "a7ef4b9627afcb9ea380f017eb8520386dcb9391261cf64fda216e7039f2cbc1"
+      },
+      "build_sources": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/build-source.txt",
+        "sha256": "677d579570323066ddb27c29e8d8747738af8835ed4fabf6cda61a8d2e4e6371"
+      },
+      "runner": {
+        "path": "work/iyuuautoseed-20261107/linux-seeded/run.sh",
+        "sha256": "d10180d5a657c807e6e78b292b32c6b99a3d5ab2930287af737ab2cc7803437f"
+      },
+      "observed": "Three IYUU API calls, 24 existing lookups and three distinct reverse callback IDs. Late candidate adds paused and removes/deletes marker, rechecks, then starts exactly once. HTTP 429 enters the retryable cache only. Successful history is persisted under the initial hash. Exact 10,000-row arrays retained with expected eviction and new tails. Worker and h2-capable peers stayed unchanged for the repair verification.",
+      "binding_note": "Executed host checkout c832edb1 plus the one-hop clone capacity diff and seeded test source listed in build-source.txt. Later authenticated multi-hop ancestry was verified by its own targeted test. Canonical IYUU used by this seeded run does not enter the new lineage loop."
+    },
+    "reviewer": "/root/kodi"
+  },
+  "open": [
+    "Verify actual worker reload/restart, disabled one-shot persistence, per-instance runtime/data isolation and native browser form with minimum new cases.",
+    "Review remaining bounded differences before acceptance. Single logical messages and one pinned material redirect chain remain bounded, instance torrent files replace the shared source cache, and whole-pass config serialization can delay reinit. Clean catalog has 193 original metadata entries without a url and skips unconfigured sites. Previously merged unbound catalog rows have no authorized transport.",
+    "Record final artifact/package verification and update the build registry only when the IYUU instance acceptance closes."
+  ],
+  "delivery": {
+    "plugin_local_branch": "codex/installed-plugins-20261105",
+    "host_local_branch": "codex/plugin-source-error-outcomes-20261105",
+    "plugin_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "host_remote_main_read": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "pushed": false,
+    "deployed": false,
+    "cleanup": "Owned container stopped. Synthetic CA and both test binaries removed, hashes and logs retained."
+  }
+}
