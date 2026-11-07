@@ -55,6 +55,14 @@ func (h *globalPartialHost) Delete(_ context.Context, name string, _ []string, _
 
 func (h *globalPartialHost) Log(context.Context, string, string) {}
 
+func (h *globalPartialHost) NewID() string { return "check" }
+
+func (h *globalPartialHost) Sites(context.Context) ([]Site, error) { return nil, nil }
+
+func (h *globalPartialHost) Downloaders(context.Context) ([]Downloader, error) { return nil, nil }
+
+func (h *globalPartialHost) Message(context.Context, Notice) error { return nil }
+
 func TestGlobalDeleteRetainsEarlierConfirmationWhenLaterOutcomeUnknown(t *testing.T) {
 	ctx := t.Context()
 	host := &globalPartialHost{data: map[string]json.RawMessage{}}
@@ -76,5 +84,30 @@ func TestGlobalDeleteRetainsEarlierConfirmationWhenLaterOutcomeUnknown(t *testin
 		if err != nil || truth(records.Values[name]["deleted"]) != (i == 0) {
 			t.Fatalf("wrong stored deletion state for %s: %v %v", name, records, err)
 		}
+	}
+}
+
+func TestCheckReportsEarlierConfirmedGlobalDeletion(t *testing.T) {
+	ctx := t.Context()
+	host := &globalPartialHost{data: map[string]json.RawMessage{}}
+	config := Config{Settings: Row{"enabled": true, "global_proxy_delete": true, "global_delete_size_range": "1-2"}}
+	for _, name := range []string{"first", "second"} {
+		config.Tasks = append(config.Tasks, Task{Row{"id": name, "downloader": name, "enabled": true, "proxy_delete": true}})
+		if err := host.Put(ctx, taskKey(name, "torrents"), Rows{name: Row{"title": name, "size": 3 << 30, "deleted": false}}); err != nil {
+			t.Fatal(err)
+		}
+	}
+	core := newCore(host, config)
+	checkErr := core.Check(ctx, "first", true)
+	if !boundary(checkErr) {
+		t.Fatalf("expected the later unconfirmed deletion to stop the run: %v", checkErr)
+	}
+	history, err := core.runs(ctx, "first")
+	if err != nil || len(history) != 1 {
+		t.Fatalf("expected one persisted check report: %v %v", history, err)
+	}
+	report := row(history[0])
+	if report["success"] != false || report["error"] != checkErr.Error() || number(report["global_deleted_count"]) != 1 || number(report["deleted_count"]) != 1 {
+		t.Fatalf("expected the report to retain the confirmed deletion and the later failure: %v", report)
 	}
 }

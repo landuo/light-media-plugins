@@ -46,6 +46,10 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 	lock.Unlock()
 	if p.Config().GlobalDynamic() && !boundary(err) {
 		n, e := p.GlobalDelete(ctx)
+		if e == nil || n > 0 {
+			r["global_deleted_count"] = n
+			r["deleted_count"] = number(r["deleted_count"]) + float64(n)
+		}
 		if e != nil {
 			r["success"] = false
 			r["error"] = e.Error()
@@ -54,9 +58,6 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 			if err == nil {
 				err = e
 			}
-		} else {
-			r["global_deleted_count"] = n
-			r["deleted_count"] = number(r["deleted_count"]) + float64(n)
 		}
 	}
 	r["finished_at"] = p.h.Now().Format(time.RFC3339)
