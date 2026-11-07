@@ -108,8 +108,12 @@ Acceptance was already durable with sealed sender attribution when the
 original-template notice reached the initiating open ID. The actual SDK
 post-Add call and DownloadAdded followed the notice response. See
 `migration/evidence/lark-messager-download-added-20261108.json`.
-Continue with TV missing-episode selection and the remaining source-provider
-and subscription differences in `migration/evidence/lark-messager-media-20261108.json`.
+TV missing-episode notice and partial pack selection passed on native Linux.
+The downloader added one torrent paused, disabled the three unwanted files,
+and started only the selected E02. E03 stayed uncovered and a durable R
+subscription was created with the original pack's note. See
+`migration/evidence/lark-messager-tv-missing-20261108.json`.
+Continue with native chat search and selection for the remaining media providers.
 Reuse earlier passing evidence for the completed paths.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome

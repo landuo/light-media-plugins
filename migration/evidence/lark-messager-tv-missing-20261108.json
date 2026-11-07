@@ -1,0 +1,71 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "host_commit": "0976931f71afa8b3d354b84dc47b1b2005e93590",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/chain/download.py:1586–1710; app/chain/message.py:2090–2142,2565–2630,3553–3575; app/utils/string.py:715–745",
+      "target": "internal/app/plugin_original_chat_media.go, plugin_original_chat_media_download.go and plugin_original_chat_media_missing.go",
+      "observed": "The owned native library inventory held S01E01 and S01E04. With four provider episodes the ordinary search reported 第 1 季缺失 2-3 集 before announcing resource search. The complete-season sentinel is distinct from an explicit missing list. Explicit re-search total format was checked in source replay."
+    },
+    {
+      "source": "app/helper/torrent.py:566–599; app/chain/download.py:1270–1580; app/modules/qbittorrent/__init__.py download file selection",
+      "target": "internal/app/plugin_original_chat_media_download.go, plugin_original_chat_media_auto.go, plugin_original_chat_media_episode_download.go and search_download.go",
+      "observed": "A single-season pack remained eligible for split even with library episodes in its actual material. The candidate used one verified fetch. The qB protocol peer saw paused Add, file list, priority zero for E01/E04/readme and Start for the same hash, and the sealed accepted selection was exactly E02."
+    },
+    {
+      "source": "app/chain/download.py:1568–1578; app/chain/message.py:2998–3042",
+      "target": "internal/app/plugin_original_chat_media_auto.go, plugin_original_chat_media_episode_download.go, plugin_original_chat_media_view.go and existing plugin_original_chat_media_subscribe.go",
+      "observed": "The accepted selection and source metadata range remained distinct. E02 counted as downloaded, E03 stayed uncovered, and the original metadata start E01 was preserved as note [1] on the durable R fallback subscription."
+    }
+  ],
+  "source_replay": {
+    "kind": "fixed source functions extracted verbatim with synthetic data",
+    "paths": [
+      "app/chain/message.py:_build_no_exists_messages",
+      "app/utils/string.py:str_series",
+      "app/helper/torrent.py:match_season_episodes"
+    ],
+    "sha256": "01b32d7fbb3dc97b87001a317d11129954ab9db87078dcc011e043bfa0965bcf",
+    "observed": "Implicit notice listed 2-3 and a separate whole missing season's total. Explicit notice listed season totals. Single-season pack and overlapping explicit range matched; a wholly owned range did not."
+  },
+  "native": {
+    "status": "passed",
+    "kind": "native Linux amd64 App and exact indexed Lark worker with owned loopback Lark, TMDB, tracker and qBittorrent peers",
+    "seconds": 2.09,
+    "environment": "Native x86_64, read-only alpine:3.22, tmpfs and loopback only. The pre-existing asset slots were seeded in the fixture. No production data, credentials or message delivery.",
+    "test": "TestOriginalLarkTVMissingEpisodeLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_tv_linux_test.go",
+    "fixture_sha256": "e0ec94841796ba3253c8a4955fbf9b5951390b0bdd7b3f6bf00c4c15b8108aff",
+    "host_elf_sha256": "4f8d3763905e1c0a43abce5b70fb69c034ab8061670a316589c8ce37b1d76834",
+    "runner_sha256": "97d266f7a06dbd201606ce71c37273b32c2b2c0a8c46c8b02b910a2d4929a191",
+    "runtime_log_sha256": "f83e77fae1f076b16ebee3240f728f520e6f42765d59c32328c12d8e4c5d953c",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "Verified ordinary Lark text searched the source TV season and the selected card sent the missing list before the search notice and resource card.",
+      "Automatic download fetched exactly one pack containing E01, E02, E04 and readme. The native qB Add used the original bytes and paused at the resolved directory. Priority zero was sent for IDs 7, 23, 99, leaving E02 ID 3 wanted, then the same hash started.",
+      "The native intent and post-Add receipt stored [2], and the Lark success template named E02. The remaining E03 produced one durable season-one R subscription and SubscribeAdded with source note [1].",
+      "The isolated App stopped. Earlier worker, site, subscriptions, movie, transfer and notification-order cases were not repeated."
+    ]
+  },
+  "prior_fixture_failures": [
+    {
+      "observation": "The first native setup lacked the routine qB login reply, and webhook acknowledgement was checked as a raw substring. It stopped before selection or downloader Add.",
+      "log_sha256": "439da957dcea74de98a728b2d7d88144fb667ab28268e2d974add6bbc9768b7a"
+    },
+    {
+      "observation": "A text edit failed to apply and the same setup exited before selection. The final fixture implements the qB login reply and parses the JSON acknowledgement.",
+      "log_sha256": "f55f6e7080517410b144af1d5687bd295c11fa9fc083ccc0148f27dd81611f1e"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "Native whole-season and complete-range checks remain conservative on unverifiable identities. An indivisible mixed-episode video cannot prove a request for only part of that file. The native worker requires an accepted Add with confirmed episode-file effects before counting split coverage.",
+    "This scenario verifies one season, qBittorrent and a split leaving a remainder. Whole-pack reentry, direct range, Transmission, episode-group mappings, unsupported season-zero behavior, multi-season material in one Add and cold recovery require separate evidence or further implementation.",
+    "Alternate provider chat discovery/selection, remaining subscription differences and Lark worker edge cases still keep the full plugin in implementing status."
+  ]
+}
