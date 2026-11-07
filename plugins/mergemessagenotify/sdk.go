@@ -27,7 +27,10 @@ func Manifest() sdk.Manifest {
 		HostAPIMin:    1,
 		HostAPIMax:    1,
 		Methods:       []string{"init", "get_state", "get_form", "get_render_mode", "listen_notice_message", "stop_service", "stop"},
-		Capabilities:  []string{sdk.BaseGetConfig, sdk.BaseUpdateConfig, sdk.BaseConfigSaveOrigin, sdk.NetworkProxyReadCapability, sdk.LogWriteCapability},
+		Capabilities: []string{
+			sdk.BaseGetConfig, sdk.BaseUpdateConfig, sdk.BaseConfigSaveOrigin,
+			sdk.NetworkProxyReadCapability, sdk.LogWriteCapability, sdk.StorageLocalReadGrantCapability,
+		},
 		BroadcastHandlers: []sdk.BroadcastHandler{
 			{Event: "notice.message", Method: "listen_notice_message"},
 		},
@@ -92,12 +95,14 @@ func NewWorker(smtp func(context.Context, map[string]any, SMTPRequest) error) *W
 			return (RequestsHTTP{Environment: proxy.Environment}).Send(ctx, input)
 		},
 		Apprise: func(ctx context.Context, input AppriseRequest) (any, error) {
-			proxy, err := activeCall(ctx).proxySettings(ctx)
+			call := activeCall(ctx)
+			proxy, err := call.proxySettings(ctx)
 			if err != nil {
 				return nil, err
 			}
 			transport := apprise.HTTPTransport{Environment: func() []string { return proxy.Environment }}
-			return NativeApprise(transport.Send)(ctx, input)
+			files := localAttachments{storage: sdk.Storage{Host: call.host}}
+			return NativeApprise(transport.Send, files.read)(ctx, input)
 		},
 		Log: func(ctx context.Context, level, message string) {
 			_ = (sdk.Logger{Host: activeCall(ctx).host}).Log(ctx, sdk.LogLevel(level), message)

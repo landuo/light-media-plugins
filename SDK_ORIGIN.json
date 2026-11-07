@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
-  "scope": "105 standalone SDK files. This increment adds the trusted configuration-save origin reader to the existing Base SDK. Other files retain their source and exact paired commit; only the two declared import relocations.",
+  "source_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "scope": "106 standalone SDK files. This increment adds a finite local regular-file read grant. Other files retain their source and exact paired commit; only the two declared import relocations.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -818,6 +818,14 @@
       "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
     },
     {
+      "source_path": "internal/plugins/storage_local_read.go",
+      "path": "internal/sdk/storage_local_read.go",
+      "source_sha256": "5a872bf26a603761d7877b1d0dc2442513cd43ebe2ebbb203e715eb7f197de7b",
+      "sha256": "5a872bf26a603761d7877b1d0dc2442513cd43ebe2ebbb203e715eb7f197de7b",
+      "changes": [],
+      "source_commit": "fcc5995a32582047d08db1b50e962e64effde84f"
+    },
+    {
       "source_path": "internal/plugins/storage_operation.go",
       "path": "internal/sdk/storage_operation.go",
       "source_sha256": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
@@ -921,6 +929,13 @@
     ]
   },
   "historical_snapshots": [
+    {
+      "source_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
+      "manifest_sha256": "06bd7be472f2e2edaee8d6d9bb3d1c5068212784dc8080e0c7a1d6a3543f52c5",
+      "scope": "105 standalone SDK files. This increment adds the trusted configuration-save origin reader to the existing Base SDK. Other files retain their source and exact paired commit; only the two declared import relocations.",
+      "target_commit": "ca29a8ca05fcd5099c53e27bbbcd1d0589cf0f52",
+      "target_path": "SDK_ORIGIN.json"
+    },
     {
       "source_commit": "2b795ebb62207861a5f4b5c54291b5ebd12b3bed",
       "scope": "CategoryEditor worker and the minimum complete-file SDK build closure; not a full host or general SDK distribution",
@@ -9016,9 +9031,10 @@
     "sdk101_metadata_close": "Runtime tests and native builds used SDK_ORIGIN predecessor b417c613; the local publication changes only this explanatory source_state and adds these two boundary notes. All101 runtime/test/fixture bytes and host sourcecommit are unchanged. The full predecessor and exact metadata-only delta binding are retained in migration/evidence/sdk101-current-consumers-20261106.",
     "source_public_GET_increment": "Finite credential-free source_public and source_douban_image request profiles only; ordinary empty profile unchanged. Full current101 predecessor f976 and exact old client retained under migration/evidence/source-public-get-sdk-20261106. Host RequestUtils/Requests URI and same-connection no-replay behavior independently32a; six-base-family nonconsumer gate cbe7 covers all non-note bytes, not wholeELF identity/new active profile/Main/UI/updatefixture proof. source600plus response range and initial caller URI remain pending.",
     "published_private_scheduler_lifecycle": "Explicit compiled managed_private_scheduler plus negotiated private_scheduler_stop:1 and optional existing Submit private ownership. Only active same-object old-Client leases and real descendants retain authority until private stop joins; single reserved pre-stop lane, default Submit and cleanup unchanged, hybrid rejected. Generic failed-init process behavior remains a stated difference; ordinary individual public services not fixed by this increment.",
-    "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn."
+    "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn.",
+    "storage_local_read_increment": "The host validates the scoped capability and current roots, protects private app state, and returns file identity only. The worker reopens beneath the granted root and verifies identity before and after reading."
   },
-  "source_base_commit": "62e870cc5e0eec119c43fa3e78a3dd2e81c58347",
+  "source_base_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
   "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Committed SDK Base bound to the host save-origin grant. The paired host isolates the exact initializer call from reentrant ordinary event calls."
+  "source_state": "Local read grant SDK paired with the host read-grant dispatcher on the local host branch."
 }

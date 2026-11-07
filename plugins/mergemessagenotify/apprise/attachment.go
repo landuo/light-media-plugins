@@ -15,7 +15,7 @@ import (
 	"sync"
 )
 
-const attachmentMaxSize = 1048576000 // Apprise AttachBase.max_file_size.
+const MaxAttachmentSize = 1048576000 // Apprise AttachBase.max_file_size.
 const defaultAttachmentType = "application/octet-stream"
 
 var errAttachmentUnavailable = errors.New("Apprise attachment is unavailable")
@@ -156,7 +156,7 @@ func attachmentHTTP(u sourceURL) *Request {
 	request := &Request{
 		Method: http.MethodGet, URL: u.scheme + "://" + u.host + u.port + u.path,
 		HeaderOrder: [][2]string{{"User-Agent", "Apprise"}},
-		Verify:      true, Timeout: [2]float64{4, 4}, MaxResponseBytes: attachmentMaxSize,
+		Verify:      true, Timeout: [2]float64{4, 4}, MaxResponseBytes: MaxAttachmentSize,
 	}
 	if u.user != nil && *u.user != "" {
 		var password any
@@ -239,7 +239,7 @@ func (s *attachmentSource) resolve(ctx context.Context, transport Transport, rea
 		if err != nil || reply.Status >= 400 {
 			return attachment{}, errAttachmentUnavailable
 		}
-		if length, _ := strconv.ParseInt(attachmentHeader(reply.Headers, "Content-Length"), 10, 64); length > attachmentMaxSize {
+		if length, _ := strconv.ParseInt(attachmentHeader(reply.Headers, "Content-Length"), 10, 64); length > MaxAttachmentSize {
 			return attachment{}, errAttachmentUnavailable
 		}
 		if match := dispositionFilename.FindStringSubmatch(attachmentHeader(reply.Headers, "Content-Disposition")); match != nil {
@@ -265,7 +265,7 @@ func (s *attachmentSource) resolve(ctx context.Context, transport Transport, rea
 		}
 		name = filepath.Base(s.path)
 	}
-	if len(data) > attachmentMaxSize {
+	if len(data) > MaxAttachmentSize {
 		return attachment{}, errAttachmentUnavailable
 	}
 	if s.name != "" {
