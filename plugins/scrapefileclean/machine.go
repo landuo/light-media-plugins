@@ -255,12 +255,16 @@ func (m *Machine) execute(task *Task) {
 			m.remember(p)
 		}
 	}()
-	if m.Ops.Exists(task.Path) {
-		id, e := m.Ops.Stat(task.Path)
-		if e == nil && same(id, task.Identity) {
+	id, err := m.Ops.Stat(task.Path)
+	if err == nil {
+		if same(id, task.Identity) {
 			return
 		}
 		m.cleanup(task, true)
+		return
+	}
+	if !missing(err) {
+		m.Errors = append(m.Errors, err)
 		return
 	}
 	for _, other := range m.State {

@@ -46,6 +46,7 @@ type localOps struct {
 	roots  []authorizedRoot
 	listed map[string]Identity
 	fence  error
+	loss   func() error
 }
 
 type authorizedRoot struct {
@@ -161,6 +162,9 @@ func (o *localOps) Stat(path string) (Identity, error) {
 	info, err := o.info(path)
 	if err != nil {
 		return Identity{}, err
+	}
+	if !info.Mode().IsRegular() {
+		return Identity{}, fs.ErrPermission
 	}
 	return fileIdentity(info)
 }
@@ -282,6 +286,12 @@ func (o *localOps) RemoveTree(path string) error { return o.remove(path, "tree",
 func (o *localOps) effect(ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
 	if o.fence != nil {
 		return nil, o.fence
+	}
+	if o.loss != nil {
+		if err := o.loss(); err != nil {
+			o.fence = err
+			return nil, err
+		}
 	}
 	result, err := o.host(ctx, method, payload)
 	if err != nil {

@@ -36,10 +36,14 @@ func openNativeDirectory(path string, pin *authorizedRoot) (*os.File, error) {
 		return nil, err
 	}
 	var walked string
+	matched := pin == nil
 	for _, component := range strings.Split(strings.TrimPrefix(path, "/"), "/") {
 		next, err := syscall.Openat(fd, component, flags, 0)
 		_ = syscall.Close(fd)
 		if err != nil {
+			if !matched {
+				return nil, fs.ErrPermission // Losing the root is not evidence of an individual unlink.
+			}
 			return nil, err
 		}
 		fd = next
@@ -50,6 +54,7 @@ func openNativeDirectory(path string, pin *authorizedRoot) (*os.File, error) {
 				_ = syscall.Close(fd)
 				return nil, fs.ErrPermission
 			}
+			matched = true
 		}
 	}
 	return os.NewFile(uintptr(fd), "/proc/self/fd/"+strconv.Itoa(fd)), nil
@@ -60,7 +65,7 @@ type nativeWatcher struct {
 	cancel     context.CancelFunc
 	done       chan struct{}
 	events     chan Event
-	errors     chan error
+	report     func(error)
 	once       sync.Once
 	root       string
 	dirs       map[int]string
@@ -70,13 +75,13 @@ type nativeWatcher struct {
 	pendingSeq uint64
 }
 
-func NativeWatch(parent context.Context, root string, open func(string) (*os.File, error)) (Watcher, error) {
+func NativeWatch(parent context.Context, root string, open func(string) (*os.File, error), report func(error)) (Watcher, error) {
 	fd, e := syscall.InotifyInit1(syscall.IN_NONBLOCK | syscall.IN_CLOEXEC)
 	if e != nil {
 		return nil, e
 	}
 	ctx, cancel := context.WithCancel(parent)
-	w := &nativeWatcher{fd: fd, cancel: cancel, done: make(chan struct{}), events: make(chan Event, 4096), errors: make(chan error, 1), root: root, dirs: map[int]string{}, known: map[string]bool{}, pending: map[uint32]renamePending{}, open: open}
+	w := &nativeWatcher{fd: fd, cancel: cancel, done: make(chan struct{}), events: make(chan Event, 4096), report: report, root: root, dirs: map[int]string{}, known: map[string]bool{}, pending: map[uint32]renamePending{}, open: open}
 	if e = w.addTree(root, false); e != nil {
 		syscall.Close(fd)
 		cancel()
@@ -86,13 +91,9 @@ func NativeWatch(parent context.Context, root string, open func(string) (*os.Fil
 	return w, nil
 }
 func (w *nativeWatcher) Events() <-chan Event { return w.events }
-func (w *nativeWatcher) Errors() <-chan error { return w.errors }
 func (w *nativeWatcher) Close() error         { w.once.Do(w.cancel); <-w.done; return nil }
 func (w *nativeWatcher) fail(e error) {
-	select {
-	case w.errors <- e:
-	default:
-	}
+	w.report(e)
 	w.cancel()
 }
 func (w *nativeWatcher) send(e Event) {
@@ -227,10 +228,10 @@ func (w *nativeWatcher) directoryMove(src, dst string) {
 	}
 }
 
-func (w *nativeWatcher) expire(all bool) {
+func (w *nativeWatcher) expire() {
 	var cookies []uint32
 	for cookie, p := range w.pending {
-		if all || time.Since(p.at) >= 500*time.Millisecond {
+		if time.Since(p.at) >= 500*time.Millisecond {
 			cookies = append(cookies, cookie)
 		}
 	}
@@ -346,13 +347,15 @@ func (w *nativeWatcher) event(wd int, mask, cookie uint32, name string) {
 func (w *nativeWatcher) run(ctx context.Context) {
 	defer close(w.done)
 	defer close(w.events)
-	defer close(w.errors)
 	defer syscall.Close(w.fd)
 	data := make([]byte, 64<<10)
-	for {
+	for ctx.Err() == nil {
 		n, e := syscall.Read(w.fd, data)
 		if e == nil {
 			for pos := 0; pos+syscall.SizeofInotifyEvent <= n; {
+				if ctx.Err() != nil {
+					return
+				}
 				wd := int(int32(binary.NativeEndian.Uint32(data[pos:])))
 				mask := binary.NativeEndian.Uint32(data[pos+4:])
 				cookie := binary.NativeEndian.Uint32(data[pos+8:])
@@ -367,17 +370,16 @@ func (w *nativeWatcher) run(ctx context.Context) {
 				pos = end
 			}
 			if n > 0 {
-				w.expire(false)
+				w.expire()
 				continue
 			}
 		} else if !errors.Is(e, syscall.EAGAIN) && !errors.Is(e, syscall.EINTR) {
 			w.fail(e)
 			return
 		}
-		w.expire(false)
+		w.expire()
 		select {
 		case <-ctx.Done():
-			w.expire(true)
 			return
 		case <-time.After(10 * time.Millisecond):
 		}

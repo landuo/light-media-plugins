@@ -41,13 +41,7 @@ type Event struct {
 
 type Watcher interface {
 	Events() <-chan Event
-	Errors() <-chan error
 	Close() error
-}
-
-type observed struct {
-	event Event
-	err   error
 }
 
 type monitor struct {
@@ -57,37 +51,51 @@ type monitor struct {
 	watchers []Watcher
 	roots    []authorizedRoot
 	pumps    sync.WaitGroup
-	observed chan observed
+	observed chan Event
 	done     chan struct{}
 	claimed  bool
+	lost     chan struct{}
+	lossOnce sync.Once
+	lossErr  error
+}
+
+func (m *monitor) reportLoss(err error) {
+	m.lossOnce.Do(func() {
+		m.lossErr = err
+		close(m.lost)
+	})
+}
+
+func (m *monitor) loss() error {
+	select {
+	case <-m.lost:
+		return m.lossErr
+	default:
+		return nil
+	}
 }
 
 func (m *monitor) pump(w Watcher) {
 	m.pumps.Add(1)
 	go func() {
 		defer m.pumps.Done()
-		events, failures := w.Events(), w.Errors()
-		for events != nil || failures != nil {
-			var next observed
+		for {
+			var event Event
+			var ok bool
 			select {
 			case <-m.ctx.Done():
 				return
-			case event, ok := <-events:
+			case event, ok = <-w.Events():
 				if !ok {
-					events = nil
-					continue
+					return
 				}
-				next.event = event
-			case err, ok := <-failures:
-				if !ok {
-					failures = nil
-					continue
-				}
-				next.err = err
 			}
 			select {
-			case m.observed <- next:
+			case m.observed <- event:
 			case <-m.ctx.Done():
+				return
+			default:
+				m.reportLoss(errors.New("plugin observation queue overflow; reload to rescan"))
 				return
 			}
 		}
@@ -149,7 +157,7 @@ func (p *Plugin) init(ctx context.Context, raw json.RawMessage, host sdk.HostCal
 	p.stop(ctx, host)
 	p.generation++
 	lifetime, cancel := context.WithCancel(context.Background())
-	w := &monitor{id: p.generation, ctx: lifetime, cancel: cancel, observed: make(chan observed, 1024), done: make(chan struct{})}
+	w := &monitor{id: p.generation, ctx: lifetime, cancel: cancel, observed: make(chan Event, 1024), done: make(chan struct{}), lost: make(chan struct{})}
 	o := &localOps{ctx: ctx, host: host}
 	p.machine.Ops = o
 	if len(raw) == 0 {
@@ -162,11 +170,14 @@ func (p *Plugin) init(ctx context.Context, raw json.RawMessage, host sdk.HostCal
 		if err == nil {
 			pin := o.roots[len(o.roots)-1]
 			native, err = NativeWatch(w.ctx, path, func(dir string) (*os.File, error) {
+				if err := w.ctx.Err(); err != nil {
+					return nil, err
+				}
 				if !inside(pin.path, dir) || internalPath(dir) {
 					return nil, fs.ErrPermission
 				}
 				return openNativeDirectory(dir, &pin)
-			})
+			}, w.reportLoss)
 		}
 		if err != nil {
 			message := "目录监控启动失败：" + path + " - " + err.Error()
@@ -248,7 +259,7 @@ func (p *Plugin) watch(ctx context.Context, raw json.RawMessage, host sdk.HostCa
 	defer close(w.done)
 	defer w.cancel()
 	defer func() { p.machine.Ops = nil }()
-	o := &localOps{ctx: ctx, host: host, roots: w.roots}
+	o := &localOps{ctx: ctx, host: host, roots: w.roots, loss: w.loss}
 	p.machine.Ops = o
 	for {
 		if w.ctx.Err() != nil || ctx.Err() != nil {
@@ -260,14 +271,15 @@ func (p *Plugin) watch(ctx context.Context, raw json.RawMessage, host sdk.HostCa
 			timer = time.NewTimer(due.Sub(p.machine.Now()))
 			alarm = timer.C
 		}
-		var next observed
+		var event Event
 		var ready, tick bool
 		select {
 		case <-w.ctx.Done():
 		case <-ctx.Done():
+		case <-w.lost:
 		case <-alarm:
 			tick = true
-		case next, ready = <-w.observed:
+		case event, ready = <-w.observed:
 		}
 		if timer != nil {
 			timer.Stop()
@@ -275,12 +287,12 @@ func (p *Plugin) watch(ctx context.Context, raw json.RawMessage, host sdk.HostCa
 		if w.ctx.Err() != nil || ctx.Err() != nil {
 			return ctx.Err()
 		}
+		if err := w.loss(); err != nil {
+			log(ctx, host, sdk.LogError, "目录监控已停止，需重载后重新扫描："+err.Error())
+			return err
+		}
 		if !ready && !tick {
-			w.observed = nil // All observers failed; pending timers can still finish.
-			if p.machine.TimerDue == nil {
-				return nil
-			}
-			continue
+			return nil
 		}
 		o.listed = map[string]Identity{}
 		queued := len(p.machine.Queue)
@@ -288,14 +300,12 @@ func (p *Plugin) watch(ctx context.Context, raw json.RawMessage, host sdk.HostCa
 		switch {
 		case tick:
 			p.machine.Tick()
-		case next.err != nil:
-			log(ctx, host, sdk.LogError, "目录监控失败："+next.err.Error())
-		case next.event.Kind == "created":
-			err = p.machine.Created(next.event.Path, next.event.Directory)
-		case next.event.Kind == "moved":
-			err = p.machine.Moved(next.event.Path, next.event.Dest, next.event.Directory)
-		case next.event.Kind == "deleted":
-			err = p.machine.Deleted(next.event.Path, next.event.Directory)
+		case event.Kind == "created":
+			err = p.machine.Created(event.Path, event.Directory)
+		case event.Kind == "moved":
+			err = p.machine.Moved(event.Path, event.Dest, event.Directory)
+		case event.Kind == "deleted":
+			err = p.machine.Deleted(event.Path, event.Directory)
 		}
 		if len(p.machine.Queue) > queued {
 			log(ctx, host, sdk.LogInfo, fmt.Sprintf("文件 %s 加入延迟删除队列，延迟 %d 秒", filepath.Base(p.machine.Queue[queued].Path), p.machine.Config.Delay))
@@ -306,9 +316,6 @@ func (p *Plugin) watch(ctx context.Context, raw json.RawMessage, host sdk.HostCa
 		p.flushErrors(ctx, host)
 		if o.fence != nil {
 			return o.fence
-		}
-		if w.observed == nil && p.machine.TimerDue == nil {
-			return nil
 		}
 	}
 }
