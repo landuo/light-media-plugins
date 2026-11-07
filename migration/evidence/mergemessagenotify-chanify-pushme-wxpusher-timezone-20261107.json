@@ -1,0 +1,186 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "combined_product_commit": "31ea9c411b8988ec632d36a716e0d09f4d69a5a7",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Pinned offline original-source captures, targeted Go replays, independent source review and exact Linux/amd64 build. No new host execution, browser, provider account or final package run.",
+  "new_replayed_cases": 63,
+  "apprise": {
+    "version": "1.9.9",
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 43,
+    "schemes_without_native_implementation": 140,
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/apprise/ORIGIN.json",
+      "sha256": "480d67cf5599e6f8ce727535767004385e1e5dbe2b1f5a68fc8fe45731fa81d6"
+    },
+    "chanify": {
+      "source": [
+        "apprise/plugins/chanify.py:45–220"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/chanify.go",
+      "test": "TestSourceChanify199",
+      "cases": 9,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/chanify-1.9.9.json",
+        "sha256": "e4207cb0af604ad4b520645f2f30812a063f53561479c9b55db7a56bb8353e51"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-chanify-source.json",
+        "sha256": "e4207cb0af604ad4b520645f2f30812a063f53561479c9b55db7a56bb8353e51"
+      },
+      "setup_failure": {
+        "path": "work/mergemessagenotify-20261107/apprise-chanify-source-setup.stderr",
+        "sha256": "f67d31e574346db71722a8ae346424add2883897301629d971335312b8fb34de"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-chanify-target.stdout",
+        "sha256": "0f5f110119fc6016350226fe014626bd215c99eaccf148bb00fdde2bcd264da3"
+      },
+      "independent_reviewer": "/root/pushme",
+      "scope": "Titleless formatting, strict token parsing, Requests URL normalization and form bytes, TLS/timeouts, ignored attachments, exact HTTP 200 and connection failure. The source setup initially supplied a title with no body for the failure scenario, which caused no request. That valid behavior was captured in its own row and the scenario then supplied a body."
+    },
+    "pushme": {
+      "source": [
+        "apprise/plugins/pushme.py:88–101,104–174,204–226"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/pushme.go",
+      "test": "TestSourcePushMe199",
+      "cases": 14,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/pushme-1.9.9.json",
+        "sha256": "352c4f6e6dbb1d01bdb05212c663c7f5d932ea47db97b8621c4f889f185c5e54"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushme-source.json",
+        "sha256": "352c4f6e6dbb1d01bdb05212c663c7f5d932ea47db97b8621c4f889f185c5e54"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushme-target.stdout",
+        "sha256": "4a10747df001cd2c331bcdc1de9f5397e950b1111ccab6be321e5e4437d6d236"
+      },
+      "independent_reviewer": "/root/chanify",
+      "scope": "Credential overrides, status prefix, Markdown/text, exact ordered URL query, TLS/timeouts, ignored attachments and HTTP failure."
+    },
+    "wxpusher": {
+      "source": [
+        "apprise/plugins/wxpusher.py:48–54,95–324,359–394"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/wxpusher.go",
+      "test": "TestSourceWxPusher199",
+      "cases": 13,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/wxpusher-1.9.9.json",
+        "sha256": "5bb2d9fffeb5ef031d54f64401847c18ceeb019b03951438a2f68ea2608f5378"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-wxpusher-source.json",
+        "sha256": "5bb2d9fffeb5ef031d54f64401847c18ceeb019b03951438a2f68ea2608f5378"
+      },
+      "compile_only_before_shared_helper": {
+        "path": "work/mergemessagenotify-20261107/apprise-wxpusher-target-setup.stdout",
+        "sha256": "f71f483bde8bfe5adec8d3753ee164f0c5d7b76f572e01daf5eed165744d3ced"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-wxpusher-target.stdout",
+        "sha256": "79475670e55d5a33e10cb339f5f864c94239200ebf225b59ffdfccd5f4a4df85"
+      },
+      "independent_reviewer": "/root/chanify",
+      "scope": "AppToken override, sorted UIDs and topics, text/Markdown/HTML, exact JSON and HTTP 200 plus numeric code 1000. The first Go attempt overlapped shared source edits and executed no cases."
+    },
+    "wxpusher_response_encoding": {
+      "source": [
+        "apprise/plugins/wxpusher.py:268",
+        "CPython 3.14.4 Lib/json/__init__.py: detect_encoding and loads"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/python_json_encoding.go",
+      "test": "TestSourceWxPusherEncodedReplies199",
+      "cases": 8,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/wxpusher-encoded-replies-1.9.9.json",
+        "sha256": "1275b71f0b760041aa4321cb23280173f67a79ffb2120fa8c1abca983c8f604f"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-wxpusher-encoded-replies-source.json",
+        "sha256": "1275b71f0b760041aa4321cb23280173f67a79ffb2120fa8c1abca983c8f604f"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-wxpusher-encoded-replies-target.stdout",
+        "sha256": "f89ae1b925ed58b5db4cd312fd37f7f9ed69e33f71f84274055145fa7b00f8c8"
+      },
+      "scope": "The review found UTF-16/32 replies accepted in Python but rejected in the initial Go path. The Go implementation now detects both byte orders with or without BOM using existing x/text. Only the eight new rows were run.",
+      "remaining": [
+        "Malformed wide byte sequences and Python surrogatepass may differ from Go replacement behavior. Truthy non-object JSON produces a failure in both paths with different internal errors."
+      ]
+    },
+    "timezone_validation": {
+      "source": [
+        "apprise/utils/time.py:35–76",
+        "apprise/plugins/base.py:351–360,879–883,949–950"
+      ],
+      "target": [
+        "plugins/mergemessagenotify/apprise/timezone.go",
+        "plugins/mergemessagenotify/apprise/provider_http.go",
+        "plugins/mergemessagenotify/apprise/json.go"
+      ],
+      "test": "TestSourceTimezones199",
+      "cases": 19,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/timezone-1.9.9.json",
+        "sha256": "a7f4a7de0eb443c253dd16e8945f5939ea38dc68144e1d8b7982ed9f8eb9dd5a"
+      },
+      "catalog": {
+        "path": "plugins/mergemessagenotify/apprise/timezone-names.txt",
+        "sha256": "8725722643bf1f4ff4fc4b22268ade98b6fae047a86897219c3a13d4c4ced93d"
+      },
+      "initial_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-timezone-source.json",
+        "sha256": "30ed73cc86c58bc9b9682025901b306e89f2fbf4be9c30243c41d6e7247055ab"
+      },
+      "gateway_valid_token_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-timezone-gateway-source.json",
+        "sha256": "1777277b4222e7e302437e33684855a8dd2cbc372a0869ed0d07d00df4198df1"
+      },
+      "first_17_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-timezone-target.stdout",
+        "sha256": "b3bdb072c996b40e5f23f7596a4e7059115f79b73c71c48b245430b1557d225d"
+      },
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-timezone-review-source.json",
+        "sha256": "e2ada8b75e4a8208c205a272929b1aeeb7ad604c348e41e0f4458485aa58d131"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-timezone-review-target.stdout",
+        "sha256": "fa153b4d0667e773dab42fb69729f0a586232743ed66a191f6952b3169326d2c"
+      },
+      "independent_reviewer": "/root/pushme",
+      "scope": "Shared and direct provider options now validate UTC aliases, case-insensitive names, one/two-part suffixes and invalid zones. The review identified Python lowercasing of dotted uppercase I. Two new source rows covered dotted I rejection and Kelvin-sign acceptance. The first 17 were not repeated.",
+      "adaptation": "Only acceptance is consumed by current delivery paths. The embedded name set equals the 598 keys from isolated Python available_timezones and Go 1.26.10 zoneinfo.zip. Extra exact keys can resolve via Go system timezone lookup. Their availability can differ from Python TZPATH."
+    }
+  },
+  "linux_build": {
+    "output": {
+      "path": "work/mergemessagenotify-20261107/linux-chanify-pushme-wxpusher-build.json",
+      "sha256": "50e5dae271f44947fc02be6b72c87708ee97ed5543016937904b160e4a51876d"
+    },
+    "binary_sha256": "3a9d93626dca78d5cdd98d940e82112fe9fa2fc7bc6513392407496fda4d3539",
+    "binary_bytes": 15051963,
+    "runtime_execution": false,
+    "temporary_binary_removed": true
+  },
+  "remaining": [
+    "140 Apprise schemes lack a Go implementation. Inherited scheduling and provider-specific boundary differences remain tracked.",
+    "Timezone names match the sampled 598-key Python and Go catalog. Additional host timezone files and differently provisioned timezone databases may differ from the original Python TZPATH.",
+    "Mako external inheritance, ordered pageargs, explicit variadic page declarations and multiple page tags remain open.",
+    "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
+  ],
+  "delivery": {
+    "fully_accepted_instances": 8,
+    "installed_instances": 23,
+    "plugin_acceptance": "implementing",
+    "target_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "pushed": false,
+    "deployed": false
+  }
+}

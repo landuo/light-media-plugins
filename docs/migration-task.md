@@ -51,8 +51,13 @@ PushPlus, Feishu, DingTalk, PagerDuty and Twist bring the Apprise count to
 reserved names, module bindings and the explicit `pageargs` collision.
 The 59 new source cases and the Linux build are recorded in
 `migration/evidence/mergemessagenotify-cn-pagerduty-twist-mako-edges-20261107.json`.
-The other 143 schemes, shared timezone parsing, further Mako behavior,
-browser, clone and final package acceptance remain open.
+Chanify, PushMe and WxPusher bring the count to 43 of 183 schemes. The
+shared timezone parser now handles the original aliases and suffixes.
+WxPusher accepts UTF-16 and UTF-32 response JSON in both byte orders.
+The targeted source replays and Linux build are recorded in
+`migration/evidence/mergemessagenotify-chanify-pushme-wxpusher-timezone-20261107.json`.
+The other 140 schemes, further Mako behavior, browser, clone and final
+package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
