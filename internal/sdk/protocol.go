@@ -295,7 +295,7 @@ type Runner struct {
 	// worker retains the serial contract; RequireConcurrent rejects fallback.
 	ConcurrentCalls   bool
 	RequireConcurrent bool
-	// BrushFlow's retained sequential source loops use per-message limits
+	// Recognized retained sequential source loops use per-message limits
 	// rather than a fixed quota for the lifetime of a business invocation.
 	SequentialHostStream bool
 	// ObservePhase is nil by default; it does not alter execution policy.
@@ -680,7 +680,7 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 		return nil, err
 	}
 	if runner.SequentialHostStream {
-		if !brushHostStreamManifest(manifest) {
+		if !SupportsSequentialHostStream(manifest) {
 			return nil, failure("invalid_limits")
 		}
 		runner.RequireConcurrent = true

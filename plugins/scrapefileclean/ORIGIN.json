@@ -1,0 +1,31 @@
+{
+  "plugin_id": "ScrapeFileClean",
+  "version": "1.0.7",
+  "author": "xlmc",
+  "source_baseline": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "source_baseline_kind": "Local content snapshot of the installed original source.",
+  "files": {
+    "README.md": "3f42085ee90db9938292d4c7573745c95ae4c269f33919db07a1ae72ccea487c",
+    "__init__.py": "c14c36e17112605e6c856614e88ea425530be2462123126a85e1adfea009a3af"
+  },
+  "paired_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
+  "reused": "Pure Go machine, config, form, Unicode table and inotify adapter ported from the paired host’s prior Go implementation. Uses existing AutoSignIn pyvalue casing, stripping and integer functions without a Python runtime.",
+  "source_oracle": {
+    "installed-reference.json": "1a76eadc6f255f5aff72931f0b0ada878235d536feef0a4630fed0096e781f22",
+    "oracle.json": "1dbddd02b8576aaeaf709aca7b7749e18bf734bd5a76e722bb45357fdead4961",
+    "SOURCE.json": "e6184234d28249ee73536c52c1961ba75a38e875a56c58816284c0e8ebd185ae"
+  },
+  "port_files": {
+    "cmd/scrape-file-clean/main.go": "4448300a8aa83f0954287d8ee5433477c2ec9d331eb73073957c447598c4043d",
+    "plugins/scrapefileclean/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+    "plugins/scrapefileclean/alnum.go": "62f3e1ffb462625c514a92d570e8d526611591ef0f11cc0113257396630b9252",
+    "plugins/scrapefileclean/form.json": "808bdf039d18266063f8bf28cf1f7dd905de8344e7c3c8fd48062e41eb4ba636",
+    "plugins/scrapefileclean/local.go": "643a60057bcb2139e6f88033e52858925ce9318b5de0027fd8480b710dab2dcf",
+    "plugins/scrapefileclean/machine.go": "4d562b019f466f1a0fc7760a9ba9a70a49e4cdc6a7c453b36d06d5fea3441180",
+    "plugins/scrapefileclean/observer_linux.go": "37de50b078d60c6aacbcd4b1b7098da76b4e7d33921d4bddebb7125eb089a1cf",
+    "plugins/scrapefileclean/observer_other.go": "41f84d58b94b8fa5e9d690e9c38b9f16acc038f10ed8f9fd4a9a2c9aaaeb67f2",
+    "plugins/scrapefileclean/plugin.go": "6ede9d67e801b1a62c38a80af07b01d2f731d055a52a0b50956614a9a8dc36dd",
+    "plugins/scrapefileclean/scrap.go": "8e2911f7be30bf394af80de0dc174baab4aa1a1c4980fc3e7a115f076c6c10ba",
+    "plugins/scrapefileclean/types.go": "a4fe2e7c303a17fef232279b20f108eda2085ac9f8827556f2922011ccd955db"
+  }
+}

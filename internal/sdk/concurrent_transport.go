@@ -41,8 +41,9 @@ func (p concurrentProposal) valid() bool {
 		p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
 }
 
-func brushHostStreamManifest(m Manifest) bool {
-	return m.PluginID == "BrushFlowLanduo" && m.ManagedPublicServices && slices.Contains(m.Capabilities, BrushSourceCandidatesCapability)
+func SupportsSequentialHostStream(m Manifest) bool {
+	return m.PluginID == "BrushFlowLanduo" && m.ManagedPublicServices && slices.Contains(m.Capabilities, BrushSourceCandidatesCapability) ||
+		m.PluginID == "ScrapeFileClean" && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, ScrapeCleanRemoveCapability)
 }
 
 func (p concurrentProposal) streamsHostCalls(method string) bool {
@@ -50,7 +51,7 @@ func (p concurrentProposal) streamsHostCalls(method string) bool {
 		return false
 	}
 	switch method {
-	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag":
+	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "private_watch":
 		return true
 	}
 	return false
