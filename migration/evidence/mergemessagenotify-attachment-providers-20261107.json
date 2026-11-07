@@ -1,0 +1,146 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "source_digest": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "original_locations": [
+    "channel/custom/apprise.py:97–115",
+    "Apprise 1.9.9 apprise/attachment/file.py:85–145",
+    "Apprise 1.9.9 apprise/plugins/apprise_api.py:273–398"
+  ],
+  "target_locations": [
+    "plugins/mergemessagenotify/local_attachment.go",
+    "plugins/mergemessagenotify/sdk.go",
+    "light-media internal/app/plugin_original_host_storage_local_read.go",
+    "light-media internal/plugins/storage_local_read.go"
+  ],
+  "adaptation": "The source accepts process-readable local files. light-media requires a canonical absolute path to a regular file under a current authorized storage root. The host refuses symlinks and application-private directories and returns file identity; the worker confines its open to the granted root and checks identity before and after reading. File replacement, bind aliases and the local size limit are code-reviewed only in this increment.",
+  "linux_actual": {
+    "environment": "Actual Linux amd64 cmd/server and installed archive worker, network=none. Public install/configuration routes, actual SDK Base.PostMessage producer and loopback gateway receiver. No external notifications or private original state.",
+    "runs": [
+      {
+        "inputs": {
+          "product_commit": "ee781ea40f16a9a1a724fd9070f533f0efa53944",
+          "host_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+          "manifest_sha256": "a9b8af4b962f8401cc3791b04e0821ffcbc47a6f693769d34cb16a393723c3fb",
+          "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+          "bundle": {
+            "bin/worker": "6092c0becbb0a1db4043f2bc5a82ad69c639ccf6c9e0a684f795063aa0e607e6",
+            "bin/host": "0927f25990e79202fc36ba6cfa375a7056ef1526a7b789179d4589e079365bf6",
+            "bin/driver": "05983493e73bb03116f5a1219b0c2eb9da93cfe21949a5ef61b080605b383a28",
+            "bin/owned-merge-notice": "e62988578b7ba245f000602d679939a2ec01617f8c3c12ade5767dcf97504b48",
+            "merge-package.zip": "b77a0e4ac57be8eeff28f305213868cb4c18fd32089b2875d93d3fb6f9cdc086",
+            "merge-index.json": "a7be49745482c2e588986043f24ba994c72648fb868326343c46e7830efc2055"
+          },
+          "driver_source_sha256": "23c3e3da527f16fc354bb1ff4aa0adeffb29777f94952bdaf6d29cd4299f7e7e",
+          "producer_source_sha256": "08d66604e10e36c5b925997debc017854b9f56eea65dbf90625674810cf00231"
+        },
+        "execution": {
+          "exit": 1,
+          "seconds": 16.044318326981738,
+          "container_absent": true,
+          "network": "none"
+        },
+        "observations": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-main/actual/observations.jsonl",
+          "sha256": "340d1cd758574a0e27adb3b84cfd899f1ba3638c2d365f9fea81f9a791221ff9"
+        },
+        "test_stdout": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-main/actual/main.stdout",
+          "sha256": "4475eba0f993942874f022820716d9327976403c90387aebb594b693deaa9ac2"
+        },
+        "driver": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-main/driver.go",
+          "sha256": "23c3e3da527f16fc354bb1ff4aa0adeffb29777f94952bdaf6d29cd4299f7e7e"
+        },
+        "cleanup": {
+          "owned_attempt_removed": true,
+          "container_absent": true
+        },
+        "scope": "Approved owned PNG delivered one original-order Gateway multipart request. Outside-root notice reached Apprise, host rejected it with INVALID_PATH, and Apprise reported one failed channel.",
+        "driver_failure": "The observer counted the same failure twice in serialized logs because it occurs in both message and raw. The test exited before reaching the symlink and private-state cases. The two observed business outcomes above are retained without recording a passing driver exit."
+      },
+      {
+        "inputs": {
+          "product_commit": "ee781ea40f16a9a1a724fd9070f533f0efa53944",
+          "host_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+          "manifest_sha256": "a9b8af4b962f8401cc3791b04e0821ffcbc47a6f693769d34cb16a393723c3fb",
+          "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+          "bundle": {
+            "bin/host": "0927f25990e79202fc36ba6cfa375a7056ef1526a7b789179d4589e079365bf6",
+            "bin/driver": "cb4e0391491834c1db1623f1efe7146dbdac7ae21fe3947d18b3786e8f8671a1",
+            "bin/owned-merge-notice": "e62988578b7ba245f000602d679939a2ec01617f8c3c12ade5767dcf97504b48",
+            "merge-package.zip": "b77a0e4ac57be8eeff28f305213868cb4c18fd32089b2875d93d3fb6f9cdc086",
+            "merge-index.json": "a7be49745482c2e588986043f24ba994c72648fb868326343c46e7830efc2055",
+            "bin/worker": "6092c0becbb0a1db4043f2bc5a82ad69c639ccf6c9e0a684f795063aa0e607e6"
+          },
+          "driver_source_sha256": "8342f2d14729787977d7bee741f063686efbe4fae59b57bc0fe048505e26a495",
+          "producer_source_sha256": "08d66604e10e36c5b925997debc017854b9f56eea65dbf90625674810cf00231"
+        },
+        "execution": {
+          "exit": 0,
+          "seconds": 7.851937945000827,
+          "container_absent": true,
+          "network": "none"
+        },
+        "observations": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-denied-tail/actual/observations.jsonl",
+          "sha256": "1cbdb45f0887f72ff6a821f760c9ecefad3522f1587ddea794fe398978d3cb41"
+        },
+        "test_stdout": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-denied-tail/actual/main.stdout",
+          "sha256": "d072ecc8a67fc656c2585a7d908ebc848dacdf3daa25c98f6883c36704dd246a"
+        },
+        "driver": {
+          "path": "work/mergemessagenotify-20261107/local-attachment-denied-tail/driver.go",
+          "sha256": "8342f2d14729787977d7bee741f063686efbe4fae59b57bc0fe048505e26a495"
+        },
+        "cleanup": {
+          "owned_attempt_removed": true,
+          "container_absent": true
+        },
+        "scope": "Only the previously unexecuted symlink and private-state paths were exercised. Both produced a failed channel, their corresponding guard message, zero destination requests, and worker cleanup. Same host, worker, package and producer bytes."
+      }
+    ],
+    "reviewer": "/root/local_attachment_grant"
+  },
+  "providers": {
+    "ntfy": {
+      "evidence_kind": "Original Apprise 1.9.9 offline request capture and Go synthetic-response replay",
+      "source": "apprise/plugins/ntfy.py",
+      "target": "plugins/mergemessagenotify/apprise/ntfy.go",
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/ntfy-1.9.9.json",
+        "sha256": "1de6ebbdbd785c4c2b18a1e94107194617133523b0486971213d3bd9d8db9ef3"
+      },
+      "target_output": {
+        "path": "work/mergemessagenotify-20261107/apprise-ntfy-target.stdout",
+        "sha256": "6a18f6775574dff5329d0ac8c8d17024f439da6c8b12a6b60bc1e307e2d5393f"
+      },
+      "source_cases": 19,
+      "result": "passed",
+      "scope": "Native ntfy.sh alias, cloud/private URLs, auth, options, truncation/splitting, ordered attachment delivery and failed-send/read abort, plus real per-provider interval in replay. The upstream store=no rejection and encoded auth/mode boundary cases remain open."
+    },
+    "pushdeer": {
+      "evidence_kind": "Original Apprise 1.9.9 offline request capture and Go synthetic-response replay",
+      "source": "apprise/plugins/pushdeer.py",
+      "target": "plugins/mergemessagenotify/apprise/pushdeer.go",
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/pushdeer-1.9.9.json",
+        "sha256": "e10831aa80a3edb16bdcf61110fd58681188612a1289c1d1378ae69c05c36510"
+      },
+      "target_output": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushdeer-go.log",
+        "sha256": "57c896490ecdd06d3c040b7857d661789172c30c2b188a6c69c1842e34cbef83"
+      },
+      "source_cases": 10,
+      "result": "passed",
+      "scope": "Public Add and Notify, both schemes, form encoding, attachment capability behavior, TLS and status handling. The 5.5-second interval is source-reviewed. Malformed authority behavior beyond the fixtures remains unverified."
+    }
+  },
+  "delivery": {
+    "branch": "codex/installed-plugins-20261105",
+    "local_only": true,
+    "release_registered": false,
+    "deployed": false
+  }
+}

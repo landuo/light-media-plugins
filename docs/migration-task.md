@@ -14,10 +14,16 @@ MergeMessageNotify is implementing from the pinned 23-file installed
 1.20.3 snapshot. Its earlier Linux package run verified native form, save-only
 trial and persisted reset, ordinary reload without replay, and a genuine
 host notice reaching OneBot. The evidence retains that exact artifact.
-Apprise hosted attachments, JSON/multipart, gateway, Bark and Gotify have
-source comparisons. Mako anonymous-block and page filters also match the
-fixed source cases. Production local-file authorization, additional Apprise
-and Mako behavior, browser, clone and final package acceptance remain open.
+Apprise hosted attachments, JSON/multipart, gateway, Bark, Gotify, ntfy and
+PushDeer have source comparisons. The paired SDK106 Linux run observed an
+authorized local-file upload and denied an outside-root path. Its observer
+counted a duplicated log field, so the first driver exited with failure.
+The unchanged artifact then passed the previously unreached symlink and
+private-directory checks. See
+`migration/evidence/mergemessagenotify-attachment-providers-20261107.json`.
+Mako anonymous-block and page filters match the fixed source cases.
+Additional Apprise and Mako behavior, browser, clone and final package
+acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official
