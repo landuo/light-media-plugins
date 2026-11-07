@@ -550,7 +550,7 @@ func (x callExpr) eval(e *environment) (any, error) {
 			keywordOrder = append(keywordOrder, arg.key)
 		}
 	}
-	call, ok := fn.(callable)
+	call, ok := asCallable(fn)
 	if !ok {
 		if _, ok := fn.(undefined); ok {
 			return nil, fault("NameError")
@@ -569,7 +569,7 @@ type lambdaExpr struct {
 }
 
 func (x lambdaExpr) eval(e *environment) (any, error) {
-	return callable(func(active *environment, a []any, k map[string]any) (any, error) {
+	return namedCallable{"<lambda>", func(active *environment, a []any, k map[string]any) (any, error) {
 		if len(a)+len(k) != len(x.parameters) {
 			return nil, fault("TypeError")
 		}
@@ -585,7 +585,7 @@ func (x lambdaExpr) eval(e *environment) (any, error) {
 			}
 		}
 		return x.body.eval(scope)
-	}), nil
+	}}, nil
 }
 
 type comprehension struct {
@@ -647,7 +647,7 @@ func (x comprehension) eval(e *environment) (any, error) {
 }
 func assignTargets(e *environment, names []string, v any) error {
 	if len(names) == 1 {
-		e.values[names[0]] = v
+		e.set(names[0], v)
 		return nil
 	}
 	vs, err := iterable(v)
@@ -655,7 +655,7 @@ func assignTargets(e *environment, names []string, v any) error {
 		return fault("ValueError")
 	}
 	for i, n := range names {
-		e.values[n] = vs[i]
+		e.set(n, vs[i])
 	}
 	return nil
 }

@@ -314,7 +314,7 @@ var builtins = map[string]any{
 		out := append([]any{}, xs...)
 		keys := append([]any{}, out...)
 		if fn := k["key"]; fn != nil {
-			call, ok := fn.(callable)
+			call, ok := asCallable(fn)
 			if !ok {
 				return nil, fault("TypeError")
 			}
@@ -460,7 +460,7 @@ func extremeBuiltin(max bool) callable {
 		}
 		key := func(v any) (any, error) {
 			if fn := k["key"]; fn != nil {
-				f, ok := fn.(callable)
+				f, ok := asCallable(fn)
 				if !ok {
 					return nil, fault("TypeError")
 				}
@@ -491,6 +491,12 @@ func extremeBuiltin(max bool) callable {
 }
 
 func getAttribute(v any, name string) (any, error) {
+	if fn, ok := v.(namedCallable); ok && name == "__name__" {
+		if fn.name == "" {
+			return nil, fault("AttributeError")
+		}
+		return fn.name, nil
+	}
 	if c, ok := v.(renderContext); ok {
 		return c.attribute(name)
 	}

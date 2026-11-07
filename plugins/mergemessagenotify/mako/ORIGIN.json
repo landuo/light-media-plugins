@@ -163,6 +163,54 @@
       "source_observations": "testdata/source-decorator-cache-1.4.1.json",
       "source_observations_sha256": "0c09a8f59f7def31c49e05772f9ccf16bf82ecaef91570168dc67d063068c4d9",
       "scope": "Twenty-nine fixed original TemplateUtil cases. Original Mako is 1.4.1 on Python 3.12 with local MarkupSafe 3.0.4; no case exercises MarkupSafe-specific filtering. Beaker is absent in both the isolated oracle and installed MoviePilot metadata. No persistent backend is created. Callable metadata, independent module/forwarding default evaluation, exact namespace forwarding, arbitrary Python suites/imports and other unported template forms are outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Separate module render, cache wrapper and lexical forwarding defaults for fixed Mako. A template namespace partial invokes the module render callable. Expose the original and wrapped names of rendered and Python callables and caller exports.",
+      "target_files": [
+        "definitions.go",
+        "template.go",
+        "parser.go",
+        "expression.go",
+        "value.go",
+        "context.go",
+        "call.go",
+        "builtins.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d",
+        "mako/cache.py": "0e7a30b905b44dc9c06b9bb9b4d37b0ffaaf5a3a9f3ca72c4c80a202a7038e83",
+        "mako/ext/beaker_cache.py": "4ca18af1570ca3eb29c257039f004dfc6ea6856a93b12c0e9916e18c3315d93e"
+      },
+      "source_observations": "testdata/source-defaults-and-names-1.4.1.json",
+      "source_observations_sha256": "4f5a0ee869df83613a00cbbd9b2a5044ebcc40314d85f86e54b6f53955b4b18e",
+      "scope": "Eighteen original TemplateUtil cases with pinned Mako 1.4.1, Python 3.12 and no Beaker. Covers module initialization, per-scope root forwarding including untaken controls, namespace bypass, cached and inline default evaluation, page parameters, callable names, and named caller exports. Root identifier analysis follows the parsed subset. Ordering between multiple independently forwarded names uses source declaration order; original Mako iterates a Python set. Advanced Python declaration analysis, bound namespace metadata beyond __name__, namespace lookup and unsupported template constructs remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Use the original template Context for namespace partials and named block rendering. Propagate page arguments and Python-assigned locals through lexical forwarding and preserve the selected Context in decorated originals. Reject a root named block collision with another root block or definition.",
+      "target_files": [
+        "definitions.go",
+        "template.go",
+        "context.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d",
+        "mako/cache.py": "0e7a30b905b44dc9c06b9bb9b4d37b0ffaaf5a3a9f3ca72c4c80a202a7038e83",
+        "mako/ext/beaker_cache.py": "4ca18af1570ca3eb29c257039f004dfc6ea6856a93b12c0e9916e18c3315d93e"
+      },
+      "source_observations": "testdata/source-definition-context-1.4.1.json",
+      "source_observations_sha256": "4644e049d5ce0b4100582aac62bab7d1ed60176f3e386ef3820b3324f3c80b31",
+      "scope": "Five additional original TemplateUtil cases for lexical page context, root-to-root context forwarding, decorator Context, direct named block and mixed def/block compile failure. Advanced Python declaration analysis and other template context copying paths remain outside this proof."
     }
   ]
 }

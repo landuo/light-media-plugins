@@ -18,6 +18,14 @@ func TestSourceDecoratorCache141(t *testing.T) {
 	runSourceCallFixture(t, "testdata/source-decorator-cache-1.4.1.json")
 }
 
+func TestSourceDefaultsAndNames141(t *testing.T) {
+	runSourceCallFixture(t, "testdata/source-defaults-and-names-1.4.1.json")
+}
+
+func TestSourceDefinitionContext141(t *testing.T) {
+	runSourceCallFixture(t, "testdata/source-definition-context-1.4.1.json")
+}
+
 func runSourceCallFixture(t *testing.T, path string) {
 	t.Helper()
 	file, err := os.Open(path)

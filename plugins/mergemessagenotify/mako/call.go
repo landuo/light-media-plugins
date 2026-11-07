@@ -27,7 +27,7 @@ func (s *callerStack) pop() {
 }
 
 type callerNamespace struct {
-	members map[string]callable
+	members map[string]namedCallable
 	context renderContext
 }
 
@@ -160,7 +160,7 @@ func (n callNode) render(e *environment) (flow, error) {
 	if e.callerFrame != nil {
 		lexical.values["caller"] = e.callerFrame
 	}
-	ns := &callerNamespace{members: map[string]callable{}, context: renderContext{e.module.contextData}}
+	ns := &callerNamespace{members: map[string]namedCallable{}, context: renderContext{e.module.contextData}}
 	if err := visitCallerExports(lexical, ns, n.exports); err != nil {
 		return normal, err
 	}
@@ -174,15 +174,22 @@ func (n callNode) render(e *environment) (flow, error) {
 			defaults[param.name] = value
 		}
 	}
-	ns.members["body"] = func(active *environment, args []any, kwargs map[string]any) (any, error) {
+	ns.members["body"] = namedCallable{"body", func(active *environment, args []any, kwargs map[string]any) (any, error) {
 		scope := lexical.child()
 		scope.ctx, scope.output = active.ctx, active.output
 		if err := bindCallbackArguments(scope, n.params, defaults, args, kwargs, active.keywordOrder); err != nil {
 			return nil, err
 		}
+		scope.parameters = make(map[string]bool, len(n.params))
+		for _, param := range n.params {
+			scope.parameters[param.name] = true
+		}
+		if err := installForwardingDefinitions(scope, n.body); err != nil {
+			return nil, err
+		}
 		_, err := renderNodes(scope, n.body)
 		return "", err
-	}
+	}}
 	e.callers.pending = ns
 	defer func() { e.callers.pending = nil }()
 	return (exprNode{x: n.expression}).render(e)
@@ -261,8 +268,9 @@ func visitCallerExports(scope *environment, ns *callerNamespace, nodes []*callEx
 			if err != nil {
 				return err
 			}
-			scope.values[def.name] = fn
-			ns.members[def.name] = fn
+			bound := namedCallable{def.boundName(), fn}
+			scope.values[def.name] = bound
+			ns.members[bound.name] = bound
 		} else if !node.stop {
 			if err := visitCallerExports(scope, ns, node.children); err != nil {
 				return err

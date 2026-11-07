@@ -6,6 +6,7 @@ type templateParser struct {
 	tokens               []templateToken
 	at                   int
 	loops                int
+	defDepth             int
 	calls                int
 	callDefs             map[int]defNode
 	blockLines           map[int]bool
@@ -219,7 +220,9 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				if t.text == "def" {
 					p.blockLines = nil
 				}
+				p.defDepth++
 				body, end, err := p.nodes(map[string]bool{"/" + t.text: true})
+				p.defDepth--
 				p.loops = priorLoops
 				if t.text == "def" {
 					p.blockLines = priorBlocks
@@ -230,7 +233,7 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				if end == nil {
 					return nil, nil, fault("SyntaxError")
 				}
-				n := defNode{name: name, params: params, body: body, block: t.text == "block"}
+				n := defNode{name: name, params: params, body: body, block: t.text == "block", root: name != "" && p.defDepth == 0 && p.calls == 0, line: t.line}
 				if n.block && n.name == "" {
 					n.anonymous = at
 				}
@@ -515,7 +518,7 @@ func executeCodeResult(e *environment, text string, result *any) (flow, error) {
 			if err != nil {
 				return normal, err
 			}
-			e.values[decl.name] = fn
+			e.set(decl.name, namedCallable{decl.name, fn})
 			at = next - 1
 			continue
 		}
@@ -528,6 +531,19 @@ func executeCodeResult(e *environment, text string, result *any) (flow, error) {
 				return normal, err
 			}
 			if s == "pass" {
+				continue
+			}
+			if strings.HasPrefix(s, "global ") {
+				names, err := parseTargets(strings.TrimSpace(s[len("global "):]))
+				if err != nil || e.module == nil {
+					return normal, fault("SyntaxError")
+				}
+				if e.globals == nil {
+					e.globals = map[string]bool{}
+				}
+				for _, name := range names {
+					e.globals[name] = true
+				}
 				continue
 			}
 			if s == "break" {

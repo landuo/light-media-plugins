@@ -55,6 +55,12 @@ func (c renderContext) attribute(name string) (any, error) {
 	return nil, fault("AttributeError")
 }
 func (s selfNamespace) attribute(name string) (any, error) {
+	if fn, ok := s.scope.module.rootCalls[name]; ok {
+		// TemplateNamespace exposes a functools.partial, without __name__.
+		return namedCallable{call: func(active *environment, args []any, kwargs map[string]any) (any, error) {
+			return callWithDefinitionContext(active, s.scope.definitionContext, fn, args, kwargs)
+		}}, nil
+	}
 	v := s.scope.get(name)
 	if _, ok := v.(undefined); ok {
 		return nil, fault("AttributeError")
@@ -65,7 +71,7 @@ func captureFunction(e *environment, a []any, k map[string]any) (any, error) {
 	if len(a) == 0 {
 		return nil, fault("TypeError")
 	}
-	fn, ok := a[0].(callable)
+	fn, ok := asCallable(a[0])
 	if !ok {
 		return nil, fault("TypeError")
 	}
