@@ -32,9 +32,15 @@ type Response struct {
 	Content []byte
 }
 type Transport func(context.Context, Request) (Response, error)
+
+type notificationService interface {
+	requests(title, body string) ([]Request, error)
+	successful(status int) bool
+}
+
 type Client struct {
 	transport Transport
-	services  []jsonService
+	services  []notificationService
 }
 
 func New(transport Transport) *Client { return &Client{transport: transport} }
@@ -59,13 +65,26 @@ func (c *Client) Add(raw string) (bool, error) {
 		return false, nil
 	}
 	scheme := strings.ToLower(strings.TrimSpace(raw[:sep]))
-	if scheme != "json" && scheme != "jsons" {
-		if knownSchemas[scheme] || scheme == "http" || scheme == "https" {
+	var service notificationService
+	var valid bool
+	var err error
+	switch scheme {
+	case "json", "jsons":
+		service, valid, err = parseJSONService(raw)
+	case "apprise", "apprises":
+		service, valid = parseGatewayService(raw)
+	case "http", "https":
+		native, ok := gatewayNativeURL(raw)
+		if !ok {
+			return false, ErrUnsupported
+		}
+		service, valid = parseGatewayService(native)
+	default:
+		if knownSchemas[scheme] {
 			return false, ErrUnsupported
 		}
 		return false, nil
 	}
-	service, valid, err := parseJSONService(raw)
 	if err != nil || !valid {
 		return false, err
 	}
@@ -94,22 +113,31 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	if !ok || bodyText == "" {
 		return false, nil
 	}
-	requests := make([][]Request, 0, len(c.services))
+	type requestGroup struct {
+		service notificationService
+		calls   []Request
+	}
+	requests := make([]requestGroup, 0, len(c.services))
+	hasCalls := false
 	for _, service := range c.services {
-		request, err := service.requests(titleText, bodyText)
+		calls, err := service.requests(titleText, bodyText)
 		if err != nil {
 			return nil, err
 		}
-		requests = append(requests, request)
+		hasCalls = hasCalls || len(calls) != 0
+		requests = append(requests, requestGroup{service: service, calls: calls})
+	}
+	if !hasCalls {
+		return false, nil
 	}
 	if c.transport == nil {
 		return nil, ErrUnsupported
 	}
-	send := func(group []Request) bool {
-		success := true
-		for _, request := range group {
+	send := func(group requestGroup) bool {
+		success := len(group.calls) != 0
+		for _, request := range group.calls {
 			reply, err := c.transport(ctx, request)
-			success = (err == nil && reply.Status >= 200 && reply.Status < 300) && success
+			success = (err == nil && group.service.successful(reply.Status)) && success
 		}
 		return success
 	}
@@ -129,7 +157,7 @@ func (c *Client) Notify(ctx context.Context, title, body, attach any) (any, erro
 	if workers > len(requests) {
 		workers = len(requests)
 	}
-	jobs := make(chan []Request)
+	jobs := make(chan requestGroup)
 	results := make(chan bool, len(requests))
 	var group sync.WaitGroup
 	for i := 0; i < workers; i++ {

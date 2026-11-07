@@ -102,8 +102,15 @@ func parseBool(s string, defaultValue bool) bool {
 	return defaultValue
 }
 func sourceSpace(r rune) bool { return unicode.IsSpace(r) || r >= 0x1c && r <= 0x1f }
+func (s jsonService) successful(status int) bool {
+	return status >= 200 && status < 300
+}
 func (s jsonService) requests(title, body string) ([]Request, error) {
-	if s.emojis {
+	return notificationRequests(title, body, s.emojis, s.overflow, s.format, s.request)
+}
+
+func notificationRequests(title, body string, emojis bool, overflow, format string, request func(string, string) (Request, error)) ([]Request, error) {
+	if emojis {
 		var err error
 		body, err = applyEmojis(body)
 		if err != nil {
@@ -117,15 +124,15 @@ func (s jsonService) requests(title, body string) ([]Request, error) {
 	title = strings.TrimFunc(title, sourceSpace)
 	body = strings.TrimRightFunc(body, sourceSpace)
 	chunks := []string{body}
-	if s.overflow != "upstream" {
+	if overflow != "upstream" {
 		r := []rune(title)
 		if len(r) > 250 {
 			title = strings.TrimRightFunc(string(r[:250]), sourceSpace)
 		}
 		r = []rune(body)
 		if len(r) > 32768 {
-			if s.overflow == "split" {
-				chunks = smartSplit(body, 32768, s.format)
+			if overflow == "split" {
+				chunks = smartSplit(body, 32768, format)
 			} else {
 				chunks = []string{strings.TrimRightFunc(strings.TrimLeft(string(r[:32768]), "\r\n\v\f"), sourceSpace)}
 			}
@@ -135,7 +142,7 @@ func (s jsonService) requests(title, body string) ([]Request, error) {
 	count := len(chunks)
 	for i, chunk := range chunks {
 		chunkTitle := title
-		if s.overflow == "split" && len([]rune(body)) > 32768 {
+		if overflow == "split" && len([]rune(body)) > 32768 {
 			chunk = strings.TrimRightFunc(strings.TrimLeft(chunk, "\r\n\v\f"), sourceSpace)
 			if title != "" {
 				digits := len(strconv.Itoa(count))
@@ -149,11 +156,11 @@ func (s jsonService) requests(title, body string) ([]Request, error) {
 				}
 			}
 		}
-		request, err := s.request(chunkTitle, chunk)
+		call, err := request(chunkTitle, chunk)
 		if err != nil {
 			return nil, err
 		}
-		requests = append(requests, request)
+		requests = append(requests, call)
 	}
 	return requests, nil
 }
