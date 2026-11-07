@@ -95,7 +95,7 @@ func (s Sites) SourceCredentials(ctx context.Context, ref SiteSourceReferenceV1)
 }
 func (s Sites) SourceRequest(ctx context.Context, in SiteSourceHTTPRequestV1) (SiteHTTPResultV1, error) {
 	var out SiteHTTPResultV1
-	if !siteSourceReferenceValid(in.Reference, false) {
+	if !siteSourceReferenceValid(in.Reference, in.OriginProfile == "brush-mteam") {
 		return out, errors.New("invalid bound source site reference")
 	}
 	if in.CredentialMode != "" && in.CredentialMode != "rousi" {

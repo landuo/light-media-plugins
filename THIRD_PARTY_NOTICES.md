@@ -170,3 +170,13 @@ author. The fixed `__init__.py` SHA-256 is
 implementation. The worker reuses the repository's native cron and JSON-value
 helpers. Its manifest retains the original author attribution. No upstream icon
 or Python runtime is included in the package.
+
+## BrushFlowLanduo source and remote workbench
+
+BrushFlowLanduo 5.2.18 retains jxxghp and landuo as the installed source
+credits. `plugins/brushflowlanduo/ORIGIN.json` binds the Go migration to the
+installed source and the paired host. The worker's Go regex implementation
+retains its CPython and Unicode notices under `compat/pythonre`. The fourteen
+reachable workbench assets are byte-identical to the installed bundle. Their
+module federation, Vite, and embedded semver notices are retained under
+`plugins/brushflowlanduo/frontend-licenses`. Vue and Vuetify come from the host.

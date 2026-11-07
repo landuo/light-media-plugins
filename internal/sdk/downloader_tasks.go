@@ -96,6 +96,7 @@ type QBittorrentTaskInfoV1 struct {
 	LastActivity *json.Number `json:"last_activity,omitempty"`
 	SeedingTime  *json.Number `json:"seeding_time,omitempty"`
 	ETA          *json.Number `json:"eta,omitempty"`
+	Tracker      string       `json:"tracker,omitempty"` // BrushFlow only, origin without credentials or path.
 }
 
 type TransmissionTaskInfoV1 struct {
@@ -118,6 +119,7 @@ type TransmissionTaskInfoV1 struct {
 	QueuePosition   *json.Number `json:"queuePosition,omitempty"`
 	RecheckProgress *json.Number `json:"recheckProgress,omitempty"`
 	Error           *json.Number `json:"error,omitempty"`
+	TrackerList     string       `json:"trackerList,omitempty"` // BrushFlow only, origins in source order.
 }
 
 // Downloaders must be constructed from the current invocation's HostCaller,

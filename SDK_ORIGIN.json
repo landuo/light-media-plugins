@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "ec70784cd9d0e14de6b65e9d916ce4e0a9e9009b",
-  "scope": "107 standalone SDK files. This increment pairs the finite local backup archive and retention capability. Other leaves retain their original paired commits and declared import relocations.",
+  "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
+  "scope": "108 standalone SDK files. This increment binds BrushFlow candidate/ownership resources, scoped tracker and M-Team reads, and the finite Vuetify style share. Other leaves retain their prior source commits.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -91,10 +91,18 @@
     {
       "source_path": "internal/plugins/brush_inventory.go",
       "path": "internal/sdk/brush_inventory.go",
-      "source_sha256": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
-      "sha256": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+      "source_sha256": "82ed871f847d19cf4bd604418fbd6502408769d58bf9ed0dc7de4383865d0c6f",
+      "sha256": "82ed871f847d19cf4bd604418fbd6502408769d58bf9ed0dc7de4383865d0c6f",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
+    },
+    {
+      "source_path": "internal/plugins/brush_source.go",
+      "path": "internal/sdk/brush_source.go",
+      "source_sha256": "75b0bee88f168c72c1bfb7d55502733306184a310251b97f853a5d535b6aeb69",
+      "sha256": "75b0bee88f168c72c1bfb7d55502733306184a310251b97f853a5d535b6aeb69",
+      "changes": [],
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
     },
     {
       "source_path": "internal/plugins/category_policy.go",
@@ -237,10 +245,10 @@
     {
       "source_path": "internal/plugins/downloader_host_delete_files.go",
       "path": "internal/sdk/downloader_host_delete_files.go",
-      "source_sha256": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
-      "sha256": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+      "source_sha256": "2768cc58a49cfc3155d0132f8ef9fa73e00649668011624129fda59db6ce012f",
+      "sha256": "2768cc58a49cfc3155d0132f8ef9fa73e00649668011624129fda59db6ce012f",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
     },
     {
       "source_path": "internal/plugins/downloader_host_test.go",
@@ -330,10 +338,10 @@
     {
       "source_path": "internal/plugins/downloader_tasks.go",
       "path": "internal/sdk/downloader_tasks.go",
-      "source_sha256": "61e105005e1f08ffc73db8bd103a34ee375199c65b47c163af0a6a43b87ca97c",
-      "sha256": "61e105005e1f08ffc73db8bd103a34ee375199c65b47c163af0a6a43b87ca97c",
+      "source_sha256": "69f77c7ae9fbd1bfbb34c9e27a675751f98d24d46ced7c197dc4e3fa26ec7d70",
+      "sha256": "69f77c7ae9fbd1bfbb34c9e27a675751f98d24d46ced7c197dc4e3fa26ec7d70",
       "changes": [],
-      "source_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996"
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
     },
     {
       "source_path": "internal/plugins/downloader_tasks_test.go",
@@ -370,10 +378,10 @@
     {
       "source_path": "internal/plugins/frontend.go",
       "path": "internal/sdk/frontend.go",
-      "source_sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
-      "sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+      "source_sha256": "3068b5d21316f73dcf8cc776e1812ec039003ec83c83bd6c1d4fac3ed0104c7c",
+      "sha256": "3068b5d21316f73dcf8cc776e1812ec039003ec83c83bd6c1d4fac3ed0104c7c",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
     },
     {
       "source_path": "internal/plugins/frontend_test.go",
@@ -780,10 +788,10 @@
     {
       "source_path": "internal/plugins/site_source_request.go",
       "path": "internal/sdk/site_source_request.go",
+      "source_sha256": "26952ef04db479bac0e0dd9b05d2339af6ba348d7284b16eb2202d38c21cb8ff",
+      "sha256": "26952ef04db479bac0e0dd9b05d2339af6ba348d7284b16eb2202d38c21cb8ff",
       "changes": [],
-      "source_sha256": "07cb6d9b42df547da4e31d563803dc9752422704247f1112458202141979c257",
-      "sha256": "07cb6d9b42df547da4e31d563803dc9752422704247f1112458202141979c257",
-      "source_commit": "7be161f91f329d640e0d222b5af23787fffc3a29"
+      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
     },
     {
       "source_path": "internal/plugins/site_source_test.go",
