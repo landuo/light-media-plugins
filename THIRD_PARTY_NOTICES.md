@@ -140,3 +140,23 @@ expression helpers retain their CPython, Unicode, and regexp2 notices under
 `plugins/autosignin/`. The package includes the APScheduler and Requests
 notices for the adapted calendar and HTTP behavior. These are Go implementations
 and embedded data. The worker requires no Python runtime.
+
+## SystemProcess business source and Linux sampler
+
+The installed SystemProcess 1.1 MoviePilot source identifies hotlcc as its
+author. The fixed `__init__.py` SHA-256 is
+`d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac`.
+`plugins/systemprocess/ORIGIN.json` records the installed source and the Go
+adaptation. The actual worker manifest retains the author attribution.
+
+The Linux worker links `github.com/shirou/gopsutil/v4 v4.26.9`,
+`github.com/tklauser/go-sysconf v0.4.0`, and
+`github.com/tklauser/numcpus v0.12.0`. Their license texts are retained in
+`third_party/gopsutil-LICENSE`, `third_party/go-sysconf-LICENSE`, and
+`third_party/numcpus-LICENSE`. The gopsutil text includes the Go Authors'
+notice for its adapted binary helpers. Numcpus is by Tobias Klauser and
+distributed under Apache License 2.0.
+
+The `golang.org/x/sys v0.49.0` BSD license and patent grant are byte-identical
+to those of `golang.org/x/text v0.43.0`. The package uses the shared
+`third_party/x-text-LICENSE` and `third_party/x-text-PATENTS` files for both.
