@@ -4175,6 +4175,19 @@
         "plugin-specific logic and host/shared dependencies",
         "configuration/data/external side effects and source return/exception"
       ]
+    },
+    {
+      "id": "plugin.MergeMessageNotify.listen_notice_message_event",
+      "feature_ids": [
+        "plugin.MergeMessageNotify"
+      ],
+      "source_location": "mergemessagenotify/__init__.py:505 (refreshed 1.20.3 source)",
+      "chain": [
+        "MoviePilot NoticeMessage ordinary event",
+        "listen_notice_message_event → state/config and system-channel filter",
+        "select type then mtype and ALL_SELECTED or ORDER_SUCCESS_ONE",
+        "registered channel filters, transport, failure/success and log side effects"
+      ]
     }
   ],
   "features": [
@@ -8343,7 +8356,7 @@
     },
     {
       "id": "plugin.MergeMessageNotify",
-      "description": "聚合消息通知 1.20.1",
+      "description": "聚合消息通知 1.20.3",
       "source_paths": [
         "mergemessagenotify/__init__.py",
         "mergemessagenotify/channel/__init__.py",
@@ -9705,14 +9718,17 @@
         "plugin.MergeMessageNotify.get_service",
         "plugin.MergeMessageNotify.get_api",
         "plugin.MergeMessageNotify.get_state",
-        "plugin.MergeMessageNotify.stop_service"
+        "plugin.MergeMessageNotify.stop_service",
+        "plugin.MergeMessageNotify.listen_notice_message_event"
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "plugins/mergemessagenotify/routing.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
+      "status": "implementing",
       "evidence_ids": [],
       "review": {
         "status": "pending",
@@ -9722,16 +9738,37 @@
       },
       "original_instance_id": "MergeMessageNotify",
       "family": "MergeMessageNotify",
-      "source_version": "1.20.1",
-      "source_metadata_only": true,
+      "source_version": "1.20.3",
+      "source_metadata_only": false,
       "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
-      "source_refresh_pending": {
+      "previous_refresh_notice": {
         "version": [
           "1.20.3"
         ],
         "entry_sha256": "f87e851eb3e8184adc481ed8e15fa64f05fa4439e2060152eced80fdbbf8fcca",
         "source_files": 23,
         "reason": "Live installed source changed since the fixed initial baseline. Refresh before implementation."
+      },
+      "refreshed_source": {
+        "snapshot_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+        "entry_sha256": "f87e851eb3e8184adc481ed8e15fa64f05fa4439e2060152eced80fdbbf8fcca",
+        "files": 23,
+        "receipt": "work/mergemessagenotify-20261107/source-receipt.json",
+        "receipt_sha256": "fcf66e0cae77fe8e465414cdb21a5c0348bad9a5160b7c2903a146ba4e2dadc3",
+        "source_root": "work/mergemessagenotify-20261107/source",
+        "method": "Read-only installed-list membership and static source files. No plugin import, settings, history, recipients or production dispatch.",
+        "previous_version_inventory": "1.20.1 original fixed baseline retained. Same source paths, 21 changed files; exact 1.20.3 per-file SHAs in receipt."
+      },
+      "implementation_note": "First slice implements original ordinary NoticeMessage routing for persisted form-array selections. Python source handler executed once on owned scripted channel results; seven Go comparisons pass. No live host route or channel protocol acceptance yet.",
+      "routing_progress": {
+        "source": "1.20.3 __init__.py:61,239,505–end; module.py ChannelStrategy",
+        "target": "plugins/mergemessagenotify/routing.go",
+        "fixture": "plugins/mergemessagenotify/testdata/source-routing.json",
+        "fixture_sha256": "fee9f1885786db77ac0afa1ecac89e9d1db0759141fcd07dd6d63896ca420b97",
+        "target_evidence": "work/mergemessagenotify-20261107/target-routing.stdout",
+        "target_evidence_sha256": "014ac37edcfb32950916eed6363b16356e1dbe7f90eed224e9bfd7e10abb01ad",
+        "status": "passed for seven source replay cases; component only",
+        "remaining": "Keep original event type metadata/enum mapping, unusual non-array stored config behavior, component config/forms and save-only test_once semantics. Implement each registered channel and verify the original Apprise URL dependency contract for pure Go. Connect the real host notice event and test the whole plugin once."
       }
     },
     {
@@ -65475,12 +65512,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "AutoSignIn 2.9.15 source, real isolated host and browser composite accepted. Registered in local Linux build. No push, original private state import or new production deployment.",
-      "tests_running": "None. Scoped final Linux worker acquisition, source comparisons and independent review finished. Task-owned temporary executable and test containers removed.",
-      "latest_detail": "migration/evidence/autosignin-acceptance-20261107.json",
+      "delivery": "Eight functional instances accepted locally. MergeMessageNotify 1.20.3 pinned and initial event routing implemented. Remote main and production delivery are separate.",
+      "tests_running": "None. Seven MergeMessageNotify routing source comparisons passed once. AutoSignIn package and fixture cleanup complete.",
+      "latest_detail": "features[plugin.MergeMessageNotify].refreshed_source and routing_progress; prior AutoSignIn acceptance in migration/evidence/autosignin-acceptance-20261107.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Refresh the read-only installed MergeMessageNotify 1.20.3 source and migrate its first complete functional route."
+      "next_complete_slice": "MergeMessageNotify 1.20.3: implement config namespace, form tabs and first real channel transport against the fixed source. Retain pending Apprise dependency parity and host notice/save trigger work."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
