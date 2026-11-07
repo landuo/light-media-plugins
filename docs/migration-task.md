@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (fourteen of 22 in scope accepted)
+## Current resume (fifteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -54,15 +54,19 @@ prior browser and clone evidence is recorded separately. The installed
 plugin declares no restore entry. WebDAV is outside scope. See
 `migration/evidence/autobackup-acceptance-20261107.json`.
 
-BrushFlowLanduo is in progress. The latest read-only installed metadata
-matched all 33 files of `landuo/MoviePilot-Plugins@3795f104` (5.2.18).
-The standard Linux ZIP passed the actual protected qBittorrent flow. A
-paused Add occurred once, and the SQLite v2 promotion record existed when
-Start reached the owned downloader peer. Actual Chrome opened both installed
-workbench pages and persisted a settings change. A separate local HTTP case
-verified guarded same-origin provider recipes. Large call volumes and
-legacy ownership remain pending. The source, native App, browser and
-recipe evidence is under `migration/evidence/brushflowlanduo-*`.
+BrushFlowLanduo 5.2.18 is accepted within the recorded host adaptations.
+The fixed source matched all 33 installed files. An actual Linux pass
+handled six ordered paused additions and recorded each before Start,
+with responses above the previous cumulative wire limit. Isolated
+legacy ownership and material recipe cases verified guarded operations.
+The paired indexed ZIP installed with the original navigation and dashboard.
+The final package adds the verified partial-deletion history correction.
+Chrome evidence for the identical workbench assets is retained. The
+installed snapshot fits the 16 MiB single-value SDK boundary. Source
+clone naming and legacy ownership restrictions are recorded in
+`migration/evidence/brushflowlanduo-acceptance-20261108.json`.
+
+Next: MergeSiteSwitch, starting with the installed source identity.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

@@ -13492,27 +13492,48 @@
         "plugins/brushflowlanduo/core.go",
         "plugins/brushflowlanduo/standard_host.go",
         "plugins/brushflowlanduo/standard_resources.go",
-        "internal/sdk/brush_source.go"
+        "internal/sdk/brush_source.go",
+        "plugins/brushflowlanduo/global_delete.go",
+        "internal/sdk/concurrent_transport.go",
+        "internal/sdk/concurrent_session.go",
+        "internal/sdk/concurrent_worker.go",
+        "internal/sdk/protocol.go",
+        "internal/sdk/worker.go",
+        "plugins/brushflowlanduo/check.go"
       ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "implementing",
+      "status": "verified",
       "evidence_ids": [
         "brushflowlanduo.native_protected_add.20261108",
         "brushflowlanduo.chrome_current_workbench.20261108",
-        "brushflowlanduo.bound_provider_recipe.20261108"
+        "brushflowlanduo.bound_provider_recipe.20261108",
+        "brushflowlanduo.native_long_pass.20261108",
+        "brushflowlanduo.legacy_owned_delete.20261108",
+        "brushflowlanduo.partial_global_delete.20261108",
+        "brushflowlanduo.final_navigation_dashboard.20261108",
+        "brushflowlanduo.partial_delete_history.20261108"
       ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/emby, /root/kodi and /root/jellyfin",
+        "evidence_ids": [
+          "brushflowlanduo.native_protected_add.20261108",
+          "brushflowlanduo.chrome_current_workbench.20261108",
+          "brushflowlanduo.bound_provider_recipe.20261108",
+          "brushflowlanduo.native_long_pass.20261108",
+          "brushflowlanduo.legacy_owned_delete.20261108",
+          "brushflowlanduo.partial_global_delete.20261108",
+          "brushflowlanduo.final_navigation_dashboard.20261108",
+          "brushflowlanduo.partial_delete_history.20261108"
+        ]
       },
       "original_instance_id": "BrushFlowLanduo",
       "family": "BrushFlowLanduo",
       "source_version": "5.2.18",
       "source_metadata_only": false,
-      "discovery_note": "Actual protected App and current Chrome workbench passed. Scoped recipe behavior passed with a real local HTTP peer. See remaining large call and legacy ownership requirements.",
+      "discovery_note": "Fixed installed 5.2.18 source, scoped Go host adaptations, packaged final worker, native long pass, legacy ownership, ordinary browser, navigation/dashboard and guarded provider recipe verified with separately bound inputs.",
       "source_refresh": {
         "prior_version": "5.2.16",
         "prior_source_paths": [
@@ -13555,15 +13576,14 @@
         "manifest_sha256": "54b7e89102602c19e3f96916f4da8488975151dfb126f0768660d989f5f2a7a0",
         "method": "Query-only installed ID and static SHA-256 on live source. All thirty-three package files match the fixed repository revision. No production config/data rows or plugin initialization."
       },
-      "pending_acceptance": [
-        "Existing standard callback ceiling truncates long source candidate runs. Adapt the finite Brush transport or continuation to preserve complete source behavior without changing other workers.",
-        "Deletion accepts current-instance ownership receipts from actual adds. Legacy source torrents have no receipt; explicit safe ownership migration and failure-path evidence are pending."
-      ],
       "source_limitations": [
         "The fixed original replacement of class names in JavaScript and lowercase-only asset renaming can break clones of the new Pascal-case virtual federation filename. The default instance is verified. See FRONTEND_ORIGIN.json."
       ],
       "adaptations": [
-        "Host-bound recipe material stays within the configured credential origin. Separate native provider paths keep their own finite endpoints."
+        "Single source invocation uses a Brush-only negotiated sequential host stream. Per-message validation, cancellation, process concurrency and the recognized namespace/daemon permissions remain enforced.",
+        "The existing 16 MiB single SDK JSON value boundary applies to native config and records. Query-only SQL measured installed rows by byte length without reading their values. Config max 4,114 B and individual data max 7,157,467 B are within the boundary. Source SQLite JSON is not subject to this Go transport boundary.",
+        "Legacy data can authorize local destructive operations only with the saved exact hash and source task label on the live selected daemon. Global-only labels and conflicting claims stay unowned. No live configuration or private history was imported and no production seed was changed.",
+        "Source-origin provider recipe requests stay inside the configured credential origin. The fixed original clone basename limitation remains documented in FRONTEND_ORIGIN.json."
       ]
     },
     {
@@ -66850,6 +66870,115 @@
         "host_fixture": "internal/app/plugin_original_brush_recipe_test.go",
         "host_fixture_sha256": "0aac7c5303b40c3282d5d1f86e096479e78970c36bde6af749e22a6853e7c578"
       }
+    },
+    {
+      "id": "brushflowlanduo.native_long_pass.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestBrushFlowInstalledAMD64LongPass on isolated Linux amd64"
+      ],
+      "observations": "Six source candidates were processed in one invocation, with five bandwidth samples and a final stored completed run with six additions. Each actual qBittorrent peer Start saw the corresponding paused Add and stored v2 promotion record. Six 9 MiB owned promotion bodies produce at least 72 MiB in JSON base64 replies before framing. This crosses the former cumulative 64 MiB budget. No restart, callback phase reset, or candidate replay.",
+      "artifacts": {
+        "evidence/brushflowlanduo-acceptance-20261108.json": "30c5d28192f14f7058932acc758569258a571fb9159de6e4d31ae0b4bf801925"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "worker_commit": "d48bee78837e8ed5e04f0a27d0078be9abffa20b",
+        "host_head": "60b224fe8c1b766c08388d9d6bbcef23a3ce7d80",
+        "archive_sha256": "ef16bfc61984426a5db58a24edff3e514cc8953cb11b336ae6a5f86801e2fb84"
+      }
+    },
+    {
+      "id": "brushflowlanduo.legacy_owned_delete.20261108",
+      "kind": "integration",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestBrushFlowLegacyOwnershipThroughHostDaemon with actual local HTTP peer"
+      ],
+      "observations": "Same instance, downloader, exact hash, stored task/site record, source per-task marker and authorized root admitted reannounce/delete. Global-only or wrong labels and a conflicting second instance were denied. An old record could not authorize Start. After deletion, ownership receipt was removed.",
+      "artifacts": {
+        "evidence/brushflowlanduo-acceptance-20261108.json": "30c5d28192f14f7058932acc758569258a571fb9159de6e4d31ae0b4bf801925"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "host_product_commit": "5936269c8e57236dfc209cc61b737f52da253b73",
+        "fixture_sha256": "54baffba75721bb96081930b0080c043e4b118d010357cf59b9d0483925ee19b"
+      }
+    },
+    {
+      "id": "brushflowlanduo.partial_global_delete.20261108",
+      "kind": "unit",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestGlobalDeleteRetainsEarlierConfirmationWhenLaterOutcomeUnknown"
+      ],
+      "observations": "When a later downloader has an uncertain outcome, no subsequent external action occurs and the earlier confirmed deletion and local statistics are saved.",
+      "artifacts": {
+        "evidence/brushflowlanduo-acceptance-20261108.json": "30c5d28192f14f7058932acc758569258a571fb9159de6e4d31ae0b4bf801925"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "worker_commit": "909ef2975778df04ea9e0b0e0d6cca17b517aa56",
+        "test_sha256": "ea0252429ee12a5757179767c6fc02d552446f94296f3c281ecf78ea133aec03",
+        "target_sha256": "1ea19a96354213fc61e41c3a5cd17fd6c4eb710afa672452410299c5643952cb"
+      }
+    },
+    {
+      "id": "brushflowlanduo.final_navigation_dashboard.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestBrushFlowInstalledAMD64NavigationAndDashboard on isolated Linux amd64"
+      ],
+      "observations": "Installed the indexed ZIP built from the paired worker revision. Disabled declarations stayed hidden. Once enabled, actual navigation exposed main in organize at order 45, and the Vue default dashboard returned the source column sizes, title, refresh and border.",
+      "artifacts": {
+        "evidence/brushflowlanduo-acceptance-20261108.json": "30c5d28192f14f7058932acc758569258a571fb9159de6e4d31ae0b4bf801925"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "worker_commit": "909ef2975778df04ea9e0b0e0d6cca17b517aa56",
+        "host_head": "a9ed3014acd685870407635765077403923b4dab",
+        "archive_sha256": "6cdd0db772cb38a3cbd90a051c2883cda51131125adab4dde44abc68c4ec00f9"
+      }
+    },
+    {
+      "id": "brushflowlanduo.partial_delete_history.20261108",
+      "kind": "unit",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.BrushFlowLanduo"
+      ],
+      "commands": [
+        "TestCheckReportsEarlierConfirmedGlobalDeletion"
+      ],
+      "observations": "When the second deletion outcome is uncertain, the saved check report shows both the first confirmed deletion and the error, and the caller receives the uncertainty boundary.",
+      "artifacts": {
+        "evidence/brushflowlanduo-acceptance-20261108.json": "30c5d28192f14f7058932acc758569258a571fb9159de6e4d31ae0b4bf801925"
+      },
+      "binding": {
+        "source_commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+        "source_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+        "worker_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+        "test_sha256": "1e6a10903cbff8ad1149ff529ddad9731491e7d069b33cd71c42ac5519fee2f3",
+        "target_sha256": "a2381afadd444bfa3480280e9060df940fea9942bb9eba40bdd715835567fa1a"
+      }
     }
   ],
   "scope": {
@@ -66909,37 +67038,37 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 14,
+      "functional_verified_instances": 15,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 13,
-      "functional_verified_count_scope": "Fourteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 14,
+      "functional_verified_count_scope": "Fifteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "9adada51cae381b01aef6368c540563ab9e6f455",
+      "tested_saved_code_revision": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "95a7df46f96f2aca5df6c3c067edd5de6ea41dfb",
-      "SDK_source_host_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
+      "host_HEAD": "a9ed3014acd685870407635765077403923b4dab",
+      "SDK_source_host_commit": "4ae9d95e736038115d44c2c60288783a1915776f",
       "SDK_current_files": 108,
-      "SDK_current_origin_sha256": "27643514429d261687da77c9635716ee08e4cfd37db2d43ad7d9dcfab01259f5",
-      "SDK_current_status": "108 files. Scoped BrushFlow candidates/ownership, tracker/official M-Team and Vue federation styles contracts.",
+      "SDK_current_origin_sha256": "3c57714c4ee65c0af6c2843d81802afecc8e7e526dee36fe871a42202aa2fce1",
+      "SDK_current_status": "108 files. BrushFlow sequential streaming retains per-message and authority checks.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
       "remote_read_date": "2026-11-08 Shanghai local date. Read-only ls-remote confirmed both main refs unchanged.",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Fourteen of 22 accepted. BrushFlow 5.2.18 protected flow, workbench and scoped recipe paths verified locally. Large calls and legacy ownership still open. No build registry change, push or deployment.",
-      "tests_running": "None. The protected native App, current Chrome workbench and independent same-origin recipe case passed. Earlier passing suites were not repeated.",
-      "latest_detail": "features[plugin.BrushFlowLanduo].bound_provider_recipe",
+      "delivery": "Fifteen of 22 accepted. BrushFlowLanduo 5.2.18 final package and paired host are local. Guarded legacy adoption, longer source passes and local material recipes verified. No push or deployment.",
+      "tests_running": "None. BrushFlow native long pass, legacy ownership, partial failure branch and final navigation/dashboard passed. Existing passed workbench and recipe cases were not repeated.",
+      "latest_detail": "migration/evidence/brushflowlanduo-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App, default-instance Chrome and guarded recipe evidence. Preserve long source call sequences and safely recognize legacy torrent ownership before registering the complete package.",
+      "next_complete_slice": "Start MergeSiteSwitch from its installed source. Keep the fixed scope and the already accepted BrushFlow evidence. Do not rerun passing suites.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -66949,7 +67078,7 @@
       "latest_SubscribeGroup_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
       "latest_AutoBackup_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455",
       "brushflowlanduo_source_revision": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
-      "latest_BrushFlowLanduo_product_commit": "a4182d03ff593ecc67e88d0504b95068dead7e42"
+      "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66966,7 +67095,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Continue BrushFlowLanduo 5.2.18. Reuse the protected App, default-instance Chrome and guarded recipe evidence. Preserve long source call sequences and safely recognize legacy torrent ownership before registering the complete package.",
+    "next_complete_slice": "Start MergeSiteSwitch from its installed source. Keep the fixed scope and the already accepted BrushFlow evidence. Do not rerun passing suites.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

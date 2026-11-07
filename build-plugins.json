@@ -241,6 +241,43 @@
         "third_party/x-text-LICENSE",
         "third_party/x-text-PATENTS"
       ]
+    },
+    {
+      "id": "BrushFlowLanduo",
+      "package": "./cmd/brush-flow-landuo",
+      "host_contract": "light-media.sdk-resources/v1",
+      "license_files": [
+        "LICENSE.upstream",
+        "THIRD_PARTY_NOTICES.md",
+        "plugins/brushflowlanduo/ORIGIN.json",
+        "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+        "third_party/Go-LICENSE",
+        "third_party/x-text-LICENSE",
+        "third_party/x-text-PATENTS",
+        "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+        "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+        "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+        "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+        "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode"
+      ],
+      "frontend": {
+        "command": [
+          "cp",
+          "-R",
+          "plugins/brushflowlanduo/frontend",
+          "{output}"
+        ],
+        "cwd": ".",
+        "output": "frontend-output"
+      }
     }
   ]
 }

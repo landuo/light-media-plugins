@@ -1,0 +1,243 @@
+{
+  "feature": "plugin.BrushFlowLanduo",
+  "status": "verified_with_host_adaptations",
+  "installed_version": "5.2.18",
+  "source": {
+    "commit": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+    "entry_sha256": "9e60e6e548f8df78a0b72c7ddbc4762083941ff1778f5b63edc219e42d573dc9",
+    "installed_manifest": "migration/evidence/brushflowlanduo-source-5.2.18.json",
+    "installed_files": 33,
+    "locations": [
+      "__init__.py:308–477",
+      "__init__.py:718–735",
+      "__init__.py:1807–1886",
+      "__init__.py:2098–2100",
+      "__init__.py:2773–2826",
+      "__init__.py:2967–3050"
+    ]
+  },
+  "target": {
+    "worker_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+    "host_head": "a9ed3014acd685870407635765077403923b4dab",
+    "sdk_source_host_commit": "4ae9d95e736038115d44c2c60288783a1915776f",
+    "legacy_adoption_host_commit": "5936269c8e57236dfc209cc61b737f52da253b73",
+    "stream_fixture_host_commit": "60b224fe8c1b766c08388d9d6bbcef23a3ce7d80",
+    "stream_fixture_worker_commit": "d48bee78837e8ed5e04f0a27d0078be9abffa20b"
+  },
+  "final_package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "brush-flow-landuo",
+      "dist/assets/AppPage-CQJjeupX.js",
+      "dist/assets/BrushFlowWorkbench-Bmyw-FFf.js",
+      "dist/assets/BrushFlowWorkbench-DXCRiXbI.css",
+      "dist/assets/Config-CKUlJQbx.js",
+      "dist/assets/Dashboard-BF4A7g-y.css",
+      "dist/assets/Dashboard-CCqSKt-v.js",
+      "dist/assets/Page-m3F8uHxo.js",
+      "dist/assets/_plugin-vue_export-helper-1_Y3tC5L.js",
+      "dist/assets/_virtual_mf-localSharedImportMap___mfe_internal__BrushFlowLanduo__mf_owner__1-C0DSOgfn.js",
+      "dist/assets/helpers-_Ccnm3rP.js",
+      "dist/assets/index-Cezq_yMy.js",
+      "dist/assets/index-pSqlufH5.js",
+      "dist/assets/remoteEntry.js",
+      "dist/assets/vite-preload-helper-BelkbqnE.js",
+      "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+      "plugins/brushflowlanduo/ORIGIN.json",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode",
+      "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+      "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "dc6d24e6b8fccc0c755d654203ee9a32e9cb659d4dab03acb2ef1d36d16f4cb0",
+    "archive_size": 3974023,
+    "capabilities": 29,
+    "entry": "brush-flow-landuo",
+    "frontend": {
+      "api_contract": "light-media.plugin-api/v1",
+      "contract": "light-media.vue-federation/v1",
+      "entry": "remoteEntry.js",
+      "exposes": [
+        "Config",
+        "Page",
+        "Dashboard",
+        "AppPage"
+      ],
+      "root": "dist/assets",
+      "shared": [
+        "vue",
+        "vuetify",
+        "vuetify/styles"
+      ]
+    },
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "BrushFlowLanduo",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "99bc7164391bc0594f731cec0c3fbca19baee4078867ab3855789a99d587e3ff",
+    "methods": 20,
+    "notice_sha256": "6a61c34e3fdeede44ee85f93060af6873c38015bd89c48fbff027e11064df1eb",
+    "notice_size": 56007,
+    "plugin_source": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+    "version": "5.2.18",
+    "worker_sha256": "f49be5f9d9675fb12bbd2898596153ef33c8e030c3738f265ae52aebb60a717e",
+    "worker_size": 7089887,
+    "path": "work/brushflowlanduo-delivery-20261108/packaging/linux-amd64/BrushFlowLanduo-5.2.18-linux-amd64.zip",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/brushflowlanduo/ORIGIN.json",
+      "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+      "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+      "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+      "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode"
+    ],
+    "verification": "Linux amd64 manifest execution, archive/member validation and unchanged frontend asset digests. The distinct prior indexed archive is the runtime navigation/dashboard input."
+  },
+  "native_long_pass": {
+    "test": "TestBrushFlowInstalledAMD64LongPass",
+    "result": "PASS 42.98s",
+    "zip_sha256": "ef16bfc61984426a5db58a24edff3e514cc8953cb11b336ae6a5f86801e2fb84",
+    "host_ELF_sha256": "6a6e9cde95902b3dbcc756a13c664081f6d1df93fbbaafae82844663a7c6d574",
+    "observations": [
+      "Six source candidates were processed in one invocation, with five bandwidth samples and a final stored completed run with six additions.",
+      "Each actual qBittorrent peer Start saw the corresponding paused Add and stored v2 promotion record.",
+      "Six 9 MiB owned promotion bodies produce at least 72 MiB in JSON base64 replies before framing. This crosses the former cumulative 64 MiB budget. No restart, callback phase reset, or candidate replay."
+    ],
+    "artifacts": {
+      "runtime.stdout": "636a6305897a1fe0c2fbb498b98fbf03fc419dfd45f9c4576d63c647ed8fb36c",
+      "build-source.txt": "c518a5f093bc690ad9299a3e039bcebc948214228afb44f64fd7fd16c26d4359",
+      "build.sha256": "c0a2bab5dab418a723f63e13a5e7a384049066c124198dcf89d52f7da52aeee0",
+      "SHA256SUMS": "a3128294781726759961eb7852f693713cb370f67c13b7c74272f7dfa34340a6",
+      "send-bundle.py": "5a47905b0e2e351dfd9cabd3bdd2daa4bdcd3bd666a6f1f956163c9d1d200a29",
+      "run-remote.sh": "4ac562a43d30fbba0bd1e870d9e7192ac7d7f2dd706898edcf8332d87ef5b76c"
+    }
+  },
+  "legacy_owned_delete": {
+    "test": "TestBrushFlowLegacyOwnershipThroughHostDaemon",
+    "result": "PASS 0.08s",
+    "kind": "Actual local App lease and qB protocol peer. An owned synthetic file was removed by the peer after the guarded App deletion.",
+    "observations": [
+      "Same instance, downloader, exact hash, stored task/site record, source per-task marker and authorized root admitted reannounce/delete.",
+      "Global-only or wrong labels and a conflicting second instance were denied. An old record could not authorize Start.",
+      "After deletion, ownership receipt was removed."
+    ],
+    "fixture_sha256": "54baffba75721bb96081930b0080c043e4b118d010357cf59b9d0483925ee19b",
+    "runtime_stdout_sha256": "e6225cc30e35a1fea2f0ec3086cc07d913b7b69a33f5fa85613eb644d7b4c440"
+  },
+  "partial_global_delete": {
+    "test": "TestGlobalDeleteRetainsEarlierConfirmationWhenLaterOutcomeUnknown",
+    "result": "PASS 0.00s",
+    "kind": "Source-derived synthetic regression scoped to the worker Core.",
+    "test_sha256": "ea0252429ee12a5757179767c6fc02d552446f94296f3c281ecf78ea133aec03",
+    "target_sha256": "1ea19a96354213fc61e41c3a5cd17fd6c4eb710afa672452410299c5643952cb",
+    "observation": "When a later downloader has an uncertain outcome, no subsequent external action occurs and the earlier confirmed deletion and local statistics are saved.",
+    "worker_commit": "909ef2975778df04ea9e0b0e0d6cca17b517aa56"
+  },
+  "final_navigation_dashboard": {
+    "test": "TestBrushFlowInstalledAMD64NavigationAndDashboard",
+    "result": "PASS 1.18s",
+    "zip_sha256": "6cdd0db772cb38a3cbd90a051c2883cda51131125adab4dde44abc68c4ec00f9",
+    "host_ELF_sha256": "0bf6e76b3aa9c14590f47fc99a56bf8ab170521f0985e1636a714d829e43f7ce",
+    "observation": "Installed the indexed ZIP built from the paired worker revision. Disabled declarations stayed hidden. Once enabled, actual navigation exposed main in organize at order 45, and the Vue default dashboard returned the source column sizes, title, refresh and border.",
+    "artifacts": {
+      "runtime.stdout": "739b3981ae86ca9948b19d8577da6d0aa1910fcaeec8eaf6696641238cd24ea9",
+      "build-source.txt": "49348fabe33804b95fc563f9a56cab442de2ef4a186e101e395b35c9adb7e922",
+      "build.sha256": "9fa56fed9cc354fd60235f7d626661dc18429b1d5a42a471d92ac3a1d43eb704",
+      "SHA256SUMS": "bf0132e9696d5ada88646cdb9f213c721f8e171cfbea7350f11a595a40c95367",
+      "send-bundle.py": "5a47905b0e2e351dfd9cabd3bdd2daa4bdcd3bd666a6f1f956163c9d1d200a29",
+      "run-remote.sh": "0503c2bc293ae37050f8c3ae32bec02520874d6ada9895a8028968c6737424f7"
+    },
+    "worker_commit": "909ef2975778df04ea9e0b0e0d6cca17b517aa56"
+  },
+  "evidence_reuse": {
+    "prior_cases": [
+      "brushflowlanduo.native_protected_add.20261108",
+      "brushflowlanduo.chrome_current_workbench.20261108",
+      "brushflowlanduo.bound_provider_recipe.20261108"
+    ],
+    "frontend_assets_same_exact_bytes": {
+      "dist/assets/AppPage-CQJjeupX.js": "f724816b0e6876d373899d4ee7e8b302967c3fe9ed9d4713aacc066d0b1ee013",
+      "dist/assets/BrushFlowWorkbench-Bmyw-FFf.js": "486fb41097407149a3f57a6b3db17a1178e9aee9702cb4fde650fbc26fbf768c",
+      "dist/assets/BrushFlowWorkbench-DXCRiXbI.css": "1d560113ca3c39ab7d3d2842340384ed26d865b31c2c1e2423c3101ba031df64",
+      "dist/assets/Config-CKUlJQbx.js": "16744ae293c8f79cfa55d999c2d51301cf56b7b16a51f343b99c8642dcbaa3e2",
+      "dist/assets/Dashboard-BF4A7g-y.css": "542fa9b7a84d1a45c810012ec28b69252ff0e9aea52b2161fdca1658aa850e7a",
+      "dist/assets/Dashboard-CCqSKt-v.js": "8aca76535601dd478b626b527875518c9a140b249ef09f39a84b9d567f0b0fe2",
+      "dist/assets/Page-m3F8uHxo.js": "9e7b2ce5ac75204b667fbe9d9d3e87a11a28955e269b2a5c14ad3babaf531a87",
+      "dist/assets/_plugin-vue_export-helper-1_Y3tC5L.js": "571519fe1345cbcdf191ac0038cc83d32e465f2d434c342ff856542339756c91",
+      "dist/assets/_virtual_mf-localSharedImportMap___mfe_internal__BrushFlowLanduo__mf_owner__1-C0DSOgfn.js": "06b7ea07de38854a4d83ca68d8f8b520e7c4fa10b5ba8aef97c799c0a1b2060a",
+      "dist/assets/helpers-_Ccnm3rP.js": "cc54137a6a3515677d2c86135b8c938a72aef0dcf2214032776fa286e29f20dd",
+      "dist/assets/index-Cezq_yMy.js": "98cfd58a755bfa05b7ddd87c24bc0118f0ae8076fb4078f883f220dc13e26ce6",
+      "dist/assets/index-pSqlufH5.js": "34de619555493f6cc7ce4e48a4d3dfa54874137db84f7c4a6ec777f950ea9fa5",
+      "dist/assets/remoteEntry.js": "7305af6d6a371ad57b48750c1fed732c03405a0c337d18dd94f08f73d5ff3e18",
+      "dist/assets/vite-preload-helper-BelkbqnE.js": "a66458b94a8d4bdfac447f3c401811e1347ad9e3421e0bc5ff14e6e6cfdf5176"
+    },
+    "scope": "Browser Config and Page, bound provider recipe, successful Add ordering and navigation/dashboard are reused. Changes after the long-pass worker only affect partially confirmed global deletes and their failure history. Frontend assets are byte-identical. No passed runtime case was repeated."
+  },
+  "adaptations": [
+    "Single source invocation uses a Brush-only negotiated sequential host stream. Per-message validation, cancellation, process concurrency and the recognized namespace/daemon permissions remain enforced.",
+    "The existing 16 MiB single SDK JSON value boundary applies to native config and records. Query-only SQL measured installed rows by byte length without reading their values. Config max 4,114 B and individual data max 7,157,467 B are within the boundary. Source SQLite JSON is not subject to this Go transport boundary.",
+    "Legacy data can authorize local destructive operations only with the saved exact hash and source task label on the live selected daemon. Global-only labels and conflicting claims stay unowned. No live configuration or private history was imported and no production seed was changed.",
+    "Source-origin provider recipe requests stay inside the configured credential origin. The fixed original clone basename limitation remains documented in FRONTEND_ORIGIN.json."
+  ],
+  "installed_size_only": {
+    "plugin": "BrushFlowLanduo",
+    "config_rows": 1,
+    "max_config_bytes": 4114,
+    "data_rows": 24,
+    "max_data_bytes": 7157467,
+    "total_data_bytes": 15280357
+  },
+  "review": {
+    "reviewers": [
+      "/root/emby",
+      "/root/kodi",
+      "/root/jellyfin"
+    ],
+    "stream": "Independent audit confirmed canonical replay sequencing, cancellation and per-message bounds.",
+    "ownership": "Actual guarded host fixture with positive and wrong-tag/instance denials.",
+    "failure_path": "Independent review identified the persistence issue and then the dropped partial count in Check. Each correction passed a distinct scoped source-derived test."
+  },
+  "delivery": {
+    "plugin_branch": "codex/installed-plugins-20261105",
+    "host_branch": "codex/plugin-source-error-outcomes-20261105",
+    "pushed": false,
+    "deployed": false
+  },
+  "partial_delete_history": {
+    "test": "TestCheckReportsEarlierConfirmedGlobalDeletion",
+    "result": "PASS 0.00s",
+    "kind": "Source-derived synthetic regression scoped to the worker Core and persisted check history.",
+    "observation": "When the second deletion outcome is uncertain, the saved check report shows both the first confirmed deletion and the error, and the caller receives the uncertainty boundary.",
+    "worker_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
+    "test_sha256": "1e6a10903cbff8ad1149ff529ddad9731491e7d069b33cd71c42ac5519fee2f3",
+    "target_sha256": "a2381afadd444bfa3480280e9060df940fea9942bb9eba40bdd715835567fa1a",
+    "runtime_stdout_sha256": "3d5a0ace54d04f5f62156d6800a9b4e0d27b4affc6e8f9d5dac396dd99a779e0"
+  }
+}
