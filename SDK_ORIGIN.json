@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0",
-  "scope": "108 standalone SDK files. This increment binds BrushFlow candidate/ownership resources, scoped tracker and M-Team reads, and the finite Vuetify style share. Other leaves retain their prior source commits.",
+  "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f",
+  "scope": "108 standalone SDK files. BrushFlow supports scoped sequential host streams under the existing per-message limits. Other leaves retain their paired commits.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -163,10 +163,10 @@
     {
       "source_path": "internal/plugins/concurrent_session.go",
       "path": "internal/sdk/concurrent_session.go",
-      "source_sha256": "a119b619d103b5b49bb8411e2ca70353002e899eee15e40f9121ff0e10493c74",
-      "sha256": "a119b619d103b5b49bb8411e2ca70353002e899eee15e40f9121ff0e10493c74",
+      "source_sha256": "a47f14481053788e276d8e1fc32e872a783a0dad93b70ad9622d513ce8ca1504",
+      "sha256": "a47f14481053788e276d8e1fc32e872a783a0dad93b70ad9622d513ce8ca1504",
       "changes": [],
-      "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2"
+      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
     },
     {
       "source_path": "internal/plugins/concurrent_session_test.go",
@@ -187,18 +187,18 @@
     {
       "source_path": "internal/plugins/concurrent_transport.go",
       "path": "internal/sdk/concurrent_transport.go",
-      "source_sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
-      "sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
+      "source_sha256": "4436d23dcef5238adbbfe7eda8f5095692b5503b2798f3f24edb99ce8153eb1f",
+      "sha256": "4436d23dcef5238adbbfe7eda8f5095692b5503b2798f3f24edb99ce8153eb1f",
       "changes": [],
-      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51"
+      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
     },
     {
       "source_path": "internal/plugins/concurrent_worker.go",
       "path": "internal/sdk/concurrent_worker.go",
-      "source_sha256": "01b5a20b17ead5389d558dbc6ae581288caef43464c5d051701a8f7db4d736a1",
-      "sha256": "01b5a20b17ead5389d558dbc6ae581288caef43464c5d051701a8f7db4d736a1",
+      "source_sha256": "10c295641e76d0397a01833dd8434ef36277bb41cf264c13fdb4424329b7b0d7",
+      "sha256": "10c295641e76d0397a01833dd8434ef36277bb41cf264c13fdb4424329b7b0d7",
       "changes": [],
-      "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2"
+      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
     },
     {
       "source_path": "internal/plugins/downloader_configurations.go",
@@ -660,10 +660,10 @@
     {
       "source_path": "internal/plugins/protocol.go",
       "path": "internal/sdk/protocol.go",
-      "source_sha256": "54ed2f2fc82cdc746cb030bcfffe7e4839fbb7533111cd2ed2a754832e36909e",
-      "sha256": "54ed2f2fc82cdc746cb030bcfffe7e4839fbb7533111cd2ed2a754832e36909e",
+      "source_sha256": "dbfd2451cfec2fea1c2192a3d31894a2d75dd3d95ce6f8711f01cb2de924ce88",
+      "sha256": "dbfd2451cfec2fea1c2192a3d31894a2d75dd3d95ce6f8711f01cb2de924ce88",
       "changes": [],
-      "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2"
+      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
     },
     {
       "source_path": "internal/plugins/protocol_test.go",
@@ -894,10 +894,10 @@
     {
       "source_path": "internal/plugins/worker.go",
       "path": "internal/sdk/worker.go",
-      "source_sha256": "072580069dc086710f6245c231721a652f609a455a7ab60ee55da5928e81e071",
-      "sha256": "072580069dc086710f6245c231721a652f609a455a7ab60ee55da5928e81e071",
+      "source_sha256": "13391fcbc7b65c507ea46df7e97c4660ae31117ee83f9b062693d8efca7d2a32",
+      "sha256": "13391fcbc7b65c507ea46df7e97c4660ae31117ee83f9b062693d8efca7d2a32",
       "changes": [],
-      "source_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2"
+      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
     }
   ],
   "business_source_provenance": {

@@ -295,6 +295,9 @@ type Runner struct {
 	// worker retains the serial contract; RequireConcurrent rejects fallback.
 	ConcurrentCalls   bool
 	RequireConcurrent bool
+	// BrushFlow's retained sequential source loops use per-message limits
+	// rather than a fixed quota for the lifetime of a business invocation.
+	SequentialHostStream bool
 	// ObservePhase is nil by default; it does not alter execution policy.
 	ObservePhase     func(RunObservation)
 	MaxInputBytes    int
@@ -676,6 +679,12 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	if err = manifest.Validate(); err != nil {
 		return nil, err
 	}
+	if runner.SequentialHostStream {
+		if !brushHostStreamManifest(manifest) {
+			return nil, failure("invalid_limits")
+		}
+		runner.RequireConcurrent = true
+	}
 	if lifeCtx == nil || binding.Generation < 1 || binding.PluginID != manifest.PluginID || binding.Version != manifest.Version || !ValidInstanceID(binding.InstanceID) || !filepath.IsAbs(command.Path) || command.Dir != "" && !filepath.IsAbs(command.Dir) {
 		return nil, failure("invalid_invocation")
 	}
@@ -793,11 +802,14 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 	s.scopedCallbacks = true
 	if runner.ConcurrentCalls || runner.RequireConcurrent {
 		if agreed.ConcurrentSession == 1 {
-			proposal := concurrentProposal{Version: 1, MaxCalls: maxConcurrentCalls, MaxHostCalls: runner.MaxHostCalls}
+			proposal := concurrentProposal{Version: 1, MaxCalls: maxConcurrentCalls, MaxHostCalls: runner.MaxHostCalls, SequentialHostStream: runner.SequentialHostStream}
 			if agreed.ParallelHostCalls != 0 && agreed.ParallelHostCalls != 1 {
 				return nil, failure("parallel_host_call_mismatch")
 			}
 			if agreed.ParallelHostCalls == 1 {
+				if proposal.SequentialHostStream {
+					return nil, failure("parallel_host_call_mismatch")
+				}
 				proposal.MaxParallelHostCalls = min(maxParallelHostCalls, runner.MaxHostCalls)
 				if proposal.MaxParallelHostCalls < 2 {
 					return nil, failure("parallel_host_call_limits")

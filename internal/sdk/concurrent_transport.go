@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io"
+	"slices"
 	"strconv"
 	"strings"
 	"sync"
@@ -24,17 +25,35 @@ type concurrentTransport struct {
 type concurrentWireCount struct{ bytes, chunks int }
 
 type concurrentProposal struct {
-	Version              int `json:"version"`
-	MaxParallelHostCalls int `json:"max_parallel_host_calls,omitempty"`
-	MaxCalls             int `json:"max_calls"`
-	MaxHostCalls         int `json:"max_host_calls"`
+	Version              int  `json:"version"`
+	MaxParallelHostCalls int  `json:"max_parallel_host_calls,omitempty"`
+	MaxCalls             int  `json:"max_calls"`
+	MaxHostCalls         int  `json:"max_host_calls"`
+	SequentialHostStream bool `json:"sequential_host_stream,omitempty"`
 }
 
 const maxConcurrentCalls = 32
 const maxParallelHostCalls = 64
 
 func (p concurrentProposal) valid() bool {
-	return (p.MaxParallelHostCalls == 0 || p.MaxParallelHostCalls >= 2 && p.MaxParallelHostCalls <= min(maxParallelHostCalls, p.MaxHostCalls)) && p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
+	return (!p.SequentialHostStream || p.MaxParallelHostCalls == 0) &&
+		(p.MaxParallelHostCalls == 0 || p.MaxParallelHostCalls >= 2 && p.MaxParallelHostCalls <= min(maxParallelHostCalls, p.MaxHostCalls)) &&
+		p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
+}
+
+func brushHostStreamManifest(m Manifest) bool {
+	return m.PluginID == "BrushFlowLanduo" && m.ManagedPublicServices && slices.Contains(m.Capabilities, BrushSourceCandidatesCapability)
+}
+
+func (p concurrentProposal) streamsHostCalls(method string) bool {
+	if !p.SequentialHostStream {
+		return false
+	}
+	switch method {
+	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag":
+		return true
+	}
+	return false
 }
 
 func (t *concurrentTransport) write(frame Frame, charge func(concurrentWireCount) error, beforePublish ...func() error) (count concurrentWireCount, err error) {
@@ -254,6 +273,9 @@ type concurrentAccount struct {
 	hostCalls  int
 	limits     transportLimits
 	worker     bool
+	// Streaming roots still have per-message frame, byte and chunk bounds.
+	// Their next sequential callback cannot be admitted before its predecessor.
+	streaming bool
 }
 
 func (a *concurrentAccount) send(n concurrentWireCount) error {
@@ -263,10 +285,10 @@ func (a *concurrentAccount) send(n concurrentWireCount) error {
 	if a.worker {
 		maxBytes = a.limits.HostReadBytes
 	}
-	if n.bytes > maxBytes-a.sent.bytes {
+	if !a.streaming && n.bytes > maxBytes-a.sent.bytes {
 		return failure("input_limit")
 	}
-	if n.chunks > a.limits.SessionChunks-a.sent.chunks {
+	if !a.streaming && n.chunks > a.limits.SessionChunks-a.sent.chunks {
 		return failure("transport_chunk_limit")
 	}
 	a.sent.bytes += n.bytes
@@ -280,10 +302,10 @@ func (a *concurrentAccount) receive(n concurrentWireCount) error {
 	if a.worker {
 		maxBytes = a.limits.HostSendBytes
 	}
-	if n.bytes > maxBytes-a.read.bytes {
+	if !a.streaming && n.bytes > maxBytes-a.read.bytes {
 		return failure("output_limit")
 	}
-	if n.chunks > a.limits.SessionChunks-a.read.chunks {
+	if !a.streaming && n.chunks > a.limits.SessionChunks-a.read.chunks {
 		return failure("transport_chunk_limit")
 	}
 	a.read.bytes += n.bytes
@@ -293,7 +315,7 @@ func (a *concurrentAccount) receive(n concurrentWireCount) error {
 func (a *concurrentAccount) host(max int) error {
 	a.mu.Lock()
 	defer a.mu.Unlock()
-	if a.hostCalls >= max {
+	if !a.streaming && a.hostCalls >= max {
 		return failure("host_call_limit")
 	}
 	a.hostCalls++

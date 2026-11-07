@@ -5,6 +5,7 @@ import (
 	"encoding/json"
 	"errors"
 	"io"
+	"strconv"
 	"strings"
 	"sync"
 )
@@ -35,6 +36,7 @@ type concurrentHostCall struct {
 	reversePublishing bool
 	hostBudgetUsers   int
 	seen              map[string]bool
+	streamSequence    uint64
 	hosts             sync.WaitGroup
 	cleanupRoot       *cleanupHostRoot
 	cleanupReleased   bool
@@ -96,6 +98,24 @@ func (call *concurrentHostCall) revoke() {
 	call.host = nil
 	call.cancel()
 	call.mu.Unlock()
+}
+
+// Caller holds call.mu. A streaming root needs no table of completed callback
+// IDs. The serial worker writes one canonical successor after each reply.
+func (call *concurrentHostCall) acceptReverseID(id string) bool {
+	if call.account.streaming {
+		sequence := call.streamSequence + 1
+		if sequence == 0 || id != call.id+"."+strconv.FormatUint(sequence, 10) {
+			return false
+		}
+		call.streamSequence = sequence
+		return true
+	}
+	if call.seen[id] {
+		return false
+	}
+	call.seen[id] = true
+	return true
 }
 func (m *concurrentClient) terminalError() error {
 	m.mu.Lock()
@@ -195,7 +215,7 @@ func (m *concurrentClient) readLoop() {
 				return
 			}
 			call.mu.Lock()
-			if call.seen[frame.ID] || m.proposal.MaxParallelHostCalls == 0 && call.inHost || m.proposal.MaxParallelHostCalls > 0 && call.reversePending >= m.proposal.MaxParallelHostCalls {
+			if m.proposal.MaxParallelHostCalls == 0 && call.inHost || m.proposal.MaxParallelHostCalls > 0 && call.reversePending >= m.proposal.MaxParallelHostCalls || !call.acceptReverseID(frame.ID) {
 				call.mu.Unlock()
 				m.abort(failure("invalid_host_call"))
 				return
@@ -205,9 +225,13 @@ func (m *concurrentClient) readLoop() {
 				m.abort(err)
 				return
 			}
-			call.seen[frame.ID] = true
 			if call.closed || call.ctx.Err() != nil || call.host == nil {
 				call.mu.Unlock()
+				if call.account.streaming {
+					// The root's cancel frame wakes the serial caller. Do not
+					// queue reply writers for already revoked stream input.
+					continue
+				}
 				m.writes.Add(1)
 				go func() { defer m.writes.Done(); m.replyDenied(call, frame.ID) }()
 				continue
@@ -283,7 +307,9 @@ func (m *concurrentClient) callHost(call *concurrentHostCall, host HostHandler, 
 		}
 	}
 	call.mu.Lock()
-	call.inHost = false
+	if !call.account.streaming {
+		call.inHost = false
+	}
 	closed := call.closed || call.ctx.Err() != nil
 	call.mu.Unlock()
 	if closed {
@@ -295,13 +321,29 @@ func (m *concurrentClient) callHost(call *concurrentHostCall, host HostHandler, 
 	} else if len(reply.Result) == 0 {
 		reply.Result = json.RawMessage(`null`)
 	}
-	sent, sendErr := m.transport.write(reply, call.account.send)
+	var publish []func() error
+	dropped := false
+	if call.account.streaming {
+		publish = append(publish, func() error {
+			call.mu.Lock()
+			defer call.mu.Unlock()
+			if call.closed || call.ctx.Err() != nil {
+				dropped = true
+				return failure("execution_canceled")
+			}
+			// writeMu has already been acquired. Until now even a peer
+			// pipelining IDs could not queue more response goroutines.
+			call.inHost = false
+			return nil
+		})
+	}
+	sent, sendErr := m.transport.write(reply, call.account.send, publish...)
 	if sendErr != nil && sent.bytes == 0 && concurrentReplyError(sendErr) != "" {
 		reply.Result = nil
 		reply.Error = &ReplyError{Code: "HOST_DENIED"}
-		_, sendErr = m.transport.write(reply, nil)
+		_, sendErr = m.transport.write(reply, nil, publish...)
 	}
-	if sendErr != nil {
+	if sendErr != nil && !dropped {
 		m.abort(sendErr)
 	}
 }
@@ -329,7 +371,7 @@ func (m *concurrentClient) callStarted(ctx context.Context, method string, paylo
 	parent, cancel := context.WithCancel(context.WithValue(ctx, concurrentCallIDKey{}, id))
 	stopLife := context.AfterFunc(m.client.life, cancel)
 	callCtx, finish, budget := invocationContext(parent, options)
-	call := &concurrentHostCall{id: id, method: method, ctx: callCtx, cancel: cancel, finish: finish, stopLife: stopLife, budget: budget, host: host, cleanup: cleanup, account: concurrentAccount{limits: m.client.session.limits}, result: make(chan concurrentOutcome, 1), sent: make(chan struct{}), seen: map[string]bool{}}
+	call := &concurrentHostCall{id: id, method: method, ctx: callCtx, cancel: cancel, finish: finish, stopLife: stopLife, budget: budget, host: host, cleanup: cleanup, account: concurrentAccount{limits: m.client.session.limits, streaming: m.proposal.streamsHostCalls(method)}, result: make(chan concurrentOutcome, 1), sent: make(chan struct{}), seen: map[string]bool{}}
 	m.mu.Lock()
 	if admissionCtx != nil && admissionCtx.Err() != nil {
 		m.mu.Unlock()

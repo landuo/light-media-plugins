@@ -24,7 +24,7 @@ func main() {
 		return
 	}
 	plugin := brushflow.NewStandard()
-	if err := sdk.ServeConcurrentWithParallelHostCalls(context.Background(), os.Stdin, os.Stdout, manifest, plugin.Handle); err != nil {
+	if err := sdk.ServeConcurrent(context.Background(), os.Stdin, os.Stdout, manifest, plugin.Handle); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}

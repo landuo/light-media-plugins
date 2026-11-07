@@ -132,6 +132,9 @@ func serve(ctx context.Context, input io.Reader, output io.Writer, manifest Mani
 			if !concurrent || !persistent || invoked || strictJSON(request.Payload, &proposal) != nil || !proposal.valid() || (parallelHostCalls != (proposal.MaxParallelHostCalls > 0)) {
 				return failure("concurrent_session_mismatch")
 			}
+			if proposal.SequentialHostStream && !brushHostStreamManifest(manifest) {
+				return failure("concurrent_session_mismatch")
+			}
 			raw, _ := json.Marshal(proposal)
 			if err = s.write(Frame{Protocol: ProtocolVersion, ID: request.ID, Type: "result", Identity: s.identity, Result: raw}); err != nil {
 				return err
