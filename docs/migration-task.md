@@ -89,10 +89,13 @@ message, test-card, and configuration paths on native Linux. The isolated
 `/sites` scenario passed pagination, ownership, edit fallback, site toggling,
 and real Chromium login with a second OTP page, atomic Cookie and UA save,
 and blocked credential egress. The host requires verified Lark ingress for
-native site actions. Continue the same plugin with `/subscribes`, then media
-and transfer retry. See
-`migration/evidence/lark-messager-sites-20261108.json` and
-`migration/evidence/lark-messager-runtime-20261108.json`.
+native site actions. The main `/subscribes` paths passed on native Linux:
+durable numbering, keyword search, newest-resource browse and accepted Add,
+paused metadata refresh, and deletion with queue fencing. Source differences
+and remaining checks are in
+`migration/evidence/lark-messager-subscribes-20261108.json`.
+Continue the same plugin with ordinary media interaction and transfer retry.
+Earlier site and worker evidence remains separately bound.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

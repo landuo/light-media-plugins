@@ -1,0 +1,92 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "host_commit": "8d96369c60536b4f11506e1ffa6086f26a226292",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/command.py preset /subscribes and CommandExcute; app/chain/message.py:378–397, 678–811; app/helper/interaction.py:32–259",
+      "target": "internal/app/plugin_original_host_message_inbound.go, plugin_original_site_interaction.go, plugin_original_subscribe_chat.go",
+      "observed": "Verified Lark ingress, 24-hour owned slash session, most-recent command text choice, clicked-message card editing, exact reply and status labels."
+    },
+    {
+      "source": "app/chain/subscribe.py:2866–3534; app/db/subscribe_oper.py:230–234",
+      "target": "internal/app/plugin_original_subscription_alias.go, store.go, plugin_original_subscribe_chat.go and subscription_runtime.go",
+      "observed": "Stable numeric alias, native keyword job completion, duplicate/missing IDs, guarded cancellation and hiding tombstones without emitting the unrelated Web deletion event."
+    },
+    {
+      "source": "app/chain/subscribe.py:1620–1960; app/chain/torrents.py:484–663",
+      "target": "internal/app/plugin_original_subscribe_chat_refresh*.go, plugin_original_host_sites.go, subscription_quality_check.go, subscription_runtime.go, search_download.go and download_events.go",
+      "observed": "Shared latest unkeyworded browse, identity/cache matching, frozen authorized row persisted into preview and independently running native download job, current site and subscription guards, accepted Add before chat completion."
+    },
+    {
+      "source": "app/chain/subscribe.py:2105–2225, 3400–3427",
+      "target": "internal/app/plugin_original_subscribe_chat_metadata.go",
+      "observed": "Separate fresh recognition and metadata persistence for paused subscriptions, state and revision retained, no search or download."
+    }
+  ],
+  "source_oracle": {
+    "source": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "kind": "fixed-source pure methods",
+    "number_input": "１，999",
+    "parsed_ids": [
+      1,
+      999
+    ],
+    "states": {
+      "N": "新建",
+      "R": "订阅中",
+      "P": "待定",
+      "S": "暂停"
+    },
+    "movie_progress": "电影",
+    "series_progress": "第2季 [2/5]"
+  },
+  "source_oracle_sha256": "023e4f8c63ed117fa43fde94459bc5229a24ec087a2d9541091406f82e41d7ae",
+  "native": {
+    "status": "passed",
+    "kind": "real native host with owned tracker, metadata, Lark and downloader protocol peers",
+    "seconds": 1.85,
+    "environment": "Native Linux x86_64, read-only alpine:3.22 fixture, tmpfs and loopback only; no private or production credentials.",
+    "test": "TestOriginalLarkSubscribeInteractionLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_chat_linux_test.go",
+    "fixture_sha256": "f1a7981c63b2fa29482496d1b24ee86dd5f73bb54fa6d4e5c5862f956fcd9374",
+    "host_elf_sha256": "df05649a775586d45a6a1be10c0edcd33a62cfe988857f939e11f61db060d877",
+    "runner_sha256": "b5ac4150dbabfdb749ed9e0852d8025eac04e38141b0aace109f43b896e242df",
+    "runtime_log_sha256": "45cac2399d49734965a384f991e347185e71d51a098297d002af8244d574a203",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "A started native App installed the same indexed LarkMessager ZIP used for /sites. A real verified webhook selected the newest /subscribes session after /sites, delivered a card with the durable numeric ID and edited it for a pending search.",
+      "Fullwidth １ and missing 999 reached the native keyword-search job. The owned tracker served a nonmatching HTML resource. The worker finished the job before reporting one completed search and one missing ID, then displayed the updated subscription state.",
+      "The pending R/P refresh read exactly two unkeyworded tracker pages. A matched release produced one material request and a separate accepted downloader Add. The child used its sealed latest-resource row with no title-search recheck. The completion notice followed the accepted job, and the card preserved the source pending state.",
+      "Metadata refresh ran separately on a paused subscription, reached the owned TMDB peer, updated the rating, retained the paused state and exact revision, and performed no tracker search.",
+      "Deleting the same alias twice canceled the selected subscription and its already queued native job and reported the duplicate as missing. A recreated subscription got a new numeric alias. No prior /sites runtime suite was repeated."
+    ]
+  },
+  "prior_failures": [
+    {
+      "status": "failed_fixture_expectation",
+      "observation": "The manual search, metadata, and deletion assertions reached the end, but a normal downloader setup read was incorrectly treated as an Add. The final fixture counts the actual Add endpoint separately.",
+      "log_sha256": "3685b6787021d623542922e7ad6a2cbc0039381181d7ca0ec1d1dcbd043d46a2"
+    },
+    {
+      "status": "failed_regression_detection",
+      "observation": "The combined fixture detected a third tracker request with a keyword from the separate download worker despite successful Add. The final code carries an encrypted per-intent latest-resource proof, refuses missing or stale proof, and no longer uses keyword search for latest Add.",
+      "log_sha256": "353bc613e9150b241aff390935b393bca7cdb5ca6392f71ddc594cfd1510ffb4"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "Native string subscription IDs remain the sole host identity. New chat numeric aliases are durable and never reused. Source chat deletes the subscription row; host retains a hidden canceled tombstone to fence previously queued work and preserve owned downloads. The optional source delete-sharing call is open and was not sent.",
+    "Direct manual search of a paused subscription remains constrained by the native scheduler guard. The source explicit ID branch permits it. The current test covers normal active manual search and paused metadata, separately.",
+    "The native metadata model retains TMDB and IMDb fields and known TMDB image paths. Source TVDB, Douban, Bangumi, and AniList identity persistence remains open. The current fixture did not exercise TV episode-count changes.",
+    "The code includes RSS selection and a same-origin enclosure request with configured Cookie, but the native scenario was spider mode. Expired feed regeneration, global invalid-enclosure TTL, exact source cache lifetimes, and broader recognized identity versus native title/year guard differences remain open. Restart recovery of latest proof did not execute in this scenario.",
+    "The Lark worker still needs the ordinary media interaction and transfer retry host paths, plus distinct worker edge evidence already listed in prior records."
+  ],
+  "review": [
+    "Independent source review of slash precedence, durable latest binding and absence of keyword recheck. The rejected prior runtime result demonstrated that this guard is covered by the final fixture.",
+    "No production config, production tracker login, remote push or deployment."
+  ]
+}

@@ -16080,7 +16080,8 @@
       "evidence_ids": [
         "larkmessager.native_amd64_message_path.20261108",
         "larkmessager.test_card_webhook_failure.20261108",
-        "larkmessager.sites_native_browser.20261108"
+        "larkmessager.sites_native_browser.20261108",
+        "larkmessager.subscribes_native_cache_add.20261108"
       ],
       "review": {
         "status": "pending",
@@ -16089,14 +16090,15 @@
         "evidence_ids": [
           "larkmessager.native_amd64_message_path.20261108",
           "larkmessager.test_card_webhook_failure.20261108",
-          "larkmessager.sites_native_browser.20261108"
+          "larkmessager.sites_native_browser.20261108",
+          "larkmessager.subscribes_native_cache_add.20261108"
         ]
       },
       "original_instance_id": "LarkMessager",
       "family": "LarkMessager",
       "source_version": "0.9.1",
       "source_metadata_only": false,
-      "discovery_note": "Ordinary SDK worker and /sites native actions executed. Remaining /subscribes, media and transfer-retry integration and distinct worker checks are open."
+      "discovery_note": "Ordinary worker, /sites and the main /subscribes flows have isolated native evidence. Media interaction, transfer retry and the remaining source differences and distinct worker checks are open."
     },
     {
       "id": "plugin.CleanInvalidSeed",
@@ -67460,6 +67462,35 @@
         "fixture_sha256": "5df19e255ebc04dc2995b51a275c93a90cc58166ca555c0fdb8c54612d91f144",
         "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
       }
+    },
+    {
+      "id": "larkmessager.subscribes_native_cache_add.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkSubscribeInteractionLinuxAMD64"
+      ],
+      "observations": [
+        "A started native App installed the same indexed LarkMessager ZIP used for /sites. A real verified webhook selected the newest /subscribes session after /sites, delivered a card with the durable numeric ID and edited it for a pending search.",
+        "Fullwidth １ and missing 999 reached the native keyword-search job. The owned tracker served a nonmatching HTML resource. The worker finished the job before reporting one completed search and one missing ID, then displayed the updated subscription state.",
+        "The pending R/P refresh read exactly two unkeyworded tracker pages. A matched release produced one material request and a separate accepted downloader Add. The child used its sealed latest-resource row with no title-search recheck. The completion notice followed the accepted job, and the card preserved the source pending state.",
+        "Metadata refresh ran separately on a paused subscription, reached the owned TMDB peer, updated the rating, retained the paused state and exact revision, and performed no tracker search.",
+        "Deleting the same alias twice canceled the selected subscription and its already queued native job and reported the duplicate as missing. A recreated subscription got a new numeric alias. No prior /sites runtime suite was repeated."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-subscribes-20261108.json": "811fb95253d95aba6ba053d28d5fbe75423ebe85c99f4e7eb3da04b81f4649d1"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "8d96369c60536b4f11506e1ffa6086f26a226292",
+        "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+        "fixture_sha256": "f1a7981c63b2fa29482496d1b24ee86dd5f73bb54fa6d4e5c5862f956fcd9374",
+        "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+      }
     }
   ],
   "scope": {
@@ -67533,7 +67564,7 @@
       "tested_saved_code_revision": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "69fb91e03ad86b8089bde4ad01b297681191c899",
+      "host_HEAD": "8d96369c60536b4f11506e1ffa6086f26a226292",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -67544,12 +67575,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seventeen of 22 accepted. The locally committed Lark worker and host /sites flow passed in isolated native Linux, including Chromium login and Cookie+UA persistence. No remote push or production deployment.",
-      "tests_running": "None for /sites. The native fixture passed and stopped. Reuse that evidence.",
-      "latest_detail": "migration/evidence/lark-messager-sites-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Lark /subscribes main native search, cached spider Add, metadata and delete passed with unchanged worker ZIP. Paired host and evidence committed locally.",
+      "tests_running": "None. The exact native /subscribes fixture passed and its isolated app stopped.",
+      "latest_detail": "migration/evidence/lark-messager-subscribes-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager only. Add /subscribes with persistent numeric aliases, latest slash session selection, search/delete, real newest-resource refresh and separate metadata refresh. Remaining Lark site edge evidence is listed separately; do not repeat the passed /sites flow.",
+      "next_complete_slice": "Continue LarkMessager ordinary media interaction and transfer retry, starting with one real media search → media card → selected torrent card → guarded native download or subscription. Source app/chain/message.py:2083–3488. /subscribes known remaining edges are in latest_detail. Do not rerun completed /sites or core /subscribes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -67562,8 +67593,7 @@
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
-      "latest_LarkMessager_product_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
-      "in_progress_lark_subscribes": "A read-only-reviewed durable numeric alias leaf is present uncommitted at light-media internal/app/plugin_original_subscription_alias.go. It is not wired into Store startup or the command yet and has no acceptance evidence. Continue that worktree; do not rerun /sites."
+      "latest_LarkMessager_product_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
