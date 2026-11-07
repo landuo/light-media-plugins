@@ -157,7 +157,12 @@ accepted the second from the same batch and completed before replying. The
 selected same-site detail page reached both SDK events and the callback,
 with the foreign page and tracker secrets filtered. See
 `migration/evidence/lark-messager-rss-batch-fallback-20261108.json`.
-Continue with remaining installed-worker behavior. Reuse earlier evidence.
+A newly indexed native worker verified signed encrypted administrator
+commands, denied non-admin and unsigned native writes, and fetched groups
+with a separate bearer while disabled or messaging was active. The native
+page consumed the result once and provider freeform errors were filtered. See
+`migration/evidence/lark-messager-encrypted-admin-fetch-chats-20261108.json`.
+Continue with installed clone/reload and rooted attachment evidence.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes

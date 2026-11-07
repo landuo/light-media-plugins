@@ -1,0 +1,57 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "218f688bbc4d21e4237c62a54084e8f50d64f4d3",
+    "worker_commit": "e6a4681479da8315c2c6596b4bd4cb71e6cbc172",
+    "fixture_sha256": "d7fcb67f9bbdf3870ee28822795cfa61020c1e548c803e8c459f515c048a5e57",
+    "package_sha256": "0f9d87c10a6ba9a1b7c19b458be55f6473d2c93ac2526c3beb3ae338c6cbc2e2"
+  },
+  "source_oracle": "Read-only installed LarkMessager source snapshot, fixed host source and previously accepted primitive/source replay. This run did not contact the original installation.",
+  "mapping": [
+    {
+      "source": "larkmessager/__init__.py:1209 onward,2393–2455; larkmessager/client.py temporary LarkClient bearer",
+      "target": "plugins/larkmessager/endpoints.go, plugin.go, transport.go and worker.go",
+      "behavior": "FetchChats uses saved credentials while disabled, takes its own temporary bearer, preserves numeric provider outcomes and stores one-shot empty failure or successful list results."
+    },
+    {
+      "source": "larkmessager/__init__.py:183,227,1710–1771; larkmessager/crypto.py; fixed MoviePilot ordinary incoming processing and site command",
+      "target": "plugins/larkmessager/crypto.go, plugin.go and worker.go; light-media:internal/app/plugin_original_lark_endpoint.go and plugin_original_site_interaction.go",
+      "behavior": "Encrypted webhook text uses configured administrator policy and ordinary processing reactions. Native privileged commands additionally require a verified source token or raw-body signature."
+    }
+  ],
+  "package": {
+    "kind": "Local indexed amd64 candidate with standard generated manifest and licenses",
+    "worker_elf_sha256": "9b74f8b307600183378ef6b786300fe92332c97447875e1be5c828049ed78075",
+    "index_sha256": "125b17643b32814f83a2a91e055a677da468f549c8b24730ac39d88d2342599c",
+    "license_archive_sha256": "47930485d27fa35579a8986e3ee1f29e414e02c2bf2c4a0a2bf7fbc84f604691",
+    "manifest_sha256": "2f2f57f77178faf4f30acdf111aa662e2e2ba18f11dbd8430f708723251fee7b",
+    "build_info_sha256": "8bb272cc08d32d05938d35bfab85e58ae63800dd11ddd98fbbfda5026ba2fcad",
+    "package_evidence_sha256": "73f433f38043ffe85f47e2523f31188336861b7ea37e373f24d1d29b547792f7",
+    "host_contract": "light-media.sdk-resources/v1"
+  },
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App and newly indexed worker with owned loopback Lark protocol peer",
+    "environment": "Read-only Alpine 3.22, tmpfs and loopback only. Synthetic encrypted payload, site and provider. No original or production credentials.",
+    "test": "TestInstalledLarkEncryptedAdminAndFetchChatsLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_lark_messager_encrypted_admin_linux_test.go",
+    "seconds": 1.81,
+    "host_elf_sha256": "d9eb00e6efef090b21bf4f41f0470c215a26e5c55d012feef031b0d37c27e58e",
+    "runner_sha256": "afaf5561a62bb2302a91767f849f6e2247e6a8ac71161426a796df936f466125",
+    "runtime_log_sha256": "f2c8f5ed1bf17d04f12776a2ac793f71f78c13a4d3307bd9cf2abae3b1acc540",
+    "observations": [
+      "The exact newly built indexed worker queried one group while disabled using a fresh bearer token and the installed source query parameters. The group result appeared once on the standard data-page endpoint.",
+      "After enabling the worker, a real HTTP AES-CBC callback with signature headers and no verification token granted the configured administrator a native site disable. Its processing reaction and exact cleanup used the active token. A separately signed non-administrator received the source denial. An unsigned encrypted administrator command did not alter the site.",
+      "The next group lookup used a third temporary bearer and saved a safe numeric provider rejection without the provider message. An actual subsequent Lark message still used the unchanged warm active token. A malformed group response used its own fourth token and saved an empty failure. Both result cards were consumed once."
+    ]
+  },
+  "adaptations_and_open": [
+    "The fixed source includes arbitrary provider message or exception text in the result. The Go worker keeps the safe numeric code and sanitizes provider freeform text and malformed payload errors.",
+    "The fixture covered the installed data-page endpoint and sequential one-shot display. It did not rerun plain webhook, ordinary reaction-only or prior cryptographic primitive tests.",
+    "Clone/reload and real attachment upload still need distinct installed-worker evidence. Known provider-error suppression versus ambiguous sends, exact source failure notice, and remaining host differences are still tracked."
+  ]
+}
