@@ -64,12 +64,7 @@ func (p *Plugin) refresh(ctx context.Context, raw json.RawMessage, caller sdk.Ho
 				Path string `json:"path"`
 			} `json:"target_diritem"`
 		} `json:"transferinfo"`
-		Media *struct {
-			Title    *string         `json:"title"`
-			Year     json.RawMessage `json:"year"`
-			Type     *string         `json:"type"`
-			Category *string         `json:"category"`
-		} `json:"mediainfo"`
+		Media json.RawMessage `json:"mediainfo"`
 	}
 	if err := json.Unmarshal(event.Data, &eventData); err != nil {
 		return err
@@ -77,10 +72,21 @@ func (p *Plugin) refresh(ctx context.Context, raw json.RawMessage, caller sdk.Ho
 	if eventData.Transfer == nil || eventData.Transfer.Target == nil || eventData.Transfer.Target.Path == "" {
 		return nil
 	}
-	if eventData.Media == nil {
+	var media *struct {
+		Title    *string         `json:"title"`
+		Year     json.RawMessage `json:"year"`
+		Type     *string         `json:"type"`
+		Category *string         `json:"category"`
+	}
+	if len(eventData.Media) == 0 {
 		return errors.New("transfer event has no mediainfo")
 	}
-	media := eventData.Media
+	if err := json.Unmarshal(eventData.Media, &media); err != nil {
+		return err
+	}
+	if media == nil {
+		return errors.New("transfer event has no mediainfo")
+	}
 	item := sdk.MediaRefreshItem{
 		Title: media.Title, Year: media.Year, Type: media.Type, Category: media.Category,
 		TargetPath: &eventData.Transfer.Target.Path,
@@ -120,16 +126,22 @@ func (p *Plugin) refresh(ctx context.Context, raw json.RawMessage, caller sdk.Ho
 }
 
 func delaySeconds(delay any) (float64, error) {
+	var raw string
 	switch value := delay.(type) {
-	case float64:
-		return value, nil
+	case json.Number:
+		raw = value.String()
 	case string:
-		return strconv.ParseFloat(strings.TrimSpace(value), 64)
+		raw = strings.TrimSpace(value)
 	case bool:
 		return 1, nil // Called only for a truthy delay.
 	default:
 		return 0, errors.New("invalid media refresh delay")
 	}
+	seconds, err := strconv.ParseFloat(raw, 64)
+	if errors.Is(err, strconv.ErrRange) {
+		err = nil // Python's float(string) saturates to infinity.
+	}
+	return seconds, err
 }
 
 func wallSeconds() float64 {

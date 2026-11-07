@@ -1,6 +1,7 @@
 package mediaserverrefresh
 
 import (
+	"bytes"
 	"context"
 	_ "embed"
 	"encoding/json"
@@ -83,7 +84,9 @@ func (p *Plugin) initialize(raw json.RawMessage) error {
 		return errors.New("MediaServerRefresh configuration has no get method")
 	}
 	var config configuration
-	if err := json.Unmarshal(raw, &config); err != nil {
+	decoder := json.NewDecoder(bytes.NewReader(raw))
+	decoder.UseNumber()
+	if err := decoder.Decode(&config); err != nil {
 		return err
 	}
 	p.mu.Lock()
