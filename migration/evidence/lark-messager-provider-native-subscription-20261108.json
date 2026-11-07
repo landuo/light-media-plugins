@@ -1,0 +1,63 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and indexed worker in an isolated container. Chat, metadata and tracker peers were controlled loopback fixtures. Historical RSS recognition and the running subscription state were seeded for this scenario.",
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2693–2731; app/chain/subscribe.py:895–944,951–1013; app/api/endpoints/subscribe.py:174–198",
+      "target": "light-media internal/app/{plugin_original_chat_media_subscribe,subscription_add_source,subscription_provider_media,subscription_runtime}.go",
+      "behavior": "Chat submits title/year/type/season plus optional TMDB identity. The configured recognizer can establish a different provider identity after selection. Explicit provider input retains its source. The host persists a namespaced provider identity and the verified season episodes."
+    },
+    {
+      "source": "app/chain/subscribe.py:1027–1072",
+      "target": "light-media internal/app/{subscription_add_source,core_business_source_facts,extension_contract}.go",
+      "behavior": "A successful subscription produces a chat notice and SubscribeAdded. The native event carries a provider-namespaced key and the background statistics input preserves separate provider fields."
+    },
+    {
+      "source": "app/chain/subscribe.py:1908–1955",
+      "target": "light-media internal/app/{plugin_original_subscribe_chat_refresh_match,plugin_original_subscribe_chat_refresh_recognition,subscription_provider_matching}.go",
+      "behavior": "RSS checks typed identity before admitting a recognized release. For alternate providers the host requires the exact source and ID, extending the fixed source TMDB/Douban conflict checks to prevent cross-provider numeric collisions."
+    },
+    {
+      "source": "MoviePilot-Frontend 2829e3b08214348f05ff2f5beae644882eccad58 src/components/cards/SubscribeCard.vue:249–265; src/components/dialog/SubscribeEditDialog.vue:145–166,232–243",
+      "target": "light-media web/src/{components/Subscriptions.vue,features/subscriptions.ts}",
+      "behavior": "Existing subscription detail and edit actions preserve provider identity. Source and embedded bundle compiled; browser interaction is still pending."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderSubscriptionFallbackLinuxAMD64",
+    "seconds": 2.01,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "37288b8b5935e8c3c001e2be3eca272abd889639",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "fd4fb6eeb6b89566feedce8f58ac0827e64c7446c4869352cd82a322f502689c",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_source_commit_at_compile": "a30f747f32f8182de111d20be3a6ee65789a2410",
+    "host_embedded_index_sha256": "6b6c8751df63291f3e460fa75bac78d5d89e23f4719a9a9f564e066894133b45",
+    "host_elf_sha256": "8db8ec81f558b83fb2923ada1330d9050e64ae0d3d7860b9a016482149707a03",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "b2b6c337318d5aec227650b74559d510c31fa1b982b86f01221546efeb644f3e",
+    "runtime_log_sha256": "b36a1928abcf73c7c3aa46aefb280dc1dbc29e28429817408b4c677ed94818f9",
+    "observations": [
+      "A real installed Lark worker and Go App handled owned chat selection. The AniList card resolved to AniList 777, the TMDB lookup returned no results, and configured title recognition resolved Bangumi 777.",
+      "The App saved season 1 and provider episodes 1–4. The subscription, sealed origin and emitted SubscribeAdded event preserved Bangumi 777 without a TMDB ID or selected AniList alias.",
+      "One genuine Lark refresh owned a sealed RSS batch containing a freshly recognized Bangumi 777 and a seeded historical AniList 777. The root succeeded and its persisted decision selected only the exact opaque Bangumi candidate ID. There was no preview, intent, material lookup, or downloader Add."
+    ]
+  },
+  "frontend": {
+    "status": "build_passed_browser_pending",
+    "command": "npm run build",
+    "binding": "37288b8b5935e8c3c001e2be3eca272abd889639"
+  },
+  "adaptations_and_open": [
+    "The provider identity is a namespaced host media key. It cannot supply a TMDB number. Only the existing App, local database and installed worker are live; all external peers are simulated.",
+    "This run did not reopen the database across a process restart or exercise ordinary search, UI editing, or direct provider-only download and local import. RSS currently verifies matching without admitting a provider-only write.",
+    "The isolated fixture did not provision source subscription-statistics sharing settings. Its background statistics child returned SUBSCRIPTION_STATS_DEPENDENCY; the saved subscription, event and matching continued. External statistics delivery was not exercised."
+  ]
+}

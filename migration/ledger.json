@@ -68134,6 +68134,33 @@
         "fixture_sha256": "542badf823fd2057bdb45b540b4ac5df3d2a370c280f5ec10823fc44eba22eca",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
       }
+    },
+    {
+      "id": "larkmessager.native_provider_subscription.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkProviderSubscriptionFallbackLinuxAMD64"
+      ],
+      "observations": [
+        "A real installed Lark worker and Go App handled owned chat selection. The AniList card resolved to AniList 777, the TMDB lookup returned no results, and configured title recognition resolved Bangumi 777.",
+        "The App saved season 1 and provider episodes 1–4. The subscription, sealed origin and emitted SubscribeAdded event preserved Bangumi 777 without a TMDB ID or selected AniList alias.",
+        "One genuine Lark refresh owned a sealed RSS batch containing a freshly recognized Bangumi 777 and a seeded historical AniList 777. The root succeeded and its persisted decision selected only the exact opaque Bangumi candidate ID. There was no preview, intent, material lookup, or downloader Add."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-provider-native-subscription-20261108.json": "872f42e8de0f2c741be70c111bfe24606100b80c12aa28b3a1c49e34f700300f"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "37288b8b5935e8c3c001e2be3eca272abd889639",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "fixture_sha256": "fd4fb6eeb6b89566feedce8f58ac0827e64c7446c4869352cd82a322f502689c",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+      }
     }
   ],
   "scope": {
@@ -68207,7 +68234,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "9ec6a295308e43f6bfe091f54e1052a28a6159a1",
+      "host_HEAD": "37288b8b5935e8c3c001e2be3eca272abd889639",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68218,12 +68245,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 full plugin instances accepted. Lark episode and full RSS quality magnets, guarded local replacement, ordered retirement, and ordinary chat single-episode Add/import passed. Code and evidence remain local.",
-      "tests_running": "None. Episode quality passed on the first run and was not repeated. Corrected full quality and direct chat episode scenarios both passed on the focused run.",
-      "latest_detail": "migration/evidence/lark-messager-rss-quality-magnets-20261108.json",
+      "delivery": "17/22 full plugin instances accepted. Lark native provider-only chat subscription creation, event and RSS source isolation passed. Code and evidence remain local.",
+      "tests_running": "None. One focused native Linux Lark provider-subscription test passed. The embedded web build passed; the provider-subscription browser path remains unverified.",
+      "latest_detail": "migration/evidence/lark-messager-provider-native-subscription-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager with worker 319ca00 and indexed package in work/lark-worker-browser-form-20261108/packaging/linux-amd64 and host 9ec6a295. Reuse all ordinary and quality magnet evidence. Next implement the provider-only mutation identity path from pinned title recognition through durable source-keyed subscription creation, matching and actual safe download/organization, without fake TMDB IDs or retired ingress. Legacy empty-reference tracker confirmation has been aligned in code; verify the distinct recovery branch only if needed. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager with the same indexed worker 319ca00 and host 37288b8b. Reuse all accepted magnet and provider subscription evidence. Next carry the verified provider identity through direct and subscription material confirmation, actual Add, completion and local organization, without fake TMDB IDs or retired ingress. Verify provider-only UI and restart as part of a distinct acceptance scenario. Verify legacy empty-reference tracker confirmation only on its separate recovery branch. Register only after agreed scope passes.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",

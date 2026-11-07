@@ -206,8 +206,12 @@ A separate ordinary Lark selection submitted and organized only S01E01. See
 `migration/evidence/lark-messager-chat-episode-magnet-20261108.json`.
 Current previews archive exact material. The legacy empty-reference fallback
 now uses the same tracker confirmation path for ordinary subscriptions and
-chat, with its own distinct recovery evidence still open. Provider-only
-writes remain open and must preserve the selected or recognized source key.
+chat, with its own distinct recovery evidence still open. A native Lark
+run now confirms provider-only chat subscription creation after configured
+recognition, the persisted event, and RSS isolation of equal numbers from
+Bangumi and AniList. The source-aware subscription editor builds. Its browser
+and restart acceptance, provider-only downloads and local organization remain
+open. See `migration/evidence/lark-messager-provider-native-subscription-20261108.json`.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
