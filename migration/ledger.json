@@ -10564,11 +10564,12 @@
       ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "implementing",
+      "status": "verified",
       "evidence_ids": [
         "iyuuautoseed.owned_linux_lifecycle.20261107",
         "iyuuautoseed.seeded_owned_linux.20261107",
-        "iyuuautoseed.lifecycle_browser_owned_linux.20261107"
+        "iyuuautoseed.lifecycle_browser_owned_linux.20261107",
+        "iyuuautoseed.native_amd64_installed_package.20261107"
       ],
       "review": {
         "status": "pending",
@@ -10675,6 +10676,16 @@
         "full_amd64_install_response_and_form": "unverified",
         "remaining": "Native isolated Linux amd64 App verification. Do not repeat local emulator cases.",
         "whole_plugin_accepted": false
+      },
+      "accepted_native_package": {
+        "status": "verified",
+        "evidence": {
+          "path": "migration/evidence/iyuuautoseed-acceptance-20261107.json",
+          "sha256": "6290e411b2e445fb76874335a0aa3a5a5d41255780da88ebb88d0ab362299ee0"
+        },
+        "artifact_sha256": "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6",
+        "worker_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
+        "whole_plugin_accepted": true
       }
     },
     {
@@ -66042,6 +66053,34 @@
         "evidence/iyuuautoseed-lifecycle-browser-package-20261107.json": "147508f2ac69c8f7b1f7de9ac80cd49925eefd0b5ad1b25ec8b7b9b07cb0b159"
       },
       "reviewer": "/root/kodi (lifecycle) and coordinator (Chrome)"
+    },
+    {
+      "id": "iyuuautoseed.native_amd64_installed_package.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.IYUUAutoSeed"
+      ],
+      "commands": [
+        "TestIYUUInstalledAMD64PackageStartup on native isolated Linux amd64 with the exact standard ZIP"
+      ],
+      "inputs": "Installed IYUU 2.22 reference, immutable candidate ZIP, temporary actual App and owned loopback repo.",
+      "observations": "Three bundle SHA checks succeeded. The actual App downloaded the same ZIP once, installed it, initialized and published the IYUU worker, then served the native form containing the source label. Test passed in 2.81 seconds.",
+      "binding": {
+        "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "environment": "Native Linux x86_64, cached alpine:3.22 in a disconnected read-only temporary container, unprivileged user, own tmpfs and loopback artifact repository. The actual mounted App handler, including request logging, was used without a production code overlay.",
+        "plugin_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
+        "host_checkout": "8332fa4fd56acaec903c0901f671c13e417b2448",
+        "host_test_commit": "791393a9783d4fa28a359c0e9d9e3b34cc9aef91",
+        "target_files": {
+          "cmd/iyuu-auto-seed/main.go": "1042396881e8c044ade40fe8f1653ef43c374d9284c773375313bc75c5232d89",
+          "build-plugins.json": "a610d0fa11a300abc55c5c759c3b6783773b37a1a61f52ff70a7d4c13dda54cc"
+        }
+      },
+      "artifacts": {
+        "evidence/iyuuautoseed-acceptance-20261107.json": "6290e411b2e445fb76874335a0aa3a5a5d41255780da88ebb88d0ab362299ee0"
+      },
+      "reviewer": "Coordinator, with earlier independent source and package reviews"
     }
   ],
   "scope": {
@@ -66088,21 +66127,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 8,
+      "functional_verified_instances": 9,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 7,
-      "functional_verified_count_scope": "Eight of 22 in current scope accepted. Original inventory has 23 and includes deferred MergeMessageNotify. Private state and deployment remain separate.",
+      "business_families_verified": 8,
+      "functional_verified_count_scope": "Nine of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
       "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "8332fa4fd56acaec903c0901f671c13e417b2448",
+      "host_HEAD": "791393a9783d4fa28a359c0e9d9e3b34cc9aef91",
       "SDK_source_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
       "SDK_current_files": 106,
       "SDK_current_origin_sha256": "ca37a259ece8a7213cc35a01d35371b0cd2e3be6e38bc9177072204d74a14eb5",
@@ -66113,14 +66152,15 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight of 22 current-scope instances accepted. IYUU reload, cold restart, clone isolation and native Chrome save passed. Linux amd64 candidate ZIP validated, installed files verified, and exact entry SDK init passed. Full amd64 App startup after installation remains unverified. No push.",
+      "delivery": "IYUUAutoSeed 2.22 passed the native amd64 installed ZIP and form gate. Nine of 22 current-scope instances accepted. Native and previous Linux runtime evidence retained. No push or deployment.",
       "tests_running": "None for IYUU. Stage-specific install and init passed before emulated host faults. All prior passed scenarios reused.",
-      "latest_detail": "features[plugin.IYUUAutoSeed].amd64_installed_startup_diagnostic",
+      "latest_detail": "features[plugin.IYUUAutoSeed].accepted_native_package",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Close the IYUUAutoSeed 2.22 amd64 full-App installed startup gate with a stage-specific diagnostic or native isolated Linux amd64. The exact ZIP entry passed SDK init under two parent architectures, and Linux arm64 lifecycle and Chrome are closed. Reuse all passed evidence without repeating those runs. Add the package build registry only after this gate. Then move to SystemProcess 1.1. Keep MergeMessageNotify deferred.",
+      "next_complete_slice": "Continue SystemProcess 1.1. Its Go worker and fixed-source replay are implemented. Verify the owned Linux App process table, config and dashboard, then browser/package only as needed. Keep MergeMessageNotify deferred.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
-      "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000"
+      "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
+      "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66137,7 +66177,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Close the IYUUAutoSeed 2.22 amd64 full-App installed startup gate with a stage-specific diagnostic or native isolated Linux amd64. The exact ZIP entry passed SDK init under two parent architectures, and Linux arm64 lifecycle and Chrome are closed. Reuse all passed evidence without repeating those runs. Add the package build registry only after this gate. Then move to SystemProcess 1.1. Keep MergeMessageNotify deferred.",
+    "next_complete_slice": "Continue SystemProcess 1.1. Its Go worker and fixed-source replay are implemented. Verify the owned Linux App process table, config and dashboard, then browser/package only as needed. Keep MergeMessageNotify deferred.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

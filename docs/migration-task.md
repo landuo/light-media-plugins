@@ -1,46 +1,22 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (eight of 22 in scope accepted)
+## Current resume (nine of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
 still has 23 instances, of which 22 are in the current migration. The saved
 Merge evidence and four local work-in-progress files are retained separately.
 
-IYUUAutoSeed 2.22 is the active plugin. Its installed API helper is
-byte-identical to the 2.19 original and the Go helper has a source replay in
-this checkout. The paired host projection can opt in to qBittorrent's
-native availability and completed-byte fields.
-See `migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json`
-for the paired revisions and observations.
+IYUUAutoSeed 2.22 is accepted. The exact Linux amd64 package installed,
+initialized and served its source-native form on an isolated native x86_64
+host. The earlier emulated host faults are preserved separately. Source
+replays and actual seeded, reload, clone and Chrome evidence were reused.
+The local build registry now includes IYUU. See
+`migration/evidence/iyuuautoseed-acceptance-20261107.json`.
 
-The standalone IYUU 2.22 Go worker now binds the source lifecycle, public cron,
-private one-shot and interval, downloader operations, site lookup and torrent
-material handling. The paired host records a real isolated Linux install,
-native form, config save, a single empty downloader pass with a renewed private
-lease, and uninstall. Downloaders, site resolution and torrent handling have
-separate controlled source replays. See
-`migration/evidence/iyuuautoseed-worker-runtime-20261107.json`.
-
-IYUU now renews reverse-call capacity within a large pass and persists all
-three source-sized caches, including authenticated clone lineage after exact-ID
-updates. An isolated Linux run reached the late seed after 24 existing
-candidates and executed paused add, marker cleanup, recheck and start once.
-It also verified the 429 cache and success history. The first Linux run exposed
-an inherited HTTP/2 ALPN mismatch in the Requests-compatible transport, fixed
-and verified with the same owned case. See
-`migration/evidence/iyuuautoseed-seeded-capacity-20261107.json`.
-
-IYUU reload, cold startup, clone isolation and native Chrome save passed.
-The exact amd64 ZIP also passed the stage-specific installed SDK handshake
-and initializer in the emulated App. The emulated Go host then crashed in
-request logging and, with that wrapper isolated, in its garbage collector.
-The complete native amd64 install response and form remain open. Reuse the
-passed evidence and do not repeat the emulator runs.
-`migration/evidence/iyuuautoseed-amd64-startup-diagnostic-20261107.json`.
-
-SystemProcess 1.1 is the next implementation. The IYUU build registry
-entry remains gated on its native amd64 check.
+SystemProcess 1.1 is the active implementation. The Go entry uses the
+verified Linux sampler and the source-native form, detail and dashboard.
+Verify the actual owned host before package and browser acceptance.
 
 AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
 and current package acceptance on SDK105. The local build registry includes
