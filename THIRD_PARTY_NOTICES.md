@@ -115,7 +115,7 @@ interpreter requirement.
 
 ## MergeMessageNotify Markdown conversion
 
-Pushover's Apprise adapter uses Goldmark v1.8.7, commit
+The Pushover and Matrix Apprise adapters use Goldmark v1.8.7, commit
 `6dafb0cf955a823afd513a641b6747424c40ee5d`, under the MIT license.
 The license is in `third_party/goldmark-LICENSE` and belongs in the
 MergeMessageNotify package's notice inventory. The conversion reference is the

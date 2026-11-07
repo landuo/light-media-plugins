@@ -26,6 +26,14 @@ func TestSourceZulip199(t *testing.T) {
 	testSourceHTTPProvider(t, "testdata/zulip-1.9.9.json")
 }
 
+func TestSourceFlockAndProwl199(t *testing.T) {
+	testSourceHTTPProvider(t, "testdata/flock-prowl-1.9.9.json")
+}
+
+func TestSourceFlockImage199(t *testing.T) {
+	testSourceHTTPProvider(t, "testdata/flock-image-1.9.9.json")
+}
+
 func testSourceHTTPProvider(t *testing.T, path string) {
 	t.Helper()
 	var fixture struct {
@@ -61,7 +69,7 @@ func testSourceHTTPProvider(t *testing.T, path string) {
 					return Response{}, err
 				}
 				now := time.Now()
-				if i > 0 && now.Sub(last)+20*time.Millisecond < time.Duration(row.Waits[i-1]*float64(time.Second)) {
+				if i > 0 && i-1 < len(row.Waits) && now.Sub(last)+20*time.Millisecond < time.Duration(row.Waits[i-1]*float64(time.Second)) {
 					t.Errorf("request %d did not honor the source interval", i)
 				}
 				last = now

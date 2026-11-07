@@ -26,16 +26,9 @@ func parseJoinService(raw string) (*joinService, bool) {
 	if !alphanumericToken32.MatchString(strings.TrimSuffix(key, "\n")) {
 		return nil, false
 	}
-	s := &joinService{key: strings.TrimFunc(key, sourceSpace), priority: "0", targets: targets, includeImage: true}
+	s := &joinService{key: strings.TrimFunc(key, sourceSpace), priority: providerPriority(sourceUnquote(u.query["priority"])), targets: targets, includeImage: true}
 	if !s.configure(u) {
 		return nil, false
-	}
-	priority := strings.ToLower(sourceUnquote(u.query["priority"]))
-	for _, pair := range [][2]string{{"l", "-2"}, {"m", "-1"}, {"n", "0"}, {"h", "1"}, {"e", "2"}, {"-2", "-2"}, {"-1", "-1"}, {"0", "0"}, {"1", "1"}, {"2", "2"}} {
-		if strings.HasPrefix(priority, pair[0]) {
-			s.priority = pair[1]
-			break
-		}
 	}
 	if value, specified := u.query["image"]; specified {
 		s.includeImage = parseBool(value, false)

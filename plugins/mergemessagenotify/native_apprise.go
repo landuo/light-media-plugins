@@ -13,6 +13,7 @@ import (
 func NativeApprise(transport apprise.Transport, readLocal apprise.LocalAttachmentReader) func(context.Context, AppriseRequest) (any, error) {
 	return func(ctx context.Context, input AppriseRequest) (any, error) {
 		client := apprise.New(transport)
+		defer client.Close(ctx)
 		client.ReadLocalAttachment = readLocal
 		for _, raw := range input.URLs {
 			if _, err := client.Add(raw); err != nil {

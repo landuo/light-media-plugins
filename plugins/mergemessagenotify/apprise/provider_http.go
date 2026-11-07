@@ -14,6 +14,16 @@ const appriseInfoIcon72 = "https://github.com/caronc/apprise/raw/master/apprise/
 
 var alphanumericToken32 = regexp.MustCompile(`(?i)^[a-z0-9]{32}$`)
 
+func providerPriority(value string) string {
+	value = strings.ToLower(value)
+	for _, pair := range [][2]string{{"l", "-2"}, {"m", "-1"}, {"n", "0"}, {"h", "1"}, {"e", "2"}, {"-2", "-2"}, {"-1", "-1"}, {"0", "0"}, {"1", "1"}, {"2", "2"}} {
+		if strings.HasPrefix(value, pair[0]) {
+			return pair[1]
+		}
+	}
+	return "0"
+}
+
 type providerHTTPOptions struct {
 	overflow, format string
 	emojis, verify   bool
@@ -69,6 +79,15 @@ func (s *providerHTTPOptions) post(endpoint, contentType string, data []byte) Re
 		HeaderOrder: [][2]string{{"User-Agent", "Apprise"}, {"Content-Type", contentType}},
 		Verify:      s.verify, Timeout: s.timeout,
 	}
+}
+
+func (s *providerHTTPOptions) postForm(endpoint, data string) Request {
+	const contentType = "application/x-www-form-urlencoded"
+	call := s.post(endpoint, contentType, []byte(data))
+	delete(call.Headers, "Content-Type")
+	call.Headers["Content-type"] = contentType
+	call.HeaderOrder[1][0] = "Content-type"
+	return call
 }
 
 // Join and IFTTT both read the credential from the authority. With userinfo

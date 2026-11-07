@@ -32,7 +32,14 @@
     "gchat",
     "slack",
     "tgram",
-    "zulip"
+    "zulip",
+    "flock",
+    "prowl",
+    "spush",
+    "rocket",
+    "rockets",
+    "matrix",
+    "matrixs"
   ],
   "upstream_files_sha256": {
     "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
@@ -232,6 +239,44 @@
       "original_sha256": "a6cc435d7f25ba8a2d1ea88495256dbcc445610f3f5d92cca464b90987bed830",
       "source_observations": "testdata/zulip-1.9.9.json",
       "reason": "Port default and self-hosted organization URLs, scoped Basic auth, stream and private recipients, payload order, and source size/response rules."
+    },
+    {
+      "file": "flock.go",
+      "original_path": "apprise/plugins/flock.py",
+      "original_sha256": "decff173dd49befb28e23f08cef9664825ff62411740960e51c8d350cce905d9",
+      "source_observations": "testdata/flock-prowl-1.9.9.json",
+      "reason": "Port webhook/native aliases, user and channel targets, FlockML encoding and source status handling.",
+      "source_boundary_observations": "testdata/flock-image-1.9.9.json"
+    },
+    {
+      "file": "prowl.go",
+      "original_path": "apprise/plugins/prowl.py",
+      "original_sha256": "892668cba5478cb9e4ef368e2012739ccb5dd1ca04dc62a5d42331135de4895d",
+      "source_observations": "testdata/flock-prowl-1.9.9.json",
+      "reason": "Port key and provider key validation, priority, no send interval, message sizing and original form."
+    },
+    {
+      "file": "simplepush.go",
+      "original_path": "apprise/plugins/simplepush.py",
+      "original_sha256": "f63d15a80436bfcb6febefac652ff63a7e4234c2bf5012c94651c3c31eb38b4c",
+      "source_observations": "testdata/simplepush-1.9.9.json",
+      "reason": "Port plaintext and AES-CBC protocol payloads, per-client IV reuse, and exact HTTP/JSON success conditions.",
+      "crypto": "Go standard library AES-CBC, PKCS7, SHA-1 key derivation and URL-safe Base64. Offline reference used the installed cryptography 49.0.0 version."
+    },
+    {
+      "file": "rocketchat.go",
+      "original_path": "apprise/plugins/rocketchat.py",
+      "original_sha256": "41ca5b774eb2a39e3c4650d99c9352a5a79be09ef6f0ec74e010ee89a8a65adb",
+      "source_observations": "testdata/rocketchat-1.9.9.json",
+      "reason": "Port webhook, API-token and login modes, grouped targets, exact headers, failure continuation and logout."
+    },
+    {
+      "file": "matrix.go",
+      "original_path": "apprise/plugins/matrix.py",
+      "original_sha256": "02aeca506dfd2533ceca741207f1a7e9a8f81a8fdf4ac0dbef3c31fad2317dab",
+      "source_observations": "testdata/matrix-1.9.9.json",
+      "reason": "Port three webhook formats, direct v2/v3, discovery, acquired-token session, rooms, media, retry and cleanup.",
+      "markdown_reference": "Installed Python-Markdown 3.11.2 default conversion; Go Goldmark v1.8.7, with differences beyond sampled dialect cases still open."
     }
   ]
 }

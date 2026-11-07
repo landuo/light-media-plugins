@@ -73,6 +73,20 @@ type Client struct {
 
 func New(transport Transport) *Client { return &Client{transport: transport} }
 
+// Close releases sessions created by this notification client.
+func (c *Client) Close(ctx context.Context) {
+	if c.transport == nil {
+		return
+	}
+	for _, service := range c.services {
+		if closer, ok := service.(interface {
+			closeNotification(context.Context, Transport)
+		}); ok {
+			closer.closeNotification(ctx, c.transport)
+		}
+	}
+}
+
 //go:embed testdata/catalog.json
 var catalogJSON []byte
 var knownSchemas = func() map[string]bool {
@@ -178,6 +192,16 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseTelegramService(raw)
 	case "zulip":
 		service, valid = parseZulipService(raw)
+	case "flock":
+		service, valid = parseFlockService(raw)
+	case "prowl":
+		service, valid = parseProwlService(raw)
+	case "spush":
+		service, valid = parseSimplePushService(raw)
+	case "rocket", "rockets":
+		service, valid = parseRocketChatService(raw)
+	case "matrix", "matrixs":
+		service, valid = parseMatrixService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -193,6 +217,10 @@ func (c *Client) addService(raw string) (bool, error) {
 			service, valid = parseGoogleChatService(native)
 		} else if native, ok := slackNativeURL(raw); ok {
 			service, valid = parseSlackService(native)
+		} else if native, ok := flockNativeURL(raw); ok {
+			service, valid = parseFlockService(native)
+		} else if native, ok := matrixNativeURL(raw); ok {
+			service, valid = parseMatrixService(native)
 		} else {
 			return false, ErrUnsupported
 		}

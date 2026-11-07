@@ -19,9 +19,9 @@ Valid unported schemes return ErrUnsupported. Supported providers can resolve
 HTTP attachments and host-authorized local files. Invalid attachment
 preparation returns False and an empty attachment list is allowed.
 
-Pushover's Markdown-to-HTML conversion uses Goldmark v1.8.7 under the MIT
-license in third_party/goldmark-LICENSE. The Go renderer adapts line breaks,
-tables and code spans against the installed Python-Markdown 3.11.2 behavior.
+Pushover and Matrix Markdown-to-HTML conversion use Goldmark v1.8.7 under
+the MIT license in third_party/goldmark-LICENSE. The renderers use each
+provider's extensions and the installed Python-Markdown 3.11.2 reference.
 The package requires no Python runtime.
 
 The embedded Telegram default INFO icon comes from the installed Apprise
