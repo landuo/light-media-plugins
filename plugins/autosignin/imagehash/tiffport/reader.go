@@ -590,6 +590,22 @@ func (d *decoder) decodePalettedPixels(dst image.Image, region decodeRegion) err
 	return nil
 }
 
+func (d *decoder) decodeGrayAlphaPixels(dst *image.NRGBA, region decodeRegion) error {
+	stride := region.rowBytes * 2
+	for y := region.ymin; y < region.rMaxY; y++ {
+		off := (y - region.ymin) * stride
+		for x := region.xmin; x < region.rMaxX; x++ {
+			if off+2 > len(d.buf) {
+				return errNoPixels
+			}
+			gray, alpha := d.buf[off], d.buf[off+1]
+			dst.SetNRGBA(x, y, color.NRGBA{R: gray, G: gray, B: gray, A: alpha})
+			off += 2
+		}
+	}
+	return nil
+}
+
 func (d *decoder) decodeRGBPixels(dst image.Image, region decodeRegion) error {
 	if d.bpp == 16 {
 		img := dst.(*image.RGBA64)
@@ -727,6 +743,8 @@ func (d *decoder) decodePixels(dst image.Image, xmin, ymin, xmax, ymax int) erro
 	switch d.mode {
 	case mGray, mGrayInvert:
 		return d.decodeGrayPixels(dst, region)
+	case mGrayAlpha:
+		return d.decodeGrayAlphaPixels(dst.(*image.NRGBA), region)
 	case mPaletted:
 		return d.decodePalettedPixels(dst, region)
 	case mRGB:
@@ -1040,6 +1058,8 @@ func (d *decoder) newImage() image.Image {
 		return image.NewGray(rect)
 	case mPaletted:
 		return image.NewPaletted(rect, d.palette)
+	case mGrayAlpha:
+		return image.NewNRGBA(rect)
 	case mNRGBA:
 		if d.bpp == 16 {
 			return image.NewNRGBA64(rect)

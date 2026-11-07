@@ -163,6 +163,17 @@ func (d *decoder) initColorModel() error {
 		d.mode = mPaletted
 		d.config.ColorModel = color.Palette(d.palette)
 	case pWhiteIsZero, pBlackIsZero:
+		bits := d.features[tBitsPerSample]
+		extra := d.features[tExtraSamples]
+		if d.firstVal(tPhotometricInterpretation) == pBlackIsZero && d.firstVal(tFillOrder) <= 1 &&
+			len(bits) == 2 && bits[0] == 8 && bits[1] == 8 && len(extra) == 1 && extra[0] == 2 {
+			if compression := d.firstVal(tCompression); compression == cJPEG || compression == cJPEGOld {
+				return UnsupportedError("JPEG luminance and alpha")
+			}
+			d.mode = mGrayAlpha
+			d.config.ColorModel = color.NRGBAModel
+			return nil
+		}
 		d.mode = mGray
 		if d.firstVal(tPhotometricInterpretation) == pWhiteIsZero {
 			d.mode = mGrayInvert

@@ -107,6 +107,8 @@ func DecodePillow(r io.Reader, check func(int, int) error) (image.Image, string,
 		}
 	case mPaletted:
 		mode = "P"
+	case mGrayAlpha:
+		mode = "LA"
 	case mRGBA, mNRGBA:
 		mode = "RGBA"
 	case mCMYK:

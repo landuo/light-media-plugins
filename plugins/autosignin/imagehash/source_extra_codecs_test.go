@@ -4,6 +4,7 @@ import (
 	"bytes"
 	"crypto/sha256"
 	"encoding/base64"
+	"encoding/binary"
 	"encoding/json"
 	"fmt"
 	"os"
@@ -104,6 +105,21 @@ func TestSourceExtraImageCodecs(t *testing.T) {
 			got, err := Hash(data)
 			if err != nil || got != c.Hash {
 				t.Errorf("source 100-bit hash differs: got=%s want=%s err=%v", got, c.Hash, err)
+			}
+			if c.Name == "AVIF-high-mono-12" {
+				t.Run("reserved-matrix", func(t *testing.T) {
+					// libavif's reformat guard rejects the reserved CICP matrix.
+					// Change just the matrix field of the valid nclx color box.
+					color := bytes.Index(data, []byte("nclx"))
+					if color < 0 || color+10 > len(data) || binary.BigEndian.Uint16(data[color+8:color+10]) != 6 {
+						t.Fatal("unexpected source nclx box")
+					}
+					invalid := bytes.Clone(data)
+					binary.BigEndian.PutUint16(invalid[color+8:color+10], 3)
+					if _, err := Decode(invalid); err == nil {
+						t.Fatal("reserved CICP matrix decoded")
+					}
+				})
 			}
 		})
 	}

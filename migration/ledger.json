@@ -9605,7 +9605,15 @@
       "family": "MergeMessageNotify",
       "source_version": "1.20.1",
       "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
+      "source_refresh_pending": {
+        "version": [
+          "1.20.3"
+        ],
+        "entry_sha256": "f87e851eb3e8184adc481ed8e15fa64f05fa4439e2060152eced80fdbbf8fcca",
+        "source_files": 23,
+        "reason": "Live installed source changed since the fixed initial baseline. Refresh before implementation."
+      }
     },
     {
       "id": "plugin.IYUUAutoSeed",
@@ -12444,7 +12452,15 @@
       "family": "BrushFlowLanduo",
       "source_version": "5.2.16",
       "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
+      "source_refresh_pending": {
+        "version": [
+          "5.2.17"
+        ],
+        "entry_sha256": "9793a677a36472a57bdef197fe55eec8709f6ea9656c261a3ec5ae33e736d24b",
+        "source_files": 27,
+        "reason": "Live installed source changed since the fixed initial baseline. Refresh before implementation."
+      }
     },
     {
       "id": "plugin.MergeSiteSwitch",
@@ -65244,11 +65260,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Current codec increment is saved on the local plugin development branch, with host30bf6ae8/SDK105 unchanged. No remote push, merge, production deployment, private import or build-registry promotion.",
-      "tests_running": "No NAS test service active. New codec normal/race/Linux and real ZIP lifecycle passed; no repeat of Main179 or browser. Remaining format differences are tracked; wholeASI not accepted.",
-      "latest_detail": "resume.AutoSignIn_current.latest_20261107; all historical raw tuples remain unchanged",
+      "delivery": "Seven accepted installed instances. Local AutoSignIn continuation adds verified TIFF LA and four opaque high-depth AVIF source cases. Private-state import and remote/production delivery remain separate.",
+      "tests_running": "None. Initial imagehash and AVIF passes followed by targeted guard fixes and an amd64 Linux build. Temporary build binaries removed.",
+      "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
       "local_codec_base": "89750790296a8252996488f8f58c6022eb2326b9; checkpoint commit containing this ledger adds the tested codec increment",
-      "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check."
+      "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
+      "next_complete_slice": "Complete AutoSignIn source-supported remaining decoder branches, then check changed entry paths and run one final package acceptance. Reuse existing valid Main and browser proof. Next sequential plugin is installed MergeMessageNotify 1.20.3 with a refreshed source snapshot."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -66237,6 +66254,68 @@
             "fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json, TIFF-gray2 through TIFF-planar-RGB16-raw",
             "verified": "Seven source-positive layouts match loaded mode, dimensions, pixels, resized grayscale and 100-bit hash. The raw reversed 2-bit palette rejection also matches. go test ./plugins/autosignin/imagehash passed.",
             "remaining": "TIFF variants outside the tested layouts, high-bit AVIF conversion, uncommon CICP and other reachable default-image inputs. Full AutoSignIn acceptance remains open."
+          },
+          "current_continuation_increment": {
+            "status": "TIFF LA and four opaque high-depth AVIF cases verified in the development imagehash entry. Whole AutoSignIn remains implementing.",
+            "base": "b97e026c219aa7ca01090cb2d1b69a716c93946e",
+            "source": "Fixed installed tjupt.py SHA ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0 with Pillow 12.2.0 and libtiff 4.7.1 / libavif 1.4.1 and libyuv 1922.",
+            "source_evidence": {
+              "tiff_source": "work/migration-20261107-continuation/tiff-la-expected.json",
+              "avif_oracle": "work/autosignin-image-gap-20261107/avif-high-depth-source/expected.json",
+              "independent_red_and_formula": "work/autosignin-image-gap-20261107/avif-high-depth-source/differential.json",
+              "permanent_fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
+            },
+            "verified": {
+              "tiff": "One normal imagehash package run passed after adding three source-derived raw, deflate and LZW-predictor LA fixtures.",
+              "avif": "One targeted source fixture run passed all 15 AVIF cases, including four new 10/12-bit opaque cases. Existing 8-bit conversion and orientation cases exercised the changed decoder entry.",
+              "linux_build": {
+                "command": "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath ./cmd/auto-sign-in",
+                "go": "go1.26.10",
+                "exit": 0,
+                "worker_sha256": "c1c92a1af750c294ee4903110b9b1a3e2c500260324ab8498f7107137e3ea0c4",
+                "bytes": 18984478,
+                "scope": "Linux build after the independent-review fixes. Targeted codec fixtures ran on the development machine. Temporary ELF removed."
+              },
+              "post_review_targeted": "Four high-depth AVIF fixture cases and reserved-matrix rejection passed after the matrix gate fix. The three TIFF LA source fixtures passed after the JPEG-layout gate fix. No repeated wider suites."
+            },
+            "implementation": "TIFF keeps both luminance and unassociated alpha through resize. Opaque AVIF converts native AV1 planes before generic RGB quantization. The retained AVIF container decoder is a pinned gav1d v0.2.6 derivative using the same AV1 module.",
+            "target_sha256": {
+              "plugins/autosignin/imagehash/decode_avif.go": "09c8e006b6f88c0b37e63e95b60a7ba72ec7d26c05b5bd28099ce046c1e66eb5",
+              "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "2e1056806ba576fb48201d695faba4c02aa3541f58ad0827f1ffa8b030d1ca36",
+              "plugins/autosignin/imagehash/tiffport/consts.go": "586011e5280715ba4dbd3636d2322f159d2f227885eac426e495bfeb31f604ac",
+              "plugins/autosignin/imagehash/tiffport/reader.go": "52eb2016ae39925e12116d6deeadbe4648022f1e86b2955c9074d08dc382dd03",
+              "plugins/autosignin/imagehash/tiffport/reader_config.go": "88a3bd944ca0b6a7d62a96fd207e420703316dead7d5fe8fe6f2f0862167b0f4",
+              "plugins/autosignin/imagehash/tiffport/source_samples.go": "df5e5d502d7e4b539a971fb850678bbd964d4afcf5f8d04a8a510888623ffadd",
+              "plugins/autosignin/imagehash/NOTICE.txt": "bc11c8415dd8a3cd94c160a3066a8733959ad08dbf612277a5ee4e40768b2820",
+              "plugins/autosignin/imagehash/avifport/ORIGIN.json": "7ae01f2abd6b32f97348d0fc0402b9c021c7e3c4089d7db2e141d1d4d0e20e4f",
+              "plugins/autosignin/imagehash/avifport/avif.go": "c47aecd7d276084c20e1b2199ad1fa95942d55113359640f9d171a1c7deb062e",
+              "plugins/autosignin/imagehash/avifport/color.go": "78b70b47f74c97f4b76abd1ea3165598d07dab8d3057d70687d959fd67843bd6",
+              "plugins/autosignin/imagehash/avifport/color_amd64.go": "e186472f625ee04b02fb7b93fe6b82244021de95ec1782969d678c7498321cb6",
+              "plugins/autosignin/imagehash/avifport/color_amd64.s": "fa72c89bac65e086d7f8a690b76357109a01768a53ac077077968099b23aaee0",
+              "plugins/autosignin/imagehash/avifport/color_arm64.go": "0c65e27efc7a3ec7706d0d547c8b5f54b3dd6755fd4f1438012e983ff5000031",
+              "plugins/autosignin/imagehash/avifport/color_arm64.s": "11a1cd071cb6516d1f8ef9d0161a0edf07867d405e2cc695a66985e89c8d8517",
+              "plugins/autosignin/imagehash/avifport/color_noasm.go": "de98fd5050bb26cc316b4154217c14e1d0dab1a2b36fa0f8b7b24b8a0a40f69b",
+              "plugins/autosignin/imagehash/avifport/color_riscv64.go": "a0aa51f4d3dbb90c0a78ce0ec5a5805905ab80912a415b6b3d0bb33a1af94d05",
+              "plugins/autosignin/imagehash/avifport/color_riscv64.s": "25ef54466e78e117d9821476d9b36887401a89f7c99b1563c8952a94d9ce5e34",
+              "plugins/autosignin/imagehash/avifport/color_row.go": "7893a2b960d2ea2b94e50747336a786f71d694b51837a1bcd3a04b9782d83f7d",
+              "plugins/autosignin/imagehash/avifport/cpu_amd64.go": "193a7991c7f47b0ee0efc2f9c32b9a9d76b5f612d0349ababeee19187cfe5fbb",
+              "plugins/autosignin/imagehash/avifport/cpu_amd64.s": "462ed6010f30c535a8f2c1f5682aff46f1a9fc13ca6ff7303527135458e30165",
+              "plugins/autosignin/imagehash/avifport/exif.go": "e79f81775e68e06a2c3961ff05e562ae0e045c6dbd2a8ead2607ee68dcdc3b97",
+              "plugins/autosignin/imagehash/avifport/gainmap.go": "a009d6a20e0ec0c819dcbfaa35a040a9f0a1b73f94f6b47d8a800eca6762a345",
+              "plugins/autosignin/imagehash/avifport/image.go": "a5e7d54ccf20f0f57264afbe1155da7a73f6d675cdabf826ad99ad091c362d91",
+              "plugins/autosignin/imagehash/avifport/isobmff.go": "ba5084ff0d4a00a1b11d728ab03c605b77ac539c80c72572682fd3d4db21c095",
+              "plugins/autosignin/imagehash/avifport/sequence.go": "83c08d7b24b867c2d71786c00d0b38f6de7a5e3c0dfa8856d6eb3c00f7b4bce9",
+              "plugins/autosignin/imagehash/avifport/tonemap.go": "8d29d978453a57de08008aa3c46e48f245a17e2b57da2bd63aa4e120408fab39",
+              "plugins/autosignin/imagehash/avifport/transform.go": "42e3a3975064a7b8e4fee7988dedbb2e5a9b2d079e83182c1cd3d04030185619",
+              "plugins/autosignin/imagehash/source_extra_codecs_test.go": "e7720c3b49e480cc6d098989f6773f7f70c8eed0fb7dff9356c67ffdc6609851"
+            },
+            "remaining": "High-depth AVIF with alpha and other source-supported matrix branches and valid TIFF layouts (including unresolved JPEG LA handling) still need parity. Run one final package acceptance after the plugin changes, reusing applicable host and browser evidence.",
+            "independent_review": {
+              "reviewer": "/root/notice_api",
+              "method": "Read-only source and target code inspection; no duplicate test run.",
+              "changes": "Check the color matrix before the monochrome fast path. Return Unsupported for JPEG-compressed LA TIFF until its alpha strip decode is implemented. Previously copied JPEG stripes would otherwise silently return a fully transparent image.",
+              "scope": "Opaque high-depth AVIF input lifetime/stride and TIFF LA interleaving/predictor reviewed. Separate-planes LA and JPEG LA remain outside verified layouts."
+            }
           }
         }
       }
@@ -66910,6 +66989,32 @@
       "rollback": "Stoplight-media, restore backed-upbinaryandconsistentdata withinNASprivatebackup, then start; preserve current state before rollback.",
       "delivered_main": false
     },
-    "execution_policy_user_20261107": "Prioritize one usable complete AutoSignIn then next plugin; reuse valid evidence; no repeated seals/projections/approval layers for routine tests; only actual compatibility gaps expand scope; group independent review per whole plugin/major shared logic; preserve all original standards and failures, no extra push/deploy authority."
+    "execution_policy_user_20261107": "Prioritize one usable complete AutoSignIn then next plugin; reuse valid evidence; no repeated seals/projections/approval layers for routine tests; only actual compatibility gaps expand scope; group independent review per whole plugin/major shared logic; preserve all original standards and failures, no extra push/deploy authority.",
+    "live_installed_recheck_20261107": {
+      "method": "One live SQLite query-only read of UserInstalledPlugins and SHA256 comparison of known installed source files, followed by static version inspection of the two changed families. No source plugin imports or real config values.",
+      "instance_count": 23,
+      "added": [],
+      "removed": [],
+      "checked_files": 190,
+      "known_source_files_changed": 26,
+      "changed_family_metadata": {
+        "brushflowlanduo": {
+          "version": [
+            "5.2.17"
+          ],
+          "entry_sha256": "9793a677a36472a57bdef197fe55eec8709f6ea9656c261a3ec5ae33e736d24b",
+          "source_files": 27
+        },
+        "mergemessagenotify": {
+          "version": [
+            "1.20.3"
+          ],
+          "entry_sha256": "f87e851eb3e8184adc481ed8e15fa64f05fa4439e2060152eced80fdbbf8fcca",
+          "source_files": 23
+        }
+      },
+      "scope_decision": "Refresh each changed family against a pinned current source snapshot when its sequential turn starts. Keep original accepted source/evidence and the current AutoSignIn source binding intact.",
+      "private_receipt": "work/migration-20261107-continuation/installed-recheck.json"
+    }
   }
 }

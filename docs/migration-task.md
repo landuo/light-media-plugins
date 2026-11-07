@@ -3,7 +3,7 @@
 ## Current resume (2026-11-07; seven accepted instances)
 
 Read `migration/ledger.json` → `resume.current` and
-`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.tiff_layout_increment`.
+`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment`.
 That ledger is the only status authority. AutoSignIn is still implementing;
 accepted count stays7/23 (6 families). No original private-state import,
 workflow, AI, official grades/RSA, remote push or production deployment.
@@ -38,9 +38,19 @@ RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
 fixtures and one source rejection. The earlier Main, browser and package runs
 apply to their tested revisions.
 
-Next, address the remaining TIFF variants, high-bit AVIF and other reachable
-default-image inputs listed in the ledger. Verify changed paths and reuse
-applicable acceptance evidence.
+The latest continuation matches three TIFF luminance and alpha cases and four
+opaque 10/12-bit AVIF cases to the installed Tjupt hash. It retains the pinned
+gav1d AVIF container decoder to access planes before RGB conversion. The
+changed imagehash paths passed their targeted checks and the Linux worker
+built successfully. The prior installation and browser records remain bound
+to their own revisions.
+
+The read-only installed list still has 23 instances. MergeMessageNotify is
+now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
+their turns arrive. AutoSignIn is the current plugin. Finish its remaining
+source-supported alpha, color matrix and TIFF paths and run one package
+acceptance at the end. Reuse applicable evidence and rerun a test only when
+the behavior it checks changes.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

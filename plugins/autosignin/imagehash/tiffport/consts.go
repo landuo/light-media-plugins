@@ -116,6 +116,7 @@ const (
 	mPaletted
 	mGray
 	mGrayInvert
+	mGrayAlpha
 	mRGB
 	mRGBA
 	mNRGBA
