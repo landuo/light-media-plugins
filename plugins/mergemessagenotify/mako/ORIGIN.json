@@ -90,6 +90,54 @@
       "source_observations": "testdata/source-filters-1.4.1.json",
       "source_observations_sha256": "1f94ef9bf6f2588cb6294887b047f549b8e4499f159616ef8069e3e3bc3ea762",
       "scope": "Ten original TemplateUtil cases. Cached/decorated blocks, call tags and other unported constructs remain outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Port Mako 1.4.1 call tags and namespace shorthand, including inline caller exports, shared call frames, lexical body scope and ordered callback arguments.",
+      "target_files": [
+        "call.go",
+        "parser.go",
+        "template.go",
+        "context.go",
+        "builtins.go",
+        "expression.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/ast.py": "f0248c12c8827349ea6d1b7d88dcf325743c589d04d50fcde63e982a5e44395b",
+        "mako/pyparser.py": "6c0319ab7a64674b58c3be700396c4ad5f0a9df91f6e679b0264a0642df3db66",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d"
+      },
+      "source_observations": "testdata/source-calls-1.4.1.json",
+      "source_observations_sha256": "ddee478ac84c454c613d4af0aaa93e8fa06d8a2bba825518d20a92e8fa58af27",
+      "scope": "Twenty-one original TemplateUtil cases. Python positional-only argument omissions, caller stack internals, cross-template namespace lookup, and unported Python or Mako constructs are outside this proof."
+    },
+    {
+      "installed_plugin_version": "1.20.3",
+      "reason": "Preserve recursive caller exports through tags and control lines, including repeated default evaluation. Expose the caller namespace Context and core metadata. Evaluate positional/star arguments before keyword arguments and both groups before the invocation type check.",
+      "target_files": [
+        "call.go",
+        "parser.go",
+        "template.go",
+        "expression.go",
+        "value.go"
+      ],
+      "source_sha256": {
+        "mergemessagenotify/util.py": "33cd9fa88f42e8e1918ff12d268c5a4260f79e598d2da6b7336428d68028b4a0",
+        "mako/parsetree.py": "c8518e095b1bd74c62192889d942a7f08ed7b524b9a89fc0dd67651278feff57",
+        "mako/codegen.py": "f271c29d3ec96cbaa76724beb38cea2e6dded99e428ce9a2163493c2024a7ae1",
+        "mako/runtime.py": "f70786b1e414652845d04b6780e7b4fada2c16bac83c4f0a87ac9d7096bc9c46",
+        "mako/ast.py": "f0248c12c8827349ea6d1b7d88dcf325743c589d04d50fcde63e982a5e44395b",
+        "mako/pyparser.py": "6c0319ab7a64674b58c3be700396c4ad5f0a9df91f6e679b0264a0642df3db66",
+        "mako/template.py": "869cb055b2aa13f173626bb2ee86768c8d3eb7ad081a374f09cdde554341424d"
+      },
+      "source_observations": "testdata/source-call-boundaries-1.4.1.json",
+      "source_observations_sha256": "f4bfaceec86a7fb4b1ff0df6d520dbbf6bab5ef6dcebe2ca2608115bef0b6804",
+      "scope": "Nine new source-derived cases. Direct raw Namespace member maps and lookup/cache methods, Context copied locals in nested definitions, and other previously unported internals remain outside this proof."
     }
   ]
 }

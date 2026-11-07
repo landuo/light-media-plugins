@@ -6,6 +6,8 @@ type templateParser struct {
 	tokens     []templateToken
 	at         int
 	loops      int
+	calls      int
+	callDefs   map[int]defNode
 	blockLines map[int]bool
 	pageFilter templateFilters
 }
@@ -19,6 +21,7 @@ func controlName(s string) string {
 func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *templateToken, error) {
 	out := []templateNode{}
 	for p.at < len(p.tokens) {
+		at := p.at
 		t := p.tokens[p.at]
 		p.at++
 		if t.kind == "close" {
@@ -184,6 +187,9 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 			switch t.text {
 			case "def", "block":
 				signature, named := t.attrs["name"]
+				if t.text == "block" && named && p.calls > 0 {
+					return nil, nil, fault("CompileException")
+				}
 				var name string
 				var params []parameter
 				var err error
@@ -231,6 +237,12 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 						return nil, nil, ErrUnsupported
 					}
 				}
+				if p.calls != 0 && n.name != "" {
+					if p.callDefs == nil {
+						p.callDefs = map[int]defNode{}
+					}
+					p.callDefs[at] = n
+				}
 				out = append(out, n)
 			case "page":
 				if args := t.attrs["args"]; args != "" {
@@ -264,10 +276,15 @@ func (p *templateParser) nodes(stops map[string]bool) ([]templateNode, *template
 				} else {
 					return nil, nil, ErrUnsupported
 				}
-			case "call":
-				return nil, nil, ErrUnsupported
 			default:
-				return nil, nil, fault("SyntaxError")
+				if t.text != "call" && !strings.Contains(t.text, ":") {
+					return nil, nil, fault("SyntaxError")
+				}
+				n, err := p.parseCall(t)
+				if err != nil {
+					return nil, nil, err
+				}
+				out = append(out, n)
 			}
 		default:
 			return nil, nil, fault("SyntaxError")

@@ -497,16 +497,13 @@ func (x callExpr) eval(e *environment) (any, error) {
 	if err != nil {
 		return nil, err
 	}
-	call, ok := fn.(callable)
-	if !ok {
-		if _, ok := fn.(undefined); ok {
-			return nil, fault("NameError")
-		}
-		return nil, fault("TypeError")
-	}
 	args := []any{}
 	kw := map[string]any{}
+	var keywordOrder []string
 	for _, arg := range x.args {
+		if arg.key != "" || arg.expand == 2 {
+			continue
+		}
 		v, err := arg.value.eval(e)
 		if err != nil {
 			return nil, err
@@ -517,7 +514,19 @@ func (x callExpr) eval(e *environment) (any, error) {
 				return nil, err
 			}
 			args = append(args, vs...)
-		} else if arg.expand == 2 {
+		} else {
+			args = append(args, v)
+		}
+	}
+	for _, arg := range x.args {
+		if arg.key == "" && arg.expand != 2 {
+			continue
+		}
+		v, err := arg.value.eval(e)
+		if err != nil {
+			return nil, err
+		}
+		if arg.expand == 2 {
 			d, ok := v.(dictionary)
 			if !ok {
 				return nil, fault("TypeError")
@@ -531,16 +540,26 @@ func (x callExpr) eval(e *environment) (any, error) {
 					return nil, fault("TypeError")
 				}
 				kw[k] = kv.value
+				keywordOrder = append(keywordOrder, k)
 			}
-		} else if arg.key != "" {
+		} else {
 			if _, ok := kw[arg.key]; ok {
 				return nil, fault("TypeError")
 			}
 			kw[arg.key] = v
-		} else {
-			args = append(args, v)
+			keywordOrder = append(keywordOrder, arg.key)
 		}
 	}
+	call, ok := fn.(callable)
+	if !ok {
+		if _, ok := fn.(undefined); ok {
+			return nil, fault("NameError")
+		}
+		return nil, fault("TypeError")
+	}
+	previous := e.keywordOrder
+	e.keywordOrder = keywordOrder
+	defer func() { e.keywordOrder = previous }()
 	return call(e, args, kw)
 }
 

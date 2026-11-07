@@ -497,6 +497,12 @@ func getAttribute(v any, name string) (any, error) {
 	if s, ok := v.(selfNamespace); ok {
 		return s.attribute(name)
 	}
+	if callers, ok := v.(*callerStack); ok {
+		return callers.current().attribute(name)
+	}
+	if caller, ok := v.(*callerNamespace); ok {
+		return caller.attribute(name)
+	}
 	if _, ok := v.(missingNamespace); ok {
 		return nil, fault("TemplateLookupException")
 	}

@@ -28,6 +28,9 @@ func (c renderContext) attribute(name string) (any, error) {
 			if !ok {
 				return nil, fault("TypeError")
 			}
+			if key == "caller" {
+				return e.callers, nil
+			}
 			v := c.scope.get(key)
 			if _, ok := v.(undefined); ok {
 				if len(a) > 1 {
@@ -46,6 +49,8 @@ func (c renderContext) attribute(name string) (any, error) {
 		}), nil
 	case "kwargs", "lookup", "namespaces", "pop_caller", "push_caller":
 		return nil, ErrUnsupported
+	case "caller_stack":
+		return c.scope.callers, nil
 	}
 	return nil, fault("AttributeError")
 }

@@ -38,13 +38,17 @@ type Field struct {
 type OrderedObject []Field
 type callable func(*environment, []any, map[string]any) (any, error)
 type environment struct {
-	ctx        context.Context
-	values     map[string]any
-	parent     *environment
-	output     *strings.Builder
-	module     *environment
-	strict     bool
-	pageFilter templateFilters // Set on the module scope.
+	ctx          context.Context
+	values       map[string]any
+	parent       *environment
+	output       *strings.Builder
+	module       *environment
+	contextData  *environment // Root Context data before template locals.
+	strict       bool
+	pageFilter   templateFilters // Set on the module scope.
+	callers      *callerStack    // Shared by the render and its lexical scopes.
+	callerFrame  *callerNamespace
+	keywordOrder []string
 }
 
 func (e *environment) get(k string) any {
@@ -73,7 +77,8 @@ var unsupportedBuiltins = func() map[string]bool {
 }()
 
 func (e *environment) child() *environment {
-	return &environment{ctx: e.ctx, values: map[string]any{}, parent: e, output: e.output, module: e.module, strict: e.strict}
+	return &environment{ctx: e.ctx, values: map[string]any{}, parent: e, output: e.output, module: e.module, strict: e.strict,
+		callers: e.callers, callerFrame: e.callerFrame, keywordOrder: e.keywordOrder}
 }
 func (e *environment) check() error { return e.ctx.Err() }
 func normalize(v any) any {
@@ -149,6 +154,8 @@ func truth(v any) bool {
 		return len(x) > 0
 	case unorderedDictionary:
 		return len(x) > 0
+	case *callerStack:
+		return x.current() != nil
 	}
 	return true
 }

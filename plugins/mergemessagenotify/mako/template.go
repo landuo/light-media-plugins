@@ -3,9 +3,12 @@ package mako
 import (
 	"context"
 	"errors"
+	"maps"
 	"math/big"
 	"net/url"
 	"strings"
+	"unicode"
+	"unicode/utf8"
 )
 
 // Render follows the original TemplateUtil boundary: a source syntax/runtime
@@ -37,7 +40,8 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 			}
 		}
 	}
-	e := &environment{ctx: ctx, values: map[string]any{}, output: b, parent: module, module: module}
+	callers := &callerStack{frames: []*callerNamespace{nil}}
+	e := &environment{ctx: ctx, values: map[string]any{}, output: b, parent: module, module: module, callers: callers}
 	for k, v := range variables {
 		e.values[k] = normalize(v)
 	}
@@ -47,6 +51,8 @@ func Render(ctx context.Context, text string, variables map[string]any) (string,
 	e.values["self"] = selfNamespace{e}
 	e.values["local"] = selfNamespace{e}
 	e.values["capture"] = callable(captureFunction)
+	e.values["caller"] = callers
+	module.contextData = &environment{values: maps.Clone(e.values), callers: callers}
 	filtersEnvironment(e)
 	if err = installDefinitions(e, nodes); err == nil {
 		_, err = renderNodes(e, nodes)
@@ -66,6 +72,7 @@ func fallback(text string, err error) (string, error) {
 type templateToken struct {
 	kind, text, extra string
 	attrs             map[string]string
+	attrOrder         []string
 	line              int
 }
 
@@ -168,12 +175,15 @@ func scanTemplate(s string) ([]templateToken, error) {
 			flush()
 			tagStart := i
 			at := i + 2
-			tag := ""
-			for at < len(s) && s[at] >= 'a' && s[at] <= 'z' {
-				tag += s[at : at+1]
-				at++
+			for at < len(s) {
+				r, size := utf8.DecodeRuneInString(s[at:])
+				if !(unicode.IsLetter(r) || unicode.IsDigit(r) || r == '_' || r == '.' || r == ':') {
+					break
+				}
+				at += size
 			}
-			known := tag == "text" || tag == "doc" || tag == "def" || tag == "block" || tag == "page" || tag == "include" || tag == "inherit" || tag == "namespace" || tag == "call"
+			tag := s[i+2 : at]
+			known := tag == "text" || tag == "doc" || tag == "def" || tag == "block" || tag == "page" || tag == "include" || tag == "inherit" || tag == "namespace" || tag == "call" || strings.Contains(tag, ":")
 			if !known {
 				module := strings.HasPrefix(s[i+2:], "!")
 				start := i + 2
@@ -197,7 +207,7 @@ func scanTemplate(s string) ([]templateToken, error) {
 				return nil, err
 			}
 			selfClosing := strings.HasSuffix(strings.TrimSpace(header), "/")
-			attrs, err := parseAttributes(strings.TrimSuffix(strings.TrimSpace(header), "/"))
+			attrs, attrOrder, err := parseAttributes(strings.TrimSuffix(strings.TrimSpace(header), "/"))
 			if err != nil {
 				return nil, err
 			}
@@ -215,7 +225,7 @@ func scanTemplate(s string) ([]templateToken, error) {
 			}
 			tagLine += strings.Count(s[previousTag:tagStart], "\n")
 			previousTag = tagStart
-			out = append(out, templateToken{kind: "tag", text: tag, attrs: attrs, line: tagLine})
+			out = append(out, templateToken{kind: "tag", text: tag, attrs: attrs, attrOrder: attrOrder, line: tagLine})
 			if selfClosing {
 				out[len(out)-1].extra = "self"
 			}
@@ -312,26 +322,30 @@ func scanHeader(s string, start int) (string, int, error) {
 	}
 	return "", 0, fault("SyntaxError")
 }
-func parseAttributes(s string) (map[string]string, error) {
+func parseAttributes(s string) (map[string]string, []string, error) {
 	out := map[string]string{}
+	var order []string
 	for s = strings.TrimSpace(s); s != ""; s = strings.TrimSpace(s) {
 		at := strings.IndexByte(s, '=')
 		if at < 1 {
-			return nil, fault("SyntaxError")
+			return nil, nil, fault("SyntaxError")
 		}
 		name := strings.TrimSpace(s[:at])
 		s = strings.TrimSpace(s[at+1:])
 		if len(s) < 2 || s[0] != '\'' && s[0] != '"' {
-			return nil, fault("SyntaxError")
+			return nil, nil, fault("SyntaxError")
 		}
 		end := strings.IndexByte(s[1:], s[0])
 		if end < 0 {
-			return nil, fault("SyntaxError")
+			return nil, nil, fault("SyntaxError")
+		}
+		if _, exists := out[name]; !exists {
+			order = append(order, name)
 		}
 		out[name] = strings.ReplaceAll(s[1:1+end], "\r\n", "\n")
 		s = s[end+2:]
 	}
-	return out, nil
+	return out, order, nil
 }
 
 type flow int
@@ -575,10 +589,14 @@ func (n defNode) install(e *environment) error {
 	return nil
 }
 func (n defNode) bind(e *environment) (callable, error) {
+	return n.bindWithDefaults(e, e.module)
+}
+
+func (n defNode) bindWithDefaults(e, defaultsScope *environment) (callable, error) {
 	defaults := map[string]any{}
 	for _, p := range n.params {
 		if p.defaultValue != nil {
-			v, err := p.defaultValue.eval(e.module)
+			v, err := p.defaultValue.eval(defaultsScope)
 			if err != nil {
 				return nil, err
 			}
@@ -622,10 +640,18 @@ func (n defNode) bind(e *environment) (callable, error) {
 		if n.buffered || len(n.filters) > 0 {
 			scope.output = &buffer
 		}
-		if err := installDefinitions(scope, n.body); err != nil {
-			return nil, err
-		}
-		_, err := renderNodes(scope, n.body)
+		err := func() error {
+			scope.callerFrame = scope.callers.push()
+			defer scope.callers.pop()
+			if _, isParameter := scope.values["caller"]; !isParameter {
+				scope.values["caller"] = scope.callers
+			}
+			if err := installDefinitions(scope, n.body); err != nil {
+				return err
+			}
+			_, err := renderNodes(scope, n.body)
+			return err
+		}()
 		if err != nil {
 			return nil, err
 		}
