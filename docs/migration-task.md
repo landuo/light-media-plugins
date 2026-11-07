@@ -56,7 +56,12 @@ shared timezone parser now handles the original aliases and suffixes.
 WxPusher accepts UTF-16 and UTF-32 response JSON in both byte orders.
 The targeted source replays and Linux build are recorded in
 `migration/evidence/mergemessagenotify-chanify-pushme-wxpusher-timezone-20261107.json`.
-The other 140 schemes, further Mako behavior, browser, clone and final
+WeCom Bot, Lark and Pushy bring the count to 46 of 183 schemes. Mako
+uses the final page tag for the render signature, filters and caching while
+retaining earlier declarations in the generated scopes. The source replay,
+review follow-ups and exact Linux build are recorded in
+`migration/evidence/mergemessagenotify-wecom-lark-pushy-multiple-pages-20261107.json`.
+The other 137 schemes, further Mako behavior, browser, clone and final
 package acceptance remain open.
 The original installed list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,

@@ -1,0 +1,200 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "mako_product_commit": "f20d74813b26c04997fdbe60edf56777b2b00434",
+  "combined_product_commit": "89495d9a6ff895b5c431595fee143acf7edc2058",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Offline original-source captures, targeted Go replays, independent read-only review and exact Linux/amd64 build. No new host execution, browser, provider account or final package run.",
+  "new_replayed_cases": 67,
+  "apprise": {
+    "version": "1.9.9",
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 46,
+    "schemes_without_native_implementation": 137,
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/apprise/ORIGIN.json",
+      "sha256": "ff949e853987e83fd7280c23c3ff30302a1d1bd0d51a53f0e12890620f0c3fff"
+    },
+    "wecombot": {
+      "source": [
+        "apprise/plugins/wecombot.py:78–133,157–222,224–270"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/wecombot.go",
+      "test": "TestSourceWeComBot199",
+      "cases": 13,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/wecombot-1.9.9.json",
+        "sha256": "5f3ec383c5f2ee5a8aa09d1ae1ed728fe78069b09ce93977b74861d9e68f7b94"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-wecombot-source.json",
+        "sha256": "5f3ec383c5f2ee5a8aa09d1ae1ed728fe78069b09ce93977b74861d9e68f7b94"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-wecombot-target.stdout",
+        "sha256": "5bbb13ba4bc5338de59bc859d89658c124e0cfad5f32744e51c4e043a3c6dd80"
+      },
+      "independent_reviewers": [
+        "/root/lark",
+        "/root/pushy"
+      ],
+      "scope": "Native HTTP(S) aliases and token precedence, fixed HTTPS webhook, titleless formats, Unicode key validation and escaping, ignored attachment, strict HTTP 200 and transport failure."
+    },
+    "lark": {
+      "source": [
+        "apprise/plugins/lark.py:52–61,71–93,104–143,154–188",
+        "apprise/url.py:279–319"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/lark.go",
+      "test": "TestSourceLark199",
+      "cases": 12,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/lark-1.9.9.json",
+        "sha256": "b368138bb49f4ed02885be1a31db18fcbbb4ab53b1578fb56fe074929ce8aee2"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-lark-source.json",
+        "sha256": "35b2f00a387def689258af4c6bbd1416aa84907172ff84b2fb95be5daa870e36"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-lark-target.stdout",
+        "sha256": "2444184c5330e88de579b1364b2d7ab2ba8c81a71284c265deace97f64654281"
+      },
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-lark-native-review-source.json",
+        "sha256": "1977d52ed8e31802ec3ead086f572d5167e639d000bef907f7b1f85203554f46"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-lark-native-review-target.stdout",
+        "sha256": "2469fdad018c79a37492616dbba5dab3ae0203174eaa18d71fb4adb3d86b8f4a"
+      },
+      "independent_reviewers": [
+        "/root/wecombot",
+        "/root/pushy"
+      ],
+      "scope": "Fixed global webhook, native alias, exact JSON and title/body merge, original first-send 5.5 second wait, strict 200 and transport failure. One new review row verifies dotted/dotless i in the native URL with original Python regular-expression case folding."
+    },
+    "pushy": {
+      "source": [
+        "apprise/plugins/pushy.py:42–43,61–70,127–312,357–389"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/pushy.go",
+      "test": "TestSourcePushy199",
+      "cases": 18,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/pushy-1.9.9.json",
+        "sha256": "827bfc26eb8c8290e0840d52bc1e96324396cb7b04938a5bcbf6459319bbbf79"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushy-source.json",
+        "sha256": "8fb67519f537f971d6692d300071925a305950e2f75c69741a1e44a0491074fc"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushy-target.stdout",
+        "sha256": "0693be5efb40e8725659f202ff7eb8e38a0034d47839532580ce139722c4bf26"
+      },
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushy-numbers-source.json",
+        "sha256": "5f7da6ae7ba2cb9f9b1aa472145cdc26107086d9dbfa99ee779b36f6096895b8"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-pushy-numbers-target.stdout",
+        "sha256": "7eadc45c7a367979e9fc6756d0dcaf075a42887ba43e73a80e101d47b6ca2bd4"
+      },
+      "independent_reviewer": "/root/wecombot",
+      "scope": "Topic/device order and continuation after errors, two real throttle waits, query and message options, truncation, success truthiness and raw UTF-16 response. Two new-only replay rows prove acceptance of unrelated large numbers and a nonzero success value outside float64 range.",
+      "remaining": [
+        "Python NaN/Infinity literals, greater-than-4300-digit integer parse limits, malformed encodings and source split-chunk parallelism."
+      ]
+    }
+  },
+  "mako": {
+    "version": "1.4.1",
+    "reference_runtime": "CPython 3.12.13 with MarkupSafe 3.0.4, no Beaker",
+    "source": [
+      "installed util.py:11–25",
+      "mako/template.py:250",
+      "mako/codegen.py:119–143,174–200,307–331,450–500,1170–1237"
+    ],
+    "target": [
+      "plugins/mergemessagenotify/mako/parser.go",
+      "plugins/mergemessagenotify/mako/template.go",
+      "plugins/mergemessagenotify/mako/definitions.go",
+      "plugins/mergemessagenotify/mako/value.go",
+      "plugins/mergemessagenotify/mako/expression.go"
+    ],
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/mako/ORIGIN.json",
+      "sha256": "ccca25016ab31938854fa4938ca2fcff18493e25a488cf365269ace221697a7f"
+    },
+    "test": "TestSourceMultiplePages141",
+    "cases": 24,
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-multiple-pages-1.4.1.json",
+      "sha256": "ef84c50d7afea95781a5b181cff62dfacbd5f80cfa06cb034071774e917ef4d7"
+    },
+    "original_capture": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-source.json",
+      "sha256": "fa1a1b27c856442419f90669171d2eef49b2c28ead5faac1cf10c2ad68ccbffd"
+    },
+    "original_capture_extra_bindings": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-extra-source.json",
+      "sha256": "ad84b72cb6c4e9d7bca769bb4b0fa3614180eec1756024b8cc096903ab376dc7"
+    },
+    "generated_module_code": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-module-code.json",
+      "sha256": "3e515dde0d68b146ce111e41f82d4d7a8e09cd1d2af48fc8cf6dfd9274d164da"
+    },
+    "setup_failure": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-source-setup.stderr",
+      "sha256": "83546490b4e3a30c0c17834fb8780ef884abedfccd867ea47890649a881bd442"
+    },
+    "replay": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-target.stdout",
+      "sha256": "7e85bfd42de4363b2377d41e83123111835362b0ee38d6a732e3c67e331f3933"
+    },
+    "review_source": [
+      {
+        "path": "work/mergemessagenotify-20261107/mako-multiple-pages-loop-source.json",
+        "sha256": "c94325ee08b8e6abc7e3dde5a1957a1b9d67cabdabbb8ba2740004dd46944ad2"
+      },
+      {
+        "path": "work/mergemessagenotify-20261107/mako-multiple-pages-bindings-source.json",
+        "sha256": "feb275de334a3d75fba227a5e4d3647aa6aae83893f41126922641afaa2d6a77"
+      }
+    ],
+    "review_replay": {
+      "path": "work/mergemessagenotify-20261107/mako-multiple-pages-review-target.stdout",
+      "sha256": "1659ac64df578938a280f80b0f3a988df5934a1d12e676fd45a979f3177f69c2"
+    },
+    "independent_reviewer": "/root/lark",
+    "scope": "Last tag controls generated signature, filters and caching. Earlier and nested declarations can still affect Context lookup, module values, binding failures and the original raw text fallback. Reviewed loop/except-local targets, absence of nested default forwarding and the fixed TemplateUtil loop default with six new-only cases.",
+    "remaining": [
+      "Explicit variadic and advanced page signatures, external inheritance, Python local name constructs outside the current parser, and ordered pageargs at the Go map input."
+    ]
+  },
+  "linux_build": {
+    "output": {
+      "path": "work/mergemessagenotify-20261107/linux-wecombot-lark-pushy-build.json",
+      "sha256": "675f2b27959f5aaeb39575cb08c3f388b4000baf73add62c6dec1a88fbedb4af"
+    },
+    "binary_sha256": "eec3b5a28eb1f17750ef29c1e2ed5beeb5f0e3ef785c0cf6a8007125d5b778f2",
+    "binary_bytes": 15087078,
+    "runtime_execution": false,
+    "temporary_binary_removed": true
+  },
+  "remaining": [
+    "137 Apprise schemes lack Go implementations. Common split-chunk parallelism, provider response boundaries and real account runs remain open.",
+    "Mako variadic and advanced page signatures, some nested declaration and context order behavior, and external inheritance remain open.",
+    "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
+  ],
+  "delivery": {
+    "fully_accepted_instances": 8,
+    "installed_instances": 23,
+    "plugin_acceptance": "implementing",
+    "target_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "pushed": false,
+    "deployed": false
+  }
+}
