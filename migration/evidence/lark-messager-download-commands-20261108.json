@@ -1,0 +1,47 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and installed indexed Lark worker. Lark, qBittorrent and TMDB protocol peers were isolated. The existing accepted download was an owned seeded record.",
+  "mapping": [
+    {
+      "source": "app/command.py:81–86,326–343,441–468; app/chain/download.py:1723–1757; app/chain/__init__.py:1402–1422",
+      "target": "light-media internal/app/{plugin_original_host_message_inbound,plugin_original_chat_downloading,search_download}.go",
+      "behavior": "The authenticated Lark command lists active tasks from the normal downloader path and sends the source numbered or empty notice. The native ownership scope includes only the light-media tag or an explicit durable claim."
+    },
+    {
+      "source": "app/command.py:87–92,302–325; app/scheduler.py:448–451,975–1041; app/chain/transfer.py:2238–2256,2365–2379",
+      "target": "light-media internal/app/{plugin_original_host_message_inbound,plugin_original_chat_transfer_command,search_download}.go",
+      "behavior": "A verified loaded Lark source starts the ordinary owned-download monitor between start and finish notices when an enabled downloader-monitored local directory exists. The completion notice follows the scheduling pass, while file publication runs as the ordinary background import."
+    }
+  ],
+  "scenario": "TestOriginalLarkDownloadCommandsLinuxAMD64",
+  "status": "passed",
+  "seconds": 1.63,
+  "observations": [
+    "The actual indexed worker forwarded /downloading from an owned webhook. The qBittorrent peer received its downloading filter. The Lark card reported one task with its exact title, 1.0K and 62.5%, and hid the old MoviePilot task. After completion it returned the empty notice with the same page link.",
+    "The actual indexed worker forwarded /transfer. Lark received the ordered start and finish notices. The host polled the completed owned intent, fetched its file list once, queued the native import, marked it imported and published an actual hardlink in the configured library. The source file remained.",
+    "Two earlier fixture attempts displayed the cards but did not publish. The seed originally lacked workflow identity and the peer lacked startup login. The next attempt reached the real metadata lookup, which had no owned TMDB peer yet. Both raw logs remain distinct from the passing run."
+  ],
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "2dfc05cb1bc6716b718c35bffc89b18954f7214d",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+    "fixture_sha256": "c56d118df7424025aca8b9dcaac340740abaed18111d51dcb0bf5467289a74bd"
+  },
+  "run_artifacts": {
+    "host_elf_sha256": "a57d25b19a26c5833940c67afc8d3253dfed5bc9ed46245ad47e908cc461d1b1",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "4b3aa2bd97bd75310f445f743d41678b89cef926bb9e0556db95bb35e6820a3c",
+    "runtime_log_sha256": "61c4414ebbbbabda496df4fc443f6a9fb08d9850762bdcb29fd6bfac9ae61ed8",
+    "fixture_missing_auth_workflow_log_sha256": "817a1a8e04d91a7d235f6ba9bdb0d62da1911adba076d11455fb3d935735b327",
+    "fixture_missing_metadata_log_sha256": "d44b0a0255c67fb4e1b2f1381a2949444879b7535c69013c539775e91f048fd5"
+  },
+  "adaptations_and_open": [
+    "The native App observes owned intents and honors pause and configured paths. It does not adopt tasks from the old MoviePilot tag.",
+    "The test verified notices and a physical hardlink. It did not verify notice-history writes or the final downloader completion tag. App teardown canceled a tag check after publication and logged a module-declaration failure.",
+    "The test did not send a real message to the user's tenant. It used the earlier indexed artifact. The worker-only Feishu rejection change has separate focused evidence and still needs its indexed binding."
+  ]
+}

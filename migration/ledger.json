@@ -3938,7 +3938,7 @@
       "chain": [
         "Fixed MoviePilot app/chain/__init__.py:1631 -> installed post_message; filter configured notice types and resolve reply/user/chat/default targets.",
         "Build a normal card or source-ordered image/file/voice operations; client.py:218-429 supplies provider upload and message transport.",
-        "Target: plugins/larkmessager/plugin.go, client.go, attachment.go and transport.go. Native ordinary notice and rooted attachment evidence. Known rejection fallback differs and is still open."
+        "Target: plugins/larkmessager/plugin.go, client.go, attachment.go and transport.go. Native ordinary notice and rooted attachment evidence. Definite API rejection now logs and returns through the source failure path. Focused worker loopback passed; changed indexed-worker evidence is pending."
       ]
     },
     {
@@ -3986,7 +3986,29 @@
       "chain": [
         "Fixed MoviePilot app/chain/message.py:812-861,972-1021 retries transfer history; app/command.py:93-97 separately binds ordinary /redo.",
         "Fixed app/chain/transfer.py:3698-3761,3795-3866 re-recognizes current path or exact explicit provider identity, obtains images and performs real transfer.",
-        "Target: light-media internal/app/plugin_original_chat_transfer.go, plugin_original_chat_transfer_redo.go and plugin_original_transfer_retry.go. TMDB path has native evidence; current provider-only transfer retry requires closure."
+        "Target: light-media internal/app/plugin_original_chat_transfer.go, plugin_original_chat_transfer_redo.go and plugin_original_transfer_retry.go. Existing TMDB and explicit Bangumi /redo have native evidence. The generic retry starts from the current path and preserved episode-group context."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.downloading_command",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "app/command.py:81–86,326–343,441–468; app/chain/download.py:1723–1757; app/chain/__init__.py:1402–1422",
+      "chain": [
+        "The authenticated Lark command lists active tasks from the normal downloader path and sends the source numbered or empty notice. The native ownership scope includes only the light-media tag or an explicit durable claim.",
+        "Target: light-media internal/app/{plugin_original_host_message_inbound,plugin_original_chat_downloading,search_download}.go. Evidence: larkmessager.native_download_commands.20261108."
+      ]
+    },
+    {
+      "id": "plugin.LarkMessager.transfer_command",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "source_location": "app/command.py:87–92,302–325; app/scheduler.py:448–451,975–1041; app/chain/transfer.py:2238–2256,2365–2379",
+      "chain": [
+        "A verified loaded Lark source starts the ordinary owned-download monitor between start and finish notices when an enabled downloader-monitored local directory exists. The completion notice follows the scheduling pass, while file publication runs as the ordinary background import.",
+        "Target: light-media internal/app/{plugin_original_host_message_inbound,plugin_original_chat_transfer_command,search_download}.go. Evidence: larkmessager.native_download_commands.20261108."
       ]
     },
     {
@@ -16188,7 +16210,9 @@
         "plugin.LarkMessager.ordinary_interactive_modules",
         "plugin.LarkMessager.processing_reaction",
         "plugin.LarkMessager.ordinary_host_interaction",
-        "plugin.LarkMessager.ordinary_transfer_retry"
+        "plugin.LarkMessager.ordinary_transfer_retry",
+        "plugin.LarkMessager.downloading_command",
+        "plugin.LarkMessager.transfer_command"
       ],
       "dependencies": [],
       "owner": "/root",
@@ -16263,7 +16287,9 @@
         "larkmessager.native_provider_browser_restart.20261108",
         "larkmessager.native_unscoped.20261108",
         "larkmessager.native_legacy_material.20261108",
-        "larkmessager.native_provider_redo.20261108"
+        "larkmessager.native_provider_redo.20261108",
+        "larkmessager.ordinary_notification_rejection_worker.20261108",
+        "larkmessager.native_download_commands.20261108"
       ],
       "review": {
         "status": "pending",
@@ -68531,11 +68557,11 @@
       ],
       "observations": [
         "An owned file initially failed automatic identification. The actual installed Lark worker returned a failure card with its numeric history alias.",
-        "The signed admission boundary used the configured webhook token. The ordinary text event sent /redo for that exact alias with bangumi:777 and the TV type. One exact Bangumi detail call occurred and the TMDB request count stayed unchanged.",
+        "The admission boundary verified the configured webhook token. The ordinary text event sent /redo for that exact alias with bangumi:777 and the TV type. One exact Bangumi detail call occurred and the TMDB request count stayed unchanged.",
         "The new job succeeded against the same stable history row, retained tv:bangumi:777 with TMDB ID zero, recorded S01E01, and published a physical hardlink at the authorized local library. The source remained. No extra reply card was observed before completion."
       ],
       "artifacts": {
-        "evidence/lark-messager-provider-redo-20261108.json": "3329d35ed0909bd1bc6bc77f483872f3027be7137578d4a872affac1cf5fbd62"
+        "evidence/lark-messager-provider-redo-20261108.json": "7009438ec714654260758185b270b43222bcb4be23e1ba5ece131211975e5e94"
       },
       "binding": {
         "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
@@ -68544,6 +68570,54 @@
         "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
         "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
         "fixture_sha256": "09e2b9e01af2643749e471f00046dd4aa4c4c7d38d04fefd37ed4d15b80633ea"
+      }
+    },
+    {
+      "id": "larkmessager.ordinary_notification_rejection_worker.20261108",
+      "kind": "unit",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "go test ./plugins/larkmessager -run '^TestOrdinaryNotificationRejectionAndOpaqueAcknowledgment$' -count=1"
+      ],
+      "observations": [
+        "Installed source client.py:278–280,325–327,413–429 logs definite Feishu API rejection, returning a failure result that ordinary __init__.py:308–364,409–417,463–471 does not propagate.",
+        "The Go worker loopback case ran once (1.184s). Definite rejection recorded one redacted message and proceeded with the file after the card. An opaque acknowledgment attempted the card once and skipped all later writes.",
+        "This verifies the actual worker client and local HTTP peer. A newly indexed worker was not built for this test."
+      ],
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+        "fixture_sha256": "9c8a090718a4c436c9e3d10fc8b23c038e66f112ec3e0a71cc743d33c8448681"
+      }
+    },
+    {
+      "id": "larkmessager.native_download_commands.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.LarkMessager"
+      ],
+      "commands": [
+        "TestOriginalLarkDownloadCommandsLinuxAMD64"
+      ],
+      "observations": [
+        "The actual indexed worker forwarded /downloading from an owned webhook. The qBittorrent peer received its downloading filter. The Lark card reported one task with its exact title, 1.0K and 62.5%, and hid the old MoviePilot task. After completion it returned the empty notice with the same page link.",
+        "The actual indexed worker forwarded /transfer. Lark received the ordered start and finish notices. The host polled the completed owned intent, fetched its file list once, queued the native import, marked it imported and published an actual hardlink in the configured library. The source file remained.",
+        "Two earlier fixture attempts displayed the cards but did not publish. The seed originally lacked workflow identity and the peer lacked startup login. The next attempt reached the real metadata lookup, which had no owned TMDB peer yet. Both raw logs remain distinct from the passing run."
+      ],
+      "artifacts": {
+        "evidence/lark-messager-download-commands-20261108.json": "cedae6d25b2917d8730542ad80f456aaecdc721614ab1ca651f7ab797a98e12f"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "2dfc05cb1bc6716b718c35bffc89b18954f7214d",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "c56d118df7424025aca8b9dcaac340740abaed18111d51dcb0bf5467289a74bd"
       }
     }
   ],
@@ -68618,7 +68692,7 @@
       "tested_saved_code_revision": "319ca00e3f726d084db38c55f53b8902113db748",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "4b7871c28ab67e4d8ed427c888bde0d54615501a",
+      "host_HEAD": "2dfc05cb1bc6716b718c35bffc89b18954f7214d",
       "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
@@ -68629,12 +68703,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "17/22 instances accepted. The indexed Lark package and isolated Linux App passed the native Bangumi /redo path in addition to the recorded download boundaries. Code and evidence remain local.",
-      "tests_running": "None. The provider redo scenario ran once after two package input naming corrections. Previous passing paths were not repeated.",
-      "latest_detail": "migration/evidence/lark-messager-provider-redo-20261108.json",
+      "delivery": "17/22 instances accepted. Indexed Lark native Bangumi /redo, /downloading and /transfer passed against an isolated Linux App. Ordinary provider rejection handling passed one worker-only check; its indexed artifact is pending. Code and evidence remain local.",
+      "tests_running": "None. One passing native download-command run followed two incomplete fixture runs. Earlier accepted Lark suites were not rerun.",
+      "latest_detail": "migration/evidence/lark-messager-download-commands-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Continue LarkMessager at host 4b7871c2 and worker 319ca00. Reuse the 36 linked evidence rows. Close ordinary Feishu API rejection handling and audit the fixed command table for /downloading and /transfer. Keep generic host commands, per-episode provider replacement and unscoped completion recovery explicitly open pending source-call-chain review. Standalone Explore detail actions are separate from Lark media list cards. Register only after agreed scope passes.",
+      "next_complete_slice": "Continue LarkMessager at host 2dfc05cb and worker 9fe068d. Reuse 38 linked evidence rows, including the native /downloading, /transfer and Bangumi /redo. Next close exact-provider late episode recovery after an unscoped download, then the old-slot replacement for provider per-episode quality. Audit remaining fixed non-AI host preset boundaries. Stage the changed worker once and bind ordinary rejection and uninstall without rerunning accepted browser/chat scenarios.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -68647,7 +68721,7 @@
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
-      "latest_LarkMessager_product_commit": "319ca00e3f726d084db38c55f53b8902113db748"
+      "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

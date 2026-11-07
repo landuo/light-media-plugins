@@ -215,6 +215,13 @@ A separate Linux run passed explicit Bangumi `/redo` from a failed Lark
 history card. The job kept the provider identity, published the actual
 S01E01 hardlink and made no TMDB conversion request. See
 `migration/evidence/lark-messager-provider-redo-20261108.json`.
+The fixed ordinary `/downloading` and `/transfer` commands now execute
+through the verified Lark webhook. Native Linux observed a scoped active list,
+the empty list, ordered transfer notices and one actual hardlink from a seeded
+owned download. See `migration/evidence/lark-messager-download-commands-20261108.json`.
+The worker's definite Feishu rejection now logs a redacted failure and may
+continue with the separate attachment. The opaque-write fence remains. A
+focused worker loopback passed; the changed indexed worker is pending.
 A native Lark run confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
 Bangumi and AniList. See
