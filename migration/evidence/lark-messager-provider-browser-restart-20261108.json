@@ -1,0 +1,65 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App with indexed Lark worker and real SQLite. An isolated Chrome profile used the native embedded Vue bundle over a loopback bridge. Recognition and Lark peers were owned protocol fixtures.",
+  "mapping": [
+    {
+      "source": "MoviePilot-Frontend 2829e3b08214348f05ff2f5beae644882eccad58 src/components/dialog/SubscribeEditDialog.vue:155–166,234–243; MoviePilot app/api/endpoints/subscribe.py:202–240",
+      "target": "light-media web/src/{components/Subscriptions.vue,features/subscriptions.ts}; internal/app/{subscription_runtime,subscription_provider_media}.go",
+      "behavior": "Load and update the existing subscription ID while retaining its provider identity. The Go host increments its existing revision field and keeps the sealed chat origin."
+    },
+    {
+      "source": "MoviePilot-Frontend 2829e3b08214348f05ff2f5beae644882eccad58 src/components/cards/SubscribeCard.vue:249–267",
+      "target": "light-media web/src/{components/Subscriptions.vue,components/ExploreDetail.vue,features/explore-media.ts}",
+      "behavior": "The hash route carries Bangumi, TV and 777 to the native provider detail endpoint. The existing editor and detail routes stay distinct."
+    },
+    {
+      "source": "app/chain/message.py:2693–2731; app/chain/subscribe.py:1004–1013",
+      "target": "light-media internal/app/{subscription_add_source,subscription_runtime,runtime}.go",
+      "behavior": "The chat-created source identity and user edit are durable across a full App close and reopen on the same data directory."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderSubscriptionBrowserRestartLinuxAMD64",
+    "seconds": 11.85,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "532a786ffff7708bb1350aa5d9df39f9953c6ad1",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "61370ee92a650918c1552fa7925bb05060b0edeb0ead654414683f7b5c113458",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_product_commit": "fcb7d31bd8693c0aee6a84dd774015ab97edf47f",
+    "host_elf_sha256": "c07135154da1485f3ea67ebc69dcde97609b984d8c67b0a903294275cda735a1",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "embedded_web_index_sha256": "6b6c8751df63291f3e460fa75bac78d5d89e23f4719a9a9f564e066894133b45",
+    "shared_fixture_sha256": "bc79ec95b9ca626e3d48c2e3669e0d0e5de4584b1481fd6a17a715e9be7fae4d",
+    "chrome": "Chrome/157.0.8103.38",
+    "observations": [
+      "The indexed Lark worker created the ordinary Bangumi 777 TV subscription from a chat webhook. A real Chrome page opened that existing card and made one keyword-only edit through the normal subscription PUT. The request carried Bangumi and 777 without tmdb_id. The same row persisted at revision 2, retaining season, provider episodes and original chat source.",
+      "The Linux host closed the first App and its database handle, then started a new App and Lark worker on the same persistent directory in the same native process. The second App recovered the exact source identity, revision, original sealed source context and edited keyword.",
+      "Chrome reloaded the subscription list from the new App without logging in again. The existing editor displayed the saved keyword and the detail action opened the exact Bangumi 777 detail and rendered its title. No tracker or downloader was configured."
+    ],
+    "artifacts_sha256": {
+      "verify.mjs": "ca450a01ccd8973bedcaf133458db199f1dd0a12423ad7146cb3d682ab6f65ab",
+      "bridge.py": "01ba65a04144d92bc3b38c0e73240cb6d9212937814b2fc9c3a04dfe69068fbb",
+      "run.sh": "bd548ae32b5c80f574a4edc9be83e08cf8e4537ce24e50653cbc1fc445a3f0a9",
+      "run-remote.sh": "bc68ad531797cc9b9faa160a6d60ddd4386cdc4f78b3f32e81781c455eef576a",
+      "runtime.log": "ead8710b765497dee59b7385d08da6e36c71e76242e0125f9d1434781de21e7d",
+      "chrome.log": "32b5870fdd798a5eb60749d90a2a6383b6577aeb965ae2ec2e2ffd27abc297a7",
+      "browser-result.json": "843f2f92dbe4b060b288cfc65208a65d241f24aa6bdad5d4f21299dea2470554",
+      "before-save.png": "e51d2f962ce88d3f2afcac2cf8f800f89e625d39483ef981f885bafc7c089414",
+      "after-restart.png": "4702fa21f9e24174fe31317a92f6b5e63ea24d1f38eb3e0a7bf6cc1832f8bb65",
+      "provider-detail.png": "7c872dad0d69e7a8358a0e2f8a334ae4795ccbaa180eff4449991efb080f1468"
+    }
+  },
+  "adaptations_and_open": [
+    "This run proves a real service instance stop and reopen on Linux. It does not claim a separate OS process, machine reboot, or restart with active download jobs.",
+    "Source detail navigation passed. Provider-only detail subscription status and its search or subscribe action still use the TMDB-oriented host path; those actions were not exercised in this edit case.",
+    "The isolated startup omitted subscription statistics sharing and its child reported SUBSCRIPTION_STATS_DEPENDENCY. The existing row, edit and recovery succeeded. No old download or RSS scenario was rerun."
+  ]
+}

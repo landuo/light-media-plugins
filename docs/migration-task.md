@@ -209,9 +209,14 @@ now uses the same tracker confirmation path for ordinary subscriptions and
 chat, with its own distinct recovery evidence still open. A native Lark
 run now confirms provider-only chat subscription creation after configured
 recognition, the persisted event, and RSS isolation of equal numbers from
-Bangumi and AniList. The source-aware subscription editor builds. Its browser
-and restart acceptance remain open. See
+Bangumi and AniList. See
 `migration/evidence/lark-messager-provider-native-subscription-20261108.json`.
+Chrome now verifies a keyword-only edit of that provider subscription and
+loads the same identity, revision, and keyword from a fresh native App on
+the same SQLite data after the first App closes. The exact Bangumi detail
+route passes. Provider detail actions and a separate-process restart are
+outside this evidence. See
+`migration/evidence/lark-messager-provider-browser-restart-20261108.json`.
 A separate native Lark selection sent the exact AniList-only torrent to an
 owned qB peer and created a real S01E01 hardlink with the same provider key.
 The first attempt exposed a missing computed field during naming. Only that
