@@ -224,6 +224,12 @@ func (c *Client) addService(raw string) (bool, error) {
 		service, valid = parseWeComBotService(raw)
 	case "pushy":
 		service, valid = parsePushyService(raw)
+	case "line":
+		service, valid = parseLineService(raw)
+	case "qq":
+		service, valid = parseQQService(raw)
+	case "wxteams", "webex":
+		service, valid = parseWebexTeamsService(raw)
 	case "http", "https":
 		if native, ok := gatewayNativeURL(raw); ok {
 			service, valid = parseGatewayService(native)
@@ -249,6 +255,10 @@ func (c *Client) addService(raw string) (bool, error) {
 			service, valid = parseLarkService(native)
 		} else if native, ok := weComBotNativeURL(raw); ok {
 			service, valid = parseWeComBotService(native)
+		} else if native, ok := qqNativeURL(raw); ok {
+			service, valid = parseQQService(native)
+		} else if native, ok := webexTeamsNativeURL(raw); ok {
+			service, valid = parseWebexTeamsService(native)
 		} else {
 			return false, ErrUnsupported
 		}
