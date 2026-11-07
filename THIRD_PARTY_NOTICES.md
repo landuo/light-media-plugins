@@ -79,3 +79,33 @@ Its Go worker uses the existing GPLv3 SDK and x/text dependency, without a
 Python runtime. Source algorithm, finite host adaptations and provenance are
 recorded in plugins/pluginuninstall/ORIGIN.md. Author attribution is retained
 in the actual worker manifest. No upstream icon is redistributed.
+
+## AutoSignIn business source and image decoding
+
+AutoSignIn2.9.15 identifies thsrite as its author in the fixed installed
+MoviePilot source. The fixed installed
+source inventory, source SHA256, runtime-free Go adaptation and original
+attributions are retained in plugins/autosignin/ORIGIN.md and the single
+migration ledger. The worker includes translated Pillow12.2 algorithms,
+private Go/libjpeg and libwebp leaves, CPython Unicode/JSON/calendar helpers,
+Requests behavior and the private MIT regular-expression engine; their
+notices/licenses remain next to the implementations and in the ZIP allowlist.
+
+Its image decoding uses golang.org/x/image v0.24.0 (BSD plus patent grant),
+decoder-only private github.com/mububoki/jpeg2000 v1.0.0 (MIT) with
+OpenJPEG2.5.4 arithmetic adaptation (BSD2), github.com/gen2brain/gav1d
+v0.2.6 (BSD2 plus AV1 patent license), and decoder-only BSD source adapted
+from github.com/hhrutter/tiff v1.0.7. The latter is a private source relocation,
+not a shared module upgrade. plugins/autosignin/imagehash/ORIGIN.json and
+NOTICE.txt identify exact versions, source inventories and license locations.
+No Python, CGo or external codec process is used by the delivered worker.
+
+The legacy image readers retain the selected Picsetgo MIT decoder leaves and
+Pillow-derived format algorithms; legacycodec/PROVENANCE.json and
+PICSETGO-LICENSE.txt identify the exact selection. The AVIF RGB conversion
+translates libyuv fixed-point YUV constants and byte-plane interpolation;
+imagehash/LIBYUV-LICENSE, LIBYUV-PATENTS and LIBYUV-AUTHORS retain its notices.
+The BLP reader derives from the CC0 Pillow plugin; source attribution is retained
+with the implementation. These are Go implementations, with no WASM or native
+codec dependency. Root Go minimum1.26.4 is a build prerequisite, not a runtime
+interpreter requirement.

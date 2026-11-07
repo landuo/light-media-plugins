@@ -4,8 +4,9 @@ import (
 	"bytes"
 	"encoding/binary"
 	"fmt"
+	"github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpeg2000port/j2k"
+	"github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpeg2000port/jp2"
 	"golang.org/x/image/bmp"
-	"golang.org/x/image/tiff"
 	"golang.org/x/image/webp"
 	"image"
 	"image/color"
@@ -28,6 +29,9 @@ func Hash(encoded []byte) (string, error) {
 }
 
 func Decode(encoded []byte) (Raster, error) {
+	if len(encoded) >= 12 && string(encoded[4:8]) == "ftyp" && (bytes.Contains(encoded[8:min(len(encoded), 64)], []byte("avif")) || bytes.Contains(encoded[8:min(len(encoded), 64)], []byte("avis"))) {
+		return decodeAVIF(encoded)
+	}
 	if len(encoded) == 0 {
 		return Raster{}, ErrInvalid
 	}
@@ -95,10 +99,27 @@ func Decode(encoded []byte) (Raster, error) {
 		case len(encoded) >= 2 && string(encoded[:2]) == "BM":
 			config, decode = bmp.DecodeConfig, bmp.Decode
 		case len(encoded) >= 4 && (string(encoded[:4]) == "II\x2a\x00" || string(encoded[:4]) == "MM\x00\x2a"):
-			config, decode = tiff.DecodeConfig, tiff.Decode
+			return decodeTIFF(encoded)
+		case len(encoded) >= 4 && (string(encoded[:4]) == "II\x2b\x00" || string(encoded[:4]) == "MM\x00\x2b"):
+			encoded, err = classicTIFF(encoded)
+			if err != nil {
+				return Raster{}, err
+			}
+			return decodeTIFF(encoded)
 		case len(encoded) >= 12 && string(encoded[:4]) == "RIFF" && string(encoded[8:12]) == "WEBP":
 			config, decode = webp.DecodeConfig, webp.Decode
+		case len(encoded) >= 12 && string(encoded[:12]) == "\x00\x00\x00\x0cjP  \r\n\x87\n":
+			encoded = pillowJP2(encoded)
+			config, decode = jp2.DecodeConfig, jp2.Decode
+		case len(encoded) >= 2 && encoded[0] == 0xff && encoded[1] == 0x4f:
+			config, decode = j2k.DecodeConfig, j2k.Decode
 		default:
+			if r, matched, err := decodeLegacy(encoded); matched {
+				return r, err
+			}
+			if r, matched, err := decodeAdditional(encoded); matched {
+				return r, err
+			}
 			return Raster{}, ErrUnsupported
 		}
 		cfg, err = config(bytes.NewReader(encoded))
@@ -308,6 +329,9 @@ func fromImage(img image.Image, mode string) (Raster, error) {
 				p[0] = n.R
 				p[1] = n.G
 				p[2] = n.B
+			case "CMYK":
+				v := color.CMYKModel.Convert(img.At(x+b.Min.X, y+b.Min.Y)).(color.CMYK)
+				p[0], p[1], p[2], p[3] = v.C, v.M, v.Y, v.K
 			case "RGBA":
 				p[0] = n.R
 				p[1] = n.G

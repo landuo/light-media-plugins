@@ -1,14 +1,52 @@
-# AutoSignIn 2.9.15 — local implementation, not accepted
+# AutoSignIn 2.9.15 — Go migration
 
-Current source is applied in the primary worktree. Backend runtime is entirely Go. The installed26-file snapshot is content-pinned by270ae0bcbf1d270b916ca9b14f8bffff9b1938d0; fixed host/frontend commits and exact source/runtime dependencies are in the single migration ledger. Original Python runs only in isolated source-oracle tests, never in the delivered worker.
+The installed26-file source snapshot is content-pinned by
+270ae0bcbf1d270b916ca9b14f8bffff9b1938d0; the main source SHA256 is
+1d8329afc00bc218710e302e0eda915351731d41101df08fcf378e90440b9220.
+Fixed MoviePilot/Frontend commits, source/runtime dependencies, adaptations
+and acceptance status are recorded in the single migration/ledger.json.
+The delivered worker is entirely Go; Python is used only for isolated source
+oracles, never as a product dependency.
 
-The current implementation composes the independently reviewed cache/regex/TEMP/history, raw source-site references, original HTTP text/status/header behavior, timeout/form order, RouSi, API registration and credential logging. Source credential logging uses one private memory registry per Plugin, with generated CSRF/token masking before static values and full-message redaction before bounded UTF8 fragments. The host retains exact-instance ownership during initialization and retired contexts. OCR reference integration is applied and awaiting its current true-source canonical verification; complete OCR value types and browser rendering remain in progress.
+The current implementation includes all22 source site-adapter algorithms,
+configuration/form/data-page behavior, cache/regex/HTTP/timeout/TEMP handling,
+OCR/browser references, ordinary events/commands/API, public/random/private
+schedules, source logging and history. Clones are managed centrally by the
+host; each has isolated configuration/history and the source-defined shared
+Tjupt answer-cache path. SDK_ORIGIN.json binds105 exact committed host SDK
+files under two declared import relocations. This is separate from the older
+production SDK101 deployment.
 
-The actual root module now adds only golang.org/x/image v0.24.0 for pure Go codecs. The regexp engine is privately vendored with its MIT/ATTRIB notices; no external regexp2 runtime requirement is added. Original image/regex/source notices remain alongside their packages. Root SDK bytes are synchronized centrally, not copied per plugin; SDK_ORIGIN.json is being updated for the current source increments and must not be mistaken for the deployed SDK101 baseline.
+Actual owned Linux Main acceptance covers active sign-in, ordinary browser
+and OCR callbacks, timer and one-shot behavior, command/API dispatch, physical
+callback retention through stop/reload/update/uninstall and global shutdown,
+cold restoration, reset and clone isolation. An unshortened60s HTTP grace
+comparison observes the caller500 while the62s physical call completes its
+late controlled effect; the old implementation fails that comparison. Real
+Chrome created/configured a clone, observed its successful one-shot and used
+its log filters. The original480s GUI run remains failed at its log deadline;
+a same-data continuation verifies logs and the remaining cold/reset/uninstall
+checks without replaying creation or one-shot actions. Existing synthetic
+canonical ZIP installation, actual form/page calls, cold start, uninstall and
+reinstall are also recorded separately in the ledger. None of these uses
+production PT sites, recipients, private settings or original one-shot flags.
 
-The applied core passed6025 named tests plus3 packages in normal and race modes with no production overlay or temporary modfile. An earlier exact Linux Main882ea4/worker e6b6 pair passed37 empty-site lifecycle/API tests, independently reviewed: install, configuration, sourceAPI36 cases, clone, reload, cold restoration, reset and uninstall. This does not verify active site visits, timer execution, updates, UI or the newer logging/OCR increments under Main. No real private configuration/data import or source one-shot replay has occurred. There is no registry publication or production deployment of this candidate.
+The current codec increment adds pure Go JPEG2000, AVIF, legacy image
+readers and TIFF signed/float/fax/JPEG/predictor/BigTIFF/orientation handling. Source-derived encoded bytes,100 grayscale samples
+and100-bit hashes are fixed in imagehash/testdata/source-extra-codecs.json.
+Image provenance, exact codec versions, license locations and remaining
+format/diagnostic limits are in imagehash/ORIGIN.json and NOTICE.txt. The codec increment and rebuilt ZIP results are tracked separately from
+whole-plugin acceptance in the ledger. Remaining codec variants are explicit;
+finite sample success is not a full generic Pillow API certification.
 
-Known remaining gates include original native raw fields/identity ingestion, browser/OCR behavior, complete current Main and browser acceptance, callback/drain bounds, canonical packaging and existing-consumer impact. Standard Go HTTP trims outer field whitespace; the source trailing Cookie space difference is explicitly recorded under adapt.http-field-ows. Source leading-whitespace request rejection is implemented separately. Strict host CA/origin guards remain explicit adaptations. Refer to ledger.resume for current hashes and exact evidence; historical paragraphs below retain their original bindings.
+Runtime adaptations include host credential masking and canonical network
+origin/TLS guards; standard Go HTTP trims trailing field whitespace; Python
+traceback/OS diagnostic text is not reproduced; physical API completion
+precedes irreversible Go Store.Close (SQLAlchemy dispose may reconnect).
+No workflow, AI/model/Agent or official grade/RSA capability is introduced.
+The current source/target algorithms and necessary adaptations are traced by
+the single ledger. Original private configuration/data import remains not_run;
+no registry publication, remote push or production deployment is implied.
 
 ## Historical candidate notes
 

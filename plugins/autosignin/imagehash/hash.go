@@ -1,5 +1,5 @@
 // Package imagehash implements the installed Tjupt handler's resize/gray/hash
-// pipeline. This is a Go translation of Pillow 12.2.0's relevant 8-bit paths;
+// pipeline. This is a Go translation of Pillow 12.2.0's relevant pixel paths;
 // see reference/Pillow-LICENSE for the retained upstream copyright and license.
 package imagehash
 
@@ -13,6 +13,7 @@ var ErrInvalid = errors.New("invalid image or hash dimensions")
 
 // Raster uses tightly packed Pillow mode bytes. Mode 1 is unpacked 0/255, and
 // mode P has one index byte per pixel and a packed 256-entry RGB palette.
+// Modes I and F use little-endian int32 and float32 pixels, respectively.
 type Raster struct {
 	Mode            string
 	Width, Height   int
@@ -27,7 +28,7 @@ func channels(mode string) int {
 		return 2
 	case "RGB":
 		return 3
-	case "RGBA", "RGBX", "CMYK":
+	case "RGBA", "RGBX", "CMYK", "I", "F":
 		return 4
 	}
 	return 0
@@ -91,6 +92,9 @@ func Gray(r Raster, shape [2]int) ([]byte, error) {
 	}
 	if r.Mode == "I;16" || r.Mode == "I;16B" {
 		return gray16(r, shape), nil
+	}
+	if r.Mode == "I" || r.Mode == "F" {
+		return grayScalar(r, shape), nil
 	}
 	pix := append([]byte(nil), r.Pixels...)
 	if r.Width != shape[0] || r.Height != shape[1] {
@@ -191,11 +195,16 @@ type coeff struct {
 
 func cubic(x float64) float64 {
 	x = math.Abs(x)
+	// Keep Pillow's separate double operations even on architectures with FMA.
 	if x < 1 {
-		return (1.5*x-2.5)*x*x + 1
+		p := float64(1.5*x) - 2.5
+		p = float64(p * x)
+		return float64(p*x) + 1
 	}
 	if x < 2 {
-		return (((x-5)*x+8)*x - 4) * -0.5
+		p := float64((x-5)*x) + 8
+		p = float64(p*x) - 4
+		return p * -0.5
 	}
 	return 0
 }

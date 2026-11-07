@@ -1,20 +1,41 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (2026-11-07, seven accepted instances; AutoSignIn in development)
+## Current resume (2026-11-07; seven accepted instances)
 
-Read `migration/ledger.json` → `resume.current`, `resume.AutoSignIn_current.latest_20261107` and `resume.active_ownership`. The ledger is the only status authority. Baseline 7/23 instances (6 families); AutoSignIn 2.9.15 remains unaccepted and original private config/data import is not_run. All Go/Linux/local/single user; workflow, AI, official authentication grades and RSA remain excluded. Only local development and owned tests are authorized, with no new push, merge, private import or production deployment. Preserve unrelated files and historical execution bindings. Production remains166/09ab+SDK101 with seven inactive plugins.
+Read `migration/ledger.json` → `resume.current` and
+`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_checkpoint`.
+That ledger is the only status authority. AutoSignIn is still implementing;
+accepted count stays7/23 (6 families). No original private-state import,
+workflow, AI, official grades/RSA, remote push or production deployment.
+Existing NAS production166/SDK101 and seven inactive plugins remain unchanged.
 
-The public-service correction was saved H913eb082/P67ebe948. SDK_ORIGIN350312a8 still binds105 exact committed H913eb files under only two declared module import relocations; prior snapshots are unchanged. The current pure SDK package normal/race gate cf9dc4ba passed P7932/H820 named nodes; skips40/17 and no-test13/0 are separate. Initial evidence-binding failure remains failed, while frozen attempt2 passed. These are finite package proofs, not whole AutoSignIn acceptance.
+The current local checkpoint adds pure Go captcha decoding for source-supported
+JPEG2000, AVIF, TIFF signed/float/fax/JPEG/predictors/BigTIFF/orientations and
+legacy formats. Source fixture results and failed candidates retain their own
+bindings. The J2K lossy raw-pixel red (3 channels) is corrected using original
+OpenJPEG binary32 arithmetic, not fixture-specific adjustment. Raw TIFF
+orientation and AVIF EXIF metadata-only semantics are separately verified.
+The DDS/DIB and BLP1 sources verify exact read outcomes and the actual TGA1bit
+RLE rejection. No Python, native codec, CGo or WASM product dependency.
 
-Ordinary entry retention7 was guarded into the tree (author d62/216, independent920ebb48, Root8862c7e0). It retains already-admitted commands/API calls and exact Client/real descendants through individual removal, with source-derived normal26/race26/Linux27 and compiled negative controls. Source44c/truef515 failures remain. Global scheduler, event and HTTP/API lifetimes are distinct: scheduler stops before plugins; events accept enabled classes during PM hooks and join after PM; physical API calls can outlive an HTTP waiter. Source key26dd and event37c demonstrate prior concrete failures and retain original raw/negative target results.
+Current normal/race tests and actual Linux decoder checks passed. The rebuilt
+canonical AutoSignIn ZIP passed real force-update, config/form/page calls, cold
+restart, uninstall and reinstall in the isolated NAS test instance; running
+worker bytes were checked. It is an unpublished candidate for the paired
+current SDK105 host, not a release for production SDK101. H30bf6ae8 and the
+SDK105 source inventory were not changed by this increment.
 
-Root13 is now applied exactly to the true tree with six guard-only permanent test copies: Root `work/root-api-http-cancellation-integration-20261107/application.json` cfcb40bf. It separates physical API lifetime from caller cancellation, preserves admitted-result behavior through key rotation, fixes event sealing and genuine close/stop_service message authority, and aligns Main HTTP graceful timeout to60s. The frozen App package f462de6b/844 and independent87588e07 bind actual normal22/race22/Linux epoch2 23 named nodes, with old8businessleafreds. These counts include structural parents, not independent features. FirstLinux failed before worker execution because tmpfs was noexec; independent5aa545 diagnostic and exec-only newepoch eaa103 passed. The original failure remains failed. Main1 of13 is still pending actual60s expiry verification.
+Reuse completed Main60/62 and Main179, real Chrome clone/save/once/log, and
+same-data cold/reset/clone-uninstall evidence. The original browser deadline
+failure stays failed; the tail did not replay creation or the one-shot. Broad
+host regression and stale historical ledger bindings are not reported green.
+Do not repeat seals, projections, archives, per-run approvals, Main179, or UI
+for unaffected changes. Only one working tree and one ledger.
 
-The six permanent test copies only add16 missing-fixture guard statements; dbe2440f/f24785fa prove exact original assertion bodies. A true default-env run passed with17 explicit skips and1 structural parent, not physical business acceptance. SDK105/Origin3503 are unchanged. H6feeb852 now saves trueRoot13, guarded permanent tests and all three finite public/ordinary/Root13 App archives. Root13 public evidence34307f96 has942safe files and real --sources verification; firstLinux failure remains preserved. Ledger paths and exact bindings are authoritative.
-
-Actual owned Main3s comparison f8bd2fb5 showed the old2s implementation fail and the sole60s candidate return200 after a real3s hold; this signs only within-grace waiting. Source unshortened60s06d39/ee7df and H11a19de separately show caller500 with the exact21-byte body while a synchronous method continues62s, performs a controlled late SQL write and delays process exit. Go irreversible Store.Close is deferred until the physical call ends to preserve late effects; SQLAlchemy dispose can reconnect. This necessary resource-stage adaptation is recorded, not claimed as identical disposal. Fresh Main5 will compare saved old13+Main60 against actual true13, with newHEAD/source/build/runtime bindings and independent runner review before owned NAS execution.
-
-Next: localcheckpoint → freshMain5 source/BOM/runner review → real unshortened60→62 oldred/newgreen → current fullMain/browser, clone isolation/cold recovery/reset/update/uninstall → accepted-consumer and canonical package verification. Full Main/UI drivers91b37d60/e7680309 include source-required configuration restoration after reset (independent4579c225) and real two-stage browser clone/save; no current UI outcome claimed. Keep all failures and original bindings; never touch old services, live PT/recipients/media or private-state import. Only after the whole AutoSignIn slice closes may the count increase to8/23.
+Next: close the specific remaining TIFF layout and variant gaps, high-bit AVIF
+and other reachable default-image inputs listed in the ledger. Keep source
+read-only and use a minimal stable test entrance. Do not promote AutoSignIn
+or the registry until whole-plugin review closes; then continue the next plugin.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

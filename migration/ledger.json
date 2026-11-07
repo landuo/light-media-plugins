@@ -8193,7 +8193,13 @@
         "plugins/autosignin/source_site_binding.go",
         "plugins/autosignin/ocr_value.go",
         "plugins/autosignin/source_ocr_response.go",
-        "plugins/autosignin/ocr_adapters.go"
+        "plugins/autosignin/ocr_adapters.go",
+        "plugins/autosignin/imagehash/decode.go",
+        "plugins/autosignin/imagehash/decode_tiff.go",
+        "plugins/autosignin/imagehash/decode_avif.go",
+        "plugins/autosignin/imagehash/jpeg2000port/ORIGIN.json",
+        "plugins/autosignin/imagehash/legacycodec/PROVENANCE.json",
+        "plugins/autosignin/imagehash/decode_additional.go"
       ],
       "scenarios": [],
       "facet_checks": {},
@@ -8214,7 +8220,7 @@
       "source_version": "2.9.15",
       "source_metadata_only": false,
       "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
-      "implementation_note": "Actual Go family source saved11772; JSON5 nowintegrated with realSDK/App finiteclosure and fullproduction normal/race. Finiteevidence is not wholefamily acceptance; native nullable provenance/rendering/wholeMain/UI/consumerimpact/package gates still open."
+      "implementation_note": "All22 site-adapter algorithms and ordinary host/UI paths are implemented. The current image increment is source-differential tested in Go and Linux and passed actual canonical ZIP lifecycle in an owned instance. Specific valid decoder gaps/unverified variants remain in resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_checkpoint; whole ASI stays implementing, not verified. Original private import is not_run."
     },
     {
       "id": "plugin.MergeMessageNotify",
@@ -65227,20 +65233,22 @@
       "tested_saved_code_revision": "67ebe9480f9367bfd022ea66b69e3d1ed063d583",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "6feeb85236578144721226b5d0aeb8c936f67559",
+      "host_HEAD": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
       "SDK_source_host_commit": "913eb082ead2c931d56f88f30b51ed631ae195e2",
       "SDK_current_files": 105,
       "SDK_current_origin_sha256": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747",
       "SDK_current_status": "All105 committed host blobs match target under two declared import relocations. This is an association, not new Main/runtime acceptance. SDK104/current-private package results retain old bindings.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-      "remote_read_date": "2026-11-07 fresh ls-remote in this continuation; H75e13686 andP4453f821 unchanged",
+      "remote_read_date": "2026-11-07 fresh ls-remote H75e13686/P4453f821 in this continuation, no push",
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Only local checkpoints; no new push, merge or production deployment. Seven previously deployed instances remain inactive; AutoSignIn not deployed.",
-      "tests_running": "TrueRoot13+guard6 saved H6feeb852; newMain60 five-artifact before/build/runtime capture is next. No runtime presently active; compiled CI17skips/1structuralparent is not business acceptance. SDK105Origin3503 unchanged.",
-      "latest_detail": "resume.AutoSignIn_current.latest_20261107; all historical raw tuples remain unchanged"
+      "delivery": "Current codec increment is saved on the local plugin development branch, with host30bf6ae8/SDK105 unchanged. No remote push, merge, production deployment, private import or build-registry promotion.",
+      "tests_running": "No NAS test service active. New codec normal/race/Linux and real ZIP lifecycle passed; no repeat of Main179 or browser. Remaining format differences are tracked; wholeASI not accepted.",
+      "latest_detail": "resume.AutoSignIn_current.latest_20261107; all historical raw tuples remain unchanged",
+      "local_codec_base": "89750790296a8252996488f8f58c6022eb2326b9; checkpoint commit containing this ledger adds the tested codec increment",
+      "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -65257,12 +65265,12 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Finish real Main unshortened60 expiry old/new and fullcurrentASI Main/browser/clone/cold/reset/update/uninstall/currentconsumer/package proof; only then consider ASI8/23. Private original import remains not_run.",
+    "next_complete_slice": "Close only actualsource imageDecodegap usingpureGo/sourceoracle, retestaffectedimage/Tjupt andnewZIP, finalwholeASIcheck/count8, then nextplugin. No repeated unrelatedfullApp run/archives/approvallayers.",
     "active_ownership": {
-      "Root": "Soleledger/docs/checkpoints. H6feeb852 saves true13/guard6/3finitearchives. P taskcode+ledger checkpoint now being saved; next fullMain/UI preparation. SDK105Origin3503 unchanged; no newpush/deploy/privateimport.",
-      "/root/notice_api": "Start newMain60 five-artifact source/build/runtime capture after Root provides current H/P checkpoint HEAD. Newtrue13 nooverlay; old13explicitpreimages+Main60. Independentreview before owned NAS execution.",
-      "/root/http_status": "Final finite App87588/guardf247 complete; read-only exact trueintegration check then future freshMain5 BOM/runner review.",
-      "/root/site_review": "API finitearchive34307/942 frozen and Rootverified/saved. Await freshGUIBOM and actual36324 ownedUIready, then realIAB two-stage clone/configsave."
+      "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
+      "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
+      "/root/http_status": "MajorMain60/Wf/GUIrecipe reviews complete and reusable; no furtherper-file/recipe review unlessmajorlogic/wholeplugin final needed.",
+      "/root/site_review": "RealChrome create/save/log completed; CUA completion alreadysent; nofurtherbrowserwork currently."
     },
     "AutoSignIn_current": {
       "source_files": 26,
@@ -65452,8 +65460,8 @@
         "limits": "wideCookieUA/richFS response/NaN saved producer pending; wholeASI unaccepted"
       },
       "latest_20261107": {
-        "accepted_instances": 7,
-        "whole_ASI": "implementing, not accepted",
+        "accepted_instances": "7/23, six historical accepted families; no new family promotion",
+        "whole_ASI": "implementing; current finite codec increment verified, whole format coverage and source private-state import are not complete",
         "H_head": "913eb082ead2c931d56f88f30b51ed631ae195e2; public service19+permanent tests saved; prior notice/private source e97c5ad3 and evidence-only11c retained",
         "P_head": "67ebe9480f9367bfd022ea66b69e3d1ed063d583; public opt-in/paired SDK105/owned fixture and Origin saved local",
         "applications": {
@@ -65490,7 +65498,7 @@
           "clone_current_GUI": "actual82.974s currentthenbrowser-onlyMain/worker/newdist; defaults+fivefieldtrim/persist/cold/workers; independent5bf. Currentnative/H4 notretroactivelyincluded.",
           "source_Main_contract": "96506846 originalactual333 probes; private+globalstop defaultwaitTrue, public removejob doesnotjoin; Webbroadcast allenabledclones, retryempty repeats; sameversionforce allowed; API DBsave precedesinit. No targetMain acceptance."
         },
-        "next": "Freeze/review/apply ordinary7 source roots; then Root HTTP cancellation5 actual source500/late-method/PM-message-order correction and current true Main within-grace+unshortened expiry. Final full current Main/UI two-phase, cold/clone/accepted-consumer/canonicalpackage gates. Preserve all priorfailures and original bindings. WholeASI remains unaccepted7/23; no private import/newpush/productiondeploy.",
+        "next": "Resume remaining specific TIFF/AVIF/other default-image reader differences from remaining_image_decode_gap.current_checkpoint.remaining. Do not repeat proven main/browser or final codec package work unless its input closure changes.",
         "remote_main_read_20261107": {
           "H": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
           "P": "4453f821ba32d5d4cc949e68d08d970e6ee7c975"
@@ -65950,6 +65958,277 @@
           "root_verify": "verify_archive.py --sources actualexit0: stored/decoded/source/sealedmanifest exact; verifier ran0business tests",
           "saved_host_commit": "6feeb85236578144721226b5d0aeb8c936f67559",
           "scope": "f462/844 App finite proof +8758/eaa/dbe/f247/cfcb/06eb/default17skip; firstLinux failure preserved. Main60 stillpending."
+        },
+        "ordinary_event_production_link_correction": {
+          "status": "exact one-reference repair independently reviewed and saved; real production Main build still pending",
+          "host_commit": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+          "target": "H/internal/app/plugin_original_event_call.go:106",
+          "cause": "test-only pluginErrorCode referenced by production; App tests included its _test definition, actual production Main build exposed undefined symbol",
+          "adaptation": "Use already-existing production pluginErrorCodeInternal, identical helper function body except its name; no business behavior change",
+          "non_author_seal": "5b172deecce6a4132dbdc5b1d5b4e7db3fe594c528d407faf9c8caf0a4b1b0a4",
+          "public_evidence": "H/testdata/plugin-source-ordinary-production-link-20261107/seal.json 9744f000ba02c0f8a43f513854747ef64989ecfacf7679db44c433e67ea6b0af,24files",
+          "trueApp_regression": "Actual currentApp22 pass0skip,6436selectedinputs507embeds stable,20.311s; eight exact prior native workers reused/hashchecked. Not fresh worker/race/Linux/Main proof.",
+          "first_Main_build_failure": "P/work/autosignin-api-main-expiry-20261107/attempt1-production-compile-failure/seal.json 974a9761; original failure tuple and before-map/raw unchanged.0ELF/0NAS.",
+          "next": "Fresh attempt2 newH30bf/P8975 production5BOM; both Main before/after share this helper-reference correction, old overlays only13 source preimages+Main60."
+        },
+        "fresh_final_Main_builds": {
+          "API_expiry": {
+            "work_path": "P/work/autosignin-api-main-expiry-20261107/attempt2",
+            "builds_sha256": "86503db63a1d188fcb7f0b3c2b222a4c7250319604f018254f13678b2976125b",
+            "BOM_sha256": "93f73d70b4a98d19d92b0fdeda4de4213c2e4f8a69d51c4ee5a6423a53e574cd",
+            "actual_inputs": 7100,
+            "embeds": 811,
+            "before_after_stable": true,
+            "runtime_status": "actualoldbusinessexit1/newexit0; see actual_Main_API_expiry_current, independent execution capsule pending",
+            "HEAD": "H30bf6ae8/P89750790",
+            "SDK_ORIGIN": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747"
+          },
+          "full_Main": {
+            "work_path": "P/work/autosignin-private-main-final-20261107",
+            "builds_sha256": "dbdff911b1769d2db300a0fff560cb8432370a9aaf8b5d6d4640af8413e62fac",
+            "BOM_sha256": "fa711e42a386fe0924485d1ed8e43f56545854c085bd67427bae164d9b4a60c2",
+            "actual_inputs": 7095,
+            "embeds": 811,
+            "before_after_stable": true,
+            "runtime_status": "Actual one owned run in progress via reviewed40bf wrapper; not acceptance until actual result/cleanup/bindings",
+            "HEAD": "H30bf6ae8/P89750790",
+            "SDK_ORIGIN": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747"
+          },
+          "browser": {
+            "work_path": "P/work/autosignin-browser-final-20261107",
+            "builds_sha256": "214f8c7a01b435481caf1bd793bc13b5d9562320b232102b46d8375c92561e87",
+            "BOM_sha256": "ee2fbcc26c154e6128bd6def6b1d923556a4cbbb68272b76dac397cd92dbd6f9",
+            "actual_inputs": 7095,
+            "embeds": 811,
+            "before_after_stable": true,
+            "runtime_status": "not_run; production compilation is not business acceptance",
+            "HEAD": "H30bf6ae8/P89750790",
+            "SDK_ORIGIN": "350312a8694683c0605d920c2a3c1b4c9b7b65b21f6d7c294fee6161dd90e747"
+          }
+        },
+        "actual_Main_API_expiry_current": {
+          "path": "P/work/autosignin-api-main-expiry-20261107/attempt2",
+          "readiness_seal": "f2ffb85876b7e50d9a274bcf060d42329644ac792168fc44ab48fc4309503b8b",
+          "before": {
+            "business_exit": 1,
+            "caller_after_listener_ms": 60000,
+            "actual_caller": "EOF/status0/emptyhead/body, real counterexample notPASS",
+            "physical_canceled": false,
+            "Main_before_release": "alive",
+            "PM_before_release": "seen",
+            "owned_attendance_after_release": 1,
+            "worker_and_Main_reaped": true,
+            "wrapper_seconds": 69.522
+          },
+          "after": {
+            "business_exit": 0,
+            "caller_after_listener_ms": 59990,
+            "status": 500,
+            "body": "Internal Server Error",
+            "body_bytes": 21,
+            "Content_Type": "text/plain; charset=utf-8",
+            "raw_connection_close": true,
+            "physical_canceled": false,
+            "Main_before_release": "alive",
+            "PM_before_release": "seen",
+            "owned_attendance_after_release": 1,
+            "worker_and_Main_reaped": true,
+            "wrapper_seconds": 70.837
+          },
+          "both": "Held62000/62001ms; exceptionnil, exactownedcontainers removed, sharedbundle unchanged;7100selectedcompiled/native/module/tool/recipeinputs+811embeds/runtime exact; same5ELFs/source/HEAD/Origin. Raw actual-before/actual-after harvested; no realPT/sourceDB/provider effects claimed.",
+          "status": "Finite actual before-after independently passed3f77c12c; wholeASI still pending image gap/package final variant",
+          "bundle_window": "Released by notice; Root now owns for fullMain"
+        },
+        "final_browser_recipe_current": {
+          "path": "P/work/autosignin-browser-final-20261107/runtime-recipe",
+          "author_seal": "b2e8a9abc9295155990a80dba0cde7f348b9445bf342902edf6b02ee2f0fe6a7",
+          "status": "authorfinite recipecomplete; independentreview pending;0NAS/CUA",
+          "reason": "OriginalUIouter checked approval afterSSH and omitted actualruntime binding/strictsymlink checks. Newrecipe adds preSSH twoapprovals/BOM/7095/HEAD/Origin checks, strictownedguards and supplemental actualrecipe before-after binding. OriginalGo5/7095/e768/oldrecipes unchanged, no rebuild needed.",
+          "future_namespace": "owned-ui-r2/attempt-ui2, hostnetwork0.0.0.0:36324 (notnetnone)"
+        },
+        "actual_full_Main_current": {
+          "raw": "P/work/autosignin-private-main-final-20261107/actual-r4",
+          "review": "dd53b677d070f6e95a13e86ac7ed5dadb4881caebbe96aee2448492779d70fc1",
+          "events": 179,
+          "actual_attendance": 14,
+          "Main_generations": 6,
+          "Web_counts": "3/8/13/16 then22 total including ordinary late replies",
+          "notification_failed": 0,
+          "Go_test_seconds": 60.76,
+          "remote_Python_seconds": 65.75948872999288,
+          "guarded_outer_seconds": 72.40674262493849,
+          "inputs": "7095compiled/native/module/tool/recipe+811embeds and supplemental recipe exact before/after;5BOM unchanged",
+          "result": "actualPASS/exit0/exceptionnil/fullCIDremoved/bothnamesempty",
+          "scope": "private/public/ordinary/event/API lifetimes, sameversion forceupdate, site501/native1, cold/reset/siteDeleted/uninstall; ownedpeer only, not actual PT/private import/provider"
+        },
+        "actual_browser_composite_current": {
+          "status": "Real browser create/save and pending isolation passed; original480s overall run remains FAIL because log observation/marker not completed in time. Same persisted data continuation then completed only remaining log/cold/reset/uninstall tail; no creation/config replay.",
+          "failed_full_run": "P/work/autosignin-browser-final-20261107/runtime-recipe/actual: actualexit1,exceptionnil,543.237remote seconds,container0,BOMunchanged,7095+recipebinding exact",
+          "browser": "Chrome native CUA: IAB unavailable, extension-tab control blocked; ordinary Escape dismissed focus popup without changing protections; real native AX actions completed. Screenshots/AX are in CUA tool outputs, not claimed as localPNG files.",
+          "visible_completed": [
+            "five whitespace fields clone created andpending0/1; realGo ui-created-checked confirmed originalbase unchanged/no copiedhistory/noattendance",
+            "actual browserSave enabled/notifyfalse, source501, retryUI-only-synthetic-retry; onceconsumedfalse andsuccess1/1 observed",
+            "clone-specific logs opened, INFO+签到成功 filters yield one genuine successrow; URL targets AutoSignInui; no config or task replay in log continuation"
+          ],
+          "continuation": "P/work/autosignin-browser-remaining-20261107/actual",
+          "continuation_result": "actualexit0/exceptionnil/147.142remote seconds/fullCIDremoved/bothnamesempty/bundleunchanged; test-only driver1ac reuses exact product host379/installedworker and2282 compiled inputs stable",
+          "remaining_tail_passed": "OriginalpreUI base page/config exact, clone config exact incllogin_sites[], two successful histories coldrestored, onlyoncefalse/disabled; metadata5trim, newPIDs/cold3.3s nohistory mutation; sourcereset empties onlysource andpreservesclone page/config/PID; cloneuninstall removesclonecode/joinsPID, basecodekept",
+          "Root_marker_only": "ui-created and ui-log-complete bridge files only, no pluginconfiguration API substitution"
+        },
+        "actual_ASI_canonical_package_current": {
+          "path": "P/work/autosignin-package-final-20261107",
+          "ZIP_sha256": "8530ee1fddf3c8ead8fb36c452d7a1ebfd6bacb3beed3ee10b7033a5668e2974",
+          "worker_sha256": "10f8e122f6be1be9da3197c4431c1f43f4454d88566e69363b82f4c41446c8d8",
+          "members": 26,
+          "result": "Actual GoMain installsZIP via loopbackrepo/forceupdate to standardworker; /proc/newpid/exe exacthash; config/form/page realcalls, coldPIDreplacement, uninstallkeepsbasecode+config then sameZIPreinstall/calls passed.11.192remote seconds/exit0/exceptionnil/cleanup0/bundleunchanged",
+          "publication": "notpublished andnotproductiondeployed; candidatepackage needs newworker afterimagecompatibility fix, unrelated lifetimes/UI proofs reused",
+          "build_method": "Existing canonical manifest/license_inventory/archive_plugin with already-tested prebuilt Linuxworker; no new build pipeline"
+        },
+        "default_broad_regression_20261107": {
+          "path": "H/work/current-plugin-app-regression-20261107",
+          "status": "FAILED, not claimed business regression green",
+          "counts": "App3319pass1498namedfail34skip;cmd/server9pass; counts includeparents",
+          "timing": "App165.038s/server1.427s/script173.918 includingcapture",
+          "input_binding": "6432compiledinputs507embeds +allhosttestdata stable",
+          "classification": "512roots1470namedfail need actualSDK/sourcefixture inputs (someASI/plugin scope, notbusinessrun);4roots12namedmissingTMDB;6roots12namedEXDEV/asset/direction;3roots3namedsitebackgroundcounts;1root1namedcatalogtypeassertionpanic.28 non-input failures remainfailed, not fixed or relabeled.",
+          "review": "H/work/independent-current-plugin-app-regression-review-20261107/FINDINGS.json",
+          "impact_limit": "15 relevant fixture/producer/consumerfiles matchpre13/913; source-supported not oldruntime. No actual new14 ASI runtime regression proven; usertaskdoesnotexpandunrelatedbusiness. NarrowASI actualproofs used, not default17skip."
+        },
+        "remaining_image_decode_gap": {
+          "review": "P/work/autosignin-delivery-gap-review-20261107/findings.md",
+          "source": "fixedtjupt.py110/174 Image.open(HTTP200body) then_to_hash; noformat/MIMEwhitelist; pinned333 jpg_2000 true; currentGo rejectsJP2 andvalidTIFFvariants",
+          "status": "inprogress, source-only image oracle fixtures being generated; nowholeASI completion untilclosed",
+          "implementation_boundary": "pureGo/noCGo/Python runtime; Root evaluating pinnedpureGo codecs, onlyimage/Tjupt affected tests and rebuiltpackage willrerun; existing host/SDK/UI/lifetime evidence reused",
+          "current_20261107": {
+            "status": "JP2/TIFF increment implemented and narrow-tested; whole format input-domain review still open",
+            "source_expected": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+            "actual_positive_cases": 24,
+            "target_paths": [
+              "plugins/autosignin/imagehash/decode.go",
+              "plugins/autosignin/imagehash/decode_tiff.go",
+              "plugins/autosignin/imagehash/scalar.go",
+              "plugins/autosignin/imagehash/tiffport/"
+            ],
+            "normal": "go test -count=1 ./plugins/autosignin/imagehash/... ./plugins/autosignin exit0; imagehash1.167s ASI5.143s",
+            "race": "same scope -race exit0; imagehash1.686s ASI56.057s",
+            "linux_actual": "work/autosignin-package-image-20261107/linux-codecs-command.json; netnone uid1000 read-only actual2.0008s exit0",
+            "linux_worker_sha256": "dae3321abfc828f018bad6cc3dfd2d32cbb618345111b825e4d550231ed8ec76",
+            "candidate_ZIP": "work/autosignin-package-image-20261107/AutoSignIn-2.9.15-linux-amd64.zip",
+            "candidate_ZIP_actual_install": "not_run; wait finite remaining-format input-domain source matrix to avoid redundant repack/run",
+            "remaining": "Source Image.open has no MIME whitelist. Actual source-success matrix for other installed formats being collected once; registration alone does not establish a positive decode case."
+          },
+          "integrated63": {
+            "status": "implemented, target failing one stricter decoder-pixel case; all63 source gray/hash expectations pass",
+            "permanent_fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+            "actual_source_oracles": [
+              "work/autosignin-image-gap-20261107/source/expected.json",
+              "work/autosignin-image-gap-20261107/fax-source/expected.json",
+              "work/autosignin-image-gap-20261107/scalar-source/expected.json",
+              "work/autosignin-image-gap-20261107/predictor-source/expected.json",
+              "work/autosignin-image-gap-20261107/remaining-formats-source/expected.json",
+              "work/autosignin-image-gap-20261107/format-variant-source/expected.json"
+            ],
+            "normal_raw": "work/autosignin-image-gap-20261107/current-normal.jsonl",
+            "named_pass": 4064,
+            "named_fail": 2,
+            "failure": "j2k-RGB8-lossy decoded source pixels SHA mismatch; 100gray and100bit hash equal. Includes structural parent, not2 business failures.",
+            "ASI_package": "pass4.794s",
+            "legacy_package": "pass1.184s",
+            "imagehash_package": "fail1.484s",
+            "review": "work/autosignin-final-review-20261107.md plus final decoder review pending",
+            "compiler": "Go minimum1.26.4; tests use cachedgo1.26.10; no SDK105 edits",
+            "remaining": "actual decoder precision issue plus registered-only/other valid variant boundaries; wholeASI not accepted",
+            "package": "33-member intermediateZIPd210 not installed; wait code completion before one final rebuiltZIP actual test"
+          },
+          "current_checkpoint": {
+            "status": "finite codec increment verified and saved locally; whole AutoSignIn remains implementing",
+            "source": "fixed installed AutoSignIn sites/tjupt.py:110,174,244-262; actual immutable333/Pillow12.2, OpenJPEG2.5.4, libavif1.4.1; code/fixtures are synthetic only",
+            "targets": [
+              "plugins/autosignin/imagehash/decode.go",
+              "plugins/autosignin/imagehash/decode_tiff.go",
+              "plugins/autosignin/imagehash/decode_avif.go",
+              "plugins/autosignin/imagehash/jpeg2000port/ORIGIN.json",
+              "plugins/autosignin/imagehash/legacycodec/PROVENANCE.json",
+              "plugins/autosignin/imagehash/decode_additional.go"
+            ],
+            "source_results": {
+              "79_exact_loaded_gray_hash": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+              "BLP1_2_positives": "plugins/autosignin/imagehash/testdata/source-blp1.json",
+              "DDS_DIB_69_positives_4_source_rejections": "plugins/autosignin/imagehash/legacycodec/bcn_source_test.go",
+              "raw_source_oracles": "work/autosignin-image-gap-20261107 including bcn-bitmap-source (see legacycodec/PROVENANCE.json for provenance)",
+              "J2K_red_to_green": "work/autosignin-image-gap-20261107/j2k-precision/RESULT.md; 3 raw channel differences to zero under source binary32/lrint; original red retained",
+              "orientation_red_to_green": "work/autosignin-image-gap-20261107/transform-source/expected.json and transform-target{,2}.stdout;8 TIFF transpose,8 AVIF metadata-only all green"
+            },
+            "normal_race": {
+              "commands": [
+                "GOTOOLCHAIN=go1.26.10 go test -json -count=1 ./plugins/autosignin/...",
+                "same with -race"
+              ],
+              "raw": [
+                "work/autosignin-image-gap-20261107/final-normal.jsonl",
+                "work/autosignin-image-gap-20261107/final-race.jsonl"
+              ],
+              "named_each": 6614,
+              "fail": 0,
+              "named_skip": 0,
+              "no_test_packages_each": 17,
+              "ASI_elapsed_seconds": [
+                5.597,
+                58.17
+              ]
+            },
+            "linux": {
+              "record": "work/autosignin-package-codecs-20261107/linux-codecs-command.json",
+              "imagehash_named_pass": 140,
+              "legacy_named_pass": 112,
+              "exit_codes": [
+                0,
+                0,
+                0
+              ],
+              "network": "none; uid1000; read-only; only owned artifacts mounted",
+              "seconds": [
+                2.434920094907284,
+                1.2137174010276794,
+                0.9215482641011477
+              ]
+            },
+            "actual_zip": {
+              "record": "work/autosignin-package-codecs-20261107/actual/attempt-asi-package-codecs/command.json",
+              "archive": "work/autosignin-package-codecs-20261107/AutoSignIn-2.9.15-linux-amd64.zip",
+              "sha256": "b6e168c59bea5c1df873245020bf90389c1898ae29765bff1c46417f899cb536",
+              "worker_sha256": "24fc7c08cbaab5fab302f39dae6f3fd8abc232510fc832735f134660ef4d2801",
+              "bytes": 7266332,
+              "members": 42,
+              "host_sha256": "37944e759b99fdcfa16faf3da590ac8ca883a2bb389331bbda964e194f5faaf0",
+              "actual_seconds": 9.48620419180952,
+              "observations": "work/autosignin-package-codecs-20261107/actual/owned-ui-r2/runtime/evidence-package-codecs/observations.jsonl",
+              "verified": "force update from previous candidate, exact /proc worker executable, real config/form/page RPC, cold restart, ordinary uninstall retaining code/config and reinstall; isolated owned synthetic NAS instance",
+              "not_claimed": "not published, not deployed to NAS production; no full current browser/Main179 replay or private original configuration import"
+            },
+            "remaining": [
+              {
+                "source": "Pillow12.2 TIFF OPEN_INFO and libtiff raw layout support",
+                "target": "imagehash/tiffport/reader_config.go and strip/tile reader",
+                "difference": "2/4-bit grayscale/palette and generic planar RGB are not yet equivalent; uncommon libtiff compression variants still require successful source examples",
+                "status": "pending implementation/verification"
+              },
+              {
+                "source": "Pillow _avif.c get_frame converts decoded samples to libavif1.4.1 RGB8",
+                "target": "imagehash/decode_avif.go",
+                "difference": "8-bit matrix/chroma and orientation controls verified; high-bit-depth conversion and uncommon CICP variants still need actual equivalence",
+                "status": "pending verification"
+              },
+              {
+                "source": "Pillow installed Image.open decoder registry",
+                "target": "imagehash/decode.go and additional readers",
+                "difference": "Some registered-only readers and rare IM variants are not implemented or verified. Original successful default-image load must be demonstrated before counting them; registry presence, unavailable external handlers, failed writer controls, and save/seek/animation APIs are not successes.",
+                "status": "pending source/target verification"
+              }
+            ],
+            "independent_review": "work/autosignin-final-review-20261107.md; original review is pre-final codec parts; current normal/race/Linux and package outcomes are separate actual tests",
+            "go_runtime": "linux amd64 CGO0 Go1.26.10, min1.26.4 for gav1d; no new SDK bytes, no native codec/Python/WASM runtime"
+          }
         }
       }
     },
@@ -66621,6 +66900,7 @@
       ],
       "rollback": "Stoplight-media, restore backed-upbinaryandconsistentdata withinNASprivatebackup, then start; preserve current state before rollback.",
       "delivered_main": false
-    }
+    },
+    "execution_policy_user_20261107": "Prioritize one usable complete AutoSignIn then next plugin; reuse valid evidence; no repeated seals/projections/approval layers for routine tests; only actual compatibility gaps expand scope; group independent review per whole plugin/major shared logic; preserve all original standards and failures, no extra push/deploy authority."
   }
 }

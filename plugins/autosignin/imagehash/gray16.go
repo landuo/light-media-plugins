@@ -70,17 +70,19 @@ type coeff16 struct {
 func coefficients16(in, out int) []coeff16 {
 	scale := float64(float32(in)) / float64(out)
 	filterScale := math.Max(scale, 1)
-	support := 2 * filterScale
+	// Explicit float64 conversions prevent fused multiply-add from changing
+	// Pillow's coefficient rounding near an integer-mode half-way result.
+	support := float64(2 * filterScale)
 	ss := 1 / filterScale
 	cs := make([]coeff16, out)
 	for x := range cs {
-		center := (float64(x) + 0.5) * scale
+		center := float64((float64(x) + 0.5) * scale)
 		start := max(0, int(center-support+0.5))
 		end := min(in, int(center+support+0.5))
 		ws := make([]float64, end-start)
 		total := 0.0
 		for i := range ws {
-			ws[i] = cubic((float64(i+start) - center + 0.5) * ss)
+			ws[i] = cubic(float64((float64(i+start) - center + 0.5) * ss))
 			total += ws[i]
 		}
 		if total != 0 {
