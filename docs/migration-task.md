@@ -10,11 +10,13 @@ worker, notice-only package restaging, reused evidence and independent review.
 Image comparisons are source-derived and finite. The prior browser deadline
 and package observer failures retain their original records.
 
-MergeMessageNotify is now implementing. The installed 1.20.3 snapshot
-contains 23 source files and is pinned in the ledger. The first Go slice
-matches original event routing for seven scenarios with configured channel
-lists. Host wiring, channel transports, configuration UI, save-only test
-delivery and Apprise URL compatibility remain open. The original installed
+MergeMessageNotify is implementing from the pinned 23-file installed
+1.20.3 snapshot. The standalone component core reuses the host's Go
+configuration and channel code, with 17 forms generated from the refreshed
+source. Targeted loopback checks cover OneBot-11 bearer authorization and
+the two changed credential guards. The standard SDK worker, trusted
+configuration-save origin, actual host/browser and unported Apprise/Mako
+branches remain open. The original installed
 list has 23 instances. Private configuration/data import and production
 deployment are separate. No changes to the original service,
 remote main, or NAS production166/SDK101. Workflow, AI and official

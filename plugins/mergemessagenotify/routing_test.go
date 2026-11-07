@@ -15,17 +15,17 @@ func TestSourceNoticeRouting(t *testing.T) {
 		t.Fatal(err)
 	}
 	type attempt struct {
-		Channel string `json:"channel"`
-		Title   any    `json:"title"`
-		Text    any    `json:"text"`
-		Type    any    `json:"type"`
-		Fields  object `json:"fields"`
+		Channel string         `json:"channel"`
+		Title   any            `json:"title"`
+		Text    any            `json:"text"`
+		Type    any            `json:"type"`
+		Fields  map[string]any `json:"fields"`
 	}
 	var fixture struct {
 		Cases []struct {
 			Name   string
-			Config object
-			Fields object
+			Config map[string]any
+			Fields map[string]any
 			Calls  []attempt
 			Logs   [][2]string
 		}
@@ -40,19 +40,21 @@ func TestSourceNoticeRouting(t *testing.T) {
 		t.Run(row.Name, func(t *testing.T) {
 			calls := []attempt{}
 			logs := [][2]string{}
-			newChannel := func(name string, ok bool, err error) channel {
-				return channel{name: name, send: func(_ context.Context, in message) (bool, error) {
-					calls = append(calls, attempt{name, in.title, in.text, in.notificationType, in.fields})
-					return ok, err
-				}}
-			}
-			registered := map[string]channel{
-				"first":  newChannel("first", true, nil),
-				"second": newChannel("second", false, nil),
-				"broken": newChannel("broken", false, errors.New("synthetic failure")),
-			}
-			routeNotice(t.Context(), row.Config, row.Fields, registered, func(level, message string) {
+			p := New(Host{Log: func(_ context.Context, level, message string) {
 				logs = append(logs, [2]string{level, message})
+			}})
+			p.config = row.Config
+			p.registered = []Channel{
+				{Key: "first", Name: "first", Elements: []any{}},
+				{Key: "second", Name: "second", Elements: []any{}},
+				{Key: "broken", Name: "broken", Elements: []any{}},
+			}
+			p.dispatch(t.Context(), row.Fields, func(_ context.Context, key string, in Message) (any, error) {
+				calls = append(calls, attempt{key, in.Title, in.Text, in.RawType, in.Ext})
+				if key == "broken" {
+					return nil, errors.New("synthetic failure")
+				}
+				return key == "first", nil
 			})
 			if !reflect.DeepEqual(calls, row.Calls) || !reflect.DeepEqual(logs, row.Logs) {
 				t.Fatalf("calls = %#v, want %#v\nlogs = %v, want %v", calls, row.Calls, logs, row.Logs)

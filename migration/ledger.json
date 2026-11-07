@@ -9724,7 +9724,19 @@
       "dependencies": [],
       "owner": "/root",
       "target_paths": [
-        "plugins/mergemessagenotify/routing.go"
+        "plugins/mergemessagenotify/routing.go",
+        "plugins/mergemessagenotify/plugin.go",
+        "plugins/mergemessagenotify/forms.json",
+        "plugins/mergemessagenotify/channels.go",
+        "plugins/mergemessagenotify/templates.go",
+        "plugins/mergemessagenotify/bark.go",
+        "plugins/mergemessagenotify/email.go",
+        "plugins/mergemessagenotify/requests.go",
+        "plugins/mergemessagenotify/native_template.go",
+        "plugins/mergemessagenotify/native_apprise.go",
+        "plugins/mergemessagenotify/apprise/ORIGIN.json",
+        "plugins/mergemessagenotify/mako/ORIGIN.json",
+        "plugins/mergemessagenotify/smtp/ORIGIN.json"
       ],
       "scenarios": [],
       "facet_checks": {},
@@ -9759,7 +9771,7 @@
         "method": "Read-only installed-list membership and static source files. No plugin import, settings, history, recipients or production dispatch.",
         "previous_version_inventory": "1.20.1 original fixed baseline retained. Same source paths, 21 changed files; exact 1.20.3 per-file SHAs in receipt."
       },
-      "implementation_note": "First slice implements original ordinary NoticeMessage routing for persisted form-array selections. Python source handler executed once on owned scripted channel results; seven Go comparisons pass. No live host route or channel protocol acceptance yet.",
+      "implementation_note": "Ported standalone business core and all 17 channel definitions from the tracked host base, updating confirmed 1.20.3 behavior. OneBot-11 loopback transport and original credential guard cases pass. Production worker/host dispatch and whole feature acceptance remain open.",
       "routing_progress": {
         "source": "1.20.3 __init__.py:61,239,505–end; module.py ChannelStrategy",
         "target": "plugins/mergemessagenotify/routing.go",
@@ -9769,6 +9781,54 @@
         "target_evidence_sha256": "014ac37edcfb32950916eed6363b16356e1dbe7f90eed224e9bfd7e10abb01ad",
         "status": "passed for seven source replay cases; component only",
         "remaining": "Keep original event type metadata/enum mapping, unusual non-array stored config behavior, component config/forms and save-only test_once semantics. Implement each registered channel and verify the original Apprise URL dependency contract for pure Go. Connect the real host notice event and test the whole plugin once."
+      },
+      "component_port": {
+        "source_version": "1.20.3",
+        "source_locations": [
+          "__init__.py:47–67,94–184,216–505",
+          "channel/__init__.py:34–150",
+          "channel/custom/__init__.py:22–109",
+          "channel/custom/onebot11.py:53–69,253–326",
+          "channel/custom/qiyeweixinbot.py:168",
+          "channel/custom/serverchan.py:173"
+        ],
+        "verified_runtime_metadata": {
+          "requests": "2.34.2",
+          "mako": "1.4.1",
+          "apprise": "1.9.9",
+          "certifi": "2026.7.22"
+        },
+        "reused_host_revision": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+        "go_provenance": [
+          "plugins/mergemessagenotify/ORIGIN.json",
+          "plugins/mergemessagenotify/apprise/ORIGIN.json",
+          "plugins/mergemessagenotify/mako/ORIGIN.json",
+          "plugins/mergemessagenotify/smtp/ORIGIN.json"
+        ],
+        "forms": {
+          "extraction": "work/mergemessagenotify-20261107/forms-source-evidence.json",
+          "extraction_sha256": "255d51b9de31de01e76e7f6dcdd500695b2135f2f994f5d5711782ddba2dac7c",
+          "current_asset": "plugins/mergemessagenotify/forms.json",
+          "sha256": "e52220d2fd02ea6a530d75b65a9d80459380f790169a1405af32bb4d21c37b6e",
+          "channels": 17,
+          "adaptation": "Excluded Agent notification enum from select and Go enum list. All 17 ordinary channel forms preserved. Source forms generated with no network."
+        },
+        "current_tests": {
+          "kind": "Fixed-source replay and real synthetic loopback HTTP. No production or recipient calls.",
+          "target_stdout": "work/mergemessagenotify-20261107/target-components.stdout",
+          "sha256": "d3c628011f21f92a03a36dc92293449eb92909cc70e6049316b7f49693e386b4",
+          "command": "go test ./plugins/mergemessagenotify -run '^TestSource(NoticeRouting|Channels1203)$' -v -count=1",
+          "scope": "Seven affected dispatcher cases plus two OneBot user/group transport cases and two missing-credentials cases. Mako and SMTP prior host proof bound to prior source, not reexecuted here."
+        },
+        "necessary_adaptations": [
+          "Requests cross-origin redirects do not forward channel credentials or a body. Error strings exclude URLs, credentials and response bodies.",
+          "Reuse the Go Mako and SMTP cores with existing finite unsupported branches and TLS verification. No Python runtime."
+        ],
+        "remaining": [
+          "Compose the ordinary standalone SDK worker and trusted configuration-save origin. Host currently calls the same init entry with raw config for save and startup. Preserve one-shot gating, ordinary broadcast, config encryption and dotted-key forms.",
+          "Expand Apprise beyond JSON/JSONS, including documented apprise:// and bark:// examples, attachments and the other source-supported providers. Reused Mako has unsupported valid language branches.",
+          "Verify current standard Linux host package, browser form, stop/reload and clone only after the affected routes are ready. Do not repeat old isolated proofs for unchanged leaves."
+        ]
       }
     },
     {
@@ -65512,12 +65572,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Eight functional instances accepted locally. MergeMessageNotify 1.20.3 pinned and initial event routing implemented. Remote main and production delivery are separate.",
-      "tests_running": "None. Seven MergeMessageNotify routing source comparisons passed once. AutoSignIn package and fixture cleanup complete.",
-      "latest_detail": "features[plugin.MergeMessageNotify].refreshed_source and routing_progress; prior AutoSignIn acceptance in migration/evidence/autosignin-acceptance-20261107.json",
+      "delivery": "Eight functional instances accepted. MergeMessageNotify 1.20.3 standalone component core, source forms and changed channel behavior saved locally; host and complete dependency acceptance remain open.",
+      "tests_running": "None. New standalone core compiled and affected source/loopback tests completed.",
+      "latest_detail": "features[plugin.MergeMessageNotify].component_port",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "MergeMessageNotify 1.20.3: implement config namespace, form tabs and first real channel transport against the fixed source. Retain pending Apprise dependency parity and host notice/save trigger work."
+      "next_complete_slice": "Compose MergeMessageNotify standard SDK worker and its trusted save-only origin. Connect the ordinary notification and form paths, then resolve concrete Apprise/Mako dependency gaps from the fixed installed source."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",

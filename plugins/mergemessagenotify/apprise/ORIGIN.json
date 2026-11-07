@@ -1,0 +1,32 @@
+{
+  "source_repository": "https://github.com/landuo/light-media",
+  "source_revision": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+  "source_directory": "internal/plugins/mergemessagenotify/apprise",
+  "relocation": "Tracked production files copied from the pinned host tree; HTTP uses the existing standalone Requests proxy implementation. No old test drivers or replay artifacts.",
+  "upstream_apprise": "1.9.9",
+  "implemented_schemes": [
+    "json",
+    "jsons"
+  ],
+  "upstream_files_sha256": {
+    "APPRISE-LICENSE": "9ac007e806bd7199cf3158adff83a16351ae85c46373c3533a98b961975103f2",
+    "CERTIFI-LICENSE": "e93716da6b9c0d5a4a1df60fe695b370f0695603d21f6f83f053e42cfc10caf7",
+    "NOTICE": "82a051bab27f882ac58ebb0ea62cad733c3bf4ae0dae1af4b0a5e87913a35718",
+    "certifi-ca.pem": "9cc2a774b5198dcff14d9be1e66091f538975d867ce029a96bce15a55dfd730f",
+    "client.go": "f64c987a4a1016175b8359ba84510053fb84c344a08bf3ff362a3c6dfb5579a5",
+    "format.go": "2bc6b24f36929316fe98c1ac820e3257d9024b92a6a4f0d1fec4f0181470775e",
+    "http.go": "5b67869f5e0fe0dbcf0bce09160c80dff06e0f4fdee2cc60229290b0a685574b",
+    "ip_patterns.go": "ea469b1a164e712f4c554b99ef9286fe26cdec3b9f24ff4094ffe9bc9e43d684",
+    "json.go": "939220d23f0b09840fc78a49b02cfdd458c32c6331d105488cef28dfc32c8bfc",
+    "url.go": "5522ff598d1b96f1a01f48a8aa8353640683d535fe4f8a0d336dd271d4c5feae",
+    "testdata/catalog.json": "dc2c06b139499350d58d0dca39fb69c6045f1b8e21f2cf86e86bde6c36e8938f",
+    "testdata/emoji-patterns.json": "6eea1f48aa34a42c639f83ef0535474e7bf63a29cf6c805631ed139a0513f41a"
+  },
+  "adaptations": [
+    {
+      "file": "http.go",
+      "reason": "Use the standalone requestsproxy with the same Requests environment, proxy authentication and cancellation interfaces.",
+      "target_sha256": "1119df060f50e208a27a7a5026f9ef3c9c749a5bb60de6d422ef42e7b082623b"
+    }
+  ]
+}
