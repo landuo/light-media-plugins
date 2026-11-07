@@ -1,61 +1,22 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (2026-11-07; seven accepted instances)
+## Current resume (2026-11-07; eight accepted instances)
 
-Read `migration/ledger.json` → `resume.current` and
-`resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment`.
-That ledger is the only status authority. AutoSignIn is still implementing;
-accepted count stays7/23 (6 families). No original private-state import,
-workflow, AI, official grades/RSA, remote push or production deployment.
-Existing NAS production166/SDK101 and seven inactive plugins remain unchanged.
+Read `migration/ledger.json` → `resume.current`. It is the only status
+authority. AutoSignIn 2.9.15 passed source, ordinary Linux host, real Chrome
+and current package acceptance on SDK105. The local build registry includes
+it. `migration/evidence/autosignin-acceptance-20261107.json` binds the executed
+worker, notice-only package restaging, reused evidence and independent review.
+Image comparisons are source-derived and finite. The prior browser deadline
+and package observer failures retain their original records.
 
-The current local checkpoint adds pure Go captcha decoding for source-supported
-JPEG2000, AVIF, TIFF signed/float/fax/JPEG/predictors/BigTIFF/orientations and
-legacy formats. Source fixture results and failed candidates retain their own
-bindings. The J2K lossy raw-pixel red (3 channels) is corrected using original
-OpenJPEG binary32 arithmetic, not fixture-specific adjustment. Raw TIFF
-orientation and AVIF EXIF metadata-only semantics are separately verified.
-The DDS/DIB and BLP1 sources verify exact read outcomes and the actual TGA1bit
-RLE rejection. No Python, native codec, CGo or WASM product dependency.
-
-An earlier canonical AutoSignIn ZIP passed force-update, config/form/page
-calls, cold restart, uninstall and reinstall in the isolated NAS test
-instance, with its running worker bytes checked. That evidence is bound to
-the earlier candidate and paired SDK105 host. The current codec changes need
-one new package check when ready.
-
-Reuse completed Main60/62 and Main179, real Chrome clone/save/once/log, and
-same-data cold/reset/clone-uninstall evidence. The original browser deadline
-failure stays failed; the tail did not replay creation or the one-shot. Broad
-host regression and stale historical ledger bindings are not reported green.
-Do not repeat seals, projections, archives, per-run approvals, Main179, or UI
-for unaffected changes. Only one working tree and one ledger.
-
-This TIFF increment covers packed grayscale and palette samples and separate
-RGB/RGBA planes. It preserves the byte-oriented behavior of Pillow's raw
-16-bit planar reader. The imagehash package passed with seven new positive
-fixtures and one source rejection. The earlier Main, browser and package runs
-apply to their tested revisions.
-
-The current codec checkpoint scales AVIF color and alpha to declared
-dimensions for still images, default tracks, and grid tiles. TIFF compression
-6 reconstructs the verified contiguous gray and YCbCr 4:2:0 strips from
-interchange headers or scattered tables. The prior installation and browser
-records retain their bindings.
-
-Nineteen additional TIFF6 samples match the pinned Pillow and libtiff
-output. They cover split interchange headers, restart precedence, contiguous
-tile grids, first-tile frames and separate YCbCr 1:1 strips and tiles. The
-canonical ZIP at the preceding code revision passed actual install/force
-update, config/form/page, login-only operation, cold history recovery and
-uninstall/reinstall. The initial observer error and same-ZIP tail both remain
-in the ledger. The two first-tile and two planar restart-tag cases were checked directly
-against source without replaying the package, Main or Chrome flows.
-
-The read-only installed list still has 23 instances. MergeMessageNotify is
-now 1.20.3 and BrushFlowLanduo is 5.2.17. Pin fresh source snapshots when
-their turns arrive. AutoSignIn is the current plugin. Rerun a test only when
-the behavior it checks changes.
+The next sequential plugin is MergeMessageNotify, last observed installed
+at 1.20.3. Pin its refreshed installed source before implementation. The
+original installed list has 23 instances. Private configuration/data import
+and production deployment are separate. No changes to the original service,
+remote main, or NAS production166/SDK101. Workflow, AI and official
+grades/RSA are excluded. Reuse applicable evidence and rerun only when the
+behavior being checked changes.
 
 ## Historical checkpoints (retain original bindings; not current state)
 

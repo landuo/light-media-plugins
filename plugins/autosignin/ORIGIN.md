@@ -35,9 +35,10 @@ The current codec increment adds pure Go JPEG2000, AVIF, legacy image
 readers and TIFF signed/float/fax/JPEG/predictor/BigTIFF/orientation handling. Source-derived encoded bytes,100 grayscale samples
 and100-bit hashes are fixed in imagehash/testdata/source-extra-codecs.json.
 Image provenance, exact codec versions, license locations and remaining
-format/diagnostic limits are in imagehash/ORIGIN.json and NOTICE.txt. The codec increment and rebuilt ZIP results are tracked separately from
-whole-plugin acceptance in the ledger. Remaining codec variants are explicit;
-finite sample success is not a full generic Pillow API certification.
+format/diagnostic limits are in imagehash/ORIGIN.json and NOTICE.txt. The rebuilt Linux worker and ordinary plugin functions passed the owned
+host and browser acceptance recorded in the ledger. Image evidence covers the
+source-derived default-image reads used by Tjupt. Finite samples do not
+certify the full generic Pillow API or arbitrary codec variants.
 
 Runtime adaptations include host credential masking and canonical network
 origin/TLS guards; standard Go HTTP trims trailing field whitespace; Python
@@ -46,7 +47,8 @@ precedes irreversible Go Store.Close (SQLAlchemy dispose may reconnect).
 No workflow, AI/model/Agent or official grade/RSA capability is introduced.
 The current source/target algorithms and necessary adaptations are traced by
 the single ledger. Original private configuration/data import remains not_run;
-no registry publication, remote push or production deployment is implied.
+the local build registry includes AutoSignIn. Remote publication and
+production deployment are separate delivery states.
 
 ## Historical candidate notes
 

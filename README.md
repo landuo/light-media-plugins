@@ -1,8 +1,8 @@
-> 2026-11-06：7/23 个实例已通过插件功能验收（含新增 RemoveLink）。本批插件配套宿主使用本地提交 `881f02673dd6bbab37f41e54ac66e6ed8e657688`；尚未推送或部署。
+> 2026-11-07：8/23 个实例已通过插件功能验收。新增 AutoSignIn 2.9.15 使用配套宿主 `30bf6ae87f431cdc83a34cfd75a62d1cc666897b`，代码和安装包已在本地验证。
 
 # Light Media Plugins
 
-已验收 7/23 个实例（CategoryEditor、TorrentTransfer 及音乐分身、SiteStatistic、MPServerStatus、PluginUnInstall、RemoveLink）。可选继承方法与发现顺序修正已通过当前原生主程序补充复验；原业务、页面、实机和外部协议证据保留原绑定，复用范围经独立审核，见[补验凭据](migration/evidence/source-interface-revalidation-20261106/ACCEPTANCE.json)。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
+已验收 8/23 个实例（CategoryEditor、TorrentTransfer 及音乐分身、SiteStatistic、MPServerStatus、PluginUnInstall、RemoveLink、AutoSignIn）。可选继承方法与发现顺序修正已通过当前原生主程序补充复验；原业务、页面、实机和外部协议证据保留原绑定，复用范围经独立审核，见[补验凭据](migration/evidence/source-interface-revalidation-20261106/ACCEPTANCE.json)。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
 ## CategoryEditor 安装与使用
 
@@ -65,6 +65,12 @@ PluginUnInstall2.2 已通过普通 Linux 主程序、真实配置页面及正式
 3. 分身身份、代码和数据由平台管理。自身卸载及冷启动期间移除后续插件的原版状态差异也保留；后续真正重启不重新加载已移除记录。
 
 来源、必要 Go 适配和完整证据见 [`ORIGIN.md`](plugins/pluginuninstall/ORIGIN.md) 与 [`ACCEPTANCE.json`](migration/evidence/pluginuninstall-20261106/ACCEPTANCE.json)。测试2.2.1仅为更新夹具，未导入私人配置或操作原系统。
+
+## 站点自动签到
+
+AutoSignIn 2.9.15 的全 Go 程序需要上述配套宿主。安装后可分别选择签到站点和模拟登录站点，保存计划或勾选「立即运行一次」。登录与签到的结果分别显示在插件数据页。分身由宿主管理，配置和历史独立，天津大学 PT 答案缓存按原版使用共享临时目录。
+
+Linux 隔离实例已验收安装、重载、定时和一次性任务、配置与历史、更新、分身及卸载。浏览器验收和原版差分的绑定在[迁移账本](migration/ledger.json)。原 MoviePilot 的私人配置和历史尚未导入，当前插件仓库远程 main 尚未包含此版本。
 
 ## 自动构建与发布
 

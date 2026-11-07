@@ -129,7 +129,7 @@
     "branch": "main",
     "working_branch": "codex/installed-plugins-20261105",
     "baseline_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
-    "revision": "67ebe9480f9367bfd022ea66b69e3d1ed063d583",
+    "revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
     "remote_revision": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
     "delivery_mode": "local",
     "delivery_reason": "Development and actual acceptance requested; no new-repository push/production-deployment authorization inferred from prior host main push.",
@@ -137,7 +137,7 @@
       "migration/ledger.json",
       "docs/migration-task.md"
     ],
-    "revision_scope": "Local saved seven-instance historical accepted baseline plus current unfinished AutoSignIn and SDK105 finite increments. Current integrated ASI/consumer/private-state acceptance pending; no main push or new production deployment.",
+    "revision_scope": "Eight functional instances accepted locally, including AutoSignIn on the paired SDK105 host; release registration and notice-only restaging are tracked separately. No remote main push or new production deployment.",
     "deployment": "NASpairedverified166/09ab+824workers installed7inactive; currentcodebranch/mainrelease distinct, details resume.deployment_20261106"
   },
   "inventory": [
@@ -8199,28 +8199,147 @@
         "plugins/autosignin/imagehash/decode_avif.go",
         "plugins/autosignin/imagehash/jpeg2000port/ORIGIN.json",
         "plugins/autosignin/imagehash/legacycodec/PROVENANCE.json",
-        "plugins/autosignin/imagehash/decode_additional.go"
+        "plugins/autosignin/imagehash/decode_additional.go",
+        "plugins/autosignin/run.go",
+        "plugins/autosignin/page.go",
+        "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go",
+        "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go",
+        "plugins/autosignin/imagehash/tiffport/reader_ojpeg_tiles.go",
+        "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+        "build-plugins.json"
       ],
-      "scenarios": [],
-      "facet_checks": {},
-      "status": "implementing",
+      "scenarios": [
+        {
+          "description": "Fixed source configuration, form/data page, status/defaults, events and site selection including deletion; actual saved config and page",
+          "execution_status": "passed",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        {
+          "description": "22 site adapters, ordinary sign-in and login-only HTTP with isolated HTTPS peers, independent persisted history and source OCR/default-image oracle",
+          "execution_status": "passed",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        {
+          "description": "Public service, private three-second one-shot, random schedules, real API grace expiry, active callback retention and physical shutdown",
+          "execution_status": "passed",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        {
+          "description": "Actual Chrome form save, clone, one-shot, logs and isolated config/data, then same-data cold/reset/clone uninstall",
+          "execution_status": "passed",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        {
+          "description": "Canonical ZIP acquisition, force-update and live worker digest, original pending page, uninstall retains base state and reinstallation restores it",
+          "execution_status": "passed",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        }
+      ],
+      "facet_checks": {
+        "data": {
+          "applicable": true,
+          "reason": "Separate source sign-in/login history, private config, shared Tjupt temporary cache, source JSON/OCR and image hash outcomes.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "state": {
+          "applicable": true,
+          "reason": "Original init/config-save/onlyonce reset, dynamic runtime state, timer and instance stop admission.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "errors": {
+          "applicable": true,
+          "reason": "Source HTTP, transport/timeout/expired client, unrecognized login, decoder and failed host observer branches retain explicit evidence.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "concurrency": {
+          "applicable": true,
+          "reason": "Source private/public stop and admission, physical callback completion through update/uninstall/shutdown; real API late result after logical 60-second expiry.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "restart": {
+          "applicable": true,
+          "reason": "Actual browser/host cold restart and login-only package cold/reinstall preserve correct history without replaying onlyonce.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "compatibility": {
+          "applicable": true,
+          "reason": "Compiled Go adapters replacing Python import; host-native form/data renderer and clone lifecycle, fixed source bytes and Linux package bindings.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "security": {
+          "applicable": true,
+          "reason": "Owned HTTPS/origin verification, host guarded source credentials and no original private data, production visits or recipients.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        },
+        "performance": {
+          "applicable": true,
+          "reason": "Real 60-second grace and delayed physical completion checked; bounded invocation and scheduling behavior compared with source, no broader capacity claim.",
+          "evidence_ids": [
+            "autosignin.accepted_source_host_package.20261107",
+            "autosignin.independent_closure.20261107"
+          ]
+        }
+      },
+      "status": "verified",
       "evidence_ids": [
-        "autosignin.source_ocr_json_values.20261106",
-        "autosignin.owned_main_once_lifecycle.20261106",
-        "autosignin.owned_browser_populated_clone.20261106"
+        "autosignin.accepted_source_host_package.20261107",
+        "autosignin.independent_closure.20261107"
       ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/autosignin_closure",
+        "evidence_ids": [
+          "autosignin.independent_closure.20261107"
+        ]
       },
       "original_instance_id": "AutoSignIn",
       "family": "AutoSignIn",
       "source_version": "2.9.15",
       "source_metadata_only": false,
       "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin.",
-      "implementation_note": "All22 site-adapter algorithms and ordinary host/UI paths are implemented. The current image increment is source-differential tested in Go and Linux and passed actual canonical ZIP lifecycle in an owned instance. Specific valid decoder gaps/unverified variants remain in resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_checkpoint; whole ASI stays implementing, not verified. Original private import is not_run."
+      "implementation_note": "Functional Go migration verified on the paired SDK105 host. Build registry includes Linux artifact. Finite decoder coverage is recorded; private data import, remote publication and deployment remain separate.",
+      "historical_evidence_ids": [
+        "autosignin.source_ocr_json_values.20261106",
+        "autosignin.owned_main_once_lifecycle.20261106",
+        "autosignin.owned_browser_populated_clone.20261106"
+      ]
     },
     {
       "id": "plugin.MergeMessageNotify",
@@ -65197,6 +65316,102 @@
         "evidence/autosignin-owned-ui-20261106/testdata/owned-ui-cleanup/remote.stdout": "0f3b36282da10d5b79d6e75186919dffd1aad90086544d7a9197bff02d1c8c0e"
       },
       "reviewer": "notice_api independent a854ea3174c0fe6e39c69ad17cfa14bf28441573bc68ab7e9e44def413d2cae9; Root actual CUA and driver producer"
+    },
+    {
+      "id": "autosignin.accepted_source_host_package.20261107",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.AutoSignIn"
+      ],
+      "commands": [
+        "TestAutoSignInFinalPackageWorker on the 1aed110 Linux worker",
+        "TestAutoSignInCanonicalPackageTail on previous exact package",
+        "Recorded Main179, Chrome and source differential commands referenced in acceptance report"
+      ],
+      "inputs": "Fixed AutoSignIn 2.9.15 source, fixed MoviePilot and frontend commits, owned HTTP/TLS/fixture state and current Linux worker. No production PT traffic.",
+      "observations": "New worker acquired from canonical ZIP and invoked through ordinary config/page with exact /proc executable digest. Unchanged scheduling, API, events, login and sign-in, clone, cold, reset and uninstall covered by retained source/real host/browser evidence.",
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "target_files": {
+          "cmd/auto-sign-in/main.go": "060dc0841142d4f74ebb84dd7c0954028b968f94ff4b13b1d19a063e0ef53b57",
+          "plugins/autosignin/plugin.go": "08a6c1630c7529636df3a28b9eb17207aa6a559ab5a224752397d7b003c6730f",
+          "plugins/autosignin/config.go": "fcfc57683038bf607e904c2f40fad9a88175c269dbd2fd622048a8cb28c83288",
+          "plugins/autosignin/services.go": "415950ec16409e75b0b77b974793fad43a1fb2136ef3a8c2080d77d1ccadd12d",
+          "plugins/autosignin/sdk_backend.go": "8c8fc67c8df22a84a65aee354bc13386460ed2f65fc3385830f2aaa34fbdc178",
+          "plugins/autosignin/visits.go": "d4de6079b0991ba757c482428cc23d196ead10d1533fafd30e4a25d26f7a3301",
+          "plugins/autosignin/source_site_binding.go": "35b2c163ad3f52b83b900bfe73e4d7156c4ff1c175bffe44e6de48a64864aadd",
+          "plugins/autosignin/ocr_value.go": "90b7ce89b6d8094b35346274b87168a89dc766256dfdb6257cdb0617be6b51d8",
+          "plugins/autosignin/source_ocr_response.go": "b4ed353a9e6c50605e712ef37cc5da0fbd87f6f521a9a53e9919a5a7c4ed0993",
+          "plugins/autosignin/ocr_adapters.go": "21603c47ec0cb47ee9d42d5205858c293342a7db2576aae3a3a967c12f21e99b",
+          "plugins/autosignin/imagehash/decode.go": "025ffc9e2ad75f8242f3a07f16fae25bf9862e5c4cfd324d330b8eedac7ad77e",
+          "plugins/autosignin/imagehash/decode_tiff.go": "155d2ed1ec937d5fff66ef40bc9903b8b86699c32cf6a1163d4ae2fe8a8ed55b",
+          "plugins/autosignin/imagehash/decode_avif.go": "bad1411265ca143987a0e83e8396aeec70246aa55991aa1aee3ffd939c63acaa",
+          "plugins/autosignin/imagehash/jpeg2000port/ORIGIN.json": "610139326bd64229cca3ebb4c4b72bdcd3f16bfb0aad0fccb2fda4da8a00353e",
+          "plugins/autosignin/imagehash/legacycodec/PROVENANCE.json": "fa7a6231b90b53a8ec06ad50fb8df4d451111c8309d0be460cf823f3c0eace7c",
+          "plugins/autosignin/imagehash/decode_additional.go": "1950d4c0261e03c3026605f1a64d6de113fe22ff43103016f113ceacc7345ea1",
+          "plugins/autosignin/run.go": "0b78ab60e5736b200ebc2b13fe30e599feaead2ac4b50d3e54e4e0c0a5c72d97",
+          "plugins/autosignin/page.go": "a12461f40412588f487c4f568949fc77b24d882360fdcfaebc7d4c96fcec93ba",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go": "f82cf018b7c50d518dd3b163b9b56a475e02ad172885535eda471fb43fd9bf62",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go": "608c85a816075785c1851934dc0c9bcc9afdad78249a8caf21f03dc603d7538e",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg_tiles.go": "a1393b3fdeeb65332058284d8c736ea43df011fe70f2542461414d236d81712b",
+          "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "ef7f9a97d1402710a148c998218953b05d3dcaa2d90e060032b626dc41d28adf",
+          "build-plugins.json": "b14786a71192a098eaba793cbf37bd738e16250faeb04f340cf3bdff736266b0"
+        },
+        "fixture_files": {
+          "evidence/autosignin-acceptance-20261107.json": "508270b96fbc332382b1907395d2ba6f63056ef040f54d4c42d508f9b58e5906"
+        },
+        "environment": "Pinned source Pillow 12.2.0/libtiff 4.7.1, owned isolated Linux/SDK105 for host runs, real Chrome for browser; exact product and host digests in acceptance."
+      },
+      "artifacts": {
+        "evidence/autosignin-acceptance-20261107.json": "508270b96fbc332382b1907395d2ba6f63056ef040f54d4c42d508f9b58e5906"
+      },
+      "reviewer": "/root/autosignin_closure"
+    },
+    {
+      "id": "autosignin.independent_closure.20261107",
+      "kind": "review",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.AutoSignIn"
+      ],
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "target_files": {
+          "cmd/auto-sign-in/main.go": "060dc0841142d4f74ebb84dd7c0954028b968f94ff4b13b1d19a063e0ef53b57",
+          "plugins/autosignin/plugin.go": "08a6c1630c7529636df3a28b9eb17207aa6a559ab5a224752397d7b003c6730f",
+          "plugins/autosignin/config.go": "fcfc57683038bf607e904c2f40fad9a88175c269dbd2fd622048a8cb28c83288",
+          "plugins/autosignin/services.go": "415950ec16409e75b0b77b974793fad43a1fb2136ef3a8c2080d77d1ccadd12d",
+          "plugins/autosignin/sdk_backend.go": "8c8fc67c8df22a84a65aee354bc13386460ed2f65fc3385830f2aaa34fbdc178",
+          "plugins/autosignin/visits.go": "d4de6079b0991ba757c482428cc23d196ead10d1533fafd30e4a25d26f7a3301",
+          "plugins/autosignin/source_site_binding.go": "35b2c163ad3f52b83b900bfe73e4d7156c4ff1c175bffe44e6de48a64864aadd",
+          "plugins/autosignin/ocr_value.go": "90b7ce89b6d8094b35346274b87168a89dc766256dfdb6257cdb0617be6b51d8",
+          "plugins/autosignin/source_ocr_response.go": "b4ed353a9e6c50605e712ef37cc5da0fbd87f6f521a9a53e9919a5a7c4ed0993",
+          "plugins/autosignin/ocr_adapters.go": "21603c47ec0cb47ee9d42d5205858c293342a7db2576aae3a3a967c12f21e99b",
+          "plugins/autosignin/imagehash/decode.go": "025ffc9e2ad75f8242f3a07f16fae25bf9862e5c4cfd324d330b8eedac7ad77e",
+          "plugins/autosignin/imagehash/decode_tiff.go": "155d2ed1ec937d5fff66ef40bc9903b8b86699c32cf6a1163d4ae2fe8a8ed55b",
+          "plugins/autosignin/imagehash/decode_avif.go": "bad1411265ca143987a0e83e8396aeec70246aa55991aa1aee3ffd939c63acaa",
+          "plugins/autosignin/imagehash/jpeg2000port/ORIGIN.json": "610139326bd64229cca3ebb4c4b72bdcd3f16bfb0aad0fccb2fda4da8a00353e",
+          "plugins/autosignin/imagehash/legacycodec/PROVENANCE.json": "fa7a6231b90b53a8ec06ad50fb8df4d451111c8309d0be460cf823f3c0eace7c",
+          "plugins/autosignin/imagehash/decode_additional.go": "1950d4c0261e03c3026605f1a64d6de113fe22ff43103016f113ceacc7345ea1",
+          "plugins/autosignin/run.go": "0b78ab60e5736b200ebc2b13fe30e599feaead2ac4b50d3e54e4e0c0a5c72d97",
+          "plugins/autosignin/page.go": "a12461f40412588f487c4f568949fc77b24d882360fdcfaebc7d4c96fcec93ba",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg.go": "f82cf018b7c50d518dd3b163b9b56a475e02ad172885535eda471fb43fd9bf62",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go": "608c85a816075785c1851934dc0c9bcc9afdad78249a8caf21f03dc603d7538e",
+          "plugins/autosignin/imagehash/tiffport/reader_ojpeg_tiles.go": "a1393b3fdeeb65332058284d8c736ea43df011fe70f2542461414d236d81712b",
+          "plugins/autosignin/imagehash/testdata/source-extra-codecs.json": "ef7f9a97d1402710a148c998218953b05d3dcaa2d90e060032b626dc41d28adf",
+          "build-plugins.json": "b14786a71192a098eaba793cbf37bd738e16250faeb04f340cf3bdff736266b0"
+        },
+        "fixture_files": {
+          "evidence/autosignin-acceptance-20261107.json": "508270b96fbc332382b1907395d2ba6f63056ef040f54d4c42d508f9b58e5906"
+        },
+        "environment": "Pinned source Pillow 12.2.0/libtiff 4.7.1, owned isolated Linux/SDK105 for host runs, real Chrome for browser; exact product and host digests in acceptance."
+      },
+      "artifacts": {
+        "evidence/autosignin-acceptance-20261107.json": "508270b96fbc332382b1907395d2ba6f63056ef040f54d4c42d508f9b58e5906"
+      },
+      "reviewer": "/root/autosignin_closure",
+      "observations": "Verified source identity, all 22 compiled site adapters, ordinary init/config/form/page/API/command/service/PluginAction/SiteDeleted/stop paths and current actual package identity. Reuse Main179, same-data Chrome tail and login-only/cold/reinstall because compared runtime differences are image decoding only. License and attribution requested and included in restaged archive with identical worker."
     }
   ],
   "scope": {
@@ -65239,14 +65454,14 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 7,
+      "functional_verified_instances": 8,
       "total_installed_instances": 23,
-      "business_families_verified": 6,
-      "functional_verified_count_scope": "Seven-instance baseline. The AutoSignIn local-probe package and login-only host path pass in isolation, bound to the exact ZIP; source codec checks and final assembly remain open.",
+      "business_families_verified": 7,
+      "functional_verified_count_scope": "Eight functional instances accepted, including AutoSignIn 2.9.15 with the paired SDK105 host. Private state and deployment remain separate.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "9f11b10ba91da49eaea7b35158be38a1bedff701",
+      "tested_saved_code_revision": "1aed110c0fe33f903a22abfdb85ae41613669e61",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
       "host_HEAD": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
@@ -65260,12 +65475,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "Seven accepted instances. Current local AutoSignIn adds TIFF6 split headers, restarts, tiles, separate planes and first-tile frames. Isolated current-codec ZIP ran successfully through the combined package lifecycle with dedicated login history. Registry, private-state import, remote and production delivery remain separate.",
-      "tests_running": "None. Seventeen new TIFF6 comparisons and the scoped isolated package gate finished. Task-owned Linux binaries and temporary test runtimes removed.",
-      "latest_detail": "resume.AutoSignIn_current.latest_20261107.remaining_image_decode_gap.current_continuation_increment",
+      "delivery": "AutoSignIn 2.9.15 source, real isolated host and browser composite accepted. Registered in local Linux build. No push, original private state import or new production deployment.",
+      "tests_running": "None. Scoped final Linux worker acquisition, source comparisons and independent review finished. Task-owned temporary executable and test containers removed.",
+      "latest_detail": "migration/evidence/autosignin-acceptance-20261107.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Final AutoSignIn closure review and affected package-worker verification after the TIFF6 single-strile restart fix, then refresh the installed MergeMessageNotify 1.20.3 source."
+      "next_complete_slice": "Refresh the read-only installed MergeMessageNotify 1.20.3 source and migrate its first complete functional route."
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -65478,7 +65693,7 @@
       },
       "latest_20261107": {
         "accepted_instances": "7/23, six historical accepted families; no new family promotion",
-        "whole_ASI": "implementing; current finite codec increment verified, whole format coverage and source private-state import are not complete",
+        "whole_ASI": "Verified functional migration of AutoSignIn 2.9.15. Source, real Main/browser, current Linux package and independent closure are bound in migration/evidence/autosignin-acceptance-20261107.json.",
         "H_head": "913eb082ead2c931d56f88f30b51ed631ae195e2; public service19+permanent tests saved; prior notice/private source e97c5ad3 and evidence-only11c retained",
         "P_head": "67ebe9480f9367bfd022ea66b69e3d1ed063d583; public opt-in/paired SDK105/owned fixture and Origin saved local",
         "applications": {
@@ -65515,7 +65730,7 @@
           "clone_current_GUI": "actual82.974s currentthenbrowser-onlyMain/worker/newdist; defaults+fivefieldtrim/persist/cold/workers; independent5bf. Currentnative/H4 notretroactivelyincluded.",
           "source_Main_contract": "96506846 originalactual333 probes; private+globalstop defaultwaitTrue, public removejob doesnotjoin; Webbroadcast allenabledclones, retryempty repeats; sameversionforce allowed; API DBsave precedesinit. No targetMain acceptance."
         },
-        "next": "Resume remaining specific TIFF/AVIF/other default-image reader differences from remaining_image_decode_gap.current_checkpoint.remaining. Do not repeat proven main/browser or final codec package work unless its input closure changes.",
+        "next": "Start MergeMessageNotify 1.20.3 with a refreshed read-only installed snapshot.",
         "remote_main_read_20261107": {
           "H": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
           "P": "4453f821ba32d5d4cc949e68d08d970e6ee7c975"
@@ -66798,7 +67013,7 @@
             "remaining": "Complete the confirmed TIFF6 source layouts in tiff_old_jpeg.remaining, then one isolated AutoSignIn package acceptance with the existing host and browser evidence. Reuse the source-confirmed AVIF scaling results."
           },
           "current_continuation_increment": {
-            "status": "Nineteen new TIFF6 examples agree with the original across the current layout increments. Exact install evidence for the previous ZIP remains bound to its code. AutoSignIn is implementing; seven of 23 instances accepted.",
+            "status": "AutoSignIn functional acceptance complete, exact current Linux worker and release notice restaging recorded. Eight of 23 installed instances accepted.",
             "source": {
               "plugin": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262",
               "Pillow": "12.2.0 Image.open/load before _tohash",
@@ -66861,7 +67076,7 @@
               "plugins/autosignin/imagehash/jpegport/raster.go",
               "plugins/autosignin/imagehash/testdata/source-extra-codecs.json"
             ],
-            "remaining": "Independent whole-plugin closure review and scoped install/hash verification for the final Linux artifact. No repeated Main, browser or cold/uninstall lifecycle runs. Original private state and remote delivery are separate.",
+            "remaining": "Private original config/history, remote publication and production deployment were not performed. Arbitrary Pillow formats and codec variations beyond source-derived fixtures are not certified.",
             "package_gate": {
               "artifact": {
                 "source_commit": "9f11b10ba91da49eaea7b35158be38a1bedff701",
@@ -66972,6 +67187,44 @@
               },
               "evidence_directory": "work/tiff6-planar-restart-tag",
               "command": "go test ./plugins/autosignin/imagehash -run ^TestSourceExtraImageCodecs/TIFF6-YCbCr111-separate-interchange-single-strip-.*-tag$ -v -count=1"
+            },
+            "final_package": {
+              "product_source_commit": "1aed110c0fe33f903a22abfdb85ae41613669e61",
+              "host_commit": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+              "host_sha256": "37944e759b99fdcfa16faf3da590ac8ca883a2bb389331bbda964e194f5faaf0",
+              "SDK_files": 105,
+              "linux": "amd64, go1.26.10, CGO_ENABLED=0, isolated UID1000/container network none",
+              "run": {
+                "exit": 0,
+                "seconds": 6.320024244021624,
+                "container_absent": true,
+                "network": "none",
+                "bundle_sha_verified": true
+              },
+              "actual_install": {
+                "actual_executable_sha256": "14c50f5d8d3dd3a7d5dad639ea862fc95da9b1e6d0252430c466db6ac72ce593",
+                "old_PID_reaped": true,
+                "real_config_and_page": true,
+                "zip_sha256": "ba00c82b33658eafd6be60e166ac96b9a5f9f3b5970583154977545ee04be34b"
+              },
+              "actual_observation_sha256": "e1927d02e22745af1d367abbf444c7899ca19cf8dbf1412d0e03dbe56e664095",
+              "actual_observation_path": "work/autosignin-final-package-20261107/actual/observations.jsonl",
+              "manifest_sha256": "b870f6212fa191f7692ee5ff6a82cee64aebf667f4256ed83fa6ed3a14083755",
+              "local_release_with_notices": {
+                "scope": "Canonical archive with complete notices, same actual installed worker bytes. Only documentation and licenses changed after installed test.",
+                "installed_zip_sha256": "ba00c82b33658eafd6be60e166ac96b9a5f9f3b5970583154977545ee04be34b",
+                "release_zip_sha256": "cc7c940235f118e0e20c84a7ec930d5eabcb9a9767b30bad85c416316cda5d1f",
+                "worker_sha256": "14c50f5d8d3dd3a7d5dad639ea862fc95da9b1e6d0252430c466db6ac72ce593",
+                "members": 44,
+                "changed_members": [
+                  "THIRD_PARTY_NOTICES.md",
+                  "plugins/autosignin/ORIGIN.md",
+                  "plugins/autosignin/imagehash/NOTICE.txt",
+                  "plugins/autosignin/imagehash/tiffport/LIBTIFF-LICENSE.md"
+                ],
+                "release_directory": "work/autosignin-final-package-20261107/with-notices"
+              },
+              "scope": "Exact current worker install/force-update, old worker reaped, real saved config and data-page calls. Final archive adds only license and attribution documents. Existing cold/GUI/ordinary host evidence retains its original binding."
             }
           }
         }

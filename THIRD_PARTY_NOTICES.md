@@ -98,6 +98,9 @@ v0.2.6 (BSD2 plus AV1 patent license), and decoder-only BSD source adapted
 from github.com/hhrutter/tiff v1.0.7. The latter is a private source relocation,
 not a shared module upgrade. plugins/autosignin/imagehash/ORIGIN.json and
 NOTICE.txt identify exact versions, source inventories and license locations.
+The TIFF behavior adapted from LibTIFF 4.7.1 retains its license in
+plugins/autosignin/imagehash/tiffport/LIBTIFF-LICENSE.md and file-specific
+attribution in plugins/autosignin/imagehash/NOTICE.txt.
 No Python, CGo or external codec process is used by the delivered worker.
 
 The legacy image readers retain the selected Picsetgo MIT decoder leaves and
