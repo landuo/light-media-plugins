@@ -4227,10 +4227,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:68",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase init_plugin / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4240,10 +4239,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:543",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_form / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4253,10 +4251,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:771",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_page / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4266,10 +4263,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:497",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_command / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4279,10 +4275,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:520",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4292,10 +4287,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:511",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_api / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4305,10 +4299,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:493",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_state / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -4318,10 +4311,9 @@
       ],
       "source_location": "cloudflarespeedtest/__init__.py:845",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase stop_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed installed CloudflareSpeedTest entry and MoviePilot ordinary plugin manager.",
+        "Go standard worker connects Web/API, private once and cron to the verified CFST child.",
+        "Current host verifies result and scoped CustomHosts config replacement before queuing reload."
       ]
     },
     {
@@ -17853,22 +17845,40 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/cloudflare-speed-test/main.go",
+        "plugins/cloudflarespeedtest/args.go",
+        "plugins/cloudflarespeedtest/core.go",
+        "plugins/cloudflarespeedtest/form.json",
+        "plugins/cloudflarespeedtest/models.go",
+        "plugins/cloudflarespeedtest/standard.go",
+        "plugins/cloudflarespeedtest/standard_host.go",
+        "plugins/cloudflarespeedtest/ORIGIN.json",
+        "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "cloudflarespeedtest.web_restart.20261108",
+        "cloudflarespeedtest.once_api.20261108",
+        "cloudflarespeedtest.unavailable.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/lark_finish_audit",
+        "evidence_ids": [
+          "cloudflarespeedtest.web_restart.20261108",
+          "cloudflarespeedtest.once_api.20261108",
+          "cloudflarespeedtest.unavailable.20261108"
+        ]
       },
       "original_instance_id": "CloudflareSpeedTest",
       "family": "CloudflareSpeedTest",
       "source_version": "1.5.1",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Installed Linux Go worker, verified native tool, source scheduler, command/API and paired CustomHosts bridge. Separate peer fixture, source replay and runtime adaptations are recorded."
     },
     {
       "id": "plugin.CustomHosts",
@@ -69411,6 +69421,114 @@
           "internal/sdk/worker.go": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533"
         }
       }
+    },
+    {
+      "id": "cloudflarespeedtest.web_restart.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CloudflareSpeedTest"
+      ],
+      "commands": [
+        "TestCloudflareSpeedTestInstalledLinuxAMD64WebAndRestart"
+      ],
+      "observations": [
+        "An installed Linux worker received a real Web command with the original sender. The downloaded official CFST Go executable made real loopback probes, updated both sealed configs in source order, then admitted one CustomHosts PluginReload. The test-only worker applied exactly two owned Hosts rows and one completion notice followed.",
+        "After the App closed and restarted, the verified cache was used again. The unchanged IP caused no new download, configuration revision, reload, or completion notice."
+      ],
+      "artifacts": {
+        "evidence/cloudflare-speed-test-acceptance-20261108.json": "424c76c302d0b0b6d4ee0574c5030e8c682e356f93038d7a73c5e58655e53536"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "2e4549b9181e8714c401f18f1b082f539d1d8c20fa32c9675b994b6277b106f1",
+        "worker_commit": "dff9b81d049bcdef967799a08ba3b3b0e1c17be8",
+        "host_commit": "37ddf684cd2e296e29c0cfc3c32589e1fb10d25a",
+        "archive_sha256": "d5ba8fa330181e6fb908f11462f423c52c3a06045f08772d350ff1eb9b1011af",
+        "target_files": {
+          "cmd/cloudflare-speed-test/main.go": "bd7eb9e5ff3726ee9b8182edfdf6fa3f0c7b318991cd8c34c51610ba662e4204",
+          "plugins/cloudflarespeedtest/args.go": "321ca7549fee9e8a52e02f7345676ddfdb202be5d2ebb6df4e12182040e52317",
+          "plugins/cloudflarespeedtest/core.go": "088e736a662153a12529b696d24780a296aba0edbe73109bdecc52cc3fb51c79",
+          "plugins/cloudflarespeedtest/form.json": "4794e8dac016957f94903657abb58ac3f4c5f8e5340413201a1588bda44f0256",
+          "plugins/cloudflarespeedtest/models.go": "e8eb7acfe1a538a5bac92f3e33e98c759bac1d0f697284f6898e45072aab936e",
+          "plugins/cloudflarespeedtest/standard.go": "fb1dba44f5dc2ea30a7afa9fc1619596b8743c9d625b0f8d40c297add4f49a7b",
+          "plugins/cloudflarespeedtest/standard_host.go": "31d137a26e2a3baf4a9841c34b41580816e8a0b77cadbf41e60a83e143c779e6",
+          "plugins/cloudflarespeedtest/ORIGIN.json": "7052f30e698d943ee7c15d8ebd1dc4657b6dbfb50fec71ead4b6b93402650cf4",
+          "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        }
+      }
+    },
+    {
+      "id": "cloudflarespeedtest.once_api.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CloudflareSpeedTest"
+      ],
+      "commands": [
+        "TestCloudflareSpeedTestInstalledLinuxAMD64OnceAndAPI"
+      ],
+      "observations": [
+        "The private once job fired after the source delay, persisted onlyonce=false, and produced no Web start notice. Public cron remained registered separately.",
+        "The bad API key returned 401 without a probe. The valid key returned the source success envelope and an empty data object after the cached engine ran with no repeated reload."
+      ],
+      "artifacts": {
+        "evidence/cloudflare-speed-test-acceptance-20261108.json": "424c76c302d0b0b6d4ee0574c5030e8c682e356f93038d7a73c5e58655e53536"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "2e4549b9181e8714c401f18f1b082f539d1d8c20fa32c9675b994b6277b106f1",
+        "worker_commit": "acc3c84f559e7773544f98cd021a090d570d508f",
+        "host_commit": "a8e26e5c0ab94f39e35cb53e75c83f9af8bb23b6",
+        "archive_sha256": "928d5b2becf4e235bb838c1aea21a023e33918586d5eb2a58167d0c87309944a",
+        "target_files": {
+          "cmd/cloudflare-speed-test/main.go": "bd7eb9e5ff3726ee9b8182edfdf6fa3f0c7b318991cd8c34c51610ba662e4204",
+          "plugins/cloudflarespeedtest/args.go": "321ca7549fee9e8a52e02f7345676ddfdb202be5d2ebb6df4e12182040e52317",
+          "plugins/cloudflarespeedtest/core.go": "088e736a662153a12529b696d24780a296aba0edbe73109bdecc52cc3fb51c79",
+          "plugins/cloudflarespeedtest/form.json": "4794e8dac016957f94903657abb58ac3f4c5f8e5340413201a1588bda44f0256",
+          "plugins/cloudflarespeedtest/models.go": "e8eb7acfe1a538a5bac92f3e33e98c759bac1d0f697284f6898e45072aab936e",
+          "plugins/cloudflarespeedtest/standard.go": "30c47117bb655bc150910872e09e4cb29c4b4a4caf29ec2ebdd39a5162dbd7b2",
+          "plugins/cloudflarespeedtest/standard_host.go": "31d137a26e2a3baf4a9841c34b41580816e8a0b77cadbf41e60a83e143c779e6",
+          "plugins/cloudflarespeedtest/ORIGIN.json": "0d13fa709f9e6b67540e0b20d0d6379fa8495cbf732aa7a5c28c7e9b189552fa",
+          "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        }
+      }
+    },
+    {
+      "id": "cloudflarespeedtest.unavailable.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CloudflareSpeedTest"
+      ],
+      "commands": [
+        "TestCloudflareSpeedTestInstalledLinuxAMD64UnavailableDependencies"
+      ],
+      "observations": [
+        "A stopped CustomHosts remained installed in SQLite. A valid speed-test API request followed the source missing-hosts log without querying release metadata.",
+        "After loading the test peer, latest metadata was unavailable and v2.2.2 metadata exposed the old asset name. The request reached the source environment-failure log, cleared onlyonce and issued no archive request or TCP probe. Both IP values were unchanged."
+      ],
+      "artifacts": {
+        "evidence/cloudflare-speed-test-acceptance-20261108.json": "424c76c302d0b0b6d4ee0574c5030e8c682e356f93038d7a73c5e58655e53536"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "2e4549b9181e8714c401f18f1b082f539d1d8c20fa32c9675b994b6277b106f1",
+        "worker_commit": "acc3c84f559e7773544f98cd021a090d570d508f",
+        "host_commit": "23beb31175e1b0a659d637732c2b54e146829554",
+        "archive_sha256": "928d5b2becf4e235bb838c1aea21a023e33918586d5eb2a58167d0c87309944a",
+        "target_files": {
+          "cmd/cloudflare-speed-test/main.go": "bd7eb9e5ff3726ee9b8182edfdf6fa3f0c7b318991cd8c34c51610ba662e4204",
+          "plugins/cloudflarespeedtest/args.go": "321ca7549fee9e8a52e02f7345676ddfdb202be5d2ebb6df4e12182040e52317",
+          "plugins/cloudflarespeedtest/core.go": "088e736a662153a12529b696d24780a296aba0edbe73109bdecc52cc3fb51c79",
+          "plugins/cloudflarespeedtest/form.json": "4794e8dac016957f94903657abb58ac3f4c5f8e5340413201a1588bda44f0256",
+          "plugins/cloudflarespeedtest/models.go": "e8eb7acfe1a538a5bac92f3e33e98c759bac1d0f697284f6898e45072aab936e",
+          "plugins/cloudflarespeedtest/standard.go": "30c47117bb655bc150910872e09e4cb29c4b4a4caf29ec2ebdd39a5162dbd7b2",
+          "plugins/cloudflarespeedtest/standard_host.go": "31d137a26e2a3baf4a9841c34b41580816e8a0b77cadbf41e60a83e143c779e6",
+          "plugins/cloudflarespeedtest/ORIGIN.json": "0d13fa709f9e6b67540e0b20d0d6379fa8495cbf732aa7a5c28c7e9b189552fa",
+          "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+        }
+      }
     }
   ],
   "scope": {
@@ -69470,21 +69588,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 20,
+      "functional_verified_instances": 21,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 19,
-      "functional_verified_count_scope": "Twenty of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 20,
+      "functional_verified_count_scope": "Twenty-one of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+      "tested_saved_code_revision": "acc3c84f559e7773544f98cd021a090d570d508f",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "0601e3e886b3e9b9497afd91130911c816f36336",
+      "host_HEAD": "23beb31175e1b0a659d637732c2b54e146829554",
       "SDK_source_host_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "91b555a3900bb81e9c97253ff8bcf472b5aa05a09677b04551e894409b6332f1",
@@ -69495,12 +69613,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "20/22 instances accepted. SeedRescue 1.6.3 is registered locally with the paired host. No push, deploy or private history import.",
-      "tests_running": "None. Native cross-site download, focused Chrome workbench paths and parallel streaming evidence are recorded.",
-      "latest_detail": "migration/evidence/seed-rescue-acceptance-20261108.json",
+      "delivery": "21/22 instances accepted. CloudflareSpeedTest 1.5.1 is registered locally with the paired host. No push, deployment or private history import.",
+      "tests_running": "None. Three distinct native Cloudflare scenarios and previous source/browser evidence are recorded.",
+      "latest_detail": "migration/evidence/cloudflare-speed-test-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start CloudflareSpeedTest from its fixed installed version. Reuse the existing Go core and verify how its external speed-test tool, selection, config and scheduled updates map to the current host. CustomHosts follows.",
+      "next_complete_slice": "Implement the installed CustomHosts 1.2.2 Go worker and host-scoped file effect. Verify its source duplicate-address rule and actual installed CloudflareSpeedTest reload using one owned Linux Hosts file.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -69515,7 +69633,8 @@
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
       "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
       "latest_CleanInvalidSeed_product_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
-      "latest_SeedRescue_product_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6"
+      "latest_SeedRescue_product_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+      "latest_CloudflareSpeedTest_product_commit": "acc3c84f559e7773544f98cd021a090d570d508f"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -69532,7 +69651,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start CloudflareSpeedTest from its fixed installed version. Reuse the existing Go core and verify how its external speed-test tool, selection, config and scheduled updates map to the current host. CustomHosts follows.",
+    "next_complete_slice": "Implement the installed CustomHosts 1.2.2 Go worker and host-scoped file effect. Verify its source duplicate-address rule and actual installed CloudflareSpeedTest reload using one owned Linux Hosts file.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

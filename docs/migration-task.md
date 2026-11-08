@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (twenty of 22 in scope accepted)
+## Current resume (twenty-one of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -17,7 +17,14 @@ the saved intent before one exact active addition. Chrome opened the
 original Config, Page and sidebar AppPage. The package and its paired host
 remain local. Historical production jobs were left for reviewed import.
 See `migration/evidence/seed-rescue-acceptance-20261108.json`.
-CloudflareSpeedTest is next, followed by CustomHosts.
+
+CloudflareSpeedTest 1.5.1 is accepted for the current local Linux scope.
+The installed worker ran the official CFST executable on isolated x86_64,
+saved both IP values, and dispatched one reload to a test-only CustomHosts
+worker. Restart, single-run scheduling, API authentication and unavailable
+dependencies were checked separately. The actual CustomHosts 1.2.2 package
+and the final paired test remain next. See
+`migration/evidence/cloudflare-speed-test-acceptance-20261108.json`.
 
 CleanInvalidSeed 2.1 is accepted for local Linux with the paired host.
 The indexed package ran the five Web commands, qBittorrent keep-data

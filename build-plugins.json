@@ -363,6 +363,18 @@
         "cwd": ".",
         "output": "frontend-output"
       }
+    },
+    {
+      "id": "CloudflareSpeedTest",
+      "package": "./cmd/cloudflare-speed-test",
+      "host_contract": "light-media.sdk-resources/v1",
+      "license_files": [
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSE.upstream",
+        "plugins/cloudflarespeedtest/ORIGIN.json",
+        "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+        "third_party/Go-LICENSE"
+      ]
     }
   ]
 }
