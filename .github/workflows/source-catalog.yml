@@ -1,9 +1,9 @@
-name: Linux amd64 plugins
+name: Go plugin source catalog
 
 on:
   push:
     branches: [main]
-    paths-ignore: [go-plugins.v1.json]
+    paths-ignore: [go-plugins.v2.json]
   pull_request:
     branches: [main]
   workflow_dispatch:
@@ -11,10 +11,8 @@ on:
 permissions:
   contents: read
 
-# Do not cancel an asset upload. An older queued build must pass source-tree
-# checks before any root-index update; non-force ref CAS protects concurrent main.
 concurrency:
-  group: linux-amd64-${{ github.event.pull_request.number || github.ref }}
+  group: source-catalog-${{ github.event.pull_request.number || github.ref }}
   cancel-in-progress: false
 
 env:
@@ -43,14 +41,19 @@ jobs:
           go-version: '1.26.4'
           check-latest: false
           cache: false
-      - name: Vet, race tests, and controlled packaging/publication tests
+      - name: Vet and test
         run: |
           test "$(uname -m)" = x86_64
           go vet ./...
           go test -race ./...
           python3 -m unittest discover -s scripts -p 'test_*.py' -v
+      - name: Verify Linux arm64 workers compile
+        env:
+          GOARCH: arm64
+          CGO_ENABLED: '0'
+        run: go build -trimpath -buildvcs=false ./cmd/...
 
-  release:
+  catalog:
     needs: test
     if: github.ref == 'refs/heads/main' && (github.event_name == 'push' || github.event_name == 'workflow_dispatch')
     runs-on: ubuntu-24.04
@@ -68,14 +71,20 @@ jobs:
           go-version: '1.26.4'
           check-latest: false
           cache: false
-      - name: Require approved root license and package actual worker manifests
-        run: |
-          test -s LICENSE
-          python3 scripts/build_plugins.py --output dist \
-            --release-base-url "https://github.com/$GITHUB_REPOSITORY/releases/download/build-$GITHUB_SHA/"
-      - name: Publish without clobber, verify public bytes, and CAS the index
+      - name: Generate catalog from actual worker manifests
+        run: python3 scripts/build_source_catalog.py --source-sha "$GITHUB_SHA"
+      - name: Publish only the catalog
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python3 scripts/publish_release.py --dist dist \
-            --repo "$GITHUB_REPOSITORY" --source-sha "$GITHUB_SHA"
+          test "$(git rev-parse HEAD)" = "$GITHUB_SHA"
+          git diff --quiet HEAD -- . ':!go-plugins.v2.json'
+          git add -- go-plugins.v2.json
+          if git diff --cached --quiet; then exit 0; fi
+          git -c user.name='github-actions[bot]' \
+            -c user.email='41898282+github-actions[bot]@users.noreply.github.com' \
+            commit -m "chore: publish plugin source catalog for $GITHUB_SHA [skip ci]"
+          auth="$(printf 'x-access-token:%s' "$GITHUB_TOKEN" | base64 -w0)"
+          GIT_CONFIG_COUNT=1 GIT_CONFIG_KEY_0=http.https://github.com/.extraheader \
+            GIT_CONFIG_VALUE_0="AUTHORIZATION: basic $auth" \
+            git push origin HEAD:refs/heads/main
