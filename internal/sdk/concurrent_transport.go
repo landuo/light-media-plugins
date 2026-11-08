@@ -35,21 +35,30 @@ type concurrentProposal struct {
 const maxConcurrentCalls = 32
 const maxParallelHostCalls = 64
 
-func (p concurrentProposal) valid() bool {
-	return (!p.SequentialHostStream || p.MaxParallelHostCalls == 0) &&
+func (p concurrentProposal) valid(manifest Manifest) bool {
+	return (!p.SequentialHostStream || SupportsSequentialHostStream(manifest) &&
+		(p.MaxParallelHostCalls > 0) == supportsParallelHostStream(manifest)) &&
 		(p.MaxParallelHostCalls == 0 || p.MaxParallelHostCalls >= 2 && p.MaxParallelHostCalls <= min(maxParallelHostCalls, p.MaxHostCalls)) &&
 		p.Version == 1 && p.MaxCalls >= 1 && p.MaxCalls <= maxConcurrentCalls && p.MaxHostCalls >= 1 && p.MaxHostCalls <= 256
+}
+
+func supportsParallelHostStream(m Manifest) bool {
+	return m.PluginID == "SeedRescue" && m.ManagedPublicServices && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, "seed_rescue.detail")
 }
 
 func SupportsSequentialHostStream(m Manifest) bool {
 	return m.PluginID == "BrushFlowLanduo" && m.ManagedPublicServices && slices.Contains(m.Capabilities, BrushSourceCandidatesCapability) ||
 		m.PluginID == "ScrapeFileClean" && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, ScrapeCleanRemoveCapability) ||
-		m.PluginID == "CleanInvalidSeed" && m.ManagedPublicServices && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, "clean_seed.tasks")
+		m.PluginID == "CleanInvalidSeed" && m.ManagedPublicServices && m.ManagedPrivateScheduler && slices.Contains(m.Capabilities, "clean_seed.tasks") ||
+		supportsParallelHostStream(m)
 }
 
 func (p concurrentProposal) streamsHostCalls(method string) bool {
 	if !p.SequentialHostStream {
 		return false
+	}
+	if p.MaxParallelHostCalls > 0 {
+		return method == "scan" || method == "scan_background" || method == "http" || method == "get_service"
 	}
 	switch method {
 	case "init", "http", "get_service", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "private_watch",
@@ -276,8 +285,7 @@ type concurrentAccount struct {
 	hostCalls  int
 	limits     transportLimits
 	worker     bool
-	// Streaming roots still have per-message frame, byte and chunk bounds.
-	// Their next sequential callback cannot be admitted before its predecessor.
+	// Streaming roots retain per-message bounds and the negotiated callback window.
 	streaming bool
 }
 

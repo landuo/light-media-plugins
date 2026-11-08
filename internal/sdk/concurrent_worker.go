@@ -26,7 +26,8 @@ type concurrentWorkerCall struct {
 	reverseClosed        bool
 	reverseHosts         sync.WaitGroup
 	cancelNotified       bool
-	streamSequence       uint64 // guarded by the serial callback gate
+	streamMu             sync.Mutex // orders publication only for parallel streams
+	streamSequence       uint64     // guarded by streamMu or the serial callback gate
 }
 
 type concurrentWorker struct {
@@ -367,27 +368,16 @@ func (w *concurrentWorker) hostSerial(call *concurrentWorkerCall, ctx context.Co
 	if err := call.account.host(w.proposal.MaxHostCalls); err != nil {
 		return nil, err
 	}
-	var suffix string
-	if call.account.streaming {
-		sequence := call.streamSequence + 1
-		if sequence == 0 {
-			return nil, failure("host_call_limit")
-		}
-		suffix = strconv.FormatUint(sequence, 10)
-	} else {
-		var err error
-		suffix, err = randomID()
-		if err != nil {
-			return nil, err
-		}
+	id, err := call.nextReverseID()
+	if err != nil {
+		return nil, err
 	}
-	id := call.request.ID + "." + suffix
 	pending := make(chan Frame, 1)
 	call.mu.Lock()
 	call.pending[id] = pending
 	call.mu.Unlock()
 	defer func() { call.mu.Lock(); delete(call.pending, id); call.mu.Unlock() }()
-	_, err := w.transport.write(Frame{Protocol: ProtocolVersion, ID: id, Type: "host_call", Identity: w.transport.wire.identity, Method: method, Payload: payload}, func(n concurrentWireCount) error {
+	_, err = w.transport.write(Frame{Protocol: ProtocolVersion, ID: id, Type: "host_call", Identity: w.transport.wire.identity, Method: method, Payload: payload}, func(n concurrentWireCount) error {
 		if call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
 			return failure("execution_canceled")
 		}
@@ -423,6 +413,57 @@ func (w *concurrentWorker) hostSerial(call *concurrentWorkerCall, ctx context.Co
 	}
 }
 
+// The caller serializes ID assignment and publication for a streaming root.
+func (call *concurrentWorkerCall) nextReverseID() (string, error) {
+	if call.account.streaming {
+		sequence := call.streamSequence + 1
+		if sequence == 0 {
+			return "", failure("host_call_limit")
+		}
+		return call.request.ID + "." + strconv.FormatUint(sequence, 10), nil
+	}
+	suffix, err := randomID()
+	return call.request.ID + "." + suffix, err
+}
+
+func (w *concurrentWorker) publishParallelHostCall(call *concurrentWorkerCall, ctx context.Context, method string, payload json.RawMessage, pending chan Frame) (string, error) {
+	if call.account.streaming {
+		call.streamMu.Lock()
+		defer call.streamMu.Unlock()
+	}
+	id, err := call.nextReverseID()
+	if err != nil {
+		return "", err
+	}
+	call.mu.Lock()
+	call.pending[id] = pending
+	call.mu.Unlock()
+	written, err := w.transport.write(Frame{Protocol: ProtocolVersion, ID: id, Type: "host_call", Identity: w.transport.wire.identity, Method: method, Payload: append(json.RawMessage(nil), payload...)}, func(n concurrentWireCount) error {
+		call.mu.Lock()
+		closed := call.reverseClosed
+		call.mu.Unlock()
+		if closed || call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
+			return failure("execution_canceled")
+		}
+		return call.account.send(n)
+	})
+	if err != nil {
+		// A rejected unpublished stream ID can be reused by the next caller.
+		// Remove this receiver before releasing the publication lock.
+		call.mu.Lock()
+		delete(call.pending, id)
+		call.mu.Unlock()
+		if call.account.streaming && written.bytes != 0 {
+			w.finish(err)
+		}
+		return "", err
+	}
+	if call.account.streaming {
+		call.streamSequence++
+	}
+	return id, nil
+}
+
 func (w *concurrentWorker) hostParallel(call *concurrentWorkerCall, ctx context.Context, method string, payload json.RawMessage) (json.RawMessage, error) {
 	if ctx == nil || ctx.Err() != nil || call.phase.closed.Load() || call.ctx.Err() != nil || !methodPattern.MatchString(method) || strings.HasPrefix(method, "transport.") || len(payload) > 0 && !json.Valid(payload) {
 		return nil, failure("invalid_host_call")
@@ -446,28 +487,12 @@ func (w *concurrentWorker) hostParallel(call *concurrentWorkerCall, ctx context.
 	if err := call.account.host(w.proposal.MaxHostCalls); err != nil {
 		return nil, err
 	}
-	suffix, err := randomID()
-	if err != nil {
-		return nil, err
-	}
-	id := call.request.ID + "." + suffix
 	pending := make(chan Frame, 1)
-	call.mu.Lock()
-	call.pending[id] = pending
-	call.mu.Unlock()
-	defer func() { call.mu.Lock(); delete(call.pending, id); call.mu.Unlock() }()
-	_, err = w.transport.write(Frame{Protocol: ProtocolVersion, ID: id, Type: "host_call", Identity: w.transport.wire.identity, Method: method, Payload: append(json.RawMessage(nil), payload...)}, func(n concurrentWireCount) error {
-		call.mu.Lock()
-		closed := call.reverseClosed
-		call.mu.Unlock()
-		if closed || call.phase.closed.Load() || call.ctx.Err() != nil || ctx.Err() != nil {
-			return failure("execution_canceled")
-		}
-		return call.account.send(n)
-	})
+	id, err := w.publishParallelHostCall(call, ctx, method, payload, pending)
 	if err != nil {
 		return nil, err
 	}
+	defer func() { call.mu.Lock(); delete(call.pending, id); call.mu.Unlock() }()
 	select {
 	case reply := <-pending:
 		call.mu.Lock()

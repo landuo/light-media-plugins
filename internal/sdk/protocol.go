@@ -806,10 +806,10 @@ func (runner Runner) Start(lifeCtx context.Context, command Command, manifest Ma
 			if agreed.ParallelHostCalls != 0 && agreed.ParallelHostCalls != 1 {
 				return nil, failure("parallel_host_call_mismatch")
 			}
+			if proposal.SequentialHostStream && (agreed.ParallelHostCalls == 1) != supportsParallelHostStream(manifest) {
+				return nil, failure("parallel_host_call_mismatch")
+			}
 			if agreed.ParallelHostCalls == 1 {
-				if proposal.SequentialHostStream {
-					return nil, failure("parallel_host_call_mismatch")
-				}
 				proposal.MaxParallelHostCalls = min(maxParallelHostCalls, runner.MaxHostCalls)
 				if proposal.MaxParallelHostCalls < 2 {
 					return nil, failure("parallel_host_call_limits")

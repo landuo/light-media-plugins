@@ -129,10 +129,7 @@ func serve(ctx context.Context, input io.Reader, output io.Writer, manifest Mani
 		}
 		if request.Method == "transport.concurrent" {
 			var proposal concurrentProposal
-			if !concurrent || !persistent || invoked || strictJSON(request.Payload, &proposal) != nil || !proposal.valid() || (parallelHostCalls != (proposal.MaxParallelHostCalls > 0)) {
-				return failure("concurrent_session_mismatch")
-			}
-			if proposal.SequentialHostStream && !SupportsSequentialHostStream(manifest) {
+			if !concurrent || !persistent || invoked || strictJSON(request.Payload, &proposal) != nil || !proposal.valid(manifest) || (parallelHostCalls != (proposal.MaxParallelHostCalls > 0)) {
 				return failure("concurrent_session_mismatch")
 			}
 			raw, _ := json.Marshal(proposal)

@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "714984d815f388224e802ef17d2a254f0774fefd",
-  "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf. CleanInvalidSeed also negotiates sequential scanning for its exact command and scheduler phases.",
+  "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
+  "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf. CleanInvalidSeed also negotiates sequential scanning for its exact command and scheduler phases. SeedRescue negotiates parallel callback streaming with the existing finite callback window and per-message limits.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -187,18 +187,18 @@
     {
       "source_path": "internal/plugins/concurrent_transport.go",
       "path": "internal/sdk/concurrent_transport.go",
-      "source_sha256": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe",
-      "sha256": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe",
+      "source_sha256": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
+      "sha256": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
       "changes": [],
-      "source_commit": "714984d815f388224e802ef17d2a254f0774fefd"
+      "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f"
     },
     {
       "source_path": "internal/plugins/concurrent_worker.go",
       "path": "internal/sdk/concurrent_worker.go",
-      "source_sha256": "10c295641e76d0397a01833dd8434ef36277bb41cf264c13fdb4424329b7b0d7",
-      "sha256": "10c295641e76d0397a01833dd8434ef36277bb41cf264c13fdb4424329b7b0d7",
+      "source_sha256": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
+      "sha256": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
       "changes": [],
-      "source_commit": "4ae9d95e736038115d44c2c60288783a1915776f"
+      "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f"
     },
     {
       "source_path": "internal/plugins/downloader_configurations.go",
@@ -660,10 +660,10 @@
     {
       "source_path": "internal/plugins/protocol.go",
       "path": "internal/sdk/protocol.go",
-      "source_sha256": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
-      "sha256": "9f8428a4cf7451c2a8027a761d16d94eef58f432f06879089cc7fd39eaa22b6f",
+      "source_sha256": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
+      "sha256": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
       "changes": [],
-      "source_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54"
+      "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f"
     },
     {
       "source_path": "internal/plugins/protocol_test.go",
@@ -894,10 +894,10 @@
     {
       "source_path": "internal/plugins/worker.go",
       "path": "internal/sdk/worker.go",
-      "source_sha256": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd",
-      "sha256": "5317e232d99d7ac9d6ae129223b99abc5b9b452b46dbbf957bedeff8380fd3bd",
+      "source_sha256": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533",
+      "sha256": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533",
       "changes": [],
-      "source_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54"
+      "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f"
     }
   ],
   "business_source_provenance": {
