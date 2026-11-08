@@ -69,7 +69,12 @@ func (p *Plugin) http(ctx context.Context, m *Machine, raw json.RawMessage) (jso
 	if err != nil {
 		return nil, err
 	}
-	return sdk.JSONHTTPResponse(200, result)
+	data := result.Data
+	if data == nil {
+		data = Object{}
+	}
+	return sdk.JSONHTTPResponse(200, Object{"success": result.Success, "message": result.Message,
+		"message_i18n": result.Message, "data": data})
 }
 
 func statusFilter(request sdk.HTTPRequest) (StatusFilter, string) {
@@ -116,14 +121,18 @@ func parseSelection(raw []byte) (Selection, string, bool) {
 	if raw := fields["confirmed_download_factor"]; len(raw) != 0 && string(raw) != "null" {
 		var value float64
 		if json.Unmarshal(raw, &value) != nil {
-			var numericText string
-			if json.Unmarshal(raw, &numericText) != nil {
-				return result, "confirmed_download_factor", false
-			}
-			var err error
-			value, err = strconv.ParseFloat(strings.TrimSpace(numericText), 64)
-			if err != nil {
-				return result, "confirmed_download_factor", false
+			if string(raw) == "true" {
+				value = 1
+			} else if string(raw) != "false" {
+				var numericText string
+				if json.Unmarshal(raw, &numericText) != nil {
+					return result, "confirmed_download_factor", false
+				}
+				var err error
+				value, err = strconv.ParseFloat(strings.TrimSpace(numericText), 64)
+				if err != nil {
+					return result, "confirmed_download_factor", false
+				}
 			}
 		}
 		if math.IsNaN(value) || math.IsInf(value, 0) || value < 0 {

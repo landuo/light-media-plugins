@@ -54,9 +54,11 @@ func (m *Machine) restore(ctx context.Context) error {
 		return e
 	}
 	if len(status) > 0 {
+		m.statusMu.Lock()
 		m.status = status
+		m.statusMu.Unlock()
 	}
-	if m.status["state"] == "running" {
+	if m.ScanStatus()["state"] == "running" {
 		return m.scanUpdate(ctx, Object{"state": "interrupted", "finished_at": m.now(), "message": "上次扫描被中断，未完成的匹配将在下次扫描恢复"})
 	}
 	return nil

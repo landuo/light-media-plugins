@@ -6,6 +6,7 @@ import (
 	"encoding/json"
 	"errors"
 	"os"
+	"sync"
 	"sync/atomic"
 	"time"
 	_ "time/tzdata"
@@ -33,9 +34,11 @@ func Manifest() sdk.Manifest {
 // One worker belongs to one loaded installation. Host callers live only in
 // the callback context, including those used by concurrent site probes.
 type Plugin struct {
-	host     standardHost
-	machine  atomic.Pointer[Machine]
-	nextScan atomic.Uint64
+	host        standardHost
+	machine     *Machine
+	initMu      sync.Mutex
+	initialized bool
+	nextScan    atomic.Uint64
 }
 
 func NewPlugin() *Plugin {
@@ -46,7 +49,7 @@ func NewPlugin() *Plugin {
 		}
 	}
 	p := &Plugin{host: standardHost{zone: zone}}
-	p.machine.Store(newMachine(&p.host))
+	p.machine = newMachine(&p.host)
 	return p
 }
 
@@ -58,7 +61,7 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 }
 
 func (p *Plugin) handle(ctx context.Context, method string, raw json.RawMessage) (json.RawMessage, error) {
-	m := p.machine.Load()
+	m := p.machine
 	switch method {
 	case "init":
 		var config Object
@@ -69,15 +72,15 @@ func (p *Plugin) handle(ctx context.Context, method string, raw json.RawMessage)
 				return nil, err
 			}
 		}
-		next := newMachine(&p.host)
-		if err := next.restore(ctx); err != nil {
-			return nil, err
+		p.initMu.Lock()
+		defer p.initMu.Unlock()
+		if !p.initialized {
+			if err := m.restore(ctx); err != nil {
+				return nil, err
+			}
+			p.initialized = true
 		}
-		if err := next.Init(ctx, config); err != nil {
-			return nil, err
-		}
-		p.machine.Store(next)
-		return nil, nil
+		return nil, m.Init(ctx, config)
 	case "get_state":
 		return json.Marshal(m.State())
 	case "get_service":
