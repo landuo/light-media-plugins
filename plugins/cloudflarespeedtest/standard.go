@@ -121,7 +121,12 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 		if err != nil {
 			return nil, err
 		}
-		return sdk.JSONHTTPResponse(200, result)
+		var message any
+		if result.Message != "" {
+			message = result.Message
+		}
+		return sdk.JSONHTTPResponse(200, Object{"success": result.Success, "message": message,
+			"message_i18n": message, "data": Object{}})
 	case "stop_service", "stop":
 		p.lifeMu.Lock()
 		defer p.lifeMu.Unlock()
