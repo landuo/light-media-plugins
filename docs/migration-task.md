@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (twenty-one of 22 in scope accepted)
+## Current resume (22 of 22 in scope accepted locally)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -9,6 +9,19 @@ Merge evidence and four local work-in-progress files are retained separately.
 The user limits media libraries to fnOS Film and local directories.
 Other media-server providers and cloud-drive storage are outside the
 current acceptance scope. Ordinary network inputs for plugins remain in scope.
+
+CustomHosts 1.2.2 completes the current migration. The exact indexed
+CustomHosts and CloudflareSpeedTest packages ran together on non-root
+Linux with a dedicated writable container Hosts file. The run verified
+the original form, duplicate IPv4 and IPv6 addresses, duplicate-name
+handling, invalid row reporting, explicit disable, actual Cloudflare
+reload and file retention after uninstall. Prior source-identical browser
+evidence was reused. See
+`migration/evidence/custom-hosts-acceptance-20261108.json`.
+
+The 22 accepted instances cover 21 plugin packages. Evidence is bound
+to each verified revision. Current delivery is local, with no push,
+deployment or production configuration import for this final slice.
 
 SeedRescue 1.6.3 is accepted for the current local Linux scope. The
 indexed worker ran a real App scan, matched one cross-site candidate and
@@ -22,8 +35,8 @@ CloudflareSpeedTest 1.5.1 is accepted for the current local Linux scope.
 The installed worker ran the official CFST executable on isolated x86_64,
 saved both IP values, and dispatched one reload to a test-only CustomHosts
 worker. Restart, single-run scheduling, API authentication and unavailable
-dependencies were checked separately. The actual CustomHosts 1.2.2 package
-and the final paired test remain next. See
+dependencies were checked separately. The final paired run also used the
+actual CustomHosts 1.2.2 package. See
 `migration/evidence/cloudflare-speed-test-acceptance-20261108.json`.
 
 CleanInvalidSeed 2.1 is accepted for local Linux with the paired host.

@@ -375,6 +375,17 @@
         "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
         "third_party/Go-LICENSE"
       ]
+    },
+    {
+      "id": "CustomHosts",
+      "package": "./cmd/custom-hosts",
+      "host_contract": "light-media.sdk-resources/v1",
+      "license_files": [
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSE.upstream",
+        "plugins/customhosts/ORIGIN.json",
+        "third_party/Go-LICENSE"
+      ]
     }
   ]
 }

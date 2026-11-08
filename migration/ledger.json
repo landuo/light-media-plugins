@@ -4323,10 +4323,9 @@
       ],
       "source_location": "customhosts/__init__.py:39",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase init_plugin / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4336,10 +4335,9 @@
       ],
       "source_location": "customhosts/__init__.py:82",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_form / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4349,10 +4347,9 @@
       ],
       "source_location": "customhosts/__init__.py:186",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_page / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4362,10 +4359,9 @@
       ],
       "source_location": "customhosts/__init__.py:74",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_command / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4375,10 +4371,9 @@
       ],
       "source_location": "customhosts/__init__.py:78",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_api / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4388,10 +4383,9 @@
       ],
       "source_location": "customhosts/__init__.py:69",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_state / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -4401,10 +4395,9 @@
       ],
       "source_location": "customhosts/__init__.py:280",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase stop_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed CustomHosts 1.2.2 init and PluginReload; Python hosts dependency enables repeated addresses.",
+        "Indexed plugins/customhosts standard Go worker uses the host-bound file effect and sealed configuration.",
+        "An owned writable container Hosts mount receives source canonical prefix and managed tail. Cloudflare's actual worker invokes the loaded instance by the ordinary reload event."
       ]
     },
     {
@@ -17995,22 +17988,33 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/custom-hosts/main.go",
+        "plugins/customhosts/form.go",
+        "plugins/customhosts/plugin.go",
+        "plugins/customhosts/ORIGIN.json"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "customhosts.installed-source-replay.20261108",
+        "customhosts.native-paired.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/lark_finish_audit",
+        "evidence_ids": [
+          "customhosts.installed-source-replay.20261108",
+          "customhosts.native-paired.20261108"
+        ]
       },
       "original_instance_id": "CustomHosts",
       "family": "CustomHosts",
       "source_version": "1.2.2",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "The installed 1.2.2 Go worker and confined real Hosts effect are accepted, with actual CloudflareSpeedTest and prior form evidence distinguished."
     }
   ],
   "decisions": [
@@ -69529,6 +69533,75 @@
           "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
         }
       }
+    },
+    {
+      "id": "customhosts.installed-source-replay.20261108",
+      "kind": "differential",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CustomHosts"
+      ],
+      "commands": [
+        "source-replay.py"
+      ],
+      "observations": [
+        "empty configuration",
+        "empty text normalization",
+        "disabled clear",
+        "repeated IPv4 and IPv6",
+        "duplicate alias rejection",
+        "bad row result",
+        "direct PluginReload",
+        "stop leaves file unchanged"
+      ],
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "9c68f52c4e045180f92e9a2e223a15b681bfa5016082ee00e2015220430035fc",
+        "worker_commit": "566d1deda6cb54b2d261288e5638ff1847e8a93f",
+        "host_commit": "7de1d57e6685beaa387480fd803bbe6c717b8799",
+        "archive_sha256": "fd8221779e96c75007c63f74277f2be639561486be361b4153afdcf6655877b9",
+        "target_files": {
+          "cmd/custom-hosts/main.go": "09a4fae69631cd421eee8962333152438192dd96c2db8b3f48b9d4d6f0a0596b",
+          "plugins/customhosts/form.go": "64bc648dff6e11d7794fdb499ef9f715ca5a16fea33c28c731ae020a9c156ac7",
+          "plugins/customhosts/plugin.go": "47db9d66a749496967968a1c3fe55ae5e0b3deda7e5a97b9c3de787e58d03fe8",
+          "plugins/customhosts/ORIGIN.json": "9e14f9e02578d22c2a2c9d352c078a3049e7a2db6590f7457d81438117cce088"
+        }
+      },
+      "artifacts": {
+        "evidence/custom-hosts-acceptance-20261108.json": "21c11936ba888b8957f296bb2395e872d0a21cb4d5989a1aec928b0a4da2812b"
+      }
+    },
+    {
+      "id": "customhosts.native-paired.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CustomHosts"
+      ],
+      "commands": [
+        "TestCustomHostsInstalledLinuxAMD64WithCloudflare"
+      ],
+      "observations": [
+        "The started non-root App installed both exact indexed worker archives. The new CustomHosts standard form and all three defaults matched the pinned original's sorted JSON. Empty initialization and enabled empty text preserved the pre-existing marker. The explicit disabled configuration cleared the marker tail and preserved the prefix.",
+        "Enabled configuration added two rows using the same non-loopback IPv4 and two sharing an IPv6. An existing name caused the colliding row to be skipped whole. The invalid row was omitted from the file and returned in the saved err_hosts array with a trailing LF. The config became the source three-field object.",
+        "An actual Cloudflare Web command ran the official Go CFST executable against an owned TCP loopback. The real CustomHosts package received PluginReload and wrote exactly both new IPv4 rows while preserving IPv6 and the prefix. The App's actual uninstall removed the instance without changing the mounted file."
+      ],
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "9c68f52c4e045180f92e9a2e223a15b681bfa5016082ee00e2015220430035fc",
+        "worker_commit": "566d1deda6cb54b2d261288e5638ff1847e8a93f",
+        "host_commit": "7de1d57e6685beaa387480fd803bbe6c717b8799",
+        "archive_sha256": "fd8221779e96c75007c63f74277f2be639561486be361b4153afdcf6655877b9",
+        "target_files": {
+          "cmd/custom-hosts/main.go": "09a4fae69631cd421eee8962333152438192dd96c2db8b3f48b9d4d6f0a0596b",
+          "plugins/customhosts/form.go": "64bc648dff6e11d7794fdb499ef9f715ca5a16fea33c28c731ae020a9c156ac7",
+          "plugins/customhosts/plugin.go": "47db9d66a749496967968a1c3fe55ae5e0b3deda7e5a97b9c3de787e58d03fe8",
+          "plugins/customhosts/ORIGIN.json": "9e14f9e02578d22c2a2c9d352c078a3049e7a2db6590f7457d81438117cce088"
+        }
+      },
+      "artifacts": {
+        "evidence/custom-hosts-acceptance-20261108.json": "21c11936ba888b8957f296bb2395e872d0a21cb4d5989a1aec928b0a4da2812b"
+      }
     }
   ],
   "scope": {
@@ -69588,21 +69661,21 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 21,
+      "functional_verified_instances": 22,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 20,
-      "functional_verified_count_scope": "Twenty-one of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 21,
+      "functional_verified_count_scope": "All 22 current-scope instances accepted locally. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "acc3c84f559e7773544f98cd021a090d570d508f",
+      "tested_saved_code_revision": "566d1deda6cb54b2d261288e5638ff1847e8a93f",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "23beb31175e1b0a659d637732c2b54e146829554",
+      "host_HEAD": "7de1d57e6685beaa387480fd803bbe6c717b8799",
       "SDK_source_host_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
       "SDK_current_files": 108,
       "SDK_current_origin_sha256": "91b555a3900bb81e9c97253ff8bcf472b5aa05a09677b04551e894409b6332f1",
@@ -69613,12 +69686,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "21/22 instances accepted. CloudflareSpeedTest 1.5.1 is registered locally with the paired host. No push, deployment or private history import.",
-      "tests_running": "None. Three distinct native Cloudflare scenarios and previous source/browser evidence are recorded.",
-      "latest_detail": "migration/evidence/cloudflare-speed-test-acceptance-20261108.json",
+      "delivery": "22/22 in-scope instances accepted on local worktrees. Nothing pushed, deployed, or imported into production by this slice.",
+      "tests_running": "None. The final paired native App run and fixed-source replay passed; existing evidence was reused.",
+      "latest_detail": "migration/evidence/custom-hosts-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Implement the installed CustomHosts 1.2.2 Go worker and host-scoped file effect. Verify its source duplicate-address rule and actual installed CloudflareSpeedTest reload using one owned Linux Hosts file.",
+      "next_complete_slice": "None within the current migration scope. MergeMessageNotify remains deferred by the user.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -69634,7 +69707,8 @@
       "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
       "latest_CleanInvalidSeed_product_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
       "latest_SeedRescue_product_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
-      "latest_CloudflareSpeedTest_product_commit": "acc3c84f559e7773544f98cd021a090d570d508f"
+      "latest_CloudflareSpeedTest_product_commit": "acc3c84f559e7773544f98cd021a090d570d508f",
+      "latest_CustomHosts_product_commit": "566d1deda6cb54b2d261288e5638ff1847e8a93f"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -69651,7 +69725,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Implement the installed CustomHosts 1.2.2 Go worker and host-scoped file effect. Verify its source duplicate-address rule and actual installed CloudflareSpeedTest reload using one owned Linux Hosts file.",
+    "next_complete_slice": "None within the current migration scope. MergeMessageNotify remains deferred by the user.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

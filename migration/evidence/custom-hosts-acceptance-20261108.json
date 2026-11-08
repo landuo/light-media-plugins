@@ -1,0 +1,163 @@
+{
+  "feature": "plugin.CustomHosts",
+  "installed_version": "1.2.2",
+  "status": "accepted_for_current_local_linux_scope",
+  "source": {
+    "installed_snapshot": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "files": {
+      "README.md": "d29831b9a5120769857b9e771fbefd9a7df1acac3971494a2788f0ba0d2765fe",
+      "__init__.py": "9c68f52c4e045180f92e9a2e223a15b681bfa5016082ee00e2015220430035fc",
+      "requirements.txt": "317727a61e8786fa5fc4996dfbc4aec1f3e9e2d94856a47f4bf7c123c65f425c"
+    },
+    "fixed_backend": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "fixed_frontend": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "anchors": {
+      "init_and_state": "__init__.py:38–72",
+      "form_and_empty_extensions": "__init__.py:73–181",
+      "read_clear_and_replace": "__init__.py:183–279",
+      "stop_and_reload": "__init__.py:280–294",
+      "python_hosts_duplicated_address": "archived python-hosts-hosts.py:412–446,500"
+    }
+  },
+  "target": {
+    "worker_commit": "566d1deda6cb54b2d261288e5638ff1847e8a93f",
+    "host_commit": "7de1d57e6685beaa387480fd803bbe6c717b8799",
+    "files": {
+      "cmd/custom-hosts/main.go": "09a4fae69631cd421eee8962333152438192dd96c2db8b3f48b9d4d6f0a0596b",
+      "plugins/customhosts/form.go": "64bc648dff6e11d7794fdb499ef9f715ca5a16fea33c28c731ae020a9c156ac7",
+      "plugins/customhosts/plugin.go": "47db9d66a749496967968a1c3fe55ae5e0b3deda7e5a97b9c3de787e58d03fe8",
+      "plugins/customhosts/ORIGIN.json": "9e14f9e02578d22c2a2c9d352c078a3049e7a2db6590f7457d81438117cce088"
+    },
+    "host_files": {
+      "internal/app/plugin_cloudflare_speed_test_linux_test.go": "61892a70f111b095e1723fd06f9fda83e3271f6ab252ead8e3f3946d46f70ad2",
+      "internal/app/plugin_original_base.go": "fca218c61a107437384f988863053b090020df615d87dd54d96d592d9577fdd6",
+      "internal/app/plugin_original_base_session.go": "0c7ed9d288880c0405e5151352fdf412f83dd3392bf1d5de7661756949a61793",
+      "internal/app/plugin_original_custom_hosts.go": "41c25a7f2ad3fe133f359d3f685ce0755bceeb94f326930a64adf240a299b400",
+      "internal/app/plugin_original_event_call.go": "9265141f281b757ad79ab6d7b7b63999782578082e140cba1498d9c2309f474a",
+      "internal/app/plugin_original_lifecycle.go": "ec98f80279a2697f7dd4473e9392c7aedca2c659de2eda7f6481e01e6438cc90",
+      "internal/app/plugin_original_resources.go": "88b860336b4740d2f38feef3b9cc0baff77234dc17b86ecae76327bf0f3b16dc",
+      "internal/app/runtime.go": "7635293f07388b9e4cee0023c137a19af8ecbc1453ce506c33ba25a8a740d680",
+      "internal/plugins/builtin/custom_hosts.go": "f80c73f467c69ad409da9800a2f62a53b94e944c4c67933e05f94a84b495373f"
+    }
+  },
+  "package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "custom-hosts",
+      "plugins/customhosts/ORIGIN.json",
+      "third_party/Go-LICENSE"
+    ],
+    "archive_sha256": "fd8221779e96c75007c63f74277f2be639561486be361b4153afdcf6655877b9",
+    "archive_size": 2673983,
+    "capabilities": 4,
+    "entry": "custom-hosts",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "CustomHosts",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "60649a395ee58e19470338d3cd40617ae2c1d8fb4ef76f663fd0ddff8135ae49",
+    "methods": 12,
+    "notice_sha256": "e9f15ec7f493e386ecb6e54624739036212e4b5eae659ac796313b155239aded",
+    "notice_size": 30301,
+    "plugin_source": "566d1deda6cb54b2d261288e5638ff1847e8a93f",
+    "version": "1.2.2",
+    "worker_sha256": "aa720573f6235203914a328ad11311c3a67ae1959bd57f5980c95ad41a9540c3",
+    "worker_size": 4691972
+  },
+  "source_replay": {
+    "source_sha256": "9c68f52c4e045180f92e9a2e223a15b681bfa5016082ee00e2015220430035fc",
+    "fixture_final_sha256": "a85989b734c6b6eba54a50b656902c8f4a9c66ce5a01454ec70c9f63ccf3efad",
+    "checks": [
+      "empty configuration",
+      "empty text normalization",
+      "disabled clear",
+      "repeated IPv4 and IPv6",
+      "duplicate alias rejection",
+      "bad row result",
+      "direct PluginReload",
+      "stop leaves file unchanged"
+    ],
+    "invalid_notices": [
+      [
+        "自定义Hosts",
+        "[HOST] 格式转换错误："
+      ],
+      [
+        "自定义Hosts",
+        "[HOST] 格式转换错误："
+      ]
+    ],
+    "retained_stdout_sha256": "4359807b0f58c0f819eed054cf0ea54079a5502ba86eb534bd1d3f5be40b9763",
+    "runner_sha256": "102bf2eecf4f33e68155e4b460bfe078e29aa41eb28bde45b91499a3016af506",
+    "classification": "Fixed Python plugin and archived python_hosts ran only in a new temporary file. MoviePilot base, event and notification effects were observed by a synthetic harness. No Python product runtime."
+  },
+  "runtime": {
+    "test": "TestCustomHostsInstalledLinuxAMD64WithCloudflare",
+    "observations": [
+      "The started non-root App installed both exact indexed worker archives. The new CustomHosts standard form and all three defaults matched the pinned original's sorted JSON. Empty initialization and enabled empty text preserved the pre-existing marker. The explicit disabled configuration cleared the marker tail and preserved the prefix.",
+      "Enabled configuration added two rows using the same non-loopback IPv4 and two sharing an IPv6. An existing name caused the colliding row to be skipped whole. The invalid row was omitted from the file and returned in the saved err_hosts array with a trailing LF. The config became the source three-field object.",
+      "An actual Cloudflare Web command ran the official Go CFST executable against an owned TCP loopback. The real CustomHosts package received PluginReload and wrote exactly both new IPv4 rows while preserving IPv6 and the prefix. The App's actual uninstall removed the instance without changing the mounted file."
+    ],
+    "log_sha256": "2c90d274774c1533762c649a08676963a9bf8277bea4bcfb66c45b5744150905",
+    "test_binary_sha256": "efdba0451b32d04d67463f45fda44ca4c0900f9449a68a86f27ff4a0a9a9841e",
+    "environment": "Native Linux amd64 Alpine 3.22 as uid 1000/gid 1001, no external network, read-only container root, one temporary writable bind-mounted /etc/hosts. Actual App, SQLite, both indexed workers and official CFST v2.3.5 executable. Official metadata/asset transport was a fixed replay and actual speed probes used only loopback.",
+    "cloudflare_package": {
+      "archive_members": [
+        "LICENSE",
+        "LICENSE.upstream",
+        "THIRD_PARTY_NOTICES.md",
+        "cloudflare-speed-test",
+        "plugins/cloudflarespeedtest/ORIGIN.json",
+        "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+        "third_party/Go-LICENSE"
+      ],
+      "archive_sha256": "928d5b2becf4e235bb838c1aea21a023e33918586d5eb2a58167d0c87309944a",
+      "archive_size": 2875670,
+      "capabilities": 18,
+      "entry": "cloudflare-speed-test",
+      "frontend": null,
+      "host_contract": "light-media.sdk-resources/v1",
+      "id": "CloudflareSpeedTest",
+      "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+      "index_sha256": "dd76b416f4c400e50a4b55ee1a6b15658b4f89f17c250a7d3ff00022e0b91481",
+      "methods": 15,
+      "notice_sha256": "0706e2ea4caf6c98ee218fade5c86e32a5859b40b804742a73edc96a6043f140",
+      "notice_size": 43012,
+      "plugin_source": "acc3c84f559e7773544f98cd021a090d570d508f",
+      "version": "1.5.1",
+      "worker_sha256": "ac9bfbd1b8d0d96b11e0676a9058c5be9e95615160701ad69ac5563ecb258686",
+      "worker_size": 5294335
+    },
+    "raw_log": "light-media/work/custom-hosts-20261108/native-pair.log",
+    "first_attempt": {
+      "raw_log_sha256": "bdf2933f76a62c07374c2380d0ccca0037110d37b4c093a506908eb5db97a261",
+      "observation": "The file and HTTP assertions passed, but the fixture started uninstall after file bytes became visible and before the asynchronous callback completed its config-save request. The removed installation correctly refused the stale request. This attempt was not accepted for normal reload completion. The focused rerun awaited the callback and checked for event failures before uninstall."
+    }
+  },
+  "reuse": {
+    "canonical_source_form_sha256": "e05a0da921b4ec05292b84727e8390651caad56d284adbd1991891cb511744a0",
+    "prior_evidence": [
+      "light-media/docs/plugin-custom-hosts-verification.json",
+      "light-media/docs/plugin-custom-hosts-deployment.json",
+      "light-media/docs/plugin-custom-hosts-delivery.txt"
+    ],
+    "classification": "Earlier actual browser and isolated container evidence remains bound to the 1.2.1 host. The installed 1.2.2 source form structure/defaults are identical and were checked through the current form endpoint. The browser was not rerun. Historical parser/IDNA suites were not rerun."
+  },
+  "adaptations": [
+    "Linux effect is host-owned and confined to a separate container /etc/hosts mount. The worker has no file path input or general write capability. The host validates instance identity, invocation kind, config fingerprint, exact normalized effect and saved result.",
+    "A bounded regular-file snapshot, inode comparison and exclusive file lock protect the managed marker tail. An I/O error attempts to restore the prior snapshot. Unsafe or unreadable input fails closed, while the original dependency may proceed from an empty parsed file. File-operation errors use safe Go messages. Stop/uninstall retains the file and an explicit disabled configuration clears it.",
+    "Clones keep separate instance configurations and event addresses through the standard manager. Original CustomHosts instances share the same system Hosts file and marker. The installed inventory contained only the main CustomHosts instance, which was used in the paired run.",
+    "Tests used the container mount and no public tracker, original service, production configuration or NAS Hosts file. Earlier browser evidence was reused for the source-identical form."
+  ],
+  "review": {
+    "reviewer": "/root/lark_finish_audit",
+    "status": "passed_with_documented_adaptations"
+  },
+  "delivery": {
+    "pushed": false,
+    "deployed": false,
+    "production_imported": false
+  }
+}
