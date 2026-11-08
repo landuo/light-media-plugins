@@ -190,7 +190,7 @@ func TestStandaloneSourceReadOwnerCancellationAndNoopStop(t *testing.T) {
 		})
 	}
 	raw, _ := json.MarshalIndent(map[string]any{"kind": "actual-independent-executable-SDK-worker-with-synthetic-resources", "worker_race_instrumented": workerRace, "observations": observations}, "", "  ")
-	if e := os.WriteFile(filepath.Join(work, "sdk-worker-lifecycle-observations.json"), append(raw, '\n'), 0600); e != nil {
+	if e := os.WriteFile(filepath.Join(dir, "sdk-worker-lifecycle-observations.json"), append(raw, '\n'), 0600); e != nil {
 		t.Fatal(e)
 	}
 }
