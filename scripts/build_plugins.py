@@ -143,7 +143,9 @@ def frontend_contract(manifest: dict) -> dict | None:
     exposed, shared = front["exposes"], front["shared"]
     if not isinstance(exposed, list) or not 1 <= len(exposed) <= 64 or not all(isinstance(x, str) and re.fullmatch(r"[A-Za-z][A-Za-z0-9_]{0,63}", x) for x in exposed) or len(set(exposed)) != len(exposed):
         raise BuildError("invalid frontend exposed components")
-    if not isinstance(shared, list) or not all(isinstance(x, str) for x in shared) or "vue" not in shared or not set(shared) <= {"vue", "vuetify"} or len(shared) != len(set(shared)):
+    if not isinstance(shared, list) or not all(isinstance(x, str) for x in shared) or "vue" not in shared or not set(shared) <= {"vue", "vuetify", "vuetify/styles"} or len(shared) != len(set(shared)):
+        raise BuildError("invalid frontend shared modules")
+    if "vuetify/styles" in shared and "vuetify" not in shared:
         raise BuildError("invalid frontend shared modules")
     return front
 
@@ -159,7 +161,13 @@ def static_asset_references(name: str, content: bytes) -> list[str]:
     if suffix == ".css":
         patterns = [r'''url\(\s*["']?([^\s)'";]+)''', r'''@import\s*["']([^"']+)["']''']
     else:
-        patterns = [r'''\b(?:import|export)\s+(?:[^;'"\n]{0,200}?\s+from\s*)?["']([^"']+)["']''', r'''\bimport\s*\(\s*["']([^"']+)["']''', r'''\bnew\s+URL\s*\(\s*["']([^"']+)["']''']
+        # A generated loader can contain import text inside a Function template.
+        # Only complete quoted arguments describe static assets.
+        patterns = [
+            r'''\b(?:import|export)\s+(?:[^;'"\n]{0,200}?\s+from\s*)?["']([^"']+)["']''',
+            r'''(?<!`)(?<!`System\.)\bimport\s*\(\s*["']([^"']+)["'](?=\s*[),])''',
+            r'''\bnew\s+URL\s*\(\s*["']([^"']+)["'](?=\s*[),])''',
+        ]
     return [ref for pattern in patterns for ref in re.findall(pattern, source)]
 
 
@@ -191,12 +199,14 @@ def collect_frontend(output: Path, front: dict) -> dict[str, bytes]:
             if reference in front["shared"]:
                 continue
             parsed = urlsplit(reference)
-            if parsed.scheme or parsed.netloc or parsed.query or parsed.fragment or reference.startswith("/") or "\\" in reference:
+            if parsed.scheme or parsed.netloc or parsed.fragment or reference.startswith("/") or "\\" in reference:
                 raise BuildError("frontend graph must use package-relative asset URLs")
             if not reference.startswith(".") and PurePosixPath(name).suffix.lower() != ".css":
                 raise BuildError(f"unresolved non-shared frontend module: {reference}")
             parts = list(PurePosixPath(name).parent.parts)
-            for part in reference.split("/"):
+            # Cache hints are not file identity. Preserve the original bytes,
+            # resolving only the path used by the source static-file endpoint.
+            for part in parsed.path.split("/"):
                 if part in {"", "."}:
                     continue
                 if part == "..":

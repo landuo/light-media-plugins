@@ -32,9 +32,9 @@ func Manifest() plugins.Manifest {
 		Author: "jxxghp", AuthorURL: "https://github.com/jxxghp", Version: "1.3",
 		PluginOrder: 5, Runtime: "go-executable", Entry: "category-editor", HostAPIMin: 1, HostAPIMax: 1,
 		Methods: []string{
-			"init", "get_state", "get_service", "get_command", "get_api", "get_render_mode",
-			"get_form", "get_page", "get_dashboard", "get_dashboard_meta", "get_auth_providers",
-			"get_module", "close", "stop_service", "stop",
+			"init", "get_state", "get_api", "get_render_mode",
+			"get_form", "get_page",
+			"close", "stop_service", "stop",
 		},
 		Capabilities: []string{
 			plugins.CategoryDefaultCapability, plugins.CategoryApplyCapability,
