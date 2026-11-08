@@ -1,0 +1,231 @@
+{
+  "feature": "plugin.CleanInvalidSeed",
+  "installed_version": "2.1",
+  "status": "accepted_for_current_local_linux_scope",
+  "source": {
+    "installed_snapshot": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "file": "cleaninvalidseed/__init__.py",
+    "sha256": "fd398230ee132f6002dbaf892e28fb10b9b95567fda9ce513e1543329a8b7fda",
+    "fixed_backend": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "fixed_frontend": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "anchors": {
+      "init_and_flag_write": "71–147",
+      "active_downloaders": "150–195",
+      "web_commands": "198–308",
+      "public_cron_and_empty_api": "310–334",
+      "downloaders_and_tracker_normalization": "335–667",
+      "two_pass_torrent_detection_and_effects": "776–1077",
+      "mapped_files_and_age": "1079–1274",
+      "configuration_and_stop": "1276–1735"
+    },
+    "prior_reference": {
+      "path": "light-media/testdata/plugins/clean-invalid-seed-2.1/reference/oracle.json",
+      "sha256": "0a32e626931ca354d7e13a82b22bd504d49e4be729f7e47d80d5f60f1f12f4a5",
+      "classification": "85 saved original-source replay cases, used for behavior expectations; not rerun"
+    }
+  },
+  "target": {
+    "plugin": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
+    "host": "5632b75333c35c87bc1b1712b0bcd33f947af40a",
+    "target_files": {
+      "cmd/clean-invalid-seed/main.go": "c1870232cac69c9175db68f4f351035e5842257844ffa73608994f144283906b",
+      "plugins/cleaninvalidseed/ORIGIN.json": "f04bf6537c8fbfbcb370bfe617c73f495cb86db7045efd6b15019fe582cf9ee0",
+      "plugins/cleaninvalidseed/PYTHON-LICENSE.txt": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "plugins/cleaninvalidseed/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+      "plugins/cleaninvalidseed/clean.go": "6432f303476664ba732bdc59e4f58055baedd6806c0ea575fa37cba8ffd791d6",
+      "plugins/cleaninvalidseed/commands.json": "d3d5a62218b15fb3ebfa9c10e81935abca6d4a447dff1f68e4896746e61cc9fa",
+      "plugins/cleaninvalidseed/digit.go": "04cb6aed325c4e4fca1192d4e7173f3725c74f1fdc8cbb8c496b3d4e0e0e2479",
+      "plugins/cleaninvalidseed/entry.go": "52d31969ffbdc3f801998ba94f70f630766289b8cb8d91fb05c075a1e0e643f5",
+      "plugins/cleaninvalidseed/files.go": "7e197d0c618f23e1086a59f1a31b8800fe4ecf3752edf8d4b36f50adf3eae97d",
+      "plugins/cleaninvalidseed/form.json": "d88ce34ef52e4c9cabebd7840479093952179f149ced07b8c7347580ceba7b2c",
+      "plugins/cleaninvalidseed/host.go": "eac527d8db07bbb6ec97e663d03a49bd2559aac18dd490e9d3ada8d8fe43e532",
+      "plugins/cleaninvalidseed/logging.go": "581d6923f596663424c0e1facf44f7acd831407060f4156a235404f543832e47",
+      "plugins/cleaninvalidseed/native.go": "c2b6c56e780eadc74b96d6dd4e06aca342bda13add8846bc34f5cb949a9458f3",
+      "plugins/cleaninvalidseed/plugin.go": "6f605b405f650aaa8470a36bbfa9bdd0ee226278d8749cd73e3fe38f11ca85bd",
+      "plugins/cleaninvalidseed/tracker.go": "576e7212b4452070d003f89457916584d610d6dae18e6c9190126c893356298e",
+      "plugins/cleaninvalidseed/types.go": "7fee70f3f7812abae6a27eaed7fc43ce29dd519708d7a4bd3fcab901afe6b692",
+      "plugins/cleaninvalidseed/utils.go": "0ece852345bd0cb7786a770b68fb5278507cb6264c5e239c936a334ba2c626eb",
+      "internal/sdk/concurrent_transport.go": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe"
+    },
+    "host_files": {
+      "internal/plugins/concurrent_transport.go": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe",
+      "internal/app/plugin_original_base_session.go": "117de9d4d2e0f9711fbf1f0bc8a6db1fefb84a6a76686915caa832f8b88a5bc2",
+      "internal/app/plugin_original_event_call.go": "fbf4ac9b73da72d0cf84bb4a67e8c3087f53ea2dc1bad27c5e4ebda6c08834bf",
+      "internal/app/plugin_original_clean_seed.go": "9fab7b2d337bd8a23ed3eb07f1909b52cf08ab177cd3a26af11526fc7325c2b2",
+      "internal/app/plugin_original_clean_seed_downloaders.go": "64291854ec158b4931c976c3bc163e3ecfa5cd386c8925a5214334a09a00f7e5",
+      "internal/app/plugin_original_clean_seed_files.go": "5a6a3183b04bd921976d314b1b2a1c936319c80eb7591f040283bf3401a8ccdf",
+      "internal/app/plugin_clean_invalid_seed_linux_test.go": "7e03c0d4d074eb16b62118aad9b65b3d06a930df5f55a3af7e41950825b2d7c3"
+    }
+  },
+  "adaptations": [
+    "Source Tracker equality and exact error matching use host-local data, a keyed identifier and sanitized display. Tracker URLs, passkeys and arbitrary credentials do not cross into the worker. Verbose messages containing sensitive text are redacted.",
+    "Native qBittorrent adds a label, and Transmission updates labels from a revalidated snapshot preserving existing values. Torrent deletion always preserves data. Uncertain acknowledgment remains fenced for the same stable task/effect. Independent downloader effects remain eligible when a different list read fails.",
+    "Only configured Linux roots and explicitly mapped direct children may be cleaned. A complete selected downloader inventory, fresh references, physical local path ownership, a stable manifest and active-import checks are mandatory. Symlinks, service data, unsafe paths and uncertain effects fail closed. The App reconciles managed assets after confirmed removal.",
+    "The host owns service lifetime, config, filesystem authority and installed instance identity. No custom page or plugin API is declared by this source. The actual form endpoint was tested, without a separate browser run for this standard schema."
+  ],
+  "review": {
+    "reviewer": "/root/lark_finish_audit",
+    "findings": [
+      "Detailed logs restored; HTTP Tracker display aligned to netloc with redaction.",
+      "Independent torrent effects no longer depend on another downloader's read success. File cleanup still requires the complete selected inventory.",
+      "Final scan reset on each source-file pass addresses stale caches across scheduled downloaders."
+    ]
+  },
+  "runtime": {
+    "qb_web": {
+      "test": "TestCleanInvalidSeedInstalledLinuxAMD64WebCommands",
+      "kind": "real_e2e",
+      "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers",
+      "host_checkpoint": "714984d815f388224e802ef17d2a254f0774fefd",
+      "host_checkpoint_note": "qB run used the checkpoint plus the paired pre-commit broker and qB fixture; subsequent snapshots only add the display normalization, scheduler-specific evidence and fresh-scan boundary.",
+      "package": {
+        "archive_members": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md",
+          "clean-invalid-seed",
+          "plugins/cleaninvalidseed/ORIGIN.json",
+          "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+          "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+          "third_party/Go-LICENSE",
+          "third_party/x-text-LICENSE",
+          "third_party/x-text-PATENTS"
+        ],
+        "archive_sha256": "516acfafdf97c07dc356abc8bde39d3de166d1b33b41694d557efb1437cecb60",
+        "archive_size": 3105947,
+        "capabilities": 11,
+        "entry": "clean-invalid-seed",
+        "frontend": null,
+        "host_contract": "light-media.sdk-resources/v1",
+        "id": "CleanInvalidSeed",
+        "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+        "index_sha256": "ca4d080c2de39b18628d2aa92ce3ceb8d0db41cf6ff2a93c82dda03d8bf40d11",
+        "methods": 14,
+        "notice_sha256": "7ded3b11ee626fda784395a190cd1a923d5128f8869028b82dde0dc7b8e59908",
+        "notice_size": 26294,
+        "plugin_source": "5d6d81b60905d2d65193d852cca67ea3d40a261b",
+        "version": "2.1",
+        "worker_sha256": "dfbcf8fff8c05fe3d08fac6c41903c997436156722c350a13cc9c2848dd4bd5b",
+        "worker_size": 5727403
+      },
+      "raw_log": "work/clean-invalid-seed-20261108/native-qb-web-commands.log",
+      "raw_log_sha256": "0407f01b5d85da859c3f4f92111c2197c7cf444d3569efc3acb859e0b5e42278",
+      "host_test_binary_sha256": "185d7e72de6a4dfd48dac621c1fc549814e345484134f317a36c09bd069f39fa",
+      "observations": [
+        "Installed the exact package through the running App. Four authenticated Web commands returned the original start/report/end notices.",
+        "Exact failure plus same-downloader healthy Tracker selected one torrent; the separate dead Tracker was insufficient. The unselected downloader received no task requests.",
+        "The older unreferenced file was removed. The younger file, active content, and deleted torrent data survived. qBittorrent received deleteFiles=false."
+      ]
+    },
+    "tr_schedules": {
+      "test": "TestCleanInvalidSeedInstalledLinuxAMD64TransmissionSchedules",
+      "kind": "real_e2e",
+      "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers",
+      "host_checkpoint": "e9d780c59e2245a506e57fbc06ecd7dae663bc9c",
+      "host_checkpoint_note": "Test built from this saved host revision.",
+      "package": {
+        "archive_members": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md",
+          "clean-invalid-seed",
+          "plugins/cleaninvalidseed/ORIGIN.json",
+          "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+          "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+          "third_party/Go-LICENSE",
+          "third_party/x-text-LICENSE",
+          "third_party/x-text-PATENTS"
+        ],
+        "archive_sha256": "a70674b6f250248aa4ccaa6f191c4b3b441475ea00fd6227c989235ea76b7777",
+        "archive_size": 3119201,
+        "capabilities": 11,
+        "entry": "clean-invalid-seed",
+        "frontend": null,
+        "host_contract": "light-media.sdk-resources/v1",
+        "id": "CleanInvalidSeed",
+        "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+        "index_sha256": "28969cc4990bcabe4e010db233845687f1409d808fee7fac41d720552de3aed4",
+        "methods": 14,
+        "notice_sha256": "50f4925f5e5e7ddb4ca26989821b8b43ffa15f316f6615f0c4029f05fbf6df33",
+        "notice_size": 26291,
+        "plugin_source": "ab2d283fa94ecb45e3f4cd35b8b2c8895a148a5c",
+        "version": "2.1",
+        "worker_sha256": "10464a5fae605b550a350b482b2d4ea9edb39bc809ed8b6bba55412581f9ad83",
+        "worker_size": 5750753
+      },
+      "raw_log": "work/clean-invalid-seed-20261108/native-tr-schedules.log",
+      "raw_log_sha256": "f14a04d8e913b426937954c19dc4bfc99ca9e96f6963ffb9bc69e42c2c35fe3a",
+      "host_test_binary_sha256": "611df2dc46d08a64b1fdba70b0c92805283dd63adf5525e883732d2a2e8eb9e9",
+      "observations": [
+        "The configured Transmission appeared in the actual installed Vuetify form. The three-second private job persisted onlyonce=false and merged both old labels with the new label on exactly one task, with no torrent deletion.",
+        "Verbose per-torrent diagnostics reached the actual plugin log. The fifth Web command persisted notify_all and replied to the initiating admin without the normal completion notice.",
+        "The registered public cron was separately run through the normal App route. After the owned Tracker recovered, it published the detailed report and did not repeat the label write."
+      ]
+    },
+    "fresh_scans": {
+      "test": "TestCleanInvalidSeedInstalledLinuxAMD64ScheduleRescansRemovedOrphan",
+      "kind": "real_e2e",
+      "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers",
+      "host_checkpoint": "5632b75333c35c87bc1b1712b0bcd33f947af40a",
+      "host_checkpoint_note": "Test built from this saved host revision.",
+      "package": {
+        "archive_members": [
+          "LICENSE",
+          "THIRD_PARTY_NOTICES.md",
+          "clean-invalid-seed",
+          "plugins/cleaninvalidseed/ORIGIN.json",
+          "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+          "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+          "third_party/Go-LICENSE",
+          "third_party/x-text-LICENSE",
+          "third_party/x-text-PATENTS"
+        ],
+        "archive_sha256": "a78a3be6120ca4ede0d5362bd11329ce511ed06da52787517cc0ccb3201a81ec",
+        "archive_size": 3122579,
+        "capabilities": 11,
+        "entry": "clean-invalid-seed",
+        "frontend": null,
+        "host_contract": "light-media.sdk-resources/v1",
+        "id": "CleanInvalidSeed",
+        "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+        "index_sha256": "ba0776fe16af496f9e2417dd0cb646f1bf87c286db35bae366bb4be9243d3ece",
+        "methods": 14,
+        "notice_sha256": "10e6c80a621dacc28daf698a98525e4c878f87a41ae6df093ff96bc2f281d062",
+        "notice_size": 26291,
+        "plugin_source": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
+        "version": "2.1",
+        "worker_sha256": "1487de3e72c305b786559ab5b2bfff97bad3a63498c1469a7bdf4b0544d120cc",
+        "worker_size": 5757105
+      },
+      "raw_log": "work/clean-invalid-seed-20261108/native-multi-scan.log",
+      "raw_log_sha256": "0d7d3d0ad9cfb7d83bda99ee76c89d2d40a6a6bd696ad71142fdf9a3235be946",
+      "host_test_binary_sha256": "a3454dcf27496e51e0a1b2e397dc938c5100c0e13d4b54c002b449d4c6b46de9",
+      "observations": [
+        "The installed final package ran a public service against two selected downloaders. The first source-file pass deleted the owned orphan, and the second read a fresh root and reported no orphans.",
+        "The durable effect store held only the confirmed removal. The shared App used the same native scheduler, download and local cleanup paths."
+      ]
+    }
+  },
+  "initial_failures": {
+    "native-qb-web-commands-attempt-1.log": {
+      "sha256": "aebda28e346fca0bbfcc0a8420a2290d4292ce11ff33da8fbeea6e1a931b8fad",
+      "classification": "fixture_failure",
+      "reason": "Fixture read the unwrapped response instead of the actual data envelope."
+    },
+    "native-tr-schedules-attempt-1.log": {
+      "sha256": "b11ca688144cadcb3ab6bb55a8716a4d8451fdc588b3af96ea375d2ec40f0118",
+      "classification": "fixture_failure",
+      "reason": "Fixture's Transmission success result was empty. The installed native TrackerStats-object branch requires the exact Success string."
+    },
+    "native-multi-scan-attempt-1.log": {
+      "sha256": "94820c48e3b6bf5107a375077ae77d031145aefba2ef941feabeca1dd4beb874",
+      "classification": "receipt_storage_type_fix",
+      "reason": "Both file passes completed correctly. The assertion identified an SQLite BLOB versus TEXT comparison, also used in effect readmission. Both comparisons now decode the stored JSON bytes consistently."
+    }
+  },
+  "delivery": {
+    "plugin_branch": "codex/installed-plugins-20261105",
+    "host_branch": "codex/plugin-source-error-outcomes-20261105",
+    "pushed": false,
+    "deployed": false,
+    "production_data_imported": false
+  }
+}

@@ -4043,10 +4043,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:71",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase init_plugin / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Host init and reinit call the Go Machine with persisted instance config; a private date job resets the once flag and waits three seconds.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4056,10 +4054,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:1276",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_form / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Installed host form endpoint returns the original Vuetify schema and filtered native downloader options.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4069,10 +4065,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:1721",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_page / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "The installed source returns no standalone page. The worker declares the same absence.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4082,10 +4076,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:198",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_command / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Five source PluginAction commands are registered by the host and use normal Web message dispatch.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4095,10 +4087,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:313",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "The enabled saved cron registers the public clean method; a private date job is not listed.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4108,10 +4098,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:310",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_api / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "The installed source returns no plugin-specific API routes. No extra worker route is declared.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4121,10 +4109,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:122",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_state / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "The saved enabled flag controls ordinary plugin state and public job registration.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -4134,10 +4120,8 @@
       ],
       "source_location": "cleaninvalidseed/__init__.py:1724",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase stop_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "The normal host lifecycle stops the managed private job and closes the worker.",
+        "Target: plugins/cleaninvalidseed/plugin.go and light-media/internal/app/plugin_original_clean_seed*.go."
       ]
     },
     {
@@ -16717,22 +16701,49 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/clean-invalid-seed/main.go",
+        "plugins/cleaninvalidseed/ORIGIN.json",
+        "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+        "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+        "plugins/cleaninvalidseed/clean.go",
+        "plugins/cleaninvalidseed/commands.json",
+        "plugins/cleaninvalidseed/digit.go",
+        "plugins/cleaninvalidseed/entry.go",
+        "plugins/cleaninvalidseed/files.go",
+        "plugins/cleaninvalidseed/form.json",
+        "plugins/cleaninvalidseed/host.go",
+        "plugins/cleaninvalidseed/logging.go",
+        "plugins/cleaninvalidseed/native.go",
+        "plugins/cleaninvalidseed/plugin.go",
+        "plugins/cleaninvalidseed/tracker.go",
+        "plugins/cleaninvalidseed/types.go",
+        "plugins/cleaninvalidseed/utils.go",
+        "internal/sdk/concurrent_transport.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "cleaninvalidseed.native_amd64_qb_web.20261108",
+        "cleaninvalidseed.native_amd64_tr_schedules.20261108",
+        "cleaninvalidseed.native_amd64_fresh_scans.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/lark_finish_audit",
+        "evidence_ids": [
+          "cleaninvalidseed.native_amd64_qb_web.20261108",
+          "cleaninvalidseed.native_amd64_tr_schedules.20261108",
+          "cleaninvalidseed.native_amd64_fresh_scans.20261108"
+        ]
       },
       "original_instance_id": "CleanInvalidSeed",
       "family": "CleanInvalidSeed",
       "source_version": "2.1",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Fixed-source command, service, form and cleanup paths are mapped. The paired Go host runs scoped local effects using current native integrations."
     },
     {
       "id": "plugin.SeedRescue",
@@ -69097,6 +69108,106 @@
           "plugins/larkmessager/worker.go": "2e21ded3a52be314cbe03d0c4e8b7e34dae5e66ac81aff0e280c07dd4d328a32"
         }
       }
+    },
+    {
+      "id": "cleaninvalidseed.native_amd64_qb_web.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CleanInvalidSeed"
+      ],
+      "commands": [
+        "TestCleanInvalidSeedInstalledLinuxAMD64WebCommands"
+      ],
+      "observations": [
+        "Installed the exact package through the running App. Four authenticated Web commands returned the original start/report/end notices.",
+        "Exact failure plus same-downloader healthy Tracker selected one torrent; the separate dead Tracker was insufficient. The unselected downloader received no task requests.",
+        "The older unreferenced file was removed. The younger file, active content, and deleted torrent data survived. qBittorrent received deleteFiles=false."
+      ],
+      "artifacts": {
+        "evidence/clean-invalid-seed-acceptance-20261108.json": "2fadd9d51adc249799a24a7f32f398775da56081c793cbba92e7346b7a690c32"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "fd398230ee132f6002dbaf892e28fb10b9b95567fda9ce513e1543329a8b7fda",
+        "worker_commit": "5d6d81b60905d2d65193d852cca67ea3d40a261b",
+        "host_commit": "714984d815f388224e802ef17d2a254f0774fefd",
+        "archive_sha256": "516acfafdf97c07dc356abc8bde39d3de166d1b33b41694d557efb1437cecb60",
+        "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers"
+      }
+    },
+    {
+      "id": "cleaninvalidseed.native_amd64_tr_schedules.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CleanInvalidSeed"
+      ],
+      "commands": [
+        "TestCleanInvalidSeedInstalledLinuxAMD64TransmissionSchedules"
+      ],
+      "observations": [
+        "The configured Transmission appeared in the actual installed Vuetify form. The three-second private job persisted onlyonce=false and merged both old labels with the new label on exactly one task, with no torrent deletion.",
+        "Verbose per-torrent diagnostics reached the actual plugin log. The fifth Web command persisted notify_all and replied to the initiating admin without the normal completion notice.",
+        "The registered public cron was separately run through the normal App route. After the owned Tracker recovered, it published the detailed report and did not repeat the label write."
+      ],
+      "artifacts": {
+        "evidence/clean-invalid-seed-acceptance-20261108.json": "2fadd9d51adc249799a24a7f32f398775da56081c793cbba92e7346b7a690c32"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "fd398230ee132f6002dbaf892e28fb10b9b95567fda9ce513e1543329a8b7fda",
+        "worker_commit": "ab2d283fa94ecb45e3f4cd35b8b2c8895a148a5c",
+        "host_commit": "e9d780c59e2245a506e57fbc06ecd7dae663bc9c",
+        "archive_sha256": "a70674b6f250248aa4ccaa6f191c4b3b441475ea00fd6227c989235ea76b7777",
+        "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers"
+      }
+    },
+    {
+      "id": "cleaninvalidseed.native_amd64_fresh_scans.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.CleanInvalidSeed"
+      ],
+      "commands": [
+        "TestCleanInvalidSeedInstalledLinuxAMD64ScheduleRescansRemovedOrphan"
+      ],
+      "observations": [
+        "The installed final package ran a public service against two selected downloaders. The first source-file pass deleted the owned orphan, and the second read a fresh root and reported no orphans.",
+        "The durable effect store held only the confirmed removal. The shared App used the same native scheduler, download and local cleanup paths."
+      ],
+      "artifacts": {
+        "evidence/clean-invalid-seed-acceptance-20261108.json": "2fadd9d51adc249799a24a7f32f398775da56081c793cbba92e7346b7a690c32"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "fd398230ee132f6002dbaf892e28fb10b9b95567fda9ce513e1543329a8b7fda",
+        "worker_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
+        "host_commit": "5632b75333c35c87bc1b1712b0bcd33f947af40a",
+        "archive_sha256": "a78a3be6120ca4ede0d5362bd11329ce511ed06da52787517cc0ccb3201a81ec",
+        "environment": "Native isolated Linux amd64, actual started light-media App and indexed worker, fresh SQLite and local files, owned loopback downloader protocol peers",
+        "target_files": {
+          "cmd/clean-invalid-seed/main.go": "c1870232cac69c9175db68f4f351035e5842257844ffa73608994f144283906b",
+          "plugins/cleaninvalidseed/ORIGIN.json": "f04bf6537c8fbfbcb370bfe617c73f495cb86db7045efd6b15019fe582cf9ee0",
+          "plugins/cleaninvalidseed/PYTHON-LICENSE.txt": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+          "plugins/cleaninvalidseed/UNICODE-LICENSE.txt": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443",
+          "plugins/cleaninvalidseed/clean.go": "6432f303476664ba732bdc59e4f58055baedd6806c0ea575fa37cba8ffd791d6",
+          "plugins/cleaninvalidseed/commands.json": "d3d5a62218b15fb3ebfa9c10e81935abca6d4a447dff1f68e4896746e61cc9fa",
+          "plugins/cleaninvalidseed/digit.go": "04cb6aed325c4e4fca1192d4e7173f3725c74f1fdc8cbb8c496b3d4e0e0e2479",
+          "plugins/cleaninvalidseed/entry.go": "52d31969ffbdc3f801998ba94f70f630766289b8cb8d91fb05c075a1e0e643f5",
+          "plugins/cleaninvalidseed/files.go": "7e197d0c618f23e1086a59f1a31b8800fe4ecf3752edf8d4b36f50adf3eae97d",
+          "plugins/cleaninvalidseed/form.json": "d88ce34ef52e4c9cabebd7840479093952179f149ced07b8c7347580ceba7b2c",
+          "plugins/cleaninvalidseed/host.go": "eac527d8db07bbb6ec97e663d03a49bd2559aac18dd490e9d3ada8d8fe43e532",
+          "plugins/cleaninvalidseed/logging.go": "581d6923f596663424c0e1facf44f7acd831407060f4156a235404f543832e47",
+          "plugins/cleaninvalidseed/native.go": "c2b6c56e780eadc74b96d6dd4e06aca342bda13add8846bc34f5cb949a9458f3",
+          "plugins/cleaninvalidseed/plugin.go": "6f605b405f650aaa8470a36bbfa9bdd0ee226278d8749cd73e3fe38f11ca85bd",
+          "plugins/cleaninvalidseed/tracker.go": "576e7212b4452070d003f89457916584d610d6dae18e6c9190126c893356298e",
+          "plugins/cleaninvalidseed/types.go": "7fee70f3f7812abae6a27eaed7fc43ce29dd519708d7a4bd3fcab901afe6b692",
+          "plugins/cleaninvalidseed/utils.go": "0ece852345bd0cb7786a770b68fb5278507cb6264c5e239c936a334ba2c626eb",
+          "internal/sdk/concurrent_transport.go": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe"
+        }
+      }
     }
   ],
   "scope": {
@@ -69156,24 +69267,24 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 18,
+      "functional_verified_instances": 19,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 17,
-      "functional_verified_count_scope": "Eighteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 18,
+      "functional_verified_count_scope": "Nineteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+      "tested_saved_code_revision": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "d7066e7be72ae8c5de4aa2c7515bef2a1d010f7b",
-      "SDK_source_host_commit": "911931dd7d1cb964f15fb364ad8c37c7c3b6db54",
+      "host_HEAD": "5632b75333c35c87bc1b1712b0bcd33f947af40a",
+      "SDK_source_host_commit": "714984d815f388224e802ef17d2a254f0774fefd",
       "SDK_current_files": 108,
-      "SDK_current_origin_sha256": "8e5e7b574493c71b402b9df2ac723c75f5b41b9b08b2a6f3253850af792cf428",
+      "SDK_current_origin_sha256": "295ff8d84e05ce00363281c51434077ff9a6f1670f31977ae48faa673dd29c4d",
       "SDK_current_status": "108 files. Existing sequential stream retains per-message checks; ScrapeFileClean uses the bound watcher phase and exact guarded removal capability.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
@@ -69181,12 +69292,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "18/22 instances accepted. LarkMessager 0.9.1 is registered in the local Linux build manifest at dd3cdaf with paired host d7066e7. Both remote main refs and production remain unchanged.",
-      "tests_running": "None. The final native bare confirmation passed on its single run. All earlier evidence and failed fixture logs retain their exact bindings.",
-      "latest_detail": "migration/evidence/lark-messager-acceptance-20261108.json",
+      "delivery": "19/22 instances accepted. CleanInvalidSeed 2.1 is registered in the local Linux build manifest with the paired saved host. Both remote main refs checked unchanged. No production deploy.",
+      "tests_running": "None. Native qB Web, native Transmission scheduling, and final per-downloader fresh file scan evidence are linked separately.",
+      "latest_detail": "migration/evidence/clean-invalid-seed-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start CleanInvalidSeed 2.1. Source and tracked host algorithm hashes match. Reuse the proven detection algorithm and finite guards. Add the standard external worker, host-authorized downloader tracker facts, mapped traversal and cleanup receipts. Begin with one non-destructive native Linux detection scenario. No earlier Lark suites need to be repeated for this next plugin.",
+      "next_complete_slice": "Start SeedRescue from its fixed installed files. Inspect its workbench routes, durable rescue queue, downloader actions, Tracker and host lifecycle. Reuse current host contracts and only run targeted evidence for this next plugin.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -69199,7 +69310,8 @@
       "latest_BrushFlowLanduo_product_commit": "c95a9207cfb3631e48694b4fbf032103fc11bf3f",
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
-      "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9"
+      "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+      "latest_CleanInvalidSeed_product_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -69216,7 +69328,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start LarkMessager 0.9.1 from the installed source. Preserve all accepted evidence. Use isolated provider endpoints and do not send production messages.",
+    "next_complete_slice": "Start SeedRescue from its fixed installed files. Inspect its workbench routes, durable rescue queue, downloader actions, Tracker and host lifecycle. Reuse current host contracts and only run targeted evidence for this next plugin.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

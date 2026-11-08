@@ -1,6 +1,6 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (eighteen of 22 in scope accepted)
+## Current resume (nineteen of 22 in scope accepted)
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
 authority. The user deferred MergeMessageNotify. The installed inventory
@@ -9,6 +9,16 @@ Merge evidence and four local work-in-progress files are retained separately.
 The user limits media libraries to fnOS Film and local directories.
 Other media-server providers and cloud-drive storage are outside the
 current acceptance scope. Ordinary network inputs for plugins remain in scope.
+
+CleanInvalidSeed 2.1 is accepted for local Linux with the paired host.
+The indexed package ran the five Web commands, qBittorrent keep-data
+removal, Transmission label merging, and private and public scheduling on
+isolated Linux. The final package also ran two scheduled file scans in one
+service, removed only the old orphan, and recorded one confirmed effect.
+The actual App used owned downloader protocol peers. The source replay
+and versioned evidence are in
+`migration/evidence/clean-invalid-seed-acceptance-20261108.json`.
+The next installed plugin is SeedRescue.
 
 IYUUAutoSeed 2.22 is accepted. The exact Linux amd64 package installed,
 initialized and served its source-native form on an isolated native x86_64
