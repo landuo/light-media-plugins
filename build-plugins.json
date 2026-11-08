@@ -331,6 +331,38 @@
         "third_party/x-text-LICENSE",
         "third_party/x-text-PATENTS"
       ]
+    },
+    {
+      "id": "SeedRescue",
+      "package": "./cmd/seed-rescue",
+      "host_contract": "light-media.sdk-resources/v1",
+      "license_files": [
+        "THIRD_PARTY_NOTICES.md",
+        "LICENSE.upstream",
+        "plugins/seedrescue/ORIGIN.json",
+        "plugins/seedrescue/FRONTEND_ORIGIN.json",
+        "plugins/seedrescue/FRONTEND_NOTICE.md",
+        "third_party/Go-LICENSE",
+        "third_party/x-net-LICENSE",
+        "third_party/x-net-PATENTS",
+        "third_party/x-text-LICENSE",
+        "third_party/x-text-PATENTS",
+        "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+        "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE"
+      ],
+      "frontend": {
+        "command": [
+          "cp",
+          "-R",
+          "plugins/seedrescue/frontend",
+          "{output}"
+        ],
+        "cwd": ".",
+        "output": "frontend-output"
+      }
     }
   ]
 }

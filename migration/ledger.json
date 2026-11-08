@@ -4131,10 +4131,9 @@
       ],
       "source_location": "seedrescue/__init__.py:133",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase init_plugin / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4144,10 +4143,9 @@
       ],
       "source_location": "seedrescue/__init__.py:1887",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_form / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4157,10 +4155,9 @@
       ],
       "source_location": "seedrescue/__init__.py:1892",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_page / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4170,10 +4167,9 @@
       ],
       "source_location": "seedrescue/__init__.py:235",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_command / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4183,10 +4179,9 @@
       ],
       "source_location": "seedrescue/__init__.py:637",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4196,10 +4191,9 @@
       ],
       "source_location": "seedrescue/__init__.py:260",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_api / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4209,10 +4203,9 @@
       ],
       "source_location": "seedrescue/__init__.py:229",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase get_state / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -4222,10 +4215,9 @@
       ],
       "source_location": "seedrescue/__init__.py:665",
       "chain": [
-        "MoviePilot installed PluginManager discovery and current instance",
-        "_PluginBase stop_service / registered ordinary API,event,command or service",
-        "plugin-specific logic and host/shared dependencies",
-        "configuration/data/external side effects and source return/exception"
+        "Fixed SeedRescue __init__.py source entrypoint and ordinary MoviePilot plugin host.",
+        "Target: plugins/seedrescue/standard.go and standard_http.go through the actual standard plugin manager.",
+        "Read and write effects use sealed plugin values and scope-bound site, IYUU, and qBittorrent adapters."
       ]
     },
     {
@@ -17632,22 +17624,61 @@
       ],
       "dependencies": [],
       "owner": "/root",
-      "target_paths": [],
+      "target_paths": [
+        "cmd/seed-rescue/main.go",
+        "plugins/seedrescue/.gitattributes",
+        "plugins/seedrescue/FRONTEND_NOTICE.md",
+        "plugins/seedrescue/FRONTEND_ORIGIN.json",
+        "plugins/seedrescue/ORIGIN.json",
+        "plugins/seedrescue/config.go",
+        "plugins/seedrescue/core.go",
+        "plugins/seedrescue/detail.go",
+        "plugins/seedrescue/download.go",
+        "plugins/seedrescue/frontend/SeedRescueWorkbench-C0MKqaDa.css",
+        "plugins/seedrescue/frontend/SeedRescueWorkbench-C7qM2njz.js",
+        "plugins/seedrescue/frontend/__federation_expose_AppPage-t5uu8UeP.js",
+        "plugins/seedrescue/frontend/__federation_expose_Config-CjwiiaeH.js",
+        "plugins/seedrescue/frontend/__federation_expose_Dashboard-l3LPbQrq.js",
+        "plugins/seedrescue/frontend/__federation_expose_Page-CWBKd09E.js",
+        "plugins/seedrescue/frontend/__federation_fn_import-JrT3xvdd.js",
+        "plugins/seedrescue/frontend/remoteEntry.js",
+        "plugins/seedrescue/frontend.go",
+        "plugins/seedrescue/machine.go",
+        "plugins/seedrescue/ports.go",
+        "plugins/seedrescue/probe.go",
+        "plugins/seedrescue/scan.go",
+        "plugins/seedrescue/standard.go",
+        "plugins/seedrescue/standard_host.go",
+        "plugins/seedrescue/standard_http.go",
+        "plugins/seedrescue/views.go",
+        "internal/sdk/concurrent_transport.go",
+        "internal/sdk/concurrent_worker.go",
+        "internal/sdk/protocol.go",
+        "internal/sdk/worker.go"
+      ],
       "scenarios": [],
       "facet_checks": {},
-      "status": "discovered",
-      "evidence_ids": [],
+      "status": "verified",
+      "evidence_ids": [
+        "seedrescue.native_manual.20261108",
+        "seedrescue.chrome_workbench.20261108",
+        "seedrescue.sdk_parallel_stream.20261108"
+      ],
       "review": {
-        "status": "pending",
+        "status": "passed",
         "independent": true,
-        "reviewer": "",
-        "evidence_ids": []
+        "reviewer": "/root/lark_finish_audit",
+        "evidence_ids": [
+          "seedrescue.native_manual.20261108",
+          "seedrescue.chrome_workbench.20261108",
+          "seedrescue.sdk_parallel_stream.20261108"
+        ]
       },
       "original_instance_id": "SeedRescue",
       "family": "SeedRescue",
       "source_version": "1.6.3",
-      "source_metadata_only": true,
-      "discovery_note": "Static method inventory is not complete behavioral discovery or acceptance. Independent branch/state/dependency review proceeds per plugin."
+      "source_metadata_only": false,
+      "discovery_note": "Actual installed worker and original reachable frontend migrated. Six ordinary HTTP operations, scheduler, persistence and SDK boundaries map to the fixed installed source."
     },
     {
       "id": "plugin.CloudflareSpeedTest",
@@ -69208,6 +69239,178 @@
           "internal/sdk/concurrent_transport.go": "880e420986780e2cdd3ef1a86033db89e3723989f3afa13fda35d1b3299a78fe"
         }
       }
+    },
+    {
+      "id": "seedrescue.native_manual.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SeedRescue"
+      ],
+      "commands": [
+        "TestSeedRescueInstalledLinuxAMD64ManualDownload"
+      ],
+      "observations": [
+        "Installed the exact final Linux SeedRescue worker and existing IYUUAutoSeed 2.22 package into a real isolated App.",
+        "Current-site RSS material, exact target search and IYUU query produced a durable AWAITING_SELECTION job and one non-free cross-site candidate. Ordinary form and configuration reads preserved both credential placeholders, and saving them retained the working originals.",
+        "Unconfirmed selection made no download. Confirmation fetched the chosen source once; the qB protocol peer read SOURCE_SUBMITTING in SQLite before receiving the exact original private-tracker torrent with the chosen directory, category, tag and active flags. The authenticated job endpoint then showed SOURCE_DOWNLOADING."
+      ],
+      "artifacts": {
+        "evidence/seed-rescue-acceptance-20261108.json": "d83358b21146e3df1bdbbbc337b47c23ccb9c8687a0293406fbaa2f1a1893b3b"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "e379ec20d09fbd3bc461b1b8f51ec508d0270a63a841763cc965c39adb98d375",
+        "worker_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+        "host_commit": "0601e3e886b3e9b9497afd91130911c816f36336",
+        "archive_sha256": "d2b3692e41b3132a190284d06676b38017b3bb422714033765cbb35541ddf38b",
+        "target_files": {
+          "cmd/seed-rescue/main.go": "75b0a862497b21b59e25ad4ac3a7174423eb47ac41c669c7968e16290ad19ecb",
+          "plugins/seedrescue/.gitattributes": "ef14dffa55b1b3d9f4829e8a743d91b9bd29ac1f97eff10ba2225c38d766e824",
+          "plugins/seedrescue/FRONTEND_NOTICE.md": "6e4c87ddd4bbcd1300efbfaed9ac3a161a817e3b54fdf27010b3485efc3e6599",
+          "plugins/seedrescue/FRONTEND_ORIGIN.json": "eee62bd41da328f8313aaa07f2a9f8a86415a3fe7b22ec936e32ad8da781608e",
+          "plugins/seedrescue/ORIGIN.json": "f2a09171ce251fa3863fc0eb2ab744bea0a3f835978cc0487fe47916d684efbe",
+          "plugins/seedrescue/config.go": "e0619165b76e0fa412c07d9f89917e97c0db1593ccede904d18149ed4eb43e04",
+          "plugins/seedrescue/core.go": "aa0cd05941d24535a416214782a772d69a45ea42a7f52be71fa0f984a9580562",
+          "plugins/seedrescue/detail.go": "9cd763537bc576b4aef5786156dcd24f64b3b4a8e7992ab34576fd58e3464fe4",
+          "plugins/seedrescue/download.go": "363fcc52d8595ea0209e311cd5889fcfc3023f765f30cd86b97df56af3f8c297",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C0MKqaDa.css": "ac13c4e31d703147f0bb7d4d41b8e8c1b061f97111ef47eaa8d35a2e992538d6",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C7qM2njz.js": "e3063b8753255b7886c5629d459b628e736dcf58322e1450884a9f517fb4c6c2",
+          "plugins/seedrescue/frontend/__federation_expose_AppPage-t5uu8UeP.js": "c870ce546f444a6bd06fcefb55f5cb8d41a05446eb1fd89caca9f36d3c4d2b1c",
+          "plugins/seedrescue/frontend/__federation_expose_Config-CjwiiaeH.js": "ff426a25fa45ac2158ec4a83917cfa778642ba0c53b028a0d41141b39187ca58",
+          "plugins/seedrescue/frontend/__federation_expose_Dashboard-l3LPbQrq.js": "fbc4bd556023bd18048eb0e37f27ad835d0e09b1996ede0cb13c9641aa3c105f",
+          "plugins/seedrescue/frontend/__federation_expose_Page-CWBKd09E.js": "8e6865be438d440a7ebf04f034fb74349d8f77fc92b6da7d213122cf6858a178",
+          "plugins/seedrescue/frontend/__federation_fn_import-JrT3xvdd.js": "4776b5a84c2055e4a6907ebf7377f6abd86f26b7d520d685a13b40d5aa8538aa",
+          "plugins/seedrescue/frontend/remoteEntry.js": "a8ca57dce7b005b047047cc6649ada4d7aeba2d196481f912af336c1ac978d75",
+          "plugins/seedrescue/frontend.go": "750497f0bd7a627cd4570f73a79184f0ef5ab366ec8628ed2f5f3199c0c6f99e",
+          "plugins/seedrescue/machine.go": "c8d8975ae40e9aaaf6e734a60f58184c7f4be240edcc2140facb1321ae77582f",
+          "plugins/seedrescue/ports.go": "d262e3bb3c4a6b28a2767688c8033c917446f0547c766cf2ba7ce60d25a0e919",
+          "plugins/seedrescue/probe.go": "27c6f2229e37bf4944f676de434ee5eccc186fa3d98cf0ea48fe03cde82316a2",
+          "plugins/seedrescue/scan.go": "1603e4b510981fa70e9bd0727879588a6f84cb009cc34dd9d1eb4eb33698c0ec",
+          "plugins/seedrescue/standard.go": "5b259974c72f0e0a7f2939c6a4c72de0045cf7eb4ea5886db021009d3ebc9bd1",
+          "plugins/seedrescue/standard_host.go": "9a4d7f28d4393dfe4cb4eb8d615b55107ef91b386d5d58404cc7752eceaa7041",
+          "plugins/seedrescue/standard_http.go": "5cebaef89ce77ea2c7ff39f8315a7bbf12e1962f0da332a6a56ef42baa9f90fb",
+          "plugins/seedrescue/views.go": "54d4861220fd43478bc54b3a567d5825108875bd1461d5692b6d9fc7b1245686",
+          "internal/sdk/concurrent_transport.go": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
+          "internal/sdk/concurrent_worker.go": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
+          "internal/sdk/protocol.go": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
+          "internal/sdk/worker.go": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533"
+        }
+      }
+    },
+    {
+      "id": "seedrescue.chrome_workbench.20261108",
+      "kind": "real_e2e",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SeedRescue"
+      ],
+      "commands": [
+        "TestSeedRescueLinuxAMD64BrowserPackage",
+        "verify.mjs"
+      ],
+      "observations": [
+        "Chrome loaded the actual indexed remote Config, saved an enabled configuration with no scanning credentials, and loaded the original Page from the installed assets with status GET responses and no frontend exception.",
+        "After the first browser script's close-button selector timed out, the targeted AppPage run opened the real sidebar link in a fresh isolated App without rerunning the previous Config/Page checks. The AppPage loaded the exact installed modules and its status, with zero browser writes and no registered schedule."
+      ],
+      "artifacts": {
+        "evidence/seed-rescue-acceptance-20261108.json": "d83358b21146e3df1bdbbbc337b47c23ccb9c8687a0293406fbaa2f1a1893b3b"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "e379ec20d09fbd3bc461b1b8f51ec508d0270a63a841763cc965c39adb98d375",
+        "worker_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+        "host_commit": "0601e3e886b3e9b9497afd91130911c816f36336",
+        "archive_sha256": "d2b3692e41b3132a190284d06676b38017b3bb422714033765cbb35541ddf38b",
+        "target_files": {
+          "cmd/seed-rescue/main.go": "75b0a862497b21b59e25ad4ac3a7174423eb47ac41c669c7968e16290ad19ecb",
+          "plugins/seedrescue/.gitattributes": "ef14dffa55b1b3d9f4829e8a743d91b9bd29ac1f97eff10ba2225c38d766e824",
+          "plugins/seedrescue/FRONTEND_NOTICE.md": "6e4c87ddd4bbcd1300efbfaed9ac3a161a817e3b54fdf27010b3485efc3e6599",
+          "plugins/seedrescue/FRONTEND_ORIGIN.json": "eee62bd41da328f8313aaa07f2a9f8a86415a3fe7b22ec936e32ad8da781608e",
+          "plugins/seedrescue/ORIGIN.json": "f2a09171ce251fa3863fc0eb2ab744bea0a3f835978cc0487fe47916d684efbe",
+          "plugins/seedrescue/config.go": "e0619165b76e0fa412c07d9f89917e97c0db1593ccede904d18149ed4eb43e04",
+          "plugins/seedrescue/core.go": "aa0cd05941d24535a416214782a772d69a45ea42a7f52be71fa0f984a9580562",
+          "plugins/seedrescue/detail.go": "9cd763537bc576b4aef5786156dcd24f64b3b4a8e7992ab34576fd58e3464fe4",
+          "plugins/seedrescue/download.go": "363fcc52d8595ea0209e311cd5889fcfc3023f765f30cd86b97df56af3f8c297",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C0MKqaDa.css": "ac13c4e31d703147f0bb7d4d41b8e8c1b061f97111ef47eaa8d35a2e992538d6",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C7qM2njz.js": "e3063b8753255b7886c5629d459b628e736dcf58322e1450884a9f517fb4c6c2",
+          "plugins/seedrescue/frontend/__federation_expose_AppPage-t5uu8UeP.js": "c870ce546f444a6bd06fcefb55f5cb8d41a05446eb1fd89caca9f36d3c4d2b1c",
+          "plugins/seedrescue/frontend/__federation_expose_Config-CjwiiaeH.js": "ff426a25fa45ac2158ec4a83917cfa778642ba0c53b028a0d41141b39187ca58",
+          "plugins/seedrescue/frontend/__federation_expose_Dashboard-l3LPbQrq.js": "fbc4bd556023bd18048eb0e37f27ad835d0e09b1996ede0cb13c9641aa3c105f",
+          "plugins/seedrescue/frontend/__federation_expose_Page-CWBKd09E.js": "8e6865be438d440a7ebf04f034fb74349d8f77fc92b6da7d213122cf6858a178",
+          "plugins/seedrescue/frontend/__federation_fn_import-JrT3xvdd.js": "4776b5a84c2055e4a6907ebf7377f6abd86f26b7d520d685a13b40d5aa8538aa",
+          "plugins/seedrescue/frontend/remoteEntry.js": "a8ca57dce7b005b047047cc6649ada4d7aeba2d196481f912af336c1ac978d75",
+          "plugins/seedrescue/frontend.go": "750497f0bd7a627cd4570f73a79184f0ef5ab366ec8628ed2f5f3199c0c6f99e",
+          "plugins/seedrescue/machine.go": "c8d8975ae40e9aaaf6e734a60f58184c7f4be240edcc2140facb1321ae77582f",
+          "plugins/seedrescue/ports.go": "d262e3bb3c4a6b28a2767688c8033c917446f0547c766cf2ba7ce60d25a0e919",
+          "plugins/seedrescue/probe.go": "27c6f2229e37bf4944f676de434ee5eccc186fa3d98cf0ea48fe03cde82316a2",
+          "plugins/seedrescue/scan.go": "1603e4b510981fa70e9bd0727879588a6f84cb009cc34dd9d1eb4eb33698c0ec",
+          "plugins/seedrescue/standard.go": "5b259974c72f0e0a7f2939c6a4c72de0045cf7eb4ea5886db021009d3ebc9bd1",
+          "plugins/seedrescue/standard_host.go": "9a4d7f28d4393dfe4cb4eb8d615b55107ef91b386d5d58404cc7752eceaa7041",
+          "plugins/seedrescue/standard_http.go": "5cebaef89ce77ea2c7ff39f8315a7bbf12e1962f0da332a6a56ef42baa9f90fb",
+          "plugins/seedrescue/views.go": "54d4861220fd43478bc54b3a567d5825108875bd1461d5692b6d9fc7b1245686",
+          "internal/sdk/concurrent_transport.go": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
+          "internal/sdk/concurrent_worker.go": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
+          "internal/sdk/protocol.go": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
+          "internal/sdk/worker.go": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533"
+        }
+      }
+    },
+    {
+      "id": "seedrescue.sdk_parallel_stream.20261108",
+      "kind": "integration",
+      "status": "passed",
+      "feature_ids": [
+        "plugin.SeedRescue"
+      ],
+      "commands": [
+        "TestSeedRescueParallelHostStream"
+      ],
+      "observations": [
+        "An actual child worker round-tripped 300 concurrent reverse requests, including out-of-order completion and a chunked message, and refused an oversized reverse frame before publication. The stream was bound to SeedRescue and the supported methods."
+      ],
+      "artifacts": {
+        "evidence/seed-rescue-acceptance-20261108.json": "d83358b21146e3df1bdbbbc337b47c23ccb9c8687a0293406fbaa2f1a1893b3b"
+      },
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "source_sha256": "e379ec20d09fbd3bc461b1b8f51ec508d0270a63a841763cc965c39adb98d375",
+        "worker_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+        "host_commit": "0601e3e886b3e9b9497afd91130911c816f36336",
+        "archive_sha256": "d2b3692e41b3132a190284d06676b38017b3bb422714033765cbb35541ddf38b",
+        "target_files": {
+          "cmd/seed-rescue/main.go": "75b0a862497b21b59e25ad4ac3a7174423eb47ac41c669c7968e16290ad19ecb",
+          "plugins/seedrescue/.gitattributes": "ef14dffa55b1b3d9f4829e8a743d91b9bd29ac1f97eff10ba2225c38d766e824",
+          "plugins/seedrescue/FRONTEND_NOTICE.md": "6e4c87ddd4bbcd1300efbfaed9ac3a161a817e3b54fdf27010b3485efc3e6599",
+          "plugins/seedrescue/FRONTEND_ORIGIN.json": "eee62bd41da328f8313aaa07f2a9f8a86415a3fe7b22ec936e32ad8da781608e",
+          "plugins/seedrescue/ORIGIN.json": "f2a09171ce251fa3863fc0eb2ab744bea0a3f835978cc0487fe47916d684efbe",
+          "plugins/seedrescue/config.go": "e0619165b76e0fa412c07d9f89917e97c0db1593ccede904d18149ed4eb43e04",
+          "plugins/seedrescue/core.go": "aa0cd05941d24535a416214782a772d69a45ea42a7f52be71fa0f984a9580562",
+          "plugins/seedrescue/detail.go": "9cd763537bc576b4aef5786156dcd24f64b3b4a8e7992ab34576fd58e3464fe4",
+          "plugins/seedrescue/download.go": "363fcc52d8595ea0209e311cd5889fcfc3023f765f30cd86b97df56af3f8c297",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C0MKqaDa.css": "ac13c4e31d703147f0bb7d4d41b8e8c1b061f97111ef47eaa8d35a2e992538d6",
+          "plugins/seedrescue/frontend/SeedRescueWorkbench-C7qM2njz.js": "e3063b8753255b7886c5629d459b628e736dcf58322e1450884a9f517fb4c6c2",
+          "plugins/seedrescue/frontend/__federation_expose_AppPage-t5uu8UeP.js": "c870ce546f444a6bd06fcefb55f5cb8d41a05446eb1fd89caca9f36d3c4d2b1c",
+          "plugins/seedrescue/frontend/__federation_expose_Config-CjwiiaeH.js": "ff426a25fa45ac2158ec4a83917cfa778642ba0c53b028a0d41141b39187ca58",
+          "plugins/seedrescue/frontend/__federation_expose_Dashboard-l3LPbQrq.js": "fbc4bd556023bd18048eb0e37f27ad835d0e09b1996ede0cb13c9641aa3c105f",
+          "plugins/seedrescue/frontend/__federation_expose_Page-CWBKd09E.js": "8e6865be438d440a7ebf04f034fb74349d8f77fc92b6da7d213122cf6858a178",
+          "plugins/seedrescue/frontend/__federation_fn_import-JrT3xvdd.js": "4776b5a84c2055e4a6907ebf7377f6abd86f26b7d520d685a13b40d5aa8538aa",
+          "plugins/seedrescue/frontend/remoteEntry.js": "a8ca57dce7b005b047047cc6649ada4d7aeba2d196481f912af336c1ac978d75",
+          "plugins/seedrescue/frontend.go": "750497f0bd7a627cd4570f73a79184f0ef5ab366ec8628ed2f5f3199c0c6f99e",
+          "plugins/seedrescue/machine.go": "c8d8975ae40e9aaaf6e734a60f58184c7f4be240edcc2140facb1321ae77582f",
+          "plugins/seedrescue/ports.go": "d262e3bb3c4a6b28a2767688c8033c917446f0547c766cf2ba7ce60d25a0e919",
+          "plugins/seedrescue/probe.go": "27c6f2229e37bf4944f676de434ee5eccc186fa3d98cf0ea48fe03cde82316a2",
+          "plugins/seedrescue/scan.go": "1603e4b510981fa70e9bd0727879588a6f84cb009cc34dd9d1eb4eb33698c0ec",
+          "plugins/seedrescue/standard.go": "5b259974c72f0e0a7f2939c6a4c72de0045cf7eb4ea5886db021009d3ebc9bd1",
+          "plugins/seedrescue/standard_host.go": "9a4d7f28d4393dfe4cb4eb8d615b55107ef91b386d5d58404cc7752eceaa7041",
+          "plugins/seedrescue/standard_http.go": "5cebaef89ce77ea2c7ff39f8315a7bbf12e1962f0da332a6a56ef42baa9f90fb",
+          "plugins/seedrescue/views.go": "54d4861220fd43478bc54b3a567d5825108875bd1461d5692b6d9fc7b1245686",
+          "internal/sdk/concurrent_transport.go": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
+          "internal/sdk/concurrent_worker.go": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
+          "internal/sdk/protocol.go": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
+          "internal/sdk/worker.go": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533"
+        }
+      }
     }
   ],
   "scope": {
@@ -69267,24 +69470,24 @@
       "migration/ledger.json"
     ],
     "current": {
-      "functional_verified_instances": 19,
+      "functional_verified_instances": 20,
       "total_installed_instances": 23,
       "current_migration_instances": 22,
       "deferred_instances": [
         "MergeMessageNotify"
       ],
-      "business_families_verified": 18,
-      "functional_verified_count_scope": "Nineteen of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "business_families_verified": 19,
+      "functional_verified_count_scope": "Twenty of 22 current-scope instances accepted. Installed inventory remains 23 with MergeMessageNotify deferred.",
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
-      "tested_saved_code_revision": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
+      "tested_saved_code_revision": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
       "host_worktree": "/Users/accidia/projects/light-media",
       "host_branch": "codex/plugin-source-error-outcomes-20261105",
-      "host_HEAD": "5632b75333c35c87bc1b1712b0bcd33f947af40a",
-      "SDK_source_host_commit": "714984d815f388224e802ef17d2a254f0774fefd",
+      "host_HEAD": "0601e3e886b3e9b9497afd91130911c816f36336",
+      "SDK_source_host_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
       "SDK_current_files": 108,
-      "SDK_current_origin_sha256": "295ff8d84e05ce00363281c51434077ff9a6f1670f31977ae48faa673dd29c4d",
+      "SDK_current_origin_sha256": "91b555a3900bb81e9c97253ff8bcf472b5aa05a09677b04551e894409b6332f1",
       "SDK_current_status": "108 files. Existing sequential stream retains per-message checks; ScrapeFileClean uses the bound watcher phase and exact guarded removal capability.",
       "host_actual_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
       "actual_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
@@ -69292,12 +69495,12 @@
       "deployed_host_revision": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
       "deployed_host_ELF_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
       "deployed_SDK": 101,
-      "delivery": "19/22 instances accepted. CleanInvalidSeed 2.1 is registered in the local Linux build manifest with the paired saved host. Both remote main refs checked unchanged. No production deploy.",
-      "tests_running": "None. Native qB Web, native Transmission scheduling, and final per-downloader fresh file scan evidence are linked separately.",
-      "latest_detail": "migration/evidence/clean-invalid-seed-acceptance-20261108.json",
+      "delivery": "20/22 instances accepted. SeedRescue 1.6.3 is registered locally with the paired host. No push, deploy or private history import.",
+      "tests_running": "None. Native cross-site download, focused Chrome workbench paths and parallel streaming evidence are recorded.",
+      "latest_detail": "migration/evidence/seed-rescue-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "Start SeedRescue from its fixed installed files. Inspect its workbench routes, durable rescue queue, downloader actions, Tracker and host lifecycle. Reuse current host contracts and only run targeted evidence for this next plugin.",
+      "next_complete_slice": "Start CloudflareSpeedTest from its fixed installed version. Reuse the existing Go core and verify how its external speed-test tool, selection, config and scheduled updates map to the current host. CustomHosts follows.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -69311,7 +69514,8 @@
       "latest_MergeSiteSwitch_product_commit": "35bdfa89367dffedec05ecdc209669c0f5e454e8",
       "latest_ScrapeFileClean_product_commit": "4950be37d694b961024b27d3c474db7dfd150b4f",
       "latest_LarkMessager_product_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
-      "latest_CleanInvalidSeed_product_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9"
+      "latest_CleanInvalidSeed_product_commit": "b5dcb3f9e1116a40b4998268821e69838018c9f9",
+      "latest_SeedRescue_product_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6"
     },
     "current_artifact_inputs": {
       "local_plugin_single_set": "work/migration-20261106/current-acceptance-inputs (13retained exactcurrent legacy worker/driver/fixture ELFs)",
@@ -69328,7 +69532,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "Start SeedRescue from its fixed installed files. Inspect its workbench routes, durable rescue queue, downloader actions, Tracker and host lifecycle. Reuse current host contracts and only run targeted evidence for this next plugin.",
+    "next_complete_slice": "Start CloudflareSpeedTest from its fixed installed version. Reuse the existing Go core and verify how its external speed-test tool, selection, config and scheduled updates map to the current host. CustomHosts follows.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",
