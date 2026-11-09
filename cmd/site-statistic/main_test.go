@@ -52,7 +52,7 @@ func TestStandaloneWorkerFreshDateBudgetsAndRealOneShot(t *testing.T) {
 	if e = json.Unmarshal(raw, &actual); e != nil || !reflect.DeepEqual(actual, manifest) {
 		t.Fatal("manifest", e)
 	}
-	identity := plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_owned_clone", Version: "1.9.7"}
+	identity := plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_owned_clone", Version: manifest.Version}
 	client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, manifest, plugins.SessionBinding{Identity: identity, Generation: 1})
 	if e != nil {
 		t.Fatal(e)

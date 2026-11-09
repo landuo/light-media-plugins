@@ -44,7 +44,7 @@ func TestWorkerProtocolSmoke(t *testing.T) {
 		t.Fatalf("executable manifest differs: %+v", emitted)
 	}
 
-	identity := plugins.Identity{PluginID: "CategoryEditor", InstanceID: "synthetic-category", Version: "1.3"}
+	identity := plugins.Identity{PluginID: "CategoryEditor", InstanceID: "synthetic-category", Version: manifest.Version}
 	client, err := (plugins.Runner{Timeout: 5 * time.Second}).Start(ctx, plugins.Command{Path: binary}, manifest, plugins.SessionBinding{Identity: identity, Generation: 1})
 	if err != nil {
 		t.Fatal(err)

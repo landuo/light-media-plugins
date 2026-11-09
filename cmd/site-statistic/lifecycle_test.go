@@ -29,10 +29,12 @@ func TestStandaloneSourceReadOwnerCancellationAndNoopStop(t *testing.T) {
 	if out, e := exec.CommandContext(ctx, "go", append(args, ".")...).CombinedOutput(); e != nil {
 		t.Fatalf("build: %v %s", e, out)
 	}
+	manifest := sitestatistic.Manifest()
 	observations := []map[string]any{}
 	for _, scenario := range []string{"queued-owner-cancel", "active-owner-cancel", "active-noop-stop-reinit", "pending-one-shot-session-retire"} {
 		t.Run(scenario, func(t *testing.T) {
-			client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, sitestatistic.Manifest(), plugins.SessionBinding{Identity: plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_lifecycle_owned", Version: "1.9.7"}, Generation: 1})
+			identity := plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_lifecycle_owned", Version: manifest.Version}
+			client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, manifest, plugins.SessionBinding{Identity: identity, Generation: 1})
 			if e != nil {
 				t.Fatal(e)
 			}
