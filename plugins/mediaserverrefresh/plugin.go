@@ -19,7 +19,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "MediaServerRefresh", Name: "媒体库服务器刷新",
 		Description: "入库后自动刷新Emby/Jellyfin/Plex服务器海报墙。", Icon: "refresh2.png",
-		Version: "1.3.3", Author: "jxxghp", AuthorURL: "https://github.com/jxxghp",
+		Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		PluginOrder: 14, Runtime: "go-executable", Entry: "media-server-refresh",
 		HostAPIMin: 1, HostAPIMax: 1, ManagedPublicServices: true,
 		Methods: []string{

@@ -25,7 +25,7 @@ func Manifest() sdk.Manifest {
 		SchemaVersion: 1, PluginID: "LarkMessager", Name: "Lark 应用消息通知",
 		Description: "基于国际版飞书 Lark 开放平台应用的通知与消息交互插件，支持文本、卡片消息发送及消息回调交互。",
 		Icon:        "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/icons/FeiShu_A.png",
-		Version:     "0.9.1", Author: "ui-beam-9", AuthorURL: "https://github.com/ui-beam-9",
+		Version:     "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		Runtime: "go-executable", Entry: "lark-messager", HostAPIMin: 1, HostAPIMax: 1, PluginOrder: 50,
 		HasPage: true, APIs: httpAPIs, ManagedPrivateScheduler: true,
 		Methods: append(methods, moduleNames...),

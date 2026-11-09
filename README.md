@@ -12,6 +12,8 @@
 
 历史 [v1 清单](go-plugins.v1.json) 和 Linux amd64 Release 继续供较早的宿主使用，保持最后一次二进制发布的版本。
 
+光影版插件由 `landuo` 维护，独立从 `1.0.0` 开始编号。已经安装较高旧版的实例需要明确执行覆盖安装，才会切换到新的版本系列。原插件署名和对应版本见[第三方声明](THIRD_PARTY_NOTICES.md)。
+
 ### 聚合消息通知
 
 在插件设置中选择「爱语飞飞」或「QQ Bot（腾讯官方）」。爱语飞飞填写 IYUU 令牌。QQ Bot 填写开放平台的 AppID、AppSecret，并选择私聊或群聊，填写该机器人的收件人 OpenID。腾讯平台需要允许机器人向这个对象主动发消息，配额及收件人设置也会影响投递。[腾讯官方 SDK 的主动发送说明](https://github.com/tencent-connect/qqbot-nodejs/blob/429a0f1b798f3b0fcef3679e207dbc0469a1df2d/USAGE.md#94-主动-push无-msgid)

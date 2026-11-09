@@ -20,7 +20,7 @@ import (
 )
 
 const PluginID = "SeedRescue"
-const Version = "1.6.3"
+const Version = "1.0.0"
 const Free = "free"
 const NonFree = "non_free"
 const Unknown = "unknown"

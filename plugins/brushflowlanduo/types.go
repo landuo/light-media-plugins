@@ -17,7 +17,7 @@ import (
 )
 
 const PluginID = "BrushFlowLanduo"
-const Version = "5.2.18"
+const Version = "1.0.0"
 const GlobalTag = "刷流"
 
 var DataNames = []string{"torrents", "archived", "unmanaged", "statistic", "runs"}

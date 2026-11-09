@@ -24,7 +24,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "ScrapeFileClean", Name: "源文件联动清理",
 		Description: "为手动清理下载目录设计：手动删除源文件后，自动联动清理媒体库中对应的硬链接文件、刮削文件（元数据、图片、字幕）与转移记录，支持延迟删除防止误删",
-		Version:     "1.0.7", Icon: "clean.png", Author: "xlmc", AuthorURL: "https://github.com/xlmc",
+		Version:     "1.0.0", Icon: "clean.png", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		Runtime: "go-executable", Entry: "scrape-file-clean", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPrivateScheduler: true,
 		RuntimeSupport:          &sdk.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}},

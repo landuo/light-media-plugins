@@ -18,7 +18,7 @@ var form json.RawMessage
 var defaults json.RawMessage
 
 func Manifest() plugins.Manifest {
-	return plugins.Manifest{SchemaVersion: 1, PluginID: "SiteStatistic", Name: "站点数据统计", Description: "站点统计数据图表。", Icon: "statistic.png", Version: "1.9.7", Author: "lightolly,jxxghp", AuthorURL: "https://github.com/lightolly", PluginOrder: 1, Runtime: "go-executable", Entry: "site-statistic", HostAPIMin: 1, HostAPIMax: 1,
+	return plugins.Manifest{SchemaVersion: 1, PluginID: "SiteStatistic", Name: "站点数据统计", Description: "站点统计数据图表。", Icon: "statistic.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 1, Runtime: "go-executable", Entry: "site-statistic", HostAPIMin: 1, HostAPIMax: 1,
 		Methods:           []string{"init", "get_state", "get_form", "get_page", "get_dashboard", "get_api", "get_render_mode", "stop_service", "stop", "close", "send_msg", "http", "private_refresh", "data_continue"},
 		Capabilities:      []string{plugins.SitesReadCapability, plugins.SitesSourceAccountsCapability, plugins.SitesSourceIndexerCapability, plugins.SitesSourceRefreshCapability, plugins.SitesSourceRefreshAllCapability, plugins.BaseUpdateConfig, plugins.BaseGetData, plugins.BaseSaveData, plugins.PostMessageCapability, plugins.LogWriteCapability, plugins.BackgroundSubmitCapability},
 		BroadcastHandlers: []plugins.BroadcastHandler{{Event: "site.refreshed", Method: "send_msg"}}, HasPage: true,

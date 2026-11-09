@@ -17,7 +17,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: PluginID, Name: "站点刷流-landuo",
 		Description: "自动托管多个站点刷流任务，并独立调度、统计与诊断。",
-		Icon:        "brush-flow.png", Version: Version, Author: "jxxghp,landuo",
+		Icon:        "brush-flow.png", Version: Version, Author: "landuo",
 		AuthorURL: "https://github.com/landuo", PluginOrder: 21,
 		Runtime: "go-executable", Entry: "brush-flow-landuo", HostAPIMin: 1, HostAPIMax: 1,
 		Methods:      []string{"init", "get_state", "get_service", "get_command", "get_api", "get_render_mode", "get_form", "get_page", "get_dashboard", "get_sidebar_nav", "http", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "reload_event", "close", "stop_service", "stop"},

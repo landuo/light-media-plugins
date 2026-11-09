@@ -26,8 +26,8 @@ func backupAPI() sdk.HTTPAPI {
 func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "AutoBackup", Name: "自动备份",
-		Description: "自动备份数据和配置文件。", Icon: "Time_machine_B.png", Version: "2.1.4",
-		Author: "thsrite", AuthorURL: "https://github.com/thsrite", PluginOrder: 17,
+		Description: "自动备份数据和配置文件。", Icon: "Time_machine_B.png", Version: "1.0.0",
+		Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 17,
 		Runtime: "go-executable", Entry: "auto-backup", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPrivateScheduler: true, ManagedPublicServices: true,
 		Methods: []string{

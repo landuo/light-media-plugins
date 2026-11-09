@@ -37,7 +37,7 @@ var selections = []selection{
 func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "MergeSiteSwitch", Name: "聚合站点开关", Description: "统一管理所有与站点相关的开关。",
-		Icon: "world.png", Version: "1.2", Author: "hotlcc", AuthorURL: "https://github.com/hotlcc",
+		Icon: "world.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		PluginOrder: 66, Runtime: "go-executable", Entry: "merge-site-switch", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPublicServices: true,
 		Methods:               []string{"init", "get_state", "get_form", "get_render_mode", "get_page", "get_api", "get_command", "get_service", "listen_site_updated_event", "listen_site_deleted_event", "close", "stop_service", "stop"},

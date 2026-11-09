@@ -10,7 +10,7 @@ import (
 )
 
 func Manifest() plugins.Manifest {
-	return plugins.Manifest{SchemaVersion: 1, PluginID: "PluginUnInstall", Name: "插件彻底卸载", Description: "删除数据库中已安装插件记录、清理插件文件。", Icon: "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png", Version: "2.2", Author: "thsrite", AuthorURL: "https://github.com/thsrite", PluginOrder: 98, Runtime: "go-executable", Entry: "plugin-uninstall", HostAPIMin: 1, HostAPIMax: 1,
+	return plugins.Manifest{SchemaVersion: 1, PluginID: "PluginUnInstall", Name: "插件彻底卸载", Description: "删除数据库中已安装插件记录、清理插件文件。", Icon: "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 98, Runtime: "go-executable", Entry: "plugin-uninstall", HostAPIMin: 1, HostAPIMax: 1,
 		Methods:        []string{"init", "get_state", "get_form", "get_api", "get_page", "get_render_mode", "stop_service", "close", "stop", "uninstall_continue"},
 		Capabilities:   []string{plugins.PluginManagerReadCapability, plugins.PluginManagerControlCapability, plugins.SettingsReadCapability, plugins.SettingsWriteCapability, plugins.BaseUpdateConfig, plugins.LogWriteCapability, plugins.BackgroundSubmitCapability},
 		RuntimeSupport: &plugins.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}}}

@@ -22,7 +22,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "RemoteIdentifiers", Name: "共享识别词",
 		Description: "从Github、Etherpad远程文件中获取共享识别词并应用", Icon: "words.png",
-		Version: "2.4.1", Author: "honue", AuthorURL: "https://github.com/honue",
+		Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		PluginOrder: 10, Runtime: "go-executable", Entry: "remote-identifiers",
 		HostAPIMin: 1, HostAPIMax: 1, ManagedPrivateScheduler: true, ManagedPublicServices: true,
 		Methods: []string{

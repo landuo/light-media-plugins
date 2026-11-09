@@ -20,7 +20,7 @@ var form json.RawMessage
 var defaults json.RawMessage
 
 func Manifest() plugins.Manifest {
-	return plugins.Manifest{SchemaVersion: 1, PluginID: "RemoveLink", Name: "清理媒体文件", Description: "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能", Icon: "Ombi_A.png", Version: "2.18", Author: "DzAvril", AuthorURL: "https://github.com/DzAvril", PluginOrder: 0, Runtime: "go-executable", Entry: "remove-link", HostAPIMin: 1, HostAPIMax: 1,
+	return plugins.Manifest{SchemaVersion: 1, PluginID: "RemoveLink", Name: "清理媒体文件", Description: "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能", Icon: "Ombi_A.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 0, Runtime: "go-executable", Entry: "remove-link", HostAPIMin: 1, HostAPIMax: 1,
 		Methods:        []string{"init", "get_state", "get_form", "get_render_mode", "get_api", "get_page", "close", "stop_service", "stop", "cleanup_continue", "private_watch", "private_observer", "private_timer"},
 		Capabilities:   []string{plugins.StorageExistsCapability, plugins.StorageListCapability, plugins.StorageDeleteCapability, plugins.TransferHistoryReadCapability, plugins.TransferHistoryDeleteCapability, plugins.EventSendCapability, plugins.PostMessageCapability, plugins.SystemMessagePutCapability, plugins.LogWriteCapability, plugins.SettingsReadCapability, plugins.BackgroundSubmitCapability, plugins.CleanupSubmitCapability},
 		Frontend:       &plugins.Frontend{Contract: plugins.FrontendFederationContract, APIContract: plugins.FrontendAPIContract, Root: "frontend", Entry: "remoteEntry.js", Exposes: []string{"Config"}, Shared: []string{"vue"}},

@@ -18,7 +18,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "CleanInvalidSeed", Name: "清理无效做种",
 		Description: "清理已经被站点删除的种子及源文件，支持qBittorrent和Transmission",
-		Icon:        "clean_a.png", Version: "2.1", Author: "DzAvril", AuthorURL: "https://github.com/DzAvril", PluginOrder: 1,
+		Icon:        "clean_a.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 1,
 		Runtime: "go-executable", Entry: "clean-invalid-seed", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPrivateScheduler: true, ManagedPublicServices: true,
 		RuntimeSupport: &sdk.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}},

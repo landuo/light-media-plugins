@@ -13,8 +13,8 @@ import (
 func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: PluginID, Name: "Cloudflare IP优选", Version: Version,
-		Description: "🌩 测试 Cloudflare CDN 延迟和速度，自动优选IP。", Icon: "cloudflare.jpg", Author: "thsrite",
-		AuthorURL: "https://github.com/thsrite", PluginOrder: 12,
+		Description: "🌩 测试 Cloudflare CDN 延迟和速度，自动优选IP。", Icon: "cloudflare.jpg", Author: "landuo",
+		AuthorURL: "https://github.com/landuo", PluginOrder: 12,
 		Runtime: "go-executable", Entry: "cloudflare-speed-test", HostAPIMin: 1, HostAPIMax: 1,
 		Methods: []string{"init", "get_state", "get_form", "get_render_mode", "get_command", "get_service", "get_api", "get_page",
 			"handle_commands", Action, "private_once", "http", "stop_service", "close", "stop"},

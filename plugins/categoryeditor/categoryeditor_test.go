@@ -76,8 +76,8 @@ func TestManifestIsStandardSourceArtifact(t *testing.T) {
 	if err := m.Validate(); err != nil {
 		t.Fatal(err)
 	}
-	if m.PluginID != "CategoryEditor" || m.Version != "1.3" || m.Entry != "category-editor" || m.Name != "二级分类策略" || m.Description != "编辑下载和整理时自动二级分类的目录规则。" || m.Icon != "Bookstack_A.png" || m.Author != "jxxghp" || m.AuthorURL != "https://github.com/jxxghp" || m.PluginOrder != 5 {
-		t.Fatalf("source identity mismatch: %+v", m)
+	if m.PluginID != "CategoryEditor" || m.Version != "1.0.0" || m.Entry != "category-editor" || m.Name != "二级分类策略" || m.Description != "编辑下载和整理时自动二级分类的目录规则。" || m.Icon != "Bookstack_A.png" || m.Author != "landuo" || m.AuthorURL != "https://github.com/landuo" || m.PluginOrder != 5 {
+		t.Fatalf("unexpected plugin manifest: %+v", m)
 	}
 	if m.AuthLevel != nil || m.HasPage || len(m.APIs) != 0 || len(m.Events) != 0 || len(m.Dashboards) != 0 || m.ConfigDefaults != "" || m.ConfigFormProjection != "" {
 		t.Fatalf("invented source features: %+v", m)

@@ -18,7 +18,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "SystemProcess", Name: "系统进程",
 		Description: "查看系统进程，支持仪表板", Icon: "Dsfinder_A.png",
-		Version: "1.1", Author: "hotlcc", AuthorURL: "https://github.com/hotlcc",
+		Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		PluginOrder: 66, Runtime: "go-executable", Entry: "system-process",
 		HostAPIMin: 1, HostAPIMax: 1, HasPage: true,
 		Methods: []string{

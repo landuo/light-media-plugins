@@ -15,15 +15,15 @@ import (
 
 const (
 	PluginID        = "CustomHosts"
-	Version         = "1.2.2"
+	Version         = "1.0.0"
 	applyCapability = "custom_hosts.apply"
 )
 
 func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: PluginID, Name: "自定义Hosts", Version: Version,
-		Description: "修改系统hosts文件，加速网络访问。", Icon: "hosts.png", Author: "thsrite",
-		AuthorURL: "https://github.com/thsrite", PluginOrder: 10,
+		Description: "修改系统hosts文件，加速网络访问。", Icon: "hosts.png", Author: "landuo",
+		AuthorURL: "https://github.com/landuo", PluginOrder: 10,
 		Runtime: "go-executable", Entry: "custom-hosts", HostAPIMin: 1, HostAPIMax: 1,
 		Methods: []string{"init", "get_state", "get_form", "get_render_mode", "get_command", "get_service", "get_api", "get_page",
 			"reload_event", "close", "stop_service", "stop"},

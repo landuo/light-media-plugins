@@ -1,5 +1,34 @@
 # Third-party notices
 
+## Source credits and inherited versions
+
+The worker manifest identifies landuo as the maintainer of this Light Media distribution. The credits below record the names and versions carried over from the original plugins. Each plugin directory documents its source and license.
+
+| Plugin | Inherited version | Source credits |
+| --- | --- | --- |
+| AutoBackup | 2.1.4 | [thsrite](https://github.com/thsrite) |
+| AutoSignIn | 2.9.15 | [thsrite](https://github.com/thsrite) |
+| BrushFlowLanduo | 5.2.18 | [jxxghp](https://github.com/jxxghp), [landuo](https://github.com/landuo) |
+| CategoryEditor | 1.3 | [jxxghp](https://github.com/jxxghp) |
+| CleanInvalidSeed | 2.1 | [DzAvril](https://github.com/DzAvril) |
+| CloudflareSpeedTest | 1.5.1 | [thsrite](https://github.com/thsrite) |
+| CustomHosts | 1.2.2 | [thsrite](https://github.com/thsrite) |
+| IYUUAutoSeed | 2.22 | jxxghp, CKun |
+| LarkMessager | 0.9.1 | [ui-beam-9](https://github.com/ui-beam-9) |
+| MPServerStatus | 1.4 | [jxxghp](https://github.com/jxxghp) |
+| MediaServerRefresh | 1.3.3 | [jxxghp](https://github.com/jxxghp) |
+| MergeMessageNotify | 1.20.3 | [hotlcc](https://github.com/hotlcc) |
+| MergeSiteSwitch | 1.2 | [hotlcc](https://github.com/hotlcc) |
+| PluginUnInstall | 2.2 | [thsrite](https://github.com/thsrite) |
+| RemoteIdentifiers | 2.4.1 | [honue](https://github.com/honue) |
+| RemoveLink | 2.18 | [DzAvril](https://github.com/DzAvril) |
+| ScrapeFileClean | 1.0.7 | [xlmc](https://github.com/xlmc) |
+| SeedRescue | 1.6.3 | [landuo](https://github.com/landuo) |
+| SiteStatistic | 1.9.7 | [lightolly](https://github.com/lightolly), [jxxghp](https://github.com/jxxghp) |
+| SubscribeGroup | 2.8.7 | [thsrite](https://github.com/thsrite) |
+| SystemProcess | 1.1 | [hotlcc](https://github.com/hotlcc) |
+| TorrentTransfer | 1.10.3 | [jxxghp](https://github.com/jxxghp) |
+
 ## CategoryEditor business source
 
 CategoryEditor 1.3 was written by jxxghp for MoviePilot. Its fixed source is
@@ -12,10 +41,8 @@ The installed source SHA-256 is
 This repository contains a Go adaptation for the Light Media standard worker
 protocol, not the original Python runtime. `LICENSE.upstream` preserves the
 GNU General Public License version 3 text from that fixed upstream commit.
-Author attribution is also retained in the worker manifest. The host performs
-the actual category file write and cache refresh; its documented safety bounds
-are intentional adaptation differences, not claims of identical behavior for
-every input. No upstream icon image is redistributed by this package.
+The host performs the category file write and cache refresh within its documented
+safety bounds. The package references the original icon by name.
 
 ## Go modules
 
@@ -77,8 +104,7 @@ source SHA256 is `2210e9dea47eeccdc46208d515e45ce1222dcadf50dbfc63cbeb41f94e4704
 in the read-only installed content snapshot recorded by migration/ledger.json.
 Its Go worker uses the existing GPLv3 SDK and x/text dependency, without a
 Python runtime. Source algorithm, finite host adaptations and provenance are
-recorded in plugins/pluginuninstall/ORIGIN.md. Author attribution is retained
-in the actual worker manifest. No upstream icon is redistributed.
+recorded in plugins/pluginuninstall/ORIGIN.md. No upstream icon is redistributed.
 
 ## AutoSignIn business source and image decoding
 
@@ -139,7 +165,7 @@ The installed SystemProcess 1.1 MoviePilot source identifies hotlcc as its
 author. The fixed `__init__.py` SHA-256 is
 `d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac`.
 `plugins/systemprocess/ORIGIN.json` records the installed source and the Go
-adaptation. The actual worker manifest retains the author attribution.
+adaptation.
 
 The Linux worker links `github.com/shirou/gopsutil/v4 v4.26.9`,
 `github.com/tklauser/go-sysconf v0.4.0`, and
@@ -160,8 +186,7 @@ author. The fixed `__init__.py` SHA-256 is
 `dedab53b1adf96dc59879ebdd67f77fe67ea773981d4befb04ca000889f607e4`.
 `plugins/autobackup/ORIGIN.json` records the original source and the scoped Go
 implementation. The worker reuses the repository's native cron and JSON-value
-helpers. Its manifest retains the original author attribution. No upstream icon
-or Python runtime is included in the package.
+helpers.
 
 ## BrushFlowLanduo source and remote workbench
 

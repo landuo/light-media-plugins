@@ -18,7 +18,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "SubscribeGroup", Name: "订阅规则自动填充",
 		Description: "电视剧下载后自动添加官组等信息到订阅；添加订阅后根据二级分类名称自定义订阅规则。",
-		Icon:        "teamwork.png", Version: "2.8.7", Author: "thsrite", AuthorURL: "https://github.com/thsrite",
+		Icon:        "teamwork.png", Version: "1.0.0", Author: "landuo", AuthorURL: "https://github.com/landuo",
 		PluginOrder: 26, Runtime: "go-executable", Entry: "subscribe-group", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPublicServices: true, HasPage: true,
 		Methods: []string{

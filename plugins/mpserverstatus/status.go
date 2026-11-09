@@ -18,7 +18,7 @@ import (
 )
 
 const ServerURL = "https://movie-pilot.org/status"
-const Version = "1.4"
+const Version = "1.0.0"
 
 type Object = map[string]any
 type Clock func() float64
