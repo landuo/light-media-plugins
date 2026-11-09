@@ -4,10 +4,10 @@
     {
       "schema_version": 2,
       "plugin_id": "CategoryEditor",
-      "current_version": "1.3",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.3",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 5,
             "schema_version": 1,
@@ -15,9 +15,9 @@
             "name": "二级分类策略",
             "description": "编辑下载和整理时自动二级分类的目录规则。",
             "icon": "Bookstack_A.png",
-            "author": "jxxghp",
-            "author_url": "https://github.com/jxxghp",
-            "version": "1.3",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "category-editor",
             "host_api_min": 1,
@@ -41,7 +41,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/category-editor",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -59,10 +59,10 @@
     {
       "schema_version": 2,
       "plugin_id": "TorrentTransfer",
-      "current_version": "1.10.3",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.10.3",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 18,
             "runtime_support": {
@@ -78,9 +78,9 @@
             "name": "自动转移做种",
             "description": "定期转移下载器中的做种任务到另一个下载器。",
             "icon": "seed.png",
-            "author": "jxxghp",
-            "author_url": "https://github.com/jxxghp",
-            "version": "1.10.3",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "torrent-transfer",
             "host_api_min": 1,
@@ -120,7 +120,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/torrent-transfer",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -138,10 +138,10 @@
     {
       "schema_version": 2,
       "plugin_id": "SiteStatistic",
-      "current_version": "1.9.7",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.9.7",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 1,
             "broadcast_handlers": [
@@ -163,9 +163,9 @@
             "name": "站点数据统计",
             "description": "站点统计数据图表。",
             "icon": "statistic.png",
-            "author": "lightolly,jxxghp",
-            "author_url": "https://github.com/lightolly",
-            "version": "1.9.7",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "site-statistic",
             "host_api_min": 1,
@@ -229,7 +229,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/site-statistic",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -249,10 +249,10 @@
     {
       "schema_version": 2,
       "plugin_id": "MPServerStatus",
-      "current_version": "1.4",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.4",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 99,
             "runtime_support": {
@@ -268,9 +268,9 @@
             "name": "MoviePilot服务监控",
             "description": "在仪表板中实时显示MoviePilot公共服务器状态。",
             "icon": "Duplicati_A.png",
-            "author": "jxxghp",
-            "author_url": "https://github.com/jxxghp",
-            "version": "1.4",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "mp-server-status",
             "host_api_min": 1,
@@ -300,7 +300,7 @@
             }
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/mp-server-status",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -331,10 +331,10 @@
     {
       "schema_version": 2,
       "plugin_id": "PluginUnInstall",
-      "current_version": "2.2",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.2",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 98,
             "runtime_support": {
@@ -350,9 +350,9 @@
             "name": "插件彻底卸载",
             "description": "删除数据库中已安装插件记录、清理插件文件。",
             "icon": "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "2.2",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "plugin-uninstall",
             "host_api_min": 1,
@@ -380,7 +380,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/plugin-uninstall",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -398,10 +398,10 @@
     {
       "schema_version": 2,
       "plugin_id": "RemoveLink",
-      "current_version": "2.18",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.18",
+          "version": "1.0.0",
           "manifest": {
             "frontend": {
               "contract": "light-media.vue-federation/v1",
@@ -428,9 +428,9 @@
             "name": "清理媒体文件",
             "description": "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能",
             "icon": "Ombi_A.png",
-            "author": "DzAvril",
-            "author_url": "https://github.com/DzAvril",
-            "version": "2.18",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "remove-link",
             "host_api_min": 1,
@@ -466,7 +466,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/remove-link",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -487,10 +487,10 @@
     {
       "schema_version": 2,
       "plugin_id": "AutoSignIn",
-      "current_version": "2.9.15",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.9.15",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -517,9 +517,9 @@
             "name": "站点自动签到",
             "description": "自动模拟登录、签到站点。",
             "icon": "signin.png",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "2.9.15",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "auto-sign-in",
             "host_api_min": 1,
@@ -595,7 +595,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/auto-sign-in",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -650,10 +650,10 @@
     {
       "schema_version": 2,
       "plugin_id": "IYUUAutoSeed",
-      "current_version": "2.22",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.22",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -677,9 +677,9 @@
             "name": "IYUU自动辅种",
             "description": "基于IYUU官方Api实现自动辅种。",
             "icon": "IYUU.png",
-            "author": "jxxghp,CKun",
-            "author_url": "https://github.com/jxxghp",
-            "version": "2.22",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "iyuu-auto-seed",
             "host_api_min": 1,
@@ -726,7 +726,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/iyuu-auto-seed",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -762,10 +762,10 @@
     {
       "schema_version": 2,
       "plugin_id": "SystemProcess",
-      "current_version": "1.1",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.1",
+          "version": "1.0.0",
           "manifest": {
             "plugin_order": 66,
             "runtime_support": {
@@ -781,9 +781,9 @@
             "name": "系统进程",
             "description": "查看系统进程，支持仪表板",
             "icon": "Dsfinder_A.png",
-            "author": "hotlcc",
-            "author_url": "https://github.com/hotlcc",
-            "version": "1.1",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "system-process",
             "host_api_min": 1,
@@ -808,7 +808,7 @@
             "has_page": true
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/system-process",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -830,10 +830,10 @@
     {
       "schema_version": 2,
       "plugin_id": "MediaServerRefresh",
-      "current_version": "1.3.3",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.3.3",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "plugin_order": 14,
@@ -856,9 +856,9 @@
             "name": "媒体库服务器刷新",
             "description": "入库后自动刷新Emby/Jellyfin/Plex服务器海报墙。",
             "icon": "refresh2.png",
-            "author": "jxxghp",
-            "author_url": "https://github.com/jxxghp",
-            "version": "1.3.3",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "media-server-refresh",
             "host_api_min": 1,
@@ -884,7 +884,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/media-server-refresh",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -903,10 +903,10 @@
     {
       "schema_version": 2,
       "plugin_id": "RemoteIdentifiers",
-      "current_version": "2.4.1",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.4.1",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -924,9 +924,9 @@
             "name": "共享识别词",
             "description": "从Github、Etherpad远程文件中获取共享识别词并应用",
             "icon": "words.png",
-            "author": "honue",
-            "author_url": "https://github.com/honue",
-            "version": "2.4.1",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "remote-identifiers",
             "host_api_min": 1,
@@ -957,7 +957,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/remote-identifiers",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -976,10 +976,10 @@
     {
       "schema_version": 2,
       "plugin_id": "SubscribeGroup",
-      "current_version": "2.8.7",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.8.7",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "plugin_order": 26,
@@ -1006,9 +1006,9 @@
             "name": "订阅规则自动填充",
             "description": "电视剧下载后自动添加官组等信息到订阅；添加订阅后根据二级分类名称自定义订阅规则。",
             "icon": "teamwork.png",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "2.8.7",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "subscribe-group",
             "host_api_min": 1,
@@ -1043,7 +1043,7 @@
             "has_page": true
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/subscribe-group",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1062,10 +1062,10 @@
     {
       "schema_version": 2,
       "plugin_id": "AutoBackup",
-      "current_version": "2.1.4",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.1.4",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -1083,9 +1083,9 @@
             "name": "自动备份",
             "description": "自动备份数据和配置文件。",
             "icon": "Time_machine_B.png",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "2.1.4",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "auto-backup",
             "host_api_min": 1,
@@ -1133,7 +1133,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/auto-backup",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1152,10 +1152,10 @@
     {
       "schema_version": 2,
       "plugin_id": "BrushFlowLanduo",
-      "current_version": "5.2.18",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "5.2.18",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "plugin_order": 21,
@@ -1195,9 +1195,9 @@
             "name": "站点刷流-landuo",
             "description": "自动托管多个站点刷流任务，并独立调度、统计与诊断。",
             "icon": "brush-flow.png",
-            "author": "jxxghp,landuo",
+            "author": "landuo",
             "author_url": "https://github.com/landuo",
-            "version": "5.2.18",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "brush-flow-landuo",
             "host_api_min": 1,
@@ -1368,7 +1368,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/brush-flow-landuo",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1402,10 +1402,10 @@
     {
       "schema_version": 2,
       "plugin_id": "MergeSiteSwitch",
-      "current_version": "1.2",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.2",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "plugin_order": 66,
@@ -1424,9 +1424,9 @@
             "name": "聚合站点开关",
             "description": "统一管理所有与站点相关的开关。",
             "icon": "world.png",
-            "author": "hotlcc",
-            "author_url": "https://github.com/hotlcc",
-            "version": "1.2",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "merge-site-switch",
             "host_api_min": 1,
@@ -1456,7 +1456,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/merge-site-switch",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1472,11 +1472,81 @@
     },
     {
       "schema_version": 2,
-      "plugin_id": "ScrapeFileClean",
-      "current_version": "1.0.7",
+      "plugin_id": "MergeMessageNotify",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.0.7",
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 66,
+            "broadcast_handlers": [
+              {
+                "event": "notice.message",
+                "method": "listen_notice_message"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "MergeMessageNotify",
+            "name": "聚合消息通知",
+            "description": "聚合发送爱语飞飞和腾讯官方 QQ Bot 通知。",
+            "icon": "https://raw.githubusercontent.com/hotlcc/MoviePilot-Plugins-Third/main/icons/MergeMessageNotify_121.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "merge-message-notify",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "listen_notice_message",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.config_save_origin",
+              "network.proxy.read",
+              "plugin.log.write"
+            ]
+          },
+          "source": {
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
+            "package": "./cmd/merge-message-notify",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/mergemessagenotify/LICENSE-GPL-3.0.txt",
+              "plugins/mergemessagenotify/NOTICE",
+              "plugins/mergemessagenotify/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-net-LICENSE",
+              "third_party/x-net-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "ScrapeFileClean",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
           "manifest": {
             "managed_private_scheduler": true,
             "runtime_support": {
@@ -1492,9 +1562,9 @@
             "name": "源文件联动清理",
             "description": "为手动清理下载目录设计：手动删除源文件后，自动联动清理媒体库中对应的硬链接文件、刮削文件（元数据、图片、字幕）与转移记录，支持延迟删除防止误删",
             "icon": "clean.png",
-            "author": "xlmc",
-            "author_url": "https://github.com/xlmc",
-            "version": "1.0.7",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "scrape-file-clean",
             "host_api_min": 1,
@@ -1525,7 +1595,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/scrape-file-clean",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1545,10 +1615,10 @@
     {
       "schema_version": 2,
       "plugin_id": "LarkMessager",
-      "current_version": "0.9.1",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "0.9.1",
+          "version": "1.0.0",
           "manifest": {
             "managed_private_scheduler": true,
             "plugin_order": 50,
@@ -1563,9 +1633,9 @@
             "name": "Lark 应用消息通知",
             "description": "基于国际版飞书 Lark 开放平台应用的通知与消息交互插件，支持文本、卡片消息发送及消息回调交互。",
             "icon": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/icons/FeiShu_A.png",
-            "author": "ui-beam-9",
-            "author_url": "https://github.com/ui-beam-9",
-            "version": "0.9.1",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "lark-messager",
             "host_api_min": 1,
@@ -1654,7 +1724,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/lark-messager",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1677,10 +1747,10 @@
     {
       "schema_version": 2,
       "plugin_id": "CleanInvalidSeed",
-      "current_version": "2.1",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "2.1",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -1704,9 +1774,9 @@
             "name": "清理无效做种",
             "description": "清理已经被站点删除的种子及源文件，支持qBittorrent和Transmission",
             "icon": "clean_a.png",
-            "author": "DzAvril",
-            "author_url": "https://github.com/DzAvril",
-            "version": "2.1",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "clean-invalid-seed",
             "host_api_min": 1,
@@ -1742,7 +1812,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/clean-invalid-seed",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1763,10 +1833,10 @@
     {
       "schema_version": 2,
       "plugin_id": "SeedRescue",
-      "current_version": "1.6.3",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.6.3",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -1801,7 +1871,7 @@
             "icon": "IYUU.png",
             "author": "landuo",
             "author_url": "https://github.com/landuo",
-            "version": "1.6.3",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "seed-rescue",
             "host_api_min": 1,
@@ -1938,7 +2008,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/seed-rescue",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1967,10 +2037,10 @@
     {
       "schema_version": 2,
       "plugin_id": "CloudflareSpeedTest",
-      "current_version": "1.5.1",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.5.1",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -1994,9 +2064,9 @@
             "name": "Cloudflare IP优选",
             "description": "🌩 测试 Cloudflare CDN 延迟和速度，自动优选IP。",
             "icon": "cloudflare.jpg",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "1.5.1",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "cloudflare-speed-test",
             "host_api_min": 1,
@@ -2057,7 +2127,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/cloudflare-speed-test",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -2075,10 +2145,10 @@
     {
       "schema_version": 2,
       "plugin_id": "CustomHosts",
-      "current_version": "1.2.2",
+      "current_version": "1.0.0",
       "releases": [
         {
-          "version": "1.2.2",
+          "version": "1.0.0",
           "manifest": {
             "managed_public_services": true,
             "plugin_order": 10,
@@ -2101,9 +2171,9 @@
             "name": "自定义Hosts",
             "description": "修改系统hosts文件，加速网络访问。",
             "icon": "hosts.png",
-            "author": "thsrite",
-            "author_url": "https://github.com/thsrite",
-            "version": "1.2.2",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
             "runtime": "go-executable",
             "entry": "custom-hosts",
             "host_api_min": 1,
@@ -2130,7 +2200,7 @@
             ]
           },
           "source": {
-            "commit": "45f60d39fedc0c62b9cc0679dbd0dd67c5d60ee4",
+            "commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
             "package": "./cmd/custom-hosts",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
