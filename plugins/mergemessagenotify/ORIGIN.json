@@ -1,0 +1,15 @@
+{
+  "repository": "https://github.com/hotlcc/MoviePilot-Plugins-Third",
+  "installed_source_version": "1.20.3",
+  "installed_source_snapshot_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "installed_source_files": {
+    "__init__.py": "f87e851eb3e8184adc481ed8e15fa64f05fa4439e2060152eced80fdbbf8fcca",
+    "channel/custom/__init__.py": "ebf0cc51fbedb2a5d6d295785a210f7ca8eefd9f3525817f5c4ed2fcc8d4652e",
+    "channel/custom/iyuu.py": "0a9e0efa1f8919f0e487bf547adbbe87c1f13e4195e67494a7e06acf7b9ef4db"
+  },
+  "go_port_worker_commit": "cb823a7848d33b293ed6b5d93809fb59408b1d2a",
+  "go_port_snapshot_commit": "6eb29963f4f201b759debcbbd297077bb173c520",
+  "scope": "Reuse the existing lifecycle, configuration and notice routing. Preserve the installed IYUU request and success predicate, and retain the original form structure with only the selected channel and the new Tencent QQ Bot channel. The two secrets use masked input fields. HTTP requests have bounded time and response size and refuse redirects.",
+  "qqbot_protocol_reference": "https://github.com/tencent-connect/qqbot-nodejs/tree/429a0f1b798f3b0fcef3679e207dbc0469a1df2d/src/protocol/api",
+  "qqbot_proactive_delivery": "Plain text to an explicitly configured user or group OpenID via the official API. Availability depends on Tencent platform permissions and quota. Provider acceptance requires a message ID. An unconfirmed request is not retried."
+}
