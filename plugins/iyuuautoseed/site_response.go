@@ -4,7 +4,7 @@ import (
 	"bytes"
 	"strings"
 
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
+	"github.com/landuo/light-media-plugins/internal/encodingdetector"
 )
 
 // Requests response decoding reused from light-media IYUU 2.19 site_http.go.

@@ -7,9 +7,9 @@ import (
 	"net/url"
 	"strings"
 
+	"github.com/landuo/light-media-plugins/internal/encodingdetector"
 	sdk "github.com/landuo/light-media-plugins/internal/sdk"
 	"github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue"
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
 )
 
 // sdkSiteResolver obtains both the indexer and its host-sealed site reference.

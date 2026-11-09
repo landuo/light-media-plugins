@@ -10,7 +10,7 @@ import (
 // Reused pure library checked independently against actual image Requests
 // Response.text. Its output text, not Go-derived expected values, is compared.
 func TestActual312RequestsTextReference(t *testing.T) {
-	raw, e := os.ReadFile("../reference/source-encoding-reference.json")
+	raw, e := os.ReadFile("reference/source-encoding-reference.json")
 	if e != nil {
 		t.Fatal(e)
 	}

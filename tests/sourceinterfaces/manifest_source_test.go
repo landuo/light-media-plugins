@@ -8,7 +8,6 @@ import (
 
 	plugins "github.com/landuo/light-media-plugins/internal/sdk"
 	"github.com/landuo/light-media-plugins/plugins/categoryeditor"
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus"
 	"github.com/landuo/light-media-plugins/plugins/pluginuninstall"
 	"github.com/landuo/light-media-plugins/plugins/removelink"
 	"github.com/landuo/light-media-plugins/plugins/sitestatistic"
@@ -35,8 +34,11 @@ func TestSourceCheckedManifestDeclarations(t *testing.T) {
 	if e = json.Unmarshal(raw, &source); e != nil || len(source.Inventory) != 7 {
 		t.Fatal("source7 inventory", e)
 	}
-	manifests := map[string]plugins.Manifest{"categoryeditor": categoryeditor.Manifest(), "torrenttransfer": torrenttransfer.Manifest(), "torrenttransfermusic": torrenttransfer.Manifest(), "removelink": removelink.Manifest(), "sitestatistic": sitestatistic.Manifest(), "mpserverstatus": mpserverstatus.Manifest(), "pluginuninstall": pluginuninstall.Manifest()}
+	manifests := map[string]plugins.Manifest{"categoryeditor": categoryeditor.Manifest(), "torrenttransfer": torrenttransfer.Manifest(), "torrenttransfermusic": torrenttransfer.Manifest(), "removelink": removelink.Manifest(), "sitestatistic": sitestatistic.Manifest(), "pluginuninstall": pluginuninstall.Manifest()}
 	for _, row := range source.Inventory {
+		if row.Plugin == "mpserverstatus" {
+			continue // The sealed source fixture includes the retired worker.
+		}
 		t.Run(row.Plugin, func(t *testing.T) {
 			m, ok := manifests[row.Plugin]
 			if !ok {

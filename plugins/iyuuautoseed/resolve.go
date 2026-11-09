@@ -6,10 +6,10 @@ import (
 	"regexp"
 	"strings"
 
+	"github.com/landuo/light-media-plugins/internal/encodingdetector"
 	"github.com/landuo/light-media-plugins/plugins/autosignin/pyregex"
 	regexengine "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine"
 	"github.com/landuo/light-media-plugins/plugins/iyuuautoseed/compat/htmlextract"
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
 )
 
 type PageKind string

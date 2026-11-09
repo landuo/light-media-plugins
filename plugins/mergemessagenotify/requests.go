@@ -11,7 +11,7 @@ import (
 	"strings"
 	"time"
 
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/requestsproxy"
+	"github.com/landuo/light-media-plugins/internal/requestsproxy"
 )
 
 type RequestsHTTP struct {

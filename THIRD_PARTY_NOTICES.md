@@ -15,7 +15,6 @@ The worker manifest identifies landuo as the maintainer of this Light Media dist
 | CustomHosts | 1.2.2 | [thsrite](https://github.com/thsrite) |
 | IYUUAutoSeed | 2.22 | jxxghp, CKun |
 | LarkMessager | 0.9.1 | [ui-beam-9](https://github.com/ui-beam-9) |
-| MPServerStatus | 1.4 | [jxxghp](https://github.com/jxxghp) |
 | MediaServerRefresh | 1.3.3 | [jxxghp](https://github.com/jxxghp) |
 | MergeMessageNotify | 1.20.3 | [hotlcc](https://github.com/hotlcc) |
 | MergeSiteSwitch | 1.2 | [hotlcc](https://github.com/hotlcc) |
@@ -66,7 +65,7 @@ private original migration logs. Controlled synthetic/source/main/browser eviden
 separately classified in migration/evidence; it contains no production
 configuration or database.
 
-## Installed plugin adaptations and MPServerStatus support
+## Installed plugin adaptations
 
 The installed TorrentTransfer1.10.3 and SiteStatistic1.9.7 business source was
 written by jxxghp for MoviePilot. Their fixed installed content source, authors,
@@ -74,28 +73,21 @@ exact source SHA256, adaptations and evidence are retained in each plugin's
 ORIGIN.md and migration/ledger.json. The content baseline is not represented
 as a newly identified upstream commit.
 
-The MPServerStatus1.4 Go candidate is adapted from jxxghp's installed source
-SHA256 `63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90`.
-Its fixed source/plugin behavior and pure codec/proxy helper reuse are described
-in plugins/mpserverstatus/ORIGIN.md; this attribution does not claim acceptance.
-It adds these exact runtime module dependencies:
+## Shared encoding and HTTP helpers
 
-- `github.com/andybalholm/brotli v1.2.6`: MIT text in
-  third_party/brotli-LICENSE. A conservative complete-module copy of the
-  unused flate subpackage's BSD notice is in third_party/brotli-flate-LICENSE.
-- `golang.org/x/net v0.61.0`: BSD text in third_party/x-net-LICENSE
-  and the additional Go IP grant in third_party/x-net-PATENTS. Only its
-  proxy/internal-socks leaves are required here.
+IYUUAutoSeed uses `github.com/andybalholm/brotli v1.2.6`. Its MIT license is in
+`third_party/brotli-LICENSE`, and the flate subpackage's BSD notice is in
+`third_party/brotli-flate-LICENSE`. The `golang.org/x/net v0.61.0` HTML and
+proxy helpers use the BSD license in `third_party/x-net-LICENSE` and the
+additional Go IP grant in `third_party/x-net-PATENTS`.
 
-The pure encoding detector preserves CPython's PSF license/history, Unicode
-LicenseV3 and chardet0BSD notice under plugins/mpserverstatus/encodingdetector/.
-The finite requests proxy helper preserves the CPython, RequestsApache2.0
-(including original NOTICE) and PySocksBSD texts under
-plugins/mpserverstatus/requestsproxy/licenses/; REQUESTS-NOTICE identifies its
-source and approved proxy-TLS adaptation. These tables/algorithms are Go source
-and embedded assets; no Python interpreter or package is used at runtime.
-The build allowlist must include all applicable notices in each corresponding
-plugin ZIP and the selected release's third-party notice bundle.
+The encoding detector used by AutoSignIn and IYUUAutoSeed preserves CPython's
+PSF license and history, the Unicode license, and the chardet 0BSD notice in
+`internal/encodingdetector/`. The proxy helper used by MergeMessageNotify
+preserves the CPython, Requests, and PySocks licenses in
+`internal/requestsproxy/licenses/`. The helper's `REQUESTS-NOTICE` identifies
+its source and proxy TLS adaptation. The helpers run as Go code with embedded
+data. The build registry includes the applicable notices for each plugin.
 
 ## PluginUnInstall business source
 
@@ -145,15 +137,15 @@ The installed IYUUAutoSeed 2.22 MoviePilot source identifies jxxghp and CKun
 as its authors. The fixed `__init__.py` SHA-256 is
 `3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7`.
 The installed source inventory and the Go adaptation's provenance are recorded
-in `plugins/iyuuautoseed/ORIGIN.json`. The executable retains the authors in
-its manifest and uses the GPLv3 SDK under this repository's `LICENSE`.
+in `plugins/iyuuautoseed/ORIGIN.json`. The executable uses the GPLv3 SDK under
+this repository's `LICENSE`.
 
 The detail-page parser retains the libxml2 2.14.6 MIT notice in
 `plugins/iyuuautoseed/compat/htmlextract/LICENSE.libxml2`. The Go dependencies
 include `golang.org/x/net` for HTML tokenization, `golang.org/x/text`, and
 Brotli. Their license and patent texts are under `third_party/`. The shared
 encoding detector retains its CPython, Unicode, and chardet notices under
-`plugins/mpserverstatus/encodingdetector/`. The reused source value and regular
+`internal/encodingdetector/`. The reused source value and regular
 expression helpers retain their CPython, Unicode, and regexp2 notices under
 `plugins/autosignin/`. The package includes the APScheduler and Requests
 notices for the adapted calendar and HTTP behavior. These are Go implementations

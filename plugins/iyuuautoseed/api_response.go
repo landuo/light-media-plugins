@@ -10,7 +10,7 @@ import (
 	"strings"
 
 	"github.com/andybalholm/brotli"
-	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
+	"github.com/landuo/light-media-plugins/internal/encodingdetector"
 )
 
 var errAPIResponseLimit = errors.New("IYUU response exceeds limit")
