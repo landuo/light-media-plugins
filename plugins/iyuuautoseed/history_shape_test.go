@@ -181,6 +181,90 @@ func TestIYUUPreparationFailureDoesNotBlockTransmission(t *testing.T) {
 	}
 }
 
+type mutationIsolationReplay struct {
+	*historyReplayHost
+	rejected    string
+	submissions []string
+}
+
+func (h *mutationIsolationReplay) SeedInfo(_ context.Context, hashes []string) (APIResult, error) {
+	rows := map[string]any{}
+	for _, hash := range hashes {
+		candidates := h.candidates[2:]
+		if hash == h.originals[0] {
+			candidates = h.candidates[:2]
+		}
+		torrents := make([]any, 0, len(candidates))
+		for _, candidate := range candidates {
+			torrents = append(torrents, map[string]any{"sid": json.Number("1"), "info_hash": candidate})
+		}
+		rows[hash] = map[string]any{"torrent": torrents}
+	}
+	return APIResult{Data: rows, ObjectKeys: hashes}, nil
+}
+
+func (h *mutationIsolationReplay) AddPaused(ctx context.Context, service Service, spec AddSpec) (AddReceipt, error) {
+	hash := string(spec.Content)
+	h.submissions = append(h.submissions, service.Name+":"+hash)
+	if hash == h.rejected {
+		return AddReceipt{Outcome: "unknown"}, errors.New("private transport error")
+	}
+	return h.historyReplayHost.AddPaused(ctx, service, spec)
+}
+
+func (h *mutationIsolationReplay) RandomTag(context.Context, int) (string, error) {
+	return "ownedtag01", nil
+}
+
+func (h *mutationIsolationReplay) FindByTag(context.Context, Service, string) (string, error) {
+	return h.adds[len(h.adds)-1], nil
+}
+
+func TestIYUUAmbiguousQBAddKeepsHistoryAndScansIndependentTR(t *testing.T) {
+	qb := Service{Name: "qb", Kind: "qbittorrent"}
+	tr := Service{Name: "tr", Kind: "transmission"}
+	size := json.Number("100")
+	qbSource, trSource := replayHash(1), replayHash(2)
+	qbAdded, qbUnknown, trAdded := replayHash(3), replayHash(4), replayHash(5)
+	host := &mutationIsolationReplay{
+		historyReplayHost: &historyReplayHost{
+			coreReplayHost: &coreReplayHost{
+				services: []Service{qb, tr},
+				completed: map[string][]NativeTorrent{
+					qb.Name: {{Fields: map[string]any{"hash": qbSource, "save_path": "/owned", "total_size": size, "completed": size, "availability": size}}},
+					tr.Name: {{Fields: map[string]any{"hashString": trSource, "download_dir": "/owned", "total_size": size}}},
+				},
+			},
+			originals: []string{qbSource, trSource}, candidates: []string{qbAdded, qbUnknown, trAdded}, histories: map[string]any{},
+		},
+		rejected: qbUnknown,
+	}
+	cfg := NewConfig()
+	cfg.values["downloaders"] = []any{qb.Name, tr.Name}
+	cfg.values["skipverify"] = true
+	core, err := NewCore(cfg, host, host)
+	if err != nil {
+		t.Fatal(err)
+	}
+	err = core.AutoSeed(t.Context())
+	var mutation *seedMutationError
+	if !errors.As(err, &mutation) || strings.Contains(err.Error(), "private transport error") {
+		t.Fatalf("expected a safe partial failure after scanning both downloaders, got %v", err)
+	}
+	expected := []string{"qb:" + qbAdded, "qb:" + qbUnknown, "tr:" + trAdded}
+	if !reflect.DeepEqual(host.submissions, expected) {
+		t.Fatalf("unexpected adds or retry: %v", host.submissions)
+	}
+	expectedHistory := map[string]any{
+		qbSource: []any{map[string]any{"downloader": "qb", "torrents": []any{qbAdded}}},
+		trSource: []any{map[string]any{"downloader": "tr", "torrents": []any{trAdded}}},
+	}
+	if !reflect.DeepEqual(host.histories, expectedHistory) || len(host.successCaches) != 1 ||
+		!reflect.DeepEqual(host.successCaches[0], []any{qbAdded, trAdded}) {
+		t.Fatalf("expected both confirmed adds to survive: history=%v, cache=%v", host.histories, host.successCaches)
+	}
+}
+
 func captureHistoryDiagnostic(t *testing.T, run func() error) (string, error) {
 	t.Helper()
 	read, write, err := os.Pipe()
