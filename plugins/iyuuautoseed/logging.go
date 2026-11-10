@@ -98,6 +98,13 @@ func sourceLog(ctx context.Context, line int, message string) {
 	}
 }
 
+// The cause may contain a private URL or credentials. Only log the stage.
+func logSeedPreparationFailure(ctx context.Context, downloader, stage string) {
+	if sink, ok := ctx.Value(sourceLogKey{}).(SourceLogSink); ok && sink != nil {
+		sink(ctx, SourceLog{Level: "WARN", Method: "auto_seed", Message: "下载器 " + downloader + " 的辅种候选在「" + stage + "」失败，继续检查其他种子"})
+	}
+}
+
 func (c *Core) queueAdd(ctx context.Context, service Service, id string) {
 	sourceLog(ctx, 1238, "添加校验检查任务："+id+" ...")
 	c.queue[service.Name] = append(c.queue[service.Name], id)
