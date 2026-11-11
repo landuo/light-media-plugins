@@ -9,8 +9,11 @@ import (
 	"net"
 	"net/http"
 	"net/url"
+	"os"
 	"strings"
 	"time"
+
+	"github.com/landuo/light-media-plugins/internal/requestsproxy"
 )
 
 // TrustedAPIBinding carries the current instance's private configuration. The
@@ -19,16 +22,22 @@ type TrustedAPIBinding struct{ Token string }
 type APITransportOptions struct {
 	Guard   func(context.Context) error
 	RootCAs *x509.CertPool
+	// Timeout is the Requests socket-idle timeout, not a total request limit.
 	Timeout time.Duration
+	// Environment is a trusted SDK proxy-environment snapshot. nil snapshots
+	// os.Environ for standalone CLI compatibility; nonnil empty means direct.
+	Environment []string
 	// LoopbackOrigin is a synthetic test seam, not a plugin setting.
 	// It accepts literal loopback IPs exclusively, and disables environment proxy.
 	LoopbackOrigin string
 }
 type APITransport struct {
-	origin string
-	token  string
-	guard  func(context.Context) error
-	client *http.Client
+	origin      string
+	token       string
+	guard       func(context.Context) error
+	timeout     time.Duration
+	environment []string
+	rootCAs     *x509.CertPool
 }
 
 const maxAPIResponse = 16 << 20
@@ -61,16 +70,25 @@ func NewAPITransport(binding TrustedAPIBinding, options APITransportOptions) (*A
 	if timeout < 0 {
 		return nil, errors.New("invalid timeout")
 	}
-	transport := &http.Transport{Proxy: nil, TLSClientConfig: &tls.Config{MinVersion: tls.VersionTLS12, RootCAs: options.RootCAs}, DisableCompression: true}
-	// The source helper does not pass settings.PROXY; RequestUtils uses its
-	// environment route. The private loopback fixture must remain direct.
-	if options.LoopbackOrigin == "" {
-		transport.Proxy = http.ProxyFromEnvironment
+	environment := options.Environment
+	if environment == nil {
+		environment = os.Environ()
 	}
-	return &APITransport{origin: origin, token: binding.Token, guard: options.Guard, client: &http.Client{Transport: transport, Timeout: timeout, CheckRedirect: func(*http.Request, []*http.Request) error { return errAPIRedirectDenied }}}, nil
+	// Never retain the SDK's mutable slice, or consult the worker environment
+	// later. The private loopback fixture must remain direct even with ALL_PROXY.
+	environment = append([]string{}, environment...)
+	if options.LoopbackOrigin != "" {
+		environment = []string{}
+	}
+	var roots *x509.CertPool
+	if options.RootCAs != nil {
+		roots = options.RootCAs.Clone()
+	}
+	return &APITransport{origin: origin, token: binding.Token, guard: options.Guard, timeout: timeout, environment: environment, rootCAs: roots}, nil
 }
 
-func (t *APITransport) Close() { t.client.CloseIdleConnections() }
+// Each Call owns and closes its transport; there is no shared idle pool.
+func (t *APITransport) Close() {}
 func (t *APITransport) Call(ctx context.Context, r APIRequest) (*APIResponse, error) {
 	if err := t.guard(ctx); err != nil {
 		return nil, errors.New("IYUU owner not authorized")
@@ -119,7 +137,18 @@ func (t *APITransport) Call(ctx context.Context, r APIRequest) (*APIResponse, er
 	if method == http.MethodPost {
 		req.Header.Set("Content-Type", "application/json")
 	}
-	res, err := t.client.Do(req)
+	// requests creates a session for each helper request. Preserve its per-socket
+	// idle deadline without imposing http.Client's whole-response time limit.
+	base := requestsproxy.NewRequestsTimeoutTransport(t.timeout)
+	base.TLSClientConfig = &tls.Config{MinVersion: tls.VersionTLS12, RootCAs: t.rootCAs}
+	base.DisableCompression = true
+	transport, err := requestsproxy.NewRequestsProxyTransport(base, t.environment, nil, req.URL)
+	if err != nil {
+		return nil, t.transportFailure(ctx, err)
+	}
+	defer transport.CloseIdleConnections()
+	client := &http.Client{Transport: transport, CheckRedirect: func(*http.Request, []*http.Request) error { return errAPIRedirectDenied }}
+	res, err := client.Do(req)
 	if err != nil {
 		return nil, t.transportFailure(ctx, err)
 	}
