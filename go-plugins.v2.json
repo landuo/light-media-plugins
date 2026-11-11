@@ -41,7 +41,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/category-editor",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -120,7 +120,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/torrent-transfer",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -229,7 +229,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/site-statistic",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -298,7 +298,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/plugin-uninstall",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -384,7 +384,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/remove-link",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -513,7 +513,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/auto-sign-in",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -568,10 +568,10 @@
     {
       "schema_version": 2,
       "plugin_id": "IYUUAutoSeed",
-      "current_version": "1.0.2",
+      "current_version": "1.0.3",
       "releases": [
         {
-          "version": "1.0.2",
+          "version": "1.0.3",
           "manifest": {
             "managed_public_services": true,
             "managed_private_scheduler": true,
@@ -597,7 +597,7 @@
             "icon": "IYUU.png",
             "author": "landuo",
             "author_url": "https://github.com/landuo",
-            "version": "1.0.2",
+            "version": "1.0.3",
             "runtime": "go-executable",
             "entry": "iyuu-auto-seed",
             "host_api_min": 1,
@@ -640,11 +640,12 @@
               "downloader.source.control",
               "plugin.background.submit",
               "message.post",
-              "plugin.log.write"
+              "plugin.log.write",
+              "network.proxy.read"
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/iyuu-auto-seed",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -726,7 +727,7 @@
             "has_page": true
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/system-process",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -802,7 +803,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/media-server-refresh",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -875,7 +876,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/remote-identifiers",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -961,7 +962,7 @@
             "has_page": true
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/subscribe-group",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1051,7 +1052,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/auto-backup",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1286,7 +1287,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/brush-flow-landuo",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1374,7 +1375,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/merge-site-switch",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1441,7 +1442,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/merge-message-notify",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1518,7 +1519,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/scrape-file-clean",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1647,7 +1648,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/lark-messager",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1735,7 +1736,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/clean-invalid-seed",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -1931,7 +1932,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/seed-rescue",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -2050,7 +2051,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/cloudflare-speed-test",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
@@ -2123,7 +2124,7 @@
             ]
           },
           "source": {
-            "commit": "3be0e36fc994fb2bac7e2880e2495cb7e7acadff",
+            "commit": "0e70558226dc5f84bde6f02414efc0299644c035",
             "package": "./cmd/custom-hosts",
             "host_contract": "light-media.sdk-resources/v1",
             "license_files": [
