@@ -36,6 +36,10 @@ func (r *sdkSiteResolver) Indexer(ctx context.Context, domain string) (*Site, er
 	}
 	site := &Site{Fields: fields}
 	if indexer.SiteID == nil {
+		fields["url"], err = sourceSiteDirectoryURL(fields["url"])
+		if err != nil {
+			return nil, err
+		}
 		return site, nil
 	}
 	credentials, err := r.sites.SourceCredentials(ctx, sdk.SiteSourceReferenceV1{SiteID: *indexer.SiteID})
@@ -58,7 +62,34 @@ func (r *sdkSiteResolver) Indexer(ctx context.Context, domain string) (*Site, er
 		return nil, err
 	}
 	site.Ref = string(bound)
+	// The host's raw URL and sealed reference stay unchanged. Only the worker's
+	// derived resolver fields need a directory base for source-style concatenation.
+	fields["url"], err = sourceSiteDirectoryURL(fields["url"])
+	if err != nil {
+		return nil, err
+	}
 	return site, nil
+}
+
+func sourceSiteDirectoryURL(value any) (string, error) {
+	raw, ok := value.(string)
+	if !ok {
+		return "", errors.New("invalid source site base")
+	}
+	base, err := url.Parse(raw)
+	if err != nil || (base.Scheme != "http" && base.Scheme != "https") || base.Hostname() == "" ||
+		base.User != nil || base.Opaque != "" || base.ForceQuery || base.RawQuery != "" || strings.Contains(raw, "#") {
+		return "", errors.New("invalid source site base")
+	}
+	// Check the escaped path: a final %2F is part of the configured segment,
+	// not the literal delimiter needed before appending details/download routes.
+	if !strings.HasSuffix(base.EscapedPath(), "/") {
+		base.Path += "/"
+		if base.RawPath != "" {
+			base.RawPath += "/"
+		}
+	}
+	return base.String(), nil
 }
 
 func (r *sdkSiteResolver) CheckSite(ctx context.Context, domain string) (bool, error) {

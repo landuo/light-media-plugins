@@ -25,3 +25,11 @@
 - `go test ./plugins/iyuuautoseed`、transport 重复 5 次、`go test -race ./plugins/iyuuautoseed ./cmd/iyuu-auto-seed` 通过。
 - 全仓第一次重复运行遇到现有 site-statistic queued-owner-cancel 时序测试失败；该测试独立重跑 5 次和 `go test -p 2 ./...` 均通过，未改动无关包。
 - Linux amd64 / arm64 均交叉编译通过；这些是本地测试与构建证据，不代替 NAS 部署或实际添加 TR 辅种的证据。
+
+## 实机添加阶段发现的独立 URL 拼接问题
+
+- 1.0.3 经 NAS 安装 API 返回 success=true；数据库、落盘 manifest 和 worker SHA256 一致，原配置前后完整比较不变。构建期间临时提高光影容器内存，完成后恢复原 512MiB memory / 1GiB memory+swap；其他服务不变。
+- 第一次安装客户端等待响应超时，不代表后台构建失败；后台使用独立 context，链接线程曾等待块 IO。容器内存与 IO pressure 偏高。最终以安装 API 回执、数据库、实际包元数据联合验收，不以进程退出或文件出现单独验收。
+- 隔离分身只选取 1 个原 TR 种子和 1 个缺失候选：另外 692 个源种子、1995 个其他候选仅在分身缓存屏蔽，不改原实例。实际服务查询返回 `IYUU返回可辅种数：1`，但在获取种子文件阶段失败；服务返回 completed 不等于实际添加成功。
+- 发现宿主 source-indexer 把站点管理的 `BaseURL` 原样作为 `url`（通常没有末尾 `/`）；原版解析器使用 `siteURL + download_page`，错误生成了站点域名后直接接 `download.php` 的新 host。详情页也有同样拼接问题，对应夜间多次 `source page target changed origin`。
+- 1.0.4 在 worker 的 SDK 适配边界派生原版要求的目录型 base URL；不改宿主原始站点配置、凭据或 opaque Reference，不放松下载/页面的同源校验。
