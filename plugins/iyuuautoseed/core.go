@@ -270,6 +270,7 @@ func (c *Core) autoSeed(ctx context.Context) error {
 	if e != nil {
 		return e
 	}
+	var partialErr error
 	for _, service := range services {
 		sourceLog(ctx, 762, fmt.Sprintf("开始扫描下载器 %s ...", service.Name))
 		torrents, e := c.host.Completed(ctx, service)
@@ -385,14 +386,27 @@ func (c *Core) autoSeed(ctx context.Context) error {
 		}
 		if len(selected) > 0 {
 			sourceLog(ctx, 827, fmt.Sprintf("总共需要辅种的种子数：%d", len(selected)))
+			var batchErr error
 			for i := 0; i < len(selected); i += 200 {
 				end := i + 200
 				if end > len(selected) {
 					end = len(selected)
 				}
-				if e := c.seedTorrents(ctx, selected[i:end], service, completedHashes); e != nil {
-					return e
+				batchErr = c.seedTorrents(ctx, selected[i:end], service, completedHashes)
+				if batchErr != nil {
+					break
 				}
+			}
+			if batchErr != nil {
+				var mutation *seedMutationError
+				// An automatic destination may be shared by multiple source
+				// downloaders. Never continue submitting writes to that destination.
+				if !errors.As(batchErr, &mutation) || truth(c.config.values["auto_downloader"]) || c.guard(ctx) != nil {
+					return errors.Join(partialErr, batchErr)
+				}
+				partialErr = errors.Join(partialErr, batchErr)
+				logSeedWarning(ctx, "下载器 "+service.Name+" 的辅种添加或校验未确认，停止向此下载器提交，继续检查其他下载器")
+				continue
 			}
 			sourceLog(ctx, 838, fmt.Sprintf("下载器 %s 辅种全部完成。", service.Name))
 			if e := c.checkRecheck(ctx); e != nil {
@@ -415,6 +429,9 @@ func (c *Core) autoSeed(ctx context.Context) error {
 		if e := c.host.Notify(ctx, "【IYUU自动辅种任务完成】", text); e != nil {
 			return e
 		}
+	}
+	if partialErr != nil {
+		return partialErr
 	}
 	sourceLog(ctx, 858, "辅种任务执行完成")
 	return nil
@@ -472,6 +489,7 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 			seeds = []any{info["torrent"]}
 		}
 		successes := []string{}
+		var mutationErr error
 		for _, rawSeed := range seeds {
 			if !truth(rawSeed) {
 				continue
@@ -512,10 +530,11 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 			if e != nil {
 				var preparation *seedPreparationError
 				if !errors.As(e, &preparation) || c.guard(ctx) != nil {
-					return e
+					mutationErr = e
+					break
 				}
 				c.counters.Fail++
-				logSeedPreparationFailure(ctx, service.Name, preparation.stage)
+				logSeedWarning(ctx, "下载器 "+service.Name+" 的辅种候选在「"+preparation.stage+"」失败，继续检查其他种子")
 				continue
 			}
 			if success {
@@ -533,6 +552,9 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 				fmt.Fprintln(os.Stderr, malformed)
 			}
 		}
+		if mutationErr != nil {
+			return mutationErr
+		}
 	}
 	sourceLog(ctx, 1005, fmt.Sprintf("下载器 %s 辅种本批次完成", service.Name))
 	return nil
@@ -548,10 +570,20 @@ type seedPreparationError struct {
 func (e *seedPreparationError) Error() string { return e.stage }
 func (e *seedPreparationError) Unwrap() error { return e.cause }
 
+type seedMutationError struct{ cause error }
+
+func (e *seedMutationError) Error() string { return "IYUU downloader add or verification failed" }
+func (e *seedMutationError) Unwrap() error { return e.cause }
+
 func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceService *Service, save, category any) (_ bool, err error) {
 	stage := "查询 IYUU 站点信息"
 	defer func() {
-		if err != nil && stage != "" {
+		if err == nil {
+			return
+		}
+		if stage == "" {
+			err = &seedMutationError{cause: err}
+		} else {
 			err = &seedPreparationError{stage: stage, cause: err}
 		}
 	}()

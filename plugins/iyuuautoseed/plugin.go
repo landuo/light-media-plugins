@@ -173,7 +173,7 @@ func (p *Plugin) prepareSchedule(ctx context.Context, caller sdk.HostCaller, nex
 	if err != nil {
 		return err
 	}
-	next.transport, err = NewAPITransport(TrustedAPIBinding{Token: token}, APITransportOptions{Guard: core.guard})
+	next.transport, err = newHostAPITransport(ctx, caller, token, core.guard)
 	if err != nil {
 		return err
 	}

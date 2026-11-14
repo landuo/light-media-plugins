@@ -1,0 +1,31 @@
+{
+  "evidence_kind": "nas_live_transmission_rpc",
+  "before_count": 693,
+  "after_count": 694,
+  "added_count": 1,
+  "expected_candidate_matches": true,
+  "missing_existing": 0,
+  "changed_existing": 0,
+  "existing_compared_fields": ["status", "downloadDir", "percentDone", "labels"],
+  "configuration_unchanged": true,
+  "save_directory_matches_source": true,
+  "source_sha256": "e4d36cded82a9ba1487411552d9e8a69caec79eacacc3c2375595857e9bace21",
+  "candidate_sha256": "18726ab37d375b4129d45ba9b8300fef3547782a9141c7be805770c406242af5",
+  "target": {
+    "site": "CARPT",
+    "status": 6,
+    "percent_done": 1,
+    "error": 0,
+    "total_size": 2165609907,
+    "have_valid": 2165609907,
+    "left_until_done": 0
+  },
+  "plugin_version": "1.0.4",
+  "source_commit": "e1cbc962762a383b281edf22029c18e0da0d56b3",
+  "worker_sha256": "befb9f3469b8d2e97fd7224fd12a8d5c1959fbda03f14488e717d879d0219c54",
+  "test_clone_removed": true,
+  "container_memory_restored": 536870912,
+  "container_memory_swap_restored": 1073741824,
+  "container_healthy": true,
+  "batch_stability_guaranteed": false
+}

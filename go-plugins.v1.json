@@ -25,16 +25,10 @@
             "methods": [
               "init",
               "get_state",
-              "get_service",
-              "get_command",
               "get_api",
               "get_render_mode",
               "get_form",
               "get_page",
-              "get_dashboard",
-              "get_dashboard_meta",
-              "get_auth_providers",
-              "get_module",
               "close",
               "stop_service",
               "stop"
@@ -49,11 +43,11 @@
           "artifacts": [
             {
               "platform": "linux-amd64",
-              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-3157db8e4879f59c39f1d43622e8355a626aeca0/CategoryEditor-1.3-linux-amd64.zip",
-              "sha256": "068f65d6084be55d54ac0df688db55ab062734f3e5a8aaabe1f4b8f0a2e0319d",
-              "size": 2627907,
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/CategoryEditor-1.3-linux-amd64.zip",
+              "sha256": "4af11ca394881181e0f7b5525236d43d201d476bfe4db4752a971bfdb8c0ab39",
+              "size": 2663955,
               "format": "zip",
-              "executable_sha256": "31bb4b8daafd1944113e1c06c5eeafa68e3dddb97c29112ae17c4d476b93e401",
+              "executable_sha256": "39dd914997c58220c16871d339f696aa3d1d18eb3c954129cd71daeece4a563c",
               "host_contract": "light-media.sdk-resources/v1",
               "files": [
                 {
@@ -68,13 +62,13 @@
                 },
                 {
                   "path": "THIRD_PARTY_NOTICES.md",
-                  "size": 1808,
-                  "sha256": "8d8fc6fb7112aa76dfdb94aa633cf6985196a3dd603aa4f8c6f8e19418ae15b2"
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
                 },
                 {
                   "path": "category-editor",
-                  "size": 4607245,
-                  "sha256": "31bb4b8daafd1944113e1c06c5eeafa68e3dddb97c29112ae17c4d476b93e401"
+                  "size": 4673344,
+                  "sha256": "39dd914997c58220c16871d339f696aa3d1d18eb3c954129cd71daeece4a563c"
                 },
                 {
                   "path": "third_party/Go-LICENSE",
@@ -90,6 +84,3199 @@
                   "path": "third_party/x-text-PATENTS",
                   "size": 1303,
                   "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "TorrentTransfer",
+      "current_version": "1.10.3",
+      "releases": [
+        {
+          "version": "1.10.3",
+          "manifest": {
+            "plugin_order": 18,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "TorrentTransfer",
+            "name": "自动转移做种",
+            "description": "定期转移下载器中的做种任务到另一个下载器。",
+            "icon": "seed.png",
+            "author": "jxxghp",
+            "author_url": "https://github.com/jxxghp",
+            "version": "1.10.3",
+            "runtime": "go-executable",
+            "entry": "torrent-transfer",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop",
+              "transfer",
+              "check_recheck",
+              "private_scheduler",
+              "transfer_continue"
+            ],
+            "capabilities": [
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.source.completed",
+              "downloader.source.tasks",
+              "downloader.source.add",
+              "downloader.source.find_by_tag",
+              "downloader.source.control",
+              "plugin.base.update_config",
+              "plugin.base.get_data_path",
+              "plugin.base.save_data",
+              "plugin.base.get_instance_metadata",
+              "plugin.background.submit",
+              "plugin.systemmessage.put",
+              "message.post",
+              "plugin.log.write"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/TorrentTransfer-1.10.3-linux-amd64.zip",
+              "sha256": "3c8ebb9f760cd5208411e811b286e61ef61633ba1fbad4a58b30b646a208f1af",
+              "size": 3132184,
+              "format": "zip",
+              "executable_sha256": "2cbe05361dbd72f01d3632f8eebc55a83db2701eafe717b3347ee7b029569d73",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                },
+                {
+                  "path": "torrent-transfer",
+                  "size": 5766080,
+                  "sha256": "2cbe05361dbd72f01d3632f8eebc55a83db2701eafe717b3347ee7b029569d73"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "SiteStatistic",
+      "current_version": "1.9.7",
+      "releases": [
+        {
+          "version": "1.9.7",
+          "manifest": {
+            "plugin_order": 1,
+            "broadcast_handlers": [
+              {
+                "event": "site.refreshed",
+                "method": "send_msg"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SiteStatistic",
+            "name": "站点数据统计",
+            "description": "站点统计数据图表。",
+            "icon": "statistic.png",
+            "author": "lightolly,jxxghp",
+            "author_url": "https://github.com/lightolly",
+            "version": "1.9.7",
+            "runtime": "go-executable",
+            "entry": "site-statistic",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_api",
+              "get_render_mode",
+              "stop_service",
+              "stop",
+              "close",
+              "send_msg",
+              "http",
+              "private_refresh",
+              "data_continue"
+            ],
+            "capabilities": [
+              "sites.read",
+              "sites.source.account.read",
+              "sites.source.indexer",
+              "sites.source.refresh",
+              "sites.source.refresh_all",
+              "plugin.base.update_config",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "message.post",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "refresh_by_domain",
+                "path": "/refresh_by_domain",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "domain",
+                    "kind": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ],
+                "headers": [
+                  "x-moviepilot-locale",
+                  "x-locale",
+                  "accept-language"
+                ]
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/SiteStatistic-1.9.7-linux-amd64.zip",
+              "sha256": "ebaf9c4536133c72d6b136c7260c874df420e0bfb6273de982a3e5ed53764786",
+              "size": 3131644,
+              "format": "zip",
+              "executable_sha256": "b2c0b4137732559d57e17df754aa2b28d8daaade7b9c5dc61c19bbb5deef601b",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/sitestatistic/ORIGIN.md",
+                  "size": 10031,
+                  "sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04"
+                },
+                {
+                  "path": "site-statistic",
+                  "size": 5820755,
+                  "sha256": "b2c0b4137732559d57e17df754aa2b28d8daaade7b9c5dc61c19bbb5deef601b"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "PluginUnInstall",
+      "current_version": "2.2",
+      "releases": [
+        {
+          "version": "2.2",
+          "manifest": {
+            "plugin_order": 98,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "PluginUnInstall",
+            "name": "插件彻底卸载",
+            "description": "删除数据库中已安装插件记录、清理插件文件。",
+            "icon": "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "2.2",
+            "runtime": "go-executable",
+            "entry": "plugin-uninstall",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_api",
+              "get_page",
+              "get_render_mode",
+              "stop_service",
+              "close",
+              "stop",
+              "uninstall_continue"
+            ],
+            "capabilities": [
+              "plugin.manager.read",
+              "plugin.manager.control",
+              "settings.read",
+              "settings.write",
+              "plugin.base.update_config",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/PluginUnInstall-2.2-linux-amd64.zip",
+              "sha256": "41bb7e8b5374194fac488f6629a1a3b192ed02e0bfeab0feebaf34e99173357e",
+              "size": 2838692,
+              "format": "zip",
+              "executable_sha256": "4c20db6d68947aee49874f9aae724bbb9dad340bce5d19f98ea28f379bb1eb45",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugin-uninstall",
+                  "size": 4983116,
+                  "sha256": "4c20db6d68947aee49874f9aae724bbb9dad340bce5d19f98ea28f379bb1eb45"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "RemoveLink",
+      "current_version": "2.18",
+      "releases": [
+        {
+          "version": "2.18",
+          "manifest": {
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "frontend",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config"
+              ],
+              "shared": [
+                "vue"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "RemoveLink",
+            "name": "清理媒体文件",
+            "description": "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能",
+            "icon": "Ombi_A.png",
+            "author": "DzAvril",
+            "author_url": "https://github.com/DzAvril",
+            "version": "2.18",
+            "runtime": "go-executable",
+            "entry": "remove-link",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_api",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop",
+              "cleanup_continue",
+              "private_watch",
+              "private_observer",
+              "private_timer"
+            ],
+            "capabilities": [
+              "storage.files.exists",
+              "storage.files.list",
+              "storage.files.delete",
+              "history.transfer.read",
+              "history.transfer.delete",
+              "event.send",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.log.write",
+              "settings.read",
+              "plugin.background.submit",
+              "plugin.cleanup.submit"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/RemoveLink-2.18-linux-amd64.zip",
+              "sha256": "e5870370995baf883d572379eff4d276b2a7ba19d748318c43d0ab245e7ffd93",
+              "size": 3077525,
+              "format": "zip",
+              "executable_sha256": "0338c71b9572f4e03af765f81270d37156bb820c5d14df116677288ff05d62d4",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "frontend/remoteEntry.js",
+                  "size": 980,
+                  "sha256": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b"
+                },
+                {
+                  "path": "frontend/style.css",
+                  "size": 7201,
+                  "sha256": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500"
+                },
+                {
+                  "path": "frontend/view.js",
+                  "size": 10754,
+                  "sha256": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/removelink/ORIGIN.md",
+                  "size": 9797,
+                  "sha256": "abc3e5959ec9cc2bcf38837455eb9643b6087e15aaeda136b4a36c684e105caf"
+                },
+                {
+                  "path": "remove-link",
+                  "size": 5441217,
+                  "sha256": "0338c71b9572f4e03af765f81270d37156bb820c5d14df116677288ff05d62d4"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "AutoSignIn",
+      "current_version": "2.9.15",
+      "releases": [
+        {
+          "version": "2.9.15",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "sign_in"
+              },
+              {
+                "event": "site.deleted",
+                "method": "site_deleted"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "AutoSignIn",
+            "name": "站点自动签到",
+            "description": "自动模拟登录、签到站点。",
+            "icon": "signin.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "2.9.15",
+            "runtime": "go-executable",
+            "entry": "auto-sign-in",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "sign_in",
+              "site_deleted",
+              "http",
+              "stop_service",
+              "stop",
+              "close",
+              "private_once",
+              "signin_continue"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "settings.read",
+              "plugin.base.get_instance_metadata",
+              "sites.read",
+              "sites.source.indexer",
+              "sites.source.indexers",
+              "sites.source.custom_config",
+              "sites.source.credentials",
+              "sites.source.request",
+              "sites.source.result.write",
+              "network.get",
+              "sites.render",
+              "ocr.captcha.text",
+              "event.send",
+              "message.post",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "signin_by_domain",
+                "path": "/signin_by_domain",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "url",
+                    "kind": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ],
+                "headers": [
+                  "x-moviepilot-locale",
+                  "x-locale",
+                  "accept-language"
+                ]
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/AutoSignIn-2.9.15-linux-amd64.zip",
+              "sha256": "2dee1c0518eea5cacd88c2dc2c376111b65f62a79fd08dfa08b14aa905f311cf",
+              "size": 10550534,
+              "format": "zip",
+              "executable_sha256": "96d3cbf79d97619ac5213426e2c910c4fb31aca256d77942d6716985d1c0c83a",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "auto-sign-in",
+                  "size": 19173669,
+                  "sha256": "96d3cbf79d97619ac5213426e2c910c4fb31aca256d77942d6716985d1c0c83a"
+                },
+                {
+                  "path": "plugins/autosignin/ORIGIN.md",
+                  "size": 8762,
+                  "sha256": "86c82b76cfb4218b7c68e8843f5429091096448ba6be413df5f80214d47f4ec2"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/GAV1D-COPYING",
+                  "size": 1361,
+                  "sha256": "be086bd51ed0881cae958b54d4bf5428ab0d4b09dad435310d9940075d194325"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/GAV1D-PATENTS",
+                  "size": 5730,
+                  "sha256": "335eca574598bf4ca181b12f708d6669e5a5e78c8e1513e5b35fa1f03901484b"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/JPEG2000-LICENSE",
+                  "size": 1065,
+                  "sha256": "50c94c634d50b45033428824101b3ad6399458d80eeafac507576381493a98fe"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBAVIF-LICENSE",
+                  "size": 20415,
+                  "sha256": "165abf92cc04b39e80d29cadea7a6a7e8fddf59407d4ad2616507a7ebe8216f9"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBWEBP-AUTHORS",
+                  "size": 3279,
+                  "sha256": "f251be89fd442bd9d701360730aea163cc8e2076ff03528f59267dc2c4f8b60a"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBWEBP-COPYING",
+                  "size": 1496,
+                  "sha256": "5aec868f669e384a22372a4e8a1a6cd7d44c64cd451f960ca69cc170d1e13acf"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBWEBP-PATENTS",
+                  "size": 1436,
+                  "sha256": "cc3273e0694ea5896145e0677699b53471b03ea43021ddc50e7923fbb9f5023c"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBYUV-AUTHORS",
+                  "size": 212,
+                  "sha256": "9bb006eaa8cc06d145c5234ae6b12f8fed6109e0b744d2c530f9b774c607e931"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBYUV-LICENSE",
+                  "size": 1506,
+                  "sha256": "2b2cc1180c7e6988328ad2033b04b80117419db9c4c584918bbb3cfec7e9364f"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/LIBYUV-PATENTS",
+                  "size": 1387,
+                  "sha256": "4da84211f947c6f9f7dd8fbce513e1522e01833407ae732b8c9a2bbb75fed495"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/MSP-ATTRIBUTION.txt",
+                  "size": 1723,
+                  "sha256": "20aa4e5491f0390c19c901ab947cca7a62844058369da604ced2f5f6223ff0fe"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/NOTICE.txt",
+                  "size": 2582,
+                  "sha256": "80840b36dca9c608895c0eeb9958783ea200381e57206ed69358c6e549edb433"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/PILLOW-LICENSE.txt",
+                  "size": 1457,
+                  "sha256": "15181e7363dca9aed78b79bebebc7fde7f1814b8bd311ea3b87ae8ccadfc185b"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/XIMAGE-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/XIMAGE-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/jpeg2000port/LICENSE",
+                  "size": 1065,
+                  "sha256": "50c94c634d50b45033428824101b3ad6399458d80eeafac507576381493a98fe"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/jpeg2000port/OPENJPEG-COPYRIGHT.txt",
+                  "size": 4375,
+                  "sha256": "f7069508c0156a45c74acd6197b94d6f2f5c61c4e207f94e55185817e7d46328"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/jpegport/LIBJPEG-LICENSE.md",
+                  "size": 5622,
+                  "sha256": "e10114e6e40f3d0311c401ca25245ac5ef459a43c20f976fd63f03e816f5741f"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/jpegport/LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/legacycodec/PICSETGO-LICENSE.txt",
+                  "size": 1070,
+                  "sha256": "6e72da9d000d57f057ac6f35153e637affc5919bc2f21c5b0663250fe32507c4"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/tiffport/LIBTIFF-LICENSE.md",
+                  "size": 2409,
+                  "sha256": "b6704cc58ca31d3f4048218772bac575dd579666553afdd3524be0b6b069f3c9"
+                },
+                {
+                  "path": "plugins/autosignin/imagehash/tiffport/LICENSE",
+                  "size": 1479,
+                  "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/APScheduler-MIT.txt",
+                  "size": 1130,
+                  "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/CPython-PSF.txt",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/Requests-Apache-2.0.txt",
+                  "size": 10142,
+                  "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/Requests-NOTICE",
+                  "size": 38,
+                  "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/regexp2-ATTRIB.txt",
+                  "size": 6955,
+                  "sha256": "8db174fc98abc02f154c20ffdacdfbd37528ef25e0f098e20a2c21defd76329a"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/ATTRIB",
+                  "size": 6955,
+                  "sha256": "8db174fc98abc02f154c20ffdacdfbd37528ef25e0f098e20a2c21defd76329a"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/LICENSE",
+                  "size": 1072,
+                  "sha256": "9be5d04bb4d706914d5bf943710da4afeb42048f7c529902fb57c82762a991a9"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/NOTICE.txt",
+                  "size": 1075,
+                  "sha256": "3795b21aa7b4a09ae67ae9b8eef0e747c9a9cd6316a66455ed0a3f788a904982"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+                  "size": 1995,
+                  "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+                  "size": 641,
+                  "sha256": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-net-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-net-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "IYUUAutoSeed",
+      "current_version": "2.22",
+      "releases": [
+        {
+          "version": "2.22",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 17,
+            "broadcast_handlers": [
+              {
+                "event": "site.deleted",
+                "method": "site_deleted"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "IYUUAutoSeed",
+            "name": "IYUU自动辅种",
+            "description": "基于IYUU官方Api实现自动辅种。",
+            "icon": "IYUU.png",
+            "author": "jxxghp,CKun",
+            "author_url": "https://github.com/jxxghp",
+            "version": "2.22",
+            "runtime": "go-executable",
+            "entry": "iyuu-auto-seed",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_page",
+              "get_api",
+              "get_command",
+              "auto_seed",
+              "site_deleted",
+              "private_scheduler",
+              "pass_continue",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.get_data_path",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "sites.read",
+              "sites.source.custom_config",
+              "sites.source.indexer",
+              "sites.source.credentials",
+              "sites.source.request",
+              "sites.source.check",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.source.completed",
+              "downloader.source.tasks",
+              "downloader.source.add",
+              "downloader.source.find_by_tag",
+              "downloader.source.control",
+              "plugin.background.submit",
+              "message.post",
+              "plugin.log.write"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/IYUUAutoSeed-2.22-linux-amd64.zip",
+              "sha256": "31cb4831ad42cf87ca742e7b0b52cfec27451897ce91e4a772fbc8b38b04e8be",
+              "size": 10463956,
+              "format": "zip",
+              "executable_sha256": "b0a9e00af08d8c5240163009a9c2d292d2d0ca3c3b44831122f8ce460a0df8b5",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "iyuu-auto-seed",
+                  "size": 19057480,
+                  "sha256": "b0a9e00af08d8c5240163009a9c2d292d2d0ca3c3b44831122f8ce460a0df8b5"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/APScheduler-MIT.txt",
+                  "size": 1130,
+                  "sha256": "6163f7987dfb38d6bc320ce2b70b2f02b862bc41126516d552ef1cd43247e758"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/CPython-PSF.txt",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/Requests-Apache-2.0.txt",
+                  "size": 10142,
+                  "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/Requests-NOTICE",
+                  "size": 38,
+                  "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/ATTRIB",
+                  "size": 6955,
+                  "sha256": "8db174fc98abc02f154c20ffdacdfbd37528ef25e0f098e20a2c21defd76329a"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/LICENSE",
+                  "size": 1072,
+                  "sha256": "9be5d04bb4d706914d5bf943710da4afeb42048f7c529902fb57c82762a991a9"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/NOTICE.txt",
+                  "size": 1075,
+                  "sha256": "3795b21aa7b4a09ae67ae9b8eef0e747c9a9cd6316a66455ed0a3f788a904982"
+                },
+                {
+                  "path": "plugins/autosignin/regexengine/ORIGIN.json",
+                  "size": 15634,
+                  "sha256": "15c9177f19efb50c867e36e8a287b574ba6e003d61a51f2eca656295c567b12b"
+                },
+                {
+                  "path": "plugins/iyuuautoseed/ORIGIN.json",
+                  "size": 7689,
+                  "sha256": "e9654347b69e09741469f5e66d0d62ae17521978ed86f1ab7734ebb8fa94c3b8"
+                },
+                {
+                  "path": "plugins/iyuuautoseed/compat/htmlextract/LICENSE.libxml2",
+                  "size": 1314,
+                  "sha256": "5d4873884a890122a4b9b20ad56ac6f7da1d796a5bfcf04a427970ac96217626"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+                  "size": 1995,
+                  "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+                },
+                {
+                  "path": "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+                  "size": 641,
+                  "sha256": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/brotli-LICENSE",
+                  "size": 1084,
+                  "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94"
+                },
+                {
+                  "path": "third_party/brotli-flate-LICENSE",
+                  "size": 1479,
+                  "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067"
+                },
+                {
+                  "path": "third_party/x-net-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-net-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "SystemProcess",
+      "current_version": "1.1",
+      "releases": [
+        {
+          "version": "1.1",
+          "manifest": {
+            "plugin_order": 66,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SystemProcess",
+            "name": "系统进程",
+            "description": "查看系统进程，支持仪表板",
+            "icon": "Dsfinder_A.png",
+            "author": "hotlcc",
+            "author_url": "https://github.com/hotlcc",
+            "version": "1.1",
+            "runtime": "go-executable",
+            "entry": "system-process",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_render_mode",
+              "get_command",
+              "get_api",
+              "get_service",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "plugin.base.get_instance_metadata"
+            ],
+            "has_page": true
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/SystemProcess-1.1-linux-amd64.zip",
+              "sha256": "38c85c03766b8df11d37ad5f517f58a88ffca6f03e08aa059393d96018702256",
+              "size": 2943858,
+              "format": "zip",
+              "executable_sha256": "05a73f6f6fb1930a7171dfea3f281fabd528cf801faf4858cde4f784db3b1886",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugins/systemprocess/ORIGIN.json",
+                  "size": 2535,
+                  "sha256": "4ea42519813d58e7745eef48389db408b884253f520ed0dfe407bf0dbc0ce203"
+                },
+                {
+                  "path": "system-process",
+                  "size": 5091872,
+                  "sha256": "05a73f6f6fb1930a7171dfea3f281fabd528cf801faf4858cde4f784db3b1886"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/go-sysconf-LICENSE",
+                  "size": 1519,
+                  "sha256": "fdaaa923d83d44f8b2ed1185600c5aa8c10673f11fba9feb78bd2816786fd6be"
+                },
+                {
+                  "path": "third_party/gopsutil-LICENSE",
+                  "size": 3147,
+                  "sha256": "ad1e64b82c04fb2ee6bfe521bff01266971ffaa70500024d4ac767c6033aafb9"
+                },
+                {
+                  "path": "third_party/numcpus-LICENSE",
+                  "size": 11358,
+                  "sha256": "cfc7749b96f63bd31c3c42b5c471bf756814053e847c10f3eb003417bc523d30"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "MediaServerRefresh",
+      "current_version": "1.3.3",
+      "releases": [
+        {
+          "version": "1.3.3",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 14,
+            "broadcast_handlers": [
+              {
+                "event": "transfer.complete",
+                "method": "refresh"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "MediaServerRefresh",
+            "name": "媒体库服务器刷新",
+            "description": "入库后自动刷新Emby/Jellyfin/Plex服务器海报墙。",
+            "icon": "refresh2.png",
+            "author": "jxxghp",
+            "author_url": "https://github.com/jxxghp",
+            "version": "1.3.3",
+            "runtime": "go-executable",
+            "entry": "media-server-refresh",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_command",
+              "get_api",
+              "get_service",
+              "refresh",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "media.servers.list",
+              "media.servers.refresh",
+              "plugin.log.write"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/MediaServerRefresh-1.3.3-linux-amd64.zip",
+              "sha256": "e6b59ba19c209b9c757d8e3d48ac9c83426345d1b4f35bcb29f8b06813124f6f",
+              "size": 2682736,
+              "format": "zip",
+              "executable_sha256": "42d6758fe831b10fc27c83adccb37806390466739fbaa3a44d447a80301390f7",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "media-server-refresh",
+                  "size": 4704272,
+                  "sha256": "42d6758fe831b10fc27c83adccb37806390466739fbaa3a44d447a80301390f7"
+                },
+                {
+                  "path": "plugins/mediaserverrefresh/ORIGIN.json",
+                  "size": 1742,
+                  "sha256": "94d412fb31aa4c264ba658117e1cbb4f6e9a0e42a06a33fb337fe11d2df90ca6"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "RemoteIdentifiers",
+      "current_version": "2.4.1",
+      "releases": [
+        {
+          "version": "2.4.1",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 10,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "RemoteIdentifiers",
+            "name": "共享识别词",
+            "description": "从Github、Etherpad远程文件中获取共享识别词并应用",
+            "icon": "words.png",
+            "author": "honue",
+            "author_url": "https://github.com/honue",
+            "version": "2.4.1",
+            "runtime": "go-executable",
+            "entry": "remote-identifiers",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_page",
+              "get_command",
+              "get_api",
+              "refresh",
+              "private_once",
+              "refresh_continue",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "network.get",
+              "settings.read",
+              "settings.write",
+              "plugin.log.write"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/RemoteIdentifiers-2.4.1-linux-amd64.zip",
+              "sha256": "030adc9ffc6938e9ae23426472cffa24f6a99a1e74a8b823a5de0bb2ed8808f6",
+              "size": 3904754,
+              "format": "zip",
+              "executable_sha256": "65b3b13af9f1addd195446f22c36ad649815f5bf03f59f3bde1ce7fa0bbf38ba",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugins/remoteidentifiers/ORIGIN.json",
+                  "size": 2521,
+                  "sha256": "bfc36cc8224de7e828acccea1337613464974071b6dc0facadf224266996b9c7"
+                },
+                {
+                  "path": "remote-identifiers",
+                  "size": 7181637,
+                  "sha256": "65b3b13af9f1addd195446f22c36ad649815f5bf03f59f3bde1ce7fa0bbf38ba"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "SubscribeGroup",
+      "current_version": "2.8.7",
+      "releases": [
+        {
+          "version": "2.8.7",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 26,
+            "broadcast_handlers": [
+              {
+                "event": "subscribe.added",
+                "method": "subscribe_notice"
+              },
+              {
+                "event": "download.added",
+                "method": "download_notice"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SubscribeGroup",
+            "name": "订阅规则自动填充",
+            "description": "电视剧下载后自动添加官组等信息到订阅；添加订阅后根据二级分类名称自定义订阅规则。",
+            "icon": "teamwork.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "2.8.7",
+            "runtime": "go-executable",
+            "entry": "subscribe-group",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_command",
+              "get_api",
+              "get_service",
+              "subscribe_notice",
+              "download_notice",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.del_data",
+              "plugin.base.update_config",
+              "sites.read",
+              "media.recognize",
+              "subscriptions.read",
+              "subscriptions.update",
+              "history.download.read",
+              "settings.read",
+              "plugin.log.write"
+            ],
+            "has_page": true
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/SubscribeGroup-2.8.7-linux-amd64.zip",
+              "sha256": "3afca39633e2836e8ba7a0e2f04dbbcace04ad04f285a56eb582880bfe4d9336",
+              "size": 2946704,
+              "format": "zip",
+              "executable_sha256": "88f357ba8a13a58adbeb851aa56c4d6d947c296fe99f476ef40bdb931eb05978",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugins/subscribegroup/ORIGIN.json",
+                  "size": 2945,
+                  "sha256": "6b8bc587d9b29330d6f9d5e9bdb2438cb3486c66c583ea8a5b1ba49ca183d622"
+                },
+                {
+                  "path": "subscribe-group",
+                  "size": 5416608,
+                  "sha256": "88f357ba8a13a58adbeb851aa56c4d6d947c296fe99f476ef40bdb931eb05978"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "AutoBackup",
+      "current_version": "2.1.4",
+      "releases": [
+        {
+          "version": "2.1.4",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 17,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "AutoBackup",
+            "name": "自动备份",
+            "description": "自动备份数据和配置文件。",
+            "icon": "Time_machine_B.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "2.1.4",
+            "runtime": "go-executable",
+            "entry": "auto-backup",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_api",
+              "get_page",
+              "get_command",
+              "backup",
+              "private_once",
+              "http",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data_path",
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "backup.local",
+              "plugin.log.write",
+              "message.post"
+            ],
+            "apis": [
+              {
+                "key": "api_backup",
+                "path": "/backup",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/AutoBackup-2.1.4-linux-amd64.zip",
+              "sha256": "8229c311fac725f704b35bc78a43376e8942974f0c8293759491d430c63164cd",
+              "size": 3897889,
+              "format": "zip",
+              "executable_sha256": "2e1f629ca619d8d009937cd71c9e0761887d737b5d46f2a21f089ead4bc62cf6",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "auto-backup",
+                  "size": 7162638,
+                  "sha256": "2e1f629ca619d8d009937cd71c9e0761887d737b5d46f2a21f089ead4bc62cf6"
+                },
+                {
+                  "path": "plugins/autobackup/ORIGIN.json",
+                  "size": 3445,
+                  "sha256": "d33069bf3fc92fb987f63f572f40309f7c7f78436dd982d9e969e80bcd13a20b"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "BrushFlowLanduo",
+      "current_version": "5.2.18",
+      "releases": [
+        {
+          "version": "5.2.18",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 21,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.reload",
+                "method": "reload_event"
+              }
+            ],
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "dist/assets",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config",
+                "Page",
+                "Dashboard",
+                "AppPage"
+              ],
+              "shared": [
+                "vue",
+                "vuetify",
+                "vuetify/styles"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "BrushFlowLanduo",
+            "name": "站点刷流-landuo",
+            "description": "自动托管多个站点刷流任务，并独立调度、统计与诊断。",
+            "icon": "brush-flow.png",
+            "author": "jxxghp,landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "5.2.18",
+            "runtime": "go-executable",
+            "entry": "brush-flow-landuo",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_sidebar_nav",
+              "http",
+              "brush",
+              "check",
+              "promotion_expiry",
+              "cleanup_tags",
+              "cleanup_task_tag",
+              "reload_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "plugin.base.update_config",
+              "plugin.base.get_instance_metadata",
+              "plugin.background.submit",
+              "plugin.services.refresh",
+              "message.post",
+              "plugin.systemmessage.put",
+              "event.send",
+              "plugin.log.write",
+              "brush.inventory.read",
+              "sites.read",
+              "sites.request",
+              "sites.source.request",
+              "subscriptions.read",
+              "media.recognize",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.tasks.list",
+              "downloader.tasks.downloading",
+              "downloader.source.completed",
+              "downloader.source.control",
+              "downloader.tags.read",
+              "downloader.tags.delete",
+              "downloader.tasks.delete_files",
+              "brush.source.candidates",
+              "brush.source.transfer",
+              "brush.source.add"
+            ],
+            "has_page": true,
+            "dashboards": [
+              "default"
+            ],
+            "apis": [
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "settings",
+                "path": "/settings",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "create",
+                "path": "/tasks",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "detail",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear",
+                "query": [
+                  {
+                    "name": "state",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page_size",
+                    "kind": "string"
+                  }
+                ]
+              },
+              {
+                "key": "update",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "PUT"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "delete",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "DELETE"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "state",
+                "path": "/tasks/{task_id}/state",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "run",
+                "path": "/tasks/{task_id}/run",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              },
+              {
+                "key": "check",
+                "path": "/tasks/{task_id}/check",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              },
+              {
+                "key": "clear",
+                "path": "/tasks/{task_id}/clear",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/BrushFlowLanduo-5.2.18-linux-amd64.zip",
+              "sha256": "b5377a33bc15f20666b7b985604dd882436c8effabc1fc82683528c586dc0efb",
+              "size": 3978981,
+              "format": "zip",
+              "executable_sha256": "317de594840f8ed5449ccbaf5ac94ef015167511acb3299179463b86a4b63236",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "brush-flow-landuo",
+                  "size": 7095888,
+                  "sha256": "317de594840f8ed5449ccbaf5ac94ef015167511acb3299179463b86a4b63236"
+                },
+                {
+                  "path": "dist/assets/AppPage-CQJjeupX.js",
+                  "size": 698,
+                  "sha256": "f724816b0e6876d373899d4ee7e8b302967c3fe9ed9d4713aacc066d0b1ee013"
+                },
+                {
+                  "path": "dist/assets/BrushFlowWorkbench-Bmyw-FFf.js",
+                  "size": 145992,
+                  "sha256": "486fb41097407149a3f57a6b3db17a1178e9aee9702cb4fde650fbc26fbf768c"
+                },
+                {
+                  "path": "dist/assets/BrushFlowWorkbench-DXCRiXbI.css",
+                  "size": 18139,
+                  "sha256": "1d560113ca3c39ab7d3d2842340384ed26d865b31c2c1e2423c3101ba031df64"
+                },
+                {
+                  "path": "dist/assets/Config-CKUlJQbx.js",
+                  "size": 827,
+                  "sha256": "16744ae293c8f79cfa55d999c2d51301cf56b7b16a51f343b99c8642dcbaa3e2"
+                },
+                {
+                  "path": "dist/assets/Dashboard-BF4A7g-y.css",
+                  "size": 1482,
+                  "sha256": "542fa9b7a84d1a45c810012ec28b69252ff0e9aea52b2161fdca1658aa850e7a"
+                },
+                {
+                  "path": "dist/assets/Dashboard-CCqSKt-v.js",
+                  "size": 4293,
+                  "sha256": "8aca76535601dd478b626b527875518c9a140b249ef09f39a84b9d567f0b0fe2"
+                },
+                {
+                  "path": "dist/assets/Page-m3F8uHxo.js",
+                  "size": 701,
+                  "sha256": "9e7b2ce5ac75204b667fbe9d9d3e87a11a28955e269b2a5c14ad3babaf531a87"
+                },
+                {
+                  "path": "dist/assets/_plugin-vue_export-helper-1_Y3tC5L.js",
+                  "size": 12648,
+                  "sha256": "571519fe1345cbcdf191ac0038cc83d32e465f2d434c342ff856542339756c91"
+                },
+                {
+                  "path": "dist/assets/_virtual_mf-localSharedImportMap___mfe_internal__BrushFlowLanduo__mf_owner__1-C0DSOgfn.js",
+                  "size": 1711,
+                  "sha256": "06b7ea07de38854a4d83ca68d8f8b520e7c4fa10b5ba8aef97c799c0a1b2060a"
+                },
+                {
+                  "path": "dist/assets/helpers-_Ccnm3rP.js",
+                  "size": 106,
+                  "sha256": "cc54137a6a3515677d2c86135b8c938a72aef0dcf2214032776fa286e29f20dd"
+                },
+                {
+                  "path": "dist/assets/index-Cezq_yMy.js",
+                  "size": 129946,
+                  "sha256": "98cfd58a755bfa05b7ddd87c24bc0118f0ae8076fb4078f883f220dc13e26ce6"
+                },
+                {
+                  "path": "dist/assets/index-pSqlufH5.js",
+                  "size": 1580,
+                  "sha256": "34de619555493f6cc7ce4e48a4d3dfa54874137db84f7c4a6ec777f950ea9fa5"
+                },
+                {
+                  "path": "dist/assets/remoteEntry.js",
+                  "size": 79580,
+                  "sha256": "7305af6d6a371ad57b48750c1fed732c03405a0c337d18dd94f08f73d5ff3e18"
+                },
+                {
+                  "path": "dist/assets/vite-preload-helper-BelkbqnE.js",
+                  "size": 1980,
+                  "sha256": "a66458b94a8d4bdfac447f3c401811e1347ad9e3421e0bc5ff14e6e6cfdf5176"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+                  "size": 5342,
+                  "sha256": "e4ab9b60ef8920a101cacf4474dd7445674f8a223edc19be332f3fab362f195a"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/ORIGIN.json",
+                  "size": 6353,
+                  "sha256": "09f7f8fc5debf44020639637424c320b93594ac3623ee130589bc2958ee8ea13"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode",
+                  "size": 1995,
+                  "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+                  "size": 917,
+                  "sha256": "a35968b1c6c3c314406d4bb959aed26c1d9355206363e8521e60059a37947902"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+                  "size": 1112,
+                  "sha256": "8385c252568609183ceb9aead4ebac3b3bd8678c627739aee7aad29116409332"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+                  "size": 1083,
+                  "sha256": "74aeeff0b0117761910083b03d18a64a5a654917e794a841406410f909b427cf"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+                  "size": 1082,
+                  "sha256": "62431fbe2f17fc691be95ed8302aa042c03200d2a7cdee7aab4bb0d2d3e16098"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+                  "size": 1068,
+                  "sha256": "0ec4954b495a967b9bf3f4dc927f3005d5c2c403716adcbe609274834b590a5d"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+                  "size": 4974,
+                  "sha256": "e2563ac6f79648392a733e20b82e3c1af2b2509cb1e41d358a228283e74731f5"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+                  "size": 765,
+                  "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+                  "size": 9592,
+                  "sha256": "d0b16a3cb603569486834cb55fa8a539832063864793339386f5e1f646928987"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+                  "size": 1081,
+                  "sha256": "ba63a93ee680c21f746ec1f95b22b92aa781743137d718ef0db08335125dadc3"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+                  "size": 1101,
+                  "sha256": "692057af3d664cbb79ac38293eb50aa3c4987f8182e2a440136e59e08f1b4a54"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+                  "size": 1103,
+                  "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "MergeSiteSwitch",
+      "current_version": "1.2",
+      "releases": [
+        {
+          "version": "1.2",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 66,
+            "broadcast_handlers": [
+              {
+                "event": "site.updated",
+                "method": "listen_site_updated_event"
+              },
+              {
+                "event": "site.deleted",
+                "method": "listen_site_deleted_event"
+              }
+            ],
+            "schema_version": 1,
+            "plugin_id": "MergeSiteSwitch",
+            "name": "聚合站点开关",
+            "description": "统一管理所有与站点相关的开关。",
+            "icon": "world.png",
+            "author": "hotlcc",
+            "author_url": "https://github.com/hotlcc",
+            "version": "1.2",
+            "runtime": "go-executable",
+            "entry": "merge-site-switch",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_api",
+              "get_command",
+              "get_service",
+              "listen_site_updated_event",
+              "listen_site_deleted_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.config_save_origin",
+              "sites.read",
+              "plugin.log.write",
+              "sites.switch"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/MergeSiteSwitch-1.2-linux-amd64.zip",
+              "sha256": "8252c1c1bff66c08d9557761c1a6fa308249861efffc921445b43b18ce897206",
+              "size": 2689923,
+              "format": "zip",
+              "executable_sha256": "3bda238b6b93c89a623b890e3808c898a73e41fadfa8d3310bcb66f7c9178784",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "merge-site-switch",
+                  "size": 4728122,
+                  "sha256": "3bda238b6b93c89a623b890e3808c898a73e41fadfa8d3310bcb66f7c9178784"
+                },
+                {
+                  "path": "plugins/mergesiteswitch/ORIGIN.json",
+                  "size": 1438,
+                  "sha256": "466c556b0b3979b7c87c184f02f3a8718d00f2c4677a8d0686940d13ab69f962"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "ScrapeFileClean",
+      "current_version": "1.0.7",
+      "releases": [
+        {
+          "version": "1.0.7",
+          "manifest": {
+            "managed_private_scheduler": true,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "ScrapeFileClean",
+            "name": "源文件联动清理",
+            "description": "为手动清理下载目录设计：手动删除源文件后，自动联动清理媒体库中对应的硬链接文件、刮削文件（元数据、图片、字幕）与转移记录，支持延迟删除防止误删",
+            "icon": "clean.png",
+            "author": "xlmc",
+            "author_url": "https://github.com/xlmc",
+            "version": "1.0.7",
+            "runtime": "go-executable",
+            "entry": "scrape-file-clean",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_api",
+              "get_page",
+              "get_command",
+              "close",
+              "stop_service",
+              "stop",
+              "private_watch"
+            ],
+            "capabilities": [
+              "storage.files.exists",
+              "storage.files.scrape_clean_remove",
+              "history.transfer.read",
+              "history.transfer.delete",
+              "event.send",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/ScrapeFileClean-1.0.7-linux-amd64.zip",
+              "sha256": "1881d97e9d5ac1022ec7bff1597495d6719fed325d4059a69d6229e7cdb002cd",
+              "size": 2996389,
+              "format": "zip",
+              "executable_sha256": "340bf82b69bccdf0943ab210ba5670bad45766385a7e5a253726a442dcefbdb4",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/autosignin/licenses/CPython-PSF.txt",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/scrapefileclean/ORIGIN.json",
+                  "size": 2262,
+                  "sha256": "152e4fb81bdb356775e4fc09b9d3ca5fceee2fdae44820776391a8feadb0d9e7"
+                },
+                {
+                  "path": "plugins/scrapefileclean/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "scrape-file-clean",
+                  "size": 5292708,
+                  "sha256": "340bf82b69bccdf0943ab210ba5670bad45766385a7e5a253726a442dcefbdb4"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "LarkMessager",
+      "current_version": "0.9.1",
+      "releases": [
+        {
+          "version": "0.9.1",
+          "manifest": {
+            "managed_private_scheduler": true,
+            "plugin_order": 50,
+            "broadcast_handlers": [
+              {
+                "event": "message.action",
+                "method": "message_action"
+              }
+            ],
+            "schema_version": 1,
+            "plugin_id": "LarkMessager",
+            "name": "Lark 应用消息通知",
+            "description": "基于国际版飞书 Lark 开放平台应用的通知与消息交互插件，支持文本、卡片消息发送及消息回调交互。",
+            "icon": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/icons/FeiShu_A.png",
+            "author": "ui-beam-9",
+            "author_url": "https://github.com/ui-beam-9",
+            "version": "0.9.1",
+            "runtime": "go-executable",
+            "entry": "lark-messager",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_render_mode",
+              "get_api",
+              "get_module",
+              "http",
+              "message_action",
+              "resolve_recipients",
+              "stop_service",
+              "close",
+              "stop",
+              "message_parser",
+              "post_message",
+              "post_medias_message",
+              "post_torrents_message",
+              "edit_message",
+              "mark_message_processing_started",
+              "mark_message_processing_finished"
+            ],
+            "capabilities": [
+              "network.lark.endpoint",
+              "plugin.base.get_instance_metadata",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "plugin.background.submit",
+              "message.receive",
+              "network.get",
+              "storage.files.local_read_grant",
+              "plugin.log.write"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "webhook",
+                "path": "/webhook",
+                "methods": [
+                  "POST",
+                  "GET"
+                ],
+                "auth": "anonymous",
+                "query": [
+                  {
+                    "name": "token",
+                    "kind": "string"
+                  }
+                ],
+                "headers": [
+                  "x-lark-signature",
+                  "x-lark-request-timestamp",
+                  "x-lark-request-nonce"
+                ],
+                "body": "raw"
+              },
+              {
+                "key": "test",
+                "path": "/test",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "fetch_chats",
+                "path": "/fetch_chats",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/LarkMessager-0.9.1-linux-amd64.zip",
+              "sha256": "a2435fb15220548df94adea7421db5459dde00b5d7db90f9d5539f4ab17a1531",
+              "size": 5760845,
+              "format": "zip",
+              "executable_sha256": "5d96d16b55877ef3819c70a6d1760385c9625707fd6206e356e7a1c0541c4357",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "lark-messager",
+                  "size": 10548539,
+                  "sha256": "5d96d16b55877ef3819c70a6d1760385c9625707fd6206e356e7a1c0541c4357"
+                },
+                {
+                  "path": "plugins/autosignin/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "plugins/larkmessager/LICENSE-JITER.txt",
+                  "size": 1091,
+                  "sha256": "7c7134b9f7b978c03fca875517cf398db91f19bbb8109b6685e742aa3f57468e"
+                },
+                {
+                  "path": "plugins/larkmessager/LICENSE-PYDANTIC.txt",
+                  "size": 1080,
+                  "sha256": "2afdd30d54b4d62b6f488a6bcc1546e84ec5061f13f4209c03d012348783795a"
+                },
+                {
+                  "path": "plugins/larkmessager/LICENSE-PYTHON.txt",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/larkmessager/ORIGIN.json",
+                  "size": 1829,
+                  "sha256": "efca8fd84e22f9953b2c2a3a64b66cc384e537748725348ac235fa4a4c4c6edb"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "CleanInvalidSeed",
+      "current_version": "2.1",
+      "releases": [
+        {
+          "version": "2.1",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 1,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "handle_commands"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CleanInvalidSeed",
+            "name": "清理无效做种",
+            "description": "清理已经被站点删除的种子及源文件，支持qBittorrent和Transmission",
+            "icon": "clean_a.png",
+            "author": "DzAvril",
+            "author_url": "https://github.com/DzAvril",
+            "version": "2.1",
+            "runtime": "go-executable",
+            "entry": "clean-invalid-seed",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "handle_commands",
+              "clean_invalid_seed",
+              "private_once",
+              "stop_service",
+              "close",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "message.post",
+              "plugin.log.write",
+              "clean_seed.tasks",
+              "clean_seed.trackers",
+              "clean_seed.control",
+              "clean_seed.files",
+              "clean_seed.remove"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/CleanInvalidSeed-2.1-linux-amd64.zip",
+              "sha256": "cb4b2de2a84f1066a727a9fde91d77780c936f14c4116ba3ef13864842aae44d",
+              "size": 3136371,
+              "format": "zip",
+              "executable_sha256": "16d9e0c2a322d00c0ed101dcacae7c85ec229f60e6c8e06fcaf92313d53b5c90",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "clean-invalid-seed",
+                  "size": 5762466,
+                  "sha256": "16d9e0c2a322d00c0ed101dcacae7c85ec229f60e6c8e06fcaf92313d53b5c90"
+                },
+                {
+                  "path": "plugins/cleaninvalidseed/ORIGIN.json",
+                  "size": 2876,
+                  "sha256": "f04bf6537c8fbfbcb370bfe617c73f495cb86db7045efd6b15019fe582cf9ee0"
+                },
+                {
+                  "path": "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+                  "size": 13936,
+                  "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf"
+                },
+                {
+                  "path": "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+                  "size": 1995,
+                  "sha256": "f5062c9a188d81dfe66b56db4182dcf9e4b17c0d9b0d311a8e20b3a1b075c443"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "SeedRescue",
+      "current_version": "1.6.3",
+      "releases": [
+        {
+          "version": "1.6.3",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 18,
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "dist/assets",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config",
+                "Page",
+                "Dashboard",
+                "AppPage"
+              ],
+              "shared": [
+                "vue"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SeedRescue",
+            "name": "稀缺保种",
+            "description": "读取目标站RSS，可选择跨站同源候选下载后辅种，也可直接下载保种站点原种。",
+            "icon": "IYUU.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.6.3",
+            "runtime": "go-executable",
+            "entry": "seed-rescue",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "get_sidebar_nav",
+              "http",
+              "scan",
+              "scan_background",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "plugin.log.write",
+              "message.post",
+              "seed_rescue.iyuu",
+              "seed_rescue.service",
+              "seed_rescue.site",
+              "seed_rescue.indexer",
+              "seed_rescue.options",
+              "seed_rescue.rss",
+              "seed_rescue.seed_info",
+              "seed_rescue.torrent_url",
+              "seed_rescue.search",
+              "seed_rescue.detail",
+              "seed_rescue.download_metadata",
+              "seed_rescue.query_torrents",
+              "seed_rescue.downloading_torrents",
+              "seed_rescue.add_torrent"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear",
+                "query": [
+                  {
+                    "name": "view",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page_size",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "state",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "promotion",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "source_promotion",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "source_site_id",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "min_seeders",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "max_seeders",
+                    "kind": "string"
+                  }
+                ]
+              },
+              {
+                "key": "scan",
+                "path": "/scan",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "job",
+                "path": "/jobs/{target_hash}",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "download",
+                "path": "/jobs/{target_hash}/download",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "retry",
+                "path": "/jobs/{target_hash}/retry",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "ignore",
+                "path": "/jobs/{target_hash}/ignore",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/SeedRescue-1.6.3-linux-amd64.zip",
+              "sha256": "0f21d303439552398885fe0675339341e7bde4beb8643f6463d1bde7f6a816fd",
+              "size": 3153521,
+              "format": "zip",
+              "executable_sha256": "201bc49b7c473af3a73985e7ad749b35e45b84ddb8d817ece709b8569f06bd98",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "dist/assets/SeedRescueWorkbench-C0MKqaDa.css",
+                  "size": 1483,
+                  "sha256": "ac13c4e31d703147f0bb7d4d41b8e8c1b061f97111ef47eaa8d35a2e992538d6"
+                },
+                {
+                  "path": "dist/assets/SeedRescueWorkbench-C7qM2njz.js",
+                  "size": 63722,
+                  "sha256": "e3063b8753255b7886c5629d459b628e736dcf58322e1450884a9f517fb4c6c2"
+                },
+                {
+                  "path": "dist/assets/__federation_expose_AppPage-t5uu8UeP.js",
+                  "size": 816,
+                  "sha256": "c870ce546f444a6bd06fcefb55f5cb8d41a05446eb1fd89caca9f36d3c4d2b1c"
+                },
+                {
+                  "path": "dist/assets/__federation_expose_Config-CjwiiaeH.js",
+                  "size": 14080,
+                  "sha256": "ff426a25fa45ac2158ec4a83917cfa778642ba0c53b028a0d41141b39187ca58"
+                },
+                {
+                  "path": "dist/assets/__federation_expose_Dashboard-l3LPbQrq.js",
+                  "size": 1287,
+                  "sha256": "fbc4bd556023bd18048eb0e37f27ad835d0e09b1996ede0cb13c9641aa3c105f"
+                },
+                {
+                  "path": "dist/assets/__federation_expose_Page-CWBKd09E.js",
+                  "size": 777,
+                  "sha256": "8e6865be438d440a7ebf04f034fb74349d8f77fc92b6da7d213122cf6858a178"
+                },
+                {
+                  "path": "dist/assets/__federation_fn_import-JrT3xvdd.js",
+                  "size": 13711,
+                  "sha256": "4776b5a84c2055e4a6907ebf7377f6abd86f26b7d520d685a13b40d5aa8538aa"
+                },
+                {
+                  "path": "dist/assets/remoteEntry.js",
+                  "size": 4211,
+                  "sha256": "a8ca57dce7b005b047047cc6649ada4d7aeba2d196481f912af336c1ac978d75"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+                  "size": 765,
+                  "sha256": "4ec3d4c66cd87f5c8d8ad911b10f99bf27cb00cdfcff82621956e379186b016b"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+                  "size": 9592,
+                  "sha256": "d0b16a3cb603569486834cb55fa8a539832063864793339386f5e1f646928987"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+                  "size": 1081,
+                  "sha256": "ba63a93ee680c21f746ec1f95b22b92aa781743137d718ef0db08335125dadc3"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+                  "size": 1101,
+                  "sha256": "692057af3d664cbb79ac38293eb50aa3c4987f8182e2a440136e59e08f1b4a54"
+                },
+                {
+                  "path": "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+                  "size": 1103,
+                  "sha256": "29b68325fe026047d13e187b44c33b2acacf7dc647dec4583702e59f235e13b5"
+                },
+                {
+                  "path": "plugins/seedrescue/FRONTEND_NOTICE.md",
+                  "size": 2031,
+                  "sha256": "6e4c87ddd4bbcd1300efbfaed9ac3a161a817e3b54fdf27010b3485efc3e6599"
+                },
+                {
+                  "path": "plugins/seedrescue/FRONTEND_ORIGIN.json",
+                  "size": 5675,
+                  "sha256": "eee62bd41da328f8313aaa07f2a9f8a86415a3fe7b22ec936e32ad8da781608e"
+                },
+                {
+                  "path": "plugins/seedrescue/ORIGIN.json",
+                  "size": 2585,
+                  "sha256": "f2a09171ce251fa3863fc0eb2ab744bea0a3f835978cc0487fe47916d684efbe"
+                },
+                {
+                  "path": "seed-rescue",
+                  "size": 5768281,
+                  "sha256": "201bc49b7c473af3a73985e7ad749b35e45b84ddb8d817ece709b8569f06bd98"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-net-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-net-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "CloudflareSpeedTest",
+      "current_version": "1.5.1",
+      "releases": [
+        {
+          "version": "1.5.1",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 12,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "handle_commands"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CloudflareSpeedTest",
+            "name": "Cloudflare IP优选",
+            "description": "🌩 测试 Cloudflare CDN 延迟和速度，自动优选IP。",
+            "icon": "cloudflare.jpg",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "1.5.1",
+            "runtime": "go-executable",
+            "entry": "cloudflare-speed-test",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "handle_commands",
+              "cloudflare_speedtest",
+              "private_once",
+              "http",
+              "stop_service",
+              "close",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.log.write",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.background.submit",
+              "cloudflare_speed.custom_hosts",
+              "cloudflare_speed.save_hosts",
+              "cloudflare_speed.reload_hosts",
+              "cloudflare_speed.platform",
+              "cloudflare_speed.exists",
+              "cloudflare_speed.ensure",
+              "cloudflare_speed.reset",
+              "cloudflare_speed.latest",
+              "cloudflare_speed.download",
+              "cloudflare_speed.extract",
+              "cloudflare_speed.remove",
+              "cloudflare_speed.run",
+              "cloudflare_speed.read_result"
+            ],
+            "apis": [
+              {
+                "key": "cloudflare_speedtest",
+                "path": "/cloudflare_speedtest",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/CloudflareSpeedTest-1.5.1-linux-amd64.zip",
+              "sha256": "2c33272742f5737e30dcdd7ad7a9f3988ad48b1e0b2a233008206fb713707bf0",
+              "size": 2875501,
+              "format": "zip",
+              "executable_sha256": "ac9bfbd1b8d0d96b11e0676a9058c5be9e95615160701ad69ac5563ecb258686",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "cloudflare-speed-test",
+                  "size": 5294335,
+                  "sha256": "ac9bfbd1b8d0d96b11e0676a9058c5be9e95615160701ad69ac5563ecb258686"
+                },
+                {
+                  "path": "plugins/cloudflarespeedtest/ORIGIN.json",
+                  "size": 1932,
+                  "sha256": "0d13fa709f9e6b67540e0b20d0d6379fa8495cbf732aa7a5c28c7e9b189552fa"
+                },
+                {
+                  "path": "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    },
+    {
+      "schema_version": 1,
+      "plugin_id": "CustomHosts",
+      "current_version": "1.2.2",
+      "releases": [
+        {
+          "version": "1.2.2",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 10,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.reload",
+                "method": "reload_event"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CustomHosts",
+            "name": "自定义Hosts",
+            "description": "修改系统hosts文件，加速网络访问。",
+            "icon": "hosts.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "1.2.2",
+            "runtime": "go-executable",
+            "entry": "custom-hosts",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "reload_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_instance_metadata",
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "custom_hosts.apply"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://github.com/landuo/light-media-plugins/releases/download/build-35d30dc943d845ea6da4555075e3b0623bcda407/CustomHosts-1.2.2-linux-amd64.zip",
+              "sha256": "80ac01e0aeb84f7870c24002dbc1ddaf24874cc466d0faad9868c0f52be63ff3",
+              "size": 2673814,
+              "format": "zip",
+              "executable_sha256": "aa720573f6235203914a328ad11311c3a67ae1959bd57f5980c95ad41a9540c3",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 9752,
+                  "sha256": "56d45abea11042e4ecd48d1af458995f00af6685b19ea42ea9b9afbb1b9e6f2b"
+                },
+                {
+                  "path": "custom-hosts",
+                  "size": 4691972,
+                  "sha256": "aa720573f6235203914a328ad11311c3a67ae1959bd57f5980c95ad41a9540c3"
+                },
+                {
+                  "path": "plugins/customhosts/ORIGIN.json",
+                  "size": 1053,
+                  "sha256": "9e14f9e02578d22c2a2c9d352c078a3049e7a2db6590f7457d81438117cce088"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
                 }
               ]
             }

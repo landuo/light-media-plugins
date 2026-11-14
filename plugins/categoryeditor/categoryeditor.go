@@ -29,7 +29,7 @@ func Manifest() plugins.Manifest {
 	return plugins.Manifest{
 		SchemaVersion: 1, PluginID: "CategoryEditor", Name: "二级分类策略",
 		Description: "编辑下载和整理时自动二级分类的目录规则。", Icon: "Bookstack_A.png",
-		Author: "jxxghp", AuthorURL: "https://github.com/jxxghp", Version: "1.3",
+		Author: "landuo", AuthorURL: "https://github.com/landuo", Version: "1.0.0",
 		PluginOrder: 5, Runtime: "go-executable", Entry: "category-editor", HostAPIMin: 1, HostAPIMax: 1,
 		Methods: []string{
 			"init", "get_state", "get_api", "get_render_mode",

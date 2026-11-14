@@ -1,5 +1,33 @@
 # Third-party notices
 
+## Source credits and inherited versions
+
+The worker manifest identifies landuo as the maintainer of this Light Media distribution. The credits below record the names and versions carried over from the original plugins. Each plugin directory documents its source and license.
+
+| Plugin | Inherited version | Source credits |
+| --- | --- | --- |
+| AutoBackup | 2.1.4 | [thsrite](https://github.com/thsrite) |
+| AutoSignIn | 2.9.15 | [thsrite](https://github.com/thsrite) |
+| BrushFlowLanduo | 5.2.18 | [jxxghp](https://github.com/jxxghp), [landuo](https://github.com/landuo) |
+| CategoryEditor | 1.3 | [jxxghp](https://github.com/jxxghp) |
+| CleanInvalidSeed | 2.1 | [DzAvril](https://github.com/DzAvril) |
+| CloudflareSpeedTest | 1.5.1 | [thsrite](https://github.com/thsrite) |
+| CustomHosts | 1.2.2 | [thsrite](https://github.com/thsrite) |
+| IYUUAutoSeed | 2.22 | jxxghp, CKun |
+| LarkMessager | 0.9.1 | [ui-beam-9](https://github.com/ui-beam-9) |
+| MediaServerRefresh | 1.3.3 | [jxxghp](https://github.com/jxxghp) |
+| MergeMessageNotify | 1.20.3 | [hotlcc](https://github.com/hotlcc) |
+| MergeSiteSwitch | 1.2 | [hotlcc](https://github.com/hotlcc) |
+| PluginUnInstall | 2.2 | [thsrite](https://github.com/thsrite) |
+| RemoteIdentifiers | 2.4.1 | [honue](https://github.com/honue) |
+| RemoveLink | 2.18 | [DzAvril](https://github.com/DzAvril) |
+| ScrapeFileClean | 1.0.7 | [xlmc](https://github.com/xlmc) |
+| SeedRescue | 1.6.3 | [landuo](https://github.com/landuo) |
+| SiteStatistic | 1.9.7 | [lightolly](https://github.com/lightolly), [jxxghp](https://github.com/jxxghp) |
+| SubscribeGroup | 2.8.7 | [thsrite](https://github.com/thsrite) |
+| SystemProcess | 1.1 | [hotlcc](https://github.com/hotlcc) |
+| TorrentTransfer | 1.10.3 | [jxxghp](https://github.com/jxxghp) |
+
 ## CategoryEditor business source
 
 CategoryEditor 1.3 was written by jxxghp for MoviePilot. Its fixed source is
@@ -12,10 +40,8 @@ The installed source SHA-256 is
 This repository contains a Go adaptation for the Light Media standard worker
 protocol, not the original Python runtime. `LICENSE.upstream` preserves the
 GNU General Public License version 3 text from that fixed upstream commit.
-Author attribution is also retained in the worker manifest. The host performs
-the actual category file write and cache refresh; its documented safety bounds
-are intentional adaptation differences, not claims of identical behavior for
-every input. No upstream icon image is redistributed by this package.
+The host performs the category file write and cache refresh within its documented
+safety bounds. The package references the original icon by name.
 
 ## Go modules
 

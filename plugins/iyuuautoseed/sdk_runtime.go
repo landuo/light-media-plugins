@@ -34,8 +34,8 @@ func (h runtimeHost) Torrent(ctx context.Context, site Site, address string) (To
 func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: "IYUUAutoSeed", Name: "IYUU自动辅种",
-		Description: "基于IYUU官方Api实现自动辅种。", Icon: "IYUU.png", Version: "2.22",
-		Author: "jxxghp,CKun", AuthorURL: "https://github.com/jxxghp", PluginOrder: 17,
+		Description: "基于IYUU官方Api实现自动辅种。", Icon: "IYUU.png", Version: "1.0.4",
+		Author: "landuo", AuthorURL: "https://github.com/landuo", PluginOrder: 17,
 		Runtime: "go-executable", Entry: "iyuu-auto-seed", HostAPIMin: 1, HostAPIMax: 1,
 		ManagedPublicServices: true, ManagedPrivateScheduler: true,
 		Methods: []string{
@@ -50,7 +50,7 @@ func Manifest() sdk.Manifest {
 			sdk.DownloaderConfigurationsReadCapability, sdk.DownloaderSourceConnectionCapability,
 			sdk.DownloaderSourceCompletedCapability, sdk.DownloaderSourceTasksCapability,
 			sdk.DownloaderSourceAddCapability, sdk.DownloaderSourceFindByTagCapability, sdk.DownloaderSourceControlCapability,
-			sdk.BackgroundSubmitCapability, sdk.PostMessageCapability, sdk.LogWriteCapability,
+			sdk.BackgroundSubmitCapability, sdk.PostMessageCapability, sdk.LogWriteCapability, sdk.NetworkProxyReadCapability,
 		},
 		BroadcastHandlers: []sdk.BroadcastHandler{{Event: "site.deleted", Method: "site_deleted"}},
 		RuntimeSupport:    &sdk.RuntimeSupport{Platforms: []string{"linux"}, StorageTypes: []string{"local"}},

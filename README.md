@@ -18,11 +18,9 @@
    关闭开关时保存只保留插件配置，不应用全局策略。
 4. 整理时还需为目标目录启用二级分类，并有匹配规则。修改策略不会自动搬动已经整理的文件。
 
-CategoryEditor 原本通过 JSON `get_form` 使用宿主表单渲染器，没有独立 Vue
-前端构建。它的表单 JSON 已嵌入 worker。其他包含独立 Vue 的插件必须同时打包
-完整前端资源，不能仅分发 Go 可执行文件；见下文。
+源码安装需要光影宿主支持 v2 清单、可用的 Go 1.26.4 或更新工具链，以及下载 Go 模块的网络。市场卡片读取清单时无需编译。仓库中声明的前端目录包含随插件安装的静态页面资源。
 
-这不是 NAS 部署脚本，不会自动升级宿主或迁移私人配置/运行数据。
+历史 [v1 清单](go-plugins.v1.json) 和 Linux amd64 Release 继续供较早的宿主使用，保持最后一次二进制发布的版本。
 
 ## 自动转移做种
 
@@ -74,26 +72,20 @@ Linux 隔离实例已验收安装、重载、定时和一次性任务、配置�
 
 ## 自动构建与发布
 
-- `main` 的代码提交先执行 Go vet、race/真实 worker 协议测试及打包/发布受控测试；
-  PR 只测试，不发布。仅支持 Linux amd64。
-- 测试通过后，以源码提交的完整 SHA 创建独立 `build-<SHA>` Release，上传完整
-  插件 ZIP、索引和第三方许可包。已有不同字节的资产不会删除或覆盖。
-- 匿名下载校验通过后，以非 force 的整分支并发保护更新根索引；如果源码期间已变化，
-  旧任务不得覆盖新索引。索引自动提交不会再次触发构建。
-- 工作流只用该仓库临时 `GITHUB_TOKEN`：测试只读、发布 job 的 contents 写权限。
-  不需要 PAT、SSH key 或访问光影私有主仓。
+### 聚合消息通知
 
-发布之前必须具有已获批准的根 `LICENSE`。`--local-probe` 仅供本地诊断，
-缺少该根许可的探针包会被发布脚本拒绝。
+在插件设置中选择「爱语飞飞」或「QQ Bot（腾讯官方）」。爱语飞飞填写 IYUU 令牌。QQ Bot 填写开放平台的 AppID、AppSecret，并选择私聊或群聊，填写该机器人的收件人 OpenID。腾讯平台需要允许机器人向这个对象主动发消息，配额及收件人设置也会影响投递。[腾讯官方 SDK 的主动发送说明](https://github.com/tencent-connect/qqbot-nodejs/blob/429a0f1b798f3b0fcef3679e207dbc0469a1df2d/USAGE.md#94-主动-push无-msgid)
 
-## 本地验证
+两个渠道可以独立筛选通知类型。打开「测试一下」并保存会发送一条测试消息，发送结果可在插件日志查看。
 
-需要 Go 1.26.0 或更新版本。
+## 更新源码清单
+
+推送源码到 `main` 后，GitHub Actions 仅验证插件能否在 Linux amd64 和 arm64 上编译。两种架构通过后，工作流从临时编译的 worker 读取 `--manifest`，校验许可和前端资源，再提交源码清单。源码清单记录完整提交号和各插件入口，临时 worker 随 CI 作业清理。需要让已安装实例看到新版时，请更新插件的版本字段。
+
+在 Linux amd64 或 arm64 上也可从干净的已提交检出生成清单：
 
 ```sh
-go test ./...
-GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build -trimpath -buildvcs=false -o category-editor ./cmd/category-editor
-./category-editor --manifest
+python3 scripts/build_source_catalog.py --source-sha "$(git rev-parse HEAD)"
 ```
 
 CI 固定 Go 1.26.2。完整包本地构建示例（输出目录必须尚不存在）：

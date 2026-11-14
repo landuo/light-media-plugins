@@ -1,0 +1,2142 @@
+{
+  "schema_version": 2,
+  "plugins": [
+    {
+      "schema_version": 2,
+      "plugin_id": "CategoryEditor",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 5,
+            "schema_version": 1,
+            "plugin_id": "CategoryEditor",
+            "name": "二级分类策略",
+            "description": "编辑下载和整理时自动二级分类的目录规则。",
+            "icon": "Bookstack_A.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "category-editor",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.category.get_default",
+              "plugin.category.apply",
+              "plugin.systemmessage.put",
+              "plugin.base.update_config"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/category-editor",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "TorrentTransfer",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 18,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "TorrentTransfer",
+            "name": "自动转移做种",
+            "description": "定期转移下载器中的做种任务到另一个下载器。",
+            "icon": "seed.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "torrent-transfer",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop",
+              "transfer",
+              "check_recheck",
+              "private_scheduler",
+              "transfer_continue"
+            ],
+            "capabilities": [
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.source.completed",
+              "downloader.source.tasks",
+              "downloader.source.add",
+              "downloader.source.find_by_tag",
+              "downloader.source.control",
+              "plugin.base.update_config",
+              "plugin.base.get_data_path",
+              "plugin.base.save_data",
+              "plugin.base.get_instance_metadata",
+              "plugin.background.submit",
+              "plugin.systemmessage.put",
+              "message.post",
+              "plugin.log.write"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/torrent-transfer",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "SiteStatistic",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 1,
+            "broadcast_handlers": [
+              {
+                "event": "site.refreshed",
+                "method": "send_msg"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SiteStatistic",
+            "name": "站点数据统计",
+            "description": "站点统计数据图表。",
+            "icon": "statistic.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "site-statistic",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_api",
+              "get_render_mode",
+              "stop_service",
+              "stop",
+              "close",
+              "send_msg",
+              "http",
+              "private_refresh",
+              "data_continue"
+            ],
+            "capabilities": [
+              "sites.read",
+              "sites.source.account.read",
+              "sites.source.indexer",
+              "sites.source.refresh",
+              "sites.source.refresh_all",
+              "plugin.base.update_config",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "message.post",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "refresh_by_domain",
+                "path": "/refresh_by_domain",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "domain",
+                    "kind": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ],
+                "headers": [
+                  "x-moviepilot-locale",
+                  "x-locale",
+                  "accept-language"
+                ]
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/site-statistic",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/sitestatistic/ORIGIN.md",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "PluginUnInstall",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 98,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "PluginUnInstall",
+            "name": "插件彻底卸载",
+            "description": "删除数据库中已安装插件记录、清理插件文件。",
+            "icon": "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "plugin-uninstall",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_api",
+              "get_page",
+              "get_render_mode",
+              "stop_service",
+              "close",
+              "stop",
+              "uninstall_continue"
+            ],
+            "capabilities": [
+              "plugin.manager.read",
+              "plugin.manager.control",
+              "settings.read",
+              "settings.write",
+              "plugin.base.update_config",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/plugin-uninstall",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "RemoveLink",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "frontend",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config"
+              ],
+              "shared": [
+                "vue"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "RemoveLink",
+            "name": "清理媒体文件",
+            "description": "媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能",
+            "icon": "Ombi_A.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "remove-link",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_api",
+              "get_page",
+              "close",
+              "stop_service",
+              "stop",
+              "cleanup_continue",
+              "private_watch",
+              "private_observer",
+              "private_timer"
+            ],
+            "capabilities": [
+              "storage.files.exists",
+              "storage.files.list",
+              "storage.files.delete",
+              "history.transfer.read",
+              "history.transfer.delete",
+              "event.send",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.log.write",
+              "settings.read",
+              "plugin.background.submit",
+              "plugin.cleanup.submit"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/remove-link",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/removelink/ORIGIN.md",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ],
+            "frontend_dir": "plugins/removelink/frontend"
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "AutoSignIn",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "sign_in"
+              },
+              {
+                "event": "site.deleted",
+                "method": "site_deleted"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "AutoSignIn",
+            "name": "站点自动签到",
+            "description": "自动模拟登录、签到站点。",
+            "icon": "signin.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "auto-sign-in",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "sign_in",
+              "site_deleted",
+              "http",
+              "stop_service",
+              "stop",
+              "close",
+              "private_once",
+              "signin_continue"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "settings.read",
+              "plugin.base.get_instance_metadata",
+              "sites.read",
+              "sites.source.indexer",
+              "sites.source.indexers",
+              "sites.source.custom_config",
+              "sites.source.credentials",
+              "sites.source.request",
+              "sites.source.result.write",
+              "network.get",
+              "sites.render",
+              "ocr.captcha.text",
+              "event.send",
+              "message.post",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "signin_by_domain",
+                "path": "/signin_by_domain",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "url",
+                    "kind": "string",
+                    "required": true
+                  },
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ],
+                "headers": [
+                  "x-moviepilot-locale",
+                  "x-locale",
+                  "accept-language"
+                ]
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/auto-sign-in",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "internal/encodingdetector/LICENSE.PSF",
+              "internal/encodingdetector/LICENSE.Unicode",
+              "internal/encodingdetector/LICENSE.chardet",
+              "plugins/autosignin/ORIGIN.md",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/autosignin/imagehash/GAV1D-COPYING",
+              "plugins/autosignin/imagehash/GAV1D-PATENTS",
+              "plugins/autosignin/imagehash/JPEG2000-LICENSE",
+              "plugins/autosignin/imagehash/LIBAVIF-LICENSE",
+              "plugins/autosignin/imagehash/LIBWEBP-AUTHORS",
+              "plugins/autosignin/imagehash/LIBWEBP-COPYING",
+              "plugins/autosignin/imagehash/LIBWEBP-PATENTS",
+              "plugins/autosignin/imagehash/LIBYUV-AUTHORS",
+              "plugins/autosignin/imagehash/LIBYUV-LICENSE",
+              "plugins/autosignin/imagehash/LIBYUV-PATENTS",
+              "plugins/autosignin/imagehash/MSP-ATTRIBUTION.txt",
+              "plugins/autosignin/imagehash/NOTICE.txt",
+              "plugins/autosignin/imagehash/PILLOW-LICENSE.txt",
+              "plugins/autosignin/imagehash/XIMAGE-LICENSE",
+              "plugins/autosignin/imagehash/XIMAGE-PATENTS",
+              "plugins/autosignin/imagehash/jpeg2000port/LICENSE",
+              "plugins/autosignin/imagehash/jpeg2000port/OPENJPEG-COPYRIGHT.txt",
+              "plugins/autosignin/imagehash/jpegport/LIBJPEG-LICENSE.md",
+              "plugins/autosignin/imagehash/jpegport/LICENSE",
+              "plugins/autosignin/imagehash/legacycodec/PICSETGO-LICENSE.txt",
+              "plugins/autosignin/imagehash/tiffport/LIBTIFF-LICENSE.md",
+              "plugins/autosignin/imagehash/tiffport/LICENSE",
+              "plugins/autosignin/licenses/APScheduler-MIT.txt",
+              "plugins/autosignin/licenses/CPython-PSF.txt",
+              "plugins/autosignin/licenses/Requests-Apache-2.0.txt",
+              "plugins/autosignin/licenses/Requests-NOTICE",
+              "plugins/autosignin/licenses/regexp2-ATTRIB.txt",
+              "plugins/autosignin/regexengine/ATTRIB",
+              "plugins/autosignin/regexengine/LICENSE",
+              "plugins/autosignin/regexengine/NOTICE.txt",
+              "third_party/Go-LICENSE",
+              "third_party/x-net-LICENSE",
+              "third_party/x-net-PATENTS",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "IYUUAutoSeed",
+      "current_version": "1.0.4",
+      "releases": [
+        {
+          "version": "1.0.4",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 17,
+            "broadcast_handlers": [
+              {
+                "event": "site.deleted",
+                "method": "site_deleted"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "IYUUAutoSeed",
+            "name": "IYUU自动辅种",
+            "description": "基于IYUU官方Api实现自动辅种。",
+            "icon": "IYUU.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.4",
+            "runtime": "go-executable",
+            "entry": "iyuu-auto-seed",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_page",
+              "get_api",
+              "get_command",
+              "auto_seed",
+              "site_deleted",
+              "private_scheduler",
+              "pass_continue",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.get_data_path",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "sites.read",
+              "sites.source.custom_config",
+              "sites.source.indexer",
+              "sites.source.credentials",
+              "sites.source.request",
+              "sites.source.check",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.source.completed",
+              "downloader.source.tasks",
+              "downloader.source.add",
+              "downloader.source.find_by_tag",
+              "downloader.source.control",
+              "plugin.background.submit",
+              "message.post",
+              "plugin.log.write",
+              "network.proxy.read"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/iyuu-auto-seed",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "internal/encodingdetector/LICENSE.PSF",
+              "internal/encodingdetector/LICENSE.Unicode",
+              "internal/encodingdetector/LICENSE.chardet",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/autosignin/licenses/APScheduler-MIT.txt",
+              "plugins/autosignin/licenses/CPython-PSF.txt",
+              "plugins/autosignin/licenses/Requests-Apache-2.0.txt",
+              "plugins/autosignin/licenses/Requests-NOTICE",
+              "plugins/autosignin/regexengine/ATTRIB",
+              "plugins/autosignin/regexengine/LICENSE",
+              "plugins/autosignin/regexengine/NOTICE.txt",
+              "plugins/autosignin/regexengine/ORIGIN.json",
+              "plugins/iyuuautoseed/ORIGIN.json",
+              "plugins/iyuuautoseed/compat/htmlextract/LICENSE.libxml2",
+              "third_party/Go-LICENSE",
+              "third_party/brotli-LICENSE",
+              "third_party/brotli-flate-LICENSE",
+              "third_party/x-net-LICENSE",
+              "third_party/x-net-PATENTS",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "SystemProcess",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 66,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SystemProcess",
+            "name": "系统进程",
+            "description": "查看系统进程，支持仪表板",
+            "icon": "Dsfinder_A.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "system-process",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_render_mode",
+              "get_command",
+              "get_api",
+              "get_service",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "plugin.base.get_instance_metadata"
+            ],
+            "has_page": true
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/system-process",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/systemprocess/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/go-sysconf-LICENSE",
+              "third_party/gopsutil-LICENSE",
+              "third_party/numcpus-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "MediaServerRefresh",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 14,
+            "broadcast_handlers": [
+              {
+                "event": "transfer.complete",
+                "method": "refresh"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "MediaServerRefresh",
+            "name": "媒体库服务器刷新",
+            "description": "入库后自动刷新Emby/Jellyfin/Plex服务器海报墙。",
+            "icon": "refresh2.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "media-server-refresh",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_command",
+              "get_api",
+              "get_service",
+              "refresh",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "media.servers.list",
+              "media.servers.refresh",
+              "plugin.log.write"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/media-server-refresh",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/mediaserverrefresh/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "RemoteIdentifiers",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 10,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "RemoteIdentifiers",
+            "name": "共享识别词",
+            "description": "从Github、Etherpad远程文件中获取共享识别词并应用",
+            "icon": "words.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "remote-identifiers",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_page",
+              "get_command",
+              "get_api",
+              "refresh",
+              "private_once",
+              "refresh_continue",
+              "stop_service",
+              "stop",
+              "close"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "network.get",
+              "settings.read",
+              "settings.write",
+              "plugin.log.write"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/remote-identifiers",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/remoteidentifiers/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "SubscribeGroup",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 26,
+            "broadcast_handlers": [
+              {
+                "event": "subscribe.added",
+                "method": "subscribe_notice"
+              },
+              {
+                "event": "download.added",
+                "method": "download_notice"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SubscribeGroup",
+            "name": "订阅规则自动填充",
+            "description": "电视剧下载后自动添加官组等信息到订阅；添加订阅后根据二级分类名称自定义订阅规则。",
+            "icon": "teamwork.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "subscribe-group",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_command",
+              "get_api",
+              "get_service",
+              "subscribe_notice",
+              "download_notice",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.del_data",
+              "plugin.base.update_config",
+              "sites.read",
+              "media.recognize",
+              "subscriptions.read",
+              "subscriptions.update",
+              "history.download.read",
+              "settings.read",
+              "plugin.log.write"
+            ],
+            "has_page": true
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/subscribe-group",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/subscribegroup/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "AutoBackup",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 17,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "AutoBackup",
+            "name": "自动备份",
+            "description": "自动备份数据和配置文件。",
+            "icon": "Time_machine_B.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "auto-backup",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_service",
+              "get_api",
+              "get_page",
+              "get_command",
+              "backup",
+              "private_once",
+              "http",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data_path",
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "backup.local",
+              "plugin.log.write",
+              "message.post"
+            ],
+            "apis": [
+              {
+                "key": "api_backup",
+                "path": "/backup",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/auto-backup",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/autobackup/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "BrushFlowLanduo",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 21,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.reload",
+                "method": "reload_event"
+              }
+            ],
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "dist/assets",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config",
+                "Page",
+                "Dashboard",
+                "AppPage"
+              ],
+              "shared": [
+                "vue",
+                "vuetify",
+                "vuetify/styles"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "BrushFlowLanduo",
+            "name": "站点刷流-landuo",
+            "description": "自动托管多个站点刷流任务，并独立调度、统计与诊断。",
+            "icon": "brush-flow.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "brush-flow-landuo",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "get_dashboard",
+              "get_sidebar_nav",
+              "http",
+              "brush",
+              "check",
+              "promotion_expiry",
+              "cleanup_tags",
+              "cleanup_task_tag",
+              "reload_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "plugin.base.update_config",
+              "plugin.base.get_instance_metadata",
+              "plugin.background.submit",
+              "plugin.services.refresh",
+              "message.post",
+              "plugin.systemmessage.put",
+              "event.send",
+              "plugin.log.write",
+              "brush.inventory.read",
+              "sites.read",
+              "sites.request",
+              "sites.source.request",
+              "subscriptions.read",
+              "media.recognize",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "downloader.tasks.list",
+              "downloader.tasks.downloading",
+              "downloader.source.completed",
+              "downloader.source.control",
+              "downloader.tags.read",
+              "downloader.tags.delete",
+              "downloader.tasks.delete_files",
+              "brush.source.candidates",
+              "brush.source.transfer",
+              "brush.source.add"
+            ],
+            "has_page": true,
+            "dashboards": [
+              "default"
+            ],
+            "apis": [
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "settings",
+                "path": "/settings",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "create",
+                "path": "/tasks",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "detail",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear",
+                "query": [
+                  {
+                    "name": "state",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page_size",
+                    "kind": "string"
+                  }
+                ]
+              },
+              {
+                "key": "update",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "PUT"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "delete",
+                "path": "/tasks/{task_id}",
+                "methods": [
+                  "DELETE"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "state",
+                "path": "/tasks/{task_id}/state",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "run",
+                "path": "/tasks/{task_id}/run",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              },
+              {
+                "key": "check",
+                "path": "/tasks/{task_id}/check",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              },
+              {
+                "key": "clear",
+                "path": "/tasks/{task_id}/clear",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json"
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/brush-flow-landuo",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/brushflowlanduo/FRONTEND_ORIGIN.json",
+              "plugins/brushflowlanduo/ORIGIN.json",
+              "plugins/brushflowlanduo/compat/pythonre/LICENSE.PSF",
+              "plugins/brushflowlanduo/compat/pythonre/LICENSE.Unicode",
+              "plugins/brushflowlanduo/compat/pythonre/NOTICE.CPython",
+              "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Core-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Runtime-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Module-Federation-SDK-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Module-Federation-Vite-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/NOTICE.md",
+              "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ],
+            "frontend_dir": "plugins/brushflowlanduo/frontend"
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "MergeSiteSwitch",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 66,
+            "broadcast_handlers": [
+              {
+                "event": "site.updated",
+                "method": "listen_site_updated_event"
+              },
+              {
+                "event": "site.deleted",
+                "method": "listen_site_deleted_event"
+              }
+            ],
+            "schema_version": 1,
+            "plugin_id": "MergeSiteSwitch",
+            "name": "聚合站点开关",
+            "description": "统一管理所有与站点相关的开关。",
+            "icon": "world.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "merge-site-switch",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_page",
+              "get_api",
+              "get_command",
+              "get_service",
+              "listen_site_updated_event",
+              "listen_site_deleted_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.config_save_origin",
+              "sites.read",
+              "plugin.log.write",
+              "sites.switch"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/merge-site-switch",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/mergesiteswitch/ORIGIN.json",
+              "third_party/Go-LICENSE"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "MergeMessageNotify",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "plugin_order": 66,
+            "broadcast_handlers": [
+              {
+                "event": "notice.message",
+                "method": "listen_notice_message"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "MergeMessageNotify",
+            "name": "聚合消息通知",
+            "description": "聚合发送爱语飞飞和腾讯官方 QQ Bot 通知。",
+            "icon": "https://raw.githubusercontent.com/hotlcc/MoviePilot-Plugins-Third/main/icons/MergeMessageNotify_121.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "merge-message-notify",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "listen_notice_message",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "plugin.base.config_save_origin",
+              "network.proxy.read",
+              "plugin.log.write"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/merge-message-notify",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "THIRD_PARTY_NOTICES.md",
+              "internal/requestsproxy/REQUESTS-NOTICE",
+              "internal/requestsproxy/licenses/CPython-PSF.txt",
+              "internal/requestsproxy/licenses/PySocks-BSD.txt",
+              "internal/requestsproxy/licenses/Requests-Apache-2.0.txt",
+              "internal/requestsproxy/licenses/Requests-NOTICE",
+              "plugins/mergemessagenotify/LICENSE-GPL-3.0.txt",
+              "plugins/mergemessagenotify/NOTICE",
+              "plugins/mergemessagenotify/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-net-LICENSE",
+              "third_party/x-net-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "ScrapeFileClean",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_private_scheduler": true,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "ScrapeFileClean",
+            "name": "源文件联动清理",
+            "description": "为手动清理下载目录设计：手动删除源文件后，自动联动清理媒体库中对应的硬链接文件、刮削文件（元数据、图片、字幕）与转移记录，支持延迟删除防止误删",
+            "icon": "clean.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "scrape-file-clean",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_api",
+              "get_page",
+              "get_command",
+              "close",
+              "stop_service",
+              "stop",
+              "private_watch"
+            ],
+            "capabilities": [
+              "storage.files.exists",
+              "storage.files.scrape_clean_remove",
+              "history.transfer.read",
+              "history.transfer.delete",
+              "event.send",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/scrape-file-clean",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/autosignin/licenses/CPython-PSF.txt",
+              "plugins/scrapefileclean/ORIGIN.json",
+              "plugins/scrapefileclean/UNICODE-LICENSE.txt",
+              "third_party/Go-LICENSE"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "LarkMessager",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_private_scheduler": true,
+            "plugin_order": 50,
+            "broadcast_handlers": [
+              {
+                "event": "message.action",
+                "method": "message_action"
+              }
+            ],
+            "schema_version": 1,
+            "plugin_id": "LarkMessager",
+            "name": "Lark 应用消息通知",
+            "description": "基于国际版飞书 Lark 开放平台应用的通知与消息交互插件，支持文本、卡片消息发送及消息回调交互。",
+            "icon": "https://raw.githubusercontent.com/jxxghp/MoviePilot-Plugins/main/icons/FeiShu_A.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "lark-messager",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_page",
+              "get_render_mode",
+              "get_api",
+              "get_module",
+              "http",
+              "message_action",
+              "resolve_recipients",
+              "stop_service",
+              "close",
+              "stop",
+              "message_parser",
+              "post_message",
+              "post_medias_message",
+              "post_torrents_message",
+              "edit_message",
+              "mark_message_processing_started",
+              "mark_message_processing_finished"
+            ],
+            "capabilities": [
+              "network.lark.endpoint",
+              "plugin.base.get_instance_metadata",
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.del_data",
+              "plugin.background.submit",
+              "message.receive",
+              "network.get",
+              "storage.files.local_read_grant",
+              "plugin.log.write"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "webhook",
+                "path": "/webhook",
+                "methods": [
+                  "POST",
+                  "GET"
+                ],
+                "auth": "anonymous",
+                "query": [
+                  {
+                    "name": "token",
+                    "kind": "string"
+                  }
+                ],
+                "headers": [
+                  "x-lark-signature",
+                  "x-lark-request-timestamp",
+                  "x-lark-request-nonce"
+                ],
+                "body": "raw"
+              },
+              {
+                "key": "test",
+                "path": "/test",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "fetch_chats",
+                "path": "/fetch_chats",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/lark-messager",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/autosignin/UNICODE-LICENSE.txt",
+              "plugins/larkmessager/LICENSE-JITER.txt",
+              "plugins/larkmessager/LICENSE-PYDANTIC.txt",
+              "plugins/larkmessager/LICENSE-PYTHON.txt",
+              "plugins/larkmessager/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "CleanInvalidSeed",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 1,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "handle_commands"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CleanInvalidSeed",
+            "name": "清理无效做种",
+            "description": "清理已经被站点删除的种子及源文件，支持qBittorrent和Transmission",
+            "icon": "clean_a.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "clean-invalid-seed",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "handle_commands",
+              "clean_invalid_seed",
+              "private_once",
+              "stop_service",
+              "close",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "downloader.configurations.read",
+              "downloader.source.connection",
+              "message.post",
+              "plugin.log.write",
+              "clean_seed.tasks",
+              "clean_seed.trackers",
+              "clean_seed.control",
+              "clean_seed.files",
+              "clean_seed.remove"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/clean-invalid-seed",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/cleaninvalidseed/ORIGIN.json",
+              "plugins/cleaninvalidseed/PYTHON-LICENSE.txt",
+              "plugins/cleaninvalidseed/UNICODE-LICENSE.txt",
+              "third_party/Go-LICENSE",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "SeedRescue",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 18,
+            "frontend": {
+              "contract": "light-media.vue-federation/v1",
+              "root": "dist/assets",
+              "entry": "remoteEntry.js",
+              "exposes": [
+                "Config",
+                "Page",
+                "Dashboard",
+                "AppPage"
+              ],
+              "shared": [
+                "vue"
+              ],
+              "api_contract": "light-media.plugin-api/v1"
+            },
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "SeedRescue",
+            "name": "稀缺保种",
+            "description": "读取目标站RSS，可选择跨站同源候选下载后辅种，也可直接下载保种站点原种。",
+            "icon": "IYUU.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "seed-rescue",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_service",
+              "get_command",
+              "get_api",
+              "get_render_mode",
+              "get_form",
+              "get_page",
+              "get_sidebar_nav",
+              "http",
+              "scan",
+              "scan_background",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_data",
+              "plugin.base.save_data",
+              "plugin.base.update_config",
+              "plugin.background.submit",
+              "plugin.log.write",
+              "message.post",
+              "seed_rescue.iyuu",
+              "seed_rescue.service",
+              "seed_rescue.site",
+              "seed_rescue.indexer",
+              "seed_rescue.options",
+              "seed_rescue.rss",
+              "seed_rescue.seed_info",
+              "seed_rescue.torrent_url",
+              "seed_rescue.search",
+              "seed_rescue.detail",
+              "seed_rescue.download_metadata",
+              "seed_rescue.query_torrents",
+              "seed_rescue.downloading_torrents",
+              "seed_rescue.add_torrent"
+            ],
+            "has_page": true,
+            "apis": [
+              {
+                "key": "status",
+                "path": "/status",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear",
+                "query": [
+                  {
+                    "name": "view",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "page_size",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "state",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "promotion",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "source_promotion",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "source_site_id",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "min_seeders",
+                    "kind": "string"
+                  },
+                  {
+                    "name": "max_seeders",
+                    "kind": "string"
+                  }
+                ]
+              },
+              {
+                "key": "scan",
+                "path": "/scan",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "job",
+                "path": "/jobs/{target_hash}",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "download",
+                "path": "/jobs/{target_hash}/download",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear",
+                "body": "json",
+                "body_required": true
+              },
+              {
+                "key": "retry",
+                "path": "/jobs/{target_hash}/retry",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              },
+              {
+                "key": "ignore",
+                "path": "/jobs/{target_hash}/ignore",
+                "methods": [
+                  "POST"
+                ],
+                "auth": "bear"
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/seed-rescue",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+              "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+              "plugins/seedrescue/FRONTEND_NOTICE.md",
+              "plugins/seedrescue/FRONTEND_ORIGIN.json",
+              "plugins/seedrescue/ORIGIN.json",
+              "third_party/Go-LICENSE",
+              "third_party/x-net-LICENSE",
+              "third_party/x-net-PATENTS",
+              "third_party/x-text-LICENSE",
+              "third_party/x-text-PATENTS"
+            ],
+            "frontend_dir": "plugins/seedrescue/frontend"
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "CloudflareSpeedTest",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "managed_private_scheduler": true,
+            "plugin_order": 12,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.action",
+                "method": "handle_commands"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CloudflareSpeedTest",
+            "name": "Cloudflare IP优选",
+            "description": "🌩 测试 Cloudflare CDN 延迟和速度，自动优选IP。",
+            "icon": "cloudflare.jpg",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "cloudflare-speed-test",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "handle_commands",
+              "cloudflare_speedtest",
+              "private_once",
+              "http",
+              "stop_service",
+              "close",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.update_config",
+              "plugin.log.write",
+              "message.post",
+              "plugin.systemmessage.put",
+              "plugin.background.submit",
+              "cloudflare_speed.custom_hosts",
+              "cloudflare_speed.save_hosts",
+              "cloudflare_speed.reload_hosts",
+              "cloudflare_speed.platform",
+              "cloudflare_speed.exists",
+              "cloudflare_speed.ensure",
+              "cloudflare_speed.reset",
+              "cloudflare_speed.latest",
+              "cloudflare_speed.download",
+              "cloudflare_speed.extract",
+              "cloudflare_speed.remove",
+              "cloudflare_speed.run",
+              "cloudflare_speed.read_result"
+            ],
+            "apis": [
+              {
+                "key": "cloudflare_speedtest",
+                "path": "/cloudflare_speedtest",
+                "methods": [
+                  "GET"
+                ],
+                "auth": "apikey",
+                "query": [
+                  {
+                    "name": "apikey",
+                    "kind": "api_key",
+                    "required": true
+                  }
+                ]
+              }
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/cloudflare-speed-test",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/cloudflarespeedtest/ORIGIN.json",
+              "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+              "third_party/Go-LICENSE"
+            ]
+          }
+        }
+      ]
+    },
+    {
+      "schema_version": 2,
+      "plugin_id": "CustomHosts",
+      "current_version": "1.0.0",
+      "releases": [
+        {
+          "version": "1.0.0",
+          "manifest": {
+            "managed_public_services": true,
+            "plugin_order": 10,
+            "broadcast_handlers": [
+              {
+                "event": "plugin.reload",
+                "method": "reload_event"
+              }
+            ],
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "CustomHosts",
+            "name": "自定义Hosts",
+            "description": "修改系统hosts文件，加速网络访问。",
+            "icon": "hosts.png",
+            "author": "landuo",
+            "author_url": "https://github.com/landuo",
+            "version": "1.0.0",
+            "runtime": "go-executable",
+            "entry": "custom-hosts",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_render_mode",
+              "get_command",
+              "get_service",
+              "get_api",
+              "get_page",
+              "reload_event",
+              "close",
+              "stop_service",
+              "stop"
+            ],
+            "capabilities": [
+              "plugin.base.get_instance_metadata",
+              "plugin.base.get_config",
+              "plugin.base.update_config",
+              "custom_hosts.apply"
+            ]
+          },
+          "source": {
+            "commit": "a1a547e71df2745fbd68068dd1d6f2d0311aa10a",
+            "package": "./cmd/custom-hosts",
+            "host_contract": "light-media.sdk-resources/v1",
+            "license_files": [
+              "LICENSE",
+              "LICENSE.upstream",
+              "THIRD_PARTY_NOTICES.md",
+              "plugins/customhosts/ORIGIN.json",
+              "third_party/Go-LICENSE"
+            ]
+          }
+        }
+      ]
+    }
+  ]
+}
