@@ -66,7 +66,10 @@ func (p *Standard) Handle(ctx context.Context, method string, raw json.RawMessag
 				trigger = Row{"kind": "cron", "cron": service.Cron, "local_timezone": true}
 			}
 			services = append(services, Row{"id": service.ID, "name": service.Name, "handler": service.Operation,
-				"trigger": trigger, "input": Row{"task_id": service.TaskID}})
+				"trigger": trigger, "input": Row{"task_id": service.TaskID},
+				// Brush runs can outlive their interval. Admit the tick and let the
+				// task lock skip it quietly instead of logging a host clock warning.
+				"kwargs": Row{"max_instances": 3, "coalesce": true, "misfire_grace_time": 60}})
 		}
 		return json.Marshal(services)
 	case "get_command", "get_page":

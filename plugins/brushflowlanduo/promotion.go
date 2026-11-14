@@ -567,6 +567,13 @@ func (p *Core) CheckPromotion(ctx context.Context, id string) error {
 	if !ok || !p.Enabled() || !t.B("enabled") || !t.B("del_no_free") {
 		return nil
 	}
+	// The promotion clock fires every minute. A failed check leaves promotion
+	// records unverified, so without throttling every minute would trigger a
+	// full check again. MP probes promotion at most every 15 minutes; keep that
+	// cadence for promotion-triggered checks.
+	if last := number(p.Runtime(id)["last_check_at"]); last > 0 && float64(p.h.Now().Unix())-last < promotionProbe {
+		return nil
+	}
 	next, e := p.NextPromotion(ctx, t)
 	if e != nil {
 		return e

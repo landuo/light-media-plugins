@@ -304,13 +304,19 @@ func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *Rec
 			r["result"] = "precondition_blocked"
 			break
 		}
-		passed, why, e = p.sizeCondition(ctx, t, size, global)
+		adding := number(v["size"])
+		if adding < 0 {
+			adding = 0
+		}
+		passed, why, e = CanAddSize(ctx, &SizeTask{Downloader: t.S("downloader"), DiskSize: floatptr(t.Row["disksize"])}, size, adding, floatptr(p.Config().Settings["global_disksize"]), global, p.sizeTasks(), p)
 		if e != nil {
 			return e
 		}
 		if !passed {
 			reason(r, why, 1)
-			continue
+			r["result"] = "waiting_for_space"
+			p.h.Log(ctx, "info", fmt.Sprintf("刷流任务 [%s] 已达到保种上限，暂停添加新种子，等待保种删除释放空间", t.Name()))
+			break
 		}
 		passed, why, e = p.candidateCondition(ctx, t, v, all)
 		if e != nil {
