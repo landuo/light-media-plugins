@@ -510,7 +510,13 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 			input := byHash[currentHash]
 			success, e := c.downloadTorrent(ctx, seed, dest, input.SavePath, input.Category)
 			if e != nil {
-				return e
+				var preparation *seedPreparationError
+				if !errors.As(e, &preparation) || c.guard(ctx) != nil {
+					return e
+				}
+				c.counters.Fail++
+				logSeedPreparationFailure(ctx, service.Name, preparation.stage)
+				continue
 			}
 			if success {
 				successes = append(successes, hash)
@@ -532,7 +538,23 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 	return nil
 }
 
-func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceService *Service, save, category any) (bool, error) {
+// Preparation errors occur before submitting an add to a downloader. A failed
+// candidate can be retried later without assuming whether a write took effect.
+type seedPreparationError struct {
+	stage string
+	cause error
+}
+
+func (e *seedPreparationError) Error() string { return e.stage }
+func (e *seedPreparationError) Unwrap() error { return e.cause }
+
+func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceService *Service, save, category any) (_ bool, err error) {
+	stage := "查询 IYUU 站点信息"
+	defer func() {
+		if err != nil && stage != "" {
+			err = &seedPreparationError{stage: stage, cause: err}
+		}
+	}()
 	c.counters.Total++
 	hash := seed["info_hash"].(string)
 	siteURL, downloadPage, e := c.api.TorrentURL(ctx, seed["sid"])
@@ -547,6 +569,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 	if !truth(siteURL) || !truth(downloadPage) {
 		return failCached()
 	}
+	stage = "解析辅种站点地址"
 	sourceURL, ok := siteURL.(string)
 	if !ok {
 		return false, sourceFault("TypeError", "get_url_domain")
@@ -555,6 +578,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 	if e != nil {
 		return false, e
 	}
+	stage = "读取站点配置"
 	site, e := c.host.Indexer(ctx, domain)
 	if e != nil {
 		return false, e
@@ -569,10 +593,12 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 		return false, nil
 	}
 	c.counters.RealTotal++
+	stage = "选择目标下载器"
 	if sourceService == nil {
 		return false, sourceFault("AttributeError", "auto_service_info.instance")
 	}
 	service := *sourceService
+	stage = "检查下载器是否已有种子"
 	existing, e := c.host.Torrents(ctx, service, []string{hash})
 	if e != nil {
 		return false, e
@@ -582,6 +608,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 		c.counters.Exist++
 		return false, nil
 	}
+	stage = "检查站点流控"
 	limited, e := c.host.CheckSite(ctx, domain)
 	if e != nil {
 		return false, e
@@ -590,6 +617,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 		c.counters.Fail++
 		return false, nil
 	}
+	stage = "解析种子下载地址"
 	template, ok := downloadPage.(string)
 	if !ok {
 		return false, sourceFault("AttributeError", "download_page.replace")
@@ -608,6 +636,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 			url += "?https=1"
 		}
 	}
+	stage = "获取种子文件"
 	content, e := c.host.Torrent(ctx, *site, url)
 	if e != nil {
 		return false, e
@@ -621,6 +650,8 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 		sourceLog(ctx, 1199, "下载种子文件失败："+url)
 		return false, c.cacheAdd(key, hash)
 	}
+	// Once a downloader can receive an add, preserve the fatal error path.
+	stage = ""
 	sourceLog(ctx, 1202, "添加下载任务："+url+" ...")
 	id, e := c.download(ctx, service, content, save, category, site.Fields["name"])
 	if e != nil {

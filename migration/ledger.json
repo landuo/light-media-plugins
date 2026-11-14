@@ -18022,7 +18022,14 @@
       "id": "defer.merge-message-notify",
       "status": "approved",
       "authorization": "The user updated the active objective with 聚合消息先不实现.",
-      "impact": "Defer only MergeMessageNotify for the current migration. Preserve its existing code, pinned inventory and partial evidence. Other installed instances remain in scope."
+      "impact": "Historical deferral of MergeMessageNotify. Its broad channel implementation and partial evidence are preserved.",
+      "superseded_by": "scope.merge-message-notify-two-channel"
+    },
+    {
+      "id": "scope.merge-message-notify-two-channel",
+      "status": "approved",
+      "authorization": "User resumed 聚合消息通知 with only 爱语飞飞 and one QQ Bot, then selected 腾讯官方 QQ 机器人（AppID / AppSecret）.",
+      "impact": "Reuse the original notice path, strategy, filters and one-shot test for IYUU. Add the official QQ Bot plain-text delivery channel. Other MergeMessageNotify channels are excluded from the current product slice."
     },
     {
       "id": "exclude.workflow-ai",
@@ -69606,10 +69613,9 @@
   ],
   "scope": {
     "instances": 23,
-    "current_migration_instances": 22,
-    "deferred_instances": [
-      "MergeMessageNotify"
-    ],
+    "current_migration_instances": 23,
+    "deferred_instances": [],
+    "channel_limited_instances": {"MergeMessageNotify": ["custom.iyuu", "custom.qqbot"]},
     "business_families": 22,
     "source_files": 190,
     "language": "Go",
@@ -69663,12 +69669,48 @@
     "current": {
       "functional_verified_instances": 22,
       "total_installed_instances": 23,
-      "current_migration_instances": 22,
-      "deferred_instances": [
-        "MergeMessageNotify"
-      ],
+      "current_migration_instances": 23,
+      "deferred_instances": [],
       "business_families_verified": 21,
-      "functional_verified_count_scope": "All 22 current-scope instances accepted locally. Installed inventory remains 23 with MergeMessageNotify deferred.",
+      "functional_verified_count_scope": "22 previously accepted instances. MergeMessageNotify two-channel candidate has isolated host and protocol evidence; live provider delivery remains unverified.",
+      "merge_message_notify_two_channel": {
+        "status": "local_commit_verified_with_isolated_host_and_protocol_replay",
+        "branch": "codex/merge-message-notify-two-channels-20261109",
+        "worktree": "work/merge-message-two-channels-20261109",
+        "commit": "b304c34cce5371a7b7a892279feb18504faa9024",
+        "base_and_actual_remote_main": "eb934c13a696c65b4c030acf6d9dea8d6fb970a5",
+        "source_snapshot_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+        "source_locations": ["__init__.py notice dispatch and form", "channel/custom/__init__.py save-only test", "channel/custom/iyuu.py:93-123"],
+        "target_locations": ["cmd/merge-message-notify/main.go", "plugins/mergemessagenotify/plugin.go", "plugins/mergemessagenotify/routing.go", "plugins/mergemessagenotify/channels.go", "plugins/mergemessagenotify/qqbot.go"],
+        "protocol_replay": "Actual worker with isolated TLS provider replies. IYUU source success predicate, filters, routing fallback, one-shot reset and QQ auth, message, rejection checked. See work/merge-message-two-channels-check-20261109/nas-smoke.log, whose first host driver run separately failed on a non-executable test volume.",
+        "nas_isolated_host": "Installation, native form, masked credentials and configuration save passed on the actual Light Media executable with no external network. See work/merge-message-two-channels-check-20261109/nas-host-smoke.log (sha256 4f4c5a7a9f6f17a922495d1add488d1e3dcd424556be07dd7db957464781830a).",
+        "package": "CGO-free Linux amd64 and arm64 builds and source catalog entry verified locally.",
+        "unverified": "Production installation, live IYUU/QQ provider delivery and import of real settings. QQ Bot proactive delivery depends on account permission, quota and target OpenID. No production message was sent."
+      },
+      "light_media_release_metadata": {
+        "plugin_branch": "codex/merge-message-notify-two-channels-20261109",
+        "plugin_commit": "b40f00db19b3c42bde5680d2d64b9c4183f1e8b7",
+        "host_custom_hosts_commit": "cc8668e425a41470a846730eb83beb2972475c0f",
+        "author": "landuo",
+        "first_version": "1.0.0",
+        "verified": "22 actual worker manifests differ from the prior manifests only in author, author URL and release version. Linux amd64 and arm64 builds, 22 v2 source entries and the host CustomHosts admission/write test passed.",
+        "evidence": "work/plugin-publisher-version-check-20261109/manifests.json and source-catalog.json",
+        "transition": "Historical v1 artifacts retain their original manifest identity. The v2 workflow can publish the new source releases after push. Existing numerically higher versions need explicit same-ID replacement; publish/deploy the CustomHosts host compatibility before installing that 1.0.0 package.",
+        "published_source_commit": "77f010fe2cd36a02385e1e85a2025f2c45c69f05",
+        "actual_remote_main_and_catalog_commit": "49f3308369ff9d774164d4b3ca45e5a95e3a3d17",
+        "github_validation": "Run 42551180867 rejected three worker test packages using old manifest versions; 77f010f fixed test bindings. Run 42551680156 passed tests and Linux arm64 build, and published the catalog. Read back all 22 v2 entries from remote main, including MergeMessageNotify.",
+        "delivery": "Historical publication of 22 plugins in 49f3308. The host compatibility commit is now on host main, recorded in mpserverstatus_retirement."
+      },
+      "mpserverstatus_retirement": {
+        "scope": "User removed MoviePilot server status from the plugin repository. This is a distribution change; historical source and test evidence retain their scope.",
+        "plugin_source_commit": "a6e9b247756a7fd90be690ff6bd729899434cbff",
+        "host_main_verified": "91d64279e1e75b0196267d8b4c8203bfbca9cc97",
+        "host_scope": "CustomHosts 1.0.0 admission and plugin frontend package verification reuse. Focused host tests and Linux amd64/arm64 build passed.",
+        "observed_plugin_main": "Remote a6e9b24 has no MPServerStatus command/package or v1/v2 entry. Shared encoding and proxy helpers moved into internal packages with existing licenses.",
+        "github_catalog_run": "42552980596 passed tests, ARM64 build and catalog publication",
+        "actual_plugin_main_and_catalog_commit": "1562a967e3f0d4aa38c0afa675eb784ff6f8965f",
+        "catalog_check": "Remote v1 contains 20 historical entries. Remote v2 contains 21 source entries pinned to a6e9b24, including MergeMessageNotify and excluding MPServerStatus."
+      },
       "private_original_config_data_import": "not_run; no original private-state import or one-shot replay authorized in this continuation",
       "target_worktree": "/Users/accidia/projects/light-media-plugins",
       "target_branch": "codex/installed-plugins-20261105",
@@ -69691,7 +69733,7 @@
       "latest_detail": "migration/evidence/custom-hosts-acceptance-20261108.json",
       "local_codec_base": "5017d07; the ledger commit adds the separate TIFF6 tag 515 path and its two fixed-source cases",
       "ledger_integrity_check": "Non-final historical checker invocation returned389 target hash mismatches against superseded exact bindings. This does not erase any historical run or certify current whole migration. Do not rewrite old evidence to force a green check.",
-      "next_complete_slice": "None within the current migration scope. MergeMessageNotify remains deferred by the user.",
+      "next_complete_slice": "MergeMessageNotify two-channel candidate is ready for authorized publication and live configuration verification.",
       "Merge_current_product_commit": "102d8af1145b3433f78121a40c8019017e530621",
       "latest_IYUU_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
       "latest_verified_IYUU_revision": "96185e27b56756a53e7b79043b086c860e851000",
@@ -69725,7 +69767,7 @@
       "new_SDK101_set": "work/parallel-sdk-sync-20261106/bins eight rebuilt workers, linux-consumer-builds exact hashes; new16609ab host; uploaded new names preserving old inputs",
       "new_SDK101_native": "saved159public files code824180f; nativefour17.868s74obs/PUI22.556s291obs/Rlk35.136s177obs all0 with8newSDK101workers+actual16609ab, old98drivers/helperdeclared; independent71ed/b727closed. ExacttwoTask-owned oldparallel/current101runtime dirs removed afterarchival:316files80110352bytes,activepid0; retainedsinglebinsetsunchanged, no originalservice/media touched; work/sdk101-publication-20261106/runtime-cleanup.*"
     },
-    "next_complete_slice": "None within the current migration scope. MergeMessageNotify remains deferred by the user.",
+    "next_complete_slice": "See resume.current.merge_message_notify_two_channel for the scoped candidate and remaining delivery checks.",
     "active_ownership": {
       "Root": "Soleledger/registry; implement actualimageDecodegap then narrowtests andcurrentZIP. H30bf/P897 localcodecheckpoints, no push/production/import. No extra seals/approvals.",
       "/root/notice_api": "WholeASI review completed; now only source333 synthetic JP2/TIFF decode+hash positive fixtures under P/work/autosignin-image-gap-20261107/source; noGocode/ledger writes.",

@@ -1,11 +1,13 @@
 # Installed plugin migration, 2026-11-05
 
-## Current resume (22 of 22 in scope accepted locally)
+## Current resume
 
 Read `migration/ledger.json` → `resume.current`. It is the only status
-authority. The user deferred MergeMessageNotify. The installed inventory
-still has 23 instances, of which 22 are in the current migration. The saved
-Merge evidence and four local work-in-progress files are retained separately.
+authority. The earlier 22 instances were accepted locally. The user resumed
+MergeMessageNotify for the installed IYUU channel and a new official Tencent
+QQ Bot channel. The scoped candidate and its exact evidence are recorded in
+`resume.current.merge_message_notify_two_channel`. The earlier broad channel
+port and its evidence are historical.
 The user limits media libraries to fnOS Film and local directories.
 Other media-server providers and cloud-drive storage are outside the
 current acceptance scope. Ordinary network inputs for plugins remain in scope.

@@ -3,6 +3,7 @@ package iyuuautoseed
 import (
 	"context"
 	"encoding/json"
+	"errors"
 	"io"
 	"os"
 	"reflect"
@@ -19,6 +20,7 @@ type historyReplayNotice struct {
 type historyReplayHost struct {
 	*coreReplayHost
 	originals, candidates []string
+	firstIndexerError     error
 	legacy                any
 	adds, reads           []string
 	histories             map[string]any
@@ -27,6 +29,10 @@ type historyReplayHost struct {
 }
 
 func (h *historyReplayHost) Indexer(context.Context, string) (*Site, error) {
+	if err := h.firstIndexerError; err != nil {
+		h.firstIndexerError = nil
+		return nil, err
+	}
 	return &Site{Fields: map[string]any{"id": 1, "url": "https://owned.example/", "name": "owned"}}, nil
 }
 
@@ -133,6 +139,45 @@ func TestSourceIYUUHistoryShapeKeepsSuccessfulPass222(t *testing.T) {
 		diagnostic != oracle.Diagnostic || finalLog != oracle.FinalLog {
 		t.Fatalf("source history behavior diverged: adds %v, reads %v, writes %v, cache %v, notices %v, legacy %v, diagnostic %q, final log %q",
 			host.adds, host.reads, host.histories, host.successCaches, host.notices, host.legacy, diagnostic, finalLog)
+	}
+}
+
+func TestIYUUPreparationFailureDoesNotBlockTransmission(t *testing.T) {
+	qb := Service{Name: "qb", Kind: "qbittorrent"}
+	tr := Service{Name: "tr", Kind: "transmission"}
+	size := json.Number("100")
+	source, candidate := replayHash(1), replayHash(2)
+	host := &historyReplayHost{
+		coreReplayHost: &coreReplayHost{
+			services: []Service{qb, tr},
+			completed: map[string][]NativeTorrent{
+				qb.Name: {{Fields: map[string]any{"hash": source, "save_path": "/owned", "total_size": size, "completed": size, "availability": size}}},
+				tr.Name: {{Fields: map[string]any{"hashString": source, "download_dir": "/owned", "total_size": size}}},
+			},
+		},
+		originals: []string{source}, candidates: []string{candidate}, histories: map[string]any{},
+		firstIndexerError: errors.New("internal failure with private test data"),
+	}
+	cfg := NewConfig()
+	cfg.values["downloaders"] = []any{qb.Name, tr.Name}
+	core, err := NewCore(cfg, host, host)
+	if err != nil {
+		t.Fatal(err)
+	}
+	var warning string
+	ctx := WithSourceLogSink(t.Context(), func(_ context.Context, log SourceLog) {
+		if strings.Contains(log.Message, "读取站点配置") {
+			warning = log.Message
+		}
+	})
+	if err = core.AutoSeed(ctx); err != nil {
+		t.Fatal(err)
+	}
+	if !reflect.DeepEqual(host.adds, []string{candidate}) || core.counters.Fail != 1 || core.counters.Success != 1 {
+		t.Fatalf("expected qB preparation failure and TR add, got adds %v, counters %+v", host.adds, core.counters)
+	}
+	if !strings.Contains(warning, "下载器 qb") || strings.Contains(warning, "private test data") {
+		t.Fatalf("expected a safe stage diagnostic, got %q", warning)
 	}
 }
 
