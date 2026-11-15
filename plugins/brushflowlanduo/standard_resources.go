@@ -247,18 +247,6 @@ func (*standardHost) Torrents(ctx context.Context, name string) ([]DownloadState
 	return brushTaskRows(result)
 }
 
-func (*standardHost) Downloading(ctx context.Context, name, tag string) ([]DownloadState, error) {
-	d, err := sourceDownloader(ctx, name)
-	if err != nil {
-		return nil, err
-	}
-	result, err := (sdk.Downloaders{Host: brushCaller(ctx)}).Downloading(ctx, sdk.DownloaderDownloadingRequestV1{DownloaderID: d.ID, Tags: []string{tag}})
-	if err != nil {
-		return nil, err
-	}
-	return brushTaskRows(result)
-}
-
 func (*standardHost) Completed(ctx context.Context, name string, hashes []string) ([]DownloadState, error) {
 	d, err := sourceDownloader(ctx, name)
 	if err != nil {

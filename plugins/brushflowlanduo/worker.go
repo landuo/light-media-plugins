@@ -17,7 +17,7 @@ func Manifest() sdk.Manifest {
 	return sdk.Manifest{
 		SchemaVersion: 1, PluginID: PluginID, Name: "站点刷流-landuo",
 		Description: "自动托管多个站点刷流任务，并独立调度、统计与诊断。",
-		Icon:        "brush-flow.png", Version: Version, Author: "jxxghp,landuo",
+		Icon:        "brush-flow.png", Version: Version, Author: "landuo",
 		AuthorURL: "https://github.com/landuo", PluginOrder: 21,
 		Runtime: "go-executable", Entry: "brush-flow-landuo", HostAPIMin: 1, HostAPIMax: 1,
 		Methods:      []string{"init", "get_state", "get_service", "get_command", "get_api", "get_render_mode", "get_form", "get_page", "get_dashboard", "get_sidebar_nav", "http", "brush", "check", "promotion_expiry", "cleanup_tags", "cleanup_task_tag", "reload_event", "close", "stop_service", "stop"},
@@ -66,7 +66,10 @@ func (p *Standard) Handle(ctx context.Context, method string, raw json.RawMessag
 				trigger = Row{"kind": "cron", "cron": service.Cron, "local_timezone": true}
 			}
 			services = append(services, Row{"id": service.ID, "name": service.Name, "handler": service.Operation,
-				"trigger": trigger, "input": Row{"task_id": service.TaskID}})
+				"trigger": trigger, "input": Row{"task_id": service.TaskID},
+				// Brush runs can outlive their interval. Admit the tick and let the
+				// task lock skip it quietly instead of logging a host clock warning.
+				"kwargs": Row{"max_instances": 3, "coalesce": true, "misfire_grace_time": 60}})
 		}
 		return json.Marshal(services)
 	case "get_command", "get_page":

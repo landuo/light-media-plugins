@@ -33,12 +33,12 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 		return nil
 	}
 	r := p.newReport("check")
-	p.SetRuntime(id, Row{"state": "running", "operation": "check", "last_error": nil})
+	p.SetRuntime(id, Row{"state": "running", "operation": "check", "last_error": nil, "last_check_at": float64(p.h.Now().Unix())})
 	err := p.runCheck(ctx, t, r)
 	if err != nil {
 		r["success"] = false
 		r["error"] = err.Error()
-		p.SetRuntime(id, Row{"last_error": err.Error()})
+		p.SetRuntime(id, Row{"state": "idle", "operation": nil, "last_error": err.Error()})
 		p.h.Log(ctx, "error", fmt.Sprintf("刷流任务 [%s] 检查失败：%s", t.Name(), err))
 	} else {
 		r["success"] = r["result"] != "downloader_unavailable" && r["result"] != "downloader_error"
@@ -71,7 +71,7 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 func (p *Core) syncTags(ctx context.Context, t Task, ts, unmanaged *RecordSet, torrents []DownloadState) error {
 	ds, e := p.service(ctx, t)
 	if e != nil {
-		return e
+		return fmt.Errorf("读取下载器服务失败: %w", e)
 	}
 	if ds == nil || ds.Kind != "qbittorrent" {
 		return nil
@@ -156,7 +156,7 @@ func (p *Core) missing(ctx context.Context, t Task, ts *RecordSet, check []strin
 func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	valid, e := p.validateReference(ctx, t, true)
 	if e != nil {
-		return e
+		return fmt.Errorf("校验站点/下载器引用失败: %w", e)
 	}
 	if !valid {
 		r["result"] = "downloader_unavailable"
@@ -164,7 +164,7 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	}
 	ds, e := p.service(ctx, t)
 	if e != nil {
-		return e
+		return fmt.Errorf("读取下载器服务失败: %w", e)
 	}
 	if ds == nil {
 		r["result"] = "downloader_unavailable"
@@ -172,11 +172,11 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	}
 	ts, e := p.records(ctx, t.ID(), "torrents")
 	if e != nil {
-		return e
+		return fmt.Errorf("读取任务种子记录失败: %w", e)
 	}
 	unmanaged, e := p.records(ctx, t.ID(), "unmanaged")
 	if e != nil {
-		return e
+		return fmt.Errorf("读取未管理记录失败: %w", e)
 	}
 	torrents, e := p.h.Torrents(ctx, t.S("downloader"))
 	if e != nil {
@@ -184,7 +184,7 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 		return configError("连接下载器出错")
 	}
 	if e = p.syncTags(ctx, t, ts, unmanaged, torrents); e != nil {
-		return e
+		return fmt.Errorf("同步标签失败: %w", e)
 	}
 	hashes := append([]string{}, ts.Order...)
 	if len(hashes) == 0 {
@@ -212,7 +212,7 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	}
 	promotionDelete, promotionPause, e := p.protectPromotion(ctx, t, check, ts)
 	if e != nil {
-		return e
+		return fmt.Errorf("促销保护检查失败: %w", e)
 	}
 	filtered := []DownloadState{}
 	for _, d := range check {

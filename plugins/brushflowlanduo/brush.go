@@ -78,27 +78,66 @@ func (p *Core) sizeCondition(ctx context.Context, t Task, size, global float64) 
 	c := p.Config()
 	return EvaluateSizeCondition(ctx, &SizeTask{Downloader: t.S("downloader"), DiskSize: floatptr(t.Row["disksize"])}, size, floatptr(c.Settings["global_disksize"]), &global, p.sizeTasks(), p)
 }
-func (p *Core) downloadingCount(ctx context.Context, name, tag string) int {
-	ts, e := p.h.Downloading(ctx, name, tag)
-	if e != nil {
-		p.h.Log(ctx, "error", fmt.Sprintf("获取下载器 [%s] 下载数量失败：%s", name, e))
-		return 0
-	}
-	return len(ts)
+
+type brushDownloadBudget struct {
+	taskLimit, globalLimit int
+	taskCount, globalCount int
 }
-func (p *Core) globalDownloadingCount(ctx context.Context) int {
-	seen := map[string]bool{}
-	n := 0
-	for _, t := range p.Config().Tasks {
-		name := t.S("downloader")
-		if name == "" || seen[name] {
-			continue
+
+func (b brushDownloadBudget) blockReason() string {
+	if b.globalLimit != 0 && b.globalCount >= b.globalLimit {
+		return fmt.Sprintf("全局同时下载任务数达到上限 %d", b.globalLimit)
+	}
+	if b.taskLimit != 0 && b.taskCount >= b.taskLimit {
+		return fmt.Sprintf("同时下载任务数达到上限 %d", b.taskLimit)
+	}
+	return ""
+}
+
+func (p *Core) downloadBudget(ctx context.Context, task Task) (brushDownloadBudget, error) {
+	c := p.Config()
+	budget := brushDownloadBudget{
+		taskLimit:   int(task.N("maxdlcount")),
+		globalLimit: int(number(c.Settings["global_maxdlcount"])),
+	}
+	if budget.taskLimit == 0 && budget.globalLimit == 0 {
+		return budget, nil
+	}
+	downloader, taskTag := task.S("downloader"), task.Tag()
+	names := []string{downloader}
+	if budget.globalLimit != 0 {
+		for _, t := range c.Tasks {
+			if name := t.S("downloader"); name != "" {
+				names = append(names, name)
+			}
 		}
-		seen[name] = true
-		n += p.downloadingCount(ctx, name, GlobalTag)
 	}
-	return n
+	for _, name := range unique(names) {
+		// Queued, checking and paused torrents still occupy a slot until complete.
+		torrents, err := p.h.Torrents(ctx, name)
+		if err != nil {
+			return budget, fmt.Errorf("获取下载器 [%s] 刷流下载数量失败：%w", name, err)
+		}
+		for _, torrent := range torrents {
+			progress := torrent.Raw["progress"]
+			if torrent.Kind == "transmission" {
+				progress = torrent.Raw["percentDone"]
+			}
+			if number(progress) >= 1 {
+				continue
+			}
+			tags := torrentLabels(torrent)
+			if name == downloader && contains(tags, taskTag) {
+				budget.taskCount++
+			}
+			if contains(tags, GlobalTag) {
+				budget.globalCount++
+			}
+		}
+	}
+	return budget, nil
 }
+
 func (p *Core) averageBandwidth(ctx context.Context) (*float64, *float64, error) {
 	up, down := []float64{}, []float64{}
 	for i := 0; i < 5; i++ {
@@ -131,17 +170,8 @@ func (p *Core) averageBandwidth(ctx context.Context) (*float64, *float64, error)
 	d /= float64(len(down))
 	return &u, &d, nil
 }
-func (p *Core) preConditions(ctx context.Context, t Task, network bool) (bool, string, error) {
+func (p *Core) bandwidthCondition(ctx context.Context, t Task) (bool, string, error) {
 	c := p.Config()
-	if n := number(c.Settings["global_maxdlcount"]); n != 0 && p.globalDownloadingCount(ctx) >= int(n) {
-		return false, fmt.Sprintf("全局同时下载任务数达到上限 %s", text(c.Settings["global_maxdlcount"])), nil
-	}
-	if n := t.N("maxdlcount"); n != 0 && p.downloadingCount(ctx, t.S("downloader"), t.Tag()) >= int(n) {
-		return false, fmt.Sprintf("同时下载任务数达到上限 %s", text(t.Row["maxdlcount"])), nil
-	}
-	if !network {
-		return true, "", nil
-	}
 	u, d, e := p.averageBandwidth(ctx)
 	if e != nil {
 		return false, "", e
@@ -222,7 +252,16 @@ func (p *Core) runBrush(ctx context.Context, t Task, r Row) error {
 		reason(r, why, 1)
 		return nil
 	}
-	passed, why, e = p.preConditions(ctx, t, true)
+	budget, e := p.downloadBudget(ctx, t)
+	if e != nil {
+		return e
+	}
+	if why = budget.blockReason(); why != "" {
+		r["result"] = "precondition_blocked"
+		reason(r, why, 1)
+		return nil
+	}
+	passed, why, e = p.bandwidthCondition(ctx, t)
 	if e != nil {
 		return e
 	}
@@ -248,7 +287,7 @@ func (p *Core) runBrush(ctx context.Context, t Task, r Row) error {
 			return e
 		}
 	}
-	if e = p.brushCandidates(ctx, t, *s, ts, all, titles, r, global); e != nil {
+	if e = p.brushCandidates(ctx, t, *s, ts, all, titles, r, global, budget); e != nil {
 		return e
 	}
 	if e = p.put(ctx, t.ID(), "torrents", ts); e != nil {
@@ -257,7 +296,7 @@ func (p *Core) runBrush(ctx context.Context, t Task, r Row) error {
 	_, e = p.recalculate(ctx, t.ID())
 	return e
 }
-func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *RecordSet, titles []string, r Row, global float64) error {
+func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *RecordSet, titles []string, r Row, global float64, budget brushDownloadBudget) error {
 	p.h.Log(ctx, "info", fmt.Sprintf("刷流任务 [%s] 开始获取站点 %s 的新种子", t.Name(), s.Name))
 	candidates, e := p.h.Browse(ctx, s.ID, t.B("rss_support"))
 	if e != nil {
@@ -295,22 +334,24 @@ func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *Rec
 	sort.SliceStable(candidates, func(i, j int) bool { return text(candidates[i]["pubdate"]) > text(candidates[j]["pubdate"]) })
 	size := seedingSize(ts)
 	for _, v := range candidates {
-		passed, why, e := p.preConditions(ctx, t, false)
-		if e != nil {
-			return e
-		}
-		if !passed {
+		if why := budget.blockReason(); why != "" {
 			reason(r, why, 1)
 			r["result"] = "precondition_blocked"
 			break
 		}
-		passed, why, e = p.sizeCondition(ctx, t, size, global)
+		adding := number(v["size"])
+		if adding < 0 {
+			adding = 0
+		}
+		passed, why, e := CanAddSize(ctx, &SizeTask{Downloader: t.S("downloader"), DiskSize: floatptr(t.Row["disksize"])}, size, adding, floatptr(p.Config().Settings["global_disksize"]), global, p.sizeTasks(), p)
 		if e != nil {
 			return e
 		}
 		if !passed {
 			reason(r, why, 1)
-			continue
+			r["result"] = "waiting_for_space"
+			p.h.Log(ctx, "info", fmt.Sprintf("刷流任务 [%s] 已达到保种上限，暂停添加新种子，等待保种删除释放空间", t.Name()))
+			break
 		}
 		passed, why, e = p.candidateCondition(ctx, t, v, all)
 		if e != nil {
@@ -339,6 +380,9 @@ func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *Rec
 			reason(r, "下载器添加失败", 1)
 			continue
 		}
+		// Reserve the slot immediately, even if the downloader list still lags.
+		budget.taskCount++
+		budget.globalCount++
 		ts.Set(hash, record)
 		all.Set(hash, record)
 		if t.B("del_no_free") {
@@ -359,7 +403,9 @@ func (p *Core) brushCandidates(ctx context.Context, t Task, s Site, ts, all *Rec
 		}
 	}
 	r["filtered_count"] = mathMax(number(r["candidate_count"])-number(r["added_count"]), 0)
-	r["result"] = "completed"
+	if r["result"] == nil {
+		r["result"] = "completed"
+	}
 	return nil
 }
 

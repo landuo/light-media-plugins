@@ -44,6 +44,35 @@ func TotalDownloaderSize(ctx context.Context, tasks []SizeTask, host SizeReadHos
 
 func BytesToGB(size float64) float64 { return size / (1024 * 1024 * 1024) }
 
+// CanAddSize predicts the result of adding one torrent. A candidate that would
+// push the task or downloader past its limit is not sent at all; the task then
+// waits until deleted seeds free the space.
+func CanAddSize(ctx context.Context, task *SizeTask, current, adding float64, globalLimit *float64, globalCurrent float64, tasks []SizeTask, host SizeReadHost) (bool, string, error) {
+	if task == nil {
+		return false, "任务配置不存在", nil
+	}
+	if adding < 0 {
+		adding = 0
+	}
+	if task.DiskSize != nil && *task.DiskSize != 0 && current+adding >= *task.DiskSize*(1024*1024*1024) {
+		return false, fmt.Sprintf("添加后将达到 %.1f GB，超过任务保种上限 %s GB，等待保种释放", BytesToGB(current+adding), strconv.FormatFloat(*task.DiskSize, 'f', -1, 64)), nil
+	}
+	if globalLimit != nil && *globalLimit != 0 {
+		total := globalCurrent
+		if total == 0 {
+			var err error
+			total, err = TotalDownloaderSize(ctx, tasks, host)
+			if err != nil {
+				return false, "", err
+			}
+		}
+		if total+adding >= *globalLimit*(1024*1024*1024) {
+			return false, fmt.Sprintf("添加后将达到 %.1f GB，超过全局保种上限 %s GB，等待保种释放", BytesToGB(total+adding), strconv.FormatFloat(*globalLimit, 'f', -1, 64)), nil
+		}
+	}
+	return true, "", nil
+}
+
 // EvaluateSizeCondition preserves the original >= boundary and task-before-
 // global precedence. A supplied global snapshot avoids another daemon read.
 func EvaluateSizeCondition(ctx context.Context, task *SizeTask, taskSize float64, globalLimit, globalSize *float64, tasks []SizeTask, host SizeReadHost) (bool, string, error) {
