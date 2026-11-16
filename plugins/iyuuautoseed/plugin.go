@@ -16,6 +16,7 @@ type pluginRuntime struct {
 	transport *APITransport
 	private   *privateSchedule
 	cache     *FileTorrentCache
+	metadata  runtimeMetadataSlot
 
 	lifetimeMu sync.Mutex
 	active     chan struct{}
@@ -36,7 +37,7 @@ type Plugin struct {
 
 func NewPlugin() *Plugin {
 	core, _ := newCore(NewConfig(), nil, nil)
-	return &Plugin{runtime: &pluginRuntime{core: core}, passes: make(map[uint64]*hostPass), now: time.Now}
+	return &Plugin{runtime: newPluginRuntime(core), passes: make(map[uint64]*hostPass), now: time.Now}
 }
 
 func (p *Plugin) current() *pluginRuntime {
@@ -50,13 +51,7 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 	case "init":
 		return nil, p.init(ctx, caller, raw)
 	case "get_state", "get_service":
-		core := p.current().core
-		core.runMu.Lock()
-		defer core.runMu.Unlock()
-		if method == "get_state" {
-			return json.Marshal(core.config.State())
-		}
-		return publicServices(core.config)
+		return p.current().metadataResponse(method)
 	case "get_form":
 		return formFromHost(ctx, caller)
 	case "get_render_mode":
@@ -74,9 +69,11 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 	case "site_deleted":
 		p.lifecycleMu.Lock()
 		defer p.lifecycleMu.Unlock()
-		core := p.current().core
+		runtime := p.current()
+		core := runtime.core
 		core.runMu.Lock()
 		defer core.runMu.Unlock()
+		defer runtime.publishMetadata()
 		if err := ctx.Err(); err != nil {
 			return nil, err
 		}
@@ -139,6 +136,7 @@ func (p *Plugin) init(ctx context.Context, caller sdk.HostCaller, raw json.RawMe
 		core.recheckRunning = old.core.recheckRunning
 		old.core.Stop()
 	}
+	old.publishMetadata()
 	old.core.runMu.Unlock()
 	if err != nil {
 		return err
@@ -147,7 +145,7 @@ func (p *Plugin) init(ctx context.Context, caller sdk.HostCaller, raw json.RawMe
 		return err
 	}
 
-	next := &pluginRuntime{core: core}
+	next := newPluginRuntime(core)
 	if core.config.ShouldSchedule() {
 		err = p.prepareSchedule(ctx, caller, next)
 		if err != nil {

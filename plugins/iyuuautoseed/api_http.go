@@ -6,11 +6,13 @@ import (
 	"crypto/tls"
 	"crypto/x509"
 	"errors"
+	"io"
 	"net"
 	"net/http"
 	"net/url"
 	"os"
 	"strings"
+	"syscall"
 	"time"
 
 	"github.com/landuo/light-media-plugins/internal/requestsproxy"
@@ -27,18 +29,43 @@ type APITransportOptions struct {
 	// Environment is a trusted SDK proxy-environment snapshot. nil snapshots
 	// os.Environ for standalone CLI compatibility; nonnil empty means direct.
 	Environment []string
+	// TransientRetry is a trusted host-only reliability policy, not a user
+	// setting. The standalone/source transport keeps its single-attempt default.
+	TransientRetry bool
 	// LoopbackOrigin is a synthetic test seam, not a plugin setting.
 	// It accepts literal loopback IPs exclusively, and disables environment proxy.
 	LoopbackOrigin string
 }
 type APITransport struct {
-	origin      string
-	token       string
-	guard       func(context.Context) error
-	timeout     time.Duration
-	environment []string
-	rootCAs     *x509.CertPool
+	origin         string
+	token          string
+	guard          func(context.Context) error
+	timeout        time.Duration
+	environment    []string
+	rootCAs        *x509.CertPool
+	transientRetry bool
+	retryDelay     time.Duration
+	// Trusted in-package observer; never receives URLs, tokens or raw errors.
+	onRetry func(context.Context, apiRetryEvent)
 }
+
+type apiRetryEvent struct {
+	Operation Operation
+	Attempt   int // The next attempt, 2; there is at most one transport retry.
+	Kind      string
+	Delay     time.Duration
+}
+
+// APITransientRetryError reports exhausted host reliability attempts without
+// retaining a raw error, URL, proxy credentials, response body or token.
+// Standalone/source-compatible transports never return this error.
+type APITransientRetryError struct {
+	Operation Operation
+	Attempts  int
+	Kind      string
+}
+
+func (*APITransientRetryError) Error() string { return "IYUU transient transport retry exhausted" }
 
 const maxAPIResponse = 16 << 20
 
@@ -84,12 +111,15 @@ func NewAPITransport(binding TrustedAPIBinding, options APITransportOptions) (*A
 	if options.RootCAs != nil {
 		roots = options.RootCAs.Clone()
 	}
-	return &APITransport{origin: origin, token: binding.Token, guard: options.Guard, timeout: timeout, environment: environment, rootCAs: roots}, nil
+	return &APITransport{origin: origin, token: binding.Token, guard: options.Guard, timeout: timeout, environment: environment, rootCAs: roots, transientRetry: options.TransientRetry, retryDelay: 2 * time.Second}, nil
 }
 
 // Each Call owns and closes its transport; there is no shared idle pool.
 func (t *APITransport) Close() {}
 func (t *APITransport) Call(ctx context.Context, r APIRequest) (*APIResponse, error) {
+	if err := ctx.Err(); err != nil {
+		return nil, err
+	}
 	if err := t.guard(ctx); err != nil {
 		return nil, errors.New("IYUU owner not authorized")
 	}
@@ -123,9 +153,39 @@ func (t *APITransport) Call(ctx context.Context, r APIRequest) (*APIResponse, er
 	if err != nil {
 		return nil, errors.New("invalid IYUU payload")
 	}
+	// Serialize once, including the timestamp/signature. A retry is the same
+	// validated operation and payload, not another Helper/business invocation.
+	for attempt := 1; ; attempt++ {
+		response, sourceErr, kind := t.callOnce(ctx, path, method, body)
+		if response != nil || sourceErr != nil || !t.transientRetry || kind == "" {
+			return response, sourceErr
+		}
+		if attempt == 2 {
+			return nil, &APITransientRetryError{Operation: r.Operation, Attempts: attempt, Kind: kind}
+		}
+		if t.onRetry != nil {
+			t.onRetry(ctx, apiRetryEvent{Operation: r.Operation, Attempt: 2, Kind: kind, Delay: t.retryDelay})
+		}
+		if err := t.waitRetry(ctx); err != nil {
+			return nil, err
+		}
+	}
+}
+
+// callOnce owns the entire attempt. All body/idle connection cleanup completes
+// before returning, including when a read stalls or a partial body is discarded.
+// The final string is a whitelist class of an actual wire failure, never a
+// decoder/JSON error or private original cause.
+func (t *APITransport) callOnce(ctx context.Context, path, method string, body []byte) (*APIResponse, error, string) {
+	if err := ctx.Err(); err != nil {
+		return nil, err, ""
+	}
+	if err := t.guard(ctx); err != nil {
+		return nil, errors.New("IYUU owner no longer authorized"), ""
+	}
 	req, err := http.NewRequestWithContext(ctx, method, t.origin+path, bytes.NewReader(body))
 	if err != nil {
-		return nil, errors.New("invalid IYUU request")
+		return nil, errors.New("invalid IYUU request"), ""
 	}
 	req.Header.Set("token", t.token)
 	// RequestUtils receives an explicit header map, so its accept_type argument
@@ -137,38 +197,118 @@ func (t *APITransport) Call(ctx context.Context, r APIRequest) (*APIResponse, er
 	if method == http.MethodPost {
 		req.Header.Set("Content-Type", "application/json")
 	}
-	// requests creates a session for each helper request. Preserve its per-socket
-	// idle deadline without imposing http.Client's whole-response time limit.
 	base := requestsproxy.NewRequestsTimeoutTransport(t.timeout)
 	base.TLSClientConfig = &tls.Config{MinVersion: tls.VersionTLS12, RootCAs: t.rootCAs}
 	base.DisableCompression = true
 	transport, err := requestsproxy.NewRequestsProxyTransport(base, t.environment, nil, req.URL)
 	if err != nil {
-		return nil, t.transportFailure(ctx, err)
+		return nil, t.transportFailure(ctx, err), apiTransientFailureKind(err)
 	}
 	defer transport.CloseIdleConnections()
 	client := &http.Client{Transport: transport, CheckRedirect: func(*http.Request, []*http.Request) error { return errAPIRedirectDenied }}
 	res, err := client.Do(req)
 	if err != nil {
-		return nil, t.transportFailure(ctx, err)
+		if res != nil && res.Body != nil {
+			res.Body.Close()
+		}
+		return nil, t.transportFailure(ctx, err), apiTransientFailureKind(err)
 	}
 	defer res.Body.Close()
-	raw, err := readAPIContent(res.Body, strings.Join(res.Header.Values("Content-Encoding"), ","))
+	reader := &apiBodyReadTracker{reader: res.Body}
+	raw, err := readAPIContent(reader, strings.Join(res.Header.Values("Content-Encoding"), ","))
 	if err != nil {
-		return nil, t.transportFailure(ctx, err)
+		kind := ""
+		// A decoder's unexpected EOF is not a socket failure. Nor do HTTP
+		// error statuses become retryable because their body is truncated.
+		if res.StatusCode >= 200 && res.StatusCode < 300 && !errors.Is(err, errAPIResponseLimit) {
+			kind = apiTransientFailureKind(reader.failure)
+		}
+		return nil, t.transportFailure(ctx, err), kind
+	}
+	if err := ctx.Err(); err != nil {
+		return nil, err, ""
 	}
 	if err := t.guard(ctx); err != nil {
-		return nil, errors.New("IYUU owner no longer authorized")
+		return nil, errors.New("IYUU owner no longer authorized"), ""
 	}
 	decoded, err := apiResponseJSONText(raw, res.Header.Get("Content-Type"))
 	if err != nil {
-		return nil, err
+		return nil, err, ""
 	}
 	reason := res.Status
 	if i := strings.IndexByte(reason, ' '); i >= 0 {
 		reason = reason[i+1:]
 	}
-	return &APIResponse{Status: res.StatusCode, Reason: reason, Body: []byte(decoded)}, nil
+	return &APIResponse{Status: res.StatusCode, Reason: reason, Body: []byte(decoded)}, nil, ""
+}
+
+func (t *APITransport) waitRetry(ctx context.Context) error {
+	if err := ctx.Err(); err != nil {
+		return err
+	}
+	if err := t.guard(ctx); err != nil {
+		return errors.New("IYUU owner no longer authorized")
+	}
+	if t.retryDelay > 0 {
+		timer := time.NewTimer(t.retryDelay)
+		defer timer.Stop()
+		select {
+		case <-ctx.Done():
+			return ctx.Err()
+		case <-timer.C:
+		}
+	}
+	if err := ctx.Err(); err != nil {
+		return err
+	}
+	if err := t.guard(ctx); err != nil {
+		return errors.New("IYUU owner no longer authorized")
+	}
+	return nil
+}
+
+type apiBodyReadTracker struct {
+	reader  io.Reader
+	failure error
+}
+
+func (r *apiBodyReadTracker) Read(p []byte) (int, error) {
+	n, err := r.reader.Read(p)
+	if err != nil && !errors.Is(err, io.EOF) {
+		r.failure = err
+	}
+	return n, err
+}
+
+func apiTransientFailureKind(err error) string {
+	if err == nil || errors.Is(err, context.Canceled) || errors.Is(err, context.DeadlineExceeded) || errors.Is(err, errAPIRedirectDenied) || errors.Is(err, errAPIResponseLimit) {
+		return ""
+	}
+	var certificate *tls.CertificateVerificationError
+	var hostname x509.HostnameError
+	var unknownAuthority x509.UnknownAuthorityError
+	var invalidCertificate x509.CertificateInvalidError
+	var roots x509.SystemRootsError
+	if errors.As(err, &certificate) || errors.As(err, &hostname) || errors.As(err, &unknownAuthority) || errors.As(err, &invalidCertificate) || errors.As(err, &roots) {
+		return ""
+	}
+	// url.Error itself satisfies net.Error, but its immediate private proxy
+	// wrapper does not. A single errors.As would stop at that outer URL error
+	// with Timeout()==false and miss the actual socket timeout further inside.
+	for cause := err; cause != nil; cause = errors.Unwrap(cause) {
+		if timeout, ok := cause.(net.Error); ok && timeout.Timeout() {
+			return "timeout"
+		}
+	}
+	switch {
+	case errors.Is(err, io.EOF), errors.Is(err, io.ErrUnexpectedEOF):
+		return "eof"
+	case errors.Is(err, syscall.ECONNRESET), errors.Is(err, syscall.ECONNABORTED):
+		return "reset"
+	case errors.Is(err, syscall.EPIPE):
+		return "broken_pipe"
+	}
+	return ""
 }
 
 func (t *APITransport) transportFailure(ctx context.Context, cause error) error {
