@@ -372,3 +372,21 @@ func TestCheckPersistsDaemonProgress(t *testing.T) {
 		t.Fatal("no daemon read")
 	}
 }
+
+func TestCheckPersistsProgressBeforeLaterFailure(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "8888888888888888888888888888888888888888"
+	record := promotionRecord(task, hash, now, .1)
+	record["freedate"] = iso(now.Add(15 * time.Minute))
+	core, host, _ := newPromotionCore(t, Rows{hash: record}, []DownloadState{promotionTorrent(task, hash, now, .75)})
+	host.deleteUncertain = true
+
+	if err := core.Check(context.Background(), task.ID(), true); err == nil {
+		t.Fatal("a present, unconfirmed delete must still fail the check")
+	}
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil || number(ts.Values[hash]["progress"]) != .75 {
+		t.Fatalf("progress was lost when the later delete failed: %v %v", ts.Values[hash], e)
+	}
+}

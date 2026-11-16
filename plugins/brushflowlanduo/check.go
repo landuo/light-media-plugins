@@ -236,6 +236,11 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 		}
 	}
 	updateRecords(p, check, ts)
+	// Persist progress before promotion checks and deletes. A later host error
+	// must not discard counters that were already read successfully.
+	if e = p.put(ctx, t.ID(), "torrents", ts); e != nil {
+		return fmt.Errorf("保存种子进度失败: %w", e)
+	}
 	if e = p.missing(ctx, t, ts, hashes, torrents); e != nil {
 		return e
 	}
