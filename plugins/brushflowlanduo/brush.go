@@ -425,6 +425,7 @@ func (p *Core) startProtectedDownload(ctx context.Context, task Task, records *R
 		}
 	}
 	record["promotion_paused_at"] = float64(p.h.Now().UnixNano()) / 1e9
+	record["promotion_pause_reason"] = promotionPauseVerify
 	if err := p.put(ctx, task.ID(), "torrents", records); err != nil {
 		return err
 	}
