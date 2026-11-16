@@ -11,14 +11,16 @@ import (
 
 type promotionHost struct {
 	Host
-	now          time.Time
-	data         map[string]json.RawMessage
-	torrents     []DownloadState
-	torrentsErr  error
-	torrentReads int
-	pauses       [][]string
-	starts       [][]string
-	deletes      [][]string
+	now             time.Time
+	data            map[string]json.RawMessage
+	torrents        []DownloadState
+	torrentsErr     error
+	torrentReads    int
+	goneAfterDelete bool
+	deleteUncertain bool
+	pauses          [][]string
+	starts          [][]string
+	deletes         [][]string
 }
 
 func (h *promotionHost) Now() time.Time { return h.now }
@@ -47,6 +49,9 @@ func (*promotionHost) Downloader(context.Context, string) (*Downloader, error) {
 }
 func (h *promotionHost) Torrents(context.Context, string) ([]DownloadState, error) {
 	h.torrentReads++
+	if h.goneAfterDelete && h.torrentReads > 1 {
+		return nil, nil
+	}
 	return h.torrents, h.torrentsErr
 }
 func (h *promotionHost) Pause(_ context.Context, _ string, hashes []string) (bool, error) {
@@ -59,7 +64,7 @@ func (h *promotionHost) Start(_ context.Context, _ string, hashes []string) (boo
 }
 func (h *promotionHost) Delete(_ context.Context, _ string, hashes []string, _ bool) (bool, error) {
 	h.deletes = append(h.deletes, append([]string{}, hashes...))
-	return true, nil
+	return !h.deleteUncertain, nil
 }
 func (*promotionHost) Reannounce(context.Context, string, []string) error { return nil }
 func (*promotionHost) Event(context.Context, Event) error                 { return nil }
@@ -173,6 +178,32 @@ func TestPromotionClockDeletesInsideSafetyMargin(t *testing.T) {
 	ts, e := core.records(context.Background(), task.ID(), "torrents")
 	if e != nil || !truth(ts.Values[hash]["deleted"]) {
 		t.Fatalf("deleted record not retained: %v %v", ts.Values[hash], e)
+	}
+}
+
+func TestCheckConfirmsDeleteWhenReceiptIsIncomplete(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "1111111111111111111111111111111111111111"
+	record := promotionRecord(task, hash, now, .5)
+	record["freedate"] = iso(now.Add(15 * time.Minute))
+	core, host, _ := newPromotionCore(t, Rows{hash: record}, []DownloadState{promotionTorrent(task, hash, now, .5)})
+	host.deleteUncertain = true
+	host.goneAfterDelete = true
+
+	if err := core.Check(context.Background(), task.ID(), true); err != nil {
+		t.Fatalf("a bookkeeping-only delete gap failed the check: %v", err)
+	}
+	if len(host.deletes) != 1 || !slices.Equal(host.deletes[0], []string{hash}) {
+		t.Fatalf("delete was not attempted: %v", host.deletes)
+	}
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil || !truth(ts.Values[hash]["deleted"]) {
+		t.Fatalf("list-confirmed delete not recorded: %v %v", ts.Values[hash], e)
+	}
+	runs, e := core.runs(context.Background(), task.ID())
+	if e != nil || len(runs) != 1 || number(row(runs[0])["deleted_count"]) != 1 {
+		t.Fatalf("delete count not reported: %v %v", runs, e)
 	}
 }
 

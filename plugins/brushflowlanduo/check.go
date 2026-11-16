@@ -294,7 +294,37 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 				}
 			}
 		} else if len(promotionDelete) > 0 {
-			return configError("促销已结束或状态无法核实的种子未能删除，请立即检查下载器")
+			// The daemon can apply a batch delete while the host's post-delete
+			// receipt stays incomplete. Read the list once to distinguish a
+			// cleanup bookkeeping gap from a delete that did not happen; the
+			// torrents were already paused above, so a true failure is safe.
+			remaining, readErr := p.h.Torrents(ctx, t.S("downloader"))
+			if readErr == nil {
+				present := map[string]bool{}
+				for _, d := range remaining {
+					present[torrentHash(d)] = true
+				}
+				allGone := true
+				for _, h := range deletes {
+					if present[h] {
+						allGone = false
+						break
+					}
+				}
+				if allGone {
+					deleted = true
+					for _, h := range deletes {
+						if v := ts.Values[h]; v != nil {
+							v["deleted"] = true
+							v["deleted_time"] = float64(p.h.Now().UnixNano()) / 1e9
+						}
+					}
+					p.h.Log(ctx, "info", "刷流任务删除回执未确认，但下载器列表已无对应种子，按已删除记录")
+				}
+			}
+			if !deleted {
+				return configError("促销已结束或状态无法核实的种子未能删除，请立即检查下载器")
+			}
 		}
 	}
 	if e = p.archive(ctx, t, ts); e != nil {
