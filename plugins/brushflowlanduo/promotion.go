@@ -566,13 +566,33 @@ func (p *Core) promotionSafe(t Task, r Row) bool {
 // cannot be read. It needs no daemon listing: the stored hashes are enough to
 // issue one pause call, which stops download volume without deleting data.
 func (p *Core) pauseUnverified(ctx context.Context, t Task, rs *RecordSet, reason string) ([]string, error) {
-	hashes := []string{}
+	candidates := []string{}
 	for _, h := range rs.Order {
 		r := rs.Values[h]
 		if !incompleteRecord(r) || truth(r["promotion_paused_at"]) {
 			continue
 		}
-		hashes = append(hashes, h)
+		candidates = append(candidates, h)
+	}
+	if len(candidates) == 0 {
+		return nil, nil
+	}
+	// Stored progress can lag behind the daemon. Ask the exact-hash completed
+	// reader first so a seeding torrent is never paused just because the full
+	// list is temporarily unavailable. If that read also fails, fail closed.
+	completed := map[string]bool{}
+	if states, e := p.h.Completed(ctx, t.S("downloader"), candidates); e == nil {
+		for _, d := range states {
+			completed[torrentHash(d)] = true
+		}
+	} else {
+		p.h.Log(ctx, "warning", "无法读取已完成种子，促销兜底将暂停全部未完成记录："+e.Error())
+	}
+	hashes := []string{}
+	for _, h := range candidates {
+		if !completed[h] {
+			hashes = append(hashes, h)
+		}
 	}
 	if len(hashes) == 0 {
 		return nil, nil

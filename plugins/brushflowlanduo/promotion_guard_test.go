@@ -19,6 +19,8 @@ type promotionHost struct {
 	goneAfterDelete bool
 	deleteUncertain bool
 	messageErr      error
+	completed       []DownloadState
+	completedErr    error
 	pauses          [][]string
 	starts          [][]string
 	deletes         [][]string
@@ -47,6 +49,9 @@ func (*promotionHost) Downloaders(context.Context) ([]Downloader, error) {
 }
 func (*promotionHost) Downloader(context.Context, string) (*Downloader, error) {
 	return &Downloader{Name: "qb", Kind: "qbittorrent", Active: true}, nil
+}
+func (h *promotionHost) Completed(context.Context, string, []string) ([]DownloadState, error) {
+	return h.completed, h.completedErr
 }
 func (h *promotionHost) Torrents(context.Context, string) ([]DownloadState, error) {
 	h.torrentReads++
@@ -119,6 +124,31 @@ func newPromotionCore(t *testing.T, records Rows, torrents []DownloadState) (*Co
 	host.data[taskKey(task.ID(), "torrents")] = raw
 	core := newCore(host, Config{Settings: Row{"enabled": true}, Tasks: []Task{task}})
 	return core, host, task
+}
+
+func TestFailSafePauseKeepsCompletedTorrents(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	staleComplete := "3333333333333333333333333333333333333333"
+	stillRunning := "4444444444444444444444444444444444444444"
+	records := Rows{
+		staleComplete: promotionRecord(task, staleComplete, now, .5),
+		stillRunning:  promotionRecord(task, stillRunning, now, .5),
+	}
+	core, host, _ := newPromotionCore(t, records, nil)
+	host.torrentsErr = errors.New("plugin: host_operation_failed")
+	host.completed = []DownloadState{promotionTorrent(task, staleComplete, now, 1)}
+
+	if err := core.Check(context.Background(), task.ID(), true); err == nil {
+		t.Fatal("a failed list read must still fail the check")
+	}
+	if len(host.pauses) != 1 || !slices.Equal(host.pauses[0], []string{stillRunning}) {
+		t.Fatalf("a completed torrent was paused from stale progress: %v", host.pauses)
+	}
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil || truth(ts.Values[staleComplete]["promotion_paused_at"]) || !truth(ts.Values[stillRunning]["promotion_paused_at"]) {
+		t.Fatalf("fail-safe pause state is wrong: %v %v", ts.Values, e)
+	}
 }
 
 func TestCheckPausesUnfinishedWhenDownloaderListFails(t *testing.T) {
