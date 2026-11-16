@@ -18,6 +18,7 @@ type promotionHost struct {
 	torrentReads    int
 	goneAfterDelete bool
 	deleteUncertain bool
+	messageErr      error
 	pauses          [][]string
 	starts          [][]string
 	deletes         [][]string
@@ -68,7 +69,7 @@ func (h *promotionHost) Delete(_ context.Context, _ string, hashes []string, _ b
 }
 func (*promotionHost) Reannounce(context.Context, string, []string) error { return nil }
 func (*promotionHost) Event(context.Context, Event) error                 { return nil }
-func (*promotionHost) Message(context.Context, Notice) error              { return nil }
+func (h *promotionHost) Message(context.Context, Notice) error            { return h.messageErr }
 func (*promotionHost) Log(context.Context, string, string)                {}
 func (*promotionHost) Tags(context.Context, string) ([]string, error)     { return nil, nil }
 func (*promotionHost) DeleteTags(context.Context, string, []string) (bool, error) {
@@ -178,6 +179,27 @@ func TestPromotionClockDeletesInsideSafetyMargin(t *testing.T) {
 	ts, e := core.records(context.Background(), task.ID(), "torrents")
 	if e != nil || !truth(ts.Values[hash]["deleted"]) {
 		t.Fatalf("deleted record not retained: %v %v", ts.Values[hash], e)
+	}
+}
+
+func TestCheckSurvivesNotificationChannelFailure(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "2222222222222222222222222222222222222222"
+	record := promotionRecord(task, hash, now, .5)
+	record["freedate"] = iso(now.Add(15 * time.Minute))
+	core, host, _ := newPromotionCore(t, Rows{hash: record}, []DownloadState{promotionTorrent(task, hash, now, .5)})
+	host.messageErr = errors.New("plugin: host_operation_failed")
+
+	if err := core.Check(context.Background(), task.ID(), true); err != nil {
+		t.Fatalf("a notification channel failure disabled the check: %v", err)
+	}
+	if len(host.deletes) != 1 || !slices.Equal(host.deletes[0], []string{hash}) {
+		t.Fatalf("promotion delete did not run: %v", host.deletes)
+	}
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil || !truth(ts.Values[hash]["deleted"]) {
+		t.Fatalf("delete state lost after notification failure: %v %v", ts.Values[hash], e)
 	}
 }
 
