@@ -1,0 +1,14 @@
+CONFIG={'root': '/home/admin/light-media-plugins-root-asi-native-20261107', 'marker': 'light-media-plugins/root-asi-native/20261107/owned-only', 'name': 'lm-root-asi-native-20261107', 'bom': {'bin/host': {'sha256': 'c31f8f43480a3cf297598af401eaa16899f65aa2b5b09fe138545613334c42c6', 'bytes': 57225378}, 'bin/worker': {'sha256': '2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0', 'bytes': 12796066}, 'bin/worker-updated': {'sha256': 'e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36', 'bytes': 12796066}, 'bin/cli': {'sha256': '7044b75a4cb61768538c0dcf764ef6a038254edb75f820b46ace98035abe0c84', 'bytes': 25215138}, 'bin/driver': {'sha256': '75fe4f1ecddc27f3249d2ec8266798ff34cfcb596cbe1f0d9f9a056dd85d637f', 'bytes': 9756834}}}
+from pathlib import Path
+import tarfile,sys,os
+r=Path(CONFIG['root']);assert os.getuid()==1000 and r.is_dir()and not r.is_symlink()and(r/'.task-owned').read_text()==CONFIG['marker']
+names=['attempt6/actual.stdout','attempt6/actual.stderr','attempt6/command.json','attempt6/live-inspect.json','attempt6/inspect-attempts.json','attempt6/live-network.stdout','attempt6/live-network.stderr','owned-r5/runtime/evidence']
+with tarfile.open(fileobj=sys.stdout.buffer,mode='w|')as archive:
+ for name in names:
+  path=r/name
+  if not path.exists():continue
+  assert not path.is_symlink()and path.resolve().is_relative_to(r.resolve())
+  if path.is_dir():
+   for f in path.rglob('*'):
+    if f.is_file():assert not f.is_symlink()and f.resolve().is_relative_to(path.resolve());archive.add(f,arcname=str(f.relative_to(r)),recursive=False)
+  else:archive.add(path,arcname=name,recursive=False)

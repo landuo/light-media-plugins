@@ -1,0 +1,33 @@
+{
+  "classification": "Actual existing build-config parser and related controlled packaging tests; not native full builder CLI or publication",
+  "config_sha256": "18a26adefa63f01313d2f02fb4aeebc7c79322c9c05013e9c6cd9707986161b8",
+  "builder_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "plugins": [
+    {
+      "id": "CategoryEditor",
+      "package": "./cmd/category-editor",
+      "host_contract": "light-media.sdk-resources/v1"
+    },
+    {
+      "id": "TorrentTransfer",
+      "package": "./cmd/torrent-transfer",
+      "host_contract": "light-media.sdk-resources/v1"
+    }
+  ],
+  "controlled_tests": {
+    "command": [
+      "python3",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "scripts",
+      "-p",
+      "test_*.py"
+    ],
+    "exit_code": 0,
+    "count": 34,
+    "raw_log_sha256": "9b665ccc2176c32e439ac0feae767c73de156617491752c1489a80007612cfba"
+  },
+  "actual_TT_ZIP_install": "Separate retained ordinary404 Linux main evidence; fa5b72e2..."
+}

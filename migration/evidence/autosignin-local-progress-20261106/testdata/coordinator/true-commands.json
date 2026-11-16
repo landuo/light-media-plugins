@@ -1,0 +1,65 @@
+[
+  {
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-json",
+      "-count=1",
+      "-timeout=3m",
+      "./plugins/autosignin/...",
+      "./cmd/auto-sign-in"
+    ],
+    "env": {
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 6.662853499874473,
+    "pass_tests": 6025,
+    "pass_packages": 3,
+    "fail": [],
+    "skip": [
+      "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/helpers",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/syntax",
+      "github.com/landuo/light-media-plugins/cmd/auto-sign-in"
+    ],
+    "overlay": false,
+    "modfile": false
+  },
+  {
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-json",
+      "-count=1",
+      "-timeout=3m",
+      "-race",
+      "./plugins/autosignin/...",
+      "./cmd/auto-sign-in"
+    ],
+    "env": {
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 62.050012125167996,
+    "pass_tests": 6025,
+    "pass_packages": 3,
+    "fail": [],
+    "skip": [
+      "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash/jpegport",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/pyvalue",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/helpers",
+      "github.com/landuo/light-media-plugins/plugins/autosignin/regexengine/syntax",
+      "github.com/landuo/light-media-plugins/cmd/auto-sign-in"
+    ],
+    "overlay": false,
+    "modfile": false
+  }
+]

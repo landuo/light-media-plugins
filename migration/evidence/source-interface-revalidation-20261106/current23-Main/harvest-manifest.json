@@ -1,0 +1,269 @@
+{
+  "classification": "allowlisted actual current23 native ordinary Main; excludes database, credentials, key, UI-ready, certificates, binaries and private configurations",
+  "collected_utc": "2026-11-05T20:47:02.326854+00:00",
+  "runs": {
+    "source-auth-main-four-2": {
+      "exit_code": 0,
+      "seconds": 18.815901392139494,
+      "observations": 75,
+      "last_observation": {
+        "at": "2026-11-05T20:29:55.635416452Z",
+        "event": "sdk98_impact_on_return",
+        "value": {
+          "Nexus": {
+            "TLS": "verified CA+two DNS SANs; no TLS bypass",
+            "connects": [
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443"
+            ],
+            "owned_artifact_http_denials_for_existing_direct_fallback": 6,
+            "requests": [
+              "pt.btschool.club/",
+              "pt.btschool.club/favicon.ico",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding"
+            ],
+            "routing": "strict CONNECT maps only two literal authorities to one owned loopback listener; no target DNS or external dial",
+            "unexpected": []
+          },
+          "qb": {
+            "classification": "owned HTTP source-qB protocol peer, not real qB daemon/full transfer proof",
+            "completed_queries": 4,
+            "info_selectors": [
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              }
+            ],
+            "unexpected_or_mutation_requests": []
+          },
+          "test_failed": false
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 4
+    },
+    "main-run-7": {
+      "exit_code": 0,
+      "seconds": 573.2060519729275,
+      "observations": 178,
+      "last_observation": {
+        "at": "2026-11-05T20:38:30.02499976Z",
+        "event": "rm_no_inherited_module_discovery",
+        "value": {
+          "complete_app_log_checked": true,
+          "module_declaration_failed_count": 0,
+          "stage": "full-tail-after-all-worker-joins"
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 6
+    },
+    "canonical-package-main-2": {
+      "exit_code": 0,
+      "seconds": 4.7274621778633446,
+      "observations": 23,
+      "last_observation": {
+        "at": "2026-11-05T20:45:57.868511438Z",
+        "event": "rm_canonical_package_complete",
+        "value": {
+          "all_workers_joined": 2,
+          "base_and_clone_source_relative_imports": true,
+          "canonical_zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+          "disabled_clone_unchanged": true,
+          "no_UI_claim": true,
+          "real_same_inode_alias_cleanup": true,
+          "verified_installed_members": 10
+        }
+      },
+      "module_declaration_failed": 0,
+      "error_events": 1
+    }
+  },
+  "files": [
+    {
+      "path": "SDK98/.task-owned",
+      "bytes": 46,
+      "sha256": "e048bd9af1345dc142f3b83e82f2b01a32cac8ef1ea2f0f19b563ec1454e4a26"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/.task-owned",
+      "bytes": 51,
+      "sha256": "5da46e6924baa43d1770bf4ed0e7e64a408be3c0cf8a05f56724234d4cafb76a"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/evidence/host-1.log",
+      "bytes": 16451,
+      "sha256": "c12f8d3f709af40582f0b40f48e78598c8f6656c98b591384dfb5f22fb3d7484"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/evidence/host-2.log",
+      "bytes": 1829,
+      "sha256": "26aff7e69c53cbe3e6403568b56bb23da6fa51238b23c63f13c1d48a68f45a3a"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/evidence/observations.jsonl",
+      "bytes": 55178,
+      "sha256": "d682d3db225fecc19a65d3e555402935c3715fd916d7f81dba011f6ad658811c"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/logs/app.jsonl",
+      "bytes": 18734,
+      "sha256": "01dd0b70ee2163002bc4140234caba3446da6813a4ecd7704c06c12952b5f9d5"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/logs/plugins/sitestatistic.log",
+      "bytes": 205,
+      "sha256": "1581dd0f12a81d058e8cc40acd65962d5ecc6d30589d2d6012a986e233287937"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/logs/plugins/torrenttransfer.log",
+      "bytes": 436,
+      "sha256": "9f29bb698d79c04d423aa7312ba9e8be7586895f0617f4679b0026d8907b9c0b"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2/logs/plugins/torrenttransfermusic.log",
+      "bytes": 436,
+      "sha256": "50a08ebcfa4d8821327fcace7c947adb2dffed7f1a8f5790fc193fdb61c43254"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2-command.json",
+      "bytes": 2696,
+      "sha256": "26c3ab71cbdd0bf27c4bad4994185d7faecbf2251d728c9ff333d512bfebe722"
+    },
+    {
+      "path": "SDK98/source-auth-main-four-2.log",
+      "bytes": 116,
+      "sha256": "46d4f768d7e9e4fc7609106e8bd4a8eb90a0b7390b360ecfe548776d69165ff2"
+    },
+    {
+      "path": "Rlk/.task-owned",
+      "bytes": 51,
+      "sha256": "478da5145e979f854541c572fdac24dea2e24d74f06c89d996a378b056d78049"
+    },
+    {
+      "path": "Rlk/main-run-7/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/main-run-7/app/logs/app.jsonl",
+      "bytes": 209691,
+      "sha256": "7d2f29c64aa3efd3f02dc43152d7952f13d8fdb674a8494b7ca6dc338ff91fbc"
+    },
+    {
+      "path": "Rlk/main-run-7/app/logs/plugins/removelink.log",
+      "bytes": 58137,
+      "sha256": "0b0e06e678d9e11e2b6596036f4fde5d3a20585f8323293ac404093602f07431"
+    },
+    {
+      "path": "Rlk/main-run-7/app/logs/plugins/removelinkowned.log",
+      "bytes": 2407,
+      "sha256": "d8bd31b35e7be6f752e58180a3b8d3524593d5c1f670a5d84a353a5ae759e2e2"
+    },
+    {
+      "path": "Rlk/main-run-7/evidence/browser-files-after.json",
+      "bytes": 495,
+      "sha256": "405a7f1df32f553291282bdaedaf4288e04aa2cdf0c0b072692e5b89f67b4825"
+    },
+    {
+      "path": "Rlk/main-run-7/evidence/browser-files-before.json",
+      "bytes": 1088,
+      "sha256": "2841f99376de00c8ae533717a63d2a6ef4cf239d0291fe120c8f0b8759068d8d"
+    },
+    {
+      "path": "Rlk/main-run-7/evidence/host-1.log",
+      "bytes": 200557,
+      "sha256": "5aae7d35abf22ff97c8efcc745caea4e964d768b71920b0dd24540aadeca580e"
+    },
+    {
+      "path": "Rlk/main-run-7/evidence/host-2.log",
+      "bytes": 8676,
+      "sha256": "ced5655321016a2ce6bb7509ce7ecc451763bc740aa071534404bec2bcc74e5c"
+    },
+    {
+      "path": "Rlk/main-run-7/evidence/observations.jsonl",
+      "bytes": 462679,
+      "sha256": "d0d71ace94f72de0b6d5aad4733e3b2908040785ebeb055fd71fdec8b51a632b"
+    },
+    {
+      "path": "Rlk/main-run-7-command.json",
+      "bytes": 4145,
+      "sha256": "09aec1e21b82a565c94bd6f87483cc4c324aaedf02b925f5e90a2ae29b0ecb32"
+    },
+    {
+      "path": "Rlk/main-run-7.log",
+      "bytes": 299,
+      "sha256": "5ed4cf592393fac06ffb57e03da1968fd3d48ed7f69187e2a999b8498545a0b9"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/app/logs/app.jsonl",
+      "bytes": 11087,
+      "sha256": "0c411399196175770a37b360f0f12865668e2c7287b4815f1c19bc7483f80780"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/app/logs/plugins/removelink.log",
+      "bytes": 1835,
+      "sha256": "bfa4338f59c39ab61fb8aa22dde57a0b5482fa1729f698770d53096ce46bd443"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/app/logs/plugins/removelinkowned.log",
+      "bytes": 240,
+      "sha256": "3b63421b4fd249f5deb271414ea0c0c53ec42de6bddae5e6fffeb8a9efe8b3ba"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/evidence/host-1.log",
+      "bytes": 10592,
+      "sha256": "e96aa1bc8ff338a14de708fb23f9f433e92914401f9f0bec05c62c55b6ad1fee"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2/evidence/observations.jsonl",
+      "bytes": 9169,
+      "sha256": "d84aaeff5a85e32b6dcbf744bf949ec854c4a828f6ad4349bcafc0b9d40d48bc"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2-command.json",
+      "bytes": 2240,
+      "sha256": "7fca1feb45c3f2eb80be3aac28dfbfcf47925f507bd75d2a3544ebd56f257901"
+    },
+    {
+      "path": "Rlk/canonical-package-main-2.log",
+      "bytes": 119,
+      "sha256": "ac2ed2d7ad233ec12d98b9b9c598ed6655d0b88b6af5b4f00f3918cba62bd66d"
+    }
+  ]
+}

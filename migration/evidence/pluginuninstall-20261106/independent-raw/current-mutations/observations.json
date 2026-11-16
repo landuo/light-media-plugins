@@ -1,0 +1,137 @@
+{
+  "host_manifest_sha256": "f9e4f90ef62309f4b064dbeb8f9a3b319841dd2c4c6e9bd33aa16201fb022988",
+  "results": [
+    {
+      "name": "membership-order-startup",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/membership-order-startup/overlay.json",
+        "-run",
+        "^TestIndependentSameOrderCloneStartupIgnoresInstalledArrayOrder$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 15.104012966156006,
+      "compiled": true,
+      "failed_tests": [
+        "TestIndependentSameOrderCloneStartupIgnoresInstalledArrayOrder"
+      ],
+      "killed": true,
+      "original_sha256": "aecf6e0689d7a50c4dc8ceba8c0aa4070d44f35998a1510538d2d2c486c52931",
+      "mutated_sha256": "43cf150ec341438dd6cf13cba5afacaf220eeaa455abf4fef8e3fd3ce453574f"
+    },
+    {
+      "name": "stale-installed-local",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/stale-installed-local/overlay.json",
+        "-run",
+        "^TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 12.514990091323853,
+      "compiled": true,
+      "failed_tests": [
+        "TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache"
+      ],
+      "killed": true,
+      "original_sha256": "d8ae643039426ae81da77707e58a5883f24f6e061e552613ee1d40f4a5a0a4c5",
+      "mutated_sha256": "7c8fcd726deb7cbc0402fee917a8902f7e86b5da2623204ceb3109dfce15d349"
+    },
+    {
+      "name": "ignore-installed-version-cache",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/ignore-installed-version-cache/overlay.json",
+        "-run",
+        "^TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 11.537712812423706,
+      "compiled": true,
+      "failed_tests": [
+        "TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache"
+      ],
+      "killed": true,
+      "original_sha256": "7008fafa4d3834a8bd1989b676524a9f4ed1857bd2cc308632d81df327e1d235",
+      "mutated_sha256": "5f4264b107584d7e036a1080aedfa555bfc79de947997ce8c50b9ab15e419401"
+    },
+    {
+      "name": "stub-page-presence",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/stub-page-presence/overlay.json",
+        "-run",
+        "^TestSourceUninstallPagePresenceUsesSourceDeclaration$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 11.655813932418823,
+      "compiled": true,
+      "failed_tests": [
+        "TestSourceUninstallPagePresenceUsesSourceDeclaration"
+      ],
+      "killed": true,
+      "original_sha256": "d8ae643039426ae81da77707e58a5883f24f6e061e552613ee1d40f4a5a0a4c5",
+      "mutated_sha256": "e93d84a918bbe480349796020dce35e1601c95ec43d31bf9969b766926199474"
+    },
+    {
+      "name": "skip-stat-empty",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/skip-stat-empty/overlay.json",
+        "-run",
+        "^TestIndependentEmptyInstalledStillChecksPackageRootExists$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 14.782124042510986,
+      "compiled": true,
+      "failed_tests": [
+        "TestIndependentEmptyInstalledStillChecksPackageRootExists"
+      ],
+      "killed": true,
+      "original_sha256": "aecf6e0689d7a50c4dc8ceba8c0aa4070d44f35998a1510538d2d2c486c52931",
+      "mutated_sha256": "22883ff85d6a2789e9318fb9f63995eff8aa558e77842e6a7b451006d8eec57d"
+    },
+    {
+      "name": "drop-physical-retirement",
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-mutations/drop-physical-retirement/overlay.json",
+        "-run",
+        "^TestIndependentLoadedSelfInitializerReapsOnlyAfterItsSourceTail$",
+        "./internal/app"
+      ],
+      "exit": 1,
+      "seconds": 17.023816108703613,
+      "compiled": true,
+      "failed_tests": [
+        "TestIndependentLoadedSelfInitializerReapsOnlyAfterItsSourceTail"
+      ],
+      "killed": true,
+      "original_sha256": "5a274be3b971d12422869f761eb51b4dd0c68909031937052f1a37c8c0511246",
+      "mutated_sha256": "83fba08371eac29b136b78639971d2a83f4a169a1620a44c48efc9f1e0043b84"
+    }
+  ]
+}

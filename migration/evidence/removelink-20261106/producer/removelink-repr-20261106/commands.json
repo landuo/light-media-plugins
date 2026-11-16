@@ -1,0 +1,95 @@
+{
+  "cwd": "/Users/accidia/projects/light-media-plugins",
+  "normal": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "race": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "vet": [
+    "go",
+    "vet",
+    "./plugins/removelink",
+    "./cmd/remove-link"
+  ],
+  "targeted": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "./plugins/removelink",
+    "-run",
+    "^(TestPythonLogReprActualSource312|TestSource312CustomExtensionAssignmentPrecedesDelayOverflow|TestSource312DelayOverflowBeforeStop)$"
+  ],
+  "independent_current": [
+    "go",
+    "test",
+    "-race",
+    "-count=1",
+    "-json",
+    "-overlay",
+    "work/migration-20261105/removelink-repr-20261106/independent-current-assertions-only-overlay.json",
+    "./plugins/removelink",
+    "-run",
+    "^TestIndependent(DirectoryListLogUsesPythonRepr|OverflowKeepsEarlierCustomExtensionAssignment)$"
+  ],
+  "worker_build": {
+    "explicit_env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "work/migration-20261105/removelink-repr-20261106/remove-link-linux",
+      "./cmd/remove-link"
+    ]
+  },
+  "update_fixture_build": {
+    "explicit_env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-overlay",
+      "work/migration-20261105/removelink-repr-20261106/update-version-overlay.json",
+      "-o",
+      "work/migration-20261105/removelink-repr-20261106/remove-link-2.18.1-linux",
+      "./cmd/remove-link"
+    ]
+  },
+  "source": "source-command.json; exact stdin payload repr_oracle.py and container cleanup recorded",
+  "exits": {
+    "normal": 0,
+    "race": 0,
+    "vet": 0,
+    "targeted": 0,
+    "independent_current": 0,
+    "worker_build": 0,
+    "update_fixture_build": 0,
+    "historical_before_repr": 1,
+    "historical_before_order": 1,
+    "historical_wrong_old_overlay": 1
+  }
+}

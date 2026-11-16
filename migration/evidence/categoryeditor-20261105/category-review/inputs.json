@@ -1,0 +1,940 @@
+[
+  {
+    "id": "fresh-and-noop",
+    "steps": [
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "get_command"
+      },
+      {
+        "op": "get_api"
+      },
+      {
+        "op": "get_page"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "form-fresh-read",
+    "steps": [
+      {
+        "op": "get_form"
+      },
+      {
+        "op": "init",
+        "config": {
+          "enabled": false,
+          "content": "saved-user-content"
+        }
+      },
+      {
+        "op": "get_form",
+        "default_text": "default-two\n"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "form-read-fails",
+    "steps": [
+      {
+        "op": "get_form",
+        "fault": "default"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "form-invalid-utf8",
+    "steps": [
+      {
+        "op": "get_form",
+        "default_bytes": "ff"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "form-empty-default",
+    "steps": [
+      {
+        "op": "get_form",
+        "default_text": ""
+      }
+    ]
+  },
+  {
+    "id": "one-shot-success",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n",
+          "discard": "field"
+        }
+      },
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_form"
+      }
+    ]
+  },
+  {
+    "id": "explicit-repeat",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "same\n"
+        }
+      },
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "same\n"
+        }
+      }
+    ]
+  },
+  {
+    "id": "disabled-draft",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": false,
+          "content": "not-applied"
+        }
+      },
+      {
+        "op": "get_form"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "missing-enabled",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "content": "x"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "missing-content",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-0",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": null
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-1",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": {}
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-2",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": false
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-3",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": 0
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-4",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": -0.0
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-5",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": 1e-320
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-6",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": ""
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "falsey-config-7",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "retained",
+          "content": "before"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "init",
+        "config": []
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "non-object-config-0",
+    "steps": [
+      {
+        "op": "init",
+        "config": true
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "non-object-config-1",
+    "steps": [
+      {
+        "op": "init",
+        "config": 1
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "non-object-config-2",
+    "steps": [
+      {
+        "op": "init",
+        "config": "text"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "non-object-config-3",
+    "steps": [
+      {
+        "op": "init",
+        "config": [
+          1
+        ]
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-0",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": null,
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-1",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": false,
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-2",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": 0,
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-3",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": -0.0,
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-4",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "",
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-5",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": [],
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-6",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": {},
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-7",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "false",
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-8",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "0",
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-9",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": [
+            0
+          ],
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-10",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": {
+            "a": 0
+          },
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "enabled-truth-11",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": 9007199254740993,
+          "content": "value"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-0",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": null
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-1",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": false
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-2",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": 0
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-3",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": -0.0
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-4",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": ""
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-5",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": []
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-6",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": {}
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-7",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": true
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-8",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": 123456789012345678901234567890
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-9",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": [
+            0
+          ]
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-10",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": {
+            "a": 1
+          }
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-11",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "\u4e2d\u6587\r\n# keep\n"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-12",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "movie: [invalid"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "content-type-13",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": ""
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "fault-apply",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "new\n"
+        },
+        "fault": "apply"
+      },
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "fault-helper",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "new\n"
+        },
+        "fault": "helper"
+      },
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "fault-message",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "new\n"
+        },
+        "fault": "message"
+      },
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "fault-update",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "new\n"
+        },
+        "fault": "update"
+      },
+      {
+        "op": "get_state"
+      },
+      {
+        "op": "stop_service"
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "update-return-False",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "new\n"
+        },
+        "update_return": false
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "update-return-None",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": true,
+          "content": "new\n"
+        },
+        "update_return": null
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "unicode-0",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "before\ud800after"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "unicode-1",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "before\udc00after"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  },
+  {
+    "id": "unicode-2",
+    "steps": [
+      {
+        "op": "init",
+        "config": {
+          "enabled": "yes",
+          "content": "emoji\ud83d\ude0a"
+        }
+      },
+      {
+        "op": "get_state"
+      }
+    ]
+  }
+]

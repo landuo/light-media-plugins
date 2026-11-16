@@ -1,0 +1,118 @@
+{
+  "phase": "finite OCR JSON value slice verified; awaiting Root independent review",
+  "remote_runner": "prepare_remote.py -> /home/admin/light-media-plugins-source-ocr-value-domain-20261106/run-r1",
+  "source": "47 ordinary type +9 mixed depth +4 empty-terminal depth,105 actual HTTP; full original HDSky14/80HTTP; all immutable333 netnone synthetic services; source source*.stdout and hdsky-source.stdout",
+  "candidates": "five consumer files in production-files.json; sourceBinding based true4d1b5e2; backend candidate equals true5c2b0a9 and is excluded from production delta",
+  "verification": "63 named pure race pass; initial prepared-only source retained; actual source form Recursion boundary child9994 restored, empty list/dict terminal repr skips depth",
+  "app_build": {
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/app-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/domain-app-linux.test",
+      "./internal/app"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": ""
+    },
+    "exit": 0,
+    "seconds": 8.509914750233293,
+    "sha256": "e4d76ef2d679eb57effb9b27054b2e5f9beefefb8a2b4acffec81e381ed4d566",
+    "inputs": 2211,
+    "stable": true,
+    "boundary": "H internal/cmd Go + go.mod/sum + exact App test; excludes P/ H testdata and Origin metadata not compiled"
+  },
+  "probe_builds": [
+    {
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-mod=readonly",
+        "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-new-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/new-domain-probe-linux",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "env": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": ""
+      },
+      "exit": 0,
+      "seconds": 0.496480209287256,
+      "sha256": "c025afcb94bef928ada9a52ce50a5319decfccc64d75726730454f1874ae0e64"
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-mod=readonly",
+        "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-old-parser-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/old-parser-domain-probe-linux",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "env": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": ""
+      },
+      "exit": 0,
+      "seconds": 0.5030282498337328,
+      "sha256": "fe472a0a20e3985d3a475efd6393943666147cbf27fb2f689abc0eb119d1a1b6"
+    },
+    {
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-mod=readonly",
+        "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-old-binding-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/old-binding-domain-probe-linux",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "env": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": ""
+      },
+      "exit": 0,
+      "seconds": 0.5083862077444792,
+      "sha256": "bc7a03a8417922702545af05d2913a14d03611abfed6a960f434d2f563f62506"
+    }
+  ],
+  "pending": [
+    "Root review 5 hunks and source/raw evidence; future true integration requires fresh canonical regression",
+    "retain four original ELFs until review release, then exact cleanup",
+    "OpenCD full JSON caller and browser/Main/UI remain outside this finite slice"
+  ]
+}

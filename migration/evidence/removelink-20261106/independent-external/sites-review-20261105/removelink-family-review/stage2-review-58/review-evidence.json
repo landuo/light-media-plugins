@@ -1,0 +1,23 @@
+{
+  "classification": "independent source and private Go/SDK review checkpoint, NOT family/Main acceptance",
+  "status": "confirmed-source-difference-open",
+  "target_manifest_sha256": "70658b192fdae91d55f3addabdf91592dee545e49776bb347cfb8a943291774f",
+  "target_files": 58,
+  "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "SDK_files": 98,
+  "normal_pass": 239,
+  "race_pass": 239,
+  "platform_skips_each": 8,
+  "linux_roots": 24,
+  "linux_nodes": 29,
+  "mutants_compiled_killed": 6,
+  "open_issues": [
+    "Unknown ~username Path.expanduser RuntimeError must stop unlink at original catch boundary",
+    "Separate finite host scalar get_state adaptation/App validation pending"
+  ],
+  "raw_manifest_sha256": "c3681ba6453f3d009809b72ec37eb18ef070ec758be2cbba2671ecee33f68bf9",
+  "raw_file_count": 512,
+  "report": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/current58/review-status.md",
+  "report_sha256": "6a3e6688ebf4eefa39c95f7793557ff327c4d348a8d537e8cb5ad916de725408",
+  "old_source_stage1_unchanged": true
+}

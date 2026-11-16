@@ -1,0 +1,148 @@
+{
+  "feature": "plugin.AutoSignIn",
+  "fixed_installed_source": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "installed_version": "2.9.15",
+  "source_sha256": {
+    "autosignin/__init__.py": "1d8329afc00bc218710e302e0eda915351731d41101df08fcf378e90440b9220",
+    "autosignin/sites/tjupt.py": "ed717891d30abcac798407c8889776ec79191e447b4ef7f97aee1bddb0f98bb0"
+  },
+  "fixed_platform": {
+    "backend": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend": "2829e3b08214348f05ff2f5beae644882eccad58"
+  },
+  "package": {
+    "product_source_commit": "1aed110c0fe33f903a22abfdb85ae41613669e61",
+    "host_commit": "30bf6ae87f431cdc83a34cfd75a62d1cc666897b",
+    "host_sha256": "37944e759b99fdcfa16faf3da590ac8ca883a2bb389331bbda964e194f5faaf0",
+    "SDK_files": 105,
+    "linux": "amd64, go1.26.10, CGO_ENABLED=0, isolated UID1000/container network none",
+    "run": {
+      "exit": 0,
+      "seconds": 6.320024244021624,
+      "container_absent": true,
+      "network": "none",
+      "bundle_sha_verified": true
+    },
+    "actual_install": {
+      "actual_executable_sha256": "14c50f5d8d3dd3a7d5dad639ea862fc95da9b1e6d0252430c466db6ac72ce593",
+      "old_PID_reaped": true,
+      "real_config_and_page": true,
+      "zip_sha256": "ba00c82b33658eafd6be60e166ac96b9a5f9f3b5970583154977545ee04be34b"
+    },
+    "actual_observation_sha256": "e1927d02e22745af1d367abbf444c7899ca19cf8dbf1412d0e03dbe56e664095",
+    "actual_observation_path": "work/autosignin-final-package-20261107/actual/observations.jsonl",
+    "manifest_sha256": "b870f6212fa191f7692ee5ff6a82cee64aebf667f4256ed83fa6ed3a14083755",
+    "local_release_with_notices": {
+      "scope": "Canonical archive with complete notices, same actual installed worker bytes. Only documentation and licenses changed after installed test.",
+      "installed_zip_sha256": "ba00c82b33658eafd6be60e166ac96b9a5f9f3b5970583154977545ee04be34b",
+      "release_zip_sha256": "cc7c940235f118e0e20c84a7ec930d5eabcb9a9767b30bad85c416316cda5d1f",
+      "worker_sha256": "14c50f5d8d3dd3a7d5dad639ea862fc95da9b1e6d0252430c466db6ac72ce593",
+      "members": 44,
+      "changed_members": [
+        "THIRD_PARTY_NOTICES.md",
+        "plugins/autosignin/ORIGIN.md",
+        "plugins/autosignin/imagehash/NOTICE.txt",
+        "plugins/autosignin/imagehash/tiffport/LIBTIFF-LICENSE.md"
+      ],
+      "release_directory": "work/autosignin-final-package-20261107/with-notices"
+    },
+    "scope": "Exact current worker install/force-update, old worker reaped, real saved config and data-page calls. Final archive adds only license and attribution documents. Existing cold/GUI/ordinary host evidence retains its original binding."
+  },
+  "reused_evidence": {
+    "actual_Main179": {
+      "raw": "P/work/autosignin-private-main-final-20261107/actual-r4",
+      "review": "dd53b677d070f6e95a13e86ac7ed5dadb4881caebbe96aee2448492779d70fc1",
+      "events": 179,
+      "actual_attendance": 14,
+      "Main_generations": 6,
+      "Web_counts": "3/8/13/16 then22 total including ordinary late replies",
+      "notification_failed": 0,
+      "Go_test_seconds": 60.76,
+      "remote_Python_seconds": 65.75948872999288,
+      "guarded_outer_seconds": 72.40674262493849,
+      "inputs": "7095compiled/native/module/tool/recipe+811embeds and supplemental recipe exact before/after;5BOM unchanged",
+      "result": "actualPASS/exit0/exceptionnil/fullCIDremoved/bothnamesempty",
+      "scope": "private/public/ordinary/event/API lifetimes, sameversion forceupdate, site501/native1, cold/reset/siteDeleted/uninstall; ownedpeer only, not actual PT/private import/provider"
+    },
+    "actual_browser_composite": {
+      "status": "Real browser create/save and pending isolation passed; original480s overall run remains FAIL because log observation/marker not completed in time. Same persisted data continuation then completed only remaining log/cold/reset/uninstall tail; no creation/config replay.",
+      "failed_full_run": "P/work/autosignin-browser-final-20261107/runtime-recipe/actual: actualexit1,exceptionnil,543.237remote seconds,container0,BOMunchanged,7095+recipebinding exact",
+      "browser": "Chrome native CUA: IAB unavailable, extension-tab control blocked; ordinary Escape dismissed focus popup without changing protections; real native AX actions completed. Screenshots/AX are in CUA tool outputs, not claimed as localPNG files.",
+      "visible_completed": [
+        "five whitespace fields clone created andpending0/1; realGo ui-created-checked confirmed originalbase unchanged/no copiedhistory/noattendance",
+        "actual browserSave enabled/notifyfalse, source501, retryUI-only-synthetic-retry; onceconsumedfalse andsuccess1/1 observed",
+        "clone-specific logs opened, INFO+签到成功 filters yield one genuine successrow; URL targets AutoSignInui; no config or task replay in log continuation"
+      ],
+      "continuation": "P/work/autosignin-browser-remaining-20261107/actual",
+      "continuation_result": "actualexit0/exceptionnil/147.142remote seconds/fullCIDremoved/bothnamesempty/bundleunchanged; test-only driver1ac reuses exact product host379/installedworker and2282 compiled inputs stable",
+      "remaining_tail_passed": "OriginalpreUI base page/config exact, clone config exact incllogin_sites[], two successful histories coldrestored, onlyoncefalse/disabled; metadata5trim, newPIDs/cold3.3s nohistory mutation; sourcereset empties onlysource andpreservesclone page/config/PID; cloneuninstall removesclonecode/joinsPID, basecodekept",
+      "Root_marker_only": "ui-created and ui-log-complete bridge files only, no pluginconfiguration API substitution"
+    },
+    "actual_API_60_second_boundary": "resume.AutoSignIn_current.latest_20261107.actual_Main_API_expiry_current",
+    "package_login_only_and_cold_reinstall": {
+      "result": {
+        "exit": 0,
+        "seconds": 16.392433180939406,
+        "container_absent": true,
+        "network": "none",
+        "bundle_sha_verified": true
+      },
+      "observations": "work/autosignin-package-current-continuation/tail/actual/observations.jsonl",
+      "sha256": "847074be59c19912a46c71eac6db6d01b62e6c8082708385a434e2f87379235a",
+      "login_only": {
+        "authenticated_home_requests": 1,
+        "login_history": true,
+        "one_shot_cleared": true,
+        "sign_in_requests": 0,
+        "today_login": "1/1",
+        "today_sign_in": "0/0"
+      },
+      "lifecycle": {
+        "base_code_retained_on_uninstall": true,
+        "cold_and_reinstall_actual_calls": true,
+        "publication_or_production_deployment": false,
+        "source_config_retained": true
+      },
+      "scope": "Same ZIP reused. Synthetic state recreated because the first owned run was cleaned up. Only needed path to cold start and uninstall/reinstall was run. No repeat of Main179, Chrome or full codec regression."
+    },
+    "historical_differential_and_host_records": [
+      "autosignin.source_ocr_json_values.20261106",
+      "autosignin.owned_main_once_lifecycle.20261106",
+      "autosignin.owned_browser_populated_clone.20261106"
+    ]
+  },
+  "image_source_replay": {
+    "fixture": "plugins/autosignin/imagehash/testdata/source-extra-codecs.json",
+    "fixture_sha256": "ef7f9a97d1402710a148c998218953b05d3dcaa2d90e060032b626dc41d28adf",
+    "latest_separate_restart_tag": {
+      "source": "AutoSignIn 2.9.15 sites/tjupt.py:110,174,244–262; Pillow 12.2.0/libtiff 4.7.1 tif_ojpeg.c OJPEGVSetField, OJPEGReadHeaderInfo, OJPEGReadHeaderInfoSecStreamDri. The separate YCbCr reader seeds the JPEG DRI from TIFF tag 515, and inline DRI overrides it.",
+      "target": "plugins/autosignin/imagehash/tiffport/reader_ojpeg_planar.go:222",
+      "kind": "Fixed source and Go differential on isolated synthetic TIFF6 inputs. Pixel bytes, grayscale, shape and Tjupt hash match.",
+      "cases": [
+        "TIFF6-YCbCr111-separate-interchange-single-strip-restart-tag",
+        "TIFF6-YCbCr111-separate-interchange-single-strip-inline-overrides-tag"
+      ],
+      "evidence": {
+        "expected.json": "e853449572ffb909dbd67bf827e26877174c62e15d84de10be615728d3799a59",
+        "command.json": "dcc96b3840dfbbd465a72656de8d8f93aff9316b69d095aadd1acc3bc4a3ba8f",
+        "target.stdout": "01f1be9400fba826743cfd97f873543828c75afb7f110886f3e2bfb5f08a3777"
+      },
+      "evidence_directory": "work/tiff6-planar-restart-tag",
+      "command": "go test ./plugins/autosignin/imagehash -run ^TestSourceExtraImageCodecs/TIFF6-YCbCr111-separate-interchange-single-strip-.*-tag$ -v -count=1"
+    },
+    "scope": "Exact original loaded mode, dimensions, pixels, grayscale and Tjupt hash on owned inputs. Finite reader coverage, no generic Pillow API or arbitrary codec-variant claim."
+  },
+  "independent_review": {
+    "reviewer": "/root/autosignin_closure",
+    "status": "passed",
+    "observations": "Verified source identity, all 22 compiled site adapters, ordinary init/config/form/page/API/command/service/PluginAction/SiteDeleted/stop paths and current actual package identity. Reuse Main179, same-data Chrome tail and login-only/cold/reinstall because compared runtime differences are image decoding only. License and attribution requested and included in restaged archive with identical worker."
+  },
+  "delivery": {
+    "build_registry": "build-plugins.json",
+    "branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "remote_pushed": false,
+    "production_deployed": false,
+    "original_private_state_imported": false
+  }
+}

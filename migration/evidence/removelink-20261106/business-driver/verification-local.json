@@ -1,0 +1,50 @@
+[
+  {
+    "name": "contracts-final-normal",
+    "argv": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "-tags=removelink_business_acceptance",
+      "./tests/integration",
+      "-run",
+      "^TestRemoveLinkBusinessNoticeContracts$"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit": 0,
+    "elapsed_seconds": 1.2648862078785896,
+    "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-normal.jsonl"
+  },
+  {
+    "name": "contracts-final-race",
+    "argv": [
+      "go",
+      "test",
+      "-json",
+      "-race",
+      "-count=1",
+      "-tags=removelink_business_acceptance",
+      "./tests/integration",
+      "-run",
+      "^TestRemoveLinkBusinessNoticeContracts$"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit": 0,
+    "elapsed_seconds": 2.9814639161340892,
+    "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/contracts-final-race.jsonl"
+  },
+  {
+    "name": "vet-final",
+    "argv": [
+      "go",
+      "vet",
+      "-tags=removelink_business_acceptance",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "exit": 0,
+    "elapsed_seconds": 0.29703370900824666,
+    "log": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/vet-final.jsonl"
+  }
+]

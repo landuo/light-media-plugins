@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/main-driver-linux.test",
+    "-test.v",
+    "-test.timeout=3m",
+    "-test.run=^TestAutoSignInActualMainOwnedSiteOnceAndClone$"
+  ],
+  "exit": 1,
+  "seconds": 4.375378393102437,
+  "env": {
+    "TMPDIR": "/home/admin/light-media-plugins-root-asi-owned-20261106/tmp",
+    "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/host-main-linux",
+    "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-owned-20261106/runtime",
+    "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/auto-sign-in-linux",
+    "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/source/form.json",
+    "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/source/api-oracle.json"
+  },
+  "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+  "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+}

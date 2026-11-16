@@ -1,0 +1,133 @@
+{
+  "source_sha256": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+  "source_methods": {
+    "init_plugin": {
+      "lineno": 35,
+      "no_op": false
+    },
+    "get_state": {
+      "lineno": 51,
+      "no_op": false
+    },
+    "get_command": {
+      "lineno": 55,
+      "no_op": true
+    },
+    "get_api": {
+      "lineno": 58,
+      "no_op": true
+    },
+    "get_form": {
+      "lineno": 61,
+      "no_op": false
+    },
+    "get_page": {
+      "lineno": 119,
+      "no_op": true
+    },
+    "stop_service": {
+      "lineno": 122,
+      "no_op": true
+    }
+  },
+  "source_static_metadata": {
+    "plugin_name": "二级分类策略",
+    "plugin_desc": "编辑下载和整理时自动二级分类的目录规则。",
+    "plugin_icon": "Bookstack_A.png",
+    "plugin_version": "1.3",
+    "plugin_author": "jxxghp",
+    "author_url": "https://github.com/jxxghp",
+    "plugin_config_prefix": "categoryeditor_",
+    "plugin_order": 5,
+    "auth_level": 1,
+    "_enabled": false,
+    "_content": ""
+  },
+  "manifest": {
+    "plugin_order": 5,
+    "schema_version": 1,
+    "plugin_id": "CategoryEditor",
+    "name": "二级分类策略",
+    "description": "编辑下载和整理时自动二级分类的目录规则。",
+    "icon": "Bookstack_A.png",
+    "author": "jxxghp",
+    "author_url": "https://github.com/jxxghp",
+    "version": "1.3",
+    "runtime": "go-executable",
+    "entry": "category-editor",
+    "host_api_min": 1,
+    "host_api_max": 1,
+    "methods": [
+      "init",
+      "get_state",
+      "get_service",
+      "get_command",
+      "get_api",
+      "get_render_mode",
+      "get_form",
+      "get_page",
+      "get_dashboard",
+      "get_dashboard_meta",
+      "get_auth_providers",
+      "get_module",
+      "close",
+      "stop_service",
+      "stop"
+    ],
+    "capabilities": [
+      "plugin.category.get_default",
+      "plugin.category.apply",
+      "plugin.systemmessage.put",
+      "plugin.base.update_config"
+    ]
+  },
+  "source_form_equals_target": true,
+  "current_host_semantic_identity": [
+    {
+      "target": "plugins/categoryeditor/categoryeditor.go",
+      "pinned_host_path": "internal/plugins/categoryeditor/categoryeditor.go",
+      "equal_except_module_relocation": true
+    },
+    {
+      "target": "plugins/categoryeditor/form.json",
+      "pinned_host_path": "internal/plugins/categoryeditor/form.json",
+      "equal_except_module_relocation": true
+    },
+    {
+      "target": "cmd/category-editor/main.go",
+      "pinned_host_path": "cmd/category-editor/main.go",
+      "equal_except_module_relocation": true
+    }
+  ],
+  "target_head": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+  "host_head": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+  "files": {
+    "plugins/categoryeditor/categoryeditor.go": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+    "plugins/categoryeditor/form.json": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+    "plugins/categoryeditor/categoryeditor_test.go": "71faceb60b71e0db5e2bdccbf48315233ae9bfe7abb253764d45caf422a29e49",
+    "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+    "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
+    "build-plugins.json": "4e379b99b94326490929d786ce0c222490c7bd156c1bb411230679c0789f98e9",
+    "scripts/build_plugins.py": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+    ".github/workflows/linux-amd64.yml": "e5aad435b2605663eea6359c8fc504b589a9b9eec17850c5b320d2d9e44d872f",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+  },
+  "host_files": {
+    "internal/app/plugin_categoryeditor_resources.go": "1821eb85c8d1f5104ea709303a7cfa4fbeeee0349144ffa6491b7a0d554db9dd",
+    "internal/app/plugin_categoryeditor_wire.go": "88acdb1a6ee46e011c451e7cf6619440507bacb11cf21aa9560c63afbab77948",
+    "internal/app/media_category.go": "7bc4a56baf0f6611de3f267d876a83b0de1d587a2935e6482723b6d315081ad8",
+    "internal/app/media_category_runtime.go": "f2ad131739f8241bcc61e333e746ad419c1ec79defcc1a245072b84e959ce491",
+    "internal/app/category_conditions.go": "c617f27de62da84d81e745d805a2578a2abf3b59ccf9f8cd83d1d44adc7b8db0",
+    "internal/app/category_yaml.go": "e86f35596e8823b3229e9a3bcb47664e30c3195c1ace4945c535800d70a35368",
+    "internal/app/defaults/category.yaml": "1095b3aeb315569f541fded31bc77f43fa625cb9ac4844e3a28ba7d7868b2303",
+    "internal/plugins/category_policy.go": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+    "testdata/plugins/category-editor-1.3/installed-category-helper.py": "1c0ec53b78caa3a4949dd970931f38430c67c9d46ea2e16c3cc00950fb24c2b2",
+    "migration/evidence/categoryeditor/resume-20261029/categoryeditor-final-independent-review-20261029.json": "1611f84bcf21007178b9dcaa85a100fcb0105a81ec46a3875f42ecd2ed5ad6a7"
+  },
+  "notes": [
+    "Build helper uses Python only on build machines; release ZIP payload contains Go executable, embedded JSON form and legal notices.",
+    "Linux/amd64 actual ZIP build and install require coordinator evidence; not executed by this static audit.",
+    "CategoryHelper source is archived 2026-10-20; no new claim about live helper identity."
+  ]
+}

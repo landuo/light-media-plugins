@@ -1,0 +1,25 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "-overlay=/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/current-host-overlay.json",
+    "-run",
+    "^TestSourceUninstall|^TestIndependentSameOrderCloneStartupIgnoresInstalledArrayOrder$|^TestIndependentLoadedSelfInitializerReapsOnlyAfterItsSourceTail$|^TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache$|^TestIndependentEmptyInstalledStillChecksPackageRootExists$",
+    "./internal/app"
+  ],
+  "cwd": "/Users/accidia/projects/light-media",
+  "explicit_env": {
+    "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/pluginuninstall-review/tmp",
+    "SOURCE_UNINSTALL_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/plugin-uninstall",
+    "SOURCE_UNINSTALL_FUTURE_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+    "OWNED_HOST_SERVICES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-host-services-fixture",
+    "SOURCE_UNINSTALL_COUNTER_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-standard-fixture"
+  },
+  "host_manifest_sha256": "f9e4f90ef62309f4b064dbeb8f9a3b319841dd2c4c6e9bd33aa16201fb022988",
+  "exit": 0,
+  "seconds": 47.66243505477905,
+  "inputs": 2866,
+  "changed": []
+}

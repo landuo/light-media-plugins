@@ -1,0 +1,83 @@
+Browser tab: 11, Title: "光影 · Light Media", URL: "http://192.168.8.129:36256/#plugins".
+1 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36256/#plugins
+	2 container app
+		3 container
+			4 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36256/#discover
+			5 link Description: 搜索结果, Value: 192.168.8.129:36256/#search
+			6 text 发现
+			7 link Description: 推荐, Value: 192.168.8.129:36256/#discover
+			8 link Description: 探索, Value: 192.168.8.129:36256/#explore
+			9 link Description: 仪表板, Value: 192.168.8.129:36256/#dashboard
+			10 text 订阅
+			11 link Description: 电影, Value: 192.168.8.129:36256/#subscriptions?type=movie
+			12 link Description: 电视剧, Value: 192.168.8.129:36256/#subscriptions?type=tv
+			13 link Description: 日历, Value: 192.168.8.129:36256/#calendar
+			14 text 整理
+			15 link Description: 下载管理, Value: 192.168.8.129:36256/#downloads
+			16 link Description: 整理历史, Value: 192.168.8.129:36256/#history
+			17 link Description: 文件管理, Value: 192.168.8.129:36256/#files
+			18 text 系统
+			19 link Description: 站点管理, Value: 192.168.8.129:36256/#sites
+			20 link Description: 插件, Value: 192.168.8.129:36256/#plugins
+			21 link Description: 任务队列, Value: 192.168.8.129:36256/#jobs
+			22 link Description: 日志, Value: 192.168.8.129:36256/#logs
+			23 link Description: 设置, Value: 192.168.8.129:36256/#settings
+		24 container
+			25 button 搜索影视
+			26 text field (settable) 搜索电影、剧集
+			27 text ⌘K
+			28 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			29 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			31 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+				32 container 有未读通知
+			33 button 退出登录
+		34 container
+			35 tab group
+				36 container
+					37 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					38 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			39 button 搜索插件
+			40 button 筛选已安装插件
+			41 button 排序插件
+			42 container
+				43 text 清理媒体文件  v2.18 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				44 link Description: DzAvril, Value: github.com/DzAvril
+				45 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			46 container
+				47 text 清理媒体文件  v2.18.1 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				48 link Description: DzAvril, Value: github.com/DzAvril
+				49 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			50 button 新建文件夹
+	51 container
+		53 container
+			54 button 关闭插件日志
+			55 text 插件日志
+			56 link 192.168.8.129:36256/api/plugins/RemoveLink/logs/download
+			57 link 192.168.8.129:36256/api/plugins/RemoveLink/logs/file
+			58 combo box (collapsed) Secondary Actions: Expand
+				59 container
+					60 text 全部级别
+					61 text field (settable) Description: 日志级别, Help: Open, Value: ALL, ID: input-109
+			62 text field (settable) Description: 搜索日志内容, Value: browser-, ID: input-112
+			63 button Clear 
+			64 button 暂停日志流
+			65 text 2026/11/06 03:52:26
+			66 text INFO:
+			67 container
+				68 text 03:52:26,889 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui/browser-source.mkv
+			69 text INFO:
+			70 container
+				71 text 03:52:26,890 plugins - 立即删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui/browser-alias-0.mkv
+			72 text INFO:
+			73 container
+				74 text 03:52:26,893 plugins - 立即删除硬链接文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui/browser-alias-1.mkv
+			75 text INFO:
+			76 container
+				77 text 03:52:26,909 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui/browser-alias-0.mkv
+			78 text INFO:
+			79 container
+				80 text 03:52:26,915 plugins - 监测到删除文件：/home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui/browser-alias-1.mkv
+
+The focused UI element is 62 text field (settable) Description: 搜索日志内容, Value: browser-, ID: input-112

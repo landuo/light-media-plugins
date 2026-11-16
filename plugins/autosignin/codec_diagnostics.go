@@ -8,7 +8,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/landuo/light-media-plugins/internal/encodingdetector"
+	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
 )
 
 //go:embed charmap-source-modules.json

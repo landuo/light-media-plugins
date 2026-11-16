@@ -37,7 +37,7 @@ func TestQQBotOfficialProactiveNotification(t *testing.T) {
 	if authCalls != 2 || len(requests) != 5 {
 		t.Fatalf("unexpected token/send count: %d/%d", authCalls, len(requests))
 	}
-	check := func(index int, endpoint string, body map[string]any, auth string) {
+	check := func(index int, endpoint string, body object, auth string) {
 		t.Helper()
 		req := requests[index]
 		headers, _ := req.Kwargs["headers"].(map[string]any)
@@ -48,12 +48,12 @@ func TestQQBotOfficialProactiveNotification(t *testing.T) {
 			t.Fatalf("unexpected auth header at %d", index)
 		}
 	}
-	check(0, "https://bots.qq.com/app/getAppAccessToken", map[string]any{"appId": "123456", "clientSecret": "fixture-secret"}, "")
+	check(0, "https://bots.qq.com/app/getAppAccessToken", obj("appId", "123456", "clientSecret", "fixture-secret"), "")
 	for _, index := range []int{1, 2} {
-		check(index, "https://api.sgroup.qq.com/v2/users/u_123456/messages", map[string]any{"content": "入库完成\n\n测试影片", "msg_type": 0}, "QQBot fixture-token-1")
+		check(index, "https://api.sgroup.qq.com/v2/users/u_123456/messages", obj("content", "入库完成\n\n测试影片", "msg_type", 0), "QQBot fixture-token-1")
 	}
-	check(3, "https://bots.qq.com/app/getAppAccessToken", map[string]any{"appId": "123456", "clientSecret": "fixture-rotated-secret"}, "")
-	check(4, "https://sandbox.api.sgroup.qq.com/v2/groups/group_123456/messages", map[string]any{"content": "群通知", "msg_type": 0}, "QQBot fixture-token-2")
+	check(3, "https://bots.qq.com/app/getAppAccessToken", obj("appId", "123456", "clientSecret", "fixture-rotated-secret"), "")
+	check(4, "https://sandbox.api.sgroup.qq.com/v2/groups/group_123456/messages", obj("content", "群通知", "msg_type", 0), "QQBot fixture-token-2")
 }
 
 func TestQQBotOfficialRejectionsDoNotReplayOrRevealSecrets(t *testing.T) {

@@ -1,0 +1,3384 @@
+{
+  "source_sha256": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+  "helper": "synthetic recorder; not YAML parser",
+  "cases": [
+    {
+      "id": "fresh-and-noop",
+      "observations": [
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_command",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_api",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_page",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "form-fresh-read",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "\u542f\u7528\u63d2\u4ef6\uff08\u5199\u5165\u914d\u7f6e\u6587\u4ef6\uff09"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "enabled": false,
+              "content": "default-one\n"
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "\u542f\u7528\u63d2\u4ef6\uff08\u5199\u5165\u914d\u7f6e\u6587\u4ef6\uff09"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "enabled": false,
+              "content": "default-two\n"
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "form-read-fails",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "form-invalid-utf8",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "UnicodeDecodeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "form-empty-default",
+      "observations": [
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "\u542f\u7528\u63d2\u4ef6\uff08\u5199\u5165\u914d\u7f6e\u6587\u4ef6\uff09"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "one-shot-success",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "\u542f\u7528\u63d2\u4ef6\uff08\u5199\u5165\u914d\u7f6e\u6587\u4ef6\uff09"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "enabled": false,
+              "content": "default-one\n"
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "6d6f7669653a0a2020e4b8ade69687e794b5e5bdb13a207b7d0a74763a0a2020e585a8e983a8e589a7e99b863a207b7d0a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie:\n  \u4e2d\u6587\u7535\u5f71: {}\ntv:\n  \u5168\u90e8\u5267\u96c6: {}\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "explicit-repeat",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "same\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "same\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "73616d650a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "same\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "same\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "same\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "73616d650a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            },
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "same\n"
+            },
+            {
+              "enabled": false,
+              "content": "same\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "disabled-draft",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_form",
+          "error": false,
+          "result": [
+            [
+              {
+                "component": "VForm",
+                "content": [
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12,
+                          "md": 6
+                        },
+                        "content": [
+                          {
+                            "component": "VSwitch",
+                            "props": {
+                              "model": "enabled",
+                              "label": "\u542f\u7528\u63d2\u4ef6\uff08\u5199\u5165\u914d\u7f6e\u6587\u4ef6\uff09"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  },
+                  {
+                    "component": "VRow",
+                    "content": [
+                      {
+                        "component": "VCol",
+                        "props": {
+                          "cols": 12
+                        },
+                        "content": [
+                          {
+                            "component": "VAceEditor",
+                            "props": {
+                              "modelvalue": "content",
+                              "lang": "yaml",
+                              "theme": "monokai",
+                              "style": "height: 30rem"
+                            }
+                          }
+                        ]
+                      }
+                    ]
+                  }
+                ]
+              }
+            ],
+            {
+              "enabled": false,
+              "content": "default-one\n"
+            }
+          ],
+          "state": false,
+          "events": [
+            {
+              "method": "default",
+              "payload": {}
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "missing-enabled",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "missing-content",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "AttributeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "falsey-config-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "retained",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "retained",
+          "state": "retained",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "AttributeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "AttributeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "AttributeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "non-object-config-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "AttributeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": null,
+          "state": null,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": 0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": 0,
+          "state": 0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": -0.0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": -0.0,
+          "state": -0.0,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": "",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "",
+          "state": "",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": [],
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": [],
+          "state": [],
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": {},
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": {},
+          "state": {},
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "value"
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-8",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "value"
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-9",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "value"
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-10",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "value"
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "enabled-truth-11",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "value"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "value"
+                }
+              }
+            }
+          ],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "76616c7565",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "value"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-3",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-4",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-5",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-6",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-7",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": true
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "TypeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-8",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": 123456789012345678901234567890
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "TypeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-9",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": [
+                  0
+                ]
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "TypeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-10",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": true,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": {
+                  "a": 1
+                }
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "TypeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": true,
+          "state": true,
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-11",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "\u4e2d\u6587\r\n# keep\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "\u4e2d\u6587\r\n# keep\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "e4b8ade696870d0a23206b6565700a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "\u4e2d\u6587\r\n# keep\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "e4b8ade696870d0a23206b6565700a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "\u4e2d\u6587\r\n# keep\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-12",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "movie: [invalid"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "movie: [invalid"
+                }
+              }
+            }
+          ],
+          "file_hex": "6d6f7669653a205b696e76616c6964",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie: [invalid"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6d6f7669653a205b696e76616c6964",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "movie: [invalid"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "content-type-13",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": ""
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": ""
+                }
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": ""
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "fault-apply",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            }
+          ],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "7072696f720a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "fault-helper",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 1,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "fault-message",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 1,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "fault-update",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "new\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 1,
+          "source_error_type": "OSError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "stop_service",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "update-return-False",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "new\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "new\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "new\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "update-return-None",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "new\n"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "new\n"
+                }
+              }
+            }
+          ],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "new\n"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "6e65770a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "new\n"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "unicode-0",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before\ud800after"
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "UnicodeEncodeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "unicode-1",
+      "observations": [
+        {
+          "op": "init",
+          "error": true,
+          "result": null,
+          "state": "yes",
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "before\udc00after"
+              }
+            }
+          ],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": "UnicodeEncodeError"
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": "yes",
+          "state": "yes",
+          "events": [],
+          "file_hex": "",
+          "messages": [],
+          "updates": [],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    },
+    {
+      "id": "unicode-2",
+      "observations": [
+        {
+          "op": "init",
+          "error": false,
+          "result": null,
+          "state": false,
+          "events": [
+            {
+              "method": "apply",
+              "payload": {
+                "content": "emoji\ud83d\ude0a"
+              }
+            },
+            {
+              "method": "message",
+              "payload": {
+                "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+                "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+              }
+            },
+            {
+              "method": "update",
+              "payload": {
+                "config": {
+                  "enabled": false,
+                  "content": "emoji\ud83d\ude0a"
+                }
+              }
+            }
+          ],
+          "file_hex": "656d6f6a69f09f988a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "emoji\ud83d\ude0a"
+            }
+          ],
+          "helper_calls": 1,
+          "source_error_type": null
+        },
+        {
+          "op": "get_state",
+          "error": false,
+          "result": false,
+          "state": false,
+          "events": [],
+          "file_hex": "656d6f6a69f09f988a",
+          "messages": [
+            {
+              "message": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565\u5df2\u66f4\u65b0\uff0c\u8bf7\u6ce8\u610f\u540c\u6b65\u8c03\u6574\u76ee\u5f55\u8bbe\u7f6e\uff0c\u63d2\u4ef6\u5c06\u6062\u590d\u5173\u95ed\u72b6\u6001\uff01",
+              "title": "\u4e8c\u7ea7\u5206\u7c7b\u7b56\u7565"
+            }
+          ],
+          "updates": [
+            {
+              "enabled": false,
+              "content": "emoji\ud83d\ude0a"
+            }
+          ],
+          "helper_calls": 0,
+          "source_error_type": null
+        }
+      ]
+    }
+  ]
+}

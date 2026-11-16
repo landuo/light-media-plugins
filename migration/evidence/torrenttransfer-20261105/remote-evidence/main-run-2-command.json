@@ -1,0 +1,28 @@
+{
+  "command": [
+    "/home/admin/light-media-plugins-migration-tt-20261105/integration-linux.test",
+    "-test.run",
+    "^TestTorrentTransferActualMainDaemons$",
+    "-test.v",
+    "-test.timeout=40m"
+  ],
+  "environment": {
+    "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-migration-tt-20261105/light-media-host-final-linux",
+    "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-tt-20261105/main-run-2",
+    "CATEGORYEDITOR_LISTEN": "0.0.0.0:36252",
+    "TORRENTTRANSFER_OWNED_ROOT": "/home/admin/light-media-plugins-migration-tt-20261105",
+    "TORRENTTRANSFER_WORKER_BINARY": "/home/admin/light-media-plugins-migration-tt-20261105/torrent-transfer-linux-amd64",
+    "TORRENTTRANSFER_UPDATE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-tt-20261105/torrent-transfer-version-fixture",
+    "TORRENTTRANSFER_PACKAGE_ZIP": "/home/admin/light-media-plugins-migration-tt-20261105/TorrentTransfer-1.10.3-linux-amd64.zip",
+    "TORRENTTRANSFER_REAL_BATCH": "1",
+    "TORRENTTRANSFER_UI_WAIT": "1",
+    "TORRENTTRANSFER_PUBLIC_URL": "http://192.168.8.129:36252"
+  },
+  "verified_binaries": {
+    "light-media-host-final-linux": "25d8b4e83e4a7422cc0fff9a341aed94ae0de629f2f18fc3fc352adc8a702f64",
+    "integration-linux.test": "b19a6a40508ecedc3af46876b72866908c763f8a04bb65562b5ec0c6aa1efd46",
+    "torrent-transfer-linux-amd64": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+    "torrent-transfer-version-fixture": "0c14bfdc790c46fdb047bd63c8d37d0ec530384d1faeb4c945e9d69cd39b4662",
+    "TorrentTransfer-1.10.3-linux-amd64.zip": "fa5b72e2e5247085be80e5e172d263dd15d2fbd1ce28e361ed0bd194f4028c02"
+  }
+}

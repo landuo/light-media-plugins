@@ -1,0 +1,23 @@
+{
+  "owner": "/root/plugin_sdk",
+  "scope": "Auth-only declaration addon: three Go Manifests + source assertion; no host/SDK/ORIGIN/old4693/report changes",
+  "before": [
+    {
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "sha256": "2cab5876eabfff1d22cfdf5e53b8bf88a4301434388ff56c6ae4d60c7614fbfd"
+    },
+    {
+      "path": "plugins/torrenttransfer/plugin.go",
+      "sha256": "48f099f1c0faa669ef78654e1ea08b52e2ed88c363203227ba3e6ba0f1d3567d"
+    },
+    {
+      "path": "plugins/removelink/plugin.go",
+      "sha256": "45139714a32b260fb1de961bc11604dc1bc689d60b4e358a4ef6c700bcc6d39a"
+    },
+    {
+      "path": "tests/sourceinterfaces/manifest_source_test.go",
+      "sha256": "dcf3a8d54186f9d79ca1c1391edb116df06e62281ec1aaea1833ece94fb64f07"
+    }
+  ],
+  "source_oracle_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606"
+}

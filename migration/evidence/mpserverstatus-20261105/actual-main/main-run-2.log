@@ -1,0 +1,4 @@
+=== RUN   TestMPServerStatusActualMainOwnedNamespace
+    mpserverstatus_main_test.go:218: source current bool form projection missing true {"conf":[{"component":"VForm","content":[{"component":"VRow","content":[{"component":"VCol","content":[{"component":"VSwitch","props":{"label":"启用插件","model":"enable"}}],"props":{"cols":12,"md":6}}]}]}],"model":{"enable":"false","onlyonce":true,"owned_unknown":"source preserves unknown value; one-shot is not a source feature"},"render_mode":"vuetify"}
+--- FAIL: TestMPServerStatusActualMainOwnedNamespace (3.18s)
+FAIL

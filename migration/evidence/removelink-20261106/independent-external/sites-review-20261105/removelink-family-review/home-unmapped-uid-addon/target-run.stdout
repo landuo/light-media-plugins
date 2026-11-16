@@ -1,0 +1,6 @@
+=== RUN   TestIndependentUnmappedCurrentUIDHomeDoesNotBecomeRoot
+    independent_unmapped_uid_test.go:5: current UID resolution error: user: Current requires cgo or $USER, $HOME set in environment
+    independent_unmapped_uid_test.go:8: NewPlugin Home="" normalized(~)="/" panic=<nil>
+    independent_unmapped_uid_test.go:9: actual3.12 Path.expanduser requires RuntimeError when HOME absent and passwd UID missing
+--- FAIL: TestIndependentUnmappedCurrentUIDHomeDoesNotBecomeRoot (0.00s)
+FAIL

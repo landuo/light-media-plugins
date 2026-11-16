@@ -1,0 +1,39 @@
+{
+  "classification": "local packaging stage of existing builder archive_plugin and license_inventory; cross-build on current primary Mac worktree; actual Linux manifests will be checked by ordinary-main driver; no full native-Linux build_plugins.py CLI execution claimed",
+  "initial_worker_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+  "zip_sha256": "fa5b72e2e5247085be80e5e172d263dd15d2fbd1ce28e361ed0bd194f4028c02",
+  "builder_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "package_files": {
+    "torrent-transfer": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+    "LICENSE": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "LICENSE.upstream": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986",
+    "THIRD_PARTY_NOTICES.md": "60367abf0e3a617f9c3f6bded95eb4824d9be50b1873c4c2197d10c0ab8ac07f",
+    "third_party/Go-LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "third_party/x-text-LICENSE": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+    "third_party/x-text-PATENTS": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+  },
+  "update_fixture": {
+    "classification": "manifest-only1.10.4 fixture, not upstream release",
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/torrenttransfer-runtime/version-fixture-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/torrenttransfer-runtime/torrent-transfer-version-fixture",
+      "./cmd/torrent-transfer"
+    ],
+    "explicit_environment": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "binary_sha256": "0c14bfdc790c46fdb047bd63c8d37d0ec530384d1faeb4c945e9d69cd39b4662",
+    "overlay_sha256": "c6983500b0ced001c9d84b02b0d9a598ce5f20c4b7cec87b340cf30c4d4e43c3",
+    "input_sha256": "aa42ad2e8c4ec736b92423db52130ba1bbf6df6090335f6119e103569ebcbb41",
+    "source_input_sha256": "fe32464cfa379c47fe42f88477e312fa80f6e2b7719a15f72415c1bb37e6c0e2"
+  },
+  "dependency_preflight_previous_driver_sha256": "f5b57527f33b2f510b49482ba6064d1802a873d56447369389063d700cf627b5",
+  "dependency_preflight_binding_limit": "Earlier dependency-only preflight driver was built before the main-driver additions; this hash identifies the executed binary. It is not current product/main acceptance."
+}

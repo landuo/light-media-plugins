@@ -1,0 +1,51 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and indexed worker. Lark, recognition, tracker and downloader use owned loopback protocol peers. SQLite and local file operations are real.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1373–1417,1492–1501,1908–1980",
+      "target": "light-media internal/app/{subscription_runtime,subscription_provider_matching,plugin_original_subscribe_chat_refresh_match}.go",
+      "behavior": "Use one recognized source model for coverage and matching. The original TMDB/Douban conflict checks extend to exact provider namespaces, including Bangumi and AniList."
+    },
+    {
+      "source": "app/chain/subscribe.py:2020–2088; app/chain/download.py:526–560,935–967",
+      "target": "light-media internal/app/{subscription_ordinary_fallback,download_provider_target,download_events,search_download,subscription_acquisition_batch}.go",
+      "behavior": "Existing RSS root, failure cooldown, download acceptance and retry use the persisted subscription revision and source identity. No provider number occupies the TMDB namespace."
+    },
+    {
+      "source": "app/chain/transfer.py:1945–1962,2333–2375",
+      "target": "light-media internal/app/{search_download,import_provider,import_plan}.go",
+      "behavior": "Verify the completed local file and register the original provider identity in the library."
+    }
+  ],
+  "run": {
+    "status": "passed",
+    "test": "TestOriginalLarkProviderSubscriptionRSSDownloadLinuxAMD64",
+    "seconds": 2.17,
+    "binding": {
+      "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+      "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+      "host_commit": "afec02bc2966b01c9c62537476f913f3d237f29f",
+      "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+      "fixture_sha256": "4768597bd36c5313b956bf1fc05994318cf86643998c2719dcaaaab0bd519e29",
+      "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+    },
+    "host_elf_sha256": "81f13ac7ff1fb92e43b00d4e8a28bf88824be9c4a5dee1d310354a0e0d440036",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "ad9634e3adb94cd680d5bfc006b90e2bb81df1dab0c8b1af96d0315709c910ea",
+    "runtime_log_sha256": "2bba5281f57e619e603e57126fb7ef96adec692cb4490beda63d6988a9b41de4",
+    "observations": [
+      "A native installed Lark worker created Bangumi 777 using configured title fallback after selecting AniList 777, with no TMDB identity. The fixture seeded the running subscription state and one historic recognized RSS row for AniList 777.",
+      "The Lark refresh owned a genuine RSS root with both provider facts. Only the exact Bangumi enclosure was fetched using owned tracker credentials. Its original bencoded bytes reached one whole Add on the qB protocol peer. The wrong-provider endpoint was never called and no separate tracker search ran.",
+      "The accepted intent and its sealed provider subscription revision, archived material and download.accepted event retained tv:bangumi:777 and S01E01. After completed file verification the App created one same-inode hardlink with a provider-keyed library slot. No extra Add occurred."
+    ]
+  },
+  "adaptations_and_open": [
+    "Only S01E01 of the four-episode subscription was acquired. No provider subscription retirement, BestVersion, restart, or scraper outcome is proved by this run.",
+    "The isolated fixture lacks source statistics sharing settings. The background registration child reported SUBSCRIPTION_STATS_DEPENDENCY without undoing subscription creation or acquisition.",
+    "The prior matching-only evidence remains bound to the earlier behavior and commit. This run covers the new material side effect, using exact enclosure ID and accepted intent instead of the obsolete matching-only decision record."
+  ]
+}

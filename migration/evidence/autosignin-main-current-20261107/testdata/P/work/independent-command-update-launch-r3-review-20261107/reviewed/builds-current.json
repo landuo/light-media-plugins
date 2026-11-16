@@ -1,0 +1,111 @@
+{
+  "env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": "",
+    "GOPROXY": "off"
+  },
+  "inputs": 7064,
+  "embeds": 811,
+  "stable": true,
+  "builds": [
+    {
+      "name": "host",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/host",
+        "./cmd/server"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "exit": 0,
+      "seconds": 3.9734770408831537,
+      "sha256": "c31f8f43480a3cf297598af401eaa16899f65aa2b5b09fe138545613334c42c6",
+      "bytes": 57225378
+    },
+    {
+      "name": "worker",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/worker",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.12479820800945163,
+      "sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+      "bytes": 12796066
+    },
+    {
+      "name": "worker-updated",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/updated-worker-overlay.json",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/worker-updated",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.12223879201337695,
+      "sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+      "bytes": 12796066
+    },
+    {
+      "name": "cli",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/cli",
+        "./cmd/source-sites-migrate-owned"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "exit": 0,
+      "seconds": 0.644235041923821,
+      "sha256": "7044b75a4cb61768538c0dcf764ef6a038254edb75f820b46ace98035abe0c84",
+      "bytes": 25215138
+    },
+    {
+      "name": "driver",
+      "argv": [
+        "go",
+        "test",
+        "-p=1",
+        "-c",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/driver-overlay.json",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/driver",
+        "./tests/integration"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.8251009588129818,
+      "sha256": "75fe4f1ecddc27f3249d2ec8266798ff34cfcb596cbe1f0d9f9a056dd85d637f",
+      "bytes": 9756834
+    }
+  ],
+  "scope": "real Go Main/worker/CLI; test-only description-marked same-version worker and driver; compilation is not runtime acceptance"
+}

@@ -1,0 +1,465 @@
+{
+  "classification": "independent readonly exact-owned NAS sample; no secret key or credential decryption; no Main/worker startup",
+  "at_utc": "2026-11-05T12:41:48.551338+00:00",
+  "marker": {
+    "content": "light-media-plugins/MPServerStatus/20261105/owned-only",
+    "uid": 1000,
+    "mode": "0o600"
+  },
+  "binaries": {
+    "light-media-host75e-linux": {
+      "sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+      "bytes": 70557259
+    },
+    "mp-server-status-linux-amd64": {
+      "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+      "bytes": 16753190
+    },
+    "mp-server-status-update-linux-amd64": {
+      "sha256": "748fd4d48d919d69ae64af021f8ce8ede962a5035c7d3c0ae4c85633302624f4",
+      "bytes": 16753190
+    },
+    "mpserverstatus-main-tests-linux-amd64": {
+      "sha256": "be494b043aa27a8a4813f250a997648612001fa5494c4093269f43c64ed0ea3d",
+      "bytes": 11669109
+    }
+  },
+  "owned_container_status": [],
+  "owned_processes": [],
+  "plugin_tables": {
+    "plugin_api_calls": {
+      "columns": [
+        "run_id",
+        "instance_id",
+        "generation",
+        "config_revision",
+        "scope"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_download_file_events": {
+      "columns": [
+        "file_event_id",
+        "instance_id",
+        "generation",
+        "sealed"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_event_admissions": {
+      "columns": [
+        "run_id",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_event_batches": {
+      "columns": [
+        "id",
+        "instance_id",
+        "handler_key",
+        "generation",
+        "config_revision",
+        "due_at",
+        "run_id",
+        "created_at",
+        "state",
+        "item_count"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_event_deliveries": {
+      "columns": [
+        "instance_id",
+        "handler_key",
+        "event_id",
+        "event_seq",
+        "batch_id"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": []
+    },
+    "plugin_event_subscriptions": {
+      "columns": [
+        "instance_id",
+        "handler_key",
+        "generation",
+        "config_revision",
+        "event_types",
+        "delay_ms",
+        "active",
+        "cursor"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_installations": {
+      "columns": [
+        "instance_id",
+        "plugin_id",
+        "version",
+        "manifest_schema",
+        "manifest",
+        "desired_enabled",
+        "installed",
+        "generation",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 2,
+      "identity_fields": [
+        "instance_id",
+        "plugin_id",
+        "version",
+        "installed",
+        "generation"
+      ],
+      "identity_rows": [
+        [
+          "MPServerStatus",
+          "MPServerStatus",
+          "1.4.1",
+          1,
+          3
+        ],
+        [
+          "MPServerStatusowned",
+          "MPServerStatus",
+          "1.4",
+          0,
+          1
+        ]
+      ]
+    },
+    "plugin_instance_metadata": {
+      "columns": [
+        "instance_id",
+        "sealed"
+      ],
+      "rows": 1,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": [
+        [
+          "MPServerStatusowned"
+        ]
+      ]
+    },
+    "plugin_media_refresh_items": {
+      "columns": [
+        "run_id",
+        "asset_id",
+        "digest"
+      ],
+      "rows": 0
+    },
+    "plugin_media_refresh_operations": {
+      "columns": [
+        "run_id",
+        "instance_id",
+        "service_fingerprint",
+        "state",
+        "result",
+        "updated_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": []
+    },
+    "plugin_message_queue": {
+      "columns": [
+        "seq",
+        "id",
+        "route_id",
+        "ordinal",
+        "state",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_migration_receipts": {
+      "columns": [
+        "source_fingerprint",
+        "source_plugin_id",
+        "instance_id",
+        "run_id",
+        "digest",
+        "imported_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": []
+    },
+    "plugin_migration_runs": {
+      "columns": [
+        "id",
+        "source_fingerprint",
+        "source_plugin_id",
+        "instance_id",
+        "state",
+        "error_code",
+        "details",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": []
+    },
+    "plugin_notice_preferences": {
+      "columns": [
+        "kind",
+        "token",
+        "sealed"
+      ],
+      "rows": 1
+    },
+    "plugin_notice_publications": {
+      "columns": [
+        "id",
+        "route_id",
+        "ordinal",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_notice_route_steps": {
+      "columns": [
+        "route_id",
+        "ordinal",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_notice_routes": {
+      "columns": [
+        "id",
+        "instance_id",
+        "generation",
+        "source_token",
+        "sealed"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_organization": {
+      "columns": [
+        "owner_id",
+        "revision",
+        "sealed",
+        "updated_at"
+      ],
+      "rows": 0
+    },
+    "plugin_run_config_transitions": {
+      "columns": [
+        "run_id",
+        "from_revision",
+        "to_revision",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_run_origins": {
+      "columns": [
+        "run_id",
+        "sealed"
+      ],
+      "rows": 0
+    },
+    "plugin_runs": {
+      "columns": [
+        "id",
+        "instance_id",
+        "version",
+        "generation",
+        "config_revision",
+        "action",
+        "state",
+        "input",
+        "result",
+        "error_code",
+        "created_at",
+        "updated_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "version",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_schedule_occurrences": {
+      "columns": [
+        "id",
+        "instance_id",
+        "service_id",
+        "generation",
+        "config_revision",
+        "scheduled_at",
+        "state",
+        "run_id",
+        "misfire_grace_ms",
+        "manual",
+        "created_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_schedules": {
+      "columns": [
+        "instance_id",
+        "service_id",
+        "group_key",
+        "generation",
+        "config_revision",
+        "definition",
+        "definition_digest",
+        "active",
+        "next_due",
+        "updated_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_site_control_operations": {
+      "columns": [
+        "run_id",
+        "instance_id",
+        "generation",
+        "config_revision",
+        "result"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_site_control_watchers": {
+      "columns": [
+        "instance_id",
+        "generation",
+        "config_revision",
+        "config",
+        "updated_at"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_site_statistic_operations": {
+      "columns": [
+        "run_id",
+        "instance_id",
+        "generation",
+        "config_revision",
+        "result"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_storage_schema": {
+      "columns": [
+        "version"
+      ],
+      "rows": 1,
+      "identity_fields": [
+        "version"
+      ],
+      "identity_rows": [
+        [
+          1
+        ]
+      ]
+    },
+    "plugin_subscribe_group_operations": {
+      "columns": [
+        "run_id",
+        "instance_id",
+        "generation",
+        "config_revision",
+        "result"
+      ],
+      "rows": 0,
+      "identity_fields": [
+        "instance_id",
+        "generation"
+      ],
+      "identity_rows": []
+    },
+    "plugin_values": {
+      "columns": [
+        "instance_id",
+        "kind",
+        "item_key",
+        "revision",
+        "sealed",
+        "updated_at"
+      ],
+      "rows": 1,
+      "identity_fields": [
+        "instance_id"
+      ],
+      "identity_rows": [
+        [
+          "MPServerStatus"
+        ]
+      ]
+    }
+  },
+  "package_id_dirs": [
+    "MPServerStatus"
+  ],
+  "continuation_marker_present": true
+}

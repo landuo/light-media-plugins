@@ -1,0 +1,93 @@
+{
+  "classification": "read-only installed Python AST inspection, no app/plugin execution; pass methods distinguished from executable page bodies",
+  "cases": [
+    {
+      "instance": "categoryeditor",
+      "source_path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot/categoryeditor/__init__.py",
+      "sha256": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+      "class": "CategoryEditor",
+      "plugin_order": 5,
+      "get_page_lines": [
+        119,
+        120
+      ],
+      "body_ast_types_after_docstring": [
+        "Pass"
+      ],
+      "page_has_executable_body": false
+    },
+    {
+      "instance": "torrenttransfer",
+      "source_path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot/torrenttransfer/__init__.py",
+      "sha256": "e5f513a57cf42ee8778744ba30cf669f93a5a3e6c7589ca0b2e3b9c483651bd5",
+      "class": "TorrentTransfer",
+      "plugin_order": 18,
+      "get_page_lines": [
+        596,
+        597
+      ],
+      "body_ast_types_after_docstring": [
+        "Pass"
+      ],
+      "page_has_executable_body": false
+    },
+    {
+      "instance": "torrenttransfermusic",
+      "source_path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot/torrenttransfermusic/__init__.py",
+      "sha256": "4d271e68aa3fc994c1d50cd850d4b1e5699c9f7900eaa106082b9f13efe4c5bb",
+      "class": "TorrentTransfermusic",
+      "plugin_order": 18,
+      "get_page_lines": [
+        598,
+        599
+      ],
+      "body_ast_types_after_docstring": [
+        "Pass"
+      ],
+      "page_has_executable_body": false
+    },
+    {
+      "instance": "sitestatistic",
+      "source_path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot/sitestatistic/__init__.py",
+      "sha256": "763a88be85185a94082a2f131ed1c80d8306abe24b10ebe9ae95447cfe5da17d",
+      "class": "SiteStatistic",
+      "plugin_order": 1,
+      "get_page_lines": [
+        973,
+        1093
+      ],
+      "body_ast_types_after_docstring": [
+        "FunctionDef",
+        "Assign",
+        "If",
+        "Assign",
+        "Assign",
+        "Assign",
+        "Assign",
+        "Assign",
+        "For",
+        "Assign",
+        "Return"
+      ],
+      "page_has_executable_body": true
+    },
+    {
+      "instance": "mpserverstatus",
+      "source_path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/source-snapshot/mpserverstatus/__init__.py",
+      "sha256": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+      "class": "MPServerStatus",
+      "plugin_order": 99,
+      "get_page_lines": [
+        103,
+        130
+      ],
+      "body_ast_types_after_docstring": [
+        "If",
+        "Assign",
+        "If",
+        "Return"
+      ],
+      "page_has_executable_body": true
+    }
+  ]
+}

@@ -1,0 +1,20 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "./internal/app",
+    "-run",
+    "^TestSourceUninstall"
+  ],
+  "exit_code": 1,
+  "seconds": 48.454729318618774,
+  "passed_nodes": 46,
+  "failed_tests": [
+    "TestSourceUninstallDuplicateInstalledIDsImportOneActualClass",
+    null
+  ],
+  "19files_stable": true,
+  "manifest_sha256": "43544923853e716481f71c2494b3a28ac263233644d0bc1f8baf3340811b691f"
+}

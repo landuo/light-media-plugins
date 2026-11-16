@@ -1,0 +1,25 @@
+{
+  "classification": "new driver only for retained actual-main cold/reset/uninstall continuation; original run6 failure and completed transfer evidence remain separate",
+  "command": [
+    "go",
+    "test",
+    "-c",
+    "-o",
+    "work/migration-20261105/torrenttransfer-runtime/integration-resume-linux.test",
+    "./tests/integration"
+  ],
+  "explicit_environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0"
+  },
+  "inputs": {
+    "tests/integration/categoryeditor_main_test.go": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+    "tests/integration/testhost_main_test.go": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+    "tests/integration/torrenttransfer_main_test.go": "5db5b10c386b33eda119c7768dbad512cce5b97bcedd3e30824e40f97896768b",
+    "tests/integration/torrenttransfer_resume_main_test.go": "f0843067ac995bf88a6df5ecc8c5d3478196ebc97af568776717b18a0fb8c4e8",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+  },
+  "binary_sha256": "a183236e5543a5bd0e7d0195ec41dd8ec6ac8b56840c2bd2a19024fc9b222659"
+}

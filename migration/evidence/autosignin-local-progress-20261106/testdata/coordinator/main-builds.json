@@ -1,0 +1,60 @@
+[
+  {
+    "name": "auto-sign-in-linux",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/auto-sign-in-linux",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 0.8095293338410556,
+    "inputs": 504,
+    "stable": true,
+    "sha256": "e6b6c247e5cd17019263a20e2dfe5c52afe33075e0511f5a5f8f597f117c5509",
+    "overlay": false,
+    "modfile": false
+  },
+  {
+    "name": "host-main-linux",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/host-main-linux",
+      "./cmd/server"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 5.609925333876163,
+    "inputs": 2481,
+    "stable": true,
+    "sha256": "882ea401bf3dba1a737efa296e003d4f88275edc3fee4b3644120cec1bc5c79f",
+    "overlay": false,
+    "modfile": false
+  }
+]

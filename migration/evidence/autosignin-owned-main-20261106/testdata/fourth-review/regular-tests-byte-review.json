@@ -1,0 +1,34 @@
+{
+  "application_sha256": "00ad899d9d01a6f067ca640d68190176a6c5af3f0448e70dfc6f5db69be90c8b",
+  "test_original_sha256": "39806e1f893490d5901ae04883a5fa66944a3503cead18ed5aa6249ce6c49ce2",
+  "actual_test_sha256": "c67d2a537e6046e206d76281c672df689839678c8c36509f95ea9f3cbd398ff2",
+  "exact_four_plan_edits": true,
+  "rows": [
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/testdata/source-ocr-json-values/source.json",
+      "sha256": "4df6b4545339fe25ea73eae1c37e94ec6a5aa84747646c7acdf7c9a6479a9775",
+      "equal_reported_byte": true,
+      "expected_edits": 0
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/testdata/source-ocr-json-values/mixed-depth.json",
+      "sha256": "1a93d3720faafbe6f5732cb71f4eeafc8ebf563110eba6d0db17e097c0785f2a",
+      "equal_reported_byte": true,
+      "expected_edits": 0
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/testdata/source-ocr-json-values/empty-depth.json",
+      "sha256": "f4d5953736248a27cb55c17d15d79313b0e2645caa5c3a13457b64db23738e82",
+      "equal_reported_byte": true,
+      "expected_edits": 0
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_ocr_value_domain_test.go",
+      "sha256": "c67d2a537e6046e206d76281c672df689839678c8c36509f95ea9f3cbd398ff2",
+      "equal_reported_byte": true,
+      "expected_edits": 4
+    }
+  ],
+  "executed_by_this_review": false,
+  "scope": "regular test relocation bytes only; no default network fixture introduced"
+}

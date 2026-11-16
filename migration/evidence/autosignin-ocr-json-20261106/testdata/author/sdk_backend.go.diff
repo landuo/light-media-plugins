@@ -1,0 +1,23 @@
+--- /Users/accidia/projects/light-media-plugins/plugins/autosignin/sdk_backend.go
++++ plugins/autosignin/sdk_backend.go
+@@ -362,8 +362,11 @@
+ 		return decodeSourcePage(content, fallback, func(level, message string) error { return b.log(level, message) })
+ 	}
+ 	hooks.OCR = func(ctx context.Context, image string) (any, error) {
+-		result, err := (sdk.CaptchaOCR{Host: b.host}).Text(ctx, sdk.CaptchaOCRRequestV1{SiteID: transport.identity(), ImageURL: image})
++		result, err := (sdk.CaptchaOCR{Host: b.host}).Text(ctx, sdk.CaptchaOCRRequestV1{SourceReference: sourceReferencePointer(transport.reference(ctx)), ImageURL: image})
+ 		b.fatal(err)
++		if result.SourceResponse != nil {
++			return sourceOCRServiceResult(result.SourceResponse.Content, result.SourceResponse.ContentType)
++		}
+ 		var value any
+ 		err = Decode(result.Result, &value)
+ 		if err != nil {
+@@ -387,3 +390,7 @@
+ 	hooks.Tjupt = &TjuptDependencies{Cache: &sdkTjuptCache{backend: b}, Public: sdkTjuptPublic{backend: b}}
+ 	return SiteVisitor{Adapters: InstalledAdapterRegistry(), Hooks: hooks}
+ }
++
++func sourceReferencePointer(value sdk.SiteSourceReferenceV1) *sdk.SiteSourceReferenceV1 {
++	return &value
++}

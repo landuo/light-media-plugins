@@ -1,0 +1,58 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App and exact changed indexed Lark worker. Provider peers were isolated. The production server executable was cross-built separately; the restart test consumed the real App signal and reopened the same test directory with a fresh App.",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "2ff19968163627866d495b2cb82cd36e46d38d43",
+    "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+    "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+    "index_sha256": "6688ae2042bd995888c0a0a03a26767e8084df436a80128d5980eaf5c110912a"
+  },
+  "runs": [
+    {
+      "id": "larkmessager.native_version_cache_commands.20261108",
+      "test": "TestOriginalLarkSystemCommandsLinuxAMD64",
+      "status": "passed",
+      "seconds": 1.55,
+      "source": "app/command.py:98–113,326–343,441–468; app/chain/system.py:25–35,165–192,219–296; app/chain/__init__.py:470–490,2045–2049",
+      "target": "light-media internal/app/plugin_original_chat_system.go, internal/systemversion/version.go, web/version.go, cmd/server/main.go",
+      "fixture_sha256": "df51c34e7d96ff449527ddc6b5f966458db66dc68993cfc408af750a2192bd05",
+      "observations": [
+        "Actual indexed Lark webhook /version sent the exact backend and frontend version lines to the initiating user. One HTTPS request to the canonical release route selected the numerically highest tag within the installed major.",
+        "Actual indexed /clear_cache cleared generic SQLite metadata, persisted and in-memory recognition, and provider cache state. A provider entry refetched. An encrypted existing notification remained unchanged and neither system response entered notice history."
+      ]
+    },
+    {
+      "id": "larkmessager.native_restart_command.20261108",
+      "test": "TestOriginalLarkRestartLinuxAMD64",
+      "status": "passed",
+      "seconds": 5.92,
+      "source": "app/command.py:104–109; app/chain/system.py:37–56,194–217; app/helper/system.py:284–321; app/startup/lifecycle.py:41–57",
+      "target": "light-media internal/app/{plugin_original_chat_restart,plugin_original_host_message_inbound,runtime}.go and the existing cmd/server/main.go supervisor",
+      "fixture_sha256": "6739c4a86add66811658d383e233182420bc25ee53c71acd0c3454c1296992bb",
+      "observations": [
+        "A verified cloned worker webhook sent a start notice and the host signaled its existing supervisor. The same sender and instance were stored in the encrypted pending receipt before closing the first App.",
+        "A fresh native App reopened the same data, started a new clone worker PID and consumed the pending receipt. Only the clone account sent one versioned completion to the original sender. The base and clone tokens were distinct.",
+        "The first batch reached the expected restart and completion, but its fixture rejected the base account's token fetch in the ordinary processing reaction chain. The corrected fixture accepts separate base authentication and still requires both actual restart writes to use only the clone token. Only this case was rerun."
+      ]
+    }
+  ],
+  "run_artifacts": {
+    "first_batch_elf_sha256": "4a01d859fcf9eeeae32b7672cfc90732fd3730aaf72985bcecd3bd9a27383578",
+    "first_batch_restart_fixture_sha256": "6a6a7b443010a047cf1d8a9543f489e04db0b2fc9bffc0827c895d2828150db2",
+    "first_batch_log_sha256": "e861388fa632a90a7281e61b828d623abed0ff819f2bfa5253d5f113bb140e3e",
+    "restart_elf_sha256": "0f0dbd1be2850c841479b5ff81df0239f1912dcc27f650906fb83bdc83f6e39b",
+    "restart_log_sha256": "94dec0903d846fb0a5952b3496406b9d62d6b119b86e8f1706a5378f0059ad53",
+    "server_build_elf_sha256": "33a6376ba6b75642ca40a666ecc33790163099d5db663513ea4f80eac99ac34f",
+    "runner_sha256": "93829b37cd858bab9bcb66664b1362fdb7daab0eb224ae151f9e90e22b086163"
+  },
+  "scope_and_adaptations": [
+    "Version uses the canonical light-media monorepo release for both components and the actual bundled frontend version file or package fallback. MoviePilot queries separate backend and frontend releases.",
+    "Cache clearing reaches installed ordinary plugin clear_cache modules first, then the host's catalog and recognition cache namespaces. The app keeps business records, configured credentials, provider transport strategy and receipts. Fanart and TVDB native caches are absent in light-media.",
+    "The native supervisor gracefully reopens the App in the same OS process. The Go receipt binds the initiating account and claims the completion before its external write to prevent an ambiguous response from replaying across restart.",
+    "CookieCloud sync is a separate site credential synchronization service (app/scheduler.py:411–415, app/chain/site.py:409–588). Media-server sync ingests and prunes a full library inventory (app/scheduler.py:416–420, app/chain/mediaserver.py:245–315,412–515). These independent host systems are outside the plugin migration and the existing no-inventory host boundary. Lark retains the ordinary command dispatch route; the port adds neither service."
+  ]
+}

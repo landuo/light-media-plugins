@@ -1,0 +1,647 @@
+Pending jobs:
+    站点自动签到 (trigger: date[2026-11-06 16:19:49 UTC], pending)
+{
+  "classification": "immutable333 netnone synthetic source-method replay with real APScheduler/private date and public interval execution; memory store, fake registry/site results/event delivery/HTTP request/installer network boundaries; not full MP App, not target Go App",
+  "python": "3.12.13",
+  "apscheduler": "3.11.3",
+  "rows": [
+    {
+      "case": "private-once-default-shutdown-blocks-reinit",
+      "delay": 3.0130973898340017,
+      "onlyonce_false_before_fire": true,
+      "blocked_before_release": true,
+      "config_before_release": "1",
+      "final_cron": "2",
+      "history_keys": [
+        "11月7日",
+        "签到-2026-11-07"
+      ],
+      "calls": 1,
+      "scheduler_none": true
+    },
+    {
+      "case": "manager-close-then-private-stop",
+      "returned_before_release": false,
+      "joined": true,
+      "calls": 1,
+      "history_keys": [
+        "11月7日",
+        "签到-2026-11-07"
+      ]
+    },
+    {
+      "case": "public-interval-real-owner-active-remove",
+      "interval_seconds": 0.12,
+      "first_callback_delay": 0.12220701109617949,
+      "running": {
+        "AutoSignIn_AutoSignIn": {
+          "name": "站点自动签到服务",
+          "pid": "AutoSignIn",
+          "provider_name": "站点自动签到",
+          "kwargs": {},
+          "running": true,
+          "last_started_at": "2026-11-07 00:19:50",
+          "last_finished_at": null,
+          "last_error": null
+        }
+      },
+      "plugin_private_scheduler_none": true,
+      "remove_seconds": 5.123415030539036e-05,
+      "task_done_at_remove": false,
+      "calls": 1,
+      "history_keys": [
+        "11月7日",
+        "签到-2026-11-07"
+      ],
+      "jobs_after_remove": []
+    },
+    {
+      "case": "web-command-source-method-replay",
+      "web": {
+        "channel": "Web",
+        "source": "owned-user",
+        "userid": "owned-user",
+        "username": "owned-user",
+        "text": "/site_signin owned arg",
+        "images": null
+      },
+      "command_event": [
+        "CommandExcute",
+        {
+          "cmd": "/site_signin owned arg",
+          "user": "owned-user",
+          "channel": "Web",
+          "source": "owned-user",
+          "processing_status": null
+        }
+      ],
+      "plugin_event_kind": "PluginAction",
+      "first": {
+        "event": {
+          "action": "site_signin",
+          "channel": "Web",
+          "source": "owned-user",
+          "user": "owned-user",
+          "arg_str": "owned arg"
+        },
+        "posts": [
+          {
+            "channel": "Web",
+            "title": "开始站点签到 ...",
+            "userid": "owned-user"
+          },
+          {
+            "channel": "Web",
+            "title": "站点签到完成！",
+            "userid": "owned-user"
+          }
+        ],
+        "history": {
+          "11月7日": [
+            {
+              "site": "Owned synthetic",
+              "status": "签到成功",
+              "site_id": 701,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              701
+            ],
+            "retry": [],
+            "results": {
+              "701": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        },
+        "calls": 1
+      },
+      "second_same_day": {
+        "posts": [
+          {
+            "channel": "Web",
+            "title": "开始站点签到 ...",
+            "userid": "owned-user"
+          }
+        ],
+        "calls": 1
+      },
+      "empty_retry_two_invocations": {
+        "calls": 2,
+        "history": {
+          "11月7日": [
+            {
+              "site": "Owned synthetic",
+              "status": "签到成功",
+              "site_id": 701,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned synthetic",
+              "status": "签到成功",
+              "site_id": 701,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              701
+            ],
+            "retry": [
+              701
+            ],
+            "results": {
+              "701": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        }
+      },
+      "processing_finish": [
+        {
+          "status": null,
+          "user_id": "owned-user"
+        }
+      ]
+    },
+    {
+      "case": "force-same-version-source-endpoint-control-flow",
+      "rows": [
+        {
+          "force": false,
+          "repo_present": true,
+          "prepare_success": true,
+          "result": {
+            "success": true
+          },
+          "calls": [
+            [
+              "version_check",
+              "AutoSignIn",
+              "https://github.com/owned/synthetic"
+            ],
+            [
+              "stats",
+              {
+                "plugin_id": "AutoSignIn",
+                "repo_url": "https://github.com/owned/synthetic"
+              }
+            ],
+            [
+              "reload",
+              "AutoSignIn"
+            ]
+          ]
+        },
+        {
+          "force": true,
+          "repo_present": true,
+          "prepare_success": true,
+          "result": {
+            "success": true
+          },
+          "calls": [
+            [
+              "download",
+              {
+                "pid": "AutoSignIn",
+                "repo_url": "https://github.com/owned/synthetic",
+                "release_version": "2.9.15",
+                "force_install": true
+              }
+            ],
+            [
+              "stats",
+              {
+                "plugin_id": "AutoSignIn",
+                "repo_url": "https://github.com/owned/synthetic"
+              }
+            ],
+            [
+              "reload",
+              "AutoSignIn"
+            ]
+          ]
+        },
+        {
+          "force": true,
+          "repo_present": true,
+          "prepare_success": false,
+          "result": {
+            "success": false,
+            "message": "owned prepare failure"
+          },
+          "calls": [
+            [
+              "download",
+              {
+                "pid": "AutoSignIn",
+                "repo_url": "https://github.com/owned/synthetic",
+                "release_version": "2.9.15",
+                "force_install": true
+              }
+            ]
+          ]
+        },
+        {
+          "force": true,
+          "repo_present": false,
+          "prepare_success": true,
+          "result": {
+            "success": false,
+            "message": "没有传入仓库地址，无法正确安装插件，请检查配置"
+          },
+          "calls": []
+        }
+      ]
+    }
+  ],
+  "timeline": [
+    {
+      "at": 0.150182,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "private-init",
+      "cron": "1",
+      "onlyonce": true
+    },
+    {
+      "at": 0.151722,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "private-init",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.16324,
+      "kind": "site_enter",
+      "thread": "Thread-1 (worker)",
+      "case": "private-init"
+    },
+    {
+      "at": 3.163746,
+      "kind": "reinit_enter",
+      "thread": "owned-reinit"
+    },
+    {
+      "at": 3.28391,
+      "kind": "private_before_release",
+      "thread": "MainThread",
+      "blocked": true,
+      "cron": "1"
+    },
+    {
+      "at": 3.283992,
+      "kind": "site_return",
+      "thread": "Thread-1 (worker)",
+      "case": "private-init"
+    },
+    {
+      "at": 3.285254,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-0_0",
+      "case": "private-init",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.28548,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-0_0",
+      "case": "private-init",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.285513,
+      "kind": "config",
+      "thread": "ThreadPoolExecutor-0_0",
+      "case": "private-init",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.286018,
+      "kind": "config",
+      "thread": "owned-reinit",
+      "case": "private-init",
+      "cron": "2",
+      "onlyonce": false
+    },
+    {
+      "at": 3.286035,
+      "kind": "reinit_return",
+      "thread": "owned-reinit"
+    },
+    {
+      "at": 3.317831,
+      "kind": "site_enter",
+      "thread": "Thread-5 (worker)",
+      "case": "private-manager-stop"
+    },
+    {
+      "at": 3.317995,
+      "kind": "manager_stop_enter",
+      "thread": "owned-manager-stop"
+    },
+    {
+      "at": 3.318007,
+      "kind": "close_enter",
+      "thread": "owned-manager-stop"
+    },
+    {
+      "at": 3.318011,
+      "kind": "close_return",
+      "thread": "owned-manager-stop"
+    },
+    {
+      "at": 3.418195,
+      "kind": "site_return",
+      "thread": "Thread-5 (worker)",
+      "case": "private-manager-stop"
+    },
+    {
+      "at": 3.419221,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-1_0",
+      "case": "private-manager-stop",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.41932,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-1_0",
+      "case": "private-manager-stop",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.419364,
+      "kind": "config",
+      "thread": "ThreadPoolExecutor-1_0",
+      "case": "private-manager-stop",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.420226,
+      "kind": "manager_stop_return",
+      "thread": "owned-manager-stop"
+    },
+    {
+      "at": 3.420512,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "public-interval",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.544776,
+      "kind": "site_enter",
+      "thread": "Thread-9 (worker)",
+      "case": "public-interval"
+    },
+    {
+      "at": 3.544856,
+      "kind": "public_plugin_stop_enter",
+      "thread": "MainThread"
+    },
+    {
+      "at": 3.544866,
+      "kind": "public_plugin_stop_return",
+      "thread": "MainThread"
+    },
+    {
+      "at": 3.544949,
+      "kind": "site_return",
+      "thread": "Thread-9 (worker)",
+      "case": "public-interval"
+    },
+    {
+      "at": 3.545646,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-2_0",
+      "case": "public-interval",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.545709,
+      "kind": "save_data",
+      "thread": "ThreadPoolExecutor-2_0",
+      "case": "public-interval",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.545738,
+      "kind": "config",
+      "thread": "ThreadPoolExecutor-2_0",
+      "case": "public-interval",
+      "cron": "3.3333333333333335e-05",
+      "onlyonce": false
+    },
+    {
+      "at": 3.54587,
+      "kind": "progress_end",
+      "thread": "ThreadPoolExecutor-2_0",
+      "status": "success"
+    },
+    {
+      "at": 3.589684,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "web-first",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.589849,
+      "kind": "post",
+      "thread": "MainThread",
+      "case": "web-first",
+      "title": "开始站点签到 ..."
+    },
+    {
+      "at": 3.591033,
+      "kind": "site_enter",
+      "thread": "Thread-13 (worker)",
+      "case": "web-first"
+    },
+    {
+      "at": 3.591047,
+      "kind": "site_return",
+      "thread": "Thread-13 (worker)",
+      "case": "web-first"
+    },
+    {
+      "at": 3.592009,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "web-first",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.592089,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "web-first",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.592108,
+      "kind": "post",
+      "thread": "MainThread",
+      "case": "web-first",
+      "title": "站点签到完成！"
+    },
+    {
+      "at": 3.592141,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "web-first",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.592296,
+      "kind": "post",
+      "thread": "MainThread",
+      "case": "web-first",
+      "title": "开始站点签到 ..."
+    },
+    {
+      "at": 3.625558,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.626883,
+      "kind": "site_enter",
+      "thread": "Thread-17 (worker)",
+      "case": "empty-retry"
+    },
+    {
+      "at": 3.626902,
+      "kind": "site_return",
+      "thread": "Thread-17 (worker)",
+      "case": "empty-retry"
+    },
+    {
+      "at": 3.627585,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.627637,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.627663,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "cron": "1",
+      "onlyonce": false
+    },
+    {
+      "at": 3.62902,
+      "kind": "site_enter",
+      "thread": "Thread-21 (worker)",
+      "case": "empty-retry"
+    },
+    {
+      "at": 3.629041,
+      "kind": "site_return",
+      "thread": "Thread-21 (worker)",
+      "case": "empty-retry"
+    },
+    {
+      "at": 3.629687,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.629741,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.629767,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "empty-retry",
+      "cron": "1",
+      "onlyonce": false
+    }
+  ],
+  "library": [
+    {
+      "class_name": "BaseScheduler",
+      "path": "/opt/venv/lib/python3.12/site-packages/apscheduler/schedulers/base.py",
+      "sha256": "a27afd46e62c402a2b5bd7e4f0a017c08259dc680245a65dfa3f79c66ad52d2b",
+      "methods": {
+        "shutdown": {
+          "signature": "(self, wait=True)",
+          "source": "    @abstractmethod\n    def shutdown(self, wait=True):\n        \"\"\"\n        Shuts down the scheduler, along with its executors and job stores.\n\n        Does not interrupt any currently running jobs.\n\n        :param bool wait: ``True`` to wait until all currently executing jobs have finished\n        :raises SchedulerNotRunningError: if the scheduler has not been started yet\n\n        \"\"\"\n        if self.state == STATE_STOPPED:\n            raise SchedulerNotRunningError\n\n        self.state = STATE_STOPPED\n\n        # Shut down all executors\n        with self._executors_lock, self._jobstores_lock:\n            for executor in self._executors.values():\n                executor.shutdown(wait)\n\n            # Shut down all job stores\n            for jobstore in self._jobstores.values():\n                jobstore.shutdown()\n\n        self._logger.info(\"Scheduler has been shut down\")\n        self._dispatch_event(SchedulerEvent(EVENT_SCHEDULER_SHUTDOWN))\n"
+        }
+      }
+    },
+    {
+      "class_name": "BackgroundScheduler",
+      "path": "/opt/venv/lib/python3.12/site-packages/apscheduler/schedulers/background.py",
+      "sha256": "b1136b8a4521a726e5bc0e510a9282e438ef7f7f9be8d1ef9d74db97196a21a3",
+      "methods": {
+        "shutdown": {
+          "signature": "(self, *args, **kwargs)",
+          "source": "    def shutdown(self, *args, **kwargs):\n        super().shutdown(*args, **kwargs)\n        self._thread.join()\n        del self._thread\n"
+        }
+      }
+    },
+    {
+      "class_name": "BlockingScheduler",
+      "path": "/opt/venv/lib/python3.12/site-packages/apscheduler/schedulers/blocking.py",
+      "sha256": "d77f2b7fd5f50be6715954d500efe9c9f60c04a864a8edaa66a268c86227bf97",
+      "methods": {
+        "shutdown": {
+          "signature": "(self, wait=True)",
+          "source": "    def shutdown(self, wait=True):\n        super().shutdown(wait)\n        self._event.set()\n"
+        }
+      }
+    },
+    {
+      "class_name": "BasePoolExecutor",
+      "path": "/opt/venv/lib/python3.12/site-packages/apscheduler/executors/pool.py",
+      "sha256": "abfb21c67bd72e375cc21b4ac8fbd04989e03a301e2903bc282bd979bd7d4524",
+      "methods": {
+        "shutdown": {
+          "signature": "(self, wait=True)",
+          "source": "    def shutdown(self, wait=True):\n        self._pool.shutdown(wait)\n"
+        }
+      }
+    }
+  ]
+}

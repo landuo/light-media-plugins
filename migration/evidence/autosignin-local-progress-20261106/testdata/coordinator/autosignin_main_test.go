@@ -1,0 +1,294 @@
+package integration
+
+import (
+	"bytes"
+	"encoding/json"
+	"io"
+	"net/http"
+	"net/http/httptest"
+	"net/url"
+	"os"
+	"os/exec"
+	"path/filepath"
+	"reflect"
+	"runtime"
+	"strconv"
+	"strings"
+	"sync"
+	"testing"
+)
+
+// This first Main slice intentionally has no configured sites. The expectations
+// are original270ae0 AutoSignIn init82-134/form342/page758-771 and the actual333
+// FastAPI36-call source oracle. It proves real installation/Handle/config/API/
+// clone/reload/cold/reset/uninstall, not successful PT visits, OCR or timers.
+func TestAutoSignInActualMainEmptyLifecycle(t *testing.T) {
+	worker := os.Getenv("AUTOSIGNIN_WORKER_BINARY")
+	if worker == "" {
+		t.Skip("opt-in ordinary Linux Main: no execution/acceptance without AUTOSIGNIN_WORKER_BINARY")
+	}
+	if runtime.GOOS != "linux" || os.Geteuid() == 0 {
+		t.Fatal("owned Linux non-root runtime required")
+	}
+	type release struct {
+		manifest map[string]any
+		version  string
+		binary   []byte
+		hash     string
+	}
+	load := func(path string) release {
+		t.Helper()
+		raw, e := exec.Command(path, "--manifest").Output()
+		if e != nil {
+			t.Fatal(e)
+		}
+		var m map[string]any
+		if json.Unmarshal(raw, &m) != nil || m["plugin_id"] != "AutoSignIn" {
+			t.Fatal("ASI manifest", string(raw))
+		}
+		b, e := os.ReadFile(path)
+		if e != nil {
+			t.Fatal(e)
+		}
+		return release{m, m["version"].(string), b, fileHash(t, path)}
+	}
+	first := load(worker)
+	if first.version != "2.9.15" {
+		t.Fatal("fixed installed version required")
+	}
+	current := first
+	var next release
+	if path := os.Getenv("AUTOSIGNIN_UPDATE_WORKER_BINARY"); path != "" {
+		next = load(path)
+		if next.version == first.version {
+			t.Fatal("explicit version-only update fixture required")
+		}
+	}
+	var mu sync.Mutex
+	var repo *httptest.Server
+	repo = httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		mu.Lock()
+		defer mu.Unlock()
+		switch r.URL.Path {
+		case "/index":
+			json.NewEncoder(w).Encode(map[string]any{"schema_version": 1, "plugin_id": "AutoSignIn", "current_version": current.version, "releases": []any{map[string]any{"version": current.version, "manifest": current.manifest, "artifacts": []any{map[string]any{"platform": "linux-" + runtime.GOARCH, "format": "executable", "sha256": current.hash, "executable_sha256": current.hash, "size": len(current.binary), "host_contract": "light-media.sdk-resources/v1", "url": repo.URL + "/worker"}}}}})
+		case "/worker":
+			w.Write(current.binary)
+		default:
+			http.NotFound(w, r)
+		}
+	}))
+	defer repo.Close()
+	h := newMainHost(t)
+	const id = "AutoSignIn"
+	const clone = "AutoSignIncopy"
+	install := func(force bool) {
+		h.ok("POST", "/api/plugins/install", map[string]any{"plugin_id": id, "force": force, "repo_url": repo.URL + "/index"})
+	}
+	install(false)
+	h.config(id, map[string]any{})
+	formRaw := h.ok("GET", "/api/plugins/"+id+"/form", nil)
+	var form struct {
+		Model map[string]any  `json:"model"`
+		Conf  json.RawMessage `json:"conf"`
+	}
+	if json.Unmarshal(formRaw, &form) != nil {
+		t.Fatal("form wire", string(formRaw))
+	}
+	fixture, e := os.ReadFile(os.Getenv("AUTOSIGNIN_FORM_SOURCE"))
+	if e != nil {
+		t.Fatal(e)
+	}
+	var sourceForm struct {
+		Model map[string]any `json:"model"`
+	}
+	if json.Unmarshal(fixture, &sourceForm) != nil || !reflect.DeepEqual(form.Model, sourceForm.Model) {
+		t.Fatal("source model differs", string(formRaw))
+	}
+	if !bytes.Contains(form.Conf, []byte("sign_sites")) || !bytes.Contains(form.Conf, []byte("login_sites")) {
+		t.Fatal("source choices absent")
+	}
+	page := func(instance string) {
+		t.Helper()
+		raw := h.ok("GET", "/api/plugins/"+instance+"/page", nil)
+		var v struct {
+			Page json.RawMessage `json:"page"`
+		}
+		if json.Unmarshal(raw, &v) != nil {
+			t.Fatal(string(raw))
+		}
+		var got, want any
+		json.Unmarshal(v.Page, &got)
+		json.Unmarshal([]byte(`[{"component":"VAlert","props":{"type":"info","text":"暂无签到数据","variant":"tonal","class":"mt-4","prepend-icon":"mdi-information"}}]`), &want)
+		if !reflect.DeepEqual(got, want) {
+			t.Fatal("source empty page differs", string(raw))
+		}
+	}
+	page(id)
+	workers := func() map[string]int {
+		t.Helper()
+		entries, e := os.ReadDir("/proc")
+		if e != nil {
+			t.Fatal(e)
+		}
+		out := map[string]int{}
+		for _, entry := range entries {
+			pid, e := strconv.Atoi(entry.Name())
+			if e != nil {
+				continue
+			}
+			stat, e := os.ReadFile(filepath.Join("/proc", entry.Name(), "stat"))
+			if e != nil {
+				continue
+			}
+			at := strings.LastIndex(string(stat), ") ")
+			if at < 0 {
+				continue
+			}
+			parts := strings.Fields(string(stat)[at+2:])
+			if len(parts) < 2 || parts[1] != strconv.Itoa(h.cmd.Process.Pid) {
+				continue
+			}
+			cmd, e := os.ReadFile(filepath.Join("/proc", entry.Name(), "cmdline"))
+			if e != nil {
+				continue
+			}
+			text := strings.ReplaceAll(string(cmd), "\x00", " ")
+			prefix := filepath.Join(h.dir, "plugin-packages") + "/"
+			at = strings.Index(text, prefix)
+			if at < 0 {
+				continue
+			}
+			name := strings.SplitN(text[at+len(prefix):], "/", 2)[0]
+			if name == id || name == clone {
+				out[name] = pid
+			}
+		}
+		h.record("asi_worker_pids", out)
+		return out
+	}
+	initialPID := workers()[id]
+	if initialPID == 0 {
+		t.Fatal("independent ASI process absent")
+	}
+	config := map[string]any{"enabled": true, "notify": false, "cron": "", "auto_cf": 0, "onlyonce": false, "clean": false, "queue_cnt": 5, "sign_sites": []any{}, "login_sites": []any{}, "retry_keyword": "错误|失败"}
+	h.ok("PUT", "/api/plugins/"+id, config)
+	h.config(id, config)
+	page(id)
+	if workers()[id] != initialPID {
+		t.Fatal("same-object init replaced worker")
+	}
+	h.ok("POST", "/api/plugins/"+id+"/clone", map[string]any{"suffix": "copy"})
+	cloneRaw := h.ok("GET", "/api/plugins/"+clone, nil)
+	var cloneConfig map[string]any
+	if json.Unmarshal(cloneRaw, &cloneConfig) != nil || cloneConfig["enabled"] != false {
+		t.Fatal("platform clone must start disabled", string(cloneRaw))
+	}
+	page(clone)
+	if workers()[clone] == 0 || workers()[clone] == initialPID {
+		t.Fatal("independent clone process absent")
+	}
+	// Source API tests use a client without the management session cookie.
+	// All selected domains are unknown and resolve solely in embedded metadata;
+	// no site/config/network/PT call can be selected by these requests.
+	settingsRaw := h.ok("GET", "/api/settings", nil)
+	var settings map[string]any
+	if json.Unmarshal(settingsRaw, &settings) != nil {
+		t.Fatal("settings snapshot", string(settingsRaw))
+	}
+	delete(settings, "secret_state")
+	settings["api_token"] = "owned-source-api-key"
+	h.ok("PUT", "/api/settings", settings)
+	oracle, e := os.ReadFile(os.Getenv("AUTOSIGNIN_API_SOURCE"))
+	if e != nil {
+		t.Fatal(e)
+	}
+	var source struct {
+		Cases []struct {
+			ID, Prefix, Case, Method string
+			Params, Headers          map[string]string
+			Status                   int
+			Body                     json.RawMessage
+		}
+	}
+	if json.Unmarshal(oracle, &source) != nil || len(source.Cases) != 36 {
+		t.Fatal("source API36 oracle")
+	}
+	client := &http.Client{Timeout: h.client.Timeout}
+	for _, row := range source.Cases {
+		t.Run(row.ID+row.Prefix+row.Case, func(t *testing.T) {
+			q := url.Values{}
+			for k, v := range row.Params {
+				q.Set(k, v)
+			}
+			path := row.Prefix + "/" + row.ID + "/signin_by_domain?" + q.Encode()
+			req, e := http.NewRequest(row.Method, h.base+path, nil)
+			if e != nil {
+				t.Fatal(e)
+			}
+			for k, v := range row.Headers {
+				req.Header.Set(k, v)
+			}
+			res, e := client.Do(req)
+			if e != nil {
+				t.Fatal(e)
+			}
+			defer res.Body.Close()
+			raw, e := io.ReadAll(res.Body)
+			if e != nil {
+				t.Fatal(e)
+			}
+			var got, want any
+			json.Unmarshal(raw, &got)
+			json.Unmarshal(row.Body, &want)
+			h.record("asi_source_API", map[string]any{"path": path, "status": res.StatusCode, "body": json.RawMessage(raw), "source_case": row.Case})
+			if res.StatusCode != row.Status || !reflect.DeepEqual(got, want) {
+				t.Fatalf("source status%d body%s; actual%d body%s", row.Status, row.Body, res.StatusCode, raw)
+			}
+		})
+	}
+	h.ok("POST", "/api/plugins/"+id+"/reload", nil)
+	if workers()[id] == initialPID {
+		t.Fatal("reload did not replace actual process")
+	}
+	h.config(id, config)
+	h.config(clone, cloneConfig)
+	page(id)
+	page(clone)
+	if next.version != "" {
+		mu.Lock()
+		current = next
+		mu.Unlock()
+		install(true)
+		h.config(id, config)
+		h.config(clone, cloneConfig)
+		page(id)
+		page(clone)
+		h.record("asi_fixture_update", map[string]any{"version": next.version, "sha256": next.hash, "version_only_synthetic": true})
+	}
+	h.stop()
+	h.start()
+	h.config(id, config)
+	h.config(clone, cloneConfig)
+	page(id)
+	page(clone)
+	if len(workers()) != 2 {
+		t.Fatal("cold worker restoration")
+	}
+	h.ok("POST", "/api/plugins/"+clone+"/reset", nil)
+	h.config(clone, map[string]any{})
+	h.config(id, config)
+	page(id)
+	page(clone)
+	h.ok("POST", "/api/plugins/"+clone+"/uninstall", map[string]any{})
+	if workers()[clone] != 0 {
+		t.Fatal("clone worker survived uninstall")
+	}
+	h.config(id, config)
+	page(id)
+	h.ok("POST", "/api/plugins/"+id+"/uninstall", map[string]any{})
+	if len(workers()) != 0 {
+		t.Fatal("ASI worker survived uninstall")
+	}
+	h.record("asi_empty_main_complete", map[string]any{"source_version": "2.9.15", "source_API_cases": 36, "host_main_sha256": fileHash(t, h.binary), "worker_sha256": first.hash, "scope": "empty/noPT lifecycle+realHandle+sourceAPI; no completeASI/Main/UI/visits/timers/OCR acceptance"})
+}

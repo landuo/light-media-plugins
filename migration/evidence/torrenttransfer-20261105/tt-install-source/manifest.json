@@ -1,0 +1,18 @@
+{
+  "classification": "read-only exact running original static source bytes; no app import/install/config read/write",
+  "at": "2026-11-05T07:08:20.490606+00:00",
+  "container": "moviepilot",
+  "image_and_started_at_unchanged": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 2026-10-28T11:43:10.979716372Z",
+  "files": [
+    {
+      "path": "/app/app/helper/plugin.py",
+      "sha256": "a7455fbb0f0e09267476b2628459dcfd1af26a94e9fc4eea04b51e5f08dfdcba",
+      "bytes": 136832
+    },
+    {
+      "path": "/app/app/api/endpoints/plugin.py",
+      "sha256": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+      "bytes": 40236
+    }
+  ]
+}

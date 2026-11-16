@@ -1,0 +1,59 @@
+uid=1000(admin) gid=1001(Users) groups=1001(Users),994(docker),1000(Administrators)
+fd5881d1899cf3e8095af4a7e7ef726f7dd31f176959a23b55cbed25b6781641  removelink.test
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=false
+=== RUN   TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=true
+--- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary (0.11s)
+    --- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=false (0.03s)
+    --- PASS: TestActualWorkerUnknownHomeKeepsSourceCatchAndObserverBoundary/delayed=true (0.08s)
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-0
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-1
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-2
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-immediate-scrap
+=== RUN   TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-delayed-scrap
+--- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink (0.02s)
+    --- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-0 (0.01s)
+    --- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-1 (0.00s)
+    --- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-2 (0.00s)
+    --- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-immediate-scrap (0.00s)
+    --- PASS: TestSource312UnknownNamedHomeStopsBeforeUnlink/unknown-home-delayed-scrap (0.00s)
+=== RUN   TestEmptyExcludeDoesNotNormalizeUnknownHome
+--- PASS: TestEmptyExcludeDoesNotNormalizeUnknownHome (0.00s)
+=== RUN   TestSource312PathExpansionOrder
+=== RUN   TestSource312PathExpansionOrder/./~__lm_review_no_such_user_20261106__
+=== RUN   TestSource312PathExpansionOrder/foo/../~__lm_review_no_such_user_20261106__
+=== RUN   TestSource312PathExpansionOrder/~
+=== RUN   TestSource312PathExpansionOrder/~#01
+=== RUN   TestSource312PathExpansionOrder/~/m/file
+=== RUN   TestSource312PathExpansionOrder/~#02
+=== RUN   TestSource312PathExpansionOrder/~/m/file#01
+=== RUN   TestSource312PathExpansionOrder/~#03
+=== RUN   TestSource312PathExpansionOrder/~/child
+=== RUN   TestSource312PathExpansionOrder/~#04
+=== RUN   TestSource312PathExpansionOrder/~/child#01
+=== RUN   TestSource312PathExpansionOrder/~#05
+=== RUN   TestSource312PathExpansionOrder/~/child#02
+=== RUN   TestSource312PathExpansionOrder/~#06
+=== RUN   TestSource312PathExpansionOrder/~/child#03
+=== RUN   TestSource312PathExpansionOrder/~#07
+=== RUN   TestSource312PathExpansionOrder/~/child#04
+--- PASS: TestSource312PathExpansionOrder (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/./~__lm_review_no_such_user_20261106__ (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/foo/../~__lm_review_no_such_user_20261106__ (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~ (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#01 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/m/file (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#02 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/m/file#01 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#03 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/child (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#04 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/child#01 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#05 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/child#02 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#06 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/child#03 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~#07 (0.00s)
+    --- PASS: TestSource312PathExpansionOrder/~/child#04 (0.00s)
+PASS

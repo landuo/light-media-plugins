@@ -1,0 +1,22 @@
+{
+  "command": [
+    "go",
+    "test",
+    "-count=1",
+    "-json",
+    "tests/integration/testhost_main_test.go",
+    "tests/integration/sitestatistic_helpers_test.go",
+    "tests/integration/sitestatistic_main_test.go",
+    "tests/integration/sdk98_impact_test.go",
+    "tests/integration/sdk98_impact_helpers_test.go",
+    "-run",
+    "^TestSDK98Impact(QBPeerSourcePostSelector|RemainingHTTPContract|AsyncHTTPCompletion|DelayedNotificationHTTP|ReloadAndConfigHTTP)$"
+  ],
+  "env": {
+    "GOFLAGS": "",
+    "SDK98_IMPACT_HTTP_OBSERVATIONS": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-http-normal"
+  },
+  "exit_code": 0,
+  "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-normal.log",
+  "stderr": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/sdk98-impact-20261105/main4-normal.stderr"
+}

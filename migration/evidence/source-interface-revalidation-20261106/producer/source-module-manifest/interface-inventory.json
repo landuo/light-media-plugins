@@ -1,0 +1,551 @@
+{
+  "classification": "sealed source-before-target inventory; snapshot of old actual runtime Manifest() values, not implementation edits",
+  "source_oracle_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
+  "five_accepted_families_six_instances_plus_Rlk": true,
+  "family_removals": {
+    "CategoryEditor": [
+      "get_module",
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ],
+    "TorrentTransfer": [
+      "get_module",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ],
+    "SiteStatistic": [
+      "get_service",
+      "get_command"
+    ],
+    "MPServerStatus": [
+      "get_service"
+    ],
+    "PluginUnInstall": [
+      "get_service",
+      "get_command",
+      "get_dashboard"
+    ],
+    "RemoveLink": [
+      "get_module",
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ]
+  },
+  "family_removed_total": 20,
+  "instance_removed_total_including_TTmusic": 24,
+  "instances": [
+    {
+      "source_plugin": "categoryeditor",
+      "class": "CategoryEditor",
+      "source_sha256": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+      "target_artifact_id": "CategoryEditor",
+      "target_version": "1.3",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_service",
+        "get_command",
+        "get_api",
+        "get_render_mode",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_dashboard_meta",
+        "get_auth_providers",
+        "get_module",
+        "close",
+        "stop_service",
+        "stop"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 55,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 58,
+          "check_method": false
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 119,
+          "check_method": false
+        },
+        "get_dashboard": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_module",
+        "get_service",
+        "get_command",
+        "get_dashboard",
+        "get_dashboard_meta"
+      ]
+    },
+    {
+      "source_plugin": "torrenttransfer",
+      "class": "TorrentTransfer",
+      "source_sha256": "e5f513a57cf42ee8778744ba30cf669f93a5a3e6c7589ca0b2e3b9c483651bd5",
+      "target_artifact_id": "TorrentTransfer",
+      "target_version": "1.10.3",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_service",
+        "get_command",
+        "get_api",
+        "get_render_mode",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_dashboard_meta",
+        "get_auth_providers",
+        "get_module",
+        "close",
+        "stop_service",
+        "stop",
+        "transfer",
+        "check_recheck",
+        "private_scheduler",
+        "transfer_continue"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": true,
+          "source_line": 170,
+          "check_method": true
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 164,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 167,
+          "check_method": false
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 596,
+          "check_method": false
+        },
+        "get_dashboard": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_module",
+        "get_command",
+        "get_dashboard",
+        "get_dashboard_meta"
+      ]
+    },
+    {
+      "source_plugin": "torrenttransfermusic",
+      "class": "TorrentTransfermusic",
+      "source_sha256": "4d271e68aa3fc994c1d50cd850d4b1e5699c9f7900eaa106082b9f13efe4c5bb",
+      "target_artifact_id": "TorrentTransfer",
+      "target_version": "1.10.3",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_service",
+        "get_command",
+        "get_api",
+        "get_render_mode",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_dashboard_meta",
+        "get_auth_providers",
+        "get_module",
+        "close",
+        "stop_service",
+        "stop",
+        "transfer",
+        "check_recheck",
+        "private_scheduler",
+        "transfer_continue"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": true,
+          "source_line": 172,
+          "check_method": true
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 166,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 169,
+          "check_method": false
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 598,
+          "check_method": false
+        },
+        "get_dashboard": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_module",
+        "get_command",
+        "get_dashboard",
+        "get_dashboard_meta"
+      ]
+    },
+    {
+      "source_plugin": "sitestatistic",
+      "class": "SiteStatistic",
+      "source_sha256": "763a88be85185a94082a2f131ed1c80d8306abe24b10ebe9ae95447cfe5da17d",
+      "target_artifact_id": "SiteStatistic",
+      "target_version": "1.9.7",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_service",
+        "get_api",
+        "get_command",
+        "get_render_mode",
+        "stop_service",
+        "stop",
+        "close",
+        "send_msg",
+        "http",
+        "private_refresh",
+        "data_continue"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": true,
+          "source_line": 112,
+          "check_method": false
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 90,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 94,
+          "check_method": true
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 973,
+          "check_method": true
+        },
+        "get_dashboard": {
+          "declared_override": true,
+          "source_line": 937,
+          "check_method": true
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_service",
+        "get_command"
+      ]
+    },
+    {
+      "source_plugin": "mpserverstatus",
+      "class": "MPServerStatus",
+      "source_sha256": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+      "target_artifact_id": "MPServerStatus",
+      "target_version": "1.4",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_form",
+        "get_page",
+        "get_dashboard",
+        "get_service",
+        "get_api",
+        "get_command",
+        "get_render_mode",
+        "stop_service",
+        "stop",
+        "close"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 56,
+          "check_method": true
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 62,
+          "check_method": true
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 103,
+          "check_method": true
+        },
+        "get_dashboard": {
+          "declared_override": true,
+          "source_line": 132,
+          "check_method": true
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_service"
+      ]
+    },
+    {
+      "source_plugin": "pluginuninstall",
+      "class": "PluginUnInstall",
+      "source_sha256": "2210e9dea47eeccdc46208d515e45ce1222dcadf50dbfc63cbeb41f94e470487",
+      "target_artifact_id": "PluginUnInstall",
+      "target_version": "2.2",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_form",
+        "get_service",
+        "get_api",
+        "get_command",
+        "get_page",
+        "get_dashboard",
+        "get_render_mode",
+        "stop_service",
+        "close",
+        "stop",
+        "uninstall_continue"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 84,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 87,
+          "check_method": false
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 216,
+          "check_method": false
+        },
+        "get_dashboard": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_service",
+        "get_command",
+        "get_dashboard"
+      ]
+    },
+    {
+      "source_plugin": "removelink",
+      "class": "RemoveLink",
+      "source_sha256": "22fb375e531378b3454607c7bca305b637abd60ee8ed69e14e32fbc2ddfc5485",
+      "target_artifact_id": "RemoveLink",
+      "target_version": "2.18",
+      "target_declared_methods": [
+        "init",
+        "get_state",
+        "get_form",
+        "get_render_mode",
+        "get_service",
+        "get_command",
+        "get_api",
+        "get_page",
+        "get_dashboard",
+        "get_dashboard_meta",
+        "get_auth_providers",
+        "get_module",
+        "close",
+        "stop_service",
+        "stop",
+        "cleanup_continue",
+        "private_watch",
+        "private_observer",
+        "private_timer"
+      ],
+      "source_interfaces": {
+        "get_module": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_service": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_command": {
+          "declared_override": true,
+          "source_line": 558,
+          "check_method": false
+        },
+        "get_api": {
+          "declared_override": true,
+          "source_line": 561,
+          "check_method": false
+        },
+        "get_page": {
+          "declared_override": true,
+          "source_line": 1030,
+          "check_method": false
+        },
+        "get_dashboard": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_dashboard_meta": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        },
+        "get_auth_providers": {
+          "declared_override": false,
+          "source_line": null,
+          "check_method": false
+        }
+      },
+      "false_advertisements_to_remove_for_registry_gates": [
+        "get_module",
+        "get_service",
+        "get_command",
+        "get_dashboard",
+        "get_dashboard_meta"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,213 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "installed_dependency_metadata": {
+    "method": "Read-only installed distribution metadata. No original plugin modules were imported.",
+    "values": {
+      "Mako": "1.4.1",
+      "Beaker": null,
+      "Markdown": "3.11.2",
+      "Apprise": "1.9.9",
+      "requests": "2.34.2"
+    },
+    "observation": {
+      "path": "work/mergemessagenotify-20261107/live-template-dependencies-20261107.json",
+      "sha256": "f673716a04399a8ae86b35e5489f771cfc5e221193d692508620603f878528ac"
+    }
+  },
+  "apprise_product_commit": "dd80b1a4109cc3b3fedb6f53730b974c4be4ec1e",
+  "combined_product_commit": "d9915414070fbae55d655877c798af285f23f5e2",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Pinned original offline source captures, scoped synthetic-response Go replays, independent read-only review, and one combined Linux build.",
+  "apprise": {
+    "providers": {
+      "join_ifttt": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/join-ifttt-1.9.9.json",
+          "sha256": "b9898f9d7fcecd8c6761cc0f0b2c51da1c75d5880c45723d20602e36c4588709"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-join-ifttt-target.stdout",
+          "sha256": "5f38fa6401f946871c828737bfb255c28b211056c7689da21170da3e16b30e44"
+        },
+        "target_entrypoint": "TestSourceJoinAndIFTTT199",
+        "cases": 16,
+        "observed": "Join group/device/name targeting, duplicate groups after normalization, original 1000-character truncation and splitting, IFTTT maker aliases and original ignored ingredient URL overrides, request/HTTP failure continuation and observed intervals.",
+        "source": [
+          "apprise/plugins/join.py:200–356,399–440",
+          "apprise/plugins/ifttt.py:138–294,328–397"
+        ],
+        "target": [
+          "plugins/mergemessagenotify/apprise/join.go",
+          "plugins/mergemessagenotify/apprise/ifttt.go",
+          "plugins/mergemessagenotify/apprise/provider_http.go"
+        ],
+        "reviewer": "/root/apprise_discord"
+      },
+      "ifttt_dot_segments": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/ifttt-dot-1.9.9.json",
+          "sha256": "1d0a060b796ef75326b25acbeadf1710977cd36abb2208d5e0578445156b128a"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-ifttt-dot-target.stdout",
+          "sha256": "d6da43f5afdb749079a3aa2870fdd3ff86449e1fff8fdd42ba3a0cfcb6412f0e"
+        },
+        "target_entrypoint": "TestSourceIFTTTDotSegments199",
+        "cases": 3,
+        "observed": "Literal URL dot segments normalize before percent decoding, and duplicate slashes are preserved.",
+        "source": [
+          "apprise/plugins/ifttt.py:230–257",
+          "Requests 2.34.2 PreparedRequest.prepare_url with urllib3 2.7.0 parse_url"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/ifttt.go"
+      },
+      "pushjet": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/pushjet-1.9.9.json",
+          "sha256": "581cd49131b268acaa9a4cbe1d90439e1a544b377748e811d8a23182d3e7b871"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-pushjet-target.stdout",
+          "sha256": "89f26604d9bb815eb3bd2ef9cf9be3d01c3fd569b2f3d9a9ef4ae6ab5809201f"
+        },
+        "target_entrypoint": "TestSourcePushjet199",
+        "cases": 10,
+        "observed": "First path token/query precedence, HTTP(S), IPv6, optional Basic authentication, original content type and exact JSON payload, strict HTTP 200 and failure handling.",
+        "source": [
+          "apprise/plugins/pushjet.py:46–120,173–255,257–294"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/pushjet.go",
+        "reviewer": "/root/apprise_discord"
+      },
+      "discord": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/discord-1.9.9.json",
+          "sha256": "3188c1463ae9dca3892142473e629e950f7ad1cedb7c416a875def4661660e53"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-discord-target.stdout",
+          "sha256": "b043bcf093da032052cdb450f85a2992368d6d473334f7adcd62383047a9c83c"
+        },
+        "target_entrypoint": "TestSourceDiscord199",
+        "cases": 20,
+        "observed": "Native webhook aliases, ordinary text, Markdown embeds, mentions, thread and pagination behavior, multipart attachments, probe and stop-on-failure ordering, rate-limit retry and observed wait.",
+        "source": [
+          "apprise/plugins/discord.py:211–303,305–645,697–816,817–908",
+          "apprise/plugins/base.py:579–820"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/discord.go",
+        "reviewer": "/root",
+        "remaining": [
+          "Deterministic ordering for Python mention sets.",
+          "Unicode decimal flags and exact attachment probe order around rate-limit waits remain open."
+        ]
+      },
+      "pushover": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/pushover-1.9.9.json",
+          "sha256": "41a922c9de76667366100f93a5090e2ce205a7b40e3da8fe52ce3414e4d11366"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-pushover-target.stdout",
+          "sha256": "b93f91d1448b837394b3cb106ba95b532a23bd45b6386c1ee541a55f5871e181"
+        },
+        "target_entrypoint": "TestSourcePushover199",
+        "cases": 21,
+        "observed": "Sorted devices, emergency retry and expiry, multipart attachments and abort behavior, 1024-character truncation and splitting, interval, original HTTP status semantics and sampled HTML/Markdown outputs.",
+        "source": [
+          "apprise/plugins/pushover.py:257–365,367–583,633–680",
+          "apprise/conversion.py:37–61"
+        ],
+        "target": "plugins/mergemessagenotify/apprise/pushover.go",
+        "reviewer": "/root",
+        "markdown_source_capture": {
+          "path": "work/mergemessagenotify-20261107/apprise-pushover-pinned-markdown-source.json",
+          "sha256": "221acfc0a22f77562879ebe600bf399f49b26ea6b3851cfd6e8973e006e52459"
+        },
+        "remaining": [
+          "Additional Python-Markdown grammar differences including nested lists remain open."
+        ]
+      }
+    },
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 22,
+    "schemes_without_native_implementation": 161,
+    "markdown_adapter": {
+      "module": "github.com/yuin/goldmark v1.8.7",
+      "source_commit": "6dafb0cf955a823afd513a641b6747424c40ee5d",
+      "release": "https://github.com/yuin/goldmark/releases/tag/v1.8.7",
+      "license": {
+        "path": "third_party/goldmark-LICENSE",
+        "sha256": "c1d6f653c38c80294dc7994647ba0dcc508ce64a86996303c804efa2f7982bff"
+      },
+      "package_notice_inventory": "Add the Goldmark license when registering the final MergeMessageNotify artifact."
+    }
+  },
+  "mako": {
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-decorator-cache-1.4.1.json",
+      "sha256": "0c09a8f59f7def31c49e05772f9ccf16bf82ecaef91570168dc67d063068c4d9"
+    },
+    "target_entrypoint": "TestSourceDecoratorCache141",
+    "unique_cases": 29,
+    "initial_replay": {
+      "path": "work/mergemessagenotify-20261107/mako-decorator-cache-target.stdout",
+      "sha256": "2baa4d86891cceb31512a5292695a3e5f2a43872ac223a829f8ea8c30b33959c"
+    },
+    "followup_replay": {
+      "path": "work/mergemessagenotify-20261107/mako-decorator-cache-target-followup.stdout",
+      "sha256": "5c9f21e4fa9a47ee9f42c19317a88ba8d5267439896716b748e8ba91e29d17e1"
+    },
+    "original_observations": [
+      {
+        "path": "work/mergemessagenotify-20261107/mako-decorator-cache-source.json",
+        "sha256": "759bc5333ab868dcd736122bda2523145a04811b791195a9b8617fbbe894f743"
+      },
+      {
+        "path": "work/mergemessagenotify-20261107/mako-decorator-cache-try-source.json",
+        "sha256": "70828ea37cb71c867d53270c77f54356b7674d5a9d5841d80b3bc2014fb8a392"
+      },
+      {
+        "path": "work/mergemessagenotify-20261107/mako-decorator-context-source.json",
+        "sha256": "20ab48289cd4c39291ae2c66447594f492232084057cf65ccd5b1c3d450d3281"
+      }
+    ],
+    "original_locations": [
+      "Installed 1.20.3 util.py:20–24",
+      "Mako 1.4.1 codegen.py:113–143,284–336,576–641,692–768",
+      "runtime.py:739–765",
+      "parsetree.py:443–540,632–655",
+      "template.py:225–243,416–417",
+      "cache.py:66–94",
+      "ext/beaker_cache.py:11–39"
+    ],
+    "target_locations": [
+      "plugins/mergemessagenotify/mako/template.go",
+      "plugins/mergemessagenotify/mako/cache.go",
+      "plugins/mergemessagenotify/mako/function.go",
+      "plugins/mergemessagenotify/mako/expression.go"
+    ],
+    "reviewer": "/root/apprise_pushover",
+    "observed": "Top-level versus inline decorator application, Python closure argument forwarding, anonymous definition initialization, original cache failure/try/fallback order, and runtime Context page visibility without definition-local leakage.",
+    "replay_scope": "First target replay passed 26 cases and exposed two parser/binding defects. The follow-up passed only those two repaired cases and one new Context boundary. Passing cases were not repeated.",
+    "remaining": [
+      "Separate source module/forwarding-stub default evaluations remain incomplete.",
+      "Callable metadata including __name__, positional-only signatures and other documented template/Python boundaries remain open."
+    ]
+  },
+  "combined_linux_build": {
+    "path": "work/mergemessagenotify-20261107/linux-decorator-provider-build.stdout",
+    "sha256": "7be962a8fcadfd2ed008ec352ab672fb088fb78cbbef5548ceb46f149e9e3a6f"
+  },
+  "execution_scope": "Original and Go network requests were captured locally with synthetic replies. Existing real host/package runs stay attached to their exact earlier product revisions. Browser, clone and final package checks are still open for the current implementation.",
+  "delivery": {
+    "working_branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "local_only": true,
+    "release_registered": false,
+    "deployed": false,
+    "external_notifications_sent": false
+  }
+}

@@ -1,0 +1,119 @@
+{
+  "classification": "independent actual333/Python3.12 Path constructor dependency chain; each UID/env branch is a new read-only network-none disposable process; no app/config/DB imports",
+  "source_sha256": "22fb375e531378b3454607c7bca305b637abd60ee8ed69e14e32fbc2ddfc5485",
+  "cases": [
+    {
+      "mode": "present-empty",
+      "uid": 65533,
+      "HOME_present": true,
+      "HOME": "",
+      "passwd": null,
+      "values": [
+        {
+          "path": "~",
+          "value": "/",
+          "error": null
+        },
+        {
+          "path": "~/child",
+          "value": "/child",
+          "error": null
+        },
+        {
+          "path": "/absolute/no-home",
+          "value": "/absolute/no-home",
+          "error": null
+        }
+      ],
+      "empty_exclude": false,
+      "runtime": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]"
+    },
+    {
+      "mode": "present-value",
+      "uid": 65533,
+      "HOME_present": true,
+      "HOME": "/owned/home",
+      "passwd": null,
+      "values": [
+        {
+          "path": "~",
+          "value": "/owned/home",
+          "error": null
+        },
+        {
+          "path": "~/child",
+          "value": "/owned/home/child",
+          "error": null
+        },
+        {
+          "path": "/absolute/no-home",
+          "value": "/absolute/no-home",
+          "error": null
+        }
+      ],
+      "empty_exclude": false,
+      "runtime": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]"
+    },
+    {
+      "mode": "absent-found",
+      "uid": 65534,
+      "HOME_present": false,
+      "HOME": null,
+      "passwd": {
+        "name": "nobody",
+        "home": "/nonexistent"
+      },
+      "values": [
+        {
+          "path": "~",
+          "value": "/nonexistent",
+          "error": null
+        },
+        {
+          "path": "~/child",
+          "value": "/nonexistent/child",
+          "error": null
+        },
+        {
+          "path": "/absolute/no-home",
+          "value": "/absolute/no-home",
+          "error": null
+        }
+      ],
+      "empty_exclude": false,
+      "runtime": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]"
+    },
+    {
+      "mode": "absent-unmapped",
+      "uid": 65533,
+      "HOME_present": false,
+      "HOME": null,
+      "passwd": null,
+      "values": [
+        {
+          "path": "~",
+          "value": null,
+          "error": {
+            "class": "RuntimeError",
+            "message": "Could not determine home directory."
+          }
+        },
+        {
+          "path": "~/child",
+          "value": null,
+          "error": {
+            "class": "RuntimeError",
+            "message": "Could not determine home directory."
+          }
+        },
+        {
+          "path": "/absolute/no-home",
+          "value": "/absolute/no-home",
+          "error": null
+        }
+      ],
+      "empty_exclude": false,
+      "runtime": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]"
+    }
+  ]
+}

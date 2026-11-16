@@ -1,0 +1,205 @@
+{
+  "feature": "plugin.SeedRescue",
+  "installed_version": "1.6.3",
+  "status": "accepted_for_current_local_linux_scope",
+  "source": {
+    "installed_snapshot": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "files": {
+      "__init__.py": "e379ec20d09fbd3bc461b1b8f51ec508d0270a63a841763cc965c39adb98d375",
+      "core.py": "db94a30635ed122fe37ffd617509ffc106a1e0612931bde951334f5cf7e44095",
+      "detail.py": "02055b2fad2b0aef8ed8a6ba9cda2e19e8ede7f7604ae31d27b24e7f49d915eb",
+      "models.py": "73fab2672ef27474614311c213ebc69f4a3a896c3a2cccf2161f910d50cfff99"
+    },
+    "public_source": "3795f1045958fc3e81ecefdf181ad49d8d9e6d7d",
+    "fixed_backend": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "fixed_frontend": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "anchors": {
+      "configuration_and_entries": "__init__.py:133–307,1872–1892",
+      "status_and_explicit_operations": "__init__.py:308–636",
+      "public_services_and_stop": "__init__.py:637–717",
+      "RSS_jobs_and_retention": "__init__.py:718–1047,1592–1722",
+      "candidate_lookup": "__init__.py:1048–1496; detail.py; core.py",
+      "risk_and_selected_add": "__init__.py:497–588,1506–1591; models.py",
+      "public_projection": "__init__.py:1729–1871"
+    }
+  },
+  "target": {
+    "worker_commit": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+    "host_commit": "0601e3e886b3e9b9497afd91130911c816f36336",
+    "files": {
+      "cmd/seed-rescue/main.go": "75b0a862497b21b59e25ad4ac3a7174423eb47ac41c669c7968e16290ad19ecb",
+      "plugins/seedrescue/.gitattributes": "ef14dffa55b1b3d9f4829e8a743d91b9bd29ac1f97eff10ba2225c38d766e824",
+      "plugins/seedrescue/FRONTEND_NOTICE.md": "6e4c87ddd4bbcd1300efbfaed9ac3a161a817e3b54fdf27010b3485efc3e6599",
+      "plugins/seedrescue/FRONTEND_ORIGIN.json": "eee62bd41da328f8313aaa07f2a9f8a86415a3fe7b22ec936e32ad8da781608e",
+      "plugins/seedrescue/ORIGIN.json": "f2a09171ce251fa3863fc0eb2ab744bea0a3f835978cc0487fe47916d684efbe",
+      "plugins/seedrescue/config.go": "e0619165b76e0fa412c07d9f89917e97c0db1593ccede904d18149ed4eb43e04",
+      "plugins/seedrescue/core.go": "aa0cd05941d24535a416214782a772d69a45ea42a7f52be71fa0f984a9580562",
+      "plugins/seedrescue/detail.go": "9cd763537bc576b4aef5786156dcd24f64b3b4a8e7992ab34576fd58e3464fe4",
+      "plugins/seedrescue/download.go": "363fcc52d8595ea0209e311cd5889fcfc3023f765f30cd86b97df56af3f8c297",
+      "plugins/seedrescue/frontend/SeedRescueWorkbench-C0MKqaDa.css": "ac13c4e31d703147f0bb7d4d41b8e8c1b061f97111ef47eaa8d35a2e992538d6",
+      "plugins/seedrescue/frontend/SeedRescueWorkbench-C7qM2njz.js": "e3063b8753255b7886c5629d459b628e736dcf58322e1450884a9f517fb4c6c2",
+      "plugins/seedrescue/frontend/__federation_expose_AppPage-t5uu8UeP.js": "c870ce546f444a6bd06fcefb55f5cb8d41a05446eb1fd89caca9f36d3c4d2b1c",
+      "plugins/seedrescue/frontend/__federation_expose_Config-CjwiiaeH.js": "ff426a25fa45ac2158ec4a83917cfa778642ba0c53b028a0d41141b39187ca58",
+      "plugins/seedrescue/frontend/__federation_expose_Dashboard-l3LPbQrq.js": "fbc4bd556023bd18048eb0e37f27ad835d0e09b1996ede0cb13c9641aa3c105f",
+      "plugins/seedrescue/frontend/__federation_expose_Page-CWBKd09E.js": "8e6865be438d440a7ebf04f034fb74349d8f77fc92b6da7d213122cf6858a178",
+      "plugins/seedrescue/frontend/__federation_fn_import-JrT3xvdd.js": "4776b5a84c2055e4a6907ebf7377f6abd86f26b7d520d685a13b40d5aa8538aa",
+      "plugins/seedrescue/frontend/remoteEntry.js": "a8ca57dce7b005b047047cc6649ada4d7aeba2d196481f912af336c1ac978d75",
+      "plugins/seedrescue/frontend.go": "750497f0bd7a627cd4570f73a79184f0ef5ab366ec8628ed2f5f3199c0c6f99e",
+      "plugins/seedrescue/machine.go": "c8d8975ae40e9aaaf6e734a60f58184c7f4be240edcc2140facb1321ae77582f",
+      "plugins/seedrescue/ports.go": "d262e3bb3c4a6b28a2767688c8033c917446f0547c766cf2ba7ce60d25a0e919",
+      "plugins/seedrescue/probe.go": "27c6f2229e37bf4944f676de434ee5eccc186fa3d98cf0ea48fe03cde82316a2",
+      "plugins/seedrescue/scan.go": "1603e4b510981fa70e9bd0727879588a6f84cb009cc34dd9d1eb4eb33698c0ec",
+      "plugins/seedrescue/standard.go": "5b259974c72f0e0a7f2939c6a4c72de0045cf7eb4ea5886db021009d3ebc9bd1",
+      "plugins/seedrescue/standard_host.go": "9a4d7f28d4393dfe4cb4eb8d615b55107ef91b386d5d58404cc7752eceaa7041",
+      "plugins/seedrescue/standard_http.go": "5cebaef89ce77ea2c7ff39f8315a7bbf12e1962f0da332a6a56ef42baa9f90fb",
+      "plugins/seedrescue/views.go": "54d4861220fd43478bc54b3a567d5825108875bd1461d5692b6d9fc7b1245686",
+      "internal/sdk/concurrent_transport.go": "7ba0a200c7e68138336ec33f61035e839e46cf1ce8a7ba6f979703fb494e7ec3",
+      "internal/sdk/concurrent_worker.go": "e9e7745070e8676034eacae6feb7cca0039850a3d5826520796ae85f488d957f",
+      "internal/sdk/protocol.go": "476f03dc3097c81629f725fc77d348fc0c903329852c088f105f4aa3fd6235fb",
+      "internal/sdk/worker.go": "e7b9b0052bd5e60ad17a471ecb7b0b723c4226ed8edc33a0646a6f2363819533"
+    },
+    "host_files": {
+      "internal/app/plugin_original_seed_rescue.go": "17621e05d29fe580e7caddd99ddc038913bd07e7ef3ccdde4b8c3791b074a3d3",
+      "internal/app/plugin_original_seed_rescue_config.go": "0cd7fc27b4b63d04dfb0b311c44773e6a596451231688921c9eb45f5dec9c5e9",
+      "internal/app/plugin_original_seed_rescue_downloader.go": "afd528daca4a0c9312287070b733df5d35ab00cc5f8ff7bb46c603666f1159a5",
+      "internal/app/plugin_original_seed_rescue_iyuu.go": "fee22962aa6a848139d57030bb1bb961253e602f2f48635b1ea3dc0016da6ee2",
+      "internal/app/plugin_original_seed_rescue_sites.go": "b10207e8e401e8eb3eaeaca5f119495a74d35205619c220c251e4a5124d627ce",
+      "internal/app/plugin_seed_rescue_browser_linux_test.go": "229b5e85cf43ec0e39bb5288a9370577a75166af613bfe044714bc5c655c32b6",
+      "internal/app/plugin_seed_rescue_linux_test.go": "c8573255d2673eaa63332a5439355e64fa8201c339aabea79483b8e56f5a4743",
+      "internal/plugins/seed_rescue_host_stream_test.go": "24891c872377bfe433a9a003657df22b06a2632d19ff7001f68661f619bd8ffb"
+    }
+  },
+  "package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "dist/assets/SeedRescueWorkbench-C0MKqaDa.css",
+      "dist/assets/SeedRescueWorkbench-C7qM2njz.js",
+      "dist/assets/__federation_expose_AppPage-t5uu8UeP.js",
+      "dist/assets/__federation_expose_Config-CjwiiaeH.js",
+      "dist/assets/__federation_expose_Dashboard-l3LPbQrq.js",
+      "dist/assets/__federation_expose_Page-CWBKd09E.js",
+      "dist/assets/__federation_fn_import-JrT3xvdd.js",
+      "dist/assets/remoteEntry.js",
+      "plugins/brushflowlanduo/frontend-licenses/Node-Semver-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/OriginJS-Vite-Plugin-Federation-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Semantic-Range-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-LICENSE",
+      "plugins/brushflowlanduo/frontend-licenses/Vite-Plugin-Vue-LICENSE",
+      "plugins/seedrescue/FRONTEND_NOTICE.md",
+      "plugins/seedrescue/FRONTEND_ORIGIN.json",
+      "plugins/seedrescue/ORIGIN.json",
+      "seed-rescue",
+      "third_party/Go-LICENSE",
+      "third_party/x-net-LICENSE",
+      "third_party/x-net-PATENTS",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "d2b3692e41b3132a190284d06676b38017b3bb422714033765cbb35541ddf38b",
+    "archive_size": 3153690,
+    "capabilities": 20,
+    "entry": "seed-rescue",
+    "frontend": {
+      "api_contract": "light-media.plugin-api/v1",
+      "contract": "light-media.vue-federation/v1",
+      "entry": "remoteEntry.js",
+      "exposes": [
+        "Config",
+        "Page",
+        "Dashboard",
+        "AppPage"
+      ],
+      "root": "dist/assets",
+      "shared": [
+        "vue"
+      ]
+    },
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "SeedRescue",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "41e03451070f9afbab15faa0ab5ee36ce1120bdc97feaf03307773ec32201e86",
+    "methods": 15,
+    "notice_sha256": "c05df3613cfa16847eee8f7dea98afa964037f4b52a9d2baa17e862b3d721df0",
+    "notice_size": 45207,
+    "plugin_source": "8fd50038ac24f835d31b0b1c9653a035bcf626d6",
+    "version": "1.6.3",
+    "worker_sha256": "201bc49b7c473af3a73985e7ad749b35e45b84ddb8d817ece709b8569f06bd98",
+    "worker_size": 5768281
+  },
+  "runtime": {
+    "observations": {
+      "native_manual": [
+        "Installed the exact final Linux SeedRescue worker and existing IYUUAutoSeed 2.22 package into a real isolated App.",
+        "Current-site RSS material, exact target search and IYUU query produced a durable AWAITING_SELECTION job and one non-free cross-site candidate. Ordinary form and configuration reads preserved both credential placeholders, and saving them retained the working originals.",
+        "Unconfirmed selection made no download. Confirmation fetched the chosen source once; the qB protocol peer read SOURCE_SUBMITTING in SQLite before receiving the exact original private-tracker torrent with the chosen directory, category, tag and active flags. The authenticated job endpoint then showed SOURCE_DOWNLOADING."
+      ],
+      "chrome_workbench": [
+        "Chrome loaded the actual indexed remote Config, saved an enabled configuration with no scanning credentials, and loaded the original Page from the installed assets with status GET responses and no frontend exception.",
+        "After the first browser script's close-button selector timed out, the targeted AppPage run opened the real sidebar link in a fresh isolated App without rerunning the previous Config/Page checks. The AppPage loaded the exact installed modules and its status, with zero browser writes and no registered schedule."
+      ],
+      "sdk_parallel_stream": [
+        "An actual child worker round-tripped 300 concurrent reverse requests, including out-of-order completion and a chunked message, and refused an oversized reverse frame before publication. The stream was bound to SeedRescue and the supported methods."
+      ]
+    },
+    "environment": "Owned Linux x86_64 Alpine container, actual started light-media and indexed packages, native SQLite, two owned site peers, IYUU and qB protocol peers. Browser is actual local Chrome via a loopback bridge.",
+    "backend_fixture_commit": "c0260105eb0d5de7062476a917d4092470c44d2c",
+    "backend_test_binary_sha256": "096099c3e3e8f3863b983f60f7a9e4684dab1a605fe633172bbace17477f0ef8",
+    "config_page_fixture_commit": "27a6cbdccdacb93671ae77cc256731a2ff8555f0",
+    "config_page_test_binary_sha256": "e4c914d7896507619e6999e3a4827d3b82c06065ecd20e67052a4f08a618a2aa",
+    "app_page_test_binary_sha256": "3328d191ce227843ae9dfb952ef739837ab54e05de19a9276d65f0a5eae42378",
+    "web_index_sha256": "6b6c8751df63291f3e460fa75bac78d5d89e23f4719a9a9f564e066894133b45",
+    "retained_work_artifacts": {
+      "work/seed-rescue-20261108/native-manual-download.log": "cdd0ff7fb99a809ec04b1bace882fa42442d980ea4181dfb8ad58496088f9581",
+      "work/seed-rescue-20261108/native-manual-download-attempt-1.log": "4c34357102638f0860d1bcd218da3892e26e8ed1f29b2beae84ebc03bd427b1c",
+      "work/seed-rescue-20261108/sdk-stream.log": "ef0e4a87a3648fd3ed44663dae172bd0ce71127ffba7f7a602621f9b664331d8",
+      "work/seed-rescue-20261108/browser/config-page-result.json": "343d9ef4f038582a5953d024f3dc0b1ef78a2d85182a675036aa2fe6d8e4e810",
+      "work/seed-rescue-20261108/browser/config-page-runtime.stdout": "c2ec62187137b8c32fd9425832911303f995e3d08c7dbf3521d57601e179218b",
+      "work/seed-rescue-20261108/browser/browser-result.json": "4e653b8dde8a002af646efa9f4419f11bc7906df603782e74cfb64c69e3f6e5b",
+      "work/seed-rescue-20261108/browser/runtime.stdout": "20acd4fe28ad81e66ab76758a383eb96920a768976ba2739f93ebe018ecaa44a",
+      "work/seed-rescue-20261108/browser/config.png": "ca6081b8e34de0074a7a278a17f7b511acdf5343b11651a5e7afb5492369b83c",
+      "work/seed-rescue-20261108/browser/page.png": "574413d13ffb91384d6085f18f98e6137420334cb356e524e0e36c9f9665cc9c",
+      "work/seed-rescue-20261108/browser/app-page.png": "90009fd76312d6716e9694f19aa3d58ba948ea3400d1dce3d4aa2109c16bb6d4"
+    }
+  },
+  "reuse": {
+    "source_oracles": [
+      "source-oracle.json",
+      "scan-oracle.json",
+      "flow-oracle.json"
+    ],
+    "prior_evidence": [
+      "light-media/docs/plugin-seed-rescue-verification.json",
+      "light-media/docs/plugin-seed-rescue-reviewed-migration-verification.json"
+    ],
+    "classification": "Source replays and previous isolated application runs retained separately. They establish original scheduler, cancellation, retry, historical state, parser and risk expectations. The port reuses those Go algorithms without rerunning broad suites."
+  },
+  "adaptations": [
+    "Current host owns site identities and installed-instance KV. Enclosures are per-invocation grants. Worker receives a valid bencoded raw-info projection without tracker credentials. The host matches the grant and sends original bytes to the authorized downloader.",
+    "Token and RSS addresses are preserved using explicit placeholders in configuration responses. New external effects require recorded intent. Unknown additions wait for a positive observation of the same downloader hash.",
+    "The archived original workbench is unmodified. The original manager's clone filename mismatch for Pascal-case workbench imports is documented in FRONTEND_ORIGIN.json. The source exposes Dashboard but does not declare a dashboard registration.",
+    "The Go HTTP boundary preserves the ordinary response envelope. Framework-generated validation diagnostics use the Go route's 422 shape. Current package acceptance uses owned protocol peers rather than production trackers or a production downloader.",
+    "Historical production job import was not run. The older reviewed import used a separately verified site and downloader identity mapping. These references must be reviewed before importing any saved live data."
+  ],
+  "first_attempts": {
+    "native": "The fixture initially omitted the source target title-search response. It created the correct candidate while reporting the intentionally absent refresh as partial. Only that scenario was rerun.",
+    "browser": "Config/save and Page were observed. The automation could not locate the close icon and stopped before AppPage. A fresh focused AppPage-only run reused the prior observations."
+  },
+  "review": {
+    "reviewer": "/root/lark_finish_audit",
+    "status": "passed_with_documented_adaptations",
+    "resolved": [
+      "mask configuration secrets",
+      "keep one live machine across configuration saves",
+      "recover an ambiguous effect from an exact qB observation",
+      "skip malformed material without aborting the full scan",
+      "fence removed clone writes"
+    ]
+  },
+  "delivery": {
+    "pushed": false,
+    "deployed": false,
+    "production_imported": false
+  }
+}

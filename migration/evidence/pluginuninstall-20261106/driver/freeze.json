@@ -1,0 +1,529 @@
+{
+  "classification": "driver frozen; ordinary Main, native permissions, cold states and browser NOT executed; coordinator requires newly reviewed host, superseded7a08 rejected",
+  "sources": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_main_test.go",
+      "sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+      "bytes": 24629
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_helpers_test.go",
+      "sha256": "f2c8cb48cbd15a406dfe67f3dea294efe9fe390072c6ea84b4f5492878813b34",
+      "bytes": 17315
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/tests/integration/testhost_main_test.go",
+      "sha256": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+      "bytes": 9233
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe/main.go",
+      "sha256": "6cc20daad968ab46bbc0c5f7049db2da08558153e249968f7b2fba66895d47c6",
+      "bytes": 5246
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe/main_test.go",
+      "sha256": "848f09a4922b3cf6490a3cdd4bb46ee152b458acbae857b2aa1f5b81b7b03728",
+      "bytes": 1797
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-version-2.2.1.go",
+      "sha256": "fd9c790627e044cdb7d0bfe6b458e164ae32afecc618695ec8e4f06c7b81755c",
+      "bytes": 3041
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/manifest-update-overlay.json",
+      "sha256": "e1087196a5c010083f911bfba4ca05263b788b4a5e4caff2194d4462a1c312ed",
+      "bytes": 239
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/run_checks.py",
+      "sha256": "06e6151929701e6b1c510b483a679194c9867058b2576aecd58ed0234affc770",
+      "bytes": 3458
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/source-map.md",
+      "sha256": "035d5ee596304425a66f0895d61d658f59a7920cc02050148abee345bacd68c1",
+      "bytes": 15442
+    }
+  ],
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/pluginuninstall-main-linux.test",
+      "sha256": "219af7aa5183087226cc073d1adf1c1df4417252c1ba61a3d346fd09a2601db1",
+      "bytes": 11062247
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture-linux",
+      "sha256": "b4d23deb2ba9d58dbd30dc56d6f212c5498cad35272160716dc0c85650ec7744",
+      "bytes": 4650716
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-uninstall-2.2.1-linux",
+      "sha256": "793ad8df2e372d11012ef5eace030e6791f57c71373e74fd29572ad75d602e96",
+      "bytes": 4942777
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/plugin-uninstall-linux",
+      "sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+      "bytes": 4942777
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/shared-acceptance-inputs/mp-server-status-linux-amd64",
+      "sha256": "66300eecf0ce7d785e3a448c338e163cfa83ac43cb13bce3e4efaeebfe852055",
+      "bytes": 16753190
+    }
+  ],
+  "commands": [
+    {
+      "name": "normal",
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "tests/integration/pluginuninstall_main_test.go",
+        "tests/integration/pluginuninstall_helpers_test.go",
+        "tests/integration/testhost_main_test.go",
+        "-run",
+        "TestPluginUninstall"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.892,
+      "cross_environment": null
+    },
+    {
+      "name": "race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-json",
+        "-count=1",
+        "tests/integration/pluginuninstall_main_test.go",
+        "tests/integration/pluginuninstall_helpers_test.go",
+        "tests/integration/testhost_main_test.go",
+        "-run",
+        "TestPluginUninstall"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.129,
+      "cross_environment": null
+    },
+    {
+      "name": "vet",
+      "command": [
+        "go",
+        "vet",
+        "tests/integration/pluginuninstall_main_test.go",
+        "tests/integration/pluginuninstall_helpers_test.go",
+        "tests/integration/testhost_main_test.go"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.187,
+      "cross_environment": null
+    },
+    {
+      "name": "probe-normal",
+      "command": [
+        "go",
+        "test",
+        "-json",
+        "-count=1",
+        "./work/migration-20261105/pluginuninstall-main-driver-20261105/probe"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 1.072,
+      "cross_environment": null
+    },
+    {
+      "name": "probe-race",
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-json",
+        "-count=1",
+        "./work/migration-20261105/pluginuninstall-main-driver-20261105/probe"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 2.035,
+      "cross_environment": null
+    },
+    {
+      "name": "probe-vet",
+      "command": [
+        "go",
+        "vet",
+        "./work/migration-20261105/pluginuninstall-main-driver-20261105/probe"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.127,
+      "cross_environment": null
+    },
+    {
+      "name": "driver-linux",
+      "command": [
+        "go",
+        "test",
+        "-c",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/pluginuninstall-main-linux.test",
+        "tests/integration/pluginuninstall_main_test.go",
+        "tests/integration/pluginuninstall_helpers_test.go",
+        "tests/integration/testhost_main_test.go"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.793,
+      "cross_environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      }
+    },
+    {
+      "name": "probe-linux",
+      "command": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture-linux",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe/main.go"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.236,
+      "cross_environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      }
+    },
+    {
+      "name": "update-linux",
+      "command": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/manifest-update-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-uninstall-2.2.1-linux",
+        "./cmd/plugin-uninstall"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.253,
+      "cross_environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      }
+    },
+    {
+      "name": "probe-native",
+      "command": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe/main.go"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.232,
+      "cross_environment": null
+    },
+    {
+      "name": "update-native",
+      "command": [
+        "go",
+        "build",
+        "-trimpath",
+        "-buildvcs=false",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/manifest-update-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-uninstall-2.2.1",
+        "./cmd/plugin-uninstall"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.283,
+      "cross_environment": null
+    },
+    {
+      "name": "probe-manifest",
+      "command": [
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/owned-pui-fixture",
+        "--manifest"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.412,
+      "cross_environment": null
+    },
+    {
+      "name": "update-manifest",
+      "command": [
+        "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/plugin-uninstall-2.2.1",
+        "--manifest"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.411,
+      "cross_environment": null
+    },
+    {
+      "name": "go-env",
+      "command": [
+        "go",
+        "env",
+        "-json",
+        "GOVERSION",
+        "GOOS",
+        "GOARCH",
+        "GOFLAGS",
+        "GOMOD",
+        "GOWORK",
+        "CGO_ENABLED"
+      ],
+      "exit_code": 0,
+      "elapsed_seconds": 0.012,
+      "cross_environment": null
+    }
+  ],
+  "local": {
+    "driver_normal": {
+      "passed": 29,
+      "opt_in_Main_skipped": 1,
+      "failed": 0
+    },
+    "driver_race": {
+      "passed": 29,
+      "opt_in_Main_skipped": 1,
+      "failed": 0
+    },
+    "owned_probe_normal": {
+      "passed": 1
+    },
+    "owned_probe_race": {
+      "passed": 1
+    },
+    "vets": 2,
+    "Linux_builds": 3
+  },
+  "source_input_count": 126,
+  "SDK_ORIGIN": {
+    "path": "/Users/accidia/projects/light-media-plugins/SDK_ORIGIN.json",
+    "sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "bytes": 246908
+  },
+  "producer18_unchanged": true,
+  "raw": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/check-input-binding.json",
+      "sha256": "a8d448f953df2458ae7ae496da72841ed246313ad28be82c51db8805ff3fb9be",
+      "bytes": 39561
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/commands.json",
+      "sha256": "15e1c05832eb521ec4e540fb0edf17e4906f475e0c140dc656d227165d52c889",
+      "bytes": 5667
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/driver-linux.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/driver-linux.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/freeze_driver.py",
+      "sha256": "78d85c876e413100e33c56cfe98e60e9688d6c7abd3e7ad628ead1e591c63f91",
+      "bytes": 3168
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/go-env.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/go-env.stdout",
+      "sha256": "5f0b27a8513dbca6232f4455cee6bd34489ffcace1d40c60036a718b79960dc9",
+      "bytes": 184
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/initial-driver-build-failure.json",
+      "sha256": "d4120490465ff46a30937604b537eff418b31ac5c39e0dc6a34be898b766240b",
+      "bytes": 421
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/local-normal.jsonl",
+      "sha256": "47f2c756c3e996a5a23c2db3460f697a5eca7e55119303be332cc71a1f12d2e2",
+      "bytes": 26049
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/manifest-update-overlay.json",
+      "sha256": "e1087196a5c010083f911bfba4ca05263b788b4a5e4caff2194d4462a1c312ed",
+      "bytes": 239
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/normal.stdout",
+      "sha256": "5fec1f4008ec4259b26e859555f1ffc85948dcbaa7e678b42def2aa40f449779",
+      "bytes": 26996
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-before-schema-fix.jsonl",
+      "sha256": "5520a45871f4fcaabb9c242dc12dd27f7c69bb6aae0198d9fbf349dd21b7927d",
+      "bytes": 2267
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-linux.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-linux.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-manifest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-manifest.stdout",
+      "sha256": "654968fad7c1b068fb9a5ae6281f07d4260aaaf9b5c39b9d4f1d8202bc5a4907",
+      "bytes": 769
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-native.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-native.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-normal.jsonl",
+      "sha256": "944df01e9b70223e63fb5d7bfb40df355881f57139ff84eebedcd952a5ffc8a3",
+      "bytes": 1967
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-normal.stdout",
+      "sha256": "e4e3ffd73b1e81b6ab8394b28a7efbc55d71c149a48732f2d9915e82a8fe0583",
+      "bytes": 1966
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-race.stdout",
+      "sha256": "0171c33fd41d6e2097a93d14b3bc4b5da7ca6af13b4daac35ee9eee4ba0c1dfb",
+      "bytes": 1965
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-vet.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/probe-vet.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/race.stdout",
+      "sha256": "7c2d0d217e22f634484029a0b105906ef1bf00319ab42b53587b3fe657ec9ce7",
+      "bytes": 26997
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/run_checks.py",
+      "sha256": "06e6151929701e6b1c510b483a679194c9867058b2576aecd58ed0234affc770",
+      "bytes": 3458
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/source-map.md",
+      "sha256": "035d5ee596304425a66f0895d61d658f59a7920cc02050148abee345bacd68c1",
+      "bytes": 15442
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-linux.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-linux.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-manifest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-manifest.stdout",
+      "sha256": "5da1660cc6078be1b1a0b6448f5b2c7121201c0464d1f6f7a7682310d1255c43",
+      "bytes": 853
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-native.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/update-native.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/vet.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-main-driver-20261105/vet.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    }
+  ],
+  "expected_Main": {
+    "new_reviewed_host_SHA": "required via PLUGINUNINSTALL_EXPECT_HOST_SHA256; coordinator final binding pending",
+    "port": 36258,
+    "uid": 1000,
+    "UI_barrier_minutes": 50,
+    "test_timeout_minutes": 70,
+    "network": "owned executable repositories; no MPS page/dashboard"
+  },
+  "preserved_harness_failures": [
+    "initial-driver-build-failure.json",
+    "probe-before-schema-fix.jsonl"
+  ],
+  "executed_Main": false,
+  "executed_NAS": false,
+  "executed_browser": false
+}

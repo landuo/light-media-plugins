@@ -1,0 +1,19 @@
+--- /Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/source_ocr_response.go
++++ plugins/autosignin/source_ocr_response.go
+@@ -19,13 +19,7 @@
+ 	if !Truth(result) {
+ 		return "", nil
+ 	}
+-	raw, err := sourceHTTPJSONBytes(result)
+-	if err != nil {
+-		return nil, err
+-	}
+-	result, err = sourceRestoreSavedJSON(raw)
+-	if err != nil {
+-		return nil, err
+-	}
+-	return &sourceOCRValue{value: result, raw: raw}, nil
++	// Keep the already-decoded source HTTP value. It may legally include
++	// nonfinite floats, ordered maps, huge integers or lone codepoints.
++	return &sourceOCRValue{value: result, fromHTTP: true}, nil
+ }

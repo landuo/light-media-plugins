@@ -1,0 +1,134 @@
+{
+  "status": "finite_implemented_verified; wholeAutoSignIn_still_implementing",
+  "source": {
+    "core_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "installed_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+    "locations": [
+      "app/helper/ocr.py OcrHelper",
+      "app/utils/http.py RequestUtils",
+      "autosignin/sites/hdsky.py HDSky.signin",
+      "autosignin/sites/opencd.py OCR form consumer (finite pure form path only)"
+    ],
+    "source_conditions": 74,
+    "source_physical_HTTP": 185
+  },
+  "implementation": {
+    "status": "five guarded production files actually applied; current tests pending",
+    "review_sha256": "944411c264a1cf620a4f6ce97a066a91b5642443f9705588e8707442edb402a9",
+    "rows": [
+      {
+        "target": "plugins/autosignin/source_ocr_response.go",
+        "before": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/source_ocr_response.go",
+        "before_sha256": "7f5b0792818799ac0d81aad4cc56a64f1c595d0875cb83e707ca6cd016431da0",
+        "candidate": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/candidate/source_ocr_response.go",
+        "original_before_path": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_ocr_response.go",
+        "sha256": "b4ed353a9e6c50605e712ef37cc5da0fbd87f6f521a9a53e9919a5a7c4ed0993"
+      },
+      {
+        "target": "plugins/autosignin/ocr_value.go",
+        "before": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/ocr_value.go",
+        "before_sha256": "3a21481f5945e26d29d9c5c8837819ce5efe5fa9f8f9ee3169c29663f96393b9",
+        "candidate": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/candidate/ocr_value.go",
+        "original_before_path": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/ocr_value.go",
+        "sha256": "90b7ce89b6d8094b35346274b87168a89dc766256dfdb6257cdb0617be6b51d8"
+      },
+      {
+        "target": "plugins/autosignin/ocr_adapters.go",
+        "before": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/ocr_adapters.go",
+        "before_sha256": "18d64bca43f0b39e0b86d6174920f794b30f44ad52d565af30cfc52ce1a538e2",
+        "candidate": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/candidate/ocr_adapters.go",
+        "original_before_path": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/ocr_adapters.go",
+        "sha256": "04b2d5fbc8835113973b42635a26bd9d4a5b67721acef7c26932be49a32c0782"
+      },
+      {
+        "target": "plugins/autosignin/visits.go",
+        "before": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/visits.go",
+        "before_sha256": "145fe68f9825b56fe3b1e6d39912bbee47933541abc72d8ea5fe049d4ed0a3bf",
+        "candidate": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/candidate/visits.go",
+        "original_before_path": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/visits.go",
+        "sha256": "2fd1bac0f47910ca909313890b71009865e6e81f0e5e7f475ed8c3a6473bc900"
+      },
+      {
+        "target": "plugins/autosignin/source_site_binding.go",
+        "before": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/source_site_binding.go",
+        "before_sha256": "4d1b5e2ff769a3788c042f4f378d6d165c7be4b300396dbd36dae4468a334ff7",
+        "candidate": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/candidate/source_site_binding.go",
+        "original_before_path": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_site_binding.go",
+        "sha256": "35b2c163ad3f52b83b900bfe73e4d7156c4ff1c175bffe44e6de48a64864aadd"
+      }
+    ]
+  },
+  "independent_review_sha256": "944411c264a1cf620a4f6ce97a066a91b5642443f9705588e8707442edb402a9",
+  "current_canonical_freeze_sha256": "f578ee6c2ee25e38fe89209511b7fb4eb40fd378ab287be118907f999d7deb14",
+  "observations": "truecurrent normal/race each63named+pkg0skip; realLinuxSDK/App75named74conditions185HTTP0skip/3340go-listownedinputs stable; no productionoverlay/modfile. Prior source and negatives retain originalbindings.",
+  "necessary_adaptations": "Existing GoHTTP trailing field OWS normalization recorded separately; source/runtime bounds remain finite and context-specific. No new backend/SDK/parser changes inthisfivefile slice.",
+  "limits": [
+    "Not wholeAutoSignIn,not allOpenCD/HDSky,not Main/UI/privateimport/providerPT or App race.",
+    "Source-derived3purefunctions moved into1regular testfile with3byte-exactsourceoracles; exactly4path substitutions, noassertions changed.",
+    "Oldunboundednegative killed137 is resource termination, not semanticred. Old boundednegative3leafreds+4controls retained.",
+    "No acceptedinstancecount increase;7/23 remains. No push/deploy."
+  ],
+  "copy_map_sha256": "cab5e5be30fbb8ffb121a5cbf02dcd924b7b2fabdbedbfd00155880d05713614",
+  "copied_files": 274,
+  "previous_finite_integration_record_sha256": "608e628fb126146abd508ffdfc045043389ebb311099f9f66216ba4362e16a88",
+  "current_all_product_regressions": {
+    "normal": {
+      "exit": 0,
+      "seconds": 60.369441125076264,
+      "inputs": 4020,
+      "stable": true,
+      "test_pass": 7621,
+      "package_pass": [
+        "github.com/landuo/light-media-plugins/cmd/category-editor",
+        "github.com/landuo/light-media-plugins/cmd/mp-server-status",
+        "github.com/landuo/light-media-plugins/cmd/site-statistic",
+        "github.com/landuo/light-media-plugins/cmd/torrent-transfer",
+        "github.com/landuo/light-media-plugins/internal/sdk",
+        "github.com/landuo/light-media-plugins/plugins/autosignin",
+        "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash",
+        "github.com/landuo/light-media-plugins/plugins/autosignin/pyregex",
+        "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+        "github.com/landuo/light-media-plugins/plugins/pluginuninstall",
+        "github.com/landuo/light-media-plugins/plugins/removelink",
+        "github.com/landuo/light-media-plugins/plugins/sitestatistic",
+        "github.com/landuo/light-media-plugins/plugins/torrenttransfer",
+        "github.com/landuo/light-media-plugins/tests/integration",
+        "github.com/landuo/light-media-plugins/tests/sourceinterfaces"
+      ],
+      "explicit_optin_test_skips": 40,
+      "no_test_packages": 10
+    },
+    "race": {
+      "exit": 0,
+      "seconds": 269.1002313331701,
+      "inputs": 4020,
+      "stable": true,
+      "test_pass": 7621,
+      "package_pass": [
+        "github.com/landuo/light-media-plugins/cmd/category-editor",
+        "github.com/landuo/light-media-plugins/cmd/mp-server-status",
+        "github.com/landuo/light-media-plugins/cmd/site-statistic",
+        "github.com/landuo/light-media-plugins/cmd/torrent-transfer",
+        "github.com/landuo/light-media-plugins/internal/sdk",
+        "github.com/landuo/light-media-plugins/plugins/autosignin",
+        "github.com/landuo/light-media-plugins/plugins/autosignin/imagehash",
+        "github.com/landuo/light-media-plugins/plugins/autosignin/pyregex",
+        "github.com/landuo/light-media-plugins/plugins/categoryeditor",
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus",
+        "github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector",
+        "github.com/landuo/light-media-plugins/plugins/pluginuninstall",
+        "github.com/landuo/light-media-plugins/plugins/removelink",
+        "github.com/landuo/light-media-plugins/plugins/sitestatistic",
+        "github.com/landuo/light-media-plugins/plugins/torrenttransfer",
+        "github.com/landuo/light-media-plugins/tests/integration",
+        "github.com/landuo/light-media-plugins/tests/sourceinterfaces"
+      ],
+      "explicit_optin_test_skips": 40,
+      "no_test_packages": 10
+    }
+  },
+  "evidence_boundary": "Added only migration/evidence/go.mod to exclude archived partial sources/intentional negative controls from runnable module; no original proofbytes moved/deleted/edited. Local ignored work/go.mod similarly isolates working candidates. Initial archive and subsequent work discovery failures are preserved distinctly."
+}

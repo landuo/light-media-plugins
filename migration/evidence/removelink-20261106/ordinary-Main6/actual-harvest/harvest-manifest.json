@@ -1,0 +1,89 @@
+{
+  "classification": "actual native ordinaryMain6 currenthost3c05 + source-correct20omission manifests, independent processes/real filesystem/IAB config and full lifecycle; not final family acceptance until packaging/composite closure",
+  "exit_code": 0,
+  "seconds": 686.3098171588499,
+  "observations": 178,
+  "last_observation": {
+    "at": "2026-11-05T19:55:56.580076263Z",
+    "event": "rm_no_inherited_module_discovery",
+    "value": {
+      "complete_app_log_checked": true,
+      "module_declaration_failed_count": 0,
+      "stage": "full-tail-after-all-worker-joins"
+    }
+  },
+  "module_declaration_failed_full_app_log": 0,
+  "files": [
+    {
+      "path": "main-run-6-command.json",
+      "bytes": 3851,
+      "sha256": "f38fe4454c0113d0e3940cfa8f0633693febeb6f2ae46e2f8827d6f1395878f2"
+    },
+    {
+      "path": "main-run-6.log",
+      "bytes": 299,
+      "sha256": "b3ff99a641fa0d22a02b715fed15fc65a6c4a0379405f216bfb3bc13773974bd"
+    },
+    {
+      "path": "input-inventory-run6.json",
+      "bytes": 1167,
+      "sha256": "a753742848aa544af6a27abffd50aa06bf1ace1d336977907413db66b4bebd39"
+    },
+    {
+      "path": "main-run-6/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "main-run-6/ui-complete",
+      "bytes": 123,
+      "sha256": "4e38d97b6b3834f799b44aaa222f665c79ce4575a4a4f44eb8ffe4d33925aeea"
+    },
+    {
+      "path": "main-run-6/evidence/observations.jsonl",
+      "bytes": 462679,
+      "sha256": "9502430a766d6a60d6ef851e4b74a1503135c7945797b6dd3acbb652726b8da6"
+    },
+    {
+      "path": "main-run-6/evidence/host-1.log",
+      "bytes": 198927,
+      "sha256": "3d18285652f302e206f20ea1fa42976af136c357eed106bb0d54cccf3fe1b69c"
+    },
+    {
+      "path": "main-run-6/evidence/host-2.log",
+      "bytes": 8672,
+      "sha256": "b86a0cfd7a6bc3150af00738447c46b9a89b7c995524b756e59db3fd70aae369"
+    },
+    {
+      "path": "main-run-6/evidence/browser-files-before.json",
+      "bytes": 1088,
+      "sha256": "4e9e268ffae30dcae5961a9f6db2208f16d2d6a1a91713eb7d0d105802217c59"
+    },
+    {
+      "path": "main-run-6/evidence/browser-files-after.json",
+      "bytes": 540,
+      "sha256": "9a417098c8e2920b2cb3de021c80948da6350f3a6bf0e638aab574364945f750"
+    },
+    {
+      "path": "main-run-6/app/logs/app.jsonl",
+      "bytes": 208057,
+      "sha256": "06ecdfa5e3e10d782f75a535a3c617d0ad4de747e62c1e95d79f63e72cbda5f3"
+    },
+    {
+      "path": "main-run-6/app/logs/plugins/removelink.log",
+      "bytes": 58501,
+      "sha256": "ff498cb53c6da32ffcc4c1663026ffbbce0c6caccb3c48ad3088d2f9ea53a8a5"
+    },
+    {
+      "path": "main-run-6/app/logs/plugins/removelinkowned.log",
+      "bytes": 2407,
+      "sha256": "07af6fb2ad6d85b97da39863af036ec57665e5863111878a5845c555749800c2"
+    }
+  ],
+  "private_excluded": [
+    "ui-ready.json",
+    "light-media.db",
+    "secret.key"
+  ],
+  "at": "2026-11-05T20:00:39.994721+00:00"
+}

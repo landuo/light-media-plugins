@@ -65,7 +65,7 @@ private original migration logs. Controlled synthetic/source/main/browser eviden
 separately classified in migration/evidence; it contains no production
 configuration or database.
 
-## Installed plugin adaptations
+## Installed plugin adaptations and MPServerStatus support
 
 The installed TorrentTransfer1.10.3 and SiteStatistic1.9.7 business source was
 written by jxxghp for MoviePilot. Their fixed installed content source, authors,
@@ -73,21 +73,28 @@ exact source SHA256, adaptations and evidence are retained in each plugin's
 ORIGIN.md and migration/ledger.json. The content baseline is not represented
 as a newly identified upstream commit.
 
-## Shared encoding and HTTP helpers
+The MPServerStatus1.4 Go candidate is adapted from jxxghp's installed source
+SHA256 `63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90`.
+Its fixed source/plugin behavior and pure codec/proxy helper reuse are described
+in plugins/mpserverstatus/ORIGIN.md; this attribution does not claim acceptance.
+It adds these exact runtime module dependencies:
 
-IYUUAutoSeed uses `github.com/andybalholm/brotli v1.2.6`. Its MIT license is in
-`third_party/brotli-LICENSE`, and the flate subpackage's BSD notice is in
-`third_party/brotli-flate-LICENSE`. The `golang.org/x/net v0.61.0` HTML and
-proxy helpers use the BSD license in `third_party/x-net-LICENSE` and the
-additional Go IP grant in `third_party/x-net-PATENTS`.
+- `github.com/andybalholm/brotli v1.2.6`: MIT text in
+  third_party/brotli-LICENSE. A conservative complete-module copy of the
+  unused flate subpackage's BSD notice is in third_party/brotli-flate-LICENSE.
+- `golang.org/x/net v0.61.0`: BSD text in third_party/x-net-LICENSE
+  and the additional Go IP grant in third_party/x-net-PATENTS. Only its
+  proxy/internal-socks leaves are required here.
 
-The encoding detector used by AutoSignIn and IYUUAutoSeed preserves CPython's
-PSF license and history, the Unicode license, and the chardet 0BSD notice in
-`internal/encodingdetector/`. The proxy helper used by MergeMessageNotify
-preserves the CPython, Requests, and PySocks licenses in
-`internal/requestsproxy/licenses/`. The helper's `REQUESTS-NOTICE` identifies
-its source and proxy TLS adaptation. The helpers run as Go code with embedded
-data. The build registry includes the applicable notices for each plugin.
+The pure encoding detector preserves CPython's PSF license/history, Unicode
+LicenseV3 and chardet0BSD notice under plugins/mpserverstatus/encodingdetector/.
+The finite requests proxy helper preserves the CPython, RequestsApache2.0
+(including original NOTICE) and PySocksBSD texts under
+plugins/mpserverstatus/requestsproxy/licenses/; REQUESTS-NOTICE identifies its
+source and approved proxy-TLS adaptation. These tables/algorithms are Go source
+and embedded assets; no Python interpreter or package is used at runtime.
+The build allowlist must include all applicable notices in each corresponding
+plugin ZIP and the selected release's third-party notice bundle.
 
 ## PluginUnInstall business source
 
@@ -96,7 +103,8 @@ source SHA256 is `2210e9dea47eeccdc46208d515e45ce1222dcadf50dbfc63cbeb41f94e4704
 in the read-only installed content snapshot recorded by migration/ledger.json.
 Its Go worker uses the existing GPLv3 SDK and x/text dependency, without a
 Python runtime. Source algorithm, finite host adaptations and provenance are
-recorded in plugins/pluginuninstall/ORIGIN.md. No upstream icon is redistributed.
+recorded in plugins/pluginuninstall/ORIGIN.md. Author attribution is retained
+in the actual worker manifest. No upstream icon is redistributed.
 
 ## AutoSignIn business source and image decoding
 
@@ -131,21 +139,29 @@ with the implementation. These are Go implementations, with no WASM or native
 codec dependency. Root Go minimum1.26.4 is a build prerequisite, not a runtime
 interpreter requirement.
 
+## MergeMessageNotify Markdown conversion
+
+The Pushover and Matrix Apprise adapters use Goldmark v1.8.7, commit
+`6dafb0cf955a823afd513a641b6747424c40ee5d`, under the MIT license.
+The license is in `third_party/goldmark-LICENSE` and belongs in the
+MergeMessageNotify package's notice inventory. The conversion reference is the
+installed Python-Markdown 3.11.2. The worker uses Goldmark at runtime.
+
 ## IYUUAutoSeed business source and compatibility helpers
 
 The installed IYUUAutoSeed 2.22 MoviePilot source identifies jxxghp and CKun
 as its authors. The fixed `__init__.py` SHA-256 is
 `3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7`.
 The installed source inventory and the Go adaptation's provenance are recorded
-in `plugins/iyuuautoseed/ORIGIN.json`. The executable uses the GPLv3 SDK under
-this repository's `LICENSE`.
+in `plugins/iyuuautoseed/ORIGIN.json`. The executable retains the authors in
+its manifest and uses the GPLv3 SDK under this repository's `LICENSE`.
 
 The detail-page parser retains the libxml2 2.14.6 MIT notice in
 `plugins/iyuuautoseed/compat/htmlextract/LICENSE.libxml2`. The Go dependencies
 include `golang.org/x/net` for HTML tokenization, `golang.org/x/text`, and
 Brotli. Their license and patent texts are under `third_party/`. The shared
 encoding detector retains its CPython, Unicode, and chardet notices under
-`internal/encodingdetector/`. The reused source value and regular
+`plugins/mpserverstatus/encodingdetector/`. The reused source value and regular
 expression helpers retain their CPython, Unicode, and regexp2 notices under
 `plugins/autosignin/`. The package includes the APScheduler and Requests
 notices for the adapted calendar and HTTP behavior. These are Go implementations
@@ -157,7 +173,7 @@ The installed SystemProcess 1.1 MoviePilot source identifies hotlcc as its
 author. The fixed `__init__.py` SHA-256 is
 `d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac`.
 `plugins/systemprocess/ORIGIN.json` records the installed source and the Go
-adaptation.
+adaptation. The actual worker manifest retains the author attribution.
 
 The Linux worker links `github.com/shirou/gopsutil/v4 v4.26.9`,
 `github.com/tklauser/go-sysconf v0.4.0`, and
@@ -178,7 +194,8 @@ author. The fixed `__init__.py` SHA-256 is
 `dedab53b1adf96dc59879ebdd67f77fe67ea773981d4befb04ca000889f607e4`.
 `plugins/autobackup/ORIGIN.json` records the original source and the scoped Go
 implementation. The worker reuses the repository's native cron and JSON-value
-helpers.
+helpers. Its manifest retains the original author attribution. No upstream icon
+or Python runtime is included in the package.
 
 ## BrushFlowLanduo source and remote workbench
 

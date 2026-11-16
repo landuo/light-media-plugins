@@ -1,0 +1,429 @@
+{
+  "classification": "immutable333 source producer get_service actual method and actual APS pending interval constructor; controlled random branch marker (not random schedule oracle), no scheduler start/App/config/DB/network",
+  "rows": [
+    {
+      "input_type": "str",
+      "input_repr": "'0'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "0.0",
+          "float64_big_endian": "0000000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "1000000",
+          "start": "2026-11-07T00:26:51.264727+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "int",
+      "input_repr": "0",
+      "services": [],
+      "random_schedule_calls": 1,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "float",
+      "input_repr": "0.0",
+      "services": [],
+      "random_schedule_calls": 1,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "bool",
+      "input_repr": "False",
+      "services": [],
+      "random_schedule_calls": 1,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "bool",
+      "input_repr": "True",
+      "services": [],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [
+        [
+          "error",
+          "定时任务配置错误：could not convert string to float: 'True'"
+        ]
+      ],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "NoneType",
+      "input_repr": "None",
+      "services": [],
+      "random_schedule_calls": 1,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "str",
+      "input_repr": "''",
+      "services": [],
+      "random_schedule_calls": 1,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "str",
+      "input_repr": "' 0.0000001 '",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "1e-07",
+          "float64_big_endian": "3e7ad7f29abcaf48",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "360",
+          "start": "2026-11-07T00:26:50.265916+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'-1'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "-1.0",
+          "float64_big_endian": "bff0000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "-3600000000",
+          "start": "2026-11-06T23:26:50.265825+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'NaN'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "nan",
+          "float64_big_endian": "7ff8000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": false,
+          "type": "ValueError",
+          "message": "cannot convert float NaN to integer"
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'+Inf'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "inf",
+          "float64_big_endian": "7ff0000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": false,
+          "type": "OverflowError",
+          "message": "cannot convert float infinity to integer"
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'-Infinity'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "-inf",
+          "float64_big_endian": "fff0000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": false,
+          "type": "OverflowError",
+          "message": "cannot convert float infinity to integer"
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'1e16'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "1e+16",
+          "float64_big_endian": "4341c37937e08000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": false,
+          "type": "OverflowError",
+          "message": "Python int too large to convert to C int"
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'bad'",
+      "services": [],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [
+        [
+          "error",
+          "定时任务配置错误：could not convert string to float: 'bad'"
+        ]
+      ],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'1_0'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "10.0",
+          "float64_big_endian": "4024000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "36000000000",
+          "start": "2026-11-07T10:26:50.266902+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'１２.５'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "12.5",
+          "float64_big_endian": "4029000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "45000000000",
+          "start": "2026-11-07T12:56:50.267277+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'1,5'",
+      "services": [],
+      "random_schedule_calls": 0,
+      "start_hour": null,
+      "end_hour": null,
+      "logs": [
+        [
+          "error",
+          "定时任务配置错误：could not convert string to float: '1,5'"
+        ]
+      ],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'0/9-23'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "0.0",
+          "float64_big_endian": "0000000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": 9,
+      "end_hour": 23,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "1000000",
+          "start": "2026-11-07T00:26:51.267614+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'0/0-23'",
+      "services": [],
+      "random_schedule_calls": 0,
+      "start_hour": 0,
+      "end_hour": 23,
+      "logs": [
+        [
+          "error",
+          "站点自动签到服务启动失败，周期格式错误"
+        ]
+      ],
+      "real_APS_pending_constructor": []
+    },
+    {
+      "input_type": "str",
+      "input_repr": "'0/23-9'",
+      "services": [
+        {
+          "id": "AutoSignIn",
+          "trigger": "interval",
+          "hours_repr": "0.0",
+          "float64_big_endian": "0000000000000000",
+          "kwargs_keys": [
+            "hours"
+          ]
+        }
+      ],
+      "random_schedule_calls": 0,
+      "start_hour": 23,
+      "end_hour": 9,
+      "logs": [],
+      "real_APS_pending_constructor": [
+        {
+          "ok": true,
+          "interval_us": "1000000",
+          "start": "2026-11-07T00:26:51.267943+08:00",
+          "timezone": "Asia/Shanghai",
+          "timezone_class": "ZoneInfo",
+          "same_timezone_object": true,
+          "start_same_timezone_object": true
+        }
+      ]
+    }
+  ]
+}

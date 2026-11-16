@@ -1,0 +1,410 @@
+{
+  "classification": "independent actual raw/driver/source/DB analysis and NAS read-only sample, not only coordinator summary",
+  "harvests": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/current23-actual-harvest/raw/harvest-manifest.json",
+      "sha256": "671540693ff115773d5a0aaba166b70ae352056d8f47e03ecdf80c4a78f8c035",
+      "raw_files": 31,
+      "runs": {
+        "source-auth-main-four-2": {
+          "exit_code": 0,
+          "seconds": 18.815901392139494,
+          "observations": 75,
+          "last_observation": {
+            "at": "2026-11-05T20:29:55.635416452Z",
+            "event": "sdk98_impact_on_return",
+            "value": {
+              "Nexus": {
+                "TLS": "verified CA+two DNS SANs; no TLS bypass",
+                "connects": [
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443"
+                ],
+                "owned_artifact_http_denials_for_existing_direct_fallback": 6,
+                "requests": [
+                  "pt.btschool.club/",
+                  "pt.btschool.club/favicon.ico",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding"
+                ],
+                "routing": "strict CONNECT maps only two literal authorities to one owned loopback listener; no target DNS or external dial",
+                "unexpected": []
+              },
+              "qb": {
+                "classification": "owned HTTP source-qB protocol peer, not real qB daemon/full transfer proof",
+                "completed_queries": 4,
+                "info_selectors": [
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  }
+                ],
+                "unexpected_or_mutation_requests": []
+              },
+              "test_failed": false
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 4
+        },
+        "main-run-7": {
+          "exit_code": 0,
+          "seconds": 573.2060519729275,
+          "observations": 178,
+          "last_observation": {
+            "at": "2026-11-05T20:38:30.02499976Z",
+            "event": "rm_no_inherited_module_discovery",
+            "value": {
+              "complete_app_log_checked": true,
+              "module_declaration_failed_count": 0,
+              "stage": "full-tail-after-all-worker-joins"
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 6
+        },
+        "canonical-package-main-2": {
+          "exit_code": 0,
+          "seconds": 4.7274621778633446,
+          "observations": 23,
+          "last_observation": {
+            "at": "2026-11-05T20:45:57.868511438Z",
+            "event": "rm_canonical_package_complete",
+            "value": {
+              "all_workers_joined": 2,
+              "base_and_clone_source_relative_imports": true,
+              "canonical_zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+              "disabled_clone_unchanged": true,
+              "no_UI_claim": true,
+              "real_same_inode_alias_cleanup": true,
+              "verified_installed_members": 10
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 1
+        }
+      }
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/managed-storage-main-impact/raw/harvest-manifest.json",
+      "sha256": "ed97f205327b1ce771cb1709b516861dbd13bab822dad6c1ff20da4727d6e21f",
+      "raw_files": 45,
+      "runs": {
+        "managed-storage-main-four-1": {
+          "exit_code": 0,
+          "seconds": 18.496739716967568,
+          "observations": 75,
+          "last_observation": {
+            "at": "2026-11-05T21:10:20.557652863Z",
+            "event": "sdk98_impact_on_return",
+            "value": {
+              "Nexus": {
+                "TLS": "verified CA+two DNS SANs; no TLS bypass",
+                "connects": [
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443",
+                  "pt.btschool.club:443"
+                ],
+                "owned_artifact_http_denials_for_existing_direct_fallback": 6,
+                "requests": [
+                  "pt.btschool.club/",
+                  "pt.btschool.club/favicon.ico",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+                  "pt.btschool.club/",
+                  "pt.btschool.club/userdetails.php?id=7",
+                  "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding"
+                ],
+                "routing": "strict CONNECT maps only two literal authorities to one owned loopback listener; no target DNS or external dial",
+                "unexpected": []
+              },
+              "qb": {
+                "classification": "owned HTTP source-qB protocol peer, not real qB daemon/full transfer proof",
+                "completed_queries": 4,
+                "info_selectors": [
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  },
+                  {
+                    "form_filter": "completed",
+                    "hashes_present": false,
+                    "method": "POST",
+                    "query_filter": ""
+                  }
+                ],
+                "unexpected_or_mutation_requests": []
+              },
+              "test_failed": false
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 4
+        },
+        "managed-storage-pui-main-1": {
+          "exit_code": 0,
+          "seconds": 21.769910249160603,
+          "observations": 291,
+          "last_observation": {
+            "at": "2026-11-05T21:10:40.241232137Z",
+            "event": "pui_main_complete",
+            "value": {
+              "DB_fault_layer": "not injected in Main; producer realSQLite43 separate",
+              "UI_executed": false,
+              "all_observed_workers_joined": 35,
+              "instances": "base, platform clones, self/future cold source distinctions",
+              "network": "owned loopback executable repositories only; MPS init/state only, no page/dashboard/network",
+              "ordinary_main": "all asserted stages complete"
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 2
+        },
+        "main-run-8": {
+          "exit_code": -15,
+          "seconds": 115.96924979612231,
+          "observations": 140,
+          "last_observation": {
+            "at": "2026-11-05T21:10:32.885884401Z",
+            "event": "rm_ui_ready",
+            "value": {
+              "pid": 2286456,
+              "url": "http://127.0.0.1:36256"
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 6
+        },
+        "main-run-9": {
+          "exit_code": 0,
+          "seconds": 35.460207489086315,
+          "observations": 177,
+          "last_observation": {
+            "at": "2026-11-05T21:12:43.211937647Z",
+            "event": "rm_no_inherited_module_discovery",
+            "value": {
+              "complete_app_log_checked": true,
+              "module_declaration_failed_count": 0,
+              "stage": "full-tail-after-all-worker-joins"
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 6
+        }
+      }
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/managed-storage-main-impact/canonical-harvest/raw/harvest-manifest.json",
+      "sha256": "6213c796060d7754acdb4b98c43f0731c3e5607fdbcb30c17e6b766a36d2142f",
+      "raw_files": 10,
+      "runs": {
+        "canonical-package-main-3": {
+          "exit_code": 0,
+          "seconds": 4.725073131965473,
+          "observations": 23,
+          "last_observation": {
+            "at": "2026-11-05T21:14:09.699949701Z",
+            "event": "rm_canonical_package_complete",
+            "value": {
+              "all_workers_joined": 2,
+              "base_and_clone_source_relative_imports": true,
+              "canonical_zip_sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+              "disabled_clone_unchanged": true,
+              "no_UI_claim": true,
+              "real_same_inode_alias_cleanup": true,
+              "verified_installed_members": 10
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 1
+        }
+      }
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-runtime/raw/harvest-manifest.json",
+      "sha256": "048e6e23db7ec33d0cd96073886c63a966ac8f8866120443b800864913bfa5e1",
+      "raw_files": 10,
+      "runs": {
+        "business-main-1": {
+          "exit_code": 0,
+          "seconds": 5.951829656027257,
+          "observations": 62,
+          "last_observation": {
+            "at": "2026-11-05T21:19:36.316823979Z",
+            "event": "rm_business_complete",
+            "value": {
+              "all_observed_workers_joined": 2,
+              "real_OwnedNotice_module_to_loopback": true,
+              "real_torrent_deletion": "not asserted; only source src event without hash",
+              "source_only_fixture_seed": "catalog cache and encrypted routing before Main, never history/worker effect",
+              "two_real_history_selectors": "src,dest"
+            }
+          },
+          "module_declaration_failed": 0,
+          "error_events": 1
+        }
+      }
+    }
+  ],
+  "business_ordinary_Main_exit": 0,
+  "business_seconds": 5.951829656027257,
+  "business_observations": 62,
+  "actual_public_import_history_asset_pairs": 4,
+  "exact_source_and_target_rows_hidden": 2,
+  "unrelated_history_rows_retained": 2,
+  "retained_asset_managed_plan_payloads_byte_identical": true,
+  "actual_notice_receipts_exact": [
+    {
+      "action": 1,
+      "buttons": null,
+      "channel": null,
+      "ctype": null,
+      "date": null,
+      "disable_web_page_preview": null,
+      "file_name": null,
+      "file_path": null,
+      "force_reply": false,
+      "image": null,
+      "link": null,
+      "mtype": "站点",
+      "original_chat_id": null,
+      "original_message_id": null,
+      "parse_mode": null,
+      "save_history": true,
+      "source": null,
+      "targets": {
+        "Telegram": "owned-removelink-recipient"
+      },
+      "text": "🗑️ 清理空目录：/home/admin/light-media-plugins-migration-removelink-20261105/business-main-1/files/hardlink/library/cleanup-child",
+      "title": "📁 目录清理",
+      "userid": null,
+      "username": null,
+      "voice_caption": null,
+      "voice_path": null
+    },
+    {
+      "action": 1,
+      "buttons": null,
+      "channel": null,
+      "ctype": null,
+      "date": null,
+      "disable_web_page_preview": null,
+      "file_name": null,
+      "file_path": null,
+      "force_reply": false,
+      "image": null,
+      "link": null,
+      "mtype": "站点",
+      "original_chat_id": null,
+      "original_message_id": null,
+      "parse_mode": null,
+      "save_history": true,
+      "source": null,
+      "targets": {
+        "Telegram": "owned-removelink-recipient"
+      },
+      "text": "⚡ 立即删除完成\n\n🗂️ 源文件：/home/admin/light-media-plugins-migration-removelink-20261105/business-main-1/files/hardlink/source/OwnedSource.1080p.mkv\n🔗 删除了 2 个硬链接文件\n📝 已清理转移记录\n🌱 已联动删除种子\n🖼️ 已清理刮削文件",
+      "title": "🧹 媒体文件清理",
+      "userid": null,
+      "username": null,
+      "voice_caption": null,
+      "voice_path": null
+    },
+    {
+      "action": 1,
+      "buttons": null,
+      "channel": null,
+      "ctype": null,
+      "date": null,
+      "disable_web_page_preview": null,
+      "file_name": null,
+      "file_path": null,
+      "force_reply": false,
+      "image": null,
+      "link": null,
+      "mtype": "站点",
+      "original_chat_id": null,
+      "original_message_id": null,
+      "parse_mode": null,
+      "save_history": true,
+      "source": null,
+      "targets": {
+        "Telegram": "owned-removelink-recipient"
+      },
+      "text": "✅ 清理完成\n\n🗂️ STRM 文件：/home/admin/light-media-plugins-migration-removelink-20261105/business-main-1/files/strm/OwnedFilm.strm\n🗑️ 已删除网盘文件：[local] /home/admin/light-media-plugins-migration-removelink-20261105/business-main-1/files/strm-media/OwnedFilm.1080p.mkv\n📝 已清理转移记录\n🖼️ 已清理刮削文件（本地+网盘 4 个）",
+      "title": "🧹 媒体文件清理",
+      "userid": null,
+      "username": null,
+      "voice_caption": null,
+      "voice_path": null
+    }
+  ],
+  "business_ERROR1_classification": "submitted_method_failed only during s.stop after business complete/receiver3 and before main_exit; no module/notification failure",
+  "notice_failure_count": 0,
+  "independent_NAS_sample_sha256": "3f95cc0da33b98a065cb27cd9ca3e8802383b52c9de6299d968914b3bccb9c68",
+  "independent_NAS_seven_executable_frontend_inputs_match": true,
+  "independent_NAS_DB_counts": {
+    "asset": 4,
+    "managed_file": 4,
+    "import_plan": 4,
+    "transfer_history_hidden": 2,
+    "notification": 3
+  },
+  "independent_NAS_two_worker_pids_absent": true,
+  "package_ZIP": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+  "package_members": 10,
+  "package_licenses": 6,
+  "package_frontend3_exact": true,
+  "package_canonical_archive_reconstruction_byte_equal": true,
+  "package_actual_Main3_exit": 0,
+  "package_actual_Main3_seconds": 4.725073131965473,
+  "package_actual_Main3_workers_joined": 2
+}

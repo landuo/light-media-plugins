@@ -1,0 +1,36 @@
+- banner:
+  - button "返回":
+  - search:
+    - button "搜索影视":
+    - textbox "搜索电影、剧集":
+      - /placeholder: 搜索电影、剧集…
+  - button "用户界面设置":
+  - button "捷径":
+  - button "通知中心":
+    - generic "有未读通知"
+  - button "退出登录":
+- main:
+  - generic: 站点数据统计
+  - text: 总上传量
+  - generic: 11.0G
+  - text: 总下载量
+  - generic: 2.0G
+  - text: 总做种数
+  - generic: "4.0"
+  - text: 总做种体积
+  - generic: 6.0K
+  - button "仪表板设置":
+  - button "编辑布局":
+- status
+- dialog:
+  - text: 插件快捷访问
+  - button "关闭插件快捷访问":
+  - heading "全部插件" [level=3]
+  - button "Badge 站点数据统计":
+    - status "Badge"
+    - generic: 站点数据统计
+  - button "Badge Owned Site twin":
+    - status "Badge"
+    - generic: Owned Site twin
+  - button "上滑关闭插件快捷访问":
+    - generic: 上滑关闭

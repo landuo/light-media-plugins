@@ -1,0 +1,123 @@
+{
+  "feature": "plugin.MediaServerRefresh",
+  "status": "verified",
+  "installed_version": "1.3.3",
+  "source": {
+    "backend_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "installed_path": "mediaserverrefresh/__init__.py",
+    "installed_sha256": "ea92f39a852aa0333cb625885e0fbf7b2a679f4f7449463bb6126afe6694a3fc",
+    "locations": [
+      "__init__.py:46–81,90–170,175–256",
+      "app/chain/transfer.py:1249–1278",
+      "app/modules/trimemedia/trimemedia.py:126–133,366–430"
+    ],
+    "replay": {
+      "path": "plugins/mediaserverrefresh/reference/stop-batch-original.json",
+      "sha256": "d1849a9ccd1d88fea9050db7a362be10c93211b711c089a990a91b47c61fc8f3",
+      "kind": "isolated execution of installed source with owned services and deterministic clock"
+    },
+    "reused_host_protocol_oracle": "light-media:testdata/plugin-host-services-20261031/media-refresh-source-oracle.json and its fixed-source fnOS transport evidence, without rerunning"
+  },
+  "target": {
+    "worker_product_commit": "0aeedee1c78394d0e21162c50411015431703d3f",
+    "host_product_commit": "bdc649c6111cdb8f8da1b226c85a1454cf69788e",
+    "host_test_saved_commit": "bd2c00268f0793b230322006bd0eafb6cedee1a8",
+    "worker_paths": {
+      "plugins/mediaserverrefresh/plugin.go": "3a276a54a132ad932ff348f94d52ec1daf86e2e6a380f6fa0463361c80749523",
+      "plugins/mediaserverrefresh/refresh.go": "eb0e9ae1c6e36ba72211c832f879033648482db4278e9ffd8ca1dd55270cf7d3",
+      "plugins/mediaserverrefresh/form.json": "01ed1051b9943bd8b0dcc7e0838b938a09ecf046db1036efd3dcf01189e8b98d",
+      "plugins/mediaserverrefresh/ORIGIN.json": "94d412fb31aa4c264ba658117e1cbb4f6e9a0e42a06a33fb337fe11d2df90ca6",
+      "cmd/media-server-refresh/main.go": "4d7425765dc96562f12f8ce99bfb1560f2d6a21359a2755ae7f5a90af2761c6d",
+      "internal/sdk/media_host.go": "6b0bb5c1abed64b68e3c71b1f087fd85e13f0560bd38e021b692ece032de5e0b",
+      "build-plugins.json": "fd2bf8fe1005b935c033e0fde2457b35871b91a8a05a740d0841903c77a1bfa6"
+    },
+    "host_paths": {
+      "internal/app/plugin_original_transfer_callback.go": "7b9f7d05835cd0736107dabdc019e353ab9e347f86514de95c1a8a9c4dcfd0fb",
+      "internal/app/plugin_original_transfer_events.go": "37d7f0343c7ec5cad439b14e2fc0e18e82bea6094940fae6961f4f127b50b33c",
+      "internal/app/plugin_original_event_call.go": "9ae4befe7f58cfb5d134493199cd5f6150b6792e74b001cf4c7a03bef6f88f7d",
+      "internal/app/plugin_original_fnos_refresh.go": "72d7363920f0dfd1445183b6e8ec8d23a8c6dbcdf85020d7c6b328fa30ca6acd",
+      "internal/app/plugin_original_host_media.go": "8fcabcc142f3fbdc7d0af2e245275375b664a53f7390ad51332a15d71e0ccf27",
+      "internal/app/asset_scrape.go": "153c6408a1d028759e8d455cf541ab8b05081560e3c78c7d6b294a714f07db87",
+      "internal/app/jobs.go": "5b95257514eda07c256378d54bfcd6d7fc48c5e9cd079ed610e6f4f47990fa31",
+      "internal/fnos/service_plugin_refresh.go": "d3c1dcc630c3a5a1666f901900cb9eadfe4a7d3fc93d2086acd46c190d3a4314",
+      "internal/fnos/refresh.go": "9c5b7c7756becb703311b408d346e9a670b7acbdf09dbf7c5afc002791e7a325",
+      "internal/app/plugin_media_server_refresh_package_linux_test.go": "03a37d7fb4d7f54d81f0c77e83a9fb47901e9183148cbf2f40a1aec9f8036b4b"
+    }
+  },
+  "standard_package": {
+    "archive_members": 8,
+    "archive_sha256": "9dc99fcd69f9b8e8a76ed3c4cdb29ea004f940875abec014894f7738b2b9c39d",
+    "archive_size": 2676464,
+    "capabilities": 3,
+    "entry": "media-server-refresh",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "MediaServerRefresh",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "methods": 12,
+    "notice_sha256": "b26d879555aa18cb6e2dc7b933556706af38a55b60487bf47e22ea86277eaf81",
+    "notice_size": 31902,
+    "plugin_source": "bb9e44c348712918246bd11fae2d0f6e35af4d07",
+    "version": "1.3.3",
+    "worker_sha256": "9d32492db27dae8b79894034196bb7ec7557a49d43d5c5eb1ad43866809fa421",
+    "worker_size": 4693112,
+    "archive": "work/mediaserverrefresh-20261107/packaging/linux-amd64/MediaServerRefresh-1.3.3-linux-amd64.zip",
+    "index_sha256": "239325393e83e46761aa6f2a736cd785394bea1db21643ae4dceb53890b73b05",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/mediaserverrefresh/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ]
+  },
+  "actual_host": {
+    "test": "TestMediaServerRefreshInstalledAMD64Package",
+    "result": "PASS 2.85s",
+    "environment": "Native Linux x86_64 Alpine, network-none read-only container and isolated tmpfs. Actual App, actual standalone Go executable, real filesystem publications, owned loopback fnOS protocol fixture and source-shaped synthetic metadata.",
+    "kind": "real App and executable with protocol fixture, no production media-server mutation and no browser session",
+    "app_test_elf_sha256": "3e8b4ed5750d05b67e03a43d579571fcf60fbfb800509ba1514fdcbe4be67e55",
+    "observations": [
+      "The exact canonical package installed and initialized disabled. The actual authenticated App route exposed the Vuetify form, defaults and configured fnOS option, then saved enabled with source-typed string delay 10.",
+      "Two native hardlink imports committed in separate owned libraries. The first automatic scrape published its NFO. Its core job waited with its original attempt budget and the same committed transfer reference.",
+      "Both actual event callbacks confirmed the selected fnOS slot before entering debounce. Before uninstall there were zero provider preflights or scans. The follower had returned while the first accepted source callback still owned the batch.",
+      "The actual uninstall triggered stop_service. Before the follower deadline, the retained callback made one preflight and one empty-body POST per owned GUID. There was no root scan or separate core scan.",
+      "The actual core worker resumed after the callback group drained and verified the first published video by library GUID, item identity and exact file path. The saved asset became visible, and the worker was removed."
+    ],
+    "fixture_setup_failure": "Initial package install, form and configuration completed. No transfer ran because the installed TransferComplete handler correctly activated source recognition and the fixture had no TMDB credential. The corrected fixture supplied synthetic provider media at the existing resolved-recognition boundary, without a network call. The same ZIP then passed the single business run.",
+    "receipt_files": {
+      "SHA256SUMS": "a35e2675d6e5592774130bba5999aaf6ef29266ad5b640bf31aada73cf6e9dfc",
+      "build-source.txt": "97ec62a3f6908128a7ea76adb5aed0349ad2b31e102631ccf677cdd75f860235",
+      "runtime.stdout": "7bd0cde10f7a8d2e0b4f43e72e523e5c25b4e4d347157c363b652d59143a5514",
+      "fixture-first-SHA256SUMS": "13681e786671d5ab9a307c00c7ff720df4ca1f3875ff4b1a647a70c24df91f12",
+      "fixture-first-build-source.txt": "5cb204819a9ef04a0826fff44cc53b9998751a80d89c81550b56b0874fee8b46",
+      "fixture-first-runtime.stdout": "678097872ec4b25aa554cc7bb4cb124f59756e3561816799ca03f59e26eb719e",
+      "run-remote.sh": "3c691691ddf8167dc2daa8b8b9d983cb0e76878e395f9aa2f695d81de7490a29",
+      "send-bundle.py": "03bf8105bebccf2df3d749d07c21fbf4c49cc5eb953f8143309377b5d30f4a47"
+    },
+    "cleanup": "Test container and staged transfer removed. Local temporary App test executable removed after hashing."
+  },
+  "adaptations": [
+    "The configured installed instance selected the existing logical fnOS slot. The worker dispatches source item or root calls by type. The current light-media host exposes fnOS. Separate host providers for Emby, Jellyfin and Plex were not part of this installed-instance acceptance.",
+    "Ownership is attached only to the exact native callback and its automatic asset follow-up. The worker must actually connect to its selected slot. The host records responsibility without claiming that a scan succeeded, then uses only independent verification for that automatic follow-up, including an uncertain exit or later replacement of the connection. Unowned and explicitly manual jobs retain normal core scanning.",
+    "One temporary active group per actual source object retains both admitted transfer references until its callbacks drain. No source event persistence or replay was added. The existing core worker retry resumes verification without consuming attempt budget or retaining the import lock."
+  ],
+  "independent_review": {
+    "reviewers": [
+      "/root/emby",
+      "/root/kodi",
+      "/root/jellyfin"
+    ],
+    "findings_addressed": [
+      "source polling and actual bound callbacks",
+      "no duplicate auto scan",
+      "source-order config reads",
+      "actual connectivity ownership instead of cached config",
+      "manual rescrape lineage",
+      "preserve single source batch within the SDK transport bound"
+    ]
+  },
+  "delivery": "Local build registry only. Requires the companion local host changes. No release, push, deployment or live-state import."
+}

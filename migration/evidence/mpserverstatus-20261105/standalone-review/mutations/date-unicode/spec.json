@@ -1,0 +1,8 @@
+{
+  "name": "date-unicode",
+  "path": "plugins/mpserverstatus/date.go",
+  "old": "if !pythonDateDigit(first) {",
+  "new": "if first < '0' || first > '9' {",
+  "occurrence": 0,
+  "run": "TestIndependentActual312Date|TestIndependentSourceDateAST"
+}

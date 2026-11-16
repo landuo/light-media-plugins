@@ -1,0 +1,26 @@
+--- /Users/accidia/projects/light-media-plugins/work/migration-20261105/sitestatistic-preparation/main-driver-ae507-superseded/sitestatistic_main_test.go	2026-11-05 18:06:55.178302576 +0800
++++ /Users/accidia/projects/light-media-plugins/tests/integration/sitestatistic_main_test.go	2026-11-05 18:06:55.187979566 +0800
+@@ -141,6 +141,9 @@
+ 	dir := ssOwnedDirectory(t)
+ 	peer := ssNewPeer(t, dir)
+ 	s := ssNewMain(ctx, t, dir, peer.caFile, peer.proxy.URL)
++	defer func() {
++		s.record("ss_owned_network_on_return", map[string]any{"test_failed": t.Failed(), "peer": peer.report()})
++	}()
+ 	s.secrets = append(s.secrets, peer.cookie[ssTargets[0]], peer.cookie[ssTargets[1]])
+ 	first := ssLoadRelease(t, worker, ssSource)
+ 	second := ssLoadRelease(t, os.Getenv("SITESTATISTIC_UPDATE_WORKER_BINARY"), ssSource)
+@@ -510,7 +513,12 @@
+ 		t.Fatal("base uninstall did not retain", string(raw))
+ 	}
+ 	ssAssertKV(t, s.kvSS(ssSource), originalKV)
+-	s.configSS(ssSource, disabled)
++	// The source public getter only exposes registered/running plugins.
++	// Base uninstall retains storage, but its public configuration is now {}.
++	s.configSS(ssSource, map[string]any{})
++	if s.dbSS().ConfigRows[ssSource] != 1 {
++		t.Fatal("base uninstall lost retained configuration storage row")
++	}
+ 	if _, e := os.Stat(filepath.Join(dir, "plugin-packages", ssSource)); e != nil {
+ 		t.Fatal("base source code unexpectedly purged", e)
+ 	}

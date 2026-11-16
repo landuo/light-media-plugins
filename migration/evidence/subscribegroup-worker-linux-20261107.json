@@ -1,0 +1,131 @@
+{
+  "feature": "plugin.SubscribeGroup",
+  "status": "verified",
+  "installed_version": "2.8.7",
+  "source": {
+    "installed_path": "subscribegroup/__init__.py",
+    "installed_sha256": "06870f20e39237e4a69c9615ce005411feaa5e1a97cad50fd3b7b0645bead383",
+    "backend_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "locations": [
+      "__init__.py:47–139,141–227,229–359,361–412,414–656,658–774",
+      "app/db/models/downloadhistory.py:81–90"
+    ],
+    "reused_oracles": {
+      "testdata/plugins/subscribe-group-original-oracle.json": "cf4e4daef2c9afdc3e06e99e109f52348b2f524c47eda04094652650787fb617",
+      "testdata/plugins/subscribe-group-parser-oracle.json": "bef73d3da964cb8910b593c205b3bd5b50f40a46f703d29d4d03bf758a1b901d"
+    },
+    "reused_normalization_block_sha256": "952b04e6bb3b1eb58a785943b7355c6f90515958f96e7d4644e37ab19c4a5e1e"
+  },
+  "target": {
+    "worker_product_commit": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
+    "host_product_commit": "a149ffa417cbb0fb3f8baeaa48c19a1b2580daf2",
+    "host_test_commit": "02c08ac340337c73e54981e6e0490b6aec05822e",
+    "sdk_source_host_commit": "b9dc4f4bf994ee9254dde7cc9cd06b66829f6373",
+    "worker_paths": {
+      "plugins/subscribegroup/plugin.go": "0102f08e9f444ccd9e221562e8683a4bf77f85252c35ea3feac29bdf2f651a9b",
+      "plugins/subscribegroup/rules.go": "f7933dc526c5e30cacc95b35a4b47a068edcb2cf09516c28ef834ec5f96484fc",
+      "plugins/subscribegroup/subscribe.go": "ac6af72e5c561cf3828710eb6ac2f0304feaf21c74c87944ebe801ba01476bc9",
+      "plugins/subscribegroup/download.go": "a6e4108d05a7a2bf6f0f1b7f5940522a2da5588858e41b11bf8323d8ad9d1716",
+      "plugins/subscribegroup/form.json": "e130d69a918fa7a847e17d50e6fb66c1dbe3c652165a19ba2d9ddb4ba69fb731",
+      "plugins/subscribegroup/view.go": "da424ee6c395b2d19987437fdb434872b168efcdfb949dfe5c79821caa2e46a4",
+      "plugins/subscribegroup/ORIGIN.json": "6b8bc587d9b29330d6f9d5e9bdb2438cb3486c66c583ea8a5b1ba49ca183d622",
+      "cmd/subscribe-group/main.go": "938f08abae52ea9a8afc9b033566bfec81f33dc17fcfe65a6a2176e3e0a00050",
+      "internal/sdk/history_host.go": "a7696d802b7840e622f947d28bd5aadf34320a561ef0bc1a9e477d491fa75f56",
+      "internal/sdk/subscription_host.go": "d04ca9d7742208ec2055d0640ee4bc296fe1cf9755254464e5e72f971d072ae6"
+    },
+    "host_paths": {
+      "internal/app/plugin_original_host_subscriptions.go": "10e3e336ab9c95e933f8e549b2c3004c9db9dbe5b8d44592509eafe44ec8af35",
+      "internal/app/plugin_original_subscribe_group.go": "2415acf5c5da2b15688b5b8aafb9bd203e7a1f8cfeb56ddf27fda5bd879519bc",
+      "internal/app/plugin_original_subscribe_group_history.go": "fca750fe2f5752f1eec034f4ca5551c351519588125bf17532bdeecb4b7d42bd",
+      "internal/app/plugin_original_host_history.go": "01dafdcf21d4b916dc9cb5716fc7c1d244dac0993c76c39fdbb9583baed5e564",
+      "internal/app/subscription_quality_continuation.go": "a6506c6b331b3643243d670319e0e79a479d537382ffa0237d21b33c4ce77d97",
+      "internal/app/plugin_subscribe_group_package_linux_test.go": "e3449435f14f3c365d6bd5d6b514ec8973e5debc9a796eb9f6676d422c0fc377",
+      "internal/app/plugin_subscribe_group_acquisition_test.go": "61ab4e7be6d279c06a75a4d409a72661dccb10c2b2df4f9960ab6eb9a1368f9b"
+    },
+    "host_compatibility_test_commit": "5508baf8c9e5dcf74c7c2d73d467cfd17be59b01"
+  },
+  "standard_package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/subscribegroup/ORIGIN.json",
+      "subscribe-group",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "48d0bdfbd46d3acee98be351dfe560da2bf32155786b214049283259291336a0",
+    "archive_size": 2941647,
+    "capabilities": 10,
+    "entry": "subscribe-group",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "SubscribeGroup",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "9fa9bd929d65b351a5e0094abd2abadf3b02019473fc91bf476bd39ab47f5775",
+    "methods": 13,
+    "notice_sha256": "e9d7d75d4c2d0666abaea800cdec8657cba9a0f596e1ed338bff1b1faa312810",
+    "notice_size": 32410,
+    "plugin_source": "0e04d8f1f9917263bb41ccb9717085a6834b4e26",
+    "version": "2.8.7",
+    "worker_sha256": "609e5b4fd97abfe7922bca8a3a8a860361a863e34d75a58d9a9c646dc2042ff8",
+    "worker_size": 5406016,
+    "path": "work/subscribegroup-20261107/packaging/linux-amd64/SubscribeGroup-2.8.7-linux-amd64.zip",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/subscribegroup/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ]
+  },
+  "actual_app": {
+    "test": "TestSubscribeGroupInstalledAMD64Package",
+    "result": "PASS 1.40s",
+    "environment": "Native Linux x86_64 Alpine, network-none read-only container, owned tmpfs, synthetic loopback TMDB/site/qBittorrent peer and actual App/standalone Go worker.",
+    "host_test_ELF_sha256": "a2d9af6f6275f8680c69e762de5add1050d76281338bf42e09ede9468bdffa37",
+    "observations": [
+      "Exact indexed package installed and original native form returned.",
+      "Actual HTTP subscription creation emitted SubscribeAdded. Category rule overwrote the existing resolution and exclusion.",
+      "Actual HTTP native Add and accepted download job emitted DownloadAdded. Source site 1 mapped to stable producer-site, existing resolution stayed and missing filters filled. Only one downloader Add occurred.",
+      "Encrypted history and handled identity matched source field order and types. Native detail returned the history. Explicit clear removed both keys, reset both switches and retained the existing subscription."
+    ],
+    "artifacts": {
+      "SHA256SUMS": "c35a01cfcd34e22667bdf4acb4322bf9c27069bfcfda498bf707f2033c6ccb54",
+      "build-source.txt": "1f9401982ae5ececbdf6ff645e42f681debfe7b15302c1330120f38110db4dca",
+      "runtime.stdout": "830b963f15f1b98b67cdd3ee89bca3aba2f3a46483708ff0313c178b35c71afd",
+      "send-bundle.py": "8c64ecf3a83fa5e739b3158e8499e2140731d1d1b749ec0ac2a128d95742c969",
+      "run-remote.sh": "2ccb167634b1d01c2c9b07d55622954015cb27df357a165357c6ce7dc8eae1fa"
+    },
+    "cleanup": "Native container and staged test files removed. Local test executable removed after hash binding."
+  },
+  "review": {
+    "independent": [
+      "/root/emby",
+      "/root/kodi",
+      "/root/jellyfin"
+    ],
+    "adaptations": [
+      "Actual ordinary accepted events and stable IDs at the SDK boundary. Source numeric site IDs remain visible in history.",
+      "Subscription update and both applicable history writes commit atomically. The prior compatible non-acquisition frozen Intent revision and quality proof advance together.",
+      "The modern acquisition-owned accepted-download handler waits until its parent job ends, so its frozen inputs are never rebound or cancelled by this event. The focused App store regression passed.",
+      "Native history display reuses the prior Go decoder. Named escapes in hand-written legacy history and isolated surrogate escapes retain prior transport limits."
+    ],
+    "fixture_limits": "Actual native download producer verified. No live user tracker/download and no browser were used in this run.",
+    "build_note": "The preliminary package build lacked copied normalization declarations and never ran an App. The final ZIP contains the exact prior source-derived normalization block and passed the single native App run."
+  },
+  "delivery": "Local build registry and paired host only. No push or deployment.",
+  "compatibility_check": {
+    "test": "TestSubscribeGroupDownloadHistoryWaitsForAcquisition",
+    "result": "PASS 0.25s",
+    "evidence_type": "Actual App SQLite and job completion, synthetic accepted Intent and running acquisition parent setup. Complements, rather than repeats, the native Linux package path.",
+    "observation": "The actual history read waits while the parent is running. The parent commits its terminal state using the same database connection, proving no open transaction blocks it. The accepted source season range then returns and the frozen Intent is unchanged.",
+    "artifacts": {
+      "acquisition-build-source.txt": "66c2e81b9a49dbd6500fdeccbeb81b195e67a0ef012adf15142310f4df6e5a29",
+      "acquisition.stdout": "8d78ba417850784919b248b0f9d9a9eb61a68495bc6c212aa10ce26ae6a165a0"
+    }
+  }
+}

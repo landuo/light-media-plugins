@@ -8,6 +8,7 @@ import (
 
 	sdk "github.com/landuo/light-media-plugins/internal/sdk"
 	merge "github.com/landuo/light-media-plugins/plugins/mergemessagenotify"
+	mergesmtp "github.com/landuo/light-media-plugins/plugins/mergemessagenotify/smtp"
 )
 
 func main() {
@@ -23,9 +24,21 @@ func main() {
 		}
 		return
 	}
-	worker := merge.NewWorker()
+	worker := merge.NewWorker(sendSMTP)
 	if err := sdk.ServeConcurrent(context.Background(), os.Stdin, os.Stdout, manifest, worker.Handle); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(1)
 	}
+}
+
+func sendSMTP(ctx context.Context, config map[string]any, request merge.SMTPRequest) error {
+	binding, err := mergesmtp.BindingFromTrustedConfig(config)
+	if err != nil {
+		return err
+	}
+	adapter, err := mergesmtp.New(binding, mergesmtp.Options{})
+	if err != nil {
+		return err
+	}
+	return adapter.Send(ctx, request)
 }

@@ -1,0 +1,4 @@
+=== RUN   TestActualWorkerStopWaitsForIndependentObserverAndTimerWork
+    concurrency_protocol_test.go:212: stop returned before the physical callback completed <nil>
+--- FAIL: TestActualWorkerStopWaitsForIndependentObserverAndTimerWork (1.05s)
+FAIL

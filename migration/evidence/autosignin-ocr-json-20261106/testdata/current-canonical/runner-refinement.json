@@ -1,0 +1,41 @@
+{
+  "frozen_runner": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/remote-runner.py",
+  "frozen_sha256": "046f4b2fadb625e117336afc67fc884186c39c0cff5c6dd935e313b1b5665345",
+  "changes": [
+    [
+      "/home/admin/light-media-plugins-source-ocr-value-domain-20261106",
+      "/home/admin/light-media-plugins-source-ocr-json-integrated-20261106"
+    ],
+    [
+      "light-media-plugins/source-ocr-value-domain/20261106/owned-only",
+      "light-media-plugins/source-ocr-json-integrated/20261106/owned-only"
+    ],
+    [
+      "run=r/'run-r2'",
+      "run=r/'run-r1'"
+    ],
+    [
+      "for phase,probe in [('old-parser','old-parser'),('old-binding','old-binding'),('new','new')]:",
+      "for phase,probe in [('current','current')]:"
+    ],
+    [
+      "lm-source-ocr-domain-r2-",
+      "lm-source-ocr-json-integrated-"
+    ],
+    [
+      "/owned/bin/domain-app-linux.test",
+      "/owned/bin/current-domain-app-linux.test"
+    ],
+    [
+      "task=lm-source-ocr-value-domain-20261106",
+      "task=lm-source-ocr-json-integrated-20261106"
+    ],
+    [
+      "assert rows[0]['exit_code']!=0 and rows[1]['exit_code']!=0 and rows[2]['exit_code']==0,'old/new or native semantic gate failed'",
+      "assert len(rows)==1 and rows[0]['exit_code']==0 and rows[0]['counts']['pass_nodes']==75,'integrated true-production gate failed'"
+    ]
+  ],
+  "bom_replaced": true,
+  "test_and_oracles_unchanged": true,
+  "new_source_runs": 0
+}

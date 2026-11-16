@@ -1,0 +1,58 @@
+{
+  "classification": "actual target constructor/path helper in four independent CGO0 Linux subprocesses; fixed333 read-only network-none UID/env; no App/SDK/filesystem writes",
+  "producer_manifest_sha256": "d52bf7b0f6e06ef524833ccbb079b5a8a43305dc4f950d39e6ccd1767fc5b156",
+  "binary_sha256": "e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d",
+  "test_sha256": "ab08041ab378dc96469c76f3b06cec71c0238f69dc6fe1ec2766f6589b426ffe",
+  "records": [
+    {
+      "mode": "present-empty",
+      "command": [
+        "ssh",
+        "admin@192.168.8.129",
+        "set -eu; cd /home/admin/light-media-plugins-review-ctor-de26864ad504; test \"$(cat TASK)\" = lm-review-ctor/de26864ad504; chmod 755 review.test; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d; docker run --rm --label task=lm-review-ctor-dd726d6c42294b1ba73c17599027156a --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-review-ctor-de26864ad504/review.test,dst=/usr/local/bin/rlk-review.test,readonly --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u USER HOME= LM_REVIEW_CTOR_CASE=present-empty /usr/local/bin/rlk-review.test -test.v -test.timeout=25s '-test.run=^TestIndependentHOMEConstructorAllBranches$'"
+      ],
+      "exit": 0,
+      "containers_remaining": "",
+      "cleanup_check_exit": 0
+    },
+    {
+      "mode": "present-value",
+      "command": [
+        "ssh",
+        "admin@192.168.8.129",
+        "set -eu; cd /home/admin/light-media-plugins-review-ctor-de26864ad504; test \"$(cat TASK)\" = lm-review-ctor/de26864ad504; chmod 755 review.test; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d; docker run --rm --label task=lm-review-ctor-5236bc3f382f4619bdd13ef485e4971c --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-review-ctor-de26864ad504/review.test,dst=/usr/local/bin/rlk-review.test,readonly --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u USER HOME=/owned/home LM_REVIEW_CTOR_CASE=present-value /usr/local/bin/rlk-review.test -test.v -test.timeout=25s '-test.run=^TestIndependentHOMEConstructorAllBranches$'"
+      ],
+      "exit": 0,
+      "containers_remaining": "",
+      "cleanup_check_exit": 0
+    },
+    {
+      "mode": "absent-found",
+      "command": [
+        "ssh",
+        "admin@192.168.8.129",
+        "set -eu; cd /home/admin/light-media-plugins-review-ctor-de26864ad504; test \"$(cat TASK)\" = lm-review-ctor/de26864ad504; chmod 755 review.test; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d; docker run --rm --label task=lm-review-ctor-ccc0d0456ec44804b25f2c5c3e8cd59b --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-review-ctor-de26864ad504/review.test,dst=/usr/local/bin/rlk-review.test,readonly --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u USER -u HOME LM_REVIEW_CTOR_CASE=absent-found /usr/local/bin/rlk-review.test -test.v -test.timeout=25s '-test.run=^TestIndependentHOMEConstructorAllBranches$'"
+      ],
+      "exit": 0,
+      "containers_remaining": "",
+      "cleanup_check_exit": 0
+    },
+    {
+      "mode": "absent-unmapped",
+      "command": [
+        "ssh",
+        "admin@192.168.8.129",
+        "set -eu; cd /home/admin/light-media-plugins-review-ctor-de26864ad504; test \"$(cat TASK)\" = lm-review-ctor/de26864ad504; chmod 755 review.test; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d; docker run --rm --label task=lm-review-ctor-286a59772fbe4f74b9f51c9cf1ad61b2 --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-review-ctor-de26864ad504/review.test,dst=/usr/local/bin/rlk-review.test,readonly --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u USER -u HOME LM_REVIEW_CTOR_CASE=absent-unmapped /usr/local/bin/rlk-review.test -test.v -test.timeout=25s '-test.run=^TestIndependentHOMEConstructorAllBranches$'"
+      ],
+      "exit": 0,
+      "containers_remaining": "",
+      "cleanup_check_exit": 0
+    }
+  ],
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; cd /home/admin/light-media-plugins-review-ctor-de26864ad504; test \"$(cat TASK)\" = lm-review-ctor/de26864ad504; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = e140d286f7218f1111c01276e79e6cf664af676889fcd280ee29fa30b675456d; rm review.test TASK; cd /home/admin; rmdir /home/admin/light-media-plugins-review-ctor-de26864ad504"
+  ],
+  "cleanup_exit": 0
+}

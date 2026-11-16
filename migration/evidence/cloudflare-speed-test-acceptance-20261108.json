@@ -1,0 +1,209 @@
+{
+  "feature": "plugin.CloudflareSpeedTest",
+  "installed_version": "1.5.1",
+  "status": "accepted_for_current_local_linux_scope",
+  "source": {
+    "installed_snapshot": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "files": {
+      "__init__.py": "2e4549b9181e8714c401f18f1b082f539d1d8c20fa32c9675b994b6277b106f1",
+      "requirements.txt": "317727a61e8786fa5fc4996dfbc4aec1f3e9e2d94856a47f4bf7c123c65f425c"
+    },
+    "fixed_backend": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "fixed_frontend": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "anchors": {
+      "private_once_and_stop": "__init__.py:68–104,845–end",
+      "command_and_host_replacement": "__init__.py:105–256",
+      "majority_correction": "__init__.py:257–289",
+      "native_tool_release_installation_and_fallback": "__init__.py:290–474",
+      "configuration_state_command_api_cron": "__init__.py:476–542",
+      "form_empty_page_and_api_entry": "__init__.py:543–783",
+      "unreachable_direct_hosts_helpers": "__init__.py:784–843"
+    }
+  },
+  "target": {
+    "worker_commit": "acc3c84f559e7773544f98cd021a090d570d508f",
+    "host_commit": "23beb31175e1b0a659d637732c2b54e146829554",
+    "files": {
+      "cmd/cloudflare-speed-test/main.go": "bd7eb9e5ff3726ee9b8182edfdf6fa3f0c7b318991cd8c34c51610ba662e4204",
+      "plugins/cloudflarespeedtest/args.go": "321ca7549fee9e8a52e02f7345676ddfdb202be5d2ebb6df4e12182040e52317",
+      "plugins/cloudflarespeedtest/core.go": "088e736a662153a12529b696d24780a296aba0edbe73109bdecc52cc3fb51c79",
+      "plugins/cloudflarespeedtest/form.json": "4794e8dac016957f94903657abb58ac3f4c5f8e5340413201a1588bda44f0256",
+      "plugins/cloudflarespeedtest/models.go": "e8eb7acfe1a538a5bac92f3e33e98c759bac1d0f697284f6898e45072aab936e",
+      "plugins/cloudflarespeedtest/standard.go": "30c47117bb655bc150910872e09e4cb29c4b4a4caf29ec2ebdd39a5162dbd7b2",
+      "plugins/cloudflarespeedtest/standard_host.go": "31d137a26e2a3baf4a9841c34b41580816e8a0b77cadbf41e60a83e143c779e6",
+      "plugins/cloudflarespeedtest/ORIGIN.json": "0d13fa709f9e6b67540e0b20d0d6379fa8495cbf732aa7a5c28c7e9b189552fa",
+      "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    "host_files": {
+      "internal/app/plugin_original_cloudflare.go": "bb26a33d0b3cba2c85a391811137f7f83de6cd1a6eff78ec90a6f8a68c5c7f3b",
+      "internal/app/plugin_original_cloudflare_native.go": "2d0566d233ee67a9abd3a923cc4bbc2945c8e037005ff0c2dce9370a3fdb772c",
+      "internal/app/plugin_original_cloudflare_network.go": "e7468099e293ecc80a3218645e08784e133799cd3f7c33a22cf34e4c9a99d001",
+      "internal/app/plugin_cloudflare_speed_test_linux_test.go": "1679826350134480f8291748dd824b32415cd3af5e46329be9d0875a27ae674e",
+      "internal/app/testdata/cloudflare-custom-hosts-peer/main.go": "4244a5cc9cff54878f20ddc661be09a915a3769e27808471351451cf2c5712ac",
+      "internal/plugins/cloudflarespeedtest/core.go": "875a3952be9fa5a8d3e0d08f80b76775324d058dccbb6174d6b73281fef03b02"
+    }
+  },
+  "engine": {
+    "repository": "https://github.com/XIU2/CloudflareSpeedTest",
+    "delivery": "Downloaded by the host from official authenticated digest metadata as needed; not redistributed in the worker package",
+    "license": "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+    "fixture_tag": "v2.3.5",
+    "fixture_source_revision": "65b43aa58c5f9c7ab8ab83d2d27e35fc00d9cec4",
+    "fixture_amd64_archive_sha256": "c4c8fc76b4e1bf2bdb5ced8b765956d82dda7bc4eb59df5c04053f0f7db98d90",
+    "official_asset_id": 491252222,
+    "official_metadata_sha256": "3890a5b8c40972490ec4016bd68a5e90732dfcf640f8187d4beda8991e851a6d",
+    "official_amd64_executable_sha256": "2d0b1f831eea02ea2eb98d1cecbe9d8d631a72f19c46b23bb0457cb12f75e556"
+  },
+  "runtime": {
+    "environment": "Native Linux x86_64 Alpine 3.22, network none, actual started light-media App and locally indexed worker, official archived CFST engine probing an owned TCP loopback. Release/asset transport replayed the reviewed official v2.3.5 bytes. An independent test-only CustomHosts 1.2.2 process handled the actual broadcast and wrote an owned file. No public speed-test endpoint or real /etc/hosts was touched.",
+    "test_peer_sha256": "4daa49d36a05fbcfd2d2fdd475240e2744519801c351628d5e182e9709c26b1d",
+    "runs": {
+      "web_restart": {
+        "test": "TestCloudflareSpeedTestInstalledLinuxAMD64WebAndRestart",
+        "log": "native-web-restart.log",
+        "test_sha256": "e4907176e59085a06c3da64c3ef126c0b5b5f41074529421946a193f0c335b4d",
+        "host_commit": "37ddf684cd2e296e29c0cfc3c32589e1fb10d25a",
+        "package": {
+          "archive_members": [
+            "LICENSE",
+            "LICENSE.upstream",
+            "THIRD_PARTY_NOTICES.md",
+            "cloudflare-speed-test",
+            "plugins/cloudflarespeedtest/ORIGIN.json",
+            "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+            "third_party/Go-LICENSE"
+          ],
+          "archive_sha256": "d5ba8fa330181e6fb908f11462f423c52c3a06045f08772d350ff1eb9b1011af",
+          "archive_size": 2876389,
+          "capabilities": 18,
+          "entry": "cloudflare-speed-test",
+          "frontend": null,
+          "host_contract": "light-media.sdk-resources/v1",
+          "id": "CloudflareSpeedTest",
+          "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+          "index_sha256": "396c8064895bf45734a574f81f71043c3c939c434dabf7e979b643d6baa3716e",
+          "methods": 15,
+          "notice_sha256": "49aafefd6c17e24e406bf3ac5d8cd89bfd621213749146c68747a8e2ecef98a6",
+          "notice_size": 43012,
+          "plugin_source": "dff9b81d049bcdef967799a08ba3b3b0e1c17be8",
+          "version": "1.5.1",
+          "worker_sha256": "94c78171bed4726d03f76caa3632c9a12b5732d64b94ecbf30ebd57ac80810bc",
+          "worker_size": 5295014
+        },
+        "observations": [
+          "An installed Linux worker received a real Web command with the original sender. The downloaded official CFST Go executable made real loopback probes, updated both sealed configs in source order, then admitted one CustomHosts PluginReload. The test-only worker applied exactly two owned Hosts rows and one completion notice followed.",
+          "After the App closed and restarted, the verified cache was used again. The unchanged IP caused no new download, configuration revision, reload, or completion notice."
+        ],
+        "log_sha256": "5c3b64654d64fa3b00c3a6e87f01dcc364ac6adbc3d71f088d76f6a49793bede"
+      },
+      "once_api": {
+        "test": "TestCloudflareSpeedTestInstalledLinuxAMD64OnceAndAPI",
+        "log": "native-once-api.log",
+        "test_sha256": "486bd3315965d46ea691c7cf9c38b7e00d10b63cd5e5afa9cfc76c6268d85c20",
+        "host_commit": "a8e26e5c0ab94f39e35cb53e75c83f9af8bb23b6",
+        "package": {
+          "archive_members": [
+            "LICENSE",
+            "LICENSE.upstream",
+            "THIRD_PARTY_NOTICES.md",
+            "cloudflare-speed-test",
+            "plugins/cloudflarespeedtest/ORIGIN.json",
+            "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+            "third_party/Go-LICENSE"
+          ],
+          "archive_sha256": "928d5b2becf4e235bb838c1aea21a023e33918586d5eb2a58167d0c87309944a",
+          "archive_size": 2875670,
+          "capabilities": 18,
+          "entry": "cloudflare-speed-test",
+          "frontend": null,
+          "host_contract": "light-media.sdk-resources/v1",
+          "id": "CloudflareSpeedTest",
+          "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+          "index_sha256": "dd76b416f4c400e50a4b55ee1a6b15658b4f89f17c250a7d3ff00022e0b91481",
+          "methods": 15,
+          "notice_sha256": "0706e2ea4caf6c98ee218fade5c86e32a5859b40b804742a73edc96a6043f140",
+          "notice_size": 43012,
+          "plugin_source": "acc3c84f559e7773544f98cd021a090d570d508f",
+          "version": "1.5.1",
+          "worker_sha256": "ac9bfbd1b8d0d96b11e0676a9058c5be9e95615160701ad69ac5563ecb258686",
+          "worker_size": 5294335
+        },
+        "observations": [
+          "The private once job fired after the source delay, persisted onlyonce=false, and produced no Web start notice. Public cron remained registered separately.",
+          "The bad API key returned 401 without a probe. The valid key returned the source success envelope and an empty data object after the cached engine ran with no repeated reload."
+        ],
+        "log_sha256": "4bbe50695b0e886c52c2a52628978a811b3f48cd390d4af1bc0905a226a5d613"
+      },
+      "unavailable": {
+        "test": "TestCloudflareSpeedTestInstalledLinuxAMD64UnavailableDependencies",
+        "log": "native-unavailable.log",
+        "test_sha256": "323de5010ca05e04dfe31e2ba769bee43e48fe40d9f84a18ca79fde69c6bfc4d",
+        "host_commit": "23beb31175e1b0a659d637732c2b54e146829554",
+        "package": {
+          "archive_members": [
+            "LICENSE",
+            "LICENSE.upstream",
+            "THIRD_PARTY_NOTICES.md",
+            "cloudflare-speed-test",
+            "plugins/cloudflarespeedtest/ORIGIN.json",
+            "plugins/cloudflarespeedtest/licenses/CloudflareSpeedTest-GPL-3.0.txt",
+            "third_party/Go-LICENSE"
+          ],
+          "archive_sha256": "928d5b2becf4e235bb838c1aea21a023e33918586d5eb2a58167d0c87309944a",
+          "archive_size": 2875670,
+          "capabilities": 18,
+          "entry": "cloudflare-speed-test",
+          "frontend": null,
+          "host_contract": "light-media.sdk-resources/v1",
+          "id": "CloudflareSpeedTest",
+          "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+          "index_sha256": "dd76b416f4c400e50a4b55ee1a6b15658b4f89f17c250a7d3ff00022e0b91481",
+          "methods": 15,
+          "notice_sha256": "0706e2ea4caf6c98ee218fade5c86e32a5859b40b804742a73edc96a6043f140",
+          "notice_size": 43012,
+          "plugin_source": "acc3c84f559e7773544f98cd021a090d570d508f",
+          "version": "1.5.1",
+          "worker_sha256": "ac9bfbd1b8d0d96b11e0676a9058c5be9e95615160701ad69ac5563ecb258686",
+          "worker_size": 5294335
+        },
+        "observations": [
+          "A stopped CustomHosts remained installed in SQLite. A valid speed-test API request followed the source missing-hosts log without querying release metadata.",
+          "After loading the test peer, latest metadata was unavailable and v2.2.2 metadata exposed the old asset name. The request reached the source environment-failure log, cleared onlyonce and issued no archive request or TCP probe. Both IP values were unchanged."
+        ],
+        "log_sha256": "cfeea5c0ad66555f1ae368b646d4c0f628e8681a9a74608111c5d998ec5170e7"
+      }
+    }
+  },
+  "reuse": {
+    "source_oracles": [
+      "light-media/internal/plugins/cloudflarespeedtest/testdata/oracle.json",
+      "light-media/internal/plugins/cloudflarespeedtest/testdata/models.json"
+    ],
+    "prior_runtime": [
+      "light-media/docs/plugin-iyuu-cloudflare-integrated-verification.json",
+      "light-media/work/_cloudflare_speedtest_app_port/verification.json"
+    ],
+    "classification": "103 original source replays and prior App/actual browser verification retained separately. The installed SDK worker uses the exact same source-native Vuetify form bytes. These suites were not repeated.",
+    "form_sha256": "4794e8dac016957f94903657abb58ac3f4c5f8e5340413201a1588bda44f0256"
+  },
+  "adaptations": [
+    "The Go host binds ordinary Web, API, private once and public service scopes to the current instance. It pins official asset metadata, digest and executable build info. It invokes direct argv in the owned instance path, uses fresh result bytes and refuses unverified legacy binaries and invalid extraction. The v2.2.2 official assets retain the old name already mismatched by the installed source.",
+    "The host updates only the source-allowed CustomHosts fields after checking the running registered peer, saved config stamp and exact selected-IP replacement. An unloaded peer follows the missing-hosts path. A queued reload is asynchronous, and a disabled CustomHosts follows the ordinary event eligibility rules.",
+    "There is no recovered replay of a same-process interruption between saving both configs and admitting reload. The next unchanged-IP run follows source behavior and skips another reload. Private cache restart and complete commands were observed.",
+    "The test-only peer proves separate worker dispatch and owned-file effects. Actual production-grade CustomHosts 1.2.2 is the next independent slice. Linux ARM64 packaging is supported by the engine host code but native runtime evidence is x86_64 only. Unreferenced direct Python Hosts methods were not imported."
+  ],
+  "review": {
+    "reviewer": "/root/lark_finish_audit",
+    "status": "passed_with_documented_adaptations",
+    "resolved": [
+      "require the live CustomHosts reload receiver",
+      "distinguish unavailable release assets from failed digest validation",
+      "match source ordinary response envelope"
+    ]
+  },
+  "delivery": {
+    "pushed": false,
+    "deployed": false,
+    "production_imported": false
+  }
+}

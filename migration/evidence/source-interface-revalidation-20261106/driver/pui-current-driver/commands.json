@@ -1,0 +1,43 @@
+[
+  {
+    "argv": [
+      "go",
+      "test",
+      "-c",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "explicit_env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "elapsed_seconds": 0.7831262499094009
+  },
+  {
+    "argv": [
+      "go",
+      "test",
+      "-c",
+      "-trimpath",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/old-f24-single-file-overlay.json",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/removelink-f24-reproduced-linux.test",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "explicit_env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "elapsed_seconds": 0.3985462081618607
+  }
+]

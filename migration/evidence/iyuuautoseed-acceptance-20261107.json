@@ -1,0 +1,99 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "verified",
+  "installed_version": "2.22",
+  "worker_product_commit": "96185e27b56756a53e7b79043b086c860e851000",
+  "host_native_test_checkout": "8332fa4fd56acaec903c0901f671c13e417b2448",
+  "host_test_saved_commit": "791393a9783d4fa28a359c0e9d9e3b34cc9aef91",
+  "installed_source": {
+    "sha256": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+    "moviepilot_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58"
+  },
+  "native_linux_amd64": {
+    "status": "passed",
+    "test": "TestIYUUInstalledAMD64PackageStartup",
+    "source": "Installed init, get_state and native form. Fixed MoviePilot app/core/plugin.py install/reload and app/api/endpoints/plugin.py form.",
+    "target": {
+      "path": "/Users/accidia/projects/light-media/internal/app/plugin_iyuu_package_stage_test.go",
+      "sha256": "b98c180c507735a31cd7c312908073df18b1682c813296eb69751dfd4e6826f7"
+    },
+    "worker": {
+      "path": "cmd/iyuu-auto-seed/main.go",
+      "sha256": "1042396881e8c044ade40fe8f1653ef43c374d9284c773375313bc75c5232d89"
+    },
+    "artifact": {
+      "path": "work/iyuuautoseed-20261107/packaging/linux-amd64/IYUUAutoSeed-2.22-linux-amd64.zip",
+      "sha256": "045e7c8ceddf259fc4d9794dbfb021381ec92b306b636c6fd9d90509254a54e6"
+    },
+    "package_metadata": {
+      "path": "work/iyuuautoseed-20261107/packaging/amd64-package.json",
+      "sha256": "34a00676c3287f5a25fa4a67a42362cd12972a867140b10370ad97cd22060f00"
+    },
+    "environment": "Native Linux x86_64, cached alpine:3.22 in a disconnected read-only temporary container, unprivileged user, own tmpfs and loopback artifact repository. The actual mounted App handler, including request logging, was used without a production code overlay.",
+    "observed": "Three bundle SHA checks succeeded. The actual App downloaded the same ZIP once, installed it, initialized and published the IYUU worker, then served the native form containing the source label. Test passed in 2.81 seconds.",
+    "log": {
+      "path": "work/iyuuautoseed-20261107/packaging/native-amd64/runtime.stdout",
+      "sha256": "dec7149edf65b5b6677dfccca86f4ff2aa39a55301507124dfefc21bc9b3648e"
+    },
+    "build": {
+      "path": "work/iyuuautoseed-20261107/packaging/native-amd64/SHA256SUMS",
+      "sha256": "deba9f8a0ae376d828656b243d975562ff874a589b158b4bee8b26a84d764a10"
+    },
+    "driver": {
+      "path": "work/iyuuautoseed-20261107/packaging/native-amd64/package_test.go",
+      "sha256": "b98c180c507735a31cd7c312908073df18b1682c813296eb69751dfd4e6826f7"
+    },
+    "runner": {
+      "path": "work/iyuuautoseed-20261107/packaging/native-amd64/run-remote.sh",
+      "sha256": "6fbda1efa10f6d9c178ce29c79d11656497e27131c8dec06bbe358166ae91818"
+    },
+    "cleanup": {
+      "path": "work/iyuuautoseed-20261107/packaging/native-amd64/cleanup.stdout",
+      "sha256": "48e2812ecdc1d059f28074bf9dad3d52354a97113499b4e0af14c83a166b4174"
+    },
+    "cleanup_note": "The initial wrapper exit was 1 after the Go test passed because macOS tar added four AppleDouble metadata files. They were removed from the exact owned directory. The Docker container was already absent. Cleanup was confirmed separately without repeating the test."
+  },
+  "reused_evidence": [
+    {
+      "path": "migration/evidence/iyuuautoseed-helper-qb-pack-fields-20261107.json",
+      "sha256": "f318160b20d743a5f7a924ef726211bfe99f60c719f38009c0d7d3e8980e802c"
+    },
+    {
+      "path": "migration/evidence/iyuuautoseed-transport-core-config-20261107.json",
+      "sha256": "e25e8e44644629499edf7d0f47582ec0d6a121d56d071e7662e1da6cd6608d65"
+    },
+    {
+      "path": "migration/evidence/iyuuautoseed-worker-runtime-20261107.json",
+      "sha256": "a427dcec54f4348a2d6460fededcb9710cb3b60d46fc599020c2b97ac94e7538"
+    },
+    {
+      "path": "migration/evidence/iyuuautoseed-seeded-capacity-20261107.json",
+      "sha256": "e1e49dc7d1ea543d72a0cc35d95b048310d76de94abc79fdb44be38794dda9e0"
+    },
+    {
+      "path": "migration/evidence/iyuuautoseed-lifecycle-browser-package-20261107.json",
+      "sha256": "147508f2ac69c8f7b1f7de9ac80cd49925eefd0b5ad1b25ec8b7b9b07cb0b159"
+    },
+    {
+      "path": "migration/evidence/iyuuautoseed-amd64-startup-diagnostic-20261107.json",
+      "sha256": "c0e159c1d50ef5943e182801ef637d13b4865adc6c0ff0ce62eda8f1c70f9dce"
+    }
+  ],
+  "adaptations": "See the linked source and lifecycle evidence. Host-owned grants and verified TLS bound external effects. The standard SDK renews callbacks, uses per-instance local cache files and preserves source business state through isolated instances. Storage/authority failures remain fenced.",
+  "delivery": {
+    "build_registry": {
+      "path": "build-plugins.json",
+      "sha256": "a610d0fa11a300abc55c5c759c3b6783773b37a1a61f52ff70a7d4c13dda54cc"
+    },
+    "candidate_build_allowlist": {
+      "path": "work/iyuuautoseed-20261107/packaging/build-iyuu.json",
+      "sha256": "6efeecf9db64e6df3acefabbd877c13c4089c51fd904910a48a6adf71fbeadc5"
+    },
+    "target_branch": "codex/installed-plugins-20261105",
+    "host_branch": "codex/plugin-source-error-outcomes-20261105",
+    "pushed": false,
+    "deployed": false
+  },
+  "review": "Coordinator closed the previously isolated architecture gate. Reused source, lifecycle and seeded evidence from previous scopes without rerunning them."
+}

@@ -1,0 +1,18 @@
+{
+  "classification": "actual target constructor/path helper in read-only network-none fixedLinux image UID65533 with HOME/USER absent; not App/SDK/file mutation",
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; cd /home/admin/light-media-plugins-review-homeuid-ac3385a61a0a; test \"$(cat TASK)\" = lm-review-homeuid/ac3385a61a0a; chmod 755 review.test; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = 0f80b784341f6820d7b1c5fc63ab7dec7552e571a965eb3cb57133bbab4c06be; docker run --rm --label task=lm-review-homeuid-ac3385a61a0a --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-review-homeuid-ac3385a61a0a/review.test,dst=/usr/local/bin/rlk-review.test,readonly --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u HOME -u USER /usr/local/bin/rlk-review.test -test.v -test.timeout=20s -test.run=^TestIndependentUnmappedCurrentUIDHomeDoesNotBecomeRoot$"
+  ],
+  "exit": 1,
+  "binary_sha256": "0f80b784341f6820d7b1c5fc63ab7dec7552e571a965eb3cb57133bbab4c06be",
+  "producer_manifest_sha256": "d9cd3f920c22593599464741b3bd5a43c46c4acf4b227c57ff014b0cb7b6d823",
+  "target_test_sha256": "3e08576519c849c95edb7e6c24a22cfd51c10ed1e48ca2b820100fc5866e5b18",
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; cd /home/admin/light-media-plugins-review-homeuid-ac3385a61a0a; test \"$(cat TASK)\" = lm-review-homeuid/ac3385a61a0a; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = 0f80b784341f6820d7b1c5fc63ab7dec7552e571a965eb3cb57133bbab4c06be; test -z \"$(docker ps -aq --filter label=task=lm-review-homeuid-ac3385a61a0a)\"; rm review.test TASK; cd /home/admin; rmdir /home/admin/light-media-plugins-review-homeuid-ac3385a61a0a"
+  ],
+  "cleanup_exit": 0
+}

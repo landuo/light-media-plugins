@@ -1,0 +1,8 @@
+{
+  "classification": "unchanged fixed local frontend source static reference; not actual originalMoviePilot browser execution",
+  "repository_head": "2829e3b08214348f05ff2f5beae644882eccad58",
+  "path": "/Users/accidia/projects/MoviePilot-Frontend/src/layouts/components/QuickAccess.vue",
+  "sha256": "75c8f664b70f361fd8c4fb5cd2475a4027ada9c754fefc9f331cf54ffed486ff",
+  "lines_160_205": "  if (loading.value) return\n\n  try {\n    loading.value = true\n    const allPlugins: Plugin[] = await api.get('plugin/', {\n      params: {\n        state: 'installed',\n      },\n    })\n\n    // 只保留有详情页面且已启用的插件\n    pluginsWithPage.value = allPlugins\n      .filter(plugin => plugin.has_page)\n      .sort((a, b) => {\n        // 按插件名称排序\n        return (a.plugin_name || '').localeCompare(b.plugin_name || '')\n      })\n  } catch (error) {\n    console.error('获取插件列表失败:', error)\n  } finally {\n    loading.value = false\n  }\n}\n\n// 加载最近访问的插件\nfunction loadRecentPlugins() {\n  recentPlugins.value = getRecentPlugins()\n}\n\n// 点击插件\nfunction handlePluginClick(plugin: Plugin) {\n  // 添加到最近访问列表\n  addRecentPlugin(plugin)\n\n  // 更新最近访问列表显示\n  loadRecentPlugins()\n\n  emit('plugin-click', plugin)\n\n  openSharedDialog(\n    PluginDataDialog,\n    {\n      plugin,\n      show_switch: false,\n    },\n    {},",
+  "observed_source_behavior": "installed list filtered only has_page, no state predicate; recent access stored before opening source data dialog"
+}

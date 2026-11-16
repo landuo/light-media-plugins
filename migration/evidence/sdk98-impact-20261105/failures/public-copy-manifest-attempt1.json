@@ -1,0 +1,17 @@
+{
+  "classification": "artifact assembly verification before certificate; 2 manifests shared outputname, raw inputs retained",
+  "mismatches": [
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-1-harvest/harvest-manifest.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/harvest-manifest.json",
+      "sha256": "babfbd618e1eb3b7dc6daaa6aabdb342632b76a17774cda4c21743da7beee5d7",
+      "bytes": 742
+    },
+    {
+      "source": "work/migration-20261105/sdk98-impact-20261105/actual-main/main-run-2-harvest/harvest-manifest.json",
+      "public": "migration/evidence/sdk98-impact-20261105/actual-main/harvest-manifest.json",
+      "sha256": "08a7bf11ce84189be07f127920def2de3f6b9169e3443e6a197bd48c0d13c218",
+      "bytes": 742
+    }
+  ]
+}

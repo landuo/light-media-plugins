@@ -21,7 +21,11 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 		return nil
 	}
 	lock := p.taskLock(id)
-	if wait || t.B("del_no_free") {
+	// Scheduled checks and the promotion clock use the lock as a try-lock. A
+	// brush run can hold it for minutes; blocking that scheduler thread would
+	// pile up ticks and hide the next promotion deadline. The next clock tick
+	// retries instead. Only an explicit caller waits.
+	if wait {
 		lock.Lock()
 	} else if !lock.TryLock() {
 		p.h.Log(ctx, "info", fmt.Sprintf("刷流任务 [%s] 已有操作执行中，本轮检查跳过", t.Name()))
@@ -33,18 +37,24 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 		return nil
 	}
 	r := p.newReport("check")
-	p.SetRuntime(id, Row{"state": "running", "operation": "check", "last_error": nil})
+	p.SetRuntime(id, Row{"state": "running", "operation": "check", "last_error": nil, "last_check_at": float64(p.h.Now().Unix())})
 	err := p.runCheck(ctx, t, r)
 	if err != nil {
 		r["success"] = false
 		r["error"] = err.Error()
-		p.SetRuntime(id, Row{"last_error": err.Error()})
+		p.SetRuntime(id, Row{"state": "idle", "operation": nil, "last_error": err.Error()})
 		p.h.Log(ctx, "error", fmt.Sprintf("刷流任务 [%s] 检查失败：%s", t.Name(), err))
 	} else {
 		r["success"] = r["result"] != "downloader_unavailable" && r["result"] != "downloader_error"
 	}
+	result := text(r["result"])
+	if err != nil || result == "downloader_unavailable" || result == "downloader_error" {
+		p.markPromotionFailure(id)
+	} else {
+		p.clearPromotionFailure(id)
+	}
 	lock.Unlock()
-	if p.Config().GlobalDynamic() && !boundary(err) {
+	if p.Config().GlobalDynamic() && err == nil && !boundary(err) {
 		n, e := p.GlobalDelete(ctx)
 		if e == nil || n > 0 {
 			r["global_deleted_count"] = n
@@ -71,7 +81,7 @@ func (p *Core) Check(ctx context.Context, id string, wait bool) error {
 func (p *Core) syncTags(ctx context.Context, t Task, ts, unmanaged *RecordSet, torrents []DownloadState) error {
 	ds, e := p.service(ctx, t)
 	if e != nil {
-		return e
+		return fmt.Errorf("读取下载器服务失败: %w", e)
 	}
 	if ds == nil || ds.Kind != "qbittorrent" {
 		return nil
@@ -156,7 +166,7 @@ func (p *Core) missing(ctx context.Context, t Task, ts *RecordSet, check []strin
 func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	valid, e := p.validateReference(ctx, t, true)
 	if e != nil {
-		return e
+		return fmt.Errorf("校验站点/下载器引用失败: %w", e)
 	}
 	if !valid {
 		r["result"] = "downloader_unavailable"
@@ -164,7 +174,7 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	}
 	ds, e := p.service(ctx, t)
 	if e != nil {
-		return e
+		return fmt.Errorf("读取下载器服务失败: %w", e)
 	}
 	if ds == nil {
 		r["result"] = "downloader_unavailable"
@@ -172,19 +182,38 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	}
 	ts, e := p.records(ctx, t.ID(), "torrents")
 	if e != nil {
-		return e
+		return fmt.Errorf("读取任务种子记录失败: %w", e)
 	}
 	unmanaged, e := p.records(ctx, t.ID(), "unmanaged")
 	if e != nil {
-		return e
+		return fmt.Errorf("读取未管理记录失败: %w", e)
 	}
 	torrents, e := p.h.Torrents(ctx, t.S("downloader"))
 	if e != nil {
+		// The daemon state is unavailable. Never leave unfinished brush
+		// torrents downloading on an unverified promotion: pause them from the
+		// stored hashes, which needs no second daemon listing. This is the
+		// fail-closed path that stops a paid download while the read is broken.
+		if t.B("del_no_free") {
+			paused, pauseErr := p.pauseUnverified(ctx, t, ts, "")
+			if pauseErr != nil {
+				if boundary(pauseErr) {
+					return pauseErr
+				}
+				p.h.Log(ctx, "error", fmt.Sprintf("刷流任务 [%s] 促销兜底暂停失败：%s", t.Name(), pauseErr))
+			} else if len(paused) > 0 {
+				r["paused_count"] = len(paused)
+				p.h.Log(ctx, "warning", fmt.Sprintf("刷流任务 [%s] 无法读取下载器种子列表，已暂停 %d 个未完成种子等待促销复核：%s", t.Name(), len(paused), e))
+			}
+			if putErr := p.put(ctx, t.ID(), "torrents", ts); putErr != nil {
+				return putErr
+			}
+		}
 		r["result"] = "downloader_error"
-		return configError("连接下载器出错")
+		return configError("连接下载器出错: " + e.Error())
 	}
 	if e = p.syncTags(ctx, t, ts, unmanaged, torrents); e != nil {
-		return e
+		return fmt.Errorf("同步标签失败: %w", e)
 	}
 	hashes := append([]string{}, ts.Order...)
 	if len(hashes) == 0 {
@@ -207,12 +236,17 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 		}
 	}
 	updateRecords(p, check, ts)
+	// Persist progress before promotion checks and deletes. A later host error
+	// must not discard counters that were already read successfully.
+	if e = p.put(ctx, t.ID(), "torrents", ts); e != nil {
+		return fmt.Errorf("保存种子进度失败: %w", e)
+	}
 	if e = p.missing(ctx, t, ts, hashes, torrents); e != nil {
 		return e
 	}
 	promotionDelete, promotionPause, e := p.protectPromotion(ctx, t, check, ts)
 	if e != nil {
-		return e
+		return fmt.Errorf("促销保护检查失败: %w", e)
 	}
 	filtered := []DownloadState{}
 	for _, d := range check {
@@ -265,7 +299,37 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 				}
 			}
 		} else if len(promotionDelete) > 0 {
-			return configError("促销已结束或状态无法核实的种子未能删除，请立即检查下载器")
+			// The daemon can apply a batch delete while the host's post-delete
+			// receipt stays incomplete. Read the list once to distinguish a
+			// cleanup bookkeeping gap from a delete that did not happen; the
+			// torrents were already paused above, so a true failure is safe.
+			remaining, readErr := p.h.Torrents(ctx, t.S("downloader"))
+			if readErr == nil {
+				present := map[string]bool{}
+				for _, d := range remaining {
+					present[torrentHash(d)] = true
+				}
+				allGone := true
+				for _, h := range deletes {
+					if present[h] {
+						allGone = false
+						break
+					}
+				}
+				if allGone {
+					deleted = true
+					for _, h := range deletes {
+						if v := ts.Values[h]; v != nil {
+							v["deleted"] = true
+							v["deleted_time"] = float64(p.h.Now().UnixNano()) / 1e9
+						}
+					}
+					p.h.Log(ctx, "info", "刷流任务删除回执未确认，但下载器列表已无对应种子，按已删除记录")
+				}
+			}
+			if !deleted {
+				return configError("促销已结束或状态无法核实的种子未能删除，请立即检查下载器")
+			}
 		}
 	}
 	if e = p.archive(ctx, t, ts); e != nil {
@@ -308,11 +372,16 @@ func (p *Core) protectPromotion(ctx context.Context, t Task, torrents []Download
 	for _, d := range torrents {
 		hash := torrentHash(d)
 		record := ts.Values[hash]
-		if record == nil {
+		if record == nil || truth(record["deleted"]) {
 			continue
 		}
 		info := p.torrentInfo(d)
 		if complete(info) {
+			continue
+		}
+		// A record that was never free is intentionally paused and is never
+		// resumed automatically; skip the repeated promotion probe.
+		if truth(record["promotion_paused_at"]) && text(record["promotion_pause_reason"]) == promotionPauseNotFree {
 			continue
 		}
 		expired, why, e := p.promotionExpired(ctx, t, info, record)
@@ -327,13 +396,13 @@ func (p *Core) protectPromotion(ctx context.Context, t Task, torrents []Download
 			p.h.Log(ctx, "info", "刷流任务删除种子："+text(record["title"])+"，原因："+why)
 			continue
 		}
-		verified, last := parseNumber(fallback(record["promotion_verified_at"], 0)), parseNumber(fallback(record["promotion_probe_at"], 0))
-		if verified == nil || last == nil {
-			verified, last = float64(0), float64(0)
+		// The host only allows "start" in the brush phase, so a check cannot
+		// resume a paused torrent. Keep the safe record paused; an explicit
+		// operator action decides whether to resume it.
+		if p.promotionSafe(t, record) {
+			continue
 		}
-		if !addedFree(record) || number(verified) == 0 || number(last) > number(verified) {
-			pause = append(pause, hash)
-		}
+		pause = append(pause, hash)
 	}
 	stop := unique(append(append([]string{}, del...), pause...))
 	stopped := true
@@ -353,12 +422,17 @@ func (p *Core) protectPromotion(ctx context.Context, t Task, torrents []Download
 		del = stop
 		pause = []string{}
 	} else {
+		now := float64(p.h.Now().UnixNano()) / 1e9
 		for _, h := range pause {
 			r := ts.Values[h]
+			if r == nil {
+				continue
+			}
 			if !truth(r["promotion_paused_at"]) {
 				p.h.Log(ctx, "warning", "刷流任务暂停促销状态无法确认的种子："+text(r["title"])+"，需确认优惠后手动恢复")
-				r["promotion_paused_at"] = float64(p.h.Now().UnixNano()) / 1e9
 			}
+			r["promotion_paused_at"] = now
+			r["promotion_pause_reason"] = promotionPauseReason(r)
 		}
 	}
 	return del, pause, nil

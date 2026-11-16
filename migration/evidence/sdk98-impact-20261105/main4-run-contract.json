@@ -1,0 +1,39 @@
+{
+  "entry": "TestSDK98ImpactOrdinaryMainFourInstances",
+  "classification": "Main4 complete-tail-audited harness candidate; only compiled and ownedHTTP fixtures executed locally",
+  "test_args": [
+    "-test.run=^TestSDK98ImpactOrdinaryMainFourInstances$",
+    "-test.timeout=10m",
+    "-test.v"
+  ],
+  "required_env": [
+    "SDK98_IMPACT_HOST_BINARY",
+    "SDK98_IMPACT_CATEGORY_BINARY",
+    "SDK98_IMPACT_TORRENT_BINARY",
+    "SDK98_IMPACT_SITE_BINARY",
+    "SDK98_IMPACT_RUNTIME_DIR"
+  ],
+  "listen": "SDK98_IMPACT_LISTEN default127.0.0.1:36257",
+  "NAS_owned_root": "/home/admin/light-media-plugins-migration-sdk98-20261105",
+  "marker": "light-media-plugins/SDK98Impact/20261105/owned-only",
+  "runtime": "fresh UID1000 Linux owned childdir; main and3workers Go only; test instrumentation uses existing python3 solely read-only ownSQLite counts, same frozen Site helper",
+  "host_binary_sha256": "7521f81d24cddd658368b4b4ebd724c2dfc23494f460acc48e63370d6950fb17",
+  "network": "new owned knownNexus HTTPS+strict CONNECT peers, canonical qB loopback queryprotocol peer; no real PT/downloaders/productionconfig; allnotifications stored only in fresh ownMain",
+  "not_claimed": "realqB/TR fulltransfer or oldMain evidence revalidated; Root actualMain run remains pending",
+  "driver": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/sdk98-impact-main-tests-linux-amd64",
+    "sha256": "95c1f38f6351be5b898ac065d6247497aebfebd84849c363bde56085d55fb36f",
+    "bytes": 12742124
+  },
+  "source_audit": {
+    "path": "work/migration-20261105/sdk98-impact-20261105/main4-tail-source-audit.json",
+    "sha256": "e93ac0d079376e4df3befa7bb25360fb062fc57d6d7e552a5313ad2f4d63298c",
+    "bytes": 18293
+  },
+  "required_observations": [
+    "Native source POST completed queries for private2 + manual2 and both public service owner idle",
+    "Known Nexus actual verifiedTLS via ownedCONNECT; native parser SQLite, exact19field API, per-site and global event, actual notice plus persisted key metadata",
+    "Four real reload process joins, independently disabled rawconfigs, fresh cold4worker processes and3500ms no replay + unchanged encryptedstorage digests",
+    "No qB daemon/fulltransfer proof inferred from query-only source peer; no syntheticHTTP fixture countedasMain acceptance"
+  ]
+}

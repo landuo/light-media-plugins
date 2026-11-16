@@ -1,0 +1,60 @@
+{
+  "status": "applied_pending_true_Main_current_source_stop_verification",
+  "scope": "existing public scheduler lifetime owner only; private_once not fixed",
+  "base_freeze_sha256": "7615cb4c740d3a1456e29b3e1dfbd993493dc5d2e3814e1b5b5ba14aee888abf",
+  "log_freeze_sha256": "59fd2d0312e2e39fa395b93ad2298e647722fe54a810d3da1f2551cc0e869bdc",
+  "reviews": [
+    {
+      "path": "/Users/accidia/projects/light-media/work/independent-public-scheduler-drain-review-20261107/seal.json",
+      "sha256": "df8a84a5fe944df038319529439b9f2cce2f66a8a2dd41476107190bbf24edb2"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media/work/independent-public-scheduler-stopping-log-review-20261107/seal.json",
+      "sha256": "1081ec7e98b0c32dca3c73ec5cf993e485e326d5417596367e7c253065548943"
+    }
+  ],
+  "targets": [
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/runtime.go",
+      "preimage_sha256": "db0e1c74891e5ed6ca80424079f6ef6ddfb24fbdef26c637bc5cde5fb00a0cea",
+      "after_sha256": "cd5f68b173cfa486bcfd272ea94f5c0efeec9790abf684ceff24df5dc9007151"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/plugin_original_direct_dispatch.go",
+      "preimage_sha256": "beba2c9aaa5ab683822d5d58bd741fb8f46dd79454e157d69313c152d07bbad5",
+      "after_sha256": "a2f5c7debe20df6375b2f2cd1d24a5f434f7ff34ccc9b2c3c4afa977c6e985a5"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/plugin_original_source_interval.go",
+      "preimage_sha256": "f316cdc5b32a2564dbcf3810f3803bfaf84d32d0105986d7402c9c0d33c7c966",
+      "after_sha256": "a37d4aa86eb19c5dd3d9f08146eb768833d91125e8c7ec2fe35680d2ae0260f4"
+    }
+  ],
+  "base_chain": [
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/runtime.go",
+      "preimage_sha256": "db0e1c74891e5ed6ca80424079f6ef6ddfb24fbdef26c637bc5cde5fb00a0cea",
+      "candidate": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/candidate/runtime.go",
+      "after_sha256": "cd5f68b173cfa486bcfd272ea94f5c0efeec9790abf684ceff24df5dc9007151",
+      "patch": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/hunks/runtime.go.patch",
+      "patch_sha256": "b5fad7be169054c5b925f1d7e1e8361df61c159fb7f7ba7765b73e7e4c666fb4"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/plugin_original_direct_dispatch.go",
+      "preimage_sha256": "beba2c9aaa5ab683822d5d58bd741fb8f46dd79454e157d69313c152d07bbad5",
+      "candidate": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/candidate/plugin_original_direct_dispatch.go",
+      "after_sha256": "c2a9a0a28199e6960125796c667df2bd167e0fe77e04cbe385a7042f30e95a08",
+      "patch": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/hunks/plugin_original_direct_dispatch.go.patch",
+      "patch_sha256": "681c2aa0d12189d8b681c2c4bfc9c46a31a3d980c574859a92a995c5c947d5c8"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media/internal/app/plugin_original_source_interval.go",
+      "preimage_sha256": "f316cdc5b32a2564dbcf3810f3803bfaf84d32d0105986d7402c9c0d33c7c966",
+      "candidate": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/candidate/plugin_original_source_interval.go",
+      "after_sha256": "a37d4aa86eb19c5dd3d9f08146eb768833d91125e8c7ec2fe35680d2ae0260f4",
+      "patch": "/Users/accidia/projects/light-media/work/source-public-scheduler-drain-20261107/hunks/plugin_original_source_interval.go.patch",
+      "patch_sha256": "cbce0d4053dadf0e2d8938517de7ee8eeb272ac50a9cc369e78f080ef0de0e88"
+    }
+  ],
+  "log_source": "fixed8a app/scheduler.py1465-1472 INFO before shutdown; event scheduler_stopping permits real lifecycle observation"
+}

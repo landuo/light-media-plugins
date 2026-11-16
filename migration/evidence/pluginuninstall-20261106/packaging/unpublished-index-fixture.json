@@ -1,0 +1,110 @@
+{
+  "schema_version": 1,
+  "plugins": [
+    {
+      "schema_version": 1,
+      "plugin_id": "PluginUnInstall",
+      "current_version": "2.2",
+      "releases": [
+        {
+          "version": "2.2",
+          "manifest": {
+            "plugin_order": 98,
+            "runtime_support": {
+              "platforms": [
+                "linux"
+              ],
+              "storage_types": [
+                "local"
+              ]
+            },
+            "schema_version": 1,
+            "plugin_id": "PluginUnInstall",
+            "name": "插件彻底卸载",
+            "description": "删除数据库中已安装插件记录、清理插件文件。",
+            "icon": "https://raw.githubusercontent.com/thsrite/MoviePilot-Plugins/main/icons/uninstall.png",
+            "author": "thsrite",
+            "author_url": "https://github.com/thsrite",
+            "version": "2.2",
+            "runtime": "go-executable",
+            "entry": "plugin-uninstall",
+            "host_api_min": 1,
+            "host_api_max": 1,
+            "methods": [
+              "init",
+              "get_state",
+              "get_form",
+              "get_service",
+              "get_api",
+              "get_command",
+              "get_page",
+              "get_dashboard",
+              "get_render_mode",
+              "stop_service",
+              "close",
+              "stop",
+              "uninstall_continue"
+            ],
+            "capabilities": [
+              "plugin.manager.read",
+              "plugin.manager.control",
+              "settings.read",
+              "settings.write",
+              "plugin.base.update_config",
+              "plugin.log.write",
+              "plugin.background.submit"
+            ]
+          },
+          "artifacts": [
+            {
+              "platform": "linux-amd64",
+              "url": "https://example.invalid/not-published/pluginuninstall-20261105/PluginUnInstall-2.2-linux-amd64.zip",
+              "sha256": "45865b1b617ae5eee8916f2ebf6da147c25ce0b608bc76dc8abee5641be9fc8d",
+              "size": 2812678,
+              "format": "zip",
+              "executable_sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+              "host_contract": "light-media.sdk-resources/v1",
+              "files": [
+                {
+                  "path": "LICENSE",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "LICENSE.upstream",
+                  "size": 35149,
+                  "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+                },
+                {
+                  "path": "THIRD_PARTY_NOTICES.md",
+                  "size": 4355,
+                  "sha256": "4ed7da4be12d120e8e722a685059b324944b019dc10a0d287f852d9ffe42b84f"
+                },
+                {
+                  "path": "plugin-uninstall",
+                  "size": 4942777,
+                  "sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1"
+                },
+                {
+                  "path": "third_party/Go-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-LICENSE",
+                  "size": 1453,
+                  "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+                },
+                {
+                  "path": "third_party/x-text-PATENTS",
+                  "size": 1303,
+                  "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,197 @@
+{
+  "clock": "test-only-controlled-clock;production-timer-unchanged",
+  "default_max_host_calls": 64,
+  "events": [
+    {
+      "at": "2026-11-05T12:33:24.136064Z",
+      "kind": "owner.start",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T12:33:24.137528Z",
+      "kind": "owner.complete",
+      "phase": "init"
+    },
+    {
+      "at": "2026-11-05T12:33:24.144038Z",
+      "kind": "owner.start",
+      "phase": "test_pending"
+    },
+    {
+      "at": "2026-11-05T12:33:24.179295Z",
+      "kind": "owner.complete",
+      "phase": "test_pending"
+    },
+    {
+      "at": "2026-11-05T12:33:24.179329Z",
+      "kind": "owner.start",
+      "phase": "check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.180341Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.181114Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.181724Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.212065Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.33656Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.336958Z",
+      "kind": "owner.complete",
+      "phase": "check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.336972Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:33:24.337441Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:33:24.337474Z",
+      "kind": "owner.start",
+      "phase": "check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.338083Z",
+      "kind": "rpc",
+      "method": "downloader.configurations.read",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.33859Z",
+      "kind": "rpc",
+      "method": "downloader.source.connection",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.339029Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.369298Z",
+      "kind": "rpc",
+      "method": "downloader.source.tasks",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.490444Z",
+      "kind": "rpc",
+      "method": "plugin.log.write",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.520603Z",
+      "kind": "rpc",
+      "method": "downloader.source.control",
+      "phase": "owner:check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.563095Z",
+      "kind": "owner.complete",
+      "phase": "check_recheck"
+    },
+    {
+      "at": "2026-11-05T12:33:24.563107Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:33:24.563577Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:33:24.56361Z",
+      "kind": "owner.start",
+      "phase": "test_snapshot"
+    },
+    {
+      "at": "2026-11-05T12:33:24.564009Z",
+      "kind": "owner.complete",
+      "phase": "test_snapshot"
+    }
+  ],
+  "kind": "actual-independent-SDK-worker-with-synthetic-host-resources",
+  "observed_max_host_calls": 6,
+  "phases": [
+    {
+      "end": "2026-11-05T12:33:24.137467Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "init",
+      "start": "2026-11-05T12:33:24.136061Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.179278Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_pending",
+      "start": "2026-11-05T12:33:24.144037Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.336955Z",
+      "error": "",
+      "host_calls": 5,
+      "method": "check_recheck",
+      "start": "2026-11-05T12:33:24.179328Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.33744Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:33:24.336971Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.563092Z",
+      "error": "",
+      "host_calls": 6,
+      "method": "check_recheck",
+      "start": "2026-11-05T12:33:24.337474Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.563577Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:33:24.563106Z"
+    },
+    {
+      "end": "2026-11-05T12:33:24.564009Z",
+      "error": "",
+      "host_calls": 0,
+      "method": "test_snapshot",
+      "start": "2026-11-05T12:33:24.56361Z"
+    }
+  ],
+  "test": "TestSDKLargeRecheckPreservesSingleBulkCalls",
+  "total_rpc": 11
+}

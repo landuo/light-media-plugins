@@ -1,0 +1,18 @@
+--- /Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/autosignin_owned_site_main_test.go
++++ proposed test-only helper change
+@@ -242,13 +242,11 @@
+ func asiOwnedEmptyPage(t *testing.T, raw []byte) bool {
+ 	t.Helper()
+ 	var got struct {
+-		Data struct {
+-			Page any `json:"page"`
+-		} `json:"data"`
++		Page any `json:"page"`
+ 	}
+ 	if json.Unmarshal(raw, &got) != nil {
+ 		t.Fatal("invalid empty page JSON")
+ 	}
+ 	want := []any{map[string]any{"component": "VAlert", "props": map[string]any{"type": "info", "text": "暂无签到数据", "variant": "tonal", "class": "mt-4", "prepend-icon": "mdi-information"}}}
+-	return reflect.DeepEqual(got.Data.Page, want)
++	return reflect.DeepEqual(got.Page, want)
+ }

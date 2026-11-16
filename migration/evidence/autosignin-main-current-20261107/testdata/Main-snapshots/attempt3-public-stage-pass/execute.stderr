@@ -1,0 +1,5 @@
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/execute-runner.py", line 95, in <module>
+    assert remote_error is None and remote_exit==0,{'remote_error':remote_error,'exit':remote_exit,'stderr':remote_stderr.decode(errors='replace'),'harvest_error':harvest_error}
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+AssertionError: {'remote_error': None, 'exit': 1, 'stderr': 'Traceback (most recent call last):\n  File "<stdin>", line 155, in <module>\nAssertionError\n', 'harvest_error': None}

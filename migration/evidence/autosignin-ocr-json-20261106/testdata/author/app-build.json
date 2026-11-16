@@ -1,0 +1,26 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-p=1",
+    "-c",
+    "-ldflags=-s -w",
+    "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/app-overlay.json",
+    "-o",
+    "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/domain-app-linux.test",
+    "./internal/app"
+  ],
+  "cwd": "/Users/accidia/projects/light-media",
+  "env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": ""
+  },
+  "exit": 0,
+  "seconds": 8.509914750233293,
+  "sha256": "e4d76ef2d679eb57effb9b27054b2e5f9beefefb8a2b4acffec81e381ed4d566",
+  "inputs": 2211,
+  "stable": true,
+  "boundary": "H internal/cmd Go + go.mod/sum + exact App test; excludes P/ H testdata and Origin metadata not compiled"
+}

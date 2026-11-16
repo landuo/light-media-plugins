@@ -1,0 +1,57 @@
+[
+  {
+    "mode": "baseline",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/independent-source-public-get-unused-consumers-review-20261106/temporary-baseline-category-linux",
+      "./cmd/category-editor"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "environment_delta": {
+      "GOFLAGS": "absent",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 0.40615420788526535,
+    "sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+    "expected_sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+    "bytes": 4652392,
+    "temporary_removed": true
+  },
+  {
+    "mode": "proposed",
+    "argv": [
+      "go",
+      "build",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-public-get-unused-consumers-20261106/overlay.json",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/independent-source-public-get-unused-consumers-review-20261106/temporary-proposed-category-linux",
+      "./cmd/category-editor"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "environment_delta": {
+      "GOFLAGS": "absent",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 0.19718383392319083,
+    "sha256": "2fcab724450b2f95382d67828cd131300953f2fbce76e67dda05682202f51263",
+    "expected_sha256": "2fcab724450b2f95382d67828cd131300953f2fbce76e67dda05682202f51263",
+    "bytes": 4652392,
+    "temporary_removed": true
+  }
+]

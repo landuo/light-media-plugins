@@ -1,0 +1,17 @@
+{
+  "scope": "local preparation only; no NAS/Main/UI/runtime/DB access",
+  "compile_inputs_before_after_identical": true,
+  "per_artifact_local_module_inputs": {
+    "plugin-uninstall-linux": 74,
+    "mp-server-status-linux": 383,
+    "plugin-uninstall-2.2.1-linux": 74,
+    "owned-pui-fixture-linux": 66
+  },
+  "PUI_base_rebuild_equals_current_d001": true,
+  "MPS_rebuild_equals_current_3278": true,
+  "probe_rebuild_equals_actual_old_Main1_b4d": true,
+  "update_only_difference": "Version 2.2 to 2.2.1 in complete current plugins/pluginuninstall/plugin.go overlay",
+  "SDK98_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "retained_temporary_ELFs": 4,
+  "actual_Main2_executed": false
+}

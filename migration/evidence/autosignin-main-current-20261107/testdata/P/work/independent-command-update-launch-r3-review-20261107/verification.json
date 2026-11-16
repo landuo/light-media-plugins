@@ -1,0 +1,112 @@
+{
+  "classification": "final local static launch/BOM review only; no Main/SSH upload/runtime/true write",
+  "config": {
+    "root": "/home/admin/light-media-plugins-root-asi-native-20261107",
+    "marker": "light-media-plugins/root-asi-native/20261107/owned-only",
+    "name": "lm-root-asi-native-20261107",
+    "owned_dir": "owned-r5",
+    "out_dir": "attempt6",
+    "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+    "bom": {
+      "bin/host": {
+        "sha256": "c31f8f43480a3cf297598af401eaa16899f65aa2b5b09fe138545613334c42c6",
+        "bytes": 57225378
+      },
+      "bin/worker": {
+        "sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+        "bytes": 12796066
+      },
+      "bin/worker-updated": {
+        "sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+        "bytes": 12796066
+      },
+      "bin/cli": {
+        "sha256": "7044b75a4cb61768538c0dcf764ef6a038254edb75f820b46ace98035abe0c84",
+        "bytes": 25215138
+      },
+      "bin/driver": {
+        "sha256": "75fe4f1ecddc27f3249d2ec8266798ff34cfcb596cbe1f0d9f9a056dd85d637f",
+        "bytes": 9756834
+      }
+    }
+  },
+  "files": {
+    "runner.py": "3e4035220bdf55d484c2a17bd2bbcdd86239733c41fc580798391e89127f749d",
+    "remote-body.py": "43c699c0d70fa8bf04bf78fd911412eba68600685d84e224d79cf11f370a1d61",
+    "execute-runner.py": "72ded19f24b224208608b2b7464179f9338cad05faa200bfc6aa15c187c408e8",
+    "prepare-runner.py": "117f0ffd03cfa558527cd778094970148dfd7acb2284ad6baa2d1b548b84f082",
+    "driver.go": "f48d30b3511741ab1c7cf6ceb03db6f1a4ae29e678f08c4da00f3d02e3ad956e",
+    "bundle-bom.json": "6ee1f21664cb3f4d8cda0485e7323445f04990f9f5f7f9d157991caf42a59cd2"
+  },
+  "bins": [
+    {
+      "name": "host",
+      "sha256": "c31f8f43480a3cf297598af401eaa16899f65aa2b5b09fe138545613334c42c6",
+      "bytes": 57225378,
+      "read_only_buildinfo_matches": true
+    },
+    {
+      "name": "worker",
+      "sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+      "bytes": 12796066,
+      "read_only_buildinfo_matches": true
+    },
+    {
+      "name": "worker-updated",
+      "sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+      "bytes": 12796066,
+      "read_only_buildinfo_matches": true
+    },
+    {
+      "name": "cli",
+      "sha256": "7044b75a4cb61768538c0dcf764ef6a038254edb75f820b46ace98035abe0c84",
+      "bytes": 25215138,
+      "read_only_buildinfo_matches": true
+    },
+    {
+      "name": "driver",
+      "sha256": "75fe4f1ecddc27f3249d2ec8266798ff34cfcb596cbe1f0d9f9a056dd85d637f",
+      "bytes": 9756834,
+      "read_only_buildinfo_matches": true
+    }
+  ],
+  "compile_symtable": [
+    {
+      "name": "runner.py",
+      "compile": true,
+      "unbound_global": []
+    },
+    {
+      "name": "execute-runner.py",
+      "compile": true,
+      "unbound_global": []
+    },
+    {
+      "name": "prepare-runner.py",
+      "compile": true,
+      "unbound_global": []
+    },
+    {
+      "name": "probe.py",
+      "compile": true,
+      "unbound_global": []
+    },
+    {
+      "name": "fetch.py",
+      "compile": true,
+      "unbound_global": []
+    }
+  ],
+  "driver_only_real_scheduler_boundary_and_clone_cold_reads_from_d870": true,
+  "four_Web_source_oracle": "4f8badd440416add1575e44238ac580e98cba64c8e3d5cf92f50ce282feaf5e3",
+  "current_input_files": 7064,
+  "embeds": 811,
+  "saved_before_after_equal": true,
+  "current_files_match_saved_inputs": true,
+  "closure_limit": "five before/after raw go-list streams now retained and checked in supplemental file",
+  "runtime_runs": 0,
+  "Main_runs": 0,
+  "true_writes": 0,
+  "NAS_writes": 0,
+  "ready_for_parent_internal_launch_gate": true
+}

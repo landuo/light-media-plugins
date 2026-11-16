@@ -1,0 +1,10 @@
+/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/domain-app-linux.test: go1.26.2
+	path	light-media/internal/app.test
+	mod	light-media	(devel)	
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-ldflags="-s -w"
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

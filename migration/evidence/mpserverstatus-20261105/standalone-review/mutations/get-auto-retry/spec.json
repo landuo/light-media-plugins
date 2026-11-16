@@ -1,0 +1,8 @@
+{
+  "name": "get-auto-retry",
+  "path": "plugins/mpserverstatus/network.go",
+  "old": "Transport: sourceNoRetryTransport{transport},",
+  "new": "Transport: transport,",
+  "occurrence": 0,
+  "run": "TestNativeNoHiddenGETRetryAfterRedirectSocketDrop"
+}

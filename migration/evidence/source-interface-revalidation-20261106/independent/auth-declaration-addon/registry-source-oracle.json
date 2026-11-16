@@ -1,0 +1,610 @@
+{
+  "classification": "actual333 exact source manager registry/direct-dashboard AST with synthetic interface implementations/state and real seven source-class predicates; no source business network or app imports",
+  "python": "3.12.13 (main, Aug  5 2026, 01:11:46) [GCC 12.2.0]",
+  "source_files": {
+    "base": "e6ac4a8621e078bf729d34c01188a5ff664ee48ad5e09cb4cf66fc44336a647f",
+    "manager": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7",
+    "object": "0fd0161be3084593a9693244e9ea734c5d949cc23a6e8f34349177a5e220dc1c",
+    "categoryeditor": "24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27",
+    "torrenttransfer": "e5f513a57cf42ee8778744ba30cf669f93a5a3e6c7589ca0b2e3b9c483651bd5",
+    "torrenttransfermusic": "4d271e68aa3fc994c1d50cd850d4b1e5699c9f7900eaa106082b9f13efe4c5bb",
+    "sitestatistic": "763a88be85185a94082a2f131ed1c80d8306abe24b10ebe9ae95447cfe5da17d",
+    "mpserverstatus": "63583e9706aeee31a181b2fefa4e80c793ae4f2b9a76c9efea5956f8b0043d90",
+    "pluginuninstall": "2210e9dea47eeccdc46208d515e45ce1222dcadf50dbfc63cbeb41f94e470487",
+    "removelink": "22fb375e531378b3454607c7bca305b637abd60ee8ed69e14e32fbc2ddfc5485"
+  },
+  "registry_and_direct_dashboard_cases": [
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_commands",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_commands",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 1,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_services",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_services",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 1,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_apis",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_apis",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 1,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_modules",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_modules",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 1,
+        "get_name": 1,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [
+        {
+          "key": [
+            "owned",
+            "ExplicitNoneInterfaces"
+          ],
+          "value": []
+        }
+      ],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_dashboard_meta",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_dashboard_meta",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 1,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "inherited-pass",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "explicit-return-None",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 1,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [],
+      "result": [],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "implemented-dashboard-default-meta",
+      "manager": "get_plugin_dashboard_meta",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": [
+        {
+          "id": "owned",
+          "name": "Owned synthetic plugin",
+          "key": ""
+        }
+      ],
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "auth-state-failure-propagates-before-implementation-check",
+      "manager": "get_plugin_auth_providers",
+      "enabled": true,
+      "calls": {
+        "get_state": 1,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 0,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 0
+      },
+      "dashboard_arguments": [],
+      "result": null,
+      "error": {
+        "class": "RuntimeError",
+        "message": "owned synthetic getter failure",
+        "status": null
+      },
+      "logged_errors": []
+    },
+    {
+      "case": "categoryeditor-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": false,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "categoryeditor-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "torrenttransfer-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": false,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "torrenttransfer-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "torrenttransfermusic-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": false,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "torrenttransfermusic-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "pluginuninstall-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": false,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "pluginuninstall-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "removelink-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": false,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    },
+    {
+      "case": "removelink-direct-inherited-dashboard",
+      "manager": "get_plugin_dashboard",
+      "enabled": true,
+      "calls": {
+        "get_state": 0,
+        "get_module": 0,
+        "get_name": 0,
+        "get_service": 0,
+        "get_command": 0,
+        "get_api": 0,
+        "get_dashboard": 1,
+        "get_dashboard_meta": 0,
+        "get_auth_providers": 0,
+        "get_render_mode": 1
+      },
+      "dashboard_arguments": [
+        {
+          "key": "test-key",
+          "kwargs": {
+            "user_agent": "owned-agent"
+          }
+        }
+      ],
+      "result": null,
+      "error": null,
+      "logged_errors": []
+    }
+  ]
+}

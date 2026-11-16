@@ -1,0 +1,123 @@
+[
+  {
+    "name": "category",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/category",
+      "./cmd/category-editor"
+    ],
+    "seconds": 0.18622493743896484,
+    "sha256": "ab341eafe32103777adf310a614cc07c4542458c9cb7037b79c3cb35b0ba6164",
+    "expected": "ab341eafe32103777adf310a614cc07c4542458c9cb7037b79c3cb35b0ba6164",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "tt",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/tt",
+      "./cmd/torrent-transfer"
+    ],
+    "seconds": 0.19567203521728516,
+    "sha256": "c9685309bf00023e088872b5532348f35c2415d753e19c72afdb86b207116070",
+    "expected": "c9685309bf00023e088872b5532348f35c2415d753e19c72afdb86b207116070",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "rlk",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/rlk",
+      "./cmd/remove-link"
+    ],
+    "seconds": 0.20084881782531738,
+    "sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+    "expected": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "site",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/site",
+      "./cmd/site-statistic"
+    ],
+    "seconds": 0.19244122505187988,
+    "sha256": "145f7439969d723e3512209262c8ab3d4c20b83b82027bb48852c1db545e5e30",
+    "expected": "145f7439969d723e3512209262c8ab3d4c20b83b82027bb48852c1db545e5e30",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "mps",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/mps",
+      "./cmd/mp-server-status"
+    ],
+    "seconds": 0.33484697341918945,
+    "sha256": "32780c52accebb11329d9e54aea09c6dcc124f92532c1fd882e203b8aa8a793d",
+    "expected": "32780c52accebb11329d9e54aea09c6dcc124f92532c1fd882e203b8aa8a793d",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "pui",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/pui",
+      "./cmd/plugin-uninstall"
+    ],
+    "seconds": 0.18591809272766113,
+    "sha256": "d001e6796321b8a7702aad9fe9c4785f2ad349c5b3d19b0008ed8d0440e0dbc3",
+    "expected": "d001e6796321b8a7702aad9fe9c4785f2ad349c5b3d19b0008ed8d0440e0dbc3",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  },
+  {
+    "name": "update",
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-overlay",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-auth-declaration-addon/version-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/update",
+      "./cmd/remove-link"
+    ],
+    "seconds": 0.20171594619750977,
+    "sha256": "8864147b399f5e85c9f0ee73a0008555ca82eca65bd0da8ce7f37ddcc9d9ecf0",
+    "expected": "8864147b399f5e85c9f0ee73a0008555ca82eca65bd0da8ce7f37ddcc9d9ecf0",
+    "byte_identical": true,
+    "ELF_magic": "7f454c46"
+  }
+]

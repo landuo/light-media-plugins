@@ -5,7 +5,7 @@ import (
 	"os"
 	"testing"
 
-	"github.com/landuo/light-media-plugins/internal/encodingdetector"
+	"github.com/landuo/light-media-plugins/plugins/mpserverstatus/encodingdetector"
 )
 
 func TestActualSourceCronDiagnostics(t *testing.T) {

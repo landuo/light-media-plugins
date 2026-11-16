@@ -1,0 +1,8 @@
+{
+  "name": "header-budget",
+  "path": "plugins/mpserverstatus/header_limits.go",
+  "old": "if c.headers > 100 {",
+  "new": "if c.headers > 101 {",
+  "occurrence": 0,
+  "run": "TestIndependentActual312Header|TestIndependentSourceNativeHeaderCount"
+}

@@ -1,0 +1,33 @@
+{
+  "classification": "actual installed source static reads only; Python -B -S pathlib.read_bytes, no app import/DB/config/network call",
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker exec -i moviepilot python -B -S -"
+  ],
+  "payload_sha256": "b0c7377e52e343247956eaf7492eb08c7ff8d937b53a1789b51ff58d92199d13",
+  "exit": 0,
+  "source_state_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker inspect --format '{{.Image}} {{.State.StartedAt}} {{.State.Running}}' moviepilot"
+  ],
+  "source_state": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 2026-11-05T14:09:26.737430404Z true",
+  "files": [
+    {
+      "path": "app/modules/filemanager/__init__.py",
+      "sha256": "7a02d0f0107b76465a9f2c2ef99731e2f39aa11dee3b6a01d2c3dfbc6d7dd9ab",
+      "bytes": 27140,
+      "fixed_8a83_sha256": "7a02d0f0107b76465a9f2c2ef99731e2f39aa11dee3b6a01d2c3dfbc6d7dd9ab",
+      "identical_to_fixed_8a83": true
+    },
+    {
+      "path": "app/modules/filemanager/storages/local.py",
+      "sha256": "fdbe39789b31b508aa35c4e15e273ee4ed19fc92130aa31c33d0b74fc10bfdf4",
+      "bytes": 12526,
+      "fixed_8a83_sha256": "fdbe39789b31b508aa35c4e15e273ee4ed19fc92130aa31c33d0b74fc10bfdf4",
+      "identical_to_fixed_8a83": true
+    }
+  ],
+  "at": "2026-11-05T20:59:37.421301+00:00"
+}

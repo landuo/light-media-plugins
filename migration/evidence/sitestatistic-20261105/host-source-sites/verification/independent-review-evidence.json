@@ -1,0 +1,242 @@
+{
+  "classification": "independent source-before-target implementation and finite SDK review passed for exact frozen inputs; ordinary main/UI/real-site acceptance remains coordinator-owned",
+  "business_freeze_sha256": "44ab580d8f1224b96ad68e3ab56dde66c251578e502b8e826a8be59c9c9ea602",
+  "business_inputs_checked": 100,
+  "host_freeze_sha256": "171b283d882c220fd1ec623ae9c59c505d8b744990763fa547e63fe5569ebe87",
+  "host_owned_inputs_checked": 16,
+  "app_compiled_input_graph": 2733,
+  "native_input_graph": 38,
+  "final_input_changes": {
+    "app": [],
+    "native": []
+  },
+  "positive": [
+    {
+      "path": "business-candidate-cold-race.jsonl",
+      "exit": 0,
+      "sha256": "b895e7a20f2ae024890589dff5a8b539a25e15c0f7984621c61320e5155eb407",
+      "test_and_subtest_pass": 212,
+      "seconds": 1.943
+    },
+    {
+      "path": "cmd-final-cold-race.jsonl",
+      "exit": 0,
+      "sha256": "ea1991e3fc9de8bdb9aeb1d0ce7259f9710a06d334da0b0085d549c8e00e4eef",
+      "test_and_subtest_pass": 6,
+      "seconds": 12.649000000000001
+    },
+    {
+      "path": "native-final-cold-race.jsonl",
+      "exit": 0,
+      "sha256": "b83c6a868f5b5dcf5625d07c47b14f408b890f69ad54921850b36b5bcbc02014",
+      "test_and_subtest_pass": 20,
+      "seconds": 1.7349999999999999
+    },
+    {
+      "path": "app-final-cold-race.jsonl",
+      "exit": 0,
+      "sha256": "b6ed70df314916dc97ec35f1f9e802f59f0d004aa62256b35de3e4b9110941dd",
+      "test_and_subtest_pass": 21,
+      "seconds": 97.634
+    }
+  ],
+  "compiled_mutations_killed": [
+    {
+      "path": "business-mutations/day1-error-lost",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestActualImagePython312StatisticsOracle/invalid-prior-retained",
+        "TestActualImagePython312StatisticsOracle/PB-prior-error",
+        "TestActualImagePython312StatisticsOracle",
+        "TestIndependentSourceSelectionCallOrder/invalid-prior-retained",
+        "TestIndependentSourceSelectionCallOrder/PB-prior-error",
+        "TestIndependentSourceSelectionCallOrder"
+      ],
+      "stdout_sha256": "557ff405776669384e2c688d54ff549fd584f91e07321f8686c0a0fd2f3c571a",
+      "inputs_sha256": "14f7b3331daf139d6eef4cbb8903091061381e4ee527ff8672e7ec475ebb5b70"
+    },
+    {
+      "path": "business-mutations/float-sum-naive",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestActualImagePython312StatisticsOracle/large-chart-sum",
+        "TestActualImagePython312StatisticsOracle"
+      ],
+      "stdout_sha256": "1dd4fc3a1b4b4db70865dc1e89f0431df5c7efea3e9026ca22a347617d26f0d8",
+      "inputs_sha256": "711f9b3eb83cad6a4128332873ef9dcb6a33de97e25b10b21bb54737b375eba9"
+    },
+    {
+      "path": "business-mutations/inactive-date-eager",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestActualImagePython312StatisticsOracle/inactive-invalid-current-date",
+        "TestActualImagePython312StatisticsOracle",
+        "TestIndependentSourceSelectionCallOrder/inactive-invalid-current-date",
+        "TestIndependentSourceSelectionCallOrder"
+      ],
+      "stdout_sha256": "4d92ef1b2b51eff0c2cc8fc42fdc40cabe5d886b5a7199d4c98641b4d1e17d31",
+      "inputs_sha256": "d6887c41ef42060e8d71ae43ffd01b82c6258af912ee8b31a56824ffcc1e65ec"
+    },
+    {
+      "path": "business-mutations/metadata-skipped",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestActualPython312CharacterAndConversionOracle/username-²",
+        "TestActualPython312CharacterAndConversionOracle/userid-²",
+        "TestActualPython312CharacterAndConversionOracle"
+      ],
+      "stdout_sha256": "f1f836385279a5bbf9af84e05c223ad318ef91558bf861a6ea69fde3436bcafe",
+      "inputs_sha256": "2f4ef0eede5b77cc315f487bc40014a424f8a1660c10d8711fbd6d0720672789"
+    },
+    {
+      "path": "business-mutations/notification-mode-frozen",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestOriginalNotificationModeReadStream/first-inc-second-total",
+        "TestOriginalNotificationModeReadStream/first-total-second-inc",
+        "TestOriginalNotificationModeReadStream",
+        "TestIndependentSourceRealtimeNotificationMode/first-inc-second-total",
+        "TestIndependentSourceRealtimeNotificationMode/first-total-second-inc",
+        "TestIndependentSourceRealtimeNotificationMode"
+      ],
+      "stdout_sha256": "070a63c927a87a87e1a944136ba0476165a5e9b8a8a6205d4bc1085aeff14d51",
+      "inputs_sha256": "7d06daf23b94206f2e31c0d9773939daba489bda4da6ce2afe6c5c0dca5c2b8d"
+    },
+    {
+      "path": "business-mutations/save-before-post",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestSourceNotificationDedupPostSaveAndMidQueryReload",
+        "TestIndependentSourceRealtimeNotificationMode/first-inc-second-total",
+        "TestIndependentSourceRealtimeNotificationMode/first-total-second-inc",
+        "TestIndependentSourceRealtimeNotificationMode"
+      ],
+      "stdout_sha256": "90754dba96c8f63b77831fa5e158e15a56836e801e50d48057677355416621ad",
+      "inputs_sha256": "68885fa880ffd48aec71f4000bffe9d170030c9d185651566810f8f1616a81b3"
+    },
+    {
+      "path": "native-final-mutations/binding-overflow-ignored",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-userid-insert",
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-unread-insert",
+        "TestIndependentRealSourceCurrentDTOAndBinding",
+        "TestIndependentRealSourceHugeFloatBindingGate/unrepresentable-float-insert",
+        "TestIndependentRealSourceHugeFloatBindingGate/unrepresentable-float-error-skip",
+        "TestIndependentRealSourceHugeFloatBindingGate"
+      ],
+      "stdout_sha256": "ca6e5ba51341ff07c60aaf255ce8f419e9b6a25230b4ba2c671e694a2f747847",
+      "inputs_sha256": "91abfcd812c3f0a18197653cefb89e6aefcb7de00fe73c248482b0af82d6b944"
+    },
+    {
+      "path": "native-final-mutations/null-insert-defaults",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestIndependentRealSourceNullInsertClone/explicit-null-insert",
+        "TestIndependentRealSourceNullInsertClone"
+      ],
+      "stdout_sha256": "5fa429b049355f4a3de29704f6cd360a04be3f5a318b649645029d06b215b302",
+      "inputs_sha256": "9a2e9515d6bccbebab5329e5694d7c927c26fd01a7919be7e3deb5313c9404fd"
+    },
+    {
+      "path": "native-final-mutations/wide-current-coerced-zero",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-upload-insert",
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-unread-insert",
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-upload-update",
+        "TestIndependentRealSourceCurrentDTOAndBinding/large-unread-error-skip",
+        "TestIndependentRealSourceCurrentDTOAndBinding",
+        "TestIndependentRealSourceNullEmptyAndNestedDTO/null-large-current",
+        "TestIndependentRealSourceNullEmptyAndNestedDTO",
+        "TestIndependentRealSourceHugeFloatBindingGate/unrepresentable-float-insert",
+        "TestIndependentRealSourceHugeFloatBindingGate/unrepresentable-float-error-skip",
+        "TestIndependentRealSourceHugeFloatBindingGate"
+      ],
+      "stdout_sha256": "68697572b7bd6c7b29982640a77548de8ede4d77e4f0ab8f77caf5399f9f9094",
+      "inputs_sha256": "88bfbab9f47f01cfb3b066514f1d5089254fa6a3e6089ac58992304c3db22163"
+    },
+    {
+      "path": "app-mutations/current-normalized-before-capture",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestIndependentActualSDKSourceSQLBoundary/default-current-insert",
+        "TestIndependentActualSDKSourceSQLBoundary"
+      ],
+      "stdout_sha256": "e28720f843162bf51e7f0729761154bc084560fc8e669c88096f1326fbbcbe1a",
+      "inputs_sha256": "fb54f16bb6346c6f9d9ab4ac18bb4d62475db9da6752e0b01a1d80c96dfdb2de"
+    },
+    {
+      "path": "app-mutations/sql-failure-returned-success",
+      "compiled": true,
+      "exit": 1,
+      "failed_tests": [
+        "TestIndependentActualSDKSourceSQLBoundary/large-userid-insert",
+        "TestIndependentActualSDKSourceSQLBoundary"
+      ],
+      "stdout_sha256": "4d8a2c397700954e91eda9760327f22c19132ac4ad6d233479ee156102f0f279",
+      "inputs_sha256": "952cb8f204d597d29fde7ec59d6fde63e07a4e658f675c846d92e51fed3d1302"
+    }
+  ],
+  "source_manifests": [
+    {
+      "path": "sqlite-source/manifest.json",
+      "sha256": "c014960c76571145a0cb151facef036694de687051ea0b40157b34b4757b0a86"
+    },
+    {
+      "path": "binding-source/manifest.json",
+      "sha256": "f489270f6654b318db6414bc7405c5860ddd77d4d7f7704a8a9fd899e62c5519"
+    },
+    {
+      "path": "binding-source-widefloat/manifest.json",
+      "sha256": "02d109a71d2810c8c357dd8f444949aeb0356d60f248ecf8c4ced5dd60db8b19"
+    },
+    {
+      "path": "binding-source-nulls/manifest.json",
+      "sha256": "1e6eea5d9077d205d83b43afa7ecdad2df0e07a256b44f103ed7ea055f57d9d3"
+    },
+    {
+      "path": "binding-source-clock/manifest.json",
+      "sha256": "079f6f8ea5758549a23e20e2c6b848e4ab42aa4fbac74da90cd277d95c90d0aa"
+    },
+    {
+      "path": "binding-source-chain-seed/manifest.json",
+      "sha256": "9e73f71261e8da93812886b3dd4dbc030feef436bdf56f38e144ffcadbfbc24f"
+    },
+    {
+      "path": "notification-mode-source/manifest.json",
+      "sha256": "6d752531cce9ed07c4f5f746de3ae6a4cb7c2dffdf7371a303700e254319db2f"
+    },
+    {
+      "path": "tt-install-source/manifest.json",
+      "sha256": "ab1592edb886cf2e55b366f6230a4216dc18634046ee3863ae2b89c1964ca95f"
+    },
+    {
+      "path": "tt-uninstall-source/manifest.json",
+      "sha256": "d15841108dcda5cea05a741a98aabb042dfd6800f9eda1de81d30df065d659e4"
+    }
+  ],
+  "source_get_clone": "same-SHA historicalr9 reused; r4 only List mutation; no new freshGet claimed",
+  "failed_runs_retained": [
+    "app-current-independent-r1.jsonl: three mismatched SQL-direct-vs-DTO seed JSON defaults; complete old overlay retained; replaced by actual source-chain seed and same full assertions",
+    "native-current-widefloat-nulls-independent.jsonl: initial wrong cwd prevented extending overlay, old14 only; not claimed as20",
+    "business-freeze-inputs-before-schema-fix.json: wrong schema key yielded zero checked, rejected; corrected check verifies all100"
+  ],
+  "limitations": [
+    "Isolated source AST/real memory SQLite/Pydantic is not production plugin execution; dynamic notification mode and locale helper probes use local3.14 explicitly",
+    "Standalone actual worker probes use synthetic resource peers; App probes use real local SQLite/native HTTP parser fixtures and synthetic plugin modules, not remote user sites",
+    "Current canonical identities/credential guards and worker-process retirement remain existing SDK adaptation boundaries; no full SiteOper or source global runtime state export claimed",
+    "No ordinary main/browser, live source writes, deployment, commit or push done by reviewer"
+  ],
+  "cleanup_sha256": "7b4c752d4e8095f80507e59eb762b17ab48cc5ff1078419449f47d1f65054227"
+}

@@ -1,0 +1,86 @@
+[
+  {
+    "name": "worker",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106-r3/worker",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 1.0782267502509058,
+    "inputs": 4015,
+    "stable": true,
+    "sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918",
+    "production_overlay": false
+  },
+  {
+    "name": "host",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106-r3/host",
+      "./cmd/server"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 2.0086737498641014,
+    "inputs": 16707,
+    "stable": true,
+    "sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+    "production_overlay": false
+  },
+  {
+    "name": "driver",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106-r3/driver-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106-r3/driver",
+      "./tests/integration"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": "",
+      "GOPROXY": "off"
+    },
+    "exit": 0,
+    "seconds": 1.4034857917577028,
+    "inputs": 4015,
+    "stable": true,
+    "sha256": "d336feedffa7e37ee2912e205a2ce9be66cf636c01976d0071b4c50331f62a78",
+    "production_overlay": false
+  }
+]

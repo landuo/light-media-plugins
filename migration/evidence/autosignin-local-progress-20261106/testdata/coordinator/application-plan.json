@@ -1,0 +1,1289 @@
+{
+  "status": "apply composed implementation; fullApp/Main/UI unaccepted",
+  "scope": "No registry publication or private import. Root2 timeout/order+Cookie3+RouSi4+API2 composed atop already independently reviewed908/7716/TEMP/notice",
+  "files": [
+    {
+      "target": "go.mod",
+      "preimage_sha256": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+      "new_sha256": "29534c6944cd98d2da6a3fae299824e94ed335ebed336ebc562f060e678278f6",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "go.sum",
+      "preimage_sha256": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+      "new_sha256": "df6f60cf3e7f1afbd8d99dd6333b0fd961a8c5467dfe44745022b00edb9fdaf4",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "internal/sdk/network_host.go",
+      "preimage_sha256": "7947d9d5570491d23a1d2db5e890ebef00cabb54b617543378dbc3cfe6243f9f",
+      "new_sha256": "45bdbef3f1e95153b72910f2e24d42e216138e4dbc1a8e7d58f68f9f7eccf75e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "internal/sdk/site_http_host.go",
+      "preimage_sha256": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+      "new_sha256": "0cf57a3942b9099fc7ab33edfe8f4698cf7b0eaece606129dcd7d233fcbcd175",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "internal/sdk/site_source_request.go",
+      "preimage_sha256": null,
+      "new_sha256": "5ffd39c57f0940a9ab9cc0236388520d99bde10e12d8fbe3bd0793951ac03c17",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/cache_recursion_refinement_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "38e5197b850f1a3eca94f77147e20d6cdd4f0f97025f067b47ee8bfe29067d94",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/config.go",
+      "preimage_sha256": "6f73b4c2d56856de783709a4f119e982795bd29dc050bf8f054cdf1ff37f32ac",
+      "new_sha256": "fcfc57683038bf607e904c2f40fad9a88175c269dbd2fd622048a8cb28c83288",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/entrypoints.go",
+      "preimage_sha256": "c013b041d2f44936189e446b8f841f898a1bfb1208e69d55b556c95f62a47cf1",
+      "new_sha256": "5c9ad9a5919438c7a8a0dc78697ab84d795a451b889ceb7d50f89b572784ee87",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/html.go",
+      "preimage_sha256": "148f4e0d8286f96ba614ff23dec03dd85e42698c5bd00758235fced65edc5b2f",
+      "new_sha256": "7fff4f8975a20d19add121bb953e332da6a6d70472abb588fa10f2835fac5483",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/independent_refinement_cache_format_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "2321a19175fd167aac770ea10ad24ddafbe1593c0f28603c0f904d26bf562953",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/independent_refinement_cache_stage_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "bf4afb29453a40d60807a04f95c89223e9244dea8cf04444162e98cab877c001",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/independent_refinement_cache_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "62e2a977ab360745e88dbc98d207da83175c2ef0508a586ae358495585cdef92",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/independent_rousi_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "ff1bb22f5eb779db72725be99c11a50053865c68947ec2538d2c0cc781b747d5",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/independent_timeout_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "c10bf614593ade833ae653a6b8844bfd5928ac05d2726189fe1ca3a53c173fb3",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/json_adapters.go",
+      "preimage_sha256": "37bc909261b176ed2a9909253c45d9b1f1e7a8d5cfd05701d6d0dda7eb8c5dab",
+      "new_sha256": "839e0cdf9b016ffbc04092dc9c7bdbb3dcea753c085e8e5728aa6b9246f4979d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/mteam.go",
+      "preimage_sha256": "f4649d09af4553e1f15df1378317033384dd53046f3624530eecd8d89017e926",
+      "new_sha256": "383db30d7d4fbfcc0314408cf19e70f002b0ff8358a03a4f86636135691ca19b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/plugin.go",
+      "preimage_sha256": "a111ba1205d94c9c477849e4c85ab8a3d59348051f7943afafd09cf99217a1df",
+      "new_sha256": "f5e80a2d5e0db4dfdeec4cef845fd488c65768a89ed5e1a6be1d930e735886e7",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/classes.go",
+      "preimage_sha256": "c55f6ee1776ed50f53b6b3581ba18485a5cd21d0f06364d1f23ad9ac1df8fae8",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/pyregex/compile.go",
+      "preimage_sha256": "ed9e41dc3a26792ab111c7a4dea36764206317ed01462b0a7fef868f71b4f446",
+      "new_sha256": "7291ef4d0c951f79c946140a615e905a34a26798eb60525a2ab0fcab0c8dea9e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/identifier-ranges.json",
+      "preimage_sha256": "c49a13e3f43c8263999142a86b96112318c10db700763f0a00fefe45588df26a",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/pyregex/literals.go",
+      "preimage_sha256": "b4a39a44ba48c9033206f8d5d82ec3fc16231be6f19b48a9057e159a62041cda",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/pyregex/names.go",
+      "preimage_sha256": "e489c906d16ef0f1984bfb228ad4f322c2a732442cd208b69b9c756eddb0516f",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/pyregex/root_independent_codepoints_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "3cfaf0872657138dd4c6d93119bb6cbb051ece30b706084b81147557c8769d2a",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_boundary_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "d56256802860a432c7b6d84a08befa83e2ed7a33e0a9d4403566bc41cf98e8b8",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_characters.json",
+      "preimage_sha256": null,
+      "new_sha256": "9094cd050fe5efaab73925d292b6c86959b8da08c38023269472200339f73211",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_codepoint_refinement_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "cd16a408b2b7cd8d1a84b96054b1d7e547e443e7b564c25e236615e73d9b79fb",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_codepoints.go",
+      "preimage_sha256": null,
+      "new_sha256": "d37872228b337cf4c2c4ece9fbbabc7cda3d404123e4eff8d2ea6c099f0ede7b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_escapes.go",
+      "preimage_sha256": null,
+      "new_sha256": "67369ee8ee8bd4b184238dee9c44cc68691ad751ccbf99c579fbdda795b84ffc",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_executor_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "6a51c84c29783fabbbd19852039c292dd23c37f5e9fbefc7bee0fa07345471f2",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_ipc_boundary_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "1f707deceb17ba3a84c829bc7e2f5374693182be81968c3265d8eca679cd195d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_lower.go",
+      "preimage_sha256": null,
+      "new_sha256": "3597756aefdd4f561aec2aa6d96b9675c6864e5d592a40edf696fd32455f332d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_oracle.go",
+      "preimage_sha256": null,
+      "new_sha256": "ff07b8de5d23fefeeae0e49eb5cb2fdda3610fc2d141d077d775596474b9214f",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_parse.go",
+      "preimage_sha256": null,
+      "new_sha256": "e903f012d94829f3690cefb93d0637fc9778a9f468fa714a2466b06effef75d9",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_parser.go",
+      "preimage_sha256": null,
+      "new_sha256": "b20ced6b96df65366e4e28e449c186628c8c08c22241b1db4dc4e8ad22579b99",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_parser_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "d8a8127a71f9d27720beb533548f4839611ce56fc14813099c52ecf946935075",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_ranges.go",
+      "preimage_sha256": null,
+      "new_sha256": "2ec40582d2fe07f35755ba22fc9b48e53ffb0a6dd7cb0e56d9b6319b77032d65",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_tokenizer.go",
+      "preimage_sha256": null,
+      "new_sha256": "d1405ac8bc5153381ec1c15b841f56259c2ed9301a3b3b1b603d4b1a6dbaa430",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_types.go",
+      "preimage_sha256": null,
+      "new_sha256": "c946e4886f3f5c20ca2c23dccb51e6f53405c8d1aeec6abf0cdca096aee2e238",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/sre_warnings.go",
+      "preimage_sha256": null,
+      "new_sha256": "d6d95af9211cc8916ed46c698b0ed5f82790082432256f0953b057ece66f9061",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/pyregex/width.go",
+      "preimage_sha256": "74211047725693a913879ed61eaac12da19ba49a3366b3883b50908a697b1496",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/pyregex/word-ranges.json",
+      "preimage_sha256": "89867c56603ce4378af5e1c6a4049bb7968250e014c15d7907e0d9b4ea00ce7f",
+      "new_sha256": null,
+      "delete_old_frontend": true
+    },
+    {
+      "target": "plugins/autosignin/random.go",
+      "preimage_sha256": "c5beae3cb658381b22b737d7af2101456067b01bda19ae5b8f6d7e04d5ef6e17",
+      "new_sha256": "28cce60c2f4a6cf4b7aabb762e592e5cd51a0580dabb25deed5b2d7cc4831929",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/refinement_boundary_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "1e980f4cc8c810020c36eeaaa94fc1e695cd9647615b89696dbe6c3ad065b328",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/refinement_independent_boundaries_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "5e1440106e999f3ff4a3d92e7ec55244cca3aa927a0fa218b4434531a060a593",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/refinement_independent_consumer_edges_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "28ca1c8efa7ecb11e0d0411f7762f3252d259d1ff64f355978b99925eb15e7cd",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/refinement_independent_depth_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "3aa23a5b96004b4fccfe4b3a537cab6b4333a3139cbadcd1f8540dd4da17f8c7",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/refinement_independent_public_getter_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "f85327bab83d4dc1203ee30003ce67952f5f5c601c7691f7214f9a677c179f3d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regex_init_bridge_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "d9bbc7c95305a32bbc06e798b330b4be34d8b570991d267ef9b746ceed7d6704",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/match.go",
+      "preimage_sha256": "294f206f706d69c1ee39425831d251687ca8c7a012a46000fc8fc527b14f3aa3",
+      "new_sha256": "ac19f845044f13911c2c26f039a787fa05ca997a7c7748566fd1ca8dfbeecf8f",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/regexp.go",
+      "preimage_sha256": "1f5471fdaf252da544c97e820f73dacb226d452a88ea24c87cab15b4810d58d5",
+      "new_sha256": "b0f983c3b859d8c110aede1c959e0f4b76ea702302068b4de7e87ebf23466089",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/runner.go",
+      "preimage_sha256": "5f0553719978a2e1991e0824003b928e8b2af0787410929da957aeddf3d21e6f",
+      "new_sha256": "6a7f3e97dfd2e8897e29d24a36fafe409b20d293d4086203d7a5d46e3e1330c9",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/source_codepoints.go",
+      "preimage_sha256": null,
+      "new_sha256": "3a32da612069ee223132432342528f715c8621ac24c25fc656708c3a5700f3f2",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/source_tree.go",
+      "preimage_sha256": null,
+      "new_sha256": "83a0e87efe09fed23207b2e9305eb2424f0222f95da89aaae7dce74f73adeb6d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/syntax/code.go",
+      "preimage_sha256": "fc7b11ab0dd1a22786111896db9eac6d165c40afaed9a7683a061f6226922d8c",
+      "new_sha256": "bd53776c2cfb299b9f36e7d05cb0da0ad11459b46074e47e8fb116a63725924e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/syntax/source_tree.go",
+      "preimage_sha256": null,
+      "new_sha256": "2baffc5909b9d77f9c9355005f3ea7edb3478225e36d3cb4260e8cd43d699bcf",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/regexengine/syntax/writer.go",
+      "preimage_sha256": "182a14a4cc8f2b21e55d0cabd149596fed065e12e927c033a43f574f84f42073",
+      "new_sha256": "3243343a56cffac7c5eab6d6827fb29adcbeb0b0f164e4b92858344efda61ee8",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/run.go",
+      "preimage_sha256": "172ed16d2063d5732ecef3f82bd708e44d79ca1cedc704d43996a55b3684e765",
+      "new_sha256": "0b78ab60e5736b200ebc2b13fe30e599feaead2ac4b50d3e54e4e0c0a5c72d97",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/runtime_test.go",
+      "preimage_sha256": "45c8a13c6635b6ae283ba55fd5edfe86c8ce93baa8b868b6338ad9542d1e93c3",
+      "new_sha256": "1a40b94f0e72d838c15683fc0b8b7b423da5324ffbaeeb5151ea72e74759abb4",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/sdk_backend.go",
+      "preimage_sha256": "b529151e1cbbf46f6063b9a23012d7842741546dd75c838d8b934205f67e0d7a",
+      "new_sha256": "5c1a823da57095064c1473f6261b67248f7ec8b47f897e2e159b0cd6b79e5d2b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/shared_temp_consumer_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "41057a19191ea63dcb6dd17cc3a08446067edfb65487b688f7e8b7eb1ec1a8ff",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_cache_json.go",
+      "preimage_sha256": null,
+      "new_sha256": "029ca07960512a75769c9e233f01ffa53639b271813b0a7cf999e27f39944beb",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_cache_recursion.go",
+      "preimage_sha256": null,
+      "new_sha256": "28c1277f3216d2172e9ad1db447d0c98230ebefe1cd26453d31c575e17beb90b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_cache_refinement_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "78c4f2ede707c4926f770764b923d30834a90cbed5aa659c423a15df5c6d14eb",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_cookie_override_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "9ffc425212935127a1a1fdd88cbcb94ae66c60284ab7dd83f875bb6c5fe3945e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_edge_fixes_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "148cd296e070b7b7d0b5bd49bee127f32c4afe7fbaa2566b8574de75eee1adb6",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_form_test.go",
+      "preimage_sha256": "fe38145b03a3e5c4a4b539ffa7c047b06115c2ad5dfe46bfb06e10a3cf0988e4",
+      "new_sha256": "aa204c53c98d44c4df54701e8611e5ad221b855b2dc91c84fb2efe24f2496961",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_http_json.go",
+      "preimage_sha256": null,
+      "new_sha256": "6ec1162ffdec8d482c9969452e98dfd516a2194f3435b1b566d69044817c5cde",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_public_text_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "ac6240f1f8167fe34ca290fc14ad1755f885bc7470ba9316c4d04f33eef7f475",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_python_string.go",
+      "preimage_sha256": null,
+      "new_sha256": "1405da77ead45e0ac6e55f31ef80858c945dab5d3cdc23d19ab8a4b018fd14c8",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_repr.go",
+      "preimage_sha256": null,
+      "new_sha256": "d0bca20cfece575b5c6d1645edd0ae84dddcaba4ca6e3b43d5130094b46bef99",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_site_binding.go",
+      "preimage_sha256": null,
+      "new_sha256": "f7830240659b1f333c848362e6e1d59e6b316da085a45a256366389cd37cba97",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_site_binding_test.go",
+      "preimage_sha256": null,
+      "new_sha256": "dbbe02d3eb50fc93a7283cf69fd5487c7778ee1444a5b1da81f6dee3ad1c76f4",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/source_tjupt_public.go",
+      "preimage_sha256": null,
+      "new_sha256": "c8724f48039bb5930604891cb36ad40616cd3276e2d712eff81db475c19d78cf",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-fallback-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "60fe1b4207cdc7158025c2709e4b59aef9efe58987559a082f1a3bf130adc18d",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-leaf-boundary-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "18892c12414d7e5be3d1719732d25c61e5699aa780b1a2e3095593fee9646780",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-leaves-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "8a64f5294df0ec866f548acf46958d70dbce69329a7cab99eedb030408bf2099",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-owner-r3.json",
+      "preimage_sha256": null,
+      "new_sha256": "60d32a386c596e27f0615b0f45015932b7c5d13edef79101db3e444123a15431",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-shapes-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "7eff1eb44dcd736e81407dac42ec7903ad4e0c603bd2df4b4eefde1d38e240a4",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-html-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "0ddee23038c09d5a4b153b99b3e9ce88400112f7cb12e627083d8ad0b03e4698",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-init-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "26b4282d941482896853f2a28a65292846d5a0c32bfe142edabdac3bc0a4e450",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-r3.json",
+      "preimage_sha256": null,
+      "new_sha256": "b5039941f207604032fcfbf864a95da4decd3d9e8bdec471f2406137c48e468c",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/case-sets-source-r1.stdout",
+      "preimage_sha256": null,
+      "new_sha256": "ffaa1b292d9eeec845d2a1aff750cc69961d58ced1c30938f8a86eb8f1fdc6bd",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/grammar-source-r1.stdout",
+      "preimage_sha256": null,
+      "new_sha256": "f3951ea107105eea6f3f448884dc751b8e6ad88614f1bb092eca0b8c4d6f9755",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/grammar-source-r2.stdout",
+      "preimage_sha256": null,
+      "new_sha256": "4717ea9ad392afb3b870c02ea4014be1b0b6f3a93103d2d38648cb03dd61517a",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/scalar-boundary-source-r1.stdout",
+      "preimage_sha256": null,
+      "new_sha256": "207722022ed2709b916d2fd6dc4e570335c1be3c0664fb87b685e81609778a1b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/scalar-boundary-source-r2.stdout",
+      "preimage_sha256": null,
+      "new_sha256": "330099f808de5bf9b90d88443def73f14a16f8c883da6fd34ea4397ac3251561",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-cache-refinement-20261106/source-canonical.json",
+      "preimage_sha256": null,
+      "new_sha256": "48aad06328803c8b8d5987043722b317ebaf1dd35cb3618118b03045f2013cbd",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-chain-r2.json",
+      "preimage_sha256": null,
+      "new_sha256": "702f852a67afa6d9056d2f4a1b0fe1834be50de7ed893dba9f7576cb4d53832e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-lazy-history-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "b7c78d3cd9581060d37a06df0ef4007b384e0d0e535573af1c24f0f3369d2074",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-time-order-r1.json",
+      "preimage_sha256": null,
+      "new_sha256": "88257bd3e1ae7fabb5b92067d964f455aef2355ee2a46fe552e1433ad87ec4ee",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-format-oracle.json",
+      "preimage_sha256": null,
+      "new_sha256": "e8ad4ec91685b38bc359e75046cc64ffe62f37c391dfbbde90ea14e857f4551b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-stage-oracle.json",
+      "preimage_sha256": null,
+      "new_sha256": "a2d0904fed2988df34f40a340c43c42e6dbd6977373c62f499fafb01c2131777",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-writer-oracle.json",
+      "preimage_sha256": null,
+      "new_sha256": "fece51c42de99a90ad5fa2609f90d438af13d6c22ee1d38640bcdfc6b5dadb4b",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/consumer-edge-source333.json",
+      "preimage_sha256": null,
+      "new_sha256": "86e240fc66474875c6ea3933fe70cdfbe438ba34ca6a0ea204d04122a9999812",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-minimal-limit-source333.json",
+      "preimage_sha256": null,
+      "new_sha256": "bf0bee7492a313467323168b180e1395470fd252ec7c9250dea13f6c1adfb740",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-near-limit-source333.json",
+      "preimage_sha256": null,
+      "new_sha256": "f0df1ff20a17cdb412a0b9a279d625050d89088a2e36fef0c4792abd0c8e3b6e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-source333.json",
+      "preimage_sha256": null,
+      "new_sha256": "2f105aef348901722463abeefd5cdee425cfc2f5922c2c8e7299e39c50b9ae45",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/public-getter-source333.json",
+      "preimage_sha256": null,
+      "new_sha256": "0f4ef32b3adfa685dd80a7779b029485a23b830bb784ee132d0e98644f25f157",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/source-boundaries333.json",
+      "preimage_sha256": null,
+      "new_sha256": "f7de42996a7e49d1b2a9b260aab3b872bfed337c2007578acf7b9d5f79127f19",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-source-site-consumer-review-20261106/rousi-source.json",
+      "preimage_sha256": null,
+      "new_sha256": "eb55517f0a2d5c858a2c00d16a8c88f0226542899885443fe9d848776008700e",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/independent-source-site-consumer-review-20261106/timeout-source.json",
+      "preimage_sha256": null,
+      "new_sha256": "3627bf4d05fd8284b72bbd502b7e2d8d8ed89cb612f3d5bc0686397742a0023a",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/root-independent-regex-codepoints-20261106/oracle.json",
+      "preimage_sha256": null,
+      "new_sha256": "0041c60cddefb98d818e68e89afdcd3241b7191061818bb5d0decdd3298d0f10",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/source-asgi-response-only-20261106/source-response.json",
+      "preimage_sha256": null,
+      "new_sha256": "52c94ebba93e6bdfe1b14b802b70f2b8eb53a9d62e0a0dec5681aa7e64a45046",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-oracles/source-public-content-type-20261106/source.json",
+      "preimage_sha256": null,
+      "new_sha256": "c25c07d4a44d2fd723658874ae192e68cb849650928abd135b1b5368422e2300",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/tjupt_adapters.go",
+      "preimage_sha256": "1a92ae44f702110c273a1233f48397f6c59b2f7530d771873238337bc52a337a",
+      "new_sha256": "b5cfbdda29ecbd720b426f43b6443d57d680b493c8f28beb9e8b170b94500c45",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/tjupt_cache.go",
+      "preimage_sha256": "ceb76ab8a37caebba56201f708f0ef8e7ec25875c7e2eba51b8e471976cab6eb",
+      "new_sha256": "0d415a77ea51e8cc3f0ee9581d3058c1f790d7a9be38f0d1a53183eecff8e8fe",
+      "delete_old_frontend": false
+    },
+    {
+      "target": "plugins/autosignin/visits.go",
+      "preimage_sha256": "1a45ee0730b141d4e6ce1560bbb69ee29b20c55948f08cef79bd7f20f7e7db57",
+      "new_sha256": "145fe68f9825b56fe3b1e6d39912bbee47933541abc72d8ea5fe049d4ed0a3bf",
+      "delete_old_frontend": false
+    }
+  ],
+  "provenance": [
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/internal/sdk/network_host.go",
+      "source": "/Users/accidia/projects/light-media/internal/plugins/network_host.go",
+      "source_sha256": "45bdbef3f1e95153b72910f2e24d42e216138e4dbc1a8e7d58f68f9f7eccf75e",
+      "kind": "SDK two declared import relocations only"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/internal/sdk/site_http_host.go",
+      "source": "/Users/accidia/projects/light-media/internal/plugins/site_http_host.go",
+      "source_sha256": "0cf57a3942b9099fc7ab33edfe8f4698cf7b0eaece606129dcd7d233fcbcd175",
+      "kind": "SDK two declared import relocations only"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/internal/sdk/site_source_request.go",
+      "source": "/Users/accidia/projects/light-media/internal/plugins/site_source_request.go",
+      "source_sha256": "5ffd39c57f0940a9ab9cc0236388520d99bde10e12d8fbe3bd0793951ac03c17",
+      "kind": "SDK two declared import relocations only"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/services.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/services.go",
+      "source_sha256": "415950ec16409e75b0b77b974793fad43a1fb2136ef3a8c2080d77d1ccadd12d",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/run.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/run.go",
+      "source_sha256": "0b78ab60e5736b200ebc2b13fe30e599feaead2ac4b50d3e54e4e0c0a5c72d97",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_http_json.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/source_http_json.go",
+      "source_sha256": "6ec1162ffdec8d482c9969452e98dfd516a2194f3435b1b566d69044817c5cde",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/html.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/html.go",
+      "source_sha256": "7fff4f8975a20d19add121bb953e332da6a6d70472abb588fa10f2835fac5483",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/plugin.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/plugin.go",
+      "source_sha256": "f5e80a2d5e0db4dfdeec4cef845fd488c65768a89ed5e1a6be1d930e735886e7",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_repr.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/source_repr.go",
+      "source_sha256": "d0bca20cfece575b5c6d1645edd0ae84dddcaba4ca6e3b43d5130094b46bef99",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/json_adapters.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/json_adapters.go",
+      "source_sha256": "839e0cdf9b016ffbc04092dc9c7bdbb3dcea753c085e8e5728aa6b9246f4979d",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_edge_fixes_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/source_edge_fixes_test.go",
+      "source_sha256": "148cd296e070b7b7d0b5bd49bee127f32c4afe7fbaa2566b8574de75eee1adb6",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/random.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/random.go",
+      "source_sha256": "28cce60c2f4a6cf4b7aabb762e592e5cd51a0580dabb25deed5b2d7cc4831929",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/mteam.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/mteam.go",
+      "source_sha256": "383db30d7d4fbfcc0314408cf19e70f002b0ff8358a03a4f86636135691ca19b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/config.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/config.go",
+      "source_sha256": "fcfc57683038bf607e904c2f40fad9a88175c269dbd2fd622048a8cb28c83288",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_python_string.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/source_python_string.go",
+      "source_sha256": "1405da77ead45e0ac6e55f31ef80858c945dab5d3cdc23d19ab8a4b018fd14c8",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/tjupt_adapters.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/tjupt_adapters.go",
+      "source_sha256": "b5cfbdda29ecbd720b426f43b6443d57d680b493c8f28beb9e8b170b94500c45",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/refinement_independent_consumer_edges_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/refinement_independent_consumer_edges_test.go",
+      "source_sha256": "28ca1c8efa7ecb11e0d0411f7762f3252d259d1ff64f355978b99925eb15e7cd",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/refinement_independent_depth_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/refinement_independent_depth_test.go",
+      "source_sha256": "3aa23a5b96004b4fccfe4b3a537cab6b4333a3139cbadcd1f8540dd4da17f8c7",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/refinement_independent_boundaries_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/refinement_independent_boundaries_test.go",
+      "source_sha256": "576f0dc56d96f6cfa04ed7030a7f4772a31e06cb05a1eb0d399259de9e8ed9de",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/refinement_independent_public_getter_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/candidate/refinement_independent_public_getter_test.go",
+      "source_sha256": "f85327bab83d4dc1203ee30003ce67952f5f5c601c7691f7214f9a677c179f3d",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/sdk_backend.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-timeout-refinement-20261106/candidate/sdk_backend.go",
+      "source_sha256": "5c1a823da57095064c1473f6261b67248f7ec8b47f897e2e159b0cd6b79e5d2b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/refinement_boundary_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/refinement_boundary_test.go",
+      "source_sha256": "92232da9f30159bf8d53a7a160fcc6041f2f2c5586e25f1f4590d6cbcad2c971",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/independent_refinement_cache_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/independent_cache_test.go",
+      "source_sha256": "7f16b14207992c3772508f07f88e7079fc636bfa8d9321664103936601a0429b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/independent_refinement_cache_format_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/independent_cache_format_test.go",
+      "source_sha256": "f5c6ee1ac67f2f0cdd9a21fbb29411388c36d0709112d4a727f9c341dc1fe8cf",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/independent_refinement_cache_stage_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/independent_cache_stage_test.go",
+      "source_sha256": "04bcd8bfae6a0ed3a3429acc52eae2b92a6032628dd6ad3283f3a9c21965e29b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_cache_json.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/source_cache_json.go",
+      "source_sha256": "029ca07960512a75769c9e233f01ffa53639b271813b0a7cf999e27f39944beb",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_cache_refinement_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-shared-temp-consumer-20261106/candidate/source_cache_refinement_test.go",
+      "source_sha256": "3b7bda3b09ba2e01b541cfe6355138f81835f52176ee9a5678d6c7dc68be142c",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/cache_recursion_refinement_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/cache_recursion_refinement_test.go",
+      "source_sha256": "dd47fbaca367a90aa27cd06a4f085c61bd59bb45b49584ecaa9cacaf4c6bfa82",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_cache_recursion.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/source_cache_recursion.go",
+      "source_sha256": "28c1277f3216d2172e9ad1db447d0c98230ebefe1cd26453d31c575e17beb90b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/visits.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/visits.go",
+      "source_sha256": "145fe68f9825b56fe3b1e6d39912bbee47933541abc72d8ea5fe049d4ed0a3bf",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/entrypoints.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/candidate/entrypoints.go",
+      "source_sha256": "5c9ad9a5919438c7a8a0dc78697ab84d795a451b889ceb7d50f89b572784ee87",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/syntax/writer.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/engine-candidate/syntax/writer.go",
+      "source_sha256": "3243343a56cffac7c5eab6d6827fb29adcbeb0b0f164e4b92858344efda61ee8",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/syntax/code.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/engine-candidate/syntax/code.go",
+      "source_sha256": "bd53776c2cfb299b9f36e7d05cb0da0ad11459b46074e47e8fb116a63725924e",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/runner.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/engine-candidate/runner.go",
+      "source_sha256": "6a7f3e97dfd2e8897e29d24a36fafe409b20d293d4086203d7a5d46e3e1330c9",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/source_tree.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/engine-candidate/source_tree.go",
+      "source_sha256": "83a0e87efe09fed23207b2e9305eb2424f0222f95da89aaae7dce74f73adeb6d",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/syntax/source_tree.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/engine-candidate/syntax/source_tree.go",
+      "source_sha256": "2baffc5909b9d77f9c9355005f3ea7edb3478225e36d3cb4260e8cd43d699bcf",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_boundary_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_boundary_test.go",
+      "source_sha256": "6ac2e1e26c257088abe826b1868b2923563b3752c9ec748c392d8a615c2a9f17",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_characters.json",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_characters.json",
+      "source_sha256": "9094cd050fe5efaab73925d292b6c86959b8da08c38023269472200339f73211",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_escapes.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_escapes.go",
+      "source_sha256": "67369ee8ee8bd4b184238dee9c44cc68691ad751ccbf99c579fbdda795b84ffc",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_executor_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_executor_test.go",
+      "source_sha256": "9b0dd3d0336d5e6bfbc91fd9d60e409c48c1573acc84637e08eeec8b427ddbcf",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_ipc_boundary_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_ipc_boundary_test.go",
+      "source_sha256": "08b9bed2f8f4c853021926d103518b33f8082226a9ae3ada5d609f0d58af384c",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_lower.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_lower.go",
+      "source_sha256": "3597756aefdd4f561aec2aa6d96b9675c6864e5d592a40edf696fd32455f332d",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_oracle.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_oracle.go",
+      "source_sha256": "ff07b8de5d23fefeeae0e49eb5cb2fdda3610fc2d141d077d775596474b9214f",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_parse.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_parse.go",
+      "source_sha256": "e903f012d94829f3690cefb93d0637fc9778a9f468fa714a2466b06effef75d9",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_parser.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_parser.go",
+      "source_sha256": "b20ced6b96df65366e4e28e449c186628c8c08c22241b1db4dc4e8ad22579b99",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_parser_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_parser_test.go",
+      "source_sha256": "1875fb62c800cc2f6da92fb1af7852c4a93effbd59d1e276a8c14ce1aa855cc0",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_ranges.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/production-candidate/pyregex/sre_ranges.go",
+      "source_sha256": "2ec40582d2fe07f35755ba22fc9b48e53ffb0a6dd7cb0e56d9b6319b77032d65",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_tokenizer.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_tokenizer.go",
+      "source_sha256": "d1405ac8bc5153381ec1c15b841f56259c2ed9301a3b3b1b603d4b1a6dbaa430",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_types.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_types.go",
+      "source_sha256": "c946e4886f3f5c20ca2c23dccb51e6f53405c8d1aeec6abf0cdca096aee2e238",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/compile.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/compile.go",
+      "source_sha256": "7291ef4d0c951f79c946140a615e905a34a26798eb60525a2ab0fcab0c8dea9e",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/classes.go",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/literals.go",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/names.go",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/width.go",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/identifier-ranges.json",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/word-ranges.json",
+      "source": "",
+      "source_sha256": null,
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/regexp.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/regexp.go",
+      "source_sha256": "b0f983c3b859d8c110aede1c959e0f4b76ea702302068b4de7e87ebf23466089",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/match.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/match.go",
+      "source_sha256": "ac19f845044f13911c2c26f039a787fa05ca997a7c7748566fd1ca8dfbeecf8f",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regexengine/source_codepoints.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/source_codepoints.go",
+      "source_sha256": "3a32da612069ee223132432342528f715c8621ac24c25fc656708c3a5700f3f2",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_codepoints.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_codepoints.go",
+      "source_sha256": "d37872228b337cf4c2c4ece9fbbabc7cda3d404123e4eff8d2ea6c099f0ede7b",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_warnings.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_warnings.go",
+      "source_sha256": "d6d95af9211cc8916ed46c698b0ed5f82790082432256f0953b057ece66f9061",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/sre_codepoint_refinement_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/candidate/sre_codepoint_refinement_test.go",
+      "source_sha256": "07b2ae68a3920801095a4f1f2982bf2648a1399d38cb0a1c87de92f8b63ae820",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/regex_init_bridge_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/regex_init_bridge_test.go",
+      "source_sha256": "0c3b9f60ecae0144366f9004b036aeffea1f5331bf4975fdafc98748a2689704",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/tjupt_cache.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-shared-temp-consumer-20261106/candidate/tjupt_cache.go",
+      "source_sha256": "0d415a77ea51e8cc3f0ee9581d3058c1f790d7a9be38f0d1a53183eecff8e8fe",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_form_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-shared-temp-consumer-20261106/candidate/source_form_test.go",
+      "source_sha256": "aa204c53c98d44c4df54701e8611e5ad221b855b2dc91c84fb2efe24f2496961",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/shared_temp_consumer_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-shared-temp-consumer-20261106/consumer_test.go",
+      "source_sha256": "41057a19191ea63dcb6dd17cc3a08446067edfb65487b688f7e8b7eb1ec1a8ff",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/pyregex/root_independent_codepoints_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/root-independent-regex-codepoints-20261106/independent_test.go",
+      "source_sha256": "19d627bde9a6745ac871122aa03ab9401e45e511e6d7228a105e52d7b17161c7",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_site_binding.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-real-integration-20261106/source_site_binding.go",
+      "source_sha256": "f7830240659b1f333c848362e6e1d59e6b316da085a45a256366389cd37cba97",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_tjupt_public.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/source_tjupt_public.go",
+      "source_sha256": "c8724f48039bb5930604891cb36ad40616cd3276e2d712eff81db475c19d78cf",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_site_binding_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/source_site_binding_test.go",
+      "source_sha256": "dbbe02d3eb50fc93a7283cf69fd5487c7778ee1444a5b1da81f6dee3ad1c76f4",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/runtime_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/runtime_test.go",
+      "source_sha256": "1a40b94f0e72d838c15683fc0b8b7b423da5324ffbaeeb5151ea72e74759abb4",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_public_text_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-bindings-20261106/candidate/source_public_text_test.go",
+      "source_sha256": "a77d28b29e35d3e8428ccf7fb2b8b139d3fcd20def2c6d29f5ff2f0fcea662a7",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/independent_timeout_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-source-site-consumer-review-20261106/independent_timeout_test.go",
+      "source_sha256": "8993bb13b9a40736d5cd3de4089137e82f9e7156e2d0562712481f9835049032",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/source_cookie_override_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-cookie-override-refinement-20261106/worker_cookie_test.go",
+      "source_sha256": "9ffc425212935127a1a1fdd88cbcb94ae66c60284ab7dd83f875bb6c5fe3945e",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    },
+    {
+      "target": "/Users/accidia/projects/light-media-plugins/plugins/autosignin/independent_rousi_test.go",
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-source-site-consumer-review-20261106/independent_rousi_test.go",
+      "source_sha256": "b4fcf2973fbe17f7637da65adf235682ea90e87f6a39d539cb9a0b977fd575fc",
+      "kind": "independently reviewed composed core/timeout/order/Cookie/RouSi/API; deletion is old replaced typed regex frontend"
+    }
+  ],
+  "fixture_copies": [
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/depth-source333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-source333.json",
+      "sha256": "2f105aef348901722463abeefd5cdee425cfc2f5922c2c8e7299e39c50b9ae45",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/depth-minimal-limit-source333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-minimal-limit-source333.json",
+      "sha256": "bf0bee7492a313467323168b180e1395470fd252ec7c9250dea13f6c1adfb740",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/depth-near-limit-source333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/depth-near-limit-source333.json",
+      "sha256": "f0df1ff20a17cdb412a0b9a279d625050d89088a2e36fef0c4792abd0c8e3b6e",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/public-getter-source333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/public-getter-source333.json",
+      "sha256": "0f4ef32b3adfa685dd80a7779b029485a23b830bb784ee132d0e98644f25f157",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/consumer-edge-source333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/consumer-edge-source333.json",
+      "sha256": "86e240fc66474875c6ea3933fe70cdfbe438ba34ca6a0ea204d04122a9999812",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-source-edge-review-20261106/source-boundaries333.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-source-edge-review-20261106/source-boundaries333.json",
+      "sha256": "f7de42996a7e49d1b2a9b260aab3b872bfed337c2007578acf7b9d5f79127f19",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/source-time-order-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-time-order-r1.json",
+      "sha256": "88257bd3e1ae7fabb5b92067d964f455aef2355ee2a46fe552e1433ad87ec4ee",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/source-lazy-history-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-lazy-history-r1.json",
+      "sha256": "b7c78d3cd9581060d37a06df0ef4007b384e0d0e535573af1c24f0f3369d2074",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-refinement-20261106/source-chain-r2.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-refinement-20261106/source-chain-r2.json",
+      "sha256": "702f852a67afa6d9056d2f4a1b0fe1834be50de7ed893dba9f7576cb4d53832e",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/source-asgi-response-only-20261106/source-response.json",
+      "target": "plugins/autosignin/testdata/source-oracles/source-asgi-response-only-20261106/source-response.json",
+      "sha256": "52c94ebba93e6bdfe1b14b802b70f2b8eb53a9d62e0a0dec5681aa7e64a45046",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/source-cache-stage-oracle.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-stage-oracle.json",
+      "sha256": "a2d0904fed2988df34f40a340c43c42e6dbd6977373c62f499fafb01c2131777",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/source-cache-writer-oracle.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-writer-oracle.json",
+      "sha256": "fece51c42de99a90ad5fa2609f90d438af13d6c22ee1d38640bcdfc6b5dadb4b",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-autosignin-refinement-review-20261106/source-cache-format-oracle.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-autosignin-refinement-review-20261106/source-cache-format-oracle.json",
+      "sha256": "e8ad4ec91685b38bc359e75046cc64ffe62f37c391dfbbde90ea14e857f4551b",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-source-edge-cache-refinement-20261106/source-canonical.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-source-edge-cache-refinement-20261106/source-canonical.json",
+      "sha256": "48aad06328803c8b8d5987043722b317ebaf1dd35cb3618118b03045f2013cbd",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/source-fallback-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-fallback-r1.json",
+      "sha256": "60fe1b4207cdc7158025c2709e4b59aef9efe58987559a082f1a3bf130adc18d",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/source-leaves-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-leaves-r1.json",
+      "sha256": "8a64f5294df0ec866f548acf46958d70dbce69329a7cab99eedb030408bf2099",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/source-leaf-boundary-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-leaf-boundary-r1.json",
+      "sha256": "18892c12414d7e5be3d1719732d25c61e5699aa780b1a2e3095593fee9646780",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/source-shapes-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-shapes-r1.json",
+      "sha256": "7eff1eb44dcd736e81407dac42ec7903ad4e0c603bd2df4b4eefde1d38e240a4",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-cache-recursion-refinement-20261106/source-owner-r3.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-cache-recursion-refinement-20261106/source-owner-r3.json",
+      "sha256": "60d32a386c596e27f0615b0f45015932b7c5d13edef79101db3e444123a15431",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/grammar-source-r2.stdout",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/grammar-source-r2.stdout",
+      "sha256": "4717ea9ad392afb3b870c02ea4014be1b0b6f3a93103d2d38648cb03dd61517a",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/grammar-source-r1.stdout",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/grammar-source-r1.stdout",
+      "sha256": "f3951ea107105eea6f3f448884dc751b8e6ad88614f1bb092eca0b8c4d6f9755",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/scalar-boundary-source-r1.stdout",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/scalar-boundary-source-r1.stdout",
+      "sha256": "207722022ed2709b916d2fd6dc4e570335c1be3c0664fb87b685e81609778a1b",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/scalar-boundary-source-r2.stdout",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/scalar-boundary-source-r2.stdout",
+      "sha256": "330099f808de5bf9b90d88443def73f14a16f8c883da6fd34ea4397ac3251561",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/autosignin-regex-frontend-20261106/case-sets-source-r1.stdout",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-frontend-20261106/case-sets-source-r1.stdout",
+      "sha256": "ffaa1b292d9eeec845d2a1aff750cc69961d58ced1c30938f8a86eb8f1fdc6bd",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/source-r3.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-r3.json",
+      "sha256": "b5039941f207604032fcfbf864a95da4decd3d9e8bdec471f2406137c48e468c",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/source-html-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-html-r1.json",
+      "sha256": "0ddee23038c09d5a4b153b99b3e9ce88400112f7cb12e627083d8ad0b03e4698",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/autosignin-regex-codepoints-20261106/source-init-r1.json",
+      "target": "plugins/autosignin/testdata/source-oracles/autosignin-regex-codepoints-20261106/source-init-r1.json",
+      "sha256": "26b4282d941482896853f2a28a65292846d5a0c32bfe142edabdac3bc0a4e450",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/root-independent-regex-codepoints-20261106/oracle.json",
+      "target": "plugins/autosignin/testdata/source-oracles/root-independent-regex-codepoints-20261106/oracle.json",
+      "sha256": "0041c60cddefb98d818e68e89afdcd3241b7191061818bb5d0decdd3298d0f10",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media/work/source-public-content-type-20261106/source.json",
+      "target": "plugins/autosignin/testdata/source-oracles/source-public-content-type-20261106/source.json",
+      "sha256": "c25c07d4a44d2fd723658874ae192e68cb849650928abd135b1b5368422e2300",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-source-site-consumer-review-20261106/rousi-source.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-source-site-consumer-review-20261106/rousi-source.json",
+      "sha256": "eb55517f0a2d5c858a2c00d16a8c88f0226542899885443fe9d848776008700e",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    },
+    {
+      "source": "/Users/accidia/projects/light-media-plugins/work/independent-source-site-consumer-review-20261106/timeout-source.json",
+      "target": "plugins/autosignin/testdata/source-oracles/independent-source-site-consumer-review-20261106/timeout-source.json",
+      "sha256": "3627bf4d05fd8284b72bbd502b7e2d8d8ed89cb612f3d5bc0686397742a0023a",
+      "classification": "original source observation copied byte-exact; assertion values unchanged"
+    }
+  ],
+  "SDK_origin_metadata": "pending exact host saved code commit and standalone validation; oldSDK_ORIGIN retained until updated"
+}

@@ -1,0 +1,172 @@
+{
+  "status": "TT business and finite host adaptation independent review closed; no real Linux main/daemon signoff by this reviewer",
+  "at": "2026-11-05T05:57:00.526208+00:00",
+  "source_snapshot_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "source_raw_sha256": {
+    "work/migration-20261105/source-snapshot/torrenttransfer/__init__.py": "e5f513a57cf42ee8778744ba30cf669f93a5a3e6c7589ca0b2e3b9c483651bd5",
+    "work/migration-20261105/source-snapshot/torrenttransfermusic/__init__.py": "4d271e68aa3fc994c1d50cd850d4b1e5699c9f7900eaa106082b9f13efe4c5bb"
+  },
+  "source_first_contract": "65 independent cases +45 source-only groups were written/run before target review; source-review artifacts retain authority",
+  "frozen_manifest_sha256": "0f6641da6e2deee482f246496d0d832f51881404e7627e26aadfbe52ad745b5c",
+  "frozen_target_files": 32,
+  "frozen_sdk_build_files": 63,
+  "linux_binary_sha256_as_author_manifest": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+  "cold_race": {
+    "command": "go test -count=1 -race -json -overlay=work/migration-20261105/torrenttransfer-review/review-overlay.json ./plugins/torrenttransfer ./cmd/torrent-transfer",
+    "tests_and_subtests_pass": 319,
+    "independent_pass": 100,
+    "failed": 0,
+    "package_results": [
+      {
+        "Time": "2026-11-05T13:50:30.796286+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/cmd/torrent-transfer",
+        "Elapsed": 4.764
+      },
+      {
+        "Time": "2026-11-05T13:50:42.894202+08:00",
+        "Action": "pass",
+        "Package": "github.com/landuo/light-media-plugins/plugins/torrenttransfer",
+        "Elapsed": 16.862
+      }
+    ]
+  },
+  "mutation_count": 10,
+  "all_mutations_compiled_and_killed": true,
+  "input_unchanged": {
+    "target_changed": [],
+    "overlay_changed": [],
+    "all_unchanged": true
+  },
+  "independent_source_evidence_sha256": {
+    "cached-connection-source-oracle.json": "01ffbc25e593f9312d4f0e0b0aff11e76f4d7c2062625bf7f338f5f94a17553f",
+    "cached-connection-source-run.json": "bb3843bbc0a678693c12a16487a56983c4f4854dd4582765938a08e83d4e0a97",
+    "cached-presence-concurrency-source-oracle.json": "67483fa7926e663ea930dd2d9402541cbc912881144c4b6ffb84f6e0179fa782",
+    "cached-presence-concurrency-source-run.json": "67483fa7926e663ea930dd2d9402541cbc912881144c4b6ffb84f6e0179fa782",
+    "constructor-auth-source-oracle.json": "8e6fd40ddd7799cb8734707cddf7f9d011bc5909854d37278908c4fe9929b517",
+    "constructor-auth-source-run.json": "54d6f09ec3a90e0d424d0552e27c3330b64390e02f0348a09d1407a9458f9aff",
+    "cron-local-oracle-run.json": "e18a6730cbcee263a95cb06bafe8e13fe1bf8d109aa61d162d1817382e41e3ce",
+    "cron-local-source-oracle.json": "e18a6730cbcee263a95cb06bafe8e13fe1bf8d109aa61d162d1817382e41e3ce",
+    "cron-whitespace-source-oracle.json": "1b4dafff685b683f8e28e68ed4af0221ffd0484ef5d631367e7df7d6aae87c24",
+    "cron-whitespace-source-run.json": "1b4dafff685b683f8e28e68ed4af0221ffd0484ef5d631367e7df7d6aae87c24",
+    "form-comparison.json": "ca509c9612b19045a629da43269d2c5b7746b71c9baeafa070dd6b44c2db7d65",
+    "installed-module-reference-comparison.json": "802d112a3c31d75acec4eb864c5259d7ded64374d32628a3482f8458e6b50e0e",
+    "localtime-errno-source-oracle.json": "3bba61d54d1e2e2bf2db8ff8166de6bf4ea4fdfd2333d32eacfbcbed9f087404",
+    "localtime-errno-source-run.json": "3bba61d54d1e2e2bf2db8ff8166de6bf4ea4fdfd2333d32eacfbcbed9f087404",
+    "metadata-runtime-add-oracle.json": "33be9730fe266a8cb5439c755bed53f3c29851c65cb4c9dc2e80cf3216e8dc90",
+    "module-service-order-oracle.json": "05d476a1110b471765f01f05debef8b6a34ebf1e7ccf3e34a8a2f204d1904d23",
+    "pathlib-errno-oracle.json": "a594d6ab7bca7f7929422c6cef2d46d01d1a6184a6524c5b561d93c1696fca66",
+    "qb-read-status-source-oracle.json": "3e13816119c69c7e9beb9b83f972a38346511fed64e0bc3ba63597c90055d8af",
+    "qb-read-status-source-run.json": "48fdcc093726087815bf24f281a50f0b0b171e9defd8ac789f4ea1472dc99c5d",
+    "qb-session-plus-retry-after-source-oracle.json": "2740ecd899cff68df20cd3393c1bc889caeceeeeee4d90dbcb0a14f313df2457",
+    "qb-session-plus-retry-after-source-run.json": "57038e7bf9a646b6c5438c1773f340681688c62666350181e20102e4ec2a0f97",
+    "qb-session-retry-source-oracle.json": "1f2c32353b1b96f25cd03989b8253e991f3de4a462bdf7d41d45d14f9d912dbb",
+    "qb-session-retry-source-run.json": "2a1547284f5157a2d503483e548f3a41bab10875de40233a016c452887ab7249",
+    "random-alphabet-source.json": "b369d2965f3f70a4f53f0aaa60a88566944790a7173fec4f45b88a4c17afc4ec",
+    "reverse-metadata-signature-source-oracle.json": "d298cf51f13ec5349465866e5b2cd0f0e1329ea4bba25ea3d97690c5af718ba6",
+    "reverse-metadata-source-run.json": "d298cf51f13ec5349465866e5b2cd0f0e1329ea4bba25ea3d97690c5af718ba6",
+    "scheduler-completion-oracle.json": "77576318ed8435feed3b3b155ac1779aaec7c486e38db7b71f4ccbf9fb36c696",
+    "service-order-oracle.json": "c59275a2a8b6878d63db4b0ac5e271853e15637c82574003e9256d226bd03277",
+    "surrogate-key-source.json": "15555a4185e1e176ce4d2334049e30de108857ff3219ae937f0cc9014cffff1f",
+    "timezone-oracle-run.json": "b36c91d7630db18d8ee1fba2646e3b88762e055094581265194dd38d1c57154d",
+    "timezone-source-oracle.json": "f8aaa3b97e144ecd445fe30b8f9bfff6efee13bc2de14b63d2095de5d8453289",
+    "transmission-constructor-reference-comparison.json": "745aa7209dca07f1f1f272915dbbef1fc7e936d580d8ebc9e779b5b24d9ab174",
+    "unknown-native-source-oracle.json": "f3ee733cf73c446814492d75d9e86b77953546ae7ef8614886a62fff915a8751",
+    "unknown-native-source-run.json": "4cc0f1c215b9c920c7895354b41b1e228619339750072f24b1c7a4af35fd9327"
+  },
+  "review_evidence_sha256": {
+    "final-current-mutation-results.json": "f1addbba52ad701f583ca73935b2a1747a56c15f0bcab67be01aa331fa9e2b3a",
+    "final-frozen-go-race.jsonl": "111e5698cb27601898f7bc0b7631612b2b26d936663bfc750278d70a498d24b0",
+    "final-target-start-sha256.json": "01f6d2fdb8c5bfeb304086e2038d5a954c2511375e9ccc13bc5cc6f03b19e50f",
+    "final-target-unchanged-after-mutations.json": "be20b1be97063fff1d2a1fc8db946048a4052f746f7bac77081d0b2a9a8b8c2c",
+    "final-target-unchanged-after-race.json": "be20b1be97063fff1d2a1fc8db946048a4052f746f7bac77081d0b2a9a8b8c2c",
+    "independent_review_test.go": "0cd9569bfff3675a994118768af7f4c91f1743616100b75282501833ff740b3f",
+    "independent_service_order_test.go": "6c88a0cca6f601c9d42625e2cd579cd4f1ac6541017ab7135fdd36afc4a2cd62",
+    "independent_timezone_test.go": "55ef993d5ca1e70d08b99836de7856d1d78a46061684ec6e86ec73a843cdc64a",
+    "independent_unknown_test.go": "89a7f6efd69753dff14b6ede0b04fc3b7bb2276ef598ba2868eb70facdb7fbe4",
+    "ordered-config-independent-binding.json": "b040bcdc21ec37140c73cc4977904dfc55ea7667102108426b749f5d4ef627c1",
+    "protocol_budget_review_test.go": "a49619f58cd53eb37e85368a93087af69ff67a1bcd65c7170fac7f679460760e",
+    "review-driver-binding.json": "2942bd0adf2b06fdb227457fd7fc9d369862fbfb87f32d00f0f10a9b61ee758b",
+    "review-overlay.json": "8769ec62e5999713dc71b2734c6f54bc125a2292a57c327fc2fcbb030c4aad9f",
+    "review.md": "33464ec06846756a94533dbcf20242d196518cd5428ccb252877e9f8be0b3958",
+    "review_input_hashes.py": "42af2be156a641e196dc22d19d381ec392abba24817891c020b6cb14ff306abb",
+    "run_mutations.py": "711cb9495b14958e80481e1af8b83688a862283cc171775849dbe52ad2bd161e",
+    "host-source-final-independent-binding.json": "b6fcf1629d316243852688fc82294768ad12da7ecb591d2d5a0b776aa27aba5e"
+  },
+  "source_harness_sha256": {
+    "cached_connection_source_oracle.py": "98f508e5385c6bc337952c071b1b6a4eb967f721a1c8d6f6de8fd1c56790037c",
+    "cached_presence_concurrency_source_oracle.py": "763c225952f9b1f6e0d4a14d9badaadef757a34d6d7cc2b59ebd963ab0bc58c8",
+    "constructor_auth_source_oracle.py": "99f74805d91802f2508012fc30773ea33e94664cf7352d02a513f46ceb66274e",
+    "cron_local_source_oracle.py": "50bdb66930b65a85b9642f05927c612dc82f4c2292cdb4b4134a174ce72e28c5",
+    "cron_whitespace_source_oracle.py": "1630f11181e33b839235edf45cbcba538857cf50df626e4885d8387d1eb8178b",
+    "localtime_errno_source_oracle.py": "0329b44a124cabb496245897bf872512c382177cb4c694ae62e42633fb4bce0a",
+    "metadata_runtime_add_oracle.py": "3a0482c57c920ba57b2a94b8b633105dfb691b3f22c6fcc33ea758a768a57fae",
+    "module_service_order_oracle.py": "47eb64b6fea03bd7acb5fdba0d54daa7e35446e6bffc7983790464e5df15cf43",
+    "pathlib_errno_oracle.py": "71484e278a2cf11a77a7b37625d985975f5adc324bbb540a9b6bc480ba9dec37",
+    "prepare_review_driver.py": "e176a539e7e08f58e8de444e2500ddd2c5407cf527d4bd6e2d35764c363e2455",
+    "qb_read_status_source_oracle.py": "dee8d7892f3eebab6fc076ca889ff81111d5bbbf39fd8b81f6249a129308a8c8",
+    "qb_session_plus_retry_after_source_oracle.py": "bc69af42e3c1bcae78f568ba116f040c1967ce27549d8fa3677233c4f3a6f739",
+    "qb_session_retry_source_oracle.py": "d510ea8e4c9dd4bfcd647d3faa70fb8d0818dfde845865222d3b51529e4e7b09",
+    "reverse_metadata_signature_source_oracle.py": "e8497d966b6ff6abd7adcceb3e3f0e623215b7e43ee6c411f54dc09ec5cb6c8e",
+    "scheduler_completion_oracle.py": "a30863cd02312080a98264843117943dd3a7cc076c319d1c85bbf6ae0a8c8733",
+    "service_order_oracle.py": "6d92b9f73858363cad5422ac47406840b1204c9dbe918f6044c6ce7d9d460c4c",
+    "timezone_source_oracle.py": "085b4aca51ad564f14388c6faba478ae90ce82b3603a412c6be551d91c0309a7",
+    "unknown_native_source_oracle.py": "37875499281d839c835a7fcd899e96542847dbcf7fff5aedf71caaa9a9d28357",
+    "vendor_skip_wire.py": "c3dedc5825246b3b7d4fa431bf4bd870384617813088193a78658fd5906bf177"
+  },
+  "sdk_observations": {
+    "TestSDKHundredTorrentAndFilteredCursorBudgets-120-transfers.json": {
+      "sha256": "175f426be7e2d6f4554c9f02064f13b09f8258b15ce99e7d3e2de53c7168bc48",
+      "total_rpc": 1810,
+      "maximum_per_phase": 15,
+      "default_max_host_calls": 64
+    },
+    "TestSDKHundredTorrentAndFilteredCursorBudgets-400-filtered-candidates.json": {
+      "sha256": "c4f4af12e02610b04436d10d2ea394d3da00ff86f9dfabecdbf7c312e3ee4d66",
+      "total_rpc": 809,
+      "maximum_per_phase": 8,
+      "default_max_host_calls": 64
+    },
+    "TestSDKLargeRecheckPreservesSingleBulkCalls.json": {
+      "sha256": "9240c085920351ccc7c3bfcfc90a2c607c43f0347e34496ebbc2f3079412d25c",
+      "total_rpc": 11,
+      "maximum_per_phase": 6,
+      "default_max_host_calls": 64
+    },
+    "TestSDKMoreThan64PrivateTicksKeepFreshBudgets.json": {
+      "sha256": "fcac70c19016fd377f0b7828dafa0a8fa931fbde2ce618a5fb885950aa9c74c2",
+      "total_rpc": 421,
+      "maximum_per_phase": 6,
+      "default_max_host_calls": 64
+    },
+    "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-reinit-active-side-effects.json": {
+      "sha256": "64eeb9180e961e7956bcc19a5210a456f8b57e1a50435d92f7e1a8cced62e8da",
+      "total_rpc": 1513,
+      "maximum_per_phase": 15,
+      "default_max_host_calls": 64
+    },
+    "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-active-side-effects.json": {
+      "sha256": "2abbcde26be54a4e5bc0247e906e964cbbdf7aa083b10d5483d8aa26a0292fc7",
+      "total_rpc": 1513,
+      "maximum_per_phase": 15,
+      "default_max_host_calls": 64
+    },
+    "TestSDKStopAndReinitJoinQueuedAndActiveContinuations-stop-queued-before-selection.json": {
+      "sha256": "9fe644bcc27663029ffef795ca2addb27bcd92585b8f5495388dbfb498206836",
+      "total_rpc": 12,
+      "maximum_per_phase": 8,
+      "default_max_host_calls": 64
+    }
+  },
+  "classes": {
+    "source": "raw installed Python AST + finite synthetic dependencies; no production import/config",
+    "prepared_wire": "actual Requests preparation and owned loopback HTTP peers; critical library byte match",
+    "worker": "actual separate concurrent SDK worker/Go plugin with synthetic resources and test-only controlled clock; production clock unchanged",
+    "host": "separate local App/SQLite/SDK/native loopback evidence, historical snapshots explicitly named",
+    "main_and_daemon": "not executed by this reviewer; coordinator evidence required"
+  },
+  "explicit_transport_adaptation": "cached constructor facts only; subsequent native clients and auth are fresh per current call scope. Additional auth roundtrips/current scope guards are preserved SDK boundaries; no exact vendor global-session HTTP trace claim",
+  "selected_writes": "one attempt; unknown facts retained; source branch reconciliation is read-only; FailureCode/guard/cancel/errors stop",
+  "outstanding_host_delta": "none in reviewed finite SourceConnection/SourceFind/readonly retry/lexer contract",
+  "host_final_manifest_sha256": "0e55b86bab2e6df361fa5fa70b8fda20255bb41eb887251e1e3ff38d60efb7dd"
+}

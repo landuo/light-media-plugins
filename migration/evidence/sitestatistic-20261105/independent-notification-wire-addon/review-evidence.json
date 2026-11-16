@@ -1,0 +1,42 @@
+{
+  "status": "passed_source_enum_wire_correction_delta_only",
+  "new_freeze_sha256": "5fe193964fcb15a6b07a4613bfa01873cbe3bda1725d145c817bb7a0ec76c31b",
+  "new_plugin_commit": "c1ce619e8365b760799f9105722b42f83f2f0e78",
+  "current_inputs_checked": 102,
+  "new_target_files": 40,
+  "SDK_build_inputs": 62,
+  "actual_source_enum_sha256": "025060b9dd29be0fc811cb42ea357e7cd23ce1f450cb704f04f18012ed8be5c1",
+  "source_enum_member": "NotificationType.SiteMessage",
+  "source_wire_value": "站点",
+  "old_invalid_literal": "站点消息",
+  "positive": [
+    {
+      "path": "business-final-cold-race.jsonl",
+      "exit": 0,
+      "test_and_subtest_pass": 219,
+      "sha256": "6374dd327b3800f8ebcd54298a270750c7d1ec7ceaec6addc0d4b01f3f00c170"
+    },
+    {
+      "path": "current-native-code-app-race.jsonl",
+      "exit": 0,
+      "test_and_subtest_pass": 1,
+      "sha256": "0f5404c0d4cdb25afaba8e8dc411b7248cb44d656c01beffb9eb35d397130669"
+    }
+  ],
+  "compiling_old_literal_negative": {
+    "exit": 1,
+    "native_rejection_code": "PLUGIN_NOTIFICATION_INVALID",
+    "sha256": "df51f9adcd1038a0bde688e77a394a58aef3e13dfc449747bbc334c5c0248ecd"
+  },
+  "original_mode_body_fingerprint_receipt_reads_unchanged": true,
+  "source_mode_oracle_correction_sha256": "32ce60b7f2587398b37cdbefb81357cf05c2d04ad1ca98fa8c9cdb78819cb44e",
+  "old_fixture_field_invalidation_sha256": "8a24a1c142ed20c1342a2000c20e4c068f6c57ffb4436a80a9702376dbf07d89",
+  "old_site_review_evidence_retained_sha256": "33e9eee4aec2b2ab9eadaa3686d7b251ab34386d8946c105567629d717997036",
+  "cleanup_sha256": "d96a048f8c8e0ce66a8c4a1d7ec2afd64a6550159e3fd68b575aaa1a6e938281",
+  "limitations": [
+    "Previous Site source stubs used a human label as fake enum; review missed mtype because body/receipt assertions and host SourceSites tests never joined this business Post adapter to real native notice. Old certificate is historical, not a current complete Site acceptance.",
+    "New test runs the real Site executable/SDK into real App Post/notice/Base storage/SQLite and checks one notice plus receipt and duplicate suppression; source accounts and invocation authority are bounded synthetic handlers, not ordinary manager/real tracker acceptance.",
+    "Local source Enum AST execution is Python3.14 but exact installed file hash matches3.12 image and fixed8a83; no app/plugin imports.",
+    "Source ordinary-cooldown mismatch and main3 sidebar-driver expectation remain separate records; this enum delta alone does not close ordinary-main/UI acceptance."
+  ]
+}

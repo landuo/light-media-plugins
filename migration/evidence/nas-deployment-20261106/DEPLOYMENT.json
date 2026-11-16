@@ -1,0 +1,155 @@
+{
+  "state": "deployed_installed_inactive_and_cold_verified",
+  "authorization": "User on2026-11-06 explicitly requested deploying completed plugins to NAS; no remote push or main merge requested.",
+  "host": {
+    "address": "192.168.8.129:3120",
+    "container": "light-media",
+    "before_sha256": "f57f098b1c151d5dcbfe2ca54d22b7378f6a5e57a6ea88e193a27ca61a7d3acd",
+    "deployed_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+    "source_commit": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
+    "reason": "Use exactly paired previously native-tested SDK101 current-seven host/workers. Latest8a820558 TEMP/interval and other unfinished ASI increments are not deployed.",
+    "health": "healthy"
+  },
+  "plugins": [
+    {
+      "id": "CategoryEditor",
+      "version": "1.3",
+      "worker_sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+      "zip_sha256": "27aeca2b27e6f9322f3930f7d834ba4ebaad630577c6c29a9461355ab083b98f",
+      "file_count": 7,
+      "prebuilt_verified": true
+    },
+    {
+      "id": "TorrentTransfer",
+      "version": "1.10.3",
+      "worker_sha256": "4893f26b744f769cfd9b90e25fa8b2a615a342f95af900738d615224f3aaf200",
+      "zip_sha256": "b35c9dbc16ab7a17546d9850c98c785401ed7a54efdd4b860edeec360ee14e4e",
+      "file_count": 7,
+      "prebuilt_verified": true
+    },
+    {
+      "id": "SiteStatistic",
+      "version": "1.9.7",
+      "worker_sha256": "0f228ea641505402e3b681a5cd431558c2eb6f7f74dd632a0e8e5771b9075ce5",
+      "zip_sha256": "a0c68d4fc080c1fa7b621da11b7e810c8086fa2479ddf792c0c8e7af2ddbc022",
+      "file_count": 7,
+      "prebuilt_verified": true
+    },
+    {
+      "id": "MPServerStatus",
+      "version": "1.4",
+      "worker_sha256": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e",
+      "zip_sha256": "70d42acbc7e5864b7f2bba6e558a79bed3170f9b04d76bc650c614780ee9e553",
+      "file_count": 20,
+      "prebuilt_verified": true
+    },
+    {
+      "id": "PluginUnInstall",
+      "version": "2.2",
+      "worker_sha256": "9eed432654887b23628fac4b814784bac513263324a27c1a1729a8a058a27d1b",
+      "zip_sha256": "bdc43d84baf62803b9a87e2bb9321edc06cbfe31811da0566efdd85f2d07c367",
+      "file_count": 7,
+      "prebuilt_verified": true
+    },
+    {
+      "id": "RemoveLink",
+      "version": "2.18",
+      "worker_sha256": "00ee2a42628d6e7a50bccd8a9004298331929b0ce9ab713948465b1252040d0c",
+      "zip_sha256": "294aaddcd159cd4951461c8ac02ec035cb6a6b03fff8e8ac01e791e07a80293e",
+      "file_count": 10,
+      "prebuilt_verified": true
+    }
+  ],
+  "instances": [
+    {
+      "plugin_id": "CategoryEditor",
+      "instance_id": "CategoryEditor",
+      "name": "二级分类策略",
+      "version": "1.3",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "TorrentTransfer",
+      "instance_id": "TorrentTransfer",
+      "name": "自动转移做种",
+      "version": "1.10.3",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "SiteStatistic",
+      "instance_id": "SiteStatistic",
+      "name": "站点数据统计",
+      "version": "1.9.7",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "MPServerStatus",
+      "instance_id": "MPServerStatus",
+      "name": "MoviePilot服务监控",
+      "version": "1.4",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "PluginUnInstall",
+      "instance_id": "PluginUnInstall",
+      "name": "插件彻底卸载",
+      "version": "2.2",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "RemoveLink",
+      "instance_id": "RemoveLink",
+      "name": "清理媒体文件",
+      "version": "2.18",
+      "installed": true,
+      "state": false,
+      "form_loaded": true
+    },
+    {
+      "plugin_id": "TorrentTransfer",
+      "instance_id": "TorrentTransfermusic",
+      "name": "自动转移做种（音乐）",
+      "version": "1.10.3",
+      "installed": true,
+      "state": false
+    }
+  ],
+  "verification": {
+    "count": 7,
+    "all_installed": true,
+    "all_inactive": true,
+    "forms_loaded": [
+      "RemoveLink",
+      "SiteStatistic",
+      "CategoryEditor",
+      "TorrentTransfer",
+      "TorrentTransfermusic",
+      "PluginUnInstall",
+      "MPServerStatus"
+    ],
+    "cold_restore_with_artifact_server_stopped": true,
+    "browser": "existing Chrome NAS page requires login; no post-deployment authenticated UI acceptance claimed"
+  },
+  "backup": "/vol2/1000/docker/light-media/deployment-backups/accepted-seven-20261106 (NAS-private0700, stopped consistent data directory plus oldbinary)",
+  "artifact_delivery": "Existing verified SDK101 ELF inputs SHA matched upload-plan; complete ZIPs repackaged with existing build functions, licenses and RemoveLink JS/CSS. Per-artifact/member hashes supplied to actual installer. Temporary artifact HTTP server boundNAS127.0.0.1:36281 stopped before finalcoldrestart; installedlocalpackages restore without it. ZIPs retainedNASdata/plugin-offline-repo-20261106.",
+  "observed_failure": "Initial deployment assertion found persistedMPServerStatus enable=true. Deployment stopped assertion, then preserved current configuration fields and explicitly saved enable:false. Other5plugin installs andmusicclone verifiedinactive. Originalfailed command retains work/install.py; not a claim allnewconfigs were initially empty.",
+  "original_MP": "PID2099522 StartedAt2026-11-05T14:09:26.737430404Z unchanged, originalservice/config not modified",
+  "limits": [
+    "Private original MP config/data migration not executed; no replayed source once flags orenabledperiodicwrites requested.",
+    "All seven instances currentlyinactive; user must configure before enabling. PluginUnInstall hasno enable toggle and acts only when explicit selection saved.",
+    "Existing Chrome production page showslogin; no authenticated postdeployment browser/UI acceptance claimed. API actualforms+SDKprocesses+coldrestore verified.",
+    "GitHubmain/release/index not updated. InstallationisNASlocal/offline, no market automaticupgrade availability is claimed."
+  ],
+  "rollback": "Stoplight-media, restore backed-upbinaryandconsistentdata withinNASprivatebackup, then start; preserve current state before rollback.",
+  "delivered_main": false
+}

@@ -1,0 +1,48 @@
+work/migration-20261105/light-media-host-linux: go1.26.2
+	path	light-media/cmd/server
+	mod	light-media	(devel)	
+	dep	github.com/andybalholm/brotli	v1.2.6	h1:ftYnfj6usCp+UGV5kSJ3+chpMQgU+gJf/AxsUQ52REI=
+	dep	github.com/antchfx/htmlquery	v1.3.7	h1:KCUklE1EO/xm6iS3CWx6iatFlcnENBk4I4UYa2pBmLU=
+	dep	github.com/antchfx/xpath	v1.3.9	h1:muXJSod6jRzhsiUjvduNSxsRSptFZ2GOJ1oMD1QkPSA=
+	dep	github.com/aquasecurity/go-pep440-version	v0.0.2-0.20260224065243-f9bba28c51a4	h1:QC8nsF3LvAGHUxkr5bvcekaUQPE9Zk4jyMugyg5Fxy0=
+	dep	github.com/aquasecurity/go-version	v0.0.1	h1:4cNl516agK0TCn5F7mmYN+xVs1E3S45LkgZk3cbaW2E=
+	dep	github.com/chromedp/cdproto	v0.0.0-20250724212937-08a3db8b4327	h1:UQ4AU+BGti3Sy/aLU8KVseYKNALcX9UXY6DfpwQ6J8E=
+	dep	github.com/chromedp/chromedp	v0.14.2	h1:r3b/WtwM50RsBZHMUm9fsNhhzRStTHrKdr2zmwbZSzM=
+	dep	github.com/chromedp/sysutil	v1.1.0	h1:PUFNv5EcprjqXZD9nJb9b/c9ibAbxiYo4exNWZyipwM=
+	dep	github.com/dlclark/regexp2/v2	v2.9.0	h1:kKj+BlRuUhZzJk8B3yOBxWKxDFnx2Ilq4e7KNdq/Mxk=
+	dep	github.com/dustin/go-humanize	v1.0.1	h1:GzkhY7T5VNhEkwH0PVJgjz+fX1rhBrR7pRT3mDkpeCY=
+	dep	github.com/go-json-experiment/json	v0.0.0-20250725192818-e39067aee2d2	h1:iizUGZ9pEquQS5jTGkh4AqeeHCMbfbjeb0zMt0aEFzs=
+	dep	github.com/gobwas/httphead	v0.1.0	h1:exrUm0f4YX0L7EBwZHuCF4GDp8aJfVeBrlLQrs6NqWU=
+	dep	github.com/gobwas/pool	v0.2.1	h1:xfeeEhW7pwmX8nuLVlqbzVc7udMDrwetjEv+TZIz1og=
+	dep	github.com/gobwas/ws	v1.4.0	h1:CTaoG1tojrh4ucGPcoJFiAQUAsEWekEWvLy7GsVNqGs=
+	dep	github.com/golang/groupcache	v0.0.0-20241129210726-2c02b8208cf8	h1:f+oWsMOmNPc8JmEHVZIycC7hBoQxHH9pNKQORJNozsQ=
+	dep	github.com/google/uuid	v1.6.0	h1:NIvaJDMOsjHA8n1jAhLSgzrAzy1Hgr+hNrb57e+94F0=
+	dep	github.com/json-iterator/go	v1.1.12	h1:PV8peI4a0ysnczrg+LtxykD8LfKY9ML6u2jnxaEnrnM=
+	dep	github.com/klauspost/compress	v1.20.3	h1:zWNoFqq/lSuYQRim3dUXlXeA0IqwuZGicdG5ZTfY5j4=
+	dep	github.com/markusmobius/go-dateparser	v1.4.7
+	=>	./third_party/go-dateparser	(devel)	
+	
+	dep	github.com/markusmobius/go-dateutil/v2	v2.9.1	h1:5g4V8s1vg/EAmhu/g14VQcHgocNf8H8VD4IzOfZg+1Y=
+	dep	github.com/modern-go/concurrent	v0.0.0-20180306012644-bacd9c7ef1dd	h1:TRLaZ9cD/w8PVh93nsPXa1VrQ6jlwL5oN8l14QlcNfg=
+	dep	github.com/modern-go/reflect2	v1.0.2	h1:xBagoLtFs94CBntxluKeaWgTMpvLxC4ur3nMaC9Gz0M=
+	dep	github.com/pkg/errors	v0.9.1	h1:FEBLx1zS214owpjy7qsBeixbURkuhQAwrK5UwLGTwt4=
+	dep	github.com/remyoudompheng/bigfft	v0.0.0-20230129092748-24d4a6f8daec	h1:W09IVJc94icq4NjY3clb7Lk8O1qJ8BdBEF8z0ibU0rE=
+	dep	github.com/sirupsen/logrus	v1.9.3	h1:dueUQJ1C2q9oE3F7wvmSGAaVtTmUizReu6fjN8uqzbQ=
+	dep	go.yaml.in/yaml/v3	v3.0.5	h1:N6y/pJk8buWs9NY5ERU2HSMfm+IuD/OtfdAnq6kESPw=
+	dep	golang.org/x/crypto	v0.58.0	h1:COkYLr4k7nDI4r6QtMML2AfzeIswWHAJthLS6K/M/54=
+	dep	golang.org/x/exp	v0.0.0-20260908205506-85c1c2202aba	h1:Ck8QetSgk912qxWLMCKxd0in+aiyBQyDSMae6e/xmpU=
+	dep	golang.org/x/net	v0.61.0	h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=
+	dep	golang.org/x/sys	v0.49.0	h1:XbzkgYJHdqh/8m2Uu0W/dQv8nktxx4BFHp1M0gROTXA=
+	dep	golang.org/x/text	v0.43.0	h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=
+	dep	golang.org/x/xerrors	v0.0.0-20231012003039-104605ab7028	h1:+cNy6SZtPcJQH3LJVLOSmiC7MMxXNOb3PU/VUEz+EhU=
+	dep	modernc.org/libc	v1.77.1	h1:Ct8j47QtiZ1Enj2DtFXQtUqrPCAjdCmPjtCuvrYQ0Hs=
+	dep	modernc.org/mathutil	v1.7.1	h1:GCZVGXdaN8gTqB1Mf/usp1Y/hSqgI2vAGGP4jZMCxOU=
+	dep	modernc.org/memory	v1.12.1	h1:nFMiWrpStgZczNl6XI9GnIk/rWhYIyHGUaR04pGbp9g=
+	dep	modernc.org/sqlite	v1.60.1	h1:/blz53O951KWFOso4QQvEs/Fq6cDBKLtMVrYNSeJVKw=
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-trimpath=true
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

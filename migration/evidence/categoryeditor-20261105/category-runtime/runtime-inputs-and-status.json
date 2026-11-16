@@ -1,0 +1,138 @@
+{
+  "host_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+  "target_initial_commit": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+  "sdk_production_tree_sha256": "46bce3cfb0e8b8f42fbc4fa3f53e90e1fe5e8d421cc229be724a6063c1e162f0",
+  "files": [
+    {
+      "path": "tests/integration/testhost_main_test.go",
+      "sha256": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+      "size": 9233
+    },
+    {
+      "path": "tests/integration/categoryeditor_main_test.go",
+      "sha256": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+      "size": 11550
+    },
+    {
+      "path": "plugins/categoryeditor/categoryeditor.go",
+      "sha256": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+      "size": 7880
+    },
+    {
+      "path": "plugins/categoryeditor/form.json",
+      "sha256": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+      "size": 930
+    },
+    {
+      "path": "cmd/category-editor/main.go",
+      "sha256": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+      "size": 786
+    },
+    {
+      "path": "SDK_ORIGIN.json",
+      "sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+      "size": 39661
+    },
+    {
+      "path": "work/migration-20261105/light-media-host-mac",
+      "sha256": "b4743ec9a2be669068ded6544dca960d710a0a7c81ee9be138b6afc9ed542842",
+      "size": 68671490
+    },
+    {
+      "path": "work/migration-20261105/light-media-host-linux",
+      "sha256": "0162d7edd2c22af31b2adf6348c224304d020c5800551605d9e172b9c525cce5",
+      "size": 70557259
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/category-editor-mac",
+      "sha256": "d556c8877463e36fbe03d80b8e664afcd4be5e48ac38a61f64ef4e3df00648fc",
+      "size": 4523778
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/category-editor-update-mac",
+      "sha256": "c3dbb9c58e4c5880f61e39f107c1f04030fe8ae2bdb2303ed1a4b0717ded3665",
+      "size": 4523778
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/category-editor-linux",
+      "sha256": "091493585e9a33b68ddc1ea3e11e5b2fccacb16289b7284771c7862bc5e33cd3",
+      "size": 4626294
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/category-editor-update-linux",
+      "sha256": "f46fef8bbcc8c18ed8c5b3fb7c28196e793842bb81628d502bec3005646b02df",
+      "size": 4626302
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/categoryeditor-main-linux.test",
+      "sha256": "26f559bc85e59bc6b61e0a5b8f54c16b0f6389f2064bb36d69cdee671d1a2c07",
+      "size": 11011986
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/category-editor-version-fixture.go",
+      "sha256": "29c23b985cc424e7b53bd0896b761eefb35fbd11e65eb509510737ce36c7c160",
+      "size": 814
+    },
+    {
+      "path": "work/migration-20261105/category-runtime/worker-version-overlay.json",
+      "sha256": "588997d9c42212ed9c560128b8570f40207efe5fc06e083e746497e36f4c1a67",
+      "size": 224
+    }
+  ],
+  "test_version_note": "Version1.3.1 executable differs only by manifest.Version assignment in Go build overlay. No production code changed; this is controlled actual-version artifact update, not an upstream1.3.1 migration claim.",
+  "actual_runs": [
+    {
+      "kind": "darwin/arm64 actual cmd/server+publicHTTP+SDK subprocess+owned local index",
+      "run": "mac-run-1",
+      "result": "failed",
+      "cause": "driver final reinstall used empty repo URL after actual main no longer imported uninstalled class; all preceding scenarios reached, endpoint business success:false preserved",
+      "fix": "supply same actual artifact index for reinstall; no product change"
+    },
+    {
+      "kind": "darwin/arm64 actual cmd/server+publicHTTP+SDK subprocess+owned local index",
+      "run": "mac-run-2",
+      "result": "passed",
+      "test_elapsed_seconds": 2.73,
+      "package_elapsed_seconds": 3.154,
+      "artifact_index_hits": 4,
+      "artifact_worker_hits": 4
+    },
+    {
+      "kind": "linux/amd64 NAS actual cmd/server+publicHTTP+SDK subprocess+owned local index",
+      "run": "linux-run",
+      "result": "passed",
+      "endpoint": "http://192.168.8.129:36251",
+      "remote_owned_root": "/home/admin/light-media-plugins-migration-category-20261105-actualmain",
+      "test_elapsed_seconds_including_UI_wait": 665.98,
+      "artifact_index_hits": 4,
+      "artifact_worker_hits": 4,
+      "driver_http_count": 42,
+      "summary": "linux-run-summary.json"
+    }
+  ],
+  "driver_vet": "passed",
+  "limits": [
+    "No source Python or old MoviePilot imported or executed; expected semantics derive from fixed source and prior independently reviewed oracle.",
+    "No production credentials, policy, server, site, downloader, subscriptions or live config copied. Only task-owned policy, application DB and test user created.",
+    "The cache check uses public /api/settings/rules categories, not a synthetic new endpoint; full helper classification algorithm is host SDK acceptance and is not reimplemented here.",
+    "CategoryEditor has no plugin-private business files/KV. Clone namespace proof covers actual separate executable/metadata inodes plus independently saved config; the only policy file intentionally remains host-global.",
+    "UI is independently performed by root; main driver waits for its completion before cold/replay checks.",
+    "Earlier driver compile unused-import error and initial reinstall-assumption failure remain preserved."
+  ],
+  "cleanup": {
+    "task_generated_binaries_removed": [
+      "work/migration-20261105/category-runtime/category-editor-mac",
+      "work/migration-20261105/category-runtime/category-editor-update-mac",
+      "work/migration-20261105/category-runtime/category-editor-linux",
+      "work/migration-20261105/category-runtime/category-editor-update-linux",
+      "work/migration-20261105/category-runtime/categoryeditor-main-linux.test"
+    ],
+    "mac_synthetic_runtime_DB_and_keys_removed": true,
+    "linux_owned_remote_directory_removed": true,
+    "host_binaries_owned_by_root_untouched": true,
+    "test_processes_running": false
+  },
+  "actual_host_provenance_note": "Coordinator confirms both provided host binaries were built from unchanged source75e13686 in original host worktree, -buildvcs=false -trimpath. Binary SHA bound here; buildinfo alone is not treated as VCS proof.",
+  "root_browser_evidence": "browser/observation.json and five AX/PNG pairs owned and recorded by root. Driver raw evidence is separately identified.",
+  "source_test_inputs_unchanged": true
+}

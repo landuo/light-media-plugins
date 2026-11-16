@@ -1,0 +1,59 @@
+[
+  {
+    "functions": [
+      "Validate",
+      "SourceTasks",
+      "SourceCompleted",
+      "sourceTasks",
+      "SourceAdd",
+      "SourceControl",
+      "sourceMutation"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors",
+      "strings",
+      "unicode/utf8"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceDownloaderSDKRejectsMalformedOrForeignOutcomes",
+      "TestSourceDownloaderSDKPreservesUnknownAndCausalReceipts"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "errors",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_test.go",
+    "registration_calls": []
+  },
+  {
+    "functions": [
+      "TestSourceAddWireValidationKeepsFiniteRequestBoundary"
+    ],
+    "imports": [
+      "context",
+      "encoding/json",
+      "strings",
+      "testing"
+    ],
+    "init_functions": [],
+    "package": "plugins",
+    "package_variables": [],
+    "path": "/Users/accidia/projects/light-media-plugins/internal/sdk/downloader_source_wire_test.go",
+    "registration_calls": []
+  }
+]

@@ -1,0 +1,6 @@
+Traceback (most recent call last):
+  File "<stdin>", line 144, in <module>
+  File "app/command.py", line 275, in __build_plugin_commands
+    for command in self.pluginmanager.get_plugin_commands():
+                   ^^^^^^^^^^^^^^^^^^
+AttributeError: 'Command' object has no attribute 'pluginmanager'

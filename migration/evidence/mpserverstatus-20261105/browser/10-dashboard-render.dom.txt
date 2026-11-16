@@ -1,0 +1,90 @@
+- complementary:
+  - link "光影 LIGHT MEDIA":
+    - /url: "#discover"
+    - text: 光影
+    - generic: LIGHT MEDIA
+  - navigation:
+    - link "搜索结果":
+      - /url: "#search"
+      - text: 搜索结果
+    - generic: 发现
+    - link "推荐":
+      - /url: "#discover"
+      - text: 推荐
+    - link "探索":
+      - /url: "#explore"
+      - text: 探索
+    - link "仪表板":
+      - /url: "#dashboard"
+      - text: 仪表板
+    - generic: 订阅
+    - link "电影":
+      - /url: "#subscriptions?type=movie"
+      - text: 电影
+    - link "电视剧":
+      - /url: "#subscriptions?type=tv"
+      - text: 电视剧
+    - link "日历":
+      - /url: "#calendar"
+      - text: 日历
+    - generic: 整理
+    - link "下载管理":
+      - /url: "#downloads"
+      - text: 下载管理
+    - link "整理历史":
+      - /url: "#history"
+      - text: 整理历史
+    - link "文件管理":
+      - /url: "#files"
+      - text: 文件管理
+    - generic: 系统
+    - link "站点管理":
+      - /url: "#sites"
+      - text: 站点管理
+    - link "插件":
+      - /url: "#plugins"
+      - text: 插件
+    - link "任务队列":
+      - /url: "#jobs"
+      - text: 任务队列
+    - link "日志":
+      - /url: "#logs"
+      - text: 日志
+    - link "设置":
+      - /url: "#settings"
+      - text: 设置
+- banner:
+  - search:
+    - button "搜索影视":
+    - textbox "搜索电影、剧集":
+      - /placeholder: 搜索电影、剧集…
+    - generic: ⌘K
+  - button "用户界面设置":
+  - button "捷径":
+  - button "通知中心":
+  - button "退出登录":
+- main:
+  - generic: MoviePilot服务监控
+  - alert:
+    - generic: 服务状态正常 · HTTP 200 · movie-pilot.org
+  - generic: 响应延迟
+  - generic: 6 ms
+  - generic: HTTP 200
+  - generic: 活跃连接
+  - generic: "12"
+  - generic: 忙碌 41.7%
+  - generic: 等待连接
+  - generic: "7"
+  - generic: 58.3% 空闲
+  - generic: 处理中连接
+  - generic: "5"
+  - generic: 读 2 / 写 3
+  - generic: 请求速率
+  - generic: 0.37 次/秒
+  - generic: 27.1 秒窗口
+  - generic: 连接速度
+  - generic: 0.04 个/秒
+  - generic: 27.1 秒窗口
+  - button "仪表板设置":
+  - button "编辑布局":
+- status

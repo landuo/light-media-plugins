@@ -1,0 +1,130 @@
+{
+  "classification": "actual canonical build_plugin/build_frontend/archive/publish_fresh functions with actual cross-built Linux ELF and native owned NAS manifest; no CLI platform spoof or Python product runtime; candidate config only, not registry acceptance or remote release",
+  "exit_code": 0,
+  "at": "2026-11-05T20:29:39.870702+00:00",
+  "worker_sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+  "build_script_sha256": "917a1166bd4ecbb155f5cda684213816a194c98bdfd97eea5ede3afa6cfd953e",
+  "source_before": {
+    "scripts/build_plugins.py": "917a1166bd4ecbb155f5cda684213816a194c98bdfd97eea5ede3afa6cfd953e",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "plugins/removelink/frontend/remoteEntry.js": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b",
+    "plugins/removelink/frontend/style.css": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500",
+    "plugins/removelink/frontend/view.js": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388"
+  },
+  "source_after": {
+    "scripts/build_plugins.py": "917a1166bd4ecbb155f5cda684213816a194c98bdfd97eea5ede3afa6cfd953e",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "plugins/removelink/frontend/remoteEntry.js": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b",
+    "plugins/removelink/frontend/style.css": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500",
+    "plugins/removelink/frontend/view.js": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388"
+  },
+  "source_stable": true,
+  "native_commands": [
+    {
+      "command": [
+        "compiled-worker",
+        "--manifest"
+      ],
+      "worker_sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031",
+      "manifest_sha256": "95c58cbc19d35b088aa65ed2b9041e9bbd1cfc629b1a2ce79b71f743cbc09af6",
+      "actual_UID": 1000,
+      "actual_platform": "Linux/amd64"
+    }
+  ],
+  "plugin_spec": {
+    "id": "RemoveLink",
+    "package": "./cmd/remove-link",
+    "host_contract": "light-media.sdk-resources/v1",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "frontend": {
+      "command": [
+        "cp",
+        "-R",
+        "plugins/removelink/frontend",
+        "{output}"
+      ],
+      "cwd": ".",
+      "output": "frontend-output"
+    }
+  },
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-auth-packaging/canonical-output/RemoveLink-2.18-linux-amd64.zip",
+      "bytes": 3046957,
+      "sha256": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-auth-packaging/canonical-output/THIRD_PARTY_LICENSES.zip",
+      "bytes": 29128,
+      "sha256": "f94d8b19923b8e98bf1f000b6be01b057252cc2cb8ac6dcc55a8b9aa26baa333"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-auth-packaging/canonical-output/go-plugins.v1.json",
+      "bytes": 5034,
+      "sha256": "6cb8858a25f29a100ecac881f0a1f3b8a3ae7dcb36e778503f18ccc5b37e71b5"
+    }
+  ],
+  "member_inventory": [
+    {
+      "path": "LICENSE",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "LICENSE.upstream",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 4355,
+      "sha256": "4ed7da4be12d120e8e722a685059b324944b019dc10a0d287f852d9ffe42b84f"
+    },
+    {
+      "path": "frontend/remoteEntry.js",
+      "size": 980,
+      "sha256": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b"
+    },
+    {
+      "path": "frontend/style.css",
+      "size": 7201,
+      "sha256": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500"
+    },
+    {
+      "path": "frontend/view.js",
+      "size": 10754,
+      "sha256": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388"
+    },
+    {
+      "path": "remove-link",
+      "size": 5401766,
+      "sha256": "6d7511431944fd72b8eec8fddd02a8ebdcf7632cf4900a0832d193c20dc60031"
+    },
+    {
+      "path": "third_party/Go-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-text-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-text-PATENTS",
+      "size": 1303,
+      "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+    }
+  ],
+  "native_manifest_scratch_removed": true
+}

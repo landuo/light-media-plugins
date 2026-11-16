@@ -1,0 +1,17 @@
+{
+  "classification": "driver-only source HTTP query counter correction after actualMain1 red; SDK/product unchanged",
+  "actual_runtime": "own Main1 logs show both private_scheduler callbacks at+3sec and no-completed-torrents outcome; counter was0 because query-only lookup missedbody",
+  "fixed_host": {
+    "commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+    "path": "internal/plugins/iyuuautoseed/native/iyuu.go",
+    "sha256": "4326226aad56b90eb405468dee6bbb1c0f68b07524e380d1222cf17f5ad2e736",
+    "lines": "145-170 Torrents posts application/x-www-form-urlencoded filter=completed, nil hashes omitted"
+  },
+  "actual_installed_vendor": {
+    "path": "work/migration-20261105/qbittorrent-vendor/torrents.py",
+    "sha256": "d087e5ef72ee748a8af160fd7f4fdbf119d41df6b1fdf2fe1d50509a3a0c2e26",
+    "lines": "1004-1090 torrents_info sets data.filter then _post_cast; source wrapper254 get_completed_torrents selects status=completed"
+  },
+  "fix": "ParseForm, count only POST PostForm.filter completed and no hashes; retain2private/4totalquery bounds; capture safe method/filter/hashpresence, no headers/cookies/body credentials",
+  "preserved": "main1-superseded/preserved.json; Root NAS Main1 command/log unchanged"
+}

@@ -1,0 +1,15 @@
+{
+  "argv": [
+    "ssh",
+    "-o",
+    "BatchMode=yes",
+    "-o",
+    "ConnectTimeout=8",
+    "admin@192.168.8.129",
+    "docker run --rm -i --no-healthcheck --name lm-independent-source-main-metadata-20261107 --label migration.review=independent-source-main-contract-20261107 --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --memory 256m --pids-limit 96 --tmpfs /tmp:rw,noexec,nosuid,size=16m --tmpfs /config:rw,noexec,nosuid,size=16m --entrypoint python3 sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -"
+  ],
+  "payload_sha256": "12de11342ad845616ae5910e26c50d670c050a6d382306ddf355e345f0eefe07",
+  "exit": 0,
+  "seconds": 3.0799256251193583,
+  "mounts": []
+}

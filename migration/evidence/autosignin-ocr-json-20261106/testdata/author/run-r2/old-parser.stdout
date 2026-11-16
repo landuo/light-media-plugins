@@ -1,0 +1,52 @@
+=== RUN   TestSourceOCRJSONDomainActualSDKWire
+{"app_version":"0.4.19","event":"login","id":"log_5bBZVmXh4ZEUInVZZytqEYRC","instance_id":"instance_KlpU5non7G1snj4XKdEVWPiZ","job_id":"","level":"INFO","message":"管理员已登录","module":"auth","time":"2026-11-06T12:34:18.517271439Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":97,"event":"request_completed","http_status":200,"id":"log_NY99EshYd2xDR89ostWrbyrF","instance_id":"instance_KlpU5non7G1snj4XKdEVWPiZ","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.auth","request_id":"req_rYMD2ovwIOWaAEpxmm60wIbH","time":"2026-11-06T12:34:18.517534553Z"}
+{"app_version":"0.4.19","duration_ms":866,"event":"request_completed","http_status":200,"id":"log_bE5LAs0IQ0iUmbSE1XNoz_XW","instance_id":"instance_KlpU5non7G1snj4XKdEVWPiZ","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_5IZXqA-lQrqDPusZeQty12aL","time":"2026-11-06T12:34:19.504739394Z"}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/null
+{"app_version":"0.4.19","event":"command_registration_unavailable","id":"log_zlCcZ71zPZYTtEZOmjvR-lew","instance_id":"instance_KlpU5non7G1snj4XKdEVWPiZ","job_id":"","level":"WARN","message":"命令菜单元数据已准备，核心尚无菜单注册提供方","module":"plugins","time":"2026-11-06T12:34:19.50604756Z","workflow_id":""}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/false
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/zero
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/negative_zero_int
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/zero_float
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/negative_zero_float
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/empty_text
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/empty_list
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/empty_dict
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/text6
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/bool_true
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/integer
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float_integral
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float_underflow
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float_overflow
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float_negative_overflow
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/nan
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/positive_inf
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/negative_inf
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/list6
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/list_nan
+    source_ocr_json_domain_test.go:282: source semantic value differs  list nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/list_nested
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/dict_order
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/dict_duplicates
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/dict_nested_nonfinite
+    source_ocr_json_domain_test.go:282: source semantic value differs  dict nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/string_surrogate
+    source_ocr_json_domain_test.go:282: source semantic value differs  str source UnicodeEncodeError
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/string_pair
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/list_surrogate
+    source_ocr_json_domain_test.go:297: source form error source UnicodeEncodeError &{UnicodeEncodeError 'utf-8' codec can't encode character '\ud800' in position 5: surrogates not allowed}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/dict_surrogate
+    source_ocr_json_domain_test.go:297: source form error source UnicodeEncodeError &{UnicodeEncodeError 'utf-8' codec can't encode character '\ud800' in position 0: surrogates not allowed}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/huge_int_4300
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/huge_int_4301
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/array_depth_100
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/array_depth_9990
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/array_depth_9993
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/array_depth_9994
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/array_depth_9995

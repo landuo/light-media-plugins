@@ -1,0 +1,124 @@
+{
+  "CategoryEditor": {
+    "directory_inode": 3036962,
+    "files": [
+      {
+        "path": "CategoryEditor/.acquired.json",
+        "inode": 3036969,
+        "size": 879,
+        "sha256": "ec4350886fbc7d6667d1e597490ca4894a34259b63b6f447a9d54048b646673e",
+        "manifest": {
+          "plugin_order": 5,
+          "schema_version": 1,
+          "plugin_id": "CategoryEditor",
+          "name": "二级分类策略",
+          "description": "编辑下载和整理时自动二级分类的目录规则。",
+          "icon": "Bookstack_A.png",
+          "author": "jxxghp",
+          "author_url": "https://github.com/jxxghp",
+          "version": "1.3.1",
+          "runtime": "go-executable",
+          "entry": "category-editor",
+          "host_api_min": 1,
+          "host_api_max": 1,
+          "methods": [
+            "init",
+            "get_state",
+            "get_service",
+            "get_command",
+            "get_api",
+            "get_render_mode",
+            "get_form",
+            "get_page",
+            "get_dashboard",
+            "get_dashboard_meta",
+            "get_auth_providers",
+            "get_module",
+            "close",
+            "stop_service",
+            "stop"
+          ],
+          "capabilities": [
+            "plugin.category.get_default",
+            "plugin.category.apply",
+            "plugin.systemmessage.put",
+            "plugin.base.update_config"
+          ]
+        },
+        "metadata_keys": [
+          "manifest",
+          "sha256",
+          "host_contract",
+          "repository_url"
+        ]
+      },
+      {
+        "path": "CategoryEditor/category-editor",
+        "inode": 3036963,
+        "size": 4626302,
+        "sha256": "f46fef8bbcc8c18ed8c5b3fb7c28196e793842bb81628d502bec3005646b02df"
+      }
+    ]
+  },
+  "CategoryEditorowned": {
+    "directory_inode": 3036965,
+    "files": [
+      {
+        "path": "CategoryEditorowned/.acquired.json",
+        "inode": 3036966,
+        "size": 877,
+        "sha256": "fb69494f90e4564eb9d0e24460533b8daa50f56d9abc437bb0b8dd00e1820d3a",
+        "manifest": {
+          "plugin_order": 5,
+          "schema_version": 1,
+          "plugin_id": "CategoryEditor",
+          "name": "二级分类策略",
+          "description": "编辑下载和整理时自动二级分类的目录规则。",
+          "icon": "Bookstack_A.png",
+          "author": "jxxghp",
+          "author_url": "https://github.com/jxxghp",
+          "version": "1.3",
+          "runtime": "go-executable",
+          "entry": "category-editor",
+          "host_api_min": 1,
+          "host_api_max": 1,
+          "methods": [
+            "init",
+            "get_state",
+            "get_service",
+            "get_command",
+            "get_api",
+            "get_render_mode",
+            "get_form",
+            "get_page",
+            "get_dashboard",
+            "get_dashboard_meta",
+            "get_auth_providers",
+            "get_module",
+            "close",
+            "stop_service",
+            "stop"
+          ],
+          "capabilities": [
+            "plugin.category.get_default",
+            "plugin.category.apply",
+            "plugin.systemmessage.put",
+            "plugin.base.update_config"
+          ]
+        },
+        "metadata_keys": [
+          "manifest",
+          "sha256",
+          "host_contract",
+          "repository_url"
+        ]
+      },
+      {
+        "path": "CategoryEditorowned/category-editor",
+        "inode": 3036967,
+        "size": 4626294,
+        "sha256": "091493585e9a33b68ddc1ea3e11e5b2fccacb16289b7284771c7862bc5e33cd3"
+      }
+    ]
+  }
+}

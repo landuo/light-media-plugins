@@ -1,0 +1,43 @@
+{
+  "plan_sha256": "c350e314c530a61586728e1b5bfdae7550a3b95d7f5b98425927339f4cea32c2",
+  "rows": [
+    {
+      "target": "plugins/autosignin/testdata/source-ocr-json-values/source.json",
+      "sha256": "4df6b4545339fe25ea73eae1c37e94ec6a5aa84747646c7acdf7c9a6479a9775",
+      "source": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/source.stdout"
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-ocr-json-values/mixed-depth.json",
+      "sha256": "1a93d3720faafbe6f5732cb71f4eeafc8ebf563110eba6d0db17e097c0785f2a",
+      "source": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/depth-source.stdout"
+    },
+    {
+      "target": "plugins/autosignin/testdata/source-ocr-json-values/empty-depth.json",
+      "sha256": "f4d5953736248a27cb55c17d15d79313b0e2645caa5c3a13457b64db23738e82",
+      "source": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/empty-depth-source.stdout"
+    },
+    {
+      "target": "plugins/autosignin/source_ocr_value_domain_test.go",
+      "sha256": "c67d2a537e6046e206d76281c672df689839678c8c36509f95ea9f3cbd398ff2",
+      "source": "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/value_domain_test.go",
+      "only_edits": [
+        {
+          "before": "checkSourceOCRValueDomain(t, \"source.stdout\", 47)",
+          "after": "checkSourceOCRValueDomain(t, \"source.json\", 47)"
+        },
+        {
+          "before": "checkSourceOCRValueDomain(t, \"depth-source.stdout\", 9)",
+          "after": "checkSourceOCRValueDomain(t, \"mixed-depth.json\", 9)"
+        },
+        {
+          "before": "checkSourceOCRValueDomain(t, \"empty-depth-source.stdout\", 4)",
+          "after": "checkSourceOCRValueDomain(t, \"empty-depth.json\", 4)"
+        },
+        {
+          "before": "os.ReadFile(\"/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/\" + filename)",
+          "after": "os.ReadFile(\"testdata/source-ocr-json-values/\" + filename)"
+        }
+      ]
+    }
+  ]
+}

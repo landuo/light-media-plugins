@@ -118,7 +118,6 @@ type Host interface {
 	Downloader(context.Context, string) (*Downloader, error)
 	SiteUsers(context.Context) ([]UserData, error)
 	Torrents(context.Context, string) ([]DownloadState, error)
-	Downloading(context.Context, string, string) ([]DownloadState, error)
 	// Completed selects candidate hashes. An empty list selects none.
 	Completed(ctx context.Context, downloader string, hashes []string) ([]DownloadState, error)
 	TransferInfo(context.Context) ([]Transfer, error)

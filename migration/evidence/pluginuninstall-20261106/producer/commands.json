@@ -1,0 +1,68 @@
+{
+  "native_workers": {
+    "commands": [
+      "go build -trimpath -buildvcs=false -o work/migration-20261105/pluginuninstall-20261105/plugin-uninstall ./cmd/plugin-uninstall",
+      "go build -trimpath -buildvcs=false -o work/migration-20261105/pluginuninstall-20261105/mp-server-status ./cmd/mp-server-status"
+    ],
+    "explicit_GOOS_GOARCH_CGO": "not captured at these native build invocations; see actual binary buildinfo, not inferred environment"
+  },
+  "linux_worker": {
+    "command": "go build -trimpath -buildvcs=false -o work/migration-20261105/pluginuninstall-20261105/plugin-uninstall-linux ./cmd/plugin-uninstall",
+    "explicit_environment": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    }
+  },
+  "app_final": [
+    {
+      "command": [
+        "go",
+        "test",
+        "-count=1",
+        "-json",
+        "./internal/app",
+        "-run",
+        "^TestSourceUninstall"
+      ],
+      "explicit_environment": {
+        "TMPDIR": "/Users/accidia/projects/light-media/work/plugin-uninstall-tmp",
+        "SOURCE_UNINSTALL_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/plugin-uninstall",
+        "SOURCE_UNINSTALL_FUTURE_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+        "OWNED_HOST_SERVICES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-host-services-fixture",
+        "SOURCE_UNINSTALL_COUNTER_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-standard-fixture"
+      },
+      "seconds": 28.9550838470459,
+      "exit": 0,
+      "inputs": 2745,
+      "changed": []
+    },
+    {
+      "command": [
+        "go",
+        "test",
+        "-race",
+        "-count=1",
+        "-json",
+        "./internal/app",
+        "-run",
+        "^TestSourceUninstall"
+      ],
+      "explicit_environment": {
+        "TMPDIR": "/Users/accidia/projects/light-media/work/plugin-uninstall-tmp",
+        "SOURCE_UNINSTALL_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/plugin-uninstall",
+        "SOURCE_UNINSTALL_FUTURE_BINARY": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-20261105/mp-server-status",
+        "OWNED_HOST_SERVICES_FIXTURE_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-host-services-fixture",
+        "SOURCE_UNINSTALL_COUNTER_BINARY": "/Users/accidia/projects/light-media/work/plugin-uninstall-standard-fixture"
+      },
+      "seconds": 66.56231808662415,
+      "exit": 0,
+      "inputs": 2745,
+      "changed": []
+    }
+  ],
+  "private_normal": "go test -count=1 -json ./plugins/pluginuninstall ./cmd/plugin-uninstall",
+  "private_race": "go test -race -count=1 -json ./plugins/pluginuninstall ./cmd/plugin-uninstall",
+  "private_vet": "go vet ./plugins/pluginuninstall ./cmd/plugin-uninstall",
+  "host_vet": "go vet ./internal/app"
+}

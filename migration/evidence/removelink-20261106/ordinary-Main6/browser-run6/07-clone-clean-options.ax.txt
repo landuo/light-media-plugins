@@ -1,0 +1,103 @@
+Browser tab: 11, Title: "光影 · Light Media", URL: "http://192.168.8.129:36256/#plugins".
+1 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36256/#plugins
+	2 container app
+		3 container
+			4 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36256/#discover
+			5 link Description: 搜索结果, Value: 192.168.8.129:36256/#search
+			6 text 发现
+			7 link Description: 推荐, Value: 192.168.8.129:36256/#discover
+			8 link Description: 探索, Value: 192.168.8.129:36256/#explore
+			9 link Description: 仪表板, Value: 192.168.8.129:36256/#dashboard
+			10 text 订阅
+			11 link Description: 电影, Value: 192.168.8.129:36256/#subscriptions?type=movie
+			12 link Description: 电视剧, Value: 192.168.8.129:36256/#subscriptions?type=tv
+			13 link Description: 日历, Value: 192.168.8.129:36256/#calendar
+			14 text 整理
+			15 link Description: 下载管理, Value: 192.168.8.129:36256/#downloads
+			16 link Description: 整理历史, Value: 192.168.8.129:36256/#history
+			17 link Description: 文件管理, Value: 192.168.8.129:36256/#files
+			18 text 系统
+			19 link Description: 站点管理, Value: 192.168.8.129:36256/#sites
+			20 link Description: 插件, Value: 192.168.8.129:36256/#plugins
+			21 link Description: 任务队列, Value: 192.168.8.129:36256/#jobs
+			22 link Description: 日志, Value: 192.168.8.129:36256/#logs
+			23 link Description: 设置, Value: 192.168.8.129:36256/#settings
+		24 container
+			25 button 搜索影视
+			26 text field (settable) 搜索电影、剧集
+			27 text ⌘K
+			28 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			29 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			31 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+				32 container 有未读通知
+			33 button 退出登录
+		34 container
+			35 tab group
+				36 container
+					37 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					38 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			39 button 搜索插件
+			40 button 筛选已安装插件
+			41 button 排序插件
+			42 container
+				43 text 清理媒体文件  v2.18 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				44 link Description: DzAvril, Value: github.com/DzAvril
+				45 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			46 container
+				47 text 清理媒体文件  v2.18.1 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				48 link Description: DzAvril, Value: github.com/DzAvril
+				49 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			50 button 新建文件夹
+	51 container
+		52 container
+			53 text 当前构建声明的支持范围：平台 Linux；存储 本地（local）。以此范围为准，原版表单中的其他平台或存储示例不代表当前已支持。
+			54 container
+				55 button 取消
+				56 button 保存设置
+				57 button 查看运行设置
+					58 text 运行开关
+					59 text 未开启
+					60 text 目录删除事件监控
+				61 button 查看硬链接
+					62 text 硬链接目录
+					63 text 1 个
+					64 text 源目录与媒体库目录
+				65 button 查看STRM 联动
+					66 text STRM 联动
+					67 text 0 组
+					68 text 映射监控未开启
+				69 button 查看清理选项
+					70 text 关联清理
+					71 text 0 项
+					72 text 刮削文件、记录与种子
+				73 text 配置已载入 下方展示当前设置，保存后生效。
+				74 container 设置分区
+					75 button 运行设置
+					76 button 硬链接
+					77 button STRM 联动
+					78 button 清理选项
+				79 container 清理选项
+					109 container
+						110 heading 关联内容, Value: 3
+							116 text 关联内容
+						117 text 随文件删除事件，一并处理所选的关联内容。
+						118 text 清理刮削文件
+						119 text 删除对应的元数据、图片、字幕与预览目录。
+						115 switch (settable, boolean) Description: 清理刮削文件, Value: 0
+						120 text 删除转移记录
+						121 text 删除对应的 MoviePilot 整理记录。
+						122 switch (settable, boolean) Description: 删除转移记录, Value: 0
+						123 text 联动删除种子
+						124 text 需安装「下载器助手」，并启用监听源文件事件。
+						125 switch (settable, boolean) Description: 联动删除种子, Value: 0
+					126 container
+						127 heading 额外清理的文件后缀, Value: 3
+							128 text 额外清理的文件后缀
+						129 text 与内置的 .nfo、.jpg、.srt 等后缀合并使用。 自定义后缀
+						130 text entry area (disabled) 自定义后缀
+						131 text 每行或逗号分隔一个后缀；仅在清理刮削文件开启时生效。
+				108 text 取消不会更改已保存的设置。
+
+The focused UI element is 78 button 清理选项

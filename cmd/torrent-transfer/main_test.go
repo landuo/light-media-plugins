@@ -45,7 +45,7 @@ func TestPersistentExecutableOwnsOneShotAndJoins(t *testing.T) {
 	if e = json.Unmarshal(output, &emitted); e != nil || !reflect.DeepEqual(emitted, manifest) {
 		t.Fatal("manifest differs", e)
 	}
-	identity := plugins.Identity{PluginID: "TorrentTransfer", InstanceID: "TorrentTransfermusic", Version: manifest.Version}
+	identity := plugins.Identity{PluginID: "TorrentTransfer", InstanceID: "TorrentTransfermusic", Version: "1.10.3"}
 	client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, manifest, plugins.SessionBinding{Identity: identity, Generation: 1})
 	if e != nil {
 		t.Fatal(e)

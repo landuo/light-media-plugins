@@ -1,0 +1,13 @@
+/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/auth-declaration-addon/independent-linux/mps: go1.26.2
+	path	github.com/landuo/light-media-plugins/cmd/mp-server-status
+	mod	github.com/landuo/light-media-plugins	(devel)	
+	dep	github.com/andybalholm/brotli	v1.2.6	h1:ftYnfj6usCp+UGV5kSJ3+chpMQgU+gJf/AxsUQ52REI=
+	dep	golang.org/x/net	v0.61.0	h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=
+	dep	golang.org/x/text	v0.43.0	h1:1QivrlhwAsnMOcqgOdl9my7s9OyZl8O5/UGUTJVXoWc=
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-trimpath=true
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

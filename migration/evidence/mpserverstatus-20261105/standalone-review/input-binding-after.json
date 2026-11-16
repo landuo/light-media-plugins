@@ -1,0 +1,3296 @@
+{
+  "freeze_sha256": "c63fa570f440a20bb29362991ac956d5a0578eb7af5abbb601a0adbf994ba95b",
+  "at_utc": "2026-11-05T12:06:31.957445+00:00",
+  "files": [
+    {
+      "path": "cmd/mp-server-status/main.go",
+      "section": "owned",
+      "expected": "35d2d9b844d8b1953a385babdce390f43c16424e9cc1746c76aa138c106ebdbc",
+      "actual": "35d2d9b844d8b1953a385babdce390f43c16424e9cc1746c76aa138c106ebdbc",
+      "match": true
+    },
+    {
+      "path": "cmd/mp-server-status/main_test.go",
+      "section": "owned",
+      "expected": "64a89987bbc1aead5f179d9e558d1efd66e887bb2fe6399bc1751af78036cb67",
+      "actual": "64a89987bbc1aead5f179d9e558d1efd66e887bb2fe6399bc1751af78036cb67",
+      "match": true
+    },
+    {
+      "path": "cmd/mp-server-status/norace_test.go",
+      "section": "owned",
+      "expected": "2ace8323be4cca38091996cf7882fd7e33d7e8452beb87b1ace5bf2e87824d42",
+      "actual": "2ace8323be4cca38091996cf7882fd7e33d7e8452beb87b1ace5bf2e87824d42",
+      "match": true
+    },
+    {
+      "path": "cmd/mp-server-status/race_test.go",
+      "section": "owned",
+      "expected": "0b9e9312699ea75c14f9b190c480ef91c7560473a87dbec89502902083442ee1",
+      "actual": "0b9e9312699ea75c14f9b190c480ef91c7560473a87dbec89502902083442ee1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "section": "owned",
+      "expected": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "actual": "409c5ae4b3ca091b15b891370a873a727cb541bd75e3445f03d47c49e44dbde1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/cancellation_cache_test.go",
+      "section": "owned",
+      "expected": "1bb211bdac3d0fc1fc579dc96dc0689525ae49bc49a6c1f827d7f450fac290a2",
+      "actual": "1bb211bdac3d0fc1fc579dc96dc0689525ae49bc49a6c1f827d7f450fac290a2",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/content.go",
+      "section": "owned",
+      "expected": "9dc41702d43f5833aebbc1ad599ea803af83a62a6d7bd4c0b1a38db23ff74734",
+      "actual": "9dc41702d43f5833aebbc1ad599ea803af83a62a6d7bd4c0b1a38db23ff74734",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/content_test.go",
+      "section": "owned",
+      "expected": "06ce9e187d0f23eb2334cf657471102470a3f7dac516879ca3656e63bee19600",
+      "actual": "06ce9e187d0f23eb2334cf657471102470a3f7dac516879ca3656e63bee19600",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/cookies.go",
+      "section": "owned",
+      "expected": "acdff1ad9231f1a7c7eb3cd7bcc0b16ba04a1d437d32544160ed94c39283b16c",
+      "actual": "acdff1ad9231f1a7c7eb3cd7bcc0b16ba04a1d437d32544160ed94c39283b16c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/cookies_review_test.go",
+      "section": "owned",
+      "expected": "1e2ba928ab1779d5bddd769c93906803d343a2f96edd74110fc1dfb9a603a654",
+      "actual": "1e2ba928ab1779d5bddd769c93906803d343a2f96edd74110fc1dfb9a603a654",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/date.go",
+      "section": "owned",
+      "expected": "c98f408bb4578760bd2d4a747be46a82c838ae0373e9cc0cf59845e67ee6bcb7",
+      "actual": "c98f408bb4578760bd2d4a747be46a82c838ae0373e9cc0cf59845e67ee6bcb7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/date_review_test.go",
+      "section": "owned",
+      "expected": "a19d9f1d657d99c477ba372ba6f4f5e909a55d505a5033ca101f603e0830bb3e",
+      "actual": "a19d9f1d657d99c477ba372ba6f4f5e909a55d505a5033ca101f603e0830bb3e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+      "section": "owned",
+      "expected": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "actual": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+      "section": "owned",
+      "expected": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "actual": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+      "section": "owned",
+      "expected": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616",
+      "actual": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/codec.go",
+      "section": "owned",
+      "expected": "4c45ee27d05419ff860ee62f9a665416a6feeafa7afc2f1b4848da3c0d9cd8f3",
+      "actual": "4c45ee27d05419ff860ee62f9a665416a6feeafa7afc2f1b4848da3c0d9cd8f3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/codec_extra.go",
+      "section": "owned",
+      "expected": "9cfe76d47dece53b9fc3194880343655b83c9eccfd76097a92a566155dd5a892",
+      "actual": "9cfe76d47dece53b9fc3194880343655b83c9eccfd76097a92a566155dd5a892",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/iso2022.go",
+      "section": "owned",
+      "expected": "8a61ed79c78b5622c6dca5bfd585ee3a6da2ef752c89183d22daf4b272ec9ebb",
+      "actual": "8a61ed79c78b5622c6dca5bfd585ee3a6da2ef752c89183d22daf4b272ec9ebb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/models/confusion.bin",
+      "section": "owned",
+      "expected": "1c853cd04b400bd2d3772fcaddc4466b32d32db703a7aa415df5a20810bf9ecb",
+      "actual": "1c853cd04b400bd2d3772fcaddc4466b32d32db703a7aa415df5a20810bf9ecb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/models/idf.bin",
+      "section": "owned",
+      "expected": "8306e28aad48cac54db7834d09f49cbbb92d3928ede53c71f2b9b232b586bb8a",
+      "actual": "8306e28aad48cac54db7834d09f49cbbb92d3928ede53c71f2b9b232b586bb8a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/models/models.bin",
+      "section": "owned",
+      "expected": "07eb1dabcf4f8e714f9f866eaa355121bf7b3563dcde0d77ed7c3668de5f75f5",
+      "actual": "07eb1dabcf4f8e714f9f866eaa355121bf7b3563dcde0d77ed7c3668de5f75f5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/models.go",
+      "section": "owned",
+      "expected": "d3f8f0647d101defa3b90aef6631ce62299db194eb25ab1b02bd727052fdf592",
+      "actual": "d3f8f0647d101defa3b90aef6631ce62299db194eb25ab1b02bd727052fdf592",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-ignore.bin.z",
+      "section": "owned",
+      "expected": "9ccaf4ce7c47616c43f552b8899c4f2537b5bcaaff34d4477c923e940994cd7f",
+      "actual": "9ccaf4ce7c47616c43f552b8899c4f2537b5bcaaff34d4477c923e940994cd7f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-replace.bin.z",
+      "section": "owned",
+      "expected": "d19a3e27649ed76466735f9c47b13ab34df79629c1f6a6ef1111e64aef3178b8",
+      "actual": "d19a3e27649ed76466735f9c47b13ab34df79629c1f6a6ef1111e64aef3178b8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-strict.bin.z",
+      "section": "owned",
+      "expected": "8a84a46a16076dcc24e7b74258631bc18a83a3344ffeb7a2090bc96bd36c0c8b",
+      "actual": "8a84a46a16076dcc24e7b74258631bc18a83a3344ffeb7a2090bc96bd36c0c8b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-ignore.bin.z",
+      "section": "owned",
+      "expected": "a45e868d0bead7013314f78b6c9d6bc2c6d1198c4e3d575887f8a3086d78de89",
+      "actual": "a45e868d0bead7013314f78b6c9d6bc2c6d1198c4e3d575887f8a3086d78de89",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-replace.bin.z",
+      "section": "owned",
+      "expected": "1a97cff541c2301a321e5c65df493841b96b708524e53c9f9478e2f53b9a64f5",
+      "actual": "1a97cff541c2301a321e5c65df493841b96b708524e53c9f9478e2f53b9a64f5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-strict.bin.z",
+      "section": "owned",
+      "expected": "20e0d8d5045b42ad57af29d48745df11889a80b41dab078e3ef26393f75be90c",
+      "actual": "20e0d8d5045b42ad57af29d48745df11889a80b41dab078e3ef26393f75be90c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-ignore.bin.z",
+      "section": "owned",
+      "expected": "179766a8835f6f199bf671c1be3d1da55cec673be26015c33a0106f4fc04e53f",
+      "actual": "179766a8835f6f199bf671c1be3d1da55cec673be26015c33a0106f4fc04e53f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-replace.bin.z",
+      "section": "owned",
+      "expected": "4ee68e024b74021dadc93fe8cfa7412aff7f7c67874feaf7aaa20b6ca3f19729",
+      "actual": "4ee68e024b74021dadc93fe8cfa7412aff7f7c67874feaf7aaa20b6ca3f19729",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-strict.bin.z",
+      "section": "owned",
+      "expected": "a1f07e0e2c424aa4a8ac6eec895f922875b08e5dbbba61765fea88a93509b756",
+      "actual": "a1f07e0e2c424aa4a8ac6eec895f922875b08e5dbbba61765fea88a93509b756",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-ignore.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-replace.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-strict.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-ignore.bin.z",
+      "section": "owned",
+      "expected": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "actual": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-replace.bin.z",
+      "section": "owned",
+      "expected": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "actual": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-strict.bin.z",
+      "section": "owned",
+      "expected": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "actual": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-ignore.bin.z",
+      "section": "owned",
+      "expected": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "actual": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-replace.bin.z",
+      "section": "owned",
+      "expected": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "actual": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-strict.bin.z",
+      "section": "owned",
+      "expected": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "actual": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-ignore.bin.z",
+      "section": "owned",
+      "expected": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "actual": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-replace.bin.z",
+      "section": "owned",
+      "expected": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "actual": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-strict.bin.z",
+      "section": "owned",
+      "expected": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "actual": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-ignore.bin.z",
+      "section": "owned",
+      "expected": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "actual": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-replace.bin.z",
+      "section": "owned",
+      "expected": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "actual": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-strict.bin.z",
+      "section": "owned",
+      "expected": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "actual": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-ignore.bin.z",
+      "section": "owned",
+      "expected": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "actual": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-replace.bin.z",
+      "section": "owned",
+      "expected": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "actual": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-strict.bin.z",
+      "section": "owned",
+      "expected": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "actual": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-ignore.bin.z",
+      "section": "owned",
+      "expected": "0adb82749aa0cd14e203e5a92b064d9a5aa2840a0dd2520d4c99cedce5b5a3ac",
+      "actual": "0adb82749aa0cd14e203e5a92b064d9a5aa2840a0dd2520d4c99cedce5b5a3ac",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-replace.bin.z",
+      "section": "owned",
+      "expected": "da000c7259547161fd680342da52307d1f07ed93956d366dd3b05d1eb0789f5d",
+      "actual": "da000c7259547161fd680342da52307d1f07ed93956d366dd3b05d1eb0789f5d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-strict.bin.z",
+      "section": "owned",
+      "expected": "738d83eb0fc87be530528bba7abc47c9f1ca2f1af75496ea578b1dd5cdcb80fb",
+      "actual": "738d83eb0fc87be530528bba7abc47c9f1ca2f1af75496ea578b1dd5cdcb80fb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-ignore.bin.z",
+      "section": "owned",
+      "expected": "8c9cd768f1b6469c961c169d8465dd0e3bc75c66327e519b6281ad82749c1346",
+      "actual": "8c9cd768f1b6469c961c169d8465dd0e3bc75c66327e519b6281ad82749c1346",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-replace.bin.z",
+      "section": "owned",
+      "expected": "1c04d2d2a59d6bd33cebc916f5c14e513c5fc516557f487eeae79a807bf587d1",
+      "actual": "1c04d2d2a59d6bd33cebc916f5c14e513c5fc516557f487eeae79a807bf587d1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-strict.bin.z",
+      "section": "owned",
+      "expected": "c12c2a49f55b98088a81b7d73d4863d36e342b64541f3aed914a602fc5b1d571",
+      "actual": "c12c2a49f55b98088a81b7d73d4863d36e342b64541f3aed914a602fc5b1d571",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-ignore.bin.z",
+      "section": "owned",
+      "expected": "caa972a0e8625569eb707cabe379499fe436d120dd36226e40622e3f13dfa0a0",
+      "actual": "caa972a0e8625569eb707cabe379499fe436d120dd36226e40622e3f13dfa0a0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-replace.bin.z",
+      "section": "owned",
+      "expected": "fb0f79dc37146c6cf4691954e2b8190ff321a4fd32a4a8cb4735d0683e77c3c4",
+      "actual": "fb0f79dc37146c6cf4691954e2b8190ff321a4fd32a4a8cb4735d0683e77c3c4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-strict.bin.z",
+      "section": "owned",
+      "expected": "ff5c534c9e0ea28315a0531af1115454c432d02d190b931fb8a2b94b7d8d54bb",
+      "actual": "ff5c534c9e0ea28315a0531af1115454c432d02d190b931fb8a2b94b7d8d54bb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-ignore.bin.z",
+      "section": "owned",
+      "expected": "8ea6725c0e80d49eede851dc569d5c60b4a0063f8bf24b4b2c4a729b253c8636",
+      "actual": "8ea6725c0e80d49eede851dc569d5c60b4a0063f8bf24b4b2c4a729b253c8636",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-replace.bin.z",
+      "section": "owned",
+      "expected": "cb6adb9c9e2466298b56381a93c82084bf6354c56667e6f1f5089344134f8a0c",
+      "actual": "cb6adb9c9e2466298b56381a93c82084bf6354c56667e6f1f5089344134f8a0c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-strict.bin.z",
+      "section": "owned",
+      "expected": "92a36774bfae1706fcc01169015e1b0b6dc57c3a8224979cf64064597096dc29",
+      "actual": "92a36774bfae1706fcc01169015e1b0b6dc57c3a8224979cf64064597096dc29",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-ignore.bin.z",
+      "section": "owned",
+      "expected": "a333ee910ba9bf1d6f2f7cc31fcf035fef648f19947c5804dc78ece81630d805",
+      "actual": "a333ee910ba9bf1d6f2f7cc31fcf035fef648f19947c5804dc78ece81630d805",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-replace.bin.z",
+      "section": "owned",
+      "expected": "e4088c4306bd7b6ff486c7a29e9f82f0ee8de8eb902e8f56e9bde002fe92ef31",
+      "actual": "e4088c4306bd7b6ff486c7a29e9f82f0ee8de8eb902e8f56e9bde002fe92ef31",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-strict.bin.z",
+      "section": "owned",
+      "expected": "9faaa7fddc5c7469a729d23548b81fbf4f9f8bfb7ae38385cd64c3b3e0ade0c3",
+      "actual": "9faaa7fddc5c7469a729d23548b81fbf4f9f8bfb7ae38385cd64c3b3e0ade0c3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-ignore.bin.z",
+      "section": "owned",
+      "expected": "c39aff103a96e75c14c84bd78899ca37121c9c012e19baee118b64656383e675",
+      "actual": "c39aff103a96e75c14c84bd78899ca37121c9c012e19baee118b64656383e675",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-replace.bin.z",
+      "section": "owned",
+      "expected": "750c5b471d8176c1f284ab5af166cc4f86233f9eed4be3aee9c09a4f862ca890",
+      "actual": "750c5b471d8176c1f284ab5af166cc4f86233f9eed4be3aee9c09a4f862ca890",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-strict.bin.z",
+      "section": "owned",
+      "expected": "b98451256ee5c43523aaf5673debecd87e418f6e51bb9a1534dd7c0d0055013d",
+      "actual": "b98451256ee5c43523aaf5673debecd87e418f6e51bb9a1534dd7c0d0055013d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-ignore.bin.z",
+      "section": "owned",
+      "expected": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "actual": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-replace.bin.z",
+      "section": "owned",
+      "expected": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "actual": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-strict.bin.z",
+      "section": "owned",
+      "expected": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "actual": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-ignore.bin.z",
+      "section": "owned",
+      "expected": "345dd00bd785e73f3fb1e15bce1d5eee266ce9e24e233e9720462ad8d4a9c0d1",
+      "actual": "345dd00bd785e73f3fb1e15bce1d5eee266ce9e24e233e9720462ad8d4a9c0d1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-replace.bin.z",
+      "section": "owned",
+      "expected": "3da2299e05f2d78f06c4eba6b5dcb605590e76d951f204dda63a660f74d97492",
+      "actual": "3da2299e05f2d78f06c4eba6b5dcb605590e76d951f204dda63a660f74d97492",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-strict.bin.z",
+      "section": "owned",
+      "expected": "f8e7c587b643be29fb4ac126e11be8937dccbb690c3f30bb6b46cf3bcf322fd6",
+      "actual": "f8e7c587b643be29fb4ac126e11be8937dccbb690c3f30bb6b46cf3bcf322fd6",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-ignore.bin.z",
+      "section": "owned",
+      "expected": "db1f3f460a90ebdb56478bf603f684aa86897468e5bacbd3058bb319d7cc0bc5",
+      "actual": "db1f3f460a90ebdb56478bf603f684aa86897468e5bacbd3058bb319d7cc0bc5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-replace.bin.z",
+      "section": "owned",
+      "expected": "9874e1e453d833ce91fa2616581ac87dbdda6f2351ef3e343353b7f95a79bca7",
+      "actual": "9874e1e453d833ce91fa2616581ac87dbdda6f2351ef3e343353b7f95a79bca7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-strict.bin.z",
+      "section": "owned",
+      "expected": "e6f5dfcaab4ef424c1bf6e2e60f672e8502dacda51db3657ffb1438ae1f9e53a",
+      "actual": "e6f5dfcaab4ef424c1bf6e2e60f672e8502dacda51db3657ffb1438ae1f9e53a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-ignore.bin.z",
+      "section": "owned",
+      "expected": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "actual": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-replace.bin.z",
+      "section": "owned",
+      "expected": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "actual": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-strict.bin.z",
+      "section": "owned",
+      "expected": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "actual": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-ignore.bin.z",
+      "section": "owned",
+      "expected": "d41cb012d5bff3ddf65b75a39430f301bf56ff3fac30d6bf6a470b9825dfab42",
+      "actual": "d41cb012d5bff3ddf65b75a39430f301bf56ff3fac30d6bf6a470b9825dfab42",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-replace.bin.z",
+      "section": "owned",
+      "expected": "63c0545f7d1fb3788fe5849f00091b0c18c4e9d8f5ffc3aa0c44fe45cfc187a0",
+      "actual": "63c0545f7d1fb3788fe5849f00091b0c18c4e9d8f5ffc3aa0c44fe45cfc187a0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-strict.bin.z",
+      "section": "owned",
+      "expected": "8b1bd9dfec6667262baee430f4d4afe00975b322515aca06eac49dd8edcf03a9",
+      "actual": "8b1bd9dfec6667262baee430f4d4afe00975b322515aca06eac49dd8edcf03a9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-ignore.bin.z",
+      "section": "owned",
+      "expected": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "actual": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-replace.bin.z",
+      "section": "owned",
+      "expected": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "actual": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-strict.bin.z",
+      "section": "owned",
+      "expected": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "actual": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-ignore.bin.z",
+      "section": "owned",
+      "expected": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "actual": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-replace.bin.z",
+      "section": "owned",
+      "expected": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "actual": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-strict.bin.z",
+      "section": "owned",
+      "expected": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "actual": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-ignore.bin.z",
+      "section": "owned",
+      "expected": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "actual": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-replace.bin.z",
+      "section": "owned",
+      "expected": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "actual": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-strict.bin.z",
+      "section": "owned",
+      "expected": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "actual": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-ignore.bin.z",
+      "section": "owned",
+      "expected": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "actual": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-replace.bin.z",
+      "section": "owned",
+      "expected": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "actual": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-strict.bin.z",
+      "section": "owned",
+      "expected": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "actual": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-ignore.bin.z",
+      "section": "owned",
+      "expected": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "actual": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-replace.bin.z",
+      "section": "owned",
+      "expected": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "actual": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-strict.bin.z",
+      "section": "owned",
+      "expected": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "actual": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-ignore.bin.z",
+      "section": "owned",
+      "expected": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "actual": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-replace.bin.z",
+      "section": "owned",
+      "expected": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "actual": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-strict.bin.z",
+      "section": "owned",
+      "expected": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "actual": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-ignore.bin.z",
+      "section": "owned",
+      "expected": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "actual": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-replace.bin.z",
+      "section": "owned",
+      "expected": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "actual": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-strict.bin.z",
+      "section": "owned",
+      "expected": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "actual": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-ignore.bin.z",
+      "section": "owned",
+      "expected": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "actual": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-replace.bin.z",
+      "section": "owned",
+      "expected": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "actual": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-strict.bin.z",
+      "section": "owned",
+      "expected": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "actual": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-ignore.bin.z",
+      "section": "owned",
+      "expected": "c6d1c411b087b9442a60c09e728016a161bfd38cdd1d9f26cf89284d45386fd4",
+      "actual": "c6d1c411b087b9442a60c09e728016a161bfd38cdd1d9f26cf89284d45386fd4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-replace.bin.z",
+      "section": "owned",
+      "expected": "09a083b677c055358024a5e9165a63824b5144c3d0c5b81c949bde698f1849c2",
+      "actual": "09a083b677c055358024a5e9165a63824b5144c3d0c5b81c949bde698f1849c2",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-strict.bin.z",
+      "section": "owned",
+      "expected": "5552caa45a9d85193366f7cc3dfd030a667d37ffb7293f04fba5bc81583456d7",
+      "actual": "5552caa45a9d85193366f7cc3dfd030a667d37ffb7293f04fba5bc81583456d7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-ignore.bin.z",
+      "section": "owned",
+      "expected": "42b37ee9a6cdb47044c3acfde5e9a52dbfe45318350bca9038bb803f6718162c",
+      "actual": "42b37ee9a6cdb47044c3acfde5e9a52dbfe45318350bca9038bb803f6718162c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-replace.bin.z",
+      "section": "owned",
+      "expected": "858cacf6ea1b6c1bfb5dc02c85f83b75136bc65ac11e8ce193bcd5b1d04e0c5b",
+      "actual": "858cacf6ea1b6c1bfb5dc02c85f83b75136bc65ac11e8ce193bcd5b1d04e0c5b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-strict.bin.z",
+      "section": "owned",
+      "expected": "a6755528bd0359a037197bbe2fe310523c5529e59aaed7a1280c3f7161031055",
+      "actual": "a6755528bd0359a037197bbe2fe310523c5529e59aaed7a1280c3f7161031055",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-ignore.bin.z",
+      "section": "owned",
+      "expected": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "actual": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-replace.bin.z",
+      "section": "owned",
+      "expected": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "actual": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-strict.bin.z",
+      "section": "owned",
+      "expected": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "actual": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-ignore.bin.z",
+      "section": "owned",
+      "expected": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "actual": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-replace.bin.z",
+      "section": "owned",
+      "expected": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "actual": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-strict.bin.z",
+      "section": "owned",
+      "expected": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "actual": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-ignore.bin.z",
+      "section": "owned",
+      "expected": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "actual": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-replace.bin.z",
+      "section": "owned",
+      "expected": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "actual": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-strict.bin.z",
+      "section": "owned",
+      "expected": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "actual": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-ignore.bin.z",
+      "section": "owned",
+      "expected": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "actual": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-replace.bin.z",
+      "section": "owned",
+      "expected": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "actual": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-strict.bin.z",
+      "section": "owned",
+      "expected": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "actual": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-ignore.bin.z",
+      "section": "owned",
+      "expected": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "actual": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-replace.bin.z",
+      "section": "owned",
+      "expected": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "actual": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-strict.bin.z",
+      "section": "owned",
+      "expected": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "actual": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-ignore.bin.z",
+      "section": "owned",
+      "expected": "b0e0798def0728ecbe492f70511c7b75c47542c4450dcbcc49e3cb8d87bf732e",
+      "actual": "b0e0798def0728ecbe492f70511c7b75c47542c4450dcbcc49e3cb8d87bf732e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-replace.bin.z",
+      "section": "owned",
+      "expected": "e6b8c08e2f4ae2cafa98fbdd7061ecca920db384cd04ed6dd976b8819b32dd1b",
+      "actual": "e6b8c08e2f4ae2cafa98fbdd7061ecca920db384cd04ed6dd976b8819b32dd1b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-strict.bin.z",
+      "section": "owned",
+      "expected": "1485ab6832e5bf13de7b0be435e6646d362cfd91c17cb15a076bca70cb248982",
+      "actual": "1485ab6832e5bf13de7b0be435e6646d362cfd91c17cb15a076bca70cb248982",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-ignore.bin.z",
+      "section": "owned",
+      "expected": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "actual": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-replace.bin.z",
+      "section": "owned",
+      "expected": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "actual": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-strict.bin.z",
+      "section": "owned",
+      "expected": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "actual": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-ignore.bin.z",
+      "section": "owned",
+      "expected": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "actual": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-replace.bin.z",
+      "section": "owned",
+      "expected": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "actual": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-strict.bin.z",
+      "section": "owned",
+      "expected": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "actual": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-ignore.bin.z",
+      "section": "owned",
+      "expected": "90fb9690cc5e21b3511f20389673caccc783c20a7d5a640e301d7aec07fda247",
+      "actual": "90fb9690cc5e21b3511f20389673caccc783c20a7d5a640e301d7aec07fda247",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-replace.bin.z",
+      "section": "owned",
+      "expected": "2acd4e27c9910a627a421aa6bb2f7ee05aa4da41baed1624908796e051e715d9",
+      "actual": "2acd4e27c9910a627a421aa6bb2f7ee05aa4da41baed1624908796e051e715d9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-strict.bin.z",
+      "section": "owned",
+      "expected": "1da1fa0cc291ebf4c335baf9970d338420ea0572e311a60e089999fbde469ba4",
+      "actual": "1da1fa0cc291ebf4c335baf9970d338420ea0572e311a60e089999fbde469ba4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-ignore.bin.z",
+      "section": "owned",
+      "expected": "8222f839576d3ee282adb6e78d7d9ff8fd53564f06aeff1f7d296e40d3f4de8c",
+      "actual": "8222f839576d3ee282adb6e78d7d9ff8fd53564f06aeff1f7d296e40d3f4de8c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-replace.bin.z",
+      "section": "owned",
+      "expected": "1476f4e51a3108bd85c44f0c1875c5fb2d672663a4febb719deb74a63ac9e6cd",
+      "actual": "1476f4e51a3108bd85c44f0c1875c5fb2d672663a4febb719deb74a63ac9e6cd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-strict.bin.z",
+      "section": "owned",
+      "expected": "931e1b63ee3defb5d292138afde82728ce7c417a19fbcbfff23caa8665181788",
+      "actual": "931e1b63ee3defb5d292138afde82728ce7c417a19fbcbfff23caa8665181788",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-ignore.bin.z",
+      "section": "owned",
+      "expected": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "actual": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-replace.bin.z",
+      "section": "owned",
+      "expected": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "actual": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-strict.bin.z",
+      "section": "owned",
+      "expected": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "actual": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-ignore.bin.z",
+      "section": "owned",
+      "expected": "a78d1ffdeec70b00d566aa2324bcf65e42c5ba36d2101ee9e61d7d2ed4b8e5c7",
+      "actual": "a78d1ffdeec70b00d566aa2324bcf65e42c5ba36d2101ee9e61d7d2ed4b8e5c7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-replace.bin.z",
+      "section": "owned",
+      "expected": "a6f29c0e32d1290e76867803ca7e050e657ed5291637f7a5ec0c04b092967079",
+      "actual": "a6f29c0e32d1290e76867803ca7e050e657ed5291637f7a5ec0c04b092967079",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-strict.bin.z",
+      "section": "owned",
+      "expected": "7b91dcffb0341463c0609f1c643cdb6850fda11f1744dd79a939b6bfd9d5443e",
+      "actual": "7b91dcffb0341463c0609f1c643cdb6850fda11f1744dd79a939b6bfd9d5443e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-ignore.bin.z",
+      "section": "owned",
+      "expected": "9862f3e37f1e14c43a246d582d8aebfb0383052f946337909fa8a7bdc50c95fd",
+      "actual": "9862f3e37f1e14c43a246d582d8aebfb0383052f946337909fa8a7bdc50c95fd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-replace.bin.z",
+      "section": "owned",
+      "expected": "94d297841cc1e99d04750eb36fa010fa05bf737c535dd9e15b1b98008b2751be",
+      "actual": "94d297841cc1e99d04750eb36fa010fa05bf737c535dd9e15b1b98008b2751be",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-strict.bin.z",
+      "section": "owned",
+      "expected": "9f9670f3b17e61eaa01134140a3a9ec4cf3b8ff39ed75186f8eaf2ed88a8f9c2",
+      "actual": "9f9670f3b17e61eaa01134140a3a9ec4cf3b8ff39ed75186f8eaf2ed88a8f9c2",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-ignore.bin.z",
+      "section": "owned",
+      "expected": "70b0fd126cde1d87f62bc522048b54c6a42a28acdf17f51da1dd9896cdce6533",
+      "actual": "70b0fd126cde1d87f62bc522048b54c6a42a28acdf17f51da1dd9896cdce6533",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-replace.bin.z",
+      "section": "owned",
+      "expected": "db574f4cef7aa7c50ef1b316296df1a889832b59ab014b25835f6bf0fcde1d49",
+      "actual": "db574f4cef7aa7c50ef1b316296df1a889832b59ab014b25835f6bf0fcde1d49",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-strict.bin.z",
+      "section": "owned",
+      "expected": "cf491ba894adaaf906b3e9fb76997591bf67942276ce2444f63ae72497125b0b",
+      "actual": "cf491ba894adaaf906b3e9fb76997591bf67942276ce2444f63ae72497125b0b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-ignore.bin.z",
+      "section": "owned",
+      "expected": "7992bdad8fa7b337556c803caeaeeef6ac871d305a739efecd507065a46e71cd",
+      "actual": "7992bdad8fa7b337556c803caeaeeef6ac871d305a739efecd507065a46e71cd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-replace.bin.z",
+      "section": "owned",
+      "expected": "77e5c946a46dd18e8fb224221a31bbe3f3c3a0de6989048691b7fffb55aa6300",
+      "actual": "77e5c946a46dd18e8fb224221a31bbe3f3c3a0de6989048691b7fffb55aa6300",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-strict.bin.z",
+      "section": "owned",
+      "expected": "65e96b58eaa842029d0b9da5e12b9e4ce1113c424496d8986f184362ad6952f0",
+      "actual": "65e96b58eaa842029d0b9da5e12b9e4ce1113c424496d8986f184362ad6952f0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-ignore.bin.z",
+      "section": "owned",
+      "expected": "79f4500635109b3b3ef0922d99e7241cd07170b47a1661b15f34b5e6d3cd426a",
+      "actual": "79f4500635109b3b3ef0922d99e7241cd07170b47a1661b15f34b5e6d3cd426a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-replace.bin.z",
+      "section": "owned",
+      "expected": "12b93e0389a7fc2b1eeeb6412b4b6ea0c10f5d37679e8d4cbebccdecba914831",
+      "actual": "12b93e0389a7fc2b1eeeb6412b4b6ea0c10f5d37679e8d4cbebccdecba914831",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-strict.bin.z",
+      "section": "owned",
+      "expected": "0c907239791b1d2ba8c4dc9eff46ee9ae66a0e8034e7f06c2f68a26ec62573a5",
+      "actual": "0c907239791b1d2ba8c4dc9eff46ee9ae66a0e8034e7f06c2f68a26ec62573a5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-ignore.bin.z",
+      "section": "owned",
+      "expected": "c825b5cab01130dc23ddbc1976c5a322ed2a5c2c840b3357c0a311a07106d5de",
+      "actual": "c825b5cab01130dc23ddbc1976c5a322ed2a5c2c840b3357c0a311a07106d5de",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-replace.bin.z",
+      "section": "owned",
+      "expected": "64337ba510c42bc08a586c41a726e3285996be6e6a44f20ece59d11a587611f4",
+      "actual": "64337ba510c42bc08a586c41a726e3285996be6e6a44f20ece59d11a587611f4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-strict.bin.z",
+      "section": "owned",
+      "expected": "d3636b85f5dd5d61b4a85113853bb85c98328a7f6049f048eaa70d393d9c8a31",
+      "actual": "d3636b85f5dd5d61b4a85113853bb85c98328a7f6049f048eaa70d393d9c8a31",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-ignore.bin.z",
+      "section": "owned",
+      "expected": "b84f9a838f18e2abe918396e767ed9f882fecdf0573e9c3ece84c7967ee7fa36",
+      "actual": "b84f9a838f18e2abe918396e767ed9f882fecdf0573e9c3ece84c7967ee7fa36",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-replace.bin.z",
+      "section": "owned",
+      "expected": "80ca39093c409107da41f82b4a5cf9e0a6fc9a3b61704483f0a80928ad74c2b4",
+      "actual": "80ca39093c409107da41f82b4a5cf9e0a6fc9a3b61704483f0a80928ad74c2b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-strict.bin.z",
+      "section": "owned",
+      "expected": "57dd1826055edc4893b919d76faa8abd96d78711477e9a64ada0e012fee69218",
+      "actual": "57dd1826055edc4893b919d76faa8abd96d78711477e9a64ada0e012fee69218",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-ignore.bin.z",
+      "section": "owned",
+      "expected": "376f98cf6d31c2e29665e037619384ad1b180b44526896edb9c8344dc4a8e2ec",
+      "actual": "376f98cf6d31c2e29665e037619384ad1b180b44526896edb9c8344dc4a8e2ec",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-replace.bin.z",
+      "section": "owned",
+      "expected": "9ee3c0b4230d625f3239fa59f682f2945ef6e1a4f389c69ba6d0cde8ce5db1af",
+      "actual": "9ee3c0b4230d625f3239fa59f682f2945ef6e1a4f389c69ba6d0cde8ce5db1af",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-strict.bin.z",
+      "section": "owned",
+      "expected": "6f72c9e5d42e27ddf8161dc0ad3dba0e7195a45605f03a4fc9e66f0e1abe5c2a",
+      "actual": "6f72c9e5d42e27ddf8161dc0ad3dba0e7195a45605f03a4fc9e66f0e1abe5c2a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-ignore.bin.z",
+      "section": "owned",
+      "expected": "3c90a85e2354d5375825dab382313164df1a842ce818fc973bf25b04a07d6fa0",
+      "actual": "3c90a85e2354d5375825dab382313164df1a842ce818fc973bf25b04a07d6fa0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-replace.bin.z",
+      "section": "owned",
+      "expected": "dc8ef35b89f24a841dfa7aac0dde0b8223efc1348d171f8cff1a3dd94174e9a4",
+      "actual": "dc8ef35b89f24a841dfa7aac0dde0b8223efc1348d171f8cff1a3dd94174e9a4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-strict.bin.z",
+      "section": "owned",
+      "expected": "a702452c05e5a1bb871fafd2036d93c41cc87d91f36260d556164bec47603593",
+      "actual": "a702452c05e5a1bb871fafd2036d93c41cc87d91f36260d556164bec47603593",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-ignore.bin.z",
+      "section": "owned",
+      "expected": "2e0cc37fbc32478c50ae999b5873ff43b670b072d19508167fb84fbeadaea850",
+      "actual": "2e0cc37fbc32478c50ae999b5873ff43b670b072d19508167fb84fbeadaea850",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-replace.bin.z",
+      "section": "owned",
+      "expected": "84fb8c6e8aeb3f8710c3e721833504682eed00c3d98a44122d982f3e74ea883d",
+      "actual": "84fb8c6e8aeb3f8710c3e721833504682eed00c3d98a44122d982f3e74ea883d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-strict.bin.z",
+      "section": "owned",
+      "expected": "4ae638c760053133c4f0c135b7a55fc3250dd0f6f9621947b8720cd73e76351e",
+      "actual": "4ae638c760053133c4f0c135b7a55fc3250dd0f6f9621947b8720cd73e76351e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-ignore.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-replace.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-strict.bin.z",
+      "section": "owned",
+      "expected": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "actual": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-ignore.bin.z",
+      "section": "owned",
+      "expected": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "actual": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-replace.bin.z",
+      "section": "owned",
+      "expected": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "actual": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-strict.bin.z",
+      "section": "owned",
+      "expected": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "actual": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-ignore.bin.z",
+      "section": "owned",
+      "expected": "d30bb149f72517556ab6741cad5b8b0ae6be1fdecfac7100c13d803c6db7861d",
+      "actual": "d30bb149f72517556ab6741cad5b8b0ae6be1fdecfac7100c13d803c6db7861d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-replace.bin.z",
+      "section": "owned",
+      "expected": "b94fe8f6f8c482738c0b080e3bf07a26ab29f3c928c3219e70e86f1e2bc8b396",
+      "actual": "b94fe8f6f8c482738c0b080e3bf07a26ab29f3c928c3219e70e86f1e2bc8b396",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-strict.bin.z",
+      "section": "owned",
+      "expected": "376b60e04925ce8da4bd2466e59be15a6fc257486875a0c7de6dfc20613dd96a",
+      "actual": "376b60e04925ce8da4bd2466e59be15a6fc257486875a0c7de6dfc20613dd96a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-ignore.bin.z",
+      "section": "owned",
+      "expected": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "actual": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-replace.bin.z",
+      "section": "owned",
+      "expected": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "actual": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-strict.bin.z",
+      "section": "owned",
+      "expected": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "actual": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-ignore.bin.z",
+      "section": "owned",
+      "expected": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "actual": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-replace.bin.z",
+      "section": "owned",
+      "expected": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "actual": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-strict.bin.z",
+      "section": "owned",
+      "expected": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "actual": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-ignore.bin.z",
+      "section": "owned",
+      "expected": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "actual": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-replace.bin.z",
+      "section": "owned",
+      "expected": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "actual": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-strict.bin.z",
+      "section": "owned",
+      "expected": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "actual": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-ignore.bin.z",
+      "section": "owned",
+      "expected": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "actual": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-replace.bin.z",
+      "section": "owned",
+      "expected": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "actual": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-strict.bin.z",
+      "section": "owned",
+      "expected": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "actual": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-ignore.bin.z",
+      "section": "owned",
+      "expected": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "actual": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-replace.bin.z",
+      "section": "owned",
+      "expected": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "actual": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-strict.bin.z",
+      "section": "owned",
+      "expected": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "actual": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-ignore.bin.z",
+      "section": "owned",
+      "expected": "ed5b31221ffd09cbced8e7abe23b55d52926f475cef65d8a6cbd30b610adb0b1",
+      "actual": "ed5b31221ffd09cbced8e7abe23b55d52926f475cef65d8a6cbd30b610adb0b1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-replace.bin.z",
+      "section": "owned",
+      "expected": "38cb69cdae53cafb924929942b02905ada00f82f6722c9d3a3f0ea8a7af94c4c",
+      "actual": "38cb69cdae53cafb924929942b02905ada00f82f6722c9d3a3f0ea8a7af94c4c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-strict.bin.z",
+      "section": "owned",
+      "expected": "9e440cdd0a08e60633caad10eebc416259163f7f2608b1b3ac4cae32b1e004e3",
+      "actual": "9e440cdd0a08e60633caad10eebc416259163f7f2608b1b3ac4cae32b1e004e3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-ignore.bin.z",
+      "section": "owned",
+      "expected": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "actual": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-replace.bin.z",
+      "section": "owned",
+      "expected": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "actual": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-strict.bin.z",
+      "section": "owned",
+      "expected": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "actual": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-ignore.bin.z",
+      "section": "owned",
+      "expected": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "actual": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-replace.bin.z",
+      "section": "owned",
+      "expected": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "actual": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-strict.bin.z",
+      "section": "owned",
+      "expected": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "actual": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-ignore.bin.z",
+      "section": "owned",
+      "expected": "e021294f12cc2af9f803b6777bdbdc3b8ba1cdf17a02bad06c2b6949baa8d5d8",
+      "actual": "e021294f12cc2af9f803b6777bdbdc3b8ba1cdf17a02bad06c2b6949baa8d5d8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-replace.bin.z",
+      "section": "owned",
+      "expected": "6a848c9a52e925f20965d3488b8dddce669c727d7d2a3a97d2d1816741592fd7",
+      "actual": "6a848c9a52e925f20965d3488b8dddce669c727d7d2a3a97d2d1816741592fd7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-strict.bin.z",
+      "section": "owned",
+      "expected": "0a7f01cc90caaac5f9c60c2f159a9de2f49140042bb390585871e49c55841e6e",
+      "actual": "0a7f01cc90caaac5f9c60c2f159a9de2f49140042bb390585871e49c55841e6e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-ignore.bin.z",
+      "section": "owned",
+      "expected": "4337ced2deeac18442d9068ea3ac7e96a09dfd632ed9b934e54edd26cf0afc2c",
+      "actual": "4337ced2deeac18442d9068ea3ac7e96a09dfd632ed9b934e54edd26cf0afc2c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-replace.bin.z",
+      "section": "owned",
+      "expected": "778546c9266387b38d081df715abea5aa9533f9c9bb36e5ae02d0be12be45f70",
+      "actual": "778546c9266387b38d081df715abea5aa9533f9c9bb36e5ae02d0be12be45f70",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-strict.bin.z",
+      "section": "owned",
+      "expected": "adfd8e2de054c8147003825cfe585e44ea370d3595f327da0dc4a8db7e83e849",
+      "actual": "adfd8e2de054c8147003825cfe585e44ea370d3595f327da0dc4a8db7e83e849",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-ignore.bin.z",
+      "section": "owned",
+      "expected": "2db62de1a8ea7efeb23b73a027f5a653097dbb07750a7c87a6e662736b962286",
+      "actual": "2db62de1a8ea7efeb23b73a027f5a653097dbb07750a7c87a6e662736b962286",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-replace.bin.z",
+      "section": "owned",
+      "expected": "ee3c1eef43ceac95de8f5b0c28b3ec0faff7d0e1786b2f2d5565c62e66d43be9",
+      "actual": "ee3c1eef43ceac95de8f5b0c28b3ec0faff7d0e1786b2f2d5565c62e66d43be9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-strict.bin.z",
+      "section": "owned",
+      "expected": "360495ecc070ff8416ff6a590b6c63c7d8375db20f5bcc5d12f04beb65cba94d",
+      "actual": "360495ecc070ff8416ff6a590b6c63c7d8375db20f5bcc5d12f04beb65cba94d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-ignore.bin.z",
+      "section": "owned",
+      "expected": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "actual": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-replace.bin.z",
+      "section": "owned",
+      "expected": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "actual": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-strict.bin.z",
+      "section": "owned",
+      "expected": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "actual": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-ignore.bin.z",
+      "section": "owned",
+      "expected": "ca43cdfaac9587bbd073a4a0d11db7a5e6c07121e98efb7e719ba2123284bfb3",
+      "actual": "ca43cdfaac9587bbd073a4a0d11db7a5e6c07121e98efb7e719ba2123284bfb3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-replace.bin.z",
+      "section": "owned",
+      "expected": "e5323ff2251ecdc3619c68fd99f735efa84fd44e31c20b5383015197e3171398",
+      "actual": "e5323ff2251ecdc3619c68fd99f735efa84fd44e31c20b5383015197e3171398",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-strict.bin.z",
+      "section": "owned",
+      "expected": "8e51d61560ba1404adb1251a2f8443d765437f84747204df0ad4a9d2bbc74674",
+      "actual": "8e51d61560ba1404adb1251a2f8443d765437f84747204df0ad4a9d2bbc74674",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-ignore.bin.z",
+      "section": "owned",
+      "expected": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "actual": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-replace.bin.z",
+      "section": "owned",
+      "expected": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "actual": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-strict.bin.z",
+      "section": "owned",
+      "expected": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "actual": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-ignore.bin.z",
+      "section": "owned",
+      "expected": "84e25b5f84f6140b738be78bfd801e5a01b013f60a16e485bfa90efe8f29636f",
+      "actual": "84e25b5f84f6140b738be78bfd801e5a01b013f60a16e485bfa90efe8f29636f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-replace.bin.z",
+      "section": "owned",
+      "expected": "2b326066011ef6dd4ba6b923626f9097a914bbc7112d79c9a62793784c473a24",
+      "actual": "2b326066011ef6dd4ba6b923626f9097a914bbc7112d79c9a62793784c473a24",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-strict.bin.z",
+      "section": "owned",
+      "expected": "5a547fba9d15a3a31addec7229e9b595a707f2bbce543958cc683d9558b1ddd0",
+      "actual": "5a547fba9d15a3a31addec7229e9b595a707f2bbce543958cc683d9558b1ddd0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-ignore.bin.z",
+      "section": "owned",
+      "expected": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "actual": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-replace.bin.z",
+      "section": "owned",
+      "expected": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "actual": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-strict.bin.z",
+      "section": "owned",
+      "expected": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "actual": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-ignore.bin.z",
+      "section": "owned",
+      "expected": "584f3d1642ffa3abbd984ba10813e09ca7890dbdaa9249edcb7fa58dd609e1b0",
+      "actual": "584f3d1642ffa3abbd984ba10813e09ca7890dbdaa9249edcb7fa58dd609e1b0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-replace.bin.z",
+      "section": "owned",
+      "expected": "af4b7f1949af2fdfbcdecb26fc86c59e2a7e70986bc0d46a34fd8a81c9577b48",
+      "actual": "af4b7f1949af2fdfbcdecb26fc86c59e2a7e70986bc0d46a34fd8a81c9577b48",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-strict.bin.z",
+      "section": "owned",
+      "expected": "3896d7e1a0ffeb128aeffbed660872fa20bbcde803daa0b991191fe7f30d1fda",
+      "actual": "3896d7e1a0ffeb128aeffbed660872fa20bbcde803daa0b991191fe7f30d1fda",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-ignore.bin.z",
+      "section": "owned",
+      "expected": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "actual": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-replace.bin.z",
+      "section": "owned",
+      "expected": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "actual": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-strict.bin.z",
+      "section": "owned",
+      "expected": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "actual": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-ignore.bin.z",
+      "section": "owned",
+      "expected": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "actual": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-replace.bin.z",
+      "section": "owned",
+      "expected": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "actual": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-strict.bin.z",
+      "section": "owned",
+      "expected": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "actual": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-ignore.bin.z",
+      "section": "owned",
+      "expected": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "actual": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-replace.bin.z",
+      "section": "owned",
+      "expected": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "actual": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-strict.bin.z",
+      "section": "owned",
+      "expected": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "actual": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-ignore.bin.z",
+      "section": "owned",
+      "expected": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "actual": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-replace.bin.z",
+      "section": "owned",
+      "expected": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "actual": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-strict.bin.z",
+      "section": "owned",
+      "expected": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "actual": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-ignore.bin.z",
+      "section": "owned",
+      "expected": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "actual": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-replace.bin.z",
+      "section": "owned",
+      "expected": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "actual": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-strict.bin.z",
+      "section": "owned",
+      "expected": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "actual": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-ignore.bin.z",
+      "section": "owned",
+      "expected": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "actual": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-replace.bin.z",
+      "section": "owned",
+      "expected": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "actual": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-strict.bin.z",
+      "section": "owned",
+      "expected": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "actual": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-ignore.bin.z",
+      "section": "owned",
+      "expected": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "actual": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-replace.bin.z",
+      "section": "owned",
+      "expected": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "actual": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-strict.bin.z",
+      "section": "owned",
+      "expected": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "actual": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-ignore.bin.z",
+      "section": "owned",
+      "expected": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "actual": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-replace.bin.z",
+      "section": "owned",
+      "expected": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "actual": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-strict.bin.z",
+      "section": "owned",
+      "expected": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "actual": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-ignore.bin.z",
+      "section": "owned",
+      "expected": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "actual": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-replace.bin.z",
+      "section": "owned",
+      "expected": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "actual": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-strict.bin.z",
+      "section": "owned",
+      "expected": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "actual": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-ignore.bin.z",
+      "section": "owned",
+      "expected": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "actual": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-replace.bin.z",
+      "section": "owned",
+      "expected": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "actual": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-strict.bin.z",
+      "section": "owned",
+      "expected": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "actual": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-ignore.bin.z",
+      "section": "owned",
+      "expected": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "actual": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-replace.bin.z",
+      "section": "owned",
+      "expected": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "actual": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-strict.bin.z",
+      "section": "owned",
+      "expected": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "actual": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-ignore.bin.z",
+      "section": "owned",
+      "expected": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "actual": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-replace.bin.z",
+      "section": "owned",
+      "expected": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "actual": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-strict.bin.z",
+      "section": "owned",
+      "expected": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "actual": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-ignore.bin.z",
+      "section": "owned",
+      "expected": "a61dc30e31f0d83f39f032d6ce2fc5466ad0645d9ecc407bf4960b47110e920c",
+      "actual": "a61dc30e31f0d83f39f032d6ce2fc5466ad0645d9ecc407bf4960b47110e920c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-replace.bin.z",
+      "section": "owned",
+      "expected": "2e76f2fcde4136c03c54f7ed82cdb354eab95bafae6eabc4dffc94de33ef8fbc",
+      "actual": "2e76f2fcde4136c03c54f7ed82cdb354eab95bafae6eabc4dffc94de33ef8fbc",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-strict.bin.z",
+      "section": "owned",
+      "expected": "02779a12762d383adfb5ff3876b3e91c5e4b0287e8dc2227bbfcae2aa48dd0d3",
+      "actual": "02779a12762d383adfb5ff3876b3e91c5e4b0287e8dc2227bbfcae2aa48dd0d3",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-ignore.bin.z",
+      "section": "owned",
+      "expected": "f7b549f062ef685e3c35f7327dcc5fb6bc81387ad8ec0a95b9cb192ec2ba4dde",
+      "actual": "f7b549f062ef685e3c35f7327dcc5fb6bc81387ad8ec0a95b9cb192ec2ba4dde",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-replace.bin.z",
+      "section": "owned",
+      "expected": "7aba583f60a0509f087016673d7e2ed08a7bbb5ef10dc4273fa71e24de025bdb",
+      "actual": "7aba583f60a0509f087016673d7e2ed08a7bbb5ef10dc4273fa71e24de025bdb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-strict.bin.z",
+      "section": "owned",
+      "expected": "e242da4467f5032421c20ac8c98ecf3d70ed8e7d674f92017762f123a092c672",
+      "actual": "e242da4467f5032421c20ac8c98ecf3d70ed8e7d674f92017762f123a092c672",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-ignore.bin.z",
+      "section": "owned",
+      "expected": "0389c015eb4011cd58fc2a385cf4006709a9000eba084d7c6b0dbf790418ca09",
+      "actual": "0389c015eb4011cd58fc2a385cf4006709a9000eba084d7c6b0dbf790418ca09",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-replace.bin.z",
+      "section": "owned",
+      "expected": "78c7845e5c4457c30353a24b036468756482a0a4a9b286c497f8ecb64e7c995c",
+      "actual": "78c7845e5c4457c30353a24b036468756482a0a4a9b286c497f8ecb64e7c995c",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-strict.bin.z",
+      "section": "owned",
+      "expected": "68c371c292d922b23b4c4a6987d50bca7d1e0a2760d46f4c3d01de001d14200b",
+      "actual": "68c371c292d922b23b4c4a6987d50bca7d1e0a2760d46f4c3d01de001d14200b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-ignore.bin.z",
+      "section": "owned",
+      "expected": "fe741f89d1431d85c8f25f2943cfa84d0819590d8518e2800e35982436029dfe",
+      "actual": "fe741f89d1431d85c8f25f2943cfa84d0819590d8518e2800e35982436029dfe",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-replace.bin.z",
+      "section": "owned",
+      "expected": "f5ba896846096cb38b9bb3e1cc1b6c73b64dcf97c2c00549a5384148f8ef2241",
+      "actual": "f5ba896846096cb38b9bb3e1cc1b6c73b64dcf97c2c00549a5384148f8ef2241",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-strict.bin.z",
+      "section": "owned",
+      "expected": "dfd38cccd59810714fdfb198123f5394220aa12ee5fd8c1e5aa5750174048f2b",
+      "actual": "dfd38cccd59810714fdfb198123f5394220aa12ee5fd8c1e5aa5750174048f2b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-192.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-194.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-74.bin.z",
+      "section": "owned",
+      "expected": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "actual": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-192.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-194.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-196.bin.z",
+      "section": "owned",
+      "expected": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+      "actual": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-74.bin.z",
+      "section": "owned",
+      "expected": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "actual": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-192.bin.z",
+      "section": "owned",
+      "expected": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+      "actual": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-193.bin.z",
+      "section": "owned",
+      "expected": "b3fca5d51819bfd559e96f341d022c385a62129d93ac41c72b6b7ac20a090159",
+      "actual": "b3fca5d51819bfd559e96f341d022c385a62129d93ac41c72b6b7ac20a090159",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-194.bin.z",
+      "section": "owned",
+      "expected": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+      "actual": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-195.bin.z",
+      "section": "owned",
+      "expected": "dd289224acae8d0e5357dc8a73e446c8a60a4c82cbd157e6ed176feaeaa8b1d5",
+      "actual": "dd289224acae8d0e5357dc8a73e446c8a60a4c82cbd157e6ed176feaeaa8b1d5",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-196.bin.z",
+      "section": "owned",
+      "expected": "5f31a6eb6a9c7788fe768554476c471c5f4e5377b1d6f59fbb0a03ad41c95588",
+      "actual": "5f31a6eb6a9c7788fe768554476c471c5f4e5377b1d6f59fbb0a03ad41c95588",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-74.bin.z",
+      "section": "owned",
+      "expected": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "actual": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-g2A.bin.z",
+      "section": "owned",
+      "expected": "0cbcb7d86a61f95ea01f1b1b4acd5e9e94e87726b0bbc33c13647bdafd1380e9",
+      "actual": "0cbcb7d86a61f95ea01f1b1b4acd5e9e94e87726b0bbc33c13647bdafd1380e9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-g2F.bin.z",
+      "section": "owned",
+      "expected": "6adf02a0892af4e4f9bf75af7d1bb989b13412b3f420ece4af76eaaec5e489c0",
+      "actual": "6adf02a0892af4e4f9bf75af7d1bb989b13412b3f420ece4af76eaaec5e489c0",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-194.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-208.bin.z",
+      "section": "owned",
+      "expected": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+      "actual": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-209.bin.z",
+      "section": "owned",
+      "expected": "3550419fd88714f03b1fe58e3301f87965b4f6b328f2629abda2752610771eac",
+      "actual": "3550419fd88714f03b1fe58e3301f87965b4f6b328f2629abda2752610771eac",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-194.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-207.bin.z",
+      "section": "owned",
+      "expected": "d421ea4892d3821422041738d5cda3991ec50ef5b9b6cc4563ecfda66c954d2a",
+      "actual": "d421ea4892d3821422041738d5cda3991ec50ef5b9b6cc4563ecfda66c954d2a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-208.bin.z",
+      "section": "owned",
+      "expected": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+      "actual": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-192.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-194.bin.z",
+      "section": "owned",
+      "expected": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "actual": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-196.bin.z",
+      "section": "owned",
+      "expected": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+      "actual": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-73.bin.z",
+      "section": "owned",
+      "expected": "139c5c4c51de86913073ba913d0c20b6e61828c6ed9e4a06553ff256d4d2ad91",
+      "actual": "139c5c4c51de86913073ba913d0c20b6e61828c6ed9e4a06553ff256d4d2ad91",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-74.bin.z",
+      "section": "owned",
+      "expected": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "actual": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_kr-195.bin.z",
+      "section": "owned",
+      "expected": "4d131b07df35ab6f26e910ec9c32e8dd6f9ea44a9e3bb12dce67d064cab67069",
+      "actual": "4d131b07df35ab6f26e910ec9c32e8dd6f9ea44a9e3bb12dce67d064cab67069",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/python-aliases.json",
+      "section": "owned",
+      "expected": "51fa7497ddd7441550bdc43d515acea2dcfe287c1afd15a3dcfff423f97a6f93",
+      "actual": "51fa7497ddd7441550bdc43d515acea2dcfe287c1afd15a3dcfff423f97a6f93",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/registry.json",
+      "section": "owned",
+      "expected": "ea4bae029ba1774f8eeae213ab3e6c344b8b256c4c31ce11d7e10862a4b62202",
+      "actual": "ea4bae029ba1774f8eeae213ab3e6c344b8b256c4c31ce11d7e10862a4b62202",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/special-codecs.json.z",
+      "section": "owned",
+      "expected": "d5b215368638f3e49928dd91b39dc865ee87498130b53c456728e69c52ef409f",
+      "actual": "d5b215368638f3e49928dd91b39dc865ee87498130b53c456728e69c52ef409f",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/unicode-flags.bin.z",
+      "section": "owned",
+      "expected": "c8efbcff47479b56085da7cabdf541c5f20a8b5c865f86cb8d9094d7f02da1a4",
+      "actual": "c8efbcff47479b56085da7cabdf541c5f20a8b5c865f86cb8d9094d7f02da1a4",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/reference/generated/unicode-names.bin.z",
+      "section": "owned",
+      "expected": "d375bd0caff3e7763dafdb689ac86edc97862c5a3675867c28e7557965e46f93",
+      "actual": "d375bd0caff3e7763dafdb689ac86edc97862c5a3675867c28e7557965e46f93",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/requests_reference_test.go",
+      "section": "owned",
+      "expected": "263e6c3e85535b53990b8a7abc1beed3c5b12d33208a4f9d8b2085b0e4f2ca7a",
+      "actual": "263e6c3e85535b53990b8a7abc1beed3c5b12d33208a4f9d8b2085b0e4f2ca7a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector/stages.go",
+      "section": "owned",
+      "expected": "dd0f14e173963b09c482c2f215053e8bba5817dacf154ef04485ddf8d82f438e",
+      "actual": "dd0f14e173963b09c482c2f215053e8bba5817dacf154ef04485ddf8d82f438e",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/header_limits.go",
+      "section": "owned",
+      "expected": "c236310cd7ab9d59e290c10a1c5fefb5d21f9980d2bc09ad8b9232a3e2337bb9",
+      "actual": "c236310cd7ab9d59e290c10a1c5fefb5d21f9980d2bc09ad8b9232a3e2337bb9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/header_review_test.go",
+      "section": "owned",
+      "expected": "2474b332deec0772a19f43de16b15614d6f1f58b592b3080e3ec2b920d4fcf06",
+      "actual": "2474b332deec0772a19f43de16b15614d6f1f58b592b3080e3ec2b920d4fcf06",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/network.go",
+      "section": "owned",
+      "expected": "7d32978b241f00e3bb0fbc2406772b93420ae06b631287d3b9184104a64a595b",
+      "actual": "7d32978b241f00e3bb0fbc2406772b93420ae06b631287d3b9184104a64a595b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/network_test.go",
+      "section": "owned",
+      "expected": "32ff8a9b862d863b2421e6b740a9a579fe3598b59fd6faa92bb8a84d4dcf5094",
+      "actual": "32ff8a9b862d863b2421e6b740a9a579fe3598b59fd6faa92bb8a84d4dcf5094",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/plugin.go",
+      "section": "owned",
+      "expected": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "actual": "06e498b874a2d3f52bca0227d7b105c483af91d604d4b501d120f619355217b7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/plugin_test.go",
+      "section": "owned",
+      "expected": "116739d044d79c25aa87ffeec3c66aa82b90a01d87f30c89ccdc8333baaa4524",
+      "actual": "116739d044d79c25aa87ffeec3c66aa82b90a01d87f30c89ccdc8333baaa4524",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/extra-source-oracle.json",
+      "section": "owned",
+      "expected": "6daa417acc7b7d687fcd92178965e55f0a83778e0cf06923be75688428ee487a",
+      "actual": "6daa417acc7b7d687fcd92178965e55f0a83778e0cf06923be75688428ee487a",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-compression-reference.json",
+      "section": "owned",
+      "expected": "41aff2336f39a6fd6ba92feeb30d1d3074afa31eb70cf3bf9069029236cb14fd",
+      "actual": "41aff2336f39a6fd6ba92feeb30d1d3074afa31eb70cf3bf9069029236cb14fd",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-cookie-attribute-review.json",
+      "section": "owned",
+      "expected": "500059a5401f77cb4461f8b95e542c93f0b9d6a535bda5c272cba63c379a0bd2",
+      "actual": "500059a5401f77cb4461f8b95e542c93f0b9d6a535bda5c272cba63c379a0bd2",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-cookie-local-review.json",
+      "section": "owned",
+      "expected": "34cba0db53f9783ae5a68cae7d45cff40be9a7ffe627aaf39b1652d1705f1956",
+      "actual": "34cba0db53f9783ae5a68cae7d45cff40be9a7ffe627aaf39b1652d1705f1956",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-cookie-review.json",
+      "section": "owned",
+      "expected": "5a8225071446898bb01bc6b98d8edeb2dd24aa65cd7631ce75a8e1469c6ce563",
+      "actual": "5a8225071446898bb01bc6b98d8edeb2dd24aa65cd7631ce75a8e1469c6ce563",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-date-review.json",
+      "section": "owned",
+      "expected": "f437772be234928e81aef800646a296707ed11c7d7b38d881194f558d7aeb640",
+      "actual": "f437772be234928e81aef800646a296707ed11c7d7b38d881194f558d7aeb640",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-encoding-reference.json",
+      "section": "owned",
+      "expected": "38953f737a1e96fd43a4d57502b71fe1f910e352c60cf099d7662342f02a3432",
+      "actual": "38953f737a1e96fd43a4d57502b71fe1f910e352c60cf099d7662342f02a3432",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-header-count-review.json",
+      "section": "owned",
+      "expected": "8af4afee5d43acbac181832fbd678e9105c4e666f0f3258e7e8a5c6e55bb4689",
+      "actual": "8af4afee5d43acbac181832fbd678e9105c4e666f0f3258e7e8a5c6e55bb4689",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-header-extended-review.json",
+      "section": "owned",
+      "expected": "fffc3cedc84adcab5f11d844be919558706f1ed38ae26187e5e2a78730d95082",
+      "actual": "fffc3cedc84adcab5f11d844be919558706f1ed38ae26187e5e2a78730d95082",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-http-reference.json",
+      "section": "owned",
+      "expected": "9e20dd67e62ec8743f46eaafaddc210cbe22648c0f6f937d0b0a0c47b1e9e2a2",
+      "actual": "9e20dd67e62ec8743f46eaafaddc210cbe22648c0f6f937d0b0a0c47b1e9e2a2",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-original-oracle.json",
+      "section": "owned",
+      "expected": "c47b1c6fecdd604e7318255fe47d1d1038a5f0a5481798a38a2debf84bb055e6",
+      "actual": "c47b1c6fecdd604e7318255fe47d1d1038a5f0a5481798a38a2debf84bb055e6",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-redirect-drop-reference.json",
+      "section": "owned",
+      "expected": "5891797b86016a044750ecbc2648d5027f56da00661fa0c04e5c0904377f7541",
+      "actual": "5891797b86016a044750ecbc2648d5027f56da00661fa0c04e5c0904377f7541",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/reference/source-text-review.json",
+      "section": "owned",
+      "expected": "07682c110b41bc06097d27b0be53d12f40eda09959c59ef6d95b140c36c50a85",
+      "actual": "07682c110b41bc06097d27b0be53d12f40eda09959c59ef6d95b140c36c50a85",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/render.go",
+      "section": "owned",
+      "expected": "0eca4f74dec029d5293661ec70851c94bfefa741f4da4622caf729f2fa71eed7",
+      "actual": "0eca4f74dec029d5293661ec70851c94bfefa741f4da4622caf729f2fa71eed7",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+      "section": "owned",
+      "expected": "ed2e1332b5ad9d3b028644482db2cf2c4796a98d9473f297314cafafb66dedcb",
+      "actual": "ed2e1332b5ad9d3b028644482db2cf2c4796a98d9473f297314cafafb66dedcb",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+      "section": "owned",
+      "expected": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "actual": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+      "section": "owned",
+      "expected": "7027e214e014eb78b7adcc1ceda5aca713a79fc4f6a0c52c9da5b3e707e6ffe9",
+      "actual": "7027e214e014eb78b7adcc1ceda5aca713a79fc4f6a0c52c9da5b3e707e6ffe9",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+      "section": "owned",
+      "expected": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "actual": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE",
+      "section": "owned",
+      "expected": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+      "actual": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/proxy.go",
+      "section": "owned",
+      "expected": "e16b2872f66230c32647a732d00d7a4b69913901635d4525efa14bd00bcb9181",
+      "actual": "e16b2872f66230c32647a732d00d7a4b69913901635d4525efa14bd00bcb9181",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/requests_cancel.go",
+      "section": "owned",
+      "expected": "a4fdca2cf4d65b9ce0231b6184d9cb068c0b57d5e7eca88be1cc737697920e26",
+      "actual": "a4fdca2cf4d65b9ce0231b6184d9cb068c0b57d5e7eca88be1cc737697920e26",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/requests_env.go",
+      "section": "owned",
+      "expected": "56f6ca68c6d7073f61027e8051d12beba6084abcaec14116158699c8bc811f08",
+      "actual": "56f6ca68c6d7073f61027e8051d12beba6084abcaec14116158699c8bc811f08",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/requests_merge.go",
+      "section": "owned",
+      "expected": "70fa6fc61faa91e5c21c3d14c3bd3b972f466a354c1906a2658412272ccd7adc",
+      "actual": "70fa6fc61faa91e5c21c3d14c3bd3b972f466a354c1906a2658412272ccd7adc",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/requests_timeout.go",
+      "section": "owned",
+      "expected": "0ee1999f5d001a1d187b920e64f2c2ddca33bd947ac2d199a090d488c0d69c9b",
+      "actual": "0ee1999f5d001a1d187b920e64f2c2ddca33bd947ac2d199a090d488c0d69c9b",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/requests_transport.go",
+      "section": "owned",
+      "expected": "9a3400cf9dd9dbc087d6904b4d35e1e8caee660e4366ad2f624d8828e5be7861",
+      "actual": "9a3400cf9dd9dbc087d6904b4d35e1e8caee660e4366ad2f624d8828e5be7861",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/source_route.go",
+      "section": "owned",
+      "expected": "67fa3f12cb0a13585b2b1c9f815e00f169ea24c8c20129d5f07f44be128c0387",
+      "actual": "67fa3f12cb0a13585b2b1c9f815e00f169ea24c8c20129d5f07f44be128c0387",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/source_edges_test.go",
+      "section": "owned",
+      "expected": "bc84163ff145aed3201413e4ea649ed8c84e291579688de00b0cf85a9b4d6375",
+      "actual": "bc84163ff145aed3201413e4ea649ed8c84e291579688de00b0cf85a9b4d6375",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/source_oracle_test.go",
+      "section": "owned",
+      "expected": "5721dd10941d5a9347dead3d5dfe6ff3c26b8129abcbe1823e75d6eed4371153",
+      "actual": "5721dd10941d5a9347dead3d5dfe6ff3c26b8129abcbe1823e75d6eed4371153",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/status.go",
+      "section": "owned",
+      "expected": "e05c50c15db2d597bc83903adaf261bb4d55489b883cca8db8920c8b7ad058ad",
+      "actual": "e05c50c15db2d597bc83903adaf261bb4d55489b883cca8db8920c8b7ad058ad",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/text_review_test.go",
+      "section": "owned",
+      "expected": "6e6e100f8c712f51af153f45b367715976497e75bd9cb63690d9a59b1359ce10",
+      "actual": "6e6e100f8c712f51af153f45b367715976497e75bd9cb63690d9a59b1359ce10",
+      "match": true
+    },
+    {
+      "path": "plugins/mpserverstatus/unicode_table.go",
+      "section": "owned",
+      "expected": "9a4e44d7d410e1546051788cb548def8d57ac6e748cd434ddfaa57b2d16e9320",
+      "actual": "9a4e44d7d410e1546051788cb548def8d57ac6e748cd434ddfaa57b2d16e9320",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/api.go",
+      "section": "sdk",
+      "expected": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+      "actual": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/api_test.go",
+      "section": "sdk",
+      "expected": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+      "actual": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/auth.go",
+      "section": "sdk",
+      "expected": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+      "actual": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/base.go",
+      "section": "sdk",
+      "expected": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+      "actual": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/base_instance_metadata_test.go",
+      "section": "sdk",
+      "expected": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+      "actual": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/base_test.go",
+      "section": "sdk",
+      "expected": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+      "actual": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/broadcast_handler.go",
+      "section": "sdk",
+      "expected": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+      "actual": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/broadcast_handler_test.go",
+      "section": "sdk",
+      "expected": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+      "actual": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/browser_host.go",
+      "section": "sdk",
+      "expected": "dc933914faa0e08857ed1666389dcd27a5a99e1d35a37543bc0a70784b1dec3d",
+      "actual": "dc933914faa0e08857ed1666389dcd27a5a99e1d35a37543bc0a70784b1dec3d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/brush_inventory.go",
+      "section": "sdk",
+      "expected": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+      "actual": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/category_policy.go",
+      "section": "sdk",
+      "expected": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+      "actual": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/chain_handler.go",
+      "section": "sdk",
+      "expected": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+      "actual": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/chain_handler_test.go",
+      "section": "sdk",
+      "expected": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+      "actual": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/cleanup_continuation.go",
+      "section": "sdk",
+      "expected": "fd78e6ff04bdaafd296b03619ea99af6a4c4387bb8fcf422db78689a814e2e13",
+      "actual": "fd78e6ff04bdaafd296b03619ea99af6a4c4387bb8fcf422db78689a814e2e13",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/cleanup_continuation_test.go",
+      "section": "sdk",
+      "expected": "16c76ce2890f9e049c35db17f2becc49080773dc0996759258c39e90304c831d",
+      "actual": "16c76ce2890f9e049c35db17f2becc49080773dc0996759258c39e90304c831d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/close_transport.go",
+      "section": "sdk",
+      "expected": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+      "actual": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_cancel_fence_test.go",
+      "section": "sdk",
+      "expected": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+      "actual": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_session.go",
+      "section": "sdk",
+      "expected": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "actual": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_session_test.go",
+      "section": "sdk",
+      "expected": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+      "actual": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_shutdown.go",
+      "section": "sdk",
+      "expected": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+      "actual": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_transport.go",
+      "section": "sdk",
+      "expected": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "actual": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/concurrent_worker.go",
+      "section": "sdk",
+      "expected": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "actual": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_configurations.go",
+      "section": "sdk",
+      "expected": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+      "actual": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_configurations_test.go",
+      "section": "sdk",
+      "expected": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+      "actual": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host.go",
+      "section": "sdk",
+      "expected": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+      "actual": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host_connection.go",
+      "section": "sdk",
+      "expected": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+      "actual": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host_connection_test.go",
+      "section": "sdk",
+      "expected": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+      "actual": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host_delete_files.go",
+      "section": "sdk",
+      "expected": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+      "actual": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host_test.go",
+      "section": "sdk",
+      "expected": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+      "actual": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_host_trackers.go",
+      "section": "sdk",
+      "expected": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+      "actual": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source.go",
+      "section": "sdk",
+      "expected": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+      "actual": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_connection.go",
+      "section": "sdk",
+      "expected": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+      "actual": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_connection_test.go",
+      "section": "sdk",
+      "expected": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+      "actual": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_find_by_tag.go",
+      "section": "sdk",
+      "expected": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+      "actual": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_labels_test.go",
+      "section": "sdk",
+      "expected": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+      "actual": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_test.go",
+      "section": "sdk",
+      "expected": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "actual": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_source_wire_test.go",
+      "section": "sdk",
+      "expected": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "actual": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_tasks.go",
+      "section": "sdk",
+      "expected": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+      "actual": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/downloader_tasks_test.go",
+      "section": "sdk",
+      "expected": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+      "actual": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/events.go",
+      "section": "sdk",
+      "expected": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+      "actual": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/file_item.go",
+      "section": "sdk",
+      "expected": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+      "actual": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/form_model_policy_test.go",
+      "section": "sdk",
+      "expected": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+      "actual": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/frontend.go",
+      "section": "sdk",
+      "expected": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+      "actual": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/frontend_test.go",
+      "section": "sdk",
+      "expected": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+      "actual": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/handler_order_test.go",
+      "section": "sdk",
+      "expected": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+      "actual": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/history_host.go",
+      "section": "sdk",
+      "expected": "c68cd2d612b3ecd3aed6c7a2cdefc75f88bb314d93f82e326b16fadb5b5b6a52",
+      "actual": "c68cd2d612b3ecd3aed6c7a2cdefc75f88bb314d93f82e326b16fadb5b5b6a52",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/identity.go",
+      "section": "sdk",
+      "expected": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+      "actual": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/input_interaction.go",
+      "section": "sdk",
+      "expected": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+      "actual": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/jsonrpc.go",
+      "section": "sdk",
+      "expected": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "actual": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/log.go",
+      "section": "sdk",
+      "expected": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+      "actual": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/log_test.go",
+      "section": "sdk",
+      "expected": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+      "actual": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/manager_resources.go",
+      "section": "sdk",
+      "expected": "4d9ec61a1300203f5975be8f4b598c18422e2b9a2ea834d918c777fabf8a3089",
+      "actual": "4d9ec61a1300203f5975be8f4b598c18422e2b9a2ea834d918c777fabf8a3089",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/media_host.go",
+      "section": "sdk",
+      "expected": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+      "actual": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/media_images.go",
+      "section": "sdk",
+      "expected": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+      "actual": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/media_info.go",
+      "section": "sdk",
+      "expected": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+      "actual": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/message_inbound.go",
+      "section": "sdk",
+      "expected": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+      "actual": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/message_inbound_test.go",
+      "section": "sdk",
+      "expected": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+      "actual": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_bytes.go",
+      "section": "sdk",
+      "expected": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+      "actual": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_bytes_test.go",
+      "section": "sdk",
+      "expected": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+      "actual": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_result.go",
+      "section": "sdk",
+      "expected": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+      "actual": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_result_test.go",
+      "section": "sdk",
+      "expected": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+      "actual": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_scope_test.go",
+      "section": "sdk",
+      "expected": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+      "actual": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/module_transfer.go",
+      "section": "sdk",
+      "expected": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+      "actual": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/mutable_event.go",
+      "section": "sdk",
+      "expected": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+      "actual": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/mutable_event_test.go",
+      "section": "sdk",
+      "expected": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+      "actual": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/network_host.go",
+      "section": "sdk",
+      "expected": "1ac0fdb7bae5cea8fe9267ae96eb834c1a8c2df43e2a80dc55dcfc23e38b1cdb",
+      "actual": "1ac0fdb7bae5cea8fe9267ae96eb834c1a8c2df43e2a80dc55dcfc23e38b1cdb",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/network_proxy_host.go",
+      "section": "sdk",
+      "expected": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+      "actual": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/notification.go",
+      "section": "sdk",
+      "expected": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+      "actual": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/ocr_host.go",
+      "section": "sdk",
+      "expected": "f854c582e02a11f1c8bd5fcd0e1e090c74892d89cb8b4c5cb1c2a738f8acd68f",
+      "actual": "f854c582e02a11f1c8bd5fcd0e1e090c74892d89cb8b4c5cb1c2a738f8acd68f",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/pending_call.go",
+      "section": "sdk",
+      "expected": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+      "actual": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/pending_call_test.go",
+      "section": "sdk",
+      "expected": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+      "actual": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/plugin_host.go",
+      "section": "sdk",
+      "expected": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "actual": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/protocol.go",
+      "section": "sdk",
+      "expected": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "actual": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/protocol_test.go",
+      "section": "sdk",
+      "expected": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+      "actual": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runner_budget.go",
+      "section": "sdk",
+      "expected": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+      "actual": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runner_budget_test.go",
+      "section": "sdk",
+      "expected": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+      "actual": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runner_home_test.go",
+      "section": "sdk",
+      "expected": "7392762335ce77581480dd2489c26fd6384b86596824eafc9be8515508ab5480",
+      "actual": "7392762335ce77581480dd2489c26fd6384b86596824eafc9be8515508ab5480",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runner_observation.go",
+      "section": "sdk",
+      "expected": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+      "actual": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runner_observation_test.go",
+      "section": "sdk",
+      "expected": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+      "actual": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runtime_support.go",
+      "section": "sdk",
+      "expected": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+      "actual": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/runtime_support_test.go",
+      "section": "sdk",
+      "expected": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+      "actual": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/service_progress.go",
+      "section": "sdk",
+      "expected": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+      "actual": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/session_options_test.go",
+      "section": "sdk",
+      "expected": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+      "actual": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/session_test.go",
+      "section": "sdk",
+      "expected": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+      "actual": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/settings_host.go",
+      "section": "sdk",
+      "expected": "b9b500ac565ef98f98d8e32b5c2285cdc7fa869a5be6df8be2199846bcc78137",
+      "actual": "b9b500ac565ef98f98d8e32b5c2285cdc7fa869a5be6df8be2199846bcc78137",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/site_host.go",
+      "section": "sdk",
+      "expected": "db86becbad6e142887d572ed566c01301d1cbdf12ac10f833821048b85a82fd8",
+      "actual": "db86becbad6e142887d572ed566c01301d1cbdf12ac10f833821048b85a82fd8",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/site_http_host.go",
+      "section": "sdk",
+      "expected": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+      "actual": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/site_source.go",
+      "section": "sdk",
+      "expected": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+      "actual": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/site_source_test.go",
+      "section": "sdk",
+      "expected": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+      "actual": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/sourcejson/model.go",
+      "section": "sdk",
+      "expected": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+      "actual": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/storage_host.go",
+      "section": "sdk",
+      "expected": "878a1a0d8e123078f7ce8989ab0ef360536702910801ff0055c39d3d1c751049",
+      "actual": "878a1a0d8e123078f7ce8989ab0ef360536702910801ff0055c39d3d1c751049",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/storage_operation.go",
+      "section": "sdk",
+      "expected": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+      "actual": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/subscription_host.go",
+      "section": "sdk",
+      "expected": "518ef5fb6e95d820d9b1c521ab588891208a955a86577b0cf3d8ccdae2b4e937",
+      "actual": "518ef5fb6e95d820d9b1c521ab588891208a955a86577b0cf3d8ccdae2b4e937",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/subscription_host_test.go",
+      "section": "sdk",
+      "expected": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+      "actual": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/testdata/owned-concurrent-fixture/main.go",
+      "section": "sdk",
+      "expected": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c",
+      "actual": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/title_torrent_filter.go",
+      "section": "sdk",
+      "expected": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+      "actual": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/transport.go",
+      "section": "sdk",
+      "expected": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+      "actual": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+      "match": true
+    },
+    {
+      "path": "internal/sdk/worker.go",
+      "section": "sdk",
+      "expected": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "actual": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "match": true
+    },
+    {
+      "path": "tests/integration/categoryeditor_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+      "actual": "b062ef6aafe35b5dad12fedb06ec8c338f1066cf243115fcf98339d018f0042a",
+      "match": true
+    },
+    {
+      "path": "tests/integration/mpserverstatus_helpers_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "b5a580ee83c960035cc5a266ba887c0917dadbddec415a71812f1465d6bf8e50",
+      "actual": "b5a580ee83c960035cc5a266ba887c0917dadbddec415a71812f1465d6bf8e50",
+      "match": true
+    },
+    {
+      "path": "tests/integration/mpserverstatus_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "3381da832386ab514880cc6578100328ebee4528b213cfbc38fe185273ecbf38",
+      "actual": "3381da832386ab514880cc6578100328ebee4528b213cfbc38fe185273ecbf38",
+      "match": true
+    },
+    {
+      "path": "tests/integration/sitestatistic_helpers_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace",
+      "actual": "d1cd1ac50cf84dac4f2c4cd89929ae3c4fcf777d94dc687d69dbedbc563c5ace",
+      "match": true
+    },
+    {
+      "path": "tests/integration/sitestatistic_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f",
+      "actual": "32ca4d183acd4e96967cc6c00b7dc8f6e5fde6ac2e1bb19bfe8589a487bcb03f",
+      "match": true
+    },
+    {
+      "path": "tests/integration/testhost_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+      "actual": "32f7956eef0fc9564e49f38d2f437c7728a6948959ee75123ceeb569661d003a",
+      "match": true
+    },
+    {
+      "path": "tests/integration/torrenttransfer_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "1c939cbb3eb78a03ca7fb8f9814e545ed8fafbbda850a86364678fec4fce8651",
+      "actual": "1c939cbb3eb78a03ca7fb8f9814e545ed8fafbbda850a86364678fec4fce8651",
+      "match": true
+    },
+    {
+      "path": "tests/integration/torrenttransfer_resume_main_test.go",
+      "section": "driver_package_read_inputs",
+      "expected": "b6a32b6a57eaf2075d51d463b67675ea0f73aa05de425177e52b1ce5872e5aca",
+      "actual": "b6a32b6a57eaf2075d51d463b67675ea0f73aa05de425177e52b1ce5872e5aca",
+      "match": true
+    },
+    {
+      "path": "SDK_ORIGIN.json",
+      "section": "module_and_license",
+      "expected": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "actual": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "match": true
+    },
+    {
+      "path": "go.mod",
+      "section": "module_and_license",
+      "expected": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+      "actual": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+      "match": true
+    },
+    {
+      "path": "go.sum",
+      "section": "module_and_license",
+      "expected": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+      "actual": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+      "match": true
+    },
+    {
+      "path": "third_party/Go-LICENSE",
+      "section": "module_and_license",
+      "expected": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "actual": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "match": true
+    },
+    {
+      "path": "third_party/brotli-LICENSE",
+      "section": "module_and_license",
+      "expected": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+      "actual": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+      "match": true
+    },
+    {
+      "path": "third_party/brotli-flate-LICENSE",
+      "section": "module_and_license",
+      "expected": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+      "actual": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+      "match": true
+    },
+    {
+      "path": "third_party/x-net-LICENSE",
+      "section": "module_and_license",
+      "expected": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "actual": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "match": true
+    },
+    {
+      "path": "third_party/x-net-PATENTS",
+      "section": "module_and_license",
+      "expected": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+      "actual": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+      "match": true
+    },
+    {
+      "path": "third_party/x-text-LICENSE",
+      "section": "module_and_license",
+      "expected": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "actual": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+      "match": true
+    },
+    {
+      "path": "third_party/x-text-PATENTS",
+      "section": "module_and_license",
+      "expected": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+      "actual": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+      "match": true
+    }
+  ]
+}

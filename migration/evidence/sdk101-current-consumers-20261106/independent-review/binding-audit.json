@@ -1,0 +1,513 @@
+{
+  "SDK": {
+    "origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+    "old_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "files": 101,
+    "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+    "exact_committed_source_plus_declared_relocations_mismatches": [],
+    "delta": [
+      {
+        "path": "internal/sdk/concurrent_session.go",
+        "new": false,
+        "test": false
+      },
+      {
+        "path": "internal/sdk/concurrent_transport.go",
+        "new": false,
+        "test": false
+      },
+      {
+        "path": "internal/sdk/concurrent_worker.go",
+        "new": false,
+        "test": false
+      },
+      {
+        "path": "internal/sdk/host_call_budget.go",
+        "new": true,
+        "test": false
+      },
+      {
+        "path": "internal/sdk/parallel_host_calls_independent_test.go",
+        "new": true,
+        "test": true
+      },
+      {
+        "path": "internal/sdk/parallel_host_calls_test.go",
+        "new": true,
+        "test": true
+      },
+      {
+        "path": "internal/sdk/protocol.go",
+        "new": false,
+        "test": false
+      },
+      {
+        "path": "internal/sdk/worker.go",
+        "new": false,
+        "test": false
+      }
+    ]
+  },
+  "inputs": {
+    "consumer": {
+      "count": 614,
+      "before_after_equal": true,
+      "current_mismatches": [],
+      "before_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "after_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586"
+    },
+    "linux": {
+      "count": 614,
+      "before_after_equal": true,
+      "current_mismatches": [],
+      "before_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "after_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586"
+    }
+  },
+  "builds": [
+    {
+      "id": "CategoryEditor",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/CategoryEditor-linux",
+      "exists": true,
+      "sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/CategoryEditor-linux",
+        "./cmd/category-editor"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "TorrentTransfer",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/TorrentTransfer-linux",
+      "exists": true,
+      "sha256": "4893f26b744f769cfd9b90e25fa8b2a615a342f95af900738d615224f3aaf200",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/TorrentTransfer-linux",
+        "./cmd/torrent-transfer"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "SiteStatistic",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/SiteStatistic-linux",
+      "exists": true,
+      "sha256": "0f228ea641505402e3b681a5cd431558c2eb6f7f74dd632a0e8e5771b9075ce5",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/SiteStatistic-linux",
+        "./cmd/site-statistic"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "MPServerStatus",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/MPServerStatus-linux",
+      "exists": true,
+      "sha256": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/MPServerStatus-linux",
+        "./cmd/mp-server-status"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "PluginUnInstall",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/PluginUnInstall-linux",
+      "exists": true,
+      "sha256": "9eed432654887b23628fac4b814784bac513263324a27c1a1729a8a058a27d1b",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/PluginUnInstall-linux",
+        "./cmd/plugin-uninstall"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "RemoveLink",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/RemoveLink-linux",
+      "exists": true,
+      "sha256": "00ee2a42628d6e7a50bccd8a9004298331929b0ce9ab713948465b1252040d0c",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/RemoveLink-linux",
+        "./cmd/remove-link"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "RemoveLink-update",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/RemoveLink-update-linux",
+      "exists": true,
+      "sha256": "a53232587dc2a9c51047b3cfe92dc58b1f848d7ca0cb1c21f8cc26b611c22ff7",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/RemoveLink-update-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/RemoveLink-update-linux",
+        "./cmd/remove-link"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    },
+    {
+      "id": "PluginUnInstall-update",
+      "artifact": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/PluginUnInstall-update-linux",
+      "exists": true,
+      "sha256": "9ce444233436d691d721c7ab74fb8545686261da71b98d7bcd886d55ebce7375",
+      "bound_sha_equal": true,
+      "bytes_equal": true,
+      "exit": 0,
+      "buildinfo_exact": true,
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/PluginUnInstall-update-overlay.json",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/bins/PluginUnInstall-update-linux",
+        "./cmd/plugin-uninstall"
+      ],
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      }
+    }
+  ],
+  "raw_runs": {
+    "sdk101-normal": {
+      "sha256": "d5c6c694d3bd752c5abeb990c468856e2654bafadfcc56223554f085f5436722",
+      "test_pass": 163,
+      "package_pass": 1,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [
+        "TestOwnedConcurrentSameWorkerOverlapAndChunkIsolation",
+        "TestOwnedConcurrentCancelIsolatedAndObjectReusable",
+        "TestOwnedConcurrentErrorsAndRetainedAuthority",
+        "TestOwnedConcurrentCallbackDeadlineDoesNotKillOtherCalls",
+        "TestOwnedConcurrentStopRevokesJoinsAndUsesFreshCleanup",
+        "TestOwnedConcurrentStopDeadlineReapsUncooperativeWorker",
+        "TestOwnedConcurrentNegotiatesFallbackAndStrictRequirement",
+        "TestOwnedConcurrentCallerDeadlineOnlyIsExplicit",
+        "TestOwnedConcurrentFullCapacityDoesNotBlockCleanup",
+        "TestOwnedConcurrentShutdownReservedManagerPhasesAtCapacity",
+        "TestOwnedConcurrentShutdownCloseFailurePolicyStaysInManager",
+        "TestOwnedConcurrentShutdownAPIAuthorityAndLegacyBoundary",
+        "TestParallelOverlayFixtureWorker",
+        "TestOwnedPendingCallActualAdmissionAndFullCapacity",
+        "TestOwnedPendingCallLostParentReplyDoesNotRollbackChild",
+        "TestOwnedPendingCallCanceledAdmissionAndLegacy",
+        "TestOwnedPendingCallTransportRetirementInvokesNoHandler"
+      ],
+      "build_failed": false
+    },
+    "sdk101-race": {
+      "sha256": "e24ed5d17632f12010d927155191e6047530110527bca5440dcc450e0bd57545",
+      "test_pass": 163,
+      "package_pass": 1,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [
+        "TestOwnedConcurrentSameWorkerOverlapAndChunkIsolation",
+        "TestOwnedConcurrentCancelIsolatedAndObjectReusable",
+        "TestOwnedConcurrentErrorsAndRetainedAuthority",
+        "TestOwnedConcurrentCallbackDeadlineDoesNotKillOtherCalls",
+        "TestOwnedConcurrentStopRevokesJoinsAndUsesFreshCleanup",
+        "TestOwnedConcurrentStopDeadlineReapsUncooperativeWorker",
+        "TestOwnedConcurrentNegotiatesFallbackAndStrictRequirement",
+        "TestOwnedConcurrentCallerDeadlineOnlyIsExplicit",
+        "TestOwnedConcurrentFullCapacityDoesNotBlockCleanup",
+        "TestOwnedConcurrentShutdownReservedManagerPhasesAtCapacity",
+        "TestOwnedConcurrentShutdownCloseFailurePolicyStaysInManager",
+        "TestOwnedConcurrentShutdownAPIAuthorityAndLegacyBoundary",
+        "TestParallelOverlayFixtureWorker",
+        "TestOwnedPendingCallActualAdmissionAndFullCapacity",
+        "TestOwnedPendingCallLostParentReplyDoesNotRollbackChild",
+        "TestOwnedPendingCallCanceledAdmissionAndLegacy",
+        "TestOwnedPendingCallTransportRetirementInvokesNoHandler"
+      ],
+      "build_failed": false
+    },
+    "consumers-normal": {
+      "sha256": "5fcfb407abd81e3f89c8ce51591fa11c1b7ad35ebdbf88078a7187472a7b024e",
+      "test_pass": 1316,
+      "package_pass": 11,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [
+        "TestWorkerProtocolSmoke",
+        "TestSource312ConstructorHomeBranches",
+        "TestObserverMatchesExecutedSourceMatrix/actual-source-selected",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-move",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-delete",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/hardlink-path-delete",
+        "TestActualWorkerObserverToOwnedFilesystemCleanup",
+        "TestActualWorkerObserverRenameAndStopBeforeDue",
+        "TestActualWorkerObserverRealTimerDoesNotRunEarly",
+        "TestActualWorkerFailedWatchStopSourceLogSequence"
+      ],
+      "build_failed": false
+    },
+    "consumers-race": {
+      "sha256": "347ee085fd399db7ee0a3bd08b3bfade9231ba049d49d63f3aa3be9e9f141f77",
+      "test_pass": 1316,
+      "package_pass": 11,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [
+        "TestWorkerProtocolSmoke",
+        "TestSource312ConstructorHomeBranches",
+        "TestObserverMatchesExecutedSourceMatrix/actual-source-selected",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-move",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/root-delete",
+        "TestObserverMatchesExecutedRootAndHardlinkBranches/actual-source-selected/hardlink-path-delete",
+        "TestActualWorkerObserverToOwnedFilesystemCleanup",
+        "TestActualWorkerObserverRenameAndStopBeforeDue",
+        "TestActualWorkerObserverRealTimerDoesNotRunEarly",
+        "TestActualWorkerFailedWatchStopSourceLogSequence"
+      ],
+      "build_failed": false
+    },
+    "optin-normal-tests": {
+      "sha256": "f9ed0cf27c7a6d4fc9ed9f02ee2b5a9d046c17f4218bad2b7301afd1c9accfca",
+      "test_pass": 16,
+      "package_pass": 1,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [],
+      "build_failed": false
+    },
+    "optin-race-tests": {
+      "sha256": "0417cda40e271b2b7d8c9bc03b649a627d3a0f8e040a8b51ee5ca0f05d35eb4d",
+      "test_pass": 16,
+      "package_pass": 1,
+      "test_fail": 0,
+      "package_fail": 0,
+      "test_skips": [],
+      "build_failed": false
+    }
+  },
+  "harvest": {
+    "files": 22,
+    "bytes": 1041288,
+    "mismatches": [],
+    "manifest_sha256": "ba6335d2296bed6259c4334628f3dd9edd0f78a27ccf483a337da62025aba115",
+    "four": {
+      "exit": 0,
+      "seconds": 17.86815034598112,
+      "count": 74,
+      "event_counts": {
+        "sdk98_bootstrap": 1,
+        "ss_http": 50,
+        "sdk98_main_start": 2,
+        "sdk98_workers": 15,
+        "http": 1,
+        "sdk98_manual_services_completed": 1,
+        "main_exit": 2,
+        "sdk98_four_instance_complete": 1,
+        "sdk98_impact_on_return": 1
+      },
+      "all_log_times_nondecreasing": true,
+      "source_command": [
+        "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+        "-test.run=^TestSDK98ImpactOrdinaryMainFourInstances$",
+        "-test.v",
+        "-test.timeout=10m"
+      ],
+      "host_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f"
+    },
+    "pui": {
+      "exit": 0,
+      "seconds": 22.55611404404044,
+      "count": 291,
+      "event_counts": {
+        "bootstrap": 1,
+        "main_start": 8,
+        "http": 8,
+        "pui_inputs": 1,
+        "pui_http": 167,
+        "pui_worker_pids": 91,
+        "pui_install_form_clone": 1,
+        "pui_raw_flags_class_gate": 1,
+        "pui_real_permissions": 1,
+        "pui_ui_skipped": 1,
+        "main_exit": 8,
+        "pui_cold_future99": 1,
+        "pui_cold_self": 1,
+        "pui_main_complete": 1
+      },
+      "all_log_times_nondecreasing": true,
+      "source_command": [
+        "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/pluginuninstall-current-main-linux.test",
+        "-test.run=^TestPluginUninstallOrdinaryMain$",
+        "-test.v",
+        "-test.timeout=20m"
+      ],
+      "host_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f"
+    },
+    "rlk": {
+      "exit": 0,
+      "seconds": 35.13595703407191,
+      "count": 177,
+      "event_counts": {
+        "rm_bootstrap": 1,
+        "rm_main_start": 2,
+        "http": 104,
+        "rm_artifact_inputs": 1,
+        "rm_frontend": 3,
+        "rm_frontend_source_relative_import": 6,
+        "rm_worker_pids": 28,
+        "rm_raw_state_source8": 1,
+        "rm_files": 10,
+        "rm_external_owned_delete": 12,
+        "rm_real_timer": 1,
+        "rm_version_fixture_update": 1,
+        "rm_no_inherited_module_discovery": 2,
+        "rm_after_browser_configs": 1,
+        "rm_owned_main_crash": 1,
+        "rm_main_complete": 1,
+        "main_exit": 1,
+        "rm_all_workers_joined": 1
+      },
+      "all_log_times_nondecreasing": true,
+      "source_command": [
+        "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+        "-test.run=^TestRemoveLinkActualMain$",
+        "-test.v",
+        "-test.timeout=15m"
+      ],
+      "host_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f"
+    }
+  },
+  "version_only_overlays": [
+    {
+      "id": "PluginUnInstall-update",
+      "virtual": "/Users/accidia/projects/light-media-plugins/plugins/pluginuninstall/plugin.go",
+      "actual": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/PluginUnInstall-update-version-only.go.txt",
+      "one_version_occurrence": true,
+      "whole_file_only_version_changed": true,
+      "before_sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+      "after_sha256": "536c56830e97a210adaadad684dee624977fdb9d021644d30e18e51682b751ef"
+    },
+    {
+      "id": "RemoveLink-update",
+      "virtual": "/Users/accidia/projects/light-media-plugins/plugins/removelink/plugin.go",
+      "actual": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/RemoveLink-update-version-only.go.txt",
+      "one_version_occurrence": true,
+      "whole_file_only_version_changed": true,
+      "before_sha256": "41b65e284920a486de3b14bf18f20911130a424d24254398b5e8789e325164f1",
+      "after_sha256": "884cb4962fe7283d90f0d5b2548338c85c3afed886a783c52a325148a9d2feef"
+    }
+  ]
+}

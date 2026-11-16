@@ -1,0 +1,291 @@
+{
+  "classification": "allowlisted actual current-declaration ordinary Main runs; no DB/secretkey/UIready/certificate key/config exports/binaries",
+  "at": "2026-11-05T20:02:52.180816+00:00",
+  "runs": {
+    "source-declarations-main-four-1": {
+      "exit_code": 0,
+      "seconds": 17.645130103919655,
+      "observations": 74,
+      "last_observation": {
+        "at": "2026-11-05T19:41:24.88956804Z",
+        "event": "sdk98_impact_on_return",
+        "value": {
+          "Nexus": {
+            "TLS": "verified CA+two DNS SANs; no TLS bypass",
+            "connects": [
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443",
+              "pt.btschool.club:443"
+            ],
+            "owned_artifact_http_denials_for_existing_direct_fallback": 6,
+            "requests": [
+              "pt.btschool.club/",
+              "pt.btschool.club/favicon.ico",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding",
+              "pt.btschool.club/",
+              "pt.btschool.club/userdetails.php?id=7",
+              "pt.btschool.club/getusertorrentlistajax.php?userid=7&type=seeding"
+            ],
+            "routing": "strict CONNECT maps only two literal authorities to one owned loopback listener; no target DNS or external dial",
+            "unexpected": []
+          },
+          "qb": {
+            "classification": "owned HTTP source-qB protocol peer, not real qB daemon/full transfer proof",
+            "completed_queries": 4,
+            "info_selectors": [
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              },
+              {
+                "form_filter": "completed",
+                "hashes_present": false,
+                "method": "POST",
+                "query_filter": ""
+              }
+            ],
+            "unexpected_or_mutation_requests": []
+          },
+          "test_failed": false
+        }
+      }
+    },
+    "source-declarations-pui-main-3": {
+      "exit_code": 0,
+      "seconds": 19.04127784119919,
+      "observations": 291,
+      "last_observation": {
+        "at": "2026-11-05T19:59:02.067056427Z",
+        "event": "pui_main_complete",
+        "value": {
+          "DB_fault_layer": "not injected in Main; producer realSQLite43 separate",
+          "UI_executed": false,
+          "all_observed_workers_joined": 35,
+          "instances": "base, platform clones, self/future cold source distinctions",
+          "network": "owned loopback executable repositories only; MPS init/state only, no page/dashboard/network",
+          "ordinary_main": "all asserted stages complete"
+        }
+      }
+    },
+    "canonical-package-main-1": {
+      "exit_code": 0,
+      "seconds": 5.081739669898525,
+      "observations": 23,
+      "last_observation": {
+        "at": "2026-11-05T19:59:27.07855099Z",
+        "event": "rm_canonical_package_complete",
+        "value": {
+          "all_workers_joined": 2,
+          "base_and_clone_source_relative_imports": true,
+          "canonical_zip_sha256": "c3088076efaa9787f9ab651abf015223647a5f4f2384b75a2e9502af80ca0b9e",
+          "disabled_clone_unchanged": true,
+          "no_UI_claim": true,
+          "real_same_inode_alias_cleanup": true,
+          "verified_installed_members": 10
+        }
+      }
+    }
+  },
+  "files": [
+    {
+      "path": "SDK98/source-declarations-main-four-1-command.json",
+      "bytes": 2522,
+      "sha256": "3be6f6a45cbb59d59db8528c224aa5d994386f8a7833039629f67fdf95ec2651"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1.log",
+      "bytes": 116,
+      "sha256": "7d38010b24faa60bef4a85557fa335812a826d62444bb252fa4267b7325fd961"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/.task-owned",
+      "bytes": 51,
+      "sha256": "5da46e6924baa43d1770bf4ed0e7e64a408be3c0cf8a05f56724234d4cafb76a"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/evidence/observations.jsonl",
+      "bytes": 55029,
+      "sha256": "f8e14bedb3897cac3a5faf5cc61ff9a7c6a39f169b2704b7b320347d5b007ee3"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/evidence/host-1.log",
+      "bytes": 16455,
+      "sha256": "770eea6bfd5b29af9b030a82ab98ef84985cf8f44cb6d02533cc4ca9e7fe1c4d"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/evidence/host-2.log",
+      "bytes": 1829,
+      "sha256": "d1f0bf42463808f0a3943e1e28c1e50afe3620de5c9d2f34badedb23e6b6a0e0"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/logs/app.jsonl",
+      "bytes": 18738,
+      "sha256": "30fb550e75c087ccd7b0eb9104e03886db49ead49fea50dff7798df9cc25e3d2"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/logs/plugins/sitestatistic.log",
+      "bytes": 205,
+      "sha256": "fe94b276ba979e04e1d15900ba0ab65aa843f15fb310cf338c7f9bcdc3506f85"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/logs/plugins/torrenttransfer.log",
+      "bytes": 436,
+      "sha256": "462813eef169eaa53ee079455a683969c586b4dd25b96902a9335a3bef20fa93"
+    },
+    {
+      "path": "SDK98/source-declarations-main-four-1/logs/plugins/torrenttransfermusic.log",
+      "bytes": 436,
+      "sha256": "3af062f120422a40af68434adc6f408f61bb949ab8eca007c233a11e37091958"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3-command.json",
+      "bytes": 3501,
+      "sha256": "1043cc7213bd75cb2dcc55699482f0a2833fb0f2a271e1e559d3a1d38bfe4988"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3.log",
+      "bytes": 98,
+      "sha256": "4c425b27469bc389afe93d41e41ab1134d66931728e328f16d1c2d3fb7c7f2d6"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/.task-owned",
+      "bytes": 55,
+      "sha256": "faa47ddb3d18cecc457222a873142bf58776d816ee42bf95eeb8b315ebcbd931"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/observations.jsonl",
+      "bytes": 213231,
+      "sha256": "d2f5149290baa6cfa1e2c6b65e11a3aebe75b74cd144af36886b71042c73f51c"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-1.log",
+      "bytes": 15684,
+      "sha256": "0ab63a503e929f5866baf85aafc2466053e39d6475ae4697379be496075bb528"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-2.log",
+      "bytes": 2258,
+      "sha256": "5c4c4d256c968466c725cdd0eb66be62357ae030e72896a20e414f758bbb0ef0"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-3.log",
+      "bytes": 3301,
+      "sha256": "af14591cfc7fa4985c1d5325f380d310b426a9e67309a3f48bbc1c9bc0a5439d"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-4.log",
+      "bytes": 2258,
+      "sha256": "65a63742c0a2a129c216046729118a588e1cba4f85602bf7f82360faf3553991"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-5.log",
+      "bytes": 2613,
+      "sha256": "a0ec28ee42f2e9d6c596ae8e17ffb23ee8b40cbe38dd57e8ffa5932412c28f2d"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-6.log",
+      "bytes": 2875,
+      "sha256": "ad70ebd46387759dcbdf2718b2ed27643c121366e8ce20a59ea174001dedc116"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-7.log",
+      "bytes": 2267,
+      "sha256": "7b629cb4026fd8e80481140e10863cad6c17c33b41e086baae5012febc79778e"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/evidence/host-8.log",
+      "bytes": 4614,
+      "sha256": "7c2778549a3b51d0a21354293789c4a222c48adeba3d1dc4fe022eb9f1d5dd39"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/logs/app.jsonl",
+      "bytes": 36078,
+      "sha256": "6cb96b50131c3dcf1030d6ac7b9ba1e30ca1b68e86667ea3501228de80557d22"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/logs/plugins/pluginuninstall.log",
+      "bytes": 555,
+      "sha256": "489ab7c536727aadae154444c8f18eca04ae1448e569f16ccf4d391393765105"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/logs/plugins/pluginuninstallcold.log",
+      "bytes": 83,
+      "sha256": "348bb49b85bd6ac5071e63dfa489e4df1ec0b8a7dd8fdd0fdee698be94961c9e"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-3/logs/plugins/pluginuninstallowned.log",
+      "bytes": 84,
+      "sha256": "086fc8b32d90b6202b79b0f1aff2e2b575283b058308ba065e7e0121eeebe458"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1-command.json",
+      "bytes": 2209,
+      "sha256": "ee5b02ee75ca5ae729745f3e8849bccbd42a0d2de5590f011dc387cedd92a666"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1.log",
+      "bytes": 119,
+      "sha256": "89b09019d48b095fa70ce8a9049ccfaafaac3b4db12f959956bcaa669912145e"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/.task-owned",
+      "bytes": 64,
+      "sha256": "836d59352097df5deb96c5d72fad2a71a34f9f19cbcb6b20e109644511633c7a"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/evidence/observations.jsonl",
+      "bytes": 9168,
+      "sha256": "a40546a0a01e3b23a62de54a5a16f7ca1fe3b5aee2c68c794b9493b9deb511b3"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/evidence/host-1.log",
+      "bytes": 10597,
+      "sha256": "73edfea66251c101dee1df54f5d4ae16f609df84ca99e6a2f8c5dfe56baf70f4"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/app/logs/app.jsonl",
+      "bytes": 11092,
+      "sha256": "38ca992dae689faf928529821dc01ae01a5cb46982ba541290deb962847330be"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/app/logs/plugins/removelink.log",
+      "bytes": 1835,
+      "sha256": "6d515329e28e2628bc325093852c308bd4dc7077cc4eb30c44042517f21a0bbe"
+    },
+    {
+      "path": "Rlk/canonical-package-main-1/app/logs/plugins/removelinkowned.log",
+      "bytes": 240,
+      "sha256": "24dfc4d8dca31be5d43f1298705435b043f036a3d44ffd4427cdf3434d1bf0fd"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-2-command.json",
+      "bytes": 3122,
+      "sha256": "41e320f7c2a97a7ea762dda01cd76c8aed5bee07118617f66b2cd1ba9380edd5"
+    },
+    {
+      "path": "SDK98/source-declarations-pui-main-2.log",
+      "bytes": 172,
+      "sha256": "c9ef47a3cf6d728f6f0d0a74f74306e91b2ecb319dafe9829f0498bf0cee4f4b"
+    }
+  ]
+}

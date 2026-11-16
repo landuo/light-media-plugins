@@ -1,0 +1,57 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "384a196ce4915f28fce1e09378cbaedee2c7629e",
+    "worker_commit": "9f101b336305c3973ffed43e61f70e11f864c850",
+    "fixture_sha256": "e68c3d6af34e15b3786614160f4b1da7a7253b83a16b0a40152b724f86ab401c",
+    "package_sha256": "da81e3e234e6c5f80dbcf8aa39066dba25ae4fcf8be36f6d96d5aefa62b12642"
+  },
+  "source_oracle": "Read-only installed LarkMessager source snapshot and fixed MoviePilot plugin platform. This run did not contact the original installation.",
+  "mapping": [
+    {
+      "source": "app/api/endpoints/plugin.py:561–570,934–956; installed larkmessager/__init__.py:1209 onward",
+      "target": "light-media native original plugin clone/reload registry and plugins/larkmessager/endpoints.go",
+      "behavior": "Instance owns persisted config, results, and runtime. Reload stops the old clone, and its data view remains instance-scoped."
+    },
+    {
+      "source": "larkmessager/__init__.py:252 onward; larkmessager/client.py:138–169,218–326,437–525,1244–1284",
+      "target": "plugins/larkmessager/{attachment,client,plugin,transport}.go",
+      "behavior": "Native rooted media uploads preserve source wire shape and order. Definite provider refusal remains separate from an unconfirmed write. Unknown caption results propagate after an accepted attachment, preventing further sends or duplicate inference."
+    }
+  ],
+  "package": {
+    "kind": "Local indexed amd64 candidate with standard generated manifest and licenses",
+    "worker_elf_sha256": "2d852106cf51a6f55a3f532956fcee0018bd2ca217abdb8d74071fbd487fd143",
+    "index_sha256": "1fdc4a1edb34b9ef489fd5a619ea6340e88c16e458eaeda2116d349d265a3f0d",
+    "license_archive_sha256": "47930485d27fa35579a8986e3ee1f29e414e02c2bf2c4a0a2bf7fbc84f604691",
+    "manifest_sha256": "2f2f57f77178faf4f30acdf111aa662e2e2ba18f11dbd8430f708723251fee7b",
+    "build_info_sha256": "b8f8790d9461a3a140061e238093839e3966da9f0a67cd6e687b87d045cc8e05",
+    "package_evidence_sha256": "f6f03b3f818d241f379bc24a5ebfd0a0855bb75c736eac4a04085508c57bf659",
+    "host_contract": "light-media.sdk-resources/v1"
+  },
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App and indexed worker processes with owned loopback Lark provider",
+    "environment": "Read-only Alpine 3.22, tmpfs and loopback only. Owned local test files and synthetic provider. No original or production credentials.",
+    "test": "TestInstalledLarkCloneAndTrustedAttachmentsLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_lark_messager_clone_attachments_linux_test.go",
+    "seconds": 3.9,
+    "host_elf_sha256": "30aa20e29a01df511c30b7018c92c5cc10a8a59f431e072245dcdd0888ffb187",
+    "runner_sha256": "b49b1e1485a59811552626fb731bde1101cf995667ff16a866d12aaa6ea6923e",
+    "runtime_log_sha256": "95295b5d6d2067c20d195b07fe8289233ed643e0879ab5458bff9ee678bed22b",
+    "observations": [
+      "The exact indexed worker was installed and cloned by the native app. Base stayed disabled with the same PID. The clone used a separate process and configuration, and a native reload reaped the exact old clone process. Its data page consumed only its own persisted result.",
+      "Trusted rooted attachment sends used only the clone account and destination. The peer observed exact PNG, document and voice multipart bytes with source-ordered image/card/file and voice/caption messages. A protected path produced no provider calls.",
+      "In a distinct voice sequence the provider accepted the upload and audio, then returned a malformed nonnumeric caption acknowledgment. The host observed one failed module delivery. Exactly one upload, audio and caption were attempted; neither accepted audio nor the unconfirmed caption was repeated."
+    ]
+  },
+  "adaptations_and_open": [
+    "The target uses a bounded rooted-read grant and rejects protected paths. The source can read ordinary process-accessible paths. Native write results require a numeric provider acknowledgment and preserve a failure on unknown effects, including partial delivery.",
+    "The original worker logs and suppresses several ordinary provider failures. The Go path logs known safe edit/reaction rejections and retains host-visible delivery errors for single failed posts or partially failed combined sends. An ambiguous result is fenced within the invocation; the current host wire does not expose a separate uncertainty code.",
+    "This fixture did not rerun earlier encrypted or group behaviors. The source worker and remaining host source differences still require final scope review before instance acceptance."
+  ]
+}

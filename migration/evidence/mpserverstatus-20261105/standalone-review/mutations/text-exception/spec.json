@@ -1,0 +1,8 @@
+{
+  "name": "text-exception",
+  "path": "plugins/mpserverstatus/content.go",
+  "old": "if class == \"LookupError\" || class == \"TypeError\" {",
+  "new": "if class == \"LookupError\" || class == \"TypeError\" || class == \"UnicodeError\" {",
+  "occurrence": 0,
+  "run": "TestIndependentActualText"
+}

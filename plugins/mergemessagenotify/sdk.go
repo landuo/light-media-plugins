@@ -4,9 +4,11 @@ import (
 	"context"
 	"encoding/json"
 	"errors"
+	"maps"
 	"sync"
 
 	sdk "github.com/landuo/light-media-plugins/internal/sdk"
+	"github.com/landuo/light-media-plugins/plugins/mergemessagenotify/apprise"
 )
 
 func Manifest() sdk.Manifest {
@@ -14,11 +16,11 @@ func Manifest() sdk.Manifest {
 		SchemaVersion: 1,
 		PluginID:      "MergeMessageNotify",
 		Name:          "聚合消息通知",
-		Description:   "聚合发送爱语飞飞和腾讯官方 QQ Bot 通知。",
+		Description:   "消息通知，一个插件就够了。",
 		Icon:          "https://raw.githubusercontent.com/hotlcc/MoviePilot-Plugins-Third/main/icons/MergeMessageNotify_121.png",
-		Author:        "landuo",
-		AuthorURL:     "https://github.com/landuo",
-		Version:       "1.0.0",
+		Author:        "hotlcc",
+		AuthorURL:     "https://github.com/hotlcc",
+		Version:       "1.20.3",
 		PluginOrder:   66,
 		Runtime:       "go-executable",
 		Entry:         "merge-message-notify",
@@ -27,7 +29,7 @@ func Manifest() sdk.Manifest {
 		Methods:       []string{"init", "get_state", "get_form", "get_render_mode", "listen_notice_message", "stop_service", "stop"},
 		Capabilities: []string{
 			sdk.BaseGetConfig, sdk.BaseUpdateConfig, sdk.BaseConfigSaveOrigin,
-			sdk.NetworkProxyReadCapability, sdk.LogWriteCapability,
+			sdk.NetworkProxyReadCapability, sdk.LogWriteCapability, sdk.StorageLocalReadGrantCapability,
 		},
 		BroadcastHandlers: []sdk.BroadcastHandler{
 			{Event: "notice.message", Method: "listen_notice_message"},
@@ -49,6 +51,10 @@ type workerCall struct {
 	proxyErr  error
 }
 
+// configuredProxy marks source settings.PROXY in channel kwargs. Its private
+// value is resolved from the host for the current call only.
+type configuredProxy struct{}
+
 func activeCall(ctx context.Context) *workerCall {
 	call, _ := ctx.Value(workerCallKey{}).(*workerCall)
 	return call
@@ -61,8 +67,11 @@ func (c *workerCall) proxySettings(ctx context.Context) (sdk.NetworkProxySetting
 	return c.proxy, c.proxyErr
 }
 
-func NewWorker() *Worker {
+func NewWorker(smtp func(context.Context, map[string]any, SMTPRequest) error) *Worker {
 	return &Worker{plugin: New(Host{
+		SMTP:   smtp,
+		Render: RenderNative,
+		Proxy:  configuredProxy{},
 		SaveConfig: func(ctx context.Context, cfg map[string]any) (bool, error) {
 			result, err := (sdk.Base{Host: activeCall(ctx).host}).UpdateConfig(ctx, cfg)
 			return result != nil && *result, err
@@ -79,7 +88,21 @@ func NewWorker() *Worker {
 			if err != nil {
 				return Response{}, err
 			}
+			if _, ok := input.Kwargs["proxies"].(configuredProxy); ok {
+				input.Kwargs = maps.Clone(input.Kwargs)
+				input.Kwargs["proxies"] = proxy.Proxies
+			}
 			return (RequestsHTTP{Environment: proxy.Environment}).Send(ctx, input)
+		},
+		Apprise: func(ctx context.Context, input AppriseRequest) (any, error) {
+			call := activeCall(ctx)
+			proxy, err := call.proxySettings(ctx)
+			if err != nil {
+				return nil, err
+			}
+			transport := apprise.HTTPTransport{Environment: func() []string { return proxy.Environment }}
+			files := localAttachments{storage: sdk.Storage{Host: call.host}}
+			return NativeApprise(transport.Send, files.read)(ctx, input)
 		},
 		Log: func(ctx context.Context, level, message string) {
 			_ = (sdk.Logger{Host: activeCall(ctx).host}).Log(ctx, sdk.LogLevel(level), message)

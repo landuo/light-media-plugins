@@ -1,0 +1,126 @@
+{
+  "status": "passed",
+  "scope": "bounded host storage permission addon only; not complete RemoveLink family or ordinary Main acceptance",
+  "base_host_commit": "162798ce1164319d71a443a0921505bd57255f3e",
+  "Root_final_freeze_sha256": "e6ec7ab341fe5079d93e4ebf0f48d86e7e26d6a75b585952e0bcaaf3387b2c29",
+  "five_frozen_files": {
+    "internal/app/file_manager.go": "cf5411f6791bed0a83212a361bfafe0eb0ca3aef78b068f59b8a5a2bf0a4db77",
+    "internal/app/plugin_original_host_storage.go": "74f695d8952c650b675ec5c6a0da3996249b877332082e1e43353181416d121a",
+    "internal/app/plugin_original_storage_hardlinks_test.go": "169a5c7972a768d0fbb84c4788660eae81228d9a7e3ab68a093856e200116ae9",
+    "internal/app/plugin_original_storage_unlink_linux.go": "f8e3ec9a3c70558b3426bd6f13e5dc93d0eb6ee636bb8579194fac02d4f6a35d",
+    "internal/app/plugin_original_storage_unlink_other.go": "53cc3eca9b772440c9666dd01155a5627bc89e218290438b0a0c6dfe84cdaa83"
+  },
+  "source": {
+    "oracle": "source-unlink-permission-addon.json",
+    "sha256": "9ec58ecb4b4d0be2888255cb798b7fde8beefb95575b37936c940c9aaa1d94c2",
+    "classification": "previous actual image333544 Python3.12.13 UID65534 original unlink AST, real owned files; reused byteexact, no new production import/execution"
+  },
+  "inputs": {
+    "independent_overlay_sha256": "bab558302304086f5b589d5c7e1784eb4d3c3c173761f9198b1378fd7f6c5df2",
+    "all_five_before_after_stable": true,
+    "unrelated_dirty_go_exact_base_replacements": 10,
+    "untracked_go_excluded": [
+      "internal/app/plugin_original_host_manager_source.go",
+      "internal/app/plugin_original_source_installed.go",
+      "internal/app/plugin_original_source_uninstall_test.go"
+    ],
+    "unmapped_dirty_go": [],
+    "go_mod_and_sum_unchanged": true,
+    "Root_prebuilt_fixture_sha256": "88fd51416c87e59b5009572f040cef9a50a68b156a04369f2e4fea5a392d1b71",
+    "independent_linux_test_sha256": "893c47bcc9b431e4730d3774d050570c0c158784e5b592ec036faaaa902468a1"
+  },
+  "static_review": {
+    "file_manager_changed_functions": [
+      "browserEntryStat"
+    ],
+    "file_manager_unchanged_functions": 24,
+    "host_storage_changed_functions": [
+      "originalHostLocalDelete"
+    ],
+    "host_storage_unchanged_functions": 6,
+    "callers": "browserEntryStat only under protectHardlinks=false, originalHostLocalRemove only after originalHostLocalDelete root/asset/downloader/two-snapshot checks",
+    "linux": "O_PATH directory walk from /, each component O_DIRECTORY|O_NOFOLLOW|CLOEXEC; final entry O_PATH|NOFOLLOW then fstat; no worker-controlled flags/path authority; final inode/device/size/mtime/mode stamp and scope.validate before beginWrite/unlinkat",
+    "non_linux": "prior importDir/OpenRoot parent SameFile and Root.RemoveAll path retained; native Linux semantics not claimed from development fallback",
+    "unchanged_guards": [
+      "public browserStat/manifest true protects hardlinks and requires prior ordinary read access",
+      "originalMetadataAllowed, browserMutationAllowed active assets/import plans/managed files/root protection",
+      "guardBrowserDownloaderSources plus before/after manifest checks",
+      "final scope validation, write gate, ctx handling, directory identity bound with OpenRoot"
+    ]
+  },
+  "executed_checks": {
+    "native_linux_uid": 1000,
+    "native_linux_classification": "actual Linux App test binary + separately built real concurrent SDK fixture, synthetic owned SQLite/files and loopback protocol peers; no ordinary Main or real qB daemon",
+    "native_linux_roots": 12,
+    "native_linux_pass_nodes": 22,
+    "native_linux_exit": 0,
+    "native_linux_seconds": 8.78039836883545,
+    "permission_cases": [
+      "parent0300 regular hardlink allowed through actual SDK; other hardlink inode/content retained",
+      "file000 regular hardlink allowed under readable parent",
+      "parent0500 returns ordinary false, selected entry remains",
+      "directory0300 rejected before mutation due required tree snapshot/read; this is not reported as ordinary false",
+      "readable directory removed while retained outside hardlink inode/content survives",
+      "symlink parent component rejected without following; selected original remains",
+      "changed final stamp rejected FILE_SNAPSHOT_CHANGED; canceled final scope rejected context.Canceled"
+    ],
+    "guards": [
+      "actual SDK source clone/cold storage",
+      "five public file-manager asset/download/symlink/snapshot roots",
+      "independent actual SDK and internal asset/root/symlink/downloader guards; downloader is owned httptest HTTP protocol peer, not real qB daemon"
+    ],
+    "strict_base_negative": {
+      "exit": 1,
+      "binary_sha256": "844ea6cdc52c8b328fa83ba83f7528d74c1adf34574c6106d19539de3b7ec790",
+      "seconds": 0.9438714981079102,
+      "base_two_production_files_match_git": true,
+      "new_os_helpers_deleted_in_negative": true
+    },
+    "development_race": {
+      "roots": 4,
+      "pass_nodes": 8,
+      "exit": 0,
+      "seconds_from_go_output": 31.552,
+      "initial_tmp_setup_failure_preserved": true,
+      "initial_failure": "unchanged artifact acquisition unsafe root ancestor under mac default temporary directory; no storage path reached; resolved by owned canonical TMPDIR, no product edits"
+    }
+  },
+  "limits": [
+    "The RemoveLink worker sdkOps.authorizeDir→Storage.List precondition for parent0300 is a separate open family issue; this host addon does not certify it solved.",
+    "Linux execution is native non-race; race evidence covers development OS fallback and shared guard/App/SDK paths only.",
+    "No new SDK, capability, RPC action, production configuration, old service, or user media change.",
+    "No claim of resistance to every concurrent hostile filesystem mutation; existing snapshot/authorization guarantees retained and tested at bounded hooks."
+  ],
+  "cleanup": {
+    "exact_generated_files": [
+      {
+        "path": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-parent-permissions-addon/independent-linux.test",
+        "bytes": 87790960,
+        "sha256": "893c47bcc9b431e4730d3774d050570c0c158784e5b592ec036faaaa902468a1",
+        "removed": true
+      },
+      {
+        "path": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-parent-permissions-addon/independent-mac-fixture",
+        "bytes": 6224434,
+        "sha256": "d81351ae9295190e8f5896234d88178dc6c7f36ebe010030019b981a084c29eb",
+        "removed": true
+      },
+      {
+        "path": "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-parent-permissions-addon/static-review",
+        "bytes": 3575170,
+        "sha256": "c1a0cb6c790e4b2e34c6481066e49fd95c33af355a82f7560f165644e4c605f9",
+        "removed": true
+      }
+    ],
+    "own_mac_tmp_removed": true,
+    "remote_cleanup": {
+      "owned_subdir_absent": true,
+      "root_marker_retained": true
+    },
+    "owned_processes": {
+      "owned_executables_running": [],
+      "root_marker_retained": true
+    },
+    "Root_preexisting_bins_and_runtime_marker": "untouched"
+  }
+}

@@ -1,0 +1,28 @@
+{
+  "classification": "actual canonical10member ZIP installed through ordinary Main651dd+2managed-storage; ELF6ce69c; unchanged canonical ZIP f907/currentworker6d75; current23 new6d75 native worker + platform clone + actual Linux owned hardlink cleanup + native source cache-query imports; no browser claim from this run",
+  "command": [
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test",
+    "-test.run=^TestRemoveLinkCanonicalPackageOrdinaryMain$",
+    "-test.timeout=10m",
+    "-test.v"
+  ],
+  "environment": {
+    "REMOVELINK_HOST_BINARY": "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-managed-storage-linux",
+    "REMOVELINK_EXPECT_HOST_SHA256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1",
+    "REMOVELINK_RUNTIME_DIR": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-main-3",
+    "REMOVELINK_LISTEN": "127.0.0.1:36259",
+    "REMOVELINK_PACKAGE_ZIP": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/RemoveLink-2.18-linux-amd64.zip",
+    "REMOVELINK_PACKAGE_INDEX": "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/go-plugins.v1.json"
+  },
+  "input_sha256": {
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/RemoveLink-2.18-linux-amd64.zip": "f90770d712fc713ab626863a53895f0e67f5e56433cecf0b15e3b645072a3b5c",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/canonical-package-auth-input/go-plugins.v1.json": "6cb8858a25f29a100ecac881f0a1f3b8a3ae7dcb36e778503f18ccc5b37e71b5",
+    "/home/admin/light-media-plugins-migration-removelink-20261105/bin/removelink-main6-linux.test": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+    "/home/admin/light-media-plugins-migration-sdk98-20261105/bin/light-media-host-managed-storage-linux": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1"
+  },
+  "driver_unexecuted_old_PUI_source": "f24 reproducible via frozen-test-inputs single-file overlay; newPUI driver01ba is a separate test input",
+  "started_utc": "2026-11-05T21:14:04.986245+00:00",
+  "exit_code": 0,
+  "seconds": 4.725073131965473,
+  "ended_utc": "2026-11-05T21:14:09.711744+00:00"
+}

@@ -1,0 +1,71 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "host_commit": "c1ee61ad964b06cc874d17c88080ebfde0d581ae",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2083–2510, app/helper/interaction.py:287 onward, app/utils/string.py:519–565 and 970–984",
+      "target": "internal/app/plugin_original_host_message_inbound.go, plugin_original_chat_media.go and plugin_original_chat_media_search.go",
+      "observed": "Verified ordinary Lark ingress retains slash precedence and per-sender media sessions. Explicit search, page navigation, stale callback rejection, and numeric selection reached the real worker."
+    },
+    {
+      "source": "app/chain/message.py:2510–2683 and 3044–3488, app/chain/media.py:885–920, installed LarkMessager __init__.py:369–474",
+      "target": "internal/app/plugin_original_chat_media_search.go, plugin_original_chat_media_view.go, plugin_original_chat_media_download.go and plugin_original_media_resource_search.go",
+      "observed": "Synchronous metadata and resource search reached the owned providers. The worker rendered the fixed eight-result page size and fresh media and torrent cards."
+    },
+    {
+      "source": "app/chain/message.py:2733–3043, app/chain/download.py:935–1048 and 1180 onward",
+      "target": "internal/app/plugin_original_chat_media_download.go, plugin_original_resource_selection.go and the existing native preview and download job",
+      "observed": "A single selected movie torrent was fetched, checked, submitted with the resolved local save path, and confirmed by the actual host job. Automatic selection and directory choice code were not exercised in this run."
+    },
+    {
+      "source": "app/chain/message.py:2684–2731 and 2998–3042, app/chain/subscribe.py synchronous add, app/db/subscribe_oper.py:89",
+      "target": "internal/app/plugin_original_chat_media_subscribe.go, subscription_add_source.go, subscription_add_receipt.go and subscription_add_statistics.go",
+      "observed": "Ordinary text subscription saved a new N row and durable subscription.added. The producer also implements best-version and auto-incomplete R with accepted begin episodes. Those two paths were not exercised."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "native Linux amd64 App and indexed worker with owned loopback Lark, TMDB, tracker and qBittorrent protocol peers",
+    "seconds": 2.04,
+    "environment": "Native x86_64, read-only alpine:3.22, tmpfs and loopback only. No production delivery, credentials, deployment or data.",
+    "test": "TestOriginalLarkMediaInteractionLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_media_linux_test.go",
+    "fixture_sha256": "88a38a4191bb37239f90cc41e13ba2ab0dcee64c44b3f74ac85b98a7d52f03e1",
+    "host_elf_sha256": "45716af2a7a9682db491698853ac43097084aa3cdb207df46f856fb0d9265f92",
+    "runner_sha256": "f420403a72f96d8c9d1dd3b4ee9806540cdc0b0cde83600912b82676ed50f479",
+    "runtime_log_sha256": "45587532188c9a288b16588f5dc97aed0eb49561ad91ab92e7139b27f89784a6",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "The started App installed the exact indexed worker. A verified webhook searched and rendered nine metadata results in two pages. A second sender's card click caused no tracker search. The owner used a card to go forward and text to go back.",
+      "Selection sent the source-shaped start notice and a fresh resource card. The tracker saw three requests across listing and native rechecks, with one torrent fetch. The downloader received exactly one matching torrent byte stream at the isolated configured save path. The native download job reached succeeded before the chat success notice.",
+      "A new subscription request invalidated the old download card. Fullwidth numeric selection saved the selected movie as N and emitted the durable subscription.added event. No second Add occurred.",
+      "The App stopped after the assertions. Its teardown logged one module declaration failure during stop, after the verified paths. No previous Lark /sites or /subscribes suite ran."
+    ]
+  },
+  "prior_fixture_failures": [
+    {
+      "observation": "Eight synthetic rows lacked the provider media type and were filtered as the real source would.",
+      "log_sha256": "d0b4e3be6f1c8c64c999ac7ed36dcf06a1139d2274de23c931846a67587d773a"
+    },
+    {
+      "observation": "The fake downloader omitted the native preferences route, so the host correctly refused to guess an automatic save directory.",
+      "log_sha256": "acfb0bdb5535c1ef3dbbb32fbafbd01e762d268bfe4adab4eb770997e9e4766d"
+    },
+    {
+      "observation": "The data assertions reached successful Add and SubscribeAdded, but the restrictive metadata fixture flagged the missing source images endpoint. The final run supplied that endpoint on the same loopback peer.",
+      "log_sha256": "4abb712b0d8548451f7164cc28d0ceb0f4651f704dd3099c62042d43743f1b1d"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "Current native media selection and mutation retain a verified TMDB identity. Synchronous plugin metadata rows can render. Non-TMDB native providers and source-specific identity resolution for selection remain open.",
+    "Single native downloads use the guarded intent and material receipt. Automatic selection has a synchronous source resource-selection bridge, whole single-season packs, and non-overlapping episodes. Multi-season Add, partially overlapping episode trimming, full missing-episode notices, directory-choice/automatic/best-version runtime checks and exact default directory-selection parity remain open.",
+    "The chat success card currently follows verified acceptance. Exact source downloadAdded template, frozen user/source attribution in DownloadHistory and ordering before external DownloadAdded still need to use the native acceptance boundary.",
+    "Transfer failure, retry callback and /redo, Lark worker edge cases, and remaining /subscribes differences listed in lark-messager-subscribes-20261108.json are open."
+  ]
+}

@@ -1,0 +1,68 @@
+{
+  "classification": "offline JSON replay of recorded raw; not new Main/Go execution",
+  "actual_raw_path": "/Users/accidia/projects/light-media-plugins/work/autosignin-owned-main-20261106-r3/empty-main-actual/runtime/evidence/observations.jsonl",
+  "actual_raw_sha256": "c47f50a211cb9d4436629b2966a9de56d17a733a8c7a78a8ed1219b7ce3adea2",
+  "at": "2026-11-06T12:56:45.652838098Z",
+  "http_response": {
+    "data": {
+      "page": [
+        {
+          "component": "VAlert",
+          "props": {
+            "class": "mt-4",
+            "prepend-icon": "mdi-information",
+            "text": "暂无签到数据",
+            "type": "info",
+            "variant": "tonal"
+          }
+        }
+      ],
+      "render_mode": "vuetify"
+    },
+    "request_id": "req_cP9PqwU3TaYJ1iyZ7KreHgVb"
+  },
+  "h_ok_return": {
+    "page": [
+      {
+        "component": "VAlert",
+        "props": {
+          "class": "mt-4",
+          "prepend-icon": "mdi-information",
+          "text": "暂无签到数据",
+          "type": "info",
+          "variant": "tonal"
+        }
+      }
+    ],
+    "render_mode": "vuetify"
+  },
+  "original_nested_data_predicate": false,
+  "corrected_page_predicate": true,
+  "negative_controls": [
+    {
+      "name": "full_http_envelope",
+      "accepted": false
+    },
+    {
+      "name": "missing_page",
+      "accepted": false
+    },
+    {
+      "name": "null_page",
+      "accepted": false
+    },
+    {
+      "name": "wrong_shape",
+      "accepted": false
+    },
+    {
+      "name": "different_text",
+      "accepted": false
+    },
+    {
+      "name": "different_class",
+      "accepted": false
+    }
+  ],
+  "expected_source": "installed ASI __init__.py759-771 exact empty page after no selections and no history"
+}

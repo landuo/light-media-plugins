@@ -1,0 +1,1574 @@
+{
+  "classification": "actual installed API uninstall/folders/routes and PluginManager delete/stop/remove/module-cache AST with inert owned DB/filesystem/API/scheduler/event recorders; no source app imports or real deletions",
+  "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "source_sha256": {
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/tt-install-source/app/api/endpoints/plugin.py": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261105/host-reference/app/core/plugin.py": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7"
+  },
+  "cases": [
+    {
+      "case": "base",
+      "plugin_id": "TorrentTransfer",
+      "is_clone": false,
+      "path_exists": true,
+      "rmtree_error": false,
+      "response": {
+        "success": true
+      },
+      "before": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfer",
+            "TorrentTransfermusic"
+          ],
+          "plugin.TorrentTransfer": {
+            "enabled": true,
+            "owned": "keep-or-delete"
+          },
+          "plugin.TorrentTransfermusic": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer",
+                "TorrentTransfermusic"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfermusic",
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfer": {
+            "history": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "TorrentTransfermusic": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "modules": [
+          "app.plugins.torrenttransfer",
+          "app.plugins.torrenttransfer.child",
+          "app.plugins.torrenttransferother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v2/plugin/TorrentTransfer/refresh",
+          "/api/v1/plugin/TorrentTransfermusic/refresh",
+          "/api/v1/system/health"
+        ]
+      },
+      "trace": [
+        {
+          "op": "config.get",
+          "key": "installed"
+        },
+        {
+          "op": "config.set",
+          "key": "installed",
+          "value": [
+            "Other",
+            "TorrentTransfermusic"
+          ]
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v1/plugin/TorrentTransfer/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v1/plugin/TorrentTransfer/refresh"
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v2/plugin/TorrentTransfer/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v2/plugin/TorrentTransfer/refresh"
+        },
+        {
+          "op": "app.setup"
+        },
+        {
+          "op": "scheduler.remove",
+          "pid": "TorrentTransfer"
+        },
+        {
+          "op": "config.get",
+          "key": "folders"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'new' 中移除插件 TorrentTransfer"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'old' 中移除插件 TorrentTransfer"
+        },
+        {
+          "op": "config.set",
+          "key": "folders",
+          "value": {
+            "new": {
+              "plugins": [
+                "TorrentTransfermusic"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfermusic"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "正在停止插件 TorrentTransfer..."
+        },
+        {
+          "op": "event.disable",
+          "class_name": "Running"
+        },
+        {
+          "op": "plugin.close",
+          "pid": "TorrentTransfer"
+        },
+        {
+          "op": "plugin.stop_service",
+          "pid": "TorrentTransfer"
+        },
+        {
+          "op": "map.pop",
+          "map": "classes",
+          "key": "TorrentTransfer"
+        },
+        {
+          "op": "map.pop",
+          "map": "running",
+          "key": "TorrentTransfer"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfer"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfer.child"
+        },
+        {
+          "op": "module.invalidate_caches"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除查找器的缓存"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件 TorrentTransfer 共清除 2 个模块缓存：['app.plugins.torrenttransfer', 'app.plugins.torrenttransfer.child']"
+        },
+        {
+          "op": "agent_tool_cache.clear"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件停止完成"
+        }
+      ],
+      "after": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfermusic"
+          ],
+          "plugin.TorrentTransfer": {
+            "enabled": true,
+            "owned": "keep-or-delete"
+          },
+          "plugin.TorrentTransfermusic": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfermusic"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfermusic"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfer": {
+            "history": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "TorrentTransfermusic": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "class_ids": [
+          "TorrentTransfermusic"
+        ],
+        "running_ids": [],
+        "modules": [
+          "app.plugins.torrenttransferother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfermusic/refresh",
+          "/api/v1/system/health"
+        ]
+      }
+    },
+    {
+      "case": "clone",
+      "plugin_id": "TorrentTransfermusic",
+      "is_clone": true,
+      "path_exists": true,
+      "rmtree_error": false,
+      "response": {
+        "success": true
+      },
+      "before": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfermusic",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfermusic": {
+            "enabled": true,
+            "owned": "keep-or-delete"
+          },
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfermusic",
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer",
+              "TorrentTransfermusic"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfermusic": {
+            "history": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "modules": [
+          "app.plugins.torrenttransfermusic",
+          "app.plugins.torrenttransfermusic.child",
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfermusic/refresh",
+          "/api/v2/plugin/TorrentTransfermusic/refresh",
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      },
+      "trace": [
+        {
+          "op": "config.get",
+          "key": "installed"
+        },
+        {
+          "op": "config.set",
+          "key": "installed",
+          "value": [
+            "Other",
+            "TorrentTransfer"
+          ]
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "app.setup"
+        },
+        {
+          "op": "scheduler.remove",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "config.delete",
+          "key": "plugin.TorrentTransfermusic"
+        },
+        {
+          "op": "data.delete",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "path.exists",
+          "path": "/owned-root/app/plugins/torrenttransfermusic",
+          "result": true
+        },
+        {
+          "op": "rmtree",
+          "path": "/owned-root/app/plugins/torrenttransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "classes",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "config.get",
+          "key": "folders"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'new' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'old' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "config.set",
+          "key": "folders",
+          "value": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "正在停止插件 TorrentTransfermusic..."
+        },
+        {
+          "op": "event.disable",
+          "class_name": "Running"
+        },
+        {
+          "op": "plugin.close",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "plugin.stop_service",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "classes",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "running",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic.child"
+        },
+        {
+          "op": "module.invalidate_caches"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除查找器的缓存"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件 TorrentTransfermusic 共清除 2 个模块缓存：['app.plugins.torrenttransfermusic', 'app.plugins.torrenttransfermusic.child']"
+        },
+        {
+          "op": "agent_tool_cache.clear"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件停止完成"
+        }
+      ],
+      "after": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "class_ids": [
+          "TorrentTransfer"
+        ],
+        "running_ids": [],
+        "modules": [
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      }
+    },
+    {
+      "case": "clone-directory-absent",
+      "plugin_id": "TorrentTransfermusic",
+      "is_clone": true,
+      "path_exists": false,
+      "rmtree_error": false,
+      "response": {
+        "success": true
+      },
+      "before": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfermusic",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfermusic": {
+            "enabled": true,
+            "owned": "keep-or-delete"
+          },
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfermusic",
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer",
+              "TorrentTransfermusic"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfermusic": {
+            "history": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "modules": [
+          "app.plugins.torrenttransfermusic",
+          "app.plugins.torrenttransfermusic.child",
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfermusic/refresh",
+          "/api/v2/plugin/TorrentTransfermusic/refresh",
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      },
+      "trace": [
+        {
+          "op": "config.get",
+          "key": "installed"
+        },
+        {
+          "op": "config.set",
+          "key": "installed",
+          "value": [
+            "Other",
+            "TorrentTransfer"
+          ]
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "app.setup"
+        },
+        {
+          "op": "scheduler.remove",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "config.delete",
+          "key": "plugin.TorrentTransfermusic"
+        },
+        {
+          "op": "data.delete",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "path.exists",
+          "path": "/owned-root/app/plugins/torrenttransfermusic",
+          "result": false
+        },
+        {
+          "op": "config.get",
+          "key": "folders"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'new' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'old' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "config.set",
+          "key": "folders",
+          "value": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "正在停止插件 TorrentTransfermusic..."
+        },
+        {
+          "op": "event.disable",
+          "class_name": "Running"
+        },
+        {
+          "op": "plugin.close",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "plugin.stop_service",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "classes",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "running",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic.child"
+        },
+        {
+          "op": "module.invalidate_caches"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除查找器的缓存"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件 TorrentTransfermusic 共清除 2 个模块缓存：['app.plugins.torrenttransfermusic', 'app.plugins.torrenttransfermusic.child']"
+        },
+        {
+          "op": "agent_tool_cache.clear"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件停止完成"
+        }
+      ],
+      "after": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "class_ids": [
+          "TorrentTransfer"
+        ],
+        "running_ids": [],
+        "modules": [
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      }
+    },
+    {
+      "case": "clone-rmtree-error",
+      "plugin_id": "TorrentTransfermusic",
+      "is_clone": true,
+      "path_exists": true,
+      "rmtree_error": true,
+      "response": {
+        "success": true
+      },
+      "before": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfermusic",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfermusic": {
+            "enabled": true,
+            "owned": "keep-or-delete"
+          },
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfermusic",
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer",
+              "TorrentTransfermusic"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfermusic": {
+            "history": [
+              0,
+              1,
+              2,
+              3,
+              4,
+              5,
+              6,
+              7,
+              8,
+              9,
+              10,
+              11,
+              12,
+              13,
+              14,
+              15,
+              16,
+              17,
+              18,
+              19,
+              20,
+              21,
+              22,
+              23,
+              24,
+              25,
+              26,
+              27,
+              28,
+              29,
+              30,
+              31,
+              32,
+              33,
+              34,
+              35,
+              36,
+              37,
+              38,
+              39,
+              40,
+              41,
+              42,
+              43,
+              44,
+              45,
+              46,
+              47,
+              48,
+              49,
+              50,
+              51,
+              52,
+              53,
+              54,
+              55,
+              56,
+              57,
+              58,
+              59,
+              60,
+              61,
+              62,
+              63,
+              64,
+              65,
+              66,
+              67,
+              68,
+              69,
+              70,
+              71,
+              72,
+              73,
+              74,
+              75,
+              76,
+              77,
+              78,
+              79,
+              80,
+              81,
+              82,
+              83,
+              84,
+              85,
+              86,
+              87,
+              88,
+              89,
+              90,
+              91,
+              92,
+              93,
+              94,
+              95,
+              96,
+              97,
+              98,
+              99,
+              100,
+              101,
+              102,
+              103,
+              104,
+              105
+            ]
+          },
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "modules": [
+          "app.plugins.torrenttransfermusic",
+          "app.plugins.torrenttransfermusic.child",
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfermusic/refresh",
+          "/api/v2/plugin/TorrentTransfermusic/refresh",
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      },
+      "trace": [
+        {
+          "op": "config.get",
+          "key": "installed"
+        },
+        {
+          "op": "config.set",
+          "key": "installed",
+          "value": [
+            "Other",
+            "TorrentTransfer"
+          ]
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v1/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "route.remove",
+          "path": "/api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "Removed plugin route: /api/v2/plugin/TorrentTransfermusic/refresh"
+        },
+        {
+          "op": "app.setup"
+        },
+        {
+          "op": "scheduler.remove",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "config.delete",
+          "key": "plugin.TorrentTransfermusic"
+        },
+        {
+          "op": "data.delete",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "path.exists",
+          "path": "/owned-root/app/plugins/torrenttransfermusic",
+          "result": true
+        },
+        {
+          "op": "rmtree",
+          "path": "/owned-root/app/plugins/torrenttransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "error",
+          "message": "删除插件分身目录 /owned-root/app/plugins/torrenttransfermusic 失败: owned rmtree failure"
+        },
+        {
+          "op": "config.get",
+          "key": "folders"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'new' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "已从文件夹 'old' 中移除插件 TorrentTransfermusic"
+        },
+        {
+          "op": "config.set",
+          "key": "folders",
+          "value": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "正在停止插件 TorrentTransfermusic..."
+        },
+        {
+          "op": "event.disable",
+          "class_name": "Running"
+        },
+        {
+          "op": "plugin.close",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "plugin.stop_service",
+          "pid": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "classes",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "map.pop",
+          "map": "running",
+          "key": "TorrentTransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除插件模块缓存：app.plugins.torrenttransfermusic.child"
+        },
+        {
+          "op": "module.invalidate_caches"
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "已清除查找器的缓存"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件 TorrentTransfermusic 共清除 2 个模块缓存：['app.plugins.torrenttransfermusic', 'app.plugins.torrenttransfermusic.child']"
+        },
+        {
+          "op": "agent_tool_cache.clear"
+        },
+        {
+          "op": "log",
+          "level": "info",
+          "message": "插件停止完成"
+        }
+      ],
+      "after": {
+        "config": {
+          "installed": [
+            "Other",
+            "TorrentTransfer"
+          ],
+          "plugin.TorrentTransfer": {
+            "owned": "unrelated"
+          },
+          "folders": {
+            "new": {
+              "plugins": [
+                "TorrentTransfer"
+              ],
+              "order": 7,
+              "icon": "owned"
+            },
+            "old": [
+              "TorrentTransfer"
+            ],
+            "unrelated": [
+              "Other"
+            ]
+          }
+        },
+        "data": {
+          "TorrentTransfer": {
+            "history": [
+              "unrelated"
+            ]
+          }
+        },
+        "class_ids": [
+          "TorrentTransfer"
+        ],
+        "running_ids": [],
+        "modules": [
+          "app.plugins.torrenttransfermusicother",
+          "unrelated"
+        ],
+        "routes": [
+          "/api/v1/plugin/TorrentTransfer/refresh",
+          "/api/v1/system/health"
+        ]
+      }
+    }
+  ],
+  "limitations": [
+    "Local Python3.14 versus installed3.12.13; ordinary list/dict/getattr/branch semantics only",
+    "Scheduler job removal, event handler disable, plugin close/stop and cache reset represented by bounded recorders",
+    "No real application uninstall/reinstall or persistent DB/filesystem execution; independent oracle for main driver expectations"
+  ]
+}

@@ -1,0 +1,85 @@
+{
+  "classification": "exact standaloneSDK synchronization from saved independently reviewed host code; current consumer rebuild/nativeimpact/ASI still pending",
+  "old_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+  "new_origin_sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+  "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+  "files_before": 98,
+  "files_after": 101,
+  "source_difference": "five old productionfiles changed;new host_call_budget helper plus2newtests. Earlier shorthand sixSDK includes budgetnew,not6oldchanged.",
+  "old98_overlay": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/previous-sdk98-overlay.json",
+  "rows": [
+    {
+      "source_path": "internal/plugins/concurrent_session.go",
+      "path": "internal/sdk/concurrent_session.go",
+      "source_sha256": "9ad2f56480e02c95b37b91e6ccce96d1b3dabc3ca0365b2d4d13290c9398781c",
+      "sha256": "9ad2f56480e02c95b37b91e6ccce96d1b3dabc3ca0365b2d4d13290c9398781c",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e"
+    },
+    {
+      "source_path": "internal/plugins/concurrent_transport.go",
+      "path": "internal/sdk/concurrent_transport.go",
+      "source_sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
+      "sha256": "db313790c1afe30078969bbb1cf3db3717a88fb7f63188862669020209571627",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c"
+    },
+    {
+      "source_path": "internal/plugins/concurrent_worker.go",
+      "path": "internal/sdk/concurrent_worker.go",
+      "source_sha256": "50eb321c7f349b8085bafe8d4d05a01aa63796d57bb8204c83511f439c98f9d4",
+      "sha256": "50eb321c7f349b8085bafe8d4d05a01aa63796d57bb8204c83511f439c98f9d4",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3"
+    },
+    {
+      "source_path": "internal/plugins/protocol.go",
+      "path": "internal/sdk/protocol.go",
+      "source_sha256": "c18ac5d4c580a71ebdce76f73b5e63268785fdb92800830910dc602a4d26911b",
+      "sha256": "c18ac5d4c580a71ebdce76f73b5e63268785fdb92800830910dc602a4d26911b",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c"
+    },
+    {
+      "source_path": "internal/plugins/worker.go",
+      "path": "internal/sdk/worker.go",
+      "source_sha256": "653a1d6d767ecde2aae143abe9f68cbe2936b64e99dc75edf64b305fcd05a12e",
+      "sha256": "653a1d6d767ecde2aae143abe9f68cbe2936b64e99dc75edf64b305fcd05a12e",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e"
+    },
+    {
+      "source_path": "internal/plugins/host_call_budget.go",
+      "path": "internal/sdk/host_call_budget.go",
+      "source_sha256": "6cf9a32f4a4d4e23755e03d7b7e44d1d1f935043b9f99185f80921d1126708dd",
+      "sha256": "6cf9a32f4a4d4e23755e03d7b7e44d1d1f935043b9f99185f80921d1126708dd",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": null
+    },
+    {
+      "source_path": "internal/plugins/parallel_host_calls_test.go",
+      "path": "internal/sdk/parallel_host_calls_test.go",
+      "source_sha256": "6104156408bfb03529ab37b24eb7e396af41132938b889db455c7ff858b2d235",
+      "sha256": "6104156408bfb03529ab37b24eb7e396af41132938b889db455c7ff858b2d235",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": null
+    },
+    {
+      "source_path": "internal/plugins/parallel_host_calls_independent_test.go",
+      "path": "internal/sdk/parallel_host_calls_independent_test.go",
+      "source_sha256": "84e668e59a405a4113cfdfe56a3a54f8eac5a89669e87849a1f505bde5e6a5ab",
+      "sha256": "84e668e59a405a4113cfdfe56a3a54f8eac5a89669e87849a1f505bde5e6a5ab",
+      "changes": [],
+      "source_commit": "b69663ab349de0547c34680a68b66c8486bacd51",
+      "before_sha256": null
+    }
+  ],
+  "all101_committed_source_bytes_verified": true
+}

@@ -1,0 +1,30 @@
+{
+  "classification": "actual IAB browser, native Linux ordinary Go Main, owned synthetic fixture only",
+  "at_utc": "2026-11-05T16:49:10.582Z",
+  "url": "http://192.168.8.129:36258/#plugins",
+  "host_sha256": "8305d765055b80f80bdcdc7ad8cfc14857da24c5abcccd54d9ec4e1c6b65fd7b",
+  "worker_sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+  "observations": {
+    "source_version": "2.2",
+    "clone_display_version": "owned",
+    "three_source_controls": true,
+    "both_switches_before": false,
+    "dynamic_self_clone_and_victim": true,
+    "no_MPS_option": true,
+    "selected_only": "OwnedPuiFixtureui",
+    "save_clicked_once": true,
+    "actual_victim_card_gone": true,
+    "reset_selection_empty": true,
+    "switches_after": [
+      true,
+      true
+    ],
+    "clone_independent_switches": [
+      false,
+      false
+    ],
+    "no_page_or_dashboard_menu": true
+  },
+  "route_correction": "Initial /plugins returned404 from unchanged FileServer. Used existing #plugins hash route via actual menu; no code change or false business pass.",
+  "secrets": "Synthetic login memory only; private ui-ready excluded from evidence"
+}

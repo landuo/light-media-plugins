@@ -1,0 +1,3067 @@
+[
+  {
+    "path": "plugins/categoryeditor/ORIGIN.md",
+    "sha256": "58886f1abd2f21029cc842685f3661ee9334b6952353ba102a02778d12333935",
+    "bytes": 1032
+  },
+  {
+    "path": "plugins/categoryeditor/categoryeditor.go",
+    "sha256": "2cab5876eabfff1d22cfdf5e53b8bf88a4301434388ff56c6ae4d60c7614fbfd",
+    "bytes": 7797
+  },
+  {
+    "path": "plugins/categoryeditor/categoryeditor_test.go",
+    "sha256": "71faceb60b71e0db5e2bdccbf48315233ae9bfe7abb253764d45caf422a29e49",
+    "bytes": 14106
+  },
+  {
+    "path": "plugins/categoryeditor/form.json",
+    "sha256": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+    "bytes": 930
+  },
+  {
+    "path": "plugins/torrenttransfer/ORIGIN.md",
+    "sha256": "0d4952e9bef348f229d8b54501a0d382a2141689e7f72523c00012c5eb5fc377",
+    "bytes": 12276
+  },
+  {
+    "path": "plugins/torrenttransfer/bencode.go",
+    "sha256": "936812df4ed2e25268802d918a386485a6734b8d1c9c605a29039238a8c9860d",
+    "bytes": 3653
+  },
+  {
+    "path": "plugins/torrenttransfer/bencode_test.go",
+    "sha256": "09c0a50c8014ed5c865b002ff4d6ef486a99ed7239d79f4818ee3b6ea0199d77",
+    "bytes": 1297
+  },
+  {
+    "path": "plugins/torrenttransfer/config.go",
+    "sha256": "ffbfc978bb494e5c74d5dfe0c0547ae35653b5af80957d56323c7e09aa0cfa93",
+    "bytes": 5944
+  },
+  {
+    "path": "plugins/torrenttransfer/core.go",
+    "sha256": "4e122c06b735d0253fe488574b00bfa765110e155335cfbb2096902ef0d9acea",
+    "bytes": 18894
+  },
+  {
+    "path": "plugins/torrenttransfer/cron.go",
+    "sha256": "9f14a89897c48be0f394da95e0926bd89fe630643f4e3aacd38492a3f190ca56",
+    "bytes": 9991
+  },
+  {
+    "path": "plugins/torrenttransfer/defaults.json",
+    "sha256": "aa37f47e27b8a2cf29f0f4c50ce1a6f46fe1a96d55f437088bc6279d800f2c92",
+    "bytes": 491
+  },
+  {
+    "path": "plugins/torrenttransfer/form.go",
+    "sha256": "7b3556183043fe980d4b2aa236002b0030a1473e38879dc1d3f4ccf16924fe4c",
+    "bytes": 1260
+  },
+  {
+    "path": "plugins/torrenttransfer/form.json",
+    "sha256": "de4920fb4cf4e20b10ebaa90858d8fc58d5eb2fe5fad7aa5d9f5ff3c833efdea",
+    "bytes": 9121
+  },
+  {
+    "path": "plugins/torrenttransfer/host.go",
+    "sha256": "9c18f9e750433d6c5c1384e5bfabe2998c04adf0983f6279d25ad0d15f1166dc",
+    "bytes": 10298
+  },
+  {
+    "path": "plugins/torrenttransfer/pass.go",
+    "sha256": "16d9479a59dac7c5e5327e266a452bb99855f061b8add0566187b555fe0ea579",
+    "bytes": 2693
+  },
+  {
+    "path": "plugins/torrenttransfer/plugin.go",
+    "sha256": "48f099f1c0faa669ef78654e1ea08b52e2ed88c363203227ba3e6ba0f1d3567d",
+    "bytes": 8142
+  },
+  {
+    "path": "plugins/torrenttransfer/plugin_test.go",
+    "sha256": "ccbe5f1bb7cb8ab4a5fe9c5be057d91987ef7de3bb8749e8fd5f7a200a7d702c",
+    "bytes": 31462
+  },
+  {
+    "path": "plugins/torrenttransfer/protocol_budget_test.go",
+    "sha256": "092d33c25b5f022c22d2f01a9df1b0bd90bbe3b618f1289ec84df18c3e206239",
+    "bytes": 21132
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/bencode-oracle.json",
+    "sha256": "cc57e9733870eb51f785511aea3e693a100ae8c74fd637fbbca059f1f84e0154",
+    "bytes": 3753
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/cron-whitespace-source-oracle.json",
+    "sha256": "1b4dafff685b683f8e28e68ed4af0221ffd0484ef5d631367e7df7d6aae87c24",
+    "bytes": 3564
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/metadata-runtime-add-oracle.json",
+    "sha256": "33be9730fe266a8cb5439c755bed53f3c29851c65cb4c9dc2e80cf3216e8dc90",
+    "bytes": 17655
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/module-service-order-oracle.json",
+    "sha256": "05d476a1110b471765f01f05debef8b6a34ebf1e7ccf3e34a8a2f204d1904d23",
+    "bytes": 12276
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/source-oracle.json",
+    "sha256": "b77b1927fc5050a7de0fc7122c72534c70e190e1f947a1a7ede58455d16df2e0",
+    "bytes": 140178
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/timezone-source-oracle.json",
+    "sha256": "f8aaa3b97e144ecd445fe30b8f9bfff6efee13bc2de14b63d2095de5d8453289",
+    "bytes": 7920
+  },
+  {
+    "path": "plugins/torrenttransfer/reference/vendor-skip-wire.json",
+    "sha256": "5f7302ef58307d328df9cb74ca5aee74b3d238916777d6a1836c73d08cf8bb05",
+    "bytes": 13095
+  },
+  {
+    "path": "plugins/torrenttransfer/scheduler.go",
+    "sha256": "9b53456b77e8db1ca2dd8ec79cf55c7ed415bef1226d8d812da09c8fbbf5a858",
+    "bytes": 4010
+  },
+  {
+    "path": "plugins/torrenttransfer/service_order_test.go",
+    "sha256": "dcc2f040bc2f36215356e76240ebfbc86f28b18856677bb74fbb9c4a312ad2bd",
+    "bytes": 8701
+  },
+  {
+    "path": "plugins/torrenttransfer/skip_wire.go",
+    "sha256": "7d0f187c5501fad2f5a7d678104f7c8dd36a5f12103f6c99cb366bbb27000102",
+    "bytes": 5974
+  },
+  {
+    "path": "plugins/torrenttransfer/skip_wire_test.go",
+    "sha256": "fa6af9da45c316f85b970fea8126b1244e82d0f2220875f5eba46e6724258628",
+    "bytes": 2281
+  },
+  {
+    "path": "plugins/torrenttransfer/source_edges_test.go",
+    "sha256": "ce93477388f5695496701fbb74c6f828b2008fa9a96edcf92a5424f5f56fbe99",
+    "bytes": 7531
+  },
+  {
+    "path": "plugins/torrenttransfer/source_oracle_test.go",
+    "sha256": "65286b7a3351c3c0d91b36d844a1bf8f74d436516e8e9de88269fc7901a58d90",
+    "bytes": 9753
+  },
+  {
+    "path": "plugins/torrenttransfer/timezone.go",
+    "sha256": "0077073ecea518e5a6751ae04263cf18a0ace1dd10bb5cd1947881e321a72b1e",
+    "bytes": 5961
+  },
+  {
+    "path": "plugins/torrenttransfer/timezone_test.go",
+    "sha256": "4e079da7164990e00b1bdabfc48b83c2c6f1d32782cfb328c90b0ca943725c89",
+    "bytes": 6011
+  },
+  {
+    "path": "plugins/torrenttransfer/types.go",
+    "sha256": "cd60255f18c406e644f084458576d5154c62915cce8ce93e4db2d8d363f48095",
+    "bytes": 6951
+  },
+  {
+    "path": "plugins/sitestatistic/ORIGIN.md",
+    "sha256": "feb8b9faa16c6011fb8a5e99aa5fb309b891237481b8aaff0f9f7b01d4161e04",
+    "bytes": 10031
+  },
+  {
+    "path": "plugins/sitestatistic/characters.go",
+    "sha256": "0307ad9a01af0c5d86aeb297f290d41416f8a5c380d6a8568dad272be75f75e4",
+    "bytes": 5910
+  },
+  {
+    "path": "plugins/sitestatistic/characters_test.go",
+    "sha256": "4078dfcb82a223098e4a18c270700c6ee015f3fe68809cd99d369071fbad0c2b",
+    "bytes": 3078
+  },
+  {
+    "path": "plugins/sitestatistic/config.go",
+    "sha256": "dac1394a4c96bdd5fd04e22698d0ac864cb7d2b235329f9269bc0e557deaae1d",
+    "bytes": 1956
+  },
+  {
+    "path": "plugins/sitestatistic/config_save.go",
+    "sha256": "ab5c29fa35bd2902f7a9a75a0d05efca2109c795c1080d3e65e9b420cf19055e",
+    "bytes": 1677
+  },
+  {
+    "path": "plugins/sitestatistic/config_text.go",
+    "sha256": "7e487fba10d7d7fa814d6822f12eb8806778b900127e5c8f12974c5529499c81",
+    "bytes": 5891
+  },
+  {
+    "path": "plugins/sitestatistic/config_text_test.go",
+    "sha256": "92b41c31c28d680e4e5cb6addaae737991bfd55b59bd2303f98298e807ecdf88",
+    "bytes": 2081
+  },
+  {
+    "path": "plugins/sitestatistic/data_pass.go",
+    "sha256": "f292ed3cddd7ba05efbe7d1f8358aa26bd26f65e305cd4073705f519a84af09d",
+    "bytes": 2856
+  },
+  {
+    "path": "plugins/sitestatistic/defaults.json",
+    "sha256": "bbd50cabf3e4ed0d4165e5b33cde715516211c63fe00b9a25a489300b5fabf87",
+    "bytes": 73
+  },
+  {
+    "path": "plugins/sitestatistic/form.json",
+    "sha256": "d9c67818e08a82f0a198d04042e1036f9d51c3e811f91208a997e5f102eb32a0",
+    "bytes": 2650
+  },
+  {
+    "path": "plugins/sitestatistic/host.go",
+    "sha256": "e0cedd44d8c4c36654049f05172832ca130eec7f6d06dbc1b6ae24929fa7d697",
+    "bytes": 3393
+  },
+  {
+    "path": "plugins/sitestatistic/locale.go",
+    "sha256": "31a0405fe1c80f811b6e2b1f6dce502d8239d7c261f4c03a3496bb9b8aa7ef1b",
+    "bytes": 5082
+  },
+  {
+    "path": "plugins/sitestatistic/locale_test.go",
+    "sha256": "532a86d3121747a7b8ccad4f0a29aa1e2f13a080595c454713adb55c8d8f80ce",
+    "bytes": 2054
+  },
+  {
+    "path": "plugins/sitestatistic/locales/en-US.json",
+    "sha256": "9c1be4429b8e0422dc9ddcd376daf8f9a9a12363ae7f142bfa64266414a5ef31",
+    "bytes": 59113
+  },
+  {
+    "path": "plugins/sitestatistic/locales/zh-CN.json",
+    "sha256": "ed078c2647874350ab5aca3d0126894280729d223b4b568674197e69b8f41073",
+    "bytes": 3629
+  },
+  {
+    "path": "plugins/sitestatistic/locales/zh-TW.json",
+    "sha256": "9fad2a7b811a92985e57aaf63ffdfdcbf1dd32c763284d1395f0b13b16dc563b",
+    "bytes": 55618
+  },
+  {
+    "path": "plugins/sitestatistic/notification.go",
+    "sha256": "2f5982c3f131652f9c15b1fc9341a07d2abd7c2224b123d8774a2bbdc79382c6",
+    "bytes": 6126
+  },
+  {
+    "path": "plugins/sitestatistic/notification_mode_test.go",
+    "sha256": "5938ef05618e1c3cd3f309dbadbd9a98bca36d0fc6c00e5db7742bd19e0955de",
+    "bytes": 1435
+  },
+  {
+    "path": "plugins/sitestatistic/notification_wire_test.go",
+    "sha256": "8bc46ed9f0ed79bca0eb4325c6ba8ee929caed05f4bef0cc59450b254055af47",
+    "bytes": 1623
+  },
+  {
+    "path": "plugins/sitestatistic/plugin.go",
+    "sha256": "59fa0166eb76bed1ce41960aeaaab67bfa1ebece7a45db712bb03b9803401adc",
+    "bytes": 7845
+  },
+  {
+    "path": "plugins/sitestatistic/plugin_test.go",
+    "sha256": "c14eec37d6d2f2d128353608a02bb6abd2468493435d8bbf040e8ed41133fba2",
+    "bytes": 13697
+  },
+  {
+    "path": "plugins/sitestatistic/reference/api-message-translations.json",
+    "sha256": "cdce2d11411d6350a217a8a2d63f1318ae4ec9e23c8780b4da8fabc8a2809d95",
+    "bytes": 1065
+  },
+  {
+    "path": "plugins/sitestatistic/reference/locale-source-oracle.json",
+    "sha256": "f5789bbe4fd47013717ece28f81993b3be0b17be299bab16ffb6cfa5e3af93c8",
+    "bytes": 11422
+  },
+  {
+    "path": "plugins/sitestatistic/reference/notification-mode-source.json",
+    "sha256": "2afc3723214fa8c5b1299b09615f4d3124a4e11500359fd2d260950b36d046fc",
+    "bytes": 8120
+  },
+  {
+    "path": "plugins/sitestatistic/reference/python-repr-source.json",
+    "sha256": "5f7302ef58307d328df9cb74ca5aee74b3d238916777d6a1836c73d08cf8bb05",
+    "bytes": 13095
+  },
+  {
+    "path": "plugins/sitestatistic/reference/python312-character-classes.json",
+    "sha256": "9d1cff24c73d91fe6b865a220cd750a9ca916d6187eab38c6ec510f5b470e016",
+    "bytes": 70234
+  },
+  {
+    "path": "plugins/sitestatistic/reference/python312-unicode-tables.json",
+    "sha256": "2d6903ad90fcffcce85c222138dd247d88f6ae7d32d04ed71dff14f9bf92264a",
+    "bytes": 6983
+  },
+  {
+    "path": "plugins/sitestatistic/reference/site-message-enum.json",
+    "sha256": "a6a640c24467f27df7f39e3316c899da42a6f20f73e808edb49a864da3c5b462",
+    "bytes": 787
+  },
+  {
+    "path": "plugins/sitestatistic/reference/source-python312.json",
+    "sha256": "0d1d35fb325aca1052dbf2c568ea716e3ea5d655ad5d1374cb27a86fd1e8f2d9",
+    "bytes": 456987
+  },
+  {
+    "path": "plugins/sitestatistic/refresh.go",
+    "sha256": "139bcc061ca0a10d16a80ce89df8a1390ec82683016a57fedada76e4a12e283f",
+    "bytes": 1128
+  },
+  {
+    "path": "plugins/sitestatistic/row.go",
+    "sha256": "40313f09d685760f7e2aef61608a9e1ce723e51600b681a70f6473bb88aeda51",
+    "bytes": 2489
+  },
+  {
+    "path": "plugins/sitestatistic/selection.go",
+    "sha256": "f4e62eb3c9dd7a11c230f038d2aa2ae48647f8fe5b716702d709001fe62997b4",
+    "bytes": 3715
+  },
+  {
+    "path": "plugins/sitestatistic/source_oracle_test.go",
+    "sha256": "7231261b4781e6994828e22fa43cb8cfeca90f56e8e3004d0e4a3479640b975e",
+    "bytes": 3524
+  },
+  {
+    "path": "plugins/sitestatistic/types.go",
+    "sha256": "243941d5440bff56f58762a30473e6091f1b920114623d431edc36cbf7dd7388",
+    "bytes": 7275
+  },
+  {
+    "path": "plugins/sitestatistic/views.go",
+    "sha256": "d968f49340d8c84723061b2e837d3a1e5f5a7f6ec787acdd0ba2374fd3709a7e",
+    "bytes": 10072
+  },
+  {
+    "path": "plugins/mpserverstatus/ORIGIN.md",
+    "sha256": "e1d896a2e6c02c56f045ac681cdf1895fb3cbb50d0cfbf5ab6f385f3fab79584",
+    "bytes": 9852
+  },
+  {
+    "path": "plugins/mpserverstatus/cancellation_cache_test.go",
+    "sha256": "1bb211bdac3d0fc1fc579dc96dc0689525ae49bc49a6c1f827d7f450fac290a2",
+    "bytes": 2879
+  },
+  {
+    "path": "plugins/mpserverstatus/content.go",
+    "sha256": "9dc41702d43f5833aebbc1ad599ea803af83a62a6d7bd4c0b1a38db23ff74734",
+    "bytes": 4427
+  },
+  {
+    "path": "plugins/mpserverstatus/content_test.go",
+    "sha256": "06ce9e187d0f23eb2334cf657471102470a3f7dac516879ca3656e63bee19600",
+    "bytes": 821
+  },
+  {
+    "path": "plugins/mpserverstatus/cookies.go",
+    "sha256": "acdff1ad9231f1a7c7eb3cd7bcc0b16ba04a1d437d32544160ed94c39283b16c",
+    "bytes": 5834
+  },
+  {
+    "path": "plugins/mpserverstatus/cookies_review_test.go",
+    "sha256": "1e2ba928ab1779d5bddd769c93906803d343a2f96edd74110fc1dfb9a603a654",
+    "bytes": 1656
+  },
+  {
+    "path": "plugins/mpserverstatus/date.go",
+    "sha256": "c98f408bb4578760bd2d4a747be46a82c838ae0373e9cc0cf59845e67ee6bcb7",
+    "bytes": 6867
+  },
+  {
+    "path": "plugins/mpserverstatus/date_review_test.go",
+    "sha256": "a19d9f1d657d99c477ba372ba6f4f5e909a55d505a5033ca101f603e0830bb3e",
+    "bytes": 579
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+    "bytes": 13936
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+    "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+    "bytes": 1995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+    "sha256": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616",
+    "bytes": 641
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/codec.go",
+    "sha256": "4c45ee27d05419ff860ee62f9a665416a6feeafa7afc2f1b4848da3c0d9cd8f3",
+    "bytes": 12294
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/codec_extra.go",
+    "sha256": "9cfe76d47dece53b9fc3194880343655b83c9eccfd76097a92a566155dd5a892",
+    "bytes": 7621
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/iso2022.go",
+    "sha256": "8a61ed79c78b5622c6dca5bfd585ee3a6da2ef752c89183d22daf4b272ec9ebb",
+    "bytes": 5869
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/models/confusion.bin",
+    "sha256": "1c853cd04b400bd2d3772fcaddc4466b32d32db703a7aa415df5a20810bf9ecb",
+    "bytes": 8214
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/models/idf.bin",
+    "sha256": "8306e28aad48cac54db7834d09f49cbbb92d3928ede53c71f2b9b232b586bb8a",
+    "bytes": 65536
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/models/models.bin",
+    "sha256": "07eb1dabcf4f8e714f9f866eaa355121bf7b3563dcde0d77ed7c3668de5f75f5",
+    "bytes": 585891
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/models.go",
+    "sha256": "d3f8f0647d101defa3b90aef6631ce62299db194eb25ab1b02bd727052fdf592",
+    "bytes": 8255
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-ignore.bin.z",
+    "sha256": "9ccaf4ce7c47616c43f552b8899c4f2537b5bcaaff34d4477c923e940994cd7f",
+    "bytes": 478
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-replace.bin.z",
+    "sha256": "d19a3e27649ed76466735f9c47b13ab34df79629c1f6a6ef1111e64aef3178b8",
+    "bytes": 490
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ascii-strict.bin.z",
+    "sha256": "8a84a46a16076dcc24e7b74258631bc18a83a3344ffeb7a2090bc96bd36c0c8b",
+    "bytes": 480
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-ignore.bin.z",
+    "sha256": "a45e868d0bead7013314f78b6c9d6bc2c6d1198c4e3d575887f8a3086d78de89",
+    "bytes": 72330
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-replace.bin.z",
+    "sha256": "1a97cff541c2301a321e5c65df493841b96b708524e53c9f9478e2f53b9a64f5",
+    "bytes": 73890
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5-strict.bin.z",
+    "sha256": "20e0d8d5045b42ad57af29d48745df11889a80b41dab078e3ef26393f75be90c",
+    "bytes": 71211
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-ignore.bin.z",
+    "sha256": "179766a8835f6f199bf671c1be3d1da55cec673be26015c33a0106f4fc04e53f",
+    "bytes": 97967
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-replace.bin.z",
+    "sha256": "4ee68e024b74021dadc93fe8cfa7412aff7f7c67874feaf7aaa20b6ca3f19729",
+    "bytes": 99617
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/big5hkscs-strict.bin.z",
+    "sha256": "a1f07e0e2c424aa4a8ac6eec895f922875b08e5dbbba61765fea88a93509b756",
+    "bytes": 96437
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-ignore.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-replace.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/charmap-strict.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-ignore.bin.z",
+    "sha256": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+    "bytes": 1062
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-replace.bin.z",
+    "sha256": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+    "bytes": 1062
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp037-strict.bin.z",
+    "sha256": "6b109c6d8c6a84c3f85b68cf36ce350b04934af4ef430274e04eba9cd0bb9659",
+    "bytes": 1062
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-ignore.bin.z",
+    "sha256": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+    "bytes": 1029
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-replace.bin.z",
+    "sha256": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+    "bytes": 1029
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1006-strict.bin.z",
+    "sha256": "d3951dbc236446a11aa67044ae6c21ca79f62b59628f577bed3bb50a0f9174a6",
+    "bytes": 1029
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-ignore.bin.z",
+    "sha256": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+    "bytes": 1064
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-replace.bin.z",
+    "sha256": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+    "bytes": 1064
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1026-strict.bin.z",
+    "sha256": "81352f5a1a3cff2a56a00cf07275ea525b6e12fdf7a67f4fa7bea2aff8f8a711",
+    "bytes": 1064
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-ignore.bin.z",
+    "sha256": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+    "bytes": 1021
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-replace.bin.z",
+    "sha256": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+    "bytes": 1021
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1125-strict.bin.z",
+    "sha256": "db9d4130839897a612e0351065d7cc2fb0ad224d324799652ed80d6195a95bc7",
+    "bytes": 1021
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-ignore.bin.z",
+    "sha256": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-replace.bin.z",
+    "sha256": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1140-strict.bin.z",
+    "sha256": "0bd1a53f2ba66b4ad11a364891b6630fe02601dcdd62afe8b5dc8765819e43c3",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-ignore.bin.z",
+    "sha256": "0adb82749aa0cd14e203e5a92b064d9a5aa2840a0dd2520d4c99cedce5b5a3ac",
+    "bytes": 1044
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-replace.bin.z",
+    "sha256": "da000c7259547161fd680342da52307d1f07ed93956d366dd3b05d1eb0789f5d",
+    "bytes": 1047
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1250-strict.bin.z",
+    "sha256": "738d83eb0fc87be530528bba7abc47c9f1ca2f1af75496ea578b1dd5cdcb80fb",
+    "bytes": 1048
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-ignore.bin.z",
+    "sha256": "8c9cd768f1b6469c961c169d8465dd0e3bc75c66327e519b6281ad82749c1346",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-replace.bin.z",
+    "sha256": "1c04d2d2a59d6bd33cebc916f5c14e513c5fc516557f487eeae79a807bf587d1",
+    "bytes": 1046
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1251-strict.bin.z",
+    "sha256": "c12c2a49f55b98088a81b7d73d4863d36e342b64541f3aed914a602fc5b1d571",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-ignore.bin.z",
+    "sha256": "caa972a0e8625569eb707cabe379499fe436d120dd36226e40622e3f13dfa0a0",
+    "bytes": 1016
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-replace.bin.z",
+    "sha256": "fb0f79dc37146c6cf4691954e2b8190ff321a4fd32a4a8cb4735d0683e77c3c4",
+    "bytes": 1019
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1252-strict.bin.z",
+    "sha256": "ff5c534c9e0ea28315a0531af1115454c432d02d190b931fb8a2b94b7d8d54bb",
+    "bytes": 1022
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-ignore.bin.z",
+    "sha256": "8ea6725c0e80d49eede851dc569d5c60b4a0063f8bf24b4b2c4a729b253c8636",
+    "bytes": 991
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-replace.bin.z",
+    "sha256": "cb6adb9c9e2466298b56381a93c82084bf6354c56667e6f1f5089344134f8a0c",
+    "bytes": 999
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1253-strict.bin.z",
+    "sha256": "92a36774bfae1706fcc01169015e1b0b6dc57c3a8224979cf64064597096dc29",
+    "bytes": 998
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-ignore.bin.z",
+    "sha256": "a333ee910ba9bf1d6f2f7cc31fcf035fef648f19947c5804dc78ece81630d805",
+    "bytes": 1010
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-replace.bin.z",
+    "sha256": "e4088c4306bd7b6ff486c7a29e9f82f0ee8de8eb902e8f56e9bde002fe92ef31",
+    "bytes": 1016
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1254-strict.bin.z",
+    "sha256": "9faaa7fddc5c7469a729d23548b81fbf4f9f8bfb7ae38385cd64c3b3e0ade0c3",
+    "bytes": 1016
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-ignore.bin.z",
+    "sha256": "c39aff103a96e75c14c84bd78899ca37121c9c012e19baee118b64656383e675",
+    "bytes": 976
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-replace.bin.z",
+    "sha256": "750c5b471d8176c1f284ab5af166cc4f86233f9eed4be3aee9c09a4f862ca890",
+    "bytes": 985
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1255-strict.bin.z",
+    "sha256": "b98451256ee5c43523aaf5673debecd87e418f6e51bb9a1534dd7c0d0055013d",
+    "bytes": 982
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-ignore.bin.z",
+    "sha256": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-replace.bin.z",
+    "sha256": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1256-strict.bin.z",
+    "sha256": "d27193da5f0b5e27d532c5c55e6fb2a85d54af141572bae04cc6be7307049c10",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-ignore.bin.z",
+    "sha256": "345dd00bd785e73f3fb1e15bce1d5eee266ce9e24e233e9720462ad8d4a9c0d1",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-replace.bin.z",
+    "sha256": "3da2299e05f2d78f06c4eba6b5dcb605590e76d951f204dda63a660f74d97492",
+    "bytes": 1030
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1257-strict.bin.z",
+    "sha256": "f8e7c587b643be29fb4ac126e11be8937dccbb690c3f30bb6b46cf3bcf322fd6",
+    "bytes": 1032
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-ignore.bin.z",
+    "sha256": "db1f3f460a90ebdb56478bf603f684aa86897468e5bacbd3058bb319d7cc0bc5",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-replace.bin.z",
+    "sha256": "9874e1e453d833ce91fa2616581ac87dbdda6f2351ef3e343353b7f95a79bca7",
+    "bytes": 1027
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp1258-strict.bin.z",
+    "sha256": "e6f5dfcaab4ef424c1bf6e2e60f672e8502dacda51db3657ffb1438ae1f9e53a",
+    "bytes": 1028
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-ignore.bin.z",
+    "sha256": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+    "bytes": 1067
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-replace.bin.z",
+    "sha256": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+    "bytes": 1067
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp273-strict.bin.z",
+    "sha256": "01de093c570920417ffccb594763b5562b5585b999ec7fd9a9cee696a825f5d7",
+    "bytes": 1067
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-ignore.bin.z",
+    "sha256": "d41cb012d5bff3ddf65b75a39430f301bf56ff3fac30d6bf6a470b9825dfab42",
+    "bytes": 932
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-replace.bin.z",
+    "sha256": "63c0545f7d1fb3788fe5849f00091b0c18c4e9d8f5ffc3aa0c44fe45cfc187a0",
+    "bytes": 942
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp424-strict.bin.z",
+    "sha256": "8b1bd9dfec6667262baee430f4d4afe00975b322515aca06eac49dd8edcf03a9",
+    "bytes": 940
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-ignore.bin.z",
+    "sha256": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-replace.bin.z",
+    "sha256": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp437-strict.bin.z",
+    "sha256": "a8cd9e013e2c9695a1b9f9ac00692b4501432077d1bb1613ac8848ae10ba4e92",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-ignore.bin.z",
+    "sha256": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+    "bytes": 1060
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-replace.bin.z",
+    "sha256": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+    "bytes": 1060
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp500-strict.bin.z",
+    "sha256": "ba1dc6fd91ee87a66fd49c71c25b9ba080b4bfd7aa0d9390d3cae78e8b6261b7",
+    "bytes": 1060
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-ignore.bin.z",
+    "sha256": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+    "bytes": 1052
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-replace.bin.z",
+    "sha256": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+    "bytes": 1052
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp720-strict.bin.z",
+    "sha256": "2f353f37c03f25a023e411c5797fd762b8ead17e16c5ad681ab2b5613c6745b7",
+    "bytes": 1052
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-ignore.bin.z",
+    "sha256": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+    "bytes": 1034
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-replace.bin.z",
+    "sha256": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+    "bytes": 1034
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp737-strict.bin.z",
+    "sha256": "689c940010dd8e33aa521c6c40b13f2adbafd5e1d1aa9d3f082802056c6cddc3",
+    "bytes": 1034
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-ignore.bin.z",
+    "sha256": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-replace.bin.z",
+    "sha256": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp775-strict.bin.z",
+    "sha256": "71b1399500095bb44bbd29d99e84bcc0709d6ee0f2028535453043de7d9cfdf4",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-ignore.bin.z",
+    "sha256": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-replace.bin.z",
+    "sha256": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp850-strict.bin.z",
+    "sha256": "99d35327e8d8b1c7be9a764fbeafc235d0d04d6cceef150235f354eb4747d4d0",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-ignore.bin.z",
+    "sha256": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-replace.bin.z",
+    "sha256": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp852-strict.bin.z",
+    "sha256": "8ef5918c19d4dd5ff18f6d40e536ba79acbe8884e5f1b52632aefeebd4f94807",
+    "bytes": 1066
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-ignore.bin.z",
+    "sha256": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-replace.bin.z",
+    "sha256": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp855-strict.bin.z",
+    "sha256": "899370b426bbb7ab425222dcc803c0cb6f39f0ff4a2420adb9d500ddb3abc8ea",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-ignore.bin.z",
+    "sha256": "c6d1c411b087b9442a60c09e728016a161bfd38cdd1d9f26cf89284d45386fd4",
+    "bytes": 887
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-replace.bin.z",
+    "sha256": "09a083b677c055358024a5e9165a63824b5144c3d0c5b81c949bde698f1849c2",
+    "bytes": 895
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp856-strict.bin.z",
+    "sha256": "5552caa45a9d85193366f7cc3dfd030a667d37ffb7293f04fba5bc81583456d7",
+    "bytes": 894
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-ignore.bin.z",
+    "sha256": "42b37ee9a6cdb47044c3acfde5e9a52dbfe45318350bca9038bb803f6718162c",
+    "bytes": 1037
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-replace.bin.z",
+    "sha256": "858cacf6ea1b6c1bfb5dc02c85f83b75136bc65ac11e8ce193bcd5b1d04e0c5b",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp857-strict.bin.z",
+    "sha256": "a6755528bd0359a037197bbe2fe310523c5529e59aaed7a1280c3f7161031055",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-ignore.bin.z",
+    "sha256": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-replace.bin.z",
+    "sha256": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp858-strict.bin.z",
+    "sha256": "492a93844e66b7dc08ead9e2952dab51fcbb48321639ec73a41ecb99a418349f",
+    "bytes": 1041
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-ignore.bin.z",
+    "sha256": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+    "bytes": 1051
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-replace.bin.z",
+    "sha256": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+    "bytes": 1051
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp860-strict.bin.z",
+    "sha256": "b6d6a08a5c8d71a688bfb0ef929d2ff79d8d86ee285af51029762417686ad66b",
+    "bytes": 1051
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-ignore.bin.z",
+    "sha256": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-replace.bin.z",
+    "sha256": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp861-strict.bin.z",
+    "sha256": "b05f7f94081328941201e8ee0d7e025f19984bb1e65207815b17a36f95efa933",
+    "bytes": 1058
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-ignore.bin.z",
+    "sha256": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-replace.bin.z",
+    "sha256": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp862-strict.bin.z",
+    "sha256": "bd3bcf49aa5fa07100e903e4c1b0200c1c4264acefa316a13c669ad9a2c5d2c5",
+    "bytes": 1057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-ignore.bin.z",
+    "sha256": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-replace.bin.z",
+    "sha256": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp863-strict.bin.z",
+    "sha256": "d2405ecaefc253bae625ada398ab587d802efa13d749c7f73ecacc1d9eeb522e",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-ignore.bin.z",
+    "sha256": "b0e0798def0728ecbe492f70511c7b75c47542c4450dcbcc49e3cb8d87bf732e",
+    "bytes": 1050
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-replace.bin.z",
+    "sha256": "e6b8c08e2f4ae2cafa98fbdd7061ecca920db384cd04ed6dd976b8819b32dd1b",
+    "bytes": 1052
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp864-strict.bin.z",
+    "sha256": "1485ab6832e5bf13de7b0be435e6646d362cfd91c17cb15a076bca70cb248982",
+    "bytes": 1053
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-ignore.bin.z",
+    "sha256": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-replace.bin.z",
+    "sha256": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp865-strict.bin.z",
+    "sha256": "53a101e839540d525ec7fa8b0d9417b5eae6ff087849f20ccb7f8695a0aaa2ad",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-ignore.bin.z",
+    "sha256": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+    "bytes": 1024
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-replace.bin.z",
+    "sha256": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+    "bytes": 1024
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp866-strict.bin.z",
+    "sha256": "7b160e2a93fb7a414e83afb4342d9919e333b917517754eb7a7b885a380aef6f",
+    "bytes": 1024
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-ignore.bin.z",
+    "sha256": "90fb9690cc5e21b3511f20389673caccc783c20a7d5a640e301d7aec07fda247",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-replace.bin.z",
+    "sha256": "2acd4e27c9910a627a421aa6bb2f7ee05aa4da41baed1624908796e051e715d9",
+    "bytes": 1031
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp869-strict.bin.z",
+    "sha256": "1da1fa0cc291ebf4c335baf9970d338420ea0572e311a60e089999fbde469ba4",
+    "bytes": 1030
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-ignore.bin.z",
+    "sha256": "8222f839576d3ee282adb6e78d7d9ff8fd53564f06aeff1f7d296e40d3f4de8c",
+    "bytes": 897
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-replace.bin.z",
+    "sha256": "1476f4e51a3108bd85c44f0c1875c5fb2d672663a4febb719deb74a63ac9e6cd",
+    "bytes": 906
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp874-strict.bin.z",
+    "sha256": "931e1b63ee3defb5d292138afde82728ce7c417a19fbcbfff23caa8665181788",
+    "bytes": 906
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-ignore.bin.z",
+    "sha256": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-replace.bin.z",
+    "sha256": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp875-strict.bin.z",
+    "sha256": "7ea19e0ff74c6fcc153c622450b42beb95ef36a2cb3cf388fd45eb948a45d5d1",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-ignore.bin.z",
+    "sha256": "a78d1ffdeec70b00d566aa2324bcf65e42c5ba36d2101ee9e61d7d2ed4b8e5c7",
+    "bytes": 49763
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-replace.bin.z",
+    "sha256": "a6f29c0e32d1290e76867803ca7e050e657ed5291637f7a5ec0c04b092967079",
+    "bytes": 51422
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp932-strict.bin.z",
+    "sha256": "7b91dcffb0341463c0609f1c643cdb6850fda11f1744dd79a939b6bfd9d5443e",
+    "bytes": 48929
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-ignore.bin.z",
+    "sha256": "9862f3e37f1e14c43a246d582d8aebfb0383052f946337909fa8a7bdc50c95fd",
+    "bytes": 88960
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-replace.bin.z",
+    "sha256": "94d297841cc1e99d04750eb36fa010fa05bf737c535dd9e15b1b98008b2751be",
+    "bytes": 90724
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp949-strict.bin.z",
+    "sha256": "9f9670f3b17e61eaa01134140a3a9ec4cf3b8ff39ed75186f8eaf2ed88a8f9c2",
+    "bytes": 87727
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-ignore.bin.z",
+    "sha256": "70b0fd126cde1d87f62bc522048b54c6a42a28acdf17f51da1dd9896cdce6533",
+    "bytes": 72517
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-replace.bin.z",
+    "sha256": "db574f4cef7aa7c50ef1b316296df1a889832b59ab014b25835f6bf0fcde1d49",
+    "bytes": 74087
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/cp950-strict.bin.z",
+    "sha256": "cf491ba894adaaf906b3e9fb76997591bf67942276ce2444f63ae72497125b0b",
+    "bytes": 71371
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-ignore.bin.z",
+    "sha256": "7992bdad8fa7b337556c803caeaeeef6ac871d305a739efecd507065a46e71cd",
+    "bytes": 199440
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-replace.bin.z",
+    "sha256": "77e5c946a46dd18e8fb224221a31bbe3f3c3a0de6989048691b7fffb55aa6300",
+    "bytes": 211127
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jis_2004-strict.bin.z",
+    "sha256": "65e96b58eaa842029d0b9da5e12b9e4ce1113c424496d8986f184362ad6952f0",
+    "bytes": 88295
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-ignore.bin.z",
+    "sha256": "79f4500635109b3b3ef0922d99e7241cd07170b47a1661b15f34b5e6d3cd426a",
+    "bytes": 199386
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-replace.bin.z",
+    "sha256": "12b93e0389a7fc2b1eeeb6412b4b6ea0c10f5d37679e8d4cbebccdecba914831",
+    "bytes": 211079
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jisx0213-strict.bin.z",
+    "sha256": "0c907239791b1d2ba8c4dc9eff46ee9ae66a0e8034e7f06c2f68a26ec62573a5",
+    "bytes": 88270
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-ignore.bin.z",
+    "sha256": "c825b5cab01130dc23ddbc1976c5a322ed2a5c2c840b3357c0a311a07106d5de",
+    "bytes": 188239
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-replace.bin.z",
+    "sha256": "64337ba510c42bc08a586c41a726e3285996be6e6a44f20ece59d11a587611f4",
+    "bytes": 201833
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/euc_jp-strict.bin.z",
+    "sha256": "d3636b85f5dd5d61b4a85113853bb85c98328a7f6049f048eaa70d393d9c8a31",
+    "bytes": 72168
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-ignore.bin.z",
+    "sha256": "b84f9a838f18e2abe918396e767ed9f882fecdf0573e9c3ece84c7967ee7fa36",
+    "bytes": 41220
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-replace.bin.z",
+    "sha256": "80ca39093c409107da41f82b4a5cf9e0a6fc9a3b61704483f0a80928ad74c2b4",
+    "bytes": 42601
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gb2312-strict.bin.z",
+    "sha256": "57dd1826055edc4893b919d76faa8abd96d78711477e9a64ada0e012fee69218",
+    "bytes": 40589
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-ignore.bin.z",
+    "sha256": "376f98cf6d31c2e29665e037619384ad1b180b44526896edb9c8344dc4a8e2ec",
+    "bytes": 112679
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-replace.bin.z",
+    "sha256": "9ee3c0b4230d625f3239fa59f682f2945ef6e1a4f389c69ba6d0cde8ce5db1af",
+    "bytes": 114414
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/gbk-strict.bin.z",
+    "sha256": "6f72c9e5d42e27ddf8161dc0ad3dba0e7195a45605f03a4fc9e66f0e1abe5c2a",
+    "bytes": 111279
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-ignore.bin.z",
+    "sha256": "3c90a85e2354d5375825dab382313164df1a842ce818fc973bf25b04a07d6fa0",
+    "bytes": 1029
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-replace.bin.z",
+    "sha256": "dc8ef35b89f24a841dfa7aac0dde0b8223efc1348d171f8cff1a3dd94174e9a4",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hp-roman8-strict.bin.z",
+    "sha256": "a702452c05e5a1bb871fafd2036d93c41cc87d91f36260d556164bec47603593",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-ignore.bin.z",
+    "sha256": "2e0cc37fbc32478c50ae999b5873ff43b670b072d19508167fb84fbeadaea850",
+    "bytes": 41208
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-replace.bin.z",
+    "sha256": "84fb8c6e8aeb3f8710c3e721833504682eed00c3d98a44122d982f3e74ea883d",
+    "bytes": 42036
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/hz-strict.bin.z",
+    "sha256": "4ae638c760053133c4f0c135b7a55fc3250dd0f6f9621947b8720cd73e76351e",
+    "bytes": 40707
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-ignore.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-replace.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-1-strict.bin.z",
+    "sha256": "4be83246eb48f6eea248d7554a6371a3ef8a9dea55f9a128020187bb9fc495b5",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-ignore.bin.z",
+    "sha256": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+    "bytes": 1031
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-replace.bin.z",
+    "sha256": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+    "bytes": 1031
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-10-strict.bin.z",
+    "sha256": "a80d2428726b3dc28c803b20790a4d93ecbcbf07f9ab87902095b7460b6d76ab",
+    "bytes": 1031
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-ignore.bin.z",
+    "sha256": "d30bb149f72517556ab6741cad5b8b0ae6be1fdecfac7100c13d803c6db7861d",
+    "bytes": 978
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-replace.bin.z",
+    "sha256": "b94fe8f6f8c482738c0b080e3bf07a26ab29f3c928c3219e70e86f1e2bc8b396",
+    "bytes": 984
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-11-strict.bin.z",
+    "sha256": "376b60e04925ce8da4bd2466e59be15a6fc257486875a0c7de6dfc20613dd96a",
+    "bytes": 982
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-ignore.bin.z",
+    "sha256": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+    "bytes": 1037
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-replace.bin.z",
+    "sha256": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+    "bytes": 1037
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-13-strict.bin.z",
+    "sha256": "4eb909c6c176efefa58c83a3a0fa1cc6a05b8e852e5622339546bff769aa892e",
+    "bytes": 1037
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-ignore.bin.z",
+    "sha256": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+    "bytes": 1046
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-replace.bin.z",
+    "sha256": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+    "bytes": 1046
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-14-strict.bin.z",
+    "sha256": "94a18ea443fa97676f5b6363ded4fd26b1b56a1be99c076e7a5a2f11fca0fbb4",
+    "bytes": 1046
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-ignore.bin.z",
+    "sha256": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+    "bytes": 1026
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-replace.bin.z",
+    "sha256": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+    "bytes": 1026
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-15-strict.bin.z",
+    "sha256": "636177b5cef09679e8149c6ac5392ce439d5e1b2ae0cf444957b658bb6acf2fd",
+    "bytes": 1026
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-ignore.bin.z",
+    "sha256": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-replace.bin.z",
+    "sha256": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-16-strict.bin.z",
+    "sha256": "ca5af3ee001b5401d31c3ffd58ca1f5211563dfacb89f2baab43d9e182ec14b4",
+    "bytes": 1040
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-ignore.bin.z",
+    "sha256": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-replace.bin.z",
+    "sha256": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-2-strict.bin.z",
+    "sha256": "590ba1b4e617fe7972f5af03debfe14c8355e793113c4a18672399a9a1577d3e",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-ignore.bin.z",
+    "sha256": "ed5b31221ffd09cbced8e7abe23b55d52926f475cef65d8a6cbd30b610adb0b1",
+    "bytes": 1005
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-replace.bin.z",
+    "sha256": "38cb69cdae53cafb924929942b02905ada00f82f6722c9d3a3f0ea8a7af94c4c",
+    "bytes": 1016
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-3-strict.bin.z",
+    "sha256": "9e440cdd0a08e60633caad10eebc416259163f7f2608b1b3ac4cae32b1e004e3",
+    "bytes": 1012
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-ignore.bin.z",
+    "sha256": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+    "bytes": 1035
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-replace.bin.z",
+    "sha256": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+    "bytes": 1035
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-4-strict.bin.z",
+    "sha256": "013f457fb29dab7441b9162fd0fa0d9b405fbfca867647dfa3a26baedaa69924",
+    "bytes": 1035
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-ignore.bin.z",
+    "sha256": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+    "bytes": 1020
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-replace.bin.z",
+    "sha256": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+    "bytes": 1020
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-5-strict.bin.z",
+    "sha256": "59914e2682ab34f7d0dcd084e093434e3ab8489257b6de52997a666114b02708",
+    "bytes": 1020
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-ignore.bin.z",
+    "sha256": "e021294f12cc2af9f803b6777bdbdc3b8ba1cdf17a02bad06c2b6949baa8d5d8",
+    "bytes": 847
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-replace.bin.z",
+    "sha256": "6a848c9a52e925f20965d3488b8dddce669c727d7d2a3a97d2d1816741592fd7",
+    "bytes": 865
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-6-strict.bin.z",
+    "sha256": "0a7f01cc90caaac5f9c60c2f159a9de2f49140042bb390585871e49c55841e6e",
+    "bytes": 853
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-ignore.bin.z",
+    "sha256": "4337ced2deeac18442d9068ea3ac7e96a09dfd632ed9b934e54edd26cf0afc2c",
+    "bytes": 1017
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-replace.bin.z",
+    "sha256": "778546c9266387b38d081df715abea5aa9533f9c9bb36e5ae02d0be12be45f70",
+    "bytes": 1024
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-7-strict.bin.z",
+    "sha256": "adfd8e2de054c8147003825cfe585e44ea370d3595f327da0dc4a8db7e83e849",
+    "bytes": 1024
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-ignore.bin.z",
+    "sha256": "2db62de1a8ea7efeb23b73a027f5a653097dbb07750a7c87a6e662736b962286",
+    "bytes": 883
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-replace.bin.z",
+    "sha256": "ee3c1eef43ceac95de8f5b0c28b3ec0faff7d0e1786b2f2d5565c62e66d43be9",
+    "bytes": 893
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-8-strict.bin.z",
+    "sha256": "360495ecc070ff8416ff6a590b6c63c7d8375db20f5bcc5d12f04beb65cba94d",
+    "bytes": 889
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-ignore.bin.z",
+    "sha256": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+    "bytes": 1010
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-replace.bin.z",
+    "sha256": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+    "bytes": 1010
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/iso8859-9-strict.bin.z",
+    "sha256": "bb7f3f8b42b60ecac08911d9f6ccc2123bdad891013f2f369751333bacc470de",
+    "bytes": 1010
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-ignore.bin.z",
+    "sha256": "ca43cdfaac9587bbd073a4a0d11db7a5e6c07121e98efb7e719ba2123284bfb3",
+    "bytes": 88260
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-replace.bin.z",
+    "sha256": "e5323ff2251ecdc3619c68fd99f735efa84fd44e31c20b5383015197e3171398",
+    "bytes": 89975
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/johab-strict.bin.z",
+    "sha256": "8e51d61560ba1404adb1251a2f8443d765437f84747204df0ad4a9d2bbc74674",
+    "bytes": 87226
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-ignore.bin.z",
+    "sha256": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-replace.bin.z",
+    "sha256": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-r-strict.bin.z",
+    "sha256": "3d9a99da39be74176865f6f6f8becbb25740fe3a25f2f1a271d7a798473a7a1a",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-ignore.bin.z",
+    "sha256": "84e25b5f84f6140b738be78bfd801e5a01b013f60a16e485bfa90efe8f29636f",
+    "bytes": 991
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-replace.bin.z",
+    "sha256": "2b326066011ef6dd4ba6b923626f9097a914bbc7112d79c9a62793784c473a24",
+    "bytes": 1003
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-t-strict.bin.z",
+    "sha256": "5a547fba9d15a3a31addec7229e9b595a707f2bbce543958cc683d9558b1ddd0",
+    "bytes": 995
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-ignore.bin.z",
+    "sha256": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-replace.bin.z",
+    "sha256": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/koi8-u-strict.bin.z",
+    "sha256": "0f16415edd616fb5031dedc2c12253ff84a7a100a53800bdb6b7e09abfc43828",
+    "bytes": 1049
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-ignore.bin.z",
+    "sha256": "584f3d1642ffa3abbd984ba10813e09ca7890dbdaa9249edcb7fa58dd609e1b0",
+    "bytes": 1043
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-replace.bin.z",
+    "sha256": "af4b7f1949af2fdfbcdecb26fc86c59e2a7e70986bc0d46a34fd8a81c9577b48",
+    "bytes": 1048
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/kz1048-strict.bin.z",
+    "sha256": "3896d7e1a0ffeb128aeffbed660872fa20bbcde803daa0b991191fe7f30d1fda",
+    "bytes": 1045
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-ignore.bin.z",
+    "sha256": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+    "bytes": 959
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-replace.bin.z",
+    "sha256": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+    "bytes": 959
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-arabic-strict.bin.z",
+    "sha256": "70537b9c1245424843827468ff48c1486c9f2d953f7b0de977bf67c925b6111d",
+    "bytes": 959
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-ignore.bin.z",
+    "sha256": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+    "bytes": 1069
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-replace.bin.z",
+    "sha256": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+    "bytes": 1069
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-croatian-strict.bin.z",
+    "sha256": "cb9259419e3f02ef4b4b8e5903fa79e33c8d51c3ad3fe8571605d2a377a3722c",
+    "bytes": 1069
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-ignore.bin.z",
+    "sha256": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-replace.bin.z",
+    "sha256": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-cyrillic-strict.bin.z",
+    "sha256": "565c3429b6e00915c8ea8252eb30099951a0382eae4a85acade30e2ee909b1a4",
+    "bytes": 1054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-ignore.bin.z",
+    "sha256": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+    "bytes": 960
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-replace.bin.z",
+    "sha256": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+    "bytes": 960
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-farsi-strict.bin.z",
+    "sha256": "3ce175f655972d574f3641c31952c58860adf2bbfd6b1e088e3eaab15f298dff",
+    "bytes": 960
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-ignore.bin.z",
+    "sha256": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+    "bytes": 1048
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-replace.bin.z",
+    "sha256": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+    "bytes": 1048
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-greek-strict.bin.z",
+    "sha256": "ff9fdaeb0379c3daa892cbe5009fe5903a6953c0d89f29b1ac785b753181b007",
+    "bytes": 1048
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-ignore.bin.z",
+    "sha256": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-replace.bin.z",
+    "sha256": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-iceland-strict.bin.z",
+    "sha256": "be0ba094ac729c9a1303449682a317e8a6a419a94b928d1ff691fb46dd7e7b86",
+    "bytes": 1056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-ignore.bin.z",
+    "sha256": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-replace.bin.z",
+    "sha256": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-latin2-strict.bin.z",
+    "sha256": "262e876a29ca03e9f3cd9dec787b5af2e1a3eb8674b869889ef7619041df8575",
+    "bytes": 1070
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-ignore.bin.z",
+    "sha256": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-replace.bin.z",
+    "sha256": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-roman-strict.bin.z",
+    "sha256": "5df765e603d4865bd7d79b35cc1ccb2c339d3c4141a03c0706fa1b2f859e083f",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-ignore.bin.z",
+    "sha256": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+    "bytes": 1065
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-replace.bin.z",
+    "sha256": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+    "bytes": 1065
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-romanian-strict.bin.z",
+    "sha256": "871d131d170761ea405e9658df14b46777fa80887acb59c1676d40de890f3cb8",
+    "bytes": 1065
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-ignore.bin.z",
+    "sha256": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-replace.bin.z",
+    "sha256": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/mac-turkish-strict.bin.z",
+    "sha256": "a39441d880a5f708be84d64fed02eaf95fa1840b3c6d63290768d2f82c69e1f8",
+    "bytes": 1061
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-ignore.bin.z",
+    "sha256": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-replace.bin.z",
+    "sha256": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/palmos-strict.bin.z",
+    "sha256": "d24e8d825ab9082fe696b0e5c2e6b3627474332091324a45d610e65c08ab12b4",
+    "bytes": 1025
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-ignore.bin.z",
+    "sha256": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-replace.bin.z",
+    "sha256": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/ptcp154-strict.bin.z",
+    "sha256": "f5618f5fb53462ce552b51b43ce6f2ad851919e01c1760ea2c2fd4db196d8b12",
+    "bytes": 1038
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-ignore.bin.z",
+    "sha256": "a61dc30e31f0d83f39f032d6ce2fc5466ad0645d9ecc407bf4960b47110e920c",
+    "bytes": 37300
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-replace.bin.z",
+    "sha256": "2e76f2fcde4136c03c54f7ed82cdb354eab95bafae6eabc4dffc94de33ef8fbc",
+    "bytes": 38505
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis-strict.bin.z",
+    "sha256": "02779a12762d383adfb5ff3876b3e91c5e4b0287e8dc2227bbfcae2aa48dd0d3",
+    "bytes": 36861
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-ignore.bin.z",
+    "sha256": "f7b549f062ef685e3c35f7327dcc5fb6bc81387ad8ec0a95b9cb192ec2ba4dde",
+    "bytes": 60588
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-replace.bin.z",
+    "sha256": "7aba583f60a0509f087016673d7e2ed08a7bbb5ef10dc4273fa71e24de025bdb",
+    "bytes": 61172
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jis_2004-strict.bin.z",
+    "sha256": "e242da4467f5032421c20ac8c98ecf3d70ed8e7d674f92017762f123a092c672",
+    "bytes": 60081
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-ignore.bin.z",
+    "sha256": "0389c015eb4011cd58fc2a385cf4006709a9000eba084d7c6b0dbf790418ca09",
+    "bytes": 60567
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-replace.bin.z",
+    "sha256": "78c7845e5c4457c30353a24b036468756482a0a4a9b286c497f8ecb64e7c995c",
+    "bytes": 61151
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/shift_jisx0213-strict.bin.z",
+    "sha256": "68c371c292d922b23b4c4a6987d50bca7d1e0a2760d46f4c3d01de001d14200b",
+    "bytes": 60054
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-ignore.bin.z",
+    "sha256": "fe741f89d1431d85c8f25f2943cfa84d0819590d8518e2800e35982436029dfe",
+    "bytes": 978
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-replace.bin.z",
+    "sha256": "f5ba896846096cb38b9bb3e1cc1b6c73b64dcf97c2c00549a5384148f8ef2241",
+    "bytes": 983
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/codecs/tis-620-strict.bin.z",
+    "sha256": "dfd38cccd59810714fdfb198123f5394220aa12ee5fd8c1e5aa5750174048f2b",
+    "bytes": 983
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-192.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-194.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp-74.bin.z",
+    "sha256": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+    "bytes": 256
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-192.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-194.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-196.bin.z",
+    "sha256": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+    "bytes": 22388
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_1-74.bin.z",
+    "sha256": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+    "bytes": 256
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-192.bin.z",
+    "sha256": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+    "bytes": 24209
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-193.bin.z",
+    "sha256": "b3fca5d51819bfd559e96f341d022c385a62129d93ac41c72b6b7ac20a090159",
+    "bytes": 25876
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-194.bin.z",
+    "sha256": "5016921fbb93a903f5deb0671f6ab129e118644b9c60e5f7c00a0cd9752ea5ff",
+    "bytes": 24209
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-195.bin.z",
+    "sha256": "dd289224acae8d0e5357dc8a73e446c8a60a4c82cbd157e6ed176feaeaa8b1d5",
+    "bytes": 28726
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-196.bin.z",
+    "sha256": "5f31a6eb6a9c7788fe768554476c471c5f4e5377b1d6f59fbb0a03ad41c95588",
+    "bytes": 22390
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-74.bin.z",
+    "sha256": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+    "bytes": 256
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-g2A.bin.z",
+    "sha256": "0cbcb7d86a61f95ea01f1b1b4acd5e9e94e87726b0bbc33c13647bdafd1380e9",
+    "bytes": 253
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2-g2F.bin.z",
+    "sha256": "6adf02a0892af4e4f9bf75af7d1bb989b13412b3f420ece4af76eaaec5e489c0",
+    "bytes": 471
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-194.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-208.bin.z",
+    "sha256": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+    "bytes": 11682
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_2004-209.bin.z",
+    "sha256": "3550419fd88714f03b1fe58e3301f87965b4f6b328f2629abda2752610771eac",
+    "bytes": 30075
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-194.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-207.bin.z",
+    "sha256": "d421ea4892d3821422041738d5cda3991ec50ef5b9b6cc4563ecfda66c954d2a",
+    "bytes": 30053
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_3-208.bin.z",
+    "sha256": "5ef57e72e0f25dde71bf20ba942b3c48ce361089c7453165deba5d685a0fd647",
+    "bytes": 11682
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-192.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-194.bin.z",
+    "sha256": "7d109772a2473fe08e187a476c4c0e5ab324aa9b83541de7ed9efa8186db89f1",
+    "bytes": 24210
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-196.bin.z",
+    "sha256": "875c9bb97b531f047e356b789542a517a51edb64c792300915997740356f6bf7",
+    "bytes": 22388
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-73.bin.z",
+    "sha256": "139c5c4c51de86913073ba913d0c20b6e61828c6ed9e4a06553ff256d4d2ad91",
+    "bytes": 199
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_jp_ext-74.bin.z",
+    "sha256": "1d301c84701574445ed7a99bba4efc9924eccf284b2ca681bbbfc3f35502fe6d",
+    "bytes": 256
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/iso/iso2022_kr-195.bin.z",
+    "sha256": "4d131b07df35ab6f26e910ec9c32e8dd6f9ea44a9e3bb12dce67d064cab67069",
+    "bytes": 28828
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/python-aliases.json",
+    "sha256": "51fa7497ddd7441550bdc43d515acea2dcfe287c1afd15a3dcfff423f97a6f93",
+    "bytes": 7042
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/registry.json",
+    "sha256": "ea4bae029ba1774f8eeae213ab3e6c344b8b256c4c31ce11d7e10862a4b62202",
+    "bytes": 76056
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/special-codecs.json.z",
+    "sha256": "d5b215368638f3e49928dd91b39dc865ee87498130b53c456728e69c52ef409f",
+    "bytes": 86057
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/unicode-flags.bin.z",
+    "sha256": "c8efbcff47479b56085da7cabdf541c5f20a8b5c865f86cb8d9094d7f02da1a4",
+    "bytes": 3458
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/reference/generated/unicode-names.bin.z",
+    "sha256": "d375bd0caff3e7763dafdb689ac86edc97862c5a3675867c28e7557965e46f93",
+    "bytes": 699655
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/requests_reference_test.go",
+    "sha256": "263e6c3e85535b53990b8a7abc1beed3c5b12d33208a4f9d8b2085b0e4f2ca7a",
+    "bytes": 1208
+  },
+  {
+    "path": "plugins/mpserverstatus/encodingdetector/stages.go",
+    "sha256": "dd0f14e173963b09c482c2f215053e8bba5817dacf154ef04485ddf8d82f438e",
+    "bytes": 20044
+  },
+  {
+    "path": "plugins/mpserverstatus/header_limits.go",
+    "sha256": "c236310cd7ab9d59e290c10a1c5fefb5d21f9980d2bc09ad8b9232a3e2337bb9",
+    "bytes": 7395
+  },
+  {
+    "path": "plugins/mpserverstatus/header_review_test.go",
+    "sha256": "2474b332deec0772a19f43de16b15614d6f1f58b592b3080e3ec2b920d4fcf06",
+    "bytes": 5506
+  },
+  {
+    "path": "plugins/mpserverstatus/network.go",
+    "sha256": "7d32978b241f00e3bb0fbc2406772b93420ae06b631287d3b9184104a64a595b",
+    "bytes": 12272
+  },
+  {
+    "path": "plugins/mpserverstatus/network_test.go",
+    "sha256": "32ff8a9b862d863b2421e6b740a9a579fe3598b59fd6faa92bb8a84d4dcf5094",
+    "bytes": 16447
+  },
+  {
+    "path": "plugins/mpserverstatus/plugin.go",
+    "sha256": "9023a12cb3cf820e8e731d0665d10e127fc6d1f4c70de0f98d59bdb8ae8d18a6",
+    "bytes": 2807
+  },
+  {
+    "path": "plugins/mpserverstatus/plugin_test.go",
+    "sha256": "116739d044d79c25aa87ffeec3c66aa82b90a01d87f30c89ccdc8333baaa4524",
+    "bytes": 6038
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/extra-source-oracle.json",
+    "sha256": "6daa417acc7b7d687fcd92178965e55f0a83778e0cf06923be75688428ee487a",
+    "bytes": 23894
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-compression-reference.json",
+    "sha256": "41aff2336f39a6fd6ba92feeb30d1d3074afa31eb70cf3bf9069029236cb14fd",
+    "bytes": 5293
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-cookie-attribute-review.json",
+    "sha256": "500059a5401f77cb4461f8b95e542c93f0b9d6a535bda5c272cba63c379a0bd2",
+    "bytes": 1392
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-cookie-local-review.json",
+    "sha256": "34cba0db53f9783ae5a68cae7d45cff40be9a7ffe627aaf39b1652d1705f1956",
+    "bytes": 3364
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-cookie-review.json",
+    "sha256": "5a8225071446898bb01bc6b98d8edeb2dd24aa65cd7631ce75a8e1469c6ce563",
+    "bytes": 1248
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-date-review.json",
+    "sha256": "f437772be234928e81aef800646a296707ed11c7d7b38d881194f558d7aeb640",
+    "bytes": 2705
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-encoding-reference.json",
+    "sha256": "38953f737a1e96fd43a4d57502b71fe1f910e352c60cf099d7662342f02a3432",
+    "bytes": 86940
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-header-count-review.json",
+    "sha256": "8af4afee5d43acbac181832fbd678e9105c4e666f0f3258e7e8a5c6e55bb4689",
+    "bytes": 1281
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-header-extended-review.json",
+    "sha256": "fffc3cedc84adcab5f11d844be919558706f1ed38ae26187e5e2a78730d95082",
+    "bytes": 756855
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-http-reference.json",
+    "sha256": "9e20dd67e62ec8743f46eaafaddc210cbe22648c0f6f937d0b0a0c47b1e9e2a2",
+    "bytes": 32045
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-original-oracle.json",
+    "sha256": "c47b1c6fecdd604e7318255fe47d1d1038a5f0a5481798a38a2debf84bb055e6",
+    "bytes": 618180
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-redirect-drop-reference.json",
+    "sha256": "5891797b86016a044750ecbc2648d5027f56da00661fa0c04e5c0904377f7541",
+    "bytes": 401
+  },
+  {
+    "path": "plugins/mpserverstatus/reference/source-text-review.json",
+    "sha256": "07682c110b41bc06097d27b0be53d12f40eda09959c59ef6d95b140c36c50a85",
+    "bytes": 2768
+  },
+  {
+    "path": "plugins/mpserverstatus/render.go",
+    "sha256": "0eca4f74dec029d5293661ec70851c94bfefa741f4da4622caf729f2fa71eed7",
+    "bytes": 7311
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+    "sha256": "ed2e1332b5ad9d3b028644482db2cf2c4796a98d9473f297314cafafb66dedcb",
+    "bytes": 2363
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+    "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+    "bytes": 13936
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+    "sha256": "7027e214e014eb78b7adcc1ceda5aca713a79fc4f6a0c52c9da5b3e707e6ffe9",
+    "bytes": 1401
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+    "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+    "bytes": 10142
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE",
+    "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+    "bytes": 38
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/proxy.go",
+    "sha256": "e16b2872f66230c32647a732d00d7a4b69913901635d4525efa14bd00bcb9181",
+    "bytes": 6264
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/requests_cancel.go",
+    "sha256": "a4fdca2cf4d65b9ce0231b6184d9cb068c0b57d5e7eca88be1cc737697920e26",
+    "bytes": 2092
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/requests_env.go",
+    "sha256": "56f6ca68c6d7073f61027e8051d12beba6084abcaec14116158699c8bc811f08",
+    "bytes": 8330
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/requests_merge.go",
+    "sha256": "70fa6fc61faa91e5c21c3d14c3bd3b972f466a354c1906a2658412272ccd7adc",
+    "bytes": 2868
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/requests_timeout.go",
+    "sha256": "0ee1999f5d001a1d187b920e64f2c2ddca33bd947ac2d199a090d488c0d69c9b",
+    "bytes": 1624
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/requests_transport.go",
+    "sha256": "9a3400cf9dd9dbc087d6904b4d35e1e8caee660e4366ad2f624d8828e5be7861",
+    "bytes": 6999
+  },
+  {
+    "path": "plugins/mpserverstatus/requestsproxy/source_route.go",
+    "sha256": "67fa3f12cb0a13585b2b1c9f815e00f169ea24c8c20129d5f07f44be128c0387",
+    "bytes": 5668
+  },
+  {
+    "path": "plugins/mpserverstatus/source_edges_test.go",
+    "sha256": "bc84163ff145aed3201413e4ea649ed8c84e291579688de00b0cf85a9b4d6375",
+    "bytes": 2319
+  },
+  {
+    "path": "plugins/mpserverstatus/source_oracle_test.go",
+    "sha256": "5721dd10941d5a9347dead3d5dfe6ff3c26b8129abcbe1823e75d6eed4371153",
+    "bytes": 8703
+  },
+  {
+    "path": "plugins/mpserverstatus/status.go",
+    "sha256": "e05c50c15db2d597bc83903adaf261bb4d55489b883cca8db8920c8b7ad058ad",
+    "bytes": 20682
+  },
+  {
+    "path": "plugins/mpserverstatus/text_review_test.go",
+    "sha256": "6e6e100f8c712f51af153f45b367715976497e75bd9cb63690d9a59b1359ce10",
+    "bytes": 2170
+  },
+  {
+    "path": "plugins/mpserverstatus/unicode_table.go",
+    "sha256": "9a4e44d7d410e1546051788cb548def8d57ac6e748cd434ddfaa57b2d16e9320",
+    "bytes": 2145
+  },
+  {
+    "path": "plugins/pluginuninstall/ORIGIN.md",
+    "sha256": "c8d5e0d035c91d937130c22dd808897a6e2ae5f7695f88804d73f129a82c19a0",
+    "bytes": 4806
+  },
+  {
+    "path": "plugins/pluginuninstall/core.go",
+    "sha256": "3bf3a036f528feb8741fb7e431df28608f9e1bc2ba60a75ddedb67f866e66350",
+    "bytes": 6574
+  },
+  {
+    "path": "plugins/pluginuninstall/form.go",
+    "sha256": "faeb6063bc19dd3e87db9b91eded7db809a479aba5124df28787ebb9ccd680c5",
+    "bytes": 928
+  },
+  {
+    "path": "plugins/pluginuninstall/form.json",
+    "sha256": "a98b0b12df790bc05b6102425daa6045aa0856e26452893ff39f51f7f040668c",
+    "bytes": 2202
+  },
+  {
+    "path": "plugins/pluginuninstall/host.go",
+    "sha256": "bfd4508658bc88bbdc5c40b6a461f61e0cdaa6872b04a2168c187554fdac4d23",
+    "bytes": 3719
+  },
+  {
+    "path": "plugins/pluginuninstall/metadata_repr.go",
+    "sha256": "714b2706e34e42a3ededd3ba160c91fefbdf6040c38c9a1a8a7cf3741d7923a2",
+    "bytes": 6368
+  },
+  {
+    "path": "plugins/pluginuninstall/options.go",
+    "sha256": "04ba6e8e14ffd802888c351018e711d011f2e1c7d2d4e492f59171b8274d67dd",
+    "bytes": 4006
+  },
+  {
+    "path": "plugins/pluginuninstall/pass.go",
+    "sha256": "5d1e7ba9bc5e54c1b5895f3ee44b5efed38701fe3b5a7b16ad22ccb3c8d40cf8",
+    "bytes": 2747
+  },
+  {
+    "path": "plugins/pluginuninstall/plugin.go",
+    "sha256": "05e2db1dfb5da6860565179f8e288c9c29285225136f9b733f1afaabe54e041d",
+    "bytes": 2992
+  },
+  {
+    "path": "plugins/pluginuninstall/protocol_test.go",
+    "sha256": "525a25750b2da444400734b9b97429ab06045baa9cc0332021dc81109a7d286d",
+    "bytes": 8414
+  },
+  {
+    "path": "plugins/pluginuninstall/reference/initial-source-oracle.json",
+    "sha256": "617c796d945c03d5b5fbe82f964f63c8ad438cab3a70f46db99bac795ebcb3bf",
+    "bytes": 56868
+  },
+  {
+    "path": "plugins/pluginuninstall/reference/lifecycle-source21.json",
+    "sha256": "83df6525a96eb7302623f6de1d20d7966319ec8ca4ad783d8d74d5aafc9ac40e",
+    "bytes": 287811
+  },
+  {
+    "path": "plugins/pluginuninstall/reference/python312-extended-source-oracle.json",
+    "sha256": "27235b845187b1440d12c9db7201ebc4cf0f526ef0d6e7fd2dd039565032d9e9",
+    "bytes": 142936
+  },
+  {
+    "path": "plugins/pluginuninstall/reference/python312-filesystem-oracle.json",
+    "sha256": "c51776e36a80653add865c9a4b570fd517fd7c92b6c8cabf4d6260a226fe92e7",
+    "bytes": 1937
+  },
+  {
+    "path": "plugins/pluginuninstall/reference/python312-installed-DB-delta.json",
+    "sha256": "35b452d20f9e8d35aad252612c25c551d66527e32d2ce48c018ceda52ee51c97",
+    "bytes": 6183
+  },
+  {
+    "path": "plugins/pluginuninstall/source_fresh_test.go",
+    "sha256": "c4369f633ecb355d91362773ff2f665c091921d79e8aa1414d6a5cc5f14a297b",
+    "bytes": 12144
+  },
+  {
+    "path": "plugins/pluginuninstall/source_oracle_test.go",
+    "sha256": "d5cc54e9cd678762dfb0b61d2e918b8142ba95359619521f22fe0af3786488c9",
+    "bytes": 8771
+  },
+  {
+    "path": "plugins/removelink/ORIGIN.md",
+    "sha256": "06901ec61578938dc492f69d8e17842a05bdf3d781b1a7d3c26cae66ed18d4e3",
+    "bytes": 8113
+  },
+  {
+    "path": "plugins/removelink/README.md",
+    "sha256": "71f83ccaa310c45c142fb002af7631ffa3de368260ab9f324722b4b51c24797a",
+    "bytes": 1314
+  },
+  {
+    "path": "plugins/removelink/concurrency_protocol_test.go",
+    "sha256": "fa10665826dbc7d453b2caedc4fee774a001b0fe56d070c51ccc3f88d4d754c7",
+    "bytes": 15974
+  },
+  {
+    "path": "plugins/removelink/defaults.json",
+    "sha256": "f0ed8b5f0f699b61839b8d9376ff5673719efe5ee5536d4756b010696627142e",
+    "bytes": 291
+  },
+  {
+    "path": "plugins/removelink/form.json",
+    "sha256": "2e6062ee16385b8cf61bbe82329fa6fa61ebd8da64ad6aecf770cd82cb15bc35",
+    "bytes": 6268
+  },
+  {
+    "path": "plugins/removelink/frontend/remoteEntry.js",
+    "sha256": "cb500f8375534b574b9a72d36f0f3e08a967af871974b44271474c3670c9269b",
+    "bytes": 980
+  },
+  {
+    "path": "plugins/removelink/frontend/style.css",
+    "sha256": "fb9efe41834a01b001f4e36cb148225655d3c17d13853c2ee9a0ff1450c7f500",
+    "bytes": 7201
+  },
+  {
+    "path": "plugins/removelink/frontend/view.js",
+    "sha256": "893e3f03c67db46f22cd5899dd1d7194f5cbf433fbd5f2cde53fd1c863f7e388",
+    "bytes": 10754
+  },
+  {
+    "path": "plugins/removelink/helpers_test.go",
+    "sha256": "d06c73a7c541e68d3a396085b9b5c16d8bc23d86324318e557379422b8ff7883",
+    "bytes": 7033
+  },
+  {
+    "path": "plugins/removelink/init_overflow_test.go",
+    "sha256": "4b694254968b5497bbc5233094194e64810d6427c4edf980928b6055fb3310ab",
+    "bytes": 5657
+  },
+  {
+    "path": "plugins/removelink/lifecycle_test.go",
+    "sha256": "bffd809e7dfca4c6cde3288079a3669efcf371e307acc6ddea5f4e78109d1a51",
+    "bytes": 4596
+  },
+  {
+    "path": "plugins/removelink/local_fixture_test.go",
+    "sha256": "a0332ae1eb894828e2ae349356e53d3ebeb0a26f1bf00cbe72ae6bccf177f960",
+    "bytes": 5516
+  },
+  {
+    "path": "plugins/removelink/machine.go",
+    "sha256": "5a4e4174c030039936dd648699e3b63afddd49d31e6874b3896b50be45015bf7",
+    "bytes": 23907
+  },
+  {
+    "path": "plugins/removelink/manifest_test.go",
+    "sha256": "d8d0d1beb9303c61a260ef9ec607c673b5540f42636e4d215bd8f2adcaaa319b",
+    "bytes": 1397
+  },
+  {
+    "path": "plugins/removelink/observer_source_test.go",
+    "sha256": "0d91957c141ad675ca2559c0e7a6e4dcec12c2546f7b6b840b7573dbd3c566b8",
+    "bytes": 4710
+  },
+  {
+    "path": "plugins/removelink/observer_test.go",
+    "sha256": "d435ee45c611bd91c77f957e22d1a68131f2b687b13554934b52b538945d634a",
+    "bytes": 3938
+  },
+  {
+    "path": "plugins/removelink/operation.go",
+    "sha256": "b34d2f0c2ecc581b00fd08da1043515758bce964f416b291ff074c8864fadf5b",
+    "bytes": 1590
+  },
+  {
+    "path": "plugins/removelink/oracle_test.go",
+    "sha256": "cdb1ccb9807125307be68db856fb74ccdb42e9ea63d4c0f97329de89f888626d",
+    "bytes": 6361
+  },
+  {
+    "path": "plugins/removelink/pass.go",
+    "sha256": "45688845ea309103be5ffe34f50a64f874c9ac136846eb994a3b247b08002f4c",
+    "bytes": 3571
+  },
+  {
+    "path": "plugins/removelink/plugin.go",
+    "sha256": "45139714a32b260fb1de961bc11604dc1bc689d60b4e358a4ef6c700bcc6d39a",
+    "bytes": 5265
+  },
+  {
+    "path": "plugins/removelink/protocol_lifecycle_test.go",
+    "sha256": "d4c2ae86f606c92fa89434cb16712ff1ddd8d5b9b290db75519c4fcb70db5205",
+    "bytes": 5334
+  },
+  {
+    "path": "plugins/removelink/protocol_recovery_test.go",
+    "sha256": "d193d3ce80190640f4831fb333986c9df290431e55b1c1aef7bf9f863ef3567d",
+    "bytes": 2365
+  },
+  {
+    "path": "plugins/removelink/protocol_strm_test.go",
+    "sha256": "934b83abb45eac6f168c0700078aeea2828a52d983aab925a849cab259a2e99b",
+    "bytes": 2903
+  },
+  {
+    "path": "plugins/removelink/protocol_test.go",
+    "sha256": "8a0dd3713597d1e717c4deca568689d20f36c7218447715c30c8a27994cb82af",
+    "bytes": 23331
+  },
+  {
+    "path": "plugins/removelink/python.go",
+    "sha256": "d1461b6d96712b55cbfd35147d1ec4937afd49e33576ecd0b258c183e29f9adb",
+    "bytes": 2132
+  },
+  {
+    "path": "plugins/removelink/python_data.go",
+    "sha256": "f607bd9eb98629269ba24b15ed684753d150f5001c9a935e2fef801bde30f3e1",
+    "bytes": 45984
+  },
+  {
+    "path": "plugins/removelink/python_decimal.go",
+    "sha256": "4e805b0fd0ef359e062b95155607cb0b02e59b79a046c036ddea5e6e186fe6f2",
+    "bytes": 9028
+  },
+  {
+    "path": "plugins/removelink/reference/config-concurrency-source312.json",
+    "sha256": "4eb2f1d945a3e21a9be1c5c2f07a931fec5edfdff94250a3279c270e2a91fe66",
+    "bytes": 1173
+  },
+  {
+    "path": "plugins/removelink/reference/frontend-files.json",
+    "sha256": "5b46043dd6958a716bb4792730ed69a3d123389f7f49cefe01f33a6d05017a13",
+    "bytes": 1091
+  },
+  {
+    "path": "plugins/removelink/reference/helpers-oracle.json",
+    "sha256": "51b221c054f6c0c619542562a8f9be9dd93aa9b73206353394c3db72b07af91a",
+    "bytes": 7071
+  },
+  {
+    "path": "plugins/removelink/reference/home-source312.json",
+    "sha256": "bdc84145179cfa9de806383e81b658943408f23c1e21f56ed6789f7cf00eb83e",
+    "bytes": 695
+  },
+  {
+    "path": "plugins/removelink/reference/image-new-york.tzif",
+    "sha256": "e9ed07d7bee0c76a9d442d091ef1f01668fee7c4f26014c0a868b19fe6c18a95",
+    "bytes": 3552
+  },
+  {
+    "path": "plugins/removelink/reference/init-source312-overflow.json",
+    "sha256": "abfa4d7ad240e2e7a9d66241064c1ffdaafc94af26056371a34934bac2350097",
+    "bytes": 2802
+  },
+  {
+    "path": "plugins/removelink/reference/log-repr-source312.json",
+    "sha256": "2b2c7c0291d72352632b0f22eba4762fa1099fab2ef1d280bd9b79e48b1cd031",
+    "bytes": 13354
+  },
+  {
+    "path": "plugins/removelink/reference/log-source-inventory.json",
+    "sha256": "2c6f37132810db9a428c8970149c536be6007d5a2ecb0572ad9b63ff4bf78e20",
+    "bytes": 19565
+  },
+  {
+    "path": "plugins/removelink/reference/log-source312.json",
+    "sha256": "f7158984651f383ba5484caa9115fa3a1e75eca8079192227d3051446836ecbf",
+    "bytes": 16265
+  },
+  {
+    "path": "plugins/removelink/reference/observer-source312.json",
+    "sha256": "654dbeead5dfddf6124d2ffc02c2d3a2e113f1198a3ce64ff8fd0286e5ad182f",
+    "bytes": 6055
+  },
+  {
+    "path": "plugins/removelink/reference/observer-start-failure-source312.json",
+    "sha256": "3c41bb0539d36ab298bab0a8e8a7a30d9d69a4bcff02824d5b0c49802539f6a2",
+    "bytes": 1521
+  },
+  {
+    "path": "plugins/removelink/reference/oracle.json",
+    "sha256": "26a2f9d57fd7071f62598b3dcf7a640f528aa46ab85dfc65bea54a93191c1a69",
+    "bytes": 99001
+  },
+  {
+    "path": "plugins/removelink/reference/site-message-enum.json",
+    "sha256": "a6a640c24467f27df7f39e3316c899da42a6f20f73e808edb49a864da3c5b462",
+    "bytes": 787
+  },
+  {
+    "path": "plugins/removelink/reference/source-inputs.json",
+    "sha256": "f98a21ca79726f3ddff755aa1fc792579bf6050ebb3977dea897df025b185394",
+    "bytes": 1973
+  },
+  {
+    "path": "plugins/removelink/reference/source-view.mjs",
+    "sha256": "e4377287647869ad3c97c293ad7abcaa60864d50d1f75140a9910895a9580a53",
+    "bytes": 11038
+  },
+  {
+    "path": "plugins/removelink/reference/timer-dst-source312.json",
+    "sha256": "eeb5f04749cb7427139dc897a94c4f5d5867e31372a91aaf662215cb5d47fe7b",
+    "bytes": 738
+  },
+  {
+    "path": "plugins/removelink/reference/timer-source312.json",
+    "sha256": "1aeec02fe74c2f9e15d4778da5c1c81ec834de7efa48b9adfcace075eed6488e",
+    "bytes": 574
+  },
+  {
+    "path": "plugins/removelink/reference/unknown-home-source312.json",
+    "sha256": "3c42217727e59df32fad4cc9107a05e5dd769a579fb46893b5c4a766fab7561c",
+    "bytes": 28555
+  },
+  {
+    "path": "plugins/removelink/sdk_ops.go",
+    "sha256": "860b5653114af9186ef2bcac147a41a83e7d445046c15b6797d8dff39e432642",
+    "bytes": 10671
+  },
+  {
+    "path": "plugins/removelink/source_log_protocol_test.go",
+    "sha256": "d4d6643a3fc0859c9ebe4057998399a51c642ab08c0c992e1424791a84a61a1f",
+    "bytes": 12929
+  },
+  {
+    "path": "plugins/removelink/source_log_test.go",
+    "sha256": "42bed6f3ab3e6d5bf48b7ba920a42797496085053b121354fdaeca74a78e3397",
+    "bytes": 9319
+  },
+  {
+    "path": "plugins/removelink/source_notice_barrier_test.go",
+    "sha256": "728bff3435fcb10ed30f0403ed39f4cace832897a046be8a7a8ea8909f1ea2a8",
+    "bytes": 12816
+  },
+  {
+    "path": "plugins/removelink/storage.go",
+    "sha256": "c9ba46d5b00f890baa6d2128be911924443e40f5cc6f7ea095e60adc4cde53fa",
+    "bytes": 7750
+  },
+  {
+    "path": "plugins/removelink/timer_source_test.go",
+    "sha256": "dc2b737546f9923a09d8eb10515cd2b7b38296b6730df1c7a03f4dd1bd7a34e1",
+    "bytes": 4449
+  },
+  {
+    "path": "plugins/removelink/types.go",
+    "sha256": "404f19e9db2ace74b6f62efcea4646eed7399bbfa6251d952759f5a56d84dbf8",
+    "bytes": 10937
+  },
+  {
+    "path": "plugins/removelink/ui_test.mjs",
+    "sha256": "27a516c3670c36e1e5501a264dc4ae40d765b9145f27848c42a5f49e23a8b4fd",
+    "bytes": 5734
+  },
+  {
+    "path": "plugins/removelink/watch.go",
+    "sha256": "5cc0fd45a217042774f35cb4a6e7af6d07d6f6437b918df7d34b7f40a516fa93",
+    "bytes": 11638
+  },
+  {
+    "path": "plugins/removelink/watch_linux.go",
+    "sha256": "7def736bb8081b4871d6d917c213f85ca80bdec1c0c62287db39f796231b9d3c",
+    "bytes": 6615
+  },
+  {
+    "path": "plugins/removelink/watch_linux_failure_test.go",
+    "sha256": "166f583172513bfdf1340231546122979294bc3926e4ff97534c367432ca88a5",
+    "bytes": 2161
+  },
+  {
+    "path": "plugins/removelink/watch_other.go",
+    "sha256": "73999bc314bcb62447204c8b73279c8ae02c50b694ba8788d2341d4655dd240e",
+    "bytes": 278
+  },
+  {
+    "path": "plugins/removelink/watch_polling.go",
+    "sha256": "dd494a705b451f0dbb9011291a126bbdd7215bb78984fde37f9337363b951d80",
+    "bytes": 5522
+  },
+  {
+    "path": "cmd/category-editor/main.go",
+    "sha256": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+    "bytes": 786
+  },
+  {
+    "path": "cmd/category-editor/main_test.go",
+    "sha256": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
+    "bytes": 5598
+  },
+  {
+    "path": "cmd/torrent-transfer/main.go",
+    "sha256": "179ee29306b0baff13ebda0aef9ec0ffd20a95b7417a0f4e203a80d6daf7d66c",
+    "bytes": 770
+  },
+  {
+    "path": "cmd/torrent-transfer/main_test.go",
+    "sha256": "22804b40d9bc3699b17c9e8db227a9cf8d227c1c2336ec02af737129a1a6f89f",
+    "bytes": 6152
+  },
+  {
+    "path": "cmd/site-statistic/lifecycle_test.go",
+    "sha256": "05a13c3ef48e624ac7c680a08f7adfa730e9333429ded376dfcdf36cb61d7b87",
+    "bytes": 7837
+  },
+  {
+    "path": "cmd/site-statistic/main.go",
+    "sha256": "5318d08b4b34b68968a8f41ca45d4fd09d286d62b090469de1479ac54381af42",
+    "bytes": 692
+  },
+  {
+    "path": "cmd/site-statistic/main_test.go",
+    "sha256": "2a78bb5542f8f9fc1272dbace25c43d10660d02cfef4725750462d48ae2b664f",
+    "bytes": 7883
+  },
+  {
+    "path": "cmd/site-statistic/race_disabled_test.go",
+    "sha256": "2ace8323be4cca38091996cf7882fd7e33d7e8452beb87b1ace5bf2e87824d42",
+    "bytes": 57
+  },
+  {
+    "path": "cmd/site-statistic/race_enabled_test.go",
+    "sha256": "0b9e9312699ea75c14f9b190c480ef91c7560473a87dbec89502902083442ee1",
+    "bytes": 55
+  },
+  {
+    "path": "cmd/mp-server-status/main.go",
+    "sha256": "35d2d9b844d8b1953a385babdce390f43c16424e9cc1746c76aa138c106ebdbc",
+    "bytes": 693
+  },
+  {
+    "path": "cmd/mp-server-status/main_test.go",
+    "sha256": "64a89987bbc1aead5f179d9e558d1efd66e887bb2fe6399bc1751af78036cb67",
+    "bytes": 11891
+  },
+  {
+    "path": "cmd/mp-server-status/norace_test.go",
+    "sha256": "2ace8323be4cca38091996cf7882fd7e33d7e8452beb87b1ace5bf2e87824d42",
+    "bytes": 57
+  },
+  {
+    "path": "cmd/mp-server-status/race_test.go",
+    "sha256": "0b9e9312699ea75c14f9b190c480ef91c7560473a87dbec89502902083442ee1",
+    "bytes": 55
+  },
+  {
+    "path": "cmd/plugin-uninstall/main.go",
+    "sha256": "e69e94bcf9bdb774bac9217c60d4054e951d6b8bb99c0f43c27ec94c68171a7d",
+    "bytes": 708
+  },
+  {
+    "path": "cmd/remove-link/main.go",
+    "sha256": "c2007976f0b2a85c3b4e75f44d67f5161d8213f3d0932b80a5c062d28bea2880",
+    "bytes": 689
+  },
+  {
+    "path": "tests/sourceinterfaces/ORIGIN.md",
+    "sha256": "a8ee03ae62e06e82eb0fabf3394dee41fbec69a5c90eb3cfd9cef1277ffbc259",
+    "bytes": 2269
+  },
+  {
+    "path": "tests/sourceinterfaces/manifest_source_test.go",
+    "sha256": "dcf3a8d54186f9d79ca1c1391edb116df06e62281ec1aaea1833ece94fb64f07",
+    "bytes": 2165
+  },
+  {
+    "path": "tests/sourceinterfaces/testdata/source-oracle.json",
+    "sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
+    "bytes": 14698
+  },
+  {
+    "path": "internal/sdk/api.go",
+    "sha256": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+    "bytes": 7000
+  },
+  {
+    "path": "internal/sdk/api_test.go",
+    "sha256": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+    "bytes": 4250
+  },
+  {
+    "path": "internal/sdk/auth.go",
+    "sha256": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+    "bytes": 1277
+  },
+  {
+    "path": "internal/sdk/base.go",
+    "sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+    "bytes": 4986
+  },
+  {
+    "path": "internal/sdk/base_instance_metadata_test.go",
+    "sha256": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+    "bytes": 1624
+  },
+  {
+    "path": "internal/sdk/base_test.go",
+    "sha256": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+    "bytes": 1978
+  },
+  {
+    "path": "internal/sdk/broadcast_handler.go",
+    "sha256": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+    "bytes": 840
+  },
+  {
+    "path": "internal/sdk/broadcast_handler_test.go",
+    "sha256": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+    "bytes": 927
+  },
+  {
+    "path": "internal/sdk/browser_host.go",
+    "sha256": "dc933914faa0e08857ed1666389dcd27a5a99e1d35a37543bc0a70784b1dec3d",
+    "bytes": 1182
+  },
+  {
+    "path": "internal/sdk/brush_inventory.go",
+    "sha256": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+    "bytes": 1739
+  },
+  {
+    "path": "internal/sdk/category_policy.go",
+    "sha256": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+    "bytes": 514
+  },
+  {
+    "path": "internal/sdk/chain_handler.go",
+    "sha256": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+    "bytes": 1238
+  },
+  {
+    "path": "internal/sdk/chain_handler_test.go",
+    "sha256": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+    "bytes": 1793
+  },
+  {
+    "path": "internal/sdk/cleanup_continuation.go",
+    "sha256": "fd78e6ff04bdaafd296b03619ea99af6a4c4387bb8fcf422db78689a814e2e13",
+    "bytes": 6488
+  },
+  {
+    "path": "internal/sdk/cleanup_continuation_test.go",
+    "sha256": "16c76ce2890f9e049c35db17f2becc49080773dc0996759258c39e90304c831d",
+    "bytes": 26665
+  },
+  {
+    "path": "internal/sdk/close_transport.go",
+    "sha256": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+    "bytes": 3060
+  },
+  {
+    "path": "internal/sdk/concurrent_cancel_fence_test.go",
+    "sha256": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+    "bytes": 3638
+  },
+  {
+    "path": "internal/sdk/concurrent_session.go",
+    "sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+    "bytes": 17877
+  },
+  {
+    "path": "internal/sdk/concurrent_session_test.go",
+    "sha256": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+    "bytes": 21760
+  },
+  {
+    "path": "internal/sdk/concurrent_shutdown.go",
+    "sha256": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+    "bytes": 4227
+  },
+  {
+    "path": "internal/sdk/concurrent_transport.go",
+    "sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+    "bytes": 9648
+  },
+  {
+    "path": "internal/sdk/concurrent_worker.go",
+    "sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+    "bytes": 12041
+  },
+  {
+    "path": "internal/sdk/downloader_configurations.go",
+    "sha256": "fd1e332dbe92b762715bf739c26b434207981ffac2c03d94533839bf154f51f9",
+    "bytes": 1240
+  },
+  {
+    "path": "internal/sdk/downloader_configurations_test.go",
+    "sha256": "b0dca7222f6e2068880192f298739779d34e219da97fa3e318b3f6d281de4916",
+    "bytes": 1671
+  },
+  {
+    "path": "internal/sdk/downloader_host.go",
+    "sha256": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+    "bytes": 13517
+  },
+  {
+    "path": "internal/sdk/downloader_host_connection.go",
+    "sha256": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+    "bytes": 1693
+  },
+  {
+    "path": "internal/sdk/downloader_host_connection_test.go",
+    "sha256": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+    "bytes": 1518
+  },
+  {
+    "path": "internal/sdk/downloader_host_delete_files.go",
+    "sha256": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+    "bytes": 1865
+  },
+  {
+    "path": "internal/sdk/downloader_host_test.go",
+    "sha256": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+    "bytes": 2332
+  },
+  {
+    "path": "internal/sdk/downloader_host_trackers.go",
+    "sha256": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+    "bytes": 4197
+  },
+  {
+    "path": "internal/sdk/downloader_source.go",
+    "sha256": "ee9ec72c84e3728a7efcf4713ca405700960efe79a7276eda141d9e7e8d3eb33",
+    "bytes": 5687
+  },
+  {
+    "path": "internal/sdk/downloader_source_connection.go",
+    "sha256": "e3df0a09ebfef39f38d23a12c41c93a386d52ada8b3ac2152bfa7a08c404e344",
+    "bytes": 1733
+  },
+  {
+    "path": "internal/sdk/downloader_source_connection_test.go",
+    "sha256": "c9630dff95ecdf059fd271cefffc5a458dcbd7f26fe6e9cfe07b3702e6339cf0",
+    "bytes": 2787
+  },
+  {
+    "path": "internal/sdk/downloader_source_find_by_tag.go",
+    "sha256": "d3c2fc5d31744f2d018f724a87251f3eb003a123b106720349a353ff9fcff46f",
+    "bytes": 864
+  },
+  {
+    "path": "internal/sdk/downloader_source_labels_test.go",
+    "sha256": "f1e0c26cc555ebcb6f2e760ced88ffa245a616a4a49395bc3105660cc40d7536",
+    "bytes": 1813
+  },
+  {
+    "path": "internal/sdk/downloader_source_test.go",
+    "sha256": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+    "bytes": 3077
+  },
+  {
+    "path": "internal/sdk/downloader_source_wire_test.go",
+    "sha256": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+    "bytes": 1350
+  },
+  {
+    "path": "internal/sdk/downloader_tasks.go",
+    "sha256": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+    "bytes": 6360
+  },
+  {
+    "path": "internal/sdk/downloader_tasks_test.go",
+    "sha256": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+    "bytes": 2457
+  },
+  {
+    "path": "internal/sdk/events.go",
+    "sha256": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+    "bytes": 4336
+  },
+  {
+    "path": "internal/sdk/file_item.go",
+    "sha256": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+    "bytes": 1482
+  },
+  {
+    "path": "internal/sdk/form_model_policy_test.go",
+    "sha256": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+    "bytes": 1690
+  },
+  {
+    "path": "internal/sdk/frontend.go",
+    "sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+    "bytes": 2711
+  },
+  {
+    "path": "internal/sdk/frontend_test.go",
+    "sha256": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+    "bytes": 2028
+  },
+  {
+    "path": "internal/sdk/handler_order_test.go",
+    "sha256": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+    "bytes": 1488
+  },
+  {
+    "path": "internal/sdk/history_host.go",
+    "sha256": "c68cd2d612b3ecd3aed6c7a2cdefc75f88bb314d93f82e326b16fadb5b5b6a52",
+    "bytes": 2917
+  },
+  {
+    "path": "internal/sdk/identity.go",
+    "sha256": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+    "bytes": 2255
+  },
+  {
+    "path": "internal/sdk/input_interaction.go",
+    "sha256": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+    "bytes": 3179
+  },
+  {
+    "path": "internal/sdk/jsonrpc.go",
+    "sha256": "0486dd5db74f2090eeda1d4bdaafbfaf9ec14ee89648658ee29f68a9b43f0fc4",
+    "bytes": 6454
+  },
+  {
+    "path": "internal/sdk/log.go",
+    "sha256": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+    "bytes": 1943
+  },
+  {
+    "path": "internal/sdk/log_test.go",
+    "sha256": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+    "bytes": 1924
+  },
+  {
+    "path": "internal/sdk/manager_resources.go",
+    "sha256": "4d9ec61a1300203f5975be8f4b598c18422e2b9a2ea834d918c777fabf8a3089",
+    "bytes": 1611
+  },
+  {
+    "path": "internal/sdk/media_host.go",
+    "sha256": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+    "bytes": 4630
+  },
+  {
+    "path": "internal/sdk/media_images.go",
+    "sha256": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+    "bytes": 1901
+  },
+  {
+    "path": "internal/sdk/media_info.go",
+    "sha256": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+    "bytes": 664
+  },
+  {
+    "path": "internal/sdk/message_inbound.go",
+    "sha256": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+    "bytes": 2768
+  },
+  {
+    "path": "internal/sdk/message_inbound_test.go",
+    "sha256": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+    "bytes": 1702
+  },
+  {
+    "path": "internal/sdk/module_bytes.go",
+    "sha256": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+    "bytes": 1235
+  },
+  {
+    "path": "internal/sdk/module_bytes_test.go",
+    "sha256": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+    "bytes": 894
+  },
+  {
+    "path": "internal/sdk/module_result.go",
+    "sha256": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+    "bytes": 1635
+  },
+  {
+    "path": "internal/sdk/module_result_test.go",
+    "sha256": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+    "bytes": 908
+  },
+  {
+    "path": "internal/sdk/module_scope_test.go",
+    "sha256": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+    "bytes": 1776
+  },
+  {
+    "path": "internal/sdk/module_transfer.go",
+    "sha256": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+    "bytes": 5543
+  },
+  {
+    "path": "internal/sdk/mutable_event.go",
+    "sha256": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+    "bytes": 3871
+  },
+  {
+    "path": "internal/sdk/mutable_event_test.go",
+    "sha256": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+    "bytes": 2723
+  },
+  {
+    "path": "internal/sdk/network_host.go",
+    "sha256": "1ac0fdb7bae5cea8fe9267ae96eb834c1a8c2df43e2a80dc55dcfc23e38b1cdb",
+    "bytes": 1277
+  },
+  {
+    "path": "internal/sdk/network_proxy_host.go",
+    "sha256": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+    "bytes": 1235
+  },
+  {
+    "path": "internal/sdk/notification.go",
+    "sha256": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+    "bytes": 1078
+  },
+  {
+    "path": "internal/sdk/ocr_host.go",
+    "sha256": "f854c582e02a11f1c8bd5fcd0e1e090c74892d89cb8b4c5cb1c2a738f8acd68f",
+    "bytes": 1457
+  },
+  {
+    "path": "internal/sdk/pending_call.go",
+    "sha256": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+    "bytes": 3119
+  },
+  {
+    "path": "internal/sdk/pending_call_test.go",
+    "sha256": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+    "bytes": 6344
+  },
+  {
+    "path": "internal/sdk/plugin_host.go",
+    "sha256": "d2eb0128ac61ab1c153834fe969516d11caaa01fda45cf4d1a554a01cfc7247b",
+    "bytes": 3811
+  },
+  {
+    "path": "internal/sdk/protocol.go",
+    "sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+    "bytes": 37350
+  },
+  {
+    "path": "internal/sdk/protocol_test.go",
+    "sha256": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+    "bytes": 13228
+  },
+  {
+    "path": "internal/sdk/runner_budget.go",
+    "sha256": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+    "bytes": 2270
+  },
+  {
+    "path": "internal/sdk/runner_budget_test.go",
+    "sha256": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+    "bytes": 4688
+  },
+  {
+    "path": "internal/sdk/runner_home_test.go",
+    "sha256": "7392762335ce77581480dd2489c26fd6384b86596824eafc9be8515508ab5480",
+    "bytes": 3197
+  },
+  {
+    "path": "internal/sdk/runner_observation.go",
+    "sha256": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+    "bytes": 2450
+  },
+  {
+    "path": "internal/sdk/runner_observation_test.go",
+    "sha256": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+    "bytes": 3738
+  },
+  {
+    "path": "internal/sdk/runtime_support.go",
+    "sha256": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+    "bytes": 818
+  },
+  {
+    "path": "internal/sdk/runtime_support_test.go",
+    "sha256": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+    "bytes": 1546
+  },
+  {
+    "path": "internal/sdk/service_progress.go",
+    "sha256": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+    "bytes": 1167
+  },
+  {
+    "path": "internal/sdk/session_options_test.go",
+    "sha256": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+    "bytes": 3503
+  },
+  {
+    "path": "internal/sdk/session_test.go",
+    "sha256": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+    "bytes": 11664
+  },
+  {
+    "path": "internal/sdk/settings_host.go",
+    "sha256": "b9b500ac565ef98f98d8e32b5c2285cdc7fa869a5be6df8be2199846bcc78137",
+    "bytes": 1942
+  },
+  {
+    "path": "internal/sdk/site_host.go",
+    "sha256": "db86becbad6e142887d572ed566c01301d1cbdf12ac10f833821048b85a82fd8",
+    "bytes": 6384
+  },
+  {
+    "path": "internal/sdk/site_http_host.go",
+    "sha256": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+    "bytes": 4061
+  },
+  {
+    "path": "internal/sdk/site_source.go",
+    "sha256": "36f6c6ab2d0650f899f244460d709b4006a9df8c954cb50023145ad9c5a5b58d",
+    "bytes": 4597
+  },
+  {
+    "path": "internal/sdk/site_source_test.go",
+    "sha256": "45f8a3a83a41b74ddbba1e91e608d278c315f537a52c0bf37522fdeed6613b8a",
+    "bytes": 3117
+  },
+  {
+    "path": "internal/sdk/sourcejson/model.go",
+    "sha256": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+    "bytes": 1482
+  },
+  {
+    "path": "internal/sdk/storage_host.go",
+    "sha256": "878a1a0d8e123078f7ce8989ab0ef360536702910801ff0055c39d3d1c751049",
+    "bytes": 1517
+  },
+  {
+    "path": "internal/sdk/storage_operation.go",
+    "sha256": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+    "bytes": 1550
+  },
+  {
+    "path": "internal/sdk/subscription_host.go",
+    "sha256": "518ef5fb6e95d820d9b1c521ab588891208a955a86577b0cf3d8ccdae2b4e937",
+    "bytes": 9312
+  },
+  {
+    "path": "internal/sdk/subscription_host_test.go",
+    "sha256": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+    "bytes": 1002
+  },
+  {
+    "path": "internal/sdk/testdata/owned-concurrent-fixture/main.go",
+    "sha256": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c",
+    "bytes": 4572
+  },
+  {
+    "path": "internal/sdk/title_torrent_filter.go",
+    "sha256": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+    "bytes": 8366
+  },
+  {
+    "path": "internal/sdk/transport.go",
+    "sha256": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+    "bytes": 12149
+  },
+  {
+    "path": "internal/sdk/worker.go",
+    "sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+    "bytes": 7648
+  },
+  {
+    "path": "go.mod",
+    "sha256": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "bytes": 160
+  },
+  {
+    "path": "go.sum",
+    "sha256": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3",
+    "bytes": 485
+  },
+  {
+    "path": "SDK_ORIGIN.json",
+    "sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "bytes": 246908
+  }
+]

@@ -1,0 +1,7 @@
+from pathlib import Path
+import json,hashlib,subprocess,os,time
+r=Path.cwd();w=Path(__file__).resolve().parent;(w/'tmp').mkdir(mode=0o700,exist_ok=True);env=dict(os.environ,GOPROXY='off',GOFLAGS='',TMPDIR=str(w/'tmp'));sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();x=json.load(open(r/'SDK_ORIGIN.json'));before={q['path']:sha(r/q['path'])for q in x['files']};rows=[]
+for name,flags in [('sdk101-normal',[]),('sdk101-race',['-race']),('sdk101-vet',None)]:
+ cmd=['go','vet','./internal/sdk']if flags is None else['go','test',*flags,'-json','-count=1','./internal/sdk','-timeout=8m'];start=time.monotonic();p=subprocess.run(cmd,env=env,cwd=r,capture_output=True);(w/(name+'.stdout')).write_bytes(p.stdout);(w/(name+'.stderr')).write_bytes(p.stderr);xs=[json.loads(s)for s in p.stdout.splitlines()if s.startswith(b'{')];row={'name':name,'command':cmd,'environment':{k:env[k]for k in ['GOPROXY','GOFLAGS','TMPDIR']},'origin_sha256':sha(r/'SDK_ORIGIN.json'),'exit':p.returncode,'seconds':time.monotonic()-start,'pass':sum(x.get('Action')=='pass'and'Test'in x for x in xs),'fail':sum(x.get('Action')=='fail'and'Test'in x for x in xs),'skip':sum(x.get('Action')=='skip'and'Test'in x for x in xs)};rows.append(row);(w/'checks.json').write_text(json.dumps(rows,indent=2)+'\n');print(json.dumps(row),flush=True)
+ if p.returncode:raise SystemExit(p.returncode)
+after={q['path']:sha(r/q['path'])for q in x['files']};assert before==after;(w/'sdk101-stable101.json').write_text(json.dumps({'files':before,'origin_sha256':sha(r/'SDK_ORIGIN.json'),'stable':True},indent=2)+'\n')

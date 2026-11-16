@@ -1,0 +1,438 @@
+=== RUN   TestSourceOCRJSONDomainActualSDKWire
+{"app_version":"0.4.19","event":"login","id":"log_HoSE0I2LKRuPwNHNLvHbaU0U","instance_id":"instance_g6aiTL8Qqo_V0HjCcHfN6ApV","job_id":"","level":"INFO","message":"管理员已登录","module":"auth","time":"2026-11-06T12:41:28.259834903Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":91,"event":"request_completed","http_status":200,"id":"log_MGXyQy1HmIvqxMCFqllFLtBg","instance_id":"instance_g6aiTL8Qqo_V0HjCcHfN6ApV","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.auth","request_id":"req_flyirfY8A6lfOGEQZ2KOEOpB","time":"2026-11-06T12:41:28.259997126Z"}
+{"app_version":"0.4.19","event":"command_registration_unavailable","id":"log_TTvnMDo2ajZbR2SEGKY7kAI_","instance_id":"instance_g6aiTL8Qqo_V0HjCcHfN6ApV","job_id":"","level":"WARN","message":"命令菜单元数据已准备，核心尚无菜单注册提供方","module":"plugins","time":"2026-11-06T12:41:29.467375632Z","workflow_id":""}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/null
+{"app_version":"0.4.19","duration_ms":1091,"event":"request_completed","http_status":200,"id":"log_dVtAfKe9trZakfTv5tt-k4nb","instance_id":"instance_g6aiTL8Qqo_V0HjCcHfN6ApV","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_3kTzFGSgGuquqbUH2N8eB_Mp","time":"2026-11-06T12:41:29.467171295Z"}
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/text6
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/float_overflow
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/nan
+    source_ocr_json_domain_test.go:282: source semantic value differs  float nonfinite source HTTP value cannot enter strict IPC JSON
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/dict_order
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/string_surrogate
+    source_ocr_json_domain_test.go:282: source semantic value differs  str source UnicodeEncodeError
+=== RUN   TestSourceOCRJSONDomainActualSDKWire/semantic/huge_int_4301
+{"app_version":"0.4.19","event":"stopped","id":"log_5rP-3B9vKszFk0QbiFUArLpu","instance_id":"instance_g6aiTL8Qqo_V0HjCcHfN6ApV","job_id":"","level":"INFO","message":"服务已停止","module":"runtime","time":"2026-11-06T12:41:30.760480084Z","workflow_id":""}
+--- FAIL: TestSourceOCRJSONDomainActualSDKWire (2.70s)
+    --- PASS: TestSourceOCRJSONDomainActualSDKWire/semantic/null (1.01s)
+    --- PASS: TestSourceOCRJSONDomainActualSDKWire/semantic/text6 (0.03s)
+    --- FAIL: TestSourceOCRJSONDomainActualSDKWire/semantic/float_overflow (0.01s)
+    --- FAIL: TestSourceOCRJSONDomainActualSDKWire/semantic/nan (0.01s)
+    --- PASS: TestSourceOCRJSONDomainActualSDKWire/semantic/dict_order (0.01s)
+    --- FAIL: TestSourceOCRJSONDomainActualSDKWire/semantic/string_surrogate (0.01s)
+    --- PASS: TestSourceOCRJSONDomainActualSDKWire/semantic/huge_int_4301 (0.01s)
+FAIL
+
+OCR_DOMAIN_OBSERVATIONS_BEGIN
+[
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring="
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 1,
+    "kind": "semantic",
+    "name": "null",
+    "result": {
+      "helper_error": "",
+      "Type": "str",
+      "Truth": false,
+      "str_codepoints": [],
+      "Repr": "''",
+      "Len": 0,
+      "len_error": "",
+      "form_error": "",
+      "form_status": 200,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring="
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=ABC123"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 1,
+    "kind": "semantic",
+    "name": "text6",
+    "result": {
+      "helper_error": "",
+      "Type": "str",
+      "Truth": true,
+      "str_codepoints": [
+        65,
+        66,
+        67,
+        49,
+        50,
+        51
+      ],
+      "Repr": "'ABC123'",
+      "Len": 6,
+      "len_error": "",
+      "form_error": "",
+      "form_status": 200,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=ABC123"
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 0,
+    "kind": "semantic",
+    "name": "float_overflow",
+    "result": {
+      "helper_error": "nonfinite source HTTP value cannot enter strict IPC JSON",
+      "Type": "",
+      "Truth": false,
+      "str_codepoints": null,
+      "Repr": "",
+      "Len": null,
+      "len_error": "",
+      "form_error": "",
+      "form_status": null,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=inf"
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 0,
+    "kind": "semantic",
+    "name": "nan",
+    "result": {
+      "helper_error": "nonfinite source HTTP value cannot enter strict IPC JSON",
+      "Type": "",
+      "Truth": false,
+      "str_codepoints": null,
+      "Repr": "",
+      "Len": null,
+      "len_error": "",
+      "form_error": "",
+      "form_status": null,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=nan"
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=z\u0026imagestring=b\u0026imagestring=a\u0026imagestring=c\u0026imagestring=d\u0026imagestring=e"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 1,
+    "kind": "semantic",
+    "name": "dict_order",
+    "result": {
+      "helper_error": "",
+      "Type": "dict",
+      "Truth": true,
+      "str_codepoints": [
+        123,
+        39,
+        122,
+        39,
+        58,
+        32,
+        48,
+        44,
+        32,
+        39,
+        98,
+        39,
+        58,
+        32,
+        50,
+        44,
+        32,
+        39,
+        97,
+        39,
+        58,
+        32,
+        49,
+        44,
+        32,
+        39,
+        99,
+        39,
+        58,
+        32,
+        51,
+        44,
+        32,
+        39,
+        100,
+        39,
+        58,
+        32,
+        52,
+        44,
+        32,
+        39,
+        101,
+        39,
+        58,
+        32,
+        53,
+        125
+      ],
+      "Repr": "{'z': 0, 'b': 2, 'a': 1, 'c': 3, 'd': 4, 'e': 5}",
+      "Len": 6,
+      "len_error": "",
+      "form_error": "",
+      "form_status": 200,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      },
+      {
+        "Method": "POST",
+        "Path": "/submit",
+        "Host": "owned-source-submit-endpoint",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "imagestring=z\u0026imagestring=b\u0026imagestring=a\u0026imagestring=c\u0026imagestring=d\u0026imagestring=e"
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 0,
+    "kind": "semantic",
+    "name": "string_surrogate",
+    "result": {
+      "helper_error": "source UnicodeEncodeError",
+      "Type": "",
+      "Truth": false,
+      "str_codepoints": null,
+      "Repr": "",
+      "Len": null,
+      "len_error": "",
+      "form_error": "",
+      "form_status": null,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ]
+  },
+  {
+    "actualwire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ],
+    "call_error": "\u003cnil\u003e",
+    "connects": 0,
+    "kind": "semantic",
+    "name": "huge_int_4301",
+    "result": {
+      "helper_error": "Exceeds the limit (4300 digits) for integer string conversion: value has 4301 digits; use sys.set_int_max_str_digits() to increase the limit",
+      "Type": "",
+      "Truth": false,
+      "str_codepoints": null,
+      "Repr": "",
+      "Len": null,
+      "len_error": "",
+      "form_error": "",
+      "form_status": null,
+      "form_transport_none": false
+    },
+    "sourcewire": [
+      {
+        "Method": "POST",
+        "Path": "/captcha/base64",
+        "Host": "owned-ocr-service:ephemeral-port",
+        "Cookie": null,
+        "UA": "python-urllib3/2.7.0",
+        "Referer": null,
+        "Body": "{\"base64_img\": \"YWJj\"}"
+      }
+    ]
+  }
+]
+OCR_DOMAIN_OBSERVATIONS_END

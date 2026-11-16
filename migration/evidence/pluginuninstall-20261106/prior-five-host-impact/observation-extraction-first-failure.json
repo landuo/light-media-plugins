@@ -1,0 +1,5 @@
+{
+  "classification": "postprocessing only; Go test2json splits long Output lines across events; no test or product change",
+  "exception": "JSONDecodeError Unterminated string at char916; fixed by concatenating Output chunks before splitlines",
+  "tests_already_passed": true
+}

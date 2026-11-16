@@ -1,0 +1,28 @@
+{
+  "classification": "real production handlers/Manifests in actual App and independent SDK processes; only host test-context successful-call recorder instrumented; no worker debug API",
+  "enabled_objects": 4,
+  "errors": null,
+  "http_status": 200,
+  "methods": {
+    "CategoryEditor": [
+      "get_state",
+      "get_auth_providers",
+      "get_render_mode"
+    ],
+    "RemoveLink": [
+      "get_state",
+      "get_auth_providers",
+      "get_render_mode"
+    ],
+    "TorrentTransfer": [
+      "get_state",
+      "get_auth_providers",
+      "get_render_mode"
+    ],
+    "TorrentTransfermusic": [
+      "get_state",
+      "get_auth_providers",
+      "get_render_mode"
+    ]
+  }
+}

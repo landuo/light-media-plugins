@@ -1,0 +1,49 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "verified",
+  "scope": "Installed ordinary Lark messaging, configuration, endpoints, event and module registration, and in-scope host operations on Linux, with local storage and the existing single-user app.",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "source_kind": "Read-only installed content baseline, not an upstream Git tree",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_source_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "worker_commit": "9fe068d77cade24d5b3d3b729d1b81c845a996a9",
+    "registry_commit": "dd3cdaf59996a4c9a5894d18b593a4ddfa2216fa",
+    "host_commit": "d7066e7be72ae8c5de4aa2c7515bef2a1d010f7b",
+    "package_sha256": "bfa070f56f11340993f98ede069fe4bacb9ad74800396caf3ac44fbac674a945",
+    "worker_elf_sha256": "b37d02d330ad0b2445ad5196ecd9ee5e78fb011825d0ca4a71d9da32925b63d5",
+    "index_sha256": "6688ae2042bd995888c0a0a03a26767e8084df436a80128d5980eaf5c110912a"
+  },
+  "final_native_check": {
+    "test": "TestInstalledLarkBareTestConfirmationLinuxAMD64",
+    "status": "passed",
+    "seconds": 1.35,
+    "source": "larkmessager/__init__.py:2096–2107,2190–2372; larkmessager/client.py ordinary direct reply to the original message",
+    "target": "plugins/larkmessager/{receive,test_endpoint,client}.go and the native installed webhook bridge",
+    "fixture_sha256": "a0f6dac1791cff6ed78a7b24207e4f408ed17e32bf62f8a82c00d82b0ffd090a",
+    "host_test_elf_sha256": "8f4275dac3eab0b0fc7642303392dd8532dc37c355c2ad8184dbd91ee6416c8e",
+    "runner_sha256": "598d4fe5515f55f7e03cd009b707f9f4af6e1eff93b2755c3b0655913b8e160f",
+    "log_sha256": "45b6142bf6f8868b3f76bd3f57f8e8b213f47a3a1533ae5d043b798ef6613ddd",
+    "observation": "The actual indexed worker sent its real connection card. Its literal bare test_ok callback entered the installed webhook and sent exactly one source-shaped reply to the original Lark provider message."
+  },
+  "review": {
+    "reviewers": [
+      "/root/emby, initial installed-source and candidate discovery",
+      "/root/lark_finish_audit, final ordinary source-to-target call chains and exact native evidence",
+      "/root/lark_worker_close, independent restart receipt, account isolation and native logs"
+    ],
+    "findings": [
+      "Compared the exact installed file snapshot, MoviePilot core and frontend call chains, and host/plugin implementation against the single ledger. The remaining original bare-confirmation branch has now passed at its real entry.",
+      "Reused the prior native/Chrome evidence by path. The updated package was exercised for Lark rejection and uninstall, late source episodes, existing provider slot replacement, ordinary system presets, and direct confirmation. Existing passed flows were not replayed merely for final registration.",
+      "Restart's verified boundary is native App close/reopen on the same directory after its actual supervisor signal. The test does not exercise listener rebinding or relaunch the OS process. The first App shutdown logged module failures. The new App, scoped notification and receipt consumption passed."
+    ]
+  },
+  "adaptations": [
+    "Ordinary commands use the originating verified webhook and loaded Lark instance. Add/organization retain the host's local path and ownership gates, preserve exact provider namespaces and keep unclear files in review. Confirmed linked manual correction retains its separate authorization.",
+    "Known ordinary provider rejection uses the source failure result and redacted log. An ambiguous outbound response fences subsequent writes instead of replaying. Restart sends once from the same account and claims its receipt before the provider write.",
+    "The native application uses a monorepo release for both component version lines and the bundled frontend's version data. The App supervisor gracefully reopens in the same OS process. The host clears the metadata cache providers it implements.",
+    "AI-specific input material retrieval, direct/stream/finalize hooks and AI settings are excluded. Independent CookieCloud site credential synchronization and complete media-library inventory scanning remain outside the requested plugin scope.",
+    "Exact provider late-scope magnet, manual linked correction and every remote provider permutation were not repeated as standalone runs. Existing guarded admission, loopback evidence and source mapping are recorded separately. No real tenant credentials, production Lark messages, or private configuration/data import were used."
+  ]
+}

@@ -1,0 +1,158 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "source": {
+    "baseline_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "baseline_kind": "Local read-only content snapshot of installed source. No separate upstream license identified in the snapshot.",
+    "sha256": {
+      "larkmessager/CHANGELOG.md": "b43073397a77b96f023a04d78ebad1da9348ed997c8818ede283cef6f87819a2",
+      "larkmessager/README.md": "a9d81164f4ed0da24ff8c0aad6197e532ea62e311e04bfd05b47f771e56e4d63",
+      "larkmessager/__init__.py": "d9f6a1078706b03dc97247450a8084a8c67f07dbfccb675235fc0e1b91b18372",
+      "larkmessager/client.py": "28ac4a3dae4879a86bba956f493b60121948fb2ca5e631d81c4868c604468654",
+      "larkmessager/crypto.py": "8867ad8e0f7fedd59cc0c3b64058d8d76b1e851459188688dbd35904b11e9529",
+      "larkmessager/requirements.txt": "9df7920f0b2887a9dc1ebb46489ad0960def6ab7d781c68e0133827f21e28093",
+      "larkmessager/schemas.py": "701b1bda58ea5ccc4eda6e71b173813c9e3b340716748086f68abfd0bd5234c4"
+    }
+  },
+  "platform": {
+    "moviepilot": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "moviepilot_frontend": "2829e3b08214348f05ff2f5beae644882eccad58"
+  },
+  "worker_commit": "d4f3e8256dc19e74b8cbf6015b87b27d0064a81d",
+  "host_commit": "7fd8cdff381bbf2b7794914e5ceba4b10991a38b",
+  "package": {
+    "archive_members": [
+      "LICENSE",
+      "THIRD_PARTY_NOTICES.md",
+      "lark-messager",
+      "plugins/autosignin/UNICODE-LICENSE.txt",
+      "plugins/larkmessager/LICENSE-JITER.txt",
+      "plugins/larkmessager/LICENSE-PYDANTIC.txt",
+      "plugins/larkmessager/LICENSE-PYTHON.txt",
+      "plugins/larkmessager/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "b14a92082f2a370b56bb8e5d41919d69cbca64a76d3fa1897424956325de0df0",
+    "archive_size": 5735334,
+    "capabilities": 9,
+    "entry": "lark-messager",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "LarkMessager",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "c8a099dbfe13c4d30cd3e557eb44095f8d3c67c48606010bc47d180651575ac0",
+    "methods": 20,
+    "notice_sha256": "47930485d27fa35579a8986e3ee1f29e414e02c2bf2c4a0a2bf7fbc84f604691",
+    "notice_size": 27401,
+    "version": "0.9.1",
+    "worker_sha256": "b354a0638b6b8339ce77b36699bddf215532450f3e3149a488684d01c446877b",
+    "worker_size": 10525646,
+    "precommit_base": "0ff34fdbba6b87d90c92b7f571e99dc513960f91",
+    "matching_committed_worker_source": "d4f3e8256dc19e74b8cbf6015b87b27d0064a81d"
+  },
+  "runtime": {
+    "kind": "real_host_with_synthetic_provider",
+    "platform": "native Linux x86_64 in an isolated alpine:3.22 container",
+    "host_test": "internal/app/plugin_lark_messager_linux_test.go:TestLarkMessagerInstalledLinuxAMD64MessagePath",
+    "outcome": "passed",
+    "seconds": 1.57,
+    "host_test_elf_sha256": "a83e521e6bfce9b91c01f295545cb867b69b338abc687d1e0c5f86a92f49d5d0",
+    "runtime_log_sha256": "c1cafcc895165986a94d36e2396512fc95108bea569521c49df13a04acf83649",
+    "isolation": "Read-only container, loopback only, tmpfs, synthetic credentials and no production or private state."
+  },
+  "failed_attempt": {
+    "kind": "local amd64 emulation",
+    "outcome": "runtime fault in Go net/http routing during the test",
+    "runtime_log_sha256": "c7f1ae9cf06b666917f034fe13c470982e8b2e175239cbcf8e4b4c4c646c02c8",
+    "resolution": "The same App ELF and worker ZIP completed on native x86_64 without a source change."
+  },
+  "observations": [
+    {
+      "source": "larkmessager/__init__.py:877–1204, 1625–1659",
+      "target": "plugins/larkmessager/worker.go and form.json",
+      "evidence": "An isolated native App installed the indexed ZIP, served the native form, saved synthetic configuration and rejected an unauthenticated test call.",
+      "status": "passed"
+    },
+    {
+      "source": "larkmessager/__init__.py:1209–1620, 2145–2403",
+      "target": "plugins/larkmessager/endpoints.go, test_endpoint.go and transport.go",
+      "evidence": "The loopback peer received the tenant token request and an interactive test card for the configured chat. The page showed the resulting message ID once.",
+      "status": "passed"
+    },
+    {
+      "source": "larkmessager/__init__.py:103–142, 1664–1798, 2000–2122; MoviePilot app/chain/message.py:678–792",
+      "target": "plugins/larkmessager/receive.go and modules.go; light-media internal/app/plugin_original_host_message_inbound.go",
+      "evidence": "The wrong token returned 403. The anonymous signed-route boundary accepted a source-exempt card event, ran the real parser and plugin MessageAction, and sent the reply to the original message ID.",
+      "status": "passed"
+    },
+    {
+      "source": "larkmessager/__init__.py:252–364",
+      "target": "plugins/larkmessager/plugin.go; light-media internal/app/plugin_original_notice.go",
+      "evidence": "The started host used its ordinary notification path and the isolated provider received the title at the configured chat.",
+      "status": "passed"
+    }
+  ],
+  "open_in_scope": [
+    {
+      "source": "MoviePilot app/chain/message.py:280–458, 678–792 and app/chain/site.py",
+      "target": "light-media internal/app/plugin_original_host_message_inbound.go",
+      "remaining": "Standard /sites session, list/card actions and pending Cookie text use the ordinary site APIs. The current inbound branch dispatches installed plugin commands and [PLUGIN] callbacks."
+    },
+    {
+      "source": "MoviePilot app/chain/message.py:280–458, 678–792 and app/chain/subscribe.py",
+      "target": "light-media internal/app/plugin_original_host_message_inbound.go",
+      "remaining": "Standard /subscribes sessions, callbacks and follow-up edits must connect to native subscription operations."
+    },
+    {
+      "source": "MoviePilot app/chain/message.py:2083–3488",
+      "target": "plugins/larkmessager/modules.go; light-media standard message chain",
+      "remaining": "Native media/resource list producers, pending selection, downloads, and reply editing must use existing host search and download paths. Worker module declarations alone are insufficient."
+    },
+    {
+      "source": "MoviePilot app/chain/message.py:812–861, 972–1021 and app/chain/transfer.py",
+      "target": "light-media internal/app/plugin_original_transfer_retry.go and notification producer",
+      "remaining": "Ordinary transfer failure retry button and actual completion feedback need host integration using stable native history IDs."
+    },
+    {
+      "source": "larkmessager/__init__.py:476–498, 609–665, 877–958, 1664–1798, 2413–2490; client.py",
+      "target": "plugins/larkmessager/worker.go, attachment.go, crypto.go and modules.go",
+      "remaining": "Remaining distinct checks include administrator text command and processing reaction, cryptographic webhooks, file/voice/image upload, disabled fetch_chats, browser operation and clone or reload boundaries."
+    },
+    {
+      "source": "larkmessager/client.py:278–280, 325–327, 424–429, 494–526; __init__.py:2398–2414",
+      "target": "plugins/larkmessager/client.go, endpoints.go and modules.go",
+      "remaining": "Compare ordinary known notification/reaction failure handling against the source internal logging and fallback returns. Current SDK may emit an additional module error event. Fetch chats has a generic provider rejection where the source exposes an API code. Preserve the opaque-write fence and redact provider response secrets."
+    }
+  ],
+  "excluded": [
+    "CardKit streaming and finalize module",
+    "AI direct tool/module and AI-only inbound attachment download",
+    "AI notification preference sync and multiuser account mapping",
+    "AI transfer recovery and agent callbacks",
+    "Official authorization"
+  ],
+  "adaptations": [
+    "The standard scoped message.receive entry replaces self-HTTP with the host API token. The actual raw anonymous Lark webhook and exact Lark source bind the grant.",
+    "The fixed international Lark origin is selected by the host at init. A private loopback-only field exists for the isolated test App.",
+    "Local outgoing attachments use rooted identity grants and a 30 MiB worker limit. Public image reads use the host network grant. No production API credentials are present in this record.",
+    "Known opaque provider write failures fence further writes in that same invocation. Source reuse and source-license identification are recorded in ORIGIN.json."
+  ],
+  "release": "Local commits only. Candidate ZIP is outside the release build registry while acceptance is open.",
+  "candidate_after_review": {
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "source": "larkmessager/__init__.py:768–779, 2096–2122",
+    "target": "plugins/larkmessager/plugin.go and worker.go",
+    "kind": "focused Go worker test with a synthetic loopback provider, not a new full native run",
+    "test": "TestConnectionCardWebhookAcknowledgesFailedReply",
+    "test_file_sha256": "d1996d163c28e0fdb9dd7112d87e3404557f841355c4bd450a7cc63ab38c0e8d",
+    "outcome": "passed",
+    "observations": [
+      "The real worker HTTP method returned success after one failed direct reply to the original test-card message. A generic error was logged and no second outbound write occurred.",
+      "Without a client, bare test_ok fell through to ordinary forwarding. A forwarding error was logged without changing the webhook acknowledgement."
+    ],
+    "independent_source_review": "/root/emby compared actual test_ok against fixed source and identified the direct reply error regression. The previously executed native test covered only the distinct [PLUGIN]… callback path."
+  }
+}

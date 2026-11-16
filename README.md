@@ -1,18 +1,76 @@
+> 2026-11-07：8/23 个实例已通过插件功能验收。新增 AutoSignIn 2.9.15 使用配套宿主 `30bf6ae87f431cdc83a34cfd75a62d1cc666897b`，代码和安装包已在本地验证。
+
 # Light Media Plugins
 
-光影的 Go 插件源码仓库，支持 Linux amd64 和 arm64。分身由光影创建和管理，共用插件包，配置与数据分别保存。
+已验收 8/23 个实例（CategoryEditor、TorrentTransfer 及音乐分身、SiteStatistic、MPServerStatus、PluginUnInstall、RemoveLink、AutoSignIn）。可选继承方法与发现顺序修正已通过当前原生主程序补充复验；原业务、页面、实机和外部协议证据保留原绑定，复用范围经独立审核，见[补验凭据](migration/evidence/source-interface-revalidation-20261106/ACCEPTANCE.json)。分身使用同一业务实现，由宿主管理独立身份、配置和数据。正在按原版逐个迁移实机安装的 23 个实例（22 个业务实现，含 1 个平台分身）。验收进度以 `migration/ledger.json` 为准；未验收插件不加入可发布索引。构建目标仅为 Linux amd64；本仓库不包含宿主应用、下载器、私人配置或数据库。
 
-## 在光影安装
+## CategoryEditor 安装与使用
 
-1. 在「插件市场」添加仓库地址 `https://github.com/landuo/light-media-plugins`。
-2. 刷新市场，选择插件并安装。支持源码安装的光影读取 [go-plugins.v2.json](go-plugins.v2.json)，按清单中的 Git 提交获取源码，用当前机器的 Go 工具链编译所选插件。安装和更新使用同一方式。
-3. 在「已安装」打开插件配置。使用前按需配置站点、下载器和本地目录。CustomHosts 需要为光影容器单独挂载可写的 Hosts 文件。
+1. 宿主必须具有 CategoryEditor 的标准资源接口。最低原配套提交为
+   `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；本轮真实 Linux main 和浏览器验收使用
+   `75e13686a0e3df05ac251e359303ef3fd5971cf6`。仅看到应用版本号不能证明包含这些接口。
+2. 等本仓库的 **Linux amd64 plugins** 工作流成功，且根目录出现
+   `go-plugins.v1.json` 后，在光影插件市场加入
+   `https://github.com/landuo/light-media-plugins`，刷新并安装“二级分类策略”。
+   源码目录或未完成的工作流不是可安装制品。
+3. 打开插件设置，编辑 YAML，开启“启用插件（写入配置文件）”并保存。
+   成功后写入宿主的全局 `category.yaml`、刷新分类缓存并自动关闭该开关。
+   关闭开关时保存只保留插件配置，不应用全局策略。
+4. 整理时还需为目标目录启用二级分类，并有匹配规则。修改策略不会自动搬动已经整理的文件。
 
 源码安装需要光影宿主支持 v2 清单、可用的 Go 1.26.4 或更新工具链，以及下载 Go 模块的网络。市场卡片读取清单时无需编译。仓库中声明的前端目录包含随插件安装的静态页面资源。
 
 历史 [v1 清单](go-plugins.v1.json) 和 Linux amd64 Release 继续供较早的宿主使用，保持最后一次二进制发布的版本。
 
-光影版插件由 `landuo` 维护，独立从 `1.0.0` 开始编号。已经安装较高旧版的实例需要明确执行覆盖安装，才会切换到新的版本系列。原插件署名和对应版本见[第三方声明](THIRD_PARTY_NOTICES.md)。
+## 自动转移做种
+
+已保存但正在补充复验的 TorrentTransfer 需要宿主提交
+`404daade9d5f321624e7b421dbf877a23fe5c2b9` 的 Source 下载器接口及其后续兼容实现。
+这些宿主改动目前仅在本地分支，尚未合并、推送或部署；已发布宿主 `75e13686` 不具备这些接口。
+本仓库新增代码也未推送，远端市场索引暂不包含此插件。
+
+1. 配套宿主可用后安装“自动转移做种”1.10.3，选择源下载器、目标下载器，填写原版种子备份目录及所需标签、路径映射等选项。
+2. 保存后可使用“一次运行”或原版定时服务。转移、校验、是否启动与任务删除顺序按原版；删除源任务保留下载文件。
+3. 音乐实例通过宿主“分身”操作创建，后缀使用 `music`，按需填写名称和配置。它拥有独立配置、运行数据、进程和修复临时文件，不是第二套业务代码。
+
+真实验收使用独占 qBittorrent5.1.2、Transmission3.00、合成文件和普通 Linux 主程序，覆盖四种转移组合、100 项真实批量、校验定时器、失败恢复、页面、分身、重启、更新、重置与卸载。
+主插件卸载保留配置、数据和代码；已加载分身卸载清除其配置、数据和代码。历史失败测试与最终复合证据分别记录，详见
+[`ACCEPTANCE.json`](migration/evidence/torrenttransfer-20261105/ACCEPTANCE.json) 和
+[`ORIGIN.md`](plugins/torrenttransfer/ORIGIN.md)。测试中的 1.10.4 只是更新夹具。
+
+## 站点数据统计
+
+SiteStatistic1.9.7 需要本地宿主提交 `d715db2c3665b32670f3f60c519ad7220224a856` 的 SourceSites 资源与恢复修复；这些接口尚未合并、推送或部署，已发布宿主75e不具备。插件本轮也未推送，远端市场暂不可安装。
+
+1. 安装后选择启用、仪表板统计范围和通知范围，保存配置。站点刷新事件触发原版汇总与正文去重；“运行一次”在三秒后由宿主刷新站点并自动清除此开关。
+2. 通过插件数据页查看统计和站点账户数据；仪表板可选择此插件。移动端应用布局下可由下拉快捷入口打开数据页。原版没有此插件的独立侧栏项。
+3. 分身由宿主创建和管理，配置、数据、进程、重载和更新相互隔离。主插件卸载保留存储，公开配置返回空对象，重装恢复；已加载分身卸载清除其命名空间和代码。
+
+真实普通Linux主程序、独占TLS/Nexus样本、SQLite、API、事件、通知持久化以及桌面/触摸页面均已验收；无实际外部通知接收方。失败历史和最后通过的复合证据见 [`ACCEPTANCE.json`](migration/evidence/sitestatistic-20261105/ACCEPTANCE.json)，必要适配见 [`ORIGIN.md`](plugins/sitestatistic/ORIGIN.md)。1.9.8仅为更新夹具，没有迁移私人配置或操作原系统。
+
+## MoviePilot 服务监控
+
+MPServerStatus1.4 已在普通 Linux 主程序和真实桌面、移动触摸页面验收。开启后可查看服务状态、延迟和最近记录；支持数据页、仪表板及平台分身的独立开关。原版没有命令、定时服务或插件 API，页面请求时获取原版指定状态源。
+
+验收使用受控 HTTPS/DNS/TLS/代理样本，证明响应处理和页面交互；不表示公网状态源始终可用。更新测试中的1.4.1仅为版本夹具。完整证据与必要适配见 [`ACCEPTANCE.json`](migration/evidence/mpserverstatus-20261105/ACCEPTANCE.json) 和 [`ORIGIN.md`](plugins/mpserverstatus/ORIGIN.md)。当前源码和配套改动仍仅本地保存，尚未推送或部署。
+
+## 插件彻底卸载
+
+PluginUnInstall2.2 已通过普通 Linux 主程序、真实配置页面及正式 ZIP 安装验收。配套宿主的新增管理接口目前仅本地分支，已发布75e宿主尚不包含本功能；本插件和宿主改动均未推送或部署。
+
+1. 在设置中选择目标插件及两个清除开关，保存后立即按原版已安装顺序停止对象、移除代码并更新安装记录。没有额外启用开关、运行一次、定时任务或数据页。
+2. 原版移除类后再以默认强制参数清除配置与数据，这些调用通常保留命名空间。迁移保持该行为；两个开关的原始值仍保留，选中列表执行后清空。普通平台卸载、重置与这里的逻辑分别验收。
+3. 分身身份、代码和数据由平台管理。自身卸载及冷启动期间移除后续插件的原版状态差异也保留；后续真正重启不重新加载已移除记录。
+
+来源、必要 Go 适配和完整证据见 [`ORIGIN.md`](plugins/pluginuninstall/ORIGIN.md) 与 [`ACCEPTANCE.json`](migration/evidence/pluginuninstall-20261106/ACCEPTANCE.json)。测试2.2.1仅为更新夹具，未导入私人配置或操作原系统。
+
+## 站点自动签到
+
+AutoSignIn 2.9.15 的全 Go 程序需要上述配套宿主。安装后可分别选择签到站点和模拟登录站点，保存计划或勾选「立即运行一次」。登录与签到的结果分别显示在插件数据页。分身由宿主管理，配置和历史独立，天津大学 PT 答案缓存按原版使用共享临时目录。
+
+Linux 隔离实例已验收安装、重载、定时和一次性任务、配置与历史、更新、分身及卸载。浏览器验收和原版差分的绑定在[迁移账本](migration/ledger.json)。原 MoviePilot 的私人配置和历史尚未导入，当前插件仓库远程 main 尚未包含此版本。
+
+## 自动构建与发布
 
 ### 聚合消息通知
 
@@ -30,4 +88,40 @@
 python3 scripts/build_source_catalog.py --source-sha "$(git rev-parse HEAD)"
 ```
 
-构建输入见 [build-plugins.json](build-plugins.json)。项目许可见 [LICENSE](LICENSE)，第三方许可和原始来源见 [THIRD_PARTY_NOTICES.md](THIRD_PARTY_NOTICES.md) 和各插件目录。
+CI 固定 Go 1.26.2。完整包本地构建示例（输出目录必须尚不存在）：
+
+```sh
+python3 -m unittest discover -s scripts -p 'test_*.py' -v
+python3 scripts/build_plugins.py --output dist \
+  --release-base-url https://github.com/landuo/light-media-plugins/releases/download/build-REPLACE_WITH_SOURCE_SHA/
+```
+
+构建脚本运行真实 worker 的 `--manifest`，而非另写一份漂移的声明；生成 ZIP
+的总 size/SHA、可执行文件 SHA 和每个文件的 size/SHA。`build-plugins.json`
+是构建输入，**不是**宿主市场索引。
+
+### 独立 Vue 资源
+
+包含 `manifest.frontend` 的 worker 必须在构建配置中声明真实前端构建命令与
+独占输出目录。打包器收集输出目录里的全部 JS、动态 chunk、CSS、字体及图片，
+保持相对路径；缺入口、可识别的缺失依赖或符号链接都会失败。它遵守宿主现有
+`light-media.vue-federation/v1` / `light-media.plugin-api/v1` 协议，不生成新 schema。
+前端构建及静态引用检查不能替代安装后的真实浏览器验收。
+
+入口名称保持 `category-editor`。进程通过标准输入/输出的 SDK 协议与宿主通信，不是独立图形界面或原生 invoke 适配器。
+
+## 来源和差异
+
+- CategoryEditor 的固定上游业务源为已安装 1.3 版本，源文件 SHA-256 为 `24a8109b5c15bb73b845e42653933d09eb83b608a53303fbab9ebff39b801c27`，已核验与 `jxxghp/MoviePilot-Plugins` 提交 `ce3357c0f2bb4e46f5ff9b72560505a33b26a362` 的 CategoryEditor 源文件逐字节相同。该提交的 GPL3 许可证原文保留于 `LICENSE.upstream`。本轮只读核对了用户设备现用 helper 和内置默认模板，指纹与固定参考一致；未在原服务执行插件。
+- CategoryEditor 的 Go 业务来源保留原提交 `2b795ebb62207861a5f4b5c54291b5ebd12b3bed`；共享 SDK 基线已核对至 `75e13686a0e3df05ac251e359303ef3fd5971cf6`。`SDK_ORIGIN.json` 列出完整文件、逐文件指纹、历史快照和仅有的模块导入调整。后续插件所需的新宿主接口单独记录，尚未发布的接口不冒称已包含在该宿主提交。
+- `plugins/categoryeditor` 保留业务实现、嵌入表单及纯合成单元测试。协议 smoke test 启动真实 worker 进程并提供合成宿主回调，不等同于真实宿主的端到端验收。
+- `migration/evidence/` 保存经检查的受控测试、源码差分、真实 Linux main/浏览器记录和独立审查；合成、协议回放和实机证据分别标明。私人迁移材料仍在被忽略的 `work/`。本仓库插件实现及所需完整文件 SDK 快照按现有 GNU GPLv3 授权提供，条款见 `LICENSE`；第三方材料保留各自许可。
+- 第三方 Go 模块固定为 `golang.org/x/text v0.43.0`、服务监控候选所需的 `github.com/andybalholm/brotli v1.2.6` 和 `golang.org/x/net v0.61.0`。许可证、专利文本和适用的纯算法来源说明见 `third_party/`、`THIRD_PARTY_NOTICES.md` 及对应插件来源文档；候选依赖存在不代表插件已验收。
+
+本轮迁移约束与恢复入口：[`docs/migration-task.md`](docs/migration-task.md)。CategoryEditor 的保存、全局策略与分身配置关系，以及失败恢复、重启和卸载证据见 [`migration/evidence/categoryeditor-20261105/`](migration/evidence/categoryeditor-20261105/)。测试中的 1.3.1 仅为 manifest 更新夹具，不代表上游新版本或已发布制品。
+
+## RemoveLink 2.18
+
+已通过真实 Linux 主程序和浏览器验收，支持监控硬链接、延迟删除、排除规则、STRM 本地映射、刮削文件与空目录清理，以及平台统一管理的分身。真实整理生成的历史记录已验证按源/目标精确清理，并由独占测试通知接收服务实际收到三条原版通知。
+
+需要配套宿主本地提交 `881f02673dd6bbab37f41e54ac66e6ed8e657688`；当前配套改动未推送、未部署。源事件只有路径且没有种子哈希，因此不声称实际删除了下载器种子。内部审计与资产登记保留，选中历史记录从列表隐藏；私人配置和数据尚未导入。完整原版对照、实机与分层证据见 [验收记录](migration/evidence/removelink-20261106/ACCEPTANCE.json) 及 [来源与适配](plugins/removelink/ORIGIN.md)。

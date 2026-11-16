@@ -1,0 +1,155 @@
+{
+  "feature": "plugin.SystemProcess",
+  "status": "verified",
+  "installed_version": "1.1",
+  "source": {
+    "installed_path": "systemprocess/__init__.py",
+    "sha256": "d0c8c6f1e034f46ce8b7d3c1bcd0cddc0e2d6455b2a6b35daa4b8002cd39f6ac",
+    "source_lines": "38–57, 84–165, 179–237, 239–273, 275–420",
+    "backend_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58"
+  },
+  "target": {
+    "worker_product_commit": "b75e2168f45868fb2de44cebffe720df0d2e46d7",
+    "licenses_commit": "7d6c97b",
+    "files": {
+      "plugins/systemprocess/plugin.go": "c199aba49ddcb05520dc62d9d0f0d6bd93d36b34d194a69648f19850868e1d75",
+      "plugins/systemprocess/sample.go": "10e316d77d6de61abe2e5a3e61de8496c27ba6b6424047a28ebf791f51e7f6b9",
+      "plugins/systemprocess/table.go": "4d56d5c1054440b1bffe4faad708347c8410fbf7c8577a0056ee3a33b4ec26bf",
+      "plugins/systemprocess/form.json": "9c0384b7d4b398649ca2776a224624f4e4e6cacb2538c535ea4592cc6aeb75c7",
+      "plugins/systemprocess/ORIGIN.json": "4ea42519813d58e7745eef48389db408b884253f520ed0dfe407bf0dbc0ce203",
+      "cmd/system-process/main.go": "8a37b95faa12cc374206611591788d902cedc0e55570e7646ed51cf9c680bd13"
+    },
+    "host_checkout_during_build": "9816ad9b609a57942c6eaa900cd5f7fb4e84aab3",
+    "host_test_saved_commit": "9b8e636d63df8721e829706390916ce2a6658e9f",
+    "host_test_file": "internal/app/plugin_system_process_browser_linux_test.go",
+    "host_test_source_sha256": "369cacd61244f4c6da5e89ac95bed1a613d292c76ea23ff2e1bdc32cc7b7c6c8",
+    "host_test_ELF_sha256": "c94838b4370b9601ab572c6a8b306f7deff713491c462186d9d58d88030458c5",
+    "embedded_dist_index_sha256": "536db35675d35545073d7d4d5945f5806734cd8e0d205c2dac0d8a74dffc685a",
+    "frontend": [
+      "web/src/components/PluginManageCard.vue",
+      "web/src/components/PluginConfigDialog.vue",
+      "web/src/components/PluginDataDialog.vue",
+      "web/src/components/PluginDashboard.vue"
+    ]
+  },
+  "reused": {
+    "evidence_path": "migration/evidence/systemprocess-worker-linux-20261107.json",
+    "evidence_sha256": "b52a93cc7a9de8418a81ce2b293c4f91a1bf78cfe625caeb0dab8aa93a9bb0b5",
+    "source_cases": 12,
+    "actual_linux_arm64_app": "Passed source-native disabled detail, enable/size/refresh, enabled dashboard metadata and direct disabled clone dashboard title with the same owned process. No rerun."
+  },
+  "standard_amd64_package": {
+    "archive_members": 11,
+    "archive_sha256": "7d5cdc06c4a10015af2a9589aba76585ba5ef3c0d00986d7cf96a00cfefc533a",
+    "archive_size": 2936433,
+    "capabilities": 1,
+    "entry": "system-process",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "SystemProcess",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "methods": 12,
+    "notice_sha256": "23d5ba11bac8d8c5d707c299dbdcc2ebb53d7ff3053363124ca0b0d75e35d1a8",
+    "notice_size": 38454,
+    "plugin_source": "bf5c63e8e253731807883e8d077a7e94a131dcb8",
+    "version": "1.1",
+    "worker_sha256": "e1ec8a55b71fc14c1fb8867d34068f0f36f350ba40dda26be1cf55612b51bd4d",
+    "worker_size": 5080104,
+    "package_path": "work/systemprocess-20261107/packaging/linux-amd64/SystemProcess-1.1-linux-amd64.zip",
+    "index_sha256": "1d9526f4f13e1d2273efd3794c0a3a48f1a37379c5b9c66a4d594b2ba7e76395",
+    "notice_inventory": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/systemprocess/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/gopsutil-LICENSE",
+      "third_party/go-sysconf-LICENSE",
+      "third_party/numcpus-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "observation": "Native actual App downloaded one indexed ZIP over loopback, validated and started the expected executable. Worker was initially disabled."
+  },
+  "actual_browser_and_native_host": {
+    "test": "TestSystemProcessLinuxAMD64BrowserPackage",
+    "environment": "Real Google Chrome headless, normal embedded light-media App on native Linux x86_64 Alpine in a network-none read-only container and fresh local tmpfs. Only the owned process and loopback HTTP were used.",
+    "runtime_pass": "55.76 seconds",
+    "browser": {
+      "browser": "Google Chrome headless via CDP",
+      "checks": {
+        "saved": {
+          "path": "/api/plugins/SystemProcess/config",
+          "status": 200,
+          "success": true,
+          "initially_disabled": true,
+          "enable": true,
+          "refresh_seconds": 9
+        },
+        "detail": {
+          "headers": [
+            "进程ID",
+            "进程名称",
+            "CPU占用",
+            "内存占用",
+            "运行时长"
+          ],
+          "owned": [
+            "19",
+            "owned-sp-probe",
+            "0.0%",
+            "1.0MB",
+            "44秒"
+          ],
+          "pid_descending": true,
+          "max_height": "",
+          "row_count": 9
+        },
+        "dashboard": {
+          "headers": [
+            "进程ID",
+            "进程名称",
+            "CPU占用",
+            "内存占用",
+            "运行时长"
+          ],
+          "owned": [
+            "19",
+            "owned-sp-probe",
+            "0.0%",
+            "1.0MB",
+            "45秒"
+          ],
+          "pid_descending": true,
+          "max_height": "242px",
+          "row_count": 9,
+          "refreshed": true,
+          "display_preselected_by_fixture": true
+        }
+      },
+      "page": "#dashboard"
+    },
+    "persisted": "App store retained enable=true and a source-typed refresh value of 9. Both actual browser responses contained the exact independently observed owned PID and source table structure.",
+    "precondition": "The fixture preselected dashboard visibility through the existing App preferences route. Chrome changed the plugin config, opened detail and dashboard, and observed the scheduled dashboard request.",
+    "first_attempt": "Initial CDP form input did not change. No save was sent. Clicked the switch label and used a numeric key event in the same installed App, then saved once.",
+    "cleanup": "Owned native test container and staged transfer removed, browser profile deleted, local temporary test ELF removed after binding.",
+    "private_artifact_hashes": {
+      "SHA256SUMS": "4b6e5620721756c8aef3fac97155d738a201fe5fd4df3dde509bb8cceffcc919",
+      "runtime.stdout": "d06ebd9b071aa4de45745cc5053e2370055a5c51b6dbc1a9e8f690d24555d9c3",
+      "browser-ready.json": "6d0cda2e6a3945174c11609549fd117ff725facc16007e150b31c06d7e7e9c21",
+      "browser-result.json": "0047eb5af9e306c55c06c7bae243b1fec3a5dd785d2c848ee54a4e3e8f8648fd",
+      "browser-first-error.txt": "1b4fceff2c44d3b6d1fc98d3895ecf63cb00846e2f1a7fe4f441ee99f3744337",
+      "dashboard.png": "d2f1f5cfe7263ffdaa199997367e2f93ac77d3158e2519e599302446edce08be",
+      "verify.mjs": "fe77b31204585a55c2485f2b414b9cdfa413f60c14cb0f0c4068cbbc8d33be07",
+      "bridge.py": "e5f2c34f68a17dcd8c0f21e562e56600e476026e0997a991ca53b0242ce5ae07",
+      "run-remote.sh": "15a065e1ae1267a41eba3fd269011e5a3d2e406a662807073b94332b8a911b7e",
+      "send-bundle.py": "e1b7aed0db77c7676bc2c61360bef7460c0dda0f96f6cc473d1139fb62bf168a"
+    }
+  },
+  "review": {
+    "reviewer": "/root/emby",
+    "status": "passed",
+    "observations": "Compared installed source lifecycle, config, detail table, dashboard state and actual Vue routes. The Linux native Go sampler timing and finite existing host renderer are recorded technical adaptations. No material plugin behavior gap found in scope."
+  },
+  "delivery": "Local build registry only. No release index changes, push or deployment."
+}

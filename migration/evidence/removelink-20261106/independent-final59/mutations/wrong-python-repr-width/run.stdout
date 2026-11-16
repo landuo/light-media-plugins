@@ -1,0 +1,12 @@
+=== RUN   TestIndependentDirectoryListLogUsesPythonRepr
+=== RUN   TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-bell
+    independent_stage1_replay_test.go:218: actual3.12 source logs [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\x07b']"],["info","/fixture/m/a\u0007b 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]; current Go [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\u0007b']"],["info","/fixture/m/a\u0007b 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]
+=== RUN   TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-nonascii-nonprint
+    independent_stage1_replay_test.go:218: actual3.12 source logs [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\x85b']"],["info","/fixture/m/ab 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]; current Go [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\u0085b']"],["info","/fixture/m/ab 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]
+=== RUN   TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-nbsp
+    independent_stage1_replay_test.go:218: actual3.12 source logs [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\xa0b']"],["info","/fixture/m/a b 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]; current Go [["info","初始化媒体文件清理插件"],["debug","开始停止服务"],["debug","文件监控已停止"],["debug","服务停止完成"],["info","延迟删除功能已禁用，将使用立即删除模式"],["info","STRM 文件删除监控功能已禁用"],["info","硬链接监控目录：['/fixture/m/a\\u00a0b']"],["info","/fixture/m/a b 的硬链接监控服务启动"],["info","更新文件列表完成，共计 1 个文件，耗时 0.00 秒"],["debug","监控集合更新完成"]]
+--- FAIL: TestIndependentDirectoryListLogUsesPythonRepr (0.04s)
+    --- FAIL: TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-bell (0.01s)
+    --- FAIL: TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-nonascii-nonprint (0.01s)
+    --- FAIL: TestIndependentDirectoryListLogUsesPythonRepr/monitor-repr-nbsp (0.00s)
+FAIL

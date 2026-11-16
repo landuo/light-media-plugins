@@ -1,0 +1,40 @@
+{
+  "classification": "actual installed source static reads only; Python -B -S pathlib.read_bytes, no app import/DB/config/network call",
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker exec -i moviepilot python -B -S -"
+  ],
+  "payload_sha256": "f08d3165fae84ba227757423a00e3f8fcb76e4f7a7198684a43c23843bbf1d91",
+  "exit": 0,
+  "source_state_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker inspect --format '{{.Image}} {{.State.StartedAt}} {{.State.Running}}' moviepilot"
+  ],
+  "source_state": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 2026-11-05T14:09:26.737430404Z true",
+  "files": [
+    {
+      "path": "app/db/transferhistory_oper.py",
+      "sha256": "da1aa87d7d904a5ba9ef08549797674aab2a81702e9ce017f414fd01114e23c7",
+      "bytes": 11587,
+      "fixed_8a83_sha256": "da1aa87d7d904a5ba9ef08549797674aab2a81702e9ce017f414fd01114e23c7",
+      "identical_to_fixed_8a83": true
+    },
+    {
+      "path": "app/db/models/transferhistory.py",
+      "sha256": "194fadb0ece7bedeccd286e9ba1af76abe19f3d79358d31b77fce9a39ea68df2",
+      "bytes": 20222,
+      "fixed_8a83_sha256": "194fadb0ece7bedeccd286e9ba1af76abe19f3d79358d31b77fce9a39ea68df2",
+      "identical_to_fixed_8a83": true
+    },
+    {
+      "path": "app/chain/download.py",
+      "sha256": "ecfaaa2b2777809924aeb32632afa53d8eb701c7ee76e333099d6847988fc003",
+      "bytes": 84639,
+      "fixed_8a83_sha256": "ecfaaa2b2777809924aeb32632afa53d8eb701c7ee76e333099d6847988fc003",
+      "identical_to_fixed_8a83": true
+    }
+  ],
+  "at": "2026-11-05T20:46:48.326726+00:00"
+}

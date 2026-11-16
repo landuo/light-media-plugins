@@ -1,0 +1,90 @@
+{
+  "classification": "real cross-built Go ELF, actual NAS Linux amd64 --manifest, existing canonical packaging validation/archive/publish functions; no platform spoof, no modified production builder or Python product runtime",
+  "native_mac_CLI": "not invoked for this slice: canonical CLI explicitly requires Linux and cannot execute an ELF on macOS; this task-only cross wrapper binds actual native NAS --manifest",
+  "started_utc": "2026-11-05T16:51:18.234447+00:00",
+  "build_config_sha256": "cebb45291281a4d1112ce45742eb69a013efdc45fe49e72f4cb6e80aa4fb4a40",
+  "build_script_sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+  "plugin_spec": {
+    "id": "PluginUnInstall",
+    "package": "./cmd/plugin-uninstall",
+    "host_contract": "light-media.sdk-resources/v1",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ]
+  },
+  "release_url": "explicit nonpublished example.invalid fixture; no remote release/upload",
+  "build": {
+    "command": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/migration-20261105/pluginuninstall-packaging-20261106/.pui-cross-build-9_6_ob42/compiled-worker",
+      "./cmd/plugin-uninstall"
+    ],
+    "exit_code": 0
+  },
+  "worker_sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1",
+  "exit_code": 0,
+  "artifacts": [
+    {
+      "path": "work/migration-20261105/pluginuninstall-packaging-20261106/cross-output/PluginUnInstall-2.2-linux-amd64.zip",
+      "sha256": "45865b1b617ae5eee8916f2ebf6da147c25ce0b608bc76dc8abee5641be9fc8d",
+      "bytes": 2812678
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-packaging-20261106/cross-output/THIRD_PARTY_LICENSES.zip",
+      "sha256": "f94d8b19923b8e98bf1f000b6be01b057252cc2cb8ac6dcc55a8b9aa26baa333",
+      "bytes": 29128
+    },
+    {
+      "path": "work/migration-20261105/pluginuninstall-packaging-20261106/cross-output/go-plugins.v1.json",
+      "sha256": "c39aba0f23c3f47e54d7870eec16bb6a41ff91e7304b0a79ed26426e54be2432",
+      "bytes": 3862
+    }
+  ],
+  "member_inventory": [
+    {
+      "path": "LICENSE",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "LICENSE.upstream",
+      "size": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "size": 4355,
+      "sha256": "4ed7da4be12d120e8e722a685059b324944b019dc10a0d287f852d9ffe42b84f"
+    },
+    {
+      "path": "plugin-uninstall",
+      "size": 4942777,
+      "sha256": "86cf644722a7bace3b8f860426c86d044e5c9d9659586160f737c76e58fb2df1"
+    },
+    {
+      "path": "third_party/Go-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-text-LICENSE",
+      "size": 1453,
+      "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+    },
+    {
+      "path": "third_party/x-text-PATENTS",
+      "size": 1303,
+      "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+    }
+  ],
+  "actual_manifest_sha256": "21734f4aa7bc23cbedee52f51c6afe8e179a48f6b6245be214e4853e20536a05",
+  "ended_utc": "2026-11-05T16:51:20.076302+00:00"
+}

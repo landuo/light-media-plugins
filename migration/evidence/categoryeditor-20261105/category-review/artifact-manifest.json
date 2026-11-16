@@ -1,0 +1,33 @@
+{
+  "status": "worker_source_semantics_passed; final_target_host_acceptance_pending",
+  "no_product_edits": true,
+  "environment": {
+    "system": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+    "python": "3.14.4",
+    "go": "go version go1.26.2 darwin/arm64"
+  },
+  "artifacts": {
+    "work/migration-20261105/category-review/REVIEW.md": "72d8281213bb62ef6e0f431732110263cb0063d36a72ababea46f89240e96f10",
+    "work/migration-20261105/category-review/_replay/target_replay.go": "59aabe9d076daabecd8f4dd1a86bd6b08f627de7d47d8736bb7f9dea334887a4",
+    "work/migration-20261105/category-review/compare.py": "ad6b6d14645720b51304efdb06b97ae31e3faf31869ad242cfc9bb23763404d0",
+    "work/migration-20261105/category-review/comparison.json": "e46cedcb563273d770638008f999ca5f5e4d9fb1f5d54f85fde63983bccc95d4",
+    "work/migration-20261105/category-review/inputs.json": "a442c3af3548202effa1b4a89b75b4e73487df9ad81d54991101671bc675f409",
+    "work/migration-20261105/category-review/live-dependency-binding.json": "335a25a47ed3e6fd6cf9d6d3e15dc6b9afa035583df61c2b309ba770c29ff91f",
+    "work/migration-20261105/category-review/live_binding.py": "21e23b30e44a3e53ff6d3eaa0321f3bcc6ce04f9d0b66701e3d1216e5e017220",
+    "work/migration-20261105/category-review/mutated-categoryeditor.go.txt": "a34927e8163ccd6c36090c1a2539aec9035af040c9d733ba7b553a7acb3c6246",
+    "work/migration-20261105/category-review/mutation-comparison.json": "3cc065f9bcae56349c6b43817d8106d01990ceac7fe5593c2b19db1464593f39",
+    "work/migration-20261105/category-review/mutation-overlay.json": "9b7b6dcc7b6cf08e39bf0a177263dff02aa7720ea71e6a7119fc092d9d637739",
+    "work/migration-20261105/category-review/mutation-target-observations.json": "8f2a0b45e561af7d5f2a4447317e0f00be434b70a8e218a5cca366207446a71b",
+    "work/migration-20261105/category-review/mutation.log": "409631ac09de26f5ff4f4dce957ed979c4992d12c1074a551cbdb17a3bd6eccf",
+    "work/migration-20261105/category-review/mutation_control.py": "562bdad006025ce0fc06f6daed9f7956456630d6aca9507fab7312530129ce19",
+    "work/migration-20261105/category-review/packages.log": "c623b88e8bd561a5f22085e52985998fe566b3e002115c360af69ee6bfc1b243",
+    "work/migration-20261105/category-review/source-observations.json": "8aa77413a55f035fa534cb7a3b65e44b081332c75d4c922355abde51cf312701",
+    "work/migration-20261105/category-review/source_replay.py": "25d6acb05e887cf5c0277f6f5b2fbd1f2d9d84543482ae28b3a57aa116edb003",
+    "work/migration-20261105/category-review/static-audit.json": "bd89f4d942fa6b5ca0255b95ceeb0338b7503be1cc678ceeaf237dac783cc057",
+    "work/migration-20261105/category-review/static_audit.py": "2dd162225134db6079971ae34f8099505df96cf05d14e0bbde2258369523dc75",
+    "work/migration-20261105/category-review/target-observations.json": "89cbd8b8f2ad773a333bb1fe920445383f9764387dee66caf4ea0034ca18020d",
+    "work/migration-20261105/category-review/unit-tests-sdk-frozen.log": "1abb7a82c9d593ef908dd2b12abf8d77daf4c21ef2eeb2003006169e461948c4",
+    "work/migration-20261105/category-review/unit-tests.log": "6cebf60f2a59d68d24b3d9794743ad36b93cd881ecef0f77b516dff12c9525a3"
+  },
+  "sdk_during_work": "SDK freeze completed. All 84 origin files independently checked against fixed host Git objects; origin00961b4882..., production-set46bce3cf.... SDK test artifact hashes validated; CategoryEditor unit tests rerun with unchanged SDK. Actual App/browser/Linux-runtime acceptance remains pending."
+}

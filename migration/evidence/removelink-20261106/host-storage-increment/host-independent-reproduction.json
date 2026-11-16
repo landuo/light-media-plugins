@@ -1,0 +1,30 @@
+{
+  "classification": "compile-only independent current 1838 production inputs exact Git651+two explicit reviewed increments; no gooverlay/SDK/product changes; actual ELF equals Rootnative candidate",
+  "root_binding_sha256": "fdc70f4948fac382c2230ff4c95072de5ac31917dba4532840373814da19b579",
+  "base_revision": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
+  "repository_inputs": 1838,
+  "all_non_delta_actual_Gitblob_match": true,
+  "finite_increments": {
+    "internal/app/file_manager.go": "6a2ee92b4a6c6e7cb3a3fec545b7f286f6e0323cd88bc7927c4edc92d3e90be3",
+    "internal/app/plugin_original_host_storage.go": "d74c76f1e5a2f30ff0060692abb3a19ad0737bfb96c92ef406bb5c708bf2e9f5"
+  },
+  "argv": [
+    "go",
+    "build",
+    "-trimpath",
+    "-buildvcs=false",
+    "-o",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/managed-history-guard-review/independent-host-linux",
+    "./cmd/server"
+  ],
+  "seconds": 1.7027368545532227,
+  "exit": 0,
+  "environment": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": ""
+  },
+  "pre_post_same": true,
+  "binary_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1"
+}

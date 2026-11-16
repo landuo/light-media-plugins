@@ -1,0 +1,78 @@
+Browser tab: 8, Title: "光影 · Light Media", URL: "http://192.168.8.129:36253/#plugins".
+0 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36253/#plugins
+	1 container app
+		2 container
+			3 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36253/#discover
+			4 link Description: 搜索结果, Value: 192.168.8.129:36253/#search
+			5 text 发现
+			6 link Description: 推荐, Value: 192.168.8.129:36253/#discover
+			7 link Description: 探索, Value: 192.168.8.129:36253/#explore
+			8 link Description: 仪表板, Value: 192.168.8.129:36253/#dashboard
+			9 text 订阅
+			10 link Description: 电影, Value: 192.168.8.129:36253/#subscriptions?type=movie
+			11 link Description: 电视剧, Value: 192.168.8.129:36253/#subscriptions?type=tv
+			12 link Description: 日历, Value: 192.168.8.129:36253/#calendar
+			13 text 整理
+			14 link Description: 下载管理, Value: 192.168.8.129:36253/#downloads
+			15 link Description: 整理历史, Value: 192.168.8.129:36253/#history
+			16 link Description: 文件管理, Value: 192.168.8.129:36253/#files
+			17 text 系统
+			18 link Description: 站点管理, Value: 192.168.8.129:36253/#sites
+			19 link Description: 插件, Value: 192.168.8.129:36253/#plugins
+			20 link Description: 任务队列, Value: 192.168.8.129:36253/#jobs
+			21 link Description: 日志, Value: 192.168.8.129:36253/#logs
+			22 link Description: 设置, Value: 192.168.8.129:36253/#settings
+		23 container
+			24 button 搜索影视
+			25 text field (settable) 搜索电影、剧集
+			26 text ⌘K
+			27 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			28 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			30 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+				31 container 有未读通知
+			32 button 退出登录
+		33 container
+			34 tab group
+				35 container
+					36 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					37 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			38 button 搜索插件
+			39 button 筛选已安装插件
+			40 button 排序插件
+			41 container
+				42 text Owned Site twin  v1.9.7 站点统计数据图表。
+				43 link Description: lightolly,jxxghp, Value: github.com/lightolly
+				44 pop up button (collapsed) Description: Owned Site twin操作, Secondary Actions: Expand
+			45 container
+				46 text 站点数据统计  v1.9.8 站点统计数据图表。
+				47 link Description: lightolly,jxxghp, Value: github.com/lightolly
+				48 pop up button (collapsed) Description: 站点数据统计操作, Secondary Actions: Expand
+			49 button 新建文件夹
+	50 container
+		51 container Owned Site twin - 插件配置 关闭配置 查看数据 保存
+			52 container
+				53 text Owned Site twin - 插件配置
+				54 button 关闭配置
+				55 text 当前构建声明的支持范围：平台 Linux；存储 本地（local）。以此范围为准，原版表单中的其他平台或存储示例不代表当前已支持。
+				56 container
+					57 container
+						58 checkbox (settable, integer) Description: 启用插件, Value: 0, ID: switch-117
+					59 text 启用插件
+				60 container
+					61 container
+						62 checkbox (settable, integer) Description: 立即运行一次, Value: 0, ID: switch-120
+					63 text 立即运行一次
+				64 combo box (collapsed) Secondary Actions: Expand
+					65 container
+						66 text 今日数据
+						67 text field (settable) Description: Open, Value: today, ID: input-123
+				68 combo box (collapsed) Secondary Actions: Expand
+					69 container
+						70 text total
+						71 text field (settable) Description: Open, Value: total, ID: input-126
+				72 button 查看数据
+				73 button 保存
+
+The focused UI element is 51 container Owned Site twin - 插件配置 关闭配置 查看数据 保存

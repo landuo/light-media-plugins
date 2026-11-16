@@ -12,9 +12,14 @@ import (
 )
 
 const (
-	promotionProbe        = 900.0
-	promotionStopMargin   = 10 * time.Minute
+	promotionProbe = 900.0
+	// Keep the safety stop longer than the 15 minute check/probe cadence so a
+	// delayed check can never leave a paid download running past the deadline.
+	promotionStopMargin   = 20 * time.Minute
 	promotionClockVersion = 2
+	promotionMaxRetry     = 900
+	promotionPauseVerify  = "verify"
+	promotionPauseNotFree = "notfree"
 )
 
 func (p *Core) invalidateLegacyPromotionClocks(ctx context.Context, tasks []Task) error {
@@ -517,6 +522,150 @@ func (p *Core) warnPromotion(ctx context.Context, info, r Row) {
 	p.mu.Unlock()
 	p.h.Log(ctx, "warning", fmt.Sprintf("刷流任务删除促销过期种子：%s 的促销截止时间缺失或无法解析（freedate=%q，freedate_diff=%q），未完成下载将先暂停，请检查站点时区、Cookie 或站点促销选择器配置", text(r["title"]), r["freedate"], r["freedate_diff"]))
 }
+func incompleteRecord(r Row) bool {
+	if r == nil || truth(r["deleted"]) {
+		return false
+	}
+	if v, ok := r["progress"]; ok && v != nil {
+		if n := parseNumber(v); n != nil {
+			return number(n) < 1
+		}
+	}
+	size := number(fallback(r["size"], fallback(r["total_size"], 0)))
+	downloaded := parseNumber(fallback(r["downloaded"], 0))
+	return size <= 0 || downloaded == nil || number(downloaded) < size
+}
+
+func promotionPauseReason(r Row) string {
+	if addedFree(r) {
+		return promotionPauseVerify
+	}
+	return promotionPauseNotFree
+}
+
+// promotionSafe answers only from the last verified promotion record. A
+// missing, stale or failed verification never authorizes an unfinished
+// download; promotionExpired refreshes the record first when a probe is due.
+func (p *Core) promotionSafe(t Task, r Row) bool {
+	if r == nil || truth(r["deleted"]) || truth(r["promotion_ended_at"]) || !truth(r["promotion_verified_at"]) {
+		return false
+	}
+	verified := number(parseNumber(fallback(r["promotion_verified_at"], 0)))
+	now := float64(p.h.Now().UnixNano()) / 1e9
+	if verified <= 0 || now-verified > 2*promotionProbe {
+		return false
+	}
+	if last := number(parseNumber(fallback(r["promotion_probe_at"], 0))); last > verified {
+		return false
+	}
+	expiry, _ := p.resolveExpiry(t, r)
+	return expiry != nil && p.h.Now().Add(promotionStopMargin).Before(*expiry)
+}
+
+// pauseUnverified is the fail-closed path used when the downloader state
+// cannot be read. It needs no daemon listing: the stored hashes are enough to
+// issue one pause call, which stops download volume without deleting data.
+func (p *Core) pauseUnverified(ctx context.Context, t Task, rs *RecordSet, reason string) ([]string, error) {
+	candidates := []string{}
+	for _, h := range rs.Order {
+		r := rs.Values[h]
+		if !incompleteRecord(r) || truth(r["promotion_paused_at"]) {
+			continue
+		}
+		candidates = append(candidates, h)
+	}
+	if len(candidates) == 0 {
+		return nil, nil
+	}
+	// Stored progress can lag behind the daemon. Ask the exact-hash completed
+	// reader first so a seeding torrent is never paused just because the full
+	// list is temporarily unavailable. If that read also fails, fail closed.
+	completed := map[string]bool{}
+	if states, e := p.h.Completed(ctx, t.S("downloader"), candidates); e == nil {
+		for _, d := range states {
+			completed[torrentHash(d)] = true
+		}
+	} else {
+		p.h.Log(ctx, "warning", "无法读取已完成种子，促销兜底将暂停全部未完成记录："+e.Error())
+	}
+	hashes := []string{}
+	for _, h := range candidates {
+		if !completed[h] {
+			hashes = append(hashes, h)
+		}
+	}
+	if len(hashes) == 0 {
+		return nil, nil
+	}
+	ok, e := p.h.Pause(ctx, t.S("downloader"), hashes)
+	if e != nil {
+		return nil, e
+	}
+	if !ok {
+		return nil, configError("促销状态无法确认，暂停未完成的刷流种子失败")
+	}
+	now := float64(p.h.Now().UnixNano()) / 1e9
+	for _, h := range hashes {
+		r := rs.Values[h]
+		pauseReason := reason
+		if pauseReason == "" {
+			pauseReason = promotionPauseReason(r)
+		}
+		r["promotion_paused_at"] = now
+		r["promotion_pause_reason"] = pauseReason
+	}
+	return hashes, nil
+}
+
+// promotionDeadlineDue reports an expiry that is already inside the safety
+// margin. The promotion clock must run immediately for it, even when the
+// ordinary 15 minute probe throttle would otherwise skip this minute.
+func (p *Core) promotionDeadlineDue(ctx context.Context, t Task) (bool, error) {
+	rs, e := p.records(ctx, t.ID(), "torrents")
+	if e != nil {
+		return false, e
+	}
+	now := p.h.Now()
+	for _, k := range rs.Order {
+		r := rs.Values[k]
+		if truth(r["deleted"]) || complete(r) {
+			continue
+		}
+		expiry, _ := p.resolveExpiry(t, r)
+		if expiry != nil && !now.Add(promotionStopMargin).Before(*expiry) {
+			return true, nil
+		}
+	}
+	return false, nil
+}
+
+func promotionRetryDelay(failures int) float64 {
+	if failures <= 1 {
+		return 60
+	}
+	delay := 60.0
+	for i := 1; i < failures; i++ {
+		delay *= 2
+		if delay >= promotionMaxRetry {
+			return promotionMaxRetry
+		}
+	}
+	return delay
+}
+
+func (p *Core) markPromotionFailure(id string) {
+	failures := int(number(p.Runtime(id)["promotion_failures"])) + 1
+	p.SetRuntime(id, Row{"promotion_failures": failures,
+		"promotion_retry_at": float64(p.h.Now().Unix()) + promotionRetryDelay(failures)})
+}
+
+func (p *Core) clearPromotionFailure(id string) {
+	if number(p.Runtime(id)["promotion_failures"]) == 0 && p.Runtime(id)["promotion_retry_at"] == nil {
+		return
+	}
+	p.SetRuntime(id, Row{"promotion_failures": 0, "promotion_retry_at": nil})
+}
+
 func (p *Core) NextPromotion(ctx context.Context, t Task) (*time.Time, error) {
 	if !t.B("del_no_free") {
 		return nil, nil
@@ -538,7 +687,18 @@ func (p *Core) NextPromotion(ctx context.Context, t Task) (*time.Time, error) {
 		if truth(r["deleted"]) || complete(r) {
 			continue
 		}
-		if !truth(r["promotion_verified_at"]) && !truth(r["promotion_paused_at"]) {
+		// A paused record is re-verified on the normal probe cadence. Without
+		// this entry a failed verification would stay paused forever.
+		if truth(r["promotion_paused_at"]) {
+			pausedAt := number(parseNumber(fallback(r["promotion_paused_at"], 0)))
+			if pausedAt > 0 {
+				add(time.Unix(0, int64((pausedAt+promotionProbe)*1e9)).In(now.Location()))
+			} else {
+				add(now)
+			}
+			continue
+		}
+		if !truth(r["promotion_verified_at"]) {
 			add(now)
 			continue
 		}
@@ -548,31 +708,55 @@ func (p *Core) NextPromotion(ctx context.Context, t Task) (*time.Time, error) {
 		}
 		if source == "probe_ended" {
 			add(now)
-		} else if expiry != nil {
-			add(expiry.Add(-promotionStopMargin))
+			continue
 		}
-		if truth(r["promotion_verified_at"]) && source != "probe_ended" {
-			last := number(parseNumber(r["promotion_probe_at"]))
-			if last > 0 {
-				add(time.Unix(0, int64((last+promotionProbe)*1e9)).In(now.Location()))
-			} else {
-				add(now)
-			}
+		if expiry != nil {
+			add(expiry.Add(-promotionStopMargin))
+		} else {
+			// A verified free record without a resolvable deadline is not safe
+			// to keep downloading; let the next check pause it.
+			add(now)
+		}
+		last := number(parseNumber(r["promotion_probe_at"]))
+		if last > 0 {
+			add(time.Unix(0, int64((last+promotionProbe)*1e9)).In(now.Location()))
+		} else {
+			add(now)
 		}
 	}
 	return next, nil
 }
+
 func (p *Core) CheckPromotion(ctx context.Context, id string) error {
 	t, ok := p.task(id)
 	if !ok || !p.Enabled() || !t.B("enabled") || !t.B("del_no_free") {
 		return nil
+	}
+	now := float64(p.h.Now().Unix())
+	// Failed checks back off so a broken daemon or site cannot turn the
+	// one-minute promotion clock into a request storm. The first failure has
+	// already paused every unfinished managed torrent.
+	if retry := number(p.Runtime(id)["promotion_retry_at"]); retry > now {
+		return nil
+	}
+	// An expiry inside the safety margin bypasses the ordinary probe throttle;
+	// otherwise a check delayed to the 15 minute cadence could overshoot the
+	// deadline and bill the download.
+	deadline, e := p.promotionDeadlineDue(ctx, t)
+	if e != nil {
+		return e
+	}
+	if !deadline {
+		if last := number(p.Runtime(id)["last_check_at"]); last > 0 && now-last < promotionProbe {
+			return nil
+		}
 	}
 	next, e := p.NextPromotion(ctx, t)
 	if e != nil {
 		return e
 	}
 	if next != nil && !next.After(p.h.Now()) {
-		return p.Check(ctx, id, true)
+		return p.Check(ctx, id, false)
 	}
 	return nil
 }

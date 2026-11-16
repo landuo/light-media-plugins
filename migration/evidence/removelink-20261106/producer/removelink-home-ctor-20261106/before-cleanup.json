@@ -1,0 +1,9 @@
+{
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; test \"$(cat /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/TASK)\" = lm-plugin-removelink-ctor/60da461cf050; rm /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/ctor.test /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/source.json /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/TASK; rmdir /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050; test ! -e /home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050"
+  ],
+  "exit": 0,
+  "local_test_binary_sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b"
+}

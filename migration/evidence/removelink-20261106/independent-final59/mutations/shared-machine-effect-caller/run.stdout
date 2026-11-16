@@ -1,0 +1,4 @@
+=== RUN   TestActualWorkerIndependentTimerAndObserverCallers
+    concurrency_protocol_test.go:121: timer did not resume with its own effect pair after observer returned
+--- FAIL: TestActualWorkerIndependentTimerAndObserverCallers (1.08s)
+FAIL

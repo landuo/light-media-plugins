@@ -1,0 +1,76 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "kind": "Native Linux amd64 App, exact indexed Lark worker for the unscoped case, and actual SDK observer for the seeded legacy case. The external protocol peers were isolated loopback fixtures.",
+  "mapping": [
+    {
+      "source": "app/chain/download.py:1599,1647–1662; app/chain/message.py:2579–2627; app/chain/search.py:1083–1094,1335–1358",
+      "target": "light-media internal/app/{plugin_original_chat_media_download,plugin_original_chat_provider_search,plugin_original_media_resource_search,plugin_original_title_filter,download_provider_target}.go",
+      "behavior": "Retry the selected source identity once when the entire seasons map is missing, then search without inventing a scope. Scope recovered for inventory need not replace the selected model given to SearchChain. The actual matched query remains private for verified material retrieval."
+    },
+    {
+      "source": "app/chain/message.py:2789–2806,2993–3042; app/chain/download.py:859–874,1249–1251,1383–1384",
+      "target": "light-media internal/app/{plugin_original_chat_media_view,search_download,download_events,download_snapshot,download_season_scope}.go",
+      "behavior": "Only an explicit numbered resource choice grants a whole unscoped download. Automatic selection still requires missing episodes. The host records and verifies the exact source, preserves unscoped material, and keeps organization gated pending verified file identity and episode scope."
+    },
+    {
+      "source": "app/chain/download.py:447–470,658–776,859–881,995–1027",
+      "target": "light-media internal/app/{download_legacy_material,material_store,search_download,download_events,plugin_original_download_added}.go",
+      "behavior": "Legacy chat tasks use the same tracker material protocol as active chat. The host verifies the originally confirmed material type and hash, and stages protected exact bytes for downloader submission and the ordinary callback without rewriting the immutable intent reference."
+    }
+  ],
+  "runs": [
+    {
+      "scenario": "unscoped",
+      "status": "passed",
+      "test": "TestOriginalLarkProviderUnscopedDownloadLinuxAMD64",
+      "seconds": 1.68,
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "3a215e0885094569f53b03b18131ab139b9ced37",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "fbf2c94057434d0d784edd9601f45b2b2ab83deeabe93317a00993a7e36a62d1"
+      },
+      "observations": [
+        "A real Lark worker selected AniList 777 with no seasons or TMDB. The native host performed a second exact AniList detail lookup. Still without seasons, it searched by the verified title and exposed the matching S03E07 release without manufacturing a season scope.",
+        "The numbered resource selection submitted one whole unpaused Add with the exact tracker torrent bytes. The intent, sealed context and download.accepted event retained tv:anilist:777. Season, episode and selected file scope remained unset.",
+        "The completed torrent remained downloaded for review. No reservation, asset slot, asset or import plan was created from the release filename alone."
+      ]
+    },
+    {
+      "scenario": "legacy_material",
+      "status": "passed",
+      "test": "TestOriginalLarkLegacyMaterialRecoveryLinuxAMD64",
+      "seconds": 1.23,
+      "binding": {
+        "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+        "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+        "host_commit": "3a215e0885094569f53b03b18131ab139b9ced37",
+        "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+        "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3",
+        "fixture_sha256": "528ebfaa9276946525d167f72c41f5fc0248c740f5046c2a747956be4f060415"
+      },
+      "observations": [
+        "The fixture constructed an older confirmed Lark intent, deliberately removing the preview and intent material references, archived bytes and preview memory cache. This case uses a seeded old record and real SDK observer, not a live legacy Lark account.",
+        "The actual host retrieved the tracker prompt with its owned cookie and posted the exact confirmation form once. The resulting torrent kept the original infohash and had different exact top-level bytes from the seed material. One qB protocol Add received those bytes.",
+        "The same bytes were encrypted and pinned in the submission transaction and reached the actual SDK download_added callback as bytes. The old Intent.MaterialRef stayed empty and its guarded legacy shape was preserved."
+      ]
+    }
+  ],
+  "run_artifacts": {
+    "host_elf_sha256": "1630433841b1f3e9efd02670e8e2f384ed9a68405c485081cb48e8052bc7dc4f",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "observer_elf_sha256": "345717b2bdde9bcc282b692d54042cd4d0663907049a77295554fe23cb5d52ab",
+    "index_sha256": "32c0ae58ea696c3b6525152c2c60ef47d7e272e850e132e28e53ae229d011349",
+    "runner_sha256": "3d06590058c26cd0838f865138939a5845a69a4bbb361adbb4e7c976bae58044",
+    "runtime_log_sha256": "c728d37b7c905cc7ee73e69be17b71cf1dd6dd32ab102947ef83ef70bb3c4ec7"
+  },
+  "adaptations_and_open": [
+    "The extra Go selection verification prewarms the provider cache. Only the one scoped inventory retry bypasses the native warmed cache, keeping the source module cache argument at its original default.",
+    "The source can attempt file recognition again during organization. This run proves manual Add and safe review when no scope is known. Later recovery of episode scope, unscoped magnet, and an alias-only tracker match were not exercised.",
+    "The legacy fixture proves a tracker-confirmed chat torrent, byte callback and immutable older intent. Legacy RSS/spider reuse their existing material protocol and were not rerun. A new magnet cannot replace a formerly confirmed torrent merely because the infohash matches."
+  ]
+}

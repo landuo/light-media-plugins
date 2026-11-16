@@ -1,0 +1,12 @@
+=== RUN   TestIndependentOverflowKeepsEarlierCustomExtensionAssignment
+=== RUN   TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/positive
+    independent_stage1_replay_test.go:262: source partial assignment: extensions=[".old"] delay=77 err=OverflowError:cannot convert float infinity to integer, expected extensions=[".new"] delay=77
+=== RUN   TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/negative
+    independent_stage1_replay_test.go:262: source partial assignment: extensions=[".old"] delay=77 err=OverflowError:cannot convert float infinity to integer, expected extensions=[".new"] delay=77
+=== RUN   TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/clear-on-overflow
+    independent_stage1_replay_test.go:262: source partial assignment: extensions=[".old"] delay=77 err=OverflowError:cannot convert float infinity to integer, expected extensions=[] delay=77
+--- FAIL: TestIndependentOverflowKeepsEarlierCustomExtensionAssignment (0.00s)
+    --- FAIL: TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/positive (0.00s)
+    --- FAIL: TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/negative (0.00s)
+    --- FAIL: TestIndependentOverflowKeepsEarlierCustomExtensionAssignment/clear-on-overflow (0.00s)
+FAIL

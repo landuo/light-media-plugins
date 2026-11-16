@@ -1,0 +1,958 @@
+[
+  {
+    "run": "attempt1-actual",
+    "command": {
+      "argv": [
+        "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/main-driver-linux.test",
+        "-test.v",
+        "-test.timeout=3m",
+        "-test.run=^TestAutoSignInActualMainOwnedSiteOnceAndClone$"
+      ],
+      "exit": 1,
+      "seconds": 4.375378393102437,
+      "env": {
+        "TMPDIR": "/home/admin/light-media-plugins-root-asi-owned-20261106/tmp",
+        "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/host-main-linux",
+        "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-owned-20261106/runtime",
+        "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/bin/auto-sign-in-linux",
+        "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/source/form.json",
+        "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106/bundle/source/api-oracle.json"
+      },
+      "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+      "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+    },
+    "stdout": "=== RUN   TestAutoSignInActualMainOwnedSiteOnceAndClone\n    autosignin_owned_site_main_test.go:112: bound source Cookie/UA differs at physical peer\n--- FAIL: TestAutoSignInActualMainOwnedSiteOnceAndClone (4.36s)\nFAIL\n",
+    "peer": [],
+    "pages": [
+      {
+        "at": "2026-11-06T12:38:38.188547256Z",
+        "contains_success_substring": false,
+        "visible_leaf_values": [
+          {
+            "key": "text",
+            "value": "mdi-calendar-check"
+          },
+          {
+            "key": "text",
+            "value": "今日签到"
+          },
+          {
+            "key": "text",
+            "value": "0/1"
+          },
+          {
+            "key": "text",
+            "value": "失败 0 · 未确认 0 · 未记录 1"
+          },
+          {
+            "key": "text",
+            "value": "mdi-alert-circle-outline"
+          },
+          {
+            "key": "text",
+            "value": "签到未完成"
+          },
+          {
+            "key": "text",
+            "value": "0"
+          },
+          {
+            "key": "text",
+            "value": "失败 0 · 未确认 0"
+          },
+          {
+            "key": "text",
+            "value": "mdi-login-variant"
+          },
+          {
+            "key": "text",
+            "value": "今日登录"
+          },
+          {
+            "key": "text",
+            "value": "0/0"
+          },
+          {
+            "key": "text",
+            "value": "异常 0 · 未记录 0"
+          },
+          {
+            "key": "text",
+            "value": "mdi-history"
+          },
+          {
+            "key": "text",
+            "value": "历史范围"
+          },
+          {
+            "key": "text",
+            "value": "14天"
+          },
+          {
+            "key": "text",
+            "value": "矩阵显示最近7天"
+          },
+          {
+            "key": "text",
+            "value": "mdi-calendar-check"
+          },
+          {
+            "key": "text",
+            "value": "签到状态"
+          },
+          {
+            "key": "text",
+            "value": "1 个站点"
+          },
+          {
+            "key": "text",
+            "value": "站点"
+          },
+          {
+            "key": "text",
+            "value": "今日"
+          },
+          {
+            "key": "text",
+            "value": "11/6"
+          },
+          {
+            "key": "text",
+            "value": "11/5"
+          },
+          {
+            "key": "text",
+            "value": "11/4"
+          },
+          {
+            "key": "text",
+            "value": "11/3"
+          },
+          {
+            "key": "text",
+            "value": "11/2"
+          },
+          {
+            "key": "text",
+            "value": "11/1"
+          },
+          {
+            "key": "text",
+            "value": "10/31"
+          },
+          {
+            "key": "title",
+            "value": "Owned ASI source peer"
+          },
+          {
+            "key": "text",
+            "value": "Owned ASI source peer"
+          },
+          {
+            "key": "text",
+            "value": "暂无记录"
+          },
+          {
+            "key": "text",
+            "value": "未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月6日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月5日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月4日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月3日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月2日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月1日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "10月31日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-login-variant"
+          },
+          {
+            "key": "text",
+            "value": "登录状态"
+          },
+          {
+            "key": "text",
+            "value": "0 个站点"
+          },
+          {
+            "key": "text",
+            "value": "暂无登录数据"
+          }
+        ],
+        "table_rows": [
+          {
+            "component": "tr",
+            "content": [
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "div",
+                    "props": {
+                      "class": "autosignin-site-name",
+                      "title": "Owned ASI source peer"
+                    },
+                    "text": "Owned ASI source peer"
+                  },
+                  {
+                    "component": "div",
+                    "props": {
+                      "class": "autosignin-site-meta"
+                    },
+                    "text": "暂无记录"
+                  }
+                ]
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "VChip",
+                    "props": {
+                      "color": "grey",
+                      "prepend-icon": "mdi-minus-circle-outline",
+                      "size": "x-small",
+                      "variant": "tonal"
+                    },
+                    "text": "未记录"
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-status-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月6日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月5日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月4日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月3日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月2日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月1日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "10月31日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "config_get": [
+      {
+        "at": "2026-11-06T12:38:38.114911527Z",
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "59 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_Ku8BRE86rDDsASul0XSiL_dF"
+        }
+      }
+    ],
+    "config_put_at": "2026-11-06T12:38:38.110807513Z",
+    "attendance_requests": []
+  },
+  {
+    "run": "empty-main-actual",
+    "command": {
+      "argv": [
+        "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/bundle/bin/main-driver-linux.test",
+        "-test.v",
+        "-test.timeout=3m",
+        "-test.run=^TestAutoSignInActualMainOwnedSiteOnceAndClone$"
+      ],
+      "exit": 1,
+      "seconds": 3.7136771520599723,
+      "env": {
+        "TMPDIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/tmp",
+        "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/bundle/bin/host-main-linux",
+        "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/runtime",
+        "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/bundle/bin/auto-sign-in-linux",
+        "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/bundle/source/form.json",
+        "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-owned-20261106-r2/bundle/source/api-oracle.json"
+      },
+      "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedNexusprotocolpeer/real3-secondonce/physicalrequest/history/clone/cold/no-replay; no realPT/OCR/UI acceptance",
+      "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+    },
+    "stdout": "=== RUN   TestAutoSignInActualMainOwnedSiteOnceAndClone\n    autosignin_owned_site_main_test.go:115: bound source Cookie/UA differs at physical peer\n--- FAIL: TestAutoSignInActualMainOwnedSiteOnceAndClone (3.70s)\nFAIL\n",
+    "peer": [
+      {
+        "cookie": "owned_session=synthetic",
+        "path": "/",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "cookie": "owned_session=synthetic",
+        "path": "/favicon.ico",
+        "ua": "MoviePilot/2.15.7 (Linux 6.18.18.c1168-trim; x86_64)"
+      },
+      {
+        "cookie": "owned_session=synthetic",
+        "path": "/",
+        "ua": "Owned-ASI/1"
+      }
+    ],
+    "pages": [
+      {
+        "at": "2026-11-06T12:41:36.208236674Z",
+        "contains_success_substring": false,
+        "visible_leaf_values": [
+          {
+            "key": "text",
+            "value": "mdi-calendar-check"
+          },
+          {
+            "key": "text",
+            "value": "今日签到"
+          },
+          {
+            "key": "text",
+            "value": "0/1"
+          },
+          {
+            "key": "text",
+            "value": "失败 0 · 未确认 0 · 未记录 1"
+          },
+          {
+            "key": "text",
+            "value": "mdi-alert-circle-outline"
+          },
+          {
+            "key": "text",
+            "value": "签到未完成"
+          },
+          {
+            "key": "text",
+            "value": "0"
+          },
+          {
+            "key": "text",
+            "value": "失败 0 · 未确认 0"
+          },
+          {
+            "key": "text",
+            "value": "mdi-login-variant"
+          },
+          {
+            "key": "text",
+            "value": "今日登录"
+          },
+          {
+            "key": "text",
+            "value": "0/0"
+          },
+          {
+            "key": "text",
+            "value": "异常 0 · 未记录 0"
+          },
+          {
+            "key": "text",
+            "value": "mdi-history"
+          },
+          {
+            "key": "text",
+            "value": "历史范围"
+          },
+          {
+            "key": "text",
+            "value": "14天"
+          },
+          {
+            "key": "text",
+            "value": "矩阵显示最近7天"
+          },
+          {
+            "key": "text",
+            "value": "mdi-calendar-check"
+          },
+          {
+            "key": "text",
+            "value": "签到状态"
+          },
+          {
+            "key": "text",
+            "value": "1 个站点"
+          },
+          {
+            "key": "text",
+            "value": "站点"
+          },
+          {
+            "key": "text",
+            "value": "今日"
+          },
+          {
+            "key": "text",
+            "value": "11/6"
+          },
+          {
+            "key": "text",
+            "value": "11/5"
+          },
+          {
+            "key": "text",
+            "value": "11/4"
+          },
+          {
+            "key": "text",
+            "value": "11/3"
+          },
+          {
+            "key": "text",
+            "value": "11/2"
+          },
+          {
+            "key": "text",
+            "value": "11/1"
+          },
+          {
+            "key": "text",
+            "value": "10/31"
+          },
+          {
+            "key": "title",
+            "value": "Owned ASI source peer"
+          },
+          {
+            "key": "text",
+            "value": "Owned ASI source peer"
+          },
+          {
+            "key": "text",
+            "value": "暂无记录"
+          },
+          {
+            "key": "text",
+            "value": "未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月6日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月5日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月4日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月3日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月2日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "11月1日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-minus-circle-outline"
+          },
+          {
+            "key": "title",
+            "value": "10月31日 未记录"
+          },
+          {
+            "key": "text",
+            "value": "mdi-login-variant"
+          },
+          {
+            "key": "text",
+            "value": "登录状态"
+          },
+          {
+            "key": "text",
+            "value": "0 个站点"
+          },
+          {
+            "key": "text",
+            "value": "暂无登录数据"
+          }
+        ],
+        "table_rows": [
+          {
+            "component": "tr",
+            "content": [
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "div",
+                    "props": {
+                      "class": "autosignin-site-name",
+                      "title": "Owned ASI source peer"
+                    },
+                    "text": "Owned ASI source peer"
+                  },
+                  {
+                    "component": "div",
+                    "props": {
+                      "class": "autosignin-site-meta"
+                    },
+                    "text": "暂无记录"
+                  }
+                ]
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "VChip",
+                    "props": {
+                      "color": "grey",
+                      "prepend-icon": "mdi-minus-circle-outline",
+                      "size": "x-small",
+                      "variant": "tonal"
+                    },
+                    "text": "未记录"
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-status-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月6日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月5日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月4日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月3日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月2日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "11月1日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              },
+              {
+                "component": "td",
+                "content": [
+                  {
+                    "component": "span",
+                    "content": [
+                      {
+                        "component": "VIcon",
+                        "props": {
+                          "size": "x-small"
+                        },
+                        "text": "mdi-minus-circle-outline"
+                      }
+                    ],
+                    "props": {
+                      "class": "autosignin-dot autosignin-dot--none",
+                      "title": "10月31日 未记录"
+                    }
+                  }
+                ],
+                "props": {
+                  "class": "autosignin-dot-cell"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "config_get": [
+      {
+        "at": "2026-11-06T12:41:36.15918297Z",
+        "response": {
+          "data": {
+            "auto_cf": 0,
+            "clean": false,
+            "cron": "59 23 31 12 *",
+            "enabled": true,
+            "login_sites": [],
+            "notify": false,
+            "onlyonce": false,
+            "queue_cnt": 1,
+            "retry_keyword": "错误|失败",
+            "sign_sites": [
+              1
+            ]
+          },
+          "request_id": "req_wCnBTkUCcuUpKtCxOlAyjdu6"
+        }
+      }
+    ],
+    "config_put_at": "2026-11-06T12:41:36.156791325Z",
+    "attendance_requests": []
+  }
+]

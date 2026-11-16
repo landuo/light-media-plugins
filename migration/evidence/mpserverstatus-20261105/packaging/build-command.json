@@ -1,0 +1,29 @@
+{
+  "classification": "actual normal LinuxAMD64 release-packager execution and notice inventory, offline/unpublished test metadata baseURL; not remote availability/deployment",
+  "command": [
+    "python3",
+    "scripts/build_plugins.py",
+    "--output",
+    "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-packaging/output",
+    "--release-base-url",
+    "https://example.invalid/not-published/mps-20261105",
+    "--plugin",
+    "MPServerStatus"
+  ],
+  "exit_code": 1,
+  "before": {
+    "build-plugins.json": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+    "scripts/build_plugins.py": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3"
+  },
+  "after": {
+    "build-plugins.json": "be18558551d26c062182f3b3c796423c741ef2a8c0facb67c41bbf6a7f350ee7",
+    "scripts/build_plugins.py": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6",
+    "SDK_ORIGIN.json": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+    "go.mod": "8acbaaab70cfa016cfa01e8604495616eb44c99e8b86cd132f7bdf028463110c",
+    "go.sum": "b78052edae6c1f4f8f61cf23c120bafa4fb793d8953317ef48d132645408b1a3"
+  },
+  "stable": true
+}

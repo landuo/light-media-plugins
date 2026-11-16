@@ -1,0 +1,50 @@
+[
+  {
+    "mode": "present-empty",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm --label task=lm-plugin-removelink-ctor-60da461cf050-present-empty --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/ctor.test,dst=/oracle/ctor.test,readonly --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/source.json,dst=/oracle/reference/unknown-home-source312.json,readonly --workdir /oracle --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u HOME -u USER REMOVELINK_HOME_CTOR_CASE=present-empty HOME= /oracle/ctor.test -test.v -test.timeout=20s '-test.run=^TestSource312ConstructorHomeBranches$'"
+    ],
+    "exit": 0,
+    "binary_sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b",
+    "fixture_sha256": "3c42217727e59df32fad4cc9107a05e5dd769a579fb46893b5c4a766fab7561c",
+    "containers_remaining": ""
+  },
+  {
+    "mode": "present-value",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm --label task=lm-plugin-removelink-ctor-60da461cf050-present-value --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/ctor.test,dst=/oracle/ctor.test,readonly --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/source.json,dst=/oracle/reference/unknown-home-source312.json,readonly --workdir /oracle --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u HOME -u USER REMOVELINK_HOME_CTOR_CASE=present-value HOME=/owned/home /oracle/ctor.test -test.v -test.timeout=20s '-test.run=^TestSource312ConstructorHomeBranches$'"
+    ],
+    "exit": 0,
+    "binary_sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b",
+    "fixture_sha256": "3c42217727e59df32fad4cc9107a05e5dd769a579fb46893b5c4a766fab7561c",
+    "containers_remaining": ""
+  },
+  {
+    "mode": "absent-found",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm --label task=lm-plugin-removelink-ctor-60da461cf050-absent-found --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/ctor.test,dst=/oracle/ctor.test,readonly --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/source.json,dst=/oracle/reference/unknown-home-source312.json,readonly --workdir /oracle --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u HOME -u USER REMOVELINK_HOME_CTOR_CASE=absent-found /oracle/ctor.test -test.v -test.timeout=20s '-test.run=^TestSource312ConstructorHomeBranches$'"
+    ],
+    "exit": 0,
+    "binary_sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b",
+    "fixture_sha256": "3c42217727e59df32fad4cc9107a05e5dd769a579fb46893b5c4a766fab7561c",
+    "containers_remaining": ""
+  },
+  {
+    "mode": "absent-unmapped",
+    "command": [
+      "ssh",
+      "admin@192.168.8.129",
+      "docker run --rm --label task=lm-plugin-removelink-ctor-60da461cf050-absent-unmapped --network none --read-only --user 65533:65533 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/ctor.test,dst=/oracle/ctor.test,readonly --mount type=bind,src=/home/admin/light-media-plugins-migration-rlk-ctor-60da461cf050/source.json,dst=/oracle/reference/unknown-home-source312.json,readonly --workdir /oracle --entrypoint /usr/bin/env sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -u HOME -u USER REMOVELINK_HOME_CTOR_CASE=absent-unmapped /oracle/ctor.test -test.v -test.timeout=20s '-test.run=^TestSource312ConstructorHomeBranches$'"
+    ],
+    "exit": 1,
+    "binary_sha256": "7ca55361b4a532c564295f39007aefd98f840ecba0d8514bf79030508e696a3b",
+    "fixture_sha256": "3c42217727e59df32fad4cc9107a05e5dd769a579fb46893b5c4a766fab7561c",
+    "containers_remaining": ""
+  }
+]

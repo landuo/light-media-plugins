@@ -1,0 +1,11 @@
+/Users/accidia/projects/light-media-plugins/work/migration-20261106/removelink-business-main-preparation/removelink-business-main-linux.test: go1.26.2
+	path	github.com/landuo/light-media-plugins/tests/integration.test
+	mod	github.com/landuo/light-media-plugins	(devel)	
+	build	-buildmode=exe
+	build	-compiler=gc
+	build	-tags=removelink_business_acceptance
+	build	-trimpath=true
+	build	CGO_ENABLED=0
+	build	GOARCH=amd64
+	build	GOOS=linux
+	build	GOAMD64=v1

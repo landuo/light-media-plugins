@@ -1,0 +1,40 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "03f4ed6a9ba70ef666955777f1e646a2a64bc5a7",
+    "worker_commit": "319ca00e3f726d084db38c55f53b8902113db748",
+    "fixture_sha256": "bdacd6c91b15e1fd8337b4281a58e6f32824ce34a3348ab7b86cfd61154c9ee1",
+    "package_sha256": "28f05d95f985221e945b22b18865ec230ac1de84fdd310b988682b61fddab0b3"
+  },
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1958–1969; app/chain/download.py:1425–1465; app/helper/torrent.py:109–126",
+      "target": "light-media internal/app/plugin_original_subscribe_chat_refresh_match.go, subscription_rss_magnet.go and internal/sites/plugin_host_resources.go",
+      "behavior": "Latest-resource subscription matching skips multi-season TV before material lookup. An exact single-season explicitly numbered magnet can be added without preflight file selection."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux amd64 App, installed indexed worker and native SDK callback observer with owned loopback protocol peers",
+    "test": "TestOriginalLarkRSSSingleSeasonMagnetLinuxAMD64",
+    "seconds": 3.06,
+    "host_elf_sha256": "c626791e3401628d514f82499a1b859dd15d0c589614f057397024d42dbc9268",
+    "worker_elf_sha256": "5650283efd1722e2d1ab1bb9b14fdbdd7020671a7da6a635a5b2baf53d545a01",
+    "observer_elf_sha256": "d2b1dbddb8355fd6d63237dded763e82b98199b5f0965b6744c593ec3a38959b",
+    "runner_sha256": "ad60f6f6be7afebe0f768fdf856a47a73aeffba886634a7fa2931d00a9154f55",
+    "runtime_log_sha256": "ed3f209f01d95e27c7db62ad618b3db0d62f930d5e9b3c75aaf5cf8813c13b1b",
+    "observations": [
+      "One verified Lark /subscribes refresh recognized a TV candidate with explicit S01E02 and excluded a higher-seeded S01–S02 candidate before any material request.",
+      "A same-origin authenticated tracker material request returned the magnet. qBittorrent received one exact whole URI without tracker Cookie, and the native SDK observer received it as a string.",
+      "This run verified TV Add and the ordinary callback. It did not test TV import or BestVersion replacement."
+    ],
+    "shared_command": "This scenario passed on its first execution. The same invocation's two ordinary-chat fixture failures are separate observations."
+  },
+  "adaptations_and_open": [
+    "The filter is shared by RSS and spider refresh, as in the pinned source. This distinct run covered RSS only. Ordinary chat intentionally retains source multi-season candidates."
+  ]
+}

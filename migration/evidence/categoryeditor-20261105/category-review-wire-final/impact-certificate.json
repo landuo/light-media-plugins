@@ -1,0 +1,326 @@
+{
+  "status": "passed_no_CategoryEditor_dependency_impact",
+  "scope": "SourceAdd wire SDK micro-increment only; no main/UI replay",
+  "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+  "sdk_origin_sha256": "a7ee9679da337a3b24cae97c2f92b5f4e7ff08a8c95f11b8fdbe60fd5dfd0ca1",
+  "sdk_origin_files": 87,
+  "sdk_source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+  "sdk_source_state": "Local accepted host SDK increment; not merged to main, pushed or deployed. Original75e84-file snapshot remains historical and unchanged.",
+  "sdk_source_branch": "codex/plugin-source-error-outcomes-20261105",
+  "frozen_84_files_unchanged": true,
+  "new_files": [
+    {
+      "source_path": "internal/plugins/downloader_source.go",
+      "path": "internal/sdk/downloader_source.go",
+      "source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "uncommitted_source_outcomes_plus_finite_source_add_wire_delta_pending_coordinator_commit",
+      "source_sha256": "8144622951198e648c76365c368f257de1fde503c372702494ff48cd1dadd8ca",
+      "sha256": "8144622951198e648c76365c368f257de1fde503c372702494ff48cd1dadd8ca",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_test.go",
+      "path": "internal/sdk/downloader_source_test.go",
+      "source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "uncommitted_source_outcomes_plus_finite_source_add_wire_delta_pending_coordinator_commit",
+      "source_sha256": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "sha256": "a784d4c14d6e53d36d7ad2903baabbc0513f673474fe821e61faee2f30f87077",
+      "changes": []
+    },
+    {
+      "source_path": "internal/plugins/downloader_source_wire_test.go",
+      "path": "internal/sdk/downloader_source_wire_test.go",
+      "source_commit": "a3ae854abecfe85eab283a9ef42f6b31eb23b645",
+      "source_base_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+      "source_branch": "codex/plugin-source-error-outcomes-20261105",
+      "source_state": "uncommitted_source_outcomes_plus_finite_source_add_wire_delta_pending_coordinator_commit",
+      "source_sha256": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "sha256": "8762ed49a1fa4f8cac02866290d15574fb20b10c6cddc172dc97950437e2529d",
+      "changes": []
+    }
+  ],
+  "ast_no_init_vars_registration": true,
+  "category_unchanged": {
+    "plugins/categoryeditor/categoryeditor.go": "d7fc582f1f79b3e28b5a0674cb12b7c221e13ad3dc473db126fa32085dedc41c",
+    "plugins/categoryeditor/form.json": "80ad278e12525c6b61563468ffa00b32b719ffd56f3029a89f13ccf1db8bb6a6",
+    "plugins/categoryeditor/categoryeditor_test.go": "71faceb60b71e0db5e2bdccbf48315233ae9bfe7abb253764d45caf422a29e49",
+    "cmd/category-editor/main.go": "673616f49148da9aa94314bd78c58f5ccdaddc8d94a664950117c434a30538b4",
+    "cmd/category-editor/main_test.go": "86c019a106de3aa26f8b0cca83c2158cb4e7cf64ceb90592dca1708eaab18ab6",
+    "go.mod": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a",
+    "go.sum": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+  },
+  "manifest_unchanged": true,
+  "package_count": 126,
+  "package_import_graph_unchanged": true,
+  "package_file_delta": [
+    {
+      "package": "github.com/landuo/light-media-plugins/internal/sdk",
+      "added": [
+        "downloader_source.go"
+      ],
+      "removed": []
+    }
+  ],
+  "builds": [
+    {
+      "mode": "current",
+      "command": "go build -trimpath -buildvcs=false -o <owned-temp>/current-linux ./cmd/category-editor",
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      },
+      "binary_sha256": "d80325bdff0efc88b9e371d70417693214f6c5f4b6c9c7983fa2f89dfad0b704",
+      "bytes": 4607756,
+      "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "symbol_count": 4877,
+      "new_linked_source_symbols": [],
+      "elf_sections": {
+        "": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".note.go.buildid": {
+          "bytes": 100,
+          "sha256": "31f72d0131502d39f343675b7866500c75c7edb8e7c64b035afcefe47e3991d7"
+        },
+        ".note.gnu.build-id": {
+          "bytes": 36,
+          "sha256": "6dfec24f9ff650ed2110b1f57d9c3360fcfe438d86256ff5d1965b3a91c53aae"
+        },
+        ".text": {
+          "bytes": 1376177,
+          "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+        },
+        ".rodata": {
+          "bytes": 397985,
+          "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+        },
+        ".gopclntab": {
+          "bytes": 1157144,
+          "sha256": "aa7fd6806be558a517bcca937eb9f59bf2ed342bf99fb5e500dc97dfb165416b"
+        },
+        ".typelink": {
+          "bytes": 3684,
+          "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+        },
+        ".itablink": {
+          "bytes": 472,
+          "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+        },
+        ".go.buildinfo": {
+          "bytes": 416,
+          "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+        },
+        ".go.fipsinfo": {
+          "bytes": 120,
+          "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+        },
+        ".go.module": {
+          "bytes": 592,
+          "sha256": "7ca4c98af682e47aee36c0edb043e1f5c39ba9612864e112228efd87a932baac"
+        },
+        ".noptrdata": {
+          "bytes": 178497,
+          "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+        },
+        ".data": {
+          "bytes": 44722,
+          "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+        },
+        ".debug_abbrev": {
+          "bytes": 352,
+          "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+        },
+        ".debug_line": {
+          "bytes": 282907,
+          "sha256": "755043c67e56847b73cc10638a3bed0df35cc7c9ca2c99ba457f470080159053"
+        },
+        ".debug_frame": {
+          "bytes": 55010,
+          "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+        },
+        ".debug_gdb_scripts": {
+          "bytes": 24,
+          "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+        },
+        ".debug_info": {
+          "bytes": 476228,
+          "sha256": "61c0d4327ba54f01a673b5149714ec9363bd61b3240baba7c0f4ab188c1c1ec5"
+        },
+        ".debug_loclists": {
+          "bytes": 235276,
+          "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+        },
+        ".debug_rnglists": {
+          "bytes": 117651,
+          "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+        },
+        ".debug_addr": {
+          "bytes": 6752,
+          "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+        },
+        ".symtab": {
+          "bytes": 117072,
+          "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+        },
+        ".strtab": {
+          "bytes": 149984,
+          "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+        },
+        ".shstrtab": {
+          "bytes": 292,
+          "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+        }
+      }
+    },
+    {
+      "mode": "exclude-new-sdk",
+      "command": "go build -overlay=<owned-temp>/exclude-new-sdk.json -trimpath -buildvcs=false -o <owned-temp>/exclude-new-sdk-linux ./cmd/category-editor",
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0"
+      },
+      "binary_sha256": "841a2903f4185d504b05753bca313522fdd396c6b12108dc39e22fdc1fbe593b",
+      "bytes": 4607740,
+      "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "symbol_count": 4877,
+      "new_linked_source_symbols": [],
+      "elf_sections": {
+        "": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".note.go.buildid": {
+          "bytes": 100,
+          "sha256": "aabef9cf3a4886a3616a80a07351cbe3b53a8e3bc5136512bf54c4a67cf735dd"
+        },
+        ".note.gnu.build-id": {
+          "bytes": 36,
+          "sha256": "3ff0525948acd37bf04bad2f4a1012f63158d3978f6260a8bdcf0744c20a4306"
+        },
+        ".text": {
+          "bytes": 1376177,
+          "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+        },
+        ".rodata": {
+          "bytes": 397985,
+          "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+        },
+        ".gopclntab": {
+          "bytes": 1157144,
+          "sha256": "0ebffc3baa32749b7ee3999a73b0b43a1262d1cba0237d725f60b74d7fb967f3"
+        },
+        ".typelink": {
+          "bytes": 3684,
+          "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+        },
+        ".itablink": {
+          "bytes": 472,
+          "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+        },
+        ".go.buildinfo": {
+          "bytes": 416,
+          "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+        },
+        ".go.fipsinfo": {
+          "bytes": 120,
+          "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+        },
+        ".go.module": {
+          "bytes": 592,
+          "sha256": "364262ca6cf15272eb529dd4e0d16a7b2772d407ecceab5b55df3938c083dacb"
+        },
+        ".noptrdata": {
+          "bytes": 178497,
+          "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+        },
+        ".data": {
+          "bytes": 44722,
+          "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+        },
+        ".debug_abbrev": {
+          "bytes": 352,
+          "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+        },
+        ".debug_line": {
+          "bytes": 282892,
+          "sha256": "c43dbb861a669fb798d8cef2b3eba2da2e0bac3d92f95ac4f76cd40b12612b9a"
+        },
+        ".debug_frame": {
+          "bytes": 55010,
+          "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+        },
+        ".debug_gdb_scripts": {
+          "bytes": 24,
+          "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+        },
+        ".debug_info": {
+          "bytes": 476226,
+          "sha256": "61c6cbf6ff4454748e9e19cf39b82c99be5234269e6daf68feba116283f87996"
+        },
+        ".debug_loclists": {
+          "bytes": 235276,
+          "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+        },
+        ".debug_rnglists": {
+          "bytes": 117651,
+          "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+        },
+        ".debug_addr": {
+          "bytes": 6752,
+          "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+        },
+        ".symtab": {
+          "bytes": 117072,
+          "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+        },
+        ".strtab": {
+          "bytes": 149984,
+          "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+        },
+        ".shstrtab": {
+          "bytes": 292,
+          "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+        }
+      }
+    }
+  ],
+  "identical_critical_sections": [
+    ".text",
+    ".rodata",
+    ".typelink",
+    ".itablink",
+    ".go.buildinfo",
+    ".go.fipsinfo",
+    ".noptrdata",
+    ".data"
+  ],
+  "identical_linked_nm": true,
+  "new_source_symbols_linked": false,
+  "temporary_binaries_removed": true,
+  "historical_build_supplement": {
+    "path": "work/migration-20261105/category-runtime/category-worker-driver-build-binding.json",
+    "sha256": "da853a7870ccb8e74c4d898a1d58d9aa8279dc952845a0e9a689e6fa89a79653",
+    "matches_original_five_artifact_SHA_and_size": true,
+    "original_flags_preserved": true,
+    "mac_unknown_environment_still_null": true,
+    "linux_explicit_env_recorded": true,
+    "driver_source_binding_limit": "run1 failure has no separate exact source hash snapshot; final run2 source is separately bound",
+    "review": "consistent supplemental historical command metadata; no reconstruction or new runtime claim"
+  },
+  "prior_acceptance_preserved": true,
+  "old_runtime_SHA_replaced": false,
+  "ledger_changed": false,
+  "limits": [
+    "New Source API behavior/host acceptance is outside this Category dependency certificate.",
+    "This run is current Linux crosscompile/link analysis and native manifest only, not actual Linux/main/browser execution.",
+    "Original main/UI evidence remains under its original exact binary/source/hash bindings.",
+    "Old Mac per-build environment remains unknown; no value is inferred from another SDK/environment observation."
+  ]
+}

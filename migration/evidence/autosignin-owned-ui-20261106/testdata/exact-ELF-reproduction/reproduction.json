@@ -1,0 +1,57 @@
+{
+  "actual_fresh_build": [
+    {
+      "name": "host",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/root-main-compiler-closure-20261106/host",
+        "./cmd/server"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "exit": 0,
+      "seconds": 1.4040129161439836,
+      "sha256": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+      "expected_prior_actual_Main_ELF": "b0a9a175e3b6d61b1a9158d4638f9a3c6639291f93879da11f5cbf157e5c6963",
+      "byte_identical": true
+    },
+    {
+      "name": "worker",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/root-main-compiler-closure-20261106/worker",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.2287712087854743,
+      "sha256": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918",
+      "expected_prior_actual_Main_ELF": "a4524236b3bad3462f640958ad56a170759558d69ff038ce56953ba38f648918",
+      "byte_identical": true
+    }
+  ],
+  "stable": true,
+  "inputs": 4650,
+  "embed_files": 811,
+  "env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": "",
+    "GOPROXY": "off"
+  },
+  "source_scope": "Actualgo-list deps/compiled productionH/P includingallmodule/source/embed/toolchaininputs. OriginalMain/UI runs retaintheir original tracked-only lists; thisnewfresh deterministic rebuildmatchesexact executedELFs, notfakehistoricalbefore/after.",
+  "original_binary_paths": "P/work/autosignin-owned-main-20261106-r5/{host,worker}",
+  "frontend": "web/src cloneprefill changes notbuiltinto oldweb/dist yet; thiscapture bindsoldactual Main56dUI, notfuturebundle."
+}

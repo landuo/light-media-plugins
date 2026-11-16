@@ -1,0 +1,107 @@
+{
+  "now_utc": "2026-11-06T18:08:33.787804+00:00",
+  "command_mtime_utc": "2026-11-06T18:05:59.921406+00:00",
+  "event_window_epoch": [
+    1793988279,
+    1793988439
+  ],
+  "bom_verified": true,
+  "commands": [
+    {
+      "argv": [
+        "docker",
+        "ps",
+        "-a",
+        "--no-trunc",
+        "--filter",
+        "name=^/lm-root-asi-native-20261107$"
+      ],
+      "exit": 0,
+      "seconds": 0.025804396020248532,
+      "stdout": "CONTAINER ID   IMAGE     COMMAND   CREATED   STATUS    PORTS     NAMES\n",
+      "stderr": ""
+    },
+    {
+      "argv": [
+        "docker",
+        "inspect",
+        "lm-root-asi-native-20261107"
+      ],
+      "exit": 1,
+      "seconds": 0.0386771010234952,
+      "stdout": "[]\n",
+      "stderr": "Error: No such object: lm-root-asi-native-20261107\n"
+    },
+    {
+      "argv": [
+        "docker",
+        "container",
+        "inspect",
+        "lm-root-asi-native-20261107"
+      ],
+      "exit": 1,
+      "seconds": 0.029608533950522542,
+      "stdout": "[]\n",
+      "stderr": "Error response from daemon: No such container: lm-root-asi-native-20261107\n"
+    },
+    {
+      "argv": [
+        "docker",
+        "events",
+        "--since",
+        "1793988279",
+        "--until",
+        "1793988439",
+        "--filter",
+        "type=container",
+        "--filter",
+        "label=task=lm-root-asi-native-20261107",
+        "--format",
+        "{{json .}}"
+      ],
+      "exit": 0,
+      "seconds": 0.060840495163574815,
+      "stdout": "{\"status\":\"create\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"create\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988350,\"timeNano\":1793988350019730618}\n{\"status\":\"attach\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"attach\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988350,\"timeNano\":1793988350024495631}\n{\"status\":\"start\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"start\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988350,\"timeNano\":1793988350677630988}\n{\"status\":\"kill\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"kill\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"signal\":\"15\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988354,\"timeNano\":1793988354819592117}\n{\"status\":\"die\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"die\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"execDuration\":\"4\",\"exitCode\":\"2\",\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988361,\"timeNano\":1793988361739015273}\n{\"status\":\"destroy\",\"id\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"from\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"Type\":\"container\",\"Action\":\"destroy\",\"Actor\":{\"ID\":\"13ac1710d9dacc5409ef78276bdd8e3d4d3ba6aee6ff59dd095053d447fe0eca\",\"Attributes\":{\"image\":\"sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881\",\"name\":\"lm-root-asi-native-20261107\",\"org.moviepilot.plugin-market-wiki-revision\":\"0e689d6990046c1d8cc0dea33b34a207cc596904\",\"org.opencontainers.image.created\":\"2026-08-14T12:40:25.833Z\",\"org.opencontainers.image.description\":\"NAS\u5a92\u4f53\u5e93\u81ea\u52a8\u5316\u7ba1\u7406\u5de5\u5177(\u4f7f\u7528Go\u66ff\u6362\u67d0\u4e9b\u5360\u8d44\u6e90\u7684python\u670d\u52a1)\",\"org.opencontainers.image.licenses\":\"GPL-3.0\",\"org.opencontainers.image.revision\":\"f2c8d3ee403b04289611d3b64c5fe26bb2119f98\",\"org.opencontainers.image.source\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.title\":\"MoviePilot\",\"org.opencontainers.image.url\":\"https://github.com/landuo/MoviePilot\",\"org.opencontainers.image.version\":\"2.15.6\",\"task\":\"lm-root-asi-native-20261107\"}},\"scope\":\"local\",\"time\":1793988361,\"timeNano\":1793988361849478240}\n",
+      "stderr": ""
+    }
+  ],
+  "files": [
+    {
+      "path": "attempt3/actual.stdout",
+      "bytes": 62,
+      "sha256": "7cae732751c25f86922d6e7332c30e46431b0cfd28ed91b413c75c8f4d5f8a85",
+      "mtime_ns": 1793988350550105224
+    },
+    {
+      "path": "attempt3/actual.stderr",
+      "bytes": 0,
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "mtime_ns": 1793988345950993063
+    },
+    {
+      "path": "attempt3/command.json",
+      "bytes": 2123,
+      "sha256": "bc957d252efaeaf91a7bec22b28b06da40a753527669f1dc6c841855029f0ec6",
+      "mtime_ns": 1793988359921406257
+    },
+    {
+      "path": "owned-r2/runtime/evidence/host-1.log",
+      "bytes": 3074,
+      "sha256": "482894f0fe916f8cdf70117dc015c4108909ae56b8de46d1d832c6ef9e2d5ef7",
+      "mtime_ns": 1793988352238078110
+    },
+    {
+      "path": "owned-r2/runtime/evidence/host-2.log",
+      "bytes": 966,
+      "sha256": "a5668c8c4f02215e8152f819b99d2e6c30b80afc918d735c541d16bb70d0321c",
+      "mtime_ns": 1793988354706038445
+    },
+    {
+      "path": "owned-r2/runtime/evidence/observations.jsonl",
+      "bytes": 5833,
+      "sha256": "9d6380cb77f09a00500436203e62fab62f1f20e8a897fb2ecdf829ced0e10aa7",
+      "mtime_ns": 1793988354262045583
+    }
+  ],
+  "scope": "read-only exact task marker/BOM/container metadata and bounded exact-label events; only own attempt3 stdout/stderr/record and owned-r2 runtime evidence, no DB/key/config or old service read"
+}

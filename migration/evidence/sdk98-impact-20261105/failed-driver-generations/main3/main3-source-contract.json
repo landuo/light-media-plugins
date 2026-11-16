@@ -1,0 +1,24 @@
+{
+  "classification": "driver-only modern manual service admission vs completion correction; product/SDK unchanged",
+  "host_commit": "f7b34c33196a6a52c8d0c7d853fc8a23614bce5f",
+  "files": [
+    {
+      "path": "internal/app/plugin_services.go",
+      "sha256": "2ec442adc44a0d688cd79c2c77fbc4a18bf562bc93c6f4e752229c1bfbd414df"
+    },
+    {
+      "path": "internal/app/plugin_original_direct_dispatch.go",
+      "sha256": "8785a4121a5dbb177798856b8c9ec1bb4da18996baccd796e8769d8d412587d1"
+    },
+    {
+      "path": "internal/app/plugin_original_service_progress.go",
+      "sha256": "4bb4238f774be8385e09aa72600cfa7a3462bf9f23ad6a4595887384ceb97cd6"
+    }
+  ],
+  "modern_POST": "plugin_services132 -> runOriginalPublicService -> dispatch287 runOriginalService wait=false; prepare synchronously, execute goroutine, acceptedtrue response does not awaittask",
+  "original_compat_GET": "system/runscheduler callswaittrue for synchronous definitions; matches fixedPython system.py1343->Scheduler.start ordinaryfunc callbeforefinish; not claimed asynchronoussourceGET",
+  "correct_observation": "POST ackaccepted/success, bounded eventual>=4sourcePOSTqueries, both public rows service_idTorrentTransfer/instancebase+music can_runtrue/status\u7b49\u5f85 before proceeding",
+  "no_retry": "each admission POSTstillonce; polling reads publicstate only",
+  "actual_Main2": "rawaccepted responses preceded transfer body logs; immediate check failed and teardown canceledjobs",
+  "old_generation": "main2-superseded/preserved.json"
+}

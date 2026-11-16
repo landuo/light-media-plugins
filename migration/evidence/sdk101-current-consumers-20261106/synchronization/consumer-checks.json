@@ -1,0 +1,67 @@
+[
+  {
+    "name": "consumers-normal",
+    "command": [
+      "go",
+      "test",
+      "-json",
+      "-count=1",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/site-statistic",
+      "./cmd/mp-server-status",
+      "./cmd/plugin-uninstall",
+      "./cmd/remove-link",
+      "./plugins/categoryeditor/...",
+      "./plugins/torrenttransfer/...",
+      "./plugins/sitestatistic/...",
+      "./plugins/mpserverstatus/...",
+      "./plugins/pluginuninstall/...",
+      "./plugins/removelink/...",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-consumers"
+    },
+    "exit": 0,
+    "seconds": 13.199635291937739,
+    "pass": 1316,
+    "fail": 0,
+    "skip": 10
+  },
+  {
+    "name": "consumers-race",
+    "command": [
+      "go",
+      "test",
+      "-race",
+      "-json",
+      "-count=1",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/site-statistic",
+      "./cmd/mp-server-status",
+      "./cmd/plugin-uninstall",
+      "./cmd/remove-link",
+      "./plugins/categoryeditor/...",
+      "./plugins/torrenttransfer/...",
+      "./plugins/sitestatistic/...",
+      "./plugins/mpserverstatus/...",
+      "./plugins/pluginuninstall/...",
+      "./plugins/removelink/...",
+      "-timeout=8m"
+    ],
+    "environment": {
+      "GOPROXY": "off",
+      "GOFLAGS": "",
+      "TMPDIR": "/Users/accidia/projects/light-media-plugins/work/parallel-sdk-sync-20261106/tmp-consumers"
+    },
+    "exit": 0,
+    "seconds": 62.22502175020054,
+    "pass": 1316,
+    "fail": 0,
+    "skip": 10
+  }
+]

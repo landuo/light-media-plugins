@@ -1,0 +1,286 @@
+{
+  "classification": "independent reading of raw actual execution traces and assertions, no replay",
+  "runs": [
+    {
+      "run": 1,
+      "exit_code": 1,
+      "command_sha256": "c1412796a9be20a48897d4868169f77d9617499c8ba28e3ae8829a5aa0251f86",
+      "log_sha256": "26cbfbbc3e80c5b2591887c89472e425850378e6a0aaf789492629a749ff9d85",
+      "observations_sha256": "f6256c28cc78041a8da1e5cad5165e70af6f1a3b8e2bb4bb570740576e232dbe",
+      "observation_count": 190,
+      "main_starts": [
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "2cc2a4067db72f039710d6514c524d8943761f1bc44eb51fcc44df11f124d3ad",
+          "generation": 1,
+          "pid": 1966483
+        }
+      ],
+      "actual_source_once": [
+        {
+          "enabled": true,
+          "global_after": 1,
+          "global_before": 0,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3211
+        }
+      ],
+      "complete_marker": false,
+      "final_peer_assert_reached": false,
+      "UI": false,
+      "failure_classification": "Product Post adapter used human label站点消息 instead of actual NotificationType.SiteMessage.value站点; source fixture double had copied same incorrect label. Enum addon invalidates old mtype projections, preserves body/receipt projections and kills old-literal mutation in real App Post."
+    },
+    {
+      "run": 2,
+      "exit_code": 1,
+      "command_sha256": "cb95a3156c024f33df9f576c02f25462b8f6feb574e6484e857856a38090c475",
+      "log_sha256": "9dd4011f20bb58c7b0842542b269f67f0efd9c8435d25d6085004fa477263d5b",
+      "observations_sha256": "272b1e3551e566ae0e45bf13d80efd564beae3c72b2d75310a71fc0e2787d3b9",
+      "observation_count": 45,
+      "main_starts": [
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "2cc2a4067db72f039710d6514c524d8943761f1bc44eb51fcc44df11f124d3ad",
+          "generation": 1,
+          "pid": 1975825
+        }
+      ],
+      "actual_source_once": [
+        {
+          "enabled": true,
+          "global_after": 1,
+          "global_before": 0,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3118
+        }
+      ],
+      "complete_marker": false,
+      "final_peer_assert_reached": false,
+      "UI": false,
+      "failure_classification": "Host ordinary15min site cooldown leaked into SourceResult native collection; no corresponding actual source SiteChain/RequestUtils userdata gate. d715 finite private boolean skips only cooldown record read/write on SourceResult; ordinary limits/identity/cancel/spacing remain."
+    },
+    {
+      "run": 3,
+      "exit_code": 1,
+      "command_sha256": "c8a73019faaab5ef87bcc6f27775024dbc0326bbba27cdc7397485e6f24fdc88",
+      "log_sha256": "a0d180da75c592ce3ccd968feb81698d45c6df90c0609bf2b38686a3ad98fb49",
+      "observations_sha256": "942cc3119347076b7f77b0c13c046bd88e582fef9affc9eb211c9b968dab00c5",
+      "observation_count": 55,
+      "main_starts": [
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+          "generation": 1,
+          "pid": 1986150
+        }
+      ],
+      "actual_source_once": [
+        {
+          "enabled": true,
+          "global_after": 1,
+          "global_before": 0,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3144
+        },
+        {
+          "enabled": true,
+          "global_after": 2,
+          "global_before": 1,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3163
+        }
+      ],
+      "complete_marker": false,
+      "final_peer_assert_reached": false,
+      "UI": false,
+      "failure_classification": "Driver falsely required sidebar entry for Vuetify plugin with no get_sidebar_nav; source sidebar aggregates explicit Vue overrides, mobile/card access uses has_page."
+    },
+    {
+      "run": 4,
+      "exit_code": 1,
+      "command_sha256": "46b1d511910193334abe83ba287279277ccd319c3de2bbcb406ed193557c87e4",
+      "log_sha256": "10968dfd8c1285ca1b0e4a4b9c8b5218bd2e9f96c4e9f1428e0debd7da561b42",
+      "observations_sha256": "069df882e6984e37e71937fce41546bd54089f7ffaf8f040c43b951eb9315a1c",
+      "observation_count": 127,
+      "main_starts": [
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+          "generation": 1,
+          "pid": 1988441
+        },
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+          "generation": 2,
+          "pid": 2001749
+        }
+      ],
+      "actual_source_once": [
+        {
+          "enabled": true,
+          "global_after": 1,
+          "global_before": 0,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3148
+        },
+        {
+          "enabled": true,
+          "global_after": 2,
+          "global_before": 1,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3187
+        },
+        {
+          "enabled": true,
+          "global_after": 3,
+          "global_before": 2,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3234
+        },
+        {
+          "enabled": true,
+          "global_after": 4,
+          "global_before": 3,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3092
+        },
+        {
+          "enabled": false,
+          "global_after": 5,
+          "global_before": 4,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3107
+        },
+        {
+          "enabled": true,
+          "global_after": 7,
+          "global_before": 6,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3467
+        },
+        {
+          "enabled": true,
+          "global_after": 8,
+          "global_before": 7,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3138
+        }
+      ],
+      "complete_marker": false,
+      "final_peer_assert_reached": false,
+      "UI": true,
+      "failure_classification": "Driver falsely required retained disabled config through unregistered public getter. Actual PluginManager.get_plugin_config776 returns{} before storage access when unregistered; stored row/KV/code remain. Revised assertion checks{}+ConfigRows1 and full config/KV on reinstall."
+    },
+    {
+      "run": 5,
+      "exit_code": 0,
+      "command_sha256": "8105c71440a1bd170a7bb91708a1ade5f40990d4bf469eb215deb9dfd3d97f1e",
+      "log_sha256": "3f1813901c52ea1cc0cf191e3c2bedf8d24a572d6ec83f002dcf98443acd1c71",
+      "observations_sha256": "df7ab17aac63db5e2b0eb289866e5140586ef34aefce0db1ab8c557e5128049a",
+      "observation_count": 134,
+      "main_starts": [
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+          "generation": 1,
+          "pid": 2005234
+        },
+        {
+          "CA_scope": "only this bootstrap/main child environment; TLS verification enabled",
+          "binary_sha256": "cbca368f8a6e0f54fbb9923a53b190b5a66e41a3b7b1f601869b51f05aee24cb",
+          "generation": 2,
+          "pid": 2005589
+        }
+      ],
+      "actual_source_once": [
+        {
+          "enabled": true,
+          "global_after": 1,
+          "global_before": 0,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3181
+        },
+        {
+          "enabled": true,
+          "global_after": 2,
+          "global_before": 1,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3162
+        },
+        {
+          "enabled": true,
+          "global_after": 3,
+          "global_before": 2,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3124
+        },
+        {
+          "enabled": true,
+          "global_after": 4,
+          "global_before": 3,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3237
+        },
+        {
+          "enabled": false,
+          "global_after": 5,
+          "global_before": 4,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3293
+        },
+        {
+          "enabled": true,
+          "global_after": 6,
+          "global_before": 5,
+          "instance": "SiteStatistic",
+          "real_elapsed_ms": 3594
+        },
+        {
+          "enabled": true,
+          "global_after": 7,
+          "global_before": 6,
+          "instance": "SiteStatisticowned",
+          "real_elapsed_ms": 3152
+        }
+      ],
+      "complete_marker": true,
+      "final_peer_assert_reached": true,
+      "UI": false,
+      "failure_classification": null
+    }
+  ],
+  "main5_final_db": {
+    "events": {
+      "*": 7,
+      "ss-owned-native-a": 20,
+      "ss-owned-native-b": 8
+    },
+    "records": {
+      "site_connection": 2,
+      "site_icon": 2,
+      "site_stats_history": 2,
+      "site_stats_latest": 2
+    },
+    "config_rows": {
+      "OwnedModuleOverride": 1,
+      "SiteStatistic": 1
+    }
+  },
+  "main5_network": {
+    "CONNECT_count": 29,
+    "request_count": 83,
+    "only_authorities": [
+      "hdsky.me:443",
+      "pt.btschool.club:443"
+    ],
+    "unexpected": [],
+    "artifact_HTTP_proxy_denials_for_owned_loopback_fallback": 8
+  },
+  "main5_source_once_range_ms": [
+    3124,
+    3594
+  ],
+  "read_only_remote_sample_matches_final_db": true,
+  "driver_diff_sha256": "abce1855662daaa8526b2d419936aa7e0cb221cd197c36225221ab80da14e86e"
+}

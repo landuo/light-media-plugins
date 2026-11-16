@@ -1,0 +1,113 @@
+CONFIG = {'root': '/home/admin/light-media-plugins-root-asi-native-20261107', 'marker': 'light-media-plugins/root-asi-native/20261107/owned-only', 'name': 'lm-root-asi-native-20261107', 'owned_dir': 'owned-r2', 'out_dir': 'attempt3', 'image': 'sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881', 'bom': {'bin/host': {'sha256': '062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb', 'bytes': 57200802}, 'bin/worker': {'sha256': '02ece64a7ecb85c64b126279014d026d5684591cd19237b24e12af8108481269', 'bytes': 12779682}, 'bin/cli': {'sha256': '72ee655a8aa706fa487201047bba360902886828d608f4efac31a40e0f8d5865', 'bytes': 25215138}, 'bin/driver': {'sha256': '97e544e53901c666d9654e237cd09079ac5040a2918bfa46f90ca37610e030ef', 'bytes': 9707682}}}
+# CONFIG is an explicit literal prefix added by prepare-runner-v2.py.
+from pathlib import Path
+import os,subprocess,json,hashlib,time
+
+root=Path(CONFIG['root'])
+assert os.getuid()==1000 and root.is_dir()and not root.is_symlink()
+assert(root/'.task-owned').read_text()==CONFIG['marker']
+owned=root/CONFIG['owned_dir'];out=root/CONFIG['out_dir']
+assert owned.parent==root and out.parent==root and not owned.exists()and not out.exists()
+assert not subprocess.check_output(['docker','ps','-aq','--filter','name=^/'+CONFIG['name']+'$']).strip()
+for name,row in CONFIG['bom'].items():
+    f=root/'bundle'/name
+    assert f.is_file()and not f.is_symlink()and f.resolve().is_relative_to((root/'bundle').resolve())
+    assert hashlib.sha256(f.read_bytes()).hexdigest()==row['sha256']and f.stat().st_size==row['bytes']
+owned.mkdir(mode=0o700);out.mkdir(mode=0o700)
+(owned/'.task-owned').write_text(CONFIG['marker']);(owned/'runtime').mkdir(mode=0o700)
+env={'CATEGORYEDITOR_HOST_BINARY':'/bundle/bin/host','CATEGORYEDITOR_RUNTIME_DIR':'/owned/runtime','CATEGORYEDITOR_LISTEN':'127.0.0.1:36322','AUTOSIGNIN_WORKER_BINARY':'/bundle/bin/worker','NATIVE_SOURCE_CLI_BINARY':'/bundle/bin/cli','OWNED_ASI_ROOT':'/owned','TMPDIR':'/tmp'}
+argv=['docker','run','--rm','--name',CONFIG['name'],'--network','none','--read-only','--no-healthcheck','--user','1000:1000','--cap-drop','ALL','--security-opt','no-new-privileges','--label','task=lm-root-asi-native-20261107','--tmpfs','/tmp:rw,nosuid,nodev,uid=1000,gid=1000,mode=1777,size=134217728','--tmpfs','/config:rw,nosuid,nodev,uid=1000,gid=1000,mode=0700,size=16777216','-v',str(root/'bundle')+':/bundle:ro','-v',str(owned)+':/owned:rw','--workdir','/owned']
+for key,value in env.items():argv+=['-e',key+'='+value]
+argv+=['--entrypoint','/bundle/bin/driver',CONFIG['image'],'-test.v','-test.timeout=90s','-test.run=^TestAutoSignInActualMainNativeSourceAndPrivateDrain$']
+
+def own_container():
+    result=subprocess.run(['docker','inspect',CONFIG['name']],capture_output=True,timeout=5)
+    if result.returncode!=0:return None
+    info=json.loads(result.stdout)[0]
+    assert info['Image']==CONFIG['image']and info['Config']['Labels'].get('task')=='lm-root-asi-native-20261107'
+    assert info['Config']['User']=='1000:1000'and info['HostConfig']['NetworkMode']=='none'and info['HostConfig']['ReadonlyRootfs']
+    mounts={x['Destination']:x for x in info['Mounts']}
+    assert mounts['/bundle']['Source']==str(root/'bundle')and not mounts['/bundle']['RW']
+    assert mounts['/owned']['Source']==str(owned)and mounts['/owned']['RW']
+    return info
+
+process=None;exit_code=None;failure=None;cleanup=[];started=time.monotonic();observed_id=None
+record={'argv':argv,'env':env,'exit':None,'exception':None,'cleanup':cleanup,'owned_container_remaining':None,'bundle_unchanged':None,'scope':'actual Go Main/worker/offlineCLI, test-only owned TLS and verified UID1000/netnone mounts. Python is verification only.'}
+try:
+    with(out/'actual.stdout').open('wb')as stdout,(out/'actual.stderr').open('wb')as stderr:
+        process=subprocess.Popen(argv,stdout=stdout,stderr=stderr)
+        info=None
+        for attempt in range(40):
+            if process.poll()is not None:break
+            info=own_container()
+            if info and info['State']['Running']:break
+            time.sleep(.05)
+        assert info and info['State']['Running'],'owned container did not reach observable running state'
+        observed_id=info['Id']
+        inspection={'Id':info['Id'],'Image':info['Image'],'State':{'Running':True,'StartedAt':info['State']['StartedAt'],'Pid':info['State']['Pid']},'User':info['Config']['User'],'ReadonlyRootfs':info['HostConfig']['ReadonlyRootfs'],'NetworkMode':info['HostConfig']['NetworkMode'],'CapDrop':info['HostConfig']['CapDrop'],'SecurityOpt':info['HostConfig']['SecurityOpt'],'Mounts':info['Mounts'],'Tmpfs':info['HostConfig']['Tmpfs']}
+        (out/'live-inspect.json').write_text(json.dumps(inspection,indent=2))
+        source="import json,os;print(json.dumps({'uid':os.getuid(),'interfaces':open('/proc/net/dev').read(),'ipv4_routes':open('/proc/net/route').read(),'ipv6_routes':open('/proc/net/ipv6_route').read()}))"
+        compile(source,'network-readback.py','exec')
+        probe=subprocess.run(['docker','exec','--user','1000:1000',observed_id,'python3','-B','-c',source],capture_output=True,timeout=5)
+        (out/'live-network.stdout').write_bytes(probe.stdout);(out/'live-network.stderr').write_bytes(probe.stderr)
+        assert probe.returncode==0,'timed network readback failed'
+        network=json.loads(probe.stdout)
+        assert network['uid']==1000
+        assert all(line.split(':',1)[0].strip()=='lo'for line in network['interfaces'].splitlines()if':'in line)
+        assert len(network['ipv4_routes'].splitlines())==1
+        exit_code=process.wait(timeout=110)
+except BaseException as error:
+    failure={'type':type(error).__name__,'message':str(error)}
+finally:
+    try:
+        info=own_container()
+        if info:
+            if observed_id is not None:assert info['Id']==observed_id
+            try:
+                result=subprocess.run(['docker','stop','--time','10',info['Id']],capture_output=True,timeout=20)
+                cleanup.append({'action':'stop_verified_owned_container','id':info['Id'],'exit':result.returncode})
+            except subprocess.TimeoutExpired:
+                cleanup.append({'action':'stop_verified_owned_container','id':info['Id'],'error':'timeout'})
+            remaining=own_container()
+            if remaining:
+                assert remaining['Id']==info['Id']
+                # Re-verified exact image/label/mounts/immutable ID above. Only
+                # this owned failed test container may be force-removed.
+                result=subprocess.run(['docker','rm','-f',remaining['Id']],capture_output=True,timeout=10)
+                cleanup.append({'action':'remove_reverified_owned_container','id':remaining['Id'],'exit':result.returncode})
+                assert result.returncode==0
+    except BaseException as error:
+        cleanup.append({'error':type(error).__name__,'message':str(error)})
+        if failure is None:failure={'type':'cleanup_failed','message':str(error)}
+    if process is not None:
+        try:
+            try:exit_code=process.wait(timeout=5)
+            except subprocess.TimeoutExpired:
+                try:process.terminate()
+                except ProcessLookupError:pass
+                try:exit_code=process.wait(timeout=5)
+                except subprocess.TimeoutExpired:
+                    try:process.kill()
+                    except ProcessLookupError:pass
+                    exit_code=process.wait(timeout=5)
+                cleanup.append({'action':'terminated_owned_docker_client','exit':exit_code})
+        except BaseException as error:
+            cleanup.append({'action':'final_docker_client_join','error':type(error).__name__,'message':str(error)})
+            if failure is None:failure={'type':'final_docker_client_join_failed','message':str(error)}
+    try:
+        result=subprocess.run(['docker','ps','-aq','--filter','name=^/'+CONFIG['name']+'$'],capture_output=True,timeout=5)
+        assert result.returncode==0,'final owned-container query failed'
+        record['owned_container_remaining']=bool(result.stdout.strip())
+    except BaseException as error:
+        cleanup.append({'action':'final_container_query','error':type(error).__name__,'message':str(error)})
+        if failure is None:failure={'type':'final_container_query_failed','message':str(error)}
+    try:
+        record['bundle_unchanged']=all(hashlib.sha256((root/'bundle'/name).read_bytes()).hexdigest()==row['sha256']for name,row in CONFIG['bom'].items())
+    except BaseException as error:
+        cleanup.append({'action':'final_bundle_check','error':type(error).__name__,'message':str(error)})
+        record['bundle_unchanged']=False
+        if failure is None:failure={'type':'final_bundle_check_failed','message':str(error)}
+    record.update(exit=exit_code,exception=failure,seconds=time.monotonic()-started)
+    (out/'command.json').write_text(json.dumps(record,indent=2))
+print(json.dumps({'exit':exit_code,'exception':failure,'seconds':record['seconds'],'owned_container_remaining':record['owned_container_remaining']}))
+assert failure is None and exit_code==0 and record['owned_container_remaining']is False and record['bundle_unchanged']is True

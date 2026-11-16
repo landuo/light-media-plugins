@@ -1,0 +1,10 @@
+{"Time":"2026-11-06T00:19:18.349533+08:00","Action":"start","Package":"light-media/internal/app"}
+{"Time":"2026-11-06T00:19:19.51463+08:00","Action":"run","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists"}
+{"Time":"2026-11-06T00:19:19.514779+08:00","Action":"output","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists","Output":"=== RUN   TestIndependentEmptyInstalledStillChecksPackageRootExists\n"}
+{"Time":"2026-11-06T00:19:19.550316+08:00","Action":"output","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists","Output":"    z_independent_source_uninstall_test.go:66: source checks plugins_dir.exists before empty target return: a search-denied ancestor must propagate, not be silently skipped\n"}
+{"Time":"2026-11-06T00:19:19.550605+08:00","Action":"output","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists","Output":"{\"app_version\":\"0.4.19\",\"event\":\"stopped\",\"id\":\"log_XbJCZPomJ1jODG2i6wwDJ2xK\",\"instance_id\":\"instance_9-CjwvbnCSjlS8MVO5AlcfXq\",\"job_id\":\"\",\"level\":\"INFO\",\"message\":\"服务已停止\",\"module\":\"runtime\",\"time\":\"2026-11-05T16:19:19.55042Z\",\"workflow_id\":\"\"}\n"}
+{"Time":"2026-11-06T00:19:19.562552+08:00","Action":"output","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists","Output":"--- FAIL: TestIndependentEmptyInstalledStillChecksPackageRootExists (0.05s)\n"}
+{"Time":"2026-11-06T00:19:19.56259+08:00","Action":"fail","Package":"light-media/internal/app","Test":"TestIndependentEmptyInstalledStillChecksPackageRootExists","Elapsed":0.05}
+{"Time":"2026-11-06T00:19:19.562607+08:00","Action":"output","Package":"light-media/internal/app","Output":"FAIL\n"}
+{"Time":"2026-11-06T00:19:19.563987+08:00","Action":"output","Package":"light-media/internal/app","Output":"FAIL\tlight-media/internal/app\t1.214s\n"}
+{"Time":"2026-11-06T00:19:19.564041+08:00","Action":"fail","Package":"light-media/internal/app","Elapsed":1.215}

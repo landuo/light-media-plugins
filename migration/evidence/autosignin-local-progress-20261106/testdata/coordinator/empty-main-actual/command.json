@@ -1,0 +1,20 @@
+{
+  "argv": [
+    "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/bundle/bin/main-driver-linux.test",
+    "-test.v",
+    "-test.timeout=3m",
+    "-test.run=^TestAutoSignInActualMainEmptyLifecycle$"
+  ],
+  "exit": 0,
+  "seconds": 8.321553855901584,
+  "env": {
+    "TMPDIR": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/tmp",
+    "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/bundle/bin/host-main-linux",
+    "CATEGORYEDITOR_RUNTIME_DIR": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/runtime",
+    "AUTOSIGNIN_WORKER_BINARY": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/bundle/bin/auto-sign-in-linux",
+    "AUTOSIGNIN_FORM_SOURCE": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/bundle/source/form.json",
+    "AUTOSIGNIN_API_SOURCE": "/home/admin/light-media-plugins-root-asi-empty-20261106-r2/bundle/source/api-oracle.json"
+  },
+  "scope": "nativeordinaryGo cmd/server+standaloneproductionworker; ownedemptyDB/sites,realHandle/API/lifecycle; noPT/OCR/timers/UI acceptance",
+  "network": "nativeownedloopback HTTP repository/Main, notnetnone; production services/configunmodified"
+}

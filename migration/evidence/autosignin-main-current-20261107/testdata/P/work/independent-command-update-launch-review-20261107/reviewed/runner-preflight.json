@@ -1,0 +1,37 @@
+{
+  "compile": true,
+  "unbound_global": [],
+  "body_sha256": "43c699c0d70fa8bf04bf78fd911412eba68600685d84e224d79cf11f370a1d61",
+  "runner_sha256": "5a17ca2b50826f87a2c1a589045a8ae77ccb235df3a1400ccb4b7cfd0a1e3c7d",
+  "config": {
+    "root": "/home/admin/light-media-plugins-root-asi-native-20261107",
+    "marker": "light-media-plugins/root-asi-native/20261107/owned-only",
+    "name": "lm-root-asi-native-20261107",
+    "owned_dir": "owned-r3",
+    "out_dir": "attempt4",
+    "image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+    "bom": {
+      "bin/host": {
+        "sha256": "8ea38cff7e98f6a1eb7089f7ff04cc8c56fdb41baedfdbc843db13824b999f67",
+        "bytes": 57217186
+      },
+      "bin/worker": {
+        "sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+        "bytes": 12796066
+      },
+      "bin/worker-updated": {
+        "sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+        "bytes": 12796066
+      },
+      "bin/cli": {
+        "sha256": "525e34407b50f4bd38e16d29bfe4d775c8052504f40072789cc8a4b43f4cf1b8",
+        "bytes": 25215138
+      },
+      "bin/driver": {
+        "sha256": "f725924537c0d650802d4626166e02f8249401f782dcb154bdcf51ee8399d1e8",
+        "bytes": 9748642
+      }
+    }
+  },
+  "status": "static_only; not_Main_runtime"
+}

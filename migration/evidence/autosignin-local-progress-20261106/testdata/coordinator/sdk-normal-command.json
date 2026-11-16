@@ -1,0 +1,35 @@
+{
+  "argv": [
+    "go",
+    "test",
+    "-p=1",
+    "-json",
+    "-count=1",
+    "./internal/sdk"
+  ],
+  "exit": 0,
+  "seconds": 14.914206999819726,
+  "passes": 163,
+  "fail": [],
+  "skip": [
+    "TestOwnedConcurrentSameWorkerOverlapAndChunkIsolation",
+    "TestOwnedConcurrentCancelIsolatedAndObjectReusable",
+    "TestOwnedConcurrentErrorsAndRetainedAuthority",
+    "TestOwnedConcurrentCallbackDeadlineDoesNotKillOtherCalls",
+    "TestOwnedConcurrentStopRevokesJoinsAndUsesFreshCleanup",
+    "TestOwnedConcurrentStopDeadlineReapsUncooperativeWorker",
+    "TestOwnedConcurrentNegotiatesFallbackAndStrictRequirement",
+    "TestOwnedConcurrentCallerDeadlineOnlyIsExplicit",
+    "TestOwnedConcurrentFullCapacityDoesNotBlockCleanup",
+    "TestOwnedConcurrentShutdownReservedManagerPhasesAtCapacity",
+    "TestOwnedConcurrentShutdownCloseFailurePolicyStaysInManager",
+    "TestOwnedConcurrentShutdownAPIAuthorityAndLegacyBoundary",
+    "TestParallelOverlayFixtureWorker",
+    "TestOwnedPendingCallActualAdmissionAndFullCapacity",
+    "TestOwnedPendingCallLostParentReplyDoesNotRollbackChild",
+    "TestOwnedPendingCallCanceledAdmissionAndLegacy",
+    "TestOwnedPendingCallTransportRetirementInvokesNoHandler"
+  ],
+  "inputs": 104,
+  "stable": true
+}

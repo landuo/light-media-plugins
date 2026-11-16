@@ -1,0 +1,52 @@
+{
+  "status": "passed_finite_source_collector_cooldown_separation_delta",
+  "host_commit": "d715db2c3665b32670f3f60c519ad7220224a856",
+  "files_git_bound": [
+    {
+      "path": "internal/app/search_download.go",
+      "sha256": "b22c5ed3325ec7708ef04d2bce7223b83a332922d472e68965adb66f38518210"
+    },
+    {
+      "path": "internal/app/site_manage.go",
+      "sha256": "3a986c564ef6515255a2440c1a0d2c74aa725cbbd9b1138dc814ccb0368f57a4"
+    },
+    {
+      "path": "internal/app/plugin_original_source_userdata_cooldown_test.go",
+      "sha256": "55ee3f3230d9cf2a883c432dd7f8559d51ee0b144637de87bfe193fab560ed47"
+    }
+  ],
+  "source_static_manifest_sha256": "1c23d7b5dbc2ca1b1d3e639115fc0a77583178d16e05b40d0ad7b74e2cd9f5d0",
+  "source_sequential_request_oracle_sha256": "04e759215d73cb13cba1517f4241e5947043065c846932ff5fb67e2e5d4ca751",
+  "source_observation": "actual installed sync collector/parser/RequestUtils method bodies request again for each logged-out→normal→normal call, owned HTTP delta1,1,1; no persistent15min gate",
+  "other_source_http_breaker": "1800s proxy HTTP2→HTTP1 fallback belongs to async httpx transport; it does not suppress this sync requests collector",
+  "old_ordinary_body_byte_equivalent_after_two_guards_removed": true,
+  "old_withSite_signature_delegates_true": true,
+  "SourceResult_only_selects_false": true,
+  "limits_identity_scope_cancellation_locks_quotas_and_spacing_preserved": true,
+  "positive": [
+    {
+      "path": "current-target-race.jsonl",
+      "exit": 0,
+      "roots": 3,
+      "sha256": "d8900bb89be6fb1597cc1c7cdf84022dd08cae49a282ede21f4e7a0a41462988"
+    },
+    {
+      "path": "ordinary-quota-race.jsonl",
+      "exit": 0,
+      "roots": 1,
+      "sha256": "90fd2590fb7302820d0cc1cdd28e1bb3a3514c21f887b30e53e037add918e4a3"
+    }
+  ],
+  "compiling_negative": {
+    "mutation": "force SourceResult collector ordinaryCooldown=true",
+    "exit": 1,
+    "sha256": "c81600e824c725b674e9dc3306fd111a1acd61863b0cf3807dd08d281dde46a7"
+  },
+  "source_oracle_harness_failure_retained": "first method-only extraction omitted actual class request_mode constant; failed before HTTP, original script and diagnosis preserved; actual class assignments retained in successful probe",
+  "execution_boundary": [
+    "Source static code captured read-only from live image333, no app imports/config/DB reads",
+    "Sequential source AST uses local3.14 and owned response/login/data-extraction/DTO boundaries; proves network gate ordering, not real tracker parsing",
+    "Target tests use actual App SQLite/native HTTP parser against loopback synthetic peer; no ordinary main startup or production traffic performed by reviewer"
+  ],
+  "ordinary_main_boundary": "Root main-run2 failed; main-run3 passes the repaired summary/receipt/dedupe but fails a separate incorrect navigation assertion. Those original exits remain failures and full main/UI acceptance is not asserted here."
+}

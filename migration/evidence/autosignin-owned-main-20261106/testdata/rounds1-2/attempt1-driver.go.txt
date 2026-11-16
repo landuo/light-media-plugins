@@ -1,0 +1,157 @@
+package integration
+
+import (
+	"encoding/json"
+	"net/http"
+	"net/http/httptest"
+	"os"
+	"os/exec"
+	"runtime"
+	"strings"
+	"sync"
+	"testing"
+	"time"
+)
+
+// Original270ae0 __signin_base1856-1931 requires both login and positive
+// attendance evidence. init_plugin104-134 resets onlyonce before a real 3s job.
+// Every endpoint below is an owned loopback protocol peer, never a PT site.
+func TestAutoSignInActualMainOwnedSiteOnceAndClone(t *testing.T) {
+	worker := os.Getenv("AUTOSIGNIN_WORKER_BINARY")
+	if worker == "" {
+		t.Skip("owned Linux Main opt-in not configured; no execution acceptance")
+	}
+	if runtime.GOOS != "linux" || os.Geteuid() == 0 {
+		t.Fatal("Linux UID1000 owned execution required")
+	}
+	raw, e := exec.Command(worker, "--manifest").Output()
+	if e != nil {
+		t.Fatal(e)
+	}
+	var manifest map[string]any
+	if json.Unmarshal(raw, &manifest) != nil || manifest["plugin_id"] != "AutoSignIn" {
+		t.Fatal("ASI manifest")
+	}
+	bin, e := os.ReadFile(worker)
+	if e != nil {
+		t.Fatal(e)
+	}
+	digest := fileHash(t, worker)
+	var repo *httptest.Server
+	repo = httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		switch r.URL.Path {
+		case "/index":
+			json.NewEncoder(w).Encode(map[string]any{"schema_version": 1, "plugin_id": "AutoSignIn", "current_version": manifest["version"], "releases": []any{map[string]any{"version": manifest["version"], "manifest": manifest, "artifacts": []any{map[string]any{"platform": "linux-" + runtime.GOARCH, "format": "executable", "url": repo.URL + "/worker", "sha256": digest, "executable_sha256": digest, "size": len(bin), "host_contract": "light-media.sdk-resources/v1"}}}}})
+		case "/worker":
+			w.Write(bin)
+		default:
+			http.NotFound(w, r)
+		}
+	}))
+	defer repo.Close()
+	var mu sync.Mutex
+	paths := []string{}
+	badCredentials := false
+	peer := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+		mu.Lock()
+		paths = append(paths, r.URL.RequestURI())
+		if r.Header.Get("Cookie") != "owned_session=synthetic" || r.Header.Get("User-Agent") != "Owned-ASI/1" {
+			badCredentials = true
+		}
+		mu.Unlock()
+		w.Header().Set("Content-Type", "text/html; charset=utf-8")
+		w.Write([]byte(`<html><body><a href="logout.php">退出登录</a><div>签到成功</div></body></html>`))
+	}))
+	defer peer.Close()
+	h := newMainHost(t)
+	const id = "AutoSignIn"
+	const clone = "AutoSignIncopy"
+	h.ok("POST", "/api/plugins/install", map[string]any{"plugin_id": id, "repo_url": repo.URL + "/index"})
+	h.ok("POST", "/api/plugins/"+id+"/clone", map[string]any{"suffix": "copy"})
+	h.ok("POST", "/api/sites/manage", map[string]any{"kind": "hhanclub", "name": "Owned ASI source peer", "url": peer.URL, "domain": "hhanclub.net", "cookie": "owned_session=synthetic", "ua": "Owned-ASI/1", "is_active": true, "timeout": 2, "daily_budget": 600, "pri": 1, "proxy": false, "render": false})
+	form := h.ok("GET", "/api/plugins/"+id+"/form", nil)
+	var root any
+	if json.Unmarshal(form, &root) != nil {
+		t.Fatal(string(form))
+	}
+	var sourceID any
+	var visit func(any)
+	visit = func(v any) {
+		switch x := v.(type) {
+		case map[string]any:
+			if x["title"] == "Owned ASI source peer" {
+				sourceID = x["value"]
+			}
+			for _, v := range x {
+				visit(v)
+			}
+		case []any:
+			for _, v := range x {
+				visit(v)
+			}
+		}
+	}
+	visit(root)
+	if sourceID == nil {
+		t.Fatal("actual managed source ID absent from original form choices", string(form))
+	}
+	config := map[string]any{"enabled": true, "notify": false, "cron": "59 23 31 12 *", "onlyonce": true, "auto_cf": 0, "clean": false, "queue_cnt": 1, "sign_sites": []any{sourceID}, "login_sites": []any{}, "retry_keyword": "错误|失败"}
+	started := time.Now()
+	h.ok("PUT", "/api/plugins/"+id, config)
+	config["onlyonce"] = false
+	h.config(id, config)
+	deadline := time.Now().Add(15 * time.Second)
+	var page json.RawMessage
+	for {
+		page = h.ok("GET", "/api/plugins/"+id+"/page", nil)
+		mu.Lock()
+		count := len(paths)
+		bad := badCredentials
+		mu.Unlock()
+		if bad {
+			t.Fatal("bound source Cookie/UA differs at physical peer")
+		}
+		if count > 0 && strings.Contains(string(page), "签到成功") {
+			break
+		}
+		if time.Now().After(deadline) {
+			t.Fatal("3-second source once job did not produce real request + successful history", string(page))
+		}
+		time.Sleep(200 * time.Millisecond)
+	}
+	if time.Since(started) < 2*time.Second {
+		t.Fatal("once task bypassed source delay")
+	}
+	mu.Lock()
+	actual := append([]string(nil), paths...)
+	mu.Unlock()
+	if len(actual) != 1 || actual[0] != "/attendance.php" {
+		t.Fatal("source request/replay differs", actual)
+	}
+	clonePage := h.ok("GET", "/api/plugins/"+clone+"/page", nil)
+	if !strings.Contains(string(clonePage), "暂无签到数据") || strings.Contains(string(clonePage), "Owned ASI source peer") {
+		t.Fatal("clone inherited base execution history", string(clonePage))
+	}
+	h.stop()
+	h.start()
+	h.config(id, config)
+	restored := h.ok("GET", "/api/plugins/"+id+"/page", nil)
+	if !strings.Contains(string(restored), "签到成功") {
+		t.Fatal("cold persisted history absent", string(restored))
+	}
+	time.Sleep(3500 * time.Millisecond)
+	mu.Lock()
+	after := len(paths)
+	mu.Unlock()
+	if after != 1 {
+		t.Fatal("cold restart replayed one-shot", after)
+	}
+	h.ok("POST", "/api/plugins/"+id+"/reset", nil)
+	empty := h.ok("GET", "/api/plugins/"+id+"/page", nil)
+	if !strings.Contains(string(empty), "暂无签到数据") {
+		t.Fatal("reset did not clear actual history", string(empty))
+	}
+	h.ok("POST", "/api/plugins/"+clone+"/uninstall", map[string]any{})
+	h.ok("POST", "/api/plugins/"+id+"/uninstall", map[string]any{})
+	h.record("asi_owned_site_once_complete", map[string]any{"source_id": sourceID, "physical_paths": actual, "elapsed_seconds": time.Since(started).Seconds(), "worker_sha256": digest, "scope": "owned protocol peer, trueMain/once/history/clone/cold/no-replay/reset; not realPT/browser/OCR or completeASI"})
+}

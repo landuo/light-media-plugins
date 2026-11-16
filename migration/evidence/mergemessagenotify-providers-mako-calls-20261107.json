@@ -1,0 +1,185 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "apprise_commit": "90a58b8fdddcc2d58bb922f1ddf753adb3b43c07",
+  "mako_and_combined_product_commit": "f7f00d59947a0d1dcb15937e8c1335cd0e4d4270",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Pinned original offline source executions with synthetic HTTP responses, targeted Go replays, independent source review, and one combined Linux executable build.",
+  "apprise": {
+    "providers": {
+      "pushbullet": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/pushbullet-1.9.9.json",
+          "sha256": "23d6d77ed687e5f0927ea9f861c612aefa417c962e33a822f5d52716c0e56204"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-pushbullet-target.stdout",
+          "sha256": "11bdc54239758a724056f2fa7efc576b841f2cf4024388f96fc1ab7d2fcd1117"
+        },
+        "target_entrypoint": "TestSourcePushBullet199",
+        "cases": 11,
+        "observed": "Broadcast, sorted recipients, exact headers/timeout and JSON, ordered upload handshake, unaddressed file payloads, continuation after note/file failure, inaccessible attachments and observed intervals.",
+        "original": "Apprise 1.9.9 apprise/plugins/pushbullet.py",
+        "target": "plugins/mergemessagenotify/apprise/pushbullet.go",
+        "reviewer": "/root/apprise_serverchan"
+      },
+      "pushsafer": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/pushsafer-1.9.9.json",
+          "sha256": "a52f53c18fe33552be62ef0c61fe1a9c6ce15796963e3802773ae02ca397412f"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-pushsafer-target.stdout",
+          "sha256": "ab5a763804899ad5be60fe11a75d0348946207e8a8d966dd322883365d1ccb72"
+        },
+        "target_entrypoint": "TestSourcePushSafer199",
+        "cases": 17,
+        "observed": "Recipient and options parsing, exact form and response success including boolean True, image-only batching, payload mutations on failed batches and observed intervals.",
+        "original": "Apprise 1.9.9 apprise/plugins/pushsafer.py",
+        "target": "plugins/mergemessagenotify/apprise/pushsafer.go",
+        "reviewer": "/root"
+      },
+      "serverchan": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/serverchan-1.9.9.json",
+          "sha256": "6fb2d76409e7aea56ffa7a7438909b6e2dc36c4ed2143646e88dcdd602d58e6a"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-serverchan-target.stdout",
+          "sha256": "76e66a366c0e310cc96047aa1f4eb0fa30d8380f97c76e429e5fb5079d870110"
+        },
+        "target_entrypoint": "TestSourceServerChan199",
+        "cases": 17,
+        "observed": "Original token-prefix and scheme behavior, exact form/TLS/timeout, status, invalid options, attachment omission and message overflow. The interval is source-reviewed only.",
+        "original": "Apprise 1.9.9 apprise/plugins/serverchan.py",
+        "target": "plugins/mergemessagenotify/apprise/serverchan.go"
+      },
+      "pushbullet_boundaries": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/pushbullet-boundary-1.9.9.json",
+          "sha256": "11502c56797308e1327d9ca0fe2d695e367054ef78eb74d599db0df5ef175304"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-provider-boundary-target.stdout",
+          "sha256": "ab2e1231d0e6c80bb0fc416a8ba3eed18a01064c9e3870f9b01a64a99a48367c"
+        },
+        "target_entrypoint": "TestSourcePushBulletBoundary199",
+        "cases": 4,
+        "observed": "Raw channel tags, disabled persistent storage rejection, whitespace-only note result and forwarding null response metadata."
+      },
+      "ntfy_boundaries": {
+        "fixture": {
+          "path": "plugins/mergemessagenotify/apprise/testdata/ntfy-boundary-1.9.9.json",
+          "sha256": "86656eabce066ca7d02d86c427eb7ffb750bb7575f26c48d50c77762156af512"
+        },
+        "output": {
+          "path": "work/mergemessagenotify-20261107/apprise-provider-boundary-target.stdout",
+          "sha256": "ab2e1231d0e6c80bb0fc416a8ba3eed18a01064c9e3870f9b01a64a99a48367c"
+        },
+        "target_entrypoint": "TestSourceNtfyBoundary199",
+        "cases": 6,
+        "observed": "Disabled persistent storage rejection, exact encoded cloud/auth selection before constructor normalization, explicit token use and empty URL behavior."
+      }
+    },
+    "url_list": {
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/url-list-1.9.9.json",
+        "sha256": "c21f3450c92d30bd0f22cd2488a483a712c6f77a7fea2bd369742924e981900d"
+      },
+      "output": {
+        "path": "work/mergemessagenotify-20261107/apprise-url-list-target.stdout",
+        "sha256": "7c12d19bad6e67c27afc4f1a276837b8a0c65c0699a246af500a12f2b21b97b5"
+      },
+      "target_entrypoint": "TestSourceURLList199",
+      "cases": 5,
+      "observed": "One configuration line can contain comma- or whitespace-separated destinations. Unknown URLs make Add false while valid services still send. Nested URL query values stay together and channel hashes are escaped before parsing.",
+      "original": [
+        "apprise/apprise.py:266–346",
+        "apprise/utils/parse.py:125–128,1021–1046",
+        "apprise/plugins/__init__.py:419–429"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/client.go",
+      "observer_setup_failure": {
+        "path": "work/mergemessagenotify-20261107/apprise-url-list-observer-incomplete.json",
+        "sha256": "40a90afde0648ccb9fb146587c2c5560750275b16df0fa91ea5b1e6159f959d1"
+      },
+      "observer_fix": "The first capture intercepted requests.post only. The corrected source capture also intercepts custom JSON requests.request and still forbids sockets. Only corrected capture is the expected result."
+    },
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 16,
+    "schemes_without_native_implementation": 167,
+    "remaining_boundaries": [
+      "Other known schemes still require Go implementations.",
+      "Cross-provider URL parsing is verified at the configured line entry, not all direct multiline inputs.",
+      "Unusual encodings/nonstandard HTTP reply JSON and some invalid parser edge cases remain unverified."
+    ]
+  },
+  "mako": {
+    "call_tags": {
+      "fixture": {
+        "path": "plugins/mergemessagenotify/mako/testdata/source-calls-1.4.1.json",
+        "sha256": "ddee478ac84c454c613d4af0aaa93e8fa06d8a2bba825518d20a92e8fa58af27"
+      },
+      "output": {
+        "path": "work/mergemessagenotify-20261107/mako-calls-target.stdout",
+        "sha256": "c59058a96df20d61d2d38eace0503d0a20e874d7e9ad41409bb249eb6a3a26e6"
+      },
+      "target_entrypoint": "TestSourceTemplateCalls141",
+      "cases": 21,
+      "observed": "Explicit call tags and namespace shorthand, inline definitions, nested caller frame/capture, body/filter behavior, callback arguments and original error fallback.",
+      "original": [
+        "installed 1.20.3 util.py TemplateUtil",
+        "Mako 1.4.1 parsetree.py:567–620",
+        "codegen.py:948–1020",
+        "runtime.py:190–214,538–548",
+        "ast.py:130–217"
+      ],
+      "target": [
+        "plugins/mergemessagenotify/mako/call.go",
+        "plugins/mergemessagenotify/mako/parser.go",
+        "plugins/mergemessagenotify/mako/template.go",
+        "plugins/mergemessagenotify/mako/context.go",
+        "plugins/mergemessagenotify/mako/expression.go",
+        "plugins/mergemessagenotify/mako/value.go"
+      ]
+    },
+    "review_followup": {
+      "fixture": {
+        "path": "plugins/mergemessagenotify/mako/testdata/source-call-boundaries-1.4.1.json",
+        "sha256": "f4bfaceec86a7fb4b1ff0df6d520dbbf6bab5ef6dcebe2ca2608115bef0b6804"
+      },
+      "output": {
+        "path": "work/mergemessagenotify-20261107/mako-call-boundaries-target.stdout",
+        "sha256": "1542ad59255b678d39ebc516900905cc820381712606283846f97abe4f857b7f"
+      },
+      "target_entrypoint": "TestSourceCallBoundaries141",
+      "cases": 9,
+      "observed": "Recursive caller exports from untaken controls and nested tags, declaration-time default effects, caller.context access and buffer effects, argument evaluation before a noncallable failure, and starred positional evaluation before keywords.",
+      "original": [
+        "Mako 1.4.1 lexer.py:135–185",
+        "parsetree.py:38–44,93–94",
+        "codegen.py:954–985",
+        "runtime.py:375–420,538–548"
+      ],
+      "reviewer": "/root/apprise_serverchan"
+    },
+    "remaining_boundaries": [
+      "Positional-only generated signatures, raw caller stack and Namespace methods, nested copied Context locals and external namespace lookup.",
+      "Cached and decorated definitions/blocks and additional Mako/Python constructs."
+    ]
+  },
+  "combined_linux_build": {
+    "path": "work/mergemessagenotify-20261107/linux-call-provider-build.stdout",
+    "sha256": "e5ecc9719c47c5cf1d83115c7134d29a589a1250f779e5ee43c041eb46869aef"
+  },
+  "execution_scope": "Only new provider, parser and Mako fixtures were replayed. The worker was compiled for Linux amd64. Earlier actual host and package runs remain tied to their original commits and are not repeated here.",
+  "delivery": {
+    "working_branch": "codex/installed-plugins-20261105",
+    "remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "local_only": true,
+    "registered_for_release": false,
+    "deployed": false,
+    "external_notifications_sent": false
+  }
+}

@@ -1,0 +1,47 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "9f543ddb38b53d4e79002715b3ed427cf42e697d",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "593fa0d546b87cef3a1d609530e4db8dd4684949493023dd7a8866f84df280d8",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with the fixed source and independent source/host call-chain review. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1486–1510,3480–3494; app/chain/download.py:1220–1247,1556–1584",
+      "target": "internal/app/subscription_runtime.go, subscription_ordinary_fallback.go, plugin_original_subscribe_chat.go, plugin_original_subscribe_chat_paused.go and jobs.go",
+      "behavior": "Manual search keeps candidate order, credits actual acceptance, and tries the next resource after definite no-effect refusal. The exact root runs its own fenced child instead of blocking the worker pool waiting for a generic download."
+    },
+    {
+      "source": "app/chain/download.py:493–559,1028–1053,1204–1225; app/chain/torrents.py:464–475",
+      "target": "internal/app/download_events.go, search_download.go and subscription_download_rejection.go",
+      "behavior": "Failure is tied to the rejected source candidate. The Go host freezes the selected fingerprint in the sealed preview and staged intent before Add so later RSS changes cannot rewrite rejection identity."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App, exact indexed worker and owned protocol peers",
+    "environment": "Read-only Alpine 3.22 container with tmpfs and loopback-only Lark, tracker, TMDB and qBittorrent protocol peers. No original or production credentials.",
+    "test": "TestOriginalLarkSameSearchFallbackLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_fallback_linux_test.go",
+    "seconds": 2.04,
+    "host_elf_sha256": "b195a0c3877d8cbcb7a4cd940581e8a3db46e29c7a03f6fe0a2f826d37400173",
+    "runner_sha256": "cb6eb91d2232fbf997ec05e59828a8f5b2ab2e4dcad4cb73fbd1b7887e4a22ee",
+    "runtime_log_sha256": "465273877943eef4a28d48a1903112a7c498a92377ba4e392fe68b7057506e92",
+    "observations": [
+      "A started Linux App installed the indexed worker and accepted one authenticated manual /subscribes action. A keyword tracker response contained two matching releases, with the first ahead in the source order.",
+      "The first torrent reached one actual qBittorrent Add with the configured save path. After its explicit Fails. response, the exact intent was failed and its reservation removed. One sealed rejection and one resource cooldown were present.",
+      "The second candidate was fetched and accepted exactly once within that same search job. Both actual download children had the same parent, and no first-resource acceptance was fabricated. The accepted resource produced one subscription completion event and an empty live list after the Lark completion notice and search summary."
+    ]
+  },
+  "adaptations_and_open": [
+    "The owned child verifies root and subscription revision before admission and rechecks cancellation at the mutation boundary. Recovered children are classified before missing-episode coverage and prior definite refusals remain excluded in that same root. Unknown submissions retain the original reservation and halt fallback. Restart, canceled root, existing hash, delayed RSS race and unknown acknowledgments were inspected in code only in this increment.",
+    "This acceptance is for an active Lark manual movie search. The same exact scoped runner also handles manual paused ordinary and TV searches, but the additional combinations were not rerun. Ordinary background and RSS refresh still use their earlier enqueue path.",
+    "The exact source failure notice, native RSS magnets, post-preview reacquisition and provider-without-TMDB remain open. Previously verified scenario artifacts remain bound to their own revisions."
+  ]
+}

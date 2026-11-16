@@ -1,0 +1,36 @@
+{
+  "task": "source-sites-capabilities-20261105",
+  "removed_owned_binaries": [
+    {
+      "path": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker",
+      "sha256": "487cd8cbd7e131c6e03d15f122f6760ddf79a5c36163bdf26b87de4be46e7340",
+      "bytes": 4523922
+    },
+    {
+      "path": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/source-sites-worker-race",
+      "sha256": "77df6f43db44649cc2488e12c57c78652b0d8cc93c0c0a26f4d4ac2a32777191",
+      "bytes": 5605570
+    },
+    {
+      "path": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/module-worker",
+      "sha256": "86d1e1399a660d84e1e8a8a1e370a874f4c0cc649f2312fe5d12d33bdde72903",
+      "bytes": 5337666
+    },
+    {
+      "path": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/module-worker-race",
+      "sha256": "23024403f5341811d1885025de341957c421279e1c9f55253685c0779fc05d35",
+      "bytes": 6585698
+    },
+    {
+      "path": "/Users/accidia/projects/light-media/work/site-source-capabilities-20261105/business-worker",
+      "sha256": "51095492b26236ca083331433f71c49ad392324ed3d3f9806f432e8295df031f",
+      "bytes": 5061442
+    }
+  ],
+  "tmpdir_empty_then_removed": true,
+  "production_changed_during_cleanup": false,
+  "no_local_server_or_daemon_started": true,
+  "oracle_container_cleanup": "source-evidence manifests and prior owned oracle cleanup files; no new remote operation in implementation phase",
+  "note": "No task source worker/SourceSitesTest process remains; only task-owned executable paths were removed. Root main/NAS/daemons untouched.",
+  "exact_owned_worker_processes_remaining": []
+}

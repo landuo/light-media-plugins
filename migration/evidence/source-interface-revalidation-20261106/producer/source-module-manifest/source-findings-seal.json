@@ -1,0 +1,85 @@
+{
+  "classification": "independent source-before-target getter/discovery contract and old six-family Manifest inventory; current discrepancies confirmed, implementation review pending",
+  "status": "source_findings_sealed_target_correction_pending",
+  "at_utc": "2026-11-05T19:24:43.671932+00:00",
+  "source_oracles": {
+    "primary_module_sha256": "a3b570f83deab708ab2e5c8c428de32462fc850559b6f3e94fd81a5a0e522606",
+    "primary_cases": 13,
+    "adjacent_registry_direct_dashboard_sha256": "d3b241a8b783c825cc5b11f28010d95fee8fe280ce7f51e3b3f1e001ca1246c1",
+    "adjacent_cases": 24,
+    "interface_inventory_sha256": "9df0a04cb343c7e68f9c6611f4f30cbf064479f5cb93676fc822be5b953f1a2b",
+    "source_instances": 7,
+    "family_false_advertisements": 20,
+    "instance_false_advertisements": 24
+  },
+  "proposed_removals": {
+    "CategoryEditor": [
+      "get_module",
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ],
+    "TorrentTransfer": [
+      "get_module",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ],
+    "SiteStatistic": [
+      "get_service",
+      "get_command"
+    ],
+    "MPServerStatus": [
+      "get_service"
+    ],
+    "PluginUnInstall": [
+      "get_service",
+      "get_command",
+      "get_dashboard"
+    ],
+    "RemoveLink": [
+      "get_module",
+      "get_service",
+      "get_command",
+      "get_dashboard",
+      "get_dashboard_meta"
+    ]
+  },
+  "source_auth_state_first_preserved": true,
+  "source_direct_dashboard_returns_null_without_state": true,
+  "source_explicit_override_return_None_remains_implemented": true,
+  "existing_module_gate_test": "TestOriginalModulesMissingDeclarationBeforeState",
+  "host_corrections_required": [
+    "source-optional get_service/get_command removed from artifact required lifecycle; retain init/get_state/stop and capability checks",
+    "commands/services implementation Methods gate before state",
+    "dashboard metadata accurate implemented declaration; direct known Base inherited dashboard remains null after live/render checks"
+  ],
+  "no_blanket_null_deletion": [
+    "get_api",
+    "get_page",
+    "get_auth_providers"
+  ],
+  "compatibility": "new optional-declaration workers require the corrected host; old host rejects before invocation; SDK98 unchanged",
+  "Main5_scope": {
+    "exit": 0,
+    "seconds": 283.9671229671221,
+    "observations": 170,
+    "module_errors": 91,
+    "log_projections": 3,
+    "errors_operation": "stop",
+    "accepted_as_equivalent": false
+  },
+  "source_capture_manifest_sha256": "6589706fa275b27586a333385e45e4a0c4f29328bc2bad749210f5bede75a985",
+  "source_container_cleanup_zero": true,
+  "app_imports": [],
+  "harness_failure_preserved": [
+    "run_source.py.attempt1",
+    "attempt1.json"
+  ],
+  "not_reviewed_yet": [
+    "Root finite host implementation/build/tests",
+    "producer six corrected manifests and new freeze/ELFs",
+    "ordinary Main6 with corrected worker/host, packaging and final composite"
+  ]
+}

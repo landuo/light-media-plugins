@@ -1,0 +1,26 @@
+{
+  "kind": "actual-independent-executable-SDK-worker-with-synthetic-resources",
+  "observations": [
+    {
+      "queries": 0,
+      "same_worker_usable": true,
+      "scenario": "queued-owner-cancel"
+    },
+    {
+      "queries": 1,
+      "same_worker_usable": true,
+      "scenario": "active-owner-cancel"
+    },
+    {
+      "queries": 1,
+      "same_worker_usable": true,
+      "scenario": "active-noop-stop-reinit"
+    },
+    {
+      "all_refreshes": 0,
+      "retirement_joined": true,
+      "scenario": "pending-one-shot-session-retire"
+    }
+  ],
+  "worker_race_instrumented": true
+}

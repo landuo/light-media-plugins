@@ -1,0 +1,146 @@
+{
+  "classification": "independent fixed-source contracts for future Root actual Main acceptance; no target App or product/ledger edits",
+  "source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_snapshot": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "contracts": [
+    {
+      "id": "ordinary-web-command",
+      "source": [
+        "app/api/endpoints/message.py:111-148",
+        "app/chain/message.py:349-362,1170-1198",
+        "app/command.py:269-349,392-473",
+        "installed-asi/__init__.py:159-169,1531-1774",
+        "app/plugins/__init__.py:328-343",
+        "app/chain/__init__.py:1631-1746"
+      ],
+      "new_actual": [
+        "source-actual.json rows[3]",
+        "message-actual.json"
+      ],
+      "necessary_conditions": [
+        "source/user/username=current user, channel=Web at incoming boundary",
+        "first successful selected site with notify=false: action0 incoming then start/completion outgoing",
+        "same-day dedup requires nonempty nonmatching retry_keyword and completed result/retry empty",
+        "PluginAction broadcasts to all enabled ASI classes; no per-pid selector",
+        "HTTP acceptance and command-processing status are not business completion"
+      ],
+      "unrun": [
+        "actual full original Web server/event consumer/message DB",
+        "two-clone source consumer runtime",
+        "external notification recipients"
+      ]
+    },
+    {
+      "id": "private-once-reinit-drain",
+      "source": [
+        "installed-asi/__init__.py:82-142,2007-2018",
+        "app/core/plugin.py:121-139,619-632",
+        "app/plugins/__init__.py:342-343",
+        "app/api/endpoints/plugin.py:976-989",
+        "actual APS BaseScheduler/BackgroundScheduler/BlockingScheduler/BasePoolExecutor shutdown"
+      ],
+      "new_actual": [
+        "source-actual.json rows[0:2]"
+      ],
+      "necessary_conditions": [
+        "onlyonce cleared before actual +3s fire",
+        "active private callback is not interrupted; default shutdown waits",
+        "new in-memory init config only applied after old callback returns/history written",
+        "API presaves new conf before init; do not infer persistent DB remains old while waiting"
+      ],
+      "unrun": [
+        "full real DB concurrency during API save",
+        "unbounded hung external HTTP or forced OS termination"
+      ]
+    },
+    {
+      "id": "public-interval-owner",
+      "source": [
+        "installed-asi/__init__.py:192-267,1531-1774",
+        "app/scheduler.py:774-841,975-1041,1251-1301,1338-1390,1459-1474",
+        "app/startup/lifecycle.py:64-70,125-126"
+      ],
+      "new_actual": [
+        "source-actual.json rows[2]",
+        "supplement-actual.json rows[0]"
+      ],
+      "necessary_conditions": [
+        "actual source callback fired by real timer",
+        "single remove does not wait/cancel active callback",
+        "whole owner stop waits active callback; global shutdown scheduler before plugins",
+        "empty retry_keyword intentionally causes next timer to retry successful selected sites",
+        "Go process retirement/drain beyond single public remove is explicit host adaptation"
+      ],
+      "unrun": [
+        "full original lifespan server shutdown",
+        "actual negative/nonfinite live timer dispatch in source App"
+      ]
+    },
+    {
+      "id": "force-same-version-artifact",
+      "source": [
+        "app/api/endpoints/plugin.py:563-623",
+        "app/core/plugin.py:72-119,156-192,641-651",
+        "app/helper/plugin.py:2689-2840"
+      ],
+      "new_actual": [
+        "source-actual.json rows[4]",
+        "supplement-actual.json rows[1:]"
+      ],
+      "necessary_conditions": [
+        "force same version still prepares/install content and reloads on success",
+        "same version is not evidence same executable bytes",
+        "Go actual new ELF/hash/new worker and old worker exit prove process adaptation",
+        "preserve final config/history via new instance init; do not replay onlyonce",
+        "source force failure without backup removes prepared directory; nonforce restores backup"
+      ],
+      "unrun": [
+        "actual external GitHub/release downloader",
+        "target ELF/process replacement (Root future Main test)"
+      ]
+    },
+    {
+      "id": "source-hours-producer",
+      "source": [
+        "installed-asi/__init__.py:192-267",
+        "app/scheduler.py:1338-1390",
+        "actual APS _create_trigger/_real_add_job/IntervalTrigger/Job._get_run_times"
+      ],
+      "new_actual": [
+        "producer-actual.json",
+        "metadata-actual.json"
+      ],
+      "reused_actual": [
+        "reused-source-evidence.json"
+      ],
+      "necessary_conditions": [
+        "Python truthiness and float parsing retained including underscore/Unicode digits",
+        "source float bit pattern is preserved; do not truncate to milliseconds or pre-reject signed/nonfinite/subms",
+        "ordinary descriptor omits timezone/start; owner injects settings.TZ object and civil implicit start",
+        "float conversion errors in get_service differ from native constructor errors after logical entry",
+        "nonterminating due scan requires documented bounded Go zero-partial-dispatch adaptation"
+      ],
+      "unrun": [
+        "Go ASI source_interval consumer integration",
+        "source random schedule content in producer20 probe"
+      ]
+    }
+  ],
+  "correction": {
+    "hypothesis": "stop_service(wait=False)",
+    "finding": "absent on fixed ASI/PluginManager/Scheduler chains; actual no-arg shutdown reaches default wait=True",
+    "prior_evidence": "old independent source physical probe explicitly used wait=True and did not itself prove default; new actual no-arg original plugin stop proves default behavior",
+    "raw_preserved": true
+  },
+  "failures": {
+    "attempt1": "source replay fixture omitted SCHEDULER_PROGRESS_PREFIX",
+    "attempt2": "source command fixture omitted pluginmanager registry",
+    "supplement-attempt1": "source Scheduler.stop fixture omitted module global lock",
+    "all_raw_retained": true
+  },
+  "limits": [
+    "source-only acceptance contract, not full ASI acceptance or 23-plugin completion",
+    "synthetic source method replay with exact original bodies and real APS/ThreadPool, no full source app",
+    "no target binaries/production/SDK/ledger/Git/deploy operation"
+  ]
+}

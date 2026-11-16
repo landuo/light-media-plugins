@@ -1,0 +1,121 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "installed_version": "2.22",
+  "installed_source_sha256": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+  "fixed_moviepilot_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "plugin_product_commit": "e616a2885ca69eb58b28c2ceee35d9d0d14bc028",
+  "paired_host_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
+  "sdk_origin": {
+    "path": "SDK_ORIGIN.json",
+    "sha256": "ca37a259ece8a7213cc35a01d35371b0cd2e3be6e38bc9177072204d74a14eb5"
+  },
+  "controlled_source_replays": [
+    {
+      "source": "Installed IYUU __init__.py:177–220,1038–1114 and fixed MoviePilot service/downloader helpers and native wrappers",
+      "target": [
+        "plugins/iyuuautoseed/sdk_downloader_inventory.go",
+        "plugins/iyuuautoseed/sdk_downloader_reads.go",
+        "plugins/iyuuautoseed/sdk_downloader_mutations.go"
+      ],
+      "test": "TestSourceIYUUDownloaderReplay222",
+      "passed_cases": 11,
+      "fixture": {
+        "path": "plugins/iyuuautoseed/reference/sdk-downloader-oracle.json",
+        "sha256": "435a671bcca7189793724c74aad10a5e3e5e73caaf214bf1577d206aed550e78"
+      },
+      "observed": "Selected native service order, duplicate names, first inactive auto destination, qB tuple and marker, classification, TR return and runtime/metadata mismatch. Separate synthetic host controls for unknown and post-guard effects."
+    },
+    {
+      "source": "Installed IYUU __init__.py:1311–1543; selected methods AST-identical to captured 2.19",
+      "target": [
+        "plugins/iyuuautoseed/resolve.go",
+        "plugins/iyuuautoseed/site_sdk.go"
+      ],
+      "test": "TestSourceSiteResolverReplay",
+      "passed_cases": 15,
+      "fixture": {
+        "path": "plugins/iyuuautoseed/reference/resolver-source-2.22.json",
+        "sha256": "313d44212706dcf49e92d14009f1793a954104458deb4f8ca5f1557533d76b25"
+      },
+      "observed": "Standard templates, M-Team and Monika branches, GPW and fallback detail selection, no-response and parser failures. Controlled response replay."
+    },
+    {
+      "source": "Fixed MoviePilot app/helper/torrent.py download_torrent, installed torrentool 1.2.0",
+      "target": [
+        "plugins/iyuuautoseed/torrent_helper.go",
+        "plugins/iyuuautoseed/torrent_bencode.go",
+        "plugins/iyuuautoseed/torrent_sdk.go",
+        "plugins/iyuuautoseed/torrent_cache.go"
+      ],
+      "test": "TestTorrentMaterial222",
+      "passed_cases": 10,
+      "fixture": {
+        "path": "plugins/iyuuautoseed/reference/torrent-material-oracle.json",
+        "sha256": "ecdd28de62b09e6e55f49049e47a722ea8eade39dc1892de7e16a16ad9276d6b"
+      },
+      "observed": "Exact source trace for cache, redirects, magnet, first-download form, throttling and failure. Local socket and synthetic inputs only."
+    }
+  ],
+  "real_linux_host": {
+    "source": "Installed IYUU __init__.py:103–174,177–250,743–858,1544–1558",
+    "target": [
+      "plugins/iyuuautoseed/plugin.go",
+      "plugins/iyuuautoseed/private_scheduler.go",
+      "plugins/iyuuautoseed/sdk_instance.go",
+      "plugins/iyuuautoseed/sdk_runtime.go",
+      "cmd/iyuu-auto-seed/main.go"
+    ],
+    "host_test": "/Users/accidia/projects/light-media/internal/app/plugin_iyuu_process_test.go",
+    "case": "TestIYUUSourceWorkerInstalledOnceAndStopped",
+    "status": "passed",
+    "environment": "Linux arm64, CGO disabled, Docker network none, temporary App storage, actual Go plugin executable and owned loopback qB protocol peer returning no completed torrents.",
+    "observed": "Manager installed the real executable. Native form contains the selected downloader. Config save clears both flags and old success cache. Actual cron declaration is process-local. One +3s private date reaches the owned downloader. Its successor holds a separate private lease while the date scan is active. Uninstall removes the object and worker session.",
+    "worker_elf_sha256": "537ef22c4374935dbe5ea58052c922cc604f4b73c84e82df6e716cb15efc6146",
+    "host_test_elf_sha256": "c3caf3607acce8353d99f2a25c988529e06352b013461f09d90657100bce0511",
+    "log": {
+      "path": "work/iyuuautoseed-20261107/linux-runtime/final-runtime.stdout",
+      "sha256": "b229d838fcddef989dcf4cd3e5845c73ba89e06ccc72348f0d10424c240fb7f9"
+    },
+    "prior_smoke_before_review_corrections": {
+      "path": "work/iyuuautoseed-20261107/linux-runtime/runtime.stdout",
+      "sha256": "f9fd9db3b87f0568fa09fbab0b9d6fcc5e2de60239177d734f479cec6b9ab62c"
+    }
+  },
+  "synthetic_host_security": {
+    "case": "TestIYUUMTeamMaterialGrant",
+    "status": "passed",
+    "host_test": "/Users/accidia/projects/light-media/internal/app/plugin_original_source_iyuu_site_test.go",
+    "source": "Installed IYUU __init__.py:1332–1360 and sanitized previously observed api.m-team.cc -> fr1.halomt.com 302 shape.",
+    "observed": "Rejects a revoked, mismatched, replayed or other-snapshot alias grant and credential-bearing CDN request. Exact lowercase token key, exact URL and trusted CDN only. Did not connect to M-Team.",
+    "log": {
+      "path": "work/iyuuautoseed-20261107/linux-runtime/final-runtime.stdout",
+      "sha256": "b229d838fcddef989dcf4cd3e5845c73ba89e06ccc72348f0d10424c240fb7f9"
+    }
+  },
+  "adaptations": [
+    "Host-verified TLS and bounded payloads. Fixed IYUU origin. Unknown downloader mutation outcomes stop automatic continuation. The log sink removes URLs and remote diagnostic bodies.",
+    "Origin, snapshot and current SDK call bind tracker requests. M-Team token POST is fixed and does not follow redirects. Aliased material GET uses one exact request grant per response, without site credentials. Catalog-only entries lack an authorized transport. Standard M-Team UTF-8 JSON is supported for alias grant issuance.",
+    "Torrent file cache and invalid URL TTL use the instance-owned path and process rather than the original shared FileCache and global invalid URL state.",
+    "Private interval/date keep source time, grace and ownership but serialize business passes for shared config/queue safety. Delayed jobs may misfire. Long active work can delay reinitialization.",
+    "No one-shot state was imported, no old MoviePilot or live production tracker/downloader was modified."
+  ],
+  "open": [
+    "Rotate host callback capacity within one large IYUU pass. The per-scheduler-cycle renewal does not remove the 64-host-call per-invocation limit on one pass.",
+    "Persist the source-legal maximum three 10000-hash caches through the host config limit without reducing the original capacity.",
+    "Exercise one owned seed-add/recheck/start chain including tracker rate and material behavior on the paired host. Verify plugin-specific failure, reload/restart, clone isolation and native browser form before acceptance.",
+    "Resolve or document remaining origin/catalog-only, TLS/encoding, cache, timeout and live configuration ordering adaptations. Build and registry release remain gated."
+  ],
+  "independent_review": [
+    "/root/emby reviewed lifecycle and actual callback budgets, plus performed downloader replay. Timer renewal, raw skipverify persistence and cancellation checks landed. Per-pass host budget and config size still open.",
+    "/root/jellyfin independently traced site scope, exact material authority and private Location. Alias bypass, missing versus empty Location and exact token key issues addressed. UTF-16/32 token response grant is outside the current verified flow.",
+    "/root/kodi ported exact helper/metainfo, replayed source and traced the observed M-Team CDN shape."
+  ],
+  "delivery": {
+    "plugin_local_branch": "codex/installed-plugins-20261105",
+    "host_local_branch": "codex/plugin-source-error-outcomes-20261105",
+    "plugin_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "pushed": false,
+    "deployed": false
+  }
+}

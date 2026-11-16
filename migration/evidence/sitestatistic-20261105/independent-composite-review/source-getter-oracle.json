@@ -1,0 +1,51 @@
+{
+  "classification": "actual installed get_plugin_config776 AST only, synthetic SystemConfigOper/state; Python3.14; no app/config import. Full stop/uninstall static chain and earlier source uninstall oracle separately bound",
+  "source_sha256": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7",
+  "source_lines": [
+    776,
+    787
+  ],
+  "before_registered": {
+    "return": {
+      "enabled": false,
+      "onlyonce": false,
+      "dashboard_type": "all",
+      "notify_type": "total",
+      "owned_unknown": "preserved source extra"
+    },
+    "calls": [
+      [
+        "get",
+        "config:SiteStatistic"
+      ]
+    ]
+  },
+  "unregistered_retained_storage": {
+    "return": {},
+    "calls": [],
+    "storage_retained": {
+      "enabled": false,
+      "onlyonce": false,
+      "dashboard_type": "all",
+      "notify_type": "total",
+      "owned_unknown": "preserved source extra",
+      "": "ignored"
+    }
+  },
+  "registered_again": {
+    "return": {
+      "enabled": false,
+      "onlyonce": false,
+      "dashboard_type": "all",
+      "notify_type": "total",
+      "owned_unknown": "preserved source extra"
+    },
+    "calls": [
+      [
+        "get",
+        "config:SiteStatistic"
+      ]
+    ]
+  },
+  "runtime": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]"
+}

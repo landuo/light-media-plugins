@@ -110,7 +110,7 @@ func (p *Plugin) dispatch(ctx context.Context, event map[string]any, send func(c
 		if err != nil {
 			a.Error = err.Error()
 			report.Failed++
-			p.log(ctx, "ERROR", "消息发送执行异常: 渠道 = "+registered.Name+"，"+a.Error)
+			p.log(ctx, "ERROR", "消息发送执行异常: 渠道 = "+registered.Name)
 		} else {
 			if truth(result) {
 				report.Success++

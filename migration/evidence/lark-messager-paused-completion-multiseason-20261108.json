@@ -1,0 +1,62 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "ba988d53041c724cb9c46155a4578aa5556d9517",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with fixed MoviePilot source and the earlier independent source audit. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/chain/subscribe.py:1325–1330,1576–1602,2806–2864,3099–3119,3474–3494",
+      "target": "internal/app/plugin_original_subscribe_chat.go, plugin_original_subscribe_chat_paused.go, subscription_quality_completion_run.go and subscription_completion_ordinary.go",
+      "behavior": "Explicit search admits the paused S row. A confirmed ordinary movie download can complete before library import. History, live row deletion, notice and complete event run before search summary and redraw."
+    },
+    {
+      "source": "app/helper/torrent.py:566–599; app/chain/download.py:1249–1297,1358–1380; app/chain/message.py:2789–2806",
+      "target": "internal/app/plugin_original_chat_media_download.go, plugin_original_chat_media_auto.go, plugin_original_chat_media_multiseason.go, download_season_scope.go and search_download.go",
+      "behavior": "A wholly missing multi-season candidate that fits the search seasons uses one complete Add without episode priorities. Confirmed scope persists into the normal local import pipeline."
+    }
+  ],
+  "native_environment": "Native Linux x86_64 App, exact indexed plugin ZIP, isolated read-only Alpine 3.22, loopback-only Lark, metadata, tracker and downloader protocol peers with owned files.",
+  "native": [
+    {
+      "status": "passed",
+      "test": "TestOriginalLarkPausedSubscriptionCompletionLinuxAMD64",
+      "fixture": "light-media:internal/app/plugin_original_subscribe_paused_completion_linux_test.go",
+      "fixture_sha256": "c0a8d11e0785b61ea8bd3296ca4f6092d5e6cae04c1bdc6fd77ac88afb4b3762",
+      "host_elf_sha256": "c871cd33fbbaad26c4c5178a41fc518cbc16d4ade91a8442641fd8fa5d82c6e0",
+      "runner_sha256": "9dacbc9517a44184dc75a743df060248dca5b39500e98d46ba76d3c6cb6fcdfe",
+      "runtime_log_sha256": "a3b89125ad3a8b7b376e5db7225fbc4b6471a5c6392ff297ceb77c067d3db747",
+      "seconds": 1.97,
+      "observations": [
+        "A real Lark callback explicitly searched a paused movie by numeric alias. One native qBittorrent Add accepted the exact torrent at the selected save path. The ordinary completion receipt preserved the same paused revision, one accepted download and an empty inventory basis.",
+        "The held Lark completion notification observed one saved history and no live subscription. The completion event, search summary and empty-list card followed the notification response."
+      ]
+    },
+    {
+      "status": "passed",
+      "test": "TestOriginalLarkWholeMultiSeasonLinuxAMD64",
+      "fixture": "light-media:internal/app/plugin_original_chat_multiseason_linux_test.go",
+      "fixture_sha256": "29c302ad44ec78c3acb62b23928de12f8d824d5a3e515f1106d95771f702e507",
+      "host_elf_sha256": "e46448d440bc63a41ae192e035356b3984da7fe9da97a9f92ef21133ab79bcd8",
+      "runner_sha256": "2c16af5e4a2daf7307948346bbb09f88a999524d0528fe2e35e1c2102031b776",
+      "runtime_log_sha256": "5cbd3ad78c7354cf548c751a3e5951ded3f6241b449a9fcd45077e62e8d89dee",
+      "seconds": 1.48,
+      "observations": [
+        "A separate real Lark auto-download for two wholly missing seasons used one material request, one running Add and no file-priority or start mutation. The intent sealed S01E01 and S02E01 separately with both metainfo files.",
+        "The owned qBittorrent peer reported both files complete in an enabled local directory. The native importer produced two distinct season asset slots, each an actual hardlink to its original file, from the one accepted intent with no fallback subscription."
+      ]
+    }
+  ],
+  "prior_failure": "The first combined run passed paused completion. Multi-season Add and sealed scope passed but its fixture had no enabled directory organization rule. The isolated multi-season rerun added a fixture rule and passed. The paused test was not repeated. Its saved ELF predates that other fixture-only correction.",
+  "adaptations_and_open": [
+    "Host completion runs durable jobs. The chat action awaits only jobs tied to the exact paused manual search and its revision, preserving source order.",
+    "The Go multi-season path requires each declared season to have a verifiable video file within its target scope, and stores each actual file. The pinned source marks the declared wholly missing seasons covered once the downloader accepts the pack. The native fixture covered automatic whole-pack Add, not manual selection of a pack or malformed releases.",
+    "Paused best-version and active search completion ordering still need source parity review. Provider-to-Add, confirmed daemon failure cooldown, post-preview reacquisition and RSS magnets remain separate."
+  ]
+}

@@ -208,11 +208,49 @@ func filterTags(ds []DownloadState, s string) []DownloadState {
 	}
 	return out
 }
-func (p *Core) deleteNotice(ctx context.Context, t Task, r Row, reason string) error {
+
+// A notification channel failure must never disable promotion monitoring. The
+// notice is best-effort; the pause/delete decision has already been persisted.
+func (p *Core) sendNotice(ctx context.Context, t Task, notice Notice) {
 	if !t.B("notify") {
-		return nil
+		return
 	}
-	return p.h.Message(ctx, Notice{Title: "【刷流任务种子删除】", Text: fmt.Sprintf("任务：%s\n站点：%s\n标题：%s\n原因：%s", t.Name(), text(fallback(r["site_name"], "未知")), text(fallback(r["title"], "未知")), reason)})
+	if e := p.h.Message(ctx, notice); e != nil {
+		p.h.Log(ctx, "warning", fmt.Sprintf("刷流任务通知发送失败（不影响种子监控）：%s", e))
+	}
+}
+
+// mergeLiveProgress overlays the daemon's current counters on detail rows
+// without persisting them. Stored records can lag while a long brush run owns
+// the task lock, so the detail page must not report an old 0% as live state.
+func (p *Core) mergeLiveProgress(ctx context.Context, t Task, rows []any) {
+	if len(rows) == 0 {
+		return
+	}
+	live, e := p.h.Torrents(ctx, t.S("downloader"))
+	if e != nil {
+		p.h.Log(ctx, "warning", "读取下载器实时进度失败，详情使用已存记录："+e.Error())
+		return
+	}
+	byHash := map[string]DownloadState{}
+	for _, d := range live {
+		byHash[torrentHash(d)] = d
+	}
+	for _, item := range rows {
+		r := row(item)
+		d, ok := byHash[text(r["hash"])]
+		if !ok {
+			continue
+		}
+		info := p.torrentInfo(d)
+		for _, k := range []string{"progress", "downloaded", "uploaded", "ratio", "seeding_time"} {
+			r[k] = info[k]
+		}
+	}
+}
+func (p *Core) deleteNotice(ctx context.Context, t Task, r Row, reason string) error {
+	p.sendNotice(ctx, t, Notice{Title: "【刷流任务种子删除】", Text: fmt.Sprintf("任务：%s\n站点：%s\n标题：%s\n原因：%s", t.Name(), text(fallback(r["site_name"], "未知")), text(fallback(r["title"], "未知")), reason)})
+	return nil
 }
 func filesize(v any) string {
 	n := number(v)
@@ -255,10 +293,8 @@ func buildAddText(r Row, name string) string {
 	return strings.Join(lines, "\n")
 }
 func (p *Core) addNotice(ctx context.Context, t Task, r Row) error {
-	if !t.B("notify") {
-		return nil
-	}
-	return p.h.Message(ctx, Notice{Title: "【刷流任务种子下载】", Text: buildAddText(r, t.Name())})
+	p.sendNotice(ctx, t, Notice{Title: "【刷流任务种子下载】", Text: buildAddText(r, t.Name())})
+	return nil
 }
 func (p *Core) syncNotice(ctx context.Context, t Task, title, status, reason string, rs []Row) error {
 	if len(rs) == 0 {
@@ -266,8 +302,6 @@ func (p *Core) syncNotice(ctx context.Context, t Task, title, status, reason str
 	}
 	s := fmt.Sprintf("任务：%s\n内容：%s 等 %d 个种子已%s\n原因：%s", text(fallback(t.Name(), "未知")), text(fallback(rs[0]["title"], "未知种子")), len(rs), status, reason)
 	p.h.Log(ctx, "info", title+"，"+s)
-	if t.B("notify") {
-		return p.h.Message(ctx, Notice{Title: title, Text: s})
-	}
+	p.sendNotice(ctx, t, Notice{Title: title, Text: s})
 	return nil
 }

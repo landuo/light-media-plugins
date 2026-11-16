@@ -1,0 +1,64 @@
+{
+  "input_count": 614,
+  "inputs_stable": true,
+  "rows": [
+    {
+      "id": "CategoryEditor",
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/independent-sdk101-current-consumers-review-20261106/CategoryEditor-independent-temporary-linux",
+        "./cmd/category-editor"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      },
+      "exit": 0,
+      "seconds": 0.19468795787543058,
+      "source_snapshot_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+      "Root_sha256": "a6068ee6abf6841fdf3562bd0b95b10e4a8487d7ed6b5487c901126ffb897924",
+      "byte_identical": true,
+      "bytes": 4652392,
+      "temporary_removed": true
+    },
+    {
+      "id": "MPServerStatus",
+      "command": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/independent-sdk101-current-consumers-review-20261106/MPServerStatus-independent-temporary-linux",
+        "./cmd/mp-server-status"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "environment": {
+        "GOOS": "linux",
+        "GOARCH": "amd64",
+        "CGO_ENABLED": "0",
+        "GOFLAGS": "",
+        "GOPROXY": "off"
+      },
+      "exit": 0,
+      "seconds": 0.3504979582503438,
+      "source_snapshot_sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "sha256": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e",
+      "Root_sha256": "a904c8daa918b25e7fdaab3f88689c22b6bab8f06a7f609371e430b3c5bcfa7e",
+      "byte_identical": true,
+      "bytes": 16769634,
+      "temporary_removed": true
+    }
+  ]
+}

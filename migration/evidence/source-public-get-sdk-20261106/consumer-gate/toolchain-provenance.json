@@ -1,0 +1,16 @@
+{
+  "version": "go version go1.26.2 darwin/arm64",
+  "source_files": [
+    {
+      "source": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/cmd/link/internal/ld/elf.go",
+      "path": "toolchain-elf.go.txt",
+      "sha256": "4b18243a18e06885d10fd3ecdd8a975f369f128d55f38627eca8af896bcc5dad"
+    },
+    {
+      "source": "/opt/homebrew/Cellar/go/1.26.2/libexec/src/cmd/internal/hash/hash.go",
+      "path": "toolchain-hash.go.txt",
+      "sha256": "8574000887ab8f24695355bc9247f189a332698db89c63b2ac13a6149ca36350"
+    }
+  ],
+  "interpretation": "GNU20byte id derived from linker suppliedGo buildid; current runtime/metadata equality must be checked on all non-provenance bytes, not fullELF equality"
+}

@@ -1,0 +1,134 @@
+{
+  "inputs": {
+    "files": 228,
+    "before_after_equal": true,
+    "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+  },
+  "runs": {
+    "full-final-normal": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 8,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 11.489
+        }
+      ],
+      "binding_note": "Before corrected complete pre-run graph capture; retained successful same-code run, not used as the strongest exact pre/post closure."
+    },
+    "full-final-race": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 8,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 58.614
+        }
+      ],
+      "binding_note": "Before corrected complete pre-run graph capture; retained successful same-code run, not used as the strongest exact pre/post closure."
+    },
+    "full-frozen-normal": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 8,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 11.926
+        }
+      ]
+    },
+    "full-frozen-race": {
+      "pass": 254,
+      "fail": 0,
+      "skip": 8,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/cmd/remove-link",
+          "Action": "skip",
+          "Elapsed": 0
+        },
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 59.294
+        }
+      ]
+    },
+    "double-root-before-race": {
+      "pass": 7,
+      "fail": 3,
+      "skip": 0,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "fail",
+          "Elapsed": 1.058
+        }
+      ]
+    },
+    "targeted-double-root-race": {
+      "pass": 20,
+      "fail": 0,
+      "skip": 0,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 3.62
+        }
+      ]
+    },
+    "independent-current-race": {
+      "pass": 4,
+      "fail": 0,
+      "skip": 0,
+      "packages": [
+        {
+          "Package": "github.com/landuo/light-media-plugins/plugins/removelink",
+          "Action": "pass",
+          "Elapsed": 1.651
+        }
+      ]
+    }
+  },
+  "linux_final": {
+    "root_pass": 4,
+    "including_subtests_pass": 28,
+    "exit": 0,
+    "uid": 1000,
+    "classification": "actual NAS Linux NSS/filesystem plus independent SDK worker and owned protocol HostHandler; no App/main"
+  },
+  "artifacts": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-error-20261106/remove-link-final-linux",
+      "sha256": "4332e12439ecd790be76d689a0fcc856c414ba8de895861f97ae95ffe8b4167c",
+      "bytes": 5401614
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/removelink-home-error-20261106/remove-link-2.18.1-final-linux",
+      "sha256": "57cfb254e127acb7786d80db6bbdcbc215d3aa5bcee6fa603f17504f6bfd4736",
+      "bytes": 5401614
+    }
+  ]
+}

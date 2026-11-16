@@ -1,0 +1,133 @@
+{
+  "feature": "plugin.AutoBackup",
+  "status": "verified",
+  "installed_version": "2.1.4",
+  "source": {
+    "installed_path": "autobackup/__init__.py",
+    "installed_sha256": "dedab53b1adf96dc59879ebdd67f77fe67ea773981d4befb04ca000889f607e4",
+    "backend_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "frontend_commit": "2829e3b08214348f05ff2f5beae644882eccad58",
+    "locations": [
+      "__init__.py:73–128,130–209,211–301,495–539,541–654,949–963",
+      "app/core/security.py:337–345"
+    ],
+    "reused_oracles": {
+      "testdata/plugins/auto-backup-2.1.4/input/_auto_backup_port/reference/business-oracle.json": "b3b8da6698eb923ea7c66265625ffae2d3e220d0dfe0b908fb6f0cc756a39827",
+      "testdata/plugins/auto-backup-2.1.4/input/_auto_backup_port/reference/archive-oracle.json": "5ee2991b82d95bf92408bfac7a932c2936be3a7e3e94d17f8a0c01b023d571fb"
+    },
+    "prior_form_and_archive_acceptance": {
+      "path": "docs/plugin-auto-backup-current-completion.md",
+      "sha256": "db265a641a9fd9a871b135e13a16986d65abf153fc8e7bde5e56c137de2300d9",
+      "boundary": "Prior adapter. Browser save/clone, local archive with native key, and synthetic restore were verified there. No fresh browser or restore execution in this standard-worker case."
+    }
+  },
+  "target": {
+    "worker_product_commit": "9adada51cae381b01aef6368c540563ab9e6f455",
+    "host_product_commit": "544a9e4bb184ce3fe82c42f569b97b9e46ad71c5",
+    "host_test_commit": "b2a843bea5e3130907787ff1632c48ce1802daba",
+    "sdk_source_host_commit": "ec70784cd9d0e14de6b65e9d916ce4e0a9e9009b",
+    "worker_paths": {
+      "plugins/autobackup/plugin.go": "2eac0b14922e44574ab48f97f7ceab4af2b77c9888d5be14f11b5015dbb4ad88",
+      "plugins/autobackup/form.go": "a927757c44eb9d7c38379365c3989fc1dc68099b74b21988527fe148bf1acafe",
+      "plugins/autobackup/form.json": "01e8874e5082dd80377d1a76f400049637edd815e7402c4ca28761b4a4b58fde",
+      "plugins/autobackup/ORIGIN.json": "d33069bf3fc92fb987f63f572f40309f7c7f78436dd982d9e969e80bcd13a20b",
+      "cmd/auto-backup/main.go": "7cc6363bb7f20f95f67220fb2cd708a4f5c6c9943d0905312ee7915f7b6fd96f",
+      "internal/sdk/local_backup.go": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6"
+    },
+    "host_paths": {
+      "internal/app/plugin_original_base.go": "ea919e822dcf8b930afc4fa8ea4890db877a112628e4b5fceccd403775549752",
+      "internal/app/plugin_original_base_session.go": "fab6277d758d1fbaa72e2fe7eafa20346052718a18017c32738510215572fd2c",
+      "internal/app/plugin_original_external_http.go": "e3ddd7d0ab824a414bf301e12d3fe727a8423340aeb3dd25d73f3285161afff2",
+      "internal/app/plugin_original_host_manager.go": "5928475a6cf4cca5ace2597ee367dc913ddee24d92e06350d89e3334edc5f701",
+      "internal/app/plugin_original_lifecycle.go": "4b07ae71fb63a578d2be9002be1a3dbca5d1454a1efb3c5b591ed91e4057e89b",
+      "internal/app/plugin_original_resources.go": "4bfdcf5ff1085e3b0d2899656adeebe6159a92fa66c7573687e4d2150b6f5774",
+      "internal/app/runtime.go": "0240bc03f075410b9c9b602a42739567aee94570a262a799d7a470a69ecdb3ef",
+      "internal/app/plugin_original_local_backup.go": "ed32fd90e3c7919e637568eb727b1543f357350dee7af71b2fbeca95ed41fb34",
+      "internal/app/plugin_original_local_backup_retention.go": "3c3503e8ae8144e101f308cf4cf3f4f44694c1a55fab22f6048f5e9cbe8750d5",
+      "internal/plugins/autobackup/local_host.go": "f6ffacc9847d29e2cae08f60db2d014d466699b61c950b8ff15e09b7dabd92b4",
+      "internal/plugins/local_backup.go": "1d30983f396c83da48bfdd3b1c2fcb71519290e35225d2f4fc2723525b4cc4a6",
+      "internal/app/plugin_auto_backup_package_linux_test.go": "92d662af62e64d18e9f0d77dc8f06744a78ffd32d49709ed23acc1f700fb151e"
+    }
+  },
+  "standard_package": {
+    "archive_members": [
+      "LICENSE",
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "auto-backup",
+      "plugins/autobackup/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ],
+    "archive_sha256": "bcd39740ed7034d969d2e22f32022d6f0420c37cf7114ce34643c7e4586d7863",
+    "archive_size": 3892289,
+    "capabilities": 6,
+    "entry": "auto-backup",
+    "frontend": null,
+    "host_contract": "light-media.sdk-resources/v1",
+    "id": "AutoBackup",
+    "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+    "index_sha256": "e0b7ab1ac0dd753dcc1400a39de4af297b31d5f36ea8b356a510ea47f1aa20ab",
+    "methods": 14,
+    "notice_sha256": "29cd152e76fd4286aff42c2020372002dd264fb8b7af900e2bb05259e06edc77",
+    "notice_size": 32836,
+    "plugin_source": "9adada51cae381b01aef6368c540563ab9e6f455",
+    "version": "2.1.4",
+    "worker_sha256": "d36a391bce240c0b1dd2fd11eb55d7af27871e3c4ef51160c3c986d6bff0ae45",
+    "worker_size": 7151526,
+    "path": "work/autobackup-20261107/packaging/linux-amd64/AutoBackup-2.1.4-linux-amd64.zip",
+    "license_files": [
+      "LICENSE.upstream",
+      "THIRD_PARTY_NOTICES.md",
+      "plugins/autobackup/ORIGIN.json",
+      "third_party/Go-LICENSE",
+      "third_party/x-text-LICENSE",
+      "third_party/x-text-PATENTS"
+    ]
+  },
+  "actual_app": {
+    "test": "TestAutoBackupInstalledAMD64Package",
+    "result": "PASS 4.23s",
+    "host_test_ELF_sha256": "c26fb11bdb95320948401c9808e92d4411a10f2a53cd7563ac9885211ce44b56",
+    "environment": "Native Linux x86_64 Alpine with network-none, unprivileged, read-only container and owned writable tmpfs. Actual started App, installed Go process, SQLite and local filesystem. Loopback fixture supplies only the exact package index and ZIP.",
+    "observations": [
+      "Installed the exact indexed Linux amd64 ZIP through the App repository install endpoint. Read its native local-only form with VCronField and the source immediate switch.",
+      "With enabled=false, initialization persisted onlyonce=false and the private +3-second callback produced a private timestamped ZIP. ctime rotation deleted the old bk file and retained an unrelated file. SQLite integrity_check passed, the committed marker and category were present, and the archived encryption key matched the owned store.",
+      "Enabled plus cron registered the public service. Manual invocation through the actual host scheduler published another archive, including same-second atomic replacement.",
+      "The framework rejected a bad key, and a valid header plus mismatched query reached the plugin-specific failure. A valid key could not create the ungranted destination. After a local root grant, the same saved config produced a private ZIP and the source success tuple. The default archive remained in place."
+    ],
+    "artifacts": {
+      "SHA256SUMS": "d6d84ba2c13847dba4e059cac7d8a90479eeadaaaf2d68eba4eb1b23fb5021cb",
+      "build-source.txt": "a6d3f3e3ff58a8e20fc541db739f1b042b182cf93eedd742ef721d902e3d3f99",
+      "build.sha256": "f4caa73fb77029dcb096c150625bec50f7be92e3bda5fed423899aa62cb8491b",
+      "runtime.stdout": "009624bda29cf97ddbf6fdc13fde4f40c0e7f6155b86d54dffae33e3bab1279f",
+      "send-bundle.py": "fa2436916dea2cade8ba49a9603d0dbe5dcc370d978f220dec69a657d93a8b2c",
+      "run-remote.sh": "736bdb57f4644d6c69809cf6ff24c97ea1795afd64bf89cc743b7acf8d1496ca"
+    },
+    "cleanup": "Remote owned container and staged input removed. Local App fixture executable removed after SHA-256 binding.",
+    "build_note": "A pre-execution compile overlapped final host edits and was discarded after hash mismatch. The final committed host was compiled and the real App case ran once."
+  },
+  "adaptations_and_limits": [
+    "Archive retains source filename, optional category and local retention ordering. Native SQLite snapshot and matching key replace MoviePilot user.db* and app.env/cookies storage. The SQLite and encryption key stay within the host, with archive mode 0600.",
+    "The implicit destination is each instance private data directory. Explicit paths require the existing local write grant and no-follow checks. Retention and same-second overwrite protect unrelated managed paths.",
+    "WebDAV/cloud storage excluded by user. PostgreSQL installer/dump is inapplicable to the native SQLite host. The installed plugin has no restore entry, data page or command. No new core backup API.",
+    "The current fixture reads the native form and runs the host lifecycle. Prior Chrome, clone and notification coverage is recorded separately. This case did not exercise a live notification provider or replay private source data."
+  ],
+  "review": {
+    "independent": [
+      "/root/emby",
+      "/root/kodi",
+      "/root/jellyfin"
+    ],
+    "scope": "Fixed source behavior, reusable archive host code, authorization and local form/clone behavior. Coordinator ran one fresh targeted native App scenario."
+  },
+  "delivery": {
+    "plugin_branch": "codex/installed-plugins-20261105",
+    "host_branch": "codex/plugin-source-error-outcomes-20261105",
+    "plugin_remote_main": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "host_remote_main": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "pushed": false,
+    "deployed": false
+  }
+}

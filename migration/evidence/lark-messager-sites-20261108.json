@@ -1,0 +1,169 @@
+{
+  "plugin": "LarkMessager 0.9.1",
+  "slice": "Lark /sites interaction and local site Cookie login",
+  "overall_plugin_status": "implementing",
+  "moviepilot_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "source_to_target": [
+    {
+      "source": "app/command.py:63–69, 441–470; app/chain/message.py:300–397, 678–792",
+      "target": "light-media internal/app/plugin_original_host_message_inbound.go and plugin_original_lark_endpoint.go",
+      "behavior": "Ordinary inbound command, pending text and callback branches; registered plugin command priority; exact loaded Lark parser."
+    },
+    {
+      "source": "app/helper/interaction.py:32–106, 132–259; app/chain/site.py:756–1243",
+      "target": "light-media internal/app/plugin_original_site_interaction.go",
+      "behavior": "Ephemeral 24-hour per-user session, 12-hex token, pages and button priority, source Markdown, edit-first then fallback send, canceled and replaced card handling."
+    },
+    {
+      "source": "app/chain/site.py:1244–1299, 1358–1386; app/db/site_oper.py:34–61",
+      "target": "light-media internal/app/plugin_original_site_interaction.go",
+      "behavior": "Native identity mapping, sequential partial state changes with duplicate/missing feedback, settings transaction, paired Cookie and UA update after origin and settings revalidation."
+    },
+    {
+      "source": "app/helper/cookie.py:108–328; app/helper/twofa.py; Playwright 1.62 networkidle",
+      "target": "light-media internal/app/plugin_original_site_cookie_login.go and internal/browserrender/{action,native,proxy}.go",
+      "behavior": "Origin-confined real browser, login input, remember, second OTP page, local cookie jar, login detection, and optional scoped OCR."
+    }
+  ],
+  "executed_source_oracle": {
+    "kind": "fixed-source pure method execution",
+    "moviepilot_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "input": {
+      "site_ids": "站点７, 999, 7",
+      "rows": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6,
+        7
+      ]
+    },
+    "output": {
+      "parsed_ids": [
+        7,
+        999,
+        7
+      ],
+      "pages": 2,
+      "page_1": [
+        1,
+        2,
+        3,
+        4,
+        5,
+        6
+      ],
+      "page_2": [
+        7
+      ],
+      "first_buttons": [
+        [
+          {
+            "text": "下一页 ➡️",
+            "callback_data": "sites:0123456789ab:page-next"
+          }
+        ]
+      ],
+      "last_buttons": [
+        [
+          {
+            "text": "⬅️ 上一页",
+            "callback_data": "sites:0123456789ab:page-prev"
+          }
+        ]
+      ],
+      "disable_prompt": "当前操作：禁用站点，请输入站点 ID，多个 ID 用空格分隔。",
+      "cookie_prompt": "当前操作：更新站点 Cookie，请输入：<id> <username> <password> [2fa_code/secret]",
+      "default_hint": "可输入：`cookie <id> <username> <password> [2fa]`、`启用 <id...>`、`禁用 <id...>`、`n`、`p`、`刷新`、`退出`。",
+      "sample_table": "| ID | 站点 | 状态 | Cookie | 渲染 | 域名 |\n| --- | --- | --- | --- | --- | --- |\n| 7 | Owned site 7 | 禁用 | 已配置 | 是 | 127.0.0.1 |"
+    }
+  },
+  "source_oracle_sha256": "d4abd6570a92aafabbc0c0219fff9577603ced4f8def6b23e0e9522b09dfe021",
+  "playwright_reference": [
+    "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/frames.ts#L356-L380",
+    "https://github.com/microsoft/playwright/blob/v1.62.0/packages/playwright-core/src/server/network.ts#L185-L202"
+  ],
+  "native": {
+    "kind": "real_host_and_real_browser_with_owned_protocol_peers",
+    "status": "passed",
+    "seconds": 15.22,
+    "host_commit": "69fb91e03ad86b8089bde4ad01b297681191c899",
+    "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "package": {
+      "archive_members": [
+        "LICENSE",
+        "THIRD_PARTY_NOTICES.md",
+        "lark-messager",
+        "plugins/autosignin/UNICODE-LICENSE.txt",
+        "plugins/larkmessager/LICENSE-JITER.txt",
+        "plugins/larkmessager/LICENSE-PYDANTIC.txt",
+        "plugins/larkmessager/LICENSE-PYTHON.txt",
+        "plugins/larkmessager/ORIGIN.json",
+        "third_party/Go-LICENSE",
+        "third_party/x-text-LICENSE",
+        "third_party/x-text-PATENTS"
+      ],
+      "archive_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+      "archive_size": 5738109,
+      "capabilities": 10,
+      "entry": "lark-messager",
+      "frontend": null,
+      "host_contract": "light-media.sdk-resources/v1",
+      "id": "LarkMessager",
+      "image": "sha256:50bbab999a8710af814e2e66146444bc367f26c871153cc6554577385fed1058",
+      "index_sha256": "60023324b28b587bd12408ac588186c82713190e266f6d8adc2f0b9aae9fef88",
+      "methods": 20,
+      "notice_sha256": "47930485d27fa35579a8986e3ee1f29e414e02c2bf2c4a0a2bf7fbc84f604691",
+      "notice_size": 27401,
+      "plugin_source": "535c6ae9af553253e16d9c0bbbce70473195621d",
+      "version": "0.9.1",
+      "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+      "worker_size": 10531057
+    },
+    "fixture": "light-media internal/app/plugin_original_site_interaction_linux_test.go:TestOriginalLarkSiteInteractionLinuxAMD64",
+    "fixture_sha256": "5df19e255ebc04dc2995b51a275c93a90cc58166ca555c0fdb8c54612d91f144",
+    "host_elf_sha256": "b770379df5a0c79525a767d23f1ffb28bb4134c62f44b427b8c9459eef5dc914",
+    "runtime_log_sha256": "b550b949adf2bdf078c0e04326b16d9d2c89a2e2e1475d089f3c707f00c9d483",
+    "runner_sha256": "af7ba301b89299572720f43a27189e41ca1522b2fc34b18e6f8368c5258e9fe7",
+    "environment": "Native Linux amd64, isolated read-only container with a writable tmpfs, loopback only, Chromium 155.0.8059.39 headless with writable XDG config and cache; all site and Lark inputs synthetic.",
+    "observations": [
+      "The exact indexed ZIP installed and enabled. An unverified ordinary command finished the normal reaction path without entering /sites or mutating any site.",
+      "Seven native rows with reversed priorities rendered as six plus one, ordered by source ID. A different sender could not use the card. A valid next-page callback PATCHed the original card. The internal clamp action string had no external effect.",
+      "A provider edit rejection caused a replacement card. Digit-run input with fullwidth ７, missing 999 and duplicate 7 reported both existing occurrences and one missing ID. The selected site was disabled; other settings and its existing Cookie survived the toggle.",
+      "The disabled site accepted exactly one real login POST with the remember checkbox. The real browser carried the temporary HttpOnly session to the separate verify page, submitted OTP once and extracted the authenticated Cookie and user agent. The site stayed disabled and both values were saved together.",
+      "The real form attempted a cross-origin credential request and waited for its result before submitting locally. The foreign server received zero requests. The test unsealed incoming message rows and found no pending site password, and verified absence in card content.",
+      "A new /sites command invalidated the previous callback token. The isolated App and browser exited. Earlier installed-worker notification and test-card scenarios were not rerun."
+    ]
+  },
+  "earlier_attempts": [
+    {
+      "status": "failed_fixture_precondition",
+      "observation": "Reserved .example host names were rejected by the native site configuration validator before package admission; the fixture was changed to an owned loopback adapter.",
+      "log_sha256": "abdc6e8bf5ef0f6a0eab178c367a32924e0a1b2c255a9d4b40a15c182b4f645a"
+    },
+    {
+      "status": "failed_fixture_provision",
+      "observation": "The Chromium image defaults to an unprivileged user and could not provision Xvfb on the first attempt. Slow dependency fetch was unnecessary after the isolated headless pass. No original services were touched."
+    },
+    {
+      "status": "failed_fixture_startup",
+      "observation": "Two headless launch attempts failed before the tracker saw an HTTP request. The second attempt added stage-specific diagnostics. The final fixture provided writable XDG paths; it retained the browser cookie jar and used source-derived networkidle exclusions.",
+      "log_sha256": [
+        "f2f181b19b995bf0f6de8d5ea1f65e9bc557d0427a3813b6af9b520b7940c11c",
+        "94067e1d25e51734925e07df1924390a82f0f9a801fb47680df215c3ce5f9dd5"
+      ]
+    }
+  ],
+  "adaptations": [
+    "Native site management is admitted only from a real Lark webhook whose configured verification token or signature is proven against the HTTP bytes. The source accepts optional verification for ordinary forwarding; encrypted bytes alone do not authorize host site changes.",
+    "The exact originating Lark worker alone sees raw Lark parse input. Pending credential text and inline /sites cookie args are excluded from message history, reaction payload text, general plugin input and event observers. Recently expired/replaced cookie prompts protect credential-shaped replies.",
+    "Credential browser traffic is confined to the exact site origin. Tracker and browser error details are mapped to bounded messages. Browser fingerprinting and proxy selection reuse the host runtime. A FlareSolverr preflight, when configured, precedes credentials and seeds only same-origin cookies. No Python runtime was added."
+  ],
+  "remaining": [
+    "Lark overall still requires /subscribes, media interaction and transfer retry host integrations and the remaining plugin-specific distinct checks. This run used literal 2FA on a second page; TOTP secret calculation, external OCR, configured proxy/FlareSolverr and headed launch did not execute in this fixture.",
+    "Next /subscribes: native durable numeric ID mapping, most-recent slash session precedence, manual search and terminal job feedback, guarded deletion, shared latest-resource refresh and a separate metadata refresh path."
+  ],
+  "delivery": "Paired host and plugin code in local branches. No push, deployment or production-site login."
+}

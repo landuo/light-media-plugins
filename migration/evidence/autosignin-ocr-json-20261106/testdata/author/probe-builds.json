@@ -1,0 +1,80 @@
+[
+  {
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-mod=readonly",
+      "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-new-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/new-domain-probe-linux",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": ""
+    },
+    "exit": 0,
+    "seconds": 1.0523034171201289,
+    "sha256": "8312f26e11bb5ffc97074671cd61c2466a66b37821754ee97a7a0e01970fd213"
+  },
+  {
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-mod=readonly",
+      "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-old-parser-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/old-parser-domain-probe-linux",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": ""
+    },
+    "exit": 0,
+    "seconds": 0.5460009998641908,
+    "sha256": "b679a7a9299e5fbf9872d5b3561b478159475479d7108c74e70be8426b2c2002"
+  },
+  {
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-mod=readonly",
+      "-modfile=work/migration-20261105/autosignin-implementation-20261106/autosignin.mod",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/probe-old-binding-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/old-binding-domain-probe-linux",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": ""
+    },
+    "exit": 0,
+    "seconds": 0.5525769172236323,
+    "sha256": "43e84dadeac8cfb8d1ebc4e3a9159e09ff382d585026d539173dbf52df236fa1"
+  }
+]

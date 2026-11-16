@@ -1,0 +1,414 @@
+{
+  "schema_version": 1,
+  "classification": "read-only source/cache/license/build inventory plan; not legal opinion, not dependency installation, not product build or network acceptance",
+  "at_utc": "2026-11-05T10:22:59.243774+00:00",
+  "owner": "Root alone edits go.mod/go.sum/shared notices/build registry/README",
+  "direct_new_modules": [
+    {
+      "module": "github.com/andybalholm/brotli",
+      "version": "v1.2.6",
+      "source_directory": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6",
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6/go.mod",
+        "bytes": 151,
+        "sha256": "9836ed7059e6b6be9d42e666c866deea8646d5815216fcf6216966074744cb1f"
+      },
+      "go_mod_text": "module github.com/andybalholm/brotli\n\ngo 1.22\n\nretract v1.0.1 // occasional panics and data corruption\n\nrequire github.com/xyproto/randomstring v1.0.5\n",
+      "cached_module_h1": "h1:ftYnfj6usCp+UGV5kSJ3+chpMQgU+gJf/AxsUQ52REI=",
+      "recomputed_directory_h1": "h1:ftYnfj6usCp+UGV5kSJ3+chpMQgU+gJf/AxsUQ52REI=",
+      "directory_hash_match": true,
+      "go_mod_h1": "h1:rzTDkvFWvIrjDXZHkuS16NPggd91W3kUSvPlQ1pLaKY=",
+      "module_files_checked": 94,
+      "license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6/LICENSE",
+          "bytes": 1084,
+          "sha256": "3d180008e36922a4e8daec11c34c7af264fed5962d07924aea928c38e8663c94",
+          "role": "MIT",
+          "proposed_root_target": "third_party/brotli-LICENSE"
+        },
+        {
+          "path": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6/flate/LICENSE",
+          "bytes": 1479,
+          "sha256": "2d36597f7117c38b006835ae7f537487207d8ec407aa9d9980794b2030cbc067",
+          "role": "BSD-3-Clause, flate subpackage not in used import closure; conservative complete-module notice",
+          "proposed_root_target": "third_party/brotli-flate-LICENSE"
+        }
+      ],
+      "PATENTS_present": false,
+      "dependency_observation": {
+        "command": "GOWORK=off GOPROXY=off GOSUMDB=off go list -mod=readonly -deps -json .",
+        "cwd": "/Users/accidia/go/pkg/mod/github.com/andybalholm/brotli@v1.2.6",
+        "exit_code": 0,
+        "raw_output": "work/migration-20261105/mpserverstatus-preparation/brotli-cached-module-deps.json",
+        "raw_sha256": "b1ec1400bdebbcc17455434d225fdf45f80efc5af6502d7510f24b93c1398ce8",
+        "nonstdlib_imports": [
+          "github.com/andybalholm/brotli/matchfinder",
+          "github.com/andybalholm/brotli"
+        ],
+        "other_modules_in_leaf_import_closure": [],
+        "classification": "read-only cached-module import graph; no worker/network execution"
+      }
+    },
+    {
+      "module": "golang.org/x/net",
+      "version": "v0.61.0",
+      "source_directory": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0",
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/go.mod",
+        "bytes": 157,
+        "sha256": "7bbcec6b6af859939ec01bbe5234e556c867bf80e171abc23ad16c2c8e3951fe"
+      },
+      "go_mod_text": "module golang.org/x/net\n\ngo 1.26.0\n\nrequire (\n\tgolang.org/x/crypto v0.58.0\n\tgolang.org/x/sys v0.49.0\n\tgolang.org/x/term v0.47.0\n\tgolang.org/x/text v0.43.0\n)\n",
+      "cached_module_h1": "h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=",
+      "recomputed_directory_h1": "h1:RR+6j/BTBCrggOLugxa+66R8FvoN6MHlzDlZIbN9YFw=",
+      "directory_hash_match": true,
+      "go_mod_h1": "h1:WgDCOTH8iwtB66T4/GfI94AHo/hhdb7Hah9NDseQfiI=",
+      "module_files_checked": 836,
+      "license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/LICENSE",
+          "bytes": 1453,
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad",
+          "role": "BSD-3-Clause",
+          "proposed_root_target": "third_party/x-net-LICENSE"
+        },
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc",
+          "role": "additional Go IP rights grant",
+          "proposed_root_target": "third_party/x-net-PATENTS"
+        }
+      ],
+      "PATENTS_present": true,
+      "dependency_observation": {
+        "command": "GOWORK=off GOPROXY=off GOSUMDB=off go list -mod=readonly -deps -json ./proxy",
+        "cwd": "/Users/accidia/go/pkg/mod/golang.org/x/net@v0.61.0",
+        "exit_code": 0,
+        "raw_output": "work/migration-20261105/mpserverstatus-preparation/x-net-proxy-cached-module-deps.json",
+        "raw_sha256": "0bd6e00a48ecf8026df524846d0dd61a9fdb73e801fc9b6336acf4565350bece",
+        "nonstdlib_imports": [
+          "golang.org/x/net/internal/socks",
+          "golang.org/x/net/proxy"
+        ],
+        "other_modules_in_leaf_import_closure": [],
+        "classification": "read-only cached-module import graph; no worker/network execution"
+      }
+    }
+  ],
+  "declared_transitives": [
+    {
+      "module": "github.com/xyproto/randomstring",
+      "version": "v1.0.5",
+      "reason": "brotli go.mod requirement; only upstream brotli_test.go imports it, not MP runtime/test leaf graph",
+      "unpacked_cache_exists": true,
+      "required_by_new_leaf_import_closure": false,
+      "runtime_license_addition_from_new_MP_imports": false,
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/github.com/xyproto/randomstring@v1.0.5/go.mod",
+        "bytes": 48,
+        "sha256": "a7d51dd77422d16f9cf46888d7ce14a3e8f11a7c3c7f024916f50c065805fc8a"
+      },
+      "go_mod_text": "module github.com/xyproto/randomstring\n\ngo 1.17\n",
+      "available_license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/github.com/xyproto/randomstring@v1.0.5/LICENSE",
+          "bytes": 1466,
+          "sha256": "600fd527a502cc31df79186bf50db4ed680ec5f57e4ac628e54cbfaa4c8140f2"
+        }
+      ]
+    },
+    {
+      "module": "golang.org/x/crypto",
+      "version": "v0.58.0",
+      "reason": "x/net go.mod requirement; not imported by x/net/proxy or internal/socks",
+      "unpacked_cache_exists": true,
+      "required_by_new_leaf_import_closure": false,
+      "runtime_license_addition_from_new_MP_imports": false,
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/golang.org/x/crypto@v0.58.0/go.mod",
+        "bytes": 192,
+        "sha256": "938883ec4a74e7fc05c46269e924dda334c2b7ca7ca219e4d27ca56d1891ccd3"
+      },
+      "go_mod_text": "module golang.org/x/crypto\n\ngo 1.26.0\n\nrequire (\n\tgolang.org/x/net v0.60.0 // tagx:ignore\n\tgolang.org/x/sys v0.49.0\n\tgolang.org/x/term v0.47.0\n)\n\nrequire golang.org/x/text v0.43.0 // indirect\n",
+      "available_license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/crypto@v0.58.0/LICENSE",
+          "bytes": 1453,
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+        },
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/crypto@v0.58.0/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+        }
+      ]
+    },
+    {
+      "module": "golang.org/x/sys",
+      "version": "v0.49.0",
+      "reason": "x/net go.mod requirement; not imported by x/net/proxy or internal/socks",
+      "unpacked_cache_exists": true,
+      "required_by_new_leaf_import_closure": false,
+      "runtime_license_addition_from_new_MP_imports": false,
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/golang.org/x/sys@v0.49.0/go.mod",
+        "bytes": 35,
+        "sha256": "9522f4c9806d1c26586ea80fa56292929bd295865e71981927f52996c6b1c831"
+      },
+      "go_mod_text": "module golang.org/x/sys\n\ngo 1.26.0\n",
+      "available_license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/sys@v0.49.0/LICENSE",
+          "bytes": 1453,
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+        },
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/sys@v0.49.0/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+        }
+      ]
+    },
+    {
+      "module": "golang.org/x/term",
+      "version": "v0.47.0",
+      "reason": "x/net go.mod requirement; not imported by x/net/proxy or internal/socks",
+      "unpacked_cache_exists": false,
+      "required_by_new_leaf_import_closure": false,
+      "runtime_license_addition_from_new_MP_imports": false,
+      "missing_resource": "No unpacked module or cached .mod/.zip/license for x/term0.47.0; only .info present. Not needed by actual new leaf import graphs. Root module resolver may fetch metadata if its chosen tidy/graph operation needs it.",
+      "available_license_files": []
+    },
+    {
+      "module": "golang.org/x/text",
+      "version": "v0.43.0",
+      "reason": "x/net metadata requirement and already-existing target direct dependency; target SDK use predates MP",
+      "unpacked_cache_exists": true,
+      "required_by_new_leaf_import_closure": false,
+      "runtime_license_addition_from_new_MP_imports": false,
+      "go_mod": {
+        "path": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/go.mod",
+        "bytes": 190,
+        "sha256": "63270b8ca6290a720212e1d6e58b8d12a8aa315a1cb960411d7ec2998c0aab59"
+      },
+      "go_mod_text": "module golang.org/x/text\n\ngo 1.26.0\n\nrequire golang.org/x/tools v0.51.0 // tagx:ignore\n\nrequire (\n\tgolang.org/x/mod v0.41.0 // indirect; tagx:ignore\n\tgolang.org/x/sync v0.24.0 // indirect\n)\n",
+      "available_license_files": [
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/LICENSE",
+          "bytes": 1453,
+          "sha256": "911f8f5782931320f5b8d1160a76365b83aea6447ee6c04fa6d5591467db9dad"
+        },
+        {
+          "path": "/Users/accidia/go/pkg/mod/golang.org/x/text@v0.43.0/PATENTS",
+          "bytes": 1303,
+          "sha256": "96f408bfae65bf137fc2525d3ecb030271c50c1e90799f87abf8846d8dd505cc"
+        }
+      ]
+    }
+  ],
+  "hash_method": {
+    "algorithm": "Go x/mod/sumdb/dirhash.Hash1, full filename strings sorted lexicographically; SHA256 per-file hex + two spaces + modulepath@version/filename + LF; SHA256 summary base64 h1",
+    "reference": {
+      "path": "/Users/accidia/go/pkg/mod/golang.org/x/mod@v0.41.0/sumdb/dirhash/hash.go",
+      "bytes": 4094,
+      "sha256": "24de6a735c1605e39b6381e6962787faa5c59adab896fb66dbc1ac8b6afcb297"
+    },
+    "initial_false_diagnostic": "A first audit used pathlib segmented Path ordering for x/net. It was corrected to exact Go full-string ordering; every836 disk file also byte-matched cached zip. No module files changed.",
+    "x_net_zip_crosscheck": {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/x-net-cached-module-integrity.json",
+      "bytes": 703,
+      "sha256": "76c9585aedf09728af1e04d7a4ff08c8f5ac2e40eaa98fe4eda378f44277c77a"
+    }
+  },
+  "root_baseline": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/go.mod",
+      "bytes": 91,
+      "sha256": "311324d743d4e2e97c453c8dd30357c4a80f82cba75496f2fbcd9ce41adb6b4a"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/go.sum",
+      "bytes": 155,
+      "sha256": "223a00fa76af00dea42243bc0c388d029397572e5f613ab9022d44f25f049955"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/README.md",
+      "bytes": 7805,
+      "sha256": "4e0108ed9a0f60819cce2b57e452623343c474a11728264913d0c178d5174554"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/THIRD_PARTY_NOTICES.md",
+      "bytes": 1960,
+      "sha256": "60367abf0e3a617f9c3f6bded95eb4824d9be50b1873c4c2197d10c0ab8ac07f"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/LICENSE",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/LICENSE.upstream",
+      "bytes": 35149,
+      "sha256": "3972dc9744f6499f0f9b2dbf76696f2ae7ad8af9b23dde66d6af86c9dfb36986"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py",
+      "bytes": 19892,
+      "sha256": "d0015525c0da529b856e21ffee6205612f260fff6e749d413fed6751d63319e6"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/build-plugins.json",
+      "bytes": 712,
+      "sha256": "18a26adefa63f01313d2f02fb4aeebc7c79322c9c05013e9c6cd9707986161b8"
+    }
+  ],
+  "vendored_notices": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+      "bytes": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "role": "CPython PSF license/history for codec-derived tables and code"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+      "bytes": 1995,
+      "sha256": "e7a93b009565cfce55919a381437ac4db883e9da2126fa28b91d12732bc53d96",
+      "role": "Unicode License V3 for generated Unicode data"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+      "bytes": 641,
+      "sha256": "0d4cf67e7a26e9957b8948e7dfc0e380e61b427a94b061e618889aba89bb9616",
+      "role": "0BSD notice, copyright2026 Dan Blanchard; actual chardet METADATA License-Expression:0BSD"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+      "bytes": 1336,
+      "sha256": "fa44e9afaa4821fdb777249c16a495148509bbb74a7b60ecd26780544f58b913",
+      "role": "pure helper provenance notice; first line needs MP-specific adaptation"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+      "bytes": 13936,
+      "sha256": "3b2f81fe21d181c499c59a256c8e1968455d6689d269aa85373bfb6af41da3bf",
+      "role": "CPython environment-proxy algorithm license"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+      "bytes": 10142,
+      "sha256": "09e8a9bcec8067104652c168685ab0931e7868f9c8284b66f5ae6edae5f1130b",
+      "role": "Requests Apache2.0 license"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+      "bytes": 1401,
+      "sha256": "7027e214e014eb78b7adcc1ceda5aca713a79fc4f6a0c52c9da5b3e707e6ffe9",
+      "role": "PySocks3-clause BSD notice"
+    }
+  ],
+  "source_support_binding_inputs": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/codec-reuse-inputs.json",
+      "bytes": 118530,
+      "sha256": "fa3314548a93537cc05a1b4f64d5321dd2e564a6023ab87c67f4d5fe4aa7ada3"
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261105/mpserverstatus-preparation/requests-proxy-reuse-inputs.json",
+      "bytes": 2604,
+      "sha256": "af08de6822bb37e6467a6b1a9d93ab5c4fc29c7a0ae2e8e60c0e71e6f66d9654"
+    }
+  ],
+  "documentation_findings": [
+    {
+      "path": "README.md",
+      "finding": "Currently says x/text is the only third-party Go module and local worker entry is category-editor. Root must update dependency/version/license list for Brotli1.2.6+x/net0.61.0 and describe MP1.4 single enable/fixed public read-only status probe when actually accepted, without claiming pending Main/browser/clone checks."
+    },
+    {
+      "path": "THIRD_PARTY_NOTICES.md",
+      "finding": "Currently only CategoryEditor/source and Go+x/text; Root must add MPServerStatus1.4 jxxghp installed sourceSHA63583e... and precise pure algorithm/proxy/codec source/notice coverage plus both modules. Do not invent an upstream commit for installed MP source."
+    },
+    {
+      "path": "plugins/mpserverstatus/ORIGIN.md",
+      "sha256": "6f22cdba3c0b6acb4d328d6b9de665250b3eda662f9bf9a9ba1d35281c91336d",
+      "finding": "Already records complete source methods/entrypoints, no delegated builtin, source oracle runtime correction (no zstd), proxy/TLS/netrc/scope/native resolver boundaries, state/noopstop/clone semantics and unverified actualhost. Before freeze explicitly name Go module pins1.2.6/0.61.0 and shipped notice filenames; source-fixture list includes343cases+1droptrace. No worker build/realMain acceptance is yet claimed."
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+      "finding": "Opening line refers to installed notification plugins (inherited original host helper). Adapt to MP public monitor/helper reuse, preserve actual licenses/attributions, and mention approved strict independent HTTPS proxy TLS modification. No product notification capability exists."
+    },
+    {
+      "path": "plugins/mpserverstatus/encodingdetector",
+      "finding": "All304 approved production/embedded model+codec+3license input files retain source bytes, plus own Requests source-comparison test. No separate README exists; provenance is in MP ORIGIN+per-file inventory. Suggested packaged ORIGIN supplies this attribution; generated tables remain embedded, not an extra runtime Python dependency."
+    },
+    {
+      "path": "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE",
+      "finding": "MISSING: actual Requests2.34.2 METADATA declares LICENSE+NOTICE. Existing privateproxy copies LICENSE but no upstream NOTICE. Actual vendor capture confirms38bytes, SHA f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc. Root should copy this exact notice and add it to MP package license_files."
+    }
+  ],
+  "packaging": {
+    "existing_function": "scripts/build_plugins.py:273 license_inventory",
+    "behavior": "Unions only explicit per-plugin license_files; adds root LICENSE automatically for non-local-probe; does not auto-discover vendored/module licenses. build_plugin includes these named files inside pluginZIP, and separate notices ZIP uses union of selected plugin allowlists. No script logic change needed for below paths.",
+    "proposed_build_entry": {
+      "id": "MPServerStatus",
+      "package": "./cmd/mp-server-status",
+      "host_contract": "light-media.sdk-resources/v1",
+      "license_files": [
+        "LICENSE.upstream",
+        "THIRD_PARTY_NOTICES.md",
+        "third_party/Go-LICENSE",
+        "third_party/x-text-LICENSE",
+        "third_party/x-text-PATENTS",
+        "third_party/brotli-LICENSE",
+        "third_party/brotli-flate-LICENSE",
+        "third_party/x-net-LICENSE",
+        "third_party/x-net-PATENTS",
+        "plugins/mpserverstatus/encodingdetector/LICENSE.PSF",
+        "plugins/mpserverstatus/encodingdetector/LICENSE.Unicode",
+        "plugins/mpserverstatus/encodingdetector/LICENSE.chardet",
+        "plugins/mpserverstatus/requestsproxy/REQUESTS-NOTICE",
+        "plugins/mpserverstatus/requestsproxy/licenses/CPython-PSF.txt",
+        "plugins/mpserverstatus/requestsproxy/licenses/Requests-Apache-2.0.txt",
+        "plugins/mpserverstatus/requestsproxy/licenses/PySocks-BSD.txt",
+        "plugins/mpserverstatus/ORIGIN.md",
+        "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE"
+      ]
+    },
+    "automatically_added_release_file": "LICENSE",
+    "expected_package_notice_members": 19,
+    "frontend": "none; original Vuetify page/dashboard trees, no custom Vue build",
+    "embedded_models": "304 source/support files are compiled go:embed inputs; ZIP need not duplicate model trees. License texts/notices/ORIGIN must be named in allowlist.",
+    "source_limits": "All proposed paths canonical ordinary files, depth<=5, distinct case-folded member names; source-notice total is far below128MiB/4096file limits. Executable size still needs actual build."
+  },
+  "not_added": [
+    "klauspost/compress or zstd: original Python3.12 urllib3.HAS_ZSTD=false; installed zstandard0.25.0 is not urllib3 decoder",
+    "xyproto/randomstring/crypto/sys/term as runtime dependency claims merely from module metadata; new leaf graphs have no additional modules",
+    "no root/share files changed in this audit"
+  ],
+  "post_unlock_checks": [
+    "Root adds exact two direct module pins and appropriate sums/notices/explicit build allowlist; re-evaluate actual resulting go.mod/go.sum rather than assuming graph output",
+    "Execute RESUME fullnormal/race/vet/Linuxbuild, retain failures and per-mode native-worker budget observations",
+    "Verify actual built worker module info and package license members/SHA with current build pipeline; normal release root LICENSE required",
+    "Independent source/target review and Root ordinary Linux Main/browser/clone acceptance remain outstanding"
+  ],
+  "actual_vendor_licenses": {
+    "capture_manifest": "work/migration-20261105/mpserverstatus-preparation/vendor-license-manifest.json",
+    "production_execution": "Path.read_bytes/hash/base64 only; no app/vendor imports/functions/config/DB/network",
+    "requests_license_matches_current": true,
+    "chardet_license_matches_current": true,
+    "chardet_spdx": "0BSD",
+    "missing_requests_notice": {
+      "source": "work/migration-20261105/mpserverstatus-preparation/vendor-license-reference/requests-2.34.2.dist-info/licenses/NOTICE",
+      "bytes": 38,
+      "sha256": "f5110972dedad2b4e9d314518daf3b7d72d6e02e499acd802181de6f74571dcc",
+      "proposed_target": "plugins/mpserverstatus/requestsproxy/licenses/Requests-NOTICE",
+      "currently_exists": false
+    }
+  },
+  "vendored_codec_byte_verification": {
+    "files_checked": 304,
+    "mismatches": [],
+    "own_additional_test": "encodingdetector/requests_reference_test.go excluded from original304 production/support inventory"
+  }
+}

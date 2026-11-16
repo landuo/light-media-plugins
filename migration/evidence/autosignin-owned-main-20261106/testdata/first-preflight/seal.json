@@ -1,0 +1,31 @@
+{
+  "schema": 1,
+  "kind": "independent-read-only-main-driver-preflight",
+  "created_utc": "2026-11-06T12:52:26.895879+00:00",
+  "scope": "static original and host call-chain inspection plus readback of two failed actual Main traces; no new Main execution or App compilation",
+  "production_mutations": false,
+  "driver_mutations": false,
+  "files": [
+    {
+      "path": "fixed-primary-facts.json",
+      "sha256": "af4dc8c83ad29351a0e9c0e25460e18b14d1b0d69d182353173d5780396e9b83",
+      "bytes": 13211
+    },
+    {
+      "path": "input-manifest.json",
+      "sha256": "696a616364646db4def432d9658a3c34996082ed7e133a8c0eddda23bcb495a7",
+      "bytes": 6514
+    },
+    {
+      "path": "observed-summary.json",
+      "sha256": "adbdced82a52a61206e8078ec8f951145acf22a3999766fa63faf188f962196d",
+      "bytes": 28042
+    },
+    {
+      "path": "review.md",
+      "sha256": "7e3e2f0eac362c3d6dde18dbac7f50a12a3cdaa68b063f9f977c392870798895",
+      "bytes": 6017
+    }
+  ],
+  "input_files_stable": 30
+}

@@ -1,0 +1,10 @@
+{
+  "kind": "review tool correction only",
+  "cause": "split without maxsplit discarded120 legitimate symbols containing spaces in generic type names",
+  "fix": "parse address,size,kind then retain complete remainder as symbol name",
+  "raw_nm_lines": 4877,
+  "prior_parsed_symbols": 4757,
+  "correct_parsed_symbols": 4877,
+  "full_nm_raw_sha_unchanged": true,
+  "machine_or_product_inputs_unchanged": true
+}

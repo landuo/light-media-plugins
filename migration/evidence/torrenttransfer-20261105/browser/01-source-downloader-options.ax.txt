@@ -1,0 +1,125 @@
+Browser tab: 7, Title: "光影 · Light Media", URL: "http://192.168.8.129:36252/#plugins".
+0 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36252/#plugins
+	1 container app
+		2 container
+			3 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36252/#discover
+			4 link Description: 搜索结果, Value: 192.168.8.129:36252/#search
+			5 text 发现
+			6 link Description: 推荐, Value: 192.168.8.129:36252/#discover
+			7 link Description: 探索, Value: 192.168.8.129:36252/#explore
+			8 link Description: 仪表板, Value: 192.168.8.129:36252/#dashboard
+			9 text 订阅
+			10 link Description: 电影, Value: 192.168.8.129:36252/#subscriptions?type=movie
+			11 link Description: 电视剧, Value: 192.168.8.129:36252/#subscriptions?type=tv
+			12 link Description: 日历, Value: 192.168.8.129:36252/#calendar
+			13 text 整理
+			14 link Description: 下载管理, Value: 192.168.8.129:36252/#downloads
+			15 link Description: 整理历史, Value: 192.168.8.129:36252/#history
+			16 link Description: 文件管理, Value: 192.168.8.129:36252/#files
+			17 text 系统
+			18 link Description: 站点管理, Value: 192.168.8.129:36252/#sites
+			19 link Description: 插件, Value: 192.168.8.129:36252/#plugins
+			20 link Description: 任务队列, Value: 192.168.8.129:36252/#jobs
+			21 link Description: 日志, Value: 192.168.8.129:36252/#logs
+			22 link Description: 设置, Value: 192.168.8.129:36252/#settings
+		23 container
+			24 button 搜索影视
+			25 text field (settable) 搜索电影、剧集
+			26 text ⌘K
+			27 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			28 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			30 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+			31 button 退出登录
+		32 container
+			33 tab group
+				34 container
+					35 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					36 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			37 button 搜索插件
+			38 button 筛选已安装插件
+			39 button 排序插件
+			40 container
+				41 text 自动转移做种  v1.10.3 定期转移下载器中的做种任务到另一个下载器。
+				42 link Description: jxxghp, Value: github.com/jxxghp
+				43 pop up button (collapsed) Description: 自动转移做种操作, Secondary Actions: Expand
+			44 button 新建文件夹
+	45 container
+		46 container
+			47 text 自动转移做种 - 插件配置
+			48 button 关闭配置
+			49 text 当前构建声明的支持范围：平台 Linux；存储 本地（local）。以此范围为准，原版表单中的其他平台或存储示例不代表当前已支持。
+			50 container
+				51 container
+					52 checkbox (settable, integer) Description: 启用插件, Value: 1, ID: switch-113
+				53 text 启用插件
+				54 container
+					55 checkbox (settable, integer) Description: 发送通知, Value: 0, ID: switch-116
+				56 text 发送通知
+				57 container
+					58 checkbox (settable, integer) Description: 转移无标签种子, Value: 0, ID: switch-119
+				59 text 转移无标签种子
+				60 container
+					61 checkbox (settable, integer) Description: 立即运行一次, Value: 0, ID: switch-122
+				62 text 立即运行一次
+				63 container
+					64 text field (settable) Value: 0 0 1 1 *, ID: input-166
+					65 button Clear 执行周期
+				66 text field (settable) Value: owned-destination, ID: input-125
+				67 container
+					68 text 转移种子分类
+					69 text field (settable) 转移种子分类, ID: input-127
+				70 container
+					71 text 不转移种子标签
+					72 text field (settable) 不转移种子标签, ID: input-129
+				73 text field (settable) Value: owned-main-run-6-read-failure, ID: input-131
+				74 combo box (expanded) Secondary Actions: Collapse
+					75 container
+						76 text Owned qB source
+						77 text field (settable) Description: Close, Value: Owned qB source, ID: input-133
+					78 list
+						79 (selected) Owned qB source
+							80 text Owned qB source
+						81 Owned qB target
+							82 text Owned qB target
+						83 Owned TR source
+							84 text Owned TR source
+						85 Owned TR target
+							86 text Owned TR target
+				87 text field (settable) Value: /home/admin/light-media-plugins-migration-tt-20261105/main-run-6/backups, ID: input-136
+				88 container
+					89 text 源数据文件根路径
+					90 text field (settable) 源数据文件根路径, ID: input-138
+				91 combo box (collapsed) Secondary Actions: Expand
+					92 container
+						93 text Owned qB target
+						94 text field (settable) Description: Open, Value: Owned qB target, ID: input-140
+				95 container
+					96 text 目的数据文件根路径
+					97 text field (settable) 目的数据文件根路径, ID: input-143
+				98 container
+					99 text 不转移数据文件目录
+					100 text entry area (settable) 不转移数据文件目录, ID: input-145
+				101 container
+					102 checkbox (settable, integer) Description: 校验完成后自动开始, Value: 0, ID: switch-147
+				103 text 校验完成后自动开始
+				104 container
+					105 checkbox (settable, integer) Description: 跳过校验(仅QB有效), Value: 1, ID: switch-150
+				106 text 跳过校验(仅QB有效)
+				107 container
+					108 checkbox (settable, integer) Description: 删除源种子, Value: 0, ID: switch-153
+				109 text 删除源种子
+				110 container
+					111 checkbox (settable, integer) Description: 删除重复种子, Value: 0, ID: switch-156
+				112 text 删除重复种子
+				113 container
+					114 checkbox (settable, integer) Description: 保留原分类, Value: 0, ID: switch-159
+				115 text 保留原分类
+				116 container
+					117 checkbox (settable, integer) Description: 保留原标签, Value: 1, ID: switch-162
+				118 text 保留原标签
+			119 button 查看数据
+			120 button 保存
+
+The focused UI element is 77 text field (settable) Description: Close, Value: Owned qB source, ID: input-133

@@ -1,0 +1,88 @@
+{
+  "case": "logger-guard-terminal-and-fresh-call-recovers",
+  "classification": "actual independent SDK worker with synthetic scoped host and owned filesystem; NOT ordinary Main",
+  "default_host_call_limit": 64,
+  "logs": [
+    [
+      "INFO",
+      "初始化媒体文件清理插件"
+    ],
+    [
+      "DEBUG",
+      "开始停止服务"
+    ],
+    [
+      "DEBUG",
+      "文件监控已停止"
+    ],
+    [
+      "DEBUG",
+      "服务停止完成"
+    ],
+    [
+      "INFO",
+      "延迟删除功能已禁用，将使用立即删除模式"
+    ],
+    [
+      "INFO",
+      "STRM 文件删除监控功能已禁用"
+    ],
+    [
+      "INFO",
+      "硬链接监控目录：['/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestActualWorkerLoggerGuardStopsBeforeUnlink2079164447/001/m']"
+    ],
+    [
+      "INFO",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestActualWorkerLoggerGuardStopsBeforeUnlink2079164447/001/m 的硬链接监控服务启动"
+    ],
+    [
+      "INFO",
+      "更新文件列表完成，共计 3 个文件，耗时 0.00 秒"
+    ],
+    [
+      "DEBUG",
+      "监控集合更新完成"
+    ],
+    [
+      "INFO",
+      "监测到删除文件：/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestActualWorkerLoggerGuardStopsBeforeUnlink2079164447/001/m/source.mkv"
+    ],
+    [
+      "DEBUG",
+      "处理删除事件: /Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestActualWorkerLoggerGuardStopsBeforeUnlink2079164447/001/m/source.mkv"
+    ],
+    [
+      "INFO",
+      "立即删除硬链接文件：/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/tmp/TestActualWorkerLoggerGuardStopsBeforeUnlink2079164447/001/m/linked-000.mkv"
+    ]
+  ],
+  "maximum_calls_per_phase": 12,
+  "phases": [
+    {
+      "Method": "owner:init",
+      "Calls": 3
+    },
+    {
+      "Method": "cleanup_continue",
+      "Calls": 12
+    },
+    {
+      "Method": "private_watch",
+      "Calls": 0
+    },
+    {
+      "Method": "owner:test_event",
+      "Calls": 1
+    },
+    {
+      "Method": "cleanup_continue",
+      "Calls": 5
+    },
+    {
+      "Method": "owner:get_state",
+      "Calls": 0
+    }
+  ],
+  "private_slice_limit": 24,
+  "total_host_calls": 21
+}

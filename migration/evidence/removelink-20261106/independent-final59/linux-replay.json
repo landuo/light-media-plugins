@@ -1,0 +1,38 @@
+{
+  "build_command": [
+    "go",
+    "test",
+    "-c",
+    "-trimpath",
+    "-buildvcs=false",
+    "-overlay",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/overlay.json",
+    "-o",
+    "/Users/accidia/projects/light-media-plugins/work/sites-review-20261105/removelink-family-review/final59/independent-linux.test",
+    "./plugins/removelink"
+  ],
+  "build_exit": 0,
+  "test_binary_sha256": "099745f20a55d82745d23f1b2b2e3c9c44de4d47ec2b50d60647cba887d3f0d9",
+  "explicit_build_env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": ""
+  },
+  "classification": "independent Linux UID1000 actual kernel+SDK subprocess+owned filesystem; synthetic host capability peer; no App/Main/real downloader",
+  "remote_owned_directory": "/home/admin/light-media-plugins-review-removelink59-20261106-5a94d0831274",
+  "marker": "lm-independent-removelink59/5a94d0831274",
+  "run_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; cd /home/admin/light-media-plugins-review-removelink59-20261106-5a94d0831274; test \"$(cat TASK)\" = lm-independent-removelink59/5a94d0831274; test \"$(id -u)\" = 1000; chmod 700 review.test; export TMPDIR=\"$PWD/tmp\"; id; sha256sum review.test; ./review.test -test.v -test.timeout=150s -test.count=1 -test.run='^(TestActualWorker(UnknownHomeKeepsSourceCatchAndObserverBoundary|IndependentTimerAndObserverCallers|ObserverLanesSerialPerRootAndIndependentAcrossRoots|ObserverStartsBeforeInitialBulkScanCompletes|StopWaitsForIndependentObserverAndTimerWork|TypedSourceAttributeStopsOnlyItsObserver|StopJoinsTimerBeforeQueueFlush|TenObserverRootsFairWhileSixCallbacksBlocked|ObserverToOwnedFilesystemCleanup|ObserverRenameAndStopBeforeDue|ObserverRealTimerDoesNotRunEarly|MoreThan64LinksOwnerWaitsThroughLastEffect|LargeScrapeDirectoryAndFilteredCandidates|QueuedStopAndReloadFlushWithNewFlags|TransientAuthorityFailureStopsLaterEffects|UnknownWriteCancellationRetainsFactNoReplay|FreshStopFlushesUnenteredTaskWithoutReplayingUnknownNotice)|TestActualCleanupRootFlushesOver64LinksBeforeOwnerReturns|TestLinuxSourceObserver(StartFailure|ActualNativeDelete)|TestIndependent(CreatedDuringDelayedExistsKeepsOldLinks|OneObserverErrorDoesNotStopSiblingDirectoryEvents|SourceNamedHomeProtection|DelayOverflowBeforeStop|WorkerUnlinkNoParentReadPrecondition|HomeRuntimeKillsOnlyFailedObserver))$'"
+  ],
+  "run_exit": 0,
+  "elapsed": 16.303028106689453,
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "set -eu; cd /home/admin/light-media-plugins-review-removelink59-20261106-5a94d0831274; test \"$(cat TASK)\" = lm-independent-removelink59/5a94d0831274; test \"$(sha256sum review.test | cut -d \" \" -f1)\" = 099745f20a55d82745d23f1b2b2e3c9c44de4d47ec2b50d60647cba887d3f0d9; rm review.test; test -z \"$(find tmp -mindepth 1 -print -quit)\"; rmdir tmp; rm TASK; cd /home/admin; rmdir /home/admin/light-media-plugins-review-removelink59-20261106-5a94d0831274; test ! -e /home/admin/light-media-plugins-review-removelink59-20261106-5a94d0831274"
+  ],
+  "remote_cleanup_exit": 0
+}

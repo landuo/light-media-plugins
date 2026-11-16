@@ -1,0 +1,65 @@
+{
+  "classification": "Composite evidence, not a single all-green invocation",
+  "ordinary_main_commit": "404daade9d5f321624e7b421dbf877a23fe5c2b9",
+  "ordinary_main_sha256": "25d8b4e83e4a7422cc0fff9a341aed94ae0de629f2f18fc3fc352adc8a702f64",
+  "original_worker_sha256": "aa7c2599789044588be0bdf779004d0b45644c770ca53087b4d4231cc4c15cfc",
+  "source_business_unchanged": true,
+  "runs": [
+    {
+      "command": "remote-evidence/main-run-1-command.json",
+      "log": "remote-evidence/main-run-1.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "Category-only PID detection in shared helper; TT-specific PID helper added."
+    },
+    {
+      "command": "remote-evidence/main-run-2-command.json",
+      "log": "remote-evidence/main-run-2.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "Early weak source fixture did not prove membership in source completed filter; exact missing snapshot was not captured, so no narrower causal claim."
+    },
+    {
+      "command": "remote-evidence/main-run-3-command.json",
+      "log": "remote-evidence/main-run-3.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "Repeated owned torrent identity collided with previous fixture; no payload deletion."
+    },
+    {
+      "command": "remote-evidence/main-run-4-command.json",
+      "log": "remote-evidence/main-run-4.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "Native qB initial asynchronous resume processing could ignore immediate recheck; source fixture now waits settled paused state before verification."
+    },
+    {
+      "command": "remote-evidence/main-run-5-command.json",
+      "log": "remote-evidence/main-run-5.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "TR3/RPC16 ignores add(labels); fixture establishes labels via supported torrent-set and reads them back."
+    },
+    {
+      "command": "remote-evidence/main-run-6-command.json",
+      "log": "remote-evidence/main-run-6.log",
+      "exit_code": 1,
+      "classification": "failed/partial real-main run",
+      "explanation": "Product steps complete; root browser coordination release was late, so original command failed at its UI wait."
+    },
+    {
+      "command": "remote-evidence/main-run-6-lifecycle-continuation-command.json",
+      "log": "remote-evidence/main-run-6-lifecycle-continuation.log",
+      "exit_code": 1,
+      "classification": "failed harness assertion after real cold/reset/uninstall/reinstall actions",
+      "explanation": "Root expected base plugin KV purge, contrary to actual original uninstall993..1030. Product correctly retained106. Historical driver source preserved; source-derived correction is a separate execution."
+    },
+    {
+      "command": "remote-evidence/main-run-6-retention-tail-command.json",
+      "log": "remote-evidence/main-run-6-retention-tail.log",
+      "exit_code": 0,
+      "classification": "passing real-main continuation",
+      "explanation": "8.96s; base retains106/config/code across stop/uninstall/reinstall. Recreated clone first transfers1 real owned torrent, then uninstall clears its nonempty KV/config/code while retaining data-path temp file and leaving base106 unchanged."
+    }
+  ]
+}

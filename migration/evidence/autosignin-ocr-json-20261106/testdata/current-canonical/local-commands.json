@@ -1,0 +1,194 @@
+[
+  {
+    "name": "pure-list",
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-test",
+      "-json",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/pure-overlay.json",
+      "./plugins/autosignin"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": null,
+      "GOARCH": null,
+      "CGO_ENABLED": null
+    },
+    "exit": 0,
+    "seconds": 0.2518181251361966
+  },
+  {
+    "name": "probe-list",
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-test",
+      "-json",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/probe-overlay.json",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "seconds": 0.20066050020977855
+  },
+  {
+    "name": "app-list",
+    "argv": [
+      "go",
+      "list",
+      "-deps",
+      "-test",
+      "-json",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/app-overlay.json",
+      "./internal/app"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "seconds": 0.5807030000723898
+  },
+  {
+    "name": "pure-normal",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-json",
+      "-count=1",
+      "-run=^TestSourceOCRFullJSON(ValueDomain47|MixedDepth9|EmptyDepth4)$",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/pure-overlay.json",
+      "./plugins/autosignin"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": null,
+      "GOARCH": null,
+      "CGO_ENABLED": null
+    },
+    "exit": 0,
+    "seconds": 5.768160792067647
+  },
+  {
+    "name": "pure-race",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-race",
+      "-json",
+      "-count=1",
+      "-run=^TestSourceOCRFullJSON(ValueDomain47|MixedDepth9|EmptyDepth4)$",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/pure-overlay.json",
+      "./plugins/autosignin"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": null,
+      "GOARCH": null,
+      "CGO_ENABLED": null
+    },
+    "exit": 0,
+    "seconds": 9.226692500058562
+  },
+  {
+    "name": "probe-build",
+    "argv": [
+      "go",
+      "build",
+      "-p=1",
+      "-trimpath",
+      "-buildvcs=false",
+      "-ldflags=-s -w",
+      "-mod=readonly",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/probe-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/current-domain-probe-linux",
+      "./cmd/auto-sign-in"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "seconds": 0.6161944172345102
+  },
+  {
+    "name": "app-build",
+    "argv": [
+      "go",
+      "test",
+      "-p=1",
+      "-c",
+      "-ldflags=-s -w",
+      "-overlay=/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/app-overlay.json",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/current-domain-app-linux.test",
+      "./internal/app"
+    ],
+    "cwd": "/Users/accidia/projects/light-media",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0"
+    },
+    "exit": 0,
+    "seconds": 10.79007212491706
+  },
+  {
+    "name": "current-domain-probe-linux-buildinfo",
+    "argv": [
+      "go",
+      "version",
+      "-m",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/current-domain-probe-linux"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": null,
+      "GOARCH": null,
+      "CGO_ENABLED": null
+    },
+    "exit": 0,
+    "seconds": 0.010328708216547966
+  },
+  {
+    "name": "current-domain-app-linux.test-buildinfo",
+    "argv": [
+      "go",
+      "version",
+      "-m",
+      "/Users/accidia/projects/light-media-plugins/work/source-ocr-json-integrated-20261106/current-domain-app-linux.test"
+    ],
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "env": {
+      "GOFLAGS": "",
+      "GOOS": null,
+      "GOARCH": null,
+      "CGO_ENABLED": null
+    },
+    "exit": 0,
+    "seconds": 0.009502958040684462
+  }
+]

@@ -1,0 +1,14 @@
+{
+  "command": [
+    "/home/admin/light-media-plugins-migration-tt-20261105/integration-retention-tail-linux.test",
+    "-test.run",
+    "^TestTorrentTransferRetainedDataAndUninstallTail$",
+    "-test.v",
+    "-test.timeout=5m"
+  ],
+  "explicit_environment": {
+    "CATEGORYEDITOR_HOST_BINARY": "/home/admin/light-media-plugins-migration-tt-20261105/light-media-host-final-linux",
+    "TORRENTTRANSFER_RETENTION_TAIL_DIR": "/home/admin/light-media-plugins-migration-tt-20261105/main-run-6",
+    "TORRENTTRANSFER_UPDATE_WORKER_BINARY": "/home/admin/light-media-plugins-migration-tt-20261105/torrent-transfer-version-fixture"
+  }
+}

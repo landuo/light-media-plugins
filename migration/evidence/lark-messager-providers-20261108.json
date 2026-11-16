@@ -1,0 +1,67 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "host_commit": "aff560b95a919719c649827c2d9a35b7bfb469b8",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/chain/__init__.py:372–414,1113–1123; app/chain/media.py:885–922; app/core/config.py SEARCH_SOURCE",
+      "target": "internal/app/plugin_original_chat_media_search.go and plugin_original_catalog_media.go",
+      "observed": "The existing synchronous plugin hook precedes native list accumulation. Native source configuration enables providers without changing priority. Errors are attributed per provider and subsequent enabled providers continue. The fixture deliberately configured AniList before Bangumi and Douban, but native requests still followed Douban, Bangumi, AniList."
+    },
+    {
+      "source": "app/modules/douban/__init__.py:838 onward; app/modules/bangumi/__init__.py:196 onward; app/modules/anilist/__init__.py:302 onward",
+      "target": "internal/app/plugin_original_chat_media_douban.go, plugin_original_chat_media_bangumi.go and plugin_original_chat_media_anilist.go",
+      "observed": "The three fixed synchronous provider search paths produced three same-title results with distinct opaque provider identities. Their existing signed HTTP, Bangumi search, AniList GraphQL and source model adapters were reused."
+    },
+    {
+      "source": "app/chain/message.py:2510–2577,2684–2731; source provider recognize_media functions",
+      "target": "internal/app/plugin_original_chat_media.go, plugin_original_chat_media_identity.go, plugin_original_chat_media_subscribe.go, subscription_add_source.go, search_download.go and download_events.go",
+      "observed": "Selecting card three requested AniList detail 777, then uniquely resolved native TMDB 123 for actual subscription Add. The sealed origin kept both IDs and the source MediaInfo kept anilist_id=777. Chat resource search, previews and intent context now carry the same identity pair, with provider-to-download execution pending a distinct runtime check."
+    }
+  ],
+  "source_oracle": {
+    "kind": "AST inspection of the four fixed module priority methods",
+    "sha256": "b1d9e4c3b80a9612a16f4e70d43aac03af73a518d6c012e422e48a0b15cc4388",
+    "priorities": {
+      "themoviedb": 1,
+      "douban": 2,
+      "bangumi": 3,
+      "anilist": 4
+    }
+  },
+  "native": {
+    "status": "passed",
+    "kind": "native Linux amd64 App, exact indexed Lark worker and owned loopback Lark, TMDB, Douban, Bangumi and AniList protocol peers",
+    "seconds": 1.81,
+    "environment": "Native x86_64, read-only alpine:3.22, tmpfs and loopback only. The named provider HTTPS requests were mapped to a trusted owned TLS listener with no public dial fallback.",
+    "test": "TestOriginalLarkProviderSelectionLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_provider_linux_test.go",
+    "fixture_sha256": "01c215b722f40ac76a615044544a2b55a56459740c5ff1e4c9f6a1a891de5a58",
+    "host_elf_sha256": "19c1e95e7c54abfd4509bb021345a552ac5c1dbdbb0ee4608ac3efefbff5b128",
+    "runner_sha256": "f1f9d0dfb65bb7988dc698ef48ac579c9e2014768679802b8b5b59b66f87b5c9",
+    "runtime_log_sha256": "7c367146247d413ea7a449d049376114df0b1e70953439726c7a234890d8eab7",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "The installed worker received an authenticated subscription search. Douban signed search, Bangumi subject search and AniList GraphQL each contributed a same-title card item in source priority order, despite reversed source settings.",
+      "The third item triggered exactly one AniList detail request for 777 before any TMDB identity lookup. No Douban or Bangumi detail request was made.",
+      "The actual host saved season one against TMDB 123, delivered the subscription notice and committed SubscribeAdded. The sealed creation origin retained the pair anilist:777 and TMDB 123, plus anilist_id=777 in the source MediaInfo.",
+      "The isolated App stopped. Prior movie, TV, transfer and slash cases were not run again."
+    ]
+  },
+  "prior_fixture_failures": [
+    {
+      "observation": "All three results and the selected callback reached the host. The restrictive TMDB fixture blocked season-one detail during actual subscription creation. The final fixture supplied that response on the same loopback service.",
+      "log_sha256": "f80a6ff6eaac18d403ff008c3003c03dfa86daaf56052d5f774b56eb0a5f87b9"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "A non-TMDB card keeps an opaque provider ID, then uses an exact same-provider detail response and the existing unique TMDB identity bridge. Native library, download and subscription IDs remain TMDB-scoped; source-attribution records preserve the independent provider ID. The ordinary subscription runtime DTO still projects native media_source as TMDB. An absent or ambiguous link prevents mutation.",
+    "Named provider genre IDs remain unchanged in the original JSON model; the native display uses their names. The native provider request/caching layer retains its bounded transport and safe media image handling. No live provider traffic or production message was sent.",
+    "This run verifies search across all three alternate providers and actual AniList subscription. Direct Douban/Bangumi subscription, non-TMDB download, a provider failure continuing to the next provider, cold recovery and other source-specific edge cases were not exercised. Multi-season packages and the remaining /subscribes and Lark worker gaps remain open."
+  ]
+}

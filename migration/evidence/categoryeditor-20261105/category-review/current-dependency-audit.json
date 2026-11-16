@@ -1,0 +1,245 @@
+{
+  "status": "new SDK file has no CategoryEditor reachable code; original evidence preserved",
+  "sdk_origin_sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+  "frozen_84_file_hashes_unchanged": true,
+  "frozen_production_set": "46bce3cfb0e8b8f42fbc4fa3f53e90e1fe5e8d421cc229be724a6063c1e162f0",
+  "new_production_files": [
+    {
+      "path": "internal/sdk/downloader_source.go",
+      "sha256": "a4d631a0e99f998402698c39447aa4336b0fb02b3555ad03bee82736562b4275",
+      "no_init_or_package_variables": true,
+      "imports": [
+        "context",
+        "errors",
+        "strings"
+      ],
+      "declarations": "four capability constants, two DTO types, Downloaders method implementations only"
+    }
+  ],
+  "compiled_category": [
+    {
+      "mode": "current",
+      "command": "go build -trimpath -buildvcs=false -o <owned-temp>/current-linux ./cmd/category-editor",
+      "binary_sha256": "829d6f6231c991098daf1c2720994b1c93a5d390cab8c9429e1a127342e26ee4",
+      "bytes": 4607756,
+      "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "source_methods_in_linked_binary": [],
+      "symbols": 4877,
+      "elf_sections": {
+        "": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".note.go.buildid": {
+          "bytes": 100,
+          "sha256": "a594e392b969085197c8d5fea2f5099fa6bed10c505911ea51ee8c75a74b6e0d"
+        },
+        ".note.gnu.build-id": {
+          "bytes": 36,
+          "sha256": "921deb0fa61f564ce9bb89044c3b31d5cd6756d0f734c7a53d8e1969e7cc1a81"
+        },
+        ".text": {
+          "bytes": 1376177,
+          "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+        },
+        ".rodata": {
+          "bytes": 397985,
+          "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+        },
+        ".gopclntab": {
+          "bytes": 1157144,
+          "sha256": "aa7fd6806be558a517bcca937eb9f59bf2ed342bf99fb5e500dc97dfb165416b"
+        },
+        ".typelink": {
+          "bytes": 3684,
+          "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+        },
+        ".itablink": {
+          "bytes": 472,
+          "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+        },
+        ".go.buildinfo": {
+          "bytes": 416,
+          "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+        },
+        ".go.fipsinfo": {
+          "bytes": 120,
+          "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+        },
+        ".go.module": {
+          "bytes": 592,
+          "sha256": "7ca4c98af682e47aee36c0edb043e1f5c39ba9612864e112228efd87a932baac"
+        },
+        ".noptrdata": {
+          "bytes": 178497,
+          "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+        },
+        ".data": {
+          "bytes": 44722,
+          "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+        },
+        ".debug_abbrev": {
+          "bytes": 352,
+          "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+        },
+        ".debug_line": {
+          "bytes": 282907,
+          "sha256": "755043c67e56847b73cc10638a3bed0df35cc7c9ca2c99ba457f470080159053"
+        },
+        ".debug_frame": {
+          "bytes": 55010,
+          "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+        },
+        ".debug_gdb_scripts": {
+          "bytes": 24,
+          "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+        },
+        ".debug_info": {
+          "bytes": 476228,
+          "sha256": "61c0d4327ba54f01a673b5149714ec9363bd61b3240baba7c0f4ab188c1c1ec5"
+        },
+        ".debug_loclists": {
+          "bytes": 235276,
+          "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+        },
+        ".debug_rnglists": {
+          "bytes": 117651,
+          "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+        },
+        ".debug_addr": {
+          "bytes": 6752,
+          "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+        },
+        ".symtab": {
+          "bytes": 117072,
+          "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+        },
+        ".strtab": {
+          "bytes": 149984,
+          "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+        },
+        ".shstrtab": {
+          "bytes": 292,
+          "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+        }
+      }
+    },
+    {
+      "mode": "frozen-minus-new-file",
+      "command": "go build -overlay=<owned-temp>/overlay.json -trimpath -buildvcs=false -o <owned-temp>/frozen-minus-new-file-linux ./cmd/category-editor",
+      "binary_sha256": "841a2903f4185d504b05753bca313522fdd396c6b12108dc39e22fdc1fbe593b",
+      "bytes": 4607740,
+      "nm_sha256": "7adb7f88abf47e972c067c82dbc672f838df51967adcceea2de2db70f1b1660c",
+      "source_methods_in_linked_binary": [],
+      "symbols": 4877,
+      "elf_sections": {
+        "": {
+          "bytes": 0,
+          "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+        },
+        ".note.go.buildid": {
+          "bytes": 100,
+          "sha256": "aabef9cf3a4886a3616a80a07351cbe3b53a8e3bc5136512bf54c4a67cf735dd"
+        },
+        ".note.gnu.build-id": {
+          "bytes": 36,
+          "sha256": "3ff0525948acd37bf04bad2f4a1012f63158d3978f6260a8bdcf0744c20a4306"
+        },
+        ".text": {
+          "bytes": 1376177,
+          "sha256": "cbdf8408b4ab822b4cd1f483df88b013233ddf16c2a1220b69a64531fc77e779"
+        },
+        ".rodata": {
+          "bytes": 397985,
+          "sha256": "58cc096e8a7e9d75bdc3594a384d46aaf216d1e38cbc89d0cf4fd1fd97a69165"
+        },
+        ".gopclntab": {
+          "bytes": 1157144,
+          "sha256": "0ebffc3baa32749b7ee3999a73b0b43a1262d1cba0237d725f60b74d7fb967f3"
+        },
+        ".typelink": {
+          "bytes": 3684,
+          "sha256": "006c5f03abfb9fac56db7d8ad6761912cea8278549899f30bfa40e2b6d124c97"
+        },
+        ".itablink": {
+          "bytes": 472,
+          "sha256": "b796948ee35c670b395d9460014fb732173098648a526e82c6a37f9c52bf4e36"
+        },
+        ".go.buildinfo": {
+          "bytes": 416,
+          "sha256": "25e6b84148cc30e40f3a4cd58f0e93283897204e63181925f8120f2af94ca66c"
+        },
+        ".go.fipsinfo": {
+          "bytes": 120,
+          "sha256": "fd2ccd4abd603bb216453b60edb11d63463b0bb3bec6051e44c3b77c45b43c42"
+        },
+        ".go.module": {
+          "bytes": 592,
+          "sha256": "364262ca6cf15272eb529dd4e0d16a7b2772d407ecceab5b55df3938c083dacb"
+        },
+        ".noptrdata": {
+          "bytes": 178497,
+          "sha256": "65acfc69bd7efad5a0016cbc53c0ec11e15efac6a41410091f48ae1f799f46f2"
+        },
+        ".data": {
+          "bytes": 44722,
+          "sha256": "a3af9aa2e96dc6fb4eacba03f9c37ab375b54143c2cd1b39daa2007d7db313dc"
+        },
+        ".debug_abbrev": {
+          "bytes": 352,
+          "sha256": "5a16a2b2d45e05acfb7469cbe828ac44b715a49c420732661fb740ad2f2d8d6a"
+        },
+        ".debug_line": {
+          "bytes": 282892,
+          "sha256": "c43dbb861a669fb798d8cef2b3eba2da2e0bac3d92f95ac4f76cd40b12612b9a"
+        },
+        ".debug_frame": {
+          "bytes": 55010,
+          "sha256": "3f79bbb059c1ec0efd04806102e539c5835f784d53413cad375ac4d28cc4059a"
+        },
+        ".debug_gdb_scripts": {
+          "bytes": 24,
+          "sha256": "387ab1d01770b965f37b129a54abafc61bbf2781c03a9b501fce0d27468d591d"
+        },
+        ".debug_info": {
+          "bytes": 476226,
+          "sha256": "61c6cbf6ff4454748e9e19cf39b82c99be5234269e6daf68feba116283f87996"
+        },
+        ".debug_loclists": {
+          "bytes": 235276,
+          "sha256": "fcec754f5082d4af958fd066cb83026af88facefd4d7c6c8a0d7139264892a70"
+        },
+        ".debug_rnglists": {
+          "bytes": 117651,
+          "sha256": "cf1e7d70560480c9dacd6dcca126dec52411618c31c59997b4790b4eb7fd86fa"
+        },
+        ".debug_addr": {
+          "bytes": 6752,
+          "sha256": "8b05e029f3d3259acf8755bf71c8e0e24637ea9cb1025cf037c3a1e36b1dd4f1"
+        },
+        ".symtab": {
+          "bytes": 117072,
+          "sha256": "1f8ff9728815d2aaeeb0b4a2ae71ac02fd3f2bc3785d63df11b661011e584a29"
+        },
+        ".strtab": {
+          "bytes": 149984,
+          "sha256": "01f993b1175c7024393df0366b24e70034c7ea957c2e6665f3efb2e34d23d7e2"
+        },
+        ".shstrtab": {
+          "bytes": 292,
+          "sha256": "e64da8832f2d16eb12ab264f5374cd2e4974499399ac1afbc5e472e94cf5569f"
+        }
+      }
+    }
+  ],
+  "linked_nm_identical": true,
+  "linked_text_and_rodata_identical": true,
+  "binaries_equal": false,
+  "no_new_linked_Source_methods": true,
+  "temporary_binaries_removed": true,
+  "limits": [
+    "This is current-target cross-compilation and linker reachability verification, not a new Linux/App/browser execution.",
+    "Old real main executions remain bound to their actual original worker binary hashes; their SHA values are not replaced with current rebuild SHA.",
+    "Any subsequent initializer/global registration or edit to original Category reachable files requires reevaluation."
+  ]
+}

@@ -4,8 +4,12 @@ package mergemessagenotify
 
 import (
 	"context"
+	"encoding/base64"
 	"errors"
+	"time"
 )
+
+var ErrDependency = errors.New("required channel dependency unavailable")
 
 type NotificationType struct {
 	Name  string
@@ -62,15 +66,52 @@ func (r Response) json() (map[string]any, error) {
 	return m, nil
 }
 
+type SMTPRequest struct {
+	Host, Encrypt                     string
+	Port                              any
+	Username, Password                string
+	From                              string
+	To                                []string
+	Title, Text, HTML, FromName, Date string
+}
+
+// SMTPQuitError identifies an exception from the original finally: smtp.quit()
+// path. Unlike connect/login/sendmail errors it escapes send_message.
+type SMTPQuitError struct{ Err error }
+
+func (e SMTPQuitError) Error() string { return e.Err.Error() }
+func (e SMTPQuitError) Unwrap() error { return e.Err }
+
+type AppriseRequest struct {
+	URLs                []string
+	Title, Body, Attach any
+}
+
+// Host never has an implicit network implementation in the candidate. SMTP and
+// Apprise return original library success/errors; adapters require separate proof.
 type Host struct {
 	HTTP       func(context.Context, Request) (Response, error)
+	SMTP       func(context.Context, map[string]any, SMTPRequest) error
+	Apprise    func(context.Context, AppriseRequest) (any, error)
 	SaveConfig func(context.Context, map[string]any) (bool, error)
 	LoadConfig func(context.Context) (map[string]any, error)
 	Log        func(context.Context, string, string)
+	Render     func(context.Context, any, map[string]any) (any, error)
+	Now        func() time.Time
+	UUID       func() string
+	Proxy      any
+	Timezone   string
 }
 
+func encode64(b []byte) string { return base64.StdEncoding.EncodeToString(b) }
+
 type Channel struct {
-	Key, Name string
+	Key, Name    string
+	Order        int
+	Defaults     map[string]any
+	Elements     []any
+	Suggested    map[string]any
+	SaveDefaults bool
 }
 type Attempt struct {
 	Key    string

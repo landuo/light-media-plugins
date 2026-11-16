@@ -1,0 +1,94 @@
+{
+  "feature": "plugin.IYUUAutoSeed",
+  "status": "partial_verified",
+  "installed_version": "2.22",
+  "source_content_baseline": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "installed_source": {
+    "README.md": "8dc1fc812693a607972b3412356cc292bdc4cdb7441f4ca6b14bc592d1774b6e",
+    "__init__.py": "3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7",
+    "iyuu_helper.py": "74f0cbde2789eab6a6c0d0edcc6fe3364a5e4ccceb909b5c8842492dc11cdcf0"
+  },
+  "plugin_product_commit": "b994d0ed4f4951ab12f69e750e0b5de4fab184b2",
+  "paired_host_commit": "ef7ea9b756da752d8647d07c7a57859fe0781996",
+  "sdk_origin": {
+    "path": "SDK_ORIGIN.json",
+    "sha256": "dc605efb2d52613fec55d573e1dcc7c919eb037704030bb2e82c472feb77a4b4"
+  },
+  "api_helper": {
+    "source": [
+      "iyuuautoseed/iyuu_helper.py:19–130"
+    ],
+    "target": [
+      "plugins/iyuuautoseed/helper.go",
+      "plugins/iyuuautoseed/json.go",
+      "plugins/iyuuautoseed/source_clock.go"
+    ],
+    "provenance": {
+      "path": "plugins/iyuuautoseed/ORIGIN.json",
+      "sha256": "a62a8218bf26914fa01e5988c844e31557fdb74647bac6f10d7cdb38dc4123a8"
+    },
+    "fixture": {
+      "path": "plugins/iyuuautoseed/reference/helper-oracle.json",
+      "sha256": "c5664d216ada746dcb9c1c43c55906ec123f03507158ad30fb4852e772175cf3"
+    },
+    "cases": 24,
+    "replay": {
+      "path": "work/iyuuautoseed-20261107/helper-target.stdout",
+      "sha256": "456eb361b10c749e695bc982a278f6cf086b3cad5b8e5afdef13dee28a10f59b"
+    },
+    "test": "go test ./plugins/iyuuautoseed -run '^TestInstalledHelperOracle$' -v -count=1",
+    "scope": "Original 2.19 and installed 2.22 helper files have identical SHA256. Reused the exact source-derived cases and ran them once through the relocated Go helper. Covers site index and report state, hash signing, retry and response edge cases. No real IYUU token, HTTP endpoint or host worker was exercised."
+  },
+  "qb_pack_projection": {
+    "source": [
+      "iyuuautoseed/__init__.py:809–817"
+    ],
+    "host_paths": [
+      "internal/plugins/downloader_source.go",
+      "internal/plugins/downloader_tasks.go",
+      "internal/app/plugin_original_downloader_tasks.go",
+      "internal/app/plugin_original_host_downloader.go",
+      "internal/app/plugin_original_host_downloader_source.go"
+    ],
+    "target": [
+      "internal/sdk/downloader_source.go",
+      "internal/sdk/downloader_tasks.go"
+    ],
+    "test": "go test ./internal/app -run '^TestOriginalDownloaderTaskProjectionPreservesQBPackFields$' -v -count=1",
+    "pre_opt_in": {
+      "path": "work/iyuuautoseed-20261107/host-qb-pack-projection.stdout",
+      "sha256": "6796950be05abc9d39f93c99a18d6e193b36240c07805945dd08355bbc5bbc45"
+    },
+    "projection_test": {
+      "path": "work/iyuuautoseed-20261107/host-qb-pack-opt-in-projection.stdout",
+      "sha256": "1a48f086ddd325975ab96f1da013850b6af3c67e8738a3f476adede9c06d7b17"
+    },
+    "scope": "Opt-in source-completed projection preserves qB JSON availability and completed bytes, native integer precision, missing/null and rejection of nonnumeric fields. Ordinary responses omit new keys for strict previous SDK consumers. Initial and opt-in revisions were separately checked because the wire contract changed."
+  },
+  "independent_source_review": [
+    "/root/emby",
+    "/root/jellyfin",
+    "/root/kodi"
+  ],
+  "deferred_merge_work": {
+    "path": "work/mergemessagenotify-20261107/deferred-9f32c27/files.json",
+    "sha256": "30ac0001758f7dd31c83dd46106608680e1e6b62130044a47b91f0cff6193ed1"
+  },
+  "remaining": [
+    "Port the 2.22 worker run and recheck lifecycle. All completed hashes precede candidate filtering and are reused across 200-row batches. Preserve qB availability and completed byte checks, and once-per-init deferred qB rechecks.",
+    "Bind fixed IYUU token-header GET/JSON POST transport, host-owned site credentials and specialized tracker/metainfo flows. The existing 2.19 host app or old relay does not establish a standalone 2.22 worker.",
+    "Port native form, private/public scheduling, site deletion, storage and restart behavior. Verify actual worker, browser, package and affected host paths."
+  ],
+  "delivery": {
+    "accepted": 8,
+    "current_scope": 22,
+    "installed": 23,
+    "pushed": false,
+    "deployed": false
+  },
+  "independent_target_review": {
+    "reviewer": "/root/emby",
+    "status": "passed_for_this_slice",
+    "scope": "Read-only comparison of paired host and plugin commits. Old wire keys remain absent without opt-in, new numeric fields pass only on the source-completed opt-in path, all 106 SDK source and target hashes match, and the original installed 2.22 helper is byte-identical to the prior source oracle input."
+  }
+}

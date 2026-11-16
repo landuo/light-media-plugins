@@ -1,0 +1,67 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+  "installed_source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+  "host_commit": "0c60b79ca03037c112898aeaa0b20789eb6971ed",
+  "worker_code_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+  "mapping": [
+    {
+      "source": "app/chain/message.py:2790–2845,2915–3043; app/chain/download.py:824–859",
+      "target": "internal/app/plugin_original_chat_media_view.go, plugin_original_chat_media_download.go, search_download.go and plugin_original_download_context.go",
+      "observed": "A verified Lark auto-selection used the ordinary resource.selection hook and waited for a directory choice. ResourceDownload saw the chosen local directory, channel, origin, user ID and parsed username. The actual downloader used that directory."
+    },
+    {
+      "source": "app/chain/download.py:935–1027; app/helper/message.py TemplateHelper and default downloadAdded template",
+      "target": "internal/app/download_events.go, material_store.go, plugin_original_chat_download_notice.go, plugin_original_notice.go and plugin_original_download_context.go",
+      "observed": "Acceptance and encrypted source attribution committed first. The configured template produced site and torrent text and a download link for the initiating open ID. After that HTTP send returned, the actual SDK post-Add call received the original bytes and directory and the actual DownloadAdded event carried the originating username/source and downloader."
+    },
+    {
+      "source": "app/chain/download.py:1028–1048",
+      "target": "internal/app/plugin_original_chat_download_notice.go and plugin_original_chat_media_view.go",
+      "observed": "The single-resource confirmed failure branch uses the source Manual notice fields. That failure branch and native cold post-Add recovery were not exercised in this run."
+    }
+  ],
+  "source_oracle": {
+    "kind": "AST inspection of fixed download_single success branch",
+    "sha256": "dbd42f4bc3ac8135ea68faa5f08b41aff30d672b11262f9d15779fda139f4195",
+    "observed": "The fixed call order is history add, file records add, source downloadAdded notice, asynchronous module submission, DownloadAdded broadcast. The notice supplies userid, username, source and ctype."
+  },
+  "native": {
+    "status": "passed",
+    "kind": "native Linux amd64 App, exact indexed Lark worker and separate SDK event observer, with owned loopback Lark, TMDB, tracker and qBittorrent protocol peers",
+    "seconds": 3.53,
+    "environment": "Native x86_64, read-only alpine:3.22, tmpfs and loopback only. No production credentials, data or delivery.",
+    "test": "TestOriginalLarkDownloadAddedLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_chat_download_linux_test.go",
+    "fixture_sha256": "fcefe5349e6688d2e1ab88806244cd56dd50a968436accea597b323d7ca04a6b",
+    "host_elf_sha256": "0627cfae4324bdf8f3142ae039ee99cb0310ff10edebe4f9964242d46f361a2e",
+    "observer_elf_sha256": "54901ae61e16fb715ed16c5d838639acf1b4ee4fe5c66658213fd89b0c106d6a",
+    "runner_sha256": "073f1071dc7aac4246309ae146bf69f0d280b7cb8f787d72ff30e8f1467139c7",
+    "runtime_log_sha256": "dcf3b0902f4a3222a58664b1a6aacbb7bb1991f6b6724da22ae372d0ff3f05d3",
+    "indexed_zip_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4",
+    "worker_sha256": "6da119077160f9008bd977c07dd1bb49c3780d0a84f783060775c3fa9d3ea9f4",
+    "observations": [
+      "Auto selection displayed two real local locations plus automatic matching. There was no material fetch or Add before the selected second location. The downloader then received the exact torrent bytes once at that path.",
+      "While the real Lark worker's success request waited for a response, the accepted Intent and one durable download.accepted fact were visible. The source and original user were readable from the sealed context and absent as plaintext in its stored bytes. The success card was addressed to the initiating open ID.",
+      "Before letting the notice return, the observer saw resource.selection and ResourceDownload with the correct sender and directory, with no post-Add module or DownloadAdded. After the response it observed the exact material and directory in the post-Add module, one attributed DownloadAdded, one successful job and no duplicate card.",
+      "The isolated App stopped. Earlier Lark worker, site, subscription, single-movie and transfer suites were not repeated."
+    ]
+  },
+  "prior_fixture_failures": [
+    {
+      "observation": "The observer helper had already created the fixture administrator. A second setup request stopped the driver before any Lark search or download.",
+      "log_sha256": "0dec58f0f8ca718824389ec7d43857983319b0efa81c4dd902b0971eb71ae62e"
+    },
+    {
+      "observation": "A text replacement failed to change that setup call. The fixture then explicitly reused one admin session for both indexed packages.",
+      "log_sha256": "f46ee27bc489fe28a9c25a89ceefa2861c4b2531e4135891005a910c22df65a3"
+    }
+  ],
+  "adaptations_and_open_in_scope": [
+    "The original stores chat attribution in download history. The host stores it in the sealed context of the accepted intent and in the sealed download fact. The native atomic download.accepted fact is separate from the original external DownloadAdded broadcast, which follows notification.",
+    "Existing-hash reconciliation preserves attribution without generating a new Add notice or broadcast. The fixed qBittorrent module can return a truthy duplicate hash on a new Add call. Native post-Add recovery is coded for a verified new_hash receipt but was not tested here. A process interruption after acceptance and before ordinary in-process dispatch can lose the notice or event.",
+    "The template projection keeps tracker Cookie and enclosure outside rendered history. Failure notice and custom template cases were not run. Multi-season selection, partial episode trimming, non-TMDB search and the earlier subscription and transfer edge cases remain open."
+  ]
+}

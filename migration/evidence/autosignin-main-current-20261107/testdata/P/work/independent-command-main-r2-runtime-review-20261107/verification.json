@@ -1,0 +1,247 @@
+{
+  "classification": "actual Linux Go Main finite command/update/reset/delete/uninstall and cooperative timer-stop outcome; globaldrain causality NOT accepted",
+  "events": 98,
+  "Main_pass_seconds": 25.33,
+  "wrapper_seconds": 29.92464046389796,
+  "wrapper_owned_remaining": false,
+  "BOM_stable": true,
+  "stages": [
+    {
+      "command": 1,
+      "history_count": 3,
+      "counts": {
+        "incoming": 1,
+        "start": 1,
+        "complete": 1
+      },
+      "at": "2026-11-06T19:34:43.755364641Z",
+      "actual_log_consumers": [
+        "AutoSignIn"
+      ],
+      "cumulative_attendance_operations": 2
+    },
+    {
+      "command": 2,
+      "history_count": 8,
+      "counts": {
+        "incoming": 2,
+        "start": 3,
+        "complete": 3
+      },
+      "at": "2026-11-06T19:34:44.052100349Z",
+      "actual_log_consumers": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_operations": 4
+    },
+    {
+      "command": 3,
+      "history_count": 13,
+      "counts": {
+        "incoming": 3,
+        "start": 5,
+        "complete": 5
+      },
+      "at": "2026-11-06T19:34:44.276535382Z",
+      "actual_log_consumers": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_operations": 6
+    },
+    {
+      "command": 4,
+      "history_count": 16,
+      "counts": {
+        "incoming": 4,
+        "start": 7,
+        "complete": 5
+      },
+      "at": "2026-11-06T19:34:44.311746684Z",
+      "actual_log_consumers": [
+        "AutoSignIn",
+        "AutoSignIncmd"
+      ],
+      "cumulative_attendance_operations": 6
+    }
+  ],
+  "physical_attendance_total": 7,
+  "CLI": [
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "validated",
+      "writes": 0
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "ready",
+      "writes": 0
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "imported",
+      "writes": 2
+    },
+    {
+      "external_calls": 0,
+      "jobs_queued": 0,
+      "sites": 1,
+      "state": "already_imported",
+      "writes": 0
+    }
+  ],
+  "update": {
+    "after_sha256": "e38f19188cfbfe4b295893b9707c1ba8ee77117880ffdcfb7952e77bf0108f36",
+    "base_pid_after": 136,
+    "base_pid_before": 122,
+    "before_sha256": "2b77bc3db6c80ff67314a68daa0df90b1595e99ab2bc658ca80cfaafd6a251a0",
+    "clone_code_unchanged": true,
+    "clone_pid_unchanged": 115,
+    "config_history_preserved": true,
+    "variant": "test-only --manifest description marker; no true product source modification",
+    "version": "2.9.15"
+  },
+  "PID_snapshots": [
+    {
+      "AutoSignIn": 82
+    },
+    {
+      "AutoSignIn": 100
+    },
+    {
+      "AutoSignIn": 122,
+      "AutoSignIncmd": 115
+    },
+    {
+      "AutoSignIn": 136,
+      "AutoSignIncmd": 115
+    },
+    {
+      "AutoSignIn": 143,
+      "AutoSignIncmd": 115
+    },
+    {},
+    {
+      "AutoSignIn": 161,
+      "AutoSignIncmd": 167
+    },
+    {
+      "AutoSignIn": 161
+    },
+    {}
+  ],
+  "hot_cold_proc_executable_hash_assertions_executed": true,
+  "base_code_retained_clone_code_removed_assertions_executed": true,
+  "ordinary_site_delete_effect": {
+    "auto_cf": 0,
+    "clean": false,
+    "cron": "58 23 31 12 *",
+    "enabled": false,
+    "login_sites": [],
+    "notify": false,
+    "onlyonce": false,
+    "queue_cnt": 1,
+    "retry_keyword": "",
+    "sign_sites": []
+  },
+  "uninstall_ack": {
+    "/api/plugins/AutoSignIncmd": {
+      "data_retained": false,
+      "success": true,
+      "uninstalled": true
+    },
+    "/api/plugins/AutoSignIn": {
+      "data_retained": true,
+      "success": true,
+      "uninstalled": true
+    }
+  },
+  "public_timer_outcome_raw_unmodified": {
+    "Web_replies_unchanged": true,
+    "callback_completed_before_exit": true,
+    "cold_additional_attendance": 0,
+    "cold_history": true,
+    "cold_update_hashes": true,
+    "first_enter_ms": 3640,
+    "observed_stop_wait_ms": 200,
+    "source_hours": "0.001"
+  },
+  "globaldrain_causality": "unverified: no actual stopping/drain-entry observation; code backup/HTTP shutdown can consume the200ms before revocation, so natural completion may precede the bug",
+  "globaldrain_bug_cleared": false,
+  "external_notification_delivery": "not accepted;12 notification_failed logs coexist with correct persisted Web messages",
+  "source_reruns": 0,
+  "new_Main_runs": 0,
+  "new_App_runs": 0,
+  "true_writes": 0,
+  "ledger_writes": 0,
+  "raw_bindings": [
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/actual.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/actual.stdout",
+      "sha256": "5d09c8df59953af37574a9a5bf6fdade4c3c830b6a9749c0313b4fb4fe2704ff",
+      "bytes": 138
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/command.json",
+      "sha256": "bd28133ccb36e9b8720dd7b1a18ec3ba028ed3fc517fef2527083b48d87f9419",
+      "bytes": 2469
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/inspect-attempts.json",
+      "sha256": "39a56311ba5c5b661a3bc6e2d018365f701d9d39537427e29af95279f41ded81",
+      "bytes": 32430
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/live-inspect.json",
+      "sha256": "0784a96412a3ac66151f3ec7c88108584f8e1a8289ed2628b8b2f5ad9ea9c45f",
+      "bytes": 1052
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/live-network.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "bytes": 0
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/attempt5/live-network.stdout",
+      "sha256": "aafd1b2b6165c6f59d0cdc0362af481c7082f09d0db15d268dc4ed235d3f1892",
+      "bytes": 989
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/owned-r4/runtime/evidence/host-1.log",
+      "sha256": "8035a95eb4a8af0a53de7f08732c42dfeb8f0de6ac07789f2ab3eae4cf459d65",
+      "bytes": 3072
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/owned-r4/runtime/evidence/host-2.log",
+      "sha256": "25e1e1d3a6e5902d5277b78baa5aa51d8420a0ed0058513301a51ae9ea20a79c",
+      "bytes": 5463
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/owned-r4/runtime/evidence/host-3.log",
+      "sha256": "bf3575796855fb3e81e21501ee1fd75035fea5b5e8395a83524fd75f71007cce",
+      "bytes": 30372
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/owned-r4/runtime/evidence/host-4.log",
+      "sha256": "0ba4c7c3ed9c45c130e57e95dfa707966a0989dcdb86b89b4011be0eca2e0fe7",
+      "bytes": 5199
+    },
+    {
+      "path": "/Users/accidia/projects/light-media-plugins/work/autosignin-command-update-main-20261107/actual-r2/owned-r4/runtime/evidence/observations.jsonl",
+      "sha256": "c16460beeddaf3f7fb515711eeaa524474f7197978a74ec47fa81d2110593596",
+      "bytes": 215434
+    }
+  ],
+  "recorded_runtime_input_files": 7064
+}

@@ -1,0 +1,40 @@
+{
+  "Id": "d68edfa8490f29d05ac627f8424c419c742aebe6787d1b43d26a75b74cbbb298",
+  "Image": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+  "State": {
+    "Running": true,
+    "StartedAt": "2026-11-06T19:17:15.481132071Z",
+    "Pid": 2863758
+  },
+  "User": "1000:1000",
+  "ReadonlyRootfs": true,
+  "NetworkMode": "none",
+  "CapDrop": [
+    "ALL"
+  ],
+  "SecurityOpt": [
+    "no-new-privileges"
+  ],
+  "Mounts": [
+    {
+      "Type": "bind",
+      "Source": "/home/admin/light-media-plugins-root-asi-native-20261107/bundle",
+      "Destination": "/bundle",
+      "Mode": "ro",
+      "RW": false,
+      "Propagation": "rprivate"
+    },
+    {
+      "Type": "bind",
+      "Source": "/home/admin/light-media-plugins-root-asi-native-20261107/owned-r3",
+      "Destination": "/owned",
+      "Mode": "rw",
+      "RW": true,
+      "Propagation": "rprivate"
+    }
+  ],
+  "Tmpfs": {
+    "/config": "rw,nosuid,nodev,uid=1000,gid=1000,mode=0700,size=16777216",
+    "/tmp": "rw,nosuid,nodev,uid=1000,gid=1000,mode=1777,size=134217728"
+  }
+}

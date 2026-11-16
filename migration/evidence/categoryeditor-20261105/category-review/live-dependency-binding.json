@@ -1,0 +1,668 @@
+{
+  "status": "live_source_and_default_identity_verified; actual_host_acceptance_pending",
+  "live_reference_manifest_sha256": "f55d991e35a10e90476357a7f0bbfd79b50964637bbf519d910dbcb01f9eec5a",
+  "container_image_id": "sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881",
+  "started_at": "2026-10-28T11:43:10.979716372Z",
+  "live_helper": {
+    "path": "work/migration-20261105/host-reference/app/modules/themoviedb/category.py",
+    "sha256": "1c0ec53b78caa3a4949dd970931f38430c67c9d46ea2e16c3cc00950fb24c2b2",
+    "bytes": 8294,
+    "equals_archived_source_exactly": true
+  },
+  "live_builtin_default": {
+    "path": "work/migration-20261105/host-reference/config/category.yaml",
+    "sha256": "1095b3aeb315569f541fded31bc77f43fa625cb9ac4844e3a28ba7d7868b2303",
+    "bytes": 5298,
+    "equals_current_host_embedded_resource_exactly": true,
+    "source_container_path": "/app/config/category.yaml",
+    "not_active_user_path": "/config/category.yaml"
+  },
+  "live_config_path_semantics": {
+    "source_sha256": "f19111073a7ef25ecd0b7e9d53dab343d76fe64ff3ad821f4ff39a790c104033",
+    "ROOT_PATH": "Path(__file__).parents[2] -> /app for collected /app/app/core/config.py",
+    "INNER_CONFIG_PATH": "/app/config",
+    "CONFIG_PATH": "CONFIG_DIR override, else /config when Docker; not interchangeable with INNER_CONFIG_PATH",
+    "inspection": "AST and source only; no production settings import"
+  },
+  "sdk": {
+    "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6",
+    "origin_sha256": "00961b4882382db60785200b8ee14c04310939c7a376fc8a00f66025a77a54e1",
+    "files_checked": 84,
+    "source_target_exact": true,
+    "production_tree_sha256_as_independently_file_checked_sdk_evidence": "46bce3cfb0e8b8f42fbc4fa3f53e90e1fe5e8d421cc229be724a6063c1e162f0",
+    "verification_sha256": "ef997e0f4fff5c1563be4183fc0aafc0cc5a3341ef53423240f4e9cc2eeeb2f5",
+    "evidence_hashes_validated": true,
+    "tests_executed_by_sdk_worker": [
+      {
+        "command": "go build -o work/migration-20261105/sdk/owned-concurrent-fixture ./internal/sdk/testdata/owned-concurrent-fixture",
+        "exit_code": 0,
+        "kind": "actual target independent worker build"
+      },
+      {
+        "command": "LIGHT_MEDIA_CONCURRENT_FIXTURE=<absolute owned-concurrent-fixture> go test ./internal/sdk/... -count=1 -json",
+        "exit_code": 0,
+        "evidence": "test-current-target.jsonl",
+        "kind": "actual darwin/arm64 target SDK, loopback-independent subprocess fixture; mock HostCaller used for DTO tests",
+        "evidence_sha256": "514eb4091bd70df3f06c1a2122b043290cd33bfb2d9717c8ab8e3237785a59c8",
+        "root_results": {
+          "pass": 82,
+          "fail": 0,
+          "skip": 0
+        },
+        "including_subtests": {
+          "pass": 131,
+          "fail": 0,
+          "skip": 0
+        },
+        "package_results": [
+          {
+            "Time": "2026-11-05T10:15:46.551309+08:00",
+            "Action": "skip",
+            "Package": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+            "Elapsed": 0
+          },
+          {
+            "Time": "2026-11-05T10:15:58.005782+08:00",
+            "Action": "pass",
+            "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+            "Elapsed": 11.455
+          }
+        ]
+      },
+      {
+        "command": "go vet ./internal/sdk/...",
+        "exit_code": 0,
+        "evidence": "vet-current-target.log",
+        "evidence_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+      },
+      {
+        "command": "go build -race -o work/migration-20261105/sdk/owned-concurrent-fixture-race ./internal/sdk/testdata/owned-concurrent-fixture",
+        "exit_code": 0,
+        "kind": "actual race-instrumented independent target worker build"
+      },
+      {
+        "command": "LIGHT_MEDIA_CONCURRENT_FIXTURE=<absolute owned-concurrent-fixture-race> go test -race ./internal/sdk/... -count=1 -json",
+        "exit_code": 0,
+        "evidence": "test-race-current-target.jsonl",
+        "kind": "actual darwin/arm64 SDK with independently compiled race-instrumented worker",
+        "evidence_sha256": "9744d079df6b4f3434ac0e001c171264275a752188bb35416b1fc0201b6de5b4",
+        "root_results": {
+          "pass": 82,
+          "fail": 0,
+          "skip": 0
+        },
+        "including_subtests": {
+          "pass": 131,
+          "fail": 0,
+          "skip": 0
+        },
+        "package_results": [
+          {
+            "Time": "2026-11-05T10:15:53.768311+08:00",
+            "Action": "skip",
+            "Package": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson",
+            "Elapsed": 0
+          },
+          {
+            "Time": "2026-11-05T10:16:39.563633+08:00",
+            "Action": "pass",
+            "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+            "Elapsed": 45.795
+          }
+        ]
+      },
+      {
+        "command": "go test -overlay=work/migration-20261105/sdk/cancellation-mutant-overlay.json ./internal/sdk -run ^TestConcurrentQueuedCancellationRespectsStopFence$ -count=1 -json",
+        "exit_code": 1,
+        "expected_failure": true,
+        "evidence": "cancellation-negative-control.jsonl",
+        "kind": "controlled pre-writer-lock liveness-check regression through Go overlay; real production files never changed",
+        "evidence_sha256": "c7ff44825b3408f757a8b40a820b472442261762799302f8b2bab97f0b1cc19e",
+        "root_results": {
+          "pass": 0,
+          "fail": 1,
+          "skip": 0
+        },
+        "including_subtests": {
+          "pass": 0,
+          "fail": 4,
+          "skip": 0
+        },
+        "package_results": [
+          {
+            "Time": "2026-11-05T10:17:01.256132+08:00",
+            "Action": "fail",
+            "Package": "github.com/landuo/light-media-plugins/internal/sdk",
+            "Elapsed": 0.432
+          }
+        ]
+      },
+      {
+        "command": "GOOS=linux GOARCH=amd64 CGO_ENABLED=0 go build ./internal/sdk/...",
+        "exit_code": 0,
+        "evidence": "linux-amd64-build.log",
+        "evidence_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+        "kind": "cross-compilation only; not Linux execution"
+      }
+    ],
+    "files": [
+      {
+        "path": "internal/sdk/api.go",
+        "sha256": "b9e0d28b8a599bcb29299374688f71f6068dbe87369105fc9868f27558fc879c",
+        "source_path": "internal/plugins/api.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/auth.go",
+        "sha256": "f0094420a5b74c30cebe37c8ff3825b689484ac1c16f60629633264280a75cf7",
+        "source_path": "internal/plugins/auth.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/base.go",
+        "sha256": "88d704b1249fd6af462f8dc8157586f1e30d579e4cc4719abf3289821f311aed",
+        "source_path": "internal/plugins/base.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/broadcast_handler.go",
+        "sha256": "3f6170384ee21d6d0893767a4ad25383d343b5a395447e64f343da6daf7122f1",
+        "source_path": "internal/plugins/broadcast_handler.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/browser_host.go",
+        "sha256": "dc933914faa0e08857ed1666389dcd27a5a99e1d35a37543bc0a70784b1dec3d",
+        "source_path": "internal/plugins/browser_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/brush_inventory.go",
+        "sha256": "2b185ebd0ec0302a58f5bd709bdb9e6d7a20ca026ffffa97c513c2f6495b00ef",
+        "source_path": "internal/plugins/brush_inventory.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/category_policy.go",
+        "sha256": "dd601bff6914b2151f043864b8edc2a640c2fdc0ba98f79565e03489328434b9",
+        "source_path": "internal/plugins/category_policy.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/chain_handler.go",
+        "sha256": "27f9620352a9349e22b05211b3cecdc16e1054d4bc3a1e707e7d57055e1886c3",
+        "source_path": "internal/plugins/chain_handler.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/close_transport.go",
+        "sha256": "0fe69adfa2532d666e36a35295f2fb01b28ef172d98babe0e649ea0174acbbbf",
+        "source_path": "internal/plugins/close_transport.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_session.go",
+        "sha256": "c3f79283e113a669737cc44d1cdc23dc47cc5cd346e7ec02339ea9d6b838cdd6",
+        "source_path": "internal/plugins/concurrent_session.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_shutdown.go",
+        "sha256": "6cab751bfbdc9ea772906f1c2e4dfc201e94d32e15a0c736918e9b98b5d6630d",
+        "source_path": "internal/plugins/concurrent_shutdown.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_transport.go",
+        "sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+        "source_path": "internal/plugins/concurrent_transport.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_worker.go",
+        "sha256": "419698b304e20018d836d5a95acc198608c61973f088053e511008254e232150",
+        "source_path": "internal/plugins/concurrent_worker.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host.go",
+        "sha256": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+        "source_path": "internal/plugins/downloader_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host_connection.go",
+        "sha256": "ff2a50416006eb2576fbc097994dc403db6b9a9747b6310e37af156d624db257",
+        "source_path": "internal/plugins/downloader_host_connection.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host_delete_files.go",
+        "sha256": "9ca1c097b7909a29ed969f3a8206b862ae2f76428ca11057d1f2e75a86c31fa2",
+        "source_path": "internal/plugins/downloader_host_delete_files.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host_trackers.go",
+        "sha256": "df94053d156dfc222bbcee09dbc05dabedb9a90523527d208e8fe1e8e6e255c3",
+        "source_path": "internal/plugins/downloader_host_trackers.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_tasks.go",
+        "sha256": "80bd320640235780bf3e679a6051649563b3380e83d0d367578f841e24d17110",
+        "source_path": "internal/plugins/downloader_tasks.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/events.go",
+        "sha256": "55fd83977122e8a3e1561c30b545e3a484a79df1f0822c7a86fa462ff37a0fe1",
+        "source_path": "internal/plugins/events.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/file_item.go",
+        "sha256": "54805a5b2d50d948cac887720434a4813d7a4a5da713b2d40cd31c0f2c97b17d",
+        "source_path": "internal/plugins/file_item.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/frontend.go",
+        "sha256": "6167a3237a12ed4ce979d1dabf5d6dd2afe97a8d6c0424fa5bcdf353c7644d58",
+        "source_path": "internal/plugins/frontend.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/history_host.go",
+        "sha256": "c68cd2d612b3ecd3aed6c7a2cdefc75f88bb314d93f82e326b16fadb5b5b6a52",
+        "source_path": "internal/plugins/history_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/identity.go",
+        "sha256": "3144e5a1efe0e49aaeb8803740487b182967aa3d56c0ccf08a87a3fa7995b620",
+        "source_path": "internal/plugins/identity.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/input_interaction.go",
+        "sha256": "748073142e9bffebd8f146d9f33d792530632d65bbf3931204c4fbfd41880da0",
+        "source_path": "internal/plugins/input_interaction.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/jsonrpc.go",
+        "sha256": "ca173d11652bbf2ce186e134a3770ff54987a5631be09043c845d2c35545dc8b",
+        "source_path": "internal/plugins/jsonrpc.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/log.go",
+        "sha256": "069cde8e5ef23f2fbc44f4073f4cba66572eab4ff5737256ffc14aaf2c8270f3",
+        "source_path": "internal/plugins/log.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/manager_resources.go",
+        "sha256": "4d9ec61a1300203f5975be8f4b598c18422e2b9a2ea834d918c777fabf8a3089",
+        "source_path": "internal/plugins/manager_resources.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/media_host.go",
+        "sha256": "902b3b901c4e943d47c93dbd4ec772f839c26266a012b192b7401a5d61f7e781",
+        "source_path": "internal/plugins/media_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/media_images.go",
+        "sha256": "87aea6a5037428f57751c83d2324e424851125fb4e5448682bdbbc66856d0c0c",
+        "source_path": "internal/plugins/media_images.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/media_info.go",
+        "sha256": "b34b527ec10fc8c6a7006fb2b7eb7450b546f7b9fba201f8c9a903e5f325aa51",
+        "source_path": "internal/plugins/media_info.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/message_inbound.go",
+        "sha256": "9749c6aea2c086641d834793fba583161dce142109c6c33e2b6f81d16a108520",
+        "source_path": "internal/plugins/message_inbound.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_bytes.go",
+        "sha256": "a773d99bf9367fd67fd5b90f8601ac89b2f3d8f7fb552b108b05ee7bfcc9dbd3",
+        "source_path": "internal/plugins/module_bytes.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_result.go",
+        "sha256": "d931cffd0500711d7a5b1097cdbd7c8a4cae2bb56730eec37e9b23a070715e55",
+        "source_path": "internal/plugins/module_result.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_transfer.go",
+        "sha256": "05ca8638bacd2e0ee499e610b1999201c26d7dab6f363e2de6890764dd4bb066",
+        "source_path": "internal/plugins/module_transfer.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/mutable_event.go",
+        "sha256": "f530e1d8e0c478b530fc796064b9484d0562ea9d00dbbadb5eeb65adde4a38a5",
+        "source_path": "internal/plugins/mutable_event.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/network_host.go",
+        "sha256": "1ac0fdb7bae5cea8fe9267ae96eb834c1a8c2df43e2a80dc55dcfc23e38b1cdb",
+        "source_path": "internal/plugins/network_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/network_proxy_host.go",
+        "sha256": "2be2e4f533e4a2506fe61d8af40650234b1553371795e1e2eacdaa73289d9991",
+        "source_path": "internal/plugins/network_proxy_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/notification.go",
+        "sha256": "3d5586379a4bb7aabe6e5a2b1211ccbafe97f78ea3aec4aad258f2bd991f7f45",
+        "source_path": "internal/plugins/notification.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/ocr_host.go",
+        "sha256": "f854c582e02a11f1c8bd5fcd0e1e090c74892d89cb8b4c5cb1c2a738f8acd68f",
+        "source_path": "internal/plugins/ocr_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/pending_call.go",
+        "sha256": "89ccd4ba72560bf4ea26b1bdd70c58edccc1ab0d49bf0f85c6c447359e918053",
+        "source_path": "internal/plugins/pending_call.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/plugin_host.go",
+        "sha256": "a6dd03125735244a5ac7320104979196ff8375fd33885e8fdb2a4fd561e19412",
+        "source_path": "internal/plugins/plugin_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/protocol.go",
+        "sha256": "4dd45fba68965bed4255ecd4382036914b40f45945da6313fbe9ea46c8119454",
+        "source_path": "internal/plugins/protocol.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runner_budget.go",
+        "sha256": "279e83f64b07e9867d3222903e2e092da202b4466e4ec272f069918eddfb2e73",
+        "source_path": "internal/plugins/runner_budget.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runner_observation.go",
+        "sha256": "28e727ff7be397037b8aa026b9e0e19bac5c83f2060aae3f6f212e7c55ba8fe9",
+        "source_path": "internal/plugins/runner_observation.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runtime_support.go",
+        "sha256": "333e6d28a60e5e9d0fb98fc8266e27136b73b8bcd0311e914b2400a67e511c45",
+        "source_path": "internal/plugins/runtime_support.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/service_progress.go",
+        "sha256": "8bc1b9906b2849d36085c94898cb0947cb511ecd982ebe76213e042201b4b4ad",
+        "source_path": "internal/plugins/service_progress.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/settings_host.go",
+        "sha256": "b9b500ac565ef98f98d8e32b5c2285cdc7fa869a5be6df8be2199846bcc78137",
+        "source_path": "internal/plugins/settings_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/site_host.go",
+        "sha256": "db86becbad6e142887d572ed566c01301d1cbdf12ac10f833821048b85a82fd8",
+        "source_path": "internal/plugins/site_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/site_http_host.go",
+        "sha256": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+        "source_path": "internal/plugins/site_http_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/storage_host.go",
+        "sha256": "878a1a0d8e123078f7ce8989ab0ef360536702910801ff0055c39d3d1c751049",
+        "source_path": "internal/plugins/storage_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/storage_operation.go",
+        "sha256": "8244ae2e8b6c835746e6505f4bd4b2ed17a0474497315e6027d45f51b0815c52",
+        "source_path": "internal/plugins/storage_operation.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/subscription_host.go",
+        "sha256": "518ef5fb6e95d820d9b1c521ab588891208a955a86577b0cf3d8ccdae2b4e937",
+        "source_path": "internal/plugins/subscription_host.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/title_torrent_filter.go",
+        "sha256": "107b116e28d688a01cfef2e154e081d9a2bcfde25f697f49a65302389304e6d2",
+        "source_path": "internal/plugins/title_torrent_filter.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/transport.go",
+        "sha256": "f36a61b4f9becfd844aef64f4a006665f8791be2e27621b65dbbb13216be249c",
+        "source_path": "internal/plugins/transport.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/worker.go",
+        "sha256": "b91a555c564512af5cf4b5fee799244a21dd3c26e08bf018df1aea1665ecdb57",
+        "source_path": "internal/plugins/worker.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/api_test.go",
+        "sha256": "56f54f51238f2eb1b7c569009f3f0ae88c9feb36ca5f3ff2765835717be7d3c8",
+        "source_path": "internal/plugins/api_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/base_instance_metadata_test.go",
+        "sha256": "d32badb3def26881eefb6bdaed5a8d6103c4106df3fd18082501d1bd5a62ff85",
+        "source_path": "internal/plugins/base_instance_metadata_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/base_test.go",
+        "sha256": "c6579e22603e50a85e609d90cf7a3987ed726cfd736f0a53d1e54ea7aa845418",
+        "source_path": "internal/plugins/base_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/broadcast_handler_test.go",
+        "sha256": "7074162259dee3a531b46c866e8e93db698ffa7d49141e685d8875d77ba80537",
+        "source_path": "internal/plugins/broadcast_handler_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/chain_handler_test.go",
+        "sha256": "0ec665c4d797c937b062304bee52c8a3f0f8b42f45f5154ae8c3dc608fed71cf",
+        "source_path": "internal/plugins/chain_handler_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_cancel_fence_test.go",
+        "sha256": "9248437808ea2633b95a69a5a29a9ab0aed48382d84cd34f4dd85470899d431c",
+        "source_path": "internal/plugins/concurrent_cancel_fence_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/concurrent_session_test.go",
+        "sha256": "42122fdbb521a5bd610bc9320b620b267f0b9dfb3dd7d4d189303346e7bea5cb",
+        "source_path": "internal/plugins/concurrent_session_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host_connection_test.go",
+        "sha256": "b32192df75cae85bdaf8a664ae202fd63e5a71905596174a2991c53547c2c706",
+        "source_path": "internal/plugins/downloader_host_connection_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_host_test.go",
+        "sha256": "612c4a9723a102d181c8ad5af1246e024a0ab859c98f1f7d0e48192df4bd6ebc",
+        "source_path": "internal/plugins/downloader_host_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/downloader_tasks_test.go",
+        "sha256": "53cc9509dbc995a8f6b57728352e9c34ffeec852406ef6df954303b3ce822650",
+        "source_path": "internal/plugins/downloader_tasks_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/form_model_policy_test.go",
+        "sha256": "f9e57ac59a39be213478047bd76e0ecb57348433ade1ac2577964b13018db57a",
+        "source_path": "internal/plugins/form_model_policy_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/frontend_test.go",
+        "sha256": "7bfe409e228d99b322ce073625b5522301da181002f23053db6d208db3444672",
+        "source_path": "internal/plugins/frontend_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/handler_order_test.go",
+        "sha256": "a8b9d1396a76a048157663b226984cdf4e88accdd07a27bd794ffb652845ec18",
+        "source_path": "internal/plugins/handler_order_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/log_test.go",
+        "sha256": "fcc2885cda8b23eaf3a789b13a07ebebe009f507cda238978ba1867de666d4f9",
+        "source_path": "internal/plugins/log_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/message_inbound_test.go",
+        "sha256": "c15b6d2be8e2a7a5db06f731fcd7ca442fd1478cf4924550e65837736617e1ba",
+        "source_path": "internal/plugins/message_inbound_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_bytes_test.go",
+        "sha256": "aaa5cab07ddc797539b30c53c6006267a0e036a98d8f0bc068b3aa62293c59b0",
+        "source_path": "internal/plugins/module_bytes_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_result_test.go",
+        "sha256": "1d360bf58945312e6ad3ed90c800d4c041bccb87aa883311a9e6c84bb0f0376b",
+        "source_path": "internal/plugins/module_result_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/module_scope_test.go",
+        "sha256": "1820e240f74fbe828c8af130b98cce5e12f749560eefe7052b5d1ca63d8332dc",
+        "source_path": "internal/plugins/module_scope_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/mutable_event_test.go",
+        "sha256": "9b4fb91df20083531c978fec8539f7e5026345581fc8cf0e04850f88d4727e89",
+        "source_path": "internal/plugins/mutable_event_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/pending_call_test.go",
+        "sha256": "d0deec4570c989e966beeb6ba07bf1751024c8ec8176a2c32710e18656cc09ed",
+        "source_path": "internal/plugins/pending_call_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/protocol_test.go",
+        "sha256": "d9b98c64c75b33a7f42f3957920bd2ef50cb6407a8950190b614e66e8d66df70",
+        "source_path": "internal/plugins/protocol_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runner_budget_test.go",
+        "sha256": "b3ead40968cc3c798d8a1e404297c15e8caa5b4d7a9e3f3421499602d18cccde",
+        "source_path": "internal/plugins/runner_budget_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runner_observation_test.go",
+        "sha256": "9a926cd3ed641b0ec38f106cafae71b034530385761bbb3090cf161ec13b46e5",
+        "source_path": "internal/plugins/runner_observation_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/runtime_support_test.go",
+        "sha256": "24ecd26a1c3ada774b07a7e414a85fea2fc3975062d6f00ae14c4bb4730d3b88",
+        "source_path": "internal/plugins/runtime_support_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/session_options_test.go",
+        "sha256": "cdd10640cb7c5cc1a5b71f8bc644ce0637e6c278a4915fd43fe3747386ac8ae4",
+        "source_path": "internal/plugins/session_options_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/session_test.go",
+        "sha256": "ce9cba929b624ba47455222a4984c60c6771feda3658caf21309eee724685cbd",
+        "source_path": "internal/plugins/session_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/subscription_host_test.go",
+        "sha256": "bccbe96710a8aca52aa3cb51d40af5e3b38519055c384d628548ed2fca5a9927",
+        "source_path": "internal/plugins/subscription_host_test.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/sourcejson/model.go",
+        "sha256": "2bf2998e11f0bd108f51c315ed3367faa277f7557304acf54d95daad06ff6c21",
+        "source_path": "internal/sourcejson/model.go",
+        "source_exact_after_import_relocation": true
+      },
+      {
+        "path": "internal/sdk/testdata/owned-concurrent-fixture/main.go",
+        "sha256": "d60aebc5286c60fa2a1a1b4865d6582c92f04d5ffcf96e77e2946f107dabed6c",
+        "source_path": "cmd/owned-concurrent-fixture/main.go",
+        "source_exact_after_import_relocation": true
+      }
+    ]
+  },
+  "unit_test": {
+    "command": "go test ./plugins/categoryeditor ./cmd/category-editor -count=1 -v",
+    "exit_code": 0,
+    "log_sha256": "1abb7a82c9d593ef908dd2b12abf8d77daf4c21ef2eeb2003006169e461948c4",
+    "sdk_unchanged_during_run": true,
+    "linux_worker_transport": "skipped on this darwin/arm64 machine, not counted as acceptance"
+  },
+  "limits": [
+    "No old oracle/test output was edited or presented as a new live execution.",
+    "Byte identity upgrades the source provenance of historical helper/default inputs; it does not prove the live ruamel/WeakSingleton/message/config DB runtime matches historical adapters.",
+    "No active user category.yaml/configuration content has been used as the builtin default.",
+    "No private configuration migration or current target App/browser/Linux runtime acceptance is claimed."
+  ]
+}

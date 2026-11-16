@@ -1,0 +1,1659 @@
+{
+  "classification": "immutable333/netnone source-method synthetic replay: fixed Web endpoint, incoming history, ordinary command branch, Command event dispatch, fixed EventManager enabled gate, PluginBase/ChainBase outgoing message methods and installed sign_in/full__do; controlled memory stores, plugin registry, synchronous delivery, successful site result; no original app/DB/network/external receiver, no target Main",
+  "negative": {
+    "case": "config-only-empty-retry-does-not-clear-old-success",
+    "calls": 1,
+    "history_before": {
+      "11月7日": [
+        {
+          "site": "Owned sequence site",
+          "status": "签到成功",
+          "site_id": 501,
+          "type": "签到",
+          "success": true,
+          "logged_in": true
+        }
+      ],
+      "签到-2026-11-07": {
+        "do": [
+          501
+        ],
+        "retry": [],
+        "results": {
+          "501": {
+            "success": true,
+            "message": "签到成功",
+            "logged_in": true
+          }
+        }
+      }
+    },
+    "history_after": {
+      "11月7日": [
+        {
+          "site": "Owned sequence site",
+          "status": "签到成功",
+          "site_id": 501,
+          "type": "签到",
+          "success": true,
+          "logged_in": true
+        }
+      ],
+      "签到-2026-11-07": {
+        "do": [
+          501
+        ],
+        "retry": [],
+        "results": {
+          "501": {
+            "success": true,
+            "message": "签到成功",
+            "logged_in": true
+          }
+        }
+      }
+    },
+    "posts": [
+      {
+        "channel": "Web",
+        "title": "开始站点签到 ...",
+        "userid": "owned-user"
+      }
+    ]
+  },
+  "pre_reset_private_history": {
+    "11月7日": [
+      {
+        "site": "Owned sequence site",
+        "status": "签到成功",
+        "site_id": 501,
+        "type": "签到",
+        "success": true,
+        "logged_in": true
+      }
+    ],
+    "签到-2026-11-07": {
+      "do": [
+        501
+      ],
+      "retry": [],
+      "results": {
+        "501": {
+          "success": true,
+          "message": "签到成功",
+          "logged_in": true
+        }
+      }
+    }
+  },
+  "rows": [
+    {
+      "case": "command1-empty-retry-base-only-after-explicit-reset",
+      "calls_before": [
+        1,
+        0
+      ],
+      "calls_after": [
+        2,
+        0
+      ],
+      "attendance_total": 2,
+      "message_count": 3,
+      "new_messages": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "delivered": [
+        "base"
+      ],
+      "event": {
+        "action": "site_signin",
+        "channel": "Web",
+        "source": "owned-user",
+        "user": "owned-user"
+      },
+      "history": {
+        "base": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [
+              501
+            ],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        },
+        "clone": {}
+      }
+    },
+    {
+      "case": "command2-empty-retry-broadcast-two-enabled",
+      "calls_before": [
+        2,
+        0
+      ],
+      "calls_after": [
+        3,
+        1
+      ],
+      "attendance_total": 4,
+      "message_count": 8,
+      "new_messages": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "delivered": [
+        "base",
+        "clone"
+      ],
+      "event": {
+        "action": "site_signin",
+        "channel": "Web",
+        "source": "owned-user",
+        "user": "owned-user"
+      },
+      "history": {
+        "base": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [
+              501
+            ],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        },
+        "clone": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [
+              501
+            ],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "command3-nonempty-retry-warmup-still-uses-stored-retry",
+      "calls_before": [
+        3,
+        1
+      ],
+      "calls_after": [
+        4,
+        2
+      ],
+      "attendance_total": 6,
+      "message_count": 13,
+      "new_messages": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "delivered": [
+        "base",
+        "clone"
+      ],
+      "event": {
+        "action": "site_signin",
+        "channel": "Web",
+        "source": "owned-user",
+        "user": "owned-user"
+      },
+      "history": {
+        "base": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        },
+        "clone": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "command4-nonempty-retry-dedups-after-warmup",
+      "calls_before": [
+        4,
+        2
+      ],
+      "calls_after": [
+        4,
+        2
+      ],
+      "attendance_total": 6,
+      "message_count": 16,
+      "new_messages": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "delivered": [
+        "base",
+        "clone"
+      ],
+      "event": {
+        "action": "site_signin",
+        "channel": "Web",
+        "source": "owned-user",
+        "user": "owned-user"
+      },
+      "history": {
+        "base": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        },
+        "clone": {
+          "11月7日": [
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            },
+            {
+              "site": "Owned sequence site",
+              "status": "签到成功",
+              "site_id": 501,
+              "type": "签到",
+              "success": true,
+              "logged_in": true
+            }
+          ],
+          "签到-2026-11-07": {
+            "do": [
+              501
+            ],
+            "retry": [],
+            "results": {
+              "501": {
+                "success": true,
+                "message": "签到成功",
+                "logged_in": true
+              }
+            }
+          }
+        }
+      }
+    }
+  ],
+  "records": [
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "text": "/site_signin",
+      "action": 0
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "站点签到完成！",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "text": "/site_signin",
+      "action": 0
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "站点签到完成！",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "站点签到完成！",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "text": "/site_signin",
+      "action": 0
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "站点签到完成！",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "站点签到完成！",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "text": "/site_signin",
+      "action": 0
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    },
+    {
+      "channel": "Web",
+      "source": null,
+      "mtype": null,
+      "ctype": null,
+      "title": "开始站点签到 ...",
+      "text": null,
+      "image": null,
+      "voice_path": null,
+      "file_path": null,
+      "file_name": null,
+      "voice_caption": null,
+      "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIncmd",
+      "userid": "owned-user",
+      "username": null,
+      "date": null,
+      "action": 1,
+      "targets": null,
+      "buttons": null,
+      "force_reply": false,
+      "original_message_id": null,
+      "original_chat_id": null,
+      "disable_web_page_preview": null,
+      "parse_mode": null,
+      "save_history": true
+    }
+  ],
+  "sequence": [
+    [
+      "db",
+      null,
+      0
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "站点签到完成！",
+      1
+    ],
+    [
+      "notice",
+      "站点签到完成！"
+    ],
+    [
+      "queue",
+      "站点签到完成！"
+    ],
+    [
+      "db",
+      null,
+      0
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "站点签到完成！",
+      1
+    ],
+    [
+      "notice",
+      "站点签到完成！"
+    ],
+    [
+      "queue",
+      "站点签到完成！"
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "站点签到完成！",
+      1
+    ],
+    [
+      "notice",
+      "站点签到完成！"
+    ],
+    [
+      "queue",
+      "站点签到完成！"
+    ],
+    [
+      "db",
+      null,
+      0
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "站点签到完成！",
+      1
+    ],
+    [
+      "notice",
+      "站点签到完成！"
+    ],
+    [
+      "queue",
+      "站点签到完成！"
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "站点签到完成！",
+      1
+    ],
+    [
+      "notice",
+      "站点签到完成！"
+    ],
+    [
+      "queue",
+      "站点签到完成！"
+    ],
+    [
+      "db",
+      null,
+      0
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ],
+    [
+      "db",
+      "开始站点签到 ...",
+      1
+    ],
+    [
+      "notice",
+      "开始站点签到 ..."
+    ],
+    [
+      "queue",
+      "开始站点签到 ..."
+    ]
+  ],
+  "web_calls": [
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "username": "owned-user",
+      "text": "/site_signin",
+      "images": null
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "username": "owned-user",
+      "text": "/site_signin",
+      "images": null
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "username": "owned-user",
+      "text": "/site_signin",
+      "images": null
+    },
+    {
+      "channel": "Web",
+      "source": "owned-user",
+      "userid": "owned-user",
+      "username": "owned-user",
+      "text": "/site_signin",
+      "images": null
+    }
+  ],
+  "timeline": [
+    {
+      "at": 2.776312,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 2.951027,
+      "kind": "site_enter",
+      "thread": "Thread-1 (worker)",
+      "case": "negative-without-reset"
+    },
+    {
+      "at": 2.951046,
+      "kind": "site_return",
+      "thread": "Thread-1 (worker)",
+      "case": "negative-without-reset"
+    },
+    {
+      "at": 2.952112,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "key": "11月7日"
+    },
+    {
+      "at": 2.952413,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 2.952466,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 2.952666,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 2.952717,
+      "kind": "post",
+      "thread": "MainThread",
+      "case": "negative-without-reset",
+      "title": "开始站点签到 ..."
+    },
+    {
+      "at": 3.007639,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.009313,
+      "kind": "site_enter",
+      "thread": "Thread-5 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.009334,
+      "kind": "site_return",
+      "thread": "Thread-5 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.010335,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.01041,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.010456,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.010637,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.010697,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "clone",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.074076,
+      "kind": "site_enter",
+      "thread": "Thread-9 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.074097,
+      "kind": "site_return",
+      "thread": "Thread-9 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.074696,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.074752,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.075063,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.075333,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "clone",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.077908,
+      "kind": "site_enter",
+      "thread": "Thread-13 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.077929,
+      "kind": "site_return",
+      "thread": "Thread-13 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.07899,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.079048,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.079345,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.08093,
+      "kind": "site_enter",
+      "thread": "Thread-17 (worker)",
+      "case": "clone"
+    },
+    {
+      "at": 3.080983,
+      "kind": "site_return",
+      "thread": "Thread-17 (worker)",
+      "case": "clone"
+    },
+    {
+      "at": 3.081673,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "clone",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.081737,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "clone",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.082028,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "clone",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.082429,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.082473,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "clone",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.084542,
+      "kind": "site_enter",
+      "thread": "Thread-21 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.084564,
+      "kind": "site_return",
+      "thread": "Thread-21 (worker)",
+      "case": "base"
+    },
+    {
+      "at": 3.085529,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.085598,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "base",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.086083,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "base",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    },
+    {
+      "at": 3.088016,
+      "kind": "site_enter",
+      "thread": "Thread-25 (worker)",
+      "case": "clone"
+    },
+    {
+      "at": 3.088035,
+      "kind": "site_return",
+      "thread": "Thread-25 (worker)",
+      "case": "clone"
+    },
+    {
+      "at": 3.08874,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "clone",
+      "key": "11月7日"
+    },
+    {
+      "at": 3.088812,
+      "kind": "save_data",
+      "thread": "MainThread",
+      "case": "clone",
+      "key": "签到-2026-11-07"
+    },
+    {
+      "at": 3.0892,
+      "kind": "config",
+      "thread": "MainThread",
+      "case": "clone",
+      "cron": "58 23 31 12 *",
+      "onlyonce": false
+    }
+  ],
+  "processing_finish": [
+    {
+      "status": null,
+      "user_id": "owned-user"
+    },
+    {
+      "status": null,
+      "user_id": "owned-user"
+    },
+    {
+      "status": null,
+      "user_id": "owned-user"
+    },
+    {
+      "status": null,
+      "user_id": "owned-user"
+    }
+  ]
+}

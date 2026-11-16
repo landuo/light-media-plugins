@@ -1,0 +1,80 @@
+--- executed-f8b
++++ new-d870
+@@ -383,9 +383,10 @@
+ 	h.ok("POST", "/api/message/web", map[string]any{"text": "/site_signin"})
+ 	waitAttendance(2)
+ 	assertCommandMessages(waitMessages(3), 1, 1, 1)
+-	if !asiOwnedEmptyPage(t, h.ok("GET", "/api/plugins/"+clone+"/page", nil)) {
+-		t.Fatal("disabled clone consumed command")
+-	}
++	if !asiOwnedPendingRow(t, h.ok("GET", "/api/plugins/"+clone+"/page", nil)) {
++		t.Fatal("disabled selected clone acquired history or lost its pending row")
++	}
++	h.config(clone, cloneConfig)
+ 	cloneConfig["enabled"] = true
+ 	h.ok("PUT", "/api/plugins/"+clone, cloneConfig)
+ 	h.ok("POST", "/api/message/web", map[string]any{"text": "/site_signin"})
+@@ -647,6 +648,63 @@
+ 		})
+ 	})
+ }
++
++// Fixed270 get_page640-832: selected sites with no history have a pending row.
++func asiOwnedPendingRow(t *testing.T, raw []byte) bool {
++	t.Helper()
++	var root any
++	if json.Unmarshal(raw, &root) != nil {
++		t.Fatal("invalid page JSON")
++	}
++	var walk func(any, func(map[string]any) bool) bool
++	walk = func(v any, pred func(map[string]any) bool) bool {
++		switch x := v.(type) {
++		case map[string]any:
++			if pred(x) {
++				return true
++			}
++			for _, v := range x {
++				if walk(v, pred) {
++					return true
++				}
++			}
++		case []any:
++			for _, v := range x {
++				if walk(v, pred) {
++					return true
++				}
++			}
++		}
++		return false
++	}
++	named := func(m map[string]any) bool {
++		p, _ := m["props"].(map[string]any)
++		return m["text"] == "Owned ASI source peer" && p["class"] == "autosignin-site-name" && p["title"] == "Owned ASI source peer"
++	}
++	return walk(root, func(row map[string]any) bool {
++		if row["component"] != "tr" {
++			return false
++		}
++		cells, _ := row["content"].([]any)
++		if len(cells) < 3 || !walk(cells[0], named) {
++			return false
++		}
++		chip := walk(cells[1], func(m map[string]any) bool {
++			p, _ := m["props"].(map[string]any)
++			return m["component"] == "VChip" && m["text"] == "未记录" && p["color"] == "grey" && p["prepend-icon"] == "mdi-minus-circle-outline"
++		})
++		dot := walk(cells[2], func(m map[string]any) bool {
++			p, _ := m["props"].(map[string]any)
++			title, _ := p["title"].(string)
++			return m["component"] == "span" && p["class"] == "autosignin-dot autosignin-dot--none" && strings.HasSuffix(title, " 未记录")
++		})
++		return chip && dot && walk(cells[0], func(m map[string]any) bool { return m["text"] == "暂无记录" }) && walk(root, func(m map[string]any) bool {
++			p, _ := m["props"].(map[string]any)
++			c, _ := p["class"].(string)
++			return m["text"] == "0/1" && strings.Contains(c, "autosignin-stat__value")
++		})
++	})
++}
+ func asiOwnedEmptyPage(t *testing.T, raw []byte) bool {
+ 	t.Helper()
+ 	var got struct {

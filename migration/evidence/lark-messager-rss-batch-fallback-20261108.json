@@ -1,0 +1,52 @@
+{
+  "plugin_id": "LarkMessager",
+  "version": "0.9.1",
+  "overall_status": "implementing",
+  "binding": {
+    "source_commit": "270ae0bcbf1d270b916ca9b14f8bffff9b1938d0",
+    "platform_source_commit": "8a83efeacd3e26b82be495e17d50146e31c96a60",
+    "host_commit": "68cba95043e6b039fac5a1042e6848cccbc1c470",
+    "worker_commit": "d1815f914b3830adf405e4d5a0918d76f093aa6b",
+    "fixture_sha256": "5dad39df6514f4e4fb69cf0bf30c006f8257ba18d6d53e32a6807127b3fa2fd6",
+    "package_sha256": "7baf176a45ce5081e714a6abd89c101008a6437b366ed434208c9f8baea8d2b4"
+  },
+  "source_oracle": "Static comparison with the fixed source and independent call-chain review. No original service execution or writes.",
+  "mapping": [
+    {
+      "source": "app/chain/torrents.py:464–476,565–582; app/chain/subscribe.py:1658–1667,2062–2088,3380–3397; app/chain/download.py:1220–1247",
+      "target": "internal/app/plugin_original_subscribe_chat_refresh.go, plugin_original_subscribe_chat_refresh_match.go, plugin_original_subscribe_chat_settlement.go, subscription_runtime.go and subscription_ordinary_fallback.go",
+      "behavior": "One fetched RSS batch owns exact matching jobs and each completes before the next admission. Definite downloader refusal allows the next candidate. The refresh success reply follows the actual result and completion."
+    },
+    {
+      "source": "app/chain/torrents.py:464–475; app/chain/download.py:824–841,1013–1027",
+      "target": "internal/app/plugin_original_host_sites.go, plugin_original_rss_details.go, plugin_original_subscribe_chat_refresh.go and plugin_original_download_context.go",
+      "behavior": "The RSS detail link stays attached to the selected resource and is consumed by both pre- and post-Add Context. The host projects only a configured-origin page with public identifier parameters and freezes it in the selected row."
+    }
+  ],
+  "native": {
+    "status": "passed",
+    "kind": "Native Linux x86_64 App, indexed Lark worker and SDK observer with owned protocol peers",
+    "environment": "Read-only Alpine 3.22, tmpfs and loopback only. Owned Lark, tracker, TMDB and qBittorrent protocol peers. No original or production credentials.",
+    "test": "TestOriginalLarkRSSBatchFallbackLinuxAMD64",
+    "fixture": "light-media:internal/app/plugin_original_subscribe_rss_fallback_linux_test.go",
+    "seconds": 4.25,
+    "host_elf_sha256": "a79b7b664b7880b77d9d5037d05486d3079ac0283f36a04652dd02e2c140fb26",
+    "observer_elf_sha256": "ed90529d44d0ebc9857c44f00cf644e983b89e53988ce9c4110b08b70ba23a64",
+    "runner_sha256": "4c64afb193341f0c73c4286cce4f67b2e807dc93a468da69a9ff9f3146811892",
+    "runtime_log_sha256": "d2618e2fa370ed62e25d6b5f6a56964e474e92808bc75b1e495ac3e3dbb112fb",
+    "observations": [
+      "The started Linux App and indexed Lark worker fetched one RSS feed and no keyword search. Two releases for the same active subscription were attempted in one bound matching job. The first Add was definitively refused and cooled, and the second was accepted using its exact metainfo and configured local save path.",
+      "The refresh callback waited for the accepted download and the successful subscription completion event. The fixture held the completion notice response and observed no premature refresh reply. The final redraw showed the original subscription had been removed.",
+      "Both real SDK resource.download events were observed. The first release had a foreign details link and exposed no page URL. The accepted release carried the normalized same-site /details.php?hit=1&id=102 in resource.download, download.added and the actual download_added module call. Private tracker query, fragment, enclosure and site Cookie were omitted, and the native log contained no private or foreign fixture marker."
+    ]
+  },
+  "prior_failure": {
+    "observation": "The first run confirmed refusal and fallback Add, then found the RSS root lacked the workflow ID required by subscription.completed. The exact RSS enqueue now supplies the native correlation ID. Only this failed new fixture was rerun and passed.",
+    "runtime_log_sha256": "9d62a8395a83a2cdfe4e0e6f8d4a3ce54274231d1ec628a92a14609f60617eb2"
+  },
+  "adaptations_and_open": [
+    "The pinned source passes the raw RSS page link and also carries enclosure and Cookie in the in-process source model. The Go host resolves the page to the configured origin, retains bounded stable identifier parameters and hit=0/1, and excludes private material and credentials from the standard event Context. Foreign/ambiguous pages and old rows with no saved detail produce an empty page.",
+    "The native fixture covered two candidates for one active ordinary RSS subscription. Serial multi-subscription matching, paused/quality timing, cold owned-child recovery and uncertainty were inspected in code only. Spider and independently scheduled background jobs still follow their existing scope. A terminal root cancelled between private confirmation and child claim can retain its original reservation for review.",
+    "Outstanding worker-level evidence includes encrypted webhook, configured administrator behavior, attachments, disabled FetchChats and clone/reload. Remaining host differences include exact source failure notice, post-preview reacquisition, additional magnet variants and provider-without-TMDB."
+  ]
+}

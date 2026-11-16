@@ -1,0 +1,28 @@
+from pathlib import Path
+import json,subprocess,hashlib,collections
+r=Path('/Users/accidia/projects/light-media-plugins');host=Path('/Users/accidia/projects/light-media');w=Path(__file__).resolve().parent;p=r/'work/parallel-sdk-sync-20261106';m=r/'work/sdk101-current-consumers-20261106';sha=lambda p:hashlib.sha256(p.read_bytes()).hexdigest();origin=json.loads((r/'SDK_ORIGIN.json').read_text());prior=json.loads((p/'previous-sdk98/SDK_ORIGIN.json').read_text());old={x['path']:x for x in prior['files']};changes=[];errors=[]
+for row in origin['files']:
+ raw=subprocess.check_output(['git','show','b69663ab349de0547c34680a68b66c8486bacd51:'+row['source_path']],cwd=host);srcsha=hashlib.sha256(raw).hexdigest();expected=raw
+ for relocation in origin['allowed_changes']:expected=expected.replace(relocation['from'].encode(),relocation['to'].encode())
+ actual=(r/row['path']).read_bytes()
+ if srcsha!=row['source_sha256']or hashlib.sha256(actual).hexdigest()!=row['sha256']or actual!=expected:errors.append(row['path'])
+ if row['path']not in old or old[row['path']]['sha256']!=row['sha256']:changes.append({'path':row['path'],'new':row['path']not in old,'test':row['path'].endswith('_test.go')})
+result={'SDK':{'origin_sha256':sha(r/'SDK_ORIGIN.json'),'old_origin_sha256':sha(p/'previous-sdk98/SDK_ORIGIN.json'),'files':len(origin['files']),'source_commit':'b69663ab349de0547c34680a68b66c8486bacd51','exact_committed_source_plus_declared_relocations_mismatches':errors,'delta':changes},'inputs':{},'builds':[],'raw_runs':{},'harvest':{}}
+for label,before,after in [('consumer',p/'consumer-inputs-before.json',p/'consumer-inputs-after.json'),('linux',p/'linux-consumer-inputs-before.json',p/'linux-consumer-inputs-after.json')]:
+ b=json.loads(before.read_text());a=json.loads(after.read_text());bad=[name for name,h in a.items()if not(r/name).is_file()or sha(r/name)!=h];result['inputs'][label]={'count':len(b),'before_after_equal':b==a,'current_mismatches':bad,'before_sha256':sha(before),'after_sha256':sha(after)}
+for row in json.loads((p/'linux-consumer-builds.json').read_text()):
+ artifact=Path(row['artifact']);buildinfo=subprocess.check_output(['go','version','-m',str(artifact)],cwd=r).decode();published=(p/(row['id']+'-linux-buildinfo.txt')).read_text();result['builds'].append({'id':row['id'],'artifact':str(artifact),'exists':artifact.is_file(),'sha256':sha(artifact),'bound_sha_equal':sha(artifact)==row['sha256'],'bytes_equal':artifact.stat().st_size==row['bytes'],'exit':row['exit'],'buildinfo_exact':buildinfo==published,'command':row['command'],'environment':row['environment']})
+for name in ['sdk101-normal','sdk101-race','consumers-normal','consumers-race','optin-normal-tests','optin-race-tests']:
+ f=p/(name+'.stdout');rows=[json.loads(l)for l in f.read_text().splitlines()if l.startswith('{')];result['raw_runs'][name]={'sha256':sha(f),'test_pass':sum(x.get('Action')=='pass'and'Test'in x for x in rows),'package_pass':sum(x.get('Action')=='pass'and'Test'not in x for x in rows),'test_fail':sum(x.get('Action')=='fail'and'Test'in x for x in rows),'package_fail':sum(x.get('Action')=='fail'and'Test'not in x for x in rows),'test_skips':[x['Test']for x in rows if x.get('Action')=='skip'and'Test'in x],'build_failed':any(x.get('Action')=='build-fail'for x in rows)}
+harvest=json.loads((m/'harvest-manifest.json').read_text());bad=[]
+for row in harvest['files']:
+ f=m/'actual-harvest'/row['path']
+ if sha(f)!=row['sha256']or f.stat().st_size!=row['bytes']:bad.append(row['path'])
+result['harvest']={'files':len(harvest['files']),'bytes':sum(x['bytes']for x in harvest['files']),'mismatches':bad,'manifest_sha256':sha(m/'harvest-manifest.json')}
+for phase in ['four','pui','rlk']:
+ command=json.loads((m/'actual-harvest'/(phase+'-command.json')).read_text());records=[json.loads(l)for l in(m/'actual-harvest'/phase/'evidence/observations.jsonl').read_text().splitlines()];result['harvest'][phase]={'exit':command['exit_code'],'seconds':command['seconds'],'count':len(records),'event_counts':dict(collections.Counter(x['event']for x in records)),'all_log_times_nondecreasing':all(records[i]['at']<=records[i+1]['at']for i in range(len(records)-1)),'source_command':command['command'],'host_sha256':command['host_sha256']}
+# Updates must be the complete current production file with exactly Version changed.
+result['version_only_overlays']=[]
+for ident,family,oldv,newv in [('PluginUnInstall-update','pluginuninstall','2.2','2.2.1'),('RemoveLink-update','removelink','2.18','2.18.1')]:
+ overlay=json.loads((p/(ident+'-overlay.json')).read_text())['Replace'];assert len(overlay)==1;virtual,actual=next(iter(overlay.items()));before=Path(virtual).read_text();after=Path(actual).read_text();needle='Version: "'+oldv+'"';result['version_only_overlays'].append({'id':ident,'virtual':virtual,'actual':actual,'one_version_occurrence':before.count(needle)==1,'whole_file_only_version_changed':after==before.replace(needle,'Version: "'+newv+'"'),'before_sha256':sha(Path(virtual)),'after_sha256':sha(Path(actual))})
+(w/'binding-audit.json').write_text(json.dumps(result,indent=2)+'\n');print(json.dumps({'SDKfiles':result['SDK']['files'],'SDKmismatches':errors,'delta':changes,'inputs':result['inputs'],'builds8_all_bound':all(x['bound_sha_equal']and x['bytes_equal']and x['buildinfo_exact']for x in result['builds']),'harvest':{k:v for k,v in result['harvest'].items()if k not in ['four','pui','rlk']},'version_only':all(x['whole_file_only_version_changed']for x in result['version_only_overlays']),'counts':{k:(v['test_pass'],v['package_pass'],len(v['test_skips']))for k,v in result['raw_runs'].items()}},indent=2))

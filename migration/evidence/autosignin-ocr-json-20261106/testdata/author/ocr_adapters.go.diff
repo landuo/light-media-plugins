@@ -1,0 +1,50 @@
+--- /Users/accidia/projects/light-media-plugins/work/source-ocr-value-domain-20261106/preimages/ocr_adapters.go
++++ plugins/autosignin/ocr_adapters.go
+@@ -7,7 +7,6 @@
+ 	"fmt"
+ 	"strings"
+ 	"time"
+-	"unicode/utf8"
+ 
+ 	"golang.org/x/net/html"
+ )
+@@ -45,11 +44,13 @@
+ 	case *sourceOCRValue:
+ 		return sourceLength(n.value)
+ 	case string:
+-		return utf8.RuneCountInString(n), nil
++		return len(sourceCodepoints(n)), nil
+ 	case []any:
+ 		return len(n), nil
+ 	case Object:
+ 		return len(n), nil
++	case sourceHTTPMap:
++		return len(n.values), nil
+ 	}
+ 	return 0, fmt.Errorf("object of type '%s' has no len()", typeName(v))
+ }
+@@ -221,7 +222,14 @@
+ 	}
+ 	form := map[string]string{"imagehash": pythonScalar(imageHash)}
+ 	var rawForm map[string]json.RawMessage
+-	if text, ok := result.(string); ok {
++	var formValues map[string][]string
++	if source, ok := result.(*sourceOCRValue); ok && source.fromHTTP {
++		values, err := sourceOCRFormValues(source.value)
++		if err != nil {
++			return AdapterResult{}, err
++		}
++		formValues = map[string][]string{"imagestring": values}
++	} else if text, ok := result.(string); ok {
+ 		form["imagestring"] = text
+ 	} else {
+ 		value, err := rawOCRValue(result)
+@@ -238,7 +246,7 @@
+ 		order = []string{"action", "imagehash", "imagestring"}
+ 		referer = textValue(site["url"])
+ 	}
+-	response, err := getHTTP(ctx, h, PageRequest{Method: "POST", URL: address, Form: form, RawForm: rawForm, FormOrder: order, Referer: referer})
++	response, err := getHTTP(ctx, h, PageRequest{Method: "POST", URL: address, Form: form, RawForm: rawForm, FormValues: formValues, FormOrder: order, Referer: referer})
+ 	if err != nil {
+ 		return AdapterResult{}, err
+ 	}

@@ -1,0 +1,39 @@
+{
+  "at_utc": "2026-11-05T08:57:06.955156+00:00",
+  "classification": "cleanup exact-owned test resources after immutable evidence harvest and independent read-only sample",
+  "containers": [
+    {
+      "id": "dcbd0899b49680933707b1203c0a10809e2fd3a2a5fad4d5c8a3a1bca4ead74a",
+      "name": "lm-plugins-tt-20261105-qb-source",
+      "ownership_verified": true,
+      "removed": true
+    },
+    {
+      "id": "2f47fd50f38dfb8c27fe28207dd4b36a36852ad929643e8f34e27d14cc31b166",
+      "name": "lm-plugins-tt-20261105-qb-target",
+      "ownership_verified": true,
+      "removed": true
+    },
+    {
+      "id": "65e30905d00e765b6cb5d29d210ba2a761ab2bd2debf9f6cb672a7fbbe5c0633",
+      "name": "lm-plugins-tt-20261105-tr-source",
+      "ownership_verified": true,
+      "removed": true
+    },
+    {
+      "id": "454bc206270f9db198adcb56594301088ac5cf0ee328cf701a51892890ca9182",
+      "name": "lm-plugins-tt-20261105-tr-target",
+      "ownership_verified": true,
+      "removed": true
+    }
+  ],
+  "processes_before": [],
+  "production_source_untouched": true,
+  "owned_transmission_image": {
+    "tag": "local/lm-tt-transmission:20261105",
+    "id": "sha256:f11b71591e57136d3da80d51f40763958f4390891ad0c85e114a4a0d3da5af57",
+    "removed": true,
+    "shared_base_images_pruned": false
+  },
+  "owned_root_removed": true
+}

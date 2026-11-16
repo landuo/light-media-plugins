@@ -182,11 +182,6 @@ type cleanupTestPeer struct {
 
 func newCleanupPeer(t *testing.T, feature bool, extra ...string) *cleanupTestPeer {
 	t.Helper()
-	return newCleanupPeerWithTimeout(t, feature, 3*time.Second, extra...)
-}
-
-func newCleanupPeerWithTimeout(t *testing.T, feature bool, timeout time.Duration, extra ...string) *cleanupTestPeer {
-	t.Helper()
 	ctx, cancel := context.WithTimeout(context.Background(), 15*time.Second)
 	exe, err := os.Executable()
 	if err != nil {
@@ -199,7 +194,7 @@ func newCleanupPeerWithTimeout(t *testing.T, feature bool, timeout time.Duration
 		args = append(args, "--feature")
 	}
 	args = append(args, extra...)
-	client, err := (Runner{Timeout: timeout, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, Command{Path: exe, Args: args}, m, SessionBinding{Identity: id, Generation: 1})
+	client, err := (Runner{Timeout: 3 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, Command{Path: exe, Args: args}, m, SessionBinding{Identity: id, Generation: 1})
 	if err != nil {
 		cancel()
 		t.Fatal(err)
@@ -468,9 +463,7 @@ func TestCleanupContinuationTwoSlotsRetainCanceledActualCallback(t *testing.T) {
 	}
 }
 func TestCleanupContinuationLargeLogicalHeaderAndDeadline(t *testing.T) {
-	// Race-instrumented subprocesses transfer the full payload under CI load.
-	// The separate 100 ms context below still verifies deadline propagation.
-	f := newCleanupPeerWithTimeout(t, true, 12*time.Second)
+	f := newCleanupPeer(t, true)
 	done := f.startRoot(f.ctx, 1, "manual")
 	select {
 	case <-f.rootEntered:

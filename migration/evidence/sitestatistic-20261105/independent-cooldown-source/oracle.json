@@ -1,0 +1,145 @@
+{
+  "classification": "actual installed IndexerModule.refresh_userdata + SiteParserBase constructor/parse/request/login/close/clear + RequestUtils constructor/get_res/request AST; owned response/parser extraction and DTO boundaries, no app imports/network",
+  "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "source_sha256": {
+    "app/chain/__init__.py": "afff04531e8ea7e312998f033f169114f785361bdc65fe7445df6cbc0d39c753",
+    "app/modules/indexer/__init__.py": "b1ec0525faf43003d6e65ef8851d0c1198ca77fc15c417b156134f9c08f1d7cf",
+    "app/modules/indexer/parser/__init__.py": "ef73038e897b57f20269ed4141ea0574a027a6e760c78a5577f0aeb9b3ca30ed",
+    "app/modules/indexer/parser/nexus_php.py": "b5c47b4ef97683057d0640f0bc8f4ad3e5354a29728f3acc12a4ed49b20382a4",
+    "app/utils/http.py": "f8d90a731717de14a822d8035a14486caba2e25d52018c87d6ec0d9fcd3b2b27"
+  },
+  "cases": [
+    {
+      "mode": "logged-out",
+      "http_delta": 1,
+      "dto": {
+        "domain": "owned.invalid",
+        "userid": null,
+        "username": null,
+        "user_level": null,
+        "join_at": null,
+        "upload": 0,
+        "download": 0,
+        "ratio": 0,
+        "bonus": 0.0,
+        "seeding": 0,
+        "seeding_size": 0,
+        "seeding_info": [],
+        "leeching": 0,
+        "leeching_size": 0,
+        "message_unread": 0,
+        "message_unread_contents": [],
+        "updated_day": "2026-11-05",
+        "err_msg": "未检测到已登陆，请检查cookies是否过期"
+      }
+    },
+    {
+      "mode": "normal",
+      "http_delta": 1,
+      "dto": {
+        "domain": "owned.invalid",
+        "userid": "7",
+        "username": "Owned",
+        "user_level": null,
+        "join_at": null,
+        "upload": 8589934592,
+        "download": 2147483648,
+        "ratio": 4.0,
+        "bonus": 0.0,
+        "seeding": 0,
+        "seeding_size": 0,
+        "seeding_info": [],
+        "leeching": 0,
+        "leeching_size": 0,
+        "message_unread": 0,
+        "message_unread_contents": [],
+        "updated_day": "2026-11-05",
+        "err_msg": null
+      }
+    },
+    {
+      "mode": "normal",
+      "http_delta": 1,
+      "dto": {
+        "domain": "owned.invalid",
+        "userid": "7",
+        "username": "Owned",
+        "user_level": null,
+        "join_at": null,
+        "upload": 8589934592,
+        "download": 2147483648,
+        "ratio": 4.0,
+        "bonus": 0.0,
+        "seeding": 0,
+        "seeding_size": 0,
+        "seeding_info": [],
+        "leeching": 0,
+        "leeching_size": 0,
+        "message_unread": 0,
+        "message_unread_contents": [],
+        "updated_day": "2026-11-05",
+        "err_msg": null
+      }
+    }
+  ],
+  "trace": [
+    {
+      "op": "log",
+      "level": "info",
+      "text": "站点 Owned 开始以 NexusPhp 模型解析数据..."
+    },
+    {
+      "op": "http",
+      "method": "get",
+      "url": "https://owned.invalid/",
+      "mode": "logged-out"
+    },
+    {
+      "op": "log",
+      "level": "warn",
+      "text": "Owned 未登录，跳过后续操作"
+    },
+    {
+      "op": "log",
+      "level": "debug",
+      "text": "站点 Owned 数据解析完成"
+    },
+    {
+      "op": "log",
+      "level": "info",
+      "text": "站点 Owned 开始以 NexusPhp 模型解析数据..."
+    },
+    {
+      "op": "http",
+      "method": "get",
+      "url": "https://owned.invalid/",
+      "mode": "normal"
+    },
+    {
+      "op": "log",
+      "level": "debug",
+      "text": "站点 Owned 数据解析完成"
+    },
+    {
+      "op": "log",
+      "level": "info",
+      "text": "站点 Owned 开始以 NexusPhp 模型解析数据..."
+    },
+    {
+      "op": "http",
+      "method": "get",
+      "url": "https://owned.invalid/",
+      "mode": "normal"
+    },
+    {
+      "op": "log",
+      "level": "debug",
+      "text": "站点 Owned 数据解析完成"
+    }
+  ],
+  "limits": [
+    "Local3.14 AST observation; source files are exact installed3.12-image static captures",
+    "Synthetic parser extraction and login/decode/DTO boundaries; not actual NexusHTML or live tracker",
+    "Proves repeated collector/request calls do not invent persistent authentication cooldown; generic runtime request budgets remain target adaptation"
+  ]
+}

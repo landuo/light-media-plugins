@@ -1,0 +1,55 @@
+[
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "test",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./tests/sourceinterfaces",
+      "-count=1",
+      "-json"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-auth-declaration-addon/normal.jsonl",
+    "observed_exit": 0
+  },
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "test",
+      "-race",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./tests/sourceinterfaces",
+      "-count=1",
+      "-json"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-auth-declaration-addon/race.jsonl",
+    "observed_exit": 0
+  },
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "vet",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./tests/sourceinterfaces"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-auth-declaration-addon/vet.stdout",
+    "observed_exit": 0
+  }
+]

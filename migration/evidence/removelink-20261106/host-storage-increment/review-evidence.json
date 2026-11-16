@@ -1,0 +1,72 @@
+{
+  "status": "passed_bounded_host_plugin_storage_registration_delta",
+  "production_test_files": [
+    {
+      "path": "internal/app/file_manager.go",
+      "sha256": "6a2ee92b4a6c6e7cb3a3fec545b7f286f6e0323cd88bc7927c4edc92d3e90be3"
+    },
+    {
+      "path": "internal/app/plugin_original_host_storage.go",
+      "sha256": "d74c76f1e5a2f30ff0060692abb3a19ad0737bfb96c92ef406bb5c708bf2e9f5"
+    },
+    {
+      "path": "internal/app/plugin_original_storage_managed_test.go",
+      "sha256": "891fffa68aa53e731470bd108c2e4320f0bf35b7c569cd0280bd24740be134e0"
+    }
+  ],
+  "source_actual_static_manifest_sha256": "28f5eb3eb7a7a656e5bc8c43adef40274b96918a956e83be113e35078b609c0f",
+  "independent_AST_all_other_guards_unchanged": true,
+  "independent_source_actual_Rlk_before651_race": {
+    "exit": 1,
+    "same_inode": true,
+    "history_deletion_reached": true,
+    "failure": "managed alias FILE_IN_USE remains"
+  },
+  "independent_current_race": {
+    "exit": 0,
+    "roots": 8,
+    "seconds": 14.688,
+    "exact_inputs_pre_post_same": true,
+    "real_App_SDK_workers": "production Rlk + resource fixture; subprocesses native normal, host test race",
+    "downloader_guard": "owned httptest protocol peer, not realqB daemon"
+  },
+  "independent_host_cold_reproduction": {
+    "classification": "compile-only independent current 1838 production inputs exact Git651+two explicit reviewed increments; no gooverlay/SDK/product changes; actual ELF equals Rootnative candidate",
+    "root_binding_sha256": "fdc70f4948fac382c2230ff4c95072de5ac31917dba4532840373814da19b579",
+    "base_revision": "651dd2c3f75f4be74951d0a552f93a9079046e1d",
+    "repository_inputs": 1838,
+    "all_non_delta_actual_Gitblob_match": true,
+    "finite_increments": {
+      "internal/app/file_manager.go": "6a2ee92b4a6c6e7cb3a3fec545b7f286f6e0323cd88bc7927c4edc92d3e90be3",
+      "internal/app/plugin_original_host_storage.go": "d74c76f1e5a2f30ff0060692abb3a19ad0737bfb96c92ef406bb5c708bf2e9f5"
+    },
+    "argv": [
+      "go",
+      "build",
+      "-trimpath",
+      "-buildvcs=false",
+      "-o",
+      "/Users/accidia/projects/light-media-plugins/work/sites-review-20261106/current-consumer-main-review/managed-history-guard-review/independent-host-linux",
+      "./cmd/server"
+    ],
+    "seconds": 1.7027368545532227,
+    "exit": 0,
+    "environment": {
+      "GOOS": "linux",
+      "GOARCH": "amd64",
+      "CGO_ENABLED": "0",
+      "GOFLAGS": ""
+    },
+    "pre_post_same": true,
+    "binary_sha256": "6ce69c24f883dba3ab45b9e51bc0262934f3372c454533e119667c5791ea6db1"
+  },
+  "Root_native_actual_raw_manifest_sha256": "ed97f205327b1ce771cb1709b516861dbd13bab822dad6c1ff20da4727d6e21f",
+  "Root_native_actual_raw_files_verified": 45,
+  "Root_Main8_harness_failure_retained": true,
+  "current6_nonconsumer_impact_sha256": "5f6463bce91491ce2349b9449d3a5c1e8d9dde01d1b2eb1444608505235d7e56",
+  "internal_index_bookkeeping": "preserved records, not erased; no claim SQL physical equivalence, no addedmarkremoved",
+  "Rlk_whole_family_acceptance": "pending separate actual two business chain closure; no UI generation relabeling",
+  "private_host_source_public_copy": false,
+  "artifact_manifest_sha256": "3e7c98caf8e2163e81d68d23e43765b3d78299fa970329440cfe37a7a9c62404",
+  "cleanup_own_binaries": 4
+}

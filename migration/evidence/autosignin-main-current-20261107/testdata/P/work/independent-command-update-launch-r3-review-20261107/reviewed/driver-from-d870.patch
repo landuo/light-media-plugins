@@ -1,0 +1,62 @@
+--- executed-r2-d870
++++ new-r3-f48d
+@@ -491,8 +491,43 @@
+ 	if enteredAfter < 3400*time.Millisecond {
+ 		t.Fatal("0.001-hour interval fired early", enteredAfter)
+ 	}
++	shutdownLog := h.log.Name()
+ 	stopped := make(chan struct{})
+ 	go func() { h.stop(); close(stopped) }()
++	// Wait for the original ordinary Scheduler.stop stage, which precedes its
++	// callback join. Merely waiting after SIGTERM can measure HTTP/code backup
++	// work and let the callback finish before old code revokes it.
++	stageDeadline := time.Now().Add(5 * time.Second)
++	for {
++		raw, err := os.ReadFile(shutdownLog)
++		if err != nil {
++			t.Fatal(err)
++		}
++		found := false
++		for _, line := range bytes.Split(raw, []byte{'\n'}) {
++			var entry struct {
++				Event   string `json:"event"`
++				Message string `json:"message"`
++			}
++			if json.Unmarshal(line, &entry) == nil && entry.Event == "scheduler_stopping" && entry.Message == "正在停止定时任务..." {
++				found = true
++				break
++			}
++		}
++		if found {
++			break
++		}
++		select {
++		case <-stopped:
++			t.Fatal("global stop returned before source scheduler stage")
++		default:
++		}
++		if time.Now().After(stageDeadline) {
++			t.Fatal("source Scheduler.stop stage was not observed while callback held")
++		}
++		time.Sleep(10 * time.Millisecond)
++	}
++	h.record("public_scheduler_stop_observed", map[string]any{"event": "scheduler_stopping", "held_callback": true, "checkpoint": "actual runtime INFO before public lifetime wait, before code backup"})
+ 	select {
+ 	case <-stopped:
+ 		t.Fatal("global stop returned before in-flight public callback")
+@@ -530,10 +565,14 @@
+ 		t.Fatal("cold running executable update persistence", afterColdPIDs)
+ 	}
+ 	h.config(id, baseConfig)
++	if !asiOwnedSuccessfulRow(t, h.ok("GET", "/api/plugins/"+clone+"/page", nil)) {
++		t.Fatal("clone cold history changed across base timer/reset/update")
++	}
++	h.config(clone, cloneConfig)
+ 	if len(readMessages()) != 16 {
+ 		t.Fatal("timer invented Web command replies")
+ 	}
+-	h.record("public_timer_global_shutdown_complete", map[string]any{"source_hours": "0.001", "first_enter_ms": enteredAfter.Milliseconds(), "observed_stop_wait_ms": 200, "callback_completed_before_exit": true, "cold_history": true, "cold_additional_attendance": 0, "cold_update_hashes": true, "Web_replies_unchanged": true})
++	h.record("public_timer_global_shutdown_complete", map[string]any{"source_hours": "0.001", "first_enter_ms": enteredAfter.Milliseconds(), "source_scheduler_stage_observed": true, "observed_stop_wait_after_stage_ms": 200, "callback_completed_before_exit": true, "cold_history": true, "clone_cold_history_config": true, "cold_additional_attendance": 0, "cold_update_hashes": true, "Web_replies_unchanged": true})
+ 	baseConfig["cron"] = "58 23 31 12 *"
+ 	h.ok("PUT", "/api/plugins/"+id, baseConfig)
+ 	newConfig = baseConfig

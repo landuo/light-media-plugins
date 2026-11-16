@@ -1,0 +1,73 @@
+[
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "test",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./plugins/sitestatistic",
+      "./plugins/mpserverstatus",
+      "./plugins/pluginuninstall",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./cmd/site-statistic",
+      "./cmd/mp-server-status",
+      "./cmd/plugin-uninstall",
+      "./tests/sourceinterfaces",
+      "-count=1",
+      "-json"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/full-normal.jsonl",
+    "observed_exit": 0
+  },
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "test",
+      "-race",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./plugins/sitestatistic",
+      "./plugins/mpserverstatus",
+      "./plugins/pluginuninstall",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./cmd/site-statistic",
+      "./cmd/mp-server-status",
+      "./cmd/plugin-uninstall",
+      "./tests/sourceinterfaces",
+      "-count=1",
+      "-json"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/full-race.jsonl",
+    "observed_exit": 0
+  },
+  {
+    "cwd": "/Users/accidia/projects/light-media-plugins",
+    "argv": [
+      "go",
+      "vet",
+      "./plugins/categoryeditor",
+      "./plugins/torrenttransfer",
+      "./plugins/removelink",
+      "./plugins/sitestatistic",
+      "./plugins/mpserverstatus",
+      "./plugins/pluginuninstall",
+      "./cmd/category-editor",
+      "./cmd/torrent-transfer",
+      "./cmd/remove-link",
+      "./cmd/site-statistic",
+      "./cmd/mp-server-status",
+      "./cmd/plugin-uninstall",
+      "./tests/sourceinterfaces"
+    ],
+    "stdout": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/source-module-manifest/vet.stdout",
+    "observed_exit": 0
+  }
+]

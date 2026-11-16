@@ -1,0 +1,57 @@
+{
+  "host": {
+    "commit": "1661b1c6187f54c3b95e051ed24138f3cf3cc2fe",
+    "artifact": "/Users/accidia/projects/light-media/work/shared-host-source-metadata-20261106/light-media-host-source-metadata-linux",
+    "artifact_sha256": "09ab128882200afba3d9e0d71947036889de25da98dc9e82a1a264a41de8a73f",
+    "recorded_sha256_equal": true,
+    "input_count": 4089,
+    "before_after_equal": true,
+    "current_mismatches": [],
+    "project_input_count": 1840,
+    "git_blob_bound_inputs": 1840,
+    "git_blob_mismatches": [],
+    "project_inputs_without_git_blob": [],
+    "buildinfo_equal": true
+  },
+  "drivers": {
+    "f24": {
+      "binary_sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+      "old_inputs": 16,
+      "before_after_equal": true,
+      "current_or_preserved_missing": [],
+      "preserved_old_paths": [
+        "tests/integration/pluginuninstall_main_test.go"
+      ],
+      "module_origin_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+    },
+    "PUI_current_01ba": {
+      "freeze_sha256": "cf80922e703b9979c09f534c6d49547db3ea80cf7ca33d0be26e03395b6b754b",
+      "artifacts": [
+        {
+          "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/pluginuninstall-current-main-linux.test",
+          "sha256": "01ba473ce2aeb5da61c299dded7a7be74cc22816a9a9f3c4edcb2e8cc26dd57b",
+          "bytes": 13592704,
+          "old_f24_reproduced": false
+        },
+        {
+          "path": "/Users/accidia/projects/light-media-plugins/work/migration-20261106/pui-current-driver/removelink-f24-reproduced-linux.test",
+          "sha256": "f24e9b1fdc9e2649ce94a054c3a485120bc8a6e357595a4d59693063221e054d",
+          "bytes": 13592584,
+          "old_f24_reproduced": true
+        }
+      ],
+      "diff_proof": {
+        "only_changed_path": "/Users/accidia/projects/light-media-plugins/tests/integration/pluginuninstall_main_test.go",
+        "old_sha256": "31e2e58b0ccb76f35e9555d37f628acae47cb9e078a3e581f836440d4ae83732",
+        "new_sha256": "3c650c17aa113339ce17a7ed12bff41198fb84c48a3ff33400684b1f5000b8f7",
+        "exact_three_replacements_only": true,
+        "version_tuple_guard_unchanged": true,
+        "host_exact_and_rejected7a08_guard_unchanged": true,
+        "current_Source613_all_unchanged": true,
+        "SDK_ORIGIN_sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875"
+      },
+      "new_required_env_preserved": true,
+      "historical_SDK": "98; this is HTTPMain harness, not newhost Runner source"
+    }
+  }
+}

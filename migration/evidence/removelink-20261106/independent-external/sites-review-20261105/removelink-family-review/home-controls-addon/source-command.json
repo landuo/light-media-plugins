@@ -1,0 +1,16 @@
+{
+  "command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker run --rm -i --label task=lm-review-rlk-home-path-22e9e75db6d94d4aab1d4936851cf60a --network none --read-only --user 65534:65534 --cap-drop ALL --security-opt no-new-privileges --tmpfs /tmp:rw,nosuid,nodev,noexec,size=16m,mode=1777 --entrypoint python sha256:33354456e8e19c65193b9ca471e45450a620c541759cc42e76cf00a03b025881 -B -S -"
+  ],
+  "exit": 0,
+  "payload_sha256": "54bc9f36ad767902f2ca552deabf48238c9680a09206a97ced3a3cb8041f5b6f",
+  "cleanup_command": [
+    "ssh",
+    "admin@192.168.8.129",
+    "docker ps -aq --filter label=task=lm-review-rlk-home-path-22e9e75db6d94d4aab1d4936851cf60a"
+  ],
+  "cleanup_exit": 0,
+  "containers_remaining": ""
+}

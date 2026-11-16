@@ -1,0 +1,154 @@
+{
+  "classification": "actual Linux native Main completed; marker-bound explicit allowlist of sanitized commands/logs/observations only; no DB/key/config/UI-ready/credentials",
+  "files": [
+    {
+      "path": "pui/main-run-1-command.json",
+      "sha256": "3267a93fa8380ae099ff1ff9d42a98eb31697767aa14204839e863faa0f05e28",
+      "bytes": 3085
+    },
+    {
+      "path": "pui/main-run-1.log",
+      "sha256": "84bf9b5d6ad91d7e9daa445a76849e9a7b313e98c7e984310d0554a01f6d3b86",
+      "bytes": 99
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/observations.jsonl",
+      "sha256": "980305ee1bdf6ae2fec6df16c55077714386ada91299d905aed8a8f4de8c4a0e",
+      "bytes": 213081
+    },
+    {
+      "path": "pui/main-run-1/runtime/logs/app.jsonl",
+      "sha256": "43679b7235957b6cbbe82a7be8df71357393de5db2ce6867d05f272157f7f610",
+      "bytes": 38067
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-1.log",
+      "sha256": "0ac03b4698533e3ec00e239ecf85a0667bf0aa6ea2fb8851c73d6cc1bb69c6ba",
+      "bytes": 17673
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-2.log",
+      "sha256": "26d71a5564fc89cb0589f8c6d958bfb32ca3d55527491dc3d4815a963b28ff75",
+      "bytes": 2254
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-3.log",
+      "sha256": "e66bc5a867d61903832ee364620e64927b0ddc71554f2cb53cf9dd7d5c386ff8",
+      "bytes": 3300
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-4.log",
+      "sha256": "a1c2d2fe54b63d40a28d2dfcda5d2acb17422f6e9f4165c80d9460167c9d6801",
+      "bytes": 2255
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-5.log",
+      "sha256": "cacde09af0452d8244d5ced48494b5b1cbd3e284dcc20186362118a9e2a4f181",
+      "bytes": 2611
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-6.log",
+      "sha256": "66e64eec1b20ba637815494012e4bb40109b4ee3856de1538880b64d8a3d09b4",
+      "bytes": 2873
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-7.log",
+      "sha256": "dadc8df591257dd439681d79cc0c4efc7c9bf91c2b9d4f2af92ce26936311916",
+      "bytes": 2265
+    },
+    {
+      "path": "pui/main-run-1/runtime/evidence/host-8.log",
+      "sha256": "400f9f10fe6ab579ae07a7c9e498929917e05f2ff7281b49c5079f39055ee281",
+      "bytes": 4613
+    },
+    {
+      "path": "pui/main-run-1/runtime/logs/plugins/pluginuninstall.log",
+      "sha256": "dbac2acdedcc48d979f9d4f652542fca739aff87ddc768265aaa2d4918eec274",
+      "bytes": 555
+    },
+    {
+      "path": "pui/main-run-1/runtime/logs/plugins/pluginuninstallowned.log",
+      "sha256": "33974eb7a00cad1eeb4ac23927a4cbb4f5b2445434caf0b58d3b29eda96b5dfd",
+      "bytes": 84
+    },
+    {
+      "path": "impact/main-run-5-command.json",
+      "sha256": "ea5c90427115169ebb13b886dbaacb7203436ac390ac0826c234e8532c8b6216",
+      "bytes": 2000
+    },
+    {
+      "path": "impact/main-run-5.log",
+      "sha256": "846feab4d07efcc7321aa6be756c7740539983a4ab1b880b1601bf339016258a",
+      "bytes": 116
+    },
+    {
+      "path": "impact/main-run-5/evidence/observations.jsonl",
+      "sha256": "8bbe51cf4dc8ca41211a0f6cc9c1bf5af84a4336162e49a34a16e5a61e0feba4",
+      "bytes": 54739
+    },
+    {
+      "path": "impact/main-run-5/logs/app.jsonl",
+      "sha256": "5efc73c858b882602a7b54d1814abe181621f5cfb93141c07795585addf17a9c",
+      "bytes": 18730
+    },
+    {
+      "path": "impact/main-run-5/evidence/host-1.log",
+      "sha256": "2c488c1b32149d69c498aa2859ec1de588da0198ae77d5adb93856b851b596b3",
+      "bytes": 16447
+    },
+    {
+      "path": "impact/main-run-5/evidence/host-2.log",
+      "sha256": "8c893f4b5db0ee1c4d234006dffa0af9253e9f81a4dedb98141ae3cb5d19d143",
+      "bytes": 1829
+    },
+    {
+      "path": "impact/main-run-5/logs/plugins/torrenttransfer.log",
+      "sha256": "1ab1b42e0cba10a5fb3607642b16f99c40b10b9d5e9845724c24d13dffd64ec5",
+      "bytes": 436
+    },
+    {
+      "path": "impact/main-run-5/logs/plugins/torrenttransfermusic.log",
+      "sha256": "04a60ab6911990528304af62ce58e82faa4b2eeedc2109e0ebb6eeaf6a78c67c",
+      "bytes": 436
+    },
+    {
+      "path": "impact/main-run-5/logs/plugins/sitestatistic.log",
+      "sha256": "9442640bf634d327ce44df02d42be93135891b5094e6b38a9232f6a88bbf1f38",
+      "bytes": 205
+    }
+  ],
+  "missing_optional_logs": [
+    "pui/main-run-1/runtime/evidence/host-9.log",
+    "pui/main-run-1/runtime/evidence/host-10.log",
+    "pui/main-run-1/runtime/evidence/host-11.log",
+    "pui/main-run-1/runtime/evidence/host-12.log",
+    "pui/main-run-1/runtime/evidence/host-13.log",
+    "pui/main-run-1/runtime/evidence/host-14.log",
+    "pui/main-run-1/runtime/evidence/host-15.log",
+    "pui/main-run-1/runtime/evidence/host-16.log",
+    "pui/main-run-1/runtime/evidence/host-17.log",
+    "pui/main-run-1/runtime/evidence/host-18.log",
+    "pui/main-run-1/runtime/evidence/host-19.log",
+    "pui/main-run-1/runtime/logs/plugins/ownedpuifixture.log",
+    "pui/main-run-1/runtime/logs/plugins/ownedpuifixtureui.log",
+    "pui/main-run-1/runtime/logs/plugins/mpserverstatus.log",
+    "impact/main-run-5/evidence/host-3.log",
+    "impact/main-run-5/evidence/host-4.log",
+    "impact/main-run-5/evidence/host-5.log",
+    "impact/main-run-5/evidence/host-6.log",
+    "impact/main-run-5/evidence/host-7.log",
+    "impact/main-run-5/evidence/host-8.log",
+    "impact/main-run-5/evidence/host-9.log",
+    "impact/main-run-5/evidence/host-10.log",
+    "impact/main-run-5/evidence/host-11.log",
+    "impact/main-run-5/evidence/host-12.log",
+    "impact/main-run-5/evidence/host-13.log",
+    "impact/main-run-5/evidence/host-14.log",
+    "impact/main-run-5/evidence/host-15.log",
+    "impact/main-run-5/evidence/host-16.log",
+    "impact/main-run-5/evidence/host-17.log",
+    "impact/main-run-5/evidence/host-18.log",
+    "impact/main-run-5/evidence/host-19.log",
+    "impact/main-run-5/logs/plugins/categoryeditor.log"
+  ]
+}

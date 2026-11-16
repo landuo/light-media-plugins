@@ -1,0 +1,39 @@
+{
+  "source_commit": "b3d27057cd0264c6e1ced7eeb60b7621f0c1fb51",
+  "files_checked": 102,
+  "changed": [
+    {
+      "path": "internal/sdk/network_host.go",
+      "old_sha256": "7947d9d5570491d23a1d2db5e890ebef00cabb54b617543378dbc3cfe6243f9f",
+      "new_sha256": "45bdbef3f1e95153b72910f2e24d42e216138e4dbc1a8e7d58f68f9f7eccf75e",
+      "source_commit": "6a50ec21bdcb680b62eee90705691799f8c4024a"
+    },
+    {
+      "path": "internal/sdk/site_http_host.go",
+      "old_sha256": "003dbfe242e7be884793c20646e32369e78836b59eb2efcde80579250a715697",
+      "new_sha256": "0cf57a3942b9099fc7ab33edfe8f4698cf7b0eaece606129dcd7d233fcbcd175",
+      "source_commit": "6a50ec21bdcb680b62eee90705691799f8c4024a"
+    },
+    {
+      "path": "internal/sdk/site_source_request.go",
+      "old_sha256": null,
+      "new_sha256": "5ffd39c57f0940a9ab9cc0236388520d99bde10e12d8fbe3bd0793951ac03c17",
+      "source_commit": "b3d27057cd0264c6e1ced7eeb60b7621f0c1fb51"
+    }
+  ],
+  "ordinary_import_relocations": [
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/plugins",
+      "to": "github.com/landuo/light-media-plugins/internal/sdk"
+    },
+    {
+      "kind": "module_import_relocation",
+      "from": "light-media/internal/sourcejson",
+      "to": "github.com/landuo/light-media-plugins/internal/sdk/sourcejson"
+    }
+  ],
+  "status": "draftOriginonly; trueSDKalready102 exact, metadataapplication pendingcurrentcanonical release",
+  "old_origin_sha256": "6b0053dd29596a2b14c3b1ab2d4fd784ccfb1606f2b26fd7088ee8dc87141de5",
+  "next_origin_sha256": "94b76da4d1115d757422363fed18a9c008efe3d551a1f9c97dfcc6a3e6548477"
+}

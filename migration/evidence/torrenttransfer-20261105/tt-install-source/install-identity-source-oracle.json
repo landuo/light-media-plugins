@@ -1,0 +1,122 @@
+{
+  "classification": "actual installed async helper/version/API guard AST with owned parent-only index and inert stats/reload/DB; no real install/network/application imports",
+  "python": "3.14.4 (main, Apr  7 2026, 13:13:20) [Clang 21.0.0 (clang-2100.0.123.102)]",
+  "source_sha256": {
+    "app/helper/plugin.py": "a7455fbb0f0e09267476b2628459dcfd1af26a94e9fc4eea04b51e5f08dfdcba",
+    "app/api/endpoints/plugin.py": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce"
+  },
+  "exact_index": {
+    "TorrentTransfer": {
+      "version": "1.10.3",
+      "v2": true
+    }
+  },
+  "cases": [
+    {
+      "case": "package-version-TorrentTransfer",
+      "result": "v2",
+      "trace": [
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": "v2"
+        }
+      ]
+    },
+    {
+      "case": "package-version-TorrentTransfermusic",
+      "result": null,
+      "trace": [
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": "v2"
+        },
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": null
+        }
+      ]
+    },
+    {
+      "case": "force-helper-clone-against-parent-only-index",
+      "result": [
+        false,
+        "TorrentTransfermusic 没有找到适用于当前版本的插件"
+      ],
+      "trace": [
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": "v2"
+        },
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": null
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "TorrentTransfermusic 没有找到适用于当前版本的插件"
+        }
+      ]
+    },
+    {
+      "case": "API-existing-clone-force-True",
+      "response": {
+        "success": false,
+        "message": "TorrentTransfermusic 没有找到适用于当前版本的插件"
+      },
+      "trace": [
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": "v2"
+        },
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": null
+        },
+        {
+          "op": "log",
+          "level": "debug",
+          "message": "TorrentTransfermusic 没有找到适用于当前版本的插件"
+        }
+      ]
+    },
+    {
+      "case": "API-existing-clone-force-False",
+      "response": {
+        "success": true
+      },
+      "trace": [
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": "v2"
+        },
+        {
+          "op": "index",
+          "repo": "https://github.com/owned/repo/",
+          "package_version": null
+        },
+        {
+          "op": "statistics",
+          "plugin_id": "TorrentTransfermusic"
+        },
+        {
+          "op": "reload",
+          "plugin_id": "TorrentTransfermusic"
+        }
+      ]
+    }
+  ],
+  "limitations": [
+    "Source guard semantics only, Linux nonfrozen branch fixed",
+    "Not a real source install, no filesystem/pip/github calls",
+    "LocalPython3.14 versus installed3.12.13; ordinary exact dictionary membership and API branching executed"
+  ]
+}

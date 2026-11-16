@@ -1,0 +1,185 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "mako_product_commit": "d9ecdfcfba5ebd657cb15c52f678546663dbd1c3",
+  "combined_product_commit": "63ea5406d0096aa30c069762001aba3f8c271263",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Offline original-source captures, targeted Go replays, independent source review and exact Linux/amd64 build. No new host execution, browser, provider account or final package run.",
+  "new_replayed_cases": 82,
+  "apprise": {
+    "version": "1.9.9",
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 50,
+    "schemes_without_native_implementation": 133,
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/apprise/ORIGIN.json",
+      "sha256": "6f384f0999f460d4307bd40cc6d630047bcffb4a39b3676067309864e5ca70d8"
+    },
+    "line": {
+      "source": [
+        "apprise/plugins/line.py:56–67,116–239,275–326"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/line.go",
+      "test": "TestSourceLine199",
+      "cases": 11,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/line-1.9.9.json",
+        "sha256": "c00e401dc56ad04751c16680c1715c076d5c7a322f580bdbcf23a2692c0c4401"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-line-source.json",
+        "sha256": "c00e401dc56ad04751c16680c1715c076d5c7a322f580bdbcf23a2692c0c4401"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-line-target.stdout",
+        "sha256": "b5bbdbf4da60e9775f288931475e9de62ca2f7327cc8ef343631ddf31f2983e3"
+      },
+      "independent_reviewers": [
+        "/root/qq",
+        "/root/webex"
+      ],
+      "scope": "Long-lived slash/padded tokens, override and exact Bearer header, recipient deduplication and ordering, failure continuation and one physical 5.5 second wait, titleless formats, image option, sizing and exact HTTP 200."
+    },
+    "qq": {
+      "source": [
+        "apprise/plugins/qq.py:52–91,107–139,142–167"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/qq.go",
+      "test": "TestSourceQQ199",
+      "cases": 18,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/qq-1.9.9.json",
+        "sha256": "c59b71e7ac7be0fcaab715fbd20c01d249301c42f9ed54b3e440bb37337e63af"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-qq-source.json",
+        "sha256": "b3cbcf4d66771bb520f2a4b70a011836d74072574cf8ed63be1d278b2af00046"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-qq-target.stdout",
+        "sha256": "69f4122688ad7adce2ca9f161178d58862e919c3636b227acd97ebf254f69689"
+      },
+      "independent_reviewers": [
+        "/root/line",
+        "/root/webex"
+      ],
+      "scope": "Qmsg HTTPS native alias, URL credentials and overrides, title/body form encoding, Unicode and token length, title truncation, ignored attachment, strict HTTP 200 and transport errors. The additional source capture substitutes a distinct override token before the first Go replay.",
+      "override_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-qq-override-source.json",
+        "sha256": "290f4c6d7cf33a451356e9b57ff0f8c273066a48d9c22515b1a651af3cdd8103"
+      }
+    },
+    "webexteams": {
+      "source": [
+        "apprise/plugins/webexteams.py:91–106,134–215,239–284"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/webexteams.go",
+      "test": "TestSourceWebexTeams199",
+      "cases": 20,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/webexteams-1.9.9.json",
+        "sha256": "df7f3e131d81f1d0aa04b9ed31ef9047c621ca566529a08bb136a1f40fef3bcc"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-webexteams-source.json",
+        "sha256": "df7f3e131d81f1d0aa04b9ed31ef9047c621ca566529a08bb136a1f40fef3bcc"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-webexteams-target.stdout",
+        "sha256": "9f1af6522c54278f704570efa61e52c29855ba7a5aa35100d330841214fbfdaa"
+      },
+      "independent_reviewers": [
+        "/root/line",
+        "/root/qq"
+      ],
+      "scope": "Both service schemes and native aliases, fixed HTTPS endpoint with double slash, format and title merge, exact JSON, HTTP 200/204, codepoint limit and errors. One source split row ran in sequential mode for deterministic order and physical 5.5 second throttle comparison.",
+      "source_setup_failure": {
+        "path": "work/mergemessagenotify-20261107/apprise-webexteams-source-setup.stderr",
+        "sha256": "a610b35d8c85e787cb96ce0d7634796a3f73530efc6a6b1fc3ff890b5906a8db"
+      }
+    }
+  },
+  "mako": {
+    "version": "1.4.1",
+    "reference_runtime": "CPython 3.12.13 with MarkupSafe 3.0.4, no Beaker",
+    "source": [
+      "installed util.py:11–25",
+      "mako/ast.py:151–217",
+      "mako/pyparser.py:228–247",
+      "mako/codegen.py:24–27,123–143,307–331,1084–1093,1233–1237",
+      "mako/runtime.py:25–53,134–146,853–904"
+    ],
+    "target": [
+      "plugins/mergemessagenotify/mako/block.go",
+      "plugins/mergemessagenotify/mako/parser.go",
+      "plugins/mergemessagenotify/mako/template.go",
+      "plugins/mergemessagenotify/mako/definitions.go",
+      "plugins/mergemessagenotify/mako/value.go"
+    ],
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/mako/ORIGIN.json",
+      "sha256": "c1bd96b303657cc40b06e15d2ae43cd95dd25ce52718480e1a3e0ed66f89d226"
+    },
+    "test": "TestSourcePageVariadic141",
+    "cases": 33,
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-page-variadic-1.4.1.json",
+      "sha256": "2ce1c3f5f933d7802bb55c8d0c2cfb812c4a6d93281a74837eaa2c069abebf4c"
+    },
+    "original_capture": {
+      "path": "work/mergemessagenotify-20261107/mako-page-variadic-source.json",
+      "sha256": "e739ba427ac864cc6589e9d05c93840920cd3a288708037ace5ee587019f9778"
+    },
+    "generated_module_code": {
+      "path": "work/mergemessagenotify-20261107/mako-page-variadic-module-code.json",
+      "sha256": "3101e41af1a1223955a5fcde400fea44431259d743431c11b62ecff0d4f1c986"
+    },
+    "replay": {
+      "path": "work/mergemessagenotify-20261107/mako-page-variadic-target.stdout",
+      "sha256": "61abba69e6a8b6c2424a8d49db67f399fa375fafab9346fc563eccaf2153f34d"
+    },
+    "review_source": [
+      {
+        "path": "work/mergemessagenotify-20261107/mako-page-variadic-review-source.json",
+        "sha256": "edd2a3b64ec5d6342fc201cac1e937da79d93340ceac417d4266c54e5eeb4d48"
+      },
+      {
+        "path": "work/mergemessagenotify-20261107/mako-page-variadic-context-source.json",
+        "sha256": "3340d0f6a0d4b2804452c0ffa230848ff8e47ce61e5b4f3b099275eb5f29bbac"
+      }
+    ],
+    "review_replay": {
+      "path": "work/mergemessagenotify-20261107/mako-page-variadic-review-target.stdout",
+      "sha256": "0a39ea2da0370662ae57ffff3e4dc8a2eefeaab5c68199b55aadd57049ff0cca"
+    },
+    "independent_reviewer": "/root/qq",
+    "scope": "Explicit and implicit keyword collections, empty variadic positional tuple from the keyword-only entry, default and keyword-only binding, positional-only and bare-star lowering, annotation omission, named-block forwarding, reserved name collisions, nested pageargs distinction and separation of Context input from root signature locals.",
+    "remaining": [
+      "Input ordering remains sorted at the Go map boundary. Advanced Python declarations, nested Context behavior and external inheritance remain open."
+    ]
+  },
+  "linux_build": {
+    "output": {
+      "path": "work/mergemessagenotify-20261107/linux-line-qq-webexteams-build.json",
+      "sha256": "20356aa997892f34e575efd12756b5fc3f0d5638a1e05921bb56cb4962ff8ad1"
+    },
+    "binary_sha256": "e98e888b4aee4ac9c426c990391a236f2f3a94f0245e3cb6b0ef733b83c30271",
+    "binary_bytes": 15126250,
+    "runtime_execution": false,
+    "temporary_binary_removed": true
+  },
+  "remaining": [
+    "133 Apprise schemes lack Go implementations. Common split-chunk parallelism, provider response boundaries and real account runs remain open.",
+    "Mako original keyword insertion order at the Go map input, advanced declaration and Context forms, and external inheritance remain open.",
+    "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
+  ],
+  "delivery": {
+    "fully_accepted_instances": 8,
+    "installed_instances": 23,
+    "plugin_acceptance": "implementing",
+    "target_remote_main_read": "4453f821ba32d5d4cc949e68d08d970e6ee7c975",
+    "pushed": false,
+    "deployed": false
+  }
+}

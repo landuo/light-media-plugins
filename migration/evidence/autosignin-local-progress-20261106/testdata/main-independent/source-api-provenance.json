@@ -1,0 +1,35 @@
+{
+  "payload_sources_match_recorded_hashes": true,
+  "payload_sha256": "07c3f6ca37906234b8b4d5b18b8014fda49d342ad080199cb21fe32c0cfff64b",
+  "recorded_payload_sha256": "07c3f6ca37906234b8b4d5b18b8014fda49d342ad080199cb21fe32c0cfff64b",
+  "oracle_sha256": "e7c756dde6796f5e840600e61b878e156d9d5aa9e71910dcf31b6b7dc65495a3",
+  "oracle_cases": 36,
+  "classification": "exact source selected get_api/manager/register/security/Response/FastAPI route execution in immutable333 netnone; only no-site lookup and locale identity are declared synthetic, no config/app startup or network/PT",
+  "route_count": 4,
+  "source_inputs": {
+    "plugin": {
+      "sha256": "1d8329afc00bc218710e302e0eda915351731d41101df08fcf378e90440b9220",
+      "bytes": 89482
+    },
+    "manager": {
+      "sha256": "b0d26b661624ca4dd643af20553dd23c70ab3e38be4573844e053dffa3c3e4b7",
+      "bytes": 93047
+    },
+    "route": {
+      "sha256": "16e96285764587b266c07af21b6df140836c00f916d6626b87584a492a4031ce",
+      "bytes": 40236
+    },
+    "security": {
+      "sha256": "7c2f1920295d13a40979acc2f74554bdbb94010663909a281c0904d6e3db5040",
+      "bytes": 15941
+    },
+    "response": {
+      "sha256": "0afd53be12ee3a6f513e74e10c98344b0d9f66e01c250e66a74ccee604bc1970",
+      "bytes": 798
+    },
+    "string": {
+      "sha256": "b21856bf4b309d20fe9d5a68538fbb0ddc7a2c23bbde424e5700caf57587297a",
+      "bytes": 33834
+    }
+  }
+}

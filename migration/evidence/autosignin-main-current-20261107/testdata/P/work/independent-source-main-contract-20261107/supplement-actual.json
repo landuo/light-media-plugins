@@ -1,0 +1,243 @@
+{
+  "classification": "immutable333 netnone original selected whole scheduler stop and async_install/flow with real owned tmpfs file mutation; metadata/dependency/content callbacks controlled, no remote downloader or full source App",
+  "rows": [
+    {
+      "case": "whole-owner-scheduler-stop-active-default-wait",
+      "events": [
+        "callback_enter",
+        "stop_enter",
+        "callback_finished",
+        "stop_return"
+      ],
+      "returned_before_release": false,
+      "joined": true,
+      "scheduler_none": true,
+      "event_cleared": false
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": false,
+      "prepare_ok": true,
+      "dep_ok": true,
+      "result": [
+        true,
+        ""
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "backup"
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "dependencies"
+        ],
+        [
+          "refresh_persistent_backup"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": "6a3e68a1353a279a0accc27d4e2d45b5ace8e637d3b09043c38d246859ab7c75",
+      "after_text": "plugin_version='2.9.15'\nmarker='new'\n"
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": true,
+      "prepare_ok": true,
+      "dep_ok": true,
+      "result": [
+        true,
+        ""
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "dependencies"
+        ],
+        [
+          "refresh_persistent_backup"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": "6a3e68a1353a279a0accc27d4e2d45b5ace8e637d3b09043c38d246859ab7c75",
+      "after_text": "plugin_version='2.9.15'\nmarker='new'\n"
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": false,
+      "prepare_ok": false,
+      "dep_ok": true,
+      "result": [
+        false,
+        "owned preparation failure"
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "backup"
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "restore"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_text": "plugin_version='2.9.15'\nmarker='old'\n"
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": true,
+      "prepare_ok": false,
+      "dep_ok": true,
+      "result": [
+        false,
+        "owned preparation failure"
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "remove"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": null,
+      "after_text": null
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": false,
+      "prepare_ok": true,
+      "dep_ok": false,
+      "result": [
+        false,
+        "owned dependency failure"
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "backup"
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "dependencies"
+        ],
+        [
+          "restore"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_text": "plugin_version='2.9.15'\nmarker='old'\n"
+    },
+    {
+      "case": "same-version-original-install-helper-flow",
+      "force": true,
+      "prepare_ok": true,
+      "dep_ok": false,
+      "result": [
+        false,
+        "owned dependency failure"
+      ],
+      "calls": [
+        [
+          "resolve_package"
+        ],
+        [
+          "metadata",
+          {
+            "version": "2.9.15",
+            "release": false
+          }
+        ],
+        [
+          "remove"
+        ],
+        [
+          "prepare_same_version"
+        ],
+        [
+          "dependencies"
+        ],
+        [
+          "remove"
+        ]
+      ],
+      "before_sha256": "31a02a86bb4fc2c5ea8b902aae0d8b376c99350cce23f6a9e18107f5228692e9",
+      "after_sha256": null,
+      "after_text": null
+    }
+  ]
+}

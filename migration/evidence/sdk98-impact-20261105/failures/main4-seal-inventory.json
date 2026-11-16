@@ -1,0 +1,6 @@
+{
+  "exit_code": 1,
+  "failure": "AssertionError:26; expected24 HTTP fixture observation files",
+  "cause": "inventory count omitted newly added reload/config fixture in each normal/race run",
+  "fix": "inventory asserts exact26 files; no test/product behavior or prior logs changed"
+}

@@ -1,0 +1,558 @@
+{
+  "classification": "immutable333 netnone selected original Notification Pydantic model, PluginBase.post_message, ChainBase.post_message and user-history method plus installed sign_in/full__do; memory message/plugin stores, identity-template and queue/event recorders, no external recipient or full app",
+  "rows": [
+    {
+      "case": "ordinary-Web-message-persistence-source-method-replay",
+      "notify": false,
+      "records": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "sequence": [
+        [
+          "db",
+          null,
+          0
+        ],
+        [
+          "db",
+          "开始站点签到 ...",
+          1
+        ],
+        [
+          "notice",
+          "开始站点签到 ..."
+        ],
+        [
+          "queue",
+          "开始站点签到 ..."
+        ],
+        [
+          "db",
+          "站点签到完成！",
+          1
+        ],
+        [
+          "notice",
+          "站点签到完成！"
+        ],
+        [
+          "queue",
+          "站点签到完成！"
+        ]
+      ],
+      "queue": [
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "notices": [
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "type": null
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "type": null
+        }
+      ],
+      "plugin_history": {
+        "11月7日": [
+          {
+            "site": "Owned synthetic",
+            "status": "签到成功",
+            "site_id": 701,
+            "type": "签到",
+            "success": true,
+            "logged_in": true
+          }
+        ],
+        "签到-2026-11-07": {
+          "do": [
+            701
+          ],
+          "retry": [],
+          "results": {
+            "701": {
+              "success": true,
+              "message": "签到成功",
+              "logged_in": true
+            }
+          }
+        }
+      }
+    },
+    {
+      "case": "ordinary-Web-message-persistence-source-method-replay",
+      "notify": true,
+      "records": [
+        {
+          "channel": "Web",
+          "source": "owned-user",
+          "userid": "owned-user",
+          "text": "/site_signin",
+          "action": 0
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": null,
+          "source": null,
+          "mtype": "站点",
+          "ctype": null,
+          "title": "【站点自动签到】",
+          "text": "全部签到数量: 1 \n本次签到数量: 1 \n下次签到数量: 0 \n确认签到成功: 1 \n仅确认登录: 0 \n登录或访问失败: 0 \n【Owned synthetic】签到成功",
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": null,
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "sequence": [
+        [
+          "db",
+          null,
+          0
+        ],
+        [
+          "db",
+          "开始站点签到 ...",
+          1
+        ],
+        [
+          "notice",
+          "开始站点签到 ..."
+        ],
+        [
+          "queue",
+          "开始站点签到 ..."
+        ],
+        [
+          "db",
+          "【站点自动签到】",
+          1
+        ],
+        [
+          "notice",
+          "【站点自动签到】"
+        ],
+        [
+          "queue",
+          "【站点自动签到】"
+        ],
+        [
+          "db",
+          "站点签到完成！",
+          1
+        ],
+        [
+          "notice",
+          "站点签到完成！"
+        ],
+        [
+          "queue",
+          "站点签到完成！"
+        ]
+      ],
+      "queue": [
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": null,
+          "source": null,
+          "mtype": "站点",
+          "ctype": null,
+          "title": "【站点自动签到】",
+          "text": "全部签到数量: 1 \n本次签到数量: 1 \n下次签到数量: 0 \n确认签到成功: 1 \n仅确认登录: 0 \n登录或访问失败: 0 \n【Owned synthetic】签到成功",
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": null,
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "save_history": true
+        }
+      ],
+      "notices": [
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "开始站点签到 ...",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "type": null
+        },
+        {
+          "channel": null,
+          "source": null,
+          "mtype": "站点",
+          "ctype": null,
+          "title": "【站点自动签到】",
+          "text": "全部签到数量: 1 \n本次签到数量: 1 \n下次签到数量: 0 \n确认签到成功: 1 \n仅确认登录: 0 \n登录或访问失败: 0 \n【Owned synthetic】签到成功",
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": null,
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "type": "站点"
+        },
+        {
+          "channel": "Web",
+          "source": null,
+          "mtype": null,
+          "ctype": null,
+          "title": "站点签到完成！",
+          "text": null,
+          "image": null,
+          "voice_path": null,
+          "file_path": null,
+          "file_name": null,
+          "voice_caption": null,
+          "link": "https://owned.invalid/#/plugins?tab=installed&id=AutoSignIn",
+          "userid": "owned-user",
+          "username": null,
+          "date": null,
+          "action": 1,
+          "targets": null,
+          "buttons": null,
+          "force_reply": false,
+          "original_message_id": null,
+          "original_chat_id": null,
+          "disable_web_page_preview": null,
+          "parse_mode": null,
+          "type": null
+        }
+      ],
+      "plugin_history": {
+        "11月7日": [
+          {
+            "site": "Owned synthetic",
+            "status": "签到成功",
+            "site_id": 701,
+            "type": "签到",
+            "success": true,
+            "logged_in": true
+          }
+        ],
+        "签到-2026-11-07": {
+          "do": [
+            701
+          ],
+          "retry": [],
+          "results": {
+            "701": {
+              "success": true,
+              "message": "签到成功",
+              "logged_in": true
+            }
+          }
+        }
+      }
+    }
+  ]
+}

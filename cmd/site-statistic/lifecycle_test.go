@@ -20,7 +20,12 @@ import (
 func TestStandaloneSourceReadOwnerCancellationAndNoopStop(t *testing.T) {
 	ctx, cancel := context.WithTimeout(context.Background(), 45*time.Second)
 	defer cancel()
-	dir := t.TempDir()
+	work, _ := filepath.Abs("../../work/migration-20261105/sitestatistic-preparation")
+	dir, e := os.MkdirTemp(work, "lifecycle-worker-")
+	if e != nil {
+		t.Fatal(e)
+	}
+	defer os.RemoveAll(dir)
 	binary := filepath.Join(dir, "site-statistic")
 	args := []string{"build", "-trimpath", "-buildvcs=false", "-o", binary}
 	if workerRace {
@@ -29,12 +34,10 @@ func TestStandaloneSourceReadOwnerCancellationAndNoopStop(t *testing.T) {
 	if out, e := exec.CommandContext(ctx, "go", append(args, ".")...).CombinedOutput(); e != nil {
 		t.Fatalf("build: %v %s", e, out)
 	}
-	manifest := sitestatistic.Manifest()
 	observations := []map[string]any{}
 	for _, scenario := range []string{"queued-owner-cancel", "active-owner-cancel", "active-noop-stop-reinit", "pending-one-shot-session-retire"} {
 		t.Run(scenario, func(t *testing.T) {
-			identity := plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_lifecycle_owned", Version: manifest.Version}
-			client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, manifest, plugins.SessionBinding{Identity: identity, Generation: 1})
+			client, e := (plugins.Runner{Timeout: 5 * time.Second, ConcurrentCalls: true, RequireConcurrent: true}).Start(ctx, plugins.Command{Path: binary}, sitestatistic.Manifest(), plugins.SessionBinding{Identity: plugins.Identity{PluginID: "SiteStatistic", InstanceID: "SiteStatistic_lifecycle_owned", Version: "1.9.7"}, Generation: 1})
 			if e != nil {
 				t.Fatal(e)
 			}
@@ -192,7 +195,7 @@ func TestStandaloneSourceReadOwnerCancellationAndNoopStop(t *testing.T) {
 		})
 	}
 	raw, _ := json.MarshalIndent(map[string]any{"kind": "actual-independent-executable-SDK-worker-with-synthetic-resources", "worker_race_instrumented": workerRace, "observations": observations}, "", "  ")
-	if e := os.WriteFile(filepath.Join(dir, "sdk-worker-lifecycle-observations.json"), append(raw, '\n'), 0600); e != nil {
+	if e := os.WriteFile(filepath.Join(work, "sdk-worker-lifecycle-observations.json"), append(raw, '\n'), 0600); e != nil {
 		t.Fatal(e)
 	}
 }

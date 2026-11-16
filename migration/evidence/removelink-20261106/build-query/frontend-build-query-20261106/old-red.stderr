@@ -1,0 +1,126 @@
+...........EEEEEEEEEEE..
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=2.18')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=2.18.1')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=one&v=two')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='other=value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=2.18&other=value')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='%76=2.18')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=a%2Fb')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=%ZZ')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=%00')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+======================================================================
+ERROR: test_source_cache_queries_resolve_path_without_rewriting_assets (__main__.BuildPackagingTests.test_source_cache_queries_resolve_path_without_rewriting_assets) (query='v=one;other=two')
+----------------------------------------------------------------------
+Traceback (most recent call last):
+  File "/Users/accidia/projects/light-media-plugins/scripts/test_build_plugins.py", line 107, in test_source_cache_queries_resolve_path_without_rewriting_assets
+    self.assertEqual(builder.collect_frontend(root, manifest(True)["frontend"]), values)
+                     ~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/accidia/projects/light-media-plugins/scripts/build_plugins.py", line 195, in collect_frontend
+    raise BuildError("frontend graph must use package-relative asset URLs")
+build_plugins.BuildError: frontend graph must use package-relative asset URLs
+
+----------------------------------------------------------------------
+Ran 14 tests in 0.069s
+
+FAILED (errors=11)

@@ -1,0 +1,13 @@
+=== RUN   TestSource312ConstructorHomeBranches
+=== RUN   TestSource312ConstructorHomeBranches/~
+    helpers_test.go:161: unmapped source home must remain unresolved  / <nil> &{RuntimeError Could not determine home directory.}
+=== RUN   TestSource312ConstructorHomeBranches/~/child
+    helpers_test.go:161: unmapped source home must remain unresolved  /child <nil> &{RuntimeError Could not determine home directory.}
+=== RUN   TestSource312ConstructorHomeBranches//absolute/owned
+=== NAME  TestSource312ConstructorHomeBranches
+    helpers_test.go:171: actual mode=absent-unmapped uid=65533 HOME_present=false passwd_found=false
+--- FAIL: TestSource312ConstructorHomeBranches (0.00s)
+    --- FAIL: TestSource312ConstructorHomeBranches/~ (0.00s)
+    --- FAIL: TestSource312ConstructorHomeBranches/~/child (0.00s)
+    --- PASS: TestSource312ConstructorHomeBranches//absolute/owned (0.00s)
+FAIL

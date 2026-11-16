@@ -1,0 +1,112 @@
+Browser tab: 11, Title: "光影 · Light Media", URL: "http://192.168.8.129:36256/#plugins".
+1 AXWebArea 光影 · Light Media, URL: 192.168.8.129:36256/#plugins
+	2 container app
+		3 container
+			4 link Description: 光影 LIGHT MEDIA, Value: 192.168.8.129:36256/#discover
+			5 link Description: 搜索结果, Value: 192.168.8.129:36256/#search
+			6 text 发现
+			7 link Description: 推荐, Value: 192.168.8.129:36256/#discover
+			8 link Description: 探索, Value: 192.168.8.129:36256/#explore
+			9 link Description: 仪表板, Value: 192.168.8.129:36256/#dashboard
+			10 text 订阅
+			11 link Description: 电影, Value: 192.168.8.129:36256/#subscriptions?type=movie
+			12 link Description: 电视剧, Value: 192.168.8.129:36256/#subscriptions?type=tv
+			13 link Description: 日历, Value: 192.168.8.129:36256/#calendar
+			14 text 整理
+			15 link Description: 下载管理, Value: 192.168.8.129:36256/#downloads
+			16 link Description: 整理历史, Value: 192.168.8.129:36256/#history
+			17 link Description: 文件管理, Value: 192.168.8.129:36256/#files
+			18 text 系统
+			19 link Description: 站点管理, Value: 192.168.8.129:36256/#sites
+			20 link Description: 插件, Value: 192.168.8.129:36256/#plugins
+			21 link Description: 任务队列, Value: 192.168.8.129:36256/#jobs
+			22 link Description: 日志, Value: 192.168.8.129:36256/#logs
+			23 link Description: 设置, Value: 192.168.8.129:36256/#settings
+		24 container
+			25 button 搜索影视
+			26 text field (settable) 搜索电影、剧集
+			27 text ⌘K
+			28 pop up button (collapsed) Description: 用户界面设置, Secondary Actions: Expand
+			29 pop up button (collapsed) Description: 捷径, Secondary Actions: Expand
+			31 button (collapsed) Description: 通知中心, Secondary Actions: Expand
+				32 container 有未读通知
+			33 button 退出登录
+		34 container
+			35 tab group
+				36 container
+					37 tab (selected, settable, boolean) 我的插件, Value: 1
+我的插件
+					38 tab (selectable, settable, boolean) 插件市场, Value: 0
+插件市场
+			39 button 搜索插件
+			40 button 筛选已安装插件
+			41 button 排序插件
+			42 container
+				43 text 清理媒体文件  v2.18 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				44 link Description: DzAvril, Value: github.com/DzAvril
+				45 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			46 container
+				47 text 清理媒体文件  v2.18.1 媒体文件清理工具：支持硬链接文件清理、STRM文件清理、刮削文件清理（元数据、图片、字幕）、转移记录清理、种子联动删除等功能
+				48 link Description: DzAvril, Value: github.com/DzAvril
+				49 pop up button (collapsed) Description: 清理媒体文件操作, Secondary Actions: Expand
+			50 button 新建文件夹
+	51 container
+		52 container
+			53 text 当前构建声明的支持范围：平台 Linux；存储 本地（local）。以此范围为准，原版表单中的其他平台或存储示例不代表当前已支持。
+			54 container
+				55 button 取消
+				56 button 保存设置
+				57 button 查看运行设置
+					58 text 运行开关
+					59 text 未开启
+					60 text 目录删除事件监控
+				61 button 查看硬链接
+					62 text 硬链接目录
+					63 text 1 个
+					64 text 源目录与媒体库目录
+				65 button 查看STRM 联动
+					66 text STRM 联动
+					67 text 0 组
+					68 text 映射监控未开启
+				69 button 查看清理选项
+					70 text 关联清理
+					71 text 0 项
+					72 text 刮削文件、记录与种子
+				73 text 配置已载入 下方展示当前设置，保存后生效。
+				74 container 设置分区
+					75 button 运行设置
+					76 button 硬链接
+					77 button STRM 联动
+					78 button 清理选项
+				79 container 硬链接
+					80 container
+						81 heading 监控目录, Value: 3
+							82 text 监控目录
+						83 text 源目录和媒体库目录都要加入，才能识别同一文件的硬链接。 目录列表
+						84 text entry area (settable) Description: 目录列表, Value: /home/admin/light-media-plugins-migration-removelink-20261105/main-run-6/files/ui
+						85 text 每行一个绝对路径；现有路径按原样保留。
+						86 text 已填写 1 个监控目录
+					87 container
+						88 heading 延迟复核, Value: 3
+							89 text 延迟复核
+						90 text 等待后再次确认，减少重新整理期间的误清理。
+						91 text 启用延迟删除
+						92 text 文件被删除后，等待指定时间再检查。
+						93 switch (settable, boolean) Description: 启用延迟删除, Value: 0
+						94 text 等待时间（秒）
+						95 stepper (disabled, settable, integer) Description: 等待时间（秒）, Value: 10
+						96 text 秒
+						97 text 10 秒至 24 小时，默认 30 秒。
+						98 text 重新整理时，文件可能短暂消失后重新出现。延迟复核可减少这类事件触发的联动清理。
+					99 container
+						100 heading 保护与排除, Value: 3
+							101 text 保护与排除
+						102 text 指定需要保留的目录或名称。 受保护目录
+						103 text entry area (settable) 受保护目录
+						104 text 目录内文件不被联动删除；保留源文件时，把源目录填在这里。
+						105 text 排除名称关键词
+						106 text entry area (settable) 排除名称关键词
+						107 text 匹配的文件保留，每行一个关键词。
+				108 text 取消不会更改已保存的设置。
+
+The focused UI element is 109 container

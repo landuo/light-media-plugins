@@ -1,0 +1,14 @@
+=== RUN   TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache
+{"app_version":"0.4.19","event":"login","id":"log_9miSeH6Psd9XJz1K0b0ItF8O","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","job_id":"","level":"INFO","message":"管理员已登录","module":"auth","time":"2026-11-05T15:28:11.50963Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":690,"event":"request_completed","http_status":200,"id":"log_-wDx4WnsT-69y_C_ggN9bILL","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.auth","request_id":"req_ynb8-z4LSBAAG09nbg5psRMP","time":"2026-11-05T15:28:11.510186Z"}
+{"app_version":"0.4.19","duration_ms":515,"event":"request_completed","http_status":200,"id":"log_IJR9VwCajKGGNwZr4lLB9viR","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_M3-aj_zVFC-WsybMt3LwE3AR","time":"2026-11-05T15:28:12.042929Z"}
+{"app_version":"0.4.19","event":"command_registration_unavailable","id":"log_sA6FUgcU_dCrf-SvVGJFWHgw","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","job_id":"","level":"WARN","message":"命令菜单元数据已准备，核心尚无菜单注册提供方","module":"plugins","time":"2026-11-05T15:28:12.044132Z","workflow_id":""}
+{"app_version":"0.4.19","duration_ms":759,"event":"request_completed","http_status":200,"id":"log_c5ffGyap4vwgSQ1gNoJaqYcA","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","level":"INFO","message":"API 请求处理完成","method":"POST","module":"http.plugins","request_id":"req_y5D-1hZ0UDXIURt8L56LyM14","time":"2026-11-05T15:28:12.842192Z"}
+{"app_version":"0.4.19","event":"plugin_message","id":"log_ANraNQDn_hvaXIsYkr_BX4DJ","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","level":"INFO","message":"插件 MPServerStatus 已卸载","module":"plugins","operation":"uninstall_continue","plugin_call_id":"pc_3iRTT7mHXsWat-4Pc3OKSZ3F","plugin_id":"PluginUnInstall","plugin_instance_id":"PluginUnInstall","plugin_version":"2.2","time":"2026-11-05T15:28:13.07538Z"}
+{"app_version":"0.4.19","event":"load_failed","id":"log_9MOdFg2H_QleuxXSp60-oX-S","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","job_id":"","level":"ERROR","message":"插件初始化失败，实例未加载","module":"plugins","time":"2026-11-05T15:28:13.079943Z","workflow_id":""}
+    z_independent_source_uninstall_test.go:56: source get_local_plugins uses copied process UserInstalledPlugins cache; target exposes stale SQL installed=true on preimported future ghost
+{"app_version":"0.4.19","event":"stopped","id":"log_MjJnFFjuieRa4HLX0a1MYVML","instance_id":"instance_enGxq0cFHPp-LENFOkAgAtUj","job_id":"","level":"INFO","message":"服务已停止","module":"runtime","time":"2026-11-05T15:28:13.094376Z","workflow_id":""}
+--- FAIL: TestIndependentFailedInstalledWriteLocalMetadataUsesSourceCache (2.49s)
+FAIL
+FAIL	light-media/internal/app	4.376s
+FAIL

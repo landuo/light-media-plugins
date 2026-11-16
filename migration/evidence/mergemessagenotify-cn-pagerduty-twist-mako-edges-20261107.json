@@ -1,0 +1,168 @@
+{
+  "feature": "plugin.MergeMessageNotify",
+  "installed_version": "1.20.3",
+  "installed_source_sha256": "64f7604c9d070f984ba38c6accf08ea8a4326b3b6955b9e12d7ce8bf6cb98140",
+  "mako_product_commit": "d83f22bf35530fbbee723f933543a88ad816b424",
+  "combined_product_commit": "291078257485a2094f2afbf67be6664a426b9e07",
+  "host_sdk_commit": "fcc5995a32582047d08db1b50e962e64effde84f",
+  "evidence_kind": "Offline original-source captures, targeted Go replays, source review and a Linux/amd64 build. No new host runtime, browser, provider account, package or deployment run.",
+  "new_replayed_cases": 59,
+  "apprise": {
+    "version": "1.9.9",
+    "known_source_schemes": 183,
+    "schemes_with_native_implementation": 40,
+    "schemes_without_native_implementation": 143,
+    "source_provenance": {
+      "path": "plugins/mergemessagenotify/apprise/ORIGIN.json",
+      "sha256": "23320ba7e44163672f49e1fe105755d3c0d2d8c86a3fead6a79d9312e4493ae0"
+    },
+    "pushplus_feishu_dingtalk": {
+      "source": [
+        "apprise/plugins/pushplus.py:77–175",
+        "apprise/plugins/feishu.py:99–245",
+        "apprise/plugins/dingtalk.py:133–372"
+      ],
+      "target": [
+        "plugins/mergemessagenotify/apprise/pushplus.go",
+        "plugins/mergemessagenotify/apprise/feishu.go",
+        "plugins/mergemessagenotify/apprise/dingtalk.go"
+      ],
+      "test": "TestSourcePushPlusFeishuDingTalk199",
+      "cases": 16,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/cn-webhooks-1.9.9.json",
+        "sha256": "304f159de4ca5396369790ed6e0a19fcf9ac11ff6ed36b9f1b254875c47c363b"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-cn-webhooks-source.json",
+        "sha256": "029cf22ced8c6491b33bd03b3a8ef186eb67f1c2a3985814e4da99371df96149"
+      },
+      "initial_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-cn-webhooks-target.stdout",
+        "sha256": "1d398886832b1ace289ea0a134549cec31e533f3f26ca19851477f33baa2b911"
+      },
+      "followup": {
+        "path": "work/mergemessagenotify-20261107/apprise-cn-webhooks-target-followup.stdout",
+        "sha256": "4a64a5cf37ce47c6fd85157090acaae96e07b622d06cdf9e23c6fa2240a0fa4e"
+      },
+      "independent_reviewer": "/root/mako_block_edges",
+      "review_source": {
+        "path": "work/mergemessagenotify-20261107/apprise-cn-webhooks-review-source.json",
+        "sha256": "345b9efd2689b5893ba567f8dd9f0c018a2152c9640eae81cb0ed7f386a249cd"
+      },
+      "review_replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-cn-webhooks-review-target.stdout",
+        "sha256": "f231610cdb24134332fffe9299d4f0335e2659f394753e5b9fccef964b6a0a64"
+      },
+      "scope": "Token parsing, native PushPlus alias, title and text/Markdown handling, exact request JSON, DingTalk recipient normalization, signature and status/error handling.",
+      "corrections": [
+        "Initial replay passed 14 and failed the DingTalk phone array because Go omitted Python JSON separator spaces. Only that row reran.",
+        "Review found that percent-encoded userinfo secrets must be rejected before signing. One new original capture and one Go replay confirmed rejection after the fix."
+      ],
+      "remaining": [
+        "Shared original timezone case/alias/suffix resolution. Python Unicode case-insensitive token character edge cases."
+      ]
+    },
+    "pagerduty": {
+      "source": [
+        "apprise/plugins/pagerduty.py:79–114,207–435,504–587"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/pagerduty.go",
+      "test": "TestSourcePagerDuty199",
+      "cases": 12,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/pagerduty-1.9.9.json",
+        "sha256": "4744486c1f3017fabdf4b552b3dd03dd4d2dcaa9981dd43c9e48b37391ca97f6"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-pagerduty-target.stdout",
+        "sha256": "d59132632784c0f084dbc7bb86829002776cdc65c00fe4208a06b89319460868"
+      },
+      "scope": "Events API v2 trigger, credentials, US/EU endpoints, severity, custom details, link/image, ignored unsupported options and attachment, status and connection failure.",
+      "remaining": [
+        "Ordering of differently written raw keys collapsing to one custom detail key. Inherited overflow/throttle behavior was not independently replayed for this provider."
+      ]
+    },
+    "twist": {
+      "source": [
+        "apprise/plugins/twist.py:45–228,274–619,621–748,750–807"
+      ],
+      "target": "plugins/mergemessagenotify/apprise/twist.go",
+      "test": "TestSourceTwist199",
+      "cases": 21,
+      "fixture": {
+        "path": "plugins/mergemessagenotify/apprise/testdata/twist-1.9.9.json",
+        "sha256": "506c5a25404f6646ee2348df5d893a40fad6635b25f3cf222b32eba32623b680"
+      },
+      "source_capture": {
+        "path": "work/mergemessagenotify-20261107/apprise-twist-source.json",
+        "sha256": "506c5a25404f6646ee2348df5d893a40fad6635b25f3cf222b32eba32623b680"
+      },
+      "setup_failure": {
+        "path": "work/mergemessagenotify-20261107/apprise-twist-oracle-initial.stderr",
+        "sha256": "b84035c8372f50d0480a9d6da7b7a92044c4e38b431a4c81b10d58e6a1d04297"
+      },
+      "replay": {
+        "path": "work/mergemessagenotify-20261107/apprise-twist-go-replay.txt",
+        "sha256": "c66ada0ee3ff247849c430648b0b18098e2c7874b8e73438de49fb9b7fad38cf"
+      },
+      "independent_reviewer": "/root/pagerduty",
+      "scope": "Password login, default workspace and channel lookup, target parsing, thread sends, expired-token retry with original headers and logout. Original workspace-name whitespace splitting was retained in the corrected synthetic setup.",
+      "remaining": [
+        "Go uses a stable recipient order and serial stateful sends. Explicit Go close uses the host call context and may skip a canceled logout. Numeric JSON IDs with noncanonical spellings, non-string tokens and malformed successful relogin replies can differ."
+      ]
+    }
+  },
+  "mako": {
+    "version": "1.4.1",
+    "reference_runtime": "CPython 3.12.13 with MarkupSafe 3.0.4, no Beaker",
+    "source": [
+      "installed util.py:11",
+      "mako/codegen.py:119–140,475–534,1190–1221"
+    ],
+    "target": [
+      "plugins/mergemessagenotify/mako/parser.go",
+      "plugins/mergemessagenotify/mako/definitions.go"
+    ],
+    "test": "TestSourceNamedBlockEdges141",
+    "cases": 10,
+    "fixture": {
+      "path": "plugins/mergemessagenotify/mako/testdata/source-named-block-edges-1.4.1.json",
+      "sha256": "c6823109da589069c0422dace396c39a5c1946df51eb16a533c3893538a06610"
+    },
+    "generated_source": {
+      "path": "work/mergemessagenotify-20261107/mako-named-block-edges-generated.json",
+      "sha256": "8e6ead74cb9da76ea1981cf8dea2335dd168aecdc57d78febb8e6216895ead00"
+    },
+    "replay": {
+      "path": "work/mergemessagenotify-20261107/mako-named-block-edges-target.stdout",
+      "sha256": "c91c5bf5198c3b8d754dc230d0e404c5778c9b52d101e8c44e1a40679081b480"
+    },
+    "scope": "Explicit pageargs collision, lexical block precedence over same-name module value, local page parameter binding, reserved and soft keyword block names.",
+    "remaining": [
+      "Go entry receives a map so pageargs keys sort instead of retaining input order. Explicit variadic page declarations and multiple page tags remain unported. External inheritance remains open."
+    ]
+  },
+  "linux_build": {
+    "output": {
+      "path": "work/mergemessagenotify-20261107/linux-cn-pagerduty-twist-build.json",
+      "sha256": "367af72975e4f0d7dfddda9a63be90af9c8641c0478742569a448b40dbad3b11"
+    },
+    "binary_sha256": "6d653e2eb2c352d3a7d769a8914c757f759d1f5b9b3d6f3d4518587de97740b0",
+    "binary_bytes": 14960832,
+    "runtime_execution": false,
+    "temporary_binary_removed": true
+  },
+  "remaining": [
+    "143 Apprise schemes still lack Go implementations. Shared timezone alias/suffix resolution and the provider-specific boundaries in the evidence remain open.",
+    "Mako external inheritance, ordered pageargs, explicit variadic page declarations and multiple page tags remain open.",
+    "Plugin browser, platform clone, explicit manager initialization and final integrated ZIP checks remain open."
+  ],
+  "delivery": {
+    "fully_accepted_instances": 8,
+    "installed_instances": 23,
+    "plugin_acceptance": "implementing",
+    "pushed": false,
+    "deployed": false
+  }
+}

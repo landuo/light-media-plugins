@@ -1,0 +1,9 @@
+{"Time":"2026-11-06T03:54:28.617868+08:00","Action":"start","Package":"github.com/landuo/light-media-plugins/tests/integration"}
+{"Time":"2026-11-06T03:54:29.106356+08:00","Action":"run","Package":"github.com/landuo/light-media-plugins/tests/integration","Test":"TestPluginUninstallOrdinaryMain"}
+{"Time":"2026-11-06T03:54:29.106444+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/tests/integration","Test":"TestPluginUninstallOrdinaryMain","Output":"=== RUN   TestPluginUninstallOrdinaryMain\n"}
+{"Time":"2026-11-06T03:54:29.106463+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/tests/integration","Test":"TestPluginUninstallOrdinaryMain","Output":"    pluginuninstall_main_test.go:78: required owned input PLUGINUNINSTALL_EXPECT_WORKER_SHA256\n"}
+{"Time":"2026-11-06T03:54:29.106485+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/tests/integration","Test":"TestPluginUninstallOrdinaryMain","Output":"--- FAIL: TestPluginUninstallOrdinaryMain (0.00s)\n"}
+{"Time":"2026-11-06T03:54:29.106487+08:00","Action":"fail","Package":"github.com/landuo/light-media-plugins/tests/integration","Test":"TestPluginUninstallOrdinaryMain","Elapsed":0}
+{"Time":"2026-11-06T03:54:29.10649+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/tests/integration","Output":"FAIL\n"}
+{"Time":"2026-11-06T03:54:29.107229+08:00","Action":"output","Package":"github.com/landuo/light-media-plugins/tests/integration","Output":"FAIL\tgithub.com/landuo/light-media-plugins/tests/integration\t0.489s\n"}
+{"Time":"2026-11-06T03:54:29.10725+08:00","Action":"fail","Package":"github.com/landuo/light-media-plugins/tests/integration","Elapsed":0.489}

@@ -1,0 +1,1113 @@
+{
+  "checks": 1507,
+  "passed": 1484,
+  "errors": [
+    {
+      "check": "actual_after_hash_matches_apply",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_categoryeditor.source-differential.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_categoryeditor.actual-main-browser.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_categoryeditor.independent-review.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sdk95.unreachable-source-sites-impact.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_torrenttransfer.source-differential.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_torrenttransfer.actual-main-browser-composite.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_torrenttransfer.independent-review.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sitestatistic.source_and_sdk",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sitestatistic.actual_main_browser",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sitestatistic.independent_composite",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sdk.unreachable_module_increment",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_mpserverstatus.source_and_sdk",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_mpserverstatus.actual_main_browser",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_mpserverstatus.independent_composite_packaging",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_sdk98.accepted_four_instance_impact.20261105",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_pluginuninstall.source_standalone_App",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_pluginuninstall.actual_main_browser_package",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_pluginuninstall.independent_composite",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_source_interfaces.current_six_revalidation.20261106",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_removelink.source_differential_SDK_kernel",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_removelink.actual_Main_browser_package",
+      "detail": null
+    },
+    {
+      "check": "explicit_unattributed_limits_removelink.independent_complete_composite",
+      "detail": null
+    }
+  ],
+  "actual_target_changes": 127,
+  "changed_evidence": [
+    "categoryeditor.source-differential.20261105",
+    "categoryeditor.actual-main-browser.20261105",
+    "categoryeditor.independent-review.20261105",
+    "sdk95.unreachable-source-sites-impact.20261105",
+    "torrenttransfer.source-differential.20261105",
+    "torrenttransfer.actual-main-browser-composite.20261105",
+    "torrenttransfer.independent-review.20261105",
+    "sitestatistic.source_and_sdk",
+    "sitestatistic.actual_main_browser",
+    "sitestatistic.independent_composite",
+    "sdk.unreachable_module_increment",
+    "mpserverstatus.source_and_sdk",
+    "mpserverstatus.actual_main_browser",
+    "mpserverstatus.independent_composite_packaging",
+    "sdk98.accepted_four_instance_impact.20261105",
+    "pluginuninstall.source_standalone_App",
+    "pluginuninstall.actual_main_browser_package",
+    "pluginuninstall.independent_composite",
+    "source_interfaces.current_six_revalidation.20261106",
+    "removelink.source_differential_SDK_kernel",
+    "removelink.actual_Main_browser_package",
+    "removelink.independent_complete_composite"
+  ],
+  "changed_features": [
+    "plugin.CategoryEditor",
+    "plugin.TorrentTransfer",
+    "plugin.SiteStatistic",
+    "plugin.RemoveLink",
+    "plugin.MPServerStatus",
+    "plugin.PluginUnInstall",
+    "plugin.TorrentTransfermusic"
+  ],
+  "target_count": 617,
+  "public_copy_count": 138,
+  "public_copies": [
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/CategoryEditor-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/CategoryEditor-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/CategoryEditor-linux-buildinfo.txt",
+      "sha256": "4e70d11ca850c9909ffc2048aea9cb16502c2a873599cc00c0997cb610d655e7",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/MPServerStatus-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/MPServerStatus-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/MPServerStatus-linux-buildinfo.txt",
+      "sha256": "f47bfde04280957d95d85df410a5de597d79495e23d034ad5198e982320fe653",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-linux-buildinfo.txt",
+      "sha256": "19ba12823aac5c4896583c3ac2b0095544db6a37d6d060c04ff241e2bf7abd5c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-update-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-update-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-update-linux-buildinfo.txt",
+      "sha256": "750dabecd8805a9351969ccc8b46b1addb2bc6cf507eedec98ae664644cd5dd2",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-update-overlay.json",
+      "sha256": "3cfd032daa8ad82ca672f8d7bfa01585b10786b9b4e24df32732fa954eba3f3c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/PluginUnInstall-update-version-only.go.txt",
+      "sha256": "536c56830e97a210adaadad684dee624977fdb9d021644d30e18e51682b751ef",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-linux-buildinfo.txt",
+      "sha256": "c1070dbacee639ab2fd568473be4b595b790c071ad5c96dffb83b1e80b9aaf73",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-update-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-update-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-update-linux-buildinfo.txt",
+      "sha256": "19175e9dbda1501afbb1069b38b77c4c6cfe30329543a22a48bc098e494c7ed0",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-update-overlay.json",
+      "sha256": "339a2511c10c43a94376bba32b6d7338dc2c7f8253548288cb4a472df5bd72ab",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/RemoveLink-update-version-only.go.txt",
+      "sha256": "884cb4962fe7283d90f0d5b2548338c85c3afed886a783c52a325148a9d2feef",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/SiteStatistic-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/SiteStatistic-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/SiteStatistic-linux-buildinfo.txt",
+      "sha256": "025cffbb17e40513dd92afa55736447fc60bb06595fcc917834e54a7f3ba0cd4",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/TorrentTransfer-linux-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/TorrentTransfer-linux-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/TorrentTransfer-linux-buildinfo.txt",
+      "sha256": "e84bcbf88f345994da30d7df9d75f1c09b28b13c47fb9ebbd3655aeb82e71bc7",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/build-consumers-linux-attempt1.json",
+      "sha256": "5a2382a34e119d8ec899bf54f0085a4f3e4a33e242f574d75171ca01eb6ab388",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/build-consumers-linux-attempt1.py",
+      "sha256": "ae523fe1bc3357ce15ad03e14f0d6b3dfe05d34d7adea869a80812d120b26abd",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/build_consumers_linux.py",
+      "sha256": "ad27f55afa96a57d5d17ebb6995ae9bb51ffd0dca743d0a38c41336161d760b1",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/checks.json",
+      "sha256": "cde841589c07d0f204e3b24228a41b12fae9d8a08cb9db76d78716314554a340",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumer-checks.json",
+      "sha256": "b2415c932837c12f870be4465b0589096b0249db34dc43e96188eebefc5bbd3d",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumer-inputs-after.json",
+      "sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumer-inputs-before.json",
+      "sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumers-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumers-normal.stdout",
+      "sha256": "5fcfb407abd81e3f89c8ce51591fa11c1b7ad35ebdbf88078a7187472a7b024e",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumers-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/consumers-race.stdout",
+      "sha256": "347ee085fd399db7ee0a3bd08b3bfade9231ba049d49d63f3aa3be9e9f141f77",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/linux-consumer-builds.json",
+      "sha256": "11084022a679b2d2ef1487a44f410e6fd848428d46e6ada2b1ed1e5606dee4ff",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/linux-consumer-inputs-after.json",
+      "sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/linux-consumer-inputs-before.json",
+      "sha256": "cdd7730434907a057da925785f1816a76d53d75eb08fca0f34cfbb502b388586",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-normal-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-normal-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-normal-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-normal-tests.stdout",
+      "sha256": "f9ed0cf27c7a6d4fc9ed9f02ee2b5a9d046c17f4218bad2b7301afd1c9accfca",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-race-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-race-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-race-tests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/optin-race-tests.stdout",
+      "sha256": "0417cda40e271b2b7d8c9bc03b649a627d3a0f8e040a8b51ee5ca0f05d35eb4d",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98-overlay.json",
+      "sha256": "18f76d9e60dcfad1145f3d2ea3ef39ae3b1532b90aaf0057922b1636799d5339",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/run_checks.py",
+      "sha256": "b0b7b1996eb11670009f9ddb215d96f076cff8e35cfd6e088bba3d1bdc1b00d9",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/run_consumers.py",
+      "sha256": "be48402ebb5b17ff1f15d658d94036037a4cdde09db00e5cbbf0357563651ff0",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/run_optin.py",
+      "sha256": "3216ecb2804bd8a6d18a2e5331e23aa70628d04253c4486e0839750ef68847a8",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-normal.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-normal.stdout",
+      "sha256": "d5c6c694d3bd752c5abeb990c468856e2654bafadfcc56223554f085f5436722",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-optin-commands.json",
+      "sha256": "2c388a0c9e03c94335245681d1e05fa37bf1c565ceb4d399d7d98e7097b808e1",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-race.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-race.stdout",
+      "sha256": "e24ed5d17632f12010d927155191e6047530110527bca5440dcc450e0bd57545",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-stable101.json",
+      "sha256": "b95d8ff704edfd1e9c3dbce7fa836630c20564c8e4c2bdad85d6430f92f83773",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-vet.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sdk101-vet.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/sync.py",
+      "sha256": "8a84b5e8ea8a136501eb4ad9887cbef5bafbfa579620d4fdbc177463e9c33848",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/synchronization.json",
+      "sha256": "a3b9da15284cf4ef966632e85c85fb52f6d9d8ca42feb03465a323b3e3c8f892",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/SDK_ORIGIN.json",
+      "sha256": "40e923e3a50de325e49fe9e7c88709295286c91a8c23e141b33b5bad6e35a875",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/concurrent_session.go",
+      "sha256": "60de05db8d6cdcd026bbcf96c0ca3d1f408c0817773d8d0c76b6c7c70e419b9e",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/concurrent_transport.go",
+      "sha256": "eced9e86ea677124c4d87622ebb3c2432dd45f22bb5c34770149130a0819094c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/concurrent_worker.go",
+      "sha256": "44d43f9046193587b0c47b3f4121471a772b09eaf6fdda5f786a2386d5090be3",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/protocol.go",
+      "sha256": "02c0873a8f3929a4f20213549b7ddb2ade02d6c001361386a68f416f3d65639c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "synchronization/previous-sdk98/worker.go",
+      "sha256": "00a60cb3fd5fb92b557a9d53ca1b5eaefe462338532b30dcfb4da7ddf001b09e",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/commands.json",
+      "sha256": "a8828d952fd8b7cd2109d96394fe9d8c3e667aee92b785d08db52f6f027bbdeb",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/four/evidence/host-1.log",
+      "sha256": "417f13402fe96746d09960583a4ae45da5ff98b84da2b0cba10862f86fd141d1",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/four/evidence/host-2.log",
+      "sha256": "f392eb424fffe25d110509fcbc09055fb43d7958a9cfb81e8d59aea8e57f19cf",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/four/evidence/observations.jsonl",
+      "sha256": "73bb6fcb060b80beb70ab08fad0be09fff5a7761719b6820ee5f4729b469b35f",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/four-command.json",
+      "sha256": "ec1dea175177bddccb96fe76443a3cd49709a4d0545bb76050daf860aabc3fb9",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/four.log",
+      "sha256": "fc5660317fa7915bbbe60c99420ae7bff69af271f366cd2e7385c2fd35aefcf5",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-1.log",
+      "sha256": "d8510de39d79295b418b81a3b0ec57ed70970a459030d996186913964d44485c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-2.log",
+      "sha256": "be3dc6674879c69471ee9bfe4a19352b756630a03576f908550262ee10593bb6",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-3.log",
+      "sha256": "196190c081399b5e5d193a690f39b1c6fde77947dfd9da50f4eeb1f7732fe726",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-4.log",
+      "sha256": "f21a43d767c7804fb2e7156b9d8888cb7a454363baa2c519812c498314fc9730",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-5.log",
+      "sha256": "99f47a10ef08a43692ae48787861d189de8c2211da8a4320c5867cf0fcff5d47",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-6.log",
+      "sha256": "d7fae19ab2ccc315e565de6b961efa6c14fc891dd8145aa68fde81078c3f2907",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-7.log",
+      "sha256": "bfec76290c2c0d432c0c164ad754e487641862074dc6a7cfb778c65cdd13d200",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/host-8.log",
+      "sha256": "a22ea6a134b245496efcb48caeb9d0d86cbeb10f25047fdad20486569ea0dba5",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui/evidence/observations.jsonl",
+      "sha256": "ab3ed7c97db41f5e376d4729213e26bcc211b0835ec2bfd40ae4625fe607ff84",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui-command.json",
+      "sha256": "3d1f4edf7dce21f2839ba6b6b615f9f00fe71a92afb7f47fd7caeb6b3c813872",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/pui.log",
+      "sha256": "409cd1d7853855a54cd521ecc4cc0fe5679468a14da91a9566921bc9d4186120",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/rlk/evidence/host-1.log",
+      "sha256": "5ccc8eecd3daef4b9a23bf8b8fd6d328fa671c5976caa3ae48cccc6d92ddd66d",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/rlk/evidence/host-2.log",
+      "sha256": "5db5c3cf4617c69f3665896fa8f8dc07aa50e6ae6720e81898d921df7d83def7",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/rlk/evidence/observations.jsonl",
+      "sha256": "4fca8b0f2d49222319d1076d64e922e66b364fb6b88c1e17d636a556303aecd3",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/rlk-command.json",
+      "sha256": "a30fd0ae38e6dad72f83baa1c160966164d56254a210f102da81539e80ac63e4",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/actual-harvest/rlk.log",
+      "sha256": "e700a0511ac7a2422bfb26946e6bbd201f9bd4e738e653cc12e08f6d1d5b02ec",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/harvest-manifest.json",
+      "sha256": "ba6335d2296bed6259c4334628f3dd9edd0f78a27ccf483a337da62025aba115",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/harvest.py",
+      "sha256": "f0ddd92fdf906e12864ae3660acb7cc71d73af0f1a968b7cce58bb94311299f1",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/harvest.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/launch-result.json",
+      "sha256": "b6f1175161338b5ed1d43d30fa6814ad8a309aa11d7069e9969533b90dab3681",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/launch.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/launch.stdout",
+      "sha256": "ed62818adfc6d2f718ef77ec440940e0520e0d904f1483241edc409dad3fd31f",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/prepared.json",
+      "sha256": "037a5457da6c3dfa53486c2a2367947d7c276ee047032203457869b3573c6179",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/run_owned.py",
+      "sha256": "70076d1acee09dad219cbacefa434e2f48bb8e2487f315a2466c3e3f7d6bc084",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/summary.json",
+      "sha256": "aed3765be2a3912ee1385c1cfa73c68728bc28ebf238c03b31c46d620738f35b",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "native/upload-plan.json",
+      "sha256": "56dae1e720da26a737d337da939dfc1fd6ce02d1b0c4dd68cb44df0a397b6829",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/CategoryEditor-independent-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/CategoryEditor-independent-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/CategoryEditor-independent-buildinfo.txt",
+      "sha256": "e8530f60cdf86004a711ed38351bdd6179de9e1cee9bedcde56e9265697f0c6d",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/MPServerStatus-independent-build.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/MPServerStatus-independent-build.stdout",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/MPServerStatus-independent-buildinfo.txt",
+      "sha256": "5d21b45ef6bb00450c8be9bc5ee2fb6f96cdf899f7a0f0fba90b3b9cb529d2a5",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/REPORT.md",
+      "sha256": "2914a2723e192cdc6032564bb0d33a88b8143c812e2643d72ac7eed1b19de382",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/SOURCE_FIRST.json",
+      "sha256": "0cc7c3101f2fdb8f81c11ca83c812c1d73a5f34f1ecddef12ba37ab1f5603e95",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/audit.py",
+      "sha256": "05f40ba43193403693469d9618f49259606f66039f6fe9039ce3ab16838e0d1d",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/audit_host_and_drivers.py",
+      "sha256": "6890a21d159f9b891a2507683cf395928022d85307cdb2fa95ee84d6f2ac0173",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/audit_observations.py",
+      "sha256": "b688585810b4ba6ba4068b9376a205f91331d03646e486611d2926f56900c884",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/binding-audit.json",
+      "sha256": "eaf770b88419eb2e856bd1595a3cbf36424b4993df94b175098a40cf8726e7a7",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/business-unchanged.json",
+      "sha256": "4b66cc876e791b7f740296f72c00418db14a04376d8fba511ef044be28752258",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/cleanup.json",
+      "sha256": "2a442744200d639c87ecdd229958e0586c2433eb609b29bd0242689fb311ebc0",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/error-and-observation-audit.json",
+      "sha256": "23f71180dc8415e40cfbb084b83192f2eaa0d547156515b364a024f3d48ab217",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/host-driver-binding.json",
+      "sha256": "825162a86ad19e3aebf47ede31e8c9be984bdda0120b4a6b2e59fa4ca4dfc3e9",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/independent-rebuilds.json",
+      "sha256": "52a71ee443f5df4b197be3fd7c8c977fa9ce777488ad8097a7b3a891673fe7ca",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/linux-manifest-payload.py",
+      "sha256": "b3c752e493a37ca806d31bddf8fb2c6543838965eca6a4ad71cf09f445691e4f",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/linux-manifests-command.json",
+      "sha256": "1527eb6521908ddcc92f67e2c7a99908d76fc509b15fe4448b02d7bb068a79ae",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/linux-manifests.json",
+      "sha256": "cd74d1c1a51c0be409438b27f1c1d4e0a7a5b86b955d9c60879779e5c6fe7196",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/linux-manifests.stderr",
+      "sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/mps-supplement-audit.json",
+      "sha256": "a66f8aa915623c7380d484723a5fc5d2b9981d4c55c6fa9a50797a30e8d8c86f",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/read_linux_manifests.py",
+      "sha256": "896009877c35c92285d8865047f03a2c5e99a72a997ad435a4a769fbb6d625ed",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/rebuild_small_consumers.py",
+      "sha256": "5fb19abe32b28f60e47e71eb38cfadbc3c29669b7b445b0cf02a31ec66728a2b",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/reused-evidence-bindings.json",
+      "sha256": "120050d9207af4194deb10f52a709d7ff75ac4266de0320450bc717f39ac352c",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/reused-mps-worker-budget-observations-normal.json",
+      "sha256": "76f1cda5038703b572e3d65ae97e6b8a732de92a5cf3a4d35718d49e4161a107",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/reused-mps-worker-budget-observations-race.json",
+      "sha256": "20b03356cb6a4b33b194c559e61c5054bcadf6f55f22ae9e8642870abb8b6224",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/review-evidence.json",
+      "sha256": "71ed5a3bfee93612fe7b0b744a9188728836e9dd480ea81500e7a6fa3e6f4a9a",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/manifest.json",
+      "sha256": "75f9bc87f860c05b8aa1091e79cc45e2b0dfee8b5b372ab94fe96dc51c0c00b5",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "copy-manifest.json",
+      "path": "independent-review/seal.json",
+      "sha256": "15dca23013ec8a9337d1c76cb293cd995ef822f1848f242c7116062387fca9d9",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "additional-copy-manifest.json",
+      "path": "SDK_ORIGIN-tested101.json",
+      "sha256": "b417c613195590062759633af4142f8a433c8d2fc8279fb36fa00e33e4d112a0",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "additional-copy-manifest.json",
+      "path": "origin-metadata-close.json",
+      "sha256": "5c1a27ed37aa28df6b365e174686377ce842f726c02aa5c721079b5566dbe856",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "additional-copy-manifest.json",
+      "path": "independent-origin-metadata/review.json",
+      "sha256": "dcb1e46351e24f2144bdca8b2c95a908b6cb823265fdbfca30c9384840557237",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "additional-copy-manifest.json",
+      "path": "independent-origin-metadata/setup-attempt1.json",
+      "sha256": "09ab2d17b59cc406205010d837cc6812140429b2803a3a96c81c06c363d448fc",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "dependency-copy-manifest.json",
+      "path": "current-dependency-reuse-proposal.json",
+      "sha256": "56ea7ad562ffb5601375978e969704ba70bd44ac542c72e8a430cb50790e26bb",
+      "source_matches": true,
+      "destination_matches": true
+    },
+    {
+      "map": "dependency-copy-manifest.json",
+      "path": "independent-current-dependency-reuse/review.json",
+      "sha256": "978f7579ad0de12fab09f413fac14d427997c94683dbc9afa35565e64f3def15",
+      "source_matches": true,
+      "destination_matches": true
+    }
+  ],
+  "input_hashes": {
+    "/Users/accidia/projects/light-media-plugins/work/sdk101-publication-20261106/ledger-before-current-dependency-apply.json": "a031724e3ef06cf325b5021afab555f7e58e9095965486204035803cd0d2414a",
+    "/Users/accidia/projects/light-media-plugins/work/sdk101-publication-20261106/current-dependency-reuse-proposal.json": "56ea7ad562ffb5601375978e969704ba70bd44ac542c72e8a430cb50790e26bb",
+    "/Users/accidia/projects/light-media-plugins/work/sdk101-publication-20261106/ledger-apply.json": "1cd8a539fcdde3cde8ffdf0568c03ae56653d73fe79fd2f3607ed0cf381cb677",
+    "/Users/accidia/projects/light-media-plugins/work/sdk101-publication-20261106/current-target-bindings.json": "c3bf1594ed7e3ee243343caf6f12e059b1cf2adc54125823e45a99452c169760",
+    "/Users/accidia/projects/light-media-plugins/migration/ledger.json": "b6d43dd87f1f67364146e8cbd7b03d03dd256d9d468f90df5a4ddda2303fad68",
+    "/Users/accidia/projects/light-media-plugins/migration/evidence/sdk101-current-consumers-20261106/copy-manifest.json": "acb088cd9b8f4ff88a0431254fde83e61ebf73b610199ce5e55085c82778a1c6",
+    "/Users/accidia/projects/light-media-plugins/migration/evidence/sdk101-current-consumers-20261106/additional-copy-manifest.json": "01f96c5f43387b01587d9413421b23eac7af7ad8d9ac85999428c7cc6d6f90e1",
+    "/Users/accidia/projects/light-media-plugins/migration/evidence/sdk101-current-consumers-20261106/dependency-copy-manifest.json": "2a8dc2afcad6868882fcf445d8b633e81e605da4259af5ed301b4d277e8fdbc2",
+    "/Users/accidia/projects/light-media-plugins/migration/evidence/sdk101-current-consumers-20261106/ACCEPTANCE.json": "40bfbfcea19f36b9fcaa4548a26e4a3d012bc5f6efff3bc63fbba18f80c502a0"
+  }
+}

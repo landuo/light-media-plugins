@@ -1,0 +1,9 @@
+{
+  "classification": "review script setup error, not product/source failure",
+  "reason": "initial verifier used shorthand closure.*; actual schema and Root delta use closure_boundaries.*",
+  "actual_changed_paths": [
+    "closure_boundaries.parallel_host_calls_increment",
+    "closure_boundaries.sdk101_metadata_close",
+    "source_state"
+  ]
+}

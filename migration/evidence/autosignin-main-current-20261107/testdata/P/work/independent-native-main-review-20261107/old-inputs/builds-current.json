@@ -1,0 +1,91 @@
+{
+  "env": {
+    "GOOS": "linux",
+    "GOARCH": "amd64",
+    "CGO_ENABLED": "0",
+    "GOFLAGS": "",
+    "GOPROXY": "off"
+  },
+  "inputs": 7044,
+  "embeds": 811,
+  "stable": true,
+  "builds": [
+    {
+      "name": "host",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/host",
+        "./cmd/server"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "exit": 0,
+      "seconds": 6.308083249721676,
+      "sha256": "062da6f0e5f5814dc4f60ac8bb30c7240c2d71b940cc4250261cdf97bed136fb",
+      "bytes": 57200802
+    },
+    {
+      "name": "worker",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/worker",
+        "./cmd/auto-sign-in"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.6084666247479618,
+      "sha256": "02ece64a7ecb85c64b126279014d026d5684591cd19237b24e12af8108481269",
+      "bytes": 12779682
+    },
+    {
+      "name": "cli",
+      "argv": [
+        "go",
+        "build",
+        "-p=1",
+        "-trimpath",
+        "-buildvcs=false",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/cli",
+        "./cmd/source-sites-migrate-owned"
+      ],
+      "cwd": "/Users/accidia/projects/light-media",
+      "exit": 0,
+      "seconds": 0.6532372497022152,
+      "sha256": "72ee655a8aa706fa487201047bba360902886828d608f4efac31a40e0f8d5865",
+      "bytes": 25215138
+    },
+    {
+      "name": "driver",
+      "argv": [
+        "go",
+        "test",
+        "-p=1",
+        "-c",
+        "-overlay=/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/driver-overlay.json",
+        "-ldflags=-s -w",
+        "-o",
+        "/Users/accidia/projects/light-media-plugins/work/autosignin-native-main-20261107/driver",
+        "./tests/integration"
+      ],
+      "cwd": "/Users/accidia/projects/light-media-plugins",
+      "exit": 0,
+      "seconds": 0.5263142911717296,
+      "sha256": "97e544e53901c666d9654e237cd09079ac5040a2918bfa46f90ca37610e030ef",
+      "bytes": 9707682
+    }
+  ],
+  "scope": "fresh production Go Main/worker/offlineCLI and test-only driver/CA environment helper, not actual runtime evidence"
+}

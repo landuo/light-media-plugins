@@ -3,7 +3,9 @@ package mergemessagenotify
 import (
 	"context"
 	_ "embed"
+	"encoding/json"
 	"errors"
+	"sort"
 	"strings"
 	"sync"
 )
@@ -11,22 +13,51 @@ import (
 //go:embed forms.json
 var formsJSON []byte
 
-var definitionsOnce sync.Once
-var channelDefinitions = []Channel{
-	{Key: "custom.iyuu", Name: "爱语飞飞"},
-	{Key: "custom.qqbot", Name: "QQ Bot（腾讯官方）"},
+type formSource struct {
+	Name        string         `json:"name"`
+	Order       int            `json:"order"`
+	Defaults    map[string]any `json:"defaults"`
+	Elements    []any          `json:"elements"`
+	Data        map[string]any `json:"data"`
+	SaveDefault bool           `json:"save_default"`
 }
+
+var definitionsOnce sync.Once
+var channelDefinitions []Channel
 var pluginElements []any
 
-func formElements() []any {
-	definitionsOnce.Do(func() {
-		data, err := Decode(formsJSON)
-		if err != nil {
-			panic(err)
+func definitions() ([]Channel, []any) {
+	definitionsOnce.Do(loadDefinitions)
+	return channelDefinitions, pluginElements
+}
+func loadDefinitions() {
+	v, e := Decode(formsJSON)
+	if e != nil {
+		panic(e)
+	}
+	m := v.(map[string]any)
+	defs := []Channel{}
+	for k, x := range m {
+		if k == "plugin" {
+			continue
 		}
-		pluginElements = data.([]any)
+		b, _ := json.Marshal(x)
+		var f formSource
+		d := json.NewDecoder(strings.NewReader(string(b)))
+		d.UseNumber()
+		if e = d.Decode(&f); e != nil {
+			panic(e)
+		}
+		defs = append(defs, Channel{k, f.Name, f.Order, f.Defaults, f.Elements, f.Data, f.SaveDefault})
+	}
+	sort.Slice(defs, func(i, j int) bool {
+		if defs[i].Order != defs[j].Order {
+			return defs[i].Order < defs[j].Order
+		}
+		return defs[i].Key < defs[j].Key
 	})
-	return clone(pluginElements).([]any)
+	channelDefinitions = defs
+	pluginElements = m["plugin"].(map[string]any)["elements"].([]any)
 }
 
 type Plugin struct {
@@ -49,6 +80,11 @@ func (p *Plugin) Channels() []Channel {
 	defer p.mu.Unlock()
 	out := make([]Channel, len(p.registered))
 	copy(out, p.registered)
+	for i := range out {
+		out[i].Defaults = cloneMap(out[i].Defaults)
+		out[i].Elements = clone(out[i].Elements).([]any)
+		out[i].Suggested = cloneMap(out[i].Suggested)
+	}
 	return out
 }
 func (p *Plugin) State() bool { p.mu.Lock(); defer p.mu.Unlock(); return truth(p.config["enable"]) }
@@ -63,8 +99,9 @@ func (p *Plugin) Init(ctx context.Context, config map[string]any, saveRequest bo
 	if len(config) == 0 || (len(config) == 2 && config["enabled"] == false && config["enable"] == false) {
 		p.config = nil
 	}
+	defs, _ := definitions()
 	p.mu.Unlock()
-	for _, c := range channelDefinitions {
+	for _, c := range defs {
 		p.mu.Lock()
 		for i, old := range p.registered {
 			if old.Key == c.Key {
@@ -76,14 +113,7 @@ func (p *Plugin) Init(ctx context.Context, config map[string]any, saveRequest bo
 		if saveRequest {
 			cfg := p.ComponentConfig(c.Key)
 			if truth(cfg["test_once"]) {
-				result, err := p.send(ctx, c, Message{Title: "测试消息", Text: "这是一条测试消息，您收到此消息表示您的渠道配置无误。"}, cfg)
-				if err != nil {
-					p.log(ctx, "ERROR", "测试消息发送失败: 渠道 = "+c.Name+"，"+err.Error())
-				} else if !truth(result) {
-					p.log(ctx, "WARNING", "测试消息发送失败: 渠道 = "+c.Name)
-				} else {
-					p.log(ctx, "INFO", "测试消息发送成功: 渠道 = "+c.Name)
-				}
+				_, _ = p.send(ctx, c, Message{Title: "测试消息", Text: "这是一条测试消息，您收到此消息表示您的渠道配置无误。"}, cfg)
 				cfg["test_once"] = false
 				if _, e := p.UpdateComponent(ctx, c.Key, cfg); e != nil {
 					continue
@@ -162,15 +192,45 @@ func (p *Plugin) UpdateComponent(ctx context.Context, key string, config map[str
 	p.mu.Unlock()
 	return result, nil
 }
+func (p *Plugin) saveChannelDefaults(ctx context.Context, c Channel) error {
+	if !c.SaveDefaults || len(c.Defaults) == 0 {
+		return nil
+	}
+	cfg := p.ComponentConfig(c.Key)
+	changed := false
+	for k, v := range c.Defaults {
+		if k != "" {
+			if _, ok := cfg[k]; !ok {
+				cfg[k] = clone(v)
+				changed = true
+			}
+		}
+	}
+	if changed {
+		_, e := p.UpdateComponent(ctx, c.Key, cfg)
+		return e
+	}
+	return nil
+}
 func (p *Plugin) Form(ctx context.Context) ([]any, map[string]any, error) {
-	elements := formElements()
+	defs, elements := definitions()
+	_ = defs
+	elements = clone(elements).([]any)
 	registered := p.Channels()
-	data := map[string]any{"channel_strategy": "ALL_SELECTED", "custom.qqbot.target_type": "c2c"}
+	data := map[string]any{"channel_strategy": "ALL_SELECTED"}
 	keys := map[string]bool{}
 	items := []any{}
 	for _, c := range registered {
 		keys[c.Key] = true
 		items = append(items, map[string]any{"title": c.Name, "value": c.Key})
+		if err := p.saveChannelDefaults(ctx, c); err != nil {
+			return nil, nil, err
+		}
+		for k, v := range c.Suggested {
+			if k != "" && truth(v) {
+				data[c.Key+"."+k] = clone(v)
+			}
+		}
 	}
 	var walk func([]any) []any
 	walk = func(elems []any) []any {
