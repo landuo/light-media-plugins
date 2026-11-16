@@ -83,7 +83,7 @@ func (*promotionHost) DeleteTags(context.Context, string, []string) (bool, error
 
 func promotionTask() Task {
 	return Task{Row{"id": "home", "name": "家园", "site_id": 3, "downloader": "qb", "enabled": true,
-		"del_no_free": true, "freeleech": "free", "timezone_offset": 0, "check_interval": 5}}
+		"del_no_free": true, "freeleech": "free", "timezone_offset": 0, "check_interval": 5, "maxdlcount": 5}}
 }
 
 func promotionNow() time.Time {
@@ -321,5 +321,54 @@ func TestProtectPromotionDoesNotResumeNeverFreeTorrent(t *testing.T) {
 	ts, e := core.records(context.Background(), task.ID(), "torrents")
 	if e != nil || !truth(ts.Values[hash]["promotion_paused_at"]) || text(ts.Values[hash]["promotion_pause_reason"]) != promotionPauseNotFree {
 		t.Fatalf("non-free pause state changed: %v %v", ts.Values[hash], e)
+	}
+}
+
+func TestMergeLiveProgressOverridesStaleDetailRow(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "6666666666666666666666666666666666666666"
+	core, _, _ := newPromotionCore(t, Rows{}, []DownloadState{promotionTorrent(task, hash, now, .75)})
+	row := Row{"hash": hash, "progress": nil, "downloaded": float64(0)}
+	core.mergeLiveProgress(context.Background(), task, []any{row})
+	if number(row["progress"]) != .75 || number(row["downloaded"]) == 0 {
+		t.Fatalf("stale detail row was not overlaid: %v", row)
+	}
+}
+
+func TestDownloadBudgetRefreshesStoredProgress(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "7777777777777777777777777777777777777777"
+	core, _, _ := newPromotionCore(t, Rows{hash: promotionRecord(task, hash, now, .1)}, []DownloadState{promotionTorrent(task, hash, now, .75)})
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil {
+		t.Fatal(e)
+	}
+	budget, e := core.downloadBudget(context.Background(), task, ts)
+	if e != nil || budget.taskCount != 1 || number(ts.Values[hash]["progress"]) != .75 {
+		t.Fatalf("budget read did not refresh progress: %v %v %v", budget, ts.Values[hash], e)
+	}
+}
+
+func TestCheckPersistsDaemonProgress(t *testing.T) {
+	now := promotionNow()
+	task := promotionTask()
+	hash := "5555555555555555555555555555555555555555"
+	record := promotionRecord(task, hash, now, .1)
+	core, host, _ := newPromotionCore(t, Rows{hash: record}, []DownloadState{promotionTorrent(task, hash, now, .75)})
+	core.h.(*promotionHost).torrents[0].Raw["downloaded"] = float64(7 << 30)
+	core.h.(*promotionHost).torrents[0].Raw["uploaded"] = float64(1 << 30)
+	core.h.(*promotionHost).torrents[0].Raw["ratio"] = 0.14
+
+	if err := core.Check(context.Background(), task.ID(), true); err != nil {
+		t.Fatal(err)
+	}
+	ts, e := core.records(context.Background(), task.ID(), "torrents")
+	if e != nil || number(ts.Values[hash]["progress"]) != .75 || number(ts.Values[hash]["downloaded"]) != float64(7<<30) {
+		t.Fatalf("daemon progress was not persisted: %v %v", ts.Values[hash], e)
+	}
+	if host.torrentReads == 0 {
+		t.Fatal("no daemon read")
 	}
 }

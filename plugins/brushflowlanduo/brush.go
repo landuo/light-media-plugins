@@ -94,13 +94,20 @@ func (b brushDownloadBudget) blockReason() string {
 	return ""
 }
 
-func (p *Core) downloadBudget(ctx context.Context, task Task) (brushDownloadBudget, error) {
+func (p *Core) downloadBudget(ctx context.Context, task Task, ts *RecordSet) (brushDownloadBudget, error) {
 	c := p.Config()
 	budget := brushDownloadBudget{
 		taskLimit:   int(task.N("maxdlcount")),
 		globalLimit: int(number(c.Settings["global_maxdlcount"])),
 	}
 	if budget.taskLimit == 0 && budget.globalLimit == 0 {
+		// No slot limit needs the list, but existing records still need the
+		// daemon counters so summaries and detail rows do not stay at 0.
+		if torrents, e := p.h.Torrents(ctx, task.S("downloader")); e == nil {
+			updateRecords(p, torrents, ts)
+		} else {
+			p.h.Log(ctx, "warning", "刷新刷流记录进度失败："+e.Error())
+		}
 		return budget, nil
 	}
 	downloader, taskTag := task.S("downloader"), task.Tag()
@@ -118,6 +125,7 @@ func (p *Core) downloadBudget(ctx context.Context, task Task) (brushDownloadBudg
 		if err != nil {
 			return budget, fmt.Errorf("获取下载器 [%s] 刷流下载数量失败：%w", name, err)
 		}
+		updateRecords(p, torrents, ts)
 		for _, torrent := range torrents {
 			progress := torrent.Raw["progress"]
 			if torrent.Kind == "transmission" {
@@ -252,7 +260,7 @@ func (p *Core) runBrush(ctx context.Context, t Task, r Row) error {
 		reason(r, why, 1)
 		return nil
 	}
-	budget, e := p.downloadBudget(ctx, t)
+	budget, e := p.downloadBudget(ctx, t, ts)
 	if e != nil {
 		return e
 	}

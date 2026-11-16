@@ -457,6 +457,7 @@ func (p *Core) Detail(ctx context.Context, id, state string, page, pageSize int)
 			rows = append(rows, arch.Values[k])
 		}
 	}
+	p.mergeLiveProgress(ctx, t, rows)
 	sort.SliceStable(rows, func(i, j int) bool { return number(row(rows[i])["time"]) > number(row(rows[j])["time"]) })
 	total := len(rows)
 	start := (page - 1) * pageSize

@@ -219,6 +219,35 @@ func (p *Core) sendNotice(ctx context.Context, t Task, notice Notice) {
 		p.h.Log(ctx, "warning", fmt.Sprintf("刷流任务通知发送失败（不影响种子监控）：%s", e))
 	}
 }
+
+// mergeLiveProgress overlays the daemon's current counters on detail rows
+// without persisting them. Stored records can lag while a long brush run owns
+// the task lock, so the detail page must not report an old 0% as live state.
+func (p *Core) mergeLiveProgress(ctx context.Context, t Task, rows []any) {
+	if len(rows) == 0 {
+		return
+	}
+	live, e := p.h.Torrents(ctx, t.S("downloader"))
+	if e != nil {
+		p.h.Log(ctx, "warning", "读取下载器实时进度失败，详情使用已存记录："+e.Error())
+		return
+	}
+	byHash := map[string]DownloadState{}
+	for _, d := range live {
+		byHash[torrentHash(d)] = d
+	}
+	for _, item := range rows {
+		r := row(item)
+		d, ok := byHash[text(r["hash"])]
+		if !ok {
+			continue
+		}
+		info := p.torrentInfo(d)
+		for _, k := range []string{"progress", "downloaded", "uploaded", "ratio", "seeding_time"} {
+			r[k] = info[k]
+		}
+	}
+}
 func (p *Core) deleteNotice(ctx context.Context, t Task, r Row, reason string) error {
 	p.sendNotice(ctx, t, Notice{Title: "【刷流任务种子删除】", Text: fmt.Sprintf("任务：%s\n站点：%s\n标题：%s\n原因：%s", t.Name(), text(fallback(r["site_name"], "未知")), text(fallback(r["title"], "未知")), reason)})
 	return nil
