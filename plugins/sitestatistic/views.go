@@ -128,6 +128,18 @@ func Traffic(value any, approximate, increment bool) string {
 	}
 	return prefix + FormatSize(value)
 }
+func adjacentDays(previous, current any) bool {
+	before, e := sourceDate(previous)
+	if e != nil {
+		return false
+	}
+	after, e := sourceDate(current)
+	if e != nil {
+		return false
+	}
+	return sourceDay(before.AddDate(0, 0, 1)) == sourceDay(after)
+}
+
 func comma(s string) string {
 	if strings.ContainsAny(s, "eE") {
 		return s
@@ -212,6 +224,12 @@ func elements(selected Selected, mode any) []Node {
 				if dataKey(p) != dataKey(d) {
 					continue
 				}
+				// A daily increment needs the immediately preceding calendar day.
+				// The source selection may fall back up to seven days after failed
+				// collections; that difference must not be shown as one day.
+				if !adjacentDays(p["updated_day"], d["updated_day"]) {
+					break
+				}
 				inc := subtraction(d, p)
 				if len(inc) == 0 {
 					break
@@ -231,36 +249,40 @@ func elements(selected Selected, mode any) []Node {
 				break
 			}
 		}
-		for index, field := range []string{"upload", "download"} {
-			labels := []string{}
-			values := []float64{}
-			for _, key := range order {
-				value := increments[key][index]
-				if value <= 0 {
-					continue
+		if len(order) == 0 {
+			result = append(result, n("VCol", map[string]any{"cols": 12}, n("VAlert", map[string]any{"type": "info", "variant": "tonal"}, text("div", nil, "没有相邻两天的有效数据，无法计算 "+pyText(selected.Day)+" 的日增量"))))
+		} else {
+			for index, field := range []string{"upload", "download"} {
+				labels := []string{}
+				values := []float64{}
+				for _, key := range order {
+					value := increments[key][index]
+					if value <= 0 {
+						continue
+					}
+					name, ok := names[key].(string)
+					if !ok {
+						panic("can only concatenate str to source site name")
+					}
+					prefix := ""
+					if approx[key][field] {
+						prefix = "≈ "
+					}
+					labels = append(labels, prefix+name)
+					values = append(values, rounded(value/(1<<30), 1))
 				}
-				name, ok := names[key].(string)
-				if !ok {
-					panic("can only concatenate str to source site name")
+				total := "0"
+				if len(values) > 0 {
+					total = pyFloat(rounded(floatSum(values), 2))
 				}
 				prefix := ""
-				if approx[key][field] {
+				if anyApprox[field] {
 					prefix = "≈ "
 				}
-				labels = append(labels, prefix+name)
-				values = append(values, rounded(value/(1<<30), 1))
+				label := []string{"上传", "下载"}[index]
+				options := map[string]any{"chart": map[string]any{"type": "pie"}, "labels": labels, "title": map[string]any{"text": label + "增量（" + pyText(selected.Day) + "）共 " + prefix + total + " GB"}, "legend": map[string]any{"show": true}, "plotOptions": map[string]any{"pie": map[string]any{"expandOnClick": false}}, "noData": map[string]any{"text": "暂无数据"}}
+				result = append(result, n("VCol", map[string]any{"cols": 12, "md": 6}, n("VApexChart", map[string]any{"height": 300, "options": options, "series": values})))
 			}
-			total := "0"
-			if len(values) > 0 {
-				total = pyFloat(rounded(floatSum(values), 2))
-			}
-			prefix := ""
-			if anyApprox[field] {
-				prefix = "≈ "
-			}
-			label := []string{"上传", "下载"}[index]
-			options := map[string]any{"chart": map[string]any{"type": "pie"}, "labels": labels, "title": map[string]any{"text": label + "增量（" + pyText(selected.Day) + "）共 " + prefix + total + " GB"}, "legend": map[string]any{"show": true}, "plotOptions": map[string]any{"pie": map[string]any{"expandOnClick": false}}, "noData": map[string]any{"text": "暂无数据"}}
-			result = append(result, n("VCol", map[string]any{"cols": 12, "md": 6}, n("VApexChart", map[string]any{"height": 300, "options": options, "series": values})))
 		}
 	}
 	return result

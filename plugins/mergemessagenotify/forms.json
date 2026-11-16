@@ -194,6 +194,264 @@
                         "text": "爱语飞飞"
                       },
                       {
+                        "component": "VWindowItem",
+                        "props": {
+                          "style": {
+                            "margin-top": "20px"
+                          },
+                          "value": "_tab.custom.qqbot"
+                        },
+                        "content": [
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 12,
+                                  "xl": 12,
+                                  "lg": 12,
+                                  "md": 12,
+                                  "sm": 12,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VTextField",
+                                    "props": {
+                                      "model": "custom.qqbot.app_id",
+                                      "label": "AppID",
+                                      "hint": "QQ 开放平台的机器人 AppID。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 12,
+                                  "xl": 12,
+                                  "lg": 12,
+                                  "md": 12,
+                                  "sm": 12,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VTextField",
+                                    "props": {
+                                      "model": "custom.qqbot.app_secret",
+                                      "label": "AppSecret",
+                                      "type": "password",
+                                      "hint": "QQ 开放平台的机器人密钥。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 12,
+                                  "xl": 12,
+                                  "lg": 12,
+                                  "md": 12,
+                                  "sm": 12,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VSelect",
+                                    "props": {
+                                      "model": "custom.qqbot.target_type",
+                                      "label": "接收对象",
+                                      "items": [
+                                        {
+                                          "title": "QQ 私聊",
+                                          "value": "c2c"
+                                        },
+                                        {
+                                          "title": "QQ 群聊",
+                                          "value": "group"
+                                        }
+                                      ],
+                                      "hint": "主动通知默认发送给私聊 OpenID，群聊需开放平台允许。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 12,
+                                  "xl": 12,
+                                  "lg": 12,
+                                  "md": 12,
+                                  "sm": 12,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VTextField",
+                                    "props": {
+                                      "model": "custom.qqbot.target_openid",
+                                      "label": "接收方 OpenID",
+                                      "hint": "填写机器人收到的用户或群 OpenID。主动通知需开放平台允许。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 4,
+                                  "xl": 4,
+                                  "lg": 4,
+                                  "md": 4,
+                                  "sm": 6,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VSwitch",
+                                    "props": {
+                                      "model": "custom.qqbot.sandbox",
+                                      "label": "沙箱模式",
+                                      "hint": "在开放平台已设置沙箱成员或群时使用。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 12,
+                                  "xl": 12,
+                                  "lg": 12,
+                                  "md": 12,
+                                  "sm": 12,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VSelect",
+                                    "props": {
+                                      "model": "custom.qqbot.enable_notify_types",
+                                      "label": "消息类型",
+                                      "multiple": true,
+                                      "chips": true,
+                                      "clearable": true,
+                                      "items": [
+                                        {
+                                          "title": "资源下载",
+                                          "value": "Download"
+                                        },
+                                        {
+                                          "title": "整理入库",
+                                          "value": "Organize"
+                                        },
+                                        {
+                                          "title": "订阅",
+                                          "value": "Subscribe"
+                                        },
+                                        {
+                                          "title": "站点",
+                                          "value": "SiteMessage"
+                                        },
+                                        {
+                                          "title": "媒体服务器",
+                                          "value": "MediaServer"
+                                        },
+                                        {
+                                          "title": "手动处理",
+                                          "value": "Manual"
+                                        },
+                                        {
+                                          "title": "插件",
+                                          "value": "Plugin"
+                                        },
+                                        {
+                                          "title": "其它",
+                                          "value": "Other"
+                                        }
+                                      ],
+                                      "hint": "选择哪些类型的消息需要通过此渠道发送，缺省时不限制类型。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          },
+                          {
+                            "component": "VRow",
+                            "content": [
+                              {
+                                "component": "VCol",
+                                "props": {
+                                  "cols": 12,
+                                  "xxl": 4,
+                                  "xl": 4,
+                                  "lg": 4,
+                                  "md": 4,
+                                  "sm": 6,
+                                  "xs": 12
+                                },
+                                "content": [
+                                  {
+                                    "component": "VSwitch",
+                                    "props": {
+                                      "model": "custom.qqbot.test_once",
+                                      "label": "测试一下",
+                                      "hint": "保存后立即发送一条测试信息，仅生效一次。"
+                                    }
+                                  }
+                                ]
+                              }
+                            ]
+                          }
+                        ]
+                      },
+                      {
+                        "component": "VTab",
+                        "props": {
+                          "style": {
+                            "text-transform": "none"
+                          },
+                          "value": "_tab.custom.qqbot"
+                        },
+                        "text": "QQ Bot（腾讯官方）"
+                      },
+                      {
                         "component": "VTab",
                         "props": {
                           "style": {
@@ -4642,7 +4900,8 @@
       "custom.pushover.server_url": "https://api.pushover.net",
       "custom.onebot-11.message_template": "% if image:\n[CQ:image,file=${image}]\n% endif\n% if title:\n${title}\n% endif\n% if text:\n${text}\n% endif",
       "custom.email.from_name": "MoviePilot",
-      "custom.http.method": "get"
+      "custom.http.method": "get",
+      "custom.qqbot.target_type": "c2c"
     },
     "updates": [
       {
@@ -4807,6 +5066,253 @@
                   "label": "IYUU令牌",
                   "placeholder": "IYUUxxx",
                   "hint": "必填。请前往爱语飞飞官网获取令牌：https://iyuu.cn"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 12,
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VSelect",
+                "props": {
+                  "model": "enable_notify_types",
+                  "label": "消息类型",
+                  "multiple": true,
+                  "chips": true,
+                  "clearable": true,
+                  "items": [
+                    {
+                      "title": "资源下载",
+                      "value": "Download"
+                    },
+                    {
+                      "title": "整理入库",
+                      "value": "Organize"
+                    },
+                    {
+                      "title": "订阅",
+                      "value": "Subscribe"
+                    },
+                    {
+                      "title": "站点",
+                      "value": "SiteMessage"
+                    },
+                    {
+                      "title": "媒体服务器",
+                      "value": "MediaServer"
+                    },
+                    {
+                      "title": "手动处理",
+                      "value": "Manual"
+                    },
+                    {
+                      "title": "插件",
+                      "value": "Plugin"
+                    },
+                    {
+                      "title": "其它",
+                      "value": "Other"
+                    }
+                  ],
+                  "hint": "选择哪些类型的消息需要通过此渠道发送，缺省时不限制类型。"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 4,
+              "xl": 4,
+              "lg": 4,
+              "md": 4,
+              "sm": 6,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VSwitch",
+                "props": {
+                  "model": "test_once",
+                  "label": "测试一下",
+                  "hint": "保存后立即发送一条测试信息，仅生效一次。"
+                }
+              }
+            ]
+          }
+        ]
+      }
+    ],
+    "data": {},
+    "updates": [],
+    "save_default": false
+  },
+  "custom.qqbot": {
+    "name": "QQ Bot（腾讯官方）",
+    "order": 202,
+    "defaults": {},
+    "elements": [
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 12,
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VTextField",
+                "props": {
+                  "model": "app_id",
+                  "label": "AppID",
+                  "hint": "QQ 开放平台的机器人 AppID。"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 12,
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VTextField",
+                "props": {
+                  "model": "app_secret",
+                  "label": "AppSecret",
+                  "type": "password",
+                  "hint": "QQ 开放平台的机器人密钥。"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 12,
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VSelect",
+                "props": {
+                  "model": "target_type",
+                  "label": "接收对象",
+                  "items": [
+                    {
+                      "title": "QQ 私聊",
+                      "value": "c2c"
+                    },
+                    {
+                      "title": "QQ 群聊",
+                      "value": "group"
+                    }
+                  ],
+                  "hint": "主动通知默认发送给私聊 OpenID，群聊需开放平台允许。"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 12,
+              "xl": 12,
+              "lg": 12,
+              "md": 12,
+              "sm": 12,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VTextField",
+                "props": {
+                  "model": "target_openid",
+                  "label": "接收方 OpenID",
+                  "hint": "填写机器人收到的用户或群 OpenID。主动通知需开放平台允许。"
+                }
+              }
+            ]
+          }
+        ]
+      },
+      {
+        "component": "VRow",
+        "content": [
+          {
+            "component": "VCol",
+            "props": {
+              "cols": 12,
+              "xxl": 4,
+              "xl": 4,
+              "lg": 4,
+              "md": 4,
+              "sm": 6,
+              "xs": 12
+            },
+            "content": [
+              {
+                "component": "VSwitch",
+                "props": {
+                  "model": "sandbox",
+                  "label": "沙箱模式",
+                  "hint": "在开放平台已设置沙箱成员或群时使用。"
                 }
               }
             ]

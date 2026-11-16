@@ -13,10 +13,28 @@ import (
 // The caller's context still cancels the entire operation. Use one instance
 // per logical request and pass it into NewRequestsProxyTransport.
 func NewRequestsTimeoutTransport(timeout time.Duration) *http.Transport {
-	base := http.DefaultTransport.(*http.Transport).Clone()
-	dialer := &net.Dialer{Timeout: timeout, KeepAlive: 30 * time.Second}
-	base.DialContext = func(ctx context.Context, network, address string) (net.Conn, error) {
-		conn, err := dialer.DialContext(ctx, network, address)
+	return NewRequestsTimeoutTransportFrom(http.DefaultTransport.(*http.Transport), timeout)
+}
+
+// NewRequestsTimeoutTransportFrom applies the same scalar timeout while keeping
+// the base transport's dialer, so address selection (including an isolated
+// test redirect) still belongs to the caller. The connect phase is bounded by
+// the timeout through the dial context, and established sockets keep the
+// per-operation deadline.
+func NewRequestsTimeoutTransportFrom(base *http.Transport, timeout time.Duration) *http.Transport {
+	if base == nil {
+		base = http.DefaultTransport.(*http.Transport)
+	}
+	transport := base.Clone()
+	dial := transport.DialContext
+	if dial == nil {
+		dialer := &net.Dialer{Timeout: timeout, KeepAlive: 30 * time.Second}
+		dial = dialer.DialContext
+	}
+	transport.DialContext = func(ctx context.Context, network, address string) (net.Conn, error) {
+		dialContext, cancel := context.WithTimeout(ctx, timeout)
+		defer cancel()
+		conn, err := dial(dialContext, network, address)
 		if err != nil {
 			return nil, err
 		}
@@ -24,10 +42,10 @@ func NewRequestsTimeoutTransport(timeout time.Duration) *http.Transport {
 	}
 	// requests uses HTTP/1.1. Per-socket deadlines must not affect unrelated
 	// multiplexed streams; the per-request transport does not share sessions.
-	base.ForceAttemptHTTP2 = false
-	base.TLSHandshakeTimeout = timeout
-	base.ResponseHeaderTimeout = 0
-	return base
+	transport.ForceAttemptHTTP2 = false
+	transport.TLSHandshakeTimeout = timeout
+	transport.ResponseHeaderTimeout = 0
+	return transport
 }
 
 type requestsTimeoutConn struct {

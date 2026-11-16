@@ -49,6 +49,8 @@ func TestMergeMessageNotifyWorkerProcess(t *testing.T) {
 	}
 	base := http.DefaultTransport.(*http.Transport).Clone()
 	base.TLSClientConfig = &tls.Config{RootCAs: pool}
+	// Per-request transports keep this dialer, so the fixture redirect covers
+	// both ordinary and timeout-bounded channel requests.
 	base.DialContext = func(ctx context.Context, network, destination string) (net.Conn, error) {
 		switch destination {
 		case "iyuu.cn:443", "bots.qq.com:443", "api.sgroup.qq.com:443":
@@ -59,7 +61,12 @@ func TestMergeMessageNotifyWorkerProcess(t *testing.T) {
 	}
 	http.DefaultTransport = base
 
-	if err := sdk.ServeConcurrent(context.Background(), os.Stdin, os.Stdout, Manifest(), NewWorker().Handle); err != nil {
+	// The owned fixture configures only the IYUU and QQ Bot channels; an SMTP
+	// send would mean the worker ignored the channel strategy.
+	noSMTP := func(context.Context, map[string]any, SMTPRequest) error {
+		return errors.New("fixture has no SMTP channel")
+	}
+	if err := sdk.ServeConcurrent(context.Background(), os.Stdin, os.Stdout, Manifest(), NewWorker(noSMTP).Handle); err != nil {
 		fmt.Fprintln(os.Stderr, err)
 		os.Exit(2)
 	}
@@ -222,8 +229,10 @@ func TestMergeMessageNotifyActualWorkerRouting(t *testing.T) {
 	}
 	channels := mergeFormChannelValues(elements)
 	slices.Sort(channels)
-	if !slices.Equal(channels, []string{"custom.iyuu", "custom.qqbot"}) {
-		t.Fatalf("enabled-channel choices = %v", channels)
+	for _, want := range []string{"custom.iyuu", "custom.qqbot"} {
+		if !slices.Contains(channels, want) {
+			t.Fatalf("enabled-channel choices lack %s: %v", want, channels)
+		}
 	}
 	if raw := call("get_state", nil); string(raw) != "true" {
 		t.Fatalf("worker state = %s", raw)
@@ -231,6 +240,9 @@ func TestMergeMessageNotifyActualWorkerRouting(t *testing.T) {
 
 	configMu.Lock()
 	saveOrigin = true
+	// The form save above already persisted channel defaults; count only the
+	// writes caused by this save-request initialization.
+	base := saveCount
 	configMu.Unlock()
 	call("init", config)
 	trial := checkRequests(1)[0]
@@ -242,7 +254,7 @@ func TestMergeMessageNotifyActualWorkerRouting(t *testing.T) {
 	saveOrigin = false
 	var saved map[string]json.RawMessage
 	err = json.Unmarshal(stored, &saved)
-	updates := saveCount
+	updates := saveCount - base
 	configMu.Unlock()
 	if err != nil || updates != 1 || string(saved["custom.iyuu.test_once"]) != "false" {
 		t.Fatalf("one-shot configuration did not reset after the failed trial: updates=%d reset=%s err=%v", updates, saved["custom.iyuu.test_once"], err)

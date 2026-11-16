@@ -72,7 +72,7 @@ func (h RequestsHTTP) Send(ctx context.Context, input Request) (Response, error)
 	req.Header = headers
 	var base *http.Transport
 	if seconds, ok := input.Kwargs["timeout"].(int); ok && seconds > 0 {
-		base = requestsproxy.NewRequestsTimeoutTransport(time.Duration(seconds) * time.Second)
+		base = requestsproxy.NewRequestsTimeoutTransportFrom(http.DefaultTransport.(*http.Transport), time.Duration(seconds)*time.Second)
 	} else {
 		base = http.DefaultTransport.(*http.Transport).Clone()
 		base.TLSHandshakeTimeout = 0

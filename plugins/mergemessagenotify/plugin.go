@@ -65,6 +65,7 @@ type Plugin struct {
 	config, stored map[string]any
 	registered     []Channel
 	host           Host
+	qqBot          qqBot
 }
 
 func New(host Host) *Plugin              { return &Plugin{host: host} }

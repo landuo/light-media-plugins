@@ -81,7 +81,7 @@ func (b *qqBot) send(ctx context.Context, http func(context.Context, Request) (R
 		return false, err
 	}
 	response, err := http(ctx, Request{"post", baseURL + targetPath + openid + "/messages", map[string]any{
-		"json":    map[string]any{"content": strings.Join(parts, "\n\n"), "msg_type": 0},
+		"json":    obj("content", strings.Join(parts, "\n\n"), "msg_type", 0),
 		"headers": map[string]any{"Authorization": "QQBot " + token},
 		"timeout": qqBotTimeout,
 	}})
@@ -116,7 +116,7 @@ func (b *qqBot) token(ctx context.Context, http func(context.Context, Request) (
 		return b.accessToken, nil
 	}
 	response, err := http(ctx, Request{"post", qqBotTokenURL, map[string]any{
-		"json":    map[string]any{"appId": appID, "clientSecret": secret},
+		"json":    obj("appId", appID, "clientSecret", secret),
 		"timeout": qqBotTimeout,
 	}})
 	if err != nil {

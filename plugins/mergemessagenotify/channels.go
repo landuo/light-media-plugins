@@ -32,6 +32,16 @@ func (p *Plugin) send(ctx context.Context, c Channel, m Message, config map[stri
 			return false, nil
 		}
 	}
+	// The official QQ Bot channel owns its own credential handshake and message
+	// endpoint; the remaining channels share the token/webhook path below.
+	if c.Key == "custom.qqbot" {
+		return p.qqBot.send(ctx, func(ctx context.Context, r Request) (Response, error) {
+			if p.host.HTTP == nil {
+				return Response{}, ErrDependency
+			}
+			return p.host.HTTP(ctx, r)
+		}, get, m)
+	}
 	required := func(keys ...string) bool {
 		for _, k := range keys {
 			if !truth(get(k)) {
@@ -104,8 +114,20 @@ func (p *Plugin) send(ctx context.Context, c Channel, m Message, config map[stri
 		if !truth(m.Title) || !required("token") {
 			return false, nil
 		}
-		r, e := http("post", "https://iyuu.cn/"+str(get("token"))+".send", map[string]any{"params": obj("text", m.Title, "desp", or(m.Text, m.Title))})
-		return response(r, e, "errcode", zero)
+		r, e := http("post", "https://iyuu.cn/"+url.PathEscape(str(get("token")))+".send", map[string]any{"params": obj("text", m.Title, "desp", or(m.Text, m.Title))})
+		if e != nil {
+			return nil, e
+		}
+		value, e := r.json()
+		if e != nil {
+			return nil, errors.New("爱语飞飞响应格式无效")
+		}
+		// The source accepts any nonempty JSON object even on an HTTP error and
+		// only treats an empty error body as an ordinary channel failure.
+		if !r.OK() && len(value) == 0 {
+			return false, nil
+		}
+		return numberEq(value["errcode"], 0), nil
 	case "chanify":
 		if !required("token") {
 			return false, nil
