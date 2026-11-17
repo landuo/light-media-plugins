@@ -119,6 +119,8 @@ type Core struct {
 	recheckRunning bool
 	counters       Counters
 	attempts       []Attempt
+	prepWarnings   map[string]*seedPreparationWarning
+	prepOrder      []string
 }
 
 func NewCore(config Config, host Host, api SeedAPI) (*Core, error) {
@@ -256,6 +258,8 @@ func (c *Core) autoSeed(ctx context.Context) error {
 	if e := c.guard(ctx); e != nil {
 		return e
 	}
+	c.beginPreparationWarnings()
+	defer c.flushPreparationWarnings(ctx)
 	services, _, e := c.active(ctx, "services")
 	if e != nil {
 		return e
@@ -534,7 +538,7 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 					break
 				}
 				c.counters.Fail++
-				logSeedWarning(ctx, "下载器 "+service.Name+" 的辅种候选在「"+preparation.stage+"」失败，继续检查其他种子")
+				c.recordPreparationWarning(service.Name, preparation)
 				continue
 			}
 			if success {
@@ -564,6 +568,8 @@ func (c *Core) seedTorrents(ctx context.Context, items []selectedTorrent, servic
 // candidate can be retried later without assuming whether a write took effect.
 type seedPreparationError struct {
 	stage string
+	site  string
+	hash  string
 	cause error
 }
 
@@ -577,6 +583,8 @@ func (e *seedMutationError) Unwrap() error { return e.cause }
 
 func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceService *Service, save, category any) (_ bool, err error) {
 	stage := "查询 IYUU 站点信息"
+	hash := seed["info_hash"].(string)
+	siteLabel := ""
 	defer func() {
 		if err == nil {
 			return
@@ -584,11 +592,10 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 		if stage == "" {
 			err = &seedMutationError{cause: err}
 		} else {
-			err = &seedPreparationError{stage: stage, cause: err}
+			err = &seedPreparationError{stage: stage, site: siteLabel, hash: hash, cause: err}
 		}
 	}()
 	c.counters.Total++
-	hash := seed["info_hash"].(string)
 	siteURL, downloadPage, e := c.api.TorrentURL(ctx, seed["sid"])
 	if e != nil {
 		return false, e
@@ -610,6 +617,7 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 	if e != nil {
 		return false, e
 	}
+	siteLabel = domain
 	stage = "读取站点配置"
 	site, e := c.host.Indexer(ctx, domain)
 	if e != nil {
@@ -618,6 +626,9 @@ func (c *Core) downloadTorrent(ctx context.Context, seed map[string]any, sourceS
 	if site == nil || !truth(site.Fields["url"]) {
 		sourceLog(ctx, 1149, "没有维护种子对应的站点："+sourceURL)
 		return false, nil
+	}
+	if name, ok := site.Fields["name"].(string); ok && strings.TrimSpace(name) != "" {
+		siteLabel = strings.TrimSpace(name)
 	}
 	selected := c.config.values["sites"].([]any)
 	if len(selected) > 0 && !containsScalar(selected, site.Fields["id"]) {

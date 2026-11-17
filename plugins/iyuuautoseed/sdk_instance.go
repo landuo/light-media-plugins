@@ -61,6 +61,8 @@ var sourcePrivateURL = regexp.MustCompile(`(?i)(https?://|magnet:\?|//)[^\s<>"']
 
 func bindSourceLog(ctx context.Context, caller sdk.HostCaller, token string) context.Context {
 	logger := sdk.Logger{Host: caller}
+	dedup := newSourceLogDedup()
+	ctx = context.WithValue(ctx, sourceLogDedupKey{}, dedup)
 	return WithSourceLogSink(ctx, func(ctx context.Context, entry SourceLog) {
 		message := entry.Message
 		// These diagnostics contain untrusted API messages or private torrent
@@ -92,6 +94,11 @@ func bindSourceLog(ctx context.Context, caller sdk.HostCaller, token string) con
 			message = message[:sdk.LogMessageLimit]
 			for !utf8.ValidString(message) {
 				message = message[:len(message)-1]
+			}
+		}
+		if entry.Level == "WARN" || entry.Level == "ERROR" {
+			if dedup.record(entry.Level, message) {
+				return
 			}
 		}
 		_ = logger.Log(ctx, sdk.LogLevel(entry.Level), message)

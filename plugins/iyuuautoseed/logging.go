@@ -1,6 +1,12 @@
 package iyuuautoseed
 
-import "context"
+import (
+	"context"
+	"strconv"
+	"sync"
+
+	sdk "github.com/landuo/light-media-plugins/internal/sdk"
+)
 
 // SourceLog carries ephemeral diagnostics. The SDK adapter binds run identity
 // and removes credentials before writing to the shared log sink.
@@ -11,6 +17,66 @@ type SourceLog struct {
 type SourceLogSink func(context.Context, SourceLog)
 type sourceLogKey struct{}
 type sourceLogDefinition struct{ Level, Method string }
+
+// A scheduled pass can produce the same warning for every candidate torrent
+// (for example a site without a configured address). Keep the source text and
+// level, but emit each distinct warning once per run and summarize the rest.
+type sourceLogRepeat struct {
+	level, message string
+	count          int
+}
+type sourceLogDedup struct {
+	mu      sync.Mutex
+	entries map[string]*sourceLogRepeat
+	order   []string
+}
+type sourceLogDedupKey struct{}
+
+func newSourceLogDedup() *sourceLogDedup {
+	return &sourceLogDedup{entries: map[string]*sourceLogRepeat{}}
+}
+
+// record returns true when this exact warning or error already occurred in the
+// current run and only its repeat counter needs to grow.
+func (d *sourceLogDedup) record(level, message string) bool {
+	d.mu.Lock()
+	defer d.mu.Unlock()
+	key := level + "\x00" + message
+	if entry, seen := d.entries[key]; seen {
+		entry.count++
+		return true
+	}
+	d.entries[key] = &sourceLogRepeat{level: level, message: message, count: 1}
+	d.order = append(d.order, key)
+	return false
+}
+
+func (d *sourceLogDedup) repeated() []sourceLogRepeat {
+	d.mu.Lock()
+	defer d.mu.Unlock()
+	out := []sourceLogRepeat{}
+	for _, key := range d.order {
+		if entry := d.entries[key]; entry != nil && entry.count > 1 {
+			out = append(out, *entry)
+		}
+	}
+	return out
+}
+
+// flushSourceLogRepeats reports the merged counts at the end of one run. The
+// summary keeps the original level so the operator still sees that these were
+// warnings, not ordinary progress lines.
+func flushSourceLogRepeats(ctx context.Context, caller sdk.HostCaller) {
+	dedup, _ := ctx.Value(sourceLogDedupKey{}).(*sourceLogDedup)
+	if dedup == nil || caller == nil {
+		return
+	}
+	logger := sdk.Logger{Host: caller}
+	for _, entry := range dedup.repeated() {
+		message := "同类日志已合并 " + strconv.Itoa(entry.count) + " 条：" + entry.message
+		_ = logger.Log(ctx, sdk.LogLevel(entry.level), message)
+	}
+}
 
 // Exact installed __init__.py SHA256 3cde4efa9ddd36f82318bed62a6a62ab9004257d8570538f937351b65970bdb7.
 var sourceLogDefinitions = map[int]sourceLogDefinition{

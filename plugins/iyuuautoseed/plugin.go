@@ -234,7 +234,10 @@ func (p *Plugin) run(ctx context.Context, runtime *pluginRuntime, caller sdk.Hos
 	return p.withHostPass(ctx, caller, func(owner context.Context, host sdk.HostCaller) error {
 		owner = bindSourceLog(owner, host, token)
 		core.host = newRuntimeHost(host, runtime.cache, core.config.skipRaw)
-		defer func() { core.host = nil }()
+		defer func() {
+			core.host = nil
+			flushSourceLogRepeats(owner, host)
+		}()
 		if recheck {
 			return core.checkRecheck(owner)
 		}
