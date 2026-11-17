@@ -36,6 +36,14 @@ func (r *sdkSiteResolver) Indexer(ctx context.Context, domain string) (*Site, er
 	}
 	site := &Site{Fields: fields}
 	if indexer.SiteID == nil {
+		// Catalog-only entries carry their base address in domain; a configured
+		// site row supplies url. Accept either spelling so an unbound site keeps
+		// the source's registry behavior instead of failing the whole candidate.
+		if !truth(fields["url"]) {
+			if base, ok := fields["domain"].(string); ok && strings.HasPrefix(base, "http") {
+				fields["url"] = base
+			}
+		}
 		fields["url"], err = sourceSiteDirectoryURL(fields["url"])
 		if err != nil {
 			return nil, err
