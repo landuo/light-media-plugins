@@ -19,7 +19,7 @@ type Object map[string]any
 
 const (
 	PluginID      = "CloudflareSpeedTest"
-	Version       = "1.5.1"
+	Version       = "1.0.0"
 	Action        = "cloudflare_speedtest"
 	ReleaseAPI    = "https://api.github.com/repos/XIU2/CloudflareSpeedTest/releases/latest"
 	ReleasePrefix = "https://github.com/XIU2/CloudflareSpeedTest/releases/download"

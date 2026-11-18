@@ -20,7 +20,7 @@ func Manifest() sdk.Manifest {
 		Icon:          "https://raw.githubusercontent.com/hotlcc/MoviePilot-Plugins-Third/main/icons/MergeMessageNotify_121.png",
 		Author:        "hotlcc",
 		AuthorURL:     "https://github.com/hotlcc",
-		Version:       "1.20.3",
+		Version:       "1.0.0",
 		PluginOrder:   66,
 		Runtime:       "go-executable",
 		Entry:         "merge-message-notify",

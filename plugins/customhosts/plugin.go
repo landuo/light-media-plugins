@@ -15,7 +15,7 @@ import (
 
 const (
 	PluginID        = "CustomHosts"
-	Version         = "1.2.2"
+	Version         = "1.0.0"
 	applyCapability = "custom_hosts.apply"
 )
 

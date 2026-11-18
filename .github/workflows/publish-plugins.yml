@@ -1,0 +1,45 @@
+name: Publish plugin build
+
+on:
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+env:
+  GOTOOLCHAIN: local
+  GOFLAGS: -mod=readonly
+  GOAUTH: 'off'
+  GOPRIVATE: ''
+  GOOS: linux
+  GOARCH: amd64
+  CGO_ENABLED: '0'
+
+jobs:
+  publish:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 30
+    permissions:
+      contents: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-go@b7ad1dad31e06c5925ef5d2fc7ad053ef454303e # v7.0.0
+        with:
+          go-version: '1.26.4'
+          check-latest: false
+          cache: false
+      - name: Build verified plugin archives
+        run: |
+          python3 scripts/build_plugins.py \
+            --output "$RUNNER_TEMP/dist" \
+            --release-base-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/build-${GITHUB_SHA}"
+      - name: Publish immutable build
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: |
+          python3 scripts/publish_release.py \
+            --dist "$RUNNER_TEMP/dist" \
+            --repo "$GITHUB_REPOSITORY" \
+            --source-sha "$GITHUB_SHA"
