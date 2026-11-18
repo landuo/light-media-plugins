@@ -35,20 +35,6 @@ jobs:
           python3 scripts/build_plugins.py \
             --output "$RUNNER_TEMP/dist" \
             --release-base-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/build-${GITHUB_SHA}"
-      - name: Inspect one archive
-        run: |
-          python3 - <<'PY'
-          import glob, os, zipfile
-          files = sorted(glob.glob(os.path.join(os.environ["RUNNER_TEMP"], "dist", "*.zip")))
-          print("archives:", len(files))
-          if files:
-              with zipfile.ZipFile(files[0]) as z:
-                  names = z.namelist()
-                  print("first:", os.path.basename(files[0]), "members:", len(names))
-                  print("\n".join(names[:25]))
-          else:
-              print("no archives produced")
-          PY
       - name: Publish immutable build
         env:
           GITHUB_TOKEN: ${{ github.token }}
