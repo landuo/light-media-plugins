@@ -6,6 +6,10 @@ on:
 permissions:
   contents: write
 
+concurrency:
+  group: publish-plugin-build
+  cancel-in-progress: false
+
 env:
   GOTOOLCHAIN: local
   GOFLAGS: -mod=readonly
@@ -30,16 +34,32 @@ jobs:
           go-version: '1.26.4'
           check-latest: false
           cache: false
-      - name: Build verified plugin archives
-        run: |
-          python3 scripts/build_plugins.py \
-            --output "$RUNNER_TEMP/dist" \
-            --release-base-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/build-${GITHUB_SHA}"
-      - name: Publish immutable build
+      - name: Build and publish the current main
         env:
           GITHUB_TOKEN: ${{ github.token }}
         run: |
-          python3 scripts/publish_release.py \
-            --dist "$RUNNER_TEMP/dist" \
-            --repo "$GITHUB_REPOSITORY" \
-            --source-sha "$GITHUB_SHA"
+          set -euo pipefail
+          for attempt in 1 2 3; do
+            git fetch --depth=1 origin main
+            sha="$(git rev-parse origin/main)"
+            git checkout --force "$sha"
+            rm -rf "$RUNNER_TEMP/dist"
+            python3 scripts/build_plugins.py \
+              --output "$RUNNER_TEMP/dist" \
+              --release-base-url "https://github.com/${GITHUB_REPOSITORY}/releases/download/build-${sha}"
+            if output="$(GITHUB_SHA="$sha" python3 scripts/publish_release.py \
+                --dist "$RUNNER_TEMP/dist" \
+                --repo "$GITHUB_REPOSITORY" \
+                --source-sha "$sha" 2>&1)"; then
+              printf '%s\n' "$output"
+              echo "published ${sha}"
+              exit 0
+            fi
+            printf '%s\n' "$output"
+            if ! grep -q 'main source changed' <<<"$output"; then
+              exit 1
+            fi
+            echo "main advanced during attempt ${attempt}; rebuilding the new head"
+          done
+          echo "main kept advancing; dispatch again once it is stable" >&2
+          exit 1
