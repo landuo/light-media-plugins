@@ -41,7 +41,14 @@ func (p *Plugin) Handle(ctx context.Context, method string, raw json.RawMessage,
 		return json.RawMessage(`["vuetify",null]`), nil
 	case "get_page", "get_dashboard":
 		dashboard := method == "get_dashboard"
-		if !dashboard && !p.machine.State() {
+		// A disabled plugin must not do any work, dashboard or not. The dashboard
+		// branch skipped this check, so a disabled plugin was still probed on every
+		// dashboard render — which pulled in the 22 MB encoding-detection model
+		// tables and kept them resident for the life of the process.
+		if !p.machine.State() {
+			if dashboard {
+				return json.Marshal([]any{})
+			}
 			return json.Marshal([]any{Object{"component": "div", "text": "插件未启用", "props": Object{"class": "text-center"}}})
 		}
 		log := func(ctx context.Context, level, message string) error {
