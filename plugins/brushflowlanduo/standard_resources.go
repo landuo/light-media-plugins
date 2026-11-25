@@ -240,9 +240,32 @@ func (*standardHost) Torrents(ctx context.Context, name string) ([]DownloadState
 	if err != nil {
 		return nil, err
 	}
-	result, err := (sdk.Downloaders{Host: brushCaller(ctx)}).List(ctx, sdk.DownloaderListRequestV1{DownloaderID: d.ID})
+	client := sdk.Downloaders{Host: brushCaller(ctx)}
+	request := sdk.DownloaderListRequestV1{DownloaderID: d.ID, IncludeActivityTime: true}
+	result, err := client.List(ctx, request)
+	if err == nil {
+		return brushTaskRows(result)
+	}
+	// Older hosts reject unknown request fields. Only a host-operation reply
+	// can mean this; cancellation, revoked calls and invalid wire data stop here.
+	var rejection *sdk.Error
+	if ctx.Err() != nil || boundary(err) || !errors.As(err, &rejection) || rejection.Code != "host_operation_failed" {
+		return nil, err
+	}
+	request.IncludeActivityTime = false
+	result, err = client.List(ctx, request)
 	if err != nil {
 		return nil, err
+	}
+	// This read was authorized without activity counters. Other brush rules
+	// can use the snapshot, but the download-time rule must remain inactive.
+	for _, task := range result.Tasks {
+		if task.QBittorrent != nil {
+			task.QBittorrent.TimeActive = nil
+		}
+		if task.Transmission != nil {
+			task.Transmission.SecondsDownloading = nil
+		}
 	}
 	return brushTaskRows(result)
 }

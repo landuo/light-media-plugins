@@ -262,6 +262,28 @@ func iso(t time.Time) string {
 	return t.Truncate(time.Microsecond).Format("2006-01-02T15:04:05.999999-07:00")
 }
 func (p *Core) promotionExpiry(ctx context.Context, t Task, r Row, verify bool) (*time.Time, string, error) {
+	if page, err := url.Parse(text(r["page_url"])); err == nil && scopedNexusDetail(page) && verify {
+		if p.nexusProbeDue(t, r) {
+			ok, err := p.refreshPromotion(ctx, t, r, t.N("timezone_offset"))
+			if err != nil || !ok {
+				return nil, "", err
+			}
+		}
+		// A failed new probe supersedes the old evidence. In particular an
+		// earlier personal expiry cannot establish the end of a new global FREE.
+		probe := number(parseNumber(fallback(r["promotion_nexus_probe_at"], 0)))
+		if ended := number(parseNumber(fallback(r["promotion_ended_at"], 0))); ended > 0 && ended >= probe {
+			return nil, "probe_ended", nil
+		}
+		if verified := number(parseNumber(fallback(r["promotion_verified_at"], 0))); verified <= 0 || verified < probe {
+			return nil, "", nil
+		}
+		if truth(r["promotion_free_without_deadline"]) {
+			return nil, "verified_free_without_deadline", nil
+		}
+		expiry, source := p.resolveExpiry(t, r)
+		return expiry, source, nil
+	}
 	if truth(r["promotion_ended_at"]) {
 		return nil, "probe_ended", nil
 	}
@@ -306,13 +328,20 @@ func (p *Core) pageDeadline(s string, offset float64) *time.Time {
 }
 func (p *Core) refreshPromotion(ctx context.Context, t Task, r Row, offset float64) (bool, error) {
 	now := float64(p.h.Now().UnixNano()) / 1e9
-	if truth(r["promotion_ended_at"]) {
+	recordPage, _ := url.Parse(text(r["page_url"]))
+	scoped := scopedNexusDetail(recordPage)
+	if truth(r["promotion_ended_at"]) && !scoped {
 		return true, nil
 	}
 	if !addedFree(r) {
 		return false, nil
 	}
-	if now-number(parseNumber(fallback(r["promotion_probe_at"], 0))) < promotionProbe {
+	if scoped {
+		if !p.nexusProbeDue(t, r) {
+			return false, nil
+		}
+		r["promotion_nexus_probe_at"] = now
+	} else if now-number(parseNumber(fallback(r["promotion_probe_at"], 0))) < promotionProbe {
 		return false, nil
 	}
 	r["promotion_probe_at"] = now
@@ -350,6 +379,36 @@ func (p *Core) refreshPromotion(ctx context.Context, t Task, r Row, offset float
 	body := text(response["text"])
 	if !truth(response["ok"]) || body == "" {
 		return false, nil
+	}
+	if scopedNexusDetail(page) {
+		until, ended, known := p.nexusDetailPromotion(ctx, s.ID, page, body, offset)
+		if !known {
+			return false, nil
+		}
+		wasOpen := truth(r["promotion_free_without_deadline"])
+		delete(r, "promotion_free_without_deadline")
+		if ended {
+			r["promotion_ended_at"] = now
+			return true, nil
+		}
+		if until.IsZero() {
+			delete(r, "freedate")
+			delete(r, "freedate_diff")
+			r["promotion_free_without_deadline"] = true
+			if !wasOpen {
+				p.h.Log(ctx, "info", "刷流任务已核实种子当前免费，站点未标明截止时间："+text(r["title"]))
+			}
+		} else {
+			if text(r["freedate"]) != iso(until) {
+				p.h.Log(ctx, "info", "刷流任务读取到促销截止时间："+text(r["title"])+" "+iso(until))
+			}
+			r["freedate"] = iso(until)
+		}
+		r["promotion_verified_at"] = now
+		r["promotion_clock_version"] = promotionClockVersion
+		delete(r, "promotion_clock_invalidated")
+		delete(r, "promotion_ended_at")
+		return true, nil
 	}
 	if m := match("PROMOTION_PAGE_OTHER_VERSIONS_PATTERN", body); m != nil {
 		body = m.Before
@@ -490,6 +549,9 @@ func (p *Core) promotionExpired(ctx context.Context, t Task, info, r Row) (bool,
 	}
 	if source == "probe_ended" {
 		return true, "站点已无促销且下载未完成", nil
+	}
+	if source == "verified_free_without_deadline" {
+		return false, "", nil
 	}
 	if expiry != nil {
 		if !p.h.Now().Add(promotionStopMargin).Before(*expiry) {

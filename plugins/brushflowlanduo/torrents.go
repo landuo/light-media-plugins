@@ -2,6 +2,7 @@ package brushflowlanduo
 
 import (
 	"context"
+	"encoding/json"
 	"fmt"
 	"math"
 	"net/url"
@@ -40,6 +41,68 @@ func contains(ss []string, s string) bool {
 	}
 	return false
 }
+
+// The SDK preserves native counters as json.Number. Unknown or malformed values
+// must never turn into a real zero when subtracting a torrent's seeding time.
+func nativeSeconds(value any) (int64, bool) {
+	switch n := value.(type) {
+	case json.Number:
+		seconds, err := n.Int64()
+		return seconds, err == nil && seconds >= 0
+	case int:
+		return int64(n), n >= 0
+	case int64:
+		return n, n >= 0
+	case float64:
+		if n >= 0 && n < 1<<53 && n == math.Trunc(n) {
+			return int64(n), true
+		}
+	}
+	return 0, false
+}
+
+// Only unfinished torrents have a download timeout. Use native progress here:
+// the displayed Transmission percentage may already round up to 100%.
+func unfinishedDownloadSeconds(t DownloadState) any {
+	var progress any
+	var seconds int64
+	var ok bool
+	switch t.Kind {
+	case "qbittorrent":
+		active, hasActive := nativeSeconds(t.Raw["time_active"])
+		seeding, hasSeeding := nativeSeconds(t.Raw["seeding_time"])
+		if !hasActive || !hasSeeding || active < seeding {
+			return nil
+		}
+		seconds, progress = active-seeding, t.Raw["progress"]
+	case "transmission":
+		seconds, ok = nativeSeconds(t.Raw["secondsDownloading"])
+		if !ok {
+			return nil
+		}
+		progress = t.Raw["percentDone"]
+	default:
+		return nil
+	}
+	var fraction float64
+	switch v := progress.(type) {
+	case json.Number:
+		var err error
+		fraction, err = v.Float64()
+		if err != nil {
+			return nil
+		}
+	case float64, int, int64:
+		fraction = number(v)
+	default:
+		return nil
+	}
+	if fraction >= 0 && fraction < 1 {
+		return seconds
+	}
+	return nil
+}
+
 func (p *Core) torrentInfo(t DownloadState) Row {
 	r := t.Raw
 	now := int(p.h.Now().Unix())
@@ -79,9 +142,9 @@ func (p *Core) torrentInfo(t DownloadState) Row {
 			tracker = text(ts[0])
 		}
 	}
-	dltime, seedtime, iatime := 0.0, 0.0, 0.0
+	age, seedtime, iatime := 0.0, 0.0, 0.0
 	if added > 0 {
-		dltime = float64(now) - added
+		age = float64(now) - added
 	}
 	if done > 0 {
 		seedtime = float64(now) - done
@@ -90,14 +153,14 @@ func (p *Core) torrentInfo(t DownloadState) Row {
 		iatime = float64(now) - active
 	}
 	avg := uploaded
-	if dltime != 0 {
-		avg = math.Trunc(uploaded / dltime)
+	if age != 0 {
+		avg = math.Trunc(uploaded / age)
 	}
 	var actualProgress any = progress
 	if t.Kind == "qbittorrent" {
 		actualProgress = r["progress"]
 	}
-	return Row{"hash": hash, "title": title, "seeding_time": seedtime, "ratio": ratio, "uploaded": uploaded, "downloaded": downloaded, "progress": actualProgress, "avg_upspeed": avg, "iatime": iatime, "dltime": dltime, "total_size": total, "add_time": time.Unix(int64(added), 0).In(p.h.Now().Location()).Format("2006-01-02 15:04:05"), "add_on": added, "tags": tags, "tracker": tracker}
+	return Row{"hash": hash, "title": title, "seeding_time": seedtime, "ratio": ratio, "uploaded": uploaded, "downloaded": downloaded, "progress": actualProgress, "avg_upspeed": avg, "iatime": iatime, "dltime": unfinishedDownloadSeconds(t), "total_size": total, "add_time": time.Unix(int64(added), 0).In(p.h.Now().Location()).Format("2006-01-02 15:04:05"), "add_on": added, "tags": tags, "tracker": tracker}
 }
 func (p *Core) siteByTorrent(ctx context.Context, t DownloadState) (int, string, error) {
 	trackers := []string{}

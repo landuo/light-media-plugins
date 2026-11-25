@@ -190,11 +190,10 @@ func (p *Core) collectGlobal(ctx context.Context, cfg Config) ([]deleteCandidate
 				if e != nil {
 					return nil, 0, nil, nil, e
 				}
-				timeout := t.N("download_time") != 0 && !complete(info) && number(info["dltime"]) >= t.N("download_time")*3600
 				if expired {
 					pre = why
-				} else if timeout {
-					pre = "下载耗时达到 " + text(t.Row["download_time"]) + " 小时"
+				} else {
+					pre = downloadTimeoutReason(t, info)
 				}
 			}
 			should, conditional, e := p.deleteCondition(ctx, t, info, r)

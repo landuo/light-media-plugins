@@ -1,8 +1,8 @@
 {
   "schema_version": 3,
   "source_repository": "https://github.com/landuo/light-media",
-  "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
-  "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf. CleanInvalidSeed also negotiates sequential scanning for its exact command and scheduler phases. SeedRescue negotiates parallel callback streaming with the existing finite callback window and per-message limits.",
+  "source_commit": "a3f51216b8d897a01424378527bd41e93e2bd640",
+  "scope": "108 standalone SDK files. Downloader list requests can opt in to native qBittorrent and Transmission activity counters. Other files retain their recorded host commits.",
   "allowed_changes": [
     {
       "kind": "module_import_relocation",
@@ -221,10 +221,10 @@
     {
       "source_path": "internal/plugins/downloader_host.go",
       "path": "internal/sdk/downloader_host.go",
-      "source_sha256": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
-      "sha256": "a45c880dac4373d5c2f96f3e15282b0e24b8425cb886c1c5363ca71e10101a69",
+      "source_sha256": "1586b68d06dcf57bd5c63380ebf16b9700a42b34d9551713e516f3ba9b254ccf",
+      "sha256": "1586b68d06dcf57bd5c63380ebf16b9700a42b34d9551713e516f3ba9b254ccf",
       "changes": [],
-      "source_commit": "75e13686a0e3df05ac251e359303ef3fd5971cf6"
+      "source_commit": "a3f51216b8d897a01424378527bd41e93e2bd640"
     },
     {
       "source_path": "internal/plugins/downloader_host_connection.go",
@@ -338,10 +338,10 @@
     {
       "source_path": "internal/plugins/downloader_tasks.go",
       "path": "internal/sdk/downloader_tasks.go",
-      "source_sha256": "69f77c7ae9fbd1bfbb34c9e27a675751f98d24d46ced7c197dc4e3fa26ec7d70",
-      "sha256": "69f77c7ae9fbd1bfbb34c9e27a675751f98d24d46ced7c197dc4e3fa26ec7d70",
+      "source_sha256": "a4896b5c24cb16d8181157d73c63fae817a8ef34c9d9628f3a8f202f3c5a58f8",
+      "sha256": "a4896b5c24cb16d8181157d73c63fae817a8ef34c9d9628f3a8f202f3c5a58f8",
       "changes": [],
-      "source_commit": "ad2acdef245f9b18f690b49c7b66af22ae494fa0"
+      "source_commit": "a3f51216b8d897a01424378527bd41e93e2bd640"
     },
     {
       "source_path": "internal/plugins/downloader_tasks_test.go",
@@ -9044,6 +9044,13 @@
       "scope": "106 standalone SDK files. The current increment adds opt-in native qBittorrent pack fields to source-completed reads. Other files retain their exact paired commits and the two declared import relocations.",
       "target_commit": "b994d0ed4f4951ab12f69e750e0b5de4fab184b2",
       "target_path": "SDK_ORIGIN.json"
+    },
+    {
+      "source_commit": "c8df837f62847f97e8bf9f6021b71ccb03ed8b1f",
+      "manifest_sha256": "91b555a3900bb81e9c97253ff8bcf472b5aa05a09677b04551e894409b6332f1",
+      "scope": "108 standalone SDK files. The paired host scope admits sequential host streams for BrushFlow and ScrapeFileClean and adds the identity-guarded ScrapeFileClean delete leaf. CleanInvalidSeed also negotiates sequential scanning for its exact command and scheduler phases. SeedRescue negotiates parallel callback streaming with the existing finite callback window and per-message limits.",
+      "target_commit": "fc1835d8f1dbe86cbf2abe81f0321844d2911ba0",
+      "target_path": "SDK_ORIGIN.json"
     }
   ],
   "closure_boundaries": {
@@ -9064,7 +9071,7 @@
     "public_service_lifetime_increment": "ManagedPublicServices is an explicit source-public-service opt-in with negotiated public_service_stop:1; admission binds the exact loaded object, captured Client and actual root/Submit descendants. Individual stop preserves accepted calls and later only reaps transport; scheduler global wait counts roots and real descendants. Ordinary default Submit/cleanup semantics remain unchanged. This SDK metadata alone does not implement or validate ordinary command/API retention or whole AutoSignIn.",
     "storage_local_read_increment": "The host validates the scoped capability and current roots, protects private app state, and returns file identity only. The worker reopens beneath the granted root and verifies identity before and after reading."
   },
-  "source_base_commit": "7be161f91f329d640e0d222b5af23787fffc3a29",
-  "source_branch": "codex/plugin-source-error-outcomes-20261105",
-  "source_state": "Local host pairing for IYUUAutoSeed 2.22. M-Team material aliases require an exact current-call grant and never forward site credentials."
+  "source_base_commit": "19b25cb3367e1e70783b51d62cc0dc22b9a88b87",
+  "source_branch": "main",
+  "source_state": "BrushFlow activity-time projection paired with the exact host commit identified above."
 }

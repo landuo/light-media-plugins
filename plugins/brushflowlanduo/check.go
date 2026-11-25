@@ -269,6 +269,13 @@ func (p *Core) runCheck(ctx context.Context, t Task, r Row) error {
 	deletes = unique(append(promotionDelete, deletes...))
 	deleted := false
 	if len(deletes) > 0 {
+		// A refused delete (for example, files shared with a seeding torrent)
+		// must not discard the promotion evidence just collected for this task.
+		if t.B("del_no_free") {
+			if e := p.put(ctx, t.ID(), "torrents", ts); e != nil {
+				return fmt.Errorf("保存种子促销核验结果失败: %w", e)
+			}
+		}
 		if ds.Kind == "qbittorrent" {
 			reannounce := []string{}
 			protected := append(append([]string{}, promotionDelete...), promotionPause...)
@@ -437,6 +444,15 @@ func (p *Core) protectPromotion(ctx context.Context, t Task, torrents []Download
 	}
 	return del, pause, nil
 }
+func downloadTimeoutReason(t Task, info Row) string {
+	seconds, known := info["dltime"].(int64)
+	hours := t.N("download_time")
+	if known && hours > 0 && float64(seconds) >= hours*3600 {
+		return "累计下载时间达到 " + text(t.Row["download_time"]) + " 小时"
+	}
+	return ""
+}
+
 func (p *Core) deleteCondition(ctx context.Context, t Task, info, r Row) (bool, string, error) {
 	expired, why, e := p.promotionExpired(ctx, t, info, r)
 	if e != nil || expired {
@@ -455,12 +471,14 @@ func (p *Core) deleteCondition(ctx context.Context, t Task, info, r Row) (bool, 
 		key, field string
 		factor     float64
 		reason     string
-		gate       bool
-	}{{"seed_time", "seeding_time", 3600, "做种时间达到 %s 小时", true}, {"seed_ratio", "ratio", 1, "分享率达到 %s", true}, {"seed_size", "uploaded", 1024 * 1024 * 1024, "上传量达到 %s GB", true}, {"download_time", "dltime", 3600, "下载耗时达到 %s 小时", !complete(info)}}
+	}{{"seed_time", "seeding_time", 3600, "做种时间达到 %s 小时"}, {"seed_ratio", "ratio", 1, "分享率达到 %s"}, {"seed_size", "uploaded", 1024 * 1024 * 1024, "上传量达到 %s GB"}}
 	for _, c := range checks {
-		if t.N(c.key) != 0 && c.gate && number(info[c.field]) >= t.N(c.key)*c.factor {
+		if t.N(c.key) != 0 && number(info[c.field]) >= t.N(c.key)*c.factor {
 			return true, fmt.Sprintf(c.reason, text(t.Row[c.key])), nil
 		}
+	}
+	if why := downloadTimeoutReason(t, info); why != "" {
+		return true, why, nil
 	}
 	if t.N("seed_avgspeed") != 0 && number(info["avg_upspeed"]) <= t.N("seed_avgspeed")*1024 && number(info["seeding_time"]) >= 1800 {
 		return true, "平均上传速度低于 " + text(t.Row["seed_avgspeed"]) + " KB/s", nil
@@ -509,12 +527,11 @@ func (p *Core) dynamicPreDelete(ctx context.Context, t Task, ds []DownloadState,
 		if e != nil {
 			return nil, e
 		}
-		timeout := t.N("download_time") != 0 && !complete(info) && number(info["dltime"]) >= t.N("download_time")*3600
-		if !expired && !timeout {
-			continue
-		}
-		if timeout && why == "" {
-			why = "下载耗时达到 " + text(t.Row["download_time"]) + " 小时"
+		if !expired {
+			why = downloadTimeoutReason(t, info)
+			if why == "" {
+				continue
+			}
 		}
 		out = append(out, hash)
 		if e = p.deleteNotice(ctx, t, r, why); e != nil {
